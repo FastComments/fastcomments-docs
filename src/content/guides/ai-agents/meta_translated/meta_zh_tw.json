@@ -1,21 +1,22 @@
 {
   "name": "AI 代理人",
+  "pageHeader": "用於評論審核的 AI 代理人",
   "icon": "ai.png",
   "itemsOrdered": [
     {
       "name": "什麼是 AI 代理人",
       "file": "what-are-ai-agents.md",
-      "subCat": "介紹"
+      "subCat": "簡介"
     },
     {
       "name": "方案與資格",
       "file": "plans-and-eligibility.md",
-      "subCat": "介紹"
+      "subCat": "簡介"
     },
     {
-      "name": "快速上手",
+      "name": "快速入門",
       "file": "quickstart.md",
-      "subCat": "介紹"
+      "subCat": "簡介"
     },
     {
       "name": "建立代理人",
@@ -28,17 +29,17 @@
       "subCat": "建立代理人"
     },
     {
-      "name": "範本：版主",
+      "name": "範本：審核員",
       "file": "template-moderator.md",
       "subCat": "建立代理人"
     },
     {
-      "name": "範本：歡迎接待員",
+      "name": "範本：歡迎問候者",
       "file": "template-welcome-greeter.md",
       "subCat": "建立代理人"
     },
     {
-      "name": "範本：置頂評論釘選者",
+      "name": "範本：置頂評論者",
       "file": "template-top-comment-pinner.md",
       "subCat": "建立代理人"
     },
@@ -48,37 +49,37 @@
       "subCat": "建立代理人"
     },
     {
-      "name": "範本：煤氣燈效應偵測器",
+      "name": "範本：操控偵測器",
       "file": "template-gaslight-detector.md",
       "subCat": "建立代理人"
     },
     {
       "name": "選擇模型",
       "file": "choosing-a-model.md",
-      "subCat": "個性與上下文"
+      "subCat": "個性與情境"
     },
     {
       "name": "個性與初始提示",
       "file": "personality-prompt.md",
-      "subCat": "個性與上下文"
+      "subCat": "個性與情境"
     },
     {
-      "name": "上下文選項",
+      "name": "情境選項",
       "file": "context-options.md",
-      "subCat": "個性與上下文"
+      "subCat": "個性與情境"
     },
     {
-      "name": "社群準則",
+      "name": "社群守則",
       "file": "community-guidelines.md",
-      "subCat": "個性與上下文"
+      "subCat": "個性與情境"
     },
     {
-      "name": "範圍：URL 與地區過濾",
+      "name": "範圍：URL 與語系過濾器",
       "file": "scope-url-locale.md",
-      "subCat": "個性與上下文"
+      "subCat": "個性與情境"
     },
     {
-      "name": "觸發事件總覽",
+      "name": "觸發事件概覽",
       "file": "triggers-overview.md",
       "subCat": "觸發事件"
     },
@@ -98,22 +99,22 @@
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：評論被釘選",
+      "name": "觸發：置頂評論",
       "file": "trigger-comment-pin.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：評論被取消釘選",
+      "name": "觸發：取消置頂評論",
       "file": "trigger-comment-unpin.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：評論被鎖定",
+      "name": "觸發：鎖定評論",
       "file": "trigger-comment-lock.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：評論被解鎖",
+      "name": "觸發：解除鎖定評論",
       "file": "trigger-comment-unlock.md",
       "subCat": "觸發事件"
     },
@@ -128,32 +129,32 @@
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：新用戶首則評論",
+      "name": "觸發：新使用者首則評論",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：自動判定為垃圾評論",
+      "name": "觸發：自動垃圾評論",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：版主已審查的評論",
+      "name": "觸發：審核員已審查評論",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：版主核准的評論",
+      "name": "觸發：審核員已批准評論",
       "file": "trigger-moderator-approved.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：版主標記為垃圾評論",
+      "name": "觸發：審核員標記為垃圾",
       "file": "trigger-moderator-spammed.md",
       "subCat": "觸發事件"
     },
     {
-      "name": "觸發：版主授予徽章",
+      "name": "觸發：審核員授予徽章",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "觸發事件"
     },
@@ -183,7 +184,7 @@
       "subCat": "允許的工具呼叫"
     },
     {
-      "name": "狀態類別",
+      "name": "狀態",
       "file": "status-states.md",
       "subCat": "安全與監督"
     },
@@ -193,12 +194,12 @@
       "subCat": "安全與監督"
     },
     {
-      "name": "審核工作流程",
+      "name": "批准工作流程",
       "file": "approval-workflow.md",
       "subCat": "安全與監督"
     },
     {
-      "name": "審核通知",
+      "name": "批准通知",
       "file": "approval-notifications.md",
       "subCat": "安全與監督"
     },
@@ -213,7 +214,7 @@
       "subCat": "安全與監督"
     },
     {
-      "name": "預算總覽",
+      "name": "預算概覽",
       "file": "budgets-overview.md",
       "subCat": "預算與成本"
     },
@@ -223,69 +224,69 @@
       "subCat": "預算與成本"
     },
     {
-      "name": "成本模式",
+      "name": "成本模型",
       "file": "cost-model.md",
       "subCat": "預算與成本"
     },
     {
-      "name": "丟棄原因",
+      "name": "中止原因",
       "file": "drop-reasons.md",
       "subCat": "預算與成本"
     },
     {
       "name": "執行歷史",
       "file": "run-history.md",
-      "subCat": "監控與調整"
+      "subCat": "監控與調校"
     },
     {
       "name": "執行詳細檢視",
       "file": "run-detail-view.md",
-      "subCat": "監控與調整"
+      "subCat": "監控與調校"
     },
     {
       "name": "分析頁面",
       "file": "analytics-page.md",
-      "subCat": "監控與調整"
+      "subCat": "監控與調校"
     },
     {
       "name": "測試執行（重播）",
       "file": "test-runs-replays.md",
-      "subCat": "監控與調整"
+      "subCat": "監控與調校"
     },
     {
-      "name": "精煉提示",
+      "name": "優化提示詞",
       "file": "refining-prompts.md",
-      "subCat": "監控與調整"
+      "subCat": "監控與調校"
     },
     {
-      "name": "Webhook 總覽",
+      "name": "Webhook 概覽",
       "file": "webhooks-overview.md",
-      "subCat": "Webhooks"
+      "subCat": "Webhook"
     },
     {
       "name": "Webhook 事件",
       "file": "webhook-events.md",
-      "subCat": "Webhooks"
+      "subCat": "Webhook"
     },
     {
       "name": "Webhook 載荷",
       "file": "webhook-payloads.md",
-      "subCat": "Webhooks"
+      "subCat": "Webhook"
     },
     {
       "name": "Webhook 簽名",
       "file": "webhook-signing.md",
-      "subCat": "Webhooks"
+      "subCat": "Webhook"
     },
     {
       "name": "Webhook 重試",
       "file": "webhook-retries.md",
-      "subCat": "Webhooks"
+      "subCat": "Webhook"
     },
     {
-      "name": "Webhook 傳送記錄",
+      "name": "Webhook 傳遞日誌",
       "file": "webhook-logs.md",
-      "subCat": "Webhooks"
+      "subCat": "Webhook"
     }
   ]
 }

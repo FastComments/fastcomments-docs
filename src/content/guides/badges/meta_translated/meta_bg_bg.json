@@ -1,5 +1,6 @@
 {
   "name": "Значки",
+  "pageHeader": "Значки за система за коментари",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Основите"
     },
     {
-      "name": "Напредване",
+      "name": "Прогрес",
       "file": "badge-progression.md",
       "subCat": "Основите"
     },
@@ -23,7 +24,7 @@
       "subCat": "Видове значки"
     },
     {
-      "name": "Гласове 'За'",
+      "name": "Гласове нагоре",
       "file": "badge-type-up-votes.md",
       "subCat": "Видове значки"
     },
@@ -33,7 +34,7 @@
       "subCat": "Видове значки"
     },
     {
-      "name": "Закачени коментари",
+      "name": "Прикрепени коментари",
       "file": "badge-type-pinned-comments.md",
       "subCat": "Видове значки"
     },
@@ -58,39 +59,39 @@
       "subCat": "Видове значки"
     },
     {
-      "name": "Въведение в модераторските значки",
+      "name": "Въведение в значките за модератори",
       "file": "moderator-badges.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     },
     {
       "name": "Изтрити коментари",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     },
     {
       "name": "Одобрени коментари",
       "file": "moderator-comments-approved.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     },
     {
       "name": "Неодобрени коментари",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     },
     {
       "name": "Прегледани коментари",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     },
     {
       "name": "Коментари, маркирани като спам",
       "file": "moderator-comments-spam.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     },
     {
       "name": "Коментари, маркирани като не-спам",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Видове модераторски значки"
+      "subCat": "Видове значки за модератори"
     }
   ]
 }

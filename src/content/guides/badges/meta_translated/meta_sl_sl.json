@@ -1,5 +1,6 @@
 {
   "name": "Značke",
+  "pageHeader": "Značke sistema za komentarje",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -23,7 +24,7 @@
       "subCat": "Vrste značk"
     },
     {
-      "name": "Všečki",
+      "name": "Pozitivni glasovi",
       "file": "badge-type-up-votes.md",
       "subCat": "Vrste značk"
     },
@@ -43,12 +44,12 @@
       "subCat": "Vrste značk"
     },
     {
-      "name": "Nočna sova",
+      "name": "Nočni sova",
       "file": "badge-type-night-owl.md",
       "subCat": "Vrste značk"
     },
     {
-      "name": "Hiter čas odgovora",
+      "name": "Hitri čas odgovora",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "Vrste značk"
     },
@@ -60,37 +61,37 @@
     {
       "name": "Uvod v moderatorjeve značke",
       "file": "moderator-badges.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     },
     {
       "name": "Izbrisani komentarji",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     },
     {
       "name": "Odobreni komentarji",
       "file": "moderator-comments-approved.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     },
     {
       "name": "Neodobreni komentarji",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     },
     {
       "name": "Pregledani komentarji",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     },
     {
-      "name": "Komentarji označeni kot neželena pošta",
+      "name": "Komentarji označeni kot spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     },
     {
-      "name": "Komentarji označeni kot niso neželena pošta",
+      "name": "Komentarji označeni kot ne‑spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Vrste značk moderatorjev"
+      "subCat": "Vrste moderatorjevih značk"
     }
   ]
 }

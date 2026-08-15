@@ -1,5 +1,6 @@
 {
   "name": "Abzeichen",
+  "pageHeader": "Abzeichen des Kommentarsystems",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -15,82 +16,82 @@
     {
       "name": "Manuelle Abzeichen",
       "file": "badge-type-manual.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
       "name": "Anzahl der Kommentare",
       "file": "badge-type-comment-count.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
-      "name": "Upvotes",
+      "name": "Up‑Votes",
       "file": "badge-type-up-votes.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
       "name": "Antworten",
       "file": "badge-type-replies.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
       "name": "Angeheftete Kommentare",
       "file": "badge-type-pinned-comments.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
       "name": "Veteran",
       "file": "badge-type-veteran.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
-      "name": "Nachteule",
+      "name": "Nachtvogel",
       "file": "badge-type-night-owl.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
       "name": "Schnelle Antwortzeit",
       "file": "badge-type-fast-reply-time.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
-      "name": "Antwort auf eine bestimmte Seite",
+      "name": "Antwort auf bestimmte Seite",
       "file": "badge-type-reply-to-specific-page.md",
-      "subCat": "Abzeichentypen"
+      "subCat": "Abzeichenarten"
     },
     {
-      "name": "Einführung in Moderatoren-Abzeichen",
+      "name": "Einführung in Moderatoren‑Abzeichen",
       "file": "moderator-badges.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     },
     {
       "name": "Gelöschte Kommentare",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     },
     {
       "name": "Genehmigte Kommentare",
       "file": "moderator-comments-approved.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     },
     {
       "name": "Nicht genehmigte Kommentare",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     },
     {
       "name": "Überprüfte Kommentare",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     },
     {
       "name": "Als Spam markierte Kommentare",
       "file": "moderator-comments-spam.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     },
     {
-      "name": "Als Nicht-Spam markierte Kommentare",
+      "name": "Als Nicht‑Spam markierte Kommentare",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Abzeichentypen für Moderatoren"
+      "subCat": "Moderatoren‑Abzeichenarten"
     }
   ]
 }

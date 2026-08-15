@@ -1,9 +1,10 @@
 {
-  "name": "Agenti AI",
+  "name": "Agenti IA",
+  "pageHeader": "Agenti IA per la moderazione dei commenti",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Cosa sono gli agenti AI",
+      "name": "Cosa sono gli agenti IA",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduzione"
     },
@@ -23,7 +24,7 @@
       "subCat": "Creazione di agenti"
     },
     {
-      "name": "Modelli iniziali",
+      "name": "Modelli di partenza",
       "file": "starter-templates.md",
       "subCat": "Creazione di agenti"
     },
@@ -38,12 +39,12 @@
       "subCat": "Creazione di agenti"
     },
     {
-      "name": "Modello: Fissatore dei commenti principali",
+      "name": "Modello: Pin dei commenti principali",
       "file": "template-top-comment-pinner.md",
       "subCat": "Creazione di agenti"
     },
     {
-      "name": "Modello: Riepilogatore della discussione",
+      "name": "Modello: Riassuntore di thread",
       "file": "template-thread-summarizer.md",
       "subCat": "Creazione di agenti"
     },
@@ -78,109 +79,109 @@
       "subCat": "Personalità e contesto"
     },
     {
-      "name": "Panoramica sugli eventi di attivazione",
+      "name": "Panoramica degli eventi di trigger",
       "file": "triggers-overview.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento aggiunto",
+      "name": "Trigger: commento aggiunto",
       "file": "trigger-comment-add.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento modificato",
+      "name": "Trigger: commento modificato",
       "file": "trigger-comment-edit.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento eliminato",
+      "name": "Trigger: commento eliminato",
       "file": "trigger-comment-delete.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento fissato",
+      "name": "Trigger: commento fissato",
       "file": "trigger-comment-pin.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento rimosso dal fissaggio",
+      "name": "Trigger: commento non fissato",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento bloccato",
+      "name": "Trigger: commento bloccato",
       "file": "trigger-comment-lock.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento sbloccato",
+      "name": "Trigger: commento sbloccato",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: soglia di voti",
+      "name": "Trigger: soglia di voto",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: soglia di segnalazioni",
+      "name": "Trigger: soglia di segnalazione",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: primo commento di un nuovo utente",
+      "name": "Trigger: primo commento di un nuovo utente",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento contrassegnato automaticamente come spam",
+      "name": "Trigger: commento spam automatico",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento esaminato dal moderatore",
+      "name": "Trigger: commento revisionato dal moderatore",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento approvato dal moderatore",
+      "name": "Trigger: commento approvato dal moderatore",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: commento contrassegnato come spam dal moderatore",
+      "name": "Trigger: commento contrassegnato come spam dal moderatore",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazione: badge assegnato dal moderatore",
+      "name": "Trigger: badge assegnato dal moderatore",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
-      "name": "Attivazioni differite",
+      "name": "Trigger differiti",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Eventi di attivazione"
+      "subCat": "Eventi di trigger"
     },
     {
       "name": "Riferimento agli strumenti",
       "file": "tools-overview.md",
-      "subCat": "Chiamate agli strumenti consentite"
+      "subCat": "Chiamate di strumenti consentite"
     },
     {
-      "name": "Blocca utente",
+      "name": "Banna utente",
       "file": "tool-ban-user.md",
-      "subCat": "Chiamate agli strumenti consentite"
+      "subCat": "Chiamate di strumenti consentite"
     },
     {
       "name": "Avvisa utente",
       "file": "tool-warn-user.md",
-      "subCat": "Chiamate agli strumenti consentite"
+      "subCat": "Chiamate di strumenti consentite"
     },
     {
       "name": "Modifica commento",
       "file": "tool-edit-comment.md",
-      "subCat": "Chiamate agli strumenti consentite"
+      "subCat": "Chiamate di strumenti consentite"
     },
     {
       "name": "Stati",
@@ -188,7 +189,7 @@
       "subCat": "Sicurezza e supervisione"
     },
     {
-      "name": "Modalità simulazione",
+      "name": "Modalità di prova",
       "file": "dry-run-mode.md",
       "subCat": "Sicurezza e supervisione"
     },
@@ -213,7 +214,7 @@
       "subCat": "Sicurezza e supervisione"
     },
     {
-      "name": "Panoramica sui budget",
+      "name": "Panoramica dei budget",
       "file": "budgets-overview.md",
       "subCat": "Budget e costi"
     },
@@ -228,7 +229,7 @@
       "subCat": "Budget e costi"
     },
     {
-      "name": "Motivi di scarto",
+      "name": "Motivi di interruzione",
       "file": "drop-reasons.md",
       "subCat": "Budget e costi"
     },
@@ -248,7 +249,7 @@
       "subCat": "Monitoraggio e ottimizzazione"
     },
     {
-      "name": "Esecuzioni di test (riproduzioni)",
+      "name": "Esecuzioni di test (replay)",
       "file": "test-runs-replays.md",
       "subCat": "Monitoraggio e ottimizzazione"
     },
@@ -258,7 +259,7 @@
       "subCat": "Monitoraggio e ottimizzazione"
     },
     {
-      "name": "Panoramica sui webhook",
+      "name": "Panoramica dei webhook",
       "file": "webhooks-overview.md",
       "subCat": "Webhook"
     },
@@ -268,22 +269,22 @@
       "subCat": "Webhook"
     },
     {
-      "name": "Payload dei webhook",
+      "name": "Payload webhook",
       "file": "webhook-payloads.md",
       "subCat": "Webhook"
     },
     {
-      "name": "Firma dei webhook",
+      "name": "Firma webhook",
       "file": "webhook-signing.md",
       "subCat": "Webhook"
     },
     {
-      "name": "Tentativi di reinvio dei webhook",
+      "name": "Ritenti webhook",
       "file": "webhook-retries.md",
       "subCat": "Webhook"
     },
     {
-      "name": "Log di consegna dei webhook",
+      "name": "Log di consegna webhook",
       "file": "webhook-logs.md",
       "subCat": "Webhook"
     }

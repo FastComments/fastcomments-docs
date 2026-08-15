@@ -1,16 +1,17 @@
 {
   "name": "Badges",
+  "pageHeader": "Badges du système de commentaires",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
-      "name": "Notions de base",
+      "name": "Bases",
       "file": "badge-basics.md",
-      "subCat": "Notions de base"
+      "subCat": "Les bases"
     },
     {
       "name": "Progression",
       "file": "badge-progression.md",
-      "subCat": "Notions de base"
+      "subCat": "Les bases"
     },
     {
       "name": "Badges manuels",
@@ -43,7 +44,7 @@
       "subCat": "Types de badges"
     },
     {
-      "name": "Noctambule",
+      "name": "Hibou nocturne",
       "file": "badge-type-night-owl.md",
       "subCat": "Types de badges"
     },

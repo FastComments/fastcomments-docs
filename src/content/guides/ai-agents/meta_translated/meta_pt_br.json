@@ -1,5 +1,6 @@
 {
   "name": "Agentes de IA",
+  "pageHeader": "Agentes de IA para Moderação de Comentários",
   "icon": "ai.png",
   "itemsOrdered": [
     {
@@ -33,17 +34,17 @@
       "subCat": "Criando Agentes"
     },
     {
-      "name": "Modelo: Recepcionista de Boas-Vindas",
+      "name": "Modelo: Saudação de Boas-vindas",
       "file": "template-welcome-greeter.md",
       "subCat": "Criando Agentes"
     },
     {
-      "name": "Modelo: Fixador de Comentário em Destaque",
+      "name": "Modelo: Fixador de Comentário Principal",
       "file": "template-top-comment-pinner.md",
       "subCat": "Criando Agentes"
     },
     {
-      "name": "Modelo: Resumidor de Tópicos",
+      "name": "Modelo: Resumidor de Tópico",
       "file": "template-thread-summarizer.md",
       "subCat": "Criando Agentes"
     },
@@ -103,17 +104,17 @@
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Desafixado",
+      "name": "Gatilho: Comentário Desfixado",
       "file": "trigger-comment-unpin.md",
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Bloqueado",
+      "name": "Gatilho: Comentário Trancado",
       "file": "trigger-comment-lock.md",
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Desbloqueado",
+      "name": "Gatilho: Comentário Destrancado",
       "file": "trigger-comment-unlock.md",
       "subCat": "Eventos de Gatilho"
     },
@@ -123,7 +124,7 @@
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Limite de Denúncias",
+      "name": "Gatilho: Limite de Sinalizações",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Eventos de Gatilho"
     },
@@ -133,17 +134,17 @@
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Automaticamente Marcado como Spam",
+      "name": "Gatilho: Comentário Spam Automático",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Revisado pelo Moderador",
+      "name": "Gatilho: Comentário Revisado por Moderador",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Comentário Aprovado pelo Moderador",
+      "name": "Gatilho: Comentário Aprovado por Moderador",
       "file": "trigger-moderator-approved.md",
       "subCat": "Eventos de Gatilho"
     },
@@ -153,7 +154,7 @@
       "subCat": "Eventos de Gatilho"
     },
     {
-      "name": "Gatilho: Moderador Concedeu Distintivo",
+      "name": "Gatilho: Moderador Concedeu Emblema",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Eventos de Gatilho"
     },
@@ -203,7 +204,7 @@
       "subCat": "Segurança e Supervisão"
     },
     {
-      "name": "Conformidade com o Artigo 17 da DSA da UE",
+      "name": "Conformidade com Artigo 17 da DSA da UE",
       "file": "eu-dsa-compliance.md",
       "subCat": "Segurança e Supervisão"
     },
@@ -238,7 +239,7 @@
       "subCat": "Monitoramento e Ajuste"
     },
     {
-      "name": "Visualização de Detalhes da Execução",
+      "name": "Visualização Detalhada da Execução",
       "file": "run-detail-view.md",
       "subCat": "Monitoramento e Ajuste"
     },
@@ -253,12 +254,12 @@
       "subCat": "Monitoramento e Ajuste"
     },
     {
-      "name": "Refinando Prompts",
+      "name": "Aprimorando Prompts",
       "file": "refining-prompts.md",
       "subCat": "Monitoramento e Ajuste"
     },
     {
-      "name": "Visão Geral de Webhooks",
+      "name": "Visão Geral dos Webhooks",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
@@ -278,7 +279,7 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Retentativas de Webhook",
+      "name": "Repetições de Webhook",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },

@@ -1,5 +1,6 @@
 {
-  "name": "Διακριτικά",
+  "name": "Σήματα",
+  "pageHeader": "Σήματα Συστήματος Σχολίων",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -13,84 +14,84 @@
       "subCat": "Τα Βασικά"
     },
     {
-      "name": "Χειροκίνητα Διακριτικά",
+      "name": "Χειροκίνητα Σήματα",
       "file": "badge-type-manual.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Αριθμός Σχολίων",
       "file": "badge-type-comment-count.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
-      "name": "Ψήφοι υπέρ",
+      "name": "Θετικές Ψηφοδοτήσεις",
       "file": "badge-type-up-votes.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Απαντήσεις",
       "file": "badge-type-replies.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Καρφιτσωμένα Σχόλια",
       "file": "badge-type-pinned-comments.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Βετεράνος",
       "file": "badge-type-veteran.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Νυχτοπούλι",
       "file": "badge-type-night-owl.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Γρήγορος Χρόνος Απάντησης",
       "file": "badge-type-fast-reply-time.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
       "name": "Απάντηση σε Συγκεκριμένη Σελίδα",
       "file": "badge-type-reply-to-specific-page.md",
-      "subCat": "Τύποι Διακριτικών"
+      "subCat": "Τύποι Σημάτων"
     },
     {
-      "name": "Εισαγωγή στα Διακριτικά των Συντονιστών",
+      "name": "Εισαγωγή στα Σήματα Συντονιστών",
       "file": "moderator-badges.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     },
     {
       "name": "Διαγραμμένα Σχόλια",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     },
     {
       "name": "Εγκεκριμένα Σχόλια",
       "file": "moderator-comments-approved.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     },
     {
-      "name": "Σχόλια μη Εγκεκριμένα",
+      "name": "Αποεγκεκριμένα Σχόλια",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     },
     {
-      "name": "Σχόλια που Εξετάστηκαν",
+      "name": "Ανασκοπημένα Σχόλια",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     },
     {
-      "name": "Σχόλια Χαρακτηρισμένα ως Ανεπιθύμητα",
+      "name": "Σχόλια που σημειώθηκαν ως Spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     },
     {
-      "name": "Σχόλια Χαρακτηρισμένα ως Μη Ανεπιθύμητα",
+      "name": "Σχόλια που σημειώθηκαν ως μη Spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Τύποι Διακριτικών Συντονιστών"
+      "subCat": "Τύποι Σημάτων Συντονιστών"
     }
   ]
 }

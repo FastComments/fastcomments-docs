@@ -1,9 +1,10 @@
 {
   "name": "AI-agenter",
+  "pageHeader": "AI-agenter til kommentarmoderation",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Hvad er AI‑agenter",
+      "name": "Hvad er AI-agenter",
       "file": "what-are-ai-agents.md",
       "subCat": "Introduktion"
     },
@@ -43,7 +44,7 @@
       "subCat": "Oprettelse af agenter"
     },
     {
-      "name": "Skabelon: Trådopsummering",
+      "name": "Skabelon: Trådsammenfatning",
       "file": "template-thread-summarizer.md",
       "subCat": "Oprettelse af agenter"
     },
@@ -78,89 +79,89 @@
       "subCat": "Personlighed og kontekst"
     },
     {
-      "name": "Oversigt over udløserhændelser",
+      "name": "Oversigt over udløserbegivenheder",
       "file": "triggers-overview.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Kommentar tilføjet",
       "file": "trigger-comment-add.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Kommentar redigeret",
       "file": "trigger-comment-edit.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Kommentar slettet",
       "file": "trigger-comment-delete.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Kommentar fastgjort",
       "file": "trigger-comment-pin.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
-      "name": "Udløser: Kommentar fjernet fra fastgørelse",
+      "name": "Udløser: Kommentar frigjort",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Kommentar låst",
       "file": "trigger-comment-lock.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
-      "name": "Udløser: Kommentar oplåst",
+      "name": "Udløser: Kommentar låst op",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Stemmetærskel",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
-      "name": "Udløser: Markeringstærskel",
+      "name": "Udløser: Flag-tærskel",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Ny brugers første kommentar",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Automatisk spam-kommentar",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
-      "name": "Udløser: Kommentar gennemgået af moderator",
+      "name": "Udløser: Moderator har gennemgået kommentar",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
-      "name": "Udløser: Kommentar godkendt af moderator",
+      "name": "Udløser: Moderator har godkendt kommentar",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udløser: Moderator markerede som spam",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
-      "name": "Udløser: Moderator tildelte mærke",
+      "name": "Udløser: Moderator tildelte badge",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Udskudte udløsere",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Udløserhændelser"
+      "subCat": "Udløserbegivenheder"
     },
     {
       "name": "Værktøjsreference",
@@ -183,12 +184,12 @@
       "subCat": "Tilladte værktøjskald"
     },
     {
-      "name": "Statustilstande",
+      "name": "Status-tilstande",
       "file": "status-states.md",
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Prøvekørselstilstand",
+      "name": "Testkørselstilstand",
       "file": "dry-run-mode.md",
       "subCat": "Sikkerhed og tilsyn"
     },
@@ -198,22 +199,22 @@
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Notifikationer om godkendelse",
+      "name": "Godkendelsesmeddelelser",
       "file": "approval-notifications.md",
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Overholdelse af EU DSA artikel 17",
+      "name": "EU DSA artikel 17 overholdelse",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Agentens hukommelsessystem",
+      "name": "Agenthukommelsessystem",
       "file": "agent-memory-system.md",
       "subCat": "Sikkerhed og tilsyn"
     },
     {
-      "name": "Oversigt over budgetter",
+      "name": "Budgetoversigt",
       "file": "budgets-overview.md",
       "subCat": "Budgetter og omkostninger"
     },
@@ -228,47 +229,47 @@
       "subCat": "Budgetter og omkostninger"
     },
     {
-      "name": "Årsager til afvisning",
+      "name": "Årsager til drop",
       "file": "drop-reasons.md",
       "subCat": "Budgetter og omkostninger"
     },
     {
       "name": "Kørselshistorik",
       "file": "run-history.md",
-      "subCat": "Overvågning og finjustering"
+      "subCat": "Overvågning og justering"
     },
     {
-      "name": "Detaljevisning af kørsel",
+      "name": "Detaljeret visning af kørsel",
       "file": "run-detail-view.md",
-      "subCat": "Overvågning og finjustering"
+      "subCat": "Overvågning og justering"
     },
     {
-      "name": "Analyser-side",
+      "name": "Analyteside",
       "file": "analytics-page.md",
-      "subCat": "Overvågning og finjustering"
+      "subCat": "Overvågning og justering"
     },
     {
-      "name": "Testkørsler (afspilninger)",
+      "name": "Testkørsler (genafspilninger)",
       "file": "test-runs-replays.md",
-      "subCat": "Overvågning og finjustering"
+      "subCat": "Overvågning og justering"
     },
     {
       "name": "Forfining af prompts",
       "file": "refining-prompts.md",
-      "subCat": "Overvågning og finjustering"
+      "subCat": "Overvågning og justering"
     },
     {
-      "name": "Oversigt over webhooks",
+      "name": "Webhooks-oversigt",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-hændelser",
+      "name": "Webhook-begivenheder",
       "file": "webhook-events.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-nyttelaster",
+      "name": "Webhook-indhold",
       "file": "webhook-payloads.md",
       "subCat": "Webhooks"
     },
@@ -278,12 +279,12 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-genforsøg",
+      "name": "Webhook-forsøg",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-leveringslogs",
+      "name": "Webhook-leveringslog",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

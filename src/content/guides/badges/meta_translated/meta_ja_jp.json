@@ -1,16 +1,17 @@
 {
   "name": "バッジ",
+  "pageHeader": "コメントシステムのバッジ",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
       "name": "基本",
       "file": "badge-basics.md",
-      "subCat": "基本"
+      "subCat": "基本事項"
     },
     {
-      "name": "進捗",
+      "name": "進行",
       "file": "badge-progression.md",
-      "subCat": "基本"
+      "subCat": "基本事項"
     },
     {
       "name": "手動バッジ",
@@ -23,7 +24,7 @@
       "subCat": "バッジの種類"
     },
     {
-      "name": "賛成票",
+      "name": "アップ投票",
       "file": "badge-type-up-votes.md",
       "subCat": "バッジの種類"
     },
@@ -33,7 +34,7 @@
       "subCat": "バッジの種類"
     },
     {
-      "name": "ピン留めされたコメント",
+      "name": "ピン留めコメント",
       "file": "badge-type-pinned-comments.md",
       "subCat": "バッジの種類"
     },
@@ -43,54 +44,54 @@
       "subCat": "バッジの種類"
     },
     {
-      "name": "夜型ユーザー",
+      "name": "夜更かし",
       "file": "badge-type-night-owl.md",
       "subCat": "バッジの種類"
     },
     {
-      "name": "迅速な返信",
+      "name": "高速返信",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "バッジの種類"
     },
     {
-      "name": "特定のページへの返信",
+      "name": "特定ページへの返信",
       "file": "badge-type-reply-to-specific-page.md",
       "subCat": "バッジの種類"
     },
     {
-      "name": "モデレーター バッジ入門",
+      "name": "モデレーターバッジの概要",
       "file": "moderator-badges.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     },
     {
-      "name": "コメントの削除",
+      "name": "削除されたコメント",
       "file": "moderator-comments-deleted.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     },
     {
-      "name": "コメントの承認",
+      "name": "承認されたコメント",
       "file": "moderator-comments-approved.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     },
     {
-      "name": "コメントの承認取り消し",
+      "name": "未承認コメント",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     },
     {
-      "name": "コメントのレビュー",
+      "name": "レビュー済みコメント",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     },
     {
-      "name": "コメントをスパムにマーク",
+      "name": "スパムとマークされたコメント",
       "file": "moderator-comments-spam.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     },
     {
-      "name": "コメントをスパムではないとマーク",
+      "name": "スパムではないとマークされたコメント",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "モデレーター バッジの種類"
+      "subCat": "モデレーターバッジの種類"
     }
   ]
 }

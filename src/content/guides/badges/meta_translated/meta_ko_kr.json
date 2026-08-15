@@ -1,5 +1,6 @@
 {
   "name": "배지",
+  "pageHeader": "댓글 시스템 배지",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -23,7 +24,7 @@
       "subCat": "배지 유형"
     },
     {
-      "name": "추천",
+      "name": "업보트",
       "file": "badge-type-up-votes.md",
       "subCat": "배지 유형"
     },
@@ -33,7 +34,7 @@
       "subCat": "배지 유형"
     },
     {
-      "name": "고정 댓글",
+      "name": "고정된 댓글",
       "file": "badge-type-pinned-comments.md",
       "subCat": "배지 유형"
     },
@@ -48,7 +49,7 @@
       "subCat": "배지 유형"
     },
     {
-      "name": "빠른 응답 시간",
+      "name": "빠른 답변 시간",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "배지 유형"
     },
@@ -73,7 +74,7 @@
       "subCat": "모더레이터 배지 유형"
     },
     {
-      "name": "승인 취소된 댓글",
+      "name": "미승인 댓글",
       "file": "moderator-comments-un-approved.md",
       "subCat": "모더레이터 배지 유형"
     },

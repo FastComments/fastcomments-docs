@@ -1,5 +1,6 @@
 {
   "name": "תגים",
+  "pageHeader": "תגי מערכת ההערות",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -23,7 +24,7 @@
       "subCat": "סוגי תגים"
     },
     {
-      "name": "הצבעות בעד",
+      "name": "קולות חיוביים",
       "file": "badge-type-up-votes.md",
       "subCat": "סוגי תגים"
     },
@@ -33,7 +34,7 @@
       "subCat": "סוגי תגים"
     },
     {
-      "name": "תגובות נעוצות",
+      "name": "תגובות מוצמדות",
       "file": "badge-type-pinned-comments.md",
       "subCat": "סוגי תגים"
     },
@@ -43,54 +44,54 @@
       "subCat": "סוגי תגים"
     },
     {
-      "name": "פעיל בלילה",
+      "name": "ינשוף לילה",
       "file": "badge-type-night-owl.md",
       "subCat": "סוגי תגים"
     },
     {
-      "name": "מענה מהיר",
+      "name": "זמן תגובה מהיר",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "סוגי תגים"
     },
     {
-      "name": "תגובה לדף מסוים",
+      "name": "תגובה לדף ספציפי",
       "file": "badge-type-reply-to-specific-page.md",
       "subCat": "סוגי תגים"
     },
     {
-      "name": "מבוא לתגי ממונה",
+      "name": "מבוא לתגים של מודרטור",
       "file": "moderator-badges.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     },
     {
       "name": "תגובות שנמחקו",
       "file": "moderator-comments-deleted.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     },
     {
-      "name": "תגובות שאושרו",
+      "name": "תגובות מאושרות",
       "file": "moderator-comments-approved.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     },
     {
       "name": "תגובות שלא אושרו",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     },
     {
       "name": "תגובות שנבדקו",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     },
     {
       "name": "תגובות שסומנו כספאם",
       "file": "moderator-comments-spam.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     },
     {
-      "name": "תגובות שסומנו כלא-ספאם",
+      "name": "תגובות שסומנו כלא ספאם",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "סוגי תגי ממונה"
+      "subCat": "סוגי תגים של מודרטור"
     }
   ]
 }

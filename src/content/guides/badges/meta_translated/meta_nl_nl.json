@@ -1,5 +1,6 @@
 {
   "name": "Badges",
+  "pageHeader": "Badges voor het reactiesysteem",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -8,89 +9,89 @@
       "subCat": "De basis"
     },
     {
-      "name": "Voortgang",
+      "name": "Progressie",
       "file": "badge-progression.md",
       "subCat": "De basis"
     },
     {
       "name": "Handmatige badges",
       "file": "badge-type-manual.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
       "name": "Aantal reacties",
       "file": "badge-type-comment-count.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
-      "name": "Positieve stemmen",
+      "name": "Upvotes",
       "file": "badge-type-up-votes.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
       "name": "Antwoorden",
       "file": "badge-type-replies.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
       "name": "Vastgezette reacties",
       "file": "badge-type-pinned-comments.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
-      "name": "Veteraan",
+      "name": "Veteran",
       "file": "badge-type-veteran.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
       "name": "Nachtuil",
       "file": "badge-type-night-owl.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
       "name": "Snelle reactietijd",
       "file": "badge-type-fast-reply-time.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
-      "name": "Reageren op specifieke pagina",
+      "name": "Reageer op specifieke pagina",
       "file": "badge-type-reply-to-specific-page.md",
-      "subCat": "Soorten badges"
+      "subCat": "Badge types"
     },
     {
       "name": "Introductie tot moderatorbadges",
       "file": "moderator-badges.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     },
     {
       "name": "Verwijderde reacties",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     },
     {
       "name": "Goedgekeurde reacties",
       "file": "moderator-comments-approved.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     },
     {
       "name": "Niet-goedgekeurde reacties",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     },
     {
       "name": "Beoordeelde reacties",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     },
     {
       "name": "Reacties gemarkeerd als spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     },
     {
-      "name": "Reacties gemarkeerd als niet-spam",
+      "name": "Reacties gemarkeerd als geen spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Soorten moderatorbadges"
+      "subCat": "Moderator badge types"
     }
   ]
 }

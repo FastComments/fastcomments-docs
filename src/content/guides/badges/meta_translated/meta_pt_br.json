@@ -1,96 +1,97 @@
 {
-  "name": "Insígnias",
+  "name": "Emblemas",
+  "pageHeader": "Emblemas do Sistema de Comentários",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
-      "name": "Noções Básicas",
+      "name": "Fundamentos",
       "file": "badge-basics.md",
-      "subCat": "Noções Básicas"
+      "subCat": "Os Fundamentos"
     },
     {
       "name": "Progressão",
       "file": "badge-progression.md",
-      "subCat": "Noções Básicas"
+      "subCat": "Os Fundamentos"
     },
     {
-      "name": "Insígnias Manuais",
+      "name": "Emblemas Manuais",
       "file": "badge-type-manual.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Contagem de Comentários",
       "file": "badge-type-comment-count.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Votos Positivos",
       "file": "badge-type-up-votes.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Respostas",
       "file": "badge-type-replies.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Comentários Fixados",
       "file": "badge-type-pinned-comments.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Veterano",
       "file": "badge-type-veteran.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Coruja Noturna",
       "file": "badge-type-night-owl.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Tempo de Resposta Rápido",
       "file": "badge-type-fast-reply-time.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
       "name": "Responder a Página Específica",
       "file": "badge-type-reply-to-specific-page.md",
-      "subCat": "Tipos de Insígnias"
+      "subCat": "Tipos de Emblema"
     },
     {
-      "name": "Introdução às Insígnias de Moderadores",
+      "name": "Introdução aos Emblemas de Moderador",
       "file": "moderator-badges.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     },
     {
       "name": "Comentários Excluídos",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     },
     {
       "name": "Comentários Aprovados",
       "file": "moderator-comments-approved.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     },
     {
       "name": "Comentários Não Aprovados",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     },
     {
       "name": "Comentários Revisados",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     },
     {
       "name": "Comentários Marcados como Spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     },
     {
       "name": "Comentários Marcados como Não Spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Tipos de Insígnias de Moderadores"
+      "subCat": "Tipos de Emblema de Moderador"
     }
   ]
 }

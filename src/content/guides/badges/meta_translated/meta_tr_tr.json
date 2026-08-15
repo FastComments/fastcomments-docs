@@ -1,16 +1,17 @@
 {
   "name": "Rozetler",
+  "pageHeader": "Yorum Sistemi Rozetleri",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
-      "name": "Temel Bilgiler",
+      "name": "Temeller",
       "file": "badge-basics.md",
-      "subCat": "Temel Bilgiler"
+      "subCat": "Temeller"
     },
     {
       "name": "İlerleme",
       "file": "badge-progression.md",
-      "subCat": "Temel Bilgiler"
+      "subCat": "Temeller"
     },
     {
       "name": "Manuel Rozetler",
@@ -38,7 +39,7 @@
       "subCat": "Rozet Türleri"
     },
     {
-      "name": "Kıdemli",
+      "name": "Veteran",
       "file": "badge-type-veteran.md",
       "subCat": "Rozet Türleri"
     },
@@ -73,7 +74,7 @@
       "subCat": "Moderatör Rozet Türleri"
     },
     {
-      "name": "Onayı Kaldırılan Yorumlar",
+      "name": "Onaylanmayan Yorumlar",
       "file": "moderator-comments-un-approved.md",
       "subCat": "Moderatör Rozet Türleri"
     },

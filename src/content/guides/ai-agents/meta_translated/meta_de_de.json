@@ -1,9 +1,10 @@
 {
   "name": "KI-Agenten",
+  "pageHeader": "KI-Agenten für Kommentarmoderation",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Was sind KI-Agenten?",
+      "name": "Was sind KI-Agenten",
       "file": "what-are-ai-agents.md",
       "subCat": "Einführung"
     },
@@ -18,12 +19,12 @@
       "subCat": "Einführung"
     },
     {
-      "name": "Einen Agenten erstellen",
+      "name": "Erstellen eines Agenten",
       "file": "creating-an-agent.md",
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Starter-Vorlagen",
+      "name": "Startvorlagen",
       "file": "starter-templates.md",
       "subCat": "Agenten erstellen"
     },
@@ -33,7 +34,7 @@
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Begrüßungs-Bot",
+      "name": "Vorlage: Begrüßungsbot",
       "file": "template-welcome-greeter.md",
       "subCat": "Agenten erstellen"
     },
@@ -48,17 +49,17 @@
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Vorlage: Gaslighting-Erkenner",
+      "name": "Vorlage: Gaslight-Detektor",
       "file": "template-gaslight-detector.md",
       "subCat": "Agenten erstellen"
     },
     {
-      "name": "Modell auswählen",
+      "name": "Auswahl eines Modells",
       "file": "choosing-a-model.md",
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Persönlichkeit und der Anfangsprompt",
+      "name": "Persönlichkeit und die Anfangseingabe",
       "file": "personality-prompt.md",
       "subCat": "Persönlichkeit und Kontext"
     },
@@ -73,114 +74,114 @@
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Geltungsbereich: URL- und Gebietsschema-Filter",
+      "name": "Umfang: URL- und Lokale-Filter",
       "file": "scope-url-locale.md",
       "subCat": "Persönlichkeit und Kontext"
     },
     {
-      "name": "Übersicht zu Auslöseereignissen",
+      "name": "Übersicht der Auslöserereignisse",
       "file": "triggers-overview.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
       "name": "Auslöser: Kommentar hinzugefügt",
       "file": "trigger-comment-add.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
       "name": "Auslöser: Kommentar bearbeitet",
       "file": "trigger-comment-edit.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
       "name": "Auslöser: Kommentar gelöscht",
       "file": "trigger-comment-delete.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Kommentar angepinnt",
+      "name": "Auslöser: Kommentar angeheftet",
       "file": "trigger-comment-pin.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Kommentar entpinnt",
+      "name": "Auslöser: Kommentar losgelöst",
       "file": "trigger-comment-unpin.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
       "name": "Auslöser: Kommentar gesperrt",
       "file": "trigger-comment-lock.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
       "name": "Auslöser: Kommentar entsperrt",
       "file": "trigger-comment-unlock.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Abstimmungs-Schwellenwert",
+      "name": "Auslöser: Stimmen-Schwelle",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Meldeschwellenwert",
+      "name": "Auslöser: Meldungs-Schwelle",
       "file": "trigger-comment-flag-threshold.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Erstkommentar eines neuen Nutzers",
+      "name": "Auslöser: Erster Kommentar eines neuen Benutzers",
       "file": "trigger-new-user-first-comment.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: automatisch als Spam markierter Kommentar",
+      "name": "Auslöser: Automatisch als Spam markierter Kommentar",
       "file": "trigger-comment-auto-spammed.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Vom Moderator überprüfter Kommentar",
+      "name": "Auslöser: Moderator hat Kommentar geprüft",
       "file": "trigger-moderator-reviewed.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Vom Moderator genehmigter Kommentar",
+      "name": "Auslöser: Moderator hat Kommentar genehmigt",
       "file": "trigger-moderator-approved.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Vom Moderator als Spam markiert",
+      "name": "Auslöser: Moderator hat Kommentar als Spam markiert",
       "file": "trigger-moderator-spammed.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Auslöser: Vom Moderator vergebenes Abzeichen",
+      "name": "Auslöser: Moderator hat Abzeichen verliehen",
       "file": "trigger-moderator-awarded-badge.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
       "name": "Verzögerte Auslöser",
       "file": "trigger-deferred-delay.md",
-      "subCat": "Auslöser-Ereignisse"
+      "subCat": "Auslöserereignisse"
     },
     {
-      "name": "Tools-Referenz",
+      "name": "Werkzeugreferenz",
       "file": "tools-overview.md",
-      "subCat": "Zugelassene Tool-Aufrufe"
+      "subCat": "Erlaubte Werkzeugaufrufe"
     },
     {
-      "name": "Nutzer sperren",
+      "name": "Benutzer sperren",
       "file": "tool-ban-user.md",
-      "subCat": "Zugelassene Tool-Aufrufe"
+      "subCat": "Erlaubte Werkzeugaufrufe"
     },
     {
-      "name": "Nutzer verwarnen",
+      "name": "Benutzer warnen",
       "file": "tool-warn-user.md",
-      "subCat": "Zugelassene Tool-Aufrufe"
+      "subCat": "Erlaubte Werkzeugaufrufe"
     },
     {
       "name": "Kommentar bearbeiten",
       "file": "tool-edit-comment.md",
-      "subCat": "Zugelassene Tool-Aufrufe"
+      "subCat": "Erlaubte Werkzeugaufrufe"
     },
     {
       "name": "Statuszustände",
@@ -188,12 +189,12 @@
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Trockenlaufmodus",
+      "name": "Trockenlauf-Modus",
       "file": "dry-run-mode.md",
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Genehmigungsworkflow",
+      "name": "Genehmigungs-Workflow",
       "file": "approval-workflow.md",
       "subCat": "Sicherheit und Aufsicht"
     },
@@ -203,17 +204,17 @@
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "EU-DSA Artikel 17 Konformität",
+      "name": "EU-DSA-Artikel-17-Konformität",
       "file": "eu-dsa-compliance.md",
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Speichersystem für Agenten",
+      "name": "Agenten‑Speichersystem",
       "file": "agent-memory-system.md",
       "subCat": "Sicherheit und Aufsicht"
     },
     {
-      "name": "Budget-Übersicht",
+      "name": "Übersicht der Budgets",
       "file": "budgets-overview.md",
       "subCat": "Budgets und Kosten"
     },
@@ -235,30 +236,30 @@
     {
       "name": "Ausführungsverlauf",
       "file": "run-history.md",
-      "subCat": "Überwachung und Optimierung"
+      "subCat": "Überwachung und Feinabstimmung"
     },
     {
       "name": "Detailansicht der Ausführung",
       "file": "run-detail-view.md",
-      "subCat": "Überwachung und Optimierung"
+      "subCat": "Überwachung und Feinabstimmung"
     },
     {
       "name": "Analyse-Seite",
       "file": "analytics-page.md",
-      "subCat": "Überwachung und Optimierung"
+      "subCat": "Überwachung und Feinabstimmung"
     },
     {
       "name": "Testläufe (Wiedergaben)",
       "file": "test-runs-replays.md",
-      "subCat": "Überwachung und Optimierung"
+      "subCat": "Überwachung und Feinabstimmung"
     },
     {
-      "name": "Eingabeaufforderungen verfeinern",
+      "name": "Prompt-Optimierung",
       "file": "refining-prompts.md",
-      "subCat": "Überwachung und Optimierung"
+      "subCat": "Überwachung und Feinabstimmung"
     },
     {
-      "name": "Webhook-Übersicht",
+      "name": "Webhooks-Übersicht",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
@@ -268,12 +269,12 @@
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-Nutzlasten",
+      "name": "Webhook-Nutzdaten",
       "file": "webhook-payloads.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-Signierung",
+      "name": "Webhook-Signatur",
       "file": "webhook-signing.md",
       "subCat": "Webhooks"
     },

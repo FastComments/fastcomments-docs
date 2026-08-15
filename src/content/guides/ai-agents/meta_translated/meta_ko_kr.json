@@ -1,5 +1,6 @@
 {
   "name": "AI 에이전트",
+  "pageHeader": "댓글 검열을 위한 AI 에이전트",
   "icon": "ai.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "소개"
     },
     {
-      "name": "요금제 및 이용 자격",
+      "name": "플랜 및 자격 요건",
       "file": "plans-and-eligibility.md",
       "subCat": "소개"
     },
@@ -43,39 +44,39 @@
       "subCat": "에이전트 만들기"
     },
     {
-      "name": "템플릿: 스레드 요약기",
+      "name": "템플릿: 스레드 요약",
       "file": "template-thread-summarizer.md",
       "subCat": "에이전트 만들기"
     },
     {
-      "name": "템플릿: 가스라이팅 탐지기",
+      "name": "템플릿: 가스라이트 감지기",
       "file": "template-gaslight-detector.md",
       "subCat": "에이전트 만들기"
     },
     {
       "name": "모델 선택",
       "file": "choosing-a-model.md",
-      "subCat": "페르소나 및 맥락"
+      "subCat": "성격 및 컨텍스트"
     },
     {
-      "name": "페르소나 및 초기 프롬프트",
+      "name": "성격 및 초기 프롬프트",
       "file": "personality-prompt.md",
-      "subCat": "페르소나 및 맥락"
+      "subCat": "성격 및 컨텍스트"
     },
     {
-      "name": "맥락 옵션",
+      "name": "컨텍스트 옵션",
       "file": "context-options.md",
-      "subCat": "페르소나 및 맥락"
+      "subCat": "성격 및 컨텍스트"
     },
     {
       "name": "커뮤니티 가이드라인",
       "file": "community-guidelines.md",
-      "subCat": "페르소나 및 맥락"
+      "subCat": "성격 및 컨텍스트"
     },
     {
       "name": "범위: URL 및 로케일 필터",
       "file": "scope-url-locale.md",
-      "subCat": "페르소나 및 맥락"
+      "subCat": "성격 및 컨텍스트"
     },
     {
       "name": "트리거 이벤트 개요",
@@ -83,37 +84,37 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 추가됨",
+      "name": "트리거: 댓글 추가",
       "file": "trigger-comment-add.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 수정됨",
+      "name": "트리거: 댓글 편집",
       "file": "trigger-comment-edit.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 삭제됨",
+      "name": "트리거: 댓글 삭제",
       "file": "trigger-comment-delete.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 고정됨",
+      "name": "트리거: 댓글 고정",
       "file": "trigger-comment-pin.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 고정 해제됨",
+      "name": "트리거: 댓글 고정 해제",
       "file": "trigger-comment-unpin.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 잠김",
+      "name": "트리거: 댓글 잠금",
       "file": "trigger-comment-lock.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 댓글 잠금 해제됨",
+      "name": "트리거: 댓글 잠금 해제",
       "file": "trigger-comment-unlock.md",
       "subCat": "트리거 이벤트"
     },
@@ -138,22 +139,22 @@
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 모더레이터가 검토한 댓글",
+      "name": "트리거: 모더레이터 검토 댓글",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 모더레이터가 승인한 댓글",
+      "name": "트리거: 모더레이터 승인 댓글",
       "file": "trigger-moderator-approved.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 모더레이터가 스팸으로 표시한 댓글",
+      "name": "트리거: 모더레이터가 스팸으로 표시",
       "file": "trigger-moderator-spammed.md",
       "subCat": "트리거 이벤트"
     },
     {
-      "name": "트리거: 모더레이터가 배지 수여",
+      "name": "트리거: 모더레이터 배지 부여",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "트리거 이벤트"
     },
@@ -188,12 +189,12 @@
       "subCat": "안전 및 감독"
     },
     {
-      "name": "모의 실행 모드",
+      "name": "드라이런 모드",
       "file": "dry-run-mode.md",
       "subCat": "안전 및 감독"
     },
     {
-      "name": "승인 워크플로우",
+      "name": "승인 워크플로",
       "file": "approval-workflow.md",
       "subCat": "안전 및 감독"
     },
@@ -228,7 +229,7 @@
       "subCat": "예산 및 비용"
     },
     {
-      "name": "중단 사유",
+      "name": "드롭 사유",
       "file": "drop-reasons.md",
       "subCat": "예산 및 비용"
     },
@@ -248,12 +249,12 @@
       "subCat": "모니터링 및 튜닝"
     },
     {
-      "name": "테스트 실행(리플레이)",
+      "name": "테스트 실행(재생)",
       "file": "test-runs-replays.md",
       "subCat": "모니터링 및 튜닝"
     },
     {
-      "name": "프롬프트 개선",
+      "name": "프롬프트 다듬기",
       "file": "refining-prompts.md",
       "subCat": "모니터링 및 튜닝"
     },

@@ -1,29 +1,30 @@
 {
   "name": "Mærker",
+  "pageHeader": "Mærker for Kommentarsystemet",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
       "name": "Grundlæggende",
       "file": "badge-basics.md",
-      "subCat": "Det grundlæggende"
+      "subCat": "Grundlæggende"
     },
     {
-      "name": "Fremgang",
+      "name": "Fremskridt",
       "file": "badge-progression.md",
-      "subCat": "Det grundlæggende"
+      "subCat": "Grundlæggende"
     },
     {
-      "name": "Manuelle mærker",
+      "name": "Manuelle Mærker",
       "file": "badge-type-manual.md",
       "subCat": "Mærketyper"
     },
     {
-      "name": "Antal kommentarer",
+      "name": "Kommentarantal",
       "file": "badge-type-comment-count.md",
       "subCat": "Mærketyper"
     },
     {
-      "name": "Opstemninger",
+      "name": "Opstemmer",
       "file": "badge-type-up-votes.md",
       "subCat": "Mærketyper"
     },
@@ -53,44 +54,44 @@
       "subCat": "Mærketyper"
     },
     {
-      "name": "Svar på en specifik side",
+      "name": "Svar på specifik side",
       "file": "badge-type-reply-to-specific-page.md",
       "subCat": "Mærketyper"
     },
     {
-      "name": "Introduktion til moderatormærker",
+      "name": "Introduktion til moderator-mærker",
       "file": "moderator-badges.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     },
     {
       "name": "Slettede kommentarer",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     },
     {
       "name": "Godkendte kommentarer",
       "file": "moderator-comments-approved.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     },
     {
-      "name": "Kommentarer ikke-godkendt",
+      "name": "Ugodkendte kommentarer",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     },
     {
       "name": "Gennemgåede kommentarer",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     },
     {
       "name": "Kommentarer markeret som spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     },
     {
-      "name": "Kommentarer markeret som ikke-spam",
+      "name": "Kommentarer markeret som ikke spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Typer af moderatormærker"
+      "subCat": "Moderator-mærketyper"
     }
   ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "Agenci AI",
+  "pageHeader": "Agenci AI do moderacji komentarzy",
   "icon": "ai.png",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "Wprowadzenie"
     },
     {
-      "name": "Plany i uprawnienia",
+      "name": "Plany i kwalifikowalność",
       "file": "plans-and-eligibility.md",
       "subCat": "Wprowadzenie"
     },
@@ -33,7 +34,7 @@
       "subCat": "Tworzenie agentów"
     },
     {
-      "name": "Szablon: Osoba witająca",
+      "name": "Szablon: Powitanie",
       "file": "template-welcome-greeter.md",
       "subCat": "Tworzenie agentów"
     },
@@ -43,7 +44,7 @@
       "subCat": "Tworzenie agentów"
     },
     {
-      "name": "Szablon: Podsumowywacz wątku",
+      "name": "Szablon: Podsumowanie wątku",
       "file": "template-thread-summarizer.md",
       "subCat": "Tworzenie agentów"
     },
@@ -58,7 +59,7 @@
       "subCat": "Osobowość i kontekst"
     },
     {
-      "name": "Osobowość i początkowe polecenie",
+      "name": "Osobowość i początkowe zapytanie",
       "file": "personality-prompt.md",
       "subCat": "Osobowość i kontekst"
     },
@@ -68,7 +69,7 @@
       "subCat": "Osobowość i kontekst"
     },
     {
-      "name": "Wytyczne społeczności",
+      "name": "Zasady społeczności",
       "file": "community-guidelines.md",
       "subCat": "Osobowość i kontekst"
     },
@@ -123,7 +124,7 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Próg zgłoszeń",
+      "name": "Wyzwalacz: Próg flag",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Zdarzenia wyzwalające"
     },
@@ -133,17 +134,17 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Komentarz oznaczony automatycznie jako spam",
+      "name": "Wyzwalacz: Automatyczny spam komentarza",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Komentarz przejrzany przez moderatora",
+      "name": "Wyzwalacz: Moderator przejrzał komentarz",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Wyzwalacz: Komentarz zatwierdzony przez moderatora",
+      "name": "Wyzwalacz: Moderator zatwierdził komentarz",
       "file": "trigger-moderator-approved.md",
       "subCat": "Zdarzenia wyzwalające"
     },
@@ -158,17 +159,17 @@
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Odroczone wyzwalacze",
+      "name": "Opóźnione wyzwalacze",
       "file": "trigger-deferred-delay.md",
       "subCat": "Zdarzenia wyzwalające"
     },
     {
-      "name": "Referencje narzędzi",
+      "name": "Referencja narzędzi",
       "file": "tools-overview.md",
       "subCat": "Dozwolone wywołania narzędzi"
     },
     {
-      "name": "Zablokuj użytkownika",
+      "name": "Zbanuj użytkownika",
       "file": "tool-ban-user.md",
       "subCat": "Dozwolone wywołania narzędzi"
     },
@@ -183,7 +184,7 @@
       "subCat": "Dozwolone wywołania narzędzi"
     },
     {
-      "name": "Statusy",
+      "name": "Stany statusu",
       "file": "status-states.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
@@ -203,7 +204,7 @@
       "subCat": "Bezpieczeństwo i nadzór"
     },
     {
-      "name": "Zgodność z art. 17 DSA UE",
+      "name": "Zgodność z artykułem 17 UE DSA",
       "file": "eu-dsa-compliance.md",
       "subCat": "Bezpieczeństwo i nadzór"
     },
@@ -228,34 +229,34 @@
       "subCat": "Budżety i koszty"
     },
     {
-      "name": "Powody odrzuceń",
+      "name": "Powody odrzucenia",
       "file": "drop-reasons.md",
       "subCat": "Budżety i koszty"
     },
     {
       "name": "Historia uruchomień",
       "file": "run-history.md",
-      "subCat": "Monitorowanie i optymalizacja"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
-      "name": "Szczegóły uruchomienia",
+      "name": "Szczegółowy widok uruchomienia",
       "file": "run-detail-view.md",
-      "subCat": "Monitorowanie i optymalizacja"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
-      "name": "Panel analityczny",
+      "name": "Strona analityczna",
       "file": "analytics-page.md",
-      "subCat": "Monitorowanie i optymalizacja"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
-      "name": "Testowe uruchomienia (odtworzenia)",
+      "name": "Testowe uruchomienia (powtórki)",
       "file": "test-runs-replays.md",
-      "subCat": "Monitorowanie i optymalizacja"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
-      "name": "Udoskonalanie poleceń",
+      "name": "Udoskonalanie zapytań",
       "file": "refining-prompts.md",
-      "subCat": "Monitorowanie i optymalizacja"
+      "subCat": "Monitorowanie i dostrajanie"
     },
     {
       "name": "Przegląd webhooków",
@@ -268,7 +269,7 @@
       "subCat": "Webhooki"
     },
     {
-      "name": "Dane webhooków",
+      "name": "Ładunki webhooków",
       "file": "webhook-payloads.md",
       "subCat": "Webhooki"
     },
@@ -278,12 +279,12 @@
       "subCat": "Webhooki"
     },
     {
-      "name": "Ponawianie webhooków",
+      "name": "Ponowne próby webhooków",
       "file": "webhook-retries.md",
       "subCat": "Webhooki"
     },
     {
-      "name": "Dzienniki dostarczania webhooków",
+      "name": "Logi dostaw webhooków",
       "file": "webhook-logs.md",
       "subCat": "Webhooki"
     }

@@ -1,21 +1,22 @@
 {
   "name": "AIエージェント",
+  "pageHeader": "コメントモデレーション用AIエージェント",
   "icon": "ai.png",
   "itemsOrdered": [
     {
       "name": "AIエージェントとは",
       "file": "what-are-ai-agents.md",
-      "subCat": "概要"
+      "subCat": "イントロダクション"
     },
     {
-      "name": "プランと利用資格",
+      "name": "プランと対象資格",
       "file": "plans-and-eligibility.md",
-      "subCat": "概要"
+      "subCat": "イントロダクション"
     },
     {
       "name": "クイックスタート",
       "file": "quickstart.md",
-      "subCat": "概要"
+      "subCat": "イントロダクション"
     },
     {
       "name": "エージェントの作成",
@@ -28,27 +29,27 @@
       "subCat": "エージェントの作成"
     },
     {
-      "name": "テンプレート：モデレーター",
+      "name": "テンプレート: モデレーター",
       "file": "template-moderator.md",
       "subCat": "エージェントの作成"
     },
     {
-      "name": "テンプレート：歓迎メッセージ",
+      "name": "テンプレート: ウェルカムグリーティング",
       "file": "template-welcome-greeter.md",
       "subCat": "エージェントの作成"
     },
     {
-      "name": "テンプレート：上位コメントのピン留め",
+      "name": "テンプレート: トップコメントピンナー",
       "file": "template-top-comment-pinner.md",
       "subCat": "エージェントの作成"
     },
     {
-      "name": "テンプレート：スレッド要約",
+      "name": "テンプレート: スレッド要約",
       "file": "template-thread-summarizer.md",
       "subCat": "エージェントの作成"
     },
     {
-      "name": "テンプレート：ガスライティング検出",
+      "name": "テンプレート: ガスライト検出器",
       "file": "template-gaslight-detector.md",
       "subCat": "エージェントの作成"
     },
@@ -63,7 +64,7 @@
       "subCat": "パーソナリティとコンテキスト"
     },
     {
-      "name": "コンテキストのオプション",
+      "name": "コンテキストオプション",
       "file": "context-options.md",
       "subCat": "パーソナリティとコンテキスト"
     },
@@ -73,7 +74,7 @@
       "subCat": "パーソナリティとコンテキスト"
     },
     {
-      "name": "スコープ：URLとロケールフィルター",
+      "name": "範囲: URLとロケールフィルタ",
       "file": "scope-url-locale.md",
       "subCat": "パーソナリティとコンテキスト"
     },
@@ -83,77 +84,77 @@
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメント追加",
+      "name": "トリガー: コメント追加",
       "file": "trigger-comment-add.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメント編集",
+      "name": "トリガー: コメント編集",
       "file": "trigger-comment-edit.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメント削除",
+      "name": "トリガー: コメント削除",
       "file": "trigger-comment-delete.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメントのピン留め",
+      "name": "トリガー: コメントピン留め",
       "file": "trigger-comment-pin.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメントのピン解除",
+      "name": "トリガー: コメントピン解除",
       "file": "trigger-comment-unpin.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメントのロック",
+      "name": "トリガー: コメントロック",
       "file": "trigger-comment-lock.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：コメントのロック解除",
+      "name": "トリガー: コメントロック解除",
       "file": "trigger-comment-unlock.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：投票の閾値",
+      "name": "トリガー: 投票閾値",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：通報の閾値",
+      "name": "トリガー: フラグ閾値",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：新規ユーザーの初回コメント",
+      "name": "トリガー: 新規ユーザーの最初のコメント",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：自動スパム判定コメント",
+      "name": "トリガー: 自動スパムコメント",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：モデレーターが確認したコメント",
+      "name": "トリガー: モデレーターがレビューしたコメント",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：モデレーターが承認したコメント",
+      "name": "トリガー: モデレーターが承認したコメント",
       "file": "trigger-moderator-approved.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：モデレーターがスパムと判定したコメント",
+      "name": "トリガー: モデレーターがスパムとマーク",
       "file": "trigger-moderator-spammed.md",
       "subCat": "トリガーイベント"
     },
     {
-      "name": "トリガー：モデレーターがバッジを付与",
+      "name": "トリガー: モデレーターがバッジを付与",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "トリガーイベント"
     },
@@ -203,7 +204,7 @@
       "subCat": "安全性と監視"
     },
     {
-      "name": "EU DSA 第17条の準拠",
+      "name": "EU DSA第17条準拠",
       "file": "eu-dsa-compliance.md",
       "subCat": "安全性と監視"
     },
@@ -215,22 +216,22 @@
     {
       "name": "予算概要",
       "file": "budgets-overview.md",
-      "subCat": "予算と費用"
+      "subCat": "予算とコスト"
     },
     {
       "name": "予算アラート",
       "file": "budget-alerts.md",
-      "subCat": "予算と費用"
+      "subCat": "予算とコスト"
     },
     {
       "name": "コストモデル",
       "file": "cost-model.md",
-      "subCat": "予算と費用"
+      "subCat": "予算とコスト"
     },
     {
       "name": "ドロップ理由",
       "file": "drop-reasons.md",
-      "subCat": "予算と費用"
+      "subCat": "予算とコスト"
     },
     {
       "name": "実行履歴",
@@ -243,7 +244,7 @@
       "subCat": "モニタリングとチューニング"
     },
     {
-      "name": "アナリティクスページ",
+      "name": "分析ページ",
       "file": "analytics-page.md",
       "subCat": "モニタリングとチューニング"
     },
@@ -253,12 +254,12 @@
       "subCat": "モニタリングとチューニング"
     },
     {
-      "name": "プロンプトの改善",
+      "name": "プロンプトの洗練",
       "file": "refining-prompts.md",
       "subCat": "モニタリングとチューニング"
     },
     {
-      "name": "Webhookの概要",
+      "name": "Webhook概要",
       "file": "webhooks-overview.md",
       "subCat": "Webhook"
     },
@@ -278,7 +279,7 @@
       "subCat": "Webhook"
     },
     {
-      "name": "Webhook再試行",
+      "name": "Webhookリトライ",
       "file": "webhook-retries.md",
       "subCat": "Webhook"
     },

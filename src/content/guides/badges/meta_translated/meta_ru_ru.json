@@ -1,5 +1,6 @@
 {
   "name": "Значки",
+  "pageHeader": "Значки системы комментариев",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -23,7 +24,7 @@
       "subCat": "Типы значков"
     },
     {
-      "name": "Положительные голоса",
+      "name": "Голоса за",
       "file": "badge-type-up-votes.md",
       "subCat": "Типы значков"
     },
@@ -43,7 +44,7 @@
       "subCat": "Типы значков"
     },
     {
-      "name": "Ночная сова",
+      "name": "Ночной сова",
       "file": "badge-type-night-owl.md",
       "subCat": "Типы значков"
     },
@@ -53,44 +54,44 @@
       "subCat": "Типы значков"
     },
     {
-      "name": "Ответ на определённую страницу",
+      "name": "Ответ на конкретную страницу",
       "file": "badge-type-reply-to-specific-page.md",
       "subCat": "Типы значков"
     },
     {
-      "name": "Введение в значки модераторов",
+      "name": "Введение в значки модератора",
       "file": "moderator-badges.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     },
     {
       "name": "Удалённые комментарии",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     },
     {
       "name": "Одобренные комментарии",
       "file": "moderator-comments-approved.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     },
     {
-      "name": "Комментарии, снятые с одобрения",
+      "name": "Неодобренные комментарии",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     },
     {
       "name": "Проверенные комментарии",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     },
     {
       "name": "Комментарии, помеченные как спам",
       "file": "moderator-comments-spam.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     },
     {
       "name": "Комментарии, помеченные как не спам",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Типы значков модераторов"
+      "subCat": "Типы значков модератора"
     }
   ]
 }

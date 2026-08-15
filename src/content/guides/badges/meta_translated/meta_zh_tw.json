@@ -1,5 +1,6 @@
 {
   "name": "徽章",
+  "pageHeader": "評論系統徽章",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -8,7 +9,7 @@
       "subCat": "基礎"
     },
     {
-      "name": "進度",
+      "name": "進階",
       "file": "badge-progression.md",
       "subCat": "基礎"
     },
@@ -18,12 +19,12 @@
       "subCat": "徽章類型"
     },
     {
-      "name": "評論數",
+      "name": "評論數量",
       "file": "badge-type-comment-count.md",
       "subCat": "徽章類型"
     },
     {
-      "name": "按讚數",
+      "name": "讚好",
       "file": "badge-type-up-votes.md",
       "subCat": "徽章類型"
     },
@@ -48,12 +49,12 @@
       "subCat": "徽章類型"
     },
     {
-      "name": "快速回覆",
+      "name": "快速回覆時間",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "徽章類型"
     },
     {
-      "name": "針對特定頁面回覆",
+      "name": "特定頁面回覆",
       "file": "badge-type-reply-to-specific-page.md",
       "subCat": "徽章類型"
     },
@@ -63,32 +64,32 @@
       "subCat": "版主徽章類型"
     },
     {
-      "name": "已刪除評論",
+      "name": "已刪除的評論",
       "file": "moderator-comments-deleted.md",
       "subCat": "版主徽章類型"
     },
     {
-      "name": "已核准評論",
+      "name": "已批准的評論",
       "file": "moderator-comments-approved.md",
       "subCat": "版主徽章類型"
     },
     {
-      "name": "未核准評論",
+      "name": "未批准的評論",
       "file": "moderator-comments-un-approved.md",
       "subCat": "版主徽章類型"
     },
     {
-      "name": "已審核評論",
+      "name": "已審核的評論",
       "file": "moderator-comments-reviewed.md",
       "subCat": "版主徽章類型"
     },
     {
-      "name": "標記為垃圾評論",
+      "name": "標記為垃圾的評論",
       "file": "moderator-comments-spam.md",
       "subCat": "版主徽章類型"
     },
     {
-      "name": "標記為非垃圾評論",
+      "name": "標記為非垃圾的評論",
       "file": "moderator-comments-not-spam.md",
       "subCat": "版主徽章類型"
     }

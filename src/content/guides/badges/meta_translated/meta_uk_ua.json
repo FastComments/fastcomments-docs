@@ -1,5 +1,6 @@
 {
   "name": "Значки",
+  "pageHeader": "Значки системи коментування",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -23,7 +24,7 @@
       "subCat": "Типи значків"
     },
     {
-      "name": "Голоси за",
+      "name": "Позитивні оцінки",
       "file": "badge-type-up-votes.md",
       "subCat": "Типи значків"
     },
@@ -48,7 +49,7 @@
       "subCat": "Типи значків"
     },
     {
-      "name": "Швидка відповідь",
+      "name": "Швидкий час відповіді",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "Типи значків"
     },
@@ -58,39 +59,39 @@
       "subCat": "Типи значків"
     },
     {
-      "name": "Вступ до значків модераторів",
+      "name": "Вступ до значків модератора",
       "file": "moderator-badges.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     },
     {
       "name": "Видалені коментарі",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     },
     {
       "name": "Схвалені коментарі",
       "file": "moderator-comments-approved.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     },
     {
-      "name": "Несхвалені коментарі",
+      "name": "Не схвалені коментарі",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     },
     {
-      "name": "Перевірені коментарі",
+      "name": "Переглянуті коментарі",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     },
     {
       "name": "Коментарі, позначені як спам",
       "file": "moderator-comments-spam.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     },
     {
       "name": "Коментарі, позначені як не спам",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Типи значків модераторів"
+      "subCat": "Типи значків модератора"
     }
   ]
 }

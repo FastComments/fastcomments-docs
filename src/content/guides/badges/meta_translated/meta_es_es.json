@@ -1,96 +1,97 @@
 {
   "name": "Insignias",
+  "pageHeader": "Insignias del Sistema de Comentarios",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
-      "name": "Conceptos básicos",
+      "name": "Fundamentos",
       "file": "badge-basics.md",
-      "subCat": "Conceptos básicos"
+      "subCat": "Los conceptos básicos"
     },
     {
       "name": "Progresión",
       "file": "badge-progression.md",
-      "subCat": "Conceptos básicos"
+      "subCat": "Los conceptos básicos"
     },
     {
-      "name": "Insignias manuales",
+      "name": "Insignias Manuales",
       "file": "badge-type-manual.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Recuento de comentarios",
+      "name": "Cantidad de Comentarios",
       "file": "badge-type-comment-count.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Votos positivos",
+      "name": "Votos Positivos",
       "file": "badge-type-up-votes.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
       "name": "Respuestas",
       "file": "badge-type-replies.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Comentarios fijados",
+      "name": "Comentarios Fijados",
       "file": "badge-type-pinned-comments.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
       "name": "Veterano",
       "file": "badge-type-veteran.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Noctámbulo",
+      "name": "Búho Nocturno",
       "file": "badge-type-night-owl.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Tiempo de respuesta rápido",
+      "name": "Tiempo de Respuesta Rápido",
       "file": "badge-type-fast-reply-time.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Responder a una página específica",
+      "name": "Responder a Página Específica",
       "file": "badge-type-reply-to-specific-page.md",
-      "subCat": "Tipos de insignias"
+      "subCat": "Tipos de Insignias"
     },
     {
-      "name": "Introducción a las insignias de moderador",
+      "name": "Introducción a Insignias de Moderador",
       "file": "moderator-badges.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     },
     {
-      "name": "Comentarios eliminados",
+      "name": "Comentarios Eliminados",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     },
     {
-      "name": "Comentarios aprobados",
+      "name": "Comentarios Aprobados",
       "file": "moderator-comments-approved.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     },
     {
-      "name": "Comentarios no aprobados",
+      "name": "Comentarios No Aprobados",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     },
     {
-      "name": "Comentarios revisados",
+      "name": "Comentarios Revisados",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     },
     {
-      "name": "Comentarios marcados como spam",
+      "name": "Comentarios Marcados como Spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     },
     {
-      "name": "Comentarios marcados como no spam",
+      "name": "Comentarios Marcados como No Spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Tipos de insignias de moderador"
+      "subCat": "Tipos de Insignias de Moderador"
     }
   ]
 }

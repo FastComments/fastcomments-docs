@@ -1,16 +1,17 @@
 {
   "name": "Distintivi",
+  "pageHeader": "Distintivi del Sistema di Commenti",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
       "name": "Nozioni di base",
       "file": "badge-basics.md",
-      "subCat": "Nozioni di base"
+      "subCat": "Le basi"
     },
     {
       "name": "Progressione",
       "file": "badge-progression.md",
-      "subCat": "Nozioni di base"
+      "subCat": "Le basi"
     },
     {
       "name": "Distintivi manuali",
@@ -18,7 +19,7 @@
       "subCat": "Tipi di distintivi"
     },
     {
-      "name": "Conteggio commenti",
+      "name": "Numero di commenti",
       "file": "badge-type-comment-count.md",
       "subCat": "Tipi di distintivi"
     },
@@ -43,12 +44,12 @@
       "subCat": "Tipi di distintivi"
     },
     {
-      "name": "Nottambulo",
+      "name": "Civetta notturna",
       "file": "badge-type-night-owl.md",
       "subCat": "Tipi di distintivi"
     },
     {
-      "name": "Tempo di risposta rapido",
+      "name": "Tempo di risposta veloce",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "Tipi di distintivi"
     },
@@ -58,39 +59,39 @@
       "subCat": "Tipi di distintivi"
     },
     {
-      "name": "Introduzione ai distintivi per i moderatori",
+      "name": "Introduzione ai distintivi di moderatore",
       "file": "moderator-badges.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     },
     {
       "name": "Commenti eliminati",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     },
     {
       "name": "Commenti approvati",
       "file": "moderator-comments-approved.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     },
     {
       "name": "Commenti non approvati",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     },
     {
-      "name": "Commenti esaminati",
+      "name": "Commenti revisionati",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     },
     {
       "name": "Commenti contrassegnati come spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     },
     {
       "name": "Commenti contrassegnati come non spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Tipi di distintivi per moderatori"
+      "subCat": "Tipi di distintivi di moderatore"
     }
   ]
 }

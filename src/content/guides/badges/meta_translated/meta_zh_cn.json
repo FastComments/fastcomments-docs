@@ -1,5 +1,6 @@
 {
   "name": "徽章",
+  "pageHeader": "评论系统徽章",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -23,7 +24,7 @@
       "subCat": "徽章类型"
     },
     {
-      "name": "点赞",
+      "name": "赞成票",
       "file": "badge-type-up-votes.md",
       "subCat": "徽章类型"
     },
@@ -38,7 +39,7 @@
       "subCat": "徽章类型"
     },
     {
-      "name": "资深",
+      "name": "资深用户",
       "file": "badge-type-veteran.md",
       "subCat": "徽章类型"
     },
@@ -48,12 +49,12 @@
       "subCat": "徽章类型"
     },
     {
-      "name": "快速回复",
+      "name": "快速回复时间",
       "file": "badge-type-fast-reply-time.md",
       "subCat": "徽章类型"
     },
     {
-      "name": "回复特定页面",
+      "name": "特定页面回复",
       "file": "badge-type-reply-to-specific-page.md",
       "subCat": "徽章类型"
     },
@@ -73,22 +74,22 @@
       "subCat": "版主徽章类型"
     },
     {
-      "name": "取消批准的评论",
+      "name": "未批准评论",
       "file": "moderator-comments-un-approved.md",
       "subCat": "版主徽章类型"
     },
     {
-      "name": "已审核评论",
+      "name": "已审查评论",
       "file": "moderator-comments-reviewed.md",
       "subCat": "版主徽章类型"
     },
     {
-      "name": "被标记为垃圾评论",
+      "name": "标记为垃圾评论",
       "file": "moderator-comments-spam.md",
       "subCat": "版主徽章类型"
     },
     {
-      "name": "被标记为非垃圾评论",
+      "name": "标记为非垃圾评论",
       "file": "moderator-comments-not-spam.md",
       "subCat": "版主徽章类型"
     }

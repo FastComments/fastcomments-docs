@@ -1,21 +1,22 @@
 {
-  "name": "סוכני בינה מלאכותית",
+  "name": "סוכני AI",
+  "pageHeader": "סוכני AI למודרציה של תגובות",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "מהם סוכני בינה מלאכותית",
+      "name": "מהם סוכני AI",
       "file": "what-are-ai-agents.md",
-      "subCat": "הקדמה"
+      "subCat": "מבוא"
     },
     {
       "name": "תוכניות וזכאות",
       "file": "plans-and-eligibility.md",
-      "subCat": "הקדמה"
+      "subCat": "מבוא"
     },
     {
       "name": "התחלה מהירה",
       "file": "quickstart.md",
-      "subCat": "הקדמה"
+      "subCat": "מבוא"
     },
     {
       "name": "יצירת סוכן",
@@ -33,12 +34,12 @@
       "subCat": "יצירת סוכנים"
     },
     {
-      "name": "תבנית: מארח קבלת פנים",
+      "name": "תבנית: קולט ברוכים",
       "file": "template-welcome-greeter.md",
       "subCat": "יצירת סוכנים"
     },
     {
-      "name": "תבנית: מצמיד תגובות מובילות",
+      "name": "תבנית: נעץ תגובה מובילה",
       "file": "template-top-comment-pinner.md",
       "subCat": "יצירת סוכנים"
     },
@@ -48,7 +49,7 @@
       "subCat": "יצירת סוכנים"
     },
     {
-      "name": "תבנית: גלאי גזלייטינג",
+      "name": "תבנית: מזהה גזלייט",
       "file": "template-gaslight-detector.md",
       "subCat": "יצירת סוכנים"
     },
@@ -58,7 +59,7 @@
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "אישיות וההנחיה הראשונית",
+      "name": "אישיות והפרומפט הראשוני",
       "file": "personality-prompt.md",
       "subCat": "אישיות והקשר"
     },
@@ -68,17 +69,17 @@
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "הנחיות הקהילה",
+      "name": "קווים מנחים של הקהילה",
       "file": "community-guidelines.md",
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "טווח: מסנני URL ואזור",
+      "name": "היקף: מסנני URL ולוקאל",
       "file": "scope-url-locale.md",
       "subCat": "אישיות והקשר"
     },
     {
-      "name": "סקירה כללית של אירועי טריגר",
+      "name": "סקירת אירועי טריגר",
       "file": "triggers-overview.md",
       "subCat": "אירועי טריגר"
     },
@@ -98,12 +99,12 @@
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: תגובה הוצמדה",
+      "name": "טריגר: תגובה נעוצה",
       "file": "trigger-comment-pin.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: תגובה הוסרה מהצמדה",
+      "name": "טריגר: תגובה שוחררה",
       "file": "trigger-comment-unpin.md",
       "subCat": "אירועי טריגר"
     },
@@ -118,22 +119,22 @@
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: סף הצבעות",
+      "name": "טריגר: סף הצבעה",
       "file": "trigger-comment-vote-threshold.md",
-      "subCat": "אירועי טריגר"
+      "subCat": "אירותי טריגר"
     },
     {
-      "name": "טריגר: סף דיווחים",
+      "name": "טריגר: סף סימון",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: תגובת המשתמש החדש הראשונה",
+      "name": "טריגר: תגובה ראשונה של משתמש חדש",
       "file": "trigger-new-user-first-comment.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: תגובה שנסומנה כספאם אוטומטית",
+      "name": "טריגר: תגובה ספאם אוטומטית",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "אירועי טריגר"
     },
@@ -153,34 +154,34 @@
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגר: מודרטור העניק תג",
+      "name": "טריגר: מודרטור העניק תו",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "אירועי טריגר"
     },
     {
-      "name": "טריגרים נדחים",
+      "name": "טריגרים מתעכבים",
       "file": "trigger-deferred-delay.md",
       "subCat": "אירועי טריגר"
     },
     {
       "name": "מדריך כלים",
       "file": "tools-overview.md",
-      "subCat": "קריאות כלים מותרות"
+      "subCat": "קריאות כלי מורשות"
     },
     {
-      "name": "חסום משתמש",
+      "name": "חסימת משתמש",
       "file": "tool-ban-user.md",
-      "subCat": "קריאות כלים מותרות"
+      "subCat": "קריאות כלי מורשות"
     },
     {
-      "name": "הזהר את המשתמש",
+      "name": "אזהרת משתמש",
       "file": "tool-warn-user.md",
-      "subCat": "קריאות כלים מותרות"
+      "subCat": "קריאות כלי מורשות"
     },
     {
-      "name": "ערוך תגובה",
+      "name": "עריכת תגובה",
       "file": "tool-edit-comment.md",
-      "subCat": "קריאות כלים מותרות"
+      "subCat": "קריאות כלי מורשות"
     },
     {
       "name": "מצבי סטטוס",
@@ -188,7 +189,7 @@
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "מצב הרצה מדומה",
+      "name": "מצב ריצה יבשה",
       "file": "dry-run-mode.md",
       "subCat": "בטיחות ופיקוח"
     },
@@ -203,12 +204,12 @@
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "ציות לסעיף 17 של ה-EU DSA",
+      "name": "עמידה במאמר 17 של DSA האיחוד האירופי",
       "file": "eu-dsa-compliance.md",
       "subCat": "בטיחות ופיקוח"
     },
     {
-      "name": "מערכת זיכרון של הסוכן",
+      "name": "מערכת זיכרון סוכן",
       "file": "agent-memory-system.md",
       "subCat": "בטיחות ופיקוח"
     },
@@ -218,74 +219,74 @@
       "subCat": "תקציבים ועלויות"
     },
     {
-      "name": "התרעות תקציב",
+      "name": "התראות תקציב",
       "file": "budget-alerts.md",
       "subCat": "תקציבים ועלויות"
     },
     {
-      "name": "מודל עלויות",
+      "name": "מודל עלות",
       "file": "cost-model.md",
       "subCat": "תקציבים ועלויות"
     },
     {
-      "name": "סיבות לדחייה",
+      "name": "סיבות להפלה",
       "file": "drop-reasons.md",
       "subCat": "תקציבים ועלויות"
     },
     {
-      "name": "היסטוריית הרצות",
+      "name": "היסטוריית ריצות",
       "file": "run-history.md",
-      "subCat": "ניטור וכיול"
+      "subCat": "מעקב וכיוונון"
     },
     {
-      "name": "תצוגת פרטי הרצה",
+      "name": "תצוגת פרטי ריצה",
       "file": "run-detail-view.md",
-      "subCat": "ניטור וכיול"
+      "subCat": "מעקב וכיוונון"
     },
     {
       "name": "דף אנליטיקה",
       "file": "analytics-page.md",
-      "subCat": "ניטור וכיול"
+      "subCat": "מעקב וכיוונון"
     },
     {
-      "name": "הרצות בדיקה (השמעות חוזרות)",
+      "name": "ריצות בדיקה (הקלטות)",
       "file": "test-runs-replays.md",
-      "subCat": "ניטור וכיול"
+      "subCat": "מעקב וכיוונון"
     },
     {
-      "name": "שיפור ההנחיות",
+      "name": "שיפור פרומפטים",
       "file": "refining-prompts.md",
-      "subCat": "ניטור וכיול"
+      "subCat": "מעקב וכיוונון"
     },
     {
-      "name": "סקירה כללית של Webhooks",
+      "name": "סקירת וובהוקים",
       "file": "webhooks-overview.md",
-      "subCat": "Webhooks"
+      "subCat": "וובהוקים"
     },
     {
-      "name": "אירועי Webhook",
+      "name": "אירועי וובהוק",
       "file": "webhook-events.md",
-      "subCat": "Webhooks"
+      "subCat": "וובהוקים"
     },
     {
-      "name": "מטעני Webhook",
+      "name": "מטעני וובהוק",
       "file": "webhook-payloads.md",
-      "subCat": "Webhooks"
+      "subCat": "וובהוקים"
     },
     {
-      "name": "חתימת Webhook",
+      "name": "חתימת וובהוק",
       "file": "webhook-signing.md",
-      "subCat": "Webhooks"
+      "subCat": "וובהוקים"
     },
     {
-      "name": "ניסיונות חוזרים של Webhook",
+      "name": "נסיונות חוזרים של וובהוק",
       "file": "webhook-retries.md",
-      "subCat": "Webhooks"
+      "subCat": "וובהוקים"
     },
     {
-      "name": "יומני משלוח Webhook",
+      "name": "יומני מסירת וובהוק",
       "file": "webhook-logs.md",
-      "subCat": "Webhooks"
+      "subCat": "וובהוקים"
     }
   ]
 }

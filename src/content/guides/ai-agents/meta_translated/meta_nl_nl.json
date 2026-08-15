@@ -1,21 +1,22 @@
 {
   "name": "AI-agenten",
+  "pageHeader": "AI-agenten voor commentaarmoderatie",
   "icon": "ai.png",
   "itemsOrdered": [
     {
       "name": "Wat zijn AI-agenten",
       "file": "what-are-ai-agents.md",
-      "subCat": "Inleiding"
+      "subCat": "Introductie"
     },
     {
       "name": "Plannen en geschiktheid",
       "file": "plans-and-eligibility.md",
-      "subCat": "Inleiding"
+      "subCat": "Introductie"
     },
     {
       "name": "Snelstart",
       "file": "quickstart.md",
-      "subCat": "Inleiding"
+      "subCat": "Introductie"
     },
     {
       "name": "Een agent maken",
@@ -38,12 +39,12 @@
       "subCat": "Agenten maken"
     },
     {
-      "name": "Sjabloon: Topreactie vastzetten",
+      "name": "Sjabloon: Topcomment vastpinnen",
       "file": "template-top-comment-pinner.md",
       "subCat": "Agenten maken"
     },
     {
-      "name": "Sjabloon: Samenvatter van discussiedraden",
+      "name": "Sjabloon: Thread-samenvatting",
       "file": "template-thread-summarizer.md",
       "subCat": "Agenten maken"
     },
@@ -68,12 +69,12 @@
       "subCat": "Persoonlijkheid en context"
     },
     {
-      "name": "Richtlijnen voor de community",
+      "name": "Gemeenschapsrichtlijnen",
       "file": "community-guidelines.md",
       "subCat": "Persoonlijkheid en context"
     },
     {
-      "name": "Bereik: URL- en locatiefilters",
+      "name": "Reikwijdte: URL- en locale-filters",
       "file": "scope-url-locale.md",
       "subCat": "Persoonlijkheid en context"
     },
@@ -98,7 +99,7 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Reactie vastgezet",
+      "name": "Trigger: Reactie vastgepind",
       "file": "trigger-comment-pin.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -118,12 +119,12 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Stemdrempel",
+      "name": "Trigger: Stemmen drempel",
       "file": "trigger-comment-vote-threshold.md",
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Meldingsdrempel",
+      "name": "Trigger: Vlag drempel",
       "file": "trigger-comment-flag-threshold.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -133,27 +134,27 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Automatisch gespamde reactie",
+      "name": "Trigger: Automatisch gemarkeerde spamreactie",
       "file": "trigger-comment-auto-spammed.md",
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Door moderator beoordeelde reactie",
+      "name": "Trigger: Moderator beoordeelde reactie",
       "file": "trigger-moderator-reviewed.md",
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Door moderator goedgekeurde reactie",
+      "name": "Trigger: Moderator goedkeurde reactie",
       "file": "trigger-moderator-approved.md",
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Door moderator als spam gemarkeerde reactie",
+      "name": "Trigger: Moderator markeerde spam",
       "file": "trigger-moderator-spammed.md",
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Trigger: Door moderator toegekend badge",
+      "name": "Trigger: Moderator heeft badge toegekend",
       "file": "trigger-moderator-awarded-badge.md",
       "subCat": "Triggergebeurtenissen"
     },
@@ -163,32 +164,32 @@
       "subCat": "Triggergebeurtenissen"
     },
     {
-      "name": "Hulpmiddelenreferentie",
+      "name": "Toolsreferentie",
       "file": "tools-overview.md",
-      "subCat": "Toegestane tool-aanroepen"
+      "subCat": "Toegestane toolaanroepen"
     },
     {
       "name": "Gebruiker verbannen",
       "file": "tool-ban-user.md",
-      "subCat": "Toegestane tool-aanroepen"
+      "subCat": "Toegestane toolaanroepen"
     },
     {
       "name": "Gebruiker waarschuwen",
       "file": "tool-warn-user.md",
-      "subCat": "Toegestane tool-aanroepen"
+      "subCat": "Toegestane toolaanroepen"
     },
     {
       "name": "Reactie bewerken",
       "file": "tool-edit-comment.md",
-      "subCat": "Toegestane tool-aanroepen"
+      "subCat": "Toegestane toolaanroepen"
     },
     {
-      "name": "Statussen",
+      "name": "Statusstaten",
       "file": "status-states.md",
       "subCat": "Veiligheid en toezicht"
     },
     {
-      "name": "Testmodus",
+      "name": "Droogloop-modus",
       "file": "dry-run-mode.md",
       "subCat": "Veiligheid en toezicht"
     },
@@ -203,17 +204,17 @@
       "subCat": "Veiligheid en toezicht"
     },
     {
-      "name": "Naleving van EU DSA Artikel 17",
+      "name": "EU DSA artikel 17 naleving",
       "file": "eu-dsa-compliance.md",
       "subCat": "Veiligheid en toezicht"
     },
     {
-      "name": "Geheugensysteem voor agenten",
+      "name": "Agentgeheugensysteem",
       "file": "agent-memory-system.md",
       "subCat": "Veiligheid en toezicht"
     },
     {
-      "name": "Budgetoverzicht",
+      "name": "Overzicht van budgetten",
       "file": "budgets-overview.md",
       "subCat": "Budgetten en kosten"
     },
@@ -238,7 +239,7 @@
       "subCat": "Monitoring en afstemming"
     },
     {
-      "name": "Gedetailleerde uitvoeringsweergave",
+      "name": "Detailweergave van uitvoering",
       "file": "run-detail-view.md",
       "subCat": "Monitoring en afstemming"
     },
@@ -253,37 +254,37 @@
       "subCat": "Monitoring en afstemming"
     },
     {
-      "name": "Prompts verfijnen",
+      "name": "Prompt verfijnen",
       "file": "refining-prompts.md",
       "subCat": "Monitoring en afstemming"
     },
     {
-      "name": "Webhook-overzicht",
+      "name": "Overzicht van webhooks",
       "file": "webhooks-overview.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-gebeurtenissen",
+      "name": "Webhookgebeurtenissen",
       "file": "webhook-events.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-payloads",
+      "name": "Webhookpayloads",
       "file": "webhook-payloads.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-ondertekening",
+      "name": "Webhookondertekening",
       "file": "webhook-signing.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-herhalingen",
+      "name": "Webhookherpogingen",
       "file": "webhook-retries.md",
       "subCat": "Webhooks"
     },
     {
-      "name": "Webhook-bezorgingslogboeken",
+      "name": "Webhook leveringslogboeken",
       "file": "webhook-logs.md",
       "subCat": "Webhooks"
     }

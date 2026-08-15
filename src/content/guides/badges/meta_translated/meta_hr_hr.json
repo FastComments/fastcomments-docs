@@ -1,5 +1,6 @@
 {
   "name": "Značke",
+  "pageHeader": "Značke sustava komentiranja",
   "icon": "badge.svg",
   "itemsOrdered": [
     {
@@ -8,12 +9,12 @@
       "subCat": "Osnove"
     },
     {
-      "name": "Napredovanje",
+      "name": "Napredak",
       "file": "badge-progression.md",
       "subCat": "Osnove"
     },
     {
-      "name": "Ručne značke",
+      "name": "Ručno dodane značke",
       "file": "badge-type-manual.md",
       "subCat": "Vrste znački"
     },
@@ -33,7 +34,7 @@
       "subCat": "Vrste znački"
     },
     {
-      "name": "Pričvršćeni komentari",
+      "name": "Zakačeni komentari",
       "file": "badge-type-pinned-comments.md",
       "subCat": "Vrste znački"
     },
@@ -43,7 +44,7 @@
       "subCat": "Vrste znački"
     },
     {
-      "name": "Noćna ptica",
+      "name": "Noćna sova",
       "file": "badge-type-night-owl.md",
       "subCat": "Vrste znački"
     },
@@ -58,39 +59,39 @@
       "subCat": "Vrste znački"
     },
     {
-      "name": "Uvod u moderatorske značke",
+      "name": "Uvod u značke moderatora",
       "file": "moderator-badges.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     },
     {
       "name": "Izbrisani komentari",
       "file": "moderator-comments-deleted.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     },
     {
       "name": "Odobreni komentari",
       "file": "moderator-comments-approved.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     },
     {
-      "name": "Komentari neodobreni",
+      "name": "Neodobreni komentari",
       "file": "moderator-comments-un-approved.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     },
     {
       "name": "Pregledani komentari",
       "file": "moderator-comments-reviewed.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     },
     {
-      "name": "Komentari označeni kao neželjena pošta",
+      "name": "Komentari označeni kao spam",
       "file": "moderator-comments-spam.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     },
     {
-      "name": "Komentari označeni kao nisu neželjena pošta",
+      "name": "Komentari označeni kao nije spam",
       "file": "moderator-comments-not-spam.md",
-      "subCat": "Vrste moderatorskih znački"
+      "subCat": "Vrste znački moderatora"
     }
   ]
 }
