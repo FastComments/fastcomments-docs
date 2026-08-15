@@ -1,36 +1,37 @@
 {
-  "name": "Program partnerski",
+  "name": "Partnerzy",
+  "pageHeader": "Zarabiaj powtarzalny przychód jako partner",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Dlaczego warto zostać partnerem FastComments?",
+      "name": "Dlaczego warto być partnerem FastComments?",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Program partnerski"
+      "subCat": "Partnerzy"
     },
     {
-      "name": "Pierwsze kroki",
+      "name": "Rozpoczęcie",
       "file": "getting-started.md",
-      "subCat": "Program partnerski"
+      "subCat": "Partnerzy"
     },
     {
       "name": "Prowizja",
       "file": "commission.md",
-      "subCat": "Program partnerski"
+      "subCat": "Partnerzy"
     },
     {
-      "name": "Panel programu partnerskiego",
+      "name": "Panel partnera",
       "file": "dashboard.md",
-      "subCat": "Program partnerski"
+      "subCat": "Partnerzy"
     },
     {
       "name": "Harmonogram wypłat",
       "file": "payout-schedule.md",
-      "subCat": "Program partnerski"
+      "subCat": "Partnerzy"
     },
     {
       "name": "Materiały marketingowe",
       "file": "marketing-materials.md",
-      "subCat": "Program partnerski"
+      "subCat": "Partnerzy"
     }
   ]
 }

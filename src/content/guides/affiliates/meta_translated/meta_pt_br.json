@@ -1,14 +1,15 @@
 {
   "name": "Afiliados",
+  "pageHeader": "Ganhe Receita Recorrente como Afiliado",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Por que se tornar um Afiliado da FastComments?",
+      "name": "Por que ser um Afiliado FastComments?",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "Afiliados"
     },
     {
-      "name": "Primeiros Passos",
+      "name": "Começando",
       "file": "getting-started.md",
       "subCat": "Afiliados"
     },
@@ -23,7 +24,7 @@
       "subCat": "Afiliados"
     },
     {
-      "name": "Cronograma de Pagamentos",
+      "name": "Calendário de Pagamentos",
       "file": "payout-schedule.md",
       "subCat": "Afiliados"
     },

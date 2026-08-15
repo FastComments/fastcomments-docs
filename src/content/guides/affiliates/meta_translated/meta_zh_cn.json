@@ -1,14 +1,15 @@
 {
-  "name": "联盟计划",
+  "name": "联盟",
+  "pageHeader": "作为联盟成员赚取经常性收入",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "为什么要成为 FastComments 的联盟成员？",
+      "name": "为什么成为 FastComments 联盟成员？",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "联盟"
     },
     {
-      "name": "入门",
+      "name": "入门指南",
       "file": "getting-started.md",
       "subCat": "联盟"
     },
@@ -18,17 +19,17 @@
       "subCat": "联盟"
     },
     {
-      "name": "联盟仪表板",
+      "name": "联盟仪表盘",
       "file": "dashboard.md",
       "subCat": "联盟"
     },
     {
-      "name": "支付时间表",
+      "name": "付款计划",
       "file": "payout-schedule.md",
       "subCat": "联盟"
     },
     {
-      "name": "营销资料",
+      "name": "营销材料",
       "file": "marketing-materials.md",
       "subCat": "联盟"
     }

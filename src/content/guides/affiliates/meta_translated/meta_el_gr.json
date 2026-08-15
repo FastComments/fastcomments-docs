@@ -1,36 +1,37 @@
 {
-  "name": "Πρόγραμμα συνεργατών",
+  "name": "Συνεργάτες",
+  "pageHeader": "Κερδίστε Επαναλαμβανόμενο Έσοδο ως Συνεργάτης",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Γιατί να γίνετε συνεργάτης του FastComments;",
+      "name": "Γιατί να γίνετε Συνεργάτης του FastComments;",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Πρόγραμμα συνεργατών"
+      "subCat": "Συνεργάτες"
     },
     {
-      "name": "Πρώτα βήματα",
+      "name": "Ξεκινώντας",
       "file": "getting-started.md",
-      "subCat": "Πρόγραμμα συνεργατών"
+      "subCat": "Συνεργάτες"
     },
     {
       "name": "Προμήθεια",
       "file": "commission.md",
-      "subCat": "Πρόγραμμα συνεργατών"
+      "subCat": "Συνεργάτες"
     },
     {
-      "name": "Πίνακας ελέγχου συνεργατών",
+      "name": "Πίνακας Ελέγχου Συνεργατών",
       "file": "dashboard.md",
-      "subCat": "Πρόγραμμα συνεργατών"
+      "subCat": "Συνεργάτες"
     },
     {
-      "name": "Πρόγραμμα πληρωμών",
+      "name": "Πρόγραμμα Πληρωμών",
       "file": "payout-schedule.md",
-      "subCat": "Πρόγραμμα συνεργατών"
+      "subCat": "Συνεργάτες"
     },
     {
-      "name": "Υλικό προώθησης",
+      "name": "Υλικά Μάρκετινγκ",
       "file": "marketing-materials.md",
-      "subCat": "Πρόγραμμα συνεργατών"
+      "subCat": "Συνεργάτες"
     }
   ]
 }

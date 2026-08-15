@@ -1,14 +1,15 @@
 {
   "name": "Affiliati",
+  "pageHeader": "Guadagna entrate ricorrenti come affiliato",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Perché diventare un affiliato di FastComments?",
+      "name": "Perché diventare un affiliato FastComments?",
       "file": "why-to-be-fastcomments-affiliate.md",
       "subCat": "Affiliati"
     },
     {
-      "name": "Primi passi",
+      "name": "Iniziare",
       "file": "getting-started.md",
       "subCat": "Affiliati"
     },
@@ -18,12 +19,12 @@
       "subCat": "Affiliati"
     },
     {
-      "name": "La dashboard degli affiliati",
+      "name": "Dashboard degli affiliati",
       "file": "dashboard.md",
       "subCat": "Affiliati"
     },
     {
-      "name": "Programma dei pagamenti",
+      "name": "Calendario dei pagamenti",
       "file": "payout-schedule.md",
       "subCat": "Affiliati"
     },

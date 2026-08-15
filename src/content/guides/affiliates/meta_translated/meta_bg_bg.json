@@ -1,36 +1,37 @@
 {
-  "name": "Партньорска програма",
+  "name": "Афилиати",
+  "pageHeader": "Печелете периодичен доход като афилиейт",
   "icon": "affiliates.png",
   "itemsOrdered": [
     {
-      "name": "Защо да станете партньор на FastComments?",
+      "name": "Защо да станете афилиейт на FastComments?",
       "file": "why-to-be-fastcomments-affiliate.md",
-      "subCat": "Партньорска програма"
+      "subCat": "Афилиати"
     },
     {
-      "name": "Първи стъпки",
+      "name": "Започване",
       "file": "getting-started.md",
-      "subCat": "Партньорска програма"
+      "subCat": "Афилиати"
     },
     {
       "name": "Комисионна",
       "file": "commission.md",
-      "subCat": "Партньорска програма"
+      "subCat": "Афилиати"
     },
     {
-      "name": "Табло за партньори",
+      "name": "Табло за управление на афилиати",
       "file": "dashboard.md",
-      "subCat": "Партньорска програма"
+      "subCat": "Афилиати"
     },
     {
-      "name": "График на изплащанията",
+      "name": "График за плащане",
       "file": "payout-schedule.md",
-      "subCat": "Партньорска програма"
+      "subCat": "Афилиати"
     },
     {
       "name": "Маркетингови материали",
       "file": "marketing-materials.md",
-      "subCat": "Партньорска програма"
+      "subCat": "Афилиати"
     }
   ]
 }
