@@ -1,40 +1,40 @@
-Live threaded komentiranje s avatarima, ugniježdenim odgovorima, glasovima i ugrađenim uređivačem bogatog teksta, plus tamna tema i predložak za live‑chat (prikazano ovdje renderirano putem `react-native-web`):
+Live threaded commenting with avatars, nested replies, votes, and the built-in rich-text composer, plus a dark theme and a live-chat preset (shown here rendered via `react-native-web`):
 
 <table>
   <tr>
-    <td align="center"><b>Live Commenting</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Live commenting, light theme"/></td>
-    <td align="center"><b>Dark Theme</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Live commenting, dark theme"/></td>
-    <td align="center"><b>Live Chat</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Live chat preset"/></td>
+    <td align="center"><b>Živo komentiranje</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Živo komentiranje, svijetla tema"/></td>
+    <td align="center"><b>Tamna tema</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Živo komentiranje, tamna tema"/></td>
+    <td align="center"><b>Živi chat</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Predložak za živi chat"/></td>
   </tr>
 </table>
 
-### Rich Text Editor
+### Uređivač bogatog teksta
 
-Ova biblioteka koristi [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) za uređivanje bogatog teksta, što pruža snažno WYSIWYG iskustvo uređivanja. Isti uređivač pokreće iOS, Android i web (preko `react-native-web`), tako da se sastavljač ponaša dosljedno na svim platformama uz jednu implementaciju.
+This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
 
-`react-native-enriched` zahtijeva React Native New Architecture (Fabric) na native (zadano od RN 0.76, opcionalno od RN 0.72‑0.75) i bundler koji rješava `exports` uvjete paketa. Ovaj SDK je razvijen i testiran protiv RN 0.81 / React 19. Isti uređivač također radi na webu putem `react-native-web`; web‑build enriched uređivača još uvijek je označen kao eksperimentalni upstream.
+`react-native-enriched` requires the React Native New Architecture (Fabric) on native (the default since RN 0.76, opt-in on RN 0.72-0.75), and a bundler that resolves package `exports` conditions. This SDK is developed and tested against RN 0.81 / React 19. The same editor also runs on web through `react-native-web`; the enriched editor's web build is still marked experimental upstream.
 
-### Widgets
+### Widgeti
 
-SDK isporučuje tri widgeta, u skladu s FastComments Android SDK‑om:
+The SDK ships three widgets, mirroring the FastComments Android SDK:
 
-- `FastCommentsLiveCommenting` – ugniježdeno komentiranje s glasovima, odgovorima, paginacijom, spominjanjima, obavijestima i live ažuriranjima.
-- `FastCommentsLiveChat` – predložak za chat baziran na istom motoru: kronološke poruke s novim na dnu, sastavljač ispod popisa, live zaglavlje (točka veze + broj korisnika), beskonačna povijest učitana skrolanjem prema gore, automatsko pomicanje na nove poruke, bez glasova ili ugniježdenih odgovora. Svaki predložak može se prepisati putem `config`.
-- `FastCommentsFeed` – društveni feed s sastavljačem objava, medijima, reakcijama, praćenjima i live bannerima za nove objave.
+- `FastCommentsLiveCommenting` – threaded commenting with votes, replies, pagination, mentions, notifications, and live updates.
+- `FastCommentsLiveChat` – a chat preset over the same engine: chronological messages with new ones at the bottom, the composer below the list, a live header strip (connection dot + user count), infinite history loaded by scrolling up, auto-scroll to new messages, no votes or reply threading. Every preset can be overridden via `config`.
+- `FastCommentsFeed` – a social feed with post composer, media, reactions, follows, and live new-post banners.
 
 ```tsx
     <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
-### Theming
+### Tematizacija
 
-Zadani izgled generira se iz skupa semantičkih dizajnerskih tokena (`FastCommentsTheme`): boje, razmaci, radijusi, veličine fonta, težine fonta i veličine avatara. Proslijedite djelomična prepisivanja tokena (tipa `FastCommentsThemeOverrides`) kroz `theme` prop na bilo kojem widgetu i cijelo stablo stilova će se dosljedno preoblikovati:
+The default look is generated from a set of semantic design tokens (`FastCommentsTheme`): colors, spacing, radius, font sizes, font weights, and avatar sizes. Pass partial token overrides (typed `FastCommentsThemeOverrides`) through the `theme` prop on any widget and the entire style tree restyles consistently:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-Tamni način rada je samo jedan set tokena udaljen:
+Dark mode is one token set away:
 
 ```tsx
     import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -42,34 +42,34 @@ Tamni način rada je samo jedan set tokena udaljen:
     <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-`styles` prop i dalje prihvaća sirovo `IFastCommentsStyles` stablo za kirursku kontrolu. Kada su `theme` i `styles` oba dostavljena, izričiti stilovi imaju prednost nad tematskim stablom; kada je dostavljen samo `styles`, on u potpunosti zamjenjuje zadane (originalno ponašanje, pa postojeće integracije i skinovi nisu pogođeni). `setupDarkModeSkin` je zastarjelo u korist `theme` prop‑a.
+The `styles` prop still accepts a raw `IFastCommentsStyles` tree for surgical control. When `theme` and `styles` are both provided, the explicit styles win over the themed tree; when only `styles` is provided, it replaces the defaults entirely (the original behavior, so existing integrations and skins are unaffected). `setupDarkModeSkin` is deprecated in favor of the `theme` prop.
 
-### Configuration Options
+### Opcije konfiguracije
 
-Ova biblioteka nastoji podržati sve opcije konfiguracije definirane u [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), baš kao i web implementacija.
+This library aims to support all configuration options defined in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), just like the web implementation.
 
-Uz to, React Native dodaje nekoliko SDK‑specifičnih opcija putem `FastCommentsRNConfig`:
+On top of those, React Native adds a few SDK-specific options via `FastCommentsRNConfig`:
 
-- `hideTopBar` – sakrij traku s prijavljenim korisnikom / zvono obavijesti iznad sastavljača.
-- `usePressToEdit` – pritisni‑i‑drži komentar da otvoriš njegov izbornik.
-- `disableDownVoting` – sakrij gumbe za negativno glasanje.
-- `renderCommentInline` – prikaži informacije o komentatoru unutar istog HTML bloka kao i sadržaj komentara.
-- `renderLikesToRight` – premjesti područje glasova/​lajkova desno od komentara umjesto ispod.
-- `renderDateBelowComment` – prikaži datum ispod komentara.
-- `showLiveStatus` – prikaži chat‑stil „Live“ + traku s brojem korisnika iznad komentara.
-- `useInlineSubmitButton` – prikaži gumb za slanje kao ikonu unutar sastavljača.
-- `countAboveToggle` – uz `useShowCommentsToggle`, koliko komentara se prikazuje iznad prekidača „Show Comments“.
-- `preserveFeedScrollPosition` – `FastCommentsFeed` pamti svoj pomak skrolanja kroz unmount/remount (zadano true).
+- `hideTopBar` – hide the logged-in user / notification-bell strip shown above the composer.
+- `usePressToEdit` – press-and-hold a comment to open its menu.
+- `disableDownVoting` – hide down-vote buttons.
+- `renderCommentInline` – render commenter info inside the same HTML block as the comment content.
+- `renderLikesToRight` – move the vote/like area to the right of the comment instead of below it.
+- `renderDateBelowComment` – render the date below the comment.
+- `showLiveStatus` – show the chat-style "Live" + user-count header strip above comments.
+- `useInlineSubmitButton` – render the submit button as an icon inside the composer.
+- `countAboveToggle` – with `useShowCommentsToggle`, how many comments render above the "Show Comments" toggle.
+- `preserveFeedScrollPosition` – `FastCommentsFeed` remembers its scroll offset across unmount/remount (default true).
 
-### FastComments Concepts
+### FastComments koncepti
 
-Glavni pojmovi o kojima treba znati za početak su `tenantId` i `urlId`. `tenantId` je vaš identifikator računa na FastComments.com. `urlId` je onaj na koji će se povezati niti komentara. To može biti URL stranice, ID proizvoda, ID članka, itd.
+The main concepts to be aware of to get started are `tenantId` and `urlId`. `tenantId` is your FastComments.com account identifier. `urlId` is where comment threads will be tied to. This could be a page URL, or a product id, an article id, etc.
 
-### Localization
+### Lokalizacija
 
-Sav tekst koji korisnici vide u ovim widgetima (oznake gumba, placeholderi, prazna stanja, relativni datumi poput „5 minutes ago“, poruke o greškama, itd.) je **server‑driven**. Komponente ne hard‑kodiraju engleske stringove; one renderiraju prijevode koje FastComments pruža za traženi jezik.
+All user-facing text in these widgets (button labels, placeholders, empty states, relative dates like "5 minutes ago", error messages, etc.) is **server-driven**. The components do not hard-code English strings; they render the translations FastComments serves for the requested locale.
 
-Za zahtjev za jezik, postavite `locale` u vašoj konfiguraciji:
+To request a locale, set `locale` in your config:
 
 ```ts
 const config = {
@@ -79,22 +79,22 @@ const config = {
 };
 ```
 
-Kada `locale` nije postavljen, FastComments servira zadan jezik najstamparije.
+When no `locale` is set, FastComments serves the tenant's default language.
 
-**Uređivanje teksta:** prijevodi se upravljaju u vašoj FastComments nadzornoj ploči, a ne u ovom SDK‑u. Za promjenu formulacije, prepišite zadani tekst ili dodajte jezik, uredite prijevode za vaš račun u nadzornoj ploči – promjena se automatski primijeni na widgete bez potrebe za novim izdanjem aplikacije. SDK ne isporučuje engleske rezervne vrijednosti, pa svaki ključ koji ostavite praznim u nadzornoj ploči prikazuje se prazno; održavajte ključeve popunjene za svaki jezik koji podržavate.
+**Editing the text:** translations are managed in your FastComments dashboard, not in this SDK. To change wording, override the default copy, or add a language, edit the translations for your account in the dashboard - the change is picked up by the widgets automatically with no app release required. The SDK ships no English fallbacks, so any key you blank out in the dashboard renders empty; keep the keys populated for every locale you support.
 
-### User Notifications
+### Obavijesti korisnika
 
-FastComments podržava obavijesti za [mnogo scenarija](https://docs.fastcomments.com/guide-notifications.html). Obavijesti su konfigurabilne, mogu se globalno ili na razini obavijesti/​komentara isključiti, i podržavaju pretplate na razini stranice tako da korisnici mogu pretplatiti se na niti određene stranice ili članka.
+FastComments supports notifications for [many scenarios](https://docs.fastcomments.com/guide-notifications.html). Notifications are configurable, can be opted-out globally or at a notification/comment level, and supports page-level subscriptions so that users can subscribe to threads of a specific page or article.
 
-Na primjer, moguće je koristiti Secure SSO za autentifikaciju korisnika, a zatim periodično provjeravati nepročitane obavijesti i slati ih korisniku.
+For example, it is possible to use Secure SSO to authenticate the user and then periodically poll for unread notifications and push them to the user.
 
-Pogledajte [primjer AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) za **kako** dobiti i **prevesti** nepročitane korisničke obavijesti.
+See [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for how to get and translate unread user notifications.
 
-### Gif Browser
+### Gif preglednik
 
-Prema zadanim postavkama, odabir slika ili gif‑ova nije omogućen. Pogledajte [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) za to kako podržati učitavanje slika i gif‑ova. Postoji Gif Browser koji anonimno pretražuje i pruža slike u ovoj biblioteci; jednostavno ga koristite.
+By default, no image or gif selection is enabled. See [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for how to support image and gif uploads. There is a Gif Browser that anonymizes searches and images provided in this library, you simply have to use it.
 
-### Performance
+### Performanse
 
-Molimo otvorite ticket s primjerom za reprodukciju, uključujući korišteni uređaj, ako uočite bilo koji problem s performansama. Performanse su prioritetna stavka u svim FastComments bibliotekama.
+Please open a ticket with an example to reproduce, including device used, if you identify any performance problems. Performance is a first-class citizen of all FastComments libraries.
