@@ -1,0 +1,1 @@
+Add comments to an Astro site with the official integration. Import the component, pass your tenant ID, and it renders wherever you put it.

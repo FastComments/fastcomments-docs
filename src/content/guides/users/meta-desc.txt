@@ -1,0 +1,1 @@
+Understand administrators, moderators, and commenters in FastComments. How usernames work, how to add each type, and how to change admin permissions.

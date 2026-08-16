@@ -1,0 +1,1 @@
+Reward commenters automatically with badges for comment count, up-votes, replies, veteran status, and night-owl activity, or assign badges by hand.

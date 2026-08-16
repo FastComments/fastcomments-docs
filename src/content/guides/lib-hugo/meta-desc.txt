@@ -1,0 +1,1 @@
+Add comments to a Hugo site with shortcodes, including theme integration, bulk comment counts for list pages, and the full widget config reference.

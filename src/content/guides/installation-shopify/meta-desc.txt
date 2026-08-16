@@ -1,0 +1,1 @@
+Install FastComments from the Shopify App Store and drag comment, review, and count blocks onto posts and products. Shopify customers are logged in for you.

@@ -66,17 +66,27 @@ pub async fn run() -> Result<()> {
             continue;
         }
         let items_path = entry.path().join("items");
-        if !items_path.exists() {
+        let has_root_source = crate::discover::has_root_level_source(&entry.path());
+        // A guide with no items/ dir can still have a root-level source to
+        // translate. `authentication`, `sso`, and `wordpress` are exactly
+        // that: empty stubs whose only content is meta-desc.txt. run.rs has
+        // never had this guard (it creates items/<locale>/ on write), so
+        // bailing here made check disagree with run about their state.
+        if !items_path.exists() && !has_root_source {
             continue;
         }
         let default_items = items_path.join(&locales.default_locale);
-        if !default_items.exists()
-            && !entry.path().join("intro.md").exists()
-            && !entry.path().join("conclusion.md").exists()
-        {
-            // No locale-structured items and no root-level
-            // intro/conclusion either — pre-locale flat structure
-            // needing `migrate-to-locale-structure.js`.
+        if !default_items.exists() && !has_root_source {
+            // No locale-structured items and no root-level source either:
+            // a pre-locale flat structure needing
+            // `migrate-to-locale-structure.js`.
+            //
+            // The root-level test walks ROOT_LEVEL_SOURCES rather than
+            // hardcoding intro/conclusion: `authentication`, `sso`, and
+            // `wordpress` are empty stubs with no items/ dir at all, so when
+            // meta-desc.txt was their only source this guard swallowed them
+            // and their descriptions silently shipped in English across all
+            // 22 translated locales.
             needs_migration.push(guide_id);
             continue;
         }

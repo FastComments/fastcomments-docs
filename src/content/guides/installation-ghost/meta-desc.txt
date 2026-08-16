@@ -1,0 +1,1 @@
+Give Ghost members a comment section that already knows them. Import member names and avatars, enable reply notifications, and edit your post template.

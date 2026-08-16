@@ -1,0 +1,1 @@
+Let readers sign in from an emailed link instead of remembering a password. How login links work, who receives them, and how they stay secure.

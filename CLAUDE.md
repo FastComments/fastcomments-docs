@@ -164,15 +164,38 @@ its card filename.
 - Only a full, unfiltered build prunes orphaned cards; a `--guide` / `--locale` run
   enumerates part of the site and would delete cards it isn't rebuilding.
 
-**Descriptions.** Only `installation` sets `description` in meta.json, and `trans` copies
-that field through untranslated. So `build.rs` derives one: an authored `description` is
-used only when it differs from the default locale's (otherwise it is English text on a
-translated page), and everything else falls back to an excerpt of the locale-resolved
-`intro.md` via the shared `pipeline::html_to_text`.
+## Meta descriptions
 
-Two quirks of the translated intros that the excerpt code works around, both in
-`excerpt_from_html`: every translated `intro.md` is wrapped in `---` fences, which render
-as a leading `<hr>`; and when the closing fence sits directly under the last line of text,
-markdown reads it as a setext underline and turns the whole paragraph into an `<h2>` (see
-`badges/items/ja_jp/intro.md`) - which `html_to_text` then uppercases, because that is the
-right behavior for the search index it was written for.
+**`src/content/guides/<id>/meta-desc.txt` is the authored SEO meta description**, one per
+guide, and it feeds `<meta name="description">`, `og:description`, and
+`twitter:description`. Plain prose, one sentence or two, aim for 120-160 characters (Google
+truncates around there). It is never rendered into the page body.
+
+It is a separate file rather than a `meta.json` field for one reason: `trans` translates
+files, not arbitrary JSON fields. `rust/trans/src/discover.rs` lists it in
+`ROOT_LEVEL_SOURCES` alongside `intro.md` / `conclusion.md`, so `trans check` and
+`trans run` pick it up with no extra pipeline, and translations land at
+`items/<locale>/meta-desc.txt`. **To add a guide description, write the English file and
+let the next build translate it** - do not hand-write the localized copies.
+
+Note `ROOT_LEVEL_SOURCES` is also what `check.rs` tests to decide a guide is a pre-locale
+flat structure needing migration. `authentication`, `sso`, and `wordpress` have no `items/`
+directory at all, so before that check consulted the list they were skipped outright and
+their descriptions would have shipped in English across all 22 translated locales.
+
+**Resolution order** in `build_one_guide`, each tier localized where it can be:
+
+1. `meta-desc.txt`, resolved `items/<locale>/` -> `items/<default>/` -> guide root
+2. a `meta.json` `description`, but only when it differs from the default locale's -
+   `trans` copies that field through untranslated, so an identical string is English text
+   sitting on a translated page
+3. an excerpt of the locale-resolved `intro.md`, via the shared `pipeline::html_to_text`
+4. the template's title fallback
+
+Two quirks of translated files that both the excerpt and `meta-desc.txt` reader work
+around: every translated file comes back wrapped in `---` fences, which render as a
+leading `<hr>` and would land verbatim in a `content="..."` attribute; and when the closing
+fence sits directly under the last line of text, markdown reads it as a setext underline
+and turns the whole paragraph into an `<h2>` (see `badges/items/ja_jp/intro.md`) - which
+`html_to_text` then uppercases, because that is the right behavior for the search index it
+was written for.

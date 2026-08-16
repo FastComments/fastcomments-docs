@@ -1,0 +1,1 @@
+Add commenting and collaborative chat to Canvas courses over LTI 1.3. Create a developer key, connect, and map Canvas roles, with no server plugin.

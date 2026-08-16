@@ -1,0 +1,1 @@
+Create, fetch, moderate, and export comments over HTTP. Every FastComments endpoint with its request and response types, including votes, users, and pages.

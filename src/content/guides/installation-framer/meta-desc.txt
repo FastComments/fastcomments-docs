@@ -1,0 +1,1 @@
+Add live comments to a Framer site with an embed block and the Framer-specific snippet, plus the height settings that keep the widget from being cut off.

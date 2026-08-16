@@ -1,0 +1,1 @@
+Run FastComments entirely on your own infrastructure. Instances, config, maintenance mode, locks, multiple domains, and the security model.

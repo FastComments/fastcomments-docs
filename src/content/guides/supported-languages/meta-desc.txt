@@ -1,0 +1,1 @@
+Every language the FastComments widget ships in, which parts of the product are translated, and how to request a language we do not cover yet.

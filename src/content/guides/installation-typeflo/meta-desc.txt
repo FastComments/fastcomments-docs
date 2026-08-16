@@ -1,0 +1,1 @@
+Add live comments to a Typeflo.io blog by pasting the FastComments snippet into the code input, then restyle the widget to match your theme.

@@ -1,0 +1,1 @@
+Restrict commenting to paying MemberSpace members, optionally still allowing anonymous comments, and set badges from a reader's membership tier.

@@ -1,0 +1,1 @@
+Let readers reply with GIFs. Which animated formats upload cleanly, how user uploads are handled, and how to turn on the built-in GIF picker.

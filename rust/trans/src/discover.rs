@@ -27,13 +27,36 @@ pub struct SourceFile {
     pub source_path: PathBuf,
 }
 
+/// Guide-root files that are translated even though they never appear
+/// under `items/<default_locale>/`. Translations still land at
+/// `items/<locale>/<name>`; the placement is normalized, not preserved.
+///
+/// `meta-desc.txt` is the authored SEO meta description. It is not markdown
+/// and is never rendered into the page - sitegen reads it only for
+/// `<meta name="description">` and the og/twitter description - but it is
+/// prose that has to ship in all 23 locales, so it rides the same path as
+/// intro/conclusion rather than growing a second translation pipeline.
+pub const ROOT_LEVEL_SOURCES: [&str; 3] = ["intro.md", "conclusion.md", "meta-desc.txt"];
+
+/// Does this guide have any translatable source at its root?
+///
+/// `check.rs` uses this to decide whether a guide with no
+/// `items/<default_locale>/` (or no `items/` at all) is a pre-locale flat
+/// structure needing migration, or simply a guide whose only content lives
+/// at the root. Getting that backwards makes `check` disagree with `run`,
+/// which has no such guard.
+pub fn has_root_level_source(guide_dir: &Path) -> bool {
+    ROOT_LEVEL_SOURCES
+        .iter()
+        .any(|name| guide_dir.join(name).exists())
+}
+
 /// Enumerate the default-locale source files for a guide.
 ///
 /// Order:
 ///   1. Every `.md` under `<guide>/items/<default_locale>/`.
-///   2. `intro.md` at the guide root, if it exists AND wasn't already
-///      listed under (1).
-///   3. `conclusion.md` likewise.
+///   2. Each [`ROOT_LEVEL_SOURCES`] entry at the guide root, if it exists
+///      AND wasn't already listed under (1).
 ///
 /// `guide_dir` is the absolute path to `src/content/guides/<id>`.
 /// `default_locale` is e.g. `"en"`.
@@ -55,10 +78,12 @@ pub fn default_locale_files(guide_dir: &Path, default_locale: &str) -> Vec<Sourc
             });
         }
     }
-    // Root-level intro.md / conclusion.md fallback. Only added if not
-    // already present under items/<default_locale>/. Matches Node's
+    // Root-level fallback. Only added if not already present under
+    // items/<default_locale>/. Matches Node's
     // "if (... && !files.includes('intro.md'))" guard at line 153/156.
-    for special in ["intro.md", "conclusion.md"] {
+    // Note the extension filter above applies only to the items/ scan, so a
+    // non-markdown root source like meta-desc.txt is picked up here.
+    for special in ROOT_LEVEL_SOURCES {
         if out.iter().any(|s| s.filename == special) {
             continue;
         }
@@ -177,5 +202,73 @@ mod tests {
         let files = default_locale_files(g, "en");
         assert_eq!(files.len(), 1);
         assert_eq!(files[0].filename, "a.md");
+    }
+
+    /// The SEO meta description is a root-level `.txt`, so it is reachable
+    /// only through the root-special list - the items/ scan filters on `.md`.
+    /// If this regresses, every guide silently ships an English description
+    /// on all 22 translated locales.
+    #[test]
+    fn root_meta_desc_txt_is_discovered() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write(g, "items/en/howto.md", "HT");
+        write(g, "meta-desc.txt", "Add comments to any website in minutes.");
+        let files = default_locale_files(g, "en");
+        let desc = files
+            .iter()
+            .find(|s| s.filename == "meta-desc.txt")
+            .expect("meta-desc.txt should be discovered");
+        assert_eq!(desc.source_path, g.join("meta-desc.txt"));
+    }
+
+    /// A guide with no meta-desc.txt must not produce a phantom task.
+    #[test]
+    fn missing_meta_desc_is_not_invented() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write(g, "items/en/howto.md", "HT");
+        let files = default_locale_files(g, "en");
+        assert!(!files.iter().any(|s| s.filename == "meta-desc.txt"));
+    }
+}
+
+#[cfg(test)]
+mod root_source_tests {
+    use super::*;
+
+    fn write(root: &Path, rel: &str, body: &str) {
+        let p = root.join(rel);
+        std::fs::create_dir_all(p.parent().unwrap()).unwrap();
+        std::fs::write(&p, body).unwrap();
+    }
+
+    /// `authentication`, `sso`, and `wordpress` are stubs with no items/
+    /// directory at all. Once meta-desc.txt became their only source, a
+    /// guard that only looked for intro/conclusion classified them as
+    /// needing migration and skipped them, so their descriptions would have
+    /// shipped in English across all 22 translated locales.
+    #[test]
+    fn a_stub_guide_with_only_meta_desc_has_a_source() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write(g, "meta.json", "{}");
+        write(g, "meta-desc.txt", "Single sign-on for FastComments.");
+        assert!(has_root_level_source(g));
+        // And it is discoverable, so check and run agree on the work.
+        let files = default_locale_files(g, "en");
+        assert_eq!(files.len(), 1);
+        assert_eq!(files[0].filename, "meta-desc.txt");
+    }
+
+    /// A genuinely flat pre-locale guide still reports no root source, so
+    /// the migration warning keeps working.
+    #[test]
+    fn a_flat_guide_reports_no_root_source() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write(g, "meta.json", "{}");
+        write(g, "some-item.md", "body");
+        assert!(!has_root_level_source(g));
     }
 }

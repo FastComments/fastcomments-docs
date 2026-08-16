@@ -1,0 +1,1 @@
+Call the FastComments API from C++. Build the client from source with CMake, then create, fetch, and moderate comments synchronously or asynchronously.

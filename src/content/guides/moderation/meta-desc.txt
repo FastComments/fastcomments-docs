@@ -1,0 +1,1 @@
+Approve, delete, ban, and bulk-action comments from one dashboard, with spam detection, profanity masking, moderation groups, and moderation by email.

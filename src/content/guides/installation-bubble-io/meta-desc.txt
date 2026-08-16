@@ -1,0 +1,1 @@
+Add a comment section to a Bubble.io app with an HTML block, including the width and layout settings that stop the widget from being clipped.

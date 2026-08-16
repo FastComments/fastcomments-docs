@@ -1,0 +1,1 @@
+Add live comments to a GoDaddy site with a code area, publish, and fix the domain error that appears when the widget runs on an unregistered domain.

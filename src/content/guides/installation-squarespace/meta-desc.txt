@@ -1,0 +1,1 @@
+Add live comments to Squarespace three ways: blog posts only, every page site-wide via code injection, or one specific page with a code block.

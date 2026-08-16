@@ -1,0 +1,1 @@
+Embed the live comment and chat widgets in a React Native app with SSO, plus when to reach for the native SDK instead of the webview widget.

@@ -1,0 +1,1 @@
+Install the WordPress plugin for live comments, moderation from your dashboard, membership-only threads via SSO, and comment counts synced back to posts.

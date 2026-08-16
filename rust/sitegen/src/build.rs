@@ -608,11 +608,15 @@ async fn build_one_guide(
     let default_url = guide_link(&guide.id, &locales.default_locale, &locales.default_locale);
     let canonical_url = guide_link(&guide.id, locale, &locales.default_locale);
     let faq_json_ld = build_faq_json_ld(&meta);
-    // Only `installation` sets `description` in meta.json, so for the other
-    // 107 guides the description (and with it the search snippet,
-    // og:description and twitter:description) comes from the locale-resolved
-    // intro, which intro_path() already prefers from items/<locale>/.
-    let description = localized_description(&meta, root, &guide.id, locale)
+    // Description feeding <meta name="description">, og:description and
+    // twitter:description, in priority order:
+    //   1. the authored, translated meta-desc.txt
+    //   2. a meta.json `description`, but only where it is really in this
+    //      locale's language
+    //   3. an excerpt of the locale-resolved intro
+    // and the template falls back to the title if all three miss.
+    let description = read_meta_desc(root, &guide.id, locale)
+        .or_else(|| localized_description(&meta, root, &guide.id, locale))
         .or_else(|| excerpt_from_html(&intro_html, DESCRIPTION_MAX_CHARS));
     let title = meta
         .page_header
@@ -1413,6 +1417,30 @@ static LEADING_CHROME: Lazy<Regex> = Lazy::new(|| {
 static HEADING_TAGS: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?is)<(/?)h[1-6][^>]*>").expect("regex"));
 
+/// Lines the translator wraps around its output. Every translated file comes
+/// back fenced in `---` (an empty-front-matter habit, visible in any
+/// `items/<locale>/intro.md`), which is invisible in rendered markdown but
+/// would land verbatim in a `content="..."` attribute.
+static FENCE_LINE: Lazy<Regex> =
+    Lazy::new(|| Regex::new(r"(?m)^\s*-{3,}\s*$").expect("regex"));
+
+/// The authored SEO meta description for this guide + locale.
+///
+/// `meta_desc_path` resolves `items/<locale>/` first, so a translated
+/// description wins over the English source automatically. Returns `None`
+/// for a missing or effectively-empty file so the caller falls through to
+/// the next tier.
+fn read_meta_desc(root: &GuidesRoot, guide_id: &str, locale: &str) -> Option<String> {
+    let path = root.meta_desc_path(guide_id, locale)?;
+    let raw = std::fs::read_to_string(&path)
+        .map_err(|e| warn!(path = ?path, error = %e, "unreadable meta-desc"))
+        .ok()?;
+    let stripped = FENCE_LINE.replace_all(&raw, "");
+    // Descriptions are single-line by definition; the source is soft-wrapped.
+    let text = stripped.split_whitespace().collect::<Vec<_>>().join(" ");
+    (!text.is_empty()).then_some(text)
+}
+
 /// A guide's authored `description`, but only when it is actually in this
 /// locale's language.
 ///
@@ -2059,5 +2087,72 @@ mod translated_intro_fence_tests {
     #[test]
     fn rules_alone_still_yield_nothing() {
         assert_eq!(excerpt_from_html("<hr /><hr/>", 160), None);
+    }
+}
+
+#[cfg(test)]
+mod meta_desc_tests {
+    use super::*;
+
+    fn write(root: &Path, rel: &str, body: &str) {
+        let p = root.join(rel);
+        std::fs::create_dir_all(p.parent().unwrap()).unwrap();
+        std::fs::write(&p, body).unwrap();
+    }
+
+    /// The translated copy under items/<locale>/ must beat the English
+    /// source at the guide root, otherwise every locale ships English.
+    #[test]
+    fn locale_copy_wins_over_the_root_source() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "English description.");
+        write(guides, "demo/items/fr_fr/meta-desc.txt", "Description française.");
+        let root = GuidesRoot::new(guides, "en");
+
+        assert_eq!(
+            read_meta_desc(&root, "demo", "fr_fr").as_deref(),
+            Some("Description française.")
+        );
+        // A locale with no translation yet falls back to the root source.
+        assert_eq!(
+            read_meta_desc(&root, "demo", "de_de").as_deref(),
+            Some("English description.")
+        );
+        assert_eq!(
+            read_meta_desc(&root, "demo", "en").as_deref(),
+            Some("English description.")
+        );
+    }
+
+    /// The translator fences its output in `---`. Rendered markdown hides
+    /// that; a content="..." attribute would not.
+    #[test]
+    fn translator_fences_and_soft_wraps_are_flattened() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(
+            guides,
+            "demo/items/ja_jp/meta-desc.txt",
+            "---\nコメントを追加する方法を\n学びます。\n---\n",
+        );
+        let root = GuidesRoot::new(guides, "en");
+        assert_eq!(
+            read_meta_desc(&root, "demo", "ja_jp").as_deref(),
+            Some("コメントを追加する方法を 学びます。")
+        );
+    }
+
+    #[test]
+    fn missing_or_empty_falls_through_to_the_next_tier() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "---\n\n---\n");
+        write(guides, "other/items/en/placeholder.md", "x");
+        let root = GuidesRoot::new(guides, "en");
+        // Fenced-but-empty is what the translator emits for an empty source.
+        assert_eq!(read_meta_desc(&root, "demo", "en"), None);
+        // No file at all.
+        assert_eq!(read_meta_desc(&root, "other", "en"), None);
     }
 }

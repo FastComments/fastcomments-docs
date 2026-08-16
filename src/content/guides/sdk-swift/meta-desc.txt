@@ -1,0 +1,1 @@
+Call the FastComments API from Swift. Add the package with Swift Package Manager, then create, fetch, and moderate comments, with SSO helpers included.

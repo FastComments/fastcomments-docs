@@ -1,0 +1,1 @@
+Move to FastComments from Disqus or another provider, import WordPress comments, move users and domains between tenants, and export your data any time.

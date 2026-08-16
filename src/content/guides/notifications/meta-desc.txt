@@ -1,0 +1,1 @@
+Control which emails FastComments sends your readers, how they opt out, how notifications behave for SSO users, and how suppressed addresses are handled.

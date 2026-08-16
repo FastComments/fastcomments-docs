@@ -1,0 +1,1 @@
+Run an isolated FastComments deployment inside your own cloud account, managed by us, with full admin access and the ability to host white-labeled tenants.

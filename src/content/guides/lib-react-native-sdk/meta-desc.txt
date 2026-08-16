@@ -1,0 +1,1 @@
+Call the FastComments API straight from a React Native app to create, fetch, and moderate comments without going through the widget.

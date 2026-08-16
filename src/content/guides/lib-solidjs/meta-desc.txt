@@ -1,0 +1,1 @@
+Add comments to a SolidJS app with the official package, including an imperative handle for changing widget config without a remount.

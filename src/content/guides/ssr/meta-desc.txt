@@ -1,0 +1,1 @@
+Render comments into your initial HTML so crawlers and slow connections see them immediately. What FastComments supports, and how to turn SSR on.

@@ -1,0 +1,1 @@
+Embed a FastComments thread anywhere that accepts an oEmbed URL, so comments travel with the content instead of being tied to a single page.

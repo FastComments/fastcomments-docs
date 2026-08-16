@@ -1,0 +1,1 @@
+Add inline discussions to a Super.so site with Collab Chat, so readers can highlight text in your Notion pages and talk about it together.

@@ -1,0 +1,1 @@
+Swap a comment thread without reloading the page. Run several widgets side by side, point them at one thread to keep them in sync, or at different threads.

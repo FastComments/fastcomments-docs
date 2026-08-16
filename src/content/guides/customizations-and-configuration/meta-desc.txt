@@ -1,0 +1,1 @@
+Configure the comment widget end to end: which page a thread belongs to, custom CSS and fonts, dark mode, text overrides, moderation defaults, and SSO.

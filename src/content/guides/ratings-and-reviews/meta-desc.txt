@@ -1,0 +1,1 @@
+Collect star ratings and written reviews, define your own questions, and show the results with the summary widget or pull them through the API.

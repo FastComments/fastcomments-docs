@@ -1,0 +1,1 @@
+Add comments, live chat, and reviews to a Vue 3 app. Install the package, render the component, and switch threads as your single-page app navigates.

@@ -1,0 +1,1 @@
+Make comments follow your site's dark theme. Detect it from the operating system, toggle it yourself, or use the built-in WordPress Networker support.

@@ -1,0 +1,1 @@
+Let commenters post runnable, syntax-highlighted code in your threads. Which languages are supported, and how to turn snippet sharing on.

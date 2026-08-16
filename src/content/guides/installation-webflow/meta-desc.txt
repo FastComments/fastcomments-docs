@@ -1,0 +1,1 @@
+Add live comments to Webflow with an embed block, on a static page or across a whole Collection, then publish to make them live.

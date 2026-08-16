@@ -1,0 +1,1 @@
+Add comments to a Jekyll site with the official gem. Install it, add a Liquid tag to your post layout, and configure the widget from _config.yml.

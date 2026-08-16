@@ -1,0 +1,1 @@
+Add live comments to a Systeme.io blog by pasting a snippet into the blog theme template, or into any other page template you can edit.

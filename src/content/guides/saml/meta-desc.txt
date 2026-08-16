@@ -1,0 +1,1 @@
+Set up SAML 2.0 single sign-on so staff and members reach FastComments through your corporate identity provider. Role mapping, testing, and common errors.

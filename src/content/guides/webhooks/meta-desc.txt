@@ -1,0 +1,1 @@
+Get an HTTP callback the moment a comment is added, edited, or deleted. Which events fire, how to verify the request, and how retries behave.

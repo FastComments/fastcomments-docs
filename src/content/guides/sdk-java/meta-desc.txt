@@ -1,0 +1,1 @@
+Call the FastComments API from Java. Add the Maven or Gradle dependency, then create, fetch, and moderate comments, with SSO helpers included.

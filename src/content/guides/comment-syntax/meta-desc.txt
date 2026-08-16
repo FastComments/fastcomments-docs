@@ -1,0 +1,1 @@
+Format comments with bold, links, code, and media. What the comment parser accepts, and the sanitizing that stops markup from becoming an attack.

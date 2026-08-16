@@ -1,0 +1,1 @@
+Add comments to an Angular app with the official package. Install it, drop the component into a template, and pass your tenant and page ID.

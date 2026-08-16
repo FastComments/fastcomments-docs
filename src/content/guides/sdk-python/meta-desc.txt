@@ -1,0 +1,1 @@
+Call the FastComments API from Python. Install with pip, then create, fetch, and moderate comments, with SSO helpers and every endpoint documented.

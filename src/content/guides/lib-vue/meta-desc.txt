@@ -1,0 +1,1 @@
+Add comments to a Vue 2 app. Install the package, render the widget component, and update the current page when your single-page app changes routes.

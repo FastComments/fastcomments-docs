@@ -1,0 +1,1 @@
+Run several domains or subdomains from one FastComments account, with per-domain sender names and logos, a tenant per environment, and shared threads.

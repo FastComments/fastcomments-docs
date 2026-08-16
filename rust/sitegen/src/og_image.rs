@@ -91,10 +91,14 @@ impl CardImage {
     }
 }
 
-/// `(guide_id, locale)` -> card filename. The index page uses
-/// [`INDEX_KEY`] as its guide id, which can't collide with a real guide
-/// because `is_valid_id` rejects the `#` character.
-pub type CardMap = HashMap<(String, String), String>;
+/// guide id -> locale -> card filename. The index page uses [`INDEX_KEY`] as
+/// its guide id, which can't collide with a real guide because `is_valid_id`
+/// rejects the `#` character.
+///
+/// Nested rather than keyed on `(String, String)` so lookups borrow: a tuple
+/// key can't be probed with `(&str, &str)`, which would mean two `to_string()`
+/// allocations on every one of the ~2500 page renders.
+pub type CardMap = HashMap<String, HashMap<String, String>>;
 
 const INDEX_KEY: &str = "#index";
 
@@ -110,7 +114,8 @@ pub fn index_card_for(cards: &CardMap, locale: &str) -> CardImage {
 
 fn lookup(cards: &CardMap, guide_id: &str, locale: &str) -> CardImage {
     cards
-        .get(&(guide_id.to_string(), locale.to_string()))
+        .get(guide_id)
+        .and_then(|by_locale| by_locale.get(locale))
         .map(|f| CardImage::generated(f))
         .unwrap_or_else(CardImage::fallback)
 }
@@ -202,16 +207,29 @@ fn is_rtl(locale: &str) -> bool {
 
 /// Content-addressed filename. Everything that changes a pixel is in the
 /// hash, so an existing file is by definition current.
+///
+/// Fields are fed to the hasher separately and the hex is written into one
+/// pre-sized buffer. The obvious `format!` version allocates a joined string
+/// plus one `String` per digest byte, which is 17 allocations on a call made
+/// once per (guide, locale).
 fn card_file_name(title: &str, kicker: &str, icon: &str, locale: &str) -> String {
     use md5::{Digest, Md5};
+    const HEX: &[u8; 16] = b"0123456789abcdef";
     let mut hasher = Md5::new();
-    hasher.update(format!("{CARD_VERSION}|{locale}|{title}|{kicker}|{icon}").as_bytes());
-    let digest = hasher.finalize();
-    let mut hex = String::with_capacity(32);
-    for b in digest {
-        hex.push_str(&format!("{b:02x}"));
+    hasher.update(CARD_VERSION.to_le_bytes());
+    // The separator keeps field boundaries unambiguous, so a title ending in
+    // the next field's opening text can't collide with a different split.
+    for field in [locale, title, kicker, icon] {
+        hasher.update(b"|");
+        hasher.update(field.as_bytes());
     }
-    format!("{hex}.png")
+    let mut name = String::with_capacity(36);
+    for b in hasher.finalize() {
+        name.push(HEX[(b >> 4) as usize] as char);
+        name.push(HEX[(b & 0x0f) as usize] as char);
+    }
+    name.push_str(".png");
+    name
 }
 
 /// Render every card needed by this build, returning the map the page and
@@ -250,19 +268,25 @@ pub async fn render_all(
 
     // Everything we're about to claim in the map, whether or not it needs a
     // render this run.
-    let map: CardMap = specs
-        .iter()
-        .map(|s| ((s.guide_id.clone(), s.locale.clone()), s.file_name.clone()))
-        .collect();
+    let mut map = CardMap::new();
+    for s in &specs {
+        map.entry(s.guide_id.clone())
+            .or_default()
+            .insert(s.locale.clone(), s.file_name.clone());
+    }
 
+    // One read_dir instead of a stat per spec. On a warm build every card is
+    // present, so the naive version pays ~2500 syscalls to learn there is
+    // nothing to do.
+    let on_disk = existing_card_names(&out_dir);
     // The hash keys on title/kicker/icon/locale but not guide id, so two
     // guides sharing a title in the same locale legitimately share one card.
     // Draw it once.
     let mut queued = std::collections::HashSet::new();
     let stale: Vec<&CardSpec> = specs
         .iter()
-        .filter(|s| !out_dir.join(&s.file_name).exists())
-        .filter(|s| queued.insert(s.file_name.clone()))
+        .filter(|s| !on_disk.contains(s.file_name.as_str()))
+        .filter(|s| queued.insert(s.file_name.as_str()))
         .collect();
 
     if stale.is_empty() {
@@ -464,6 +488,18 @@ fn icon_data_uri(icons_dir: &Path, icon: &str) -> Option<String> {
     ))
 }
 
+/// Card filenames already on disk. A missing or unreadable directory reads
+/// as "nothing cached", which just means everything re-renders.
+fn existing_card_names(out_dir: &Path) -> std::collections::HashSet<String> {
+    let Ok(entries) = std::fs::read_dir(out_dir) else {
+        return std::collections::HashSet::new();
+    };
+    entries
+        .flatten()
+        .filter_map(|e| e.file_name().into_string().ok())
+        .collect()
+}
+
 /// Content-addressed names accumulate as titles change. Drop anything no
 /// longer referenced so the directory doesn't grow without bound.
 fn prune_orphans(out_dir: &Path, specs: &[CardSpec]) {
@@ -525,10 +561,15 @@ mod tests {
     #[test]
     fn present_card_resolves_to_an_absolute_docs_url() {
         let mut cards = CardMap::new();
-        cards.insert(("badges".into(), "en".into()), "abc.png".into());
+        cards
+            .entry("badges".to_string())
+            .or_default()
+            .insert("en".to_string(), "abc.png".to_string());
         let img = card_for(&cards, "badges", "en");
         assert_eq!(img.url, "https://docs.fastcomments.com/images/og/abc.png");
         assert_eq!((img.width, img.height), (CARD_WIDTH, CARD_HEIGHT));
+        // A guide present in the map but not in this locale still falls back.
+        assert_eq!(card_for(&cards, "badges", "fr_fr").url, FALLBACK_URL);
     }
 
     #[test]

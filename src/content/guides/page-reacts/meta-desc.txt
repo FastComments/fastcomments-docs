@@ -1,0 +1,1 @@
+Let readers react to a page without writing a comment, using customizable emoji reactions above the thread or the floating likes button.

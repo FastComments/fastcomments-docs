@@ -1,0 +1,1 @@
+Let readers click a spot on an image and start a conversation about it. Visual markers pin each thread to its exact point and sync live across viewers.

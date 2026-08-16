@@ -1,0 +1,1 @@
+Point Claude, ChatGPT, or Cursor at the FastComments docs so they write correct integration code. Add the LLM Kit snippet or connect the MCP server.

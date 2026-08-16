@@ -1,0 +1,1 @@
+Decide per user who can read and who can post, straight from your SSO payload. The spec, how to implement it, and example API calls.

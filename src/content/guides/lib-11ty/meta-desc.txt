@@ -1,0 +1,1 @@
+Add comments to an Eleventy site with the official plugin. Drop a shortcode into your template, or wire the widget up by hand and skip the plugin.

@@ -1,0 +1,1 @@
+Restyle every part of the comment widget with your own CSS. Full default stylesheet for v2, plus the recent comments and most discussed widgets.

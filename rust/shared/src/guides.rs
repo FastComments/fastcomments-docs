@@ -230,21 +230,31 @@ impl GuidesRoot {
     }
 
     pub fn intro_path(&self, guide_id: &str, locale: &str) -> Option<PathBuf> {
+        self.guide_file_path(guide_id, locale, "intro.md")
+    }
+
+    /// The authored SEO meta description, if the guide has one.
+    ///
+    /// Written at the guide root in the default locale and translated into
+    /// `items/<locale>/meta-desc.txt` by `trans` (which discovers it through
+    /// `discover::ROOT_LEVEL_SOURCES`). Never rendered into the page body:
+    /// sitegen reads it only for `<meta name="description">` and the
+    /// og/twitter description.
+    pub fn meta_desc_path(&self, guide_id: &str, locale: &str) -> Option<PathBuf> {
+        self.guide_file_path(guide_id, locale, "meta-desc.txt")
+    }
+
+    /// Resolve a guide-level file across the three tiers translations use:
+    /// this locale, the default locale, then the guide root.
+    fn guide_file_path(&self, guide_id: &str, locale: &str, name: &str) -> Option<PathBuf> {
         if !self.validate_id("guide_id", guide_id) || !self.validate_id("locale", locale) {
             return None;
         }
+        let guide = self.guides_dir.join(guide_id);
         let candidates = [
-            self.guides_dir
-                .join(guide_id)
-                .join("items")
-                .join(locale)
-                .join("intro.md"),
-            self.guides_dir
-                .join(guide_id)
-                .join("items")
-                .join(&self.default_locale)
-                .join("intro.md"),
-            self.guides_dir.join(guide_id).join("intro.md"),
+            guide.join("items").join(locale).join(name),
+            guide.join("items").join(&self.default_locale).join(name),
+            guide.join(name),
         ];
         candidates.into_iter().find(|p| p.exists())
     }

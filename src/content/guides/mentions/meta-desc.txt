@@ -1,0 +1,1 @@
+Let commenters tag each other with @mentions, trigger a notification, and pre-fill mentions from your own code. Includes how autocomplete resolves names.

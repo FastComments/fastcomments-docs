@@ -1,0 +1,1 @@
+Restrict your comment section to logged-in Memberstack members with a single snippet, so only paying members can post.

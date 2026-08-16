@@ -1,0 +1,1 @@
+Put live comments on BigCommerce blog posts and product pages by editing your theme template, with a separate snippet for Page Builder.

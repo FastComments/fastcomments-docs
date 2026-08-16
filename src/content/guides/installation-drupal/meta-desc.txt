@@ -1,0 +1,1 @@
+Install the Drupal module for live comments as widget blocks or content-type fields, with SSO, per-role permissions, and EU data residency.

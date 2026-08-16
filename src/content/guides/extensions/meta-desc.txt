@@ -1,0 +1,1 @@
+Add your own markup, event listeners, and logic to the comment widget with Extensions. The lifecycle, the extension object, and the API you can call.

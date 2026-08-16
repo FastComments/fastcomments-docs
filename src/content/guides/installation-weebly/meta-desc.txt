@@ -1,0 +1,1 @@
+Add live comments to a Weebly blog by pasting the FastComments snippet into your blog settings, then publishing the site.
