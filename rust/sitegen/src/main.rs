@@ -6,6 +6,7 @@
 
 mod build;
 mod custom_styling;
+mod og_image;
 mod static_build;
 mod validate_headings;
 

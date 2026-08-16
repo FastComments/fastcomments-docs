@@ -34,7 +34,7 @@ pub mod marker_names;
 
 // Re-export the indexer API so existing callers (rust/indexer) work
 // unchanged after the directory move.
-pub use indexer::{process_markdown, ProcessedItem, EXAMPLE_TENANT_ID};
+pub use indexer::{html_to_text, process_markdown, ProcessedItem, EXAMPLE_TENANT_ID};
 
 /// Emit the `<div class="related-parameter">…</div>` HTML for a
 /// related-parameter marker body. Mirrors

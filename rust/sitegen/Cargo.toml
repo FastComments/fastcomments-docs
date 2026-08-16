@@ -26,6 +26,7 @@ handlebars = { workspace = true }
 pulldown-cmark = { workspace = true }
 once_cell = { workspace = true }
 md-5 = { workspace = true }
+base64 = { workspace = true }
 chrono = { version = "0.4", default-features = false, features = ["clock"] }
 reqwest = { workspace = true }
 regex = { workspace = true }

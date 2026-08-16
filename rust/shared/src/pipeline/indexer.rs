@@ -416,7 +416,12 @@ static STYLE_HLJS: Lazy<Regex> = Lazy::new(|| {
 /// HTML -> indexable plain text. Mirrors the behavior of `cleanSearchText`
 /// plus the html-to-text v9 defaults configured at
 /// `src/build-search-index-worker.js:39-51`.
-fn html_to_text(html: &str) -> String {
+///
+/// Public because sitegen's OG/meta-description fallback needs the exact
+/// same stripping rules to turn a rendered `intro.md` into card text. A
+/// second HTML stripper would both drift from this one and trip the
+/// jscpd duplicate-code gate in `build.sh`.
+pub fn html_to_text(html: &str) -> String {
     // Strip the inline highlight.js stylesheet (it would otherwise leak into
     // the indexable text via html-to-text's `<style>` skip — actually
     // html-to-text v9 *does* skip `<style>` by default, but the original

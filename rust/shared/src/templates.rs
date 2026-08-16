@@ -1,4 +1,4 @@
-//! Loads and renders the 4 Handlebars templates under `src/templates/`
+//! Loads and renders the Handlebars templates under `src/templates/`
 //! using the `handlebars` crate. Templates use only basic features:
 //! `{{var}}`, `{{{var}}}`, `{{#if}}`, `{{#each}}`, `{{@key}}` — no custom
 //! helpers needed (`t.KEY` is property access on the `t` translations
@@ -22,7 +22,7 @@ impl TemplateRegistry {
         // Don't HTML-escape inside templates — markdown HTML already escapes
         // user content where needed and matches Node `handlebars`'s default
         // behavior of treating `{{var}}` as escaped and `{{{var}}}` as raw.
-        for name in ["page", "guide-layout", "index", "code"] {
+        for name in ["page", "guide-layout", "index", "code", "og-card"] {
             let path = template_dir.as_ref().join(format!("{name}.html"));
             let body = std::fs::read_to_string(&path)
                 .with_context(|| format!("read template {path:?}"))?;

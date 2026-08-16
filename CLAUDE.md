@@ -132,3 +132,47 @@ in the Wrendex crawl). **Do NOT revert to canonicalize-to-English** — the old
 alternates (Google treats them as translations, not duplicates). `default_url` is still
 used for the `x-default` hreflang and the stable comment `urlId` (shared across locales).
 This matches the fastcomments blog's canonical policy.
+
+## Social cards (og: / twitter:)
+
+`page.html` and `index.html` emit the full Open Graph + Twitter card set
+(`twitter:card` is `summary_large_image`, matching
+`fastcomments-blog/src/templates/post.html`). `code.html` is `noindex` and is left alone.
+`twitter:site` is deliberately absent: there is no X handle anywhere in fastcomments,
+fastcomments-blog, or the live fastcomments.com HTML.
+
+**Card images are generated per (guide, locale)** by `rust/sitegen/src/og_image.rs`, which
+runs as a pre-pass in `build::run` before the page passes because every `page_ctx` needs
+its card filename.
+
+- 1200x630 (the 1.91:1 that `summary_large_image` wants). The old site-wide
+  `https://fastcomments.com/images/og-card.png` is 1200x923, so X used to crop it.
+- Rendered in headless Chrome from `src/templates/og-card.html` via `page.set_content()`.
+  Chrome, not a Rust rasterizer, because ja/ko/zh/he need font fallback, bidi, and line
+  wrapping. `set_content` leaves the document on `about:blank`, so the template must stay
+  fully self-contained - the webfont and the guide icon are base64 data URIs and the logo
+  is CSS-drawn. A relative URL there silently 404s.
+- Output is `src/static/generated/images/og/<md5>.png`. That subdirectory survives
+  `build.sh`'s `rm -f src/static/generated/*.*` (top-level files only), which is what makes
+  the cache worth having.
+- Filenames are content-addressed on `md5(title|kicker|icon|locale|CARD_VERSION)`, so the
+  file existing IS the freshness check. **Bump `CARD_VERSION` after any design or template
+  change**, otherwise every cached card stays stale forever. A cold build renders ~2500
+  cards in ~3 minutes; every later build is a cache hit costing ~0.
+- Failures are never fatal: no Chrome, a launch error, or `SITEGEN_OG_CARDS=0` all fall back
+  to the old static `og-card.png` (declared at its real 1200x923).
+- Only a full, unfiltered build prunes orphaned cards; a `--guide` / `--locale` run
+  enumerates part of the site and would delete cards it isn't rebuilding.
+
+**Descriptions.** Only `installation` sets `description` in meta.json, and `trans` copies
+that field through untranslated. So `build.rs` derives one: an authored `description` is
+used only when it differs from the default locale's (otherwise it is English text on a
+translated page), and everything else falls back to an excerpt of the locale-resolved
+`intro.md` via the shared `pipeline::html_to_text`.
+
+Two quirks of the translated intros that the excerpt code works around, both in
+`excerpt_from_html`: every translated `intro.md` is wrapped in `---` fences, which render
+as a leading `<hr>`; and when the closing fence sits directly under the last line of text,
+markdown reads it as a setext underline and turns the whole paragraph into an `<h2>` (see
+`badges/items/ja_jp/intro.md`) - which `html_to_text` then uppercases, because that is the
+right behavior for the search index it was written for.

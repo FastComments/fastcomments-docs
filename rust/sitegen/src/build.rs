@@ -21,9 +21,17 @@ use fcdocs_shared::sidecar_supervisor::Sidecar;
 use fcdocs_shared::templates::TemplateRegistry;
 use fcdocs_shared::translations::Translations;
 use futures::stream::{FuturesUnordered, StreamExt};
+use once_cell::sync::Lazy;
+use regex::Regex;
 use serde_json::{json, Value};
 use tracing::{info, warn};
 
+use crate::og_image;
+
+/// Meta/og/twitter description budget. Google truncates around 155-160
+/// characters and X's card body clamps shorter still, so anything past this
+/// is invisible everywhere it would be read.
+const DESCRIPTION_MAX_CHARS: usize = 160;
 
 pub async fn run(args: Vec<String>) -> Result<()> {
     let repo = repo_root()?;
@@ -173,6 +181,27 @@ pub async fn run(args: Vec<String>) -> Result<()> {
         .unwrap_or_else(num_cpus::get);
     info!(parallelism, "guide build parallelism");
 
+    // Social card images. Runs before the page passes because every
+    // page_ctx needs its card filename, and ahead of the screenshot pool so
+    // the two aren't fighting over Chrome. Cards are content-addressed and
+    // cached on disk, so this is a no-op on every build after the first
+    // unless a guide title changed. Only a full (unfiltered) build may prune,
+    // since a --guide/--locale run only enumerates part of the site.
+    let og_cards = Arc::new(
+        og_image::render_all(
+            &repo,
+            &selected_guides,
+            &root,
+            &locales,
+            &locale_keys,
+            &translations,
+            &templates,
+            &static_generated_dir,
+            guide_filter.is_none() && locale_filter.is_none(),
+        )
+        .await,
+    );
+
     let started = std::time::Instant::now();
     let mut total_pages = 0usize;
 
@@ -211,6 +240,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                 browser_pool.clone(),
                 link_validator.clone(),
                 link_errors.clone(),
+                og_cards.clone(),
             ));
         }
         while let Some(joined) = tasks.next().await {
@@ -234,6 +264,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                     browser_pool.clone(),
                     link_validator.clone(),
                     link_errors.clone(),
+                    og_cards.clone(),
                 ));
             }
         }
@@ -272,6 +303,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                 browser_pool.clone(),
                 link_validator.clone(),
                 link_errors.clone(),
+                og_cards.clone(),
             ));
         }
         while let Some(joined) = tasks.next().await {
@@ -296,6 +328,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
                     browser_pool.clone(),
                     link_validator.clone(),
                     link_errors.clone(),
+                    og_cards.clone(),
                 ));
             }
         }
@@ -337,6 +370,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
             &guide_order,
             &static_generated_dir,
             &build_id,
+            &og_cards,
         ) {
             warn!(locale, error = %format!("{e:#}"), "skipping index page");
         }
@@ -378,7 +412,6 @@ pub async fn run(args: Vec<String>) -> Result<()> {
 }
 
 #[allow(clippy::too_many_arguments)]
-#[allow(clippy::too_many_arguments)]
 fn spawn_guide_task(
     guide: Guide,
     locale: String,
@@ -393,6 +426,7 @@ fn spawn_guide_task(
     browser_pool: Arc<BrowserPool>,
     link_validator: Arc<fcdocs_shared::link_validator::LinkValidator>,
     link_errors: Arc<std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>>,
+    og_cards: Arc<og_image::CardMap>,
 ) -> tokio::task::JoinHandle<Result<()>> {
     tokio::spawn(async move {
         build_one_guide(
@@ -409,6 +443,7 @@ fn spawn_guide_task(
             &browser_pool,
             &link_validator,
             &link_errors,
+            &og_cards,
         )
         .await
     })
@@ -429,6 +464,7 @@ async fn build_one_guide(
     browser_pool: &BrowserPool,
     link_validator: &fcdocs_shared::link_validator::LinkValidator,
     link_errors: &std::sync::Mutex<Vec<fcdocs_shared::link_validator::LinkError>>,
+    og_cards: &og_image::CardMap,
 ) -> Result<()> {
     // Load meta — prefer locale-translated meta.
     let meta = load_meta_for_locale(root, &guide.id, locale)?;
@@ -572,19 +608,34 @@ async fn build_one_guide(
     let default_url = guide_link(&guide.id, &locales.default_locale, &locales.default_locale);
     let canonical_url = guide_link(&guide.id, locale, &locales.default_locale);
     let faq_json_ld = build_faq_json_ld(&meta);
+    // Only `installation` sets `description` in meta.json, so for the other
+    // 107 guides the description (and with it the search snippet,
+    // og:description and twitter:description) comes from the locale-resolved
+    // intro, which intro_path() already prefers from items/<locale>/.
+    let description = localized_description(&meta, root, &guide.id, locale)
+        .or_else(|| excerpt_from_html(&intro_html, DESCRIPTION_MAX_CHARS));
+    let title = meta
+        .page_header
+        .clone()
+        .unwrap_or_else(|| meta.name.clone().unwrap_or_default());
+    let card = og_image::card_for(og_cards, &guide.id, locale);
     let page_ctx = json!({
-        "title": meta.page_header.clone().unwrap_or_else(|| meta.name.clone().unwrap_or_default()),
+        "title": title,
         "content": guide_root_html,
         "ExampleTenantId": full::EXAMPLE_TENANT_ID,
         "lang": locales.locales.get(locale).map(|l| l.hreflang.clone()).unwrap_or_default(),
         "locale": locale,
+        "ogLocale": og_image::og_locale(locales, locale),
         "alternateLocales": alternate_locales,
         "availableLocales": available_locales,
         "defaultUrl": default_url,
-        "description": meta.description(),
+        "description": description,
         "canonicalUrl": canonical_url,
         "faq": meta.faq_value(),
         "faqJsonLd": faq_json_ld,
+        "ogImage": card.url,
+        "ogImageWidth": card.width,
+        "ogImageHeight": card.height,
         "stableUrlId": format!("/{}", default_url),
     });
     let final_html = templates.render("page", &page_ctx)?;
@@ -936,7 +987,11 @@ fn conclusion_path(root: &GuidesRoot, guide_id: &str, locale: &str) -> Option<Pa
     candidates.into_iter().find(|p| p.exists())
 }
 
-fn load_meta_for_locale(root: &GuidesRoot, guide_id: &str, locale: &str) -> Result<GuideMeta> {
+pub(crate) fn load_meta_for_locale(
+    root: &GuidesRoot,
+    guide_id: &str,
+    locale: &str,
+) -> Result<GuideMeta> {
     let translated = root
         .guides_dir
         .join(guide_id)
@@ -973,6 +1028,7 @@ fn home_ref_url(locale: &str, default_locale: &str) -> String {
     }
 }
 
+#[allow(clippy::too_many_arguments)]
 fn build_index_page(
     locale: &str,
     root: &GuidesRoot,
@@ -982,6 +1038,7 @@ fn build_index_page(
     guide_order: &[String],
     static_generated_dir: &Path,
     build_id: &str,
+    og_cards: &og_image::CardMap,
 ) -> Result<()> {
     let guides = root.walk(locale)?;
     let t = translations.for_locale(locale);
@@ -1062,6 +1119,7 @@ fn build_index_page(
     let alternate_locales = build_alternate_locales(locales, locale, index_url_for);
 
     let last_update_date = chrono::Local::now().format("%Y-%m-%d %H:%M:%S").to_string();
+    let index_card = og_image::index_card_for(og_cards, locale);
     let ctx = json!({
         "guides": localize(&guides_not_install),
         "installationGuides": localize(&installation),
@@ -1071,10 +1129,14 @@ fn build_index_page(
         "buildId": build_id,
         "locale": locale,
         "lang": locales.locales.get(locale).map(|l| l.hreflang.clone()).unwrap_or_default(),
+        "ogLocale": og_image::og_locale(locales, locale),
         "availableLocales": available_locales,
         "alternateLocales": alternate_locales,
         "canonicalUrl": local_index_url,
         "defaultUrl": "",
+        "ogImage": index_card.url,
+        "ogImageWidth": index_card.width,
+        "ogImageHeight": index_card.height,
         "t": (*t.value).clone(),
     });
     let html = templates.render("index", &ctx)?;
@@ -1323,6 +1385,120 @@ impl GuideMetaExt for GuideMeta {
     fn faq_value(&self) -> Option<Value> {
         self.extra.get("faq").cloned()
     }
+}
+
+// ------------------------------------------------------------------
+// Meta / social description fallback
+// ------------------------------------------------------------------
+
+/// Leading `<h1>`-`<h6>` blocks in a rendered intro. `api/intro.md` opens
+/// with `### The FastComments API`, which is already the page title, so using
+/// it as the description would just repeat the title back at the reader in
+/// the search snippet and the social card.
+/// Also strips leading `<hr>`: every translated intro is wrapped in `---`
+/// fences (see `items/fr_fr/intro.md`), which markdown renders as a rule
+/// ahead of the real content.
+static LEADING_CHROME: Lazy<Regex> = Lazy::new(|| {
+    Regex::new(r"(?is)^(?:\s*(?:<hr\s*/?>|<h[1-6][^>]*>.*?</h[1-6]>))+").expect("regex")
+});
+
+/// Heading open/close tags anywhere in the fragment.
+///
+/// A translated intro whose trailing `---` fence sits directly under the
+/// last line of text turns the whole paragraph into a setext `<h2>` (see
+/// `badges/items/ja_jp/intro.md`). `html_to_text` uppercases headings,
+/// matching html-to-text v9's defaults for the search index, so that page's
+/// description would otherwise read as SHOUTED body text. Demoting headings
+/// to `<p>` keeps the shared stripper without inheriting that rule.
+static HEADING_TAGS: Lazy<Regex> =
+    Lazy::new(|| Regex::new(r"(?is)<(/?)h[1-6][^>]*>").expect("regex"));
+
+/// A guide's authored `description`, but only when it is actually in this
+/// locale's language.
+///
+/// `trans` translates `name` / `pageHeader` / item `name` / `subCat` and
+/// copies everything else through verbatim, so `meta_translated/meta_fr_fr.json`
+/// carries an English `description`. Returning it would put English body text
+/// on a French card while a translated intro sits right there unused, so a
+/// description identical to the default locale's is treated as untranslated
+/// and the caller falls through to the intro.
+fn localized_description(
+    meta: &GuideMeta,
+    root: &GuidesRoot,
+    guide_id: &str,
+    locale: &str,
+) -> Option<String> {
+    let described = meta.description()?;
+    if locale == root.default_locale {
+        return Some(described);
+    }
+    let default_described = load_meta_for_locale(root, guide_id, &root.default_locale)
+        .ok()
+        .and_then(|m| m.description());
+    if default_described.as_deref() == Some(described.as_str()) {
+        return None;
+    }
+    Some(described)
+}
+
+/// Turn a rendered intro into a meta/og/twitter description.
+///
+/// 107 of 108 guides set no `description` in meta.json, so without this
+/// every page ships no `<meta name="description">` at all and an
+/// `og:description` of just `"<title> | FastComments Documentation"`.
+/// `intro_path()` resolves `items/<locale>/intro.md` first, so the text
+/// this produces is already localized.
+fn excerpt_from_html(html: &str, max_chars: usize) -> Option<String> {
+    // Preferred: skip the leading rule/heading chrome and describe the body.
+    let body = LEADING_CHROME.replace(html, "");
+    match flatten_to_text(&body) {
+        Some(text) => Some(truncate_chars(&text, max_chars)),
+        // Nothing but chrome, which means the intro's entire text IS a
+        // heading (the setext case). Use it rather than shipping no
+        // description at all, demoting the tags so it doesn't come out
+        // uppercased.
+        None => {
+            let demoted = HEADING_TAGS.replace_all(html, "<${1}p>");
+            let demoted = LEADING_CHROME.replace(&demoted, "");
+            flatten_to_text(&demoted).map(|t| truncate_chars(&t, max_chars))
+        }
+    }
+}
+
+/// Rendered HTML -> one line of plain text, or `None` when there is none.
+///
+/// `html_to_text` keeps newlines on purpose: it feeds the search index,
+/// where paragraph structure matters. A description is a single-line
+/// attribute value and the intro markdown is hard-wrapped, so those newlines
+/// would otherwise land raw inside `content="..."`.
+fn flatten_to_text(html: &str) -> Option<String> {
+    let text = fcdocs_shared::pipeline::html_to_text(html);
+    let text = text.split_whitespace().collect::<Vec<_>>().join(" ");
+    (!text.is_empty()).then_some(text)
+}
+
+/// Truncate to `max_chars` **characters**, preferring the last whitespace
+/// boundary so we don't cut a word in half. Byte slicing would panic on the
+/// ja/ko/zh/he/ru/el locales, so all indexing goes through `char_indices`.
+fn truncate_chars(text: &str, max_chars: usize) -> String {
+    if text.chars().count() <= max_chars {
+        return text.to_string();
+    }
+    // Byte offset just past the last character we're allowed to keep.
+    let end = text
+        .char_indices()
+        .nth(max_chars)
+        .map(|(i, _)| i)
+        .unwrap_or(text.len());
+    let head = &text[..end];
+    // Back off to a word boundary, but only if that doesn't gut the
+    // excerpt, because CJK text has no spaces at all, so `rfind` there would
+    // either miss entirely or land near the start.
+    let cut = head
+        .rfind(char::is_whitespace)
+        .filter(|i| *i * 2 > end)
+        .unwrap_or(end);
+    format!("{}…", head[..cut].trim_end())
 }
 
 #[cfg(test)]
@@ -1685,5 +1861,203 @@ mod filter_tests {
             parse_locale_filter(args(&["--locale=../../../etc"]).into_iter()),
             Some(vec![])
         );
+    }
+}
+
+#[cfg(test)]
+mod description_tests {
+    use super::*;
+
+    #[test]
+    fn leading_heading_is_dropped() {
+        // api/intro.md opens with `### The FastComments API`, which is
+        // already the page title, so repeating it as the description wastes
+        // the whole snippet.
+        let html = "<h3>The FastComments API</h3>\n<p>FastComments provides an API.</p>";
+        assert_eq!(
+            excerpt_from_html(html, 160).as_deref(),
+            Some("FastComments provides an API.")
+        );
+    }
+
+    #[test]
+    fn empty_intro_yields_none_so_the_template_guard_still_fires() {
+        assert_eq!(excerpt_from_html("", 160), None);
+        assert_eq!(excerpt_from_html("   \n  ", 160), None);
+        assert_eq!(excerpt_from_html("<p></p>", 160), None);
+    }
+
+    /// An intro that is nothing but a heading falls back to that heading
+    /// rather than to no description at all. See
+    /// `translated_intro_fence_tests` for why this case is common.
+    #[test]
+    fn heading_only_intro_is_used_rather_than_dropped() {
+        assert_eq!(
+            excerpt_from_html("<h2>Only a heading</h2>", 160).as_deref(),
+            Some("Only a heading")
+        );
+    }
+
+    #[test]
+    fn truncation_breaks_on_a_word_boundary() {
+        let html = "<p>alpha beta gamma delta epsilon</p>";
+        let got = excerpt_from_html(html, 14).unwrap();
+        assert_eq!(got, "alpha beta…");
+    }
+
+    #[test]
+    fn shorter_than_the_budget_is_left_alone() {
+        let html = "<p>Short enough.</p>";
+        assert_eq!(excerpt_from_html(html, 160).as_deref(), Some("Short enough."));
+    }
+
+    /// The 23 locales include ja/ko/zh/he/ru/el. Byte-slicing a multibyte
+    /// string mid-character panics, so truncation must index by chars.
+    #[test]
+    fn multibyte_truncation_does_not_panic_and_counts_chars() {
+        for html in [
+            "<p>コメントシステムのバッジについて詳しく説明します。バッジの種類と要件を確認してください。</p>",
+            "<p>מערכת התגים של FastComments זמינה בכל התוכניות שלנו לתגמול המשתמשים והמנהלים שלך.</p>",
+            "<p>Система значков FastComments доступна во всех тарифных планах для награждения пользователей.</p>",
+        ] {
+            let got = excerpt_from_html(html, 20).unwrap();
+            // <= 20 kept chars plus the ellipsis.
+            assert!(got.chars().count() <= 21, "{got}");
+            assert!(got.ends_with('…'), "{got}");
+        }
+    }
+
+    /// CJK has no spaces, so a word-boundary search would either find
+    /// nothing or land near the start and gut the excerpt. Truncation
+    /// falls back to the hard char limit there.
+    #[test]
+    fn spaceless_text_uses_the_full_budget() {
+        let html = "<p>コメントシステムのバッジについて詳しく説明します。</p>";
+        let got = excerpt_from_html(html, 10).unwrap();
+        assert_eq!(got.chars().count(), 11);
+    }
+
+    /// html_to_text is shared with the search indexer, so the code-block
+    /// chrome it already strips (line numbers, copy buttons) stays out of
+    /// the card text for free.
+    #[test]
+    fn code_chrome_is_stripped_via_the_shared_html_to_text() {
+        let html = "<p>Install it.</p><pre><span class=\"line-number\">1</span><span class=\"copy\">Copy</span>npm i</pre>";
+        let got = excerpt_from_html(html, 160).unwrap();
+        assert!(!got.contains("Copy"), "{got}");
+        assert!(got.starts_with("Install it."), "{got}");
+    }
+}
+
+#[cfg(test)]
+mod localized_description_tests {
+    use super::*;
+
+    fn meta_with_description(d: Option<&str>) -> GuideMeta {
+        let mut m = GuideMeta::default();
+        if let Some(d) = d {
+            m.extra
+                .insert("description".to_string(), Value::String(d.to_string()));
+        }
+        m
+    }
+
+    fn root_at(dir: &Path) -> GuidesRoot {
+        GuidesRoot::new(dir, "en")
+    }
+
+    /// `trans` copies `description` through untranslated, so a non-default
+    /// locale whose description is byte-identical to English is not actually
+    /// localized. Falling through to the localized intro beats shipping
+    /// English body text on a translated card.
+    #[test]
+    fn untranslated_description_is_rejected_on_non_default_locales() {
+        let tmp = std::env::temp_dir().join("fcdocs-og-desc-test");
+        let guide = tmp.join("demo");
+        std::fs::create_dir_all(&guide).unwrap();
+        std::fs::write(
+            guide.join("meta.json"),
+            br#"{"name":"Demo","description":"English text"}"#,
+        )
+        .unwrap();
+        let root = root_at(&tmp);
+
+        let meta = meta_with_description(Some("English text"));
+        assert_eq!(
+            localized_description(&meta, &root, "demo", "fr_fr"),
+            None,
+            "identical-to-English description must fall through to the intro"
+        );
+        // The default locale keeps it: that's where the English belongs.
+        assert_eq!(
+            localized_description(&meta, &root, "demo", "en").as_deref(),
+            Some("English text")
+        );
+        // A genuinely translated one is used.
+        let translated = meta_with_description(Some("Texte français"));
+        assert_eq!(
+            localized_description(&translated, &root, "demo", "fr_fr").as_deref(),
+            Some("Texte français")
+        );
+
+        std::fs::remove_dir_all(&tmp).ok();
+    }
+
+    #[test]
+    fn no_description_at_all_falls_through() {
+        let tmp = std::env::temp_dir().join("fcdocs-og-desc-test-2");
+        std::fs::create_dir_all(&tmp).unwrap();
+        let root = root_at(&tmp);
+        assert_eq!(
+            localized_description(&meta_with_description(None), &root, "demo", "fr_fr"),
+            None
+        );
+        std::fs::remove_dir_all(&tmp).ok();
+    }
+}
+
+#[cfg(test)]
+mod translated_intro_fence_tests {
+    use super::*;
+
+    /// Every translated intro is wrapped in `---` fences, which markdown
+    /// renders as a leading `<hr>`. Without stripping it the heading-skip
+    /// never fires and the guide's own title leaks into the description.
+    #[test]
+    fn leading_rule_before_a_heading_is_stripped() {
+        let html = "<hr />\n<h2>Installation</h2>\n<p>FastComments makes it easy.</p>";
+        assert_eq!(
+            excerpt_from_html(html, 160).as_deref(),
+            Some("FastComments makes it easy.")
+        );
+    }
+
+    /// When the trailing `---` fence sits directly under the last line of
+    /// text, markdown reads it as a setext underline and the whole paragraph
+    /// becomes an `<h2>`. html_to_text uppercases headings, so the naive
+    /// path would ship a SHOUTED description.
+    #[test]
+    fn setext_mangled_paragraph_keeps_its_case() {
+        let html = "<hr />\n<h2>FastComments offers a feature-rich badge system.</h2>";
+        assert_eq!(
+            excerpt_from_html(html, 160).as_deref(),
+            Some("FastComments offers a feature-rich badge system.")
+        );
+    }
+
+    /// The demotion path must not kick in when there is real body text:
+    /// a genuine leading heading still gets skipped.
+    #[test]
+    fn demotion_does_not_resurrect_a_skipped_heading() {
+        let html = "<h3>The FastComments API</h3><p>Build integrations.</p>";
+        assert_eq!(
+            excerpt_from_html(html, 160).as_deref(),
+            Some("Build integrations.")
+        );
+    }
+
+    #[test]
+    fn rules_alone_still_yield_nothing() {
+        assert_eq!(excerpt_from_html("<hr /><hr/>", 160), None);
     }
 }
