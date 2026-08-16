@@ -1,0 +1,3 @@
+---
+Agrega comentarios a una aplicación React con el paquete oficial. Instálalo, renderiza el componente y pasa tu tenant y el ID de la página para iniciar un hilo.
+---

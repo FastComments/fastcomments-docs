@@ -1,0 +1,3 @@
+---
+FastComments'a yönlendirdiğiniz her müşteriden tekrarlayan komisyon kazanın. Nasıl kaydolacağınız, komisyon oranının ne olduğu ve ödemelerin ne zaman gerçekleşeceği.
+---

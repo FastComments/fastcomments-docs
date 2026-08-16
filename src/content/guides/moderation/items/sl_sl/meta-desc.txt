@@ -1,0 +1,3 @@
+---
+Odobrite, izbrišite, blokirajte in masovno ukrepajte nad komentarji z enega nadzornega panela, z odkrivanjem spama, maskiranjem vulgarnih izrazov, skupinami moderacije in moderacijo po e‑pošti.
+---

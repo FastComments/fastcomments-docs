@@ -1,0 +1,3 @@
+---
+Aggiungi commenti a un'app React con il pacchetto ufficiale. Installalo, rendi il componente e passa il tuo tenant e l'ID della pagina per avviare una discussione.
+---

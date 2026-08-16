@@ -1,0 +1,3 @@
+---
+Adicione comentários ao vivo a um blog do Weebly colando o snippet do FastComments nas configurações do seu blog, e então publique o site.
+---

@@ -1,0 +1,3 @@
+---
+Ogranicz sekcję komentarzy do zalogowanych członków Memberstack za pomocą jednego fragmentu kodu, tak aby tylko płacący członkowie mogli publikować.
+---

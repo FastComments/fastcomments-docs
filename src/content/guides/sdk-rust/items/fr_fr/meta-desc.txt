@@ -1,0 +1,1 @@
+Appelez l'API FastComments depuis Rust. Installez avec cargo add, puis créez, récupérez et modérez les commentaires, avec des assistants SSO et chaque point de terminaison documenté.

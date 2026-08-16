@@ -1,0 +1,3 @@
+---
+Goteje comentários em um tópico ao longo do tempo para que uma nova página não pareça vazia. Como agendar a reprodução e o formato de importação que ele espera.
+---

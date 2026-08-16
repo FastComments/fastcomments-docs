@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo a un sitio de GoDaddy con un área de código, publica y corrige el error de dominio que aparece cuando el widget se ejecuta en un dominio no registrado.
+---

@@ -1,0 +1,3 @@
+---
+Dodajte razdelek za komentarje v tečaje ThriveCart Learn+ z nastavitvijo po meri kode, da lahko študenti postavljajo vprašanja znotraj vsake lekcije.
+---

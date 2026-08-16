@@ -1,0 +1,4 @@
+---
+Erstellen Sie einen social‑ähnlichen Content‑Feed für Web, Android und iOS. Personalisieren Sie, was jeder Leser sieht, und liefern Sie unterschiedliche Inhalte je nach Region.
+
+---

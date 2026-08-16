@@ -1,0 +1,3 @@
+---
+Oblikujte komentarje s krepko, povezavami, kodo in mediji. Kaj sprejema parser komentarjev in sanitizacija, ki preprečuje, da bi označevanje postalo napad.
+---

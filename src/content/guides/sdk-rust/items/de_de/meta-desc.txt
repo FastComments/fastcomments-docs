@@ -1,0 +1,1 @@
+Rufen Sie die FastComments API aus Rust auf. Installieren Sie sie mit cargo add, dann erstellen, abrufen und moderieren Sie Kommentare, mit SSO‑Hilfen und allen dokumentierten Endpunkten.

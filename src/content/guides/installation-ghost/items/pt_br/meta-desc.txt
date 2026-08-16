@@ -1,0 +1,3 @@
+---
+Dê aos membros do Ghost uma seção de comentários que já os conhece. Importe nomes e avatares dos membros, habilite notificações de respostas e edite o modelo da sua postagem.
+---

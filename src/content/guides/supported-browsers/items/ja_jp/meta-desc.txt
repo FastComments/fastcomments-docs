@@ -1,0 +1,3 @@
+---
+FastComments ウィジェットがサポートするブラウザ、Internet Explorer の位置、各リリースのテスト方法、そしてウィジェットが必要とする JavaScript について。
+---

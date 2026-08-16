@@ -1,0 +1,3 @@
+---
+Skupinska razprava z oznakami, ki jih bralci lahko kliknejo in filtrirajo po njih. Samodopolnitev, prilagojeni simboli namesto # in prednapolnjevanje oznak iz vaše lastne kode.
+---

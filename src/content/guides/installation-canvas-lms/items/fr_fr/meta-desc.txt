@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires et un chat collaboratif aux cours Canvas via LTI 1.3. Créez une clé développeur, connectez‑vous et mappez les rôles Canvas, sans plugin serveur.
+---

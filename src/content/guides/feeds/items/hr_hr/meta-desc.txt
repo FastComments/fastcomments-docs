@@ -1,0 +1,3 @@
+---
+Izradite društveni stil sadržajnog feeda na webu, Androidu i iOS-u. Personalizirajte što svaki čitatelj vidi i pružite različiti sadržaj po regiji.
+---

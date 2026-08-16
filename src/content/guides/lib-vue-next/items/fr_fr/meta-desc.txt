@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires, un chat en direct et des avis à une application Vue 3. Installez le package, rendez le composant et changez de fil de discussion au fur et à mesure que votre application monopage navigue.
+---

@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à une application Django avec des balises de modèle, incluant la connexion SSO sécurisée automatique depuis l'utilisateur connecté, l'accès à l'API côté serveur et la prise en charge de la région UE.
+---

@@ -1,0 +1,3 @@
+---
+Renderuj komentarze w początkowym HTML, aby roboty indeksujące i wolne połączenia widziały je od razu. Co FastComments obsługuje i jak włączyć SSR.
+---

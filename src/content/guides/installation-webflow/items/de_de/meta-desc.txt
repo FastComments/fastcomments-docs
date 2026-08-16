@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu Webflow mit einem Embed‑Block hinzu, entweder auf einer statischen Seite oder über eine gesamte Collection, und veröffentlichen Sie dann, um sie live zu schalten.
+---

@@ -1,0 +1,3 @@
+---
+Permita que los lectores reaccionen a una página sin escribir un comentario, usando reacciones de emoji personalizables sobre el hilo o el botón flotante de me gusta.
+---

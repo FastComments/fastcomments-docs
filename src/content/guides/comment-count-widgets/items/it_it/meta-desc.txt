@@ -1,0 +1,3 @@
+---
+Mostra un conteggio dei commenti in tempo reale accanto a qualsiasi post o prodotto con un widget autonomo, una pagina alla volta o in blocco su un intero elenco.
+---

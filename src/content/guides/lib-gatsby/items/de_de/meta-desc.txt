@@ -1,0 +1,1 @@
+Fügen Sie Kommentare zu einer Gatsby‑Website hinzu. Ein vollständiges, funktionierendes Beispielprojekt, das Sie kopieren können, und das zeigt, wo das Widget platziert wird und wie die Seiten‑ID übergeben wird.

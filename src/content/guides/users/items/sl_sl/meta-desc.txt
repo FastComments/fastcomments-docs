@@ -1,0 +1,3 @@
+---
+Razumite administratorje, moderatorje in komentatorje v FastComments. Kako delujejo uporabniška imena, kako dodati vsako vrsto in kako spremeniti dovoljenja administratorjev.
+---

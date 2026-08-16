@@ -1,0 +1,3 @@
+---
+Geef Ghost‑leden een commentaarsectie die hen al kent. Importeer ledennamen en avatars, schakel antwoordmeldingen in, en bewerk je berichtsjabloon.
+---

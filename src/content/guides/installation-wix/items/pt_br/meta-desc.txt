@@ -1,0 +1,3 @@
+---
+Adicione comentários ao vivo ao Wix com um bloco de incorporação e defina o ID do tópico para que cada página e postagem de blog tenha sua própria conversa, em vez de compartilhar uma.
+---

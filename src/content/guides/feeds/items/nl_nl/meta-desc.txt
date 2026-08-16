@@ -1,0 +1,3 @@
+---
+Bouw een sociaal-achtige contentfeed op web, Android en iOS. Personaliseer wat elke lezer ziet en lever verschillende content per regio.
+---

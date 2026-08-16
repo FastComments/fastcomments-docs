@@ -1,0 +1,3 @@
+---
+Recompense os comentaristas automaticamente com emblemas por contagem de comentários, votos positivos, respostas, status de veterano e atividade noturna, ou atribua emblemas manualmente.
+---

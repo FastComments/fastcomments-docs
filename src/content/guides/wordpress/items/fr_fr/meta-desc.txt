@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à WordPress avec le plugin officiel : modération du tableau de bord, SSO pour les sites d’adhésion, et comptages de commentaires synchronisés avec les articles.
+---

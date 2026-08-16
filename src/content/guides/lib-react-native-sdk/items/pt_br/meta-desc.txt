@@ -1,0 +1,3 @@
+---
+Chame a API FastComments diretamente de um aplicativo React Native para criar, buscar e moderar comentários sem passar pelo widget.
+---

@@ -1,0 +1,3 @@
+---
+Lad kommentatorer tagge hinanden med @mentions, udløse en notifikation og forudfylde mentions fra din egen kode. Inkluderer hvordan autofuldførelse løser navne.
+---

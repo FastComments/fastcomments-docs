@@ -1,0 +1,3 @@
+---
+Tilføj en kommentarsektion til en Bubble.io-app med en HTML-blok, inklusive bredde- og layoutindstillinger, der forhindrer widget'en i at blive afklippet.
+---

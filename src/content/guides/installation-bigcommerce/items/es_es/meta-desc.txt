@@ -1,0 +1,3 @@
+---
+Coloca comentarios en vivo en las publicaciones de blog y páginas de producto de BigCommerce editando la plantilla de tu tema, con un fragmento separado para Page Builder.
+---

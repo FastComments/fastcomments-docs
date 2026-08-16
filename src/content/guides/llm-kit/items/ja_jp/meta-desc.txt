@@ -1,0 +1,3 @@
+---
+Claude、ChatGPT、または Cursor を FastComments のドキュメントに向けて、正しい統合コードを書かせます。LLM Kit スニペットを追加するか、MCP サーバーに接続してください。
+---

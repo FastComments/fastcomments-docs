@@ -1,0 +1,3 @@
+---
+Approuvez, supprimez, bannissez et effectuez des actions groupées sur les commentaires depuis un tableau de bord, avec détection du spam, masquage des vulgarités, groupes de modération et modération par e‑mail.
+---

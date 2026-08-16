@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à un blog Systeme.io en collant un extrait dans le modèle de thème du blog, ou dans tout autre modèle de page que vous pouvez modifier.
+---

@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à Squarespace de trois manières : uniquement les articles de blog, chaque page du site via l’injection de code, ou une page spécifique avec un bloc de code.
+---

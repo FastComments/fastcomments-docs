@@ -1,0 +1,3 @@
+---
+Configure el widget de comentarios de extremo a extremo: a qué página pertenece un hilo, CSS y fuentes personalizados, modo oscuro, sobrescrituras de texto, valores predeterminados de moderación y SSO.
+---

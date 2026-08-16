@@ -1,0 +1,3 @@
+---
+Collectez les évaluations par étoiles et les avis écrits, définissez vos propres questions, et affichez les résultats avec le widget de synthèse ou récupérez‑les via l’API.
+---

@@ -1,0 +1,3 @@
+---
+Ograničite odjeljak za komentare na prijavljene Memberstack članove pomoću jednog isječka, tako da samo plaćeni članovi mogu objavljivati.
+---

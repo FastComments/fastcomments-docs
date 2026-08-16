@@ -1,0 +1,3 @@
+---
+Instale o módulo Drupal para comentários ao vivo como blocos de widget ou campos de tipo de conteúdo, com SSO, permissões por função e residência de dados da UE.
+---

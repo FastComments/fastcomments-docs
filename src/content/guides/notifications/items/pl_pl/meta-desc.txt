@@ -1,0 +1,3 @@
+---
+Kontroluj, które e‑maile FastComments wysyła Twoim czytelnikom, jak mogą się wypisać, jak zachowują się powiadomienia dla użytkowników SSO oraz jak obsługiwane są zablokowane adresy.
+---

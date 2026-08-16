@@ -1,0 +1,1 @@
+Vdelajte vtičnike za žive komentarje in klepet v aplikacijo React Native s SSO, ter kdaj uporabiti izvirni SDK namesto vtičnika v spletni pogled.

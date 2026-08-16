@@ -1,0 +1,3 @@
+---
+Ristila ogni parte del widget dei commenti con il tuo CSS. Foglio di stile predefinito completo per v2, più i widget dei commenti recenti e più discussi.
+---

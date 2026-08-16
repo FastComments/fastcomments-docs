@@ -1,0 +1,3 @@
+---
+חבר את FastComments ל‑D2L Brightspace, Moodle, Blackboard, Sakai או Schoology. כתובת רישום דינמית אחת מחברת את כל אינטגרציית LTI 1.3.
+---

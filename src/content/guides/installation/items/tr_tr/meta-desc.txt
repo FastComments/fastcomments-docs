@@ -1,0 +1,3 @@
+---
+Herhangi bir web sitesine yaklaşık beş dakikada bir yorum bölümü ekleyin. WordPress, React, Vue, Angular, React Native ve düz HTML için hazır kod parçacıkları.
+---

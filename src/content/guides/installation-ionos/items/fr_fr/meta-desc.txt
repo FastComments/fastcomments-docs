@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à un site Web IONOS. L'astuce réside dans l'élément de formulaire de contact, qui est l'endroit où le constructeur IONOS vous permet de coller du code personnalisé.
+---

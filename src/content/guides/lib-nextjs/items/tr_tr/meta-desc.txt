@@ -1,0 +1,3 @@
+---
+Resmi paketle bir Next.js uygulamasına yorum ekleyin, hazır bileşenler ve Vercel'e dağıtım için notlarla.
+---

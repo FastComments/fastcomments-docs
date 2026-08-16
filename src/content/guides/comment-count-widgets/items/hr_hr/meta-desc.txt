@@ -1,0 +1,3 @@
+---
+Prikažite broj živih komentara pored bilo kojeg posta ili proizvoda pomoću samostalnog widgeta, po jednoj stranici ili u grupi kroz cijeli popis.
+---

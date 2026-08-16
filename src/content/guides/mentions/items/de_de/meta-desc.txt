@@ -1,0 +1,3 @@
+---
+Lassen Sie Kommentatoren einander mit @mentions markieren, eine Benachrichtigung auslösen und Erwähnungen aus Ihrem eigenen Code vorausfüllen. Enthält, wie autocomplete Namen auflöst.
+---

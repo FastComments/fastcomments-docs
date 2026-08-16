@@ -1,0 +1,3 @@
+---
+Pozwól czytelnikom odpowiadać za pomocą GIF‑ów. Które formaty animacji są przesyłane bez problemów, jak obsługiwane są przesyłane przez użytkowników pliki oraz jak włączyć wbudowany wybór GIF‑ów.
+---

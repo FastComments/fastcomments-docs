@@ -1,0 +1,1 @@
+Tilføj native trådet kommentarer, live chat og sociale feeds til en iOS‑app, med SSO, temaer, billeduploads, nævnelser og realtidsopdateringer.

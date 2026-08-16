@@ -1,0 +1,3 @@
+---
+Okuyucuların bir yorum yazmadan, konu başlığının üzerindeki özelleştirilebilir emoji tepkileri veya yüzen beğeniler düğmesiyle bir sayfaya tepki vermesini sağlayın.
+---

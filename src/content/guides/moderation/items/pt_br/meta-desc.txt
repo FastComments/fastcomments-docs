@@ -1,0 +1,3 @@
+---
+Aprovar, excluir, banir e executar ações em massa nos comentários a partir de um único painel, com detecção de spam, mascaramento de profanidade, grupos de moderação e moderação por e‑mail.
+---

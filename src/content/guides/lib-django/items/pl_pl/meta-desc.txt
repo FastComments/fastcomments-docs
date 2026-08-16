@@ -1,0 +1,1 @@
+Dodaj komentarze do aplikacji Django za pomocą tagów szablonu, w tym automatyczne Secure SSO z zalogowanego użytkownika, dostęp do API po stronie serwera oraz wsparcie regionu UE.

@@ -1,0 +1,3 @@
+---
+Instalirajte Drupal modul za live komentare kao widget blokove ili polja tipa sadržaja, sa SSO, dozvolama po ulozi i rezidencijom podataka u EU.
+---

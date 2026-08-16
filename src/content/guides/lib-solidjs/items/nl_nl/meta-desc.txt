@@ -1,0 +1,3 @@
+---
+Voeg opmerkingen toe aan een SolidJS‑app met het officiële pakket, inclusief een imperatieve handle voor het wijzigen van de widgetconfiguratie zonder een hermount.
+---

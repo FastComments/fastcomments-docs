@@ -1,0 +1,3 @@
+---
+Otrzymaj wywołanie HTTP w momencie, gdy komentarz zostanie dodany, edytowany lub usunięty. Które zdarzenia są wyzwalane, jak zweryfikować żądanie oraz jak zachowują się ponowne próby.
+---

@@ -1,0 +1,3 @@
+---
+Forstå administratorer, moderatorer og kommentatorer i FastComments. Hvordan brugernavne fungerer, hvordan du tilføjer hver type, og hvordan du ændrer adminrettigheder.
+---

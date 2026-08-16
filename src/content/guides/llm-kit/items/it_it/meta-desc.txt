@@ -1,0 +1,3 @@
+---
+Indirizza Claude, ChatGPT o Cursor alla documentazione di FastComments affinché scrivano il codice di integrazione corretto. Aggiungi lo snippet LLM Kit o collega il server MCP.
+---

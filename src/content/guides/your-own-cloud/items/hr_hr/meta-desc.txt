@@ -1,0 +1,3 @@
+---
+Pokrenite izoliranu FastComments implementaciju unutar vlastitog cloud računa, koju upravljamo mi, s potpunim administratorskim pristupom i mogućnošću hostanja bijelo označenih najamnika.
+---

@@ -1,0 +1,3 @@
+---
+Wywołaj API FastComments bezpośrednio z aplikacji React Native, aby tworzyć, pobierać i moderować komentarze bez korzystania z widgetu.
+---

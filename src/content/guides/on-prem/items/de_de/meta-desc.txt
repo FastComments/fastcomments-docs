@@ -1,0 +1,3 @@
+---
+Führen Sie FastComments vollständig auf Ihrer eigenen Infrastruktur aus. Instanzen, Konfiguration, Wartungsmodus, Sperren, mehrere Domains und das Sicherheitsmodell.
+---

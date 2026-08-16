@@ -1,0 +1,3 @@
+---
+Følg nye kommentarer i enhver RSS-læser i stedet for din indbakke. Sådan genererer du din feed-URL, og hvad du skal vide, før du deler den med nogen.
+---

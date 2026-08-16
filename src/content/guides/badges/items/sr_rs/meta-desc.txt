@@ -1,0 +1,3 @@
+---
+Nagradite komentatore automatski značkama za broj komentara, pozitivne glasove, odgovore, status veterana i aktivnost noćnog sova, ili dodelite značke ručno.
+---

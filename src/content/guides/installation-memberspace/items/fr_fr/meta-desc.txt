@@ -1,0 +1,1 @@
+Restreindre les commentaires aux membres payants de MemberSpace, tout en permettant éventuellement les commentaires anonymes, et attribuer des badges en fonction du niveau d'adhésion du lecteur.

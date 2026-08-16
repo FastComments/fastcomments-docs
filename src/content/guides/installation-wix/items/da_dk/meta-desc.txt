@@ -1,0 +1,3 @@
+---
+Tilføj live-kommentarer til Wix med en embed-blok, og indstil trådens ID, så hver side og blogindlæg får sin egen samtale i stedet for at dele én.
+---

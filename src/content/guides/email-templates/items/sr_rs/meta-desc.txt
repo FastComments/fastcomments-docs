@@ -1,0 +1,3 @@
+---
+Pošaljite obaveštenja o komentarima koja izgledaju kao vaš proizvod, a ne naša. Pišite šablone sa vašim sopstvenim markup-om, prilagodite ih po domenu i lokalizujte tekst.
+---

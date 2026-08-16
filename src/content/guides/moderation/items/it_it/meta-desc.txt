@@ -1,0 +1,3 @@
+---
+Approva, elimina, banna e applica azioni di massa ai commenti da un unico cruscotto, con rilevamento dello spam, mascheramento delle parolacce, gruppi di moderazione e moderazione via email.
+---

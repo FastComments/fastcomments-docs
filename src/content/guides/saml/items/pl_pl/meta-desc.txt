@@ -1,0 +1,3 @@
+---
+Skonfiguruj jednokrotne logowanie SAML 2.0, aby personel i członkowie mogli uzyskać dostęp do FastComments poprzez swojego dostawcę tożsamości korporacyjnej. Mapowanie ról, testowanie i typowe błędy.
+---

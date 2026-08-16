@@ -1,0 +1,3 @@
+---
+Geef je community echte profielen: avatars, bio's, sociale links, verdiende badges, directe berichten en een activiteitfeed, met privacycontroles doorlopend.
+---

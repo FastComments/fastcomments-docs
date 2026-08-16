@@ -1,0 +1,3 @@
+---
+Log dine eksisterende brugere direkte ind i kommentarfeltet, så de aldrig opretter en anden konto eller logger ind to gange.
+---

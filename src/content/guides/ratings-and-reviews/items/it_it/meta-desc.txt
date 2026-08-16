@@ -1,0 +1,3 @@
+---
+Raccogli valutazioni a stelle e recensioni scritte, definisci le tue domande e mostra i risultati con il widget di riepilogo o estraili tramite l'API.
+---

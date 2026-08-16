@@ -1,0 +1,3 @@
+---
+FastComments API'sini C++'dan çağırın. İstemciyi CMake ile kaynaktan derleyin, ardından yorumları senkron veya asenkron olarak oluşturun, alın ve denetleyin.
+---

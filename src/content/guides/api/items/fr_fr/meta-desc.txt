@@ -1,0 +1,3 @@
+---
+Créez, récupérez, modérez et exportez les commentaires via HTTP. Chaque point de terminaison FastComments avec ses types de requête et de réponse, y compris les votes, les utilisateurs et les pages.
+---

@@ -1,0 +1,4 @@
+---
+Voeg live reacties toe aan Squarespace op drie manieren: alleen blogberichten, elke pagina site-breed via code-injectie, of één specifieke 
+pagina met een codeblok.
+---

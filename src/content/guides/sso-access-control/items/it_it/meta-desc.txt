@@ -1,0 +1,3 @@
+---
+Decidi per utente chi può leggere e chi può pubblicare, direttamente dal tuo payload SSO. La specifica, come implementarla e esempi di chiamate API.
+---

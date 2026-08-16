@@ -1,0 +1,1 @@
+Pozovite FastComments API iz Rust-a. Instalirajte pomoću cargo add, zatim kreirajte, preuzmite i moderirajte komentare, uz SSO pomoćnike i sve dokumentovane krajnje tačke.

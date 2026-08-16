@@ -1,0 +1,3 @@
+---
+Créez des agents IA qui surveillent votre communauté et agissent de façon autonome : modération automatique, accueil des nouveaux utilisateurs, résumé des fils de discussion et épinglage des meilleurs commentaires.
+---

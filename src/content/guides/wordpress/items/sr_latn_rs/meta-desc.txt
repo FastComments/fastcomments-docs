@@ -1,0 +1,3 @@
+---
+Dodajte live komentarisanje na WordPress uz zvanični dodatak: moderacija na kontrolnoj tabli, SSO za sajtove sa članstvom i brojači komentara sinhronizovani nazad na objave.
+---

@@ -1,0 +1,3 @@
+---
+Kald FastComments API fra Ruby. Installer gemmen, og derefter opret, hent og moderer kommentarer, med SSO‑hjælpere og alle endepunkter dokumenteret.
+---

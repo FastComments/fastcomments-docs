@@ -1,0 +1,1 @@
+Formateer opmerkingen met vet, links, code en media. Wat de commentaarparser accepteert, en de sanitizing die voorkomt dat markup een aanval wordt.

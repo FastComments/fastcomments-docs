@@ -1,0 +1,3 @@
+---
+将 Claude、ChatGPT 或 Cursor 指向 FastComments 文档，以便它们编写正确的集成代码。添加 LLM Kit 代码片段或连接 MCP 服务器。
+---

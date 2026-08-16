@@ -1,0 +1,3 @@
+---
+Indlejr en FastComments-tråd hvor som helst, der accepterer en oEmbed-URL, så kommentarer følger med indholdet i stedet for at være bundet til en enkelt side.
+---

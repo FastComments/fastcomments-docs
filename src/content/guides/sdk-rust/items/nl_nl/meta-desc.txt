@@ -1,0 +1,1 @@
+Call de FastComments API aan vanuit Rust. Installeer met cargo add, en maak vervolgens, haal op en beheer reacties, met SSO‑hulpmiddelen en elk eindpunt gedocumenteerd.

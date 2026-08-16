@@ -1,0 +1,3 @@
+---
+Gere tokens SSO assinados do FastComments em PHP para que seus usuários autenticados comentem como eles mesmos, sem necessidade de uma segunda conta e sem etapa extra de login.
+---

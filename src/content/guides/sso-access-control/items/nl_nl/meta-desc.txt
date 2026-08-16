@@ -1,0 +1,3 @@
+---
+Bepaal per gebruiker wie kan lezen en wie kan posten, rechtstreeks vanuit je SSO‑payload. De specificatie, hoe je het implementeert, en voorbeeld‑API‑aanroepen.
+---

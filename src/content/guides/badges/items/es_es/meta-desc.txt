@@ -1,0 +1,3 @@
+---
+Recompensa a los comentaristas automáticamente con insignias por la cantidad de comentarios, los votos positivos, las respuestas, el estado de veterano y la actividad nocturna, o asigna insignias manualmente.
+---

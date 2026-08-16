@@ -1,0 +1,3 @@
+---
+קרא את FastComments API מ‑Nim. התקן עם nimble, ואז צור, שלוף, והנהל תגובות, עם SSO helpers וכל endpoint מתועד.
+---

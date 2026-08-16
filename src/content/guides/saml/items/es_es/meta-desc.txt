@@ -1,0 +1,3 @@
+---
+Configura SAML 2.0 de inicio de sesión único para que el personal y los miembros accedan a FastComments a través de su proveedor de identidad corporativo. Mapeo de roles, pruebas y errores comunes.
+---

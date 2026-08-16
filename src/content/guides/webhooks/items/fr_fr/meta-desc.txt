@@ -1,0 +1,4 @@
+---
+Recevez un rappel HTTP au moment où un commentaire est ajouté, modifié ou supprimé. Quels événements se déclenchent, comment vérifier la requête, et comment les nouvelles tentatives se comportent.
+
+---

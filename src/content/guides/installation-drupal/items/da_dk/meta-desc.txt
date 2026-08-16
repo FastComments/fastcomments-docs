@@ -1,0 +1,3 @@
+---
+Installer Drupal-modulet til live-kommentarer som widget-blokke eller indholdstypefelter, med SSO, per-rolle tilladelser og EU-dataplacering.
+---

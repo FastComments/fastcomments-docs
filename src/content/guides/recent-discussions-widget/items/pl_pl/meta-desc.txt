@@ -1,0 +1,3 @@
+---
+Wyświetlaj najaktywniejsze ostatnie wątki komentarzy w dowolnym miejscu swojej witryny za pomocą widgetu Recent Discussions, aby czytelnicy mogli odnaleźć rozmowy, które przegapili.
+---

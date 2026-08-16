@@ -1,0 +1,3 @@
+---
+Resmi entegrasyonla bir Astro sitesine yorum ekleyin. Bileşeni içe aktarın, tenant ID'nizi geçin ve onu yerleştirdiğiniz her yerde render eder.
+---

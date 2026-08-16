@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til et Hugo-site med shortcodes, inklusive tema-integration, massekommentarantal for listesider og den komplette widget‑konfigurationsreference.
+---

@@ -1,0 +1,3 @@
+---
+Namestite vtičnik FastComments za Moodle, da dodate komentarje na tečaje in dejavnosti. SSO je samodejno, zato se študenti nikoli ne morajo prijaviti dvakrat.
+---

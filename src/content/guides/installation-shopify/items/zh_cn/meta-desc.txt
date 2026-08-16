@@ -1,0 +1,3 @@
+---
+从 Shopify 应用商店安装 FastComments，并将评论、评审和计数块拖放到帖子和产品上。Shopify 客户已为您登录。
+---

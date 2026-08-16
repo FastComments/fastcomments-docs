@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do witryny Gatsby. Kompletny działający projekt przykładowy, który możesz skopiować, pokazujący, gdzie umieścić widget i jak przekazać identyfikator strony.
+---

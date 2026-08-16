@@ -1,0 +1,3 @@
+---
+Aggiungi commenti a un sito Astro con l'integrazione ufficiale. Importa il componente, passa il tuo ID tenant e verrà renderizzato ovunque lo posizioni.
+---

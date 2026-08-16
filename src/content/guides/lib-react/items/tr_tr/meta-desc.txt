@@ -1,0 +1,3 @@
+---
+Resmi paketle bir React uygulamasına yorum ekleyin. Paketi kurun, bileşeni render edin ve bir konu başlatmak için tenant ve sayfa kimliğinizi geçin.
+---

@@ -1,0 +1,3 @@
+---
+Konfigurirajte pripomoček za komentarje od začetka do konca: na kateri strani pripada nit, po meri CSS in pisave, temni način, preglasitve besedila, privzete nastavitve moderiranja in SSO.
+---

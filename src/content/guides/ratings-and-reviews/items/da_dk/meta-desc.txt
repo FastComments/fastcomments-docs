@@ -1,0 +1,3 @@
+---
+Indsaml stjernebedømmelser og skrevne anmeldelser, definer dine egne spørgsmål, og vis resultaterne med opsummeringswidget'en eller hent dem via API'en.
+---

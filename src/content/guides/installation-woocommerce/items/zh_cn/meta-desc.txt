@@ -1,0 +1,3 @@
+---
+使用 FastComments WordPress 插件，为 WooCommerce 商店添加实时评论和产品讨论，无需编辑主题。
+---

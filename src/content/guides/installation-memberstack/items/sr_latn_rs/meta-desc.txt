@@ -1,0 +1,3 @@
+---
+Ograničite sekciju komentara na prijavljene Memberstack članove jednim isječkom, tako da samo plaćajući članovi mogu objavljivati.
+---

@@ -1,0 +1,3 @@
+---
+Plaats live reacties op BigCommerce blogberichten en productpagina's door uw themasjabloon te bewerken, met een apart fragment voor Page Builder.
+---

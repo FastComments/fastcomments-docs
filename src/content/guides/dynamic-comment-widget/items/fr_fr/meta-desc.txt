@@ -1,0 +1,3 @@
+---
+Échangez un fil de commentaires sans recharger la page. Exécutez plusieurs widgets côte à côte, pointez‑les sur un même fil pour les garder synchronisés, ou sur des fils différents.
+---

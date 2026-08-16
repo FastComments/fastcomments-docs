@@ -1,0 +1,3 @@
+---
+Izgradite feed sadržaja u društvenom stilu za web, Android i iOS. Personalizujte ono što svaki čitalac vidi i pružite različit sadržaj po regionu.
+---

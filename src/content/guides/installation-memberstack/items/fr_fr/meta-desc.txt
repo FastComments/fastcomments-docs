@@ -1,0 +1,3 @@
+---
+Restreignez votre section de commentaires aux membres Memberstack connectés avec un seul extrait, afin que seuls les membres payants puissent publier.
+---

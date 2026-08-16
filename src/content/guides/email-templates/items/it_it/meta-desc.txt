@@ -1,0 +1,3 @@
+---
+Invia notifiche di commenti che sembrano il tuo prodotto, non il nostro. Scrivi modelli con il tuo markup, varia per dominio e localizza il testo.
+---

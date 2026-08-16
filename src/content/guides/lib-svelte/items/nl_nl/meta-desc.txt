@@ -1,0 +1,3 @@
+---
+Voeg opmerkingen toe aan een Svelte-app met het officiële pakket. Installeer het, plaats de widgetcomponent op je pagina en geef je tenant en pagina‑ID door.
+---

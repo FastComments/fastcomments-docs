@@ -1,0 +1,3 @@
+---
+Okuyucuların bir e-posta bağlantısı üzerinden şifre hatırlamadan oturum açmalarını sağlayın. Giriş bağlantılarının nasıl çalıştığı, kimlerin aldığını ve nasıl güvenli kaldığını öğrenin.
+---

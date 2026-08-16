@@ -1,0 +1,3 @@
+---
+Wissel een commentaarthread zonder de pagina te herladen. Plaats meerdere widgets naast elkaar, richt ze op één thread om ze gesynchroniseerd te houden, of op verschillende threads.
+---

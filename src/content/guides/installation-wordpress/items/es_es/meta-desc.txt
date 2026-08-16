@@ -1,0 +1,3 @@
+---
+Instale el plugin de WordPress para comentarios en tiempo real, moderación desde su panel, hilos solo para miembros mediante SSO y recuentos de comentarios sincronizados de vuelta a las publicaciones.
+---

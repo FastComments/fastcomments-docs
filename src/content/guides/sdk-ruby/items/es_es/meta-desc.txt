@@ -1,0 +1,3 @@
+---
+Llama a la API de FastComments desde Ruby. Instala la gema, luego crea, recupera y modera comentarios, con ayudantes SSO y todos los endpoints documentados.
+---

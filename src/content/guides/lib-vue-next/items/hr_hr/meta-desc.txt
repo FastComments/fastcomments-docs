@@ -1,0 +1,3 @@
+---
+Dodajte komentare, live chat i recenzije u Vue 3 aplikaciju. Instalirajte paket, renderirajte komponentu i prebacujte teme dok se vaša single-page aplikacija navigira.
+---

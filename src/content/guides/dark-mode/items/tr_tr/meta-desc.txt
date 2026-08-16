@@ -1,0 +1,3 @@
+---
+Yorumların sitenizin karanlık temasıyla uyumlu olmasını sağlayın. İşletim sisteminden algılayın, kendiniz geçiş yapın veya yerleşik WordPress Networker desteğini kullanın.
+---

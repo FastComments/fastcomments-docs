@@ -1,0 +1,4 @@
+---
+Wlewaj komentarze do wątku stopniowo, aby nowa strona nie wyglądała na pustą. Jak zaplanować odtwarzanie i jaki format importu jest oczekiwany.
+
+---

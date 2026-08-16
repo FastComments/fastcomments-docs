@@ -1,0 +1,3 @@
+---
+Adicione comentários a um aplicativo Vue 2. Instale o pacote, renderize o componente do widget e atualize a página atual quando seu aplicativo de página única mudar de rotas.
+---

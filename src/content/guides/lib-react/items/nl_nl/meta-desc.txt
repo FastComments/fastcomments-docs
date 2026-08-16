@@ -1,0 +1,3 @@
+---
+Voeg reacties toe aan een React‑app met het officiële pakket. Installeer het, render de component en geef uw tenant en pagina‑ID door om een thread te starten.
+---

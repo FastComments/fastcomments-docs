@@ -1,0 +1,3 @@
+---
+Adicione uma seção de comentários a um aplicativo Bubble.io com um bloco HTML, incluindo as configurações de largura e layout que impedem que o widget seja recortado.
+---

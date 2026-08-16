@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til en SolidJS-app med den officielle pakke, inklusive et imperativt håndtag til at ændre widget‑konfigurationen uden genindlæsning.
+---

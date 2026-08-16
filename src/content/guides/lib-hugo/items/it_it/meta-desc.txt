@@ -1,0 +1,3 @@
+---
+Aggiungi commenti a un sito Hugo con shortcode, includendo l'integrazione del tema, conteggi di commenti in blocco per le pagine di elenco e il riferimento completo alla configurazione del widget.
+---

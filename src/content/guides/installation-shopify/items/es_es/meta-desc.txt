@@ -1,0 +1,3 @@
+---
+Instala FastComments desde la Shopify App Store y arrastra bloques de comentarios, reseñas y recuentos a publicaciones y productos. Los clientes de Shopify inician sesión por ti.
+---

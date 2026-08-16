@@ -1,0 +1,3 @@
+---
+Renderize os comentários no seu HTML inicial para que rastreadores e conexões lentas os vejam imediatamente. O que o FastComments suporta e como ativar o SSR.
+---

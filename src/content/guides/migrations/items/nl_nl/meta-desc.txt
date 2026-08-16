@@ -1,0 +1,3 @@
+---
+Stap over naar FastComments vanuit Disqus of een andere provider, importeer WordPress‑reacties, verplaats gebruikers en domeinen tussen tenants, en exporteer je gegevens op elk moment.
+---

@@ -1,0 +1,3 @@
+---
+Dajte bralcem možnost, da označijo katerikoli stavek na vaši strani in ga razpravljajo v vrsticah. Niti se sidrajo na točno besedilo in se sinhronizirajo v živo med vsemi, ki berejo.
+---

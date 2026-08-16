@@ -1,0 +1,4 @@
+---
+Sprzedawaj system komentarzy pod własną marką. Twórz i zarządzaj najemcami za pośrednictwem API lub panelu, a rozliczenia obsługuj sam lub FastComments.
+
+---

@@ -1,0 +1,3 @@
+---
+Zbirajte ocene z zvezdicami in pisne recenzije, definirajte lastna vprašanja ter prikažite rezultate s povzetkom v pripomočku ali jih pridobite prek API-ja.
+---

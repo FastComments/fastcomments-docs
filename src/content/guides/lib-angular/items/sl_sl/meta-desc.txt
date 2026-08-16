@@ -1,0 +1,3 @@
+---
+Dodajte komentarje v Angular aplikacijo z uradnim paketom. Namestite ga, vstavite komponento v predlogo in posredujte svoj najemnik ter ID strani.
+---

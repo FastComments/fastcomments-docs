@@ -1,0 +1,3 @@
+---
+Ugradite vidžete za uživo komentare i čet u React Native aplikaciju sa SSO, plus kada se odlučiti za native SDK umesto webview vidžeta.
+---

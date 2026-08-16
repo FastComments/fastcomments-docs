@@ -1,0 +1,3 @@
+---
+Consenti ai lettori di rispondere con GIF. Quali formati animati vengono caricati correttamente, come vengono gestiti gli upload degli utenti e come attivare il selettore GIF integrato.
+---

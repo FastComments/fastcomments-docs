@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz Go-a. Instalirajte pomoću go get, zatim kreirajte, dohvatite i moderirajte komentare, uz SSO pomoćnike i sve krajnje točke dokumentirane.
+---

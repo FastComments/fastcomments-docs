@@ -1,0 +1,3 @@
+---
+Pozwól czytelnikom komentować bez przeszkód. Porównaj linki logowania bez hasła, hasła, SSO i SAML, aby wybrać metodę logowania, którą zaakceptuje Twoja publiczność.
+---

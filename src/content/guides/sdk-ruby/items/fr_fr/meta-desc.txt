@@ -1,0 +1,3 @@
+Call the FastComments API from Ruby. Install the gem, then create, fetch, and moderate comments, with SSO helpers and every endpoint documented.
+
+---

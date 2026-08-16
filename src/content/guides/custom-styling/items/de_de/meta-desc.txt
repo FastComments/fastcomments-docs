@@ -1,0 +1,3 @@
+---
+Gestalten Sie jeden Teil des Kommentar-Widgets mit Ihrem eigenen CSS neu. Vollständiges Standard-Stylesheet für v2, plus die neuesten Kommentare und am meisten diskutierten Widgets.
+---

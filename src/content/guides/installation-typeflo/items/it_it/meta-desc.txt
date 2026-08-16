@@ -1,0 +1,3 @@
+---
+Aggiungi commenti in tempo reale a un blog Typeflo.io incollando lo snippet FastComments nell'input del codice, quindi ridisegna il widget per farlo corrispondere al tuo tema.
+---

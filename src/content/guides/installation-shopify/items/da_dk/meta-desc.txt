@@ -1,0 +1,3 @@
+---
+Installer FastComments fra Shopify App Store og træk kommentar-, anmeldelses- og tælleblokke ind på indlæg og produkter. Shopify‑kunder er logget ind for dig.
+---

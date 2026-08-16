@@ -1,0 +1,4 @@
+---
+Permettez aux commentateurs de se taguer les uns les autres avec des @mentions, de déclencher une notification et de préremplir les mentions depuis votre propre code. Inclut la façon dont l'autocomplétion résout les noms.
+
+---

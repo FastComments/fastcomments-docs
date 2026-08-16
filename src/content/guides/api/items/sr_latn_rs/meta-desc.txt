@@ -1,0 +1,3 @@
+---
+Kreirajte, preuzmite, moderirajte i izvezite komentare putem HTTP-a. Svaki FastComments endpoint sa svojim tipovima zahteva i odgovora, uključujući glasove, korisnike i stranice.
+---

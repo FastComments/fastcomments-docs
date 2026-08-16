@@ -1,0 +1,3 @@
+---
+Colete avaliações por estrelas e avaliações escritas, defina suas próprias perguntas e exiba os resultados com o widget de resumo ou recupere‑os através da API.
+---

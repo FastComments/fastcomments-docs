@@ -1,0 +1,3 @@
+---
+Begrijp beheerders, moderators en commentatoren in FastComments. Hoe gebruikersnamen werken, hoe elk type toe te voegen, en hoe de beheerdersrechten te wijzigen.
+---

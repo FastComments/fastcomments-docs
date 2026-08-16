@@ -1,0 +1,3 @@
+---
+Verzamel sterbeoordelingen en geschreven recensies, definieer uw eigen vragen, en toon de resultaten met de samenvattingswidget of haal ze op via de API.
+---

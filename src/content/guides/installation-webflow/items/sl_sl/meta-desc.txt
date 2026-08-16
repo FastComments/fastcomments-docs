@@ -1,0 +1,3 @@
+---
+Dodajte žive komentarje v Webflow z vdelanim blokom, na statični strani ali po celotni zbirki, nato objavite, da bodo živi.
+---

@@ -1,0 +1,3 @@
+---
+Kısa kodlarla bir Hugo sitesine yorum ekleyin, tema entegrasyonu, liste sayfaları için toplu yorum sayımları ve tam widget yapılandırma referansı dahil.
+---

@@ -1,0 +1,3 @@
+---
+Fügen Sie einem Hugo‑Site Kommentare mit Shortcodes hinzu, einschließlich Theme‑Integration, Massen‑Kommentarzähler für Listenseiten und der vollständigen Widget‑Konfigurationsreferenz.
+---

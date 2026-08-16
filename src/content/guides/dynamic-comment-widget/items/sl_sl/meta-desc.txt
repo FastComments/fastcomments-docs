@@ -1,0 +1,3 @@
+---
+Zamenjajte nit komentarjev brez ponovnega nalaganja strani. Zaženite več pripomočkov drug ob drugem, usmerite jih na eno nit, da ostanejo sinhronizirani, ali na različne niti.
+---

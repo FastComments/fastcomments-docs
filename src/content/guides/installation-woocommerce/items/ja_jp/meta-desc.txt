@@ -1,0 +1,3 @@
+---
+FastComments WordPress プラグインを使用して、WooCommerce ストアにライブコメントと製品ディスカッションを追加し、テーマの編集は不要です。
+---

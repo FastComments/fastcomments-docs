@@ -1,0 +1,3 @@
+---
+Discussione di gruppo con hashtag che i lettori possono cliccare e filtrare. Autocompletamento, simboli personalizzati al posto di # e precompilazione dei tag dal proprio codice.
+---

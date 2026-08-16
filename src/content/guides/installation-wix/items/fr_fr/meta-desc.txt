@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à Wix avec un bloc d'intégration, et définissez l'ID du fil afin que chaque page et article de blog obtienne sa propre conversation au lieu d'en partager une.
+---

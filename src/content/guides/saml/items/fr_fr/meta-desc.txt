@@ -1,0 +1,3 @@
+---
+Configurer l'authentification unique SAML 2.0 afin que le personnel et les membres accèdent à FastComments via votre fournisseur d'identité d'entreprise. Mappage des rôles, tests et erreurs courantes.
+---

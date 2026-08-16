@@ -1,0 +1,3 @@
+---
+Installa il modulo Drupal per i commenti in tempo reale come blocchi widget o campi di tipo contenuto, con SSO, permessi per ruolo e residenza dei dati nell'UE.
+---

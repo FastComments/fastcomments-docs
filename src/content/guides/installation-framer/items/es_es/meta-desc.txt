@@ -1,0 +1,4 @@
+---
+Agrega comentarios en vivo a un sitio de Framer con un bloque incrustado y el fragmento específico de Framer, además de la configuración de altura que evita que el widget se corte.
+
+---

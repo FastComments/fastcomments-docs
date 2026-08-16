@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do witryny Jekyll przy użyciu oficjalnego gema. Zainstaluj go, dodaj tag Liquid do układu swojego wpisu i skonfiguruj widżet w pliku _config.yml.
+---

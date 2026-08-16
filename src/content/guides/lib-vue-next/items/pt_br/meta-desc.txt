@@ -1,0 +1,3 @@
+---
+Adicione comentários, chat ao vivo e avaliações a um aplicativo Vue 3. Instale o pacote, renderize o componente e troque de threads conforme seu aplicativo de página única navega.
+---

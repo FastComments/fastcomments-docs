@@ -1,0 +1,3 @@
+---
+Pokličite FastComments API iz Nima. Namestite z nimble, nato ustvarite, pridobite in moderirajte komentarje, z SSO pomočniki in z vsemi dokumentiranimi končnimi točkami.
+---

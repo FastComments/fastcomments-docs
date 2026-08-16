@@ -1,0 +1,3 @@
+---
+Les cookies tiers ne sont plus nécessaires pour commenter. À quoi FastComments les utilise encore, et comment les activer pour un flux de connexion plus fluide.
+---

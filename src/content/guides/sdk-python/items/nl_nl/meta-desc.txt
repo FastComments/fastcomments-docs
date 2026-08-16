@@ -1,0 +1,1 @@
+Roep de FastComments API aan vanuit Python. Installeer met pip, en maak vervolgens, haal op en beheer reacties, met SSO‑hulpmiddelen en elk eindpunt gedocumenteerd.

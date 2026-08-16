@@ -1,0 +1,3 @@
+---
+Intégrez un fil FastComments n'importe où qui accepte une URL oEmbed, afin que les commentaires voyagent avec le contenu au lieu d'être liés à une seule page.
+---

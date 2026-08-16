@@ -1,0 +1,3 @@
+---
+Dodajte žive komentarje na blog Typeflo.io tako, da prilepite izsek FastComments v vnos kode, nato preoblikujte gradnik, da se ujema z vašo temo.
+---

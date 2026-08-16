@@ -1,0 +1,3 @@
+---
+Dodajte live komentare na Framer sajt pomoću embed bloka i Framer‑specifičnog snippet‑a, uz podešavanja visine koja sprečavaju da se widget iseče.
+---

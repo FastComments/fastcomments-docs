@@ -1,0 +1,3 @@
+---
+Obtenha um callback HTTP no momento em que um comentário é adicionado, editado ou excluído. Quais eventos são disparados, como verificar a solicitação e como as tentativas de reenvio se comportam.
+---

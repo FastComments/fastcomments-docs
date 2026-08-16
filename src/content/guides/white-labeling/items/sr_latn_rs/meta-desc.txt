@@ -1,0 +1,3 @@
+---
+Prodajte komentarisanje pod vašim brendom. Kreirajte i upravljajte tenantima putem API-ja ili kontrolne table, a naplatu obavljate vi ili FastComments.
+---

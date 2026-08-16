@@ -1,0 +1,3 @@
+---
+Prejmite HTTP povratni klic takoj, ko je komentar dodan, urejen ali izbrisan. Kateri dogodki se sprožijo, kako preveriti zahtevo in kako se obnašajo ponovni poskusi.
+---

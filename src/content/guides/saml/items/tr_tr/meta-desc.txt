@@ -1,0 +1,3 @@
+---
+SAML 2.0 tek oturum açmayı kurarak personelin ve üyelerin FastComments'a kurumsal kimlik sağlayıcınız üzerinden erişmesini sağlayın. Rol eşlemesi, test etme ve yaygın hatalar.
+---

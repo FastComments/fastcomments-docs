@@ -1,0 +1,3 @@
+---
+Laat lezers reageren op een pagina zonder een reactie te schrijven, met aanpasbare emoji‑reacties boven de thread of de zwevende vind‑ik‑leuk‑knop.
+---

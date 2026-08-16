@@ -1,0 +1,3 @@
+---
+Aggiungi commenti a un'app Django con tag di template, includendo SSO sicuro automatico dall'utente connesso, accesso API lato server e supporto per la regione UE.
+---

@@ -1,0 +1,3 @@
+---
+Ejecute FastComments completamente en su propia infraestructura. Instancias, configuración, modo de mantenimiento, bloqueos, múltiples dominios y el modelo de seguridad.
+---

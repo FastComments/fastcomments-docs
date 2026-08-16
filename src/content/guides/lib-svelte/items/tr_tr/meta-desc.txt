@@ -1,0 +1,4 @@
+---
+Resmi paketle bir Svelte uygulamasına yorum ekleyin. Paketi kurun, widget bileşenini sayfanıza yerleştirin ve kiracınızı ve sayfa kimliğinizi geçin.
+
+---

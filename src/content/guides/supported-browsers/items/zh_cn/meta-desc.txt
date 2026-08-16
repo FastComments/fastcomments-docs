@@ -1,0 +1,3 @@
+---
+FastComments 小部件支持哪些浏览器，Internet Explorer 的位置如何，我们如何测试每个版本，以及小部件需要的 JavaScript。
+---

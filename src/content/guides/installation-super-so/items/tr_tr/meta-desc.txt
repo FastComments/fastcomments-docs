@@ -1,0 +1,3 @@
+---
+Super.so sitesine Collab Chat ile satır içi tartışmalar ekleyin, böylece okuyucular Notion sayfalarınızda metni vurgulayabilir ve birlikte konuşabilir.
+---

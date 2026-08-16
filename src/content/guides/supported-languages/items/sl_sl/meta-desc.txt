@@ -1,0 +1,3 @@
+---
+Vsak jezik, v katerem je pripomoček FastComments na voljo, kateri deli izdelka so prevedeni, in kako zahtevati jezik, ki ga še ne podpiramo.
+---

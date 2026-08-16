@@ -1,0 +1,1 @@
+Yorumlamayı ödeme yapan MemberSpace üyeleriyle sınırlayın, isteğe bağlı olarak hâlâ anonim yorumlara izin verin ve okuyucunun üyelik seviyesinden rozetler ayarlayın.

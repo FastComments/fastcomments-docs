@@ -1,0 +1,3 @@
+---
+Permita que os leitores realcem qualquer frase em sua página e a discutam inline. Os tópicos ancoram ao texto exato e sincronizam ao vivo entre todos que estão lendo.
+---

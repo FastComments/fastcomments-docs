@@ -1,0 +1,1 @@
+Formatez les commentaires avec du gras, des liens, du code et des médias. Ce que le parseur de commentaires accepte, et la désinfection qui empêche le balisage de devenir une attaque.

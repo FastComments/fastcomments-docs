@@ -1,0 +1,3 @@
+---
+Voeg reacties toe aan een Astro‑site met de officiële integratie. Importeer de component, geef uw tenant‑ID door, en deze wordt weergegeven waar u hem ook plaatst.
+---

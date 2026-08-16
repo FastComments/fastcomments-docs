@@ -1,0 +1,3 @@
+---
+Agrega comentarios a una aplicación Angular con el paquete oficial. Instálalo, inserta el componente en una plantilla y pasa tu inquilino y el ID de la página.
+---

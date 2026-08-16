@@ -1,0 +1,3 @@
+---
+Samodejno nagradite komentatorje z značkami za število komentarjev, všečke, odgovore, status veterana in aktivnost nočne sove, ali pa značke dodelite ročno.
+---

@@ -1,0 +1,3 @@
+---
+Kald FastComments API fra Swift. Tilføj pakken med Swift Package Manager, og derefter opret, hent og moderer kommentarer, med SSO‑hjælper inkluderet.
+---

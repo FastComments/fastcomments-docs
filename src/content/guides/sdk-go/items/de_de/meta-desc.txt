@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API aus Go auf. Installieren Sie sie mit `go get` und erstellen, holen und moderieren Sie Kommentare, mit SSO‑Hilfen und allen dokumentierten Endpunkten.
+---

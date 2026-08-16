@@ -1,0 +1,3 @@
+---
+Dodajte komentare u Django aplikaciju pomoću template tagova, uključujući automatski Secure SSO od prijavljenog korisnika, pristup API‑ju na serveru i podršku za EU region.
+---

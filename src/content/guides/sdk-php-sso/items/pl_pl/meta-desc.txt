@@ -1,0 +1,3 @@
+---
+Generuj podpisane tokeny SSO FastComments w PHP, aby zalogowani użytkownicy komentowali jako oni sami, bez dodatkowego konta i dodatkowego kroku logowania.
+---

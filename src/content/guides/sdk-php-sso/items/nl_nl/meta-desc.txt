@@ -1,0 +1,3 @@
+---
+Genereer ondertekende FastComments SSO‑tokens in PHP zodat uw ingelogde gebruikers als zichzelf kunnen reageren, zonder een tweede account en zonder extra inlogstap.
+---

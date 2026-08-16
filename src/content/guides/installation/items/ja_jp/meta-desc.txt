@@ -1,0 +1,4 @@
+---
+約5分で任意のウェブサイトにコメントセクションを追加できます。WordPress、React、Vue、Angular、React Native、そしてプレーンHTML用の既成スニペットが用意されています。
+
+---

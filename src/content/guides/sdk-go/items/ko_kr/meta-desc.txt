@@ -1,0 +1,5 @@
+Call the FastComments API from Go. Install with go get, then create, fetch, and moderate comments, with SSO helpers and every endpoint documented.
+
+--- 
+
+Go에서 FastComments API를 호출하십시오. go get으로 설치한 후, 댓글을 생성하고, 가져오며, 관리하고, SSO 도우미와 모든 엔드포인트가 문서화되어 있습니다.

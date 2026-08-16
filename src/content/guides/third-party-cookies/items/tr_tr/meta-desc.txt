@@ -1,0 +1,3 @@
+---
+Üçüncü taraf çerezleri artık yorum yapmak için gerekli değil. FastComments'ın bunları hâlâ ne için kullandığı ve daha sorunsuz bir oturum açma akışı için nasıl etkinleştirileceği.
+---

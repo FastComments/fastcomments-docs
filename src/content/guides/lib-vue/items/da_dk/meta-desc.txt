@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til en Vue 2‑app. Installer pakken, render widget‑komponenten, og opdater den aktuelle side, når din single‑page‑app skifter ruter.
+---

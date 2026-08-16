@@ -1,0 +1,3 @@
+---
+Dodajte live komentare na Wix pomoću embed bloka i postavite ID teme tako da svaka stranica i blog post imaju svoj razgovor umesto da dele jedan.
+---

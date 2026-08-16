@@ -1,0 +1,1 @@
+Dodajte komentare na Gatsby sajt. Potpuni radni primer projekta koji možete kopirati, pokazujući gde se postavlja widget i kako proslediti ID stranice.

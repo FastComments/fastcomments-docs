@@ -1,0 +1,3 @@
+---
+Betreiben Sie mehrere Domains oder Subdomains von einem FastComments‑Konto aus, mit pro Domain festgelegten Absendernamen und Logos, einem Mandanten pro Umgebung und gemeinsam genutzten Threads.
+---

@@ -1,0 +1,3 @@
+---
+Okuyucuların sorunsuz bir şekilde yorum yapmasına izin ver. Parolasız giriş bağlantılarını, şifreleri, SSO ve SAML'ı karşılaştırarak, kitlenizin kabul edeceği oturum açma yöntemini seçin.
+---

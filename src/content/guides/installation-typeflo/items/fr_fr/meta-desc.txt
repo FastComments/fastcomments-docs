@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à un blog Typeflo.io en collant le snippet FastComments dans le champ de code, puis re‑stylisez le widget pour qu’il corresponde à votre thème.
+---

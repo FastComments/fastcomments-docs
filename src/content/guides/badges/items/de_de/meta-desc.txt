@@ -1,0 +1,3 @@
+---
+Belohnen Sie Kommentatoren automatisch mit Badges für die Anzahl der Kommentare, Up‑Votes, Antworten, Veteranen‑Status und nächtliche Aktivität, oder weisen Sie Badges manuell zu.
+---

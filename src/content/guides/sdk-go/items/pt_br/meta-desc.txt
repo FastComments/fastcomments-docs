@@ -1,0 +1,3 @@
+---
+Chame a API do FastComments a partir do Go. Instale com go get, então crie, recupere e modere comentários, com auxiliares SSO e todos os endpoints documentados.
+---

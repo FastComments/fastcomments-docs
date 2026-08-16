@@ -1,0 +1,3 @@
+---
+Dodajte komentare u realnom vremenu na Framer sajt pomoću embed bloka i Framer‑specifičnog snippet‑a, plus postavke visine koje sprečavaju da se widget iseče.
+---

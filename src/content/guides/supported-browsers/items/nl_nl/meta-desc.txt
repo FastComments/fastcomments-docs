@@ -1,0 +1,3 @@
+---
+Welke browsers de FastComments-widget ondersteunt, waar Internet Explorer staat, hoe we elke release testen, en welke JavaScript de widget nodig heeft.
+---

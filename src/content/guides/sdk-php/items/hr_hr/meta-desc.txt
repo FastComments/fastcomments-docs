@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz PHP-a. Instalirajte pomoću Composer-a, zatim kreirajte, dohvatite i moderirajte komentare, uz uključene modele zahtjeva i SSO pomoćnike.
+---

@@ -1,0 +1,3 @@
+---
+Elke taal waarin de FastComments-widget wordt geleverd, welke delen van het product vertaald zijn, en hoe u een taal kunt aanvragen die we nog niet ondersteunen.
+---

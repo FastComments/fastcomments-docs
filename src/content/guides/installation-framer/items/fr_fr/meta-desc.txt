@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à un site Framer avec un bloc d'intégration et le snippet spécifique à Framer, ainsi que les réglages de hauteur qui empêchent le widget d'être coupé.
+---

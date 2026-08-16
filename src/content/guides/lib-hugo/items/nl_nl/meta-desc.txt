@@ -1,0 +1,1 @@
+Voeg reacties toe aan een Hugo‑site met shortcodes, inclusief themaintegratie, bulkreactietellingen voor lijstpagina’s en de volledige widget‑configuratiereferentie.

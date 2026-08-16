@@ -1,0 +1,1 @@
+Restrinja os comentários a membros pagantes do MemberSpace, permitindo opcionalmente ainda comentários anônimos, e defina emblemas com base no nível de associação do leitor.

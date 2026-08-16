@@ -1,0 +1,3 @@
+---
+Lad læsere logge ind fra et link sendt via e‑mail i stedet for at huske en adgangskode. Sådan fungerer login‑links, hvem der modtager dem, og hvordan de forbliver sikre.
+---

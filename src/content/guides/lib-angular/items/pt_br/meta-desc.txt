@@ -1,0 +1,3 @@
+---
+Adicione comentários a um aplicativo Angular com o pacote oficial. Instale‑o, insira o componente em um template e passe seu tenant e o ID da página.
+---

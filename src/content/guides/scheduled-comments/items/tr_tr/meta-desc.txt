@@ -1,0 +1,3 @@
+---
+Yorumları bir konu içinde zaman içinde damlatın, böylece yeni bir sayfa boş görünmez. Oynatmayı nasıl zamanlayacağınız ve beklediği içe aktarma formatı.
+---

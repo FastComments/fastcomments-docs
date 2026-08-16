@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare zu einer Jekyll‑Website mit dem offiziellen Gem hinzu. Installieren Sie es, fügen Sie einen Liquid‑Tag zu Ihrem Beitragslayout hinzu und konfigurieren Sie das Widget aus _config.yml.
+---

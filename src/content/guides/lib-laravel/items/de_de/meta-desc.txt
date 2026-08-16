@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare zu einer Laravel‑App mit Blade‑Komponenten hinzu. Wickelt das PHP SDK für vollen API‑Zugriff ein und verbindet SSO automatisch mit Ihrem authentifizierten Benutzer.
+---

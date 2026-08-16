@@ -1,0 +1,3 @@
+---
+Agrega comentarios a un sitio Astro con la integración oficial. Importa el componente, pasa tu ID de inquilino y se renderiza donde lo coloques.
+---

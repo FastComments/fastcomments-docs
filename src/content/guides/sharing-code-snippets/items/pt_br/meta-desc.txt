@@ -1,0 +1,3 @@
+---
+Deixe os comentaristas postar código executável, com realce de sintaxe, em seus tópicos. Quais linguagens são suportadas e como ativar o compartilhamento de trechos de código.
+---

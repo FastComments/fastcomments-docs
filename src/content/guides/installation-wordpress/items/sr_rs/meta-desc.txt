@@ -1,0 +1,3 @@
+---
+Instalirajte WordPress dodatak za live komentare, moderaciju sa vaše kontrolne table, niti samo za članove putem SSO, i sinhronizovane brojeve komentara nazad na objave.
+---

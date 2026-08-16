@@ -1,0 +1,3 @@
+---
+Bir yorum eklendiğinde, düzenlendiğinde veya silindiğinde bir HTTP geri araması alın. Hangi olayların tetiklendiği, isteği nasıl doğrulayacağınız ve yeniden denemelerin nasıl davrandığı.
+---

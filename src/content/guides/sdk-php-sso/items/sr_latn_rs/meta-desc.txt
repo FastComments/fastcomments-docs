@@ -1,0 +1,3 @@
+---
+Generišite potpisane FastComments SSO tokena u PHP-u tako da vaši prijavljeni korisnici komentarišu kao oni sami, bez drugog naloga i dodatnog koraka prijave.
+---

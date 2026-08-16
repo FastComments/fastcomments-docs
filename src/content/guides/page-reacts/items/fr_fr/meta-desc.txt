@@ -1,0 +1,3 @@
+---
+Permettez aux lecteurs de réagir à une page sans écrire de commentaire, en utilisant des réactions emoji personnalisables au-dessus du fil ou le bouton flottant de likes.
+---

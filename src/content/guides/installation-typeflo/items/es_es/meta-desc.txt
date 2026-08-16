@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo a un blog de Typeflo.io pegando el fragmento de FastComments en la entrada de código, luego restyliza el widget para que coincida con tu tema.
+---

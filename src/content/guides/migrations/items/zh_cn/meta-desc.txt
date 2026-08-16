@@ -1,0 +1,3 @@
+---
+从 Disqus 或其他提供商迁移到 FastComments，导入 WordPress 评论，在租户之间移动用户和域，并随时导出您的数据。
+---

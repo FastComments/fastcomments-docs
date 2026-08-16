@@ -1,0 +1,3 @@
+---
+FastComments 小工具支援哪些瀏覽器、Internet Explorer 的狀況、我們如何測試每個版本，以及小工具所需的 JavaScript。
+---

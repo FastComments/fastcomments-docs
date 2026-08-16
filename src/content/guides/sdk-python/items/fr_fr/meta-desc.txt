@@ -1,0 +1,3 @@
+---
+Appelez l'API FastComments depuis Python. Installez‑la avec pip, puis créez, récupérez et modérez les commentaires, avec des assistants SSO et chaque point de terminaison documenté.
+---

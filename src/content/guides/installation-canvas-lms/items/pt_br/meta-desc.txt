@@ -1,0 +1,3 @@
+---
+Adicione comentários e chat colaborativo aos cursos Canvas via LTI 1.3. Crie uma chave de desenvolvedor, conecte‑se e mapeie funções do Canvas, sem plugin de servidor.
+---

@@ -1,0 +1,3 @@
+---
+Vdelajte nit FastComments kjerkoli, ki sprejme oEmbed URL, tako da se komentarji prenašajo s vsebino namesto da bi bili vezani na eno stran.
+---

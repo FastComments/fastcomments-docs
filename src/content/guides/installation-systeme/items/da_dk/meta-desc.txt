@@ -1,0 +1,3 @@
+---
+Tilføj live‑kommentarer til en Systeme.io‑blog ved at indsætte et snippet i blogtemaets skabelon eller i enhver anden side‑skabelon, du kan redigere.
+---

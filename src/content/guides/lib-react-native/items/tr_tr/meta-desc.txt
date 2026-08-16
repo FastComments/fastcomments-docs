@@ -1,0 +1,3 @@
+---
+Canlı yorum ve sohbet widget'larını SSO ile bir React Native uygulamasına gömün, ayrıca webview widget'ı yerine yerel SDK'ya ne zaman başvurmanız gerektiği.
+---

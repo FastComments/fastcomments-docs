@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo i dyskusję o produktach do sklepu WooCommerce, korzystając z wtyczki FastComments WordPress, bez konieczności edytowania motywu.
+---

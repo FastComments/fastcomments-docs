@@ -1,0 +1,3 @@
+---
+Brinde a su comunidad perfiles reales: avatares, biografías, enlaces sociales, insignias obtenidas, mensajería directa y un feed de actividad, con controles de privacidad en todo momento.
+---

@@ -1,0 +1,3 @@
+---
+Fügen Sie Inline‑Diskussionen zu einer Super.so‑Website mit Collab Chat hinzu, damit Leser Text in Ihren Notion‑Seiten hervorheben und gemeinsam darüber sprechen können.
+---

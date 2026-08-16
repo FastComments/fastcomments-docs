@@ -1,0 +1,3 @@
+---
+Odlučite po korisniku tko može čitati i tko može objavljivati, izravno iz vašeg SSO opterećenja. Specifikacija, kako je implementirati i primjeri API poziva.
+---

@@ -1,0 +1,3 @@
+---
+BigCommerce blog gönderileri ve ürün sayfalarına tema şablonunuzu düzenleyerek canlı yorumlar ekleyin, Page Builder için ayrı bir snippet ile.
+---

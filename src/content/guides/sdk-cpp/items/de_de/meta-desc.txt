@@ -1,0 +1,4 @@
+---
+Rufen Sie die FastComments-API aus C++ auf. Bauen Sie den Client aus dem Quellcode mit CMake, und erstellen, holen und moderieren Sie Kommentare synchron oder asynchron.
+
+---

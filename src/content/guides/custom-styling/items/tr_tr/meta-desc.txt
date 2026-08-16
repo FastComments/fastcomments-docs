@@ -1,0 +1,3 @@
+---
+Yorum widget'ının her bölümünü kendi CSS'inizle yeniden stilize edin. v2 için tam varsayılan stil sayfası, ayrıca son yorumlar ve en çok tartışılan widget'lar.
+---

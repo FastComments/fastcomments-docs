@@ -1,0 +1,3 @@
+---
+Fügen Sie einem Systeme.io‑Blog Live‑Kommentare hinzu, indem Sie einen Snippet in die Blog‑Theme‑Vorlage oder in jede andere Seitenvorlage einfügen, die Sie bearbeiten können.
+---

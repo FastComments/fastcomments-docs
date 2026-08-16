@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz Node.js-a ili pregledača. Instalirajte putem npm-a, zatim kreirajte i moderirajte komentare, pretplatite se na događaje u realnom vremenu i postavite SSO.
+---

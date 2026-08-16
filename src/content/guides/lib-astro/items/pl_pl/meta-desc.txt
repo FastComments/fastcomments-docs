@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do witryny Astro za pomocą oficjalnej integracji. Zaimportuj komponent, przekaż swój identyfikator najemcy i zostanie on renderowany w dowolnym miejscu, w którym go umieścisz.
+---

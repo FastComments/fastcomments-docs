@@ -1,0 +1,3 @@
+---
+Ajoutez une section de commentaires à n'importe quel site web en environ cinq minutes. Extraits prêts à l'emploi pour WordPress, React, Vue, Angular, React Native et HTML simple.
+---

@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do witryny Hugo za pomocą shortcode'ów, w tym integrację z motywem, masowe liczenie komentarzy na stronach list i pełną referencję konfiguracji widgetu.
+---

@@ -1,0 +1,3 @@
+---
+Neka komentari prate tamnu temu vašeg sajta. Detektujte je iz operativnog sistema, prebacite je sami ili koristite ugrađenu podršku za WordPress Networker.
+---

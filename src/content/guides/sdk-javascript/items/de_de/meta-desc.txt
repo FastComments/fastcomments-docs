@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API von Node.js oder dem Browser aus auf. Installieren Sie sie mit npm, dann erstellen und moderieren Sie Kommentare, abonnieren Live‑Ereignisse und richten Sie SSO ein.
+---

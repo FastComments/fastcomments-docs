@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do witryny Zyro za pomocą widżetu kodu i dodaj przycisk unoszących się polubień, aby czytelnicy mogli reagować bez pisania komentarza.
+---

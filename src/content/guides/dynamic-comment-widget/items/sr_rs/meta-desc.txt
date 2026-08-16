@@ -1,0 +1,3 @@
+---
+Zamenite nit komentara bez ponovnog učitavanja stranice. Pokrenite više widgeta jedan pored drugog, usmerite ih na istu nit da bi ostali sinhronizovani, ili na različite niti.
+---

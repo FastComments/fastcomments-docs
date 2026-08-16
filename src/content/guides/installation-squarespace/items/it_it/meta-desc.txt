@@ -1,0 +1,3 @@
+---
+Aggiungi commenti in tempo reale a Squarespace in tre modi: solo nei post del blog, su ogni pagina dell'intero sito tramite iniezione di codice, o in una pagina specifica con un blocco di codice.
+---

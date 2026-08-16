@@ -1,0 +1,3 @@
+---
+Installer FastComments Moodle-pluginet for at tilføje kommentarer til kurser og aktiviteter. SSO er automatisk, så studerende aldrig behøver at logge ind to gange.
+---

@@ -1,0 +1,1 @@
+Beschränken Sie das Kommentieren auf zahlende MemberSpace‑Mitglieder, optional können weiterhin anonyme Kommentare erlaubt werden, und setzen Sie Badges basierend auf der Mitgliedschaftsstufe des Lesers.

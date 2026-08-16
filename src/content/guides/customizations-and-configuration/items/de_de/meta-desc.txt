@@ -1,0 +1,3 @@
+---
+Konfigurieren Sie das Kommentar-Widget von Anfang bis Ende: zu welcher Seite ein Thread gehört, benutzerdefiniertes CSS und Schriftarten, Dark Mode, Textüberschreibungen, Moderationsstandards und SSO.
+---

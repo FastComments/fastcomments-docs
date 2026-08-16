@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare zu einer Vue 2 App hinzu. Installieren Sie das Paket, rendern Sie die Widget‑Komponente und aktualisieren Sie die aktuelle Seite, wenn Ihre Single‑Page‑App die Route ändert.
+---

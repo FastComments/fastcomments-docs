@@ -1,0 +1,3 @@
+---
+Jede Sprache, in der das FastComments-Widget verfügbar ist, welche Teile des Produkts übersetzt werden und wie man eine Sprache anfordert, die wir noch nicht unterstützen.
+---

@@ -1,0 +1,3 @@
+---
+Incorpore um thread do FastComments em qualquer lugar que aceite uma URL oEmbed, para que os comentários viajem com o conteúdo em vez de estarem vinculados a uma única página.
+---

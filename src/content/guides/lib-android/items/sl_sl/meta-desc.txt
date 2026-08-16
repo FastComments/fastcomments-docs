@@ -1,0 +1,3 @@
+---
+Dodajte izvorne komentarje, klepet in vire v Android aplikacijo. Zagotovite varno SSO, popolno prilagoditev teme in vodila po pomnilniku za dolgovečne zaslone.
+---

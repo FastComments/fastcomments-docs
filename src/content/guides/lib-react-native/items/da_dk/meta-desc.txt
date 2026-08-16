@@ -1,0 +1,3 @@
+---
+Indlejr de live kommentar- og chat-widgets i en React Native-app med SSO, samt hvornår du skal vælge det native SDK i stedet for webview-widgeten.
+---

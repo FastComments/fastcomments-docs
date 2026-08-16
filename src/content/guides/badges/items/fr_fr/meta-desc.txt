@@ -1,0 +1,3 @@
+---
+Récompensez automatiquement les commentateurs avec des badges en fonction du nombre de commentaires, des votes positifs, des réponses, du statut de vétéran et de l'activité nocturne, ou attribuez les badges manuellement.
+---

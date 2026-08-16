@@ -1,0 +1,3 @@
+---
+Gatsby sitesine yorum ekleyin. Kopyalayabileceğiniz tam çalışan bir örnek proje, widget'ın nereye yerleştirileceğini ve sayfa kimliğinin nasıl geçirileceğini gösterir.
+---

@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do aplikacji Next.js przy użyciu oficjalnego pakietu, z gotowymi komponentami i wskazówkami dotyczącymi wdrażania na Vercel.
+---

@@ -1,0 +1,3 @@
+---
+Canlı yorumlar için Drupal modülünü widget blokları veya içerik türü alanları olarak, SSO, rol bazlı izinler ve AB veri konumlandırmasıyla kurun.
+---

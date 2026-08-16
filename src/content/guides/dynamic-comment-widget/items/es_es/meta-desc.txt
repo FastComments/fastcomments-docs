@@ -1,0 +1,3 @@
+---
+Intercambia un hilo de comentarios sin recargar la página. Ejecuta varios widgets uno al lado del otro, apúntalos a un mismo hilo para mantenerlos sincronizados, o a hilos diferentes.
+---

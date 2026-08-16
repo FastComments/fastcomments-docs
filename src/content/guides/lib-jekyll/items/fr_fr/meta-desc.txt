@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à un site Jekyll avec la gem officielle. Installez‑la, ajoutez une balise Liquid à la mise en page de votre article, et configurez le widget depuis _config.yml.
+---

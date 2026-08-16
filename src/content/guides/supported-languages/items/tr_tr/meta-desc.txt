@@ -1,0 +1,3 @@
+---
+FastComments widget'in gönderildiği her dil, ürünün hangi bölümlerinin çevrildiği ve henüz kapsamadığımız bir dili nasıl talep edebileceğiniz.
+---

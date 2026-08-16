@@ -1,0 +1,3 @@
+---
+FastComments'ta yöneticileri, moderatörleri ve yorumcuları anlayın. Kullanıcı adlarının nasıl çalıştığını, her türün nasıl eklendiğini ve yönetici izinlerinin nasıl değiştirileceğini öğrenin.
+---

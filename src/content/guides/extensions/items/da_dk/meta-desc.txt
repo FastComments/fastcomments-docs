@@ -1,0 +1,3 @@
+---
+Tilføj din egen markup, eventlyttere og logik til kommentarfunktionen med Extensions. Livscyklussen, udvidelsesobjektet og API'et du kan kalde.
+---

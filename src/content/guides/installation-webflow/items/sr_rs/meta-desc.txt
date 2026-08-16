@@ -1,0 +1,3 @@
+---
+Dodajte live komentare u Webflow pomoću embed block, na statičnoj stranici ili kroz čitavu kolekciju, zatim objavite da bi bili aktivni.
+---

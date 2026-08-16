@@ -1,0 +1,3 @@
+---
+Hvert sprog, som FastComments-widget'en leveres på, hvilke dele af produktet der er oversat, og hvordan man anmoder om et sprog, vi endnu ikke dækker.
+---

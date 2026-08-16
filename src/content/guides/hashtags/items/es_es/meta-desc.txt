@@ -1,0 +1,3 @@
+---
+Discusión grupal con hashtags que los lectores pueden hacer clic y filtrar. Autocompletar, símbolos personalizados en lugar de #, y rellenar etiquetas desde tu propio código.
+---

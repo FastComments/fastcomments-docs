@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API von Swift aus auf. Fügen Sie das Paket mit dem Swift Package Manager hinzu und erstellen, holen und moderieren Sie dann Kommentare, wobei SSO-Hilfsfunktionen enthalten sind.
+---

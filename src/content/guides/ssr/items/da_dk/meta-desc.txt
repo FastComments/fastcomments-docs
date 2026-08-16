@@ -1,0 +1,3 @@
+---
+Render kommentarer ind i din oprindelige HTML, så crawlers og langsomme forbindelser ser dem med det samme. Hvad FastComments understøtter, og hvordan du aktiverer SSR.
+---

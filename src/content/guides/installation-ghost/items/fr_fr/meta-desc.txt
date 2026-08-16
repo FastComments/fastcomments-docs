@@ -1,0 +1,3 @@
+---
+Donnez aux membres de Ghost une section de commentaires qui les connaît déjà. Importez les noms et avatars des membres, activez les notifications de réponses, et modifiez le modèle de votre article.
+---

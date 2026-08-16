@@ -1,0 +1,3 @@
+---
+Controle quais e‑mails o FastComments envia aos seus leitores, como eles podem cancelar a assinatura, como as notificações se comportam para usuários SSO e como os endereços suprimidos são tratados.
+---

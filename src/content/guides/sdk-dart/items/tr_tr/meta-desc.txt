@@ -1,0 +1,3 @@
+---
+FastComments API'sini Dart ve Flutter'dan çağırın. Paketi pubspec'e ekleyin, ardından yorumları oluşturun, alın ve denetleyin, SSO token yardımcıları dahil.
+---

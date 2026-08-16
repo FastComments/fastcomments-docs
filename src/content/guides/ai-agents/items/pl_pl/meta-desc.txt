@@ -1,0 +1,3 @@
+---
+Twórz agenty AI, które obserwują Twoją społeczność i działają samodzielnie: automatyczne moderowanie, powitanie nowych użytkowników, podsumowywanie wątków i przypinanie najlepszych komentarzy.
+---

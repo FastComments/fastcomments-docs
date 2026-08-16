@@ -1,0 +1,3 @@
+---
+Pozwól czytelnikom zaznaczyć dowolne zdanie na Twojej stronie i dyskutować je w miejscu. Wątki są zakotwiczone do dokładnego tekstu i synchronizują się na żywo u wszystkich czytających.
+---

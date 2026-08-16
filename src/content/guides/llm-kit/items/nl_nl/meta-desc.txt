@@ -1,0 +1,1 @@
+Richt Claude, ChatGPT of Cursor op de FastComments‑documentatie zodat ze correcte integratiecode schrijven. Voeg het LLM Kit‑fragment toe of verbind de MCP‑server.

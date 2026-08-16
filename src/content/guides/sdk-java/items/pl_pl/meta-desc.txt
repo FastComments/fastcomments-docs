@@ -1,0 +1,3 @@
+---
+Wywołaj API FastComments z języka Java. Dodaj zależność Maven lub Gradle, a następnie twórz, pobieraj i moderuj komentarze, z wbudowanymi pomocnikami SSO.
+---

@@ -1,0 +1,3 @@
+---
+Pokrenite izolovanu FastComments implementaciju unutar vašeg sopstvenog cloud naloga, koju upravljamo mi, sa punim administratorskim pristupom i mogućnošću hostovanja zakupaca sa belom oznakom.
+---

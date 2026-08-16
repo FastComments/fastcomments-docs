@@ -1,0 +1,3 @@
+---
+Passa a FastComments da Disqus o da un altro provider, importa i commenti di WordPress, sposta utenti e domini tra tenant e esporta i tuoi dati in qualsiasi momento.
+---

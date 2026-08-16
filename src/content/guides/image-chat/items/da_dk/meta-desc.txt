@@ -1,0 +1,3 @@
+---
+Lad læserne klikke på et sted på et billede og starte en samtale om det. Visuelle markører fastgør hver tråd til dens præcise punkt og synkroniserer live på tværs af seere.
+---

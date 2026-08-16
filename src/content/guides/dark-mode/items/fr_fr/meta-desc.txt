@@ -1,0 +1,3 @@
+---
+Faire en sorte que les commentaires suivent le thème sombre de votre site. Détectez‑le depuis le système d’exploitation, basculez‑le vous‑même, ou utilisez la prise en charge intégrée de WordPress Networker.
+---

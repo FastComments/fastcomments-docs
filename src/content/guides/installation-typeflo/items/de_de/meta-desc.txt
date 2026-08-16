@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu einem Typeflo.io‑Blog hinzu, indem Sie das FastComments‑Snippet in das Code‑Eingabefeld einfügen, und passen Sie anschließend das Widget an Ihr Theme an.
+---

@@ -1,0 +1,3 @@
+---
+Dodajte komentare u Laravel aplikaciju pomoću Blade komponenti. Omotava PHP SDK za pun pristup API-ju i automatski povezuje SSO sa vašim autentifikovanim korisnikom.
+---

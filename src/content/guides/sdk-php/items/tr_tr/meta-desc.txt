@@ -1,0 +1,3 @@
+---
+FastComments API'sini PHP'den çağırın. Composer ile kurun, ardından yorumları oluşturun, alın ve denetleyin; istek modelleri ve SSO yardımcıları dahil.
+---

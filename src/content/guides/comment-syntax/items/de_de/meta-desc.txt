@@ -1,0 +1,1 @@
+Formatieren Sie Kommentare mit **Fett**, Links, Code und Medien. Was der Kommentar‑Parser akzeptiert und die Bereinigung, die verhindert, dass Markup zu einem Angriff wird.

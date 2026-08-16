@@ -1,0 +1,4 @@
+---
+Voeg commentaar en collaboratieve chat toe aan Canvas-cursussen via LTI 1.3. Maak een ontwikkelaarsleutel, maak verbinding en koppel Canvas-rollen, zonder serverplug-in.
+
+---

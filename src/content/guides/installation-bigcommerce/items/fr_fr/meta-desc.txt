@@ -1,0 +1,3 @@
+---
+Mettez des commentaires en direct sur les articles de blog et les pages produit de BigCommerce en modifiant le modèle de votre thème, avec un extrait séparé pour le Page Builder.
+---

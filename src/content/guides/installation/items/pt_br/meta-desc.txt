@@ -1,0 +1,3 @@
+---
+Adicione uma seção de comentários a qualquer site em cerca de cinco minutos. Trechos prontos para WordPress, React, Vue, Angular, React Native e HTML puro.
+---

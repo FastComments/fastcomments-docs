@@ -1,0 +1,3 @@
+---
+Rendern Sie Kommentare in Ihr initiales HTML, damit Crawler und langsame Verbindungen sie sofort sehen. Was FastComments unterstützt und wie Sie SSR aktivieren.
+---

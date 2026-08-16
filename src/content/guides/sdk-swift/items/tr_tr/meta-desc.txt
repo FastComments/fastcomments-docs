@@ -1,0 +1,3 @@
+---
+FastComments API'sini Swift'ten çağırın. Paketi Swift Package Manager ile ekleyin, ardından yorumları oluşturun, alın ve denetleyin, SSO yardımcıları dahil.
+---

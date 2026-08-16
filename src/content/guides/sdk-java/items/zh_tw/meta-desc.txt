@@ -1,0 +1,3 @@
+---
+從 Java 呼叫 FastComments API。加入 Maven 或 Gradle 依賴，然後建立、取得以及審核評論，並包含 SSO 輔助工具。
+---

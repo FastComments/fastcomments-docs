@@ -1,0 +1,3 @@
+---
+Vendi il servizio di commenti sotto il tuo marchio. Crea e gestisci i tenant tramite l'API o il cruscotto, con la fatturazione gestita da te o da FastComments.
+---

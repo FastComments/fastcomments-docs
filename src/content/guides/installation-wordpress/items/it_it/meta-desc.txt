@@ -1,0 +1,3 @@
+---
+Installa il plugin WordPress per commenti in tempo reale, moderazione dal tuo cruscotto, discussioni solo per membri tramite SSO e conteggi dei commenti sincronizzati nuovamente nei post.
+---

@@ -1,0 +1,3 @@
+---
+從 Dart 和 Flutter 呼叫 FastComments API。將套件加入 pubspec，然後建立、取得以及審核評論，並包含 SSO 令牌輔助工具。
+---

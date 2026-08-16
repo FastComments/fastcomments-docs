@@ -1,0 +1,3 @@
+---
+Chiama l'API FastComments da Ruby. Installa il gem, quindi crea, recupera e modera i commenti, con gli helper SSO e tutti gli endpoint documentati.
+---

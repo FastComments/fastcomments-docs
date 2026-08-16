@@ -1,0 +1,3 @@
+---
+Richten Sie SAML 2.0 Single Sign‑On ein, damit Mitarbeitende und Mitglieder über Ihren Unternehmens‑Identitätsanbieter auf FastComments zugreifen können. Rollen‑Mapping, Tests und häufige Fehler.
+---

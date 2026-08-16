@@ -1,0 +1,1 @@
+Umieść komentarze na żywo w postach blogowych i stronach produktów BigCommerce, edytując szablon swojego motywu, z osobnym fragmentem dla Page Buildera.

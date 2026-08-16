@@ -1,0 +1,3 @@
+---
+הוסף מדור תגובות לכל אתר בכחמש דקות בערך. קטעי קוד מוכנים מראש עבור WordPress, React, Vue, Angular, React Native, ו‑HTML רגיל.
+---

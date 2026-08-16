@@ -1,0 +1,3 @@
+---
+Dodajte žive komentarje na Framer spletno mesto z vdelanim blokom in Framer‑specifičnim izrezkom, ter nastavitvami višine, ki preprečijo, da bi se pripomoček odrezal.
+---

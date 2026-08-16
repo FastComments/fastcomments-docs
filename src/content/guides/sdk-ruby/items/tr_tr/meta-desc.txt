@@ -1,0 +1,1 @@
+FastComments API'sini Ruby'den çağırın. Gem'i kurun, ardından yorumları oluşturun, alın ve denetleyin; SSO yardımcıları ve tüm uç noktalar belgelenmiştir.

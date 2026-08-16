@@ -1,0 +1,4 @@
+---
+Swift から FastComments API を呼び出します。Swift Package Manager でパッケージを追加し、コメントの作成、取得、モデレーションを行い、SSO ヘルパーも含まれています。
+
+---

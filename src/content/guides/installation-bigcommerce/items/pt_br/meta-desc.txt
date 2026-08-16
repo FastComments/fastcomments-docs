@@ -1,0 +1,3 @@
+---
+Coloque comentários ao vivo nas postagens de blog e nas páginas de produtos do BigCommerce editando o modelo do seu tema, com um snippet separado para o Page Builder.
+---

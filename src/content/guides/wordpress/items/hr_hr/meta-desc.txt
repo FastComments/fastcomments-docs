@@ -1,0 +1,3 @@
+---
+Dodajte live komentiranje u WordPress uz službeni dodatak: moderiranje nadzorne ploče, SSO za članstvo na stranicama i brojanje komentara sinkronizirano natrag na objave.
+---

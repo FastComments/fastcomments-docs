@@ -1,0 +1,3 @@
+---
+Dodajte komentarje v živo v WordPress z uradnim vtičnikom: moderiranje na nadzorni plošči, SSO za članske strani in število komentarjev, sinhronizirano nazaj v objave.
+---

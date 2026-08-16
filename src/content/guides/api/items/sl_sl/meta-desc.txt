@@ -1,0 +1,3 @@
+---
+Ustvarjajte, pridobivajte, moderirajte in izvažajte komentarje prek HTTP. Vsak FastComments končni naslov z njegovimi zahtevami in odzivnimi tipi, vključno z glasovi, uporabniki in stranmi.
+---

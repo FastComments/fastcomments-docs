@@ -1,0 +1,3 @@
+---
+Scambia un thread di commenti senza ricaricare la pagina. Esegui più widget affiancati, puntali su un unico thread per mantenerli sincronizzati, o su thread diversi.
+---

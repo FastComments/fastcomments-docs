@@ -1,0 +1,3 @@
+---
+Prikupljajte ocene u zvezdicama i pisane recenzije, definišite svoja pitanja i prikažite rezultate pomoću widgeta za pregled ili ih preuzmite putem API-ja.
+---

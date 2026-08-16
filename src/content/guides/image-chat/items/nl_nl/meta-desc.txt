@@ -1,0 +1,3 @@
+---
+Laat lezers op een plek in een afbeelding klikken en een gesprek starten over die plek. Visuele markeringen bevestigen elke thread op het exacte punt en synchroniseren live tussen kijkers.
+---

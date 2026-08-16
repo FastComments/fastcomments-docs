@@ -1,0 +1,3 @@
+---
+Yorum widget'ını uçtan uca yapılandırın: bir konunun hangi sayfaya ait olduğu, özel CSS ve yazı tipleri, karanlık mod, metin geçersiz kılmaları, moderasyon varsayılanları ve SSO.
+---

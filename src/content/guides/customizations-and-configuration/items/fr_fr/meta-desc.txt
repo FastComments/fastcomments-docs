@@ -1,0 +1,3 @@
+---
+Configurez le widget de commentaires de bout en bout : la page à laquelle appartient un fil, le CSS et les polices personnalisés, le mode sombre, les substitutions de texte, les paramètres par défaut de modération et le SSO.
+---

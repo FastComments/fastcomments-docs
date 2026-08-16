@@ -1,0 +1,3 @@
+---
+Vierta comentarios en un hilo a lo largo del tiempo para que una nueva página no parezca vacía. Cómo programar la reproducción y el formato de importación que espera.
+---

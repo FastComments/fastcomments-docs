@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à un site Gatsby. Un projet d'exemple complet et fonctionnel que vous pouvez copier, montrant où placer le widget et comment transmettre l'ID de la page.
+---

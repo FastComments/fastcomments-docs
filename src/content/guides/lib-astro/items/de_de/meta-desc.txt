@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare zu einer Astro site mit der offiziellen Integration hinzu. Importieren Sie die Komponente, übergeben Sie Ihre tenant ID, und sie wird dort gerendert, wo Sie sie platzieren.
+---

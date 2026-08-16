@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do Webnode za pomocą bloku HTML. Uwaga, blok jest płatną funkcją od czerwca 2023, więc nowsze projekty wymagają pakietu premium.
+---

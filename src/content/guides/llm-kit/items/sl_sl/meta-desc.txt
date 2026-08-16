@@ -1,0 +1,3 @@
+---
+Usmerite Claude, ChatGPT ali Cursor na dokumentacijo FastComments, da napišejo pravilno integracijsko kodo. Dodajte izsek LLM Kit ali povežite strežnik MCP.
+---

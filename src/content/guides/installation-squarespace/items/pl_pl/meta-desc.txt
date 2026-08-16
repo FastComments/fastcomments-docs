@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do Squarespace na trzy sposoby: tylko w postach na blogu, na każdej stronie w całej witrynie za pomocą wstrzykiwania kodu lub na jednej konkretnej stronie za pomocą bloku kodu.
+---

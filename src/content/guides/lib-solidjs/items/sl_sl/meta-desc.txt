@@ -1,0 +1,3 @@
+---
+Dodajte komentarje v aplikacijo SolidJS z uradnim paketom, vključno z imperativnim ročajem za spreminjanje konfiguracije gradnika brez ponovnega nalaganja.
+---

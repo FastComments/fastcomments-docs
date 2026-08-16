@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer, live chat og anmeldelser til en Vue 3-app. Installer pakken, render komponenten, og skift tråde, mens din single-page app navigerer.
+---

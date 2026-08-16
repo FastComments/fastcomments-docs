@@ -1,0 +1,3 @@
+---
+Permettez aux lecteurs de se connecter via un lien envoyé par e‑mail au lieu de se souvenir d’un mot de passe. Comment fonctionnent les liens de connexion, qui les reçoit, et comment ils restent sécurisés.
+---

@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo a un sitio Zyro con el widget de código, y añade el botón flotante de me gusta para que los lectores puedan reaccionar sin escribir un comentario.
+---

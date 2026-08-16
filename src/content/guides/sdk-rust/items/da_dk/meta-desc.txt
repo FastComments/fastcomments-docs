@@ -1,0 +1,3 @@
+---
+Kald FastComments API fra Rust. Installer med cargo add, og derefter opret, hent og moderer kommentarer, med SSO‑hjælper og alle endepunkter dokumenteret.
+---

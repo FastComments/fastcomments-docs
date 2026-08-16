@@ -1,0 +1,5 @@
+Render comments into your initial HTML so crawlers and slow connections see them immediately. What FastComments supports, and how to turn SSR on.
+
+--- 
+
+コメントを初期HTMLにレンダリングすることで、クローラーや遅い接続でもすぐに表示されます。FastComments がサポートしている内容と、SSR を有効にする方法。

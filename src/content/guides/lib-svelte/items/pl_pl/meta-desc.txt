@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do aplikacji Svelte za pomocą oficjalnego pakietu. Zainstaluj go, umieść komponent widgetu na swojej stronie i przekaż swój tenant oraz ID strony.
+---

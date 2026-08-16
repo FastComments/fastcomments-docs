@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do witryny IONOS. Sztuczka polega na elemencie formularza kontaktowego, w którym kreator IONOS pozwala wkleić własny kod.
+---

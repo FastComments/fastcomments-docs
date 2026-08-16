@@ -1,0 +1,3 @@
+---
+Kald FastComments API'et fra C++. Byg klienten fra kildekoden med CMake, og opret, hent og moderer kommentarer synkront eller asynkront.
+---

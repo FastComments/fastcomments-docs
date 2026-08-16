@@ -1,0 +1,3 @@
+---
+Adicione comentários a um aplicativo Laravel com componentes Blade. Envolve o SDK PHP para acesso total à API e conecta o SSO ao seu usuário autenticado automaticamente.
+---

@@ -1,0 +1,3 @@
+---
+Herontwerp elk onderdeel van de commentaarwidget met je eigen CSS. Volledig standaard stylesheet voor v2, plus de recente reacties en meest besproken widgets.
+---

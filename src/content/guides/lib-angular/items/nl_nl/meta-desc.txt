@@ -1,0 +1,3 @@
+---
+Voeg opmerkingen toe aan een Angular‑app met het officiële pakket. Installeer het, plaats de component in een template en geef uw tenant en pagina‑ID door.
+---

@@ -1,0 +1,1 @@
+Aggiungi una sezione commenti a un'app Bubble.io con un blocco HTML, includendo le impostazioni di larghezza e layout che impediscono al widget di essere tagliato.

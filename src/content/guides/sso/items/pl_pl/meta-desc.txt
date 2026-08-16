@@ -1,0 +1,3 @@
+---
+Zaloguj swoich istniejących użytkowników bezpośrednio w sekcji komentarzy, aby nigdy nie tworzyli drugiego konta ani nie logowali się dwukrotnie.
+---

@@ -1,0 +1,3 @@
+---
+Kolačići trećih strana više nisu potrebni za komentarisanje. Za šta FastComments i dalje koristi kolačiće i kako ih omogućiti za glatkiji tok prijave.
+---

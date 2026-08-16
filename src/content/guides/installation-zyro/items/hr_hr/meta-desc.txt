@@ -1,0 +1,3 @@
+---
+Dodajte live komentare na Zyro stranicu pomoću widgeta koda i dodajte plutajući gumb za lajkove kako bi čitatelji mogli reagirati bez pisanja komentara.
+---

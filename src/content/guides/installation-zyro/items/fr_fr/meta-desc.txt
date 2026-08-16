@@ -1,0 +1,1 @@
+Ajoutez des commentaires en direct à un site Zyro avec le widget de code, et ajoutez le bouton de likes flottant afin que les lecteurs puissent réagir sans écrire de commentaire.

@@ -1,0 +1,3 @@
+---
+Dodajte komentarje, klepet v živo in ocene v aplikacijo Vue 3. Namestite paket, upodabljajte komponento in preklapljajte niti, ko se vaša enostranska aplikacija premika.
+---

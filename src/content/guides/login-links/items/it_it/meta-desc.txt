@@ -1,0 +1,3 @@
+---
+Consenti ai lettori di accedere tramite un link inviato via email invece di ricordare una password. Come funzionano i link di accesso, chi li riceve e come rimangono sicuri.
+---

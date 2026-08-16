@@ -1,0 +1,3 @@
+---
+Senden Sie Kommentarbenachrichtigungen, die wie Ihr Produkt aussehen, nicht wie unseres. Schreiben Sie Vorlagen mit Ihrem eigenen Markup, variieren Sie sie pro Domain und lokalisieren Sie den Text.
+---

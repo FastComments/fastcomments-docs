@@ -1,0 +1,3 @@
+---
+Permita que os leitores façam login a partir de um link enviado por e‑mail, em vez de lembrar uma senha. Como os links de login funcionam, quem os recebe e como eles permanecem seguros.
+---

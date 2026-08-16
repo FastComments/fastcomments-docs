@@ -1,0 +1,3 @@
+---
+Führen Sie eine isolierte FastComments‑Bereitstellung in Ihrem eigenen Cloud‑Konto aus, die von uns verwaltet wird, mit vollem Administratorzugriff und der Möglichkeit, White‑Label‑Mandanten zu hosten.
+---

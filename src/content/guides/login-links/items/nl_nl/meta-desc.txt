@@ -1,0 +1,3 @@
+---
+Laat lezers inloggen via een e‑maillink in plaats van een wachtwoord te onthouden. Hoe inloglinks werken, wie ze ontvangt, en hoe ze veilig blijven.
+---

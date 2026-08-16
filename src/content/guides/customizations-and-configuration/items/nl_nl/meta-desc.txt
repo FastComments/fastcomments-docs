@@ -1,0 +1,3 @@
+---
+Configureer de commentaarwidget van begin tot eind: op welke pagina een thread behoort, aangepaste CSS en lettertypen, donkere modus, tekstoverschrijvingen, moderatie‑standaarden en SSO.
+---

@@ -1,0 +1,3 @@
+---
+從 Disqus 或其他提供者遷移到 FastComments，匯入 WordPress 評論，於租戶之間搬移使用者與網域，並隨時匯出您的資料。
+---

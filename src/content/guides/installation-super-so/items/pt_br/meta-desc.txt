@@ -1,0 +1,3 @@
+---
+Adicione discussões inline a um site Super.so com o Collab Chat, para que os leitores possam destacar texto nas suas páginas do Notion e conversar sobre ele juntos.
+---

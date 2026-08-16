@@ -1,0 +1,3 @@
+---
+Inserisci commenti in tempo reale sui post del blog e sulle pagine prodotto di BigCommerce modificando il modello del tuo tema, con uno snippet separato per Page Builder.
+---

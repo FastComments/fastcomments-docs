@@ -1,0 +1,3 @@
+---
+Konfigurer kommentarfunktionen fra ende til anden: hvilken side en tråd tilhører, brugerdefineret CSS og skrifttyper, mørk tilstand, tekstoverstyringer, standardindstillinger for moderation og SSO.
+---

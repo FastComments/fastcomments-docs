@@ -1,0 +1,3 @@
+---
+Naj bralci vstopijo prek povezave, poslane po e‑pošti, namesto da si zapomnijo geslo. Kako delujejo povezave za prijavo, kdo jih prejme in kako ostanejo varne.
+---

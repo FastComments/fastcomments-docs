@@ -1,0 +1,3 @@
+---
+Permita que los lectores comenten sin fricción. Compare enlaces de inicio de sesión sin contraseña, contraseñas, SSO y SAML para elegir el método de inicio de sesión que su audiencia aceptará.
+---

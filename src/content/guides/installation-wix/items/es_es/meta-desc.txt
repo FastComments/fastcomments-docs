@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo a Wix con un bloque incrustado y establece el ID del hilo para que cada página y publicación del blog tenga su propia conversación en lugar de compartir una.
+---

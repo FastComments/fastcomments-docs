@@ -1,0 +1,3 @@
+---
+FastComments API'sini Nim'den çağırın. nimble ile kurun, ardından yorumları oluşturun, alın ve denetleyin, SSO yardımcıları ve tüm uç noktalar belgelenmiştir.
+---

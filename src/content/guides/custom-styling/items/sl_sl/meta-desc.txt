@@ -1,0 +1,3 @@
+---
+Preoblikujte vsak del pripomočka za komentarje s svojo CSS. Polna privzeta stilna predloga za v2, plus nedavni komentarji in najbolj razpravljani pripomočki.
+---

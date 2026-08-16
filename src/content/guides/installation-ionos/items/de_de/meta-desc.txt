@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu einer IONOS‑Website hinzu. Der Trick ist das Kontaktformular‑Element, das dort ist, wo der IONOS‑Builder Ihnen das Einfügen von benutzerdefiniertem Code ermöglicht.
+---

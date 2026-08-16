@@ -1,0 +1,3 @@
+---
+Osadź widżety komentarzy na żywo i czatu w aplikacji React Native z SSO, a także kiedy sięgnąć po natywny SDK zamiast widżetu webview.
+---

@@ -1,0 +1,3 @@
+---
+Renderujte komentare u vaš početni HTML kako bi crawleri i spore veze odmah videli. Šta FastComments podržava i kako uključiti SSR.
+---

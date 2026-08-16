@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz Ruby-ja. Instalirajte gem, a zatim kreirajte, preuzmite i moderirajte komentare, uz SSO pomoćnike i dokumentaciju svih krajnjih tačaka.
+---

@@ -1,0 +1,3 @@
+---
+Dobijte HTTP povratni poziv u trenutku kada je komentar dodat, izmenjen ili obrisan. Koji događaji se pokreću, kako da verifikujete zahtev i kako se ponašaju ponovni pokušaji.
+---

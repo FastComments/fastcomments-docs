@@ -1,0 +1,1 @@
+Ghost članom zagotovite razdelek za komentarje, ki jih že pozna. Uvozite imena in avatarje članov, omogočite obvestila o odgovorih in uredite predlogo svoje objave.

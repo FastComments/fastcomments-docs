@@ -1,0 +1,3 @@
+---
+Dodajte komentare na Astro sajt uz zvaničnu integraciju. Uvezite komponentu, prosledite svoj tenant ID i ona će se prikazati gde god je postavite.
+---

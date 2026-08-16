@@ -1,0 +1,3 @@
+---
+從 Rust 呼叫 FastComments API。使用 cargo add 安裝，然後建立、取得和管理評論，提供 SSO 輔助功能，並記錄所有端點。
+---

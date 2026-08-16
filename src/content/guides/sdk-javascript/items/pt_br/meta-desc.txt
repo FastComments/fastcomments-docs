@@ -1,0 +1,3 @@
+---
+Chame a API FastComments a partir do Node.js ou do navegador. Instale com npm, então crie e modere comentários, assine eventos ao vivo e configure SSO.
+---

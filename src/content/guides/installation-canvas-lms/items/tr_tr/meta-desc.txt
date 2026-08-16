@@ -1,0 +1,3 @@
+---
+LTI 1.3 üzerinden Canvas kurslarına yorum ekleme ve işbirlikçi sohbet ekleyin. Bir geliştirici anahtarı oluşturun, bağlanın ve Canvas rollerini eşleyin, sunucu eklentisi olmadan.
+---

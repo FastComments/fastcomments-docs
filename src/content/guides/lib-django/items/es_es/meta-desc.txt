@@ -1,0 +1,3 @@
+---
+Agrega comentarios a una aplicación Django con etiquetas de plantilla, incluyendo SSO seguro automático del usuario conectado, acceso a la API del lado del servidor y soporte para la región de la UE.
+---

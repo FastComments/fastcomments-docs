@@ -1,0 +1,1 @@
+Kod widget'ı ile bir Zyro sitesine canlı yorumlar ekleyin ve okuyucuların yorum yazmadan tepki verebilmeleri için kayan beğeniler düğmesini ekleyin.

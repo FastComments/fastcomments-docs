@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til et Astro‑site med den officielle integration. Importér komponenten, angiv din tenant ID, og den renderes, hvor du placerer den.
+---

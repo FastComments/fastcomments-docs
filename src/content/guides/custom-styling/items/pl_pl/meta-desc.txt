@@ -1,0 +1,3 @@
+---
+Przestylizuj każdą część widżetu komentarzy przy użyciu własnego CSS. Pełny domyślny arkusz stylów dla wersji v2, wraz z widżetami najnowszych komentarzy i najczęściej dyskutowanych.
+---

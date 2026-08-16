@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til en Svelte-app med den officielle pakke. Installer den, placer widget-komponenten på din side, og angiv din lejer og side-ID.
+---

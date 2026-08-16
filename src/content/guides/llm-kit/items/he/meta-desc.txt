@@ -1,0 +1,1 @@
+הצב את Claude, ChatGPT, או Cursor על תיעוד FastComments כדי שהם יכתבו קוד אינטגרציה נכון. הוסף את קטע קוד של LLM Kit או התחבר לשרת MCP.

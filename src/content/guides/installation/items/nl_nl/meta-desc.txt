@@ -1,0 +1,3 @@
+---
+Voeg een commentaarsectie toe aan elke website in ongeveer vijf minuten. Klaar‑voor‑gebruik snippets voor WordPress, React, Vue, Angular, React Native en gewone HTML.
+---

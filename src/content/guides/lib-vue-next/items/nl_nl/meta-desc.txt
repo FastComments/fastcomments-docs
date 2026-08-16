@@ -1,0 +1,3 @@
+---
+Voeg reacties, livechat en beoordelingen toe aan een Vue 3-app. Installeer het pakket, render de component en schakel threads over terwijl je single-page app navigeert.
+---

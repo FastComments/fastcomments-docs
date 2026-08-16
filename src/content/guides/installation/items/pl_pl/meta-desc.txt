@@ -1,0 +1,3 @@
+---
+Dodaj sekcję komentarzy do dowolnej witryny w około pięć minut. Gotowe fragmenty kodu dla WordPress, React, Vue, Angular, React Native i zwykłego HTML.
+---

@@ -1,0 +1,3 @@
+---
+Webflow'a bir embed bloğu ile canlı yorumlar ekleyin, statik bir sayfada ya da bir bütün Koleksiyon boyunca, ardından yayınlayarak canlı hale getirin.
+---

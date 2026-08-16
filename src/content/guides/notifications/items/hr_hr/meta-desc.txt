@@ -1,0 +1,3 @@
+---
+Kontrolirajte koje e‑mailove FastComments šalje vašim čitateljima, kako se oni odjavljuju, kako se obavijesti ponašaju za SSO korisnike i kako se obrađuju suzdržane adrese.
+---

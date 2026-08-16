@@ -1,0 +1,3 @@
+---
+Få kommentarer til at følge dit sites mørke tema. Detekter det fra operativsystemet, skift det selv, eller brug den indbyggede WordPress Networker‑understøttelse.
+---

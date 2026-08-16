@@ -1,0 +1,3 @@
+---
+Ugradite widgete za live komentare i chat u React Native aplikaciju s SSO-om, te kada koristiti native SDK umjesto widgeta u webviewu.
+---

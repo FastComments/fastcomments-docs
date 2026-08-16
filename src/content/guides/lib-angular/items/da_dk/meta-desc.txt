@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til en Angular-app med den officielle pakke. Installer den, placer komponenten i en skabelon, og videregiv din lejer og side-ID.
+---

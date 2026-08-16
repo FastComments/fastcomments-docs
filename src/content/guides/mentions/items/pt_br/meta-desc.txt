@@ -1,0 +1,3 @@
+---
+Permita que os comentaristas marquem uns aos outros com @menções, acionem uma notificação e preencham automaticamente as menções a partir do seu próprio código. Inclui como o autocomplete resolve nomes.
+---

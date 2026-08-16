@@ -1,0 +1,3 @@
+---
+PHP'de imzalı FastComments SSO tokenları oluşturun, böylece oturum açmış kullanıcılar kendileri gibi yorum yapabilir, ikinci bir hesap ve ekstra bir giriş adımı olmadan.
+---

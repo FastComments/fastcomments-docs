@@ -1,0 +1,3 @@
+---
+Şablon etiketleriyle bir Django uygulamasına yorum ekleyin, oturum açmış kullanıcıdan otomatik Secure SSO, sunucu tarafı API erişimi ve AB bölgesi desteği dahil.
+---

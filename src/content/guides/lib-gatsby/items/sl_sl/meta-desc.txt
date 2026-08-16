@@ -1,0 +1,3 @@
+---
+Dodajte komentarje na spletno mesto Gatsby. Celoten delujoči primer projekta, ki ga lahko kopirate, in ki prikazuje, kje se vstavi pripomoček ter kako posredovati ID strani.
+---

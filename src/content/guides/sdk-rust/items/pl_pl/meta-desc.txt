@@ -1,0 +1,3 @@
+---
+Wywołaj API FastComments z języka Rust. Zainstaluj przy użyciu cargo add, a następnie twórz, pobieraj i moderuj komentarze, korzystając z pomocników SSO oraz pełnej dokumentacji wszystkich endpointów.
+---

@@ -1,0 +1,3 @@
+---
+Begræns din kommentarsektion til indloggede Memberstack‑medlemmer med et enkelt snippet, så kun betalende medlemmer kan poste.
+---

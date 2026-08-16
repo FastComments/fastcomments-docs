@@ -1,0 +1,4 @@
+---
+Third-party cookies are no longer required to comment. What FastComments still uses them for, and how to enable them for the smoother sign-in flow.
+
+---

@@ -1,0 +1,4 @@
+---
+Deja que los lectores hagan clic en un punto de una imagen y comiencen una conversación al respecto. Los marcadores visuales fijan cada hilo en su punto exacto y se sincronizan en tiempo real entre los espectadores.
+
+---

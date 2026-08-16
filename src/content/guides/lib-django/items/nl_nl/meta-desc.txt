@@ -1,0 +1,1 @@
+Voeg opmerkingen toe aan een Django-app met sjabloontags, inclusief automatische Secure SSO van de ingelogde gebruiker, server-side API-toegang en ondersteuning voor de EU-regio.

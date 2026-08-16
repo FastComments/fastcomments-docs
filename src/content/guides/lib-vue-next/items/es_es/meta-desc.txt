@@ -1,0 +1,3 @@
+---
+Agrega comentarios, chat en vivo y reseñas a una aplicación Vue 3. Instala el paquete, renderiza el componente y cambia de hilos a medida que tu aplicación de una sola página navega.
+---

@@ -1,0 +1,3 @@
+---
+Dozvolite čitaocima da kliknu na mesto na slici i započnu razgovor o tome. Vizuelni markeri zakačuju svaku nit na tačnu tačku i sinhronizuju se uživo kod svih gledalaca.
+---

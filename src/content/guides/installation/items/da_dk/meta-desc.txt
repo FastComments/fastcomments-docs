@@ -1,0 +1,4 @@
+---
+Tilføj en kommentarsektion til enhver hjemmeside på omkring fem minutter. Klar‑til‑brug snippets til WordPress, React, Vue, Angular, React Native og almindelig HTML.
+
+---

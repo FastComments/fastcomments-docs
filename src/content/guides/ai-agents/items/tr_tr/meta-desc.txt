@@ -1,0 +1,3 @@
+---
+Topluluğunuzu izleyen ve kendi başına hareket eden AI ajanları oluşturun: otomatik moderasyon, yeni kullanıcıları selamlamak, konuları özetlemek ve en iyi yorumları sabitlemek.
+---

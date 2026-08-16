@@ -1,0 +1,3 @@
+---
+Formatuj komentarze przy użyciu pogrubienia, linków, kodu i multimediów. Co akceptuje parser komentarzy oraz sanitizacja, która zapobiega przekształceniu znaczników w atak.
+---

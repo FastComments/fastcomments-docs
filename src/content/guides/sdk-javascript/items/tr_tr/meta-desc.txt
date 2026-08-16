@@ -1,0 +1,3 @@
+---
+FastComments API'sini Node.js'ten veya tarayıcıdan çağırın. npm ile kurun, ardından yorumlar oluşturun ve denetleyin, canlı etkinliklere abone olun ve SSO'yu kurun.
+---

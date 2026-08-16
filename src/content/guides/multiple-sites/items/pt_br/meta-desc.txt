@@ -1,0 +1,3 @@
+---
+Execute vários domínios ou subdomínios a partir de uma única conta FastComments, com nomes de remetente e logotipos por domínio, um locatário por ambiente e tópicos compartilhados.
+---

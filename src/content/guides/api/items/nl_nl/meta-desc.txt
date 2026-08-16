@@ -1,0 +1,3 @@
+---
+Maak, haal op, modereer en exporteer opmerkingen via HTTP. Elke FastComments‑endpoint met zijn aanvraag‑ en responstypen, inclusief stemmen, gebruikers en pagina's.
+---

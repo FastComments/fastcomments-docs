@@ -1,0 +1,1 @@
+Voeg reacties toe aan een Gatsby‑site. Een volledig werkend voorbeeldproject dat je kunt kopiëren, waarin wordt getoond waar de widget moet komen en hoe je de pagina‑ID doorgeeft.

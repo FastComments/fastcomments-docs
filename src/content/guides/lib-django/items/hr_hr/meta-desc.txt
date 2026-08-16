@@ -1,0 +1,1 @@
+Dodajte komentare u Django aplikaciju pomoću oznaka predloška, uključujući automatski Secure SSO od prijavljenog korisnika, pristup API‑ju na strani poslužitelja i podršku za EU regiju.

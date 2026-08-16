@@ -1,0 +1,3 @@
+---
+使用 FastComments WordPress 外掛，為 WooCommerce 商店新增即時評論與產品討論，無需編輯佈景主題。
+---

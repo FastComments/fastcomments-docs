@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz Pythona. Instalirajte pomoću pip-a, zatim kreirajte, dohvatite i moderirajte komentare, uz SSO pomoćnike i dokumentaciju svih krajnjih točaka.
+---

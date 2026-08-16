@@ -1,0 +1,3 @@
+---
+Resmi paketle bir Angular uygulamasına yorum ekleyin. Paketi kurun, bileşeni bir şablona yerleştirin ve kiracınızı ve sayfa kimliğinizi geçin.
+---

@@ -1,0 +1,3 @@
+---
+Générez des jetons SSO FastComments signés en PHP afin que vos utilisateurs connectés commentent en tant qu'eux‑mêmes, sans compte secondaire et sans étape de connexion supplémentaire.
+---

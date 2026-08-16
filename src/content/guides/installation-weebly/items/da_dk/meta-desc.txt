@@ -1,0 +1,3 @@
+---
+Tilføj live-kommentarer til en Weebly-blog ved at indsætte FastComments‑snippet'et i dine blogindstillinger og derefter udgive siden.
+---

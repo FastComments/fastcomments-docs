@@ -1,0 +1,3 @@
+---
+Yeni yorumları gelen kutunuz yerine herhangi bir RSS okuyucusunda takip edin. Besleme URL'nizi nasıl oluşturacağınızı ve bunu başkalarıyla paylaşmadan önce bilmeniz gerekenleri öğrenin.
+---

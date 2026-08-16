@@ -1,0 +1,3 @@
+---
+Dodaj komentarze do aplikacji Angular za pomocą oficjalnego pakietu. Zainstaluj go, wstaw komponent do szablonu i przekaż swój tenant oraz identyfikator strony.
+---

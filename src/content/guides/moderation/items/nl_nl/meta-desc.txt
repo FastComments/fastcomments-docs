@@ -1,0 +1,3 @@
+---
+Goedkeuren, verwijderen, verbannen en bulkacties uitvoeren op reacties vanuit één dashboard, met spamdetectie, het maskeren van scheldwoorden, moderatiegroepen en moderatie via e‑mail.
+---

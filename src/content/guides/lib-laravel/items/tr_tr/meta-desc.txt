@@ -1,0 +1,3 @@
+---
+Blade bileşenleriyle bir Laravel uygulamasına yorum ekleyin. Tam API erişimi için PHP SDK'sını sarar ve SSO'yu kimliği doğrulanmış kullanıcınıza otomatik olarak bağlar.
+---

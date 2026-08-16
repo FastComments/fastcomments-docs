@@ -1,0 +1,4 @@
+---
+Llama a la API de FastComments desde Dart y Flutter. Añade el paquete a pubspec, luego crea, recupera y modera comentarios, con los ayudantes de token SSO incluidos.
+
+---

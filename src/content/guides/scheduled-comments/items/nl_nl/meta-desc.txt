@@ -1,0 +1,3 @@
+---
+Giet opmerkingen geleidelijk in een thread over tijd zodat een nieuwe pagina niet leeg lijkt. Hoe de weergave in te plannen en het importformaat dat het verwacht.
+---

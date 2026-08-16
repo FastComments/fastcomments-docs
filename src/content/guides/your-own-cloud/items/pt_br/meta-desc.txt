@@ -1,0 +1,3 @@
+---
+Execute uma implantação isolada do FastComments dentro da sua própria conta de nuvem, gerenciada por nós, com acesso total de administrador e a capacidade de hospedar locatários com marca branca.
+---

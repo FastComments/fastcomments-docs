@@ -1,0 +1,3 @@
+---
+HTTP üzerinden yorumları oluşturun, alın, denetleyin ve dışa aktarın. Oylar, kullanıcılar ve sayfalar dahil olmak üzere her FastComments uç noktasının istek ve yanıt türleri.
+---

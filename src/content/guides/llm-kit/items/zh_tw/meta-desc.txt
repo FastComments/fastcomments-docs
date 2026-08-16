@@ -1,0 +1,1 @@
+將 Claude、ChatGPT 或 Cursor 指向 FastComments 文件，讓它們撰寫正確的整合程式碼。加入 LLM Kit 片段或連接 MCP 伺服器。

@@ -1,0 +1,4 @@
+---
+Render opmerkingen in je initiële HTML zodat crawlers en trage verbindingen ze onmiddellijk zien. Wat FastComments ondersteunt, en hoe je SSR inschakelt.
+
+---

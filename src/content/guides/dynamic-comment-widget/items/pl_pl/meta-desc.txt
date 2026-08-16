@@ -1,0 +1,3 @@
+---
+Zamień wątek komentarzy bez przeładowywania strony. Uruchom kilka widżetów obok siebie, skieruj je na jeden wątek, aby utrzymać ich synchronizację, lub na różne wątki.
+---

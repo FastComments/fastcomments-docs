@@ -1,0 +1,3 @@
+---
+Fügen Sie Wix Live‑Kommentare mit einem Einbettungs‑Block hinzu und setzen Sie die Thread‑ID, damit jede Seite und jeder Blog‑Beitrag seine eigene Unterhaltung erhält, anstatt sich eine zu teilen.
+---

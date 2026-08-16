@@ -1,0 +1,3 @@
+---
+Dodajte komentare u Vue 2 aplikaciju. Instalirajte paket, prikažite komponentu widgeta i ažurirajte trenutnu stranicu kada se vaša jednostrani aplikacija promijeni rute.
+---

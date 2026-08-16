@@ -1,0 +1,3 @@
+---
+קרא ל‑API של FastComments מ‑Swift. הוסף את החבילה באמצעות Swift Package Manager, ואז צור, שלוף, והנהל תגובות, כולל עוזרי SSO.
+---

@@ -1,0 +1,3 @@
+---
+Prikažite živo število komentarjev poleg vsake objave ali izdelka s samostojnim gradnikom, po eni strani naenkrat ali v velikem obsegu po celotnem seznamu.
+---

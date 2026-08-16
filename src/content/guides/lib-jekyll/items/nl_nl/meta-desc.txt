@@ -1,0 +1,3 @@
+---
+Voeg reacties toe aan een Jekyll‑site met de officiële gem. Installeer deze, voeg een Liquid‑tag toe aan je postlay‑out, en configureer de widget vanuit _config.yml.
+---

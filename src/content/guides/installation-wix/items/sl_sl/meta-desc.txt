@@ -1,0 +1,3 @@
+---
+Dodajte žive komentarje v Wix s pomočjo vdelanega bloka in nastavite ID niti, da vsaka stran in objava v blogu dobi svoj pogovor namesto da bi si delili enega.
+---

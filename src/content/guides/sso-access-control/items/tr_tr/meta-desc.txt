@@ -1,0 +1,3 @@
+---
+Kullanıcı başına kimlerin okuyabileceğini ve kimlerin gönderi yapabileceğini, SSO yükünüzden doğrudan belirleyin. Şema, nasıl uygulanacağı ve örnek API çağrıları.
+---

@@ -1,0 +1,3 @@
+---
+Giv Ghost‑medlemmer en kommentarsektion, der allerede kender dem. Importér medlemsnavne og avatarer, aktivér svarnotifikationer og redigér din post‑skabelon.
+---

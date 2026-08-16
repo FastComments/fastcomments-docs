@@ -1,0 +1,3 @@
+---
+Toutes les langues dans lesquelles le widget FastComments est disponible, quelles parties du produit sont traduites, et comment demander une langue que nous ne couvrons pas encore.
+---

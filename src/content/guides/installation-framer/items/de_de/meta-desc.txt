@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu einer Framer‑Website mit einem Embed‑Block und dem Framer‑spezifischen Snippet hinzu, sowie die Höheneinstellungen, die verhindern, dass das Widget abgeschnitten wird.
+---

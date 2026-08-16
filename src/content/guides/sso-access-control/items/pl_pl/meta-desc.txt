@@ -1,0 +1,3 @@
+---
+Zdecyduj dla każdego użytkownika, kto może czytać, a kto może publikować, bezpośrednio z ładunku SSO. Specyfikacja, jak ją wdrożyć oraz przykładowe wywołania API.
+---

@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu einer GoDaddy‑Website mit einem Code‑Bereich hinzu, veröffentlichen Sie sie und beheben Sie den Domain‑Fehler, der erscheint, wenn das Widget auf einer nicht registrierten Domain ausgeführt wird.
+---

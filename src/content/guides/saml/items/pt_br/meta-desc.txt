@@ -1,0 +1,1 @@
+Configure o SAML 2.0 single sign-on para que funcionários e membros acessem o FastComments através do seu provedor de identidade corporativo. Mapeamento de funções, testes e erros comuns.

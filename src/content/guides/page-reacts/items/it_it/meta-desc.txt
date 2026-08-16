@@ -1,0 +1,3 @@
+---
+Consenti ai lettori di reagire a una pagina senza scrivere un commento, utilizzando reazioni emoji personalizzabili sopra la discussione o il pulsante flottante dei like.
+---

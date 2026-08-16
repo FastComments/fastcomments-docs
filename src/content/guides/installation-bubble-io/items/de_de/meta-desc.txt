@@ -1,0 +1,3 @@
+---
+Fügen Sie einer Bubble.io-App einen Kommentarbereich mit einem HTML-Block hinzu, einschließlich der Breiten- und Layout‑Einstellungen, die verhindern, dass das Widget abgeschnitten wird.
+---

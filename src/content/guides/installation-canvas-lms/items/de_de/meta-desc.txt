@@ -1,0 +1,3 @@
+---
+Fügen Sie Canvas‑Kursen Kommentare und kollaborativen Chat über LTI 1.3 hinzu. Erstellen Sie einen Entwickler‑Schlüssel, verbinden Sie sich und ordnen Sie Canvas‑Rollen zu, ohne ein Server‑Plugin.
+---

@@ -1,0 +1,3 @@
+---
+Pozwól czytelnikom logować się za pomocą linku wysłanego e‑mailem zamiast pamiętać hasło. Jak działają linki logowania, kto je otrzymuje i jak pozostają bezpieczne.
+---

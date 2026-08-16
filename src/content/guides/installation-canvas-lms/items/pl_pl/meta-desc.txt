@@ -1,0 +1,3 @@
+---
+Dodaj komentowanie i współpracujący czat do kursów Canvas za pomocą LTI 1.3. Utwórz klucz dewelopera, połącz się i mapuj role Canvas, bez wtyczki serwera.
+---

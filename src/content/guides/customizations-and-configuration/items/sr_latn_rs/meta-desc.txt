@@ -1,0 +1,3 @@
+---
+Konfigurišite vidžet za komentare od početka do kraja: na kojoj stranici thread pripada, prilagođeni CSS i fontovi, tamni režim, zamene teksta, podrazumevane postavke moderacije i SSO.
+---

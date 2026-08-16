@@ -1,0 +1,3 @@
+---
+Agrega comentarios a un sitio Jekyll con el gem oficial. Instálalo, agrega una etiqueta Liquid a la plantilla de tu publicación y configura el widget desde _config.yml.
+---

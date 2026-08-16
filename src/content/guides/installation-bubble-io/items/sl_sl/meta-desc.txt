@@ -1,0 +1,3 @@
+---
+Dodajte sekcijo za komentarje v aplikacijo Bubble.io s HTML blokom, vključno s širino in nastavitvami postavitve, ki preprečijo, da bi bil gradnik odrezan.
+---

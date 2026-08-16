@@ -1,0 +1,4 @@
+---
+Permita que os leitores cliquem em um ponto de uma imagem e iniciem uma conversa sobre ele. Marcadores visuais fixam cada thread em seu ponto exato e sincronizam ao vivo entre os visualizadores.
+
+---

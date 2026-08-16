@@ -1,0 +1,3 @@
+---
+Consenti ai lettori di commentare senza attriti. Confronta i collegamenti di accesso senza password, le password, SSO e SAML per scegliere il metodo di accesso che il tuo pubblico accetterà.
+---

@@ -1,0 +1,3 @@
+---
+Lassen Sie Leser auf einen Punkt in einem Bild klicken und ein Gespräch darüber beginnen. Visuelle Marker heften jeden Thread an genau diesen Punkt und synchronisieren sich live über alle Betrachter.
+---

@@ -1,0 +1,3 @@
+---
+Izgradite AI agente koji prate vašu zajednicu i deluju samostalno: automatsko moderiranje, pozdravljanje novih korisnika, sumiranje tema i zakačivanje najboljih komentara.
+---

@@ -1,0 +1,3 @@
+---
+Fügen Sie einem WooCommerce‑Shop Live‑Kommentare und Produktdiskussionen hinzu, indem Sie das FastComments WordPress‑Plugin verwenden, ohne dass Theme‑Änderungen erforderlich sind.
+---

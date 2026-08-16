@@ -1,0 +1,3 @@
+---
+Tredjeparts-cookies er ikke længere påkrævet for at kommentere. Hvad FastComments stadig bruger dem til, og hvordan du aktiverer dem for en glattere login‑flow.
+---

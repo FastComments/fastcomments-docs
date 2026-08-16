@@ -1,0 +1,1 @@
+Dodajte komentarisanje i kolaborativni čet u Canvas kurseve putem LTI 1.3. Kreirajte developerski ključ, povežite se i mapirajte Canvas uloge, bez server plug‑ina.

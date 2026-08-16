@@ -1,0 +1,3 @@
+---
+Zaženite FastComments v celoti na lastni infrastrukturi. Primerki, konfiguracija, način vzdrževanja, zaklepi, več domen in varnostni model.
+---

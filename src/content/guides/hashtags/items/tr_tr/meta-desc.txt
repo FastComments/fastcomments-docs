@@ -1,0 +1,3 @@
+---
+Okuyucuların tıklayıp filtreleyebileceği hashtag'lerle grup tartışması. Otomatik tamamlama, # yerine özel semboller ve kendi kodunuzdan etiketleri önceden doldurma.
+---

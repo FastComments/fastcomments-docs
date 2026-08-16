@@ -1,0 +1,3 @@
+---
+Yorumcuların birbirlerini @bahsetmelerle etiketlemesine, bir bildirim tetiklemesine ve kendi kodunuzdan bahsetmeleri önceden doldurmasına izin verin. Otomatik tamamlama isimlerin nasıl çözüldüğünü içerir.
+---

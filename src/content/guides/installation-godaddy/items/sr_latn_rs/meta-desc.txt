@@ -1,0 +1,3 @@
+---
+Dodajte live komentare na GoDaddy sajt pomoću oblasti koda, objavite i popravite grešku domena koja se pojavljuje kada widget radi na neregistrovanom domenu.
+---

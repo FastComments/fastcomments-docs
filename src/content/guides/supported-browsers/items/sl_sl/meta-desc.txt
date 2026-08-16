@@ -1,0 +1,1 @@
+Kateri brskalniki jih FastComments pripomoček podpira, kje stoji Internet Explorer, kako testiramo vsako izdajo in kakšen JavaScript pripomoček potrebuje.

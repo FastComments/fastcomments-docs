@@ -1,0 +1,3 @@
+---
+Betten Sie die Live‑Kommentar‑ und Chat‑Widgets in eine React‑Native‑App mit SSO ein, sowie wann Sie das native SDK anstelle des Webview‑Widgets verwenden sollten.
+---

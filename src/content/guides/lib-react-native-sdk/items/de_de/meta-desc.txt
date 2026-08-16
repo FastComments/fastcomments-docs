@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API direkt aus einer React‑Native‑App auf, um Kommentare zu erstellen, abzurufen und zu moderieren, ohne das Widget zu verwenden.
+---

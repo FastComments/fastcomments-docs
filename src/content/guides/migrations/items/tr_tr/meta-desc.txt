@@ -1,0 +1,3 @@
+---
+FastComments'e Disqus veya başka bir sağlayıcıdan geçin, WordPress yorumlarını içe aktarın, kullanıcıları ve alan adlarını kiracılar arasında taşıyın ve verilerinizi istediğiniz zaman dışa aktarın.
+---

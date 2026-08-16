@@ -1,0 +1,3 @@
+---
+Dodaj natywne komentarze, czat i kanały do aplikacji na Androida. Bezpieczne SSO, pełna personalizacja motywu i wskazówki dotyczące pamięci dla długotrwałych ekranów.
+---

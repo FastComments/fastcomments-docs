@@ -1,0 +1,3 @@
+---
+從 PHP 呼叫 FastComments API。使用 Composer 安裝，然後建立、取得和管理評論，並包含請求模型和 SSO 輔助工具。
+---

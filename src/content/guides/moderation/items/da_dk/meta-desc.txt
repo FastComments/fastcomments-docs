@@ -1,0 +1,3 @@
+---
+Godkend, slet, bandlys og udfør massehandlinger på kommentarer fra et enkelt dashboard, med spamdetektion, maskering af bandeord, moderationsgrupper og moderation via e‑mail.
+---

@@ -1,0 +1,3 @@
+---
+Dodaj natywne wątkowane komentarze, czat na żywo i kanały społecznościowe do aplikacji iOS, z SSO, motywami, przesyłaniem obrazów, wzmiankami i aktualizacjami w czasie rzeczywistym.
+---

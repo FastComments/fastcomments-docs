@@ -1,0 +1,3 @@
+---
+Consenti ai lettori di evidenziare qualsiasi frase sulla tua pagina e discuterla in linea. I thread si ancorano al testo esatto e si sincronizzano in tempo reale per tutti i lettori.
+---

@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do bloga Systeme.io, wklejając fragment kodu do szablonu motywu bloga lub do dowolnego innego szablonu strony, który możesz edytować.
+---

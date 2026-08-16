@@ -1,0 +1,3 @@
+---
+Kald FastComments API direkte fra en React Native-app for at oprette, hente og moderere kommentarer uden at gå gennem widget'en.
+---

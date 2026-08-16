@@ -1,0 +1,3 @@
+---
+FastComments Moodle eklentisini kurarak kurslara ve aktivitelere yorum ekleyin. SSO otomatik olduğundan, öğrencilerin iki kez oturum açması gerekmez.
+---

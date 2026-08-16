@@ -1,0 +1,3 @@
+---
+Aggiungi commenti in tempo reale a un sito GoDaddy con un'area di codice, pubblica e risolvi l'errore di dominio che appare quando il widget viene eseguito su un dominio non registrato.
+---

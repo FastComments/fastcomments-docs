@@ -1,0 +1,3 @@
+---
+Przejdź do FastComments z Disqus lub innego dostawcy, zaimportuj komentarze WordPress, przenieś użytkowników i domeny między najemcami oraz eksportuj swoje dane w dowolnym momencie.
+---

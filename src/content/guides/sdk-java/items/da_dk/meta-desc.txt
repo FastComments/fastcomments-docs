@@ -1,0 +1,3 @@
+---
+Kald FastComments API fra Java. Tilføj Maven- eller Gradle-afhængigheden, og opret, hent og moderer kommentarer, med SSO-hjælp inkluderet.
+---

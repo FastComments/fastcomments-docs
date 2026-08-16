@@ -1,0 +1,3 @@
+---
+Premia automaticamente i commentatori con badge per il numero di commenti, i voti positivi, le risposte, lo status di veterano e l'attività notturna, oppure assegna i badge manualmente.
+---

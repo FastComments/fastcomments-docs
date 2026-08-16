@@ -1,0 +1,3 @@
+---
+Lassen Sie Leser über einen per E‑Mail gesendeten Link einloggen, anstatt sich ein Passwort zu merken. Wie Login‑Links funktionieren, wer sie erhält und wie sie sicher bleiben.
+---

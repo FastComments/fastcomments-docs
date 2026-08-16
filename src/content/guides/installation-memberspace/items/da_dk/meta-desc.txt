@@ -1,0 +1,1 @@
+Begræns kommentarer til betalende MemberSpace‑medlemmer, med mulighed for stadig at tillade anonyme kommentarer, og sæt badges ud fra læserens medlemskabsniveau.

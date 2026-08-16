@@ -1,0 +1,3 @@
+---
+Voeg native reacties, chat en feeds toe aan een Android‑app. Beveiligde SSO, volledige themapersonalisatie en geheugenbegeleiding voor langdurige schermen.
+---

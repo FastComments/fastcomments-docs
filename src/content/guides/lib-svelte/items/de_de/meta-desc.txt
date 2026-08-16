@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare zu einer Svelte‑App mit dem offiziellen Paket hinzu. Installieren Sie es, fügen Sie die Widget‑Komponente in Ihre Seite ein und übergeben Sie Ihren Mandanten und die Seiten‑ID.
+---

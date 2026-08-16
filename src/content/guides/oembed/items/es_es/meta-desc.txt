@@ -1,0 +1,3 @@
+---
+Incruste un hilo de FastComments en cualquier lugar que acepte una URL oEmbed, de modo que los comentarios viajen con el contenido en lugar de estar vinculados a una sola página.
+---

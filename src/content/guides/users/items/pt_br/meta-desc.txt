@@ -1,0 +1,4 @@
+---
+Entenda administradores, moderadores e comentaristas no FastComments. Como os nomes de usuário funcionam, como adicionar cada tipo e como alterar as permissões de administrador.
+
+---

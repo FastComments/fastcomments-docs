@@ -1,0 +1,3 @@
+---
+Dodaj komentarze, czat na żywo i recenzje do aplikacji Vue 3. Zainstaluj pakiet, wyrenderuj komponent i przełączaj wątki w miarę nawigacji w Twojej aplikacji jednostronicowej.
+---

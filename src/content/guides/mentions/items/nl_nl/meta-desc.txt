@@ -1,0 +1,3 @@
+---
+Laat commentatoren elkaar taggen met @mentions, een melding activeren en vermeldingen vooraf invullen vanuit je eigen code. Inclusief hoe autocomplete namen oplost.
+---

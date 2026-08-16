@@ -1,0 +1,3 @@
+---
+Adicione sua própria marcação, ouvintes de eventos e lógica ao widget de comentários com Extensões. O ciclo de vida, o objeto de extensão e a API que você pode chamar.
+---

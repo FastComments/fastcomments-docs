@@ -1,0 +1,3 @@
+---
+Gruppendiskussion mit Hashtags, die Leser anklicken und nach denen sie filtern können. Autovervollständigung, benutzerdefinierte Symbole anstelle von # und das Vorbefüllen von Tags aus Ihrem eigenen Code.
+---

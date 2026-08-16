@@ -1,0 +1,3 @@
+---
+Permettez aux commentateurs de publier du code exécutable et syntaxiquement mis en évidence dans vos fils de discussion. Quelles langues sont prises en charge et comment activer le partage d'extraits de code.
+---

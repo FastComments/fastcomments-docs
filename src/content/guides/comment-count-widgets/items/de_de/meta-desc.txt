@@ -1,0 +1,3 @@
+---
+Zeigen Sie eine Live‑Kommentaranzahl neben jedem Beitrag oder Produkt mit einem eigenständigen Widget, einzeln pro Seite oder in großen Mengen über eine gesamte Auflistung.
+---

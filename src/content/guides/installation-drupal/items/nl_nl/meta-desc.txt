@@ -1,0 +1,3 @@
+---
+Installeer de Drupal-module voor live reacties als widgetblokken of contenttype-velden, met SSO, per-rol permissies, en EU-gegevensresidentie.
+---

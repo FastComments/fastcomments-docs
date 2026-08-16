@@ -1,0 +1,3 @@
+---
+Dodajte komentare na Jekyll sajt uz zvanični gem. Instalirajte ga, dodajte Liquid tag u svoj raspored posta i konfigurišite widget iz _config.yml.
+---

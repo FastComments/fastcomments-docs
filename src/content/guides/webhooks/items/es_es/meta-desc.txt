@@ -1,0 +1,3 @@
+---
+Recibe una devolución de llamada HTTP en el momento en que se agrega, edita o elimina un comentario. Qué eventos se disparan, cómo verificar la solicitud y cómo se comportan los reintentos.
+---

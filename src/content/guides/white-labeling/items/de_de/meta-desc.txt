@@ -1,0 +1,4 @@
+---
+Verkaufen Sie das Kommentieren unter Ihrer eigenen Marke. Erstellen und verwalten Sie Mandanten über die API oder das Dashboard, wobei die Abrechnung von Ihnen oder von FastComments übernommen wird.
+
+---

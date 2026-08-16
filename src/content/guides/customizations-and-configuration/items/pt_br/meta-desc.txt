@@ -1,0 +1,3 @@
+---
+Configure o widget de comentários de ponta a ponta: a qual página um tópico pertence, CSS e fontes personalizados, modo escuro, substituições de texto, padrões de moderação e SSO.
+---

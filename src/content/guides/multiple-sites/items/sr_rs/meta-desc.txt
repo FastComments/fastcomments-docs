@@ -1,0 +1,3 @@
+---
+Pokrenite više domena ili poddomena sa jednog FastComments naloga, sa imenima pošiljaoca i logotipima po domenu, tenantom po okruženju i deljenim nitima.
+---

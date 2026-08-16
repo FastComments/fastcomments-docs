@@ -1,0 +1,3 @@
+---
+Entscheiden Sie pro Benutzer, wer lesen und wer posten kann, direkt aus Ihrer SSO-Payload. Die Spezifikation, wie man sie implementiert, und Beispiel‑API‑Aufrufe.
+---

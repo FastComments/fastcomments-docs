@@ -1,0 +1,3 @@
+---
+Konfigurirajte widget za komentare od početka do kraja: na kojoj stranici thread pripada, prilagođeni CSS i fontovi, tamni način, zamjene teksta, zadane postavke moderacije i SSO.
+---

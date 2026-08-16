@@ -1,0 +1,3 @@
+---
+Restrinja sua seção de comentários a membros do Memberstack que estejam logados com um único snippet, de modo que apenas membros pagantes possam postar.
+---

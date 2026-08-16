@@ -1,0 +1,3 @@
+---
+Aggiungi il tuo markup, i listener di eventi e la logica al widget dei commenti con le Estensioni. Il ciclo di vita, l'oggetto estensione e l'API che puoi chiamare.
+---

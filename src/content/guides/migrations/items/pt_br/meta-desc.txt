@@ -1,0 +1,4 @@
+---
+Mude para o FastComments a partir do Disqus ou de outro provedor, importe comentários do WordPress, mova usuários e domínios entre locatários e exporte seus dados a qualquer momento.
+
+---

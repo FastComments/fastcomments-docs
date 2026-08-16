@@ -1,0 +1,1 @@
+Vue 2 uygulamasına yorum ekleyin. Paketi kurun, widget bileşenini render edin ve tek‑sayfalık uygulamanız rotaları değiştiğinde mevcut sayfayı güncelleyin.

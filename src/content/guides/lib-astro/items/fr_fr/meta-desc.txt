@@ -1,0 +1,4 @@
+---
+Ajoutez des commentaires à un site Astro avec l'intégration officielle. Importez le composant, transmettez votre ID de locataire, et il s'affiche où que vous le placiez.
+
+---

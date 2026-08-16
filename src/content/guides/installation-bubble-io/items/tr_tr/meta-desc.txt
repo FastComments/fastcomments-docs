@@ -1,0 +1,3 @@
+---
+Bir Bubble.io uygulamasına bir HTML bloğu ile yorum bölümü ekleyin, widget'ın kırpılmasını önleyen genişlik ve düzen ayarlarını dahil ederek.
+---

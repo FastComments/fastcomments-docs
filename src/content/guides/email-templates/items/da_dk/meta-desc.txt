@@ -1,0 +1,3 @@
+---
+Send kommentar‑notifikationer, der ser ud som dit produkt, ikke vores. Skriv skabeloner med dit eget markup, varier dem pr. domæne, og lokalisér teksten.
+---

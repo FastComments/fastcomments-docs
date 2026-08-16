@@ -1,0 +1,3 @@
+---
+Dodajte komentare u realnom vremenu na Typeflo.io blog tako što ćete zalepiti FastComments isječak u polje za kod, a zatim prilagodite stil widgeta da odgovara vašoj temi.
+---

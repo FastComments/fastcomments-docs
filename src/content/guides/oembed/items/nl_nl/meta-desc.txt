@@ -1,0 +1,3 @@
+---
+Integreer een FastComments-thread overal waar een oEmbed-URL wordt geaccepteerd, zodat opmerkingen met de inhoud meereizen in plaats van aan één enkele pagina te zijn gekoppeld.
+---

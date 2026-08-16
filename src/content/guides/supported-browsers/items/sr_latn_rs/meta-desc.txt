@@ -1,0 +1,1 @@
+Koje pretraživače FastComments widget podržava, gde se Internet Explorer nalazi, kako testiramo svako izdanje i koji JavaScript widget zahteva.

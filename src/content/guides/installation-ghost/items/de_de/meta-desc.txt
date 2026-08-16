@@ -1,0 +1,3 @@
+---
+Geben Sie Ghost-Mitgliedern einen Kommentarbereich, der sie bereits kennt. Importieren Sie Mitgliedsnamen und Avatare, aktivieren Sie Benachrichtigungen für Antworten und bearbeiten Sie Ihre Beitragvorlage.
+---

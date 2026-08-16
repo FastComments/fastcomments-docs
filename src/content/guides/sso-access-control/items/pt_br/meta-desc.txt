@@ -1,0 +1,3 @@
+---
+Decida por usuário quem pode ler e quem pode publicar, diretamente a partir da sua carga útil SSO. A especificação, como implementá‑la e exemplos de chamadas de API.
+---

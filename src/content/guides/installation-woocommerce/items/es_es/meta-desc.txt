@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo y discusión de productos a una tienda WooCommerce usando el plugin FastComments para WordPress, sin necesidad de editar el tema.
+---

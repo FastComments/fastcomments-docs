@@ -1,0 +1,3 @@
+---
+Dodajte odjeljak za komentare na bilo koju web stranicu za otprilike pet minuta. Gotovi isječci za WordPress, React, Vue, Angular, React Native i običan HTML.
+---

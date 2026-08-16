@@ -1,0 +1,3 @@
+---
+在大约五分钟内为任何网站添加评论区。提供适用于 WordPress、React、Vue、Angular、React Native 和普通 HTML 的现成代码片段。
+---

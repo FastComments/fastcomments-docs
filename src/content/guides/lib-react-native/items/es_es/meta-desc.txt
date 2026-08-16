@@ -1,0 +1,1 @@
+Incruste los widgets de comentarios y chat en tiempo real en una aplicación React Native con SSO, además de cuándo optar por el SDK nativo en lugar del widget de webview.

@@ -1,0 +1,3 @@
+---
+Gestisci più domini o sottodomini da un unico account FastComments, con nomi di mittente e loghi per dominio, un tenant per ambiente e thread condivisi.
+---

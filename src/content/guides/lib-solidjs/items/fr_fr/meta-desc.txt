@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à une application SolidJS avec le package officiel, incluant une poignée impérative pour modifier la configuration du widget sans remonter.
+---

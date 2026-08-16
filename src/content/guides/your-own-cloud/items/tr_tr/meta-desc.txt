@@ -1,0 +1,3 @@
+---
+Kendi bulut hesabınız içinde izole bir FastComments dağıtımını, bizim tarafımızdan yönetilen, tam yönetici erişimi ve beyaz etiketli kiracılar barındırma yeteneğiyle çalıştırın.
+---

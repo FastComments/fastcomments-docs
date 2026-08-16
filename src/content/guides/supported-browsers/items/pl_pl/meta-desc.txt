@@ -1,0 +1,3 @@
+---
+Które przeglądarki obsługuje widget FastComments, gdzie znajduje się Internet Explorer, jak testujemy każde wydanie oraz jakiego JavaScriptu wymaga widget.
+---

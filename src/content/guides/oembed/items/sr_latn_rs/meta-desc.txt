@@ -1,0 +1,3 @@
+---
+Ugradite FastComments nit bilo gde gde se prihvata oEmbed URL, tako da komentari putuju zajedno sa sadržajem umesto da budu vezani za jednu stranicu.
+---

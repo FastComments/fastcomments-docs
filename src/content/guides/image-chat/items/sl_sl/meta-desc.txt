@@ -1,0 +1,3 @@
+---
+Naj bralci kliknejo točko na sliki in začnejo pogovor o njej. Vizualni označevalci pripnejo vsako nit na njen točen položaj in se sinhronizirajo v živo med gledalci.
+---

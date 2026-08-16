@@ -1,0 +1,3 @@
+---
+Dozvolite čitateljima da komentiraju bez prepreka. Usporedite linkove za prijavu bez lozinke, lozinke, SSO i SAML kako biste odabrali metodu prijave koju će vaša publika prihvatiti.
+---

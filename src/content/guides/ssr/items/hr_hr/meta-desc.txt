@@ -1,0 +1,3 @@
+---
+Prikazujte komentare u vašem početnom HTML-u kako bi ih pretraživači i spore veze vidjeli odmah. Što FastComments podržava i kako uključiti SSR.
+---

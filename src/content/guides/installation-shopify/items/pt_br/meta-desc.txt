@@ -1,0 +1,3 @@
+---
+Instale o FastComments na Shopify App Store e arraste blocos de comentário, avaliação e contagem para postagens e produtos. Os clientes da Shopify são autenticados para você.
+---

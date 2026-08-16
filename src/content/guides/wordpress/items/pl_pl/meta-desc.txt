@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do WordPressa za pomocą oficjalnej wtyczki: moderacja w panelu, SSO dla stron członkowskich oraz synchronizacja liczby komentarzy z powrotem do wpisów.
+---

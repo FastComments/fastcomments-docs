@@ -1,0 +1,3 @@
+---
+Pozwól komentatorom oznaczać się nawzajem za pomocą @mentions, wywoływać powiadomienie i wstępnie wypełniać wzmianki z własnego kodu. Zawiera informacje o tym, jak autocomplete rozwiązuje nazwy.
+---

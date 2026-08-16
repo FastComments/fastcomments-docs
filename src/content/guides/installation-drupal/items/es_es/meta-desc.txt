@@ -1,0 +1,3 @@
+---
+Instale el módulo de Drupal para comentarios en tiempo real como bloques de widget o campos de tipo de contenido, con SSO, permisos por rol y residencia de datos en la UE.
+---

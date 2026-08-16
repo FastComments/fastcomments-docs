@@ -1,0 +1,3 @@
+---
+Crea un feed di contenuti in stile social su web, Android e iOS. Personalizza ciò che ogni lettore vede e fornisci contenuti diversi per regione.
+---

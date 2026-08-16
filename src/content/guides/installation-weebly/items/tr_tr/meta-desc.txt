@@ -1,0 +1,3 @@
+---
+Weebly bloguna blog ayarlarınıza FastComments snippet'ini yapıştırarak canlı yorumlar ekleyin, ardından siteyi yayınlayın.
+---

@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu Webnode mit dem HTML‑Block hinzu. Beachten Sie, dass der Block seit Juni 2023 ein kostenpflichtiges Feature ist, sodass neuere Projekte ein Premium‑Paket benötigen.
+---

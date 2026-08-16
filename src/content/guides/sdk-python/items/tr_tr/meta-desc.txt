@@ -1,0 +1,3 @@
+---
+FastComments API'sini Python'dan çağırın. pip ile kurun, ardından yorumları oluşturun, alın ve denetleyin, SSO yardımcıları ve tüm uç noktalar belgelenmiştir.
+---

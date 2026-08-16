@@ -1,0 +1,3 @@
+---
+Svaki jezik u kojem FastComments widget dolazi, koji dijelovi proizvoda su prevedeni i kako zatražiti jezik koji još ne podržavamo.
+---

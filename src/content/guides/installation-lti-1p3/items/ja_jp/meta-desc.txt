@@ -1,0 +1,3 @@
+---
+FastComments を D2L Brightspace、Moodle、Blackboard、Sakai、または Schoology に接続します。1 つの動的登録 URL が LTI 1.3 統合全体を設定します。
+---

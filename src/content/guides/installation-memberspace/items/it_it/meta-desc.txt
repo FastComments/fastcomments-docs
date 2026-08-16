@@ -1,0 +1,1 @@
+Limita i commenti ai membri paganti di MemberSpace, consentendo opzionalmente ancora i commenti anonimi, e imposta i badge in base al livello di abbonamento del lettore.

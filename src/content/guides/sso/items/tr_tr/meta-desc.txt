@@ -1,0 +1,3 @@
+---
+Mevcut kullanıcılarınızı doğrudan yorum bölümüne yönlendirerek, ikinci bir hesap oluşturmalarını veya iki kez oturum açmalarını önleyin.
+---

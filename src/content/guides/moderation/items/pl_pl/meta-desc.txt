@@ -1,0 +1,3 @@
+---
+Zatwierdzaj, usuwaj, blokuj i wykonuj akcje zbiorcze na komentarzach z jednego panelu, z wykrywaniem spamu, maskowaniem wulgaryzmów, grupami moderacji oraz moderacją przez e‑mail.
+---

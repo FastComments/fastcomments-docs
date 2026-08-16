@@ -1,0 +1,3 @@
+---
+Dodajte izvorne komentare, chat i feedove u Android aplikaciju. Osigurajte SSO, potpunu prilagodbu tema i smjernice za memoriju za dugotrajne zaslone.
+---

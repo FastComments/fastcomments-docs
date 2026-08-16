@@ -1,0 +1,3 @@
+---
+Namestite modul Drupal za žive komentarje kot gradnike pripomočkov ali polja vrste vsebine, z enotno prijavo (SSO), dovoljenji po vlogi in rezidenčnostjo podatkov v EU.
+---

@@ -1,0 +1,3 @@
+---
+Permettez aux lecteurs de répondre avec des GIFs. Quels formats animés se téléchargent correctement, comment les téléchargements des utilisateurs sont gérés, et comment activer le sélecteur de GIF intégré.
+---

@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à Webflow avec un bloc d’intégration, sur une page statique ou sur l’ensemble d’une collection, puis publiez pour les rendre actifs.
+---

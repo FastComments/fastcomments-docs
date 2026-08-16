@@ -1,0 +1,3 @@
+---
+Appelez l'API FastComments depuis PHP. Installez avec Composer, puis créez, récupérez et modérez les commentaires, avec les modèles de requête et les assistants SSO inclus.
+---

@@ -1,0 +1,3 @@
+---
+Razumjeti administratore, moderatore i komentatore u FastComments. Kako funkcioniraju korisnička imena, kako dodati svaku vrstu i kako promijeniti administratorske dozvole.
+---

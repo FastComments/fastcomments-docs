@@ -1,0 +1,3 @@
+---
+Añade comentarios a una aplicación Svelte con el paquete oficial. Instálalo, inserta el componente del widget en tu página y pasa tu tenant y el ID de la página.
+---

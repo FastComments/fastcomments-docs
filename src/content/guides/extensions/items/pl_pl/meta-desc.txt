@@ -1,0 +1,3 @@
+---
+Dodaj własny znacznik, nasłuchiwacze zdarzeń i logikę do widżetu komentarzy za pomocą Rozszerzeń. Cykl życia, obiekt rozszerzenia i API, które możesz wywołać.
+---

@@ -1,0 +1,3 @@
+---
+Dodajte komentarje na Hugo spletno mesto s kratkimi kodami, vključno z integracijo teme, skupnimi števci komentarjev za strani seznamov in popolno referenco konfiguracije gradnika.
+---

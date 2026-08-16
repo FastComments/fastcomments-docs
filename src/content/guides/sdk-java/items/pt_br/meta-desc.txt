@@ -1,0 +1,3 @@
+---
+Chame a API FastComments a partir do Java. Adicione a dependência Maven ou Gradle, então crie, recupere e modere comentários, com auxiliares SSO incluídos.
+---

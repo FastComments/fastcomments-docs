@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu einer Zyro‑Website mit dem Code‑Widget hinzu und fügen Sie die schwebende Like‑Schaltfläche hinzu, damit Leser reagieren können, ohne einen Kommentar zu schreiben.
+---

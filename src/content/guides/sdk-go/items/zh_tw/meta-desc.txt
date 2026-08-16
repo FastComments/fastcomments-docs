@@ -1,0 +1,1 @@
+從 Go 呼叫 FastComments API。使用 go get 安裝，然後建立、取得與審核評論，並提供 SSO 輔助功能以及所有端點的文件說明。

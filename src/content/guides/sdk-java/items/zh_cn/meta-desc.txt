@@ -1,0 +1,4 @@
+---
+从 Java 调用 FastComments API。添加 Maven 或 Gradle 依赖，然后创建、获取和审核评论，并包含 SSO 辅助功能。
+
+---

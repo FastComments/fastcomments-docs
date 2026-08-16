@@ -1,0 +1,4 @@
+---
+從 Swift 呼叫 FastComments API。使用 Swift Package Manager 添加套件，然後建立、取得以及審核評論，並包含 SSO 輔助功能。
+
+---

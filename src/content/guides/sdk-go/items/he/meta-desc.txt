@@ -1,0 +1,2 @@
+---
+קרא את FastComments API מ-Go. התקן עם go get, ואז צור, שלוף, והנהל תגובות, עם עוזרי SSO וכל endpoint מתועד.

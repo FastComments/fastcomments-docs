@@ -1,0 +1,3 @@
+---
+Exécutez un déploiement FastComments isolé dans votre propre compte cloud, géré par nous, avec un accès administrateur complet et la capacité d'héberger des locataires en marque blanche.
+---

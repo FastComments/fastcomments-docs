@@ -1,0 +1,1 @@
+Dodajte komentarje v aplikacijo Vue 2. Namestite paket, prikažite komponento pripomočka in posodobite trenutno stran, ko vaša enostranska aplikacija spremeni poti.

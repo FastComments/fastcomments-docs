@@ -1,0 +1,3 @@
+---
+Controlla quali email FastComments invia ai tuoi lettori, come possono annullare l'iscrizione, come si comportano le notifiche per gli utenti SSO e come vengono gestiti gli indirizzi soppressi.
+---

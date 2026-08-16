@@ -1,0 +1,3 @@
+---
+Recopila valoraciones con estrellas y reseñas escritas, define tus propias preguntas y muestra los resultados con el widget de resumen o recógelos a través de la API.
+---

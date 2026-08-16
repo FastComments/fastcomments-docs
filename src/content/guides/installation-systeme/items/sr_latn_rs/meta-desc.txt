@@ -1,0 +1,3 @@
+---
+Dodajte komentare u realnom vremenu na blog Systeme.io tako što ćete zalepiti isječak u šablon teme bloga, ili u bilo koji drugi šablon stranice koji možete uređivati.
+---

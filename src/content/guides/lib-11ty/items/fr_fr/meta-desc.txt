@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à un site Eleventy avec le plugin officiel. Insérez un shortcode dans votre modèle, ou intégrez le widget manuellement et ignorez le plugin.
+---

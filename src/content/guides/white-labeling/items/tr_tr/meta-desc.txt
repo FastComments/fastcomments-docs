@@ -1,0 +1,3 @@
+---
+Kendi markanız altında yorum hizmeti satabilirsiniz. API veya kontrol paneli üzerinden kiracıları oluşturun ve yönetin, faturalandırma sizin tarafınızdan veya FastComments tarafından yapılabilir.
+---

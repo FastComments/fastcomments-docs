@@ -1,0 +1,3 @@
+---
+Envía notificaciones de comentarios que se vean como tu producto, no como el nuestro. Escribe plantillas con tu propio marcado, varíalas por dominio y localiza el texto.
+---

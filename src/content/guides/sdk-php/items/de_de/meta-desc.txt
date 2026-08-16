@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API von PHP aus auf. Installieren Sie sie mit Composer und erstellen, holen und moderieren Sie dann Kommentare, wobei Anforderungsmodelle und SSO-Helfer enthalten sind.
+---

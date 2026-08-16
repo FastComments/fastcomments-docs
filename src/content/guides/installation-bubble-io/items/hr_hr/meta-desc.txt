@@ -1,0 +1,3 @@
+---
+Dodajte odjeljak za komentare u Bubble.io aplikaciju pomoću HTML bloka, uključujući postavke širine i rasporeda koje sprječavaju da se widget odseče.
+---

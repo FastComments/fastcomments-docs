@@ -1,0 +1,3 @@
+---
+Skonfiguruj widżet komentarzy od początku do końca: do której strony należy wątek, niestandardowy CSS i czcionki, tryb ciemny, nadpisywanie tekstu, domyślne ustawienia moderacji i SSO.
+---

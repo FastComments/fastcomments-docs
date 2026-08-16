@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API von Nim aus auf. Installieren Sie sie mit nimble, dann erstellen, abrufen und moderieren Sie Kommentare, mit SSO-Hilfen und allen dokumentierten Endpunkten.
+---

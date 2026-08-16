@@ -1,0 +1,3 @@
+---
+Beheer welke e-mails FastComments naar uw lezers verzendt, hoe ze zich afmelden, hoe meldingen zich gedragen voor SSO‑gebruikers, en hoe onderdrukte adressen worden afgehandeld.
+---

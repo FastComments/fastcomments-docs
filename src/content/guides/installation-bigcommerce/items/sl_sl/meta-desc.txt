@@ -1,0 +1,1 @@
+Dodajte žive komentarje na blog objave in strani izdelkov v BigCommerce z urejanjem predloge svoje teme, z ločenim izrezkom za Page Builder.

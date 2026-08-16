@@ -1,0 +1,3 @@
+---
+Rufen Sie die FastComments-API aus Java auf. Fügen Sie die Maven- oder Gradle-Abhängigkeit hinzu und erstellen, holen und moderieren Sie Kommentare, wobei SSO-Hilfsfunktionen enthalten sind.
+---

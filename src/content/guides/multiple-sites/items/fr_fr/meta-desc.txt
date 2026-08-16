@@ -1,0 +1,1 @@
+Exécutez plusieurs domaines ou sous‑domaines à partir d’un seul compte FastComments, avec des noms d’expéditeur et des logos spécifiques à chaque domaine, un locataire par environnement, et des fils de discussion partagés.

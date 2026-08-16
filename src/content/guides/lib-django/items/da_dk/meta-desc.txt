@@ -1,0 +1,1 @@
+Tilføj kommentarer til en Django‑app med skabelon‑tags, inklusive automatisk Secure SSO fra den loggede bruger, server‑side API‑adgang og understøttelse af EU‑regionen.

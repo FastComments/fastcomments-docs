@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare, Live‑Chat und Bewertungen zu einer Vue 3‑App hinzu. Installieren Sie das Paket, rendern Sie die Komponente und wechseln Sie die Threads, während Ihre Single‑Page‑App navigiert.
+---

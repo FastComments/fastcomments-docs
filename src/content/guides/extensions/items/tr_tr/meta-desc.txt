@@ -1,0 +1,3 @@
+---
+Kendi işaretlemenizi, olay dinleyicilerinizi ve mantığınızı Uzantılar ile yorum widget'ına ekleyin. Yaşam döngüsü, uzantı nesnesi ve çağırabileceğiniz API.
+---

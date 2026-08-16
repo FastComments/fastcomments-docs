@@ -1,0 +1,3 @@
+---
+Android uygulamasına yerel yorumlar, sohbet ve akışlar ekleyin. Uzun ömürlü ekranlar için güvenli SSO, tam tema özelleştirme ve bellek rehberliği sağlayın.
+---

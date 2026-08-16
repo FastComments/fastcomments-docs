@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à un site Hugo avec des shortcodes, y compris l'intégration du thème, le comptage en masse des commentaires pour les pages de liste, et la référence complète de la configuration du widget.
+---

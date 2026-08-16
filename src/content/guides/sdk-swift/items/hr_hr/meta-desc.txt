@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz Swifta. Dodajte paket pomoću Swift Package Managera, zatim kreirajte, dohvatite i moderirajte komentare, uz uključene SSO pomoćnike.
+---

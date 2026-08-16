@@ -1,0 +1,3 @@
+---
+Dajte Ghost članovima odeljak za komentare koji ih već poznaje. Uvezite imena i avatare članova, omogućite obaveštenja o odgovorima i izmenite šablon vašeg posta.
+---

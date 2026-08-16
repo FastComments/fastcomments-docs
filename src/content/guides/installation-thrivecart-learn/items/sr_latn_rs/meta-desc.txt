@@ -1,0 +1,3 @@
+---
+Dodajte sekciju za komentare na ThriveCart Learn+ kurseve pomoću podešavanja prilagođenog koda, kako bi studenti mogli postavljati pitanja unutar svake lekcije.
+---

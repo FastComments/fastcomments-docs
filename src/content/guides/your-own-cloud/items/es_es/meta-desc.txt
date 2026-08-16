@@ -1,0 +1,3 @@
+---
+Ejecute una implementación aislada de FastComments dentro de su propia cuenta en la nube, gestionada por nosotros, con acceso total de administrador y la capacidad de alojar inquilinos con marca blanca.
+---

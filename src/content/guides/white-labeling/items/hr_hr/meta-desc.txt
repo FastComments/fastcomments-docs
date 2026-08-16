@@ -1,0 +1,3 @@
+---
+Prodajte komentiranje pod vlastitim brendom. Kreirajte i upravljajte najmodavcima putem API-ja ili nadzorne ploče, a naplatu obavljate vi ili FastComments.
+---

@@ -1,0 +1,3 @@
+---
+Voeg inline discussies toe aan een Super.so-site met Collab Chat, zodat lezers tekst in je Notion‑pagina’s kunnen markeren en er samen over kunnen praten.
+---

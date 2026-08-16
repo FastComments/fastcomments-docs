@@ -1,0 +1,3 @@
+---
+Izrišite komentarje v začetni HTML, da jih pajki in počasne povezave takoj vidijo. Kaj FastComments podpira in kako vklopiti SSR.
+---

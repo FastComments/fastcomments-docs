@@ -1,0 +1,3 @@
+---
+Formater kommentarer med fed, links, kode og medier. Hvad kommentarparseren accepterer, og saniteringen der forhindrer markup i at blive et angreb.
+---

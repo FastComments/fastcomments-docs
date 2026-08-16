@@ -1,0 +1,3 @@
+---
+Dodajte komentare u React aplikaciju s službenim paketom. Instalirajte ga, renderirajte komponentu i proslijedite svoj tenant i ID stranice kako biste započeli temu.
+---

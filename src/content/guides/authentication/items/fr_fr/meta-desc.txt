@@ -1,0 +1,4 @@
+---
+Laissez les lecteurs commenter sans friction. Comparez les liens de connexion sans mot de passe, les mots de passe, le SSO et le SAML pour choisir la méthode de connexion que votre audience acceptera.
+
+---

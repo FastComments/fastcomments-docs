@@ -1,0 +1,3 @@
+---
+Voer FastComments volledig uit op uw eigen infrastructuur. Instanties, configuratie, onderhoudsmodus, vergrendelingen, meerdere domeinen en het beveiligingsmodel.
+---

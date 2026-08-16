@@ -1,0 +1,3 @@
+---
+Zaradite ponavljajuću proviziju za svakog kupca kojeg uputite na FastComments. Kako se prijaviti, kolika je stopa provizije i kada se isplate vrše.
+---

@@ -1,0 +1,1 @@
+Point Claude, ChatGPT eller Cursor på FastComments-dokumentationen, så de skriver korrekt integrationskode. Tilføj LLM Kit‑snippets eller forbind MCP‑serveren.

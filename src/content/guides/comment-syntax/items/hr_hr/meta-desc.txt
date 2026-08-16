@@ -1,0 +1,3 @@
+---
+Formatirajte komentare s podebljanim, poveznicama, kodom i medijima. Što parser komentara prihvaća i sanitizacija koja sprječava da markup postane napad.
+---

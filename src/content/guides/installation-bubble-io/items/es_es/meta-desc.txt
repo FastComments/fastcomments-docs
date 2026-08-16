@@ -1,0 +1,3 @@
+---
+Agrega una sección de comentarios a una aplicación de Bubble.io con un bloque HTML, incluyendo los ajustes de ancho y diseño que evitan que el widget se recorte.
+---

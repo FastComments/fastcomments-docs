@@ -1,0 +1,3 @@
+---
+Canlı yorumları bir Systeme.io bloguna eklemek için bir snippet'i blog tema şablonuna ya da düzenleyebileceğiniz herhangi bir sayfa şablonuna yapıştırın.
+---

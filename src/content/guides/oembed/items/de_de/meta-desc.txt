@@ -1,0 +1,3 @@
+---
+Betten Sie einen FastComments-Thread überall ein, wo eine oEmbed-URL akzeptiert wird, damit Kommentare mit dem Inhalt reisen, anstatt an eine einzelne Seite gebunden zu sein.
+---

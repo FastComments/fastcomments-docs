@@ -1,0 +1,3 @@
+---
+FastComments'u tamamen kendi altyapınızda çalıştırın. Örnekler, yapılandırma, bakım modu, kilitler, birden fazla alan adı ve güvenlik modeli.
+---

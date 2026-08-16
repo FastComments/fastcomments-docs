@@ -1,0 +1,3 @@
+---
+Dodajte komentare uživo na Zyro sajt pomoću vidžeta za kod, i dodajte plutajući dugme za lajkove kako bi čitaoci mogli da reaguju bez pisanja komentara.
+---

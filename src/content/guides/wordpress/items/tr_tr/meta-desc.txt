@@ -1,0 +1,3 @@
+---
+Resmi eklenti ile WordPress'e canlı yorum ekleyin: pano denetimi, üyelik siteleri için SSO ve yorum sayıları gönderilere geri senkronize edilir.
+---

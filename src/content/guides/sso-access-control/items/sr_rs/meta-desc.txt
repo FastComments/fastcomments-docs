@@ -1,0 +1,3 @@
+---
+Odlučite po korisniku ko može da čita i ko može da objavljuje, direktno iz vašeg SSO payload-a. Specifikacija, kako da je implementirate i primeri API poziva.
+---

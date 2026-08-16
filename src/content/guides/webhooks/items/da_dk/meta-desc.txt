@@ -1,0 +1,3 @@
+---
+Få et HTTP‑callback i det øjeblik, en kommentar tilføjes, redigeres eller slettes. Hvilke hændelser udløses, hvordan du verificerer anmodningen, og hvordan genforsøg opfører sig.
+---

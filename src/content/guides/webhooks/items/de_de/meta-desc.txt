@@ -1,0 +1,3 @@
+---
+Erhalten Sie einen HTTP-Callback, sobald ein Kommentar hinzugefügt, bearbeitet oder gelöscht wird. Welche Ereignisse ausgelöst werden, wie Sie die Anfrage überprüfen und wie Wiederholungen funktionieren.
+---

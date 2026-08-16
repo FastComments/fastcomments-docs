@@ -1,0 +1,3 @@
+---
+Omstil hver del af kommentarfunktionen med din egen CSS. Fuld standard stylesheet for v2, plus de seneste kommentarer og de mest diskuterede widgets.
+---

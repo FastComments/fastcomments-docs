@@ -1,0 +1,3 @@
+---
+Dodajte komentare u SolidJS aplikaciju koristeći zvanični paket, uključujući imperativni rukovalac za promenu konfiguracije widgeta bez ponovnog učitavanja.
+---

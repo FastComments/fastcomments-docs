@@ -1,0 +1,3 @@
+---
+Installieren Sie das WordPress-Plugin für Live‑Kommentare, Moderation über Ihr Dashboard, nur für Mitglieder zugängliche Threads via SSO und Kommentarzähler, die zurück zu den Beiträgen synchronisiert werden.
+---

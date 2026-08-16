@@ -1,0 +1,3 @@
+---
+Inicia sesión a tus usuarios existentes directamente en la sección de comentarios para que nunca creen una segunda cuenta o inicien sesión dos veces.
+---

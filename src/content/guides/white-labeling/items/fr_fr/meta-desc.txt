@@ -1,0 +1,3 @@
+---
+Vendez le service de commentaires sous votre propre marque. Créez et gérez des locataires via l’API ou le tableau de bord, la facturation étant gérée par vous ou par FastComments.
+---

@@ -1,0 +1,3 @@
+---
+Wix'e bir gömme bloğu ile canlı yorumlar ekleyin ve her sayfa ve blog gönderisinin kendi konuşmasını alması için konu kimliğini ayarlayın, böylece hepsi aynı konuşmayı paylaşmaz.
+---

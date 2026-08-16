@@ -1,0 +1,3 @@
+---
+Fügen Sie Kommentare zu einer Angular‑App mit dem offiziellen Paket hinzu. Installieren Sie es, fügen Sie die Komponente in eine Vorlage ein und übergeben Sie Ihren Mandanten und die Seiten‑ID.
+---

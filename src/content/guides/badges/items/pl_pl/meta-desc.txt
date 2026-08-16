@@ -1,0 +1,3 @@
+---
+Nagradzaj komentatorów automatycznie odznakami za liczbę komentarzy, polubienia, odpowiedzi, status weterana oraz aktywność nocną, lub przydzielaj odznaki ręcznie.
+---

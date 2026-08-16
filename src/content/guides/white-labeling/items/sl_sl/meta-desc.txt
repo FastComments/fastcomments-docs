@@ -1,0 +1,3 @@
+---
+Prodajte komentiranje pod lastno blagovno znamko. Ustvarjajte in upravljajte najemnike prek API-ja ali nadzorne plošče, pri čemer je obračunavanje v vaših rokah ali pri FastComments.
+---

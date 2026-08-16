@@ -1,0 +1,3 @@
+---
+Osadź wątek FastComments w dowolnym miejscu, które akceptuje adres URL oEmbed, aby komentarze podążały za treścią zamiast być powiązane z jedną stroną.
+---

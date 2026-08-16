@@ -1,0 +1,3 @@
+---
+Venda comentários sob sua própria marca. Crie e gerencie locatários através da API ou do painel, com a cobrança sendo feita por você ou pela FastComments.
+---

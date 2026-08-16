@@ -1,0 +1,3 @@
+---
+Rendez les commentaires dans votre HTML initial afin que les robots d'exploration et les connexions lentes les voient immédiatement. Ce que FastComments prend en charge, et comment activer le SSR.
+---

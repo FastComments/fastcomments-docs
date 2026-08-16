@@ -1,0 +1,3 @@
+---
+Formatta i commenti con grassetto, link, codice e media. Cosa accetta il parser dei commenti e la sanificazione che impedisce al markup di diventare un attacco.
+---

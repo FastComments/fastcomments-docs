@@ -1,0 +1,3 @@
+---
+FastComments API'sini Java'dan çağırın. Maven veya Gradle bağımlılığını ekleyin, ardından yorumları oluşturun, alın ve denetleyin, SSO yardımcıları dahil.
+---

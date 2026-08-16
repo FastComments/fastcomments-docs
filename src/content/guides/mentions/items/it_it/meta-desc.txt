@@ -1,0 +1,3 @@
+---
+Consenti ai commentatori di taggare gli altri con @mentions, attivare una notifica e pre‑riempire le menzioni dal tuo codice. Include come l'autocompletamento risolve i nomi.
+---

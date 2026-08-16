@@ -1,0 +1,3 @@
+---
+Ajoutez votre propre balisage, vos écouteurs d'événements et votre logique au widget de commentaires avec les Extensions. Le cycle de vie, l'objet d'extension et l'API que vous pouvez appeler.
+---

@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til et Gatsby‑site. Et komplet fungerende eksempelprojekt, du kan kopiere, som viser, hvor widget’en placeres, og hvordan du videregiver side‑ID’en.
+---

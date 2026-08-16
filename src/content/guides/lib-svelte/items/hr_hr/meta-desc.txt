@@ -1,0 +1,3 @@
+---
+Dodajte komentare u Svelte aplikaciju s službenim paketom. Instalirajte ga, ubacite komponentu widgeta u svoju stranicu i proslijedite svoj tenant i ID stranice.
+---

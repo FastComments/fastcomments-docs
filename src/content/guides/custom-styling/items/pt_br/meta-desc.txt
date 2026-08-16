@@ -1,0 +1,3 @@
+---
+Reestilize cada parte do widget de comentários com seu próprio CSS. Folha de estilo padrão completa para v2, além dos widgets de comentários recentes e mais discutidos.
+---

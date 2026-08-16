@@ -1,0 +1,3 @@
+---
+Yıldız puanlarını ve yazılı incelemeleri toplayın, kendi sorularınızı tanımlayın ve sonuçları özet widget'ı ile gösterin veya API üzerinden çekin.
+---

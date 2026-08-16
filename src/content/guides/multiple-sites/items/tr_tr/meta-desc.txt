@@ -1,0 +1,3 @@
+---
+Bir FastComments hesabından birden fazla alan adı veya alt alan adı çalıştırın, alan adı başına gönderici adları ve logoları, ortam başına bir kiracı ve paylaşılan konular ile.
+---

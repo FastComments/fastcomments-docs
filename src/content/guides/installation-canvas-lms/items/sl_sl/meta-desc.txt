@@ -1,0 +1,3 @@
+---
+Dodajte komentarje in sodelovalni klepet v Canvas tečaje prek LTI 1.3. Ustvarite razvijalski ključ, se povežite in preslikajte Canvas vloge, brez strežniškega vtičnika.
+---

@@ -1,0 +1,3 @@
+---
+Stel SAML 2.0 single sign-on in zodat personeel en leden FastComments bereiken via uw corporate identity provider. Rolmapping, testen en veelvoorkomende fouten.
+---

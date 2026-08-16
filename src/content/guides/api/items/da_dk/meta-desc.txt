@@ -1,0 +1,3 @@
+---
+Opret, hent, moderer og eksporter kommentarer over HTTP. Alle FastComments-endpoints med deres anmodnings- og svar-typer, inklusive stemmer, brugere og sider.
+---

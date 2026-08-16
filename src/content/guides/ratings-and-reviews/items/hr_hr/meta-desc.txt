@@ -1,0 +1,3 @@
+---
+Prikupljajte ocjene zvjezdicama i pisane recenzije, definirajte vlastita pitanja i prikažite rezultate pomoću widgeta sažetka ili ih dohvatite putem API-ja.
+---

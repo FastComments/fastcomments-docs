@@ -1,0 +1,1 @@
+Ogranicz komentowanie do płacących członków MemberSpace, opcjonalnie nadal zezwalając na anonimowe komentarze, i ustaw odznaki na podstawie poziomu członkostwa czytelnika.

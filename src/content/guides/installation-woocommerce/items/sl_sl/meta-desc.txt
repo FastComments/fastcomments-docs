@@ -1,0 +1,3 @@
+---
+Dodajte žive komentarje in razprave o izdelkih v trgovino WooCommerce z uporabo vtičnika FastComments za WordPress, brez potrebe po urejanju teme.
+---

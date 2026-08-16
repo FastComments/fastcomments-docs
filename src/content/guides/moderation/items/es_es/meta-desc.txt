@@ -1,0 +1,3 @@
+---
+Aprueba, elimina, prohíbe y realiza acciones masivas en los comentarios desde un único panel, con detección de spam, enmascaramiento de palabras ofensivas, grupos de moderación y moderación por correo electrónico.
+---

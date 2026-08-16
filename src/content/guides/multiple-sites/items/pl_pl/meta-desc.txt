@@ -1,0 +1,3 @@
+---
+Uruchom kilka domen lub subdomen z jednego konta FastComments, z nazwami nadawców i logo specyficznymi dla każdej domeny, najemcą dla każdego środowiska oraz współdzielonymi wątkami.
+---

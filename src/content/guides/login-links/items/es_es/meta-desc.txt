@@ -1,0 +1,3 @@
+---
+Permita que los lectores inicien sesión desde un enlace enviado por correo electrónico en lugar de recordar una contraseña. Cómo funcionan los enlaces de inicio de sesión, quién los recibe y cómo se mantienen seguros.
+---

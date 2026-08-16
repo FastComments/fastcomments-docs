@@ -1,0 +1,3 @@
+---
+Dodajte svoj markup, event listenere i logiku u widget za komentare pomoću Extensions. Životni ciklus, extension object i API koji možete pozvati.
+---

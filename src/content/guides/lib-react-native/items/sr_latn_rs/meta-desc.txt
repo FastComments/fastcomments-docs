@@ -1,0 +1,1 @@
+Ugradite live komentar i chat vidžete u React Native aplikaciju sa SSO, plus kada da se odlučite za native SDK umesto webview vidžeta.

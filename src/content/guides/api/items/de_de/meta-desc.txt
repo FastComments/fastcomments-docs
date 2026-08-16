@@ -1,0 +1,3 @@
+---
+Erstellen, abrufen, moderieren und exportieren Sie Kommentare über HTTP. Jeder FastComments-Endpunkt mit seinen Anforderungs‑ und Antworttypen, einschließlich Stimmen, Benutzer und Seiten.
+---

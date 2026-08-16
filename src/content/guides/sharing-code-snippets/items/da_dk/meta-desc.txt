@@ -1,0 +1,3 @@
+---
+Lad kommentatorer poste kørbar, syntaksfremhævet kode i dine tråde. Hvilke sprog understøttes, og hvordan du aktiverer deling af kodeudsnit.
+---

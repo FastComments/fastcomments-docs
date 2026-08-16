@@ -1,0 +1,1 @@
+Voeg een commentaarsectie toe aan een Bubble.io‑app met een HTML‑blok, inclusief de breedte‑ en lay‑outinstellingen die voorkomen dat de widget wordt afgesneden.

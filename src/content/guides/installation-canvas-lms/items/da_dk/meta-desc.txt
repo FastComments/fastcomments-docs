@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer og samarbejdschat til Canvas‑kurser via LTI 1.3. Opret en udviklernøgle, opret forbindelse, og map Canvas‑roller, uden server‑plugin.
+---

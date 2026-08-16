@@ -1,0 +1,3 @@
+---
+FastComments dizisini, içeriğin bir oEmbed URL'sini kabul ettiği herhangi bir yere gömün, böylece yorumlar tek bir sayfaya bağlı kalmak yerine içerikle birlikte taşınır.
+---

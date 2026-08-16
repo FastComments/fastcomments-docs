@@ -1,0 +1,4 @@
+---
+Sammeln Sie Sternebewertungen und schriftliche Rezensionen, definieren Sie Ihre eigenen Fragen und zeigen Sie die Ergebnisse mit dem Zusammenfassungs‑Widget an oder rufen Sie sie über die API ab.
+
+---

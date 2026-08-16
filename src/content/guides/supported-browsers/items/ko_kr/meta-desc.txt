@@ -1,0 +1,3 @@
+---
+FastComments 위젯이 지원하는 브라우저, Internet Explorer의 위치, 각 릴리스를 테스트하는 방법, 그리고 위젯에 필요한 JavaScript에 대해.
+---

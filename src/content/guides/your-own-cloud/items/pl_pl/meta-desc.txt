@@ -1,0 +1,3 @@
+---
+Uruchom odizolowaną instalację FastComments w swoim własnym koncie w chmurze, zarządzaną przez nas, z pełnym dostępem administracyjnym i możliwością hostowania najemców z białą etykietą.
+---

@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires en direct à un site GoDaddy avec une zone de code, publiez, et corrigez l'erreur de domaine qui apparaît lorsque le widget s'exécute sur un domaine non enregistré.
+---

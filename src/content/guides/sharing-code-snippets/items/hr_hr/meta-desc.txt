@@ -1,0 +1,3 @@
+---
+Dozvolite komentatorima da objavljuju izvršivi, sintaksno označen kod u vašim temama. Koji su jezici podržani i kako omogućiti dijeljenje isječaka.
+---

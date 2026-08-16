@@ -1,0 +1,3 @@
+---
+Lassen Sie Kommentatoren ausführbaren, syntaktisch hervorgehobenen Code in Ihren Threads posten. Welche Sprachen werden unterstützt und wie Sie das Teilen von Snippets aktivieren.
+---

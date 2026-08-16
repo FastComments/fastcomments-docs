@@ -1,0 +1,3 @@
+---
+Voeg opmerkingen toe aan een Laravel-app met Blade-componenten. Verpakt de PHP SDK voor volledige API-toegang en koppelt SSO automatisch aan uw geauthenticeerde gebruiker.
+---

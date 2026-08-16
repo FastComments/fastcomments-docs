@@ -1,0 +1,3 @@
+---
+Skift til FastComments fra Disqus eller en anden udbyder, importer WordPress-kommentarer, flyt brugere og domæner mellem lejere, og eksporter dine data når som helst.
+---

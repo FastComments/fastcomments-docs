@@ -1,0 +1,3 @@
+---
+Resmi gem'i kullanarak bir Jekyll sitesine yorum ekleyin. Kurun, gönderi düzeninize bir Liquid etiketi ekleyin ve widget'ı _config.yml dosyasından yapılandırın.
+---

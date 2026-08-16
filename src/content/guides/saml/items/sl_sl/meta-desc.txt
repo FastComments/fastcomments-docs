@@ -1,0 +1,1 @@
+Nastavite SAML 2.0 enojno prijavo, da osebje in člani dosežejo FastComments prek vašega korporativnega ponudnika identitete. Preslikava vlog, testiranje in pogoste napake.

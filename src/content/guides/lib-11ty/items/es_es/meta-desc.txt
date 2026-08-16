@@ -1,0 +1,3 @@
+---
+Añade comentarios a un sitio Eleventy con el plugin oficial. Inserta un shortcode en tu plantilla, o conecta el widget manualmente y omite el plugin.
+---

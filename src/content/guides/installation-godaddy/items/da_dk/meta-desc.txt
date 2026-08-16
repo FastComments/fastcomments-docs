@@ -1,0 +1,3 @@
+---
+Tilføj live‑kommentarer til et GoDaddy‑websted med et kodeområde, udgiv, og ret domænefejlen, der opstår, når widgeten kører på et ikke‑registreret domæne.
+---

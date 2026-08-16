@@ -1,0 +1,3 @@
+---
+Ajoutez une section de commentaires à une application Bubble.io avec un bloc HTML, y compris les paramètres de largeur et de mise en page qui empêchent le widget d'être découpé.
+---

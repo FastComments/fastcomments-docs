@@ -1,0 +1,3 @@
+---
+Odločite po uporabniku, kdo lahko bere in kdo lahko objavlja, neposredno iz vašega SSO paketa. Specifikacija, kako jo implementirati, in primeri API klicev.
+---

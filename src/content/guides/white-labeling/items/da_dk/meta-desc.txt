@@ -1,0 +1,4 @@
+---
+Sælg kommentering under dit eget brand. Opret og administrer lejere via API'et eller dashboardet, med fakturering håndteret af dig eller af FastComments.
+
+---

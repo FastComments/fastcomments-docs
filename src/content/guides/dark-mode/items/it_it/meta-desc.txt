@@ -1,0 +1,3 @@
+---
+Fai sì che i commenti seguano il tema scuro del tuo sito. Rilevalo dal sistema operativo, attivalo manualmente o utilizza il supporto integrato di WordPress Networker.
+---

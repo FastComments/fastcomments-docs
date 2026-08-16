@@ -1,0 +1,3 @@
+---
+Ejecute varios dominios o subdominios desde una sola cuenta de FastComments, con nombres de remitente y logotipos por dominio, un inquilino por entorno y hilos compartidos.
+---

@@ -1,0 +1,3 @@
+---
+Wywołaj API FastComments z języka Nim. Zainstaluj za pomocą nimble, a następnie twórz, pobieraj i moderuj komentarze, korzystając z pomocników SSO oraz pełnej dokumentacji wszystkich endpointów.
+---

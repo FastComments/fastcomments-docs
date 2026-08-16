@@ -1,0 +1,3 @@
+---
+Voeg opmerkingen toe aan een Vue 2-app. Installeer het pakket, render de widgetcomponent en werk de huidige pagina bij wanneer je single-page app van route verandert.
+---

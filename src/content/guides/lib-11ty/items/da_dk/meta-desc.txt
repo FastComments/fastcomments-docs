@@ -1,0 +1,3 @@
+---
+Tilføj kommentarer til et Eleventy-site med den officielle plugin. Drop en shortcode i din skabelon, eller tilslut widget'en manuelt og spring pluginet over.
+---

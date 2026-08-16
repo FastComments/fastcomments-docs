@@ -1,0 +1,3 @@
+---
+Zrozum administratorów, moderatorów i komentatorów w FastComments. Jak działają nazwy użytkowników, jak dodać każdy typ oraz jak zmienić uprawnienia administratora.
+---

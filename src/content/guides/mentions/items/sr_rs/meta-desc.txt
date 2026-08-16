@@ -1,0 +1,3 @@
+---
+Dozvolite komentatorima da označavaju jedni druge pomoću @pomena, pokrenu obaveštenje i unapred popune pominjanja iz vašeg koda. Uključuje kako automatsko dovršavanje razrešava imena.
+---

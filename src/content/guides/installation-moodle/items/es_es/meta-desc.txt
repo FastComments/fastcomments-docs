@@ -1,0 +1,3 @@
+---
+Instala el plugin FastComments para Moodle para añadir comentarios a cursos y actividades. SSO es automático, por lo que los estudiantes nunca tienen que iniciar sesión dos veces.
+---

@@ -1,0 +1,3 @@
+---
+Ponovo stilizujte svaki deo vidžeta za komentare svojim CSS-om. Potpuni podrazumevani stil za v2, plus najnoviji komentari i najraspravljaniji vidžeti.
+---

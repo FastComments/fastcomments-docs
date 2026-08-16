@@ -1,0 +1,3 @@
+---
+Spraw, aby komentarze dopasowywały się do ciemnego motywu Twojej witryny. Wykryj go z systemu operacyjnego, przełącz ręcznie lub użyj wbudowanego wsparcia WordPress Networker.
+---

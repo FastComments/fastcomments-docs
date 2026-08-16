@@ -1,0 +1,3 @@
+---
+Richten Sie Claude, ChatGPT oder Cursor auf die FastComments-Dokumentation, damit sie korrekten Integrationscode schreiben. Fügen Sie das LLM Kit‑Snippet hinzu oder verbinden Sie den MCP‑Server.
+---

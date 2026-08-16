@@ -1,0 +1,3 @@
+---
+Pozovite FastComments API iz Jave. Dodajte Maven ili Gradle zavisnost, a zatim kreirajte, preuzmite i moderirajte komentare, uz uključene SSO pomoćnike.
+---

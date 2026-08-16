@@ -1,0 +1,3 @@
+---
+Vende comentarios bajo tu propia marca. Crea y gestiona inquilinos a través de la API o del panel, con la facturación gestionada por ti o por FastComments.
+---

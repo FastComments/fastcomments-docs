@@ -1,0 +1,3 @@
+---
+Haz que los comentarios sigan el tema oscuro de tu sitio. Detecta el tema desde el sistema operativo, actívalo tú mismo, o usa el soporte integrado de WordPress Networker.
+---

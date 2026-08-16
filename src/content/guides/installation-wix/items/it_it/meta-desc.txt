@@ -1,0 +1,3 @@
+---
+Aggiungi commenti in tempo reale a Wix con un blocco embed e imposta l'ID del thread in modo che ogni pagina e post del blog abbia la propria conversazione invece di condividerne una.
+---

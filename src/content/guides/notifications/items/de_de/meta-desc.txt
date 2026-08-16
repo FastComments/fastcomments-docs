@@ -1,0 +1,3 @@
+---
+Steuern Sie, welche E‑Mails FastComments an Ihre Leser sendet, wie sie sich abmelden können, wie Benachrichtigungen für SSO‑Benutzer funktionieren und wie unterdrückte Adressen behandelt werden.
+---

@@ -1,0 +1,3 @@
+---
+FastComments WordPress eklentisini kullanarak bir WooCommerce mağazasına canlı yorumlar ve ürün tartışması ekleyin, tema düzenlemesi gerektirmez.
+---

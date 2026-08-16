@@ -1,0 +1,3 @@
+---
+FastComments widget'ının desteklediği tarayıcılar, Internet Explorer'ın konumu, her sürümü nasıl test ettiğimiz ve widget'ın ihtiyaç duyduğu JavaScript.
+---

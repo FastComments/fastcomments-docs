@@ -1,0 +1,3 @@
+---
+Genehmigen, löschen, sperren und Massenaktionen für Kommentare von einem Dashboard aus, mit Spam-Erkennung, Fluchwortmaskierung, Moderationsgruppen und Moderation per E‑Mail.
+---

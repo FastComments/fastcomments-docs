@@ -1,0 +1,3 @@
+---
+Installer WordPress‑pluginet for live‑kommentarer, moderation fra dit dashboard, kun‑medlemskabs‑tråde via SSO og kommentar‑tællinger, der synkroniseres tilbage til indlæg.
+---

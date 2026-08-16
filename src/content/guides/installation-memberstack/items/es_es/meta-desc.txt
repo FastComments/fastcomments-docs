@@ -1,0 +1,3 @@
+---
+Restringe tu sección de comentarios a los miembros de Memberstack que hayan iniciado sesión con un solo fragmento, de modo que solo los miembros que pagan puedan publicar.
+---

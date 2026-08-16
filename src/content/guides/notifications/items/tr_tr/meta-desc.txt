@@ -1,0 +1,3 @@
+---
+FastComments'in okuyucularınıza gönderdiği e-postaları, nasıl çıkış yapabileceklerini, SSO kullanıcıları için bildirimlerin nasıl davrandığını ve bastırılmış adreslerin nasıl ele alındığını kontrol edin.
+---

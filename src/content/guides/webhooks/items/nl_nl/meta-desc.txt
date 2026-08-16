@@ -1,0 +1,3 @@
+---
+Ontvang een HTTP-callback op het moment dat een reactie wordt toegevoegd, bewerkt of verwijderd. Welke gebeurtenissen worden geactiveerd, hoe je het verzoek verifieert, en hoe herpogingen zich gedragen.
+---

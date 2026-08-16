@@ -1,0 +1,3 @@
+---
+Zainstaluj moduł Drupal dla komentarzy na żywo jako bloki widgetów lub pola typu treści, z SSO, uprawnieniami per-roli i rezydencją danych w UE.
+---

@@ -1,0 +1,3 @@
+---
+Fügen Sie Live‑Kommentare zu BigCommerce‑Blog‑Posts und Produktseiten hinzu, indem Sie Ihre Theme‑Vorlage bearbeiten, mit einem separaten Snippet für den Page Builder.
+---

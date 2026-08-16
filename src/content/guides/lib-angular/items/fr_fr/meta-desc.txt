@@ -1,0 +1,3 @@
+---
+Ajoutez des commentaires à une application Angular avec le package officiel. Installez‑le, insérez le composant dans un modèle, et transmettez votre locataire et l’ID de la page.
+---

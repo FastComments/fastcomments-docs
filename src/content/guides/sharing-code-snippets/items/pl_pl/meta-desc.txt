@@ -1,0 +1,3 @@
+---
+Pozwól komentatorom zamieszczać wykonywalny, podświetlony składniowo kod w Twoich wątkach. Jakie języki są obsługiwane i jak włączyć udostępnianie fragmentów kodu.
+---

@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo a los cursos y sitios de marketing de GoHighLevel, con recorridos separados para áreas de membresía y páginas regulares usando un elemento de código.
+---

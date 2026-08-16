@@ -1,0 +1,3 @@
+---
+Crie, recupere, modere e exporte comentários via HTTP. Cada endpoint do FastComments com seus tipos de requisição e resposta, incluindo votos, usuários e páginas.
+---

@@ -1,0 +1,1 @@
+Restringir los comentarios a los miembros de MemberSpace que paguen, opcionalmente permitiendo aún comentarios anónimos, y establecer insignias según el nivel de membresía del lector.

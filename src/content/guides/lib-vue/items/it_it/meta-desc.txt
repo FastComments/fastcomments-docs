@@ -1,0 +1,3 @@
+---
+Aggiungi commenti a un'app Vue 2. Installa il pacchetto, rendi il componente widget e aggiorna la pagina corrente quando la tua app a pagina singola cambia rotta.
+---

@@ -1,0 +1,3 @@
+---
+Dodajte komentare na Astro stranicu pomoću službene integracije. Uvezite komponentu, proslijedite svoj ID najemnika i ona će se prikazati gdje god je postavite.
+---

@@ -1,0 +1,3 @@
+---
+Wechseln Sie zu FastComments von Disqus oder einem anderen Anbieter, importieren Sie WordPress‑Kommentare, verschieben Sie Benutzer und Domains zwischen Mandanten und exportieren Sie Ihre Daten jederzeit.
+---

@@ -1,0 +1,3 @@
+---
+Voer een geïsoleerde FastComments‑implementatie uit binnen uw eigen cloudaccount, beheerd door ons, met volledige beheerdersrechten en de mogelijkheid om white‑labeled tenants te hosten.
+---

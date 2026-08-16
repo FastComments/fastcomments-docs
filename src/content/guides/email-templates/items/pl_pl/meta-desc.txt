@@ -1,0 +1,3 @@
+---
+Wysyłaj powiadomienia o komentarzach, które wyglądają jak Twój produkt, a nie nasz. Twórz szablony ze swoim własnym kodem, dostosowuj je do poszczególnych domen i lokalizuj treść.
+---

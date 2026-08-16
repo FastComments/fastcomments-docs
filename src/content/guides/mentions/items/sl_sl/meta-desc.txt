@@ -1,0 +1,3 @@
+---
+Naj komentatorji označujejo drug drugega z @omenjami, sprožijo obvestilo in vnaprej izpolnijo omembe iz svoje kode. Vključuje, kako samodopolnjevanje razrešuje imena.
+---

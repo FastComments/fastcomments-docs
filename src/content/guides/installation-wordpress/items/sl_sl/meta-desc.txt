@@ -1,0 +1,3 @@
+---
+Namestite WordPress vtičnik za žive komentarje, moderiranje iz vaše nadzorne plošče, niti samo za člane prek SSO in število komentarjev, sinhronizirano nazaj v objave.
+---

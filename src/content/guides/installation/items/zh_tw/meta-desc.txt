@@ -1,0 +1,4 @@
+---
+在大約五分鐘內為任何網站新增評論區。提供適用於 WordPress、React、Vue、Angular、React Native 以及純 HTML 的現成程式碼片段。
+
+---

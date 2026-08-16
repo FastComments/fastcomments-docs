@@ -1,0 +1,3 @@
+---
+Fai accedere direttamente i tuoi utenti esistenti nella sezione dei commenti in modo che non creino mai un secondo account o effettuino il login due volte.
+---

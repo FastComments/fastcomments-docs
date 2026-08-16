@@ -1,0 +1,3 @@
+---
+Dodajte komentarje v React aplikacijo z uradnim paketom. Namestite ga, upodabljajte komponento in posredujte svoj najemnik ter ID strani, da začnete nit.
+---

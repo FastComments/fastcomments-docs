@@ -1,0 +1,3 @@
+---
+Agrega comentarios en vivo a Squarespace de tres maneras: solo en publicaciones de blog, en todas las páginas del sitio mediante inyección de código, o en una página específica con un bloque de código.
+---

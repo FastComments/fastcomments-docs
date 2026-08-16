@@ -1,0 +1,3 @@
+---
+Uruchom FastComments w pełni na własnej infrastrukturze. Instancje, konfiguracja, tryb konserwacji, blokady, wiele domen i model bezpieczeństwa.
+---

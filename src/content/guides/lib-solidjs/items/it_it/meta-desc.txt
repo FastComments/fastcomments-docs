@@ -1,0 +1,3 @@
+---
+Aggiungi commenti a un'app SolidJS con il pacchetto ufficiale, includendo un handle imperativo per modificare la configurazione del widget senza un rimontaggio.
+---

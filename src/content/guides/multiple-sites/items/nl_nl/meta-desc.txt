@@ -1,0 +1,3 @@
+---
+Beheer meerdere domeinen of subdomeinen vanuit één FastComments‑account, met per‑domein afzendernamen en logo’s, een tenant per omgeving, en gedeelde threads.
+---

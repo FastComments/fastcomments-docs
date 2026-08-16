@@ -1,0 +1,3 @@
+---
+Tek bir kontrol panelinden yorumları onaylayın, silin, yasaklayın ve toplu işlem yapın; spam tespiti, küfür maskelemesi, moderasyon grupları ve e-posta ile moderasyon.
+---

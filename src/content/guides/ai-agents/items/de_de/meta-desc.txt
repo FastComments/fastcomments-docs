@@ -1,0 +1,3 @@
+---
+Erstellen Sie KI-Agenten, die Ihre Community beobachten und eigenständig handeln: automatisches Moderieren, Begrüßung neuer Nutzer, Zusammenfassen von Threads und Anheften der besten Kommentare.
+---

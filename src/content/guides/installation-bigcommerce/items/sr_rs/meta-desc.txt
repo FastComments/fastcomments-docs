@@ -1,0 +1,3 @@
+---
+Postavite live komentare na blog postove i stranice proizvoda na BigCommerce-u uređivanjem šablona teme, uz poseban snippet za Page Builder.
+---

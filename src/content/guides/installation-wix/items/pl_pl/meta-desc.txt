@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do Wix za pomocą bloku embed i ustaw identyfikator wątku, aby każda strona i wpis na blogu miały własną konwersację zamiast współdzielić jedną.
+---

@@ -1,0 +1,3 @@
+---
+Herhangi bir gönderi veya ürünün yanında, bağımsız bir widget ile canlı yorum sayısını gösterin; bir sayfada bir seferde veya tüm liste boyunca toplu olarak.
+---

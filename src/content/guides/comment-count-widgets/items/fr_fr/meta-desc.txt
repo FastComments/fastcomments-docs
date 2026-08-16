@@ -1,0 +1,3 @@
+---
+Affichez un compteur de commentaires en temps réel à côté de n'importe quel article ou produit avec un widget autonome, une page à la fois ou en masse sur l'ensemble d'une liste.
+---

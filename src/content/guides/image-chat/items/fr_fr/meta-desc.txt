@@ -1,0 +1,3 @@
+---
+Permettez aux lecteurs de cliquer sur un point d'une image et de démarrer une conversation à ce sujet. Des marqueurs visuels épinglent chaque fil à son point exact et se synchronisent en direct chez les spectateurs.
+---

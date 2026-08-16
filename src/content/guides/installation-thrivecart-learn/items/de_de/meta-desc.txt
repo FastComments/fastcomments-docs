@@ -1,0 +1,3 @@
+---
+Fügen Sie einen Kommentarbereich zu ThriveCart Learn+ Kursen mit der benutzerdefinierten Code‑Einstellung hinzu, damit Studenten innerhalb jeder Lektion Fragen stellen können.
+---

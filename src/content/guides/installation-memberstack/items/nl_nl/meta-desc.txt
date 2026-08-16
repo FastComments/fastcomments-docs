@@ -1,0 +1,3 @@
+---
+Beperk je commentaarsectie tot ingelogde Memberstack-leden met één snippet, zodat alleen betalende leden kunnen posten.
+---

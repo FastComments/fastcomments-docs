@@ -1,0 +1,1 @@
+Ograničite komentiranje na plaćene članove MemberSpace, po želji i dalje dopuštajući anonimne komentare, i postavite značke prema razini članstva čitatelja.

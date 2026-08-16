@@ -1,0 +1,3 @@
+---
+Prikažite broj živih komentara pored bilo koje objave ili proizvoda pomoću samostalnog vidžeta, po jednoj stranici ili u grupi kroz čitav spisak.
+---

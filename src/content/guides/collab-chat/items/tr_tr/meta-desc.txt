@@ -1,0 +1,3 @@
+---
+Okuyucuların sayfanızdaki herhangi bir cümleyi vurgulamasına ve satır içinde tartışmasına izin verin. Konular, tam metne bağlanır ve okuyan herkes arasında canlı olarak senkronize olur.
+---

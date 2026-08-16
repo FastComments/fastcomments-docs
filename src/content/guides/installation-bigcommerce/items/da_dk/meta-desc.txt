@@ -1,0 +1,1 @@
+Tilføj live‑kommentarer på BigCommerce blogindlæg og produktsider ved at redigere din temaplade, med et separat snippet til Page Builder.

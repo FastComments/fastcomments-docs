@@ -1,0 +1,3 @@
+---
+Dodajte komentarje v Svelte aplikacijo z uradnim paketom. Namestite ga, vstavite komponento pripomočka na svojo stran in posredujte svoj najemnik ter ID strani.
+---

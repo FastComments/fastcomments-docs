@@ -1,0 +1,4 @@
+---
+Connectez vos utilisateurs existants directement à la section des commentaires afin qu'ils ne créent jamais de second compte ou ne se connectent deux fois.
+
+---

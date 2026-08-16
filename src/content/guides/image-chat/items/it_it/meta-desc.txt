@@ -1,0 +1,3 @@
+---
+Consenti ai lettori di fare clic su un punto di un'immagine e avviare una conversazione al riguardo. I marcatori visivi fissano ogni discussione al suo punto esatto e si sincronizzano in tempo reale tra gli spettatori.
+---

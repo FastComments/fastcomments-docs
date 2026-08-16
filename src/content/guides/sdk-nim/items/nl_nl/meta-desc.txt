@@ -1,0 +1,3 @@
+---
+Roep de FastComments API aan vanuit Nim. Installeer met nimble, en maak vervolgens, haal op en modereer reacties, met SSO‑hulpmiddelen en elk eindpunt gedocumenteerd.
+---

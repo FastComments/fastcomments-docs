@@ -1,0 +1,3 @@
+---
+Styr hvilke e-mails FastComments sender til dine læsere, hvordan de kan framelde sig, hvordan meddelelser fungerer for SSO‑brugere, og hvordan undertrykte adresser håndteres.
+---

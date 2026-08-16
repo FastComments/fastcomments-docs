@@ -1,0 +1,3 @@
+---
+Tilføj live‑kommentarer til et Framer‑websted med en embed‑blok og den Framer‑specifikke snippet, plus højdeindstillingerne der forhindrer, at widget’en bliver afskåret.
+---

@@ -1,0 +1,1 @@
+Dodajte komentare na Hugo web mjesto pomoću kratkih kodova, uključujući integraciju teme, grupno brojanje komentara za stranice popisa i potpunu referencu konfiguracije widgeta.

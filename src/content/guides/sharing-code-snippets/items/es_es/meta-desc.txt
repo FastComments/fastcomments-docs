@@ -1,0 +1,3 @@
+---
+Permita que los comentaristas publiquen código ejecutable y con resaltado de sintaxis en sus hilos. Qué lenguajes son compatibles y cómo activar el uso compartido de fragmentos.
+---

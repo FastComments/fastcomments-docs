@@ -1,0 +1,3 @@
+---
+Agrega comentarios nativos, chat y feeds a una aplicación Android. SSO seguro, personalización completa del tema y orientación de memoria para pantallas de larga duración.
+---
