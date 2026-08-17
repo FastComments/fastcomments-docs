@@ -1,10 +1,10 @@
-**Template ID:** `welcome_greeter`
+**ИД шаблона:** `welcome_greeter`
 
-Welcome Greeter топло одговара први пут коментаторима. То је шаблон најниже ризика (без деструктивних алата) и добар први агент за пуштање у живо.
+Welcome Greeter топло одговара првим коментаторима. То је шаблон са најнижим ризиком (без деструктивних алата) и добар први агент за пуштање у живо.
 
-### Тригери
+### Окидачи
 
-- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
+- **Нови корисник постави свој први коментар на овом сајту** (`NEW_USER_FIRST_COMMENT`).
 
 Овај догађај се покреће тачно једном по кориснику, тако да агент не може да се понавља. Погледајте [Trigger: New User First Comment](#trigger-new-user-first-comment).
 
@@ -16,15 +16,10 @@ Welcome Greeter топло одговара први пут коментатор
 
 ### Препоручена додавања пре пуштања у живо
 
-- **Set the Display name** to something inviting - "Community Bot", your site mascot, or your brand name. The display name is what readers see attached to the welcome reply.  
-  **Подесите име за приказ** на нешто привлачно – „Community Bot“, маскоту вашег сајта или име вашег бренда. Име за приказ је оно што читаоци виде уз поздравни одговор.
+- **Подесите Приказано име** на нешто привлачно – “Community Bot”, ваш маскот сајта или име вашег бренда. Приказано име је оно што читаоци виде уз добродошлину.
+- **Означите “Укључи наслов странице, поднаслов, опис и мета ознаке”** у [Context Options](#context-options). Одговори поздрављача постају приметно бољи када могу да упуте на стварни садржај странице.
+- **Размотрите ограничења локала** ако радите на више језика. Добродошлина на погрешном језику је јарше од пропуштеног одговора. Погледајте [Scope: URL and Locale Filters](#scope-url-locale).
 
-- **Tick "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). The greeter's replies become noticeably better when it can reference what the page is actually about.  
-  **Означите „Укључи наслов странице, поднаслов, опис и мета ознаке“** у [Context Options](#context-options). Одговори греетера постају приметно бољи када може да се позове на то о чему је страница заиста.
+### Зашто су одобрења непотребна
 
-- **Consider locale restrictions** if you operate in multiple languages. A welcome reply in the wrong language is more jarring than a missed reply. See [Scope: URL and Locale Filters](#scope-url-locale).  
-  **Размотрите ограничења локала** ако радите на више језика. Поздравни одговор на погрешном језику је јарши од пропуштеног одговора. Погледајте [Scope: URL and Locale Filters](#scope-url-locale).
-
-### Зашто није потребно одобрење
-
-Агент само пише нове коментаре и то само на једнократном тригеру. Најгоре: незгодајни поздрав. Не постоји деструктивна радња која би се требало контролисати. Већина оператора користи овај без икаквих одобрења након што тестирање без утицаја изгледа чисто.
+Агент само пише нове коментаре и то само на једнократном окидачу. Најгоре: незгода у поздраву. Не постоји деструктивна радња која би захтевала одобрење. Већина оператера користи овај без икаквих одобрења након што тестирање без утицаја изгледа чисто.

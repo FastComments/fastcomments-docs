@@ -4,9 +4,9 @@ For security, this is not a client-side widget config flag. It is a server-side 
 
 This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Подешавање за уграђивање медија укључено на страници за прилагођавање виџета, омогућава коментаторима да налепе поуздане iframe уграђивања'; title='Дозволи уграђивање медија' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Подешавање медијских уграђивања укључено на страници за прилагођавање виџета, омогућавајући коментаторима да налепе поуздане iframe уграђивања'; title='Дозволи медијска уграђивања' app-screenshot-end]
 
-### Adding Your Own Providers
+### Додавање сопствених провајдера
 
 If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
 

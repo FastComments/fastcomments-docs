@@ -1,4 +1,5 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+---
+Подолу е Vanilla JS кодът за инсталиране на Summary Widget. React библиотеката също разполага с този widget.
 
 [inline-code-attrs-start title = 'Инсталиране на Summary Widget'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
@@ -11,6 +12,8 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Widget‑ът автоматично ще намери въпросите, които да се покажат в резюмето, въз основа на съответната конфигурация на widget‑а за тази страница/сайт.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Ако имате нужда от widget в една от нашите други библиотеки, която не го съдържа, подайте заявка за поддръжка, за да знаем, че трябва да го добавим.
+
+---

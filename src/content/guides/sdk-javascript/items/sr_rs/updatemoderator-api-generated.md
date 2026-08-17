@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | updateModeratorBody | UpdateModeratorBody | Yes |  |
 
-## Response
+## Одговор
 
-Returns: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
+Враћа: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoUpdateModerator(): Promise<void> {
     const tenantId: string = "tenant_42abc";

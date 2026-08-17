@@ -1,17 +1,16 @@
-When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
+コメントスレッドをモデレートおよび閲覧する際、モデレート中にコンテキストを得るためにスレッドへ直接ジャンプできることが望まれます。
 
-This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
-the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
+これは、ユーザーのフローがコメントモデレーションページで開始し、個々のコメントから
+そのコメントが含まれるページへ移動し、ページの読み込みが完了し、コメントの読み込みが完了した後にそのコメントまでスクロールしなければならないことを意味します。
 
-However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
+しかし、FastComments はより速い方法を提供します。コメントモデレートページでは、各コメントの右下に「View Comment」ボタンがあります。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='モデレーションリスト内の単一コメントで、右下に「View Comment」ボタンがあります'; title='コメント' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='モデレーションリストの単一コメントで、右下に「View Comment」ボタンがあります'; title='コメント' app-screenshot-end]
 
-If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
+このコメントに返信がある場合、ボタンのテキストは返信数が表示されますが、クリックすると同じ動作が行われます。
 
-This button will take you to the **Comment Thread Viewer**.
+このボタンをクリックすると **Comment Thread Viewer** に移動します。
 
-The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
-the comment is on, and scrolls to that comment.
+Comment Thread Viewer は、FastComments がホストする小さくて高速に読み込まれるアプリケーションで、コメントが属するページのコメントスレッドを表示し、そのコメントまでスクロールします。
 
-This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
+これにより、モデレーターは別のページの読み込みを待つことなく、必要なコンテキストを迅速に取得できます。
