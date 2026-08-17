@@ -1,31 +1,31 @@
 **Template ID:** `gaslight_detector`
 
-Detektor gaslightingu monitoruje edycje komentarzy, które przepisują historię w trakcie rozmowy — tego rodzaju, gdy autor zmienia znaczenie wcześniejszego komentarza po tym, jak pojawiły się odpowiedzi, przez co późniejsze odpowiedzi wyglądają na wyrwane z kontekstu lub błędne. Gdy agent uzna, że edycja przekroczyła tę granicę, przywraca oryginalny tekst i wysyła autorowi wiadomość prywatną z wyjaśnieniem.
+Detektor Gaslight obserwuje edycje komentarzy, które przepisują historię w trakcie rozmowy – takie, w których autor zmienia znaczenie wcześniejszego komentarza po tym, jak zostały napisane odpowiedzi, powodując, że dalsze odpowiedzi wydają się nie na miejscu lub błędne. Gdy agent uzna, że edycja przekracza tę granicę, przywraca oryginalny tekst i wysyła DM do autora z wyjaśnieniem.
 
-To szablon o wyższym ryzyku, ponieważ modyfikuje treść użytkownika. Uruchom go w [dry-run](#dry-run-mode) dłużej niż szablon tylko do odczytu i umieść `edit_comment` za [approval](#approval-workflow), dopóki nie zaufasz ocenie modelu dla twojego ruchu.
+Jest to szablon o wyższym ryzyku, ponieważ modyfikuje treść użytkownika. Uruchamiaj go w trybie [dry-run](#dry-run-mode) dłużej niż szablon tylko do odczytu i ogranicz `edit_comment` za pomocą [approval](#approval-workflow), dopóki nie będziesz ufać ocenie modelu w odniesieniu do Twojego ruchu.
 
-### Triggers
+### Wyzwalacze
 
-- **Comment edited** (`COMMENT_EDIT`) - agent porównuje nowy i poprzedni tekst i decyduje, czy edycja wypacza istniejące odpowiedzi.
+- **Komentarz edytowany** (`COMMENT_EDIT`) – agent porównuje nowy i poprzedni tekst i decyduje, czy edycja zniekształca istniejące już odpowiedzi.
 
-See [Trigger: Comment Edited](#trigger-comment-edit) for the full payload, including the previous comment text and reply count at edit time.
+Zobacz [Trigger: Comment Edited](#trigger-comment-edit), aby uzyskać pełny ładunek, w tym poprzedni tekst komentarza oraz liczbę odpowiedzi w momencie edycji.
 
-### Allowed tools
+### Dozwolone narzędzia
 
-- [`edit_comment`](#tool-edit-comment) - używane do przywrócenia oryginalnego tekstu, gdy edycja zostanie oceniona jako gaslighting.
-- [`warn_user`](#tool-warn-user) - wydaje miękkie ostrzeżenie, które użytkownik zobaczy przy następnej wizycie.
-- [`send_dm`](#tools-overview) - kanał wyjaśnień; użytkownik otrzymuje wiadomość prywatną opisującą, dlaczego jego edycja została cofnięta.
+- [`edit_comment`](#tool-edit-comment) – używany do przywrócenia oryginalnego tekstu, gdy edycja zostanie uznana za gaslighting.
+- [`warn_user`](#tool-warn-user) – wydaje łagodne ostrzeżenie, które użytkownik zobaczy przy następnym odwiedzeniu.
+- [`send_dm`](#tools-overview) – kanał wyjaśniający; użytkownik otrzymuje wiadomość prywatną opisującą, dlaczego jego edycja została cofnięta.
 
-It cannot ban, mark spam, vote, or post new comments - the surface is intentionally narrow.
+Nie może banować, oznaczać spamu, głosować ani publikować nowych komentarzy – interfejs jest celowo wąski.
 
-### Recommended additions before going live
+### Zalecane dodatki przed uruchomieniem
 
-- **Gate `edit_comment` behind [approval](#approval-workflow).** Przywrócenie komentarza jest widoczne dla autora i dla każdego, kto widział edytowaną wersję, więc fałszywy pozytyw jest kompromitujący. Trzymaj zatwierdzenia włączone, dopóki [dry-run](#dry-run-mode) nie pokaże, że agent działa konsekwentnie.
-- **Tighten the prompt with what counts as gaslighting on your site.** Domyślny prompt jest krótki celowo. Podaj modelowi konkretne przykłady — „odwrócenie twierdzenia tak/nie”, „usunięcie liczby, na którą powołują się odpowiedzi”, „dodanie wrogiego zdania po opublikowaniu odpowiedzi” — oraz wyraźne przykłady negatywne, takie jak poprawki literówek, sprzątanie formatowania lub dodawanie źródeł.
-- **Use the reply count from the trigger context.** Edycje komentarzy bez odpowiedzi nie mogą wypaczyć rozmowy; prompt powinien nakazać modelowi pomijać takie przypadki.
-- **Tick "Include commenter's trust factor, account age, ban history, and recent comments"** in [Context Options](#context-options). Model jest znacznie mniej agresywny, gdy może zobaczyć konto działające w dobrej wierze od dłuższego czasu.
-- **Consider a short edit-grace window in the prompt.** Wiele edycji w ciągu pierwszych 30–60 sekund to poprawki literówek; poinstruuj model, aby ignorował tak szybkie edycje.
+- **Ogranicz `edit_comment` za pomocą [approval](#approval-workflow).** Cofnięcie komentarza jest widoczne dla autora i dla każdego, kto widział edytowaną wersję, więc fałszywy pozytyw może być kłopotliwy. Trzymaj zatwierdzenia włączone, dopóki tryb dry-run nie pokaże, że agent jest konsekwentny.
+- **Uściśnij prompt, określając, co na Twojej stronie jest uznawane za gaslighting.** Domyślny prompt jest celowo krótki. Dostarcz modelowi konkretne przykłady – „odwrócenie twierdzenia tak/nie”, „usunięcie liczby, na którą odwołują się odpowiedzi”, „dodanie wrogiego zdania po opublikowaniu odpowiedzi” – oraz wyraźne przeciwprzykłady, takie jak poprawki literówek, czyszczenie formatowania czy dodawanie źródeł.
+- **Użyj liczby odpowiedzi z kontekstu wyzwalacza.** Edycje komentarzy bez odpowiedzi nie mogą zakłócić rozmowy; prompt powinien nakazać modelowi pomijanie takich przypadków.
+- **Zaznacz „Include commenter's trust factor, account age, ban history, and recent comments”** w [Context Options](#context-options). Model jest znacznie mniej agresywny, gdy widzi konto o długiej, dobrej reputacji.
+- **Rozważ krótkie okno tolerancji na edycję w promptcie.** Wiele edycji w ciągu pierwszych 30–60 sekund to poprawki literówek; poinstruuj model, aby ignorował tak szybkie edycje.
 
-### Recommended dry-run window
+### Zalecane okno trybu dry-run
 
-Run for at least two weeks of real traffic in [dry-run](#dry-run-mode) before flipping to Enabled, and review every flagged edit during that window. Use [Test Runs (Replays)](#test-runs-replays) to replay the last 30 days of edits against the agent before going live.
+Uruchom przynajmniej przez dwa tygodnie rzeczywistego ruchu w trybie [dry-run](#dry-run-mode) przed przełączeniem na Włączone i przeglądaj każdą oznaczoną edycję w tym okresie. Skorzystaj z [Test Runs (Replays)](#test-runs-replays), aby odtworzyć ostatnie 30 dni edycji przeciwko agentowi przed uruchomieniem.

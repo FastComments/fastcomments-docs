@@ -1,8 +1,6 @@
----
-Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
-Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
-ドキュメントをグループ化（groupBy が提供されている場合）し、複数の操作を適用して集計します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
+ドキュメントをグループ化（groupBy が提供されている場合）し、複数の操作を適用して集計します。異なる操作（例：sum、countDistinct、avg など）がサポートされています。
 
 ## Parameters
 
@@ -14,13 +12,11 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
-
-戻り値: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+返却: `AggregateResponse`
 
 ## Example
 
-[inline-code-attrs-start title = 'aggregate の例'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '集計例'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -28,7 +24,7 @@ require 'fastcomments-client'
 FastCommentsClient.configure do |config|
   # APIキー認証を設定: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # APIキーのプレフィックスを設定するには、次の行のコメントを解除してください。例: 'Bearer'（デフォルトは nil）
+  # 以下の行のコメントを外すと、APIキーのプレフィックスを設定できます（例: 'Bearer'、デフォルトは nil）
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

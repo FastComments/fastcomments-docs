@@ -1,47 +1,47 @@
-O custo do agente é baseado em **tokens**. Cada chamada de LLM retorna uma contagem de tokens, a plataforma converte isso para centavos de USD usando a tarifa por token do modelo, e os centavos são cobrados contra os orçamentos do agente e do locatário.
+Agent cost is **token-based**. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
 
 ### O que é cobrado
 
-- **Todas as chamadas de LLM**, incluindo a chamada que não produz ações de ferramenta ("o agente decidiu não fazer nada"). A inferência é paga mesmo quando nenhuma ação resulta.
-- **Chamadas em modo dry-run**. Dry-run é "não agir, mas ainda chamar o LLM" - a chamada ao LLM custa o mesmo. Veja [Modo Dry-Run](#dry-run-mode).
-- **Chamadas de replay**. Replays são execuções em modo dry-run contra comentários históricos. Elas consomem tokens. Veja [Test Runs (Replays)](#test-runs-replays).
+- **All LLM calls**, including the call that produces zero tool actions ("the agent decided to do nothing"). Inference is paid even when no action results.
+- **Dry-run calls**. Dry-run is "do not act, but still call the LLM" - the LLM call costs the same. See [Dry-Run Mode](#dry-run-mode).
+- **Replay calls**. Replays are dry-run runs against historical comments. They cost tokens. See [Test Runs (Replays)](#test-runs-replays).
 
 ### O que não é cobrado
 
-- **Gatilhos que nunca produzem uma chamada ao LLM.** Casos descartados antes do LLM (sobre orçamento, rate limit, incompatibilidade de escopo, cobrança inválida, prevenção de loop) custam zero tokens. Veja [Drop Reasons](#drop-reasons).
-- **Despacho de ferramentas.** Chamar `pin_comment` ou qualquer outra ferramenta em si não custa tokens - apenas a ida e volta ao LLM custa.
-- **`search_memory`.** É somente leitura e não gera sua própria ida e volta ao LLM.
+- **Triggers that never produce an LLM call.** Dropped-before-LLM cases (over budget, rate limited, scope mismatch, billing invalid, loop prevention) cost zero tokens. See [Drop Reasons](#drop-reasons).
+- **Tool dispatch.** Calling `pin_comment` or any other tool does not itself cost tokens - only the LLM round-trip does.
+- **`search_memory`.** It is read-only and does not produce its own LLM round-trip.
 
 ### Custo por execução
 
-Uma única execução do agente pode chamar o LLM várias vezes - cada resultado de chamada de ferramenta é reenviado ao modelo para que ele possa chamar outra ferramenta ou finalizar. Então `tokensUsed` em uma execução é a soma de todas as idas e voltas ao LLM nessa execução.
+A single agent run can call the LLM multiple times - each tool call result is fed back into the model so it can either call another tool or finish. So `tokensUsed` on a run is the sum across all LLM round-trips in that run.
 
 Os maiores contribuintes para o custo de tokens por execução:
 
-- **Prompts iniciais longos** e **diretrizes da comunidade** - eles entram em todas as execuções.
-- **[Context options](#context-options)** - contexto de thread, histórico do usuário, metadados da página. Cada um adiciona tokens.
-- **O próprio texto do comentário** - comentários longos custam mais.
-- **Múltiplas chamadas de ferramenta em uma execução** - o resultado de cada ferramenta é enviado de volta ao modelo.
-- **Leituras de memória** - `search_memory` retorna até 25 registros (limitado a 8000 caracteres de conteúdo total). A maior parte desses bytes entra no próximo prompt.
+- **Long [prompts iniciais](#personality-prompt) and [diretrizes da comunidade](#community-guidelines)** - they go in on every run.
+- **[Opções de contexto](#context-options)** - thread context, user history, page metadata. Each adds tokens.
+- **The comment text itself** - long comments cost more.
+- **Multiple tool calls in one run** - each tool's result message is sent back to the model.
+- **Memory reads** - `search_memory` returns up to 25 records (capped at 8000 chars total content). Most of those bytes go into the next prompt.
 
-**Max Tokens Per Trigger** (padrão 20,000) limita o tamanho da **resposta** por chamada ao LLM. Não limita o tamanho da entrada.
+**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
 
-### Conversão de tokens para centavos
+### Conversão de token para centavos
 
-A plataforma aplica uma única tarifa por pacote do locatário (`flexLLMCostCents` por `flexLLMUnit` tokens). O custo por token é definido no nível do pacote, não por modelo - ambos os modelos disponíveis ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) são cobrados à mesma taxa em um dado pacote. A [Run Detail View](#run-detail-view) mostra o custo por execução na sua moeda assim que uma execução é concluída.
+The platform applies a single per-tenant-package rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Cost-per-token is package-level, not per-model - both available models ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) bill at the same rate on a given package. The [Visão Detalhada da Execução](#run-detail-view) shows the per-run cost in your currency once a run completes.
 
 ### Onde o custo é registrado
 
-Cada execução registra sua contagem bruta de tokens e o custo por execução. Totais diários e mensais são agregados na [Analytics page](#analytics-page).
+Each run records its raw token count and per-run cost. Daily and monthly totals roll up into the [página de Analytics](#analytics-page).
 
-### Como interpretar o custo
+### Como ler o custo
 
-- **Custo por execução**: [Run Detail View](#run-detail-view) -> campo `Cost`.
-- **Agregado diário / mensal**: [Analytics page](#analytics-page) -> gráficos de Uso do Orçamento e Custo Diário.
-- **Custo por ação**: também na [Run Detail View](#run-detail-view), útil para ajuste quando o loop de ferramentas de um agente está anormalmente longo.
+- **Per-run cost**: [Visão Detalhada da Execução](#run-detail-view) -> `Cost` field.
+- **Daily / monthly aggregate**: [página de Analytics](#analytics-page) -> Budget usage and Daily cost charts.
+- **Per-action cost**: also on Run Detail View, useful for tuning when an agent's tool-loop is unusually long.
 
 ### Veja também
 
-- [Choosing a Model](#choosing-a-model) - a maior alavanca sobre o custo.
-- [Context Options](#context-options) - de onde vem o custo adicional.
-- [Budgets Overview](#budgets-overview) - limites rígidos que previnem custos descontrolados.
+- [Escolhendo um Modelo](#choosing-a-model) - the bigger lever on cost.
+- [Opções de Contexto](#context-options) - where added cost comes from.
+- [Visão Geral de Orçamentos](#budgets-overview) - hard caps that prevent runaway cost.

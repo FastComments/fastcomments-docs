@@ -1,15 +1,24 @@
-Наш [плагін для WordPress](https://wordpress.org/plugins/fastcomments/) має потужний механізм імпорту через графічний інтерфейс. Після встановлення плагін проведе вас через процес прив'язки вашої інсталяції WordPress до FastComments та копіювання наявних даних коментарів.
+Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
+it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
 
-**Це робиться без ручного копіювання або завантаження файлів.**
+**Це виконується без ручного копіювання чи завантаження чогось.**
 
-Процес міграції буде відображено в інтерфейсі під час міграції. Більшість міграцій займає лише кілька хвилин.
+The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
 
-Механізм спроектовано так, щоб не створювати надмірного навантаження на вашу інсталяцію WordPress під час міграції.
+The mechanism is designed to not put excessive load on your WordPress installation during the migration.
 
 ### CloudFlare & FireWalls
 
-Щоб автоматичне налаштування WordPress працювало, нам потрібно робити запити до вашої інсталяції WordPress. Міжмережеві екрани (firewalls), такі як Cloudflare, можуть блокувати нас і спричинити збій інтеграції. У таких випадках ми [можемо надати вам](https://fastcomments.com/auth/my-account/help) перелік IP-адрес для додавання у білий список для інтеграції.
+In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
+Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
+you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
 
 ### Data Ownership
 
-У випадку нашої міграції WordPress усі нові або оновлені дані коментарів автоматично синхронізуються назад з вашою інсталяцією WordPress у фоні. Це означає, що, хоча коментарі обслуговуються самим FastComments, щоб зменшити навантаження на вашу інсталяцію WordPress, ми **також** зберігаємо їх у вашій базі даних як резервну копію. Це також означає, що якщо ви захочете перейти від FastComments, ваші дані вже перенесені і актуальні.
+In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
+behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
+we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
+already migrated and up to date.
+
+
+---

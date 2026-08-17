@@ -1,53 +1,55 @@
-FastComments setzt Artikel 17 des EU-Digitaldienstegesetzes (DSA) für Mandanten in der EU-Region durch: vollautomatisierte Benutzersperrungen sind **nicht erlaubt**.
+FastComments setzt Artikel 17 des EU‑Digital Services Act für Mandanten in der EU‑Region durch: **vollautomatisierte Benutzersperrungen sind nicht erlaubt**.
 
 ### Was das in der Praxis bedeutet
 
-Wenn Ihr Mandant in der EU-Region ist, im Agent-Edit-Formular:
+Wenn Ihr Mandant sich in der EU‑Region befindet, im Agent‑Bearbeitungsformular:
 
-- Das **Approvals**-Kontrollkästchen für `ban_user` ist **fest aktiviert** und kann nicht deaktiviert werden.
-- Das Label lautet: "EU DSA Article 17: user suspensions require human review. 'Benutzer sperren' ist aktiviert und darf in der EU-Region nicht vollständig automatisiert werden."
-- Ein Tooltip in der Approval-Spalte lautet: "Locked on by EU DSA Article 17 - fully-automated bans are not permitted in the EU region."
+- Das Kontrollkästchen **Approvals** für `ban_user` ist **aktiviert und gesperrt** und kann nicht abgewählt werden.
+- Das Etikett lautet: "EU DSA Artikel 17: Benutzersperrungen erfordern eine menschliche Überprüfung. 'Einen Benutzer sperren' ist aktiviert und kann in der EU‑Region nicht vollautomatisiert werden."
+- Ein Tooltip in der Genehmigungsspalte lautet: "Durch EU DSA Artikel 17 gesperrt – vollautomatisierte Sperrungen sind in der EU‑Region nicht erlaubt."
 
-Unabhängig von Ihrer sonstigen Konfiguration geht jeder `ban_user`-Aufruf eines beliebigen Agenten für einen Mandanten in der EU-Region in den [approvals inbox](#approval-workflow) zur menschlichen Überprüfung. Die Sperrung erfolgt erst, nachdem ein Mensch sie genehmigt hat.
+Egal, was Sie sonst noch konfigurieren, jeder `ban_user`‑Aufruf von einem beliebigen Agenten auf einem EU‑Region‑Mandanten wird an den [approvals inbox](#approval-workflow) zur menschlichen Überprüfung gesendet. Die Sperrung erfolgt erst, wenn ein Mensch sie genehmigt.
 
-### Warum dies auf Plattformebene und nicht auf Prompt-Ebene durchgesetzt wird
+### Warum dies auf Plattform‑Ebene und nicht auf Prompt‑Ebene erzwungen wird
 
-System-Prompts können von einem ausreichend fehlverhaltenden Modell ignoriert oder umgangen werden. Die Einhaltung von Artikel 17 ist zu wichtig, um sich auf das wohlwollende Verhalten des Modells zu verlassen; es muss ein hartes serverseitiges Gate sein, das der Tool-Dispatcher selbst durchsetzt. Genau das tun wir.
+System‑Prompts können von einem ausreichend fehlverhaltenden Modell ignoriert oder umgangen werden. Die Einhaltung von Artikel 17 ist zu wichtig, um sich auf das gute Verhalten des Modells zu verlassen; sie muss ein harter serverseitiger Gate sein, den der Tool‑Dispatcher selbst durchsetzt. Genau das tun wir.
 
-### Was genehmigungspflichtig ist und was nicht
+### Was durch Genehmigung geht und was nicht
 
-- **`ban_user`**: in der EU immer genehmigungspflichtig. Einschließlich:
+- **`ban_user`**: immer in der EU gesperrt. Einschließlich:
   - Sichtbare Sperrungen (`shadowBan: false`).
-  - Shadow-Bans (`shadowBan: true`).
+  - Schatten‑Sperrungen (`shadowBan: true`).
   - Sperrungen mit `deleteAllUsersComments: true`.
   - Sperrungen mit `banIP: true`.
-- Alle Varianten von Sperrungen landen mit der Begründung und Zuversicht des Agenten im Approvals-Posteingang; ein Mensch genehmigt oder lehnt ab.
+- Alle Sperrungsvarianten landen im Genehmigungs‑Posteingang mit der Begründung und dem Vertrauen des Agenten; ein Mensch genehmigt oder lehnt ab.
 
-Die anderen Agent-Tools (`mark_comment_spam`, `warn_user`, `lock_comment` usw.) sind von Artikel 17 **nicht** betroffen. Sie können diese weiterhin automatisieren. Artikel 17 bezieht sich speziell auf Benutzersperrungen.
+Die anderen Agent‑Werkzeuge (`mark_comment_spam`, `warn_user`, `lock_comment` usw.) sind **nicht** von Artikel 17 betroffen. Sie können weiterhin automatisiert werden. Artikel 17 bezieht sich speziell auf Benutzersperrungen.
 
-### Was ist mit Nicht-EU-Mandanten
+### Was ist mit Nicht‑EU‑Mandanten
 
-Die Sperre gilt außerhalb der EU-Region nicht. Sie können `ban_user` dennoch hinter einer Genehmigungspflicht platzieren — wir empfehlen dies nachdrücklich in den ersten Wochen des Betriebs eines Moderationsagenten — aber es wird nicht erzwungen.
+Die Sperre gilt nicht außerhalb der EU‑Region. Sie können `ban_user` trotzdem hinter einer Genehmigung sperren – wir empfehlen dies dringend für die ersten Wochen des Lebens eines Moderations‑Agents – aber sie wird nicht erzwungen.
 
-### Shadow-Bans
+### Schatten‑Sperrungen
 
-Shadow-Bans gelten für die Zwecke von Artikel 17 als Sperrungen (der Nutzer kann posten, aber seine Inhalte sind verborgen). Sie unterliegen der gleichen Genehmigungsregelung wie sichtbare Sperrungen.
+Schatten‑Sperrungen zählen für die Zwecke von Artikel 17 als Sperrungen (der Benutzer kann posten, aber sein Inhalt wird verborgen). Sie werden identisch wie sichtbare Sperrungen gesperrt.
 
-### Regionserkennung
+### Regions‑Erkennung
 
-Die Region wird auf Prozessebene durch die Umgebungsvariable `REGION` in der FastComments-Installation bestimmt (ausgelesen von `isEURegion()` in `models/constants.ts`). Es gibt kein regionsbezogenes Feld pro Mandant — die Sperre gilt für jeden Mandanten auf einer in der EU bereitgestellten Instanz. Wenn Sie Ihre Daten von einer Nicht-EU-Installation auf eine EU-Installation migrieren, tritt die Sperre für alle Mandanten dieser Instanz in Kraft.
+Die Region wird auf Prozessebene durch die Umgebungsvariable `REGION` in der FastComments‑Bereitstellung bestimmt (ausgelesen von `isEURegion()` in `models/constants.ts`). Es gibt kein regionsspezifisches Feld pro Mandant – die Sperre gilt für jeden Mandanten einer EU‑bereitgestellten Instanz. Wenn Sie Ihre Daten von einer Nicht‑EU‑Bereitstellung zu einer EU‑Bereitstellung migrieren, tritt die Sperre für alle Mandanten dieser Instanz in Kraft.
 
-### Was passiert, wenn alle Prüfer nicht verfügbar sind
+### Was, wenn alle Prüfer nicht verfügbar sind
 
-Die Genehmigungsanfrage verbleibt im Posteingang, bis eine Entscheidung getroffen wird. Sie läuft 90 Tage nach Erstellung automatisch ab. Es gibt keinen Weg wie "kein Prüfer verfügbar, automatisch entscheiden" — das würde den Zweck von Artikel 17 zunichte machen.
+Die Genehmigung verbleibt im Posteingang, bis sie entschieden wird. Sie verfällt automatisch 90 Tage nach Erstellung. Es gibt keinen Pfad "kein Prüfer verfügbar, automatisierte Entscheidung zulassen" – das würde den Sinn von Artikel 17 zunichte machen.
 
-Wenn Ihre Community so viel Verkehr hat, dass EU-Sperrungen nicht in angemessener Zeit geprüft werden können, sollten Sie in Erwägung ziehen:
+Wenn Ihre Community ein so hohes Volumen hat, dass EU‑Sperrungen nicht in angemessener Zeit geprüft werden können, sollten Sie in Betracht ziehen:
 
-- Weitere Prüfer hinzuzufügen (siehe [Benachrichtigungen für Genehmigungen](#approval-notifications)).
-- Den Agenten so zu konfigurieren, dass er `warn_user` aggressiver einsetzt, da Warnungen nicht unter Artikel 17 fallen.
-- Die Bereitschaft des Agenten zu sperren zu senken, indem Sie die [Community-Richtlinien](#community-guidelines) oder das [Initial-Prompt](#personality-prompt) verschärfen.
+- Mehr Prüfer hinzuzufügen (siehe [Approval Notifications](#approval-notifications)).
+- Den Agenten stärker auf die Nutzung von [`warn_user`](#tool-warn-user) umzustellen, da Warnungen nicht unter Artikel 17 fallen.
+- Das Sperrungs‑Verlangen des Agenten zu reduzieren, indem Sie die [community guidelines](#community-guidelines) oder den [initial prompt](#personality-prompt) verschärfen.
 
 ### Siehe auch
 
-- [Tool: ban_user](#tool-ban-user) für Informationen darüber, was `ban_user` bewirkt und welche destruktiven Optionen hinter zusätzlichen Opt-ins stehen.
-- [Genehmigungs-Workflow](#approval-workflow) für den vollständigen Genehmigungslebenszyklus.
+- [Tool: ban_user](#tool-ban-user) für das, was `ban_user` tut, und die destruktiven Optionen hinter zusätzlichen Opt‑Ins.
+- [Approval Workflow](#approval-workflow) für den vollständigen Genehmigungs‑Lebenszyklus.
+
+---

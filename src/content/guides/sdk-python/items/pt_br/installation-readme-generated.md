@@ -1,4 +1,4 @@
-### Instalar do GitHub
+### Install from GitHub
 
 Instale diretamente a partir de uma tag de release (recomendado, totalmente reproduzível):
 
@@ -12,15 +12,15 @@ Fixe a tag em vez de um branch para que as compilações sejam determinísticas.
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Cada [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) marcado também tem um wheel compilado anexado se você preferir instalar um artefato binário diretamente.
+Cada tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) também tem um wheel compilado anexado se você preferir instalar um artefato binário diretamente.
 
-### Conteúdo da Biblioteca
+### Library Contents
 
 Esta biblioteca contém dois módulos: o cliente de API gerado e a biblioteca principal Python que contém utilitários escritos à mão para facilitar o trabalho com a API, incluindo suporte a SSO.
 
-- [Documentação da Biblioteca do Cliente API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- Documentação da Biblioteca Principal, Incluindo Exemplos de SSO
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### APIs Públicas vs Seguras
+### Public vs Secured APIs
 
-Para o cliente de API, há três classes, `DefaultApi`, `PublicApi` e `ModerationApi`. O `DefaultApi` contém métodos que requerem sua chave de API, e o `PublicApi` contém métodos que podem ser chamados diretamente de um navegador/dispositivo móvel/etc sem autenticação. O `ModerationApi` fornece um conjunto extenso de APIs de moderação ao vivo e rápidas. Cada método do `ModerationApi` aceita um parâmetro `sso` e pode autenticar via SSO ou um cookie de sessão do FastComments.com.
+Para o cliente de API, há três classes, `DefaultApi`, `PublicApi` e `ModerationApi`. O `DefaultApi` contém métodos que requerem sua chave de API, e o `PublicApi` contém métodos que podem ser feitos diretamente de um navegador/dispositivo móvel/etc sem autenticação. O `ModerationApi` fornece um conjunto extenso de APIs de moderação ao vivo e rápidas. Cada método do `ModerationApi` aceita um parâmetro `sso` e pode autenticar via SSO ou um cookie de sessão do FastComments.com.

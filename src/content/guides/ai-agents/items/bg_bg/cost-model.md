@@ -1,47 +1,49 @@
-Разходите на агента се основават на **токени**. Всеки LLM повикване връща брой токени, платформата преобразува това в центове (USD) чрез ставката за токен на модела, и тези центове се начисляват към бюджетите на агента и на наемателя.
+Agent cost is **token-based**. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
 
 ### Какво се таксува
 
-- **Всички LLM повиквания**, включително повикването, което не генерира инструментални действия ("агентът реши да не прави нищо"). Инференцията се заплаща дори когато не последва действие.
-- **Извиквания в режим суха проба.** Dry-run означава "не предприемай действие, но все пак извикай LLM" - повикването на LLM струва същото. Виж [Режим Dry-Run](#dry-run-mode).
-- **Повторни изпълнения (replays).** Повторенията са сухи проби върху исторически коментари. Те струват токени. Виж [Тестови изпълнения (Replays)](#test-runs-replays).
+- **All LLM calls**, including the call that produces zero tool actions ("the agent decided to do nothing"). Inference is paid even when no action results.
+- **Dry-run calls**. Dry-run is "do not act, but still call the LLM" - the LLM call costs the same. See [Dry-Run Mode](#dry-run-mode).
+- **Replay calls**. Replays are dry-run runs against historical comments. They cost tokens. See [Test Runs (Replays)](#test-runs-replays).
 
 ### Какво не се таксува
 
-- **Тригери, които никога не водят до повикване на LLM.** Случаите, прекратени преди LLM (извън бюджет, ограничени по честота, несъответствие на обхвата, невалидно фактуриране, предотвратяване на цикли) не струват токени. Виж [Причини за отхвърляне](#drop-reasons).
-- **Извикване на инструменти.** Извикването на `pin_comment` или който и да е друг инструмент само по себе си не струва токени — само LLM кръгът се таксува.
-- **`search_memory`.** То е само за четене и не предизвиква собствен LLM кръг.
+- **Triggers that never produce an LLM call.** Dropped-before-LLM cases (over budget, rate limited, scope mismatch, billing invalid, loop prevention) cost zero tokens. See [Drop Reasons](#drop-reasons).
+- **Tool dispatch.** Calling `pin_comment` or any other tool does not itself cost tokens - only the LLM round-trip does.
+- **`search_memory`.** It is read-only and does not produce its own LLM round-trip.
 
-### Цена на изпълнение
+### Разход на изпълнение
 
-Едно изпълнение на агент може да повика LLM многократно — всеки резултат от извикване на инструмент се подава обратно в модела, за да може той или да повика друг инструмент, или да приключи. Затова `tokensUsed` за едно изпълнение е сумата по всички LLM кръгове в това изпълнение.
+A single agent run can call the LLM multiple times - each tool call result is fed back into the model so it can either call another tool or finish. So `tokensUsed` on a run is the sum across all LLM round-trips in that run.
 
-Най-големите фактори, които допринасят за разхода на токени за изпълнение:
+The biggest contributors to per-run token cost:
 
-- **Дълги [първоначални подсказки](#personality-prompt) и [общностни указания](#community-guidelines)** — те се включват при всяко изпълнение.
-- **[Опции за контекст](#context-options)** — контекст на нишката, история на потребителя, метаданни на страницата. Всяка добавя токени.
-- **Самият текст на коментара** — дългите коментари струват повече.
-- **Множество извиквания на инструменти в едно изпълнение** — резултатът от всеки инструмент се изпраща обратно към модела.
-- **Четения от паметта** — `search_memory` връща до 25 записа (ограничено до общо 8000 знака съдържание). Повечето от тези байтове отиват в следващата подсказка.
+- **Long [initial prompts](#personality-prompt) and [community guidelines](#community-guidelines)** - they go in on every run.
+- **[Context options](#context-options)** - thread context, user history, page metadata. Each adds tokens.
+- **The comment text itself** - long comments cost more.
+- **Multiple tool calls in one run** - each tool's result message is sent back to the model.
+- **Memory reads** - `search_memory` returns up to 25 records (capped at 8000 chars total content). Most of those bytes go into the next prompt.
 
-**Максимален брой токени на тригер** (по подразбиране 20 000) ограничава размера на **отговора** за повикване на LLM. Той не ограничава размера на входа.
+**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
 
-### Преобразуване от токени в центове
+### Преобразуване на токени в центове
 
-Платформата прилага една обща ставка за пакет на наемател (`flexLLMCostCents` за `flexLLMUnit` токени). Цената за токен е на ниво пакет, а не на модел — и двата налични модела ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) се таксуват със същата ставка в даден пакет. [Изглед на подробностите за изпълнение](#run-detail-view) показва цената за изпълнението във вашата валута след приключването на изпълнението.
+The platform applies a single per-tenant-package rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Cost-per-token is package-level, not per-model - both available models ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) bill at the same rate on a given package. The [Run Detail View](#run-detail-view) shows the per-run cost in your currency once a run completes.
 
 ### Къде се записва разходът
 
-Всяко изпълнение записва своя брой токени и цена за изпълнение. Дневните и месечните суми се обобщават в [Страница 'Аналитика'](#analytics-page).
+Each run records its raw token count and per-run cost. Daily and monthly totals roll up into the [Analytics page](#analytics-page).
 
-### Как да разчетете разходите
+### Как да четете разхода
 
-- **Цена на изпълнение**: [Изглед на подробностите за изпълнение](#run-detail-view) -> поле `Cost`.
-- **Дневни / месечни агрегати**: [Страница 'Аналитика'](#analytics-page) -> диаграми за използването на бюджета и за дневните разходи.
-- **Цена на действие**: също в [Изглед на подробностите за изпълнение](#run-detail-view), полезно за настройване, когато инструменталният цикъл на агента е необичайно дълъг.
+- **Per-run cost**: [Run Detail View](#run-detail-view) -> `Cost` field.
+- **Daily / monthly aggregate**: [Analytics page](#analytics-page) -> Budget usage and Daily cost charts.
+- **Per-action cost**: also on Run Detail View, useful for tuning when an agent's tool-loop is unusually long.
 
 ### Вижте също
 
-- [Избор на модел](#choosing-a-model) - най-големият лост за влияние върху разходите.
-- [Опции за контекст](#context-options) - откъде идва добавеният разход.
-- [Преглед на бюджетите](#budgets-overview) - твърди ограничения, които предотвратяват неконтролируеми разходи.
+- [Choosing a Model](#choosing-a-model) - the bigger lever on cost.
+- [Context Options](#context-options) - where added cost comes from.
+- [Budgets Overview](#budgets-overview) - hard caps that prevent runaway cost.
+
+---

@@ -1,47 +1,49 @@
-Agentomkostninger er **token-baserede**. Hvert LLM-opkald returnerer et tokenantal, platformen konverterer det til USD cents ved hjælp af modellens pris per token, og centene belastes agentens og tenantens budgetter.
+Agentomkostninger er **token-baseret**. Hvert LLM-kald returnerer et tokenantal, platformen konverterer dette til USD-cent ved hjælp af modellens per-token-rate, og centene faktureres mod agentens og lejerens budgetter.
 
 ### Hvad der faktureres
 
-- **Alle LLM-opkald**, inklusive opkaldet der producerer nul tool-handlinger ("agenten besluttede ikke at gøre noget"). Inferens betales selv når ingen handling resulterer.
-- **Dry-run-kald**. Dry-run betyder "gør ikke noget, men kald stadig LLM" - LLM-opkaldet koster det samme. Se [Dry-Run-tilstand](#dry-run-mode).
-- **Replay-kald**. Replays er dry-run-kørsler mod historiske kommentarer. De koster tokens. Se [Testkørsler (Replays)](#test-runs-replays).
+- **Alle LLM-kald**, inklusive kaldet der producerer nul værktøjsaktioner ("agenten besluttede at gøre ingenting"). Inferens betales selv når der ikke er nogen handling som resultat.
+- **Dry-run-kald**. Dry-run er "ikke handle, men stadig kalde LLM" - LLM-kaldet koster det samme. Se [Dry-Run Mode](#dry-run-mode).
+- **Replay-kald**. Replays er dry-run-kørsler mod historiske kommentarer. De koster tokens. Se [Test Runs (Replays)](#test-runs-replays).
 
 ### Hvad der ikke faktureres
 
-- **Triggers der aldrig producerer et LLM-opkald.** Droppet-før-LLM-tilfælde (overskredet budget, rate-begrænset, scope-mismatch, ugyldig fakturering, loop-forebyggelse) koster nul tokens. Se [Drop-årsager](#drop-reasons).
-- **Tool-dispatch.** At kalde `pin_comment` eller ethvert andet værktøj koster i sig selv ikke tokens - kun LLM-roundtrippen gør.
-- **`search_memory`.** Det er skrivebeskyttet og producerer ikke sin egen LLM-roundtrip.
+- **Udløsere der aldrig producerer et LLM-kald.** Dropped-before-LLM tilfælde (over budget, rate begrænset, scope mismatch, fakturering ugyldig, loop forebyggelse) koster nul tokens. Se [Drop Reasons](#drop-reasons).
+- **Værktøjsdisponering.** At kalde `pin_comment` eller et andet værktøj koster i sig selv ikke tokens - kun LLM-round-trippen gør.
+- **`search_memory`.** Det er skrivebeskyttet og producerer ikke sin egen LLM-round-trip.
 
-### Omkostning per kørsel
+### Omkostning pr. kørsel
 
-En enkelt agentkørsel kan kalde LLM flere gange - resultatet af hvert tool-kald føres tilbage til modellen, så den enten kan kalde et andet værktøj eller afslutte. Så `tokensUsed` på en kørsel er summen over alle LLM-roundtrips i den kørsel.
+En enkelt agentkørsel kan kalde LLM flere gange - hvert værktøjskalds resultat føres tilbage til modellen, så den enten kan kalde et andet værktøj eller afslutte. Så `tokensUsed` på en kørsel er summen af alle LLM-round-trips i den kørsel.
 
-De største bidragydere til token-omkostningen pr. kørsel:
+De største bidragydere til tokenomkostninger pr. kørsel:
 
-- **Lange [indledende prompts](#personality-prompt) og [fællesskabsretningslinjer](#community-guidelines)** - de indgår i hver kørsel.
-- **[Kontekstmuligheder](#context-options)** - tråd-kontekst, brugerhistorik, sidemetadata. Hver tilføjer tokens.
+- **Lange [initial prompts](#personality-prompt) og [community guidelines](#community-guidelines)** - de indgår i hver kørsel.
+- **[Context options](#context-options)** - trådkontekst, brugerhistorik, side metadata. Hver tilføjer tokens.
 - **Selve kommentarteksten** - lange kommentarer koster mere.
-- **Flere tool-kald i én kørsel** - resultatbeskeden fra hvert værktøj sendes tilbage til modellen.
-- **Memory-læsninger** - `search_memory` returnerer op til 25 poster (begrænset til 8000 tegn i alt). De fleste af disse bytes går ind i det næste prompt.
+- **Flere værktøjskald i én kørsel** - hver værktøjs resultatmeddelelse sendes tilbage til modellen.
+- **Læse fra hukommelse** - `search_memory` returnerer op til 25 poster (begrænset til 8000 tegn i samlet indhold). De fleste af disse bytes går ind i den næste prompt.
 
-**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
+**Max Tokens Per Trigger** (standard 20.000) begrænser **respons**-størrelsen pr. LLM-kald. Den begrænser ikke inputstørrelsen.
 
 ### Token-til-cent konvertering
 
-Platformen anvender en enkelt per-tenant-package sats (`flexLLMCostCents` per `flexLLMUnit` tokens). Pris per token er på pakkeniveau, ikke per model - begge tilgængelige modeller ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) fakturerer til samme sats på en given pakke. [Kørselsdetaljer](#run-detail-view) viser omkostningen pr. kørsel i din valuta, når en kørsel er færdig.
+Platformen anvender en enkelt per-lejer-pakke rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Omkostning-per-token er på pakkens niveau, ikke per model - begge tilgængelige modeller ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) fakturerer til samme rate på en given pakke. [Run Detail View](#run-detail-view) viser omkostningen pr. kørsel i din valuta, når en kørsel er afsluttet.
 
-### Hvor omkostningen registreres
+### Hvor omkostninger registreres
 
-Hver kørsel registrerer sit rå tokenantal og omkostning pr. kørsel. Daglige og månedlige totaler rulles op på [Analytics-siden](#analytics-page).
+Hver kørsel registrerer sit rå tokenantal og omkostning pr. kørsel. Daglige og månedlige totaler samles på [Analytics page](#analytics-page).
 
-### Sådan læser du omkostninger
+### Sådan læses omkostninger
 
-- **Omkostning pr. kørsel**: [Kørselsdetaljer](#run-detail-view) -> `Cost`-feltet.
-- **Dagligt / månedligt samlet**: [Analytics-siden](#analytics-page) -> Budgetforbrug og diagrammer for daglige omkostninger.
-- **Omkostning pr. handling**: også i [Kørselsdetaljer](#run-detail-view), nyttigt til tuning når en agentens tool-loop er usædvanligt lang.
+- **Omkostning pr. kørsel**: [Run Detail View](#run-detail-view) -> `Cost`-feltet.
+- **Daglig / månedlig samlet**: [Analytics page](#analytics-page) -> Budgetforbrug og daglige omkostningsdiagrammer.
+- **Omkostning pr. handling**: også på Run Detail View, nyttig til justering når en agents værktøjs-loop er usædvanligt lang.
 
 ### Se også
 
-- [Valg af model](#choosing-a-model) - den største faktor for omkostninger.
-- [Kontekstmuligheder](#context-options) - hvor den tilføjede omkostning kommer fra.
-- [Budgetoversigt](#budgets-overview) - hårde grænser der forhindrer løbende omkostninger.
+- [Choosing a Model](#choosing-a-model) - den største indflydelse på omkostninger.
+- [Context Options](#context-options) - hvor de ekstra omkostninger kommer fra.
+- [Budgets Overview](#budgets-overview) - hårde grænser der forhindrer ukontrollerede omkostninger.
+
+---

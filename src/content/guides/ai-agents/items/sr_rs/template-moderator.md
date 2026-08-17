@@ -1,31 +1,31 @@
-**Идентификатор шаблона:** `tos_enforcer`
+**Template ID:** `tos_enforcer`
 
-Модел шаблона Moderator је препоручена полазна тачка ако вам је циљ смањење ручног оптерећења модерације. Он прегледа нове и пријављене коментаре и примењује правила ваше заједнице.
+Moderator šablon je preporučena polazna tačka ako je vaš cilj smanjenje ručnog opterećenja moderacije. On pregledava nove i označene komentare i primenjuje pravila vaše zajednice.
 
-Већином ћете желети да **допуните уграђени упит** конкретним примерима шта ваш сајт дозвољава, а шта не. Платформска политика ескалације (упозори пре забране, претражи меморију пре забране) је већ уграђена у системски упит који агент прима, па је није потребно понављати.
+Gotovo uvek ćete želeti da **dopunite ugrađeni prompt** konkretnim primerima šta vaš sajt dozvoljava, a šta ne. Politika eskalacije same platforme (upozori pre zabrane, pretraži memoriju pre zabranjivanja) već je ugrađena u sistemski prompt koji agent prima, pa nije potrebno da je ponavljate.
 
-### Триггери
+### Triggers
 
-- **New comment posted** (`COMMENT_ADD`) - агент прегледа сваки нови коментар.
-- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, (подразумевани праг: 3)) - агент поново процењује коментар који су други корисници пријавили.
+- **Novi komentar postavljen** (`COMMENT_ADD`) – agent gleda svaki novi komentar.
+- **Komentar pređe prag za označavanje** (`COMMENT_FLAG_THRESHOLD`, podrazumevani prag: 3) – agent ponovo procenjuje komentar koji su drugi korisnici označili.
 
-### Дозвољени алати
+### Allowed tools
 
-- [`mark_comment_approved`](#tools-overview) - корисно за системе претходне модерације где агент објављује чисте коментаре и сакрива остале.
+- [`mark_comment_approved`](#tools-overview) – korisno za pre-moderacione najamnike gde agent objavljuje čiste komentare i sakriva ostale.
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-Не може да шаље коментаре, гласа, закачи, закључа, додели значке или шаље е-пошту — упит је намерно ограничен.
+Ne može da objavljuje komentare, glasa, zakači, zaključava, dodeljuje značke ili šalje e‑mail – prompt je namerno sužan.
 
-### Препоручене допуне пре пуштања у рад
+### Recommended additions before going live
 
-- **Поставите [Community Guidelines](#community-guidelines).** Неколико реченица писане политике је довољно; агент је примењује при сваком покретању.
-- **Ограничи позив `ban_user` захтевом за [одобрењем](#approval-workflow).** Ово је подразумевано укључено у ЕУ региону (види [EU DSA Article 17 Compliance](#eu-dsa-compliance)) и препоручује се свуда.
-- **Размислите и о ограничавању `mark_comment_spam` захтевом за одобрење** ако имате мало саобраћаја али велико значење појединих случајева.
-- **Ограничи `mark_comment_approved` захтевом за одобрење ако користите претходну модерацију.** Одобравање лошег коментара ставља га испред читалаца; ограните ту акцију док агент не стекне поверење кроз dry-run.
-- **Означите "Include commenter's trust factor, account age, ban history, and recent comments"** у [Context Options](#context-options). Модел ће упозоравати далеко мање агресивно када може да види да је неко дугогодишњи корисник који делује у доброј намери.
+- **Postavite [Community Guidelines](#community-guidelines).** Nekoliko rečenica pisane politike je dovoljno; agent je primenjuje pri svakom pokretanju.
+- **Postavite `ban_user` iza [odobrenja](#approval-workflow).** Ovo je podrazumevano uključeno u EU regionu (vidite [EU DSA Article 17 Compliance](#eu-dsa-compliance)) i preporučuje se svuda.
+- **Razmotrite takođe postavljanje `mark_comment_spam` iza odobrenja** ako imate sadržaj niskog obima, ali visokog značaja.
+- **Postavite `mark_comment_approved` iza odobrenja ako koristite pre-moderaciju.** Odobravanje lošeg komentara stavlja ga pred čitaoce; postavite ga iza odobrenja dok agent ne stekne poverenje kroz dry‑run.
+- **Označite „Uključi faktor poverenja komentatora, starost naloga, istoriju zabrana i nedavne komentare“** u [Context Options](#context-options). Model će upozoravati mnogo manje agresivno kada vidi da je neko dugogodišnji korisnik dobre volje.
 
-### Препоручено трајање у [dry-run](#dry-run-mode) режиму
+### Recommended dry-run window
 
-Пустите овај шаблон у [dry-run](#dry-run-mode) режиму најмање недељу дана на вашем реалном саобраћају пре него што га пребаците у Enabled. Користите [Test Runs (Replays)](#test-runs-replays) да бисте такође прегледали резултате за претходних 30 дана.
+Pokrenite ovaj šablon u [dry-run](#dry-run-mode) najmanje nedelju dana na vašem stvarnom saobraćaju pre nego što ga prebacite na Enabled. Koristite [Test Runs (Replays)](#test-runs-replays) da takođe pregledate poslednjih 30 dana.

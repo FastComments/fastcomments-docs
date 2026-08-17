@@ -1,23 +1,22 @@
----
-Сработва, когато потребител публикува първия си коментар на този сайт (вашият tenant). Това е **веднъж за всеки потребител** - последващите коментари от същия потребител не го задействат отново.
+Fires when a user posts their first comment on this site (your tenant). This is **once per user** - subsequent comments from the same user do not refire it.
 
-### Контекст, който агентът получава
+### Context the agent receives
 
-- Новият коментар.
-- По избор: нишка / история на потребителя / контекст на страницата, както е конфигурирано.
+- The new comment.
+- Optional thread / user history / page context as configured.
 
-Когато контекстът с история на потребителя е включен, списъкът с последни коментари на потребителя, разбира се, ще бъде празен (или ще съдържа само този), но факторът на доверие и възрастта на акаунта са попълнени.
+When user history context is on, the user's recent comments list will of course be empty (or contain only this one), but the trust factor and account age are populated.
 
-### Забележки
+### Notable
 
-- "First comment on this site" е ограничено до **tenant**, а не за всички сайтове в FastComments. Потребител с коментари в други сайтове на FastComments все пак ще задейства този тригер първия път, когато публикува при вас.
-- Тригерът се задейства само за потребители с userId. Анонимни непотвърдени коментари без стабилен userId не го задействат.
-- Тригерът се задейства, когато коментарът е одобрен/видим (не при първоначалното публикуване). Редакции или модераторски действия върху първите коментари не го задействат отново.
+- "First comment on this site" is scoped to the **tenant**, not site-wide across FastComments. A user with comments on other FastComments sites still fires this trigger the first time they post on yours.
+- The trigger only fires for users with a userId. Anonymous unverified comments without a stable userId do not fire it.
+- The trigger fires when the comment is approved/visible (not at initial post time). Edits or moderator actions on first comments do not refire it.
 
-### Чести употреби
+### Common uses
 
-- **Приветствие** - [шаблонът Welcome Greeter](#template-welcome-greeter) е създаден около този тригер.
-- **Онбординг** - изпратете [DM предупреждение](#tool-warn-user) (тук използвано по-скоро като приятелско уведомление, а не като наказание), насочващо потребителя към правилата на общността.
-- **Уведомяване на преглеждащ** - ако искате човек да преглежда всеки първи пост на нов коментиращ, `mark_comment_reviewed` може да ги маркира за преглед.
+- **Welcome greeting** - the [Welcome Greeter template](#template-welcome-greeter) is built around this trigger.
+- **Onboarding** - send a [DM warning](#tool-warn-user) (used here as a friendly heads-up rather than a warning) pointing the user at the community guidelines.
+- **Reviewer notification** - if you want a human to look at every new commenter's first post, [`mark_comment_reviewed`](#tools-overview) can flag them for review.
 
 ---

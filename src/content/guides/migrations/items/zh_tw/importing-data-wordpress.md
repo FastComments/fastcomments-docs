@@ -1,15 +1,20 @@
-我們的 [WordPress 外掛](https://wordpress.org/plugins/fastcomments/) 有一個強大的基於 UI 的匯入機制。安裝外掛後，它會引導你將你的 WordPress 安裝與 FastComments 連結，並將你現有的留言資料複製過來。
+我們的[WordPress 插件](https://wordpress.org/plugins/fastcomments/)具備強大的基於 UI 的匯入機制。安裝插件後，
+它會指引您將 WordPress 安裝與 FastComments 連結，並複製您現有的評論資料。
 
-**這是在不需手動複製或下載任何東西的情況下完成的。**
+**這是在不手動複製或下載任何內容的情況下完成的。**
 
-在遷移期間，UI 會向你顯示遷移流程。大多數遷移只需幾分鐘。
+在遷移過程中，遷移流程會透過 UI 向您顯示。大多數遷移只需幾分鐘。
 
-此機制的設計目的是在遷移期間不會對你的 WordPress 安裝造成過大的負載。
+此機制的設計旨在遷移期間不對您的 WordPress 安裝造成過度負載。
 
-### CloudFlare 與防火牆
+### CloudFlare 與 防火牆
 
-為了讓自動化的 WordPress 設定能正常運作，我們必須對你的 WordPress 安裝進行呼叫。像 CloudFlare 這類的防火牆可能會阻擋我們並導致整合失敗。在這種情況下，[我們可以提供給你](https://fastcomments.com/auth/my-account/help) 一組需加入白名單的 IP 以供整合使用。
+為了讓自動化的 WordPress 設定能正常運作，我們必須對您的 WordPress 安裝發出請求。  
+像 Cloudflare 這樣的防火牆可能會阻擋我們，導致整合失敗。在此情況下，[我們可以提供您](https://fastcomments.com/auth/my-account/help)一組需要列入白名單的 IP 位址，以完成整合。
 
 ### 資料所有權
 
-在我們的 WordPress 遷移情況下，任何新增或更新的留言資料都會在背後自動同步回你的 WordPress 安裝。這表示，雖然留言由 FastComments 本身提供以減輕你 WordPress 部署的負載，**我們也**會將它們儲存在你的資料庫作為備份。這也表示如果你希望切換離開 FastComments，你的資料已經被遷移且是最新的。
+在我們的 WordPress 遷移情況下，任何新建或更新的評論資料都會在幕後自動同步回您的 WordPress 安裝。  
+這表示，雖然評論由 FastComments 本身提供，以減輕您的 WordPress 部署負載，我們**也**會將它們儲存於您的資料庫作為備份。這同時意味著，如果您想要轉離 FastComments，您的資料已經完成遷移且保持最新。
+
+---

@@ -1,26 +1,26 @@
-### Namestitev iz GitHub-a
+### Install from GitHub
 
-Namestite neposredno iz oznake izdaj (priporočeno, popolnoma reproducibilno):
+Install directly from a release tag (recommended, fully reproducible):
 
 ```bash
 pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Označite oznako namesto veje, da so gradnje deterministične. Enaka oblika deluje v `requirements.txt`:
+Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
 
 ```
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Vsaka označena [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) ima tudi priložen sestavljen paket (wheel), če raje neposredno namestite binarni artefakt.
+Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
 
-### Vsebina knjižnice
+### Library Contents
 
-Ta knjižnica vsebuje dva modula: ustvarjenega API odjemalca in jedrno Python knjižnico, ki vsebuje ročno napisane pripomočke za olajšanje dela z API-jem, vključno s podporo SSO.
+This library contains two modules: the generated API client and the core Python library which contains hand-written utilities to make working with the API easier, including SSO support.
 
-- [API Client Library Documentation](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- Core Library Documentation, Including SSO Examples
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Javni vs Zavarovani API-ji
+### Public vs Secured APIs
 
-Za API odjemalca obstajajo trije razredi, `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, `PublicApi` pa vsebuje metode, ki jih je mogoče klicati neposredno iz brskalnika/mobilne naprave naprave/itd. brez avtentikacije. `ModerationApi` ponuja obsežen nabor živih in hitrih moderacijskih API-jev. Vsaka metoda `ModerationApi` sprejme parameter `sso` in se lahko avtenticira prek SSO ali piškotka seje FastComments.com.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

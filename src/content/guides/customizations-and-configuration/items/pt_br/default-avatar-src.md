@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Quando um usuário comenta com FastComments pela primeira vez, tentaremos buscar seu avatar em <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Quando um usuário comenta com FastComments pela primeira vez, tentaremos buscar seu avatar em <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>.
 
 No entanto, se não encontrarmos um avatar, ou se o usuário nunca definir um em sua conta, exibiremos uma imagem de avatar padrão estática.
 

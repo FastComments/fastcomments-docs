@@ -1,42 +1,42 @@
-Zgodovina izvedb (Run History) je dnevnik po agentu vsakega sprožilca, ki je tekel. Dosegljiva je s strani strani seznama agentov preko gumba **Runs**, ali neposredno na `/auth/my-account/ai-agents/{agentId}/runs`.
+Run History je dnevnik po agentu za vsako sprožitev, ki se je izvedla. Dostopen je s strani seznama agentov prek gumba **Runs**, ali neposredno na `/auth/my-account/ai-agents/{agentId}/runs`.
 
-### What's on the page
+### Kaj je na strani
 
-Stran z paginirano tabelo z eno vrstico na izvedbo:
+Stran vsebuje paginirano tabelo z eno vrstico na izvajanje:
 
-| Column | Meaning |
+| Stolpec | Pomen |
 |---|---|
-| Date | Kdaj se je sprožilec sprožil (ali kdaj je tekel odložen sprožilec). |
-| Status | **Started**, **Success**, or **Error**. Ob tem se prikaže tudi značka **Dry Run**, če je bila izvedba v načinu dry-run. |
-| Cost | Strošek na izvedbo v valuti vaše najemniške enote. Prazno za izvedbe v teku (Started). |
-| Actions | Število klicev orodij v izvedbi. |
-| Details | Gumb **View**, ki odpre [Run Detail View](#run-detail-view). |
+| Datum | Kdaj je bila sprožitev aktivirana (ali kdaj je bila odložena sprožitev izvedena). |
+| Stanje | **Started**, **Success**, ali **Error**. Oznaka **Dry Run** je prikazana poleg, če je bilo izvajanje v načinu suhega zagona. |
+| Strošek | Strošek na izvajanje v valuti vašega najemnika. Prazno za izvajanja v teku (Started). |
+| Dejanja | Število klicev orodij v tem izvajanju. |
+| Podrobnosti | Gumb **View**, ki odpre [Run Detail View](#run-detail-view). |
 
-### Status meanings
+### Pomeni stanja
 
-- **Started** - izvedba je v teku ali je obnemela pred dokončanjem. Izvedba, ki je nenavadno dolgo v stanju "Started", navadno pomeni potekel čas pri klicu LLM.
-- **Error** - izvedba je končana, vendar je nekje spodletela - klic LLM je vrnil napako, odpovedalo je posredovanje orodja itd. Pogled podrobnosti vsebuje specifično napako.
-- **Success** - izvedba je končana brez napake. Agent je lahko izvedel nič, eno ali več dejanj.
+- **Started** – izvajanje je v teku ali je prekinjeno pred dokončanjem. Izvajanje, ki ostane v stanju "Started" nenavadno dolgo, običajno pomeni časovno omejitev klica LLM.  
+- **Error** – izvajanje se je zaključilo, vendar je nekje spodletelo – klic LLM je vrnil napako, pošiljanje orodja je spodletelo ipd. Podrobni pogled vsebuje specifično napako.  
+- **Success** – izvajanje se je zaključilo brez napake. Agent je lahko izvedel nič, eno ali več dejanj.
 
-### Empty state
+### Prazno stanje
 
-Ko agent nima izvedb, stran prikaže: "No runs yet for this agent. Enabled runs appear here once a trigger fires; use Test run to preview what this agent would do against past comments."
+Ko agent nima izvajanj, stran prikaže: "Za tega agenta še ni izvajanj. Omogočena izvajanja se bodo pojavila tukaj, ko se sproži sprožitev; uporabite Test run, da si ogledate, kaj bi ta agent storil pri preteklih komentarjih."
 
-Ta zadnji del je nameren — [test run flow](#test-runs-replays) je priporočeni način za napolnitev Run History pri svežem agentu.
+Ta zadnji del je namenjen – [test run flow](#test-runs-replays) je priporočljiv način za napolnitev Zgodovine izvajanj pri novem agentu.
 
-### What's not on the run history page
+### Kaj ni na strani zgodovine izvajanj
 
-- **Live triggers that never dispatched** - sprožilec, ki je izpadel zaradi proračuna, obsega ali omejitve hitrosti, se ne prikaže na tej strani. Ti se pojavijo na [Analytics page](#analytics-page) pod "Triggers skipped".
-- **Approvals** - čakajoča odobritev za dejanja, izvedena v tej izvedbi, živi v [approvals inbox](#approval-workflow). Dejanje se v pogledu podrobnosti izvedbe prikaže kot **Pending approval**.
+- **Live triggers that never dispatched** – sprožitev, ki je bila opuščena zaradi proračuna, obsega ali omejitve hitrosti, se na tej strani ne prikaže. Pojavijo se na [Analytics page](#analytics-page) pod "Triggers skipped".  
+- **Approvals** – čakajoča odobritve za dejanja, izvedena v tem izvajanju, so v [approvals inbox](#approval-workflow). Dejanje se prikaže v podrobnem pogledu izvajanja kot **Pending approval**.
 
-### Retention
+### Zadrževanje
 
-Posamezni zapisi izvedb se hranijo 90 dni, po tem času izvedba izginja iz zgodovine. Stroški in število sprožilcev se še naprej seštevajo v dolgoročnih povzetkih analitike, zato [Analytics page](#analytics-page) še vedno prikazuje zgodovinske vsote izven tega obdobja.
+Posamezni zapisi izvajanj se hranijo 90 dni, po tem pa se izvajanje odstrani iz zgodovine. Stroški in število sprožitev se še naprej seštevajo v dolgoročnih povzetkih analitike, zato [Analytics page](#analytics-page) še vedno prikazuje zgodovinske skupne vrednosti po tem obdobju.
 
-### Replays
+### Ponovitve
 
-Izvedbe, ustvarjene z replays, so privzeto izključene iz pogleda živih izvedb. Stran [Test Runs (Replays)](#test-runs-replays) je kraj, kjer si jih lahko ogledate.
+Izvajanja, ustvarjena s ponovitvijo, so privzeto izključena iz pogleda live-runs. Stran [Test Runs (Replays)](#test-runs-replays) je mesto, kjer jih lahko vidite.
 
-### Filtering across agents
+### Filtriranje med agenti
 
-Tabela izvedb je po agentu. Ni pogleda izvedb čez več agentov - [Analytics page](#analytics-page) je povzetek čez agente. Če morate pregledati izvedbe čez več agentov, so dogodki Webhooks `trigger.succeeded` in `trigger.failed` tisti, ki jih lahko posredujete v vaš sistem.
+Tabela izvajanj je po agentih. Ni pogleda izvajanj med agenti – [Analytics page](#analytics-page) je povzetek med agenti. Če morate pregledati izvajanja med več agenti, so dogodki [Webhooks](#webhooks-overview) `trigger.succeeded` in `trigger.failed`, ki jih pošljete v svoj sistem.

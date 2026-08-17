@@ -1,47 +1,50 @@
-Agent stroški so **na osnovi tokenov**. Vsak klic LLM vrne število tokenov; platforma to pretvori v ameriške cente (USD) z uporabo modelove cene na token, in ti centi se zaračunajo proti proračunom agenta in najemnika.
+---
+Agent cost is **token-based**. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
 
-### Kaj se zaračunava
+### What's billed
 
-- **Vsi klici LLM**, vključno s klicem, ki ne povzroči nobenega ukrepa orodja ("agent se je odločil, da ne bo ničesar storil"). Za inferenco se plača tudi, kadar ne pride do nobenega ukrepa.
-- **Klici suhega zagona**. Suhi zagon pomeni "ne izvajaj dejanj, vendar vseeno pokliči LLM" - klic LLM stane enako. Oglejte si [Način suhega zagona](#dry-run-mode).
-- **Ponovitveni klici**. Ponovitve so suhi zagon proti zgodovinskim komentarjem. Stanejo tokene. Oglejte si [Testni zagoni (ponovitve)](#test-runs-replays).
+- **All LLM calls**, including the call that produces zero tool actions ("the agent decided to do nothing"). Inference is paid even when no action results.
+- **Dry-run calls**. Dry-run is "do not act, but still call the LLM" - the LLM call costs the same. See [Dry-Run Mode](#dry-run-mode).
+- **Replay calls**. Replays are dry-run runs against historical comments. They cost tokens. See [Test Runs (Replays)](#test-runs-replays).
 
-### Kaj se ne zaračunava
+### What's not billed
 
-- **Sprožilci, ki nikoli ne sprožijo klica LLM.** Primeri, kjer je postopek opuščen pred klicem LLM (prekoračen proračun, omejitev hitrosti, neusklajenost obsega, neveljavno zaračunavanje, preprečevanje zank) ne stanejo nobenih tokenov. Oglejte si [Razloge za opustitev](#drop-reasons).
-- **Pošiljanje ukaza orodju.** Klic `pin_comment` ali katerega koli drugega orodja samo po sebi ne stane tokenov - računa se le LLM tur in nazaj.
-- **`search_memory`.** Je samo za branje in ne sproži lastnega LLM klica.
+- **Triggers that never produce an LLM call.** Dropped-before-LLM cases (over budget, rate limited, scope mismatch, billing invalid, loop prevention) cost zero tokens. See [Drop Reasons](#drop-reasons).
+- **Tool dispatch.** Calling `pin_comment` or any other tool does not itself cost tokens - only the LLM round-trip does.
+- **`search_memory`.** It is read-only and does not produce its own LLM round-trip.
 
-### Stroški na zagon
+### Cost per run
 
-En zagon agenta lahko pokliče LLM večkrat - rezultat vsakega klica orodja se vrne v model, da lahko pokliče drugo orodje ali konča. Zato je `tokensUsed` na zagon vsota vseh LLM tur v tem zagonu.
+A single agent run can call the LLM multiple times - each tool call result is fed back into the model so it can either call another tool or finish. So `tokensUsed` on a run is the sum across all LLM round-trips in that run.
 
-Največji dejavniki, ki prispevajo k token strošku na zagon:
+The biggest contributors to per-run token cost:
 
-- **Dolgi [začetni pozivi](#personality-prompt) in [smernice skupnosti](#community-guidelines)** - vključeni so v vsak zagon.
-- **[Možnosti konteksta](#context-options)** - kontekst teme, zgodovina uporabnika, metapodatki strani. Vsak poveča število tokenov.
-- **Samo besedilo komentarja** - dolgi komentarji stanejo več.
-- **Več klicev orodij v enem zagonu** - vsako sporočilo z rezultatom orodja se pošlje nazaj modelu.
-- **Branje iz pomnilnika** - `search_memory` vrne do 25 zapisov (omejeno na 8000 znakov skupne vsebine). Večina teh bajtov gre v naslednji poziv.
+- **Long [initial prompts](#personality-prompt) and [community guidelines](#community-guidelines)** - they go in on every run.
+- **[Context options](#context-options)** - thread context, user history, page metadata. Each adds tokens.
+- **The comment text itself** - long comments cost more.
+- **Multiple tool calls in one run** - each tool's result message is sent back to the model.
+- **Memory reads** - `search_memory` returns up to 25 records (capped at 8000 chars total content). Most of those bytes go into the next prompt.
 
-**Največje število tokenov na sprožilec** (privzeto 20.000) omejuje velikost **odgovora** na klic LLM. Ne omejuje velikosti vnosa.
+**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
 
-### Pretvorba tokenov v cente
+### Token-to-cents conversion
 
-Platforma uporablja eno stopnjo na paket najemnika (`flexLLMCostCents` na `flexLLMUnit` tokenov). Strošek na token je na ravni paketa, ne na ravni modela - oba razpoložljiva modela ([GLM 5.1 in GPT-OSS Turbo](#choosing-a-model)) se zaračunata po enaki stopnji v določenem paketu. [Pogled podrobnosti zagona](#run-detail-view) prikaže strošek na zagon v vaši valuti, ko se zagon zaključi.
+The platform applies a single per-tenant-package rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Cost-per-token is package-level, not per-model - both available models ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) bill at the same rate on a given package. The [Run Detail View](#run-detail-view) shows the per-run cost in your currency once a run completes.
 
-### Kje so zabeleženi stroški
+### Where cost is recorded
 
-Vsak zagon zabeleži surovo število tokenov in strošek na zagon. Dnevne in mesečne vsote se seštejejo na [Stran analitike](#analytics-page).
+Each run records its raw token count and per-run cost. Daily and monthly totals roll up into the [Analytics page](#analytics-page).
 
-### Kako razumeti stroške
+### How to read cost
 
-- **Strošek na zagon**: [Pogled podrobnosti zagona](#run-detail-view) -> polje `Cost`.
-- **Dnevni / mesečni agregat**: [Stran analitike](#analytics-page) -> grafikoni porabe proračuna in dnevnih stroškov.
-- **Strošek na dejanje**: prav tako v [Pogledu podrobnosti zagona](#run-detail-view), uporaben za prilagajanje, ko je zanka orodij agenta nenavadno dolga.
+- **Per-run cost**: [Run Detail View](#run-detail-view) -> `Cost` field.
+- **Daily / monthly aggregate**: [Analytics page](#analytics-page) -> Budget usage and Daily cost charts.
+- **Per-action cost**: also on Run Detail View, useful for tuning when an agent's tool-loop is unusually long.
 
-### Oglejte si tudi
+### See also
 
-- [Izbira modela](#choosing-a-model) - največji vpliv na stroške.
-- [Možnosti konteksta](#context-options) - od kod prihajajo dodatni stroški.
-- [Pregled proračunov](#budgets-overview) - trde omejitve, ki preprečujejo nenadzorovane stroške.
+- [Choosing a Model](#choosing-a-model) - the bigger lever on cost.
+- [Context Options](#context-options) - where added cost comes from.
+- [Budgets Overview](#budgets-overview) - hard caps that prevent runaway cost.
+
+---

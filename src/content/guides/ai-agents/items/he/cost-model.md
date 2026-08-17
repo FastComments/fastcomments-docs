@@ -1,47 +1,49 @@
-העלות של הסוכן מבוססת על **טוקנים**. כל קריאת LLM מחזירה ספירת טוקנים, הפלטפורמה מייצרת את זה לסנטים של USD באמצעות שיעור ל־טוקן של המודל, והסנטים מחויבים מול התקציבים של הסוכן וה־tenant.
+Agent cost is **מבוססת על טוקנים**. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
 
 ### מה מחויב
 
-- **כל קריאות ה־LLM**, כולל הקריאה שמייצרת אפס פעולות כלים ("הסוכן החליט לא לעשות כלום"). התשלום על ההסקה של המודל משולם גם כאשר לא נוצרה פעולה.
-- **קריאות Dry-run**. Dry-run הוא "אל תפעל, אך עדיין קרא ל־LLM" - קריאת ה־LLM עולה אותו דבר. ראה [מצב Dry-Run](#dry-run-mode).
-- **קריאות Replay**. הרצות חוזרות הן הרצות Dry-run כנגד תגובות היסטוריות. הן עולות בטוקנים. ראה [הרצות בדיקה (Replays)](#test-runs-replays).
+- **כל קריאות LLM**, כולל הקריאה שמייצרת אפס פעולות כלי ("הסוכן החליט לא לעשות דבר"). Inference is paid even when no action results.
+- **קריאות Dry-run**. Dry-run הוא "אל תפעול, אך עדיין קרא ל-LLM" - the LLM call costs the same. See [Dry-Run Mode](#dry-run-mode).
+- **קריאות Replay**. Replays are dry-run runs against historical comments. They cost tokens. See [Test Runs (Replays)](#test-runs-replays).
 
 ### מה לא מחויב
 
-- **טריגרים שלעולם אינם מייצרים קריאת LLM.** מקרים שנדחים לפני קריאת ה־LLM (חריגה מתקציב, הגבלת קצב, אי-התאמת היקף, חיוב לא תקין, מניעת לולאה) עולים אפס טוקנים. ראה [סיבות לדחייה](#drop-reasons).
-- **שליחת כלים.** קריאה ל־`pin_comment` או לכל כלי אחר אינה בעצמה עולה טוקנים - רק הסבב של ה־LLM עולה.
-- **`search_memory`.** היא לקריאה בלבד ואינה מייצרת סבב LLM משלה.
+- **טריגרים שלעולם לא מייצרים קריאת LLM**. Dropped-before-LLM cases (over budget, rate limited, scope mismatch, billing invalid, loop prevention) cost zero tokens. See [Drop Reasons](#drop-reasons).
+- **הפצת כלי**. Calling `pin_comment` or any other tool does not itself cost tokens - only the LLM round-trip does.
+- **`search_memory`**. It is read-only and does not produce its own LLM round-trip.
 
-### עלות לכל הרצה
+### עלות לכל ריצה
 
-ההרצה של סוכן בודד יכולה לקרוא ל־LLM מספר פעמים - כל תוצאה של קריאת כלי מוזנת חזרה למודל כדי שיוכל לקרוא כלי נוסף או לסיים. לכן `tokensUsed` בהרצה הוא הסכום של כל סבבי ה־LLM בהרצה זו.
+A single agent run can call the LLM multiple times - each tool call result is fed back into the model so it can either call another tool or finish. So `tokensUsed` on a run is the sum across all LLM round-trips in that run.
 
-הגורמים הגדולים ביותר לעלות לטוקנים לכל הרצה:
+הגורמים הגדולים ביותר לעלות הטוקנים לכל ריצה:
 
-- **פרומפטים התחלתיים ארוכים והנחיות הקהילה** - הם נכנסים בכל הרצה.
-- **[אפשרויות הקשר](#context-options)** - הקשר השרשור, היסטוריית משתמש, מטא־דאטה של הדף. כל אחד מוסיף טוקנים.
-- **טקסט התגובה עצמו** - תגובות ארוכות עולות יותר.
-- **קריאות כלים מרובות בהרצה אחת** - תוצאת כל כלי נשלחת חזרה למודל.
-- **קריאות זיכרון** - `search_memory` מחזירה עד 25 רשומות (מוגבלות ל־8000 תווים של תוכן). רוב הבתים האלה נכנסים לפרומפט הבא.
+- **[initial prompts](#personality-prompt) ארוכים** ו**[community guidelines](#community-guidelines)** - they go in on every run.
+- **[Context options](#context-options)** - thread context, user history, page metadata. Each adds tokens.
+- **טקסט ההערה עצמו** - long comments cost more.
+- **קריאות מרובות לכלי בריצה אחת** - each tool's result message is sent back to the model.
+- **קריאות זיכרון** - `search_memory` returns up to 25 records (capped at 8000 chars total content). Most of those bytes go into the next prompt.
 
-**מקסימום טוקנים לכל טריגר** (ברירת מחדל 20,000) מקבע את גודל התשובה לכל קריאת LLM. הוא אינו מקבע את גודל הקלט.
+**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
 
-### המרת טוקנים לסנטים
+### המרת טוקן לסנטים
 
-הפלטפורמה מיישמת שיעור יחיד ברמת חבילה ל־tenant (`flexLLMCostCents` לכל `flexLLMUnit` טוקנים). עלות ליחידת טוקן היא ברמת החבילה, לא ברמת המודל - שני המודלים הזמינים ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) מחויבים באותו שיעור בחבילה נתונה. תצוגת פרטי ההרצה [Run Detail View](#run-detail-view) מציגה את העלות לכל הרצה במטבע שלך ברגע שההרצה מסתיימת.
+The platform applies a single per-tenant-package rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Cost-per-token is package-level, not per-model - both available models ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) bill at the same rate on a given package. The [Run Detail View](#run-detail-view) shows the per-run cost in your currency once a run completes.
 
-### היכן נרשמת העלות
+### היכן מתועדת העלות
 
-כל הרצה רושמת את ספירת הטוקנים הגולמית ואת העלות לכל הרצה. סכומים יומיים וחודשיים מצטברים לתוך [דף האנליטיקה](#analytics-page).
+Each run records its raw token count and per-run cost. Daily and monthly totals roll up into the [Analytics page](#analytics-page).
 
 ### איך לקרוא את העלות
 
-- **עלות לכל הרצה**: [תצוגת פרטי ההרצה](#run-detail-view) -> שדה `Cost`.
-- **סכום יומי / חודשי מצטבר**: [דף האנליטיקה](#analytics-page) -> גרף שימוש בתקציב וגרף עלות יומית.
-- **עלות לכל פעולה**: גם בתצוגת פרטי ההרצה, שימושי לכוונון כאשר לולאת הכלים של סוכן ארוכה באופן יוצא דופן.
+- **עלות לכל ריצה**: [Run Detail View](#run-detail-view) -> `Cost` field.
+- **סיכום יומי / חודשי**: [Analytics page](#analytics-page) -> Budget usage and Daily cost charts.
+- **עלות לכל פעולה**: also on Run Detail View, useful for tuning when an agent's tool-loop is unusually long.
 
 ### ראה גם
 
-- [בחירת מודל](#choosing-a-model) - המנוף הגדול יותר על העלות.
-- [אפשרויות הקשר](#context-options) - מאיפה מגיעה העלות הנוספת.
-- [סקירת תקציבים](#budgets-overview) - מכסים קשיחים שמונעים עלויות בלתי נשלטות.
+- [Choosing a Model](#choosing-a-model) - the bigger lever on cost.
+- [Context Options](#context-options) - where added cost comes from.
+- [Budgets Overview](#budgets-overview) - hard caps that prevent runaway cost.
+
+---

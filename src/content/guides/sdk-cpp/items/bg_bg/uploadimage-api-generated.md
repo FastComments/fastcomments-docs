@@ -1,8 +1,6 @@
 Upload and resize an image
-Качване и преоразмеряване на изображение
 
 ## Parameters
-## Параметри
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
@@ -10,22 +8,13 @@ Upload and resize an image
 | file | HttpContent | Yes |  |
 | options | const UploadImageOptions& | Yes |  |
 
-| Име | Тип | Задължително | Описание |
-|------|------|--------------|----------|
-| tenantId | string | Да |  |
-| file | HttpContent | Да |  |
-| options | const UploadImageOptions& | Да |  |
-
 ## Response
-## Отговор
 
-Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UploadImageResponse.h)
-Връща: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UploadImageResponse.h)
+Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 
 ## Example
-## Пример
 
-[inline-code-attrs-start title = 'Пример за uploadImage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto fileStream = concurrency::streams::fstream::open_istream(U("avatar.png"), std::ios::in).get();
 HttpContent file(fileStream, U("image/png"));

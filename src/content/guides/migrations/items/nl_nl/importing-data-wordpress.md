@@ -1,18 +1,20 @@
----
-Onze [WordPress-plugin](https://wordpress.org/plugins/fastcomments/) heeft een krachtig, UI-gebaseerd importmechanisme. Na het installeren van de plugin begeleidt het je bij het koppelen van je WordPress-installatie aan FastComments en het overzetten van je bestaande commentaardata.
+Our [WordPress-plug-in](https://wordpress.org/plugins/fastcomments/) heeft een krachtig UI-gebaseerd importmechanisme. Na het installeren van de plug-in,
+zal het je begeleiden bij het koppelen van je WordPress‑installatie met FastComments en het overzetten van je bestaande commentaargegevens.
 
-**Dit gebeurt zonder dat iets handmatig gekopieerd of gedownload hoeft te worden.**
+**Dit gebeurt zonder handmatig iets te kopiëren of te downloaden.**
 
-Het migratieproces wordt tijdens de migratie via de UI aan je aangegeven. De meeste migraties duren slechts een paar minuten.
+Het migratieproces wordt via de UI aangegeven tijdens de migratie. De meeste migraties duren slechts een paar minuten.
 
-Het mechanisme is zo ontworpen dat het tijdens de migratie geen overmatige belasting op je WordPress-installatie legt.
+Het mechanisme is ontworpen om geen overmatige belasting op je WordPress‑installatie te leggen tijdens de migratie.
 
 ### CloudFlare & firewalls
 
-Om de geautomatiseerde WordPress-installatie te laten werken, moeten we calls naar je WordPress-installatie maken. Firewalls zoals Cloudflare kunnen ons blokkeren en ervoor zorgen dat de integratie faalt. In dergelijke gevallen [kunnen we je](https://fastcomments.com/auth/my-account/help) voorzien van een set IP's die je kunt whitelisten voor de integratie.
+Om de geautomatiseerde WordPress‑setup te laten werken, moeten we oproepen doen naar je WordPress‑installatie.
+Firewalls zoals Cloudflare kunnen ons blokkeren en de integratie laten mislukken. In dergelijke gevallen, [we kunnen u voorzien](https://fastcomments.com/auth/my-account/help) van een reeks IP‑adressen om op de witte lijst te zetten voor de integratie.
 
-### Eigendom van gegevens
+### Data-eigendom
 
-In het geval van onze WordPress-migratie worden alle nieuwe of bijgewerkte commentaardata automatisch op de achtergrond teruggesynchroniseerd naar je WordPress-installatie. Dit betekent dat, terwijl de reacties door FastComments zelf worden geserveerd om de belasting van je WordPress-omgeving te verminderen, we ze **ook** in je database opslaan als backup. Dit betekent ook dat, als je ervoor kiest om van FastComments over te stappen, je gegevens al gemigreerd en up-to-date zijn.
-
----
+In het geval van onze WordPress‑migratie wordt elke nieuwe of bijgewerkte commentaardata automatisch teruggesynchroniseerd naar je WordPress‑installatie
+achter de schermen. Dit betekent dat, terwijl de reacties door FastComments zelf worden geleverd om de belasting van je WordPress‑implementatie te verlagen,
+we **ook** een back‑up in je database opslaan. Dit betekent ook dat als je wilt overstappen van FastComments, je gegevens
+al gemigreerd en up‑to‑date zijn.

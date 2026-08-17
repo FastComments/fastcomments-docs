@@ -1,186 +1,185 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-この API はユーザーに表示するためのコメントを取得するために使用されます。例えば、承認されていないコメントやスパムコメントを自動的にフィルタリングします。
+この API は、ユーザーに表示するためのコメントを取得するために使用されます。たとえば、未承認またはスパムコメントを自動的に除外します。
 
-### Pagination
+### ページネーション
 
-ページネーションは、パフォーマンス要件やユースケースに応じて、次のいずれかの方法で行うことができます:
+ページネーションは、パフォーマンス要件とユースケースに応じて、次の 2 つの方法のいずれかで実行できます。
 
-1. Fastest: **Precalculated Pagination**:
-   1. これは、当社の事前構築されたウィジェットやクライアントを使用する場合に FastComments が動作する方法です。
-   2. 「次へ」をクリックすると単にページ数が増加します。
-   3. これはキー・バリュー ストアから取得されるように考えることができます。
-   4. この方法では、`page` パラメータを `0` から開始して定義し、ソート方向を `direction` として指定します。
-   5. ページサイズはカスタマイズルールで変更できます。
-2. Most Flexible: **Flexible Pagination**:
-   1. この方法ではカスタムの `limit` と `skip` パラメータを定義できます。`page` を渡さないでください。
-   2. ソートの `direction` もサポートされています。
-   3. `limit` は `skip` を適用した後に返される合計数です。
-      - 例: `page size = 100` かつ `page = 2` の場合、`skip = 200, limit = 100` を設定します。
-   4. 子コメントもページネーションにカウントされます。`asTree` オプションを使うことでこれを回避できます。
-      - `limitChildren` と `skipChildren` により子のページネーションが可能です。
-      - `maxTreeDepth` により返されるスレッドの深さを制限できます。
+1. 最速: **事前計算ページネーション**:
+   1. これは、事前に構築されたウィジェットとクライアントを使用する際の FastComments の動作方式です。
+   2. 「次へ」をクリックすると、単にページ番号が増えます。
+   3. これはキー・バリュー・ストアから取得されるものと考えてください。
+   4. この方法では、`page` パラメータを `0` から開始し、ソート方向を `direction` として定義するだけです。
+   5. ページサイズはカスタマイズルールで調整できます。
+2. 最も柔軟: **柔軟なページネーション**:
+   1. この方法では、カスタムの `limit` と `skip` パラメータを定義できます。`page` は渡さないでください。
+   2. ソート `direction` もサポートされています。
+   3. `limit` は、`skip` が適用された後に返す総数です。
+      - 例: `page size = 100` で `page = 2` の場合、`skip = 200, limit = 100` と設定します。
+   4. 子コメントもページネーションにカウントされます。`asTree` オプションを使用して回避できます。
+      - `limitChildren` と `skipChildren` で子コメントをページネーションできます。
+      - `maxTreeDepth` で返されるスレッドの深さを制限できます。
 
-### Threads
+### スレッド
 
-1. `Precalculated Pagination` を使用する場合、コメントは *page* ごとにグループ化され、スレッド内のコメントは全体のページに影響します。
-   1. この方法では、クライアントは `parentId` に基づいてスレッドを判断できます。
-   2. 例えば、あるページにトップレベルのコメントが1件とその返信が29件あり、API に `page=0` を設定すると、トップレベルのコメント1件と29件の子コメントが返されます。
-   3. [Example image here illustrating multiple pages.](https://blog.winricklabs.com/images/fc-pagination02.png)
+1. `Precalculated Pagination` を使用する場合、コメントは *ページ* ごとにグループ化され、スレッド内のコメントは全体のページに影響します。
+   1. この方法では、`parentId` に基づいてクライアント側でスレッドを判定できます。
+   2. 例として、トップレベルコメントが 1 件で 29 件の返信があるページで、API に `page=0` を設定すると、トップレベルコメントと 29 件の子コメントだけが取得されます。
 2. `Flexible Pagination` を使用する場合、`parentId` パラメータを定義できます。
-   1. トップレベルのコメントのみを取得するにはこれを null に設定してください。
-   2. スレッドを表示するには、再度 API を呼び出して `parentId` を渡します。
-   3. 一般的な解決方法としては、トップレベルのコメント用に API 呼び出しを行い、その後各コメントの子コメントを取得するために並列の API 呼び出しを行う方法があります。
-3. __新機能（2023年2月）!__ `&asTree=true` を使用してツリーとして取得できます。
-   1. これは `Flexible Pagination as a Tree` と考えることができます。
-   2. ページネーションにはトップレベルのコメントのみがカウントされます。
-   3. ツリーをルートから開始するには `parentId=null` を設定してください（`parentId` を設定する必要があります）。
-   4. ページネーションには `skip` と `limit` を設定してください。
-   5. `asTree` を `true` に設定してください。
-   6. このシナリオではバックエンドがより多くの処理を行うため、クレジットコストが `2x` に増加します。
-   7. 必要に応じて `maxTreeDepth`、`limitChildren`、`skipChildren` を設定してください。
+   1. これを null に設定すると、トップレベルコメントのみが取得されます。
+   2. スレッドを表示するには、API を再度呼び出し、`parentId` を渡します。
+   3. 一般的な解決策は、トップレベルコメント用に API 呼び出しを行い、続いて各コメントの子コメントを取得するために並列で API 呼び出しを行うことです。
+3. __NEW 2023年2月から！__ `&asTree=true` を使用してツリーとして取得します。
+   1. これは `Flexible Pagination as a Tree` と考えてください。
+   2. ページネーションではトップレベルコメントのみがカウントされます。
+   3. `parentId=null` を設定してツリーをルートから開始します（`parentId` を設定する必要があります）。
+   4. ページネーションのために `skip` と `limit` を設定します。
+   5. `asTree` を `true` に設定します。
+   6. このシナリオではバックエンドの作業が大幅に増えるため、クレジットコストが `2x` に増加します。
+   7. 必要に応じて `maxTreeDepth`、`limitChildren`、`skipChildren` を設定します。
 
-### Trees Explained
+### ツリーの説明
 
-`asTree` を使用するとページネーションの考え方が分かりにくくなることがあります。参考になる図はこちらです:
+`asTree` を使用する場合、ページネーションの考え方が難しいことがあります。便利な図をご覧ください。
 
 <div class="screenshot white-bg">
     <div class="title">ツリーページネーション図</div>
     <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="ツリーページネーション図" />
 </div>
 
-### Fetching Comments in The Context of a User
+### ユーザーコンテキストでのコメント取得
 
-`/comments` API は、異なるユースケースに対して 2 つのコンテキストで使用できます:
+`/comments` API は、異なるユースケースに応じて 2 つのコンテキストで使用できます。
 
-- 自身のクライアントを構築するための情報でソートおよびタグ付けされたコメントを返す場合。
-  - この場合は query パラメータに `contextUserId` を定義してください。
+- 独自クライアント構築のために、ソートされ情報がタグ付けされたコメントを返す場合。
+  - この場合、`contextUserId` クエリパラメータを定義します。
 - カスタム統合のためにバックエンドからコメントを取得する場合。
-  - `contextUserId` を指定しない場合、プラットフォームはこれをデフォルトとします。
+  - プラットフォームは `contextUserId` がなくてもデフォルトでこの方式になります。
 
-[inline-code-attrs-start title = 'コメントの事前計算ページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コメント 事前計算ページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&page=0&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'コメントの柔軟なページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コメント 柔軟なページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'ユーザーコンテキストでのコメントの柔軟なページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ユーザーコンテキストでのコメント 柔軟なページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'ユーザーコンテキストでのトップレベルコメントのみの柔軟なページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'トップレベルコメントのみのユーザーコンテキストでのコメント 柔軟なページネーション'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null'
 [inline-code-end]
 
-### Get Comments as a Tree
+### ツリー形式のコメント取得
 
-コメントをツリーとして返すことが可能で、ページネーションはトップレベルのコメントのみをカウントします。
+コメントをツリーとして返すことが可能で、ページネーションはトップレベルコメントのみをカウントします。
 
-[inline-code-attrs-start title = 'ユーザーコンテキストでのツリー形式のコメント'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ユーザーコンテキストでのコメント ツリー形式'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
-トップレベルのコメントとその直下の子のみを取得したいですか? こうする方法の一例を示します:
+トップレベルコメントとその直下の子コメントだけを取得したいですか？以下の方法があります。
 
-[inline-code-attrs-start title = '最大深度付きツリー形式のコメント'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最大深さ付きツリー形式のコメント'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
 [inline-code-end]
 
-ただし、UI 上では各コメントに「返信を表示」ボタンを表示するかどうかを知る必要がある場合があります。ツリーとしてコメントを取得すると、該当する場合に `hasChildren` プロパティがコメントに付与されます。
+ただし、UI では各コメントに「返信を表示」ボタンを表示すべきかどうかを知る必要があるかもしれません。ツリーでコメントを取得する場合、該当するコメントには `hasChildren` プロパティが付与されます。
 
-### Get Comments as a Tree, Searching by Hash Tag
+### ハッシュタグで検索するツリー形式のコメント取得
 
-API を使用してハッシュタグで検索することが可能で、テナント全体（1 ページや `urlId` に限定されません）を横断して検索できます。
+API を使用してハッシュタグで検索することが可能です。テナント全体（特定のページや `urlId` に限定されません）で検索できます。
 
 この例では `urlId` を省略し、複数のハッシュタグで検索します。API は要求されたすべてのハッシュタグを持つコメントのみを返します。
 
-[inline-code-attrs-start title = 'ハッシュタグによるユーザーコンテキストでのツリー形式のコメント'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ハッシュタグで検索するユーザーコンテキストのツリー形式コメント'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
-### All Request Params
+### すべてのリクエストパラメータ
 
-[inline-code-attrs-start title = 'コメントリクエスト構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コメント リクエスト構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** The urlId (page url, or article id) the comments are associated with. **/
+    /** コメントが関連付けられる urlId（ページ URL または記事 ID）。 **/
     urlId?: string
-    /** Limit the comments returned by this user. **/
+    /** このユーザーが返すコメントを制限します。 **/
     userId?: string
-    /** Use this to search by hashtag. To drill down to the intersection of multiple hashtags, do &hashTag=a&hashTag=b. **/
+    /** ハッシュタグで検索する際に使用します。複数ハッシュタグの交差を絞り込むには、&hashTag=a&hashTag=b のように指定します。 **/
     hashTag?: string
-    /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
+    /** ソート方向。デフォルトは MR（最も関連性が高い）。他のオプションは OF（古い順） と NF（新しい順）。 **/
     direction?: 'MR' | 'OF' | 'NF'
-    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments (up to 250). **/
+    /** 事前計算ページネーション: 取得するページ番号、0 から開始。すべてのコメント（最大 250 件）を取得するには -1 を指定します。 **/
     page?: number
-    /** Flexible Pagination: How many comments should we return? **/
+    /** 柔軟なページネーション: 返すコメント数を指定します。 **/
     limit?: number
-    /** Flexible Pagination: How many child comments should we return for each parent? **/
+    /** 柔軟なページネーション: 各親に対して返す子コメント数を指定します。 **/
     limitChildren?: number
-    /** Flexible Pagination: How many comments should we skip? **/
+    /** 柔軟なページネーション: スキップするコメント数を指定します。 **/
     skip?: number
-    /** Flexible Pagination: How many child comments should we skip for each parent? **/
+    /** 柔軟なページネーション: 各親に対してスキップする子コメント数を指定します。 **/
     skipChildren?: number
-    /** For determining blocked and flagged comments. **/
+    /** ブロックおよびフラグ付けされたコメントを判定するために使用します。 **/
     contextUserId?: string
-    /** For determining blocked and flagged comments. **/
+    /** ブロックおよびフラグ付けされたコメントを判定するために使用します。 **/
     anonUserId?: string
-    /** For fetching child comments. **/
+    /** 子コメントを取得するために使用します。 **/
     parentId?: string
-    /** For fetching as a tree. **/
+    /** ツリー形式で取得するために使用します。 **/
     asTree?: boolean
-    /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
+    /** ツリーのどの深さまでデータを返すかを指定します。0 は子を返さず、1 は直下の子を返す、というように指定します。 **/
     maxTreeDepth?: number
 }
 [inline-code-end]
 
-### The Response
+### レスポンス
 
-[inline-code-attrs-start title = 'コメントレスポンス構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コメント レスポンス構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** 失敗時に含まれます。 **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page' | 'invalid-pagination-request' | 'invalid-limit' | 'invalid-limit-children' | 'invalid-skip' | 'invalid-skip-children' | 'invalid-max-tree-depth'
-    /** Included on failure. **/
+    /** 失敗時に含まれます。 **/
     reason?: string
-    /** The comments! **/
+    /** コメント一覧！ **/
     comments: Comment[]
 }
 [inline-code-end]
 
-### Helpful Tips
+### 便利なヒント
 
 #### URL ID
 
-おそらく `Comment` API を `urlId` パラメータと一緒に使用したいでしょう。まず `Pages` API を呼び出して、利用可能な `urlId` の値がどのようになっているかを確認できます。
+おそらく `Comment` API を `urlId` パラメータと共に使用したいでしょう。まず `Pages` API を呼び出すことで、利用可能な `urlId` の値がどのようなものか確認できます。 
 
-#### Anonymous Actions
+#### 匿名アクション
 
-匿名でコメントする場合、コメントの取得時やフラグ付け・ブロックを行う際に `anonUserId` を渡すことをお勧めします。
+匿名コメントの場合、コメント取得時やフラグ付け・ブロック操作時に `anonUserId` を渡すことが望ましいでしょう。
 
-(!) これは多くのアプリストアで必須です。ユーザーはログインしていなくても、自分が見えるユーザー生成コンテンツを通報できる必要があります。これを行わないと、アプリが当該ストアから削除される可能性があります。
+(!) これは多くのアプリストアで必須です。ユーザーはログインしていなくても閲覧できるユーザー生成コンテンツにフラグを付けられる必要があります。これを行わないと、アプリが該当ストアから削除される可能性があります。
 
-#### Comments Not Being Returned
+#### コメントが返されない場合
 
-コメントが承認されており、スパムではないことを確認してください。
+コメントが承認済みであり、スパムでないことを確認してください。
 
 ---

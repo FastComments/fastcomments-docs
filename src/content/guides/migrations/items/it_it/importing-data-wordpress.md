@@ -1,22 +1,15 @@
----
-Il nostro [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) ha un potente meccanismo di importazione basato su interfaccia grafica. Al momento dell'installazione del plugin,
-ti guiderà attraverso il collegamento della tua installazione WordPress con FastComments e la copia dei dati dei commenti esistenti.
+Il nostro [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) ha un potente meccanismo di importazione basato sull'interfaccia utente. Dopo aver installato il plugin, ti guiderà nel collegare la tua installazione WordPress a FastComments e nel copiare i tuoi dati di commenti esistenti.
 
-**Questo viene fatto senza copiare o scaricare nulla manualmente.**
+**Questo avviene senza copiare o scaricare nulla manualmente.**
 
 Il processo di migrazione ti verrà indicato tramite l'interfaccia utente durante la migrazione. La maggior parte delle migrazioni richiede solo un paio di minuti.
 
-Il meccanismo è progettato per non mettere un carico eccessivo sulla tua installazione WordPress durante la migrazione.
+Il meccanismo è progettato per non sovraccaricare la tua installazione WordPress durante la migrazione.
 
 ### CloudFlare & FireWalls
 
-Perché la configurazione automatizzata di WordPress funzioni, dobbiamo effettuare chiamate alla tua installazione WordPress.
-Firewall come Cloudflare potrebbero bloccarci e far fallire l'integrazione. In tali casi, [possiamo fornirti](https://fastcomments.com/auth/my-account/help) un insieme di IP da mettere in whitelist per l'integrazione.
+Affinché la configurazione automatica di WordPress funzioni, dobbiamo effettuare chiamate alla tua installazione WordPress. I firewall come Cloudflare potrebbero bloccarci e causare il fallimento dell'integrazione. In tali casi, [possiamo fornirti](https://fastcomments.com/auth/my-account/help) un insieme di IP da inserire nella whitelist per l'integrazione.
 
 ### Data Ownership
 
-Nel caso della nostra migrazione da WordPress, qualsiasi dato di commento nuovo o aggiornato viene automaticamente sincronizzato nuovamente con la tua installazione WordPress
-in background. Ciò significa che, mentre i commenti sono serviti da FastComments stesso per alleggerire il carico sulla tua installazione WordPress,
-noi li salviamo **anche** nel tuo database come backup. Questo significa inoltre che, se desideri passare via da FastComments, i tuoi dati sono
-già migrati e aggiornati.
----
+Nel caso della nostra migrazione WordPress, tutti i nuovi o aggiornati dati dei commenti vengono sincronizzati automaticamente con la tua installazione WordPress in background. Ciò significa che, mentre i commenti sono serviti da FastComments stesso per ridurre il carico sulla tua installazione WordPress, noi **salviamo anche** i commenti nel tuo database come backup. Questo significa anche che, se desideri passare a un altro sistema, i tuoi dati sono già migrati e aggiornati.

@@ -1,18 +1,21 @@
----
-Nasza [wtyczka WordPress](https://wordpress.org/plugins/fastcomments/) ma potężny mechanizm importu oparty na interfejsie użytkownika. Po zainstalowaniu wtyczki przeprowadzi cię przez proces łączenia twojej instalacji WordPress z FastComments i skopiowania istniejących danych komentarzy.
+Nasz [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) ma potężny mechanizm importu oparty na interfejsie użytkownika. Po zainstalowaniu wtyczki,
+poprowadzi Cię przez połączenie Twojej instalacji WordPress z FastComments i skopiowanie istniejących danych komentarzy.
 
-**To odbywa się bez ręcznego kopiowania lub pobierania czegokolwiek.**
+**Dzieje się to bez ręcznego kopiowania lub pobierania czegokolwiek.**
 
-Przebieg migracji będzie wyświetlany w interfejsie użytkownika. Większość migracji trwa tylko kilka minut.
+Proces migracji będzie wskazywany w interfejsie użytkownika podczas migracji. Większość migracji zajmuje tylko kilka minut.
 
-Mechanizm został zaprojektowany tak, aby nie obciążać nadmiernie twojej instalacji WordPress podczas migracji.
+Mechanizm został zaprojektowany tak, aby nie obciążać nadmiernie Twojej instalacji WordPress podczas migracji.
 
-### CloudFlare & Zapory
+### CloudFlare & FireWalls
 
-Aby automatyczna konfiguracja WordPress działała, musimy wykonywać połączenia do twojej instalacji WordPress. Zapory sieciowe, takie jak Cloudflare, mogą nas zablokować i spowodować niepowodzenie integracji. W takich przypadkach [możemy dostarczyć ci](https://fastcomments.com/auth/my-account/help) zestaw adresów IP do dodania do białej listy dla tej integracji.
+Aby automatyczna konfiguracja WordPress działała, musimy wykonywać wywołania do Twojej instalacji WordPress.
+Zapory takie jak Cloudflare mogą nas zablokować i spowodować niepowodzenie integracji. W takich przypadkach [możemy
+Ci](https://fastcomments.com/auth/my-account/help) dostarczyć zestaw adresów IP do wpisania na białą listę dla integracji.
 
-### Własność danych
+### Data Ownership
 
-W przypadku naszej migracji WordPress wszystkie nowe lub zaktualizowane dane komentarzy są automatycznie synchronizowane z twoją instalacją WordPress w tle. Oznacza to, że chociaż komentarze są dostarczane przez FastComments, aby odciążyć twoje środowisko WordPress, my **również** zapisujemy je w twojej bazie danych jako kopię zapasową. Oznacza to także, że jeśli zechcesz przejść z FastComments, twoje dane są już zmigrowane i aktualne.
-
----
+W przypadku naszej migracji WordPress, wszelkie nowe lub zaktualizowane dane komentarzy są automatycznie synchronizowane z powrotem do Twojej instalacji WordPress
+w tle. Oznacza to, że podczas gdy komentarze są serwowane przez FastComments, aby odciążyć Twoją instalację WordPress,
+**również** zapisujemy je w Twojej bazie danych jako kopię zapasową. To także oznacza, że jeśli zechcesz przejść z FastComments, Twoje dane są
+już migrowane i aktualne.

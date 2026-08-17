@@ -1,91 +1,90 @@
 [related-parameter-start name = 'sso'; type = 'FastCommentsSSO'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1' related-parameter-end]
 
-FastComments Secure SSO χρησιμοποιεί κρυπτογράφηση HMAC-SHA256 ως μηχανισμό για την υλοποίηση του SSO. Πρώτα θα περιγράψουμε την συνολική αρχιτεκτονική, θα δώσουμε παραδείγματα, και λεπτομερή βήματα.
+Το FastComments Secure SSO χρησιμοποιεί κρυπτογράφηση HMAC‑SHA256 ως μηχανισμό για την υλοποίηση του SSO. Αρχικά θα παρουσιάσουμε τη συνολική αρχιτεκτονική, θα δώσουμε παραδείγματα και λεπτομερή βήματα.
 
-Υπάρχει επίσης κάποια τεκμηρίωση σχετικά με τη μετανάστευση από άλλους παρόχους με παρόμοιους μηχανισμούς SSO, και τις διαφορές.
+Υπάρχει επίσης τεκμηρίωση σχετικά με τη μετάβαση από άλλους παρόχους με παρόμοιους μηχανισμούς SSO και τις διαφορές.
 
-Η ροή έχει ως εξής:
+Η ροή φαίνεται ως εξής:
 
 <div class="screenshot white-bg">
-    <div class="title">Ροή Secure SSO</div>
-    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Διάγραμμα Secure SSO" />
+    <div class="title">Ασφαλής Ροή SSO</div>
+    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Διάγραμμα Ασφαλούς SSO" />
 </div>
 
-Δεδομένου ότι το Secure SSO περιλαμβάνει full-stack ανάπτυξη, πλήρη λειτουργικά παραδείγματα κώδικα σε Java/Spring, NodeJS/Express, και vanilla PHP βρίσκονται αυτή τη στιγμή <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">στο GitHub</a>.
+Δεδομένου ότι το Secure SSO περιλαμβάνει ανάπτυξη full‑stack, πλήρη παραδείγματα κώδικα σε Java/Spring, NodeJS/Express και vanilla PHP είναι επί του παρόντος διαθέσιμα στο GitHub.
 
-Αν και χρησιμοποιούμε ExpressJS στο παράδειγμα NodeJS και Spring στο παράδειγμα Java, δεν απαιτούνται frameworks/libraries σε αυτά τα run-times για να υλοποιήσετε το FastComments SSO - δουλεύουν τα εγγενή πακέτα crypto.
+Παρόλο που χρησιμοποιούμε ExpressJS στο παράδειγμα NodeJS και Spring στο παράδειγμα Java, δεν απαιτούνται frameworks/βιβλιοθήκες σε αυτά τα περιβάλλοντα για την υλοποίηση του FastComments SSO – τα ενσωματωμένα πακέτα κρυπτογράφησης λειτουργούν.
 
-Δεν χρειάζεται να γράψετε κανένα νέο API endpoint με το FastComments SSO. Απλώς κρυπτογραφήστε τις πληροφορίες του χρήστη χρησιμοποιώντας το secret key σας και περάστε το payload στο comment widget.
+Δεν χρειάζεται να γράψετε νέα API endpoints με το FastComments SSO. Απλώς κρυπτογραφήστε τις πληροφορίες του χρήστη χρησιμοποιώντας το μυστικό κλειδί σας και περάστε το payload στο widget σχολίων.
 
 #### Get Your API Secret Key
 
-Το API Secret σας μπορεί να ανακτηθεί από <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">αυτή τη σελίδα</a>. Μπορείτε επίσης να βρείτε αυτή τη σελίδα πηγαίνοντας στο Ο λογαριασμός μου (My Account), κάνοντας κλικ στο πλακίδιο API/SSO, και στη συνέχεια κάνοντας κλικ στο "Get API Secret Key".
+Το μυστικό κλειδί API σας μπορεί να ληφθεί από αυτή τη σελίδα. Μπορείτε επίσης να βρείτε αυτή τη σελίδα πηγαίνοντας στο «Ο λογαριασμός μου», κάνοντας κλικ στο πλακίδιο API/SSO και, στη συνέχεια, κάνοντας κλικ στο «Λήψη Μυστικού Κλειδιού API».
 
 #### Comment Widget Parameters
 
-Η τεκμηρίωση API υψηλού επιπέδου για το comment widget βρίσκεται <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">εδώ</a>.
+Τεκμηρίωση API υψηλού επιπέδου για το widget σχολίων μπορεί να βρεθεί [here](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1).
 
-Ας δούμε πιο λεπτομερώς τι σημαίνουν αυτές οι παράμετροι.
+Ας εμβαθύνουμε περισσότερο στο τι σημαίνουν αυτές οι παράμετροι.
 
-Το comment widget λαμβάνει ένα αντικείμενο διαμόρφωσης - το περνάτε ήδη αυτό εάν χρησιμοποιείτε FastComments για να περάσετε το id του πελάτη σας (που ονομάζεται tenantId).
+Το widget σχολίων δέχεται ένα αντικείμενο ρυθμίσεων – το περνάτε ήδη εάν χρησιμοποιείτε το FastComments για να περάσετε το αναγνωριστικό πελάτη σας (ονομάζεται tenantId).
 
-Για να ενεργοποιήσετε το SSO, περάστε ένα νέο αντικείμενο "sso", το οποίο πρέπει να έχει τις ακόλουθες παραμέτρους. Οι τιμές πρέπει να δημιουργούνται από το server side.
+Για να ενεργοποιήσετε το SSO, περάστε ένα νέο αντικείμενο "sso", το οποίο πρέπει να περιέχει τις παρακάτω παραμέτρους. Οι τιμές πρέπει να δημιουργούνται από τον διακομιστή.
 
-- userDataJSONBase64: Τα δεδομένα του χρήστη σε μορφή JSON, τα οποία στη συνέχεια κωδικοποιούνται σε Base64.
-- verificationHash: Το hash HMAC-SHA256 που δημιουργείται από UNIX_TIME_MILLIS + userDataJSONBase64.
-- timestamp: Χρονική σήμανση epoch, σε **milliseconds**. Δεν πρέπει να είναι στο μέλλον, ούτε περισσότερες από δύο ημέρες στο παρελθόν.
-- loginURL: Ένα URL που το comment widget μπορεί να εμφανίσει για να κάνει login ο χρήστης.
-- logoutURL: Ένα URL που το comment widget μπορεί να εμφανίσει για να κάνει logout ο χρήστης.
-- loginCallback: Όταν παρέχεται αντί του login URL, μια συνάρτηση που το comment widget θα καλεί όταν πατηθεί το κουμπί login.
-- logoutCallback: Όταν παρέχεται αντί του logout URL, μια συνάρτηση που το comment widget θα καλεί όταν πατηθεί το κουμπί logout.
+- userDataJSONBase64: Τα δεδομένα του χρήστη σε μορφή JSON, τα οποία κωδικοποιούνται στη συνέχεια σε Base64.
+- verificationHash: Το hash HMAC‑SHA256 που δημιουργείται από UNIX_TIME_MILLIS + userDataJSONBase64.
+- timestamp: Χρονική σήμανση Epoch, σε **χιλιοστά του δευτερολέπτου**. Δεν πρέπει να είναι στο μέλλον ή περισσότερο από δύο ημέρες στο παρελθόν.
+- loginURL: Ένα URL που το widget σχολίων μπορεί να εμφανίσει για να συνδέσει τον χρήστη.
+- logoutURL: Ένα URL που το widget σχολίων μπορεί να εμφανίσει για να αποσυνδέσει τον χρήστη.
+- loginCallback: Όταν παρέχεται αντί του login URL, μια συνάρτηση που το widget σχολίων θα καλέσει όταν ο χρήστης κάνει κλικ στο κουμπί σύνδεσης.
+- logoutCallback: Όταν παρέχεται αντί του logout URL, μια συνάρτηση που το widget σχολίων θα καλέσει όταν ο χρήστης κάνει κλικ στο κουμπί αποσύνδεσης.
 
-[code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
+[code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Κώδικας Πελάτη Secure SSO'; isFunctional = false; code-example-end]
 
 #### The User Object
 
-The User object contains the following schema:
 [inline-code-attrs-start title = 'Το Αντικείμενο Χρήστη'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    /** Απαιτούμενο. 1k Characters Max. **/
+    /** Required. 1k Characters Max. **/
     id: string;
-    /** Απαιτούμενο. 1k Characters Max. Σημείωση: Πρέπει να είναι μοναδικό. **/
+    /** Required. 1k Characters Max. Note: Must be unique. **/
     email: string;
-    /** Απαιτούμενο. 1k Characters Max. Σημείωση: Το username δεν μπορεί να είναι ένα email. Δεν χρειάζεται να είναι μοναδικό. **/
+    /** Required. 1k Characters Max. Note: The username cannot be an email. Does not have to be unique. **/
     username: string;
-    /** Προαιρετικό. 3k Characters Max για URLs. Προεπιλογή είναι από gravatar βάσει του email. Υποστηρίζει εικόνες κωδικοποιημένες σε base64, οπότε στην περίπτωση αυτή το όριο είναι 50k χαρακτήρες. **/ 
+    /** Optional. 3k Characters Max for URLs. Default is from gravatar based on email. Supports 64 encoded images, in which case the limit is 50k characters. **/ 
     avatar?: string;
-    /** Προαιρετικό. Προεπιλογή false. **/
+    /** Optional. Default false. **/
     optedInNotifications?: boolean;
-    /** Προαιρετικό. Προεπιλογή false. **/
+    /** Optional. Default false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** Προαιρετικό. 100 Characters Max. Αυτή η ετικέτα θα εμφανίζεται δίπλα στο όνομά τους. Προεπιλογή είναι Administrator/Moderator όταν ισχύει. **/
+    /** Optional. 100 Characters Max. This label will be shown next to their name. Default is Administrator/Moderator when applicable. **/
     displayLabel?: string;
-    /** Προαιρετικό. 500 Characters Max. Αυτό θα εμφανίζεται αντί του username. **/
+    /** Optional. 500 Characters Max. This will be shown instead of the username. **/
     displayName?: string;
-    /** Προαιρετικό. 2k Characters Max. Το όνομα του χρήστη θα συνδέεται με αυτό. **/
+    /** Optional. 2k Characters Max. The user's name will link to this. **/
     websiteUrl?: string;
-    /** Προαιρετικό. Έως 100 groups ανά χρήστη. Ένα group id δεν μπορεί να είναι μεγαλύτερο από 50 χαρακτήρες. **/
+    /** Optional. Up to 100 groups per user. A group id may not be longer than 50 characters. **/
     groupIds?: string[];
-    /** Προαιρετικό. Δηλώνει τον χρήστη ως administrator. **/
+    /** Optional. Denotes the user as an administrator. **/
     isAdmin?: boolean;
-    /** Προαιρετικό. Δηλώνει τον χρήστη ως moderator. **/
+    /** Optional. Denotes the user as a moderator. **/
     isModerator?: boolean;
-    /** Προαιρετικό, προεπιλογή true. Θέστε σε false για να ενεργοποιήσετε την καρτέλα "activity" στο προφίλ του χρήστη. **/
+    /** Optional, default true. Set to false to enable the "activity" tab in the user's profile. **/
     isProfileActivityPrivate?: boolean;
-    /** Προαιρετικό, προεπιλογή false. Θέστε σε true για να απενεργοποιήσετε τα σχόλια προφίλ. **/
+    /** Optional, default false. Set to true to disable profile comments. **/
     isProfileCommentsPrivate?: boolean;
-    /** Προαιρετικό, προεπιλογή false. Θέστε σε true για να απενεργοποιήσετε την απευθείας αποστολή μηνυμάτων σε αυτόν τον χρήστη. **/
+    /** Optional, default false. Set to true to disable direct messaging this user. **/
     isProfileDMDisabled?: boolean;
-    /** Προαιρετική ρύθμιση για σήματα χρήστη. **/
+    /** Optional configuration for user badges. **/
     badgeConfig?: {
-        /** Πίνακας παγκόσμιων badge IDs προς ανάθεση. Περιορισμένο σε 30 badges. Η σειρά διατηρείται. **/
+        /** Array of global badge IDs to assign. Limited to 30 badges. Order is respected. **/
         badgeIds: string[];
-        /** Πίνακας badge IDs περιορισμένων στην τρέχουσα σελίδα (urlId). Εμφανίζεται μόνο στην ανατεθειμένη σελίδα. **/
+        /** Array of badge IDs scoped to the current page (urlId). Only displayed on the assigned page. **/
         pageBadgeIds?: string[];
-        /** Αν true, αντικαθιστά τα υπάρχοντα εμφανιζόμενα badges. Τα παγκόσμια και τα σελίδα-περιορισμένα παρακάμπτονται ανεξάρτητα. **/
+        /** If true, replaces existing displayed badges. Global and page-scoped are overridden independently. **/
         override?: boolean;
-        /** Αν true, ενημερώνει τις ιδιότητες εμφάνισης των badges από τη διαμόρφωση του tenant. **/
+        /** If true, updates badge display properties from tenant configuration. **/
         update?: boolean;
     };
 }
@@ -93,13 +92,13 @@ interface SSOUser {
 
 #### Moderators and Administrators
 
-Για admins και moderators, περάστε τις αντίστοιχες σημαίες `isAdmin` ή `isModerator` στο αντικείμενο `SSOUser`.
+Για διαχειριστές και συντονιστές, περάστε τις αντίστοιχες σημαίες `isAdmin` ή `isModerator` στο αντικείμενο `SSOUser`.
 
 #### Notifications
 
-Για να ενεργοποιήσετε ή να απενεργοποιήσετε τις ειδοποιήσεις, ορίστε την τιμή του `optedInNotifications` σε `true` ή `false` αντίστοιχα. Την πρώτη φορά που ο χρήστης φορτώνει τη σελίδα με αυτή την τιμή στο SSO payload, οι ρυθμίσεις ειδοποιήσεων του θα ενημερωθούν.
+Για να ενεργοποιήσετε ή να απενεργοποιήσετε τις ειδοποιήσεις, ορίστε την τιμή του `optedInNotifications` σε `true` ή `false` αντίστοιχα. Την πρώτη φορά που ο χρήστης φορτώνει τη σελίδα με αυτήν την τιμή στο payload SSO, οι ρυθμίσεις ειδοποιήσεων του θα ενημερωθούν.
 
-Επιπλέον, αν θέλετε οι χρήστες να λαμβάνουν email ειδοποιήσεων για δραστηριότητα σε σελίδες στις οποίες έχουν εγγραφεί (αντί για μόνο εντός της εφαρμογής), τότε ορίστε το `optedInSubscriptionNotifications` σε `true`.
+Επιπλέον, εάν θέλετε οι χρήστες να λαμβάνουν email ειδοποιήσεις για δραστηριότητα σε σελίδες στις οποίες έχουν εγγραφεί (αντί για απλές ειδοποιήσεις εντός της εφαρμογής), ορίστε το `optedInSubscriptionNotifications` σε `true`.
 
 #### VIP Users & Special Labels
 
@@ -107,12 +106,12 @@ interface SSOUser {
 
 #### Unauthenticated users
 
-Για να αναπαραστήσετε έναν μη-επαληθευμένο χρήστη, απλώς μην συμπληρώσετε τα userDataJSONBase64, verificationHash, ή timestamp. Παρέχετε ένα loginURL.
+Για να αντιπροσωπεύσετε έναν μη αυθεντικοποιημένο χρήστη, απλώς μην συμπληρώσετε τα userDataJSONBase64, verificationHash ή timestamp. Παρέχετε ένα loginURL.
 
-Αυτοί οι χρήστες δεν θα μπορούν να σχολιάσουν, και αντ' αυτού θα τους εμφανιστεί ένα μήνυμα σύνδεσης (μήνυμα, σύνδεσμος, ή κουμπί, ανάλογα με τη διαμόρφωση).
+Αυτοί οι χρήστες δεν θα μπορούν να σχολιάσουν και θα εμφανιστεί αντί αυτού ένα μήνυμα σύνδεσης (μήνυμα, σύνδεσμος ή κουμπί, ανάλογα με τη ρύθμιση).
 
 #### Direct Examples for Serializing and Hashing User Data
 
-Περισσότερες λεπτομέρειες και παραδείγματα υπάρχουν <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">εδώ</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">εδώ</a> (java) και <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">εδώ</a> (php).
+Περισσότερες λεπτομέρειες ως παραδείγματα εδώ (js), εδώ (java) και εδώ (php).
 
-Κατανοούμε ότι οποιαδήποτε ενσωμάτωση μπορεί να είναι μια περίπλοκη και επώδυνη διαδικασία. Μην διστάσετε να επικοινωνήσετε με τον αντιπρόσωπό σας ή να χρησιμοποιήσετε τη <a href="https://fastcomments.com/auth/my-account/help" target="_blank">σελίδα υποστήριξης</a>.
+Καταλαβαίνουμε ότι κάθε ενσωμάτωση μπορεί να είναι μια πολύπλοκη και επίπονη διαδικασία. Μη διστάσετε να επικοινωνήσετε με τον αντιπρόσωπό σας ή να χρησιμοποιήσετε τη σελίδα υποστήριξης.

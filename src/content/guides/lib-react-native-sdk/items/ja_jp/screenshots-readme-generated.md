@@ -10,9 +10,9 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
 
 ### リッチテキストエディタ
 
-このライブラリはリッチテキスト編集のために[`react-native-enriched`](https://github.com/software-mansion/react-native-enriched)を使用しており、強力なWYSIWYG編集体験を提供します。同じエディタが iOS、Android、そしてウェブ（`react-native-web`経由）で動作するため、コンポーザーは単一の実装で全プラットフォームで一貫した動作をします。
+このライブラリはリッチテキスト編集のために [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched-html) を使用しており、強力なWYSIWYG編集体験を提供します。同じエディタが iOS、Android、そしてウェブ（`react-native-web` 経由）で動作するため、コンポーザーは単一の実装で全プラットフォームで一貫した動作をします。
 
-`react-native-enriched` はネイティブ上で React Native New Architecture（Fabric）を必要とします（RN 0.76 以降はデフォルト、RN 0.72-0.75 はオプトイン）。また、パッケージの `exports` 条件を解決できるバンドラが必要です。この SDK は RN 0.81 / React 19 を対象に開発・テストされています。同じエディタは `react-native-web` を通じてウェブでも動作しますが、enriched エディタのウェブビルドは依然として上流で実験的とマークされています。
+`react-native-enriched` はネイティブで React Native New Architecture (Fabric) が必要です（RN 0.76 以降はデフォルト、RN 0.72-0.75 ではオプトイン）。また、パッケージの `exports` 条件を解決できるバンドラが必要です。この SDK は RN 0.81 / React 19 を対象に開発・テストされています。同じエディタは `react-native-web` を通じてウェブでも動作しますが、enriched エディタのウェブビルドはまだ上流で実験的とされています。
 
 ### ウィジェット
 
@@ -28,13 +28,13 @@ SDK には FastComments Android SDK を鏡像した 3 つのウィジェット�
 
 ### テーマ設定
 
-デフォルトの外観はセマンティックデザイントークン（`FastCommentsTheme`）のセットから生成されます：色、間隔、半径、フォントサイズ、フォントウェイト、アバターサイズ。任意のウィジェットの `theme` プロップに部分的なトークンオーバーライド（型 `FastCommentsThemeOverrides`）を渡すと、全体のスタイルツリーが一貫して再スタイル化されます:
+デフォルトの外観はセマンティックデザイントークン（`FastCommentsTheme`）のセットから生成されます：色、間隔、半径、フォントサイズ、フォントウェイト、アバターサイズ。任意のウィジェットの `theme` プロップに部分的なトークンオーバーライド（型は `FastCommentsThemeOverrides`）を渡すと、全体のスタイルツリーが一貫して再スタイル化されます:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-ダークモードはトークンセットを一つ変えるだけで実現できます:
+ダークモードはトークンセットを1つ切り替えるだけで利用できます:
 
 ```tsx
     import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -50,15 +50,15 @@ SDK には FastComments Android SDK を鏡像した 3 つのウィジェット�
 
 これらに加えて、React Native は `FastCommentsRNConfig` を通じていくつかの SDK 固有オプションを追加します:
 
-- `hideTopBar` - コンポーザー上部に表示されるログインユーザー / 通知ベルのストリップを非表示にします。
+- `hideTopBar` - コンポーザー上部に表示されるログインユーザー／通知ベルのストリップを非表示にします。
 - `usePressToEdit` - コメントを長押ししてメニューを開きます。
 - `disableDownVoting` - ダウン投票ボタンを非表示にします。
 - `renderCommentInline` - コメント内容と同じ HTML ブロック内にコメント投稿者情報を表示します。
 - `renderLikesToRight` - 投票/いいね領域をコメントの下ではなく右側に移動します。
 - `renderDateBelowComment` - 日付をコメントの下に表示します。
-- `showLiveStatus` - コメント上部にチャットスタイルの「Live」+ ユーザー数ヘッダーを表示します。
+- `showLiveStatus` - コメント上部にチャットスタイルの「Live」＋ユーザー数ヘッダーを表示します。
 - `useInlineSubmitButton` - 送信ボタンをコンポーザー内のアイコンとして表示します。
-- `countAboveToggle` - `useShowCommentsToggle` と併用し、「コメント表示」トグルの上に表示するコメント数を指定します。
+- `countAboveToggle` - `useShowCommentsToggle` と併用し、"Show Comments" トグルの上に表示するコメント数を指定します。
 - `preserveFeedScrollPosition` - `FastCommentsFeed` はアンマウント/リマウント間でスクロール位置を保持します（デフォルト true）。
 
 ### FastComments の概念
@@ -67,9 +67,9 @@ SDK には FastComments Android SDK を鏡像した 3 つのウィジェット�
 
 ### ローカリゼーション
 
-これらのウィジェット内のすべてのユーザー向けテキスト（ボタンラベル、プレースホルダー、空状態、"5 分前" のような相対日時、エラーメッセージなど）は **サーバー駆動** です。コンポーネントは英語文字列をハードコードせず、要求されたロケールに対して FastComments が提供する翻訳を表示します。
+これらのウィジェット内のすべてのユーザー向けテキスト（ボタンラベル、プレースホルダー、空状態、"5 分前" のような相対日時、エラーメッセージ等）は **サーバー駆動** です。コンポーネントは英語文字列をハードコードせず、要求されたロケールに対して FastComments が提供する翻訳を表示します。
 
-ロケールを指定するには、設定で `locale` を設定します:
+`locale` を設定してロケールをリクエストします:
 
 ```ts
 const config = {
@@ -81,11 +81,11 @@ const config = {
 
 `locale` が設定されていない場合、FastComments はテナントのデフォルト言語を提供します。
 
-**テキストの編集:** 翻訳はこの SDK ではなく、FastComments のダッシュボードで管理されます。文言を変更するには、デフォルトのコピーを上書きするか、言語を追加し、ダッシュボードでアカウントの翻訳を編集してください。変更はウィジェットに自動的に反映され、アプリのリリースは不要です。SDK には英語のフォールバックが含まれていないため、ダッシュボードでキーを空白にすると空のまま表示されます。サポートするすべてのロケールでキーを埋めておいてください。
+**テキストの編集:** 翻訳はこの SDK ではなく、FastComments のダッシュボードで管理されます。文言を変更するには、デフォルトのコピーを上書きするか、言語を追加し、ダッシュボードでアカウントの翻訳を編集してください。変更はウィジェットが自動的に取得し、アプリのリリースは不要です。SDK には英語のフォールバックが含まれていないため、ダッシュボードでキーを空にすると空文字が表示されます。サポートするすべてのロケールでキーを設定したままにしてください。
 
 ### ユーザー通知
 
-FastComments は [多数のシナリオ](https://docs.fastcomments.com/guide-notifications.html) に対する通知をサポートしています。通知は設定可能で、全体または通知/コメント単位でオプトアウトでき、ページレベルの購読をサポートしているため、ユーザーは特定のページや記事のスレッドを購読できます。
+FastComments は [多数のシナリオ](https://docs.fastcomments.com/guide-notifications.html) に対する通知をサポートします。通知は設定可能で、全体または通知/コメント単位でオプトアウトでき、ページレベルの購読もサポートしているため、ユーザーは特定のページや記事のスレッドを購読できます。
 
 例えば、Secure SSO を使用してユーザーを認証し、定期的に未読通知をポーリングしてユーザーにプッシュすることが可能です。
 
@@ -93,10 +93,8 @@ FastComments は [多数のシナリオ](https://docs.fastcomments.com/guide-not
 
 ### Gif ブラウザ
 
-デフォルトでは画像や gif の選択は有効になっていません。画像および gif のアップロードをサポートする方法については、[example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) を参照してください。このライブラリには検索と画像を匿名化する Gif ブラウザが用意されており、単にそれを使用すればよいです。
+デフォルトでは画像や GIF の選択は有効になっていません。画像や GIF のアップロードをサポートする方法については [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) を参照してください。このライブラリには検索と画像を匿名化する Gif ブラウザがあり、単にそれを使用すればよいです。
 
 ### パフォーマンス
 
-パフォーマンス上の問題を特定した場合は、使用したデバイスを含む再現手順の例とともにチケットを作成してください。パフォーマンスはすべての FastComments ライブラリにおいて重要な要素です。
-
----
+パフォーマンス上の問題を特定した場合は、使用したデバイスを含む再現例とともにチケットを作成してください。パフォーマンスはすべての FastComments ライブラリにおいて重要な要素です。

@@ -1,17 +1,21 @@
-당사의 [WordPress 플러그인](https://wordpress.org/plugins/fastcomments/)은 강력한 UI 기반 가져오기 메커니즘을 가지고 있습니다. 플러그인을 설치하면,
-WordPress 설치를 FastComments와 연결하고 기존 댓글 데이터를 복사하는 과정을 안내해 드립니다.
+Our [WordPress 플러그인](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
+it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
 
-**이 작업은 수동으로 무엇을 복사하거나 다운로드하지 않고 수행됩니다.**
+**This is done without copying or downloading anything manually.**
 
-마이그레이션 과정은 마이그레이션 중 UI를 통해 표시됩니다. 대부분의 마이그레이션은 몇 분밖에 걸리지 않습니다.
+The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
 
-이 메커니즘은 마이그레이션 중에 귀하의 WordPress 설치에 과도한 부하를 주지 않도록 설계되었습니다.
+The mechanism is designed to not put excessive load on your WordPress installation during the migration.
 
-### CloudFlare & 방화벽
+### CloudFlare 및 방화벽
 
-자동 WordPress 설정이 작동하려면 귀하의 WordPress 설치에 요청을 보내야 합니다.
-CloudFlare와 같은 방화벽이 저희의 요청을 차단하여 통합이 실패할 수 있습니다. 이러한 경우, [저희가 제공해드릴 수 있습니다](https://fastcomments.com/auth/my-account/help) 통합을 위해 허용 목록에 추가할 IP 집합을 안내해 드립니다.
+In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
+Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
+you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
 
 ### 데이터 소유권
 
-WordPress 마이그레이션의 경우, 새로 생성되거나 업데이트된 댓글 데이터는 백그라운드에서 자동으로 귀하의 WordPress 설치와 다시 동기화됩니다. 이는 댓글이 WordPress 배포의 부하를 줄이기 위해 FastComments 자체에서 제공되는 동안에도, 저희가 백업 용도로 귀하의 데이터베이스에 **또한** 저장한다는 것을 의미합니다. 또한 FastComments에서 전환하려는 경우, 귀하의 데이터는 이미 마이그레이션되어 최신 상태라는 의미이기도 합니다.
+In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
+behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
+we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
+already migrated and up to date.

@@ -1,26 +1,26 @@
-### Install from GitHub
+### 從 GitHub 安裝
 
-Install directly from a release tag (recommended, fully reproducible):
+直接從發行標籤安裝（推薦，完全可重現）：
 
 ```bash
 pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
+將標籤固定（pin）而非分支，以確保建置具決定性。相同的寫法也適用於 `requirements.txt`：
 
 ```
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
+每個已標記的 [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) 也附有已建好的 wheel，如果你想直接安裝二進位制檔案的話。
 
-### Library Contents
+### 函式庫內容
 
-This library contains two modules: the generated API client and the core Python library which contains hand‑written utilities to make working with the API easier, including SSO support.
+此函式庫包含兩個模組：產生的 API 客戶端以及核心 Python 函式庫，後者包含手寫的工具函式，以簡化與 API 的互動，並支援 SSO。
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- Core Library Docs, Including SSO Examples
+- [API 客戶端函式庫文件](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [核心函式庫文件，包含 SSO 範例](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Public vs Secured APIs
+### 公開與受保護的 API
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+對於 API 客戶端，有三個類別，`DefaultApi`、`PublicApi` 與 `ModerationApi`。`DefaultApi` 包含需要 API 金鑰的方法，`PublicApi` 包含可直接從瀏覽器/行動裝置等發出且不需驗證的方法。`ModerationApi` 提供廣泛的即時與快速審核 API。每個 `ModerationApi` 方法皆接受 `sso` 參數，並可透過 SSO 或 FastComments.com 的會話 Cookie 進行驗證。

@@ -1,56 +1,56 @@
-Ово је петоминутни пут од „имамо AI агенте“ до „агент одговара на живи саобраћај, контролисан одобрењима“. Ако желите детаљнију верзију, сваки корак садржи линк ка страници која то темељно објашњава.
+This is the five‑minute path from "we have AI Agents" to "an agent is responding to live traffic, gated by approvals." If you want the long form, every step links to the page that covers it in depth.
 
-### 1. Отворите страницу AI агената
+### 1. Open the AI Agents page
 
-Идите на [AI агенти](https://fastcomments.com/auth/my-account/ai-agents) у вашем налогу. При првом доласку видећете или:
+Go to [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) in your account. The first time you land here you will see either:
 
-- Празан приказ са дугметима **Прегледај шаблоне** и **Почни од почетка** (имате агенте које можете да креирате), или
-- Страница за промоцију ако ваш план не укључује агенте - погледајте [Plans and Eligibility](#plans-and-eligibility).
+- A blank-state with a **Browse templates** and **Start from scratch** button (you have agents available to create), or
+- An upsell page if your plan does not include agents - see [Plans and Eligibility](#plans-and-eligibility).
 
-### 2. Изаберите уводни шаблон
+### 2. Pick a starter template
 
-Кликните **Прегледај шаблоне**. Изаберите један од:
+Click **Browse templates**. Pick one of:
 
-- [Moderator](#template-moderator) - прегледа означене или нове коментаре, упозорава оне који први пут коментаришу, ескалира до забране тек после упозорења.
-- [Welcome Greeter](#template-welcome-greeter) - одговара првим коментаторима.
-- [Top Comment Pinner](#template-top-comment-pinner) - прикачи (pin-ује) садржајне коментаре када пређу праг гласова.
-- [Thread Summarizer](#template-thread-summarizer) - објављује неутралан резиме дужих тема.
+- [Moderator](#template-moderator) - reviews flagged or new comments, warns first‑timers, escalates to ban only after a warning.
+- [Welcome Greeter](#template-welcome-greeter) - replies to first‑time commenters.
+- [Top Comment Pinner](#template-top-comment-pinner) - pins substantive comments once they cross a vote threshold.
+- [Thread Summarizer](#template-thread-summarizer) - posts a neutral summary on long threads.
 
-Сваки шаблон отвара уређивање са унапред попуњеним формуларом и већ изабраним **Статус: Тестни режим**.
+Each template lands on a pre‑filled edit form with **Status: Dry Run** already selected.
 
-### 3. Прегледајте и сачувајте
+### 3. Review and save
 
-На форми за уређивање урадите најмање:
+On the edit form, do at minimum:
 
-- **Интерно име.** Кратки идентификатор који се користи у админ контролним таблама.
-- **Име за приказ.** Шта се појављује јавно када агент објави коментар.
-- **Почетни упит.** Уредите шаблонски упит да одговара вашем тону и специфичним правилима.
-- **Одобрења.** Означите акције које треба да захтевају људску ревизију пре него што буду извршене. Препоручујемо бар `ban_user` за сваког агента који ради модерирање. Погледајте [Approval Workflow](#approval-workflow).
+- **Internal name.** A short identifier used in admin dashboards.
+- **Display name.** What appears publicly when the agent posts a comment.
+- **Initial prompt.** Edit the template's prompt to match your voice and your specific rules.
+- **Approvals.** Tick the actions that should require human review before they take effect. We recommend at least `ban_user` for any moderation‑style agent. See [Approval Workflow](#approval-workflow).
 
-Кликните **Сачувај агента**.
+Click **Save agent**.
 
-### 4. Пратите га у тестном режиму
+### 4. Watch it in dry‑run
 
-Агент је сада активан у **тестном режиму**. Примаће своје тригере, позиваће модел и записивати акције на страници [Историја извршавања](#run-history) — са ознаком **Тестни режим** на сваком реду — али не предузима стварне радње. Посетите неколико детаља о покретањима (погледајте [Детаљни преглед покретања](#run-detail-view)) и погледајте:
+The agent is now live in **Dry Run**. It will receive its triggers, call the model, and record actions on the [Run History](#run-history) page - with the **Dry Run** badge on each row - but it does not take real actions. Visit a few of the run details (see [Run Detail View](#run-detail-view)) and look at:
 
-- Акције које је агент изабрао.
-- Образложење и степен уверења за сваку акцију.
-- Цео транскрипт LLM-а.
+- The actions the agent picked.
+- The justification and confidence on each action.
+- The full LLM transcript.
 
-Ако агент доноси одлуке са којима се не слажете, уредите почетни упит или означите више одобрења.
+If the agent is making decisions you disagree with, edit the initial prompt or tick more approvals.
 
-### 5. Покрените тест над прошлим коментарима
+### 5. Run a test against past comments
 
-На страници са листом агената кликните **Пробно покретање** на реду агента. Формулар има поље **Дани** (бројчано) (1 до 90). Величина узорка и горња граница броја коментара који се оцењују приказани су информативно — израчунавају се на серверу, а не поставља их корисник. Реплеј ради над историјским коментарима без предузимања стварних радњи и извештава шта би агент **урадио** у односу на оно што се заправо догодило (да ли је коментар касније одобрен, обележен као спам, обрисан итд.). Погледајте [Тест покретања (Реплејеви)](#test-runs-replays).
+From the agents list page, click **Test run** on the agent's row. The form has a single **Days** numeric input (1 to 90). Sample size and the hard cap on comments evaluated are shown informationally - they are computed server‑side, not user‑set. The replay runs against historical comments without taking real actions and reports what the agent **would** have done versus what actually happened (was the comment later approved, marked spam, deleted, and so on). See [Test Runs (Replays)](#test-runs-replays).
 
-### 6. Пребаците на Омогућено
+### 6. Flip to Enabled
 
-Када будете задовољни резултатима тестног режима и реплеја, уредите агента и промените **Статус** у **Омогућено**. Од тог тренутка, биће извршаване стварне радње. Страница [Историја извршавања](#run-history) сада показује директна покретања без ознаке тестног режима, а свака радња коју сте означили за одобрење појављује се у пријемном сандучету одобрења (погледајте [Approval Workflow](#approval-workflow)).
+When you are happy with the dry‑run and replay output, edit the agent and change **Status** to **Enabled**. From here on, real actions land. The Run History page now shows live runs without the dry‑run badge, and any action you marked for approval appears in the [approvals inbox](#approval-workflow).
 
-### Шта следи
+### What's next
 
-- Подесите [Буџете](#budgets-overview) и [Упозорења о буџету](#budget-alerts).
-- Конфигуришите [Webhooks](#webhooks-overview) ако желите да екстерни системи реагују на догађаје агента.
-- Додајте [Правила за заједницу](#community-guidelines) како бисте одлуке агента одржали усклађене са вашом писаном политиком.
+- Set [Budgets](#budgets-overview) and [Budget Alerts](#budget-alerts).
+- Configure [Webhooks](#webhooks-overview) if you want external systems to react to agent events.
+- Add [Community Guidelines](#community-guidelines) to keep agent decisions aligned with your written policy.
 
 ---

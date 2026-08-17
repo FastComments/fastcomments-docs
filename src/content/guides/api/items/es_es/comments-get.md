@@ -1,187 +1,185 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-Esta API se usa para obtener comentarios para mostrar a un usuario. Por ejemplo, filtra automáticamente
-los comentarios no aprobados o spam.
+Esta API se utiliza para obtener comentarios para mostrarlos a un usuario. Por ejemplo, filtra automáticamente los comentarios no aprobados o spam.
 
-### Paginación
+### Pagination
 
-La paginación se puede hacer de dos maneras, dependiendo de los requisitos de rendimiento y caso de uso:
+La paginación puede realizarse de una de dos maneras, según los requisitos de rendimiento y el caso de uso:
 
-1. Más rápido: **Paginación Precalculada**:
-   1. Así es como funciona FastComments cuando usa nuestros widgets y clientes preconstruidos.
-   2. Hacer clic en "siguiente" simplemente aumenta el conteo de páginas.
-   3. Puede pensar en esto como ser recuperado por un almacén de clave-valor.
-   4. De esta manera, simplemente defina un parámetro `page` comenzando en `0` y una dirección de ordenamiento como `direction`.
-   5. Los tamaños de página se pueden personalizar a través de reglas de personalización.
-2. Más flexible: **Paginación Flexible**:
-   1. De esta manera puede definir parámetros personalizados `limit` y `skip`. No pase `page`.
-   2. También se soporta la `direction` de ordenamiento.
-   3. `limit` es el total a devolver después de que se aplica `skip`.
-      - Ejemplo: establezca `skip = 200, limit = 100` cuando `tamaño de página = 100` y `page = 2`.
-   4. Los comentarios hijos aún cuentan en la paginación. Puede evitar esto usando la opción `asTree`.
-      - Puede paginar hijos a través de `limitChildren` y `skipChildren`.
-      - Puede limitar la profundidad de los hilos devueltos a través de `maxTreeDepth`.
+1. **Más rápido: Paginación precalculada**:
+   1. Así es como FastComments funciona cuando utilizas nuestros widgets y clientes preconstruidos.
+   2. Hacer clic en "next" simplemente incrementa el número de página.
+   3. Puedes pensar en esto como una recuperación desde una tienda clave‑valor.
+   4. De esta forma, simplemente define un parámetro `page` que comience en `0` y una dirección de ordenamiento como `direction`.
+   5. Los tamaños de página pueden personalizarse mediante reglas de personalización.
+2. **Más flexible: Paginación flexible**:
+   1. De esta manera puedes definir parámetros personalizados `limit` y `skip`. No pases `page`.
+   2. También se admite el `direction` de ordenamiento.
+   3. `limit` es el número total a devolver después de aplicar `skip`.
+      - Ejemplo: establece `skip = 200, limit = 100` cuando `page size = 100` y `page = 2`.
+   4. Los comentarios hijos siguen contando en la paginación. Puedes evitarlo usando la opción `asTree`.
+      - Puedes paginar los hijos mediante `limitChildren` y `skipChildren`.
+      - Puedes limitar la profundidad de los hilos devueltos mediante `maxTreeDepth`.
 
-### Hilos
+### Threads
 
-1. Cuando usa `Paginación Precalculada`, los comentarios se agrupan por *página* y los comentarios en hilos afectan la página general.
-   1. De esta manera, los hilos se pueden determinar en el cliente basándose en `parentId`.
-   2. Por ejemplo, con una página con un comentario de nivel superior, y 29 respuestas, y configurando `page=0` en la API - obtendrá solo el comentario de nivel superior y los 29 hijos.
-   3. [Imagen de ejemplo aquí ilustrando múltiples páginas.](https://blog.winricklabs.com/images/fc-pagination02.png)
-2. Cuando usa `Paginación Flexible`, puede definir un parámetro `parentId`.
-   1. Establezca esto a null para obtener solo comentarios de nivel superior.
-   2. Luego para ver hilos, llame a la API nuevamente y pase `parentId`.
-   3. Una solución común es hacer una llamada a la API para los comentarios de nivel superior y luego hacer llamadas paralelas a la API para obtener comentarios para los hijos de cada comentario.
-3. __¡NUEVO Desde Feb 2023!__ Obtener como árbol usando `&asTree=true`.
-   1. Puede pensar en esto como `Paginación Flexible como Árbol`.
+1. Cuando se usa `Precalculated Pagination`, los comentarios se agrupan por *page* y los comentarios en hilos afectan la página global.
+   1. De esta forma, los hilos pueden determinarse en el cliente basándose en `parentId`.
+   2. Por ejemplo, con una página que tiene un comentario de nivel superior y 29 respuestas, y estableciendo `page=0` en la API, obtendrás solo el comentario de nivel superior y los 29 hijos.
+2. Cuando se usa `Flexible Pagination`, puedes definir un parámetro `parentId`.
+   1. Establécelo en null para obtener solo los comentarios de nivel superior.
+   2. Luego, para ver los hilos, llama a la API nuevamente y pasa `parentId`.
+   3. Una solución común es hacer una llamada a la API para los comentarios de nivel superior y luego llamadas paralelas para obtener los comentarios de los hijos de cada comentario.
+3. __NEW As of Feb 2023!__ Obtén los datos como un árbol usando `&asTree=true`.
+   1. Puedes pensar en esto como `Flexible Pagination as a Tree`.
    2. Solo los comentarios de nivel superior cuentan en la paginación.
-   3. Establezca `parentId=null` para iniciar el árbol en la raíz (debe establecer `parentId`).
-   4. Establezca `skip` y `limit` para paginación.
-   5. Establezca `asTree` a `true`.
-   6. El costo de créditos aumenta por `2x`, ya que nuestro backend tiene que hacer mucho más trabajo en este escenario.
-   7. Establezca `maxTreeDepth`, `limitChildren` y `skipChildren` según lo deseado.
+   3. Establece `parentId=null` para iniciar el árbol en la raíz (debes establecer `parentId`).
+   4. Establece `skip` y `limit` para la paginación.
+   5. Establece `asTree` en `true`.
+   6. El costo de créditos aumenta a `2x`, ya que nuestro backend debe hacer mucho más trabajo en este escenario.
+   7. Establece `maxTreeDepth`, `limitChildren` y `skipChildren` según lo desees.
 
-### Árboles Explicados
+### Trees Explained
 
-Cuando usa `asTree`, puede ser difícil razonar sobre la paginación. Aquí hay un gráfico útil:
+Cuando se usa `asTree`, puede ser difícil razonar sobre la paginación. Aquí tienes un gráfico útil:
 
 <div class="screenshot white-bg">
-    <div class="title">Diagrama de Paginación de Árbol</div>
-    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Diagrama de Paginación de Árbol" />
+    <div class="title">Diagrama de paginación de árbol</div>
+    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Diagrama de paginación de árbol" />
 </div>
 
-### Obtener Comentarios en el Contexto de un Usuario
+### Fetching Comments in The Context of a User
 
-La API `/comments` se puede usar en dos contextos, para diferentes casos de uso:
+La API `/comments` puede usarse en dos contextos, para diferentes casos de uso:
 
-- Para devolver comentarios ordenados y etiquetados con información para construir su propio cliente.
-  - En este caso, defina un parámetro de consulta `contextUserId`.
-- Para obtener comentarios desde su backend para integraciones personalizadas.
-  - La plataforma usará esto por defecto sin `contextUserId`.
+- Para devolver comentarios ordenados y etiquetados con información para construir tu propio cliente.
+  - En este caso, define un parámetro de consulta `contextUserId`.
+- Para obtener comentarios de tu backend para integraciones personalizadas.
+  - La plataforma usará esto por defecto sin `contextUserId`. 
 
-[inline-code-attrs-start title = 'Paginación Precalculada de Comentarios'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios Paginación Precalculada'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&page=0&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Paginación Flexible de Comentarios'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios Paginación Flexible'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Paginación Flexible de Comentarios en Contexto de Usuario'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios Paginación Flexible en Contexto de Usuario'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Paginación Flexible de Comentarios en Contexto de Usuario Solo para Comentarios de Nivel Superior'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios Paginación Flexible en Contexto de Usuario solo Comentarios de Nivel Superior'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null'
 [inline-code-end]
 
-### Obtener Comentarios como Árbol
+### Get Comments as a Tree
 
 Es posible obtener los comentarios devueltos como un árbol, con la paginación contando solo los comentarios de nivel superior.
 
-[inline-code-attrs-start title = 'Comentarios Como Árbol en Contexto de Usuario'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios como árbol en contexto de usuario'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
-¿Quiere obtener solo los comentarios de nivel superior y los hijos inmediatos? Aquí hay una forma:
+¿Quieres obtener solo los comentarios de nivel superior y sus hijos inmediatos? Aquí tienes una forma:
 
-[inline-code-attrs-start title = 'Comentarios Como Árbol con Profundidad Máxima'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios como árbol con profundidad máxima'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
 [inline-code-end]
 
-Sin embargo, en su UI podría necesitar saber si mostrar un botón de "mostrar respuestas" en
-cada comentario. Cuando obtiene comentarios a través de un árbol hay una propiedad `hasChildren` etiquetada
-en los comentarios cuando aplica.
+Sin embargo, en tu UI podrías necesitar saber si mostrar un botón "mostrar respuestas" en cada comentario. Al obtener comentarios mediante un árbol, existe una propiedad `hasChildren` etiquetada en los comentarios cuando corresponde.
 
-### Obtener Comentarios como Árbol, Buscando por Hash Tag
+### Get Comments as a Tree, Searching by Hash Tag
 
-Es posible buscar por hashtag usando la API, a través de todo su inquilino (no limitado a una página, o `urlId`).
+Es posible buscar por hashtag usando la API, en todo tu tenant (no limitado a una página o `urlId`).
 
-En este ejemplo, omitimos `urlId`, y buscamos por múltiples hashtags. La API solo devolverá comentarios que tengan todos los hashtags solicitados.
+En este ejemplo, omitimos `urlId` y buscamos por varios hashtags. La API solo devolverá los comentarios que tengan todos los hashtags solicitados.
 
-[inline-code-attrs-start title = 'Comentarios Como Árbol en Contexto de Usuario, Por Hash Tag'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comentarios como árbol en contexto de usuario, por etiqueta hash'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
-### Todos los Parámetros de Solicitud
+### All Request Params
 
-[inline-code-attrs-start title = 'Estructura de Solicitud de Comentarios'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura de solicitud de comentarios'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** The urlId (page url, or article id) the comments are associated with. **/
+    /** El urlId (URL de la página o ID del artículo) con el que están asociados los comentarios. **/
     urlId?: string
-    /** Limit the comments returned by this user. **/
+    /** Limitar los comentarios devueltos por este usuario. **/
     userId?: string
-    /** Use this to search by hashtag. To drill down to the intersection of multiple hashtags, do &hashTag=a&hashTag=b. **/
+    /** Use esto para buscar por etiqueta hash. Para profundizar en la intersección de múltiples etiquetas hash, use &hashTag=a&hashTag=b. **/
     hashTag?: string
-    /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
+    /** La dirección de ordenamiento. Por defecto es MR (Más relevante). Otras opciones son OF (Más antiguo primero) y NF (Más nuevo primero). **/
     direction?: 'MR' | 'OF' | 'NF'
-    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments (up to 250). **/
+    /** Paginación precalculada: La página a obtener, comenzando en 0. Pase -1 para todos los comentarios (hasta 250). **/
     page?: number
-    /** Flexible Pagination: How many comments should we return? **/
+    /** Paginación flexible: ¿Cuántos comentarios debemos devolver? **/
     limit?: number
-    /** Flexible Pagination: How many child comments should we return for each parent? **/
+    /** Paginación flexible: ¿Cuántos comentarios hijos debemos devolver por cada padre? **/
     limitChildren?: number
-    /** Flexible Pagination: How many comments should we skip? **/
+    /** Paginación flexible: ¿Cuántos comentarios debemos omitir? **/
     skip?: number
-    /** Flexible Pagination: How many child comments should we skip for each parent? **/
+    /** Paginación flexible: ¿Cuántos comentarios hijos debemos omitir por cada padre? **/
     skipChildren?: number
-    /** For determining blocked and flagged comments. **/
+    /** Para determinar comentarios bloqueados y marcados. **/
     contextUserId?: string
-    /** For determining blocked and flagged comments. **/
+    /** Para determinar comentarios bloqueados y marcados. **/
     anonUserId?: string
-    /** For fetching child comments. **/
+    /** Para obtener comentarios hijos. **/
     parentId?: string
-    /** For fetching as a tree. **/
+    /** Para obtener como árbol. **/
     asTree?: boolean
-    /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
+    /** ¿Qué tan profundo en el árbol debemos devolver datos? 0 no devuelve hijos. 1 devuelve hijos inmediatos, etc. **/
     maxTreeDepth?: number
 }
 [inline-code-end]
 
-### La Respuesta
+### The Response
 
-[inline-code-attrs-start title = 'Estructura de Respuesta de Comentarios'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura de respuesta de comentarios'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Incluido en caso de error. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page' | 'invalid-pagination-request' | 'invalid-limit' | 'invalid-limit-children' | 'invalid-skip' | 'invalid-skip-children' | 'invalid-max-tree-depth'
-    /** Included on failure. **/
+    /** Incluido en caso de error. **/
     reason?: string
-    /** The comments! **/
+    /** ¡Los comentarios! **/
     comments: Comment[]
 }
 [inline-code-end]
 
-### Consejos Útiles
+### Helpful Tips
 
 #### URL ID
 
-Probablemente quiera usar la API `Comment` con el parámetro `urlId`. Puede llamar a la API `Pages` primero, para ver cómo lucen los valores `urlId` disponibles para usted.
+Probablemente quieras usar la API `Comment` con el parámetro `urlId`. Puedes llamar primero a la API `Pages` para ver cómo se ven los valores `urlId` disponibles para ti.
 
-#### Acciones Anónimas
+#### Anonymous Actions
 
-Para comentarios anónimos probablemente quiera pasar `anonUserId` cuando obtiene comentarios, y cuando realiza marcado y bloqueo.
+Para comentar de forma anónima probablemente quieras pasar `anonUserId` al obtener comentarios y al realizar marcados y bloqueos.
 
-(!) Esto es requerido para muchas tiendas de aplicaciones ya que los usuarios deben poder marcar contenido creado por usuarios que pueden ver, incluso si no han iniciado sesión. No hacerlo puede causar que su aplicación sea eliminada de dicha tienda.
+(!) Esto es requerido por muchas tiendas de aplicaciones, ya que los usuarios deben poder marcar contenido creado por usuarios que pueden ver, incluso si no han iniciado sesión. No hacerlo puede causar que tu aplicación sea eliminada de dicha tienda.
 
-#### Comentarios No Devueltos
+#### Comments Not Being Returned
 
-Verifique que sus comentarios estén aprobados, y no sean spam.
+Verifica que tus comentarios estén aprobados y que no sean spam.
+
+---

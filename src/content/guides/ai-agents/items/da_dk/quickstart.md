@@ -1,54 +1,54 @@
-Dette er fem-minuttersvejen fra "vi har AI-agenter" til "en agent besvarer live-trafik, styret af godkendelser." Hvis du vil have den lange version, linker hvert trin til siden, der beskriver det i dybden.
+This is the five-minute path from "we have AI Agents" to "an agent is responding to live traffic, gated by approvals." If you want the long form, every step links to the page that covers it in depth.
 
-### 1. Open the AI Agents page
+### 1. Åbn siden AI‑agenter
 
-Gå til [AI-agenter](https://fastcomments.com/auth/my-account/ai-agents) i din konto. Første gang du lander her vil du se enten:
+Gå til [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) i din konto. Første gang du lander her, vil du se enten:
 
-- En tom tilstand med en **Gennemse skabeloner** og **Start fra bunden** knapper (du har agenter tilgængelige til at oprette), eller
-- en opsalgsside hvis din plan ikke inkluderer agenter - se [Planer og berettigelse](#plans-and-eligibility).
+- En tom tilstand med en **Browse templates**‑ og **Start from scratch**‑knap (du har agenter klar til at blive oprettet), eller
+- En opgraderingsside, hvis din plan ikke inkluderer agenter – se [Plans and Eligibility](#plans-and-eligibility).
 
-### 2. Pick a starter template
+### 2. Vælg en startskabelon
 
-Klik på **Gennemse skabeloner**. Vælg en af:
+Klik på **Browse templates**. Vælg en af:
 
-- [Moderator](#template-moderator) - gennemgår markerede eller nye kommentarer, advarer førstegangsforfattere, eskalerer til udelukkelse kun efter en advarsel.
-- [Velkomsthilsen](#template-welcome-greeter) - svarer til førstegangs-kommentatorer.
-- [Fastgør topkommentarer](#template-top-comment-pinner) - fastgør væsentlige kommentarer, når de passerer en stemmegrænse.
-- [Trådopsummerer](#template-thread-summarizer) - udgiver et neutralt sammendrag på lange tråde.
+- [Moderator](#template-moderator) – gennemgår flagrede eller nye kommentarer, advarer førstegangs‑kommentatorer, eskalerer til ban kun efter en advarsel.
+- [Welcome Greeter](#template-welcome-greeter) – svarer på førstegangs‑kommentatorer.
+- [Top Comment Pinner](#template-top-comment-pinner) – fastgør væsentlige kommentarer, når de når en stemmetærskel.
+- [Thread Summarizer](#template-thread-summarizer) – poster et neutralt resumé på lange tråde.
 
-Hver skabelon åbner en forudfyldt redigeringsformular med **Status: Dry Run** allerede valgt.
+Each template lands on a pre-filled edit form with **Status: Dry Run** already selected.
 
-### 3. Review and save
+### 3. Gennemgå og gem
 
-På redigeringsformularen, gør som minimum:
+On the edit form, do at minimum:
 
-- **Internt navn.** En kort identifikator brugt i administrationspaneler.
-- **Visningsnavn.** Det, der vises offentligt, når agenten skriver en kommentar.
-- **Startprompt.** Rediger skabelonens prompt, så den matcher din tone og dine specifikke regler.
-- **Godkendelser.** Sæt kryds ved de handlinger, der skal kræve menneskelig gennemgang, før de træder i kraft. Vi anbefaler mindst `ban_user` for enhver moderationsagent. Se [Godkendelsesworkflow](#approval-workflow).
+- **Internal name.** Et kort id, der bruges i admin‑dashboards.
+- **Display name.** Det, der vises offentligt, når agenten poster en kommentar.
+- **Initial prompt.** Rediger skabelonens prompt, så den passer til din tone og dine specifikke regler.
+- **Approvals.** Marker de handlinger, der skal kræve menneskelig gennemgang, før de træder i kraft. Vi anbefaler mindst `ban_user` for enhver moderations‑agt. Se [Approval Workflow](#approval-workflow).
 
-Klik på **Gem agent**.
+Click **Save agent**.
 
-### 4. Watch it in dry-run
+### 4. Se den i dry‑run
 
-Agenten er nu aktiv i **Dry Run**. Den vil modtage sine triggere, kalde modellen og registrere handlinger på [Kørselshistorik](#run-history)-siden - med **Dry Run**-badgen på hver række - men den udfører ikke reelle handlinger. Besøg et par af kørselsdetaljerne (se [Kørselsdetaljevisning](#run-detail-view)) og kig på:
+Agenten er nu aktiv i **Dry Run**. Den vil modtage sine triggere, kalde modellen og registrere handlinger på siden [Run History](#run-history) – med **Dry Run**‑badge på hver række – men den udfører ingen reelle handlinger. Besøg nogle af kørselens detaljer (se [Run Detail View](#run-detail-view)) og se på:
 
 - De handlinger, agenten valgte.
-- Begrundelsen og tilliden for hver handling.
-- Den fulde LLM-transkription.
+- Begrundelsen og sikkerheden for hver handling.
+- Den fulde LLM‑transkript.
 
-Hvis agenten træffer beslutninger, du er uenig i, rediger startprompten eller sæt kryds ved flere godkendelser.
+If the agent is making decisions you disagree with, edit the initial prompt or tick more approvals.
 
-### 5. Run a test against past comments
+### 5. Kør en test mod tidligere kommentarer
 
-Fra agentlisten, klik på **Test run** på agentens række. Formularen har et enkelt numerisk input **Dage** (1 til 90). Prøvestørrelse og den faste øvre grænse for evaluerede kommentarer vises kun som information - de beregnes på serversiden, ikke af brugeren. Genspilsafviklingen kører mod historiske kommentarer uden at udføre reelle handlinger og rapporterer, hvad agenten **ville** have gjort i forhold til, hvad der faktisk skete (blev kommentaren senere godkendt, markeret som spam, slettet osv.). Se [Testkørsler (Genspil)](#test-runs-replays).
+From the agents list page, click **Test run** on the agent's row. The form has a single **Days** numeric input (1 to 90). Sample size and the hard cap on comments evaluated are shown informationally - they are computed server-side, not user-set. The replay runs against historical comments without taking real actions and reports what the agent **would** have done versus what actually happened (was the comment later approved, marked spam, deleted, and so on). See [Test Runs (Replays)](#test-runs-replays).
 
-### 6. Flip to Enabled
+### 6. Skift til Enabled
 
-Når du er tilfreds med Dry Run og gengivelsesresultaterne, rediger agenten og ændr **Status** til **Aktiveret**. Fremover udføres reelle handlinger. Siden [Kørselshistorik](#run-history) viser nu live-kørsler uden Dry Run-badgen, og enhver handling, du markerede til godkendelse, vises i [godkendelsesindbakken](#approval-workflow).
+When you are happy with the dry-run and replay output, edit the agent and change **Status** to **Enabled**. From here on, real actions land. The Run History page now shows live runs without the dry-run badge, and any action you marked for approval appears in the [approvals inbox](#approval-workflow).
 
-### What's next
+### Hvad er næste skridt
 
-- Indstil [Budgetter](#budgets-overview) og [Budgetadvarsler](#budget-alerts).
-- Konfigurer [Webhooks](#webhooks-overview), hvis du ønsker, at eksterne systemer reagerer på agentbegivenheder.
-- Tilføj [Fællesskabsretningslinjer](#community-guidelines) for at holde agentens beslutninger i overensstemmelse med din skriftlige politik.
+- Indstil [Budgets](#budgets-overview) og [Budget Alerts](#budget-alerts).
+- Konfigurer [Webhooks](#webhooks-overview), hvis du vil have eksterne systemer til at reagere på agent‑begivenheder.
+- Tilføj [Community Guidelines](#community-guidelines) for at holde agentens beslutninger i overensstemmelse med din skriftlige politik.

@@ -1,65 +1,63 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-Diese API wird verwendet, um Kommentare zur Anzeige für einen Benutzer abzurufen. Sie filtert beispielsweise automatisch
-nicht genehmigte oder Spam-Kommentare heraus.
+Diese API wird verwendet, um Kommentare zum Anzeigen für einen Benutzer abzurufen. Beispielsweise filtert sie automatisch nicht genehmigte oder Spam‑Kommentare heraus.
 
 ### Paginierung
 
-Die Paginierung kann auf zwei Arten erfolgen, abhängig von den Leistungsanforderungen und dem Anwendungsfall:
+Die Paginierung kann auf eine von zwei Arten erfolgen, abhängig von Leistungsanforderungen und Anwendungsfall:
 
-1. Am schnellsten: **Vorberechnete Paginierung**:
+1. Schnellste: **Vorkalkulierte Paginierung**:
    1. So funktioniert FastComments, wenn Sie unsere vorgefertigten Widgets und Clients verwenden.
-   2. Ein Klick auf "weiter" erhöht einfach die Seitenzahl.
-   3. Sie können sich das so vorstellen, als würde es durch einen Key-Value-Speicher abgerufen.
-   4. Definieren Sie auf diese Weise einfach einen `page`-Parameter beginnend bei `0` und eine Sortierrichtung als `direction`.
-   5. Seitengrößen können über Anpassungsregeln konfiguriert werden.
-2. Am flexibelsten: **Flexible Paginierung**:
-   1. Auf diese Weise können Sie benutzerdefinierte `limit`- und `skip`-Parameter definieren. Übergeben Sie nicht `page`.
-   2. Sortierrichtung `direction` wird ebenfalls unterstützt.
+   2. Durch Klicken auf „Weiter“ wird einfach die Seitenzahl erhöht.
+   3. Man kann sich das vorstellen, als würde es aus einem Schlüssel‑Wert‑Speicher abgerufen.
+   4. Auf diese Weise definieren Sie einfach einen `page`‑Parameter, beginnend bei `0`, und eine Sortierrichtung als `direction`.
+   5. Seitengrößen können über Anpassungsregeln angepasst werden.
+2. Flexibelste: **Flexible Paginierung**:
+   1. Auf diese Weise können Sie benutzerdefinierte `limit`‑ und `skip`‑Parameter festlegen. Übergeben Sie nicht `page`.
+   2. Die Sortierrichtung `direction` wird ebenfalls unterstützt.
    3. `limit` ist die Gesamtzahl, die nach Anwendung von `skip` zurückgegeben wird.
-      - Beispiel: Setzen Sie `skip = 200, limit = 100` bei `Seitengröße = 100` und `page = 2`.
-   4. Untergeordnete Kommentare zählen weiterhin bei der Paginierung. Sie können dies mit der Option `asTree` umgehen.
-      - Sie können untergeordnete Kommentare über `limitChildren` und `skipChildren` paginieren.
+      - Beispiel: Setzen Sie `skip = 200, limit = 100`, wenn `page size = 100` und `page = 2`.
+   4. Unterkommentare zählen weiterhin in die Paginierung. Sie können dies umgehen, indem Sie die Option `asTree` verwenden.
+      - Sie können Unterkommentare über `limitChildren` und `skipChildren` paginieren.
       - Sie können die Tiefe der zurückgegebenen Threads über `maxTreeDepth` begrenzen.
 
 ### Threads
 
-1. Bei Verwendung der `Vorberechneten Paginierung` werden Kommentare nach *Seite* gruppiert und Kommentare in Threads beeinflussen die Gesamtseite.
-   1. Auf diese Weise können Threads auf dem Client basierend auf `parentId` bestimmt werden.
-   2. Beispiel: Bei einer Seite mit einem Kommentar der obersten Ebene und 29 Antworten und der Einstellung `page=0` in der API - erhalten Sie nur den Kommentar der obersten Ebene und die 29 untergeordneten.
-   3. [Beispielbild hier, das mehrere Seiten illustriert.](https://blog.winricklabs.com/images/fc-pagination02.png)
-2. Bei Verwendung der `Flexiblen Paginierung` können Sie einen `parentId`-Parameter definieren.
-   1. Setzen Sie diesen auf null, um nur Kommentare der obersten Ebene zu erhalten.
-   2. Um dann Threads anzuzeigen, rufen Sie die API erneut auf und übergeben `parentId`.
-   3. Eine gängige Lösung ist, einen API-Aufruf für die Kommentare der obersten Ebene zu machen und dann parallele API-Aufrufe für die untergeordneten Kommentare jedes Kommentars zu machen.
-3. __NEU seit Feb 2023!__ Als Baum abrufen mit `&asTree=true`.
-   1. Sie können sich das als `Flexible Paginierung als Baum` vorstellen.
-   2. Nur die Kommentare der obersten Ebene zählen bei der Paginierung.
-   3. Setzen Sie `parentId=null`, um den Baum am Wurzelknoten zu beginnen (Sie müssen `parentId` setzen).
+1. Bei Verwendung von `Precalculated Pagination` werden Kommentare nach *Seite* gruppiert und Kommentare in Threads beeinflussen die gesamte Seite.
+   1. Auf diese Weise können Threads auf dem Client anhand von `parentId` bestimmt werden.
+   2. Zum Beispiel, bei einer Seite mit einem Top‑Level‑Kommentar und 29 Antworten und `page=0` in der API – Sie erhalten nur den Top‑Level‑Kommentar und die 29 Unterkommentare.
+2. Bei Verwendung von `Flexible Pagination` können Sie einen `parentId`‑Parameter definieren.
+   1. Setzen Sie diesen auf null, um nur Top‑Level‑Kommentare zu erhalten.
+   2. Rufen Sie dann die API erneut auf und übergeben Sie `parentId`, um Threads anzuzeigen.
+   3. Eine gängige Lösung besteht darin, einen API‑Aufruf für die Top‑Level‑Kommentare zu machen und dann parallele API‑Aufrufe, um Kommentare für die Unterkommentare jedes Kommentars zu erhalten.
+3. __NEU seit Feb 2023!__ Abrufen als Baum mit `&asTree=true`.
+   1. Man kann sich das vorstellen als `Flexible Pagination als Baum`.
+   2. Nur die Top‑Level‑Kommentare zählen in der Paginierung.
+   3. Setzen Sie `parentId=null`, um den Baum an der Wurzel zu starten (Sie müssen `parentId` setzen).
    4. Setzen Sie `skip` und `limit` für die Paginierung.
    5. Setzen Sie `asTree` auf `true`.
-   6. Die Credit-Kosten erhöhen sich um das `2-fache`, da unser Backend in diesem Szenario viel mehr Arbeit leisten muss.
-   7. Setzen Sie `maxTreeDepth`, `limitChildren` und `skipChildren` nach Bedarf.
+   6. Die Kosten in Credits erhöhen sich um `2x`, da unser Backend in diesem Szenario viel mehr Arbeit leisten muss.
+   7. Setzen Sie `maxTreeDepth`, `limitChildren` und `skipChildren` nach Wunsch.
 
 ### Bäume erklärt
 
-Bei Verwendung von `asTree` kann es schwierig sein, die Paginierung nachzuvollziehen. Hier ist eine hilfreiche Grafik:
+Bei Verwendung von `asTree` kann es schwierig sein, die Paginierung zu verstehen. Hier ist eine praktische Grafik:
 
 <div class="screenshot white-bg">
-    <div class="title">Baum-Paginierung Diagramm</div>
-    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Baum-Paginierung Diagramm" />
+    <div class="title">Baum‑Paginierungsdiagramm</div>
+    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Baum‑Paginierungsdiagramm" />
 </div>
 
-### Kommentare im Kontext eines Benutzers abrufen
+### Abrufen von Kommentaren im Kontext eines Benutzers
 
-Die `/comments`-API kann in zwei Kontexten für verschiedene Anwendungsfälle verwendet werden:
+Die `/comments`‑API kann in zwei Kontexten für unterschiedliche Anwendungsfälle verwendet werden:
 
-- Für die Rückgabe von Kommentaren, sortiert und mit Informationen versehen, um Ihren eigenen Client zu erstellen.
-  - Definieren Sie in diesem Fall einen `contextUserId`-Abfrageparameter.
+- Zum Zurückgeben von Kommentaren, sortiert und mit Informationen versehen, um Ihren eigenen Client zu bauen.
+  - In diesem Fall definieren Sie einen `contextUserId`‑Abfrageparameter.
 - Zum Abrufen von Kommentaren von Ihrem Backend für benutzerdefinierte Integrationen.
   - Die Plattform verwendet standardmäßig dies ohne `contextUserId`.
 
-[inline-code-attrs-start title = 'Kommentare Vorberechnete Paginierung'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentare Vorkalkulierte Paginierung'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&page=0&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR'
@@ -77,7 +75,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Kommentare Flexible Paginierung im Benutzerkontext nur für Kommentare der obersten Ebene'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentare Flexible Paginierung im Benutzerkontext nur für Top-Level-Kommentare'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null'
@@ -85,87 +83,85 @@ curl --request GET \
 
 ### Kommentare als Baum abrufen
 
-Es ist möglich, die Kommentare als Baum zurückzugeben, wobei die Paginierung nur die Kommentare der obersten Ebene zählt.
+Es ist möglich, die zurückgegebenen Kommentare als Baum zu erhalten, wobei die Paginierung nur die Top‑Level‑Kommentare zählt.
 
-[inline-code-attrs-start title = 'Kommentare als Baum im Benutzerkontext'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentare Als‑Baum im Benutzerkontext'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
-Möchten Sie nur die Kommentare der obersten Ebene und die unmittelbaren Kinder erhalten? Hier ist eine Möglichkeit:
+Möchten Sie nur die Top‑Level‑Kommentare und die unmittelbaren Unterkommentare erhalten? Hier ist ein Weg:
 
-[inline-code-attrs-start title = 'Kommentare als Baum mit maximaler Tiefe'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentare Als‑Baum mit maximaler Tiefe'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
 [inline-code-end]
 
-In Ihrer Benutzeroberfläche müssen Sie jedoch möglicherweise wissen, ob bei
-jedem Kommentar eine Schaltfläche "Antworten anzeigen" angezeigt werden soll. Beim Abrufen von Kommentaren über einen Baum gibt es eine `hasChildren`-Eigenschaft, die
-bei Bedarf an Kommentare angehängt wird.
+Allerdings müssen Sie in Ihrer UI möglicherweise wissen, ob für jeden Kommentar ein „Antworten anzeigen“-Button angezeigt werden soll. Beim Abrufen von Kommentaren über einen Baum wird, falls zutreffend, eine `hasChildren`‑Eigenschaft an die Kommentare angehängt.
 
-### Kommentare als Baum abrufen, Suche nach Hash-Tag
+### Kommentare als Baum abrufen, Suche nach Hashtag
 
-Es ist möglich, mit der API nach Hashtag zu suchen, über Ihren gesamten Tenant (nicht auf eine Seite oder `urlId` beschränkt).
+Es ist möglich, über die API nach Hashtag zu suchen, über Ihren gesamten Mandanten hinweg (nicht auf eine Seite oder `urlId` beschränkt).
 
-In diesem Beispiel lassen wir `urlId` weg und suchen nach mehreren Hashtags. Die API gibt nur Kommentare zurück, die alle angeforderten Hashtags haben.
+In diesem Beispiel lassen wir `urlId` weg und suchen nach mehreren Hashtags. Die API gibt nur Kommentare zurück, die alle angeforderten Hashtags enthalten.
 
-[inline-code-attrs-start title = 'Kommentare als Baum im Benutzerkontext, nach Hash-Tag'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kommentare Als‑Baum im Benutzerkontext, nach Hashtag'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
-### Alle Anfrageparameter
+### Alle Anforderungsparameter
 
-[inline-code-attrs-start title = 'Kommentare Anfragestruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktur der Kommentar-Anfrage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** The urlId (page url, or article id) the comments are associated with. **/
+    /** Die urlId (Seiten-URL oder Artikel-ID), mit der die Kommentare verknüpft sind. **/
     urlId?: string
-    /** Limit the comments returned by this user. **/
+    /** Begrenzen Sie die von diesem Benutzer zurückgegebenen Kommentare. **/
     userId?: string
-    /** Use this to search by hashtag. To drill down to the intersection of multiple hashtags, do &hashTag=a&hashTag=b. **/
+    /** Verwenden Sie dies, um nach Hashtag zu suchen. Um die Schnittmenge mehrerer Hashtags zu erhalten, verwenden Sie &hashTag=a&hashTag=b. **/
     hashTag?: string
-    /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
+    /** Die Sortierrichtung. Standard ist MR (Meistrelevant). Weitere Optionen sind OF (Älteste zuerst) und NF (Neueste zuerst). **/
     direction?: 'MR' | 'OF' | 'NF'
-    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments (up to 250). **/
+    /** Vorkalkulierte Paginierung: Die abzurufende Seite, beginnend bei 0. Verwenden Sie -1 für alle Kommentare (bis zu 250). **/
     page?: number
-    /** Flexible Pagination: How many comments should we return? **/
+    /** Flexible Paginierung: Wie viele Kommentare sollen zurückgegeben werden? **/
     limit?: number
-    /** Flexible Pagination: How many child comments should we return for each parent? **/
+    /** Flexible Paginierung: Wie viele Unterkommentare sollen pro übergeordnetem Kommentar zurückgegeben werden? **/
     limitChildren?: number
-    /** Flexible Pagination: How many comments should we skip? **/
+    /** Flexible Paginierung: Wie viele Kommentare sollen übersprungen werden? **/
     skip?: number
-    /** Flexible Pagination: How many child comments should we skip for each parent? **/
+    /** Flexible Paginierung: Wie viele Unterkommentare sollen pro übergeordnetem Kommentar übersprungen werden? **/
     skipChildren?: number
-    /** For determining blocked and flagged comments. **/
+    /** Zur Bestimmung blockierter und gemeldeter Kommentare. **/
     contextUserId?: string
-    /** For determining blocked and flagged comments. **/
+    /** Zur Bestimmung blockierter und gemeldeter Kommentare. **/
     anonUserId?: string
-    /** For fetching child comments. **/
+    /** Zum Abrufen von Unterkommentaren. **/
     parentId?: string
-    /** For fetching as a tree. **/
+    /** Zum Abrufen als Baum. **/
     asTree?: boolean
-    /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
+    /** Wie tief in den Baum sollen Daten zurückgegeben werden? 0 gibt keine Unterkommentare zurück. 1 gibt unmittelbare Unterkommentare zurück usw. **/
     maxTreeDepth?: number
 }
 [inline-code-end]
 
 ### Die Antwort
 
-[inline-code-attrs-start title = 'Kommentare Antwortstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktur der Kommentar-Antwort'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Bei einem Fehler enthalten. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page' | 'invalid-pagination-request' | 'invalid-limit' | 'invalid-limit-children' | 'invalid-skip' | 'invalid-skip-children' | 'invalid-max-tree-depth'
-    /** Included on failure. **/
+    /** Bei einem Fehler enthalten. **/
     reason?: string
-    /** The comments! **/
+    /** Die Kommentare! **/
     comments: Comment[]
 }
 [inline-code-end]
@@ -174,14 +170,16 @@ interface CommentsResponse {
 
 #### URL-ID
 
-Sie möchten wahrscheinlich die `Comment`-API mit dem `urlId`-Parameter verwenden. Sie können zuerst die `Pages`-API aufrufen, um zu sehen, wie die verfügbaren `urlId`-Werte aussehen.
+Sie möchten wahrscheinlich die `Comment`‑API mit dem Parameter `urlId` verwenden. Sie können zuerst die `Pages`‑API aufrufen, um zu sehen, wie die für Sie verfügbaren `urlId`‑Werte aussehen.
 
 #### Anonyme Aktionen
 
-Für anonymes Kommentieren möchten Sie wahrscheinlich `anonUserId` beim Abrufen von Kommentaren und beim Durchführen von Markierungen und Blockierungen übergeben.
+Für anonyme Kommentare sollten Sie wahrscheinlich `anonUserId` beim Abrufen von Kommentaren sowie beim Melden und Blockieren übergeben.
 
-(!) Dies ist für viele App-Stores erforderlich, da Benutzer in der Lage sein müssen, benutzergenerierten Inhalt, den sie sehen können, zu markieren, auch wenn sie nicht angemeldet sind. Wenn Sie dies nicht tun, kann Ihre App aus dem entsprechenden Store entfernt werden.
+(!) Dies ist für viele App‑Stores erforderlich, da Benutzer in der Lage sein müssen, von ihnen sichtbare, von Benutzern erstellte Inhalte zu melden, selbst wenn sie nicht eingeloggt sind. Wenn Sie dies nicht tun, kann Ihre App aus dem jeweiligen Store entfernt werden.
 
 #### Kommentare werden nicht zurückgegeben
 
-Überprüfen Sie, ob Ihre Kommentare genehmigt sind und kein Spam sind.
+Stellen Sie sicher, dass Ihre Kommentare genehmigt sind und nicht als Spam gelten.
+
+---

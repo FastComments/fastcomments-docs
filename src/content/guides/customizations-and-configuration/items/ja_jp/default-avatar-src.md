@@ -1,8 +1,8 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-ユーザーが FastComments で初めてコメントすると、<a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a> からアバターを取得しようとします。
+ユーザーが FastComments で初めてコメントすると、<a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a> からアバターを取得しようとします。
 
-ただし、アバターが見つからない場合や、ユーザーがアカウントでアバターを設定していない場合は、静的なデフォルトアバター画像を表示します。
+ただし、アバターが見つからない場合や、ユーザーがアカウントで設定していない場合は、静的なデフォルトアバター画像を表示します。
 
 独自の静的アバター画像を指定するには、*defaultAvatarSrc* 設定を使用します。
 

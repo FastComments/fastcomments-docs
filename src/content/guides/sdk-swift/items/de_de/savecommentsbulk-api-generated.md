@@ -1,7 +1,7 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|-----|--------------|---------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
@@ -10,13 +10,13 @@
 
 ## Antwort
 
-Rückgabe: [`[SaveCommentsBulkResponse]`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/[SaveCommentsBulkResponse].swift)
+Rückgabe: `[SaveCommentsBulkResponse]`
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'saveCommentsBulk Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele befinden sich noch in der Beta-Phase. Bei Problemen bitte über http://github.com/OpenAPITools/openapi-generator/issues/new melden
+// Die folgenden Codebeispiele sind noch in der Beta-Phase. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -4,13 +4,13 @@ Live threaded commenting with avatars, nested replies, votes, and the built-in r
   <tr>
     <td align="center"><b>Commenti Live</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Commenti live, tema chiaro"/></td>
     <td align="center"><b>Tema Scuro</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Commenti live, tema scuro"/></td>
-    <td align="center"><b>Chat Live</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Preset di live chat"/></td>
+    <td align="center"><b>Chat Live</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Preset di chat live"/></td>
   </tr>
 </table>
 
-### Editor di Testo Formattato
+### Editor di Testo Arricchito
 
-Questa libreria utilizza [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched) per l'editing di testo formattato, che offre un'esperienza di editing WYSIWYG potente. Lo stesso editor alimenta iOS, Android e il web (tramite `react-native-web`), quindi il compositore si comporta in modo coerente su ogni piattaforma con un'unica implementazione.
+Questa libreria utilizza [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched-html) per l'editing di testo arricchito, che offre un'esperienza di editing WYSIWYG potente. Lo stesso editor alimenta iOS, Android e il web (tramite `react-native-web`), quindi il compositore si comporta in modo coerente su tutte le piattaforme con un'unica implementazione.
 
 `react-native-enriched` richiede la New Architecture di React Native (Fabric) su native (impostazione predefinita da RN 0.76, opzionale su RN 0.72-0.75) e un bundler che risolve le condizioni `exports` del pacchetto. Questo SDK è sviluppato e testato con RN 0.81 / React 19. Lo stesso editor funziona anche sul web tramite `react-native-web`; la build web dell'editor enriched è ancora contrassegnata come sperimentale a monte.
 
@@ -19,7 +19,7 @@ Questa libreria utilizza [`react-native-enriched`](https://github.com/software-m
 L'SDK fornisce tre widget, rispecchiando l'SDK Android di FastComments:
 
 - `FastCommentsLiveCommenting` - commenti in thread con voti, risposte, paginazione, menzioni, notifiche e aggiornamenti live.
-- `FastCommentsLiveChat` - un preset di chat basato sullo stesso motore: messaggi cronologici con i nuovi in fondo, il compositore sotto la lista, una barra intestazione live (punto di connessione + conteggio utenti), cronologia infinita caricata scorrendo verso l'alto, auto-scroll ai nuovi messaggi, senza voti o thread di risposta. Ogni preset può essere sovrascritto tramite `config`.
+- `FastCommentsLiveChat` - un preset di chat basato sullo stesso motore: messaggi cronologici con i nuovi in fondo, il compositore sotto l'elenco, una barra intestazione live (punto di connessione + conteggio utenti), cronologia infinita caricata scorrendo verso l'alto, auto-scroll ai nuovi messaggi, senza voti o thread di risposta. Ogni preset può essere sovrascritto tramite `config`.
 - `FastCommentsFeed` - un feed sociale con compositore di post, media, reazioni, follow e banner live per nuovi post.
 
 ```tsx
@@ -28,7 +28,7 @@ L'SDK fornisce tre widget, rispecchiando l'SDK Android di FastComments:
 
 ### Tematizzazione
 
-L'aspetto predefinito è generato da un insieme di token di design semantici (`FastCommentsTheme`): colori, spaziatura, raggio, dimensioni dei font, pesi dei font e dimensioni degli avatar. Passa sovrascritture parziali dei token (tipizzate `FastCommentsThemeOverrides`) tramite la prop `theme` su qualsiasi widget e l'intero albero di stile verrà ri-stilizzato in modo coerente:
+L'aspetto predefinito è generato da un insieme di token di design semantici (`FastCommentsTheme`): colori, spaziatura, raggio, dimensioni dei font, pesi dei font e dimensioni degli avatar. Passa sovrascritture parziali dei token (tipizzati `FastCommentsThemeOverrides`) tramite la prop `theme` su qualsiasi widget e l'intero albero di stile verrà ri-stilizzato in modo coerente:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
@@ -50,7 +50,7 @@ Questa libreria mira a supportare tutte le opzioni di configurazione definite in
 
 Oltre a queste, React Native aggiunge alcune opzioni specifiche dell'SDK tramite `FastCommentsRNConfig`:
 
-- `hideTopBar` - nasconde la barra superiore dell'utente loggato / campanella di notifica mostrata sopra il compositore.
+- `hideTopBar` - nasconde la barra superiore con l'utente loggato / campanella di notifica mostrata sopra il compositore.
 - `usePressToEdit` - premi e tieni premuto un commento per aprire il suo menu.
 - `disableDownVoting` - nasconde i pulsanti di voto negativo.
 - `renderCommentInline` - rende le informazioni del commentatore all'interno dello stesso blocco HTML del contenuto del commento.
@@ -81,7 +81,7 @@ const config = {
 
 Quando `locale` non è impostato, FastComments fornisce la lingua predefinita del tenant.
 
-**Modifica del testo:** le traduzioni sono gestite nella tua dashboard FastComments, non in questo SDK. Per cambiare la formulazione, sovrascrivi il testo predefinito o aggiungi una lingua, modifica le traduzioni per il tuo account nella dashboard – la modifica viene rilevata automaticamente dai widget senza necessità di rilasciare l'app. L'SDK non fornisce fallback in inglese, quindi qualsiasi chiave che lasci vuota nella dashboard verrà renderizzata vuota; mantieni le chiavi popolate per ogni lingua supportata.
+**Modifica del testo:** le traduzioni sono gestite nella tua dashboard FastComments, non in questo SDK. Per cambiare la formulazione, sovrascrivi il testo predefinito o aggiungi una lingua, modifica le traduzioni per il tuo account nella dashboard – la modifica viene rilevata automaticamente dai widget senza necessità di rilasciare l'app. L'SDK non fornisce fallback in inglese, quindi qualsiasi chiave che svuoti nella dashboard verrà renderizzata vuota; mantieni le chiavi popolate per ogni lingua supportata.
 
 ### Notifiche Utente
 
@@ -91,9 +91,9 @@ Ad esempio, è possibile utilizzare Secure SSO per autenticare l'utente e poi ef
 
 Vedi [l'esempio AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) per capire come ottenere e tradurre le notifiche non lette dell'utente.
 
-### Browser di Gif
+### Browser Gif
 
-Per impostazione predefinita, non è abilitata alcuna selezione di immagini o gif. Vedi [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) per sapere come supportare il caricamento di immagini e gif. C'è un Browser di Gif che anonimizza le ricerche e le immagini fornite in questa libreria, devi semplicemente usarlo.
+Per impostazione predefinita, nessuna selezione di immagini o gif è abilitata. Vedi [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) per sapere come supportare il caricamento di immagini e gif. C'è un Browser Gif che anonimizza le ricerche e le immagini fornite in questa libreria, devi semplicemente usarlo.
 
 ### Prestazioni
 

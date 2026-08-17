@@ -1,26 +1,26 @@
-### GitHub からインストール
+### Install from GitHub
 
-リリースタグから直接インストールします（推奨、完全に再現可能）：
+Install directly from a release tag (recommended, fully reproducible):
 
 ```bash
 pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-ビルドが決定的になるように、ブランチではなくタグを固定してください。同じ形式は `requirements.txt` でも機能します：
+Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
 
 ```
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-各タグ付き [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) には、直接バイナリアーティファクトをインストールしたい場合に備えて、ビルド済みの wheel が添付されています。
+Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
 
-### ライブラリの内容
+### Library Contents
 
-このライブラリには、生成された API クライアントと、API の利用を容易にする手書きユーティリティ（SSO サポートを含む）を含むコア Python ライブラリの 2 つのモジュールが含まれています。
+This library contains two modules: the generated API client and the core Python library which contains hand-written utilities to make working with the API easier, including SSO support.
 
-- [API クライアント ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- コア ライブラリ ドキュメント（SSO の例を含む）
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### パブリック API と保護された API
+### Public vs Secured APIs
 
-API クライアントには、`DefaultApi`、`PublicApi`、`ModerationApi` の 3 つのクラスがあります。`DefaultApi` には API キーが必要なメソッドが含まれ、`PublicApi` には認証なしでブラウザやモバイルデバイスなどから直接呼び出せるメソッドが含まれます。`ModerationApi` は、ライブかつ高速なモデレーション API の包括的なスイートを提供します。すべての `ModerationApi` メソッドは `sso` パラメータを受け取り、SSO または FastComments.com のセッションクッキーで認証できます。
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

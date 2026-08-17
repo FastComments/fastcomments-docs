@@ -1,62 +1,61 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-Bu API, bir kullanıcıya gösterim için yorumları almak amacıyla kullanılır. Örneğin, onaylanmamış veya spam yorumları otomatik olarak filtreler.
+Bu API, bir kullanıcıya göstermek üzere yorumları almak için kullanılır. Örneğin, otomatik olarak onaylanmamış veya istenmeyen (spam) yorumları filtreler.
 
-### Sayfalama
+### Pagination
 
 Sayfalama, performans gereksinimlerine ve kullanım durumuna bağlı olarak iki yoldan biriyle yapılabilir:
 
-1. En Hızlı: **Önceden Hesaplanmış Sayfalama**:
-   1. Bu, önceden oluşturulmuş widget'larımızı ve istemcilerimizi kullandığınızda FastComments'in nasıl çalıştığıdır.
-   2. "İleri"ye tıklamak yalnızca sayfa sayısını artırır.
-   3. Bunu bir anahtar-değer deposundan getiriliyormuş gibi düşünebilirsiniz.
-   4. Bu şekilde, `page` parametresini `0`'dan başlayarak ve bir sıralama yönünü `direction` olarak tanımlamanız yeterlidir.
+1. En hızlı: **Precalculated Pagination**:
+   1. Bu, önceden oluşturulmuş widget ve istemcilerimizi kullandığınızda FastComments'ın nasıl çalıştığıdır.
+   2. “next”e tıklamak yalnızca sayfa sayacını artırır.
+   3. Bunu bir anahtar-değer deposundan alınmış gibi düşünebilirsiniz.
+   4. Bu şekilde, `0`'dan başlayan bir `page` parametresi ve `direction` olarak bir sıralama yönü tanımlamanız yeterlidir.
    5. Sayfa boyutları özelleştirme kurallarıyla ayarlanabilir.
-2. En Esnek: **Esnek Sayfalama**:
+2. En esnek: **Flexible Pagination**:
    1. Bu şekilde özel `limit` ve `skip` parametreleri tanımlayabilirsiniz. `page` göndermeyin.
-   2. `direction` sıralama yönü de desteklenir.
-   3. `limit`, `skip` uygulandıktan sonra döndürülecek toplam sayıdır.
-      - Örnek: `sayfa boyutu = 100` ve `page = 2` olduğunda `skip = 200, limit = 100` olarak ayarlayın.
-   4. Alt yorumlar (child) yine sayfalama içinde sayılır. Bunu `asTree` seçeneğini kullanarak aşabilirsiniz.
-      - Alt yorumları `limitChildren` ve `skipChildren` ile sayfalandırabilirsiniz.
-      - Döndürülecek konuların derinliğini `maxTreeDepth` ile sınırlayabilirsiniz.
+   2. `direction` sıralaması da desteklenir.
+   3. `limit`, `skip` uygulandıktan sonra döndürülecek toplam sayıyı belirtir.
+      - Örnek: `page size = 100` ve `page = 2` iken `skip = 200, limit = 100` ayarlayın.
+   4. Alt yorumlar hâlâ sayfalamada sayılır. Bunu `asTree` seçeneğiyle aşabilirsiniz.
+      - `limitChildren` ve `skipChildren` ile alt yorumları sayfalayabilirsiniz.
+      - `maxTreeDepth` ile döndürülen konu derinliğini sınırlayabilirsiniz.
 
-### Konular (Threads)
+### Threads
 
-1. `Önceden Hesaplanmış Sayfalama` kullanıldığında, yorumlar *sayfa* bazında gruplanır ve konulardaki yorumlar genel sayfayı etkiler.
-   1. Bu şekilde, konular `parentId`'ye göre istemci tarafında belirlenebilir.
-   2. Örneğin; bir sayfada bir üst düzey yorum ve 29 cevap varsa ve API'de `page=0` ayarlanmışsa — sadece üst düzey yorumu ve 29 çocuğu alırsınız.
-   3. [Çoklu sayfaları gösteren örnek resim burada.](https://blog.winricklabs.com/images/fc-pagination02.png)
-2. `Esnek Sayfalama` kullanıldığında, bir `parentId` parametresi tanımlayabilirsiniz.
-   1. Sadece üst düzey yorumları almak için bunu null olarak ayarlayın.
-   2. Konuları görüntülemek için API'yi tekrar çağırın ve `parentId` gönderin.
-   3. Yaygın bir çözüm, üst düzey yorumlar için bir API çağrısı yapmak ve ardından her yorumun çocuk yorumlarını almak için paralel API çağrıları yapmaktır.
-3. __YENİ Şubat 2023 itibarıyla!__ `&asTree=true` kullanarak ağaç olarak getirin.
-   1. Bunu `Ağaç Olarak Esnek Sayfalama` olarak düşünebilirsiniz.
-   2. Sadece üst düzey yorumlar sayfalamada sayılır.
-   3. Ağacı kökten başlatmak için `parentId=null` ayarlayın (bu parametreyi ayarlamanız gerekir).
+1. `Precalculated Pagination` kullanıldığında, yorumlar *sayfa* bazında gruplanır ve konu içindeki yorumlar genel sayfayı etkiler.
+   1. Bu şekilde, konular istemci tarafında `parentId` temel alınarak belirlenebilir.
+   2. Örneğin, bir üst düzey yorum ve 29 yanıt içeren bir sayfada API'de `page=0` ayarlandığında yalnızca üst düzey yorum ve 29 alt yorum alınır.
+2. `Flexible Pagination` kullanıldığında bir `parentId` parametresi tanımlayabilirsiniz.
+   1. Bunu `null` olarak ayarlarsanız yalnızca üst düzey yorumları alırsınız.
+   2. Ardından konuları görüntülemek için API'yi tekrar çağırıp `parentId` gönderin.
+   3. Yaygın bir çözüm, üst düzey yorumlar için bir API çağrısı yapıp ardından her yorumun alt yorumları için paralel API çağrıları yapmaktır.
+3. __NEW As of Feb 2023!__ `&asTree=true` kullanarak ağaç olarak alın.
+   1. Bunu `Flexible Pagination as a Tree` olarak düşünebilirsiniz.
+   2. Yalnızca üst düzey yorumlar sayfalamada sayılır.
+   3. `parentId=null` ayarlayarak ağacı kökten başlatın (`parentId` ayarlamanız gerekir).
    4. Sayfalama için `skip` ve `limit` ayarlayın.
    5. `asTree` değerini `true` yapın.
-   6. Bu senaryoda, altyapımızın daha fazla işlem yapması gerektiği için kredi maliyeti `2x` artar.
-   7. İstediğiniz şekilde `maxTreeDepth`, `limitChildren` ve `skipChildren` ayarlayın.
+   6. Krediler maliyeti `2x` artar, çünkü bu senaryoda arka uç çok daha fazla iş yapmalıdır.
+   7. `maxTreeDepth`, `limitChildren` ve `skipChildren` değerlerini istediğiniz gibi ayarlayın.
 
-### Ağaçlar Açıklaması
+### Trees Explained
 
-`asTree` kullanıldığında, sayfalama hakkında akıl yürütmek zor olabilir. İşte faydalı bir görsel:
+`asTree` kullanıldığında, sayfalama hakkında mantık yürütmek zor olabilir. İşte kullanışlı bir grafik:
 
 <div class="screenshot white-bg">
     <div class="title">Ağaç Sayfalama Diyagramı</div>
-    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Tree Pagination Diagram" />
+    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Ağaç Sayfalama Diyagramı" />
 </div>
 
-### Yorumları Bir Kullanıcı Bağlamında Getirme
+### Fetching Comments in The Context of a User
 
-`/comments` API'si, farklı kullanım durumları için iki bağlamda kullanılabilir:
+`/comments` API'si iki bağlamda, farklı kullanım durumları için kullanılabilir:
 
-- Kendi istemcinizi oluşturmak için sıralanmış ve bilgi ile etiketlenmiş yorumları döndürmek için.
-  - Bu durumda, bir `contextUserId` sorgu parametresi tanımlayın.
-- Özel entegrasyonlar için backend'inizden yorumları almak için.
-  - Platform, `contextUserId` olmadan buna varsayılan davranır.
+- Kendi istemcinizi oluşturmak için sıralanmış ve etiketlenmiş yorumları döndürmek.
+  - Bu durumda bir `contextUserId` sorgu parametresi tanımlayın.
+- Özel entegrasyonlar için yorumları arka uçtan almak.
+  - Platform, `contextUserId` olmadan buna varsayılan olarak geçer.
 
 [inline-code-attrs-start title = 'Yorumlar Önceden Hesaplanmış Sayfalama'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -70,117 +69,117 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Kullanıcı Bağlamında Yorumlar — Esnek Sayfalama'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorumlar Kullanıcı Bağlamında Esnek Sayfalama'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Kullanıcı Bağlamında Yalnızca Üst Düzey Yorumlar için Esnek Sayfalama'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorumlar Kullanıcı Bağlamında Yalnızca Üst Düzey Yorumlar İçin Esnek Sayfalama'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null'
 [inline-code-end]
 
-### Yorumları Ağaç Olarak Alma
+### Get Comments as a Tree
 
-Yorumların, sayfalama yalnızca üst düzey yorumları sayacak şekilde ağaç olarak dönmesi mümkündür.
+Yorumları bir ağaç olarak alabilir ve sayfalama yalnızca üst düzey yorumları sayar.
 
-[inline-code-attrs-start title = 'Kullanıcı Bağlamında Yorumlar — Ağaç Olarak'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorumlar Ağaç Şeklinde Kullanıcı Bağlamında'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
-Sadece üst düzey yorumları ve bunların hemen çocuklarını mı almak istiyorsunuz? İşte bir yol:
+Yalnızca üst düzey yorumları ve doğrudan alt yorumları almak ister misiniz? İşte bir yol:
 
-[inline-code-attrs-start title = 'Yorumlar Ağaç Olarak — Maksimum Derinlik'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorumlar Ağaç Şeklinde Maksimum Derinlik ile'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
 [inline-code-end]
 
-Ancak, UI'nizde her yorumda bir "cevapları göster" düğümü gösterip göstermeyeceğinizi bilmeniz gerekebilir. Yorumları ağaç olarak alırken, ilgili olduğunda yorumlara eklenen `hasChildren` özelliği vardır.
+Ancak UI'nizde her yorumun yanıtları göster düğmesini gösterip göstermeyeceğinizi bilmeniz gerekebilir. Ağaç üzerinden yorum alırken, uygulanabilir olduğunda yorumlara `hasChildren` özelliği eklenir.
 
-### Etiket (Hash Tag) ile Ağaç Olarak Yorum Alma
+### Get Comments as a Tree, Searching by Hash Tag
 
-API ile tüm kiracı (tenant) kapsamında (tek bir sayfa veya `urlId` ile sınırlı olmadan) etiket ile arama yapmak mümkündür.
+API'yi kullanarak tüm tenantınızda (tek bir sayfaya veya `urlId`'ye sınırlı olmadan) hashtag ile arama yapabilirsiniz.
 
-Bu örnekte `urlId`'yi atlıyoruz ve birden fazla etiket ile arama yapıyoruz. API yalnızca istenen tüm etiketlere sahip yorumları döndürecektir.
+Bu örnekte `urlId`'yi atlıyoruz ve birden fazla hashtag ile arama yapıyoruz. API yalnızca istenen tüm hashtag'lere sahip yorumları döndürür.
 
-[inline-code-attrs-start title = 'Kullanıcı Bağlamında Yorumlar Ağaç Olarak, Etikete Göre'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yorumlar Ağaç Şeklinde Kullanıcı Bağlamında, Hashtag ile'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
-### Tüm İstek Parametreleri
+### All Request Params
 
 [inline-code-attrs-start title = 'Yorumlar İstek Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** The urlId (page url, or article id) the comments are associated with. **/
+    /** Yorumların ilişkilendirildiği urlId (sayfa URL'si veya makale kimliği). **/
     urlId?: string
-    /** Limit the comments returned by this user. **/
+    /** Bu kullanıcı tarafından döndürülen yorumları sınırlayın. **/
     userId?: string
-    /** Use this to search by hashtag. To drill down to the intersection of multiple hashtags, do &hashTag=a&hashTag=b. **/
+    /** Hashtag ile arama yapmak için bunu kullanın. Birden fazla hashtag'in kesişimini bulmak için &hashTag=a&hashTag=b şeklinde kullanın. **/
     hashTag?: string
-    /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
+    /** Sıralama yönü. Varsayılan MR (En İlgili). Diğer seçenekler OF (En Eskisi İlk) ve NF (En Yeni İlk). **/
     direction?: 'MR' | 'OF' | 'NF'
-    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments (up to 250). **/
+    /** Önceden Hesaplanmış Sayfalama: Alınacak sayfa, 0'dan başlar. Tüm yorumlar için -1 gönderin (250'ye kadar). **/
     page?: number
-    /** Flexible Pagination: How many comments should we return? **/
+    /** Esnek Sayfalama: Kaç yorum döndürmeliyiz? **/
     limit?: number
-    /** Flexible Pagination: How many child comments should we return for each parent? **/
+    /** Esnek Sayfalama: Her ebeveyn için kaç alt yorum döndürmeliyiz? **/
     limitChildren?: number
-    /** Flexible Pagination: How many comments should we skip? **/
+    /** Esnek Sayfalama: Kaç yorumu atlamalıyız? **/
     skip?: number
-    /** Flexible Pagination: How many child comments should we skip for each parent? **/
+    /** Esnek Sayfalama: Her ebeveyn için kaç alt yorumu atlamalıyız? **/
     skipChildren?: number
-    /** For determining blocked and flagged comments. **/
+    /** Engellenen ve işaretlenmiş yorumları belirlemek için. **/
     contextUserId?: string
-    /** For determining blocked and flagged comments. **/
+    /** Engellenen ve işaretlenmiş yorumları belirlemek için. **/
     anonUserId?: string
-    /** For fetching child comments. **/
+    /** Alt yorumları almak için. **/
     parentId?: string
-    /** For fetching as a tree. **/
+    /** Ağaç olarak almak için. **/
     asTree?: boolean
-    /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
+    /** Ağaçta ne kadar derine veri döndürmeliyiz? 0 hiçbir alt yorum döndürmez. 1 doğrudan alt yorumları döndürür, vb. **/
     maxTreeDepth?: number
 }
 [inline-code-end]
 
-### Yanıt
+### The Response
 
 [inline-code-attrs-start title = 'Yorumlar Yanıt Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Başarısızlıkta dahil edilir. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page' | 'invalid-pagination-request' | 'invalid-limit' | 'invalid-limit-children' | 'invalid-skip' | 'invalid-skip-children' | 'invalid-max-tree-depth'
-    /** Included on failure. **/
+    /** Başarısızlıkta dahil edilir. **/
     reason?: string
-    /** The comments! **/
+    /** Yorumlar! **/
     comments: Comment[]
 }
 [inline-code-end]
 
-### Faydalı İpuçları
+### Helpful Tips
 
 #### URL ID
 
-Muhtemelen `urlId` parametresiyle `Comment` API'sini kullanmak isteyeceksiniz. Hangi `urlId` değerlerinin size sunulduğunu görmek için önce `Pages` API'sini çağırabilirsiniz.
+`Comment` API'sini `urlId` parametresiyle kullanmak isteyebilirsiniz. Önce `Pages` API'sini çağırarak size mevcut olan `urlId` değerlerinin nasıl göründüğünü görebilirsiniz. 
 
-#### Anonim İşlemler
+#### Anonymous Actions
 
-Anonim yorum için muhtemelen yorumları alırken ve bayraklama (flagging) ve engelleme (blocking) işlemlerini yaparken `anonUserId` göndermek isteyeceksiniz.
+Anonim yorumlama için yorumları alırken ve işaretleme ve engelleme işlemleri yaparken `anonUserId` göndermeniz muhtemeldir.
 
-(!) Bu, birçok uygulama mağazası için gereklidir çünkü kullanıcılar giriş yapmamış olsalar bile görebildikleri kullanıcı tarafından oluşturulmuş içeriği işaretleyebilmelidir. Bunu yapmamak uygulamanızın ilgili mağazadan kaldırılmasına neden olabilir.
+(!) Bu, birçok uygulama mağazası için gereklidir; kullanıcılar oturum açmasalar bile görebildikleri kullanıcı tarafından oluşturulan içeriği işaretleyebilmelidir. Bunu yapmazsanız uygulamanız ilgili mağazadan kaldırılabilir.
 
-#### Yorumlar Döndürülmüyor
+#### Comments Not Being Returned
 
-Yorumlarınızın onaylandığını ve spam olmadığını kontrol edin.
+Yorumlarınızın onaylandığını ve istenmeyen (spam) olmadığını kontrol edin.
 
 ---

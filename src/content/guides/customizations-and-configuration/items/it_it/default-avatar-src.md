@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Quando un utente commenta con FastComments per la prima volta, proveremo a recuperare il suo avatar da <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Quando un utente commenta con FastComments per la prima volta, proveremo a recuperare il suo avatar da <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>.
 
 Tuttavia, se non troviamo un avatar, o l'utente non ne imposta mai uno nel suo account, mostriamo un'immagine avatar predefinita statica.
 
@@ -12,4 +12,4 @@ Questo può essere fatto anche senza codice. Nella pagina di personalizzazione d
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; alt='Sezione Avatar Predefinito della pagina di personalizzazione del widget, dove imposti l\'URL dell\'immagine avatar di fallback'; title='Personalizzare l\'Avatar Predefinito' app-screenshot-end]
 
-Nota che la definizione dell'avatar per un utente specifico, ad esempio con SSO, è trattata nella sua sezione dedicata.
+Nota che la definizione dell'avatar per un utente specifico, ad esempio con SSO, è trattata nella sua propria sezione.
