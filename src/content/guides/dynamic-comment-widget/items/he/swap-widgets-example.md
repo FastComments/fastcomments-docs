@@ -35,11 +35,11 @@ We could remove them as well by calling `instance.destroy` instead of update.
         (function () {
             const target = document.getElementById('fastcomments-widgets');
             const tenantId = "demo"; // הכנס כאן את מזהה השוכר שלך
-
+    
             function setHeading(heading, {name, productID}) {
                 heading.innerHTML = `${name} (${productID})`;
             }
-
+    
             function addWidget({name, productID, productURL}) {
                 const outer = document.createElement('div');
                 const heading = document.createElement('h5');
@@ -58,7 +58,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
                     "showLiveRightAway": true
                 });
             }
-
+    
             function switchProduct(oldId, {name, productID, productURL}) {
                 for (const instanceWrapped of fcUIInstances) {
                     if (instanceWrapped.targetElement) {
@@ -76,18 +76,18 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 }
                 alert(`Product ${oldId} not found to replace!`);
             }
-
+    
             // הוסף כמה וידג'טים
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
-
+    
             const form = document.querySelector('.demo-form');
             form.querySelector('button').addEventListener('click', function() {
                 const name = form.querySelector('input[name=name]').value;
                 const productID = form.querySelector('input[name=id]').value;
                 const productURL = form.querySelector('input[name=url]').value;
                 const replaces_id = form.querySelector('input[name=replaces_id]').value;
-
+    
                 if (replaces_id) {
                     switchProduct(replaces_id, {
                         name,
@@ -107,7 +107,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
         #fastcomments-widgets > div {
             width: 100%;
         }
-
+    
         .demo-form section label {
             display: block;
             margin-bottom: 20px;
