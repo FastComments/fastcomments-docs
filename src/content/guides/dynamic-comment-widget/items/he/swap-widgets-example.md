@@ -34,7 +34,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
     <script>
         (function () {
             const target = document.getElementById('fastcomments-widgets');
-            const tenantId = "demo"; // PUT YOUR TENANT ID HERE
+            const tenantId = "demo"; // הכנס כאן את מזהה השוכר שלך
     
             function setHeading(heading, {name, productID}) {
                 heading.innerHTML = `${name} (${productID})`;
@@ -52,8 +52,8 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 target.append(outer);
                 window.FastCommentsUI(widgetTarget, {
                     "tenantId": tenantId,
-                    "pageTitle": name, // for notification emails and moderation dashboard
-                    "url": productURL, // for notification emails and moderation dashboard
+                    "pageTitle": name, // עבור הודעות דוא"ל ולוח ניהול
+                    "url": productURL, // עבור הודעות דוא"ל ולוח ניהול
                     "urlId": productID,
                     "showLiveRightAway": true
                 });
@@ -77,7 +77,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 alert(`Product ${oldId} not found to replace!`);
             }
     
-            // add some widgets
+            // הוסף כמה ווידג'טים
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -117,7 +117,6 @@ We could remove them as well by calling `instance.destroy` instead of update.
 
 This is similar to how pagination works.
 
-With the React and related libraries we can simply update the configuration and the library (React, Angular, Vue)
-will handle refreshing the widget for us. With VanillaJS we have to manage it ourselves as shown.
+With the React and related libraries we can simply update the configuration and the library (React, Angular, Vue) will handle refreshing the widget for us. With VanillaJS we have to manage it ourselves as shown.
 
 Feel free to ask any questions below and we'll do our best to help!
