@@ -1,29 +1,29 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| direction | string | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| direction | string | query | Не |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/VoteResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer postVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postVote Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, молимо пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let direction = "direction_example" // String |  (opcionalno)
-let broadcastId = "broadcastId_example" // String |  (opcionalno)
-let sso = "sso_example" // String |  (opcionalno)
+let direction = "direction_example" // String |  (опционално)
+let broadcastId = "broadcastId_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
 ModerationAPI.postVote(tenantId: tenantId, commentId: commentId, options: ModerationAPI.PostVoteOptions(direction: direction, broadcastId: broadcastId, sso: sso)) { (response, error) in
     guard error == nil else {
@@ -36,3 +36,5 @@ ModerationAPI.postVote(tenantId: tenantId, commentId: commentId, options: Modera
     }
 }
 [inline-code-end]
+
+---

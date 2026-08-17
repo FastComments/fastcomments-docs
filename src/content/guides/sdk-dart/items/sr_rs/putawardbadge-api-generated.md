@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Name | Type Location Required Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
 | userId | string | query | No |  |
@@ -9,13 +9,13 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `AwardUserBadgeResponse`
+Returns: `AwardUserBadgeResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putAwardBadge Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

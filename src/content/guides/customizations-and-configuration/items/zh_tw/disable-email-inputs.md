@@ -7,13 +7,11 @@ For some sites, or applications, it's desirable not to ask the user for their em
 Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
 anonymous commenting, and then the option to disable the email input fields will appear.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='在自訂 UI 中啟用匿名評論後顯示的，完全隱藏電子郵件欄位的選項'; title='停用電子郵件輸入欄位' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='在啟用匿名評論後於自訂 UI 中顯示的完全隱藏電子郵件欄位的選項'; title='停用電子郵件輸入欄位' app-screenshot-end]
 
 With this on, the email fields will not show at all in all of our commenting products.
 
 Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
 https://fastcomments.com.
 
-You may want to consider [disabling the unverified label](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----
+You may want to consider [停用未驗證標籤](/guide-customizations-and-configuration.html#disable-unverified-label).

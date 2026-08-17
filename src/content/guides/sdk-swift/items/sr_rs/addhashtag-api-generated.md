@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
 | tenantId | string | query | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateHashTagResponse.swift)
+Враћа: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateHashTagResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'addHashTag Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let createHashTagBody = CreateHashTagBody(tenantId: "tenantId_example", tag: "tag_example", url: "url_example") // CreateHashTagBody | (opcionalno)
+let createHashTagBody = CreateHashTagBody(tenantId: "tenantId_example", tag: "tag_example", url: "url_example") // CreateHashTagBody |  (optional)
 
 DefaultAPI.addHashTag(tenantId: tenantId, createHashTagBody: createHashTagBody) { (response, error) in
     guard error == nil else {
@@ -29,3 +29,5 @@ DefaultAPI.addHashTag(tenantId: tenantId, createHashTagBody: createHashTagBody) 
     }
 }
 [inline-code-end]
+
+---

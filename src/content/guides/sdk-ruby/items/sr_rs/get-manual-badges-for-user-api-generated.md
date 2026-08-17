@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| badgesUserId | string | query | No |  |
-| commentId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| badgesUserId | string | query | Не |  |
+| commentId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_manual_badges_response.rb)
+Враћа: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_user_manual_badges_response.rb)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_manual_badges_for_user'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges_for_user Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -34,3 +34,5 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user: #{e}"
 end
 [inline-code-end]
+
+---

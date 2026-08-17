@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| create_user_badge_params | models::CreateUserBadgeParams | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| create_user_badge_params | models::CreateUserBadgeParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiCreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_create_user_badge_response.rs)
+Враћа: [`ApiCreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_create_user_badge_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'create_user_badge Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_user_badge Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = CreateUserBadgeParams {

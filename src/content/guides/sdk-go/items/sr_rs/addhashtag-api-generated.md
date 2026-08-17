@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
+Враћа: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_create_hash_tag_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer AddHashTag'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'AddHashTag Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,7 +23,7 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (opciono)
+	createHashTagBody := *openapiclient.NewCreateHashTagBody("Tag_example") // CreateHashTagBody |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32,7 +32,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.AddHashTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `AddHashTag`: CreateHashTagResponse
+	// одговор од `AddHashTag`: CreateHashTagResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]

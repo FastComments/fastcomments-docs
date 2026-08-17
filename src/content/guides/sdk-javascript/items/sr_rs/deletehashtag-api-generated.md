@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tag | string | Da |  |
-| tenantId | string | Ne |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tag | string | Yes |  |
+| tenantId | string | No |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
+Враћа: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'deleteHashTag Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,3 +24,5 @@ Vraća: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-s
   console.log(response);
 })();
 [inline-code-end]
+
+---

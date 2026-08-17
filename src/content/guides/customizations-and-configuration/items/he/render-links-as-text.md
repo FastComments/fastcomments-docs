@@ -1,8 +1,10 @@
-By default, FastComments will render links like this: [https://exmaple.com](https://exmaple.com) - where the link URL becomes a clickable
-HTML anchor tag.
+---
+בברירת מחדל, FastComments יציג קישורים כך: [https://exmaple.com](https://exmaple.com) - כאשר כתובת הקישור הופכת לקישור שניתן ללחוץ עליו
+תג HTML של קישור.
 
-Some sites may want to disable this, for example to discourage scammers. We provide this by setting the `Comment HTML Rendering Option` to `Links as Text`.
+אתרים מסוימים עשויים לרצות להשבית זאת, לדוגמה כדי למנוע הונאות. אנו מספקים זאת על‑ידי הגדרת `Comment HTML Rendering Option` ל‑`Links as Text`.
 
-This can be customized without code, on the widget customization page, for an entire domain, or page:
+ניתן להתאים זאת ללא קוד, בדף התאמת הווידג'ט, עבור כל הדומיין או עבור דף ספציפי:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='אפשרות רינדור HTML של תגובה מוגדרת ל-Links as Text תחת אפשרויות מתקדמות בהתאמת ווידג\'ט'; title='הצגת קישורים כטקסט' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='האפשרות Comment HTML Rendering Option מוגדרת ל‑Links as Text תחת אפשרויות מתקדמות בהתאמת הווידג\'ט'; title='הצגת קישורים כטקסט' app-screenshot-end]
+---

@@ -1,6 +1,6 @@
 ### Swift Package Manager
 
-Add the following to your `Package.swift` file:
+Добавьте следующее в ваш файл `Package.swift`:
 
 ```swift
 dependencies: [
@@ -8,10 +8,10 @@ dependencies: [
 ]
 ```
 
-Or in Xcode:
+Или в Xcode:
 1. File > Add Packages...
-2. Enter the repository URL: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Select the version you want to use
+2. Введите URL репозитория: `https://github.com/fastcomments/fastcomments-swift.git`
+3. Выберите версию, которую хотите использовать
 
 ### Requirements
 

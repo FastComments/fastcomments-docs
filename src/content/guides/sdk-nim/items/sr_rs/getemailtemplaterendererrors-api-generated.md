@@ -1,18 +1,19 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
 | skip | float64 | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_render_errors_response.nim)
+Враћа: [`Option[GetEmailTemplateRenderErrorsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_render_errors_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getEmailTemplateRenderErrors'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
   tenantId = "my-tenant-123",
@@ -22,8 +23,10 @@ let (optResp, httpResp) = client.getEmailTemplateRenderErrors(
 
 if optResp.isSome:
   let resp = optResp.get()
-  # upotrebite odgovor po potrebi
+  # користите одговор по потреби
 else:
-  # obradite nedostajući odgovor
+  # обрадите недостајући одговор
   discard
 [inline-code-end]
+
+---

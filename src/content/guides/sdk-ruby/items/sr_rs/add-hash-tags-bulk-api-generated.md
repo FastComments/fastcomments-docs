@@ -1,24 +1,24 @@
 ## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 
 ## Response
 
 Returns: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/bulk_create_hash_tags_response.rb)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer add_hash_tags_bulk'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tags_bulk Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# postavljanje autorizacije
+# подешавање ауторизације
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključem: api_key
+  # Подеси ауторизацију API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeću liniju da biste postavili prefiks za API ključ, npr. 'Bearer' (podrazumevano nil)
+  # Одкоментариши следећи ред да подесиш префикс за API кључ, нпр. 'Bearer' (подразумевано је nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -31,6 +31,8 @@ begin
   result = api_instance.add_hash_tags_bulk(tenant_id, bulk_create_hash_tags_body)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Error when calling DefaultApi->add_hash_tags_bulk: #{e}"
+  puts "Грешка при позиву DefaultApi->add_hash_tags_bulk: #{e}"
 end
 [inline-code-end]
+
+---

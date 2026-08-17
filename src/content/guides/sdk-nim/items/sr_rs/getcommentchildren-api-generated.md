@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| sso | string = "" | No |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| sso | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
+Враћа: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentChildren'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentChildren'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (childRespOpt, httpResp) = client.getCommentChildren(tenantId = "my-tenant-123", commentId = "cmt-456789", sso = "")
 if childRespOpt.isSome:

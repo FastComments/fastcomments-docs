@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | createFeedPostParams | CreateFeedPostParams | Yes |  |
 | broadcastId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublicResponse.ts)
+Враћа: [`CreateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublicResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primjer createFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function submitPost() {
   const tenantId: string = "tenant_12345";

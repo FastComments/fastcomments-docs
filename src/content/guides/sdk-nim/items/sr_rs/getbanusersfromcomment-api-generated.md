@@ -1,21 +1,23 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| sso | string = "" | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| sso | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetBannedUsersFromCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_banned_users_from_comment_response.nim)
+Враћа: [`Option[GetBannedUsersFromCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_banned_users_from_comment_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getBanUsersFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getBanUsersFromComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getBanUsersFromComment(tenantId = "my-tenant-001", commentId = "cmt-123456", sso = "")
 if response.isSome:
   let banInfo = response.get()
   echo banInfo
 [inline-code-end]
+
+---

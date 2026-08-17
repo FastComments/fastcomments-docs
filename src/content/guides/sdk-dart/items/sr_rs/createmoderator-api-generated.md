@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateModeratorResponse`
+Враћа: `CreateModeratorResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createModerator Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createModerator'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

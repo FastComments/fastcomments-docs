@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| postIds | array | query | Yes |  |
-| sso | string | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| postIds | array | query | Да |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: `FeedPostsStatsResponse`
+Враћа: `FeedPostsStatsResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getFeedPostsStats Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getFeedPostsStats'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

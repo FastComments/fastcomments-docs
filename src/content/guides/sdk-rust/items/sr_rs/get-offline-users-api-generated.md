@@ -1,4 +1,7 @@
-Past komentari na stranici koji NISU trenutno online. Sortirano po displayName. Koristite ovo nakon što iscrpite /users/online da prikažete sekciju „Members“. Kursorska paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName} indeks od afterName unapred putem $gt, bez troška $skip.
+Претходни коментатори на страници који ТРЕНУТНО НИСУ онлајн. Сортирани по displayName.  
+Користите ово након што исцрпите /users/online да прикажете одељак „Members“.
+
+Курсорска пагинација по commenterName: сервер пролази кроз парцијални {tenantId, urlId, commenterName} индекс од afterName унапред помоћу $gt, без трошка $skip.
 
 ## Parameters
 
@@ -11,9 +14,9 @@ Past komentari na stranici koji NISU trenutno online. Sortirano po displayName. 
 
 ## Response
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

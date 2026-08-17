@@ -2,22 +2,22 @@ req
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| limit | number | Ne |  |
-| tags | Array<string> | Ne |  |
+| tenantId | string | Да |  |
+| afterId | string | Не |  |
+| limit | number | Не |  |
+| tags | Array<string> | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetFeedPostsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse1.ts)
+Враћа: [`GetFeedPostsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getFeedPosts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPosts Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = 'tenant_12345';
@@ -28,3 +28,5 @@ Vraća: [`GetFeedPostsResponse1`](https://github.com/FastComments/fastcomments-s
   const feedResult: GetFeedPostsResponse1 = await getFeedPosts(tenantId, afterId, limit, tags);
 })();
 [inline-code-end]
+
+---

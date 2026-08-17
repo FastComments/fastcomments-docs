@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserTrustFactorResponse.java)
+Враћа: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetUserTrustFactorResponse.java)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTrustFactor'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| bulk_aggregate_question_results_request | models::BulkAggregateQuestionResultsRequest | Yes |  |
-| force_recalculate | bool | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| bulk_aggregate_question_results_request | models::BulkAggregateQuestionResultsRequest | Да |  |
+| force_recalculate | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/bulk_aggregate_question_results_response.rs)
+Враћа: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/bulk_aggregate_question_results_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'bulk_aggregate_question_results Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulk_aggregate_question_results пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let request = models::BulkAggregateQuestionResultsRequest {
@@ -28,3 +28,5 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

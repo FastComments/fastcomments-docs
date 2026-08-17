@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Ne |  |
-| userId | string = "" | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Не |  |
+| userId | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[UpdateSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_subscription_api_response.nim)
+Враћа: [`Option[UpdateSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_subscription_api_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за updateSubscription'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let subscriptionData = UpdateAPIUserSubscriptionData(
   planId = "premium-plan",

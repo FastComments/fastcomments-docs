@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| options | PostUnFlagCommentOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | PostUnFlagCommentOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postUnFlagComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (maybeResp, httpResp) = client.postUnFlagComment(
   tenantId = "my-tenant-123",
@@ -23,3 +23,5 @@ let (maybeResp, httpResp) = client.postUnFlagComment(
 if maybeResp.isSome:
   let emptyResp = maybeResp.get()
 [inline-code-end]
+
+---

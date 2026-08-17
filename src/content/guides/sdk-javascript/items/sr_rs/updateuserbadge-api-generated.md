@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
+Враћа: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function applyBadge() {
     const tenantId: string = "acme-corp-tenant";
@@ -20,7 +20,7 @@ async function applyBadge() {
 
     const params: UpdateUserBadgeParams = {
         badgeId: "gold-contributor",
-        // primer opcionog polja
+        // пример опционог поља
         expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
     };
 

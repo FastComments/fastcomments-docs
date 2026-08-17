@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sorts | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| text-search | string | query | Не |  |
+| byIPFromComment | string | query | Не |  |
+| filters | string | query | Не |  |
+| searchFilters | string | query | Не |  |
+| sorts | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `ModerationExportResponse`
+Враћа: `ModerationExportResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postApiExport Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -36,5 +36,3 @@ try {
     print('Exception when calling ModerationApi->postApiExport: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateEmailTemplateResponse`
+Враћа: `CreateEmailTemplateResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createEmailTemplate Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createEmailTemplate'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Конфигуриши ауторизацију API кључа: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentariši dole da подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

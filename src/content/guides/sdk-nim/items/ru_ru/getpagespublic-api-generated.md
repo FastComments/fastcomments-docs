@@ -1,19 +1,19 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.  
+Requires `enableFChat` to be true on the resolved custom config for each page.  
 Pages that require SSO are filtered against the requesting user's group access.
 
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | GetPagesPublicOptions | No |  |
+| tenantId | string | Да |  |
+| options | GetPagesPublicOptions | Нет |  |
 
-## Response
+## Ответ
 
-Returns: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
+Возвращает: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

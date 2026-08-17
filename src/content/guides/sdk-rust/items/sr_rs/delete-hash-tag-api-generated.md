@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | tag | String | Yes |  |
 | delete_hash_tag_request_body | models::DeleteHashTagRequestBody | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'delete_hash_tag Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_hash_tag пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = DeleteHashTagParams {
@@ -24,3 +24,5 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

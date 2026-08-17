@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|-----|----------|------|
-| namespace | string | Da |  |
-| component | string | Da |  |
-| locale | string | Ne |  |
-| useFullTranslationIds | boolean | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| namespace | string | Да |  |
+| component | string | Да |  |
+| locale | string | Не |  |
+| useFullTranslationIds | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTranslationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse1.ts)
+Враћа: [`GetTranslationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const namespace: string = 'blog';
@@ -25,3 +25,5 @@ Vraća: [`GetTranslationsResponse1`](https://github.com/FastComments/fastcomment
   const fullTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component, locale, useFullTranslationIds);
 })();
 [inline-code-end]
+
+---

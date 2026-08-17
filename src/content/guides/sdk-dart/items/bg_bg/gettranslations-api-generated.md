@@ -1,27 +1,27 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| namespace | string | path | Yes |  |
-| component | string | path | Yes |  |
-| locale | string | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
+| namespace | string | path | Да |  |
+| component | string | path | Да |  |
+| locale | string | query | Не |  |
+| useFullTranslationIds | boolean | query | Не |  |
 
-## Response
+## Отговор
 
-Returns: `GetTranslationsResponse`
+Връща: `GetTranslationsResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getTranslations'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
-final namespace = namespace_example; // Низ |
-final component = component_example; // Низ |
-final locale = locale_example; // Низ |
-final useFullTranslationIds = true; // булев |
+final namespace = namespace_example; // String | 
+final component = component_example; // String | 
+final locale = locale_example; // String | 
+final useFullTranslationIds = true; // bool | 
 
 try {
     final result = api_instance.getTranslations(namespace, component, GetTranslationsOptions(locale: locale, useFullTranslationIds: useFullTranslationIds));

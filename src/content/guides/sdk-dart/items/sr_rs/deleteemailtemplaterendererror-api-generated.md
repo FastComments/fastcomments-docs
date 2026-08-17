@@ -1,23 +1,23 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| errorId | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
+| errorId | string | path | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIEmptyResponse`
+Враћа: `APIEmptyResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer deleteEmailTemplateRenderError'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// откоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

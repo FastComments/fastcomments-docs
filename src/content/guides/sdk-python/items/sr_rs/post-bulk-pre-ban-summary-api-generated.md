@@ -1,20 +1,20 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
 | tenantId | string | query | Yes |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
 | includeByIP | boolean | query | No |  |
 | includeByEmailDomain | boolean | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_pre_ban_summary.py)
+Враћа: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/bulk_pre_ban_summary.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_bulk_pre_ban_summary Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.moderation_api import PostBulkPreBanSummaryOptions
@@ -23,23 +23,23 @@ from client.models.bulk_pre_ban_summary import BulkPreBanSummary
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Unesite kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     bulk_pre_ban_params = client.BulkPreBanParams() # BulkPreBanParams | 
-    include_by_user_id_and_email = True # bool |  (opciono)
-    include_by_ip = True # bool |  (opciono)
-    include_by_email_domain = True # bool |  (opciono)
-    sso = 'sso_example' # str |  (opciono)
+    include_by_user_id_and_email = True # bool |  (optional)
+    include_by_ip = True # bool |  (optional)
+    include_by_email_domain = True # bool |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.post_bulk_pre_ban_summary(tenant_id, bulk_pre_ban_params, PostBulkPreBanSummaryOptions(include_by_user_id_and_email=include_by_user_id_and_email, include_by_ip=include_by_ip, include_by_email_domain=include_by_email_domain, sso=sso))

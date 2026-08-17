@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| createFeedPostParams | CreateFeedPostParams | Yes |  |
-| options | const CreateFeedPostOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| createFeedPostParams | CreateFeedPostParams | Да |  |
+| options | const CreateFeedPostOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
+Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createFeedPost'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 CreateFeedPostParams postParams;

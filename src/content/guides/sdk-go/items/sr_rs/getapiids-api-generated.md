@@ -1,23 +1,23 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| afterId | string | query | Ne |  |
-| demo | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| afterId | string | query | No |  |
+| demo | boolean | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
+Враћа: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_api_get_comment_ids_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer GetApiIds'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetApiIds пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -30,13 +30,13 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	textSearch := "textSearch_example" // string |  (opciono)
-	byIPFromComment := "byIPFromComment_example" // string |  (opciono)
-	filters := "filters_example" // string |  (opciono)
-	searchFilters := "searchFilters_example" // string |  (opciono)
-	afterId := "afterId_example" // string |  (opciono)
-	demo := true // bool |  (opciono)
-	sso := "sso_example" // string |  (opciono)
+	textSearch := "textSearch_example" // string |  (опционално)
+	byIPFromComment := "byIPFromComment_example" // string |  (опционално)
+	filters := "filters_example" // string |  (опционално)
+	searchFilters := "searchFilters_example" // string |  (опционално)
+	afterId := "afterId_example" // string |  (опционално)
+	demo := true // bool |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetApiIds``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetApiIds`: ModerationAPIGetCommentIdsResponse
+	// одговор од `GetApiIds`: ModerationAPIGetCommentIdsResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetApiIds`: %v\n", resp)
 }
 [inline-code-end]

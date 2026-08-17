@@ -1,43 +1,43 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
+Враћа: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_get_logs_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_logs'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.moderation_api_get_logs_response import ModerationAPIGetLogsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (опционо)
 
     try:
         api_response = api_instance.get_logs(tenant_id, comment_id, sso=sso)
-        print("The response of ModerationApi->get_logs:\n")
+        print("Одговор од ModerationApi->get_logs:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ModerationApi->get_logs: %s\n" % e)
+        print("Изузетак приликом позивања ModerationApi->get_logs: %s\n" % e)
 [inline-code-end]

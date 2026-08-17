@@ -1,16 +1,16 @@
 ## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| meta | string | query | No |  |
-| skip | number | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| meta | string | query | Не |  |
+| skip | number | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: `GetTenantsResponse`
+Враћа: `GetTenantsResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTenants'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | textSearch | string | No |  |
 | byIPFromComment | string | No |  |
 | filters | string | No |  |
@@ -11,13 +11,13 @@
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetApiIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiIdsResponse.ts)
+Враћа: [`GetApiIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiIdsResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getApiIds'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiIds Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const textSearch: string = "urgent feedback";
 const byIPFromComment: string = "203.0.113.42";

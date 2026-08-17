@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createUserBadgeParams | CreateUserBadgeParams | No |  |
+| tenantId | string | Да |  |
+| createUserBadgeParams | CreateUserBadgeParams | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APICreateUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_create_user_badge_response.nim)
+Враћа: [`Option[APICreateUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_create_user_badge_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'createUserBadge Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

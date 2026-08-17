@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
 | updateAPISSOUserData | UpdateAPISSOUserData | No |  |
 | updateComments | bool | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`Option[PutSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_sso_user_api_response.nim)
+Враћа: [`Option[PutSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_sso_user_api_response.nim)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer putSSOUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putSSOUser Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (apiRespOpt, httpResp) = client.putSSOUser(
   tenantId = "my-tenant-123",

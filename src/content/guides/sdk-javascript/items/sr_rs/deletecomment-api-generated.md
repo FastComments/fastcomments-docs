@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | contextUserId | string | No |  |
 | isLive | boolean | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResponse.ts)
+Враћа: [`DeleteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = 'tenant_01';

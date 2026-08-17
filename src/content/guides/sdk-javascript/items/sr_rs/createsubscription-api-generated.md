@@ -1,15 +1,15 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateSubscriptionAPIResponse.ts)
+Враћа: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateSubscriptionAPIResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'createSubscription Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,3 +27,5 @@ Vraća: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastco
     console.log(result);
 })();
 [inline-code-end]
+
+---

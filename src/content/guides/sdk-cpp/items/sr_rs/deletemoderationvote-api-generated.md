@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | voteId | string | Yes |  |
 | options | const DeleteModerationVoteOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer deleteModerationVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteModerationVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto commentId = utility::conversions::to_string_t("comment-abc123");

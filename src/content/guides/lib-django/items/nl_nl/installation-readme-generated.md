@@ -1,17 +1,18 @@
-Install from a release tag (this project is distributed via git tags, not PyPI):
+---
+Installeer vanaf een release‑tag (dit project wordt gedistribueerd via git‑tags, niet via PyPI):
 
 ```bash
 pip install "git+https://github.com/fastcomments/fastcomments-django.git@v0.1.0"
 ```
 
-For server-side REST access (the `admin()` / `public_api()` helpers), add the
-`api` extra, which pulls in the SDK's generated client:
+Voor server‑side REST‑toegang (de `admin()` / `public_api()` helpers), voeg de
+`api` extra toe, die de door de SDK gegenereerde client binnenhaalt:
 
 ```bash
 pip install "fastcomments-django[api] @ git+https://github.com/fastcomments/fastcomments-django.git@v0.1.0"
 ```
 
-Add the app to `INSTALLED_APPS`:
+Voeg de app toe aan `INSTALLED_APPS`:
 
 ```python
 INSTALLED_APPS = [
@@ -19,3 +20,4 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
+---

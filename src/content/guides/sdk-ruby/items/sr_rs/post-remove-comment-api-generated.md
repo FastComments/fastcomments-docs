@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `PostRemoveCommentApiResponse`
+Враћа: `PostRemoveCommentApiResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_remove_comment Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_remove_comment пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

@@ -1,8 +1,8 @@
-Widžet Recent Comments prikazuje listu najnovijih komentara na vašem sajtu ili za određenu stranicu. Uključuje naslov, zaobljene avatare, prikaze komentara, klikabilne datume koji vode direktno do komentara i automatsko otkrivanje tamnog moda.
+The Recent Comments Widget displays a list of the most recent comments across your site or for a specific page. It includes a heading, rounded avatars, comment previews, clickable dates that deep-link to the comment, and automatic dark mode detection.
 
-## Osnovna instalacija
+## Basic Installation
 
-[inline-code-attrs-start title = 'Instalacija widžeta Recent Comments'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталација виџета за недавне коментаре'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -13,18 +13,18 @@ Widžet Recent Comments prikazuje listu najnovijih komentara na vašem sajtu ili
 </script>
 [inline-code-end]
 
-## Opcije konfiguracije
+## Configuration Options
 
-- **tenantId** (obavezno): ID vašeg FastComments naloga
-- **urlId** (opciono): Filtrira na jednu stranicu. Ostavite null za sve stranice
-- **count** (opciono): Broj komentara koji će biti prikazani. Podrazumevano je `10`
-- **hasDarkBackground** (opciono): Primorava tamni izgled. Ako nije postavljeno, automatski se detektuje iz pozadine stranice
+- **tenantId** (required): Your FastComments tenant ID
+- **urlId** (optional): Filter to a single page. Leave null for all pages
+- **count** (optional): Number of comments to show. Default is `10`
+- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
 
-## Struktura widžeta
+## Widget Structure
 
-Widžet se renderuje sa sledećom HTML strukturom:
+The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = 'HTML struktura widžeta Recent Comments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML структура виџета за недавне коментаре'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -44,9 +44,9 @@ Widžet se renderuje sa sledećom HTML strukturom:
 </div>
 [inline-code-end]
 
-## Podrazumevani CSS (referenca)
+## Default CSS Reference
 
-[inline-code-attrs-start title = 'Podrazumevani CSS widžeta Recent Comments'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Подразумевани CSS виџета за недавне коментаре'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,11 +70,11 @@ Widžet se renderuje sa sledećom HTML strukturom:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Primeri prilagođavanja
+## Customization Examples
 
-### Promena veličine avatara
+### Change Avatar Size
 
-[inline-code-attrs-start title = 'Prilagođena veličina avatara'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Прилагођена величина аватара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-avatar {
     width: 40px !important;
@@ -82,18 +82,18 @@ Widžet se renderuje sa sledećom HTML strukturom:
 }
 [inline-code-end]
 
-### Prikaži više redova teksta komentara
+### Show More Lines of Comment Text
 
-[inline-code-attrs-start title = 'Prikaži više redova komentara'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Прикажи више линија коментара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Ukloni granicu kontejnera
+### Remove the Container Border
 
-[inline-code-attrs-start title = 'Ukloni granicu kontejnera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Уклони ивицу контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;

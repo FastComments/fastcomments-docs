@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| updateHashTagBody | UpdateHashTagBody | No |  |
+| tag | string | Да |  |
+| tenantId | string | Не |  |
+| updateHashTagBody | UpdateHashTagBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PatchHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchHashTagResponse.ts)
+Враћа: [`PatchHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchHashTagResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patchHashTag Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const response1: PatchHashTagResponse = await patchHashTag("new-feature");
 

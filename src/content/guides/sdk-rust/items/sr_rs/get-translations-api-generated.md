@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| namespace | String | Da |  |
-| component | String | Da |  |
-| locale | String | Ne |  |
-| use_full_translation_ids | bool | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| namespace | String | Да |  |
+| component | String | Да |  |
+| locale | String | Не |  |
+| use_full_translation_ids | bool | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_translations_response.rs)
+Враћа: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_translations_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'get_translations Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

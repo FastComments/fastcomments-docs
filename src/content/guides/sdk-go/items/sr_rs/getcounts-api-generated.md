@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_banned_users_count_response.go)
+Враћа: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_banned_users_count_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'GetCounts Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetCounts Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -23,8 +23,8 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	sso := "sso_example" // string |  (opciono)
+	tenantId := "tenantId_example" // стринг | 
+	sso := "sso_example" // стринг |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33,7 +33,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetCounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetCounts`: GetBannedUsersCountResponse
+	// одговор од `GetCounts`: GetBannedUsersCountResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]

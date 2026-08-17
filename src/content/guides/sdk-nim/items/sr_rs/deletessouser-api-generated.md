@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
 | options | DeleteSSOUserOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[DeleteSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_sso_user_api_response.nim)
+Враћа: [`Option[DeleteSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_sso_user_api_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteSSOUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSSOUser пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (apiRespOpt, httpResp) = client.deleteSSOUser(
   tenantId = "my-tenant-123",

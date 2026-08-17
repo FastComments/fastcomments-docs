@@ -1,12 +1,12 @@
-The work that moderators do is tracked and can be viewed by coming back to the "Edit Moderators" page.
+モデレーターが行う作業は追跡され、"Edit Moderators" ページに戻ることで確認できます。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='各モデレーターの承認、削除、スパムとしてマークされたコメント数を一覧表示する Edit Moderators ページ'; title='モデレーター統計' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderators?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderators'; selector = '.account-block'; alt='Edit Moderators ページは、各モデレーターと承認されたコメント、削除されたコメント、スパムとしてマークされたコメントの数を一覧表示します'; title='モデレーター統計' app-screenshot-end]
 
-This page will track various statistics:
-- Comments Approved
-- Comments Marked Reviewed
-- Comments Deleted
-- Comments Edited
-- Comments Marked Spam
-- Users Banned
-- Their Invite Status (Accepted or Pending)
+このページはさまざまな統計を追跡します：
+- 承認されたコメント
+- レビュー済みとしてマークされたコメント
+- 削除されたコメント
+- 編集されたコメント
+- スパムとしてマークされたコメント
+- 禁止されたユーザー
+- 招待ステータス（受諾または保留）

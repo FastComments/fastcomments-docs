@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| voteId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| voteId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| broadcastId | string | query | Да |  |
+| editKey | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `VoteDeleteResponse`
+Враћа: `VoteDeleteResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteCommentVote Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -36,5 +36,3 @@ try {
     print('Exception when calling PublicApi->deleteCommentVote: $e\n');
 }
 [inline-code-end]
-
----

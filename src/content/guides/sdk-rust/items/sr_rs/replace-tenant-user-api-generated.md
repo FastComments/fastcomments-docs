@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 | replace_tenant_user_body | models::ReplaceTenantUserBody | Yes |  |
 | update_comments | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'replace_tenant_user Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replace_tenant_user пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = ReplaceTenantUserParams {
@@ -26,3 +26,5 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

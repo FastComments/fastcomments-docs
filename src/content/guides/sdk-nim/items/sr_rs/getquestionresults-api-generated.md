@@ -1,17 +1,17 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | GetQuestionResultsOptions | No |  |
+| tenantId | string | Да |  |
+| options | GetQuestionResultsOptions | Не |  |
 
-## Odgovor
+## Response
 
-Vraća: [`Option[GetQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_results_response.nim)
+Враћа: [`Option[GetQuestionResultsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_results_response.nim)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer getQuestionResults'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResults Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getQuestionResults(
   tenantId = "my-tenant-123",
@@ -22,3 +22,5 @@ if response.isSome:
   let results = response.get()
   echo results
 [inline-code-end]
+
+---

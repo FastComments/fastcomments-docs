@@ -1,4 +1,5 @@
-To see every widget and flow running locally against the public `demo` tenant, clone the repo and run:
+---
+За да видите всеки уиджет и поток, работещи локално срещу публичния `demo` наемател, клонирайте репото и стартирайте:
 
 ```bash
 cd examples/example-showcase
@@ -6,4 +7,5 @@ npm install
 npm run dev
 ```
 
-Each widget/flow has its own view under `examples/example-showcase/src/views/` that you can copy straight into your own React app.
+Всеки уиджет/поток има собствен изглед в `examples/example-showcase/src/views/`, който можете директно да копирате във вашето собствено React приложение.
+---

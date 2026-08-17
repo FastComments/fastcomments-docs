@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| broadcastId | string | query | Da |  |
-| editKey | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| commentId | string | path | Yes |  |
+| broadcastId | string | query | Yes |  |
+| editKey | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `PublicAPISetCommentTextResponse`
+Returns: `PublicAPISetCommentTextResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'setCommentText Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setCommentText Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

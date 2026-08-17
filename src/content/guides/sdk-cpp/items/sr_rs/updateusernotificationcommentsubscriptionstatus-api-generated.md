@@ -1,22 +1,22 @@
-Omogućite ili onemogućite obaveštenja za određeni komentar.
+Омогућите или онемогућите обавештења за одређени коментар.
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenantId | string | Yes |  |
 | notificationId | string | Yes |  |
 | optedInOrOut | string | Yes |  |
 | commentId | string | Yes |  |
 | sso | string | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
+Враћа: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
     utility::conversions::to_string_t("my-tenant-123"),

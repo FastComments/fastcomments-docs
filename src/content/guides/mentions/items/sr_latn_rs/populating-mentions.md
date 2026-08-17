@@ -1,5 +1,5 @@
 ---
-The `@mentions` autocomplete can be pre-populated with the users in your platform or application by using the [API](/guide-api.html).
+Autocomplete za `@mentions` može biti unapred popunjen korisnicima na vašoj platformi ili aplikaciji korišćenjem [API](/guide-api.html).
 
-By using the API, it is possible to populate both SSO and Tenant Users. Both will appear in `@mentions` autocomplete depending on group configuration.
+Korišćenjem API-ja moguće je popuniti i SSO i Tenant korisnike. Oboje će se pojaviti u autocomplete‑u za `@mentions` u zavisnosti od konfiguracije grupe.
 ---

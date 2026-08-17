@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentResponse.ts)
+Враћа: [`GetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,3 +21,5 @@ Vraća: [`GetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-
   console.log(badgeInfo?.label);
 })();
 [inline-code-end]
+
+---

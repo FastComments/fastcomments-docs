@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Da |  |
-| forceRecalculate | boolean | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Да |  |
+| forceRecalculate | boolean | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`BulkAggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResultsResponse1.ts)
+Враћа: [`BulkAggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkAggregateQuestionResultsResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'bulkAggregateQuestionResults Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'bulkAggregateQuestionResults Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-corp";
 

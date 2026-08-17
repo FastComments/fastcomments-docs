@@ -1,4 +1,4 @@
-### 1. Add FastCommentsView to your layout
+### 1. Προσθήκη FastCommentsView στη διάταξή σας
 
 ```xml
 <com.fastcomments.sdk.FastCommentsView
@@ -7,10 +7,10 @@
     android:layout_height="match_parent" />
 ```
 
-### 2. Initialize and configure the SDK
+### 2. Αρχικοποίηση και διαμόρφωση του SDK
 
 ```kotlin
-// Διαμορφώστε το SDK
+// Διαμόρφωση του SDK
 val config = CommentWidgetConfig(
     "your-tenant-id", 
     "page-url-id", 
@@ -19,20 +19,20 @@ val config = CommentWidgetConfig(
     "Site Name"
 )
 
-// Επιπρόσθετες επιλογές διαμόρφωσης
-config.voteStyle = VoteStyle.UpDown // ή VoteStyle.Heart
+// Επιπλέον επιλογές διαμόρφωσης
+config.voteStyle = VoteStyle.UpDown // or VoteStyle.Heart
 config.enableInfiniteScrolling = true
-config.hasDarkBackground = true // για υποστήριξη σκοτεινής λειτουργίας
+config.hasDarkBackground = true // for dark mode support
 
-// Αρχικοποιήστε το SDK
+// Αρχικοποίηση του SDK
 val sdk = FastCommentsSDK(config)
 
-// Βρείτε την προβολή σχολίων στο layout σας
+// Εύρεση της προβολής σχολίων στη διάταξή σας
 val commentsView = findViewById<FastCommentsView>(R.id.commentsView)
 
-// Ορίστε το instance του SDK για την προβολή
+// Ορισμός του αντικειμένου SDK για την προβολή
 commentsView.setSDK(sdk)
 
-// Φορτώστε τα σχόλια
+// Φόρτωση σχολίων
 commentsView.load()
 ```

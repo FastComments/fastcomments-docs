@@ -1,17 +1,17 @@
-## Params
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
+Враћа: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getUserBadgeProgressById Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBadgeProgressById'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = U("my-tenant-123");
 auto userId = U("user-456");

@@ -1,17 +1,20 @@
-When users comment, and they are not logged in, they will be asked to provide their email.
+---
+Когато потребителите коментират и не са влезли в профила, ще им бъде поискано да предоставят своя имейл.
 
-This will create an "unverified session" for that user, and we will ask them to verify that session via email.
+Това ще създаде „непотвърдена сесия“ за този потребител и ще ги помолим да потвърдят сесията чрез имейл.
 
-For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
+За някои сайтове или приложения е желателно да не се изисква имейл от потребителя при коментиране или гласуване.
 
-Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
-anonymous commenting, and then the option to disable the email input fields will appear.
+Активирането на анонимно коментиране прави полето за имейл незадължително. Въпреки това можем да го изключим напълно. Първо активирайте
+анонимното коментиране и след това ще се появи опцията за изключване на полетата за имейл.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Опция за напълно скриване на полетата за имейл, показана след активиране на анонимните коментари в потребителския интерфейс за персонализиране'; title='Деактивиране на полетата за имейл' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Опция за скриване на полетата за имейл изцяло, показана след като анонимните коментари са активирани в UI за персонализиране'; title='Деактивиране на полетата за имейл' app-screenshot-end]
 
-With this on, the email fields will not show at all in all of our commenting products.
+С тази настройка полетата за имейл изобщо няма да се показват във всички наши продукти за коментиране.
 
-Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
+Имайте предвид, че с тази конфигурация всички коментари ще бъдат непотвърдени, освен ако потребителят не създаде акаунт и влезе в
 https://fastcomments.com.
 
-You may want to consider [disabling the unverified label](/guide-customizations-and-configuration.html#disable-unverified-label).
+Може да обмислите [изключване на етикета за непотвърден](/guide-customizations-and-configuration.html#disable-unverified-label).
+
+---

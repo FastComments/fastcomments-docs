@@ -1,28 +1,28 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| userId | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| userId | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSubscriptionAPIResponse.ts)
+Враћа: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSubscriptionAPIResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteSubscription Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSubscription Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant_9876";
   const subscriptionId: string = "sub_54321";
   const userId: string = "user_abc123";
 
-  // Sa opcionim userId
+  // Са опционом userId
   const responseWithUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId, userId);
 
-  // Bez opcionog userId
+  // Без опционог userId
   const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);
 })();
 [inline-code-end]

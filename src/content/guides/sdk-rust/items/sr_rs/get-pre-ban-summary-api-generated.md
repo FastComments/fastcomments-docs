@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | comment_id | String | Yes |  |
@@ -9,13 +9,13 @@
 | include_by_email_domain | bool | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PreBanSummary`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/pre_ban_summary.rs)
+Враћа: [`PreBanSummary`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/pre_ban_summary.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_pre_ban_summary'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_pre_ban_summary'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetPreBanSummaryParams {

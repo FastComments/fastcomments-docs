@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createTenantUserBody | CreateTenantUserBody | Ne |  |
+| tenantId | string | Да |  |
+| createTenantUserBody | CreateTenantUserBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[CreateTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user_response.nim)
+Враћа: [`Option[CreateTenantUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_tenant_user_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createTenantUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let tenantId = "my-tenant-123"
 let userBody = CreateTenantUserBody(
@@ -28,3 +28,5 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp.userId
 [inline-code-end]
+
+---

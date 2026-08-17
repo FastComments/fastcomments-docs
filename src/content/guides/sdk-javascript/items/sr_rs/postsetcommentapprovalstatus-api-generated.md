@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| commentId | string | Da |  |
-| approved | boolean | Ne |  |
-| broadcastId | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| commentId | string | Yes |  |
+| approved | boolean | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
+Враћа: [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentApprovalStatus Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function main() {
   const commentIdOnly: string = "cmt_1001";

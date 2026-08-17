@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| value | String | No |  |
-| sso | String | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| value | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_user_search_response.rs)
+Враћа: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_user_search_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_search_users Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetSearchUsersParams {
@@ -24,5 +24,3 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

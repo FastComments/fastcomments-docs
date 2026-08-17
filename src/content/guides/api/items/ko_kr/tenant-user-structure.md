@@ -1,14 +1,12 @@
-The `TenantUser` defines a `User` which is managed by a specific tenant. Their account is in complete control of the tenant
-they are associated with, and their account can be updated or deleted via the [UI](https://fastcomments.com/auth/my-account/users) or API.
+The `TenantUser`는 특정 테넌트에 의해 관리되는 `User`를 정의합니다. 해당 계정은 연관된 테넌트가 완전히 제어하며, 계정은 [UI](https://fastcomments.com/auth/my-account/users) 또는 API를 통해 업데이트하거나 삭제할 수 있습니다.
 
-Tenant users can be administrators with all permissions and access to the `Tenant`, or they can be limited to specific permissions to
-moderate comments, access API keys, etc.
+테넌트 사용자는 `Tenant`에 대한 모든 권한과 접근을 가진 관리자일 수 있거나, 댓글을 관리하고 API 키에 접근하는 등 특정 권한만 제한적으로 가질 수 있습니다.
 
-The structure for the `TenantUser` object is as follows:
+`TenantUser` 객체의 구조는 다음과 같습니다:
 
 [inline-code-attrs-start title = 'TenantUser 구조'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-/** 알림을 위한 설정입니다. **/
+/** 알림을 위한 것입니다. **/
 export enum UserDigestEmailFrequency {
     Disabled = -1,
     Daily = 0,
@@ -20,7 +18,7 @@ export interface TenantUser {
     id: string
     tenantId: string
     username: string
-    /** 예를 들어 댓글 작성자의 블로그 링크입니다. **/
+    /** 예를 들어, 댓글 작성자의 블로그에 대한 링크. **/
     websiteUrl?: string
     email: string
     signUpDate: number
@@ -32,7 +30,7 @@ export interface TenantUser {
     optedInTenantNotifications: boolean
     hideAccountCode: boolean
     avatarSrc?: string
-    /** 사용자가 댓글 작성자들로부터의 도움 요청을 받는가? **/
+    /** 사용자가 댓글 작성자로부터 도움 요청을 받습니까? **/
     isHelpRequestAdmin: boolean
     isAccountOwner: boolean
     isAdminAdmin: boolean
@@ -50,5 +48,3 @@ export interface TenantUser {
     karma?: number
 }
 [inline-code-end]
-
----

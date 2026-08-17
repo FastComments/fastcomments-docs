@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| domainToUpdate | string | Yes |  |
-| patchDomainConfigParams | PatchDomainConfigParams | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Да |  |
+| domainToUpdate | string | Да |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
+Враћа: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patchDomainConfig Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto domainToUpdate = utility::conversions::to_string_t("example.com");
@@ -23,9 +23,9 @@ patchDomainConfigParams.customHeader = boost::optional<utility::string_t>(utilit
 
 api->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
     .then([](std::shared_ptr<PatchDomainConfigResponse> resp) {
-        // obrada uspeha
+        // обрада успеха
     })
     .then([](pplx::task<void> t) {
-        try { t.get(); } catch (const std::exception& e) { /* obrada greške */ }
+        try { t.get(); } catch (const std::exception& e) { /* обрада грешке */ }
     });
 [inline-code-end]

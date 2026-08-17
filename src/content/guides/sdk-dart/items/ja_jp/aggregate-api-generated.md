@@ -11,7 +11,7 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Response
 
-Returns: `AggregateResponse`
+返却: `AggregateResponse`
 
 ## Example
 

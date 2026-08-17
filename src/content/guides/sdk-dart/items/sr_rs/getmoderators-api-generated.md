@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| skip | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Returns: `GetModeratorsResponse`
+Враћа: `GetModeratorsResponse`
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getModerators'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Подеси ауторизацију API кључа: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentari ispod da postaviš prefiks (npr. Bearer) за API кључ, ако је потребно
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -30,3 +30,5 @@ try {
     print('Exception when calling DefaultApi->getModerators: $e\n');
 }
 [inline-code-end]
+
+---

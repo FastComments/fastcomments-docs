@@ -1,38 +1,38 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
-| minValue | number | query | No |  |
-| maxValue | number | query | No |  |
-| limit | number | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| questionId | string | query | Не |  |
+| questionIds | array | query | Не |  |
+| urlId | string | query | Не |  |
+| startDate | string | query | Не |  |
+| forceRecalculate | boolean | query | Не |  |
+| minValue | number | query | Не |  |
+| maxValue | number | query | Не |  |
+| limit | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CombineQuestionResultsWithCommentsResponse.php)
+Враћа: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CombineQuestionResultsWithCommentsResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
+// Подесите ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
@@ -57,3 +57,5 @@ try {
     echo 'Exception when calling DefaultApi->combineCommentsWithQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

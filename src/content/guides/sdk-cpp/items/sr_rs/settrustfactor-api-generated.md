@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | options | const SetTrustFactorOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
+Враћа: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'setTrustFactor Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример setTrustFactor'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 SetTrustFactorOptions opts;
 opts.userId = utility::conversions::to_string_t("user@example.com");
@@ -25,3 +25,5 @@ api->setTrustFactor(utility::conversions::to_string_t("my-tenant-123"), opts)
         }
     });
 [inline-code-end]
+
+---

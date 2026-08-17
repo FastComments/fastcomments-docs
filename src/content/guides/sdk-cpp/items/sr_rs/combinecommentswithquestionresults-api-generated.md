@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| options | const CombineCommentsWithQuestionResultsOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | const CombineCommentsWithQuestionResultsOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
+Враћа: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,7 +22,7 @@ api->combineCommentsWithQuestionResults(tenantId, options).then(
         try{
             auto respPtr = task.get();
             auto combined = std::make_shared<CombineQuestionResultsWithCommentsResponse>(*respPtr);
-            // Use combined as needed
+            // Користите комбинирано по потреби
         }catch(const std::exception&){
         }
     });

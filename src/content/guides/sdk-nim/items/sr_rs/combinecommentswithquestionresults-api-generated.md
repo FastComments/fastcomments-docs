@@ -1,15 +1,15 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| options | CombineCommentsWithQuestionResultsOptions | Ne |  |
+| tenantId | string | Да |  |
+| options | CombineCommentsWithQuestionResultsOptions | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_question_results_with_comments_response.nim)
+Враћа: [`Option[CombineQuestionResultsWithCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_combine_question_results_with_comments_response.nim)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

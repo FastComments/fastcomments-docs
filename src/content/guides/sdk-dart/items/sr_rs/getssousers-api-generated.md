@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | skip | integer | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetSSOUsersResponse`
+Враћа: `GetSSOUsersResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getSSOUsers'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSSOUsers Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Подесите ауторизацију API кључа: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite ispod da postavite префикс (нпр. Bearer) за API кључ, ако је потребно
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

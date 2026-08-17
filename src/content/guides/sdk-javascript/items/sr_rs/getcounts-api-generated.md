@@ -2,8 +2,8 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ne |  |
+| sso | string | Ne |  |
 
 ## Odgovor
 
@@ -11,7 +11,7 @@ Vraća: [`GetCountsResponse`](https://github.com/FastComments/fastcomments-sdk-j
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getCounts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCounts Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runExample() {
     const tenantId: string = "acme-corp";

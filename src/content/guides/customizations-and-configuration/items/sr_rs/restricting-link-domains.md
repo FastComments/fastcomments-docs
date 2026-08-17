@@ -1,9 +1,9 @@
-Podrazumevano, FastComments dozvoljava povezivanje na bilo koji eksterni sajt.
+Подразумевано, FastComments дозвољава повезивање ка било ком спољном сајту.
 
-Ovo se može ograničiti na željenu listu sajtova ili domena. Pokušaj objavljivanja linka ka sajtu ili domenu koji nije na definisanoj listi izazvaće prikaz greške korisniku.
+Ово се може ограничити на жељени списак сајтова или домена. Покушај објављивања везе ка сајту или домену који није у дефинисаном списку изазваће приказ грешке кориснику.
 
-Ova validacija važi samo za Comment Widget i API. Uvozi nisu pogođeni.
+Ова валидација важи само за Comment Widget и API. Увоз није утицао.
 
-Ovo se radi bez koda, na stranici za prilagođavanje widgeta:
+Ово се ради без кода, на страници за прилагођавање виџета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Podešavanja eksternih veza sa listom ograničenih domena gde se unose dozvoljeni sajtovi'; title='Ograniči domene eksternih veza' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Подешавања спољних веза са листом ограничених домена веза где се уносе дозвољени сајтови'; title='Ограничи спољне домене веза' app-screenshot-end]

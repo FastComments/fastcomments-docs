@@ -1,21 +1,21 @@
-Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+Агрегира документи чрез групиране (ако е предоставен groupBy) и прилагане на множество операции. Поддържат се различни операции (например sum, countDistinct, avg и др.).
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| aggregationRequest | AggregationRequest | Yes |  |
-| parentTenantId | string | No |  |
-| includeStats | boolean | No |  |
+| tenantId | string | Да |  |
+| aggregationRequest | AggregationRequest | Да |  |
+| parentTenantId | string | Не |  |
+| includeStats | boolean | Не |  |
 
-## Response
+## Отговор
 
-Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
+Връща: [`AggregateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'aggregate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'пример за агрегиране'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant-12345";
 
@@ -43,3 +43,5 @@ const result: AggregateResponse = await aggregate(
   includeStats
 );
 [inline-code-end]
+
+---

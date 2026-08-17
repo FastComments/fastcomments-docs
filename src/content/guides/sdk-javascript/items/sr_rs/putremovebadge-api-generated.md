@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| badgeId | string | Yes |  |
-| userId | string | No |  |
-| commentId | string | No |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| badgeId | string | Да |  |
+| userId | string | Не |  |
+| commentId | string | Не |  |
+| broadcastId | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
+Враћа: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putRemoveBadge Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const badgeId: string = "badge-12345";
 const userId: string = "user-9876";
@@ -29,3 +29,5 @@ const result: PutRemoveBadgeResponse = await putRemoveBadge(
   broadcastId
 );
 [inline-code-end]
+
+---

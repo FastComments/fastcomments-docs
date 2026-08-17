@@ -1,24 +1,23 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове коренске коментаре, и такође
 
 ## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------|
-| tenantId | string | query | Da |  |
-| urlId | string | query | Da |  |
-| url | string | query | Da |  |
-| pageTitle | string | query | Da |  |
-| subscribedOrUnsubscribed | string | path | Da |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | query | Yes |  |
+| urlId | string | query | Yes |  |
+| url | string | query | Yes |  |
+| pageTitle | string | query | Yes |  |
+| subscribedOrUnsubscribed | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Response
 
-Vraća: `UpdateUserNotificationPageSubscriptionStatusResponse`
+Returns: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

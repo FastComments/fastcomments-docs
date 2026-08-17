@@ -1,63 +1,61 @@
-A `DomainConfig` object represents configuration for a domain for a tenant.
+A `DomainConfig` 物件代表租戶的網域設定。
 
-The structure for the `DomainConfig` object is as follows:
+`DomainConfig` 物件的結構如下：
 
-[inline-code-attrs-start title = '網域設定結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Domain Config 結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** 一個網域，不是 URL，例如 "fastcomments.com" 或 "www.example.com"。如果想限定子網域，也可以包含子網域。最多 1000 字元。 **/
+    /** A domain, not a URL, like "fastcomments.com" or "www.example.com". Subdomain may be included if limiting to a subdomain is desired. Max 1000 characters. **/
     domain: string
-    /** 用於發送電子郵件的寄件人名稱。 **/
+    /** The From-Name used when sending emails. **/
     emailFromName?: string
-    /** 用於發送電子郵件的寄件人電子郵件。確保已設定 SPF 以允許 mail.fastcomments.com 代表此屬性所使用的網域寄送電子郵件。 **/
+    /** The From-Email used when sending emails. Ensure SPF is setup to allow mail.fastcomments.com to send emails as the domain used in this attribute. **/
     emailFromEmail?: string
-    /** 唯讀。物件建立時間。 **/
+    /** READONLY. When the object was created. **/
     createdAt: string
-    /** 此網域相關的 logo。用於電子郵件。請使用 HTTPS。 **/
+    /** The logo related to this domain. Used in emails. Use HTTPS. **/
     logoSrc?: string
-    /** 此網域相關的小尺寸 logo。請使用 HTTPS。 **/
+    /** A smaller logo related to this domain. Use HTTPS. **/
     logoSrc100px?: string
-    /** 僅限 SSO。用於每封寄出電子郵件頁尾的 URL。支援 "[userId]" 變數。 **/
+    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
     footerUnsubscribeURL?: string
-    /** 僅限 SSO。用於每封寄出電子郵件的標頭。此設定可用於例如設定取消訂閱相關的標頭以改善送達率。此記錄中的 List-Unsubscribe 條目（若存在）支援 "[userId]" 變數。 **/
+    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
     emailHeaders?: Record<string, string>
-    /** 停用所有取消訂閱連結。不建議，可能會影響郵件送達率。 **/
+    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM 設定。 **/
+    /** DKIM Configuration. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'DKIM 設定結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DKIM Config 結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** DKIM 紀錄中的網域名稱。 **/
+    /** The domain name in your DKIM record. **/
     domainName: string
-    /** 要使用的 DKIM 金鑰選擇器。 **/
+    /** The DKIM key selector to use. **/
     keySelector: string
-    /** 公開金鑰，PEM 格式。在 GET 回應中會回傳。 **/
+    /** The public key, in PEM format. Returned in GET responses. **/
     publicKey: string
-    /** @deprecated 不再於 API 回應中回傳。為了向下相容，寫入時仍接受。 **/
+    /** @deprecated No longer returned in API responses. Accepted on write for backwards compatibility. **/
     privateKey?: string
 }
 [inline-code-end]
 
 ### For Authentication
 
-Domain Configuration is used to determine which sites can host the FastComments widget for your account. This is a basic form
-of authentication, meaning adding or removing any Domain Configurations can impact the availability of your FastComments installation
-in production.
+Domain Configuration 用於決定哪些網站可以為您的帳號託管 FastComments 小工具。這是一種基本的驗證形式，意味著新增或移除任何 Domain Configurations 都可能影響您在正式環境中 FastComments 安裝的可用性。
 
-Don't remove or update the `domain` property of a `Domain Config` for a domain that is currently in use unless disabling that domain is intended.
+除非確實要停用該網域，否則不要移除或更新 `Domain Config` 中的 `domain` 屬性，尤其是該網域目前仍在使用中。
 
-This has the same behavior as removing a domain from [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+此行為與從 [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains) 移除網域的行為相同。
 
-Also note that removing a domain from the `My Domains` UI will remove any corresponding configuration for that domain that may have been added via this UI.
+另請注意，從 `My Domains` 介面中移除網域，會同時刪除透過此 UI 新增的任何相對應設定。
 
 ### For Email Customization
 
-The unsubscribe link in the email footer, and the one-click-unsubscribe feature offered by many email clients, can be configured via this API by defining `footerUnsubscribeURL` and `emailHeaders`, respectively.
+電子郵件底部的退訂連結，以及許多郵件客戶端提供的一鍵退訂功能，都可以透過此 API 設定，分別使用 `footerUnsubscribeURL` 與 `emailHeaders`。
 
 ### For DKIM
 
-After defining your DKIM DNS records, simply update the DomainConfig with your DKIM configuration using the defined structure.
+在定義好 DKIM DNS 記錄後，只需使用上述結構將 DKIM 設定更新至 DomainConfig 即可。

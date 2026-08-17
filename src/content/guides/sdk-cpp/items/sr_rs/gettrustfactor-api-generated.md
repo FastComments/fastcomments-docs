@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| options | const GetTrustFactorOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | const GetTrustFactorOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserTrustFactorResponse.h)
+Враћа: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserTrustFactorResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTrustFactor'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTrustFactor'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 GetTrustFactorOptions options;
@@ -23,3 +23,5 @@ api->getTrustFactor(tenantId, options).then([](std::shared_ptr<GetUserTrustFacto
     }
 });
 [inline-code-end]
+
+---

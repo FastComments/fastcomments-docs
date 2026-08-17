@@ -1,8 +1,8 @@
-Omogući ili onemogući obaveštenja za određeni komentar.
+Омогућите или онемогућите обавештења за одређени коментар.
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | notificationId | string | No |  |
@@ -10,13 +10,13 @@ Omogući ili onemogući obaveštenja za određeni komentar.
 | commentId | string | Yes |  |
 | sso | string = "" | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
+Враћа: [`Option[UpdateUserNotificationCommentSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_comment_subscription_status_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus(
   tenantId = "my-tenant-123",

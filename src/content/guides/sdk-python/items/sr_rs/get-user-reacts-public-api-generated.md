@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| postIds | array | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | path | Да |  |
+| postIds | array | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
+Returns: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/user_reacts_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_user_reacts_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import GetUserReactsPublicOptions
@@ -20,20 +20,20 @@ from client.models.user_reacts_response import UserReactsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumeva https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    post_ids = ['post_ids_example'] # List[str] |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    post_ids = ['post_ids_example'] # List[str] |  (опционално)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.get_user_reacts_public(tenant_id, GetUserReactsPublicOptions(post_ids=post_ids, sso=sso))

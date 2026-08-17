@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | userId | string | query | No |  |
 | limit | number | query | No |  |
 | skip | number | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIGetUserBadgeProgressListResponse`
+Враћа: `APIGetUserBadgeProgressListResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserBadgeProgressList'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressList Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite ovlašćenje API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite dole da postavite prefiks (npr. Bearer) za API ključ, po potrebi
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

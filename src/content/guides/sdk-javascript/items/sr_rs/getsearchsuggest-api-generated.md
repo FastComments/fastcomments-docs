@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | textSearch | string | No |  |
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSearchSuggestResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSuggestResponse.ts)
+Враћа: [`GetSearchSuggestResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSuggestResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSearchSuggest Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchSuggest'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function example(): Promise<void> {
     const term: string = "fastcomments api";
@@ -25,3 +25,5 @@ async function example(): Promise<void> {
 
 example();
 [inline-code-end]
+
+---

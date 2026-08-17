@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| create_question_config_body | models::CreateQuestionConfigBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenant_id | String | Да |  |
+| create_question_config_body | models::CreateQuestionConfigBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_question_config_response.rs)
+Враћа: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_question_config_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer create_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример create_question_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let params = CreateQuestionConfigParams {
     tenant_id: "acme-corp-tenant".to_string(),

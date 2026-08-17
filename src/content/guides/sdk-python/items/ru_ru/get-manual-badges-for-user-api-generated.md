@@ -1,19 +1,19 @@
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| badgesUserId | string | query | No |  |
-| commentId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| badgesUserId | string | query | Нет |  |
+| commentId | string | query | Нет |  |
+| sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
-Returns: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_manual_badges_response.py)
+Возвращает: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_manual_badges_response.py)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример get_manual_badges_for_user'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges_for_user Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.moderation_api import GetManualBadgesForUserOptions
@@ -21,16 +21,16 @@ from client.models.get_user_manual_badges_response import GetUserManualBadgesRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
+# Определение хоста необязательно и по умолчанию https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войти в контекст с экземпляром клиента API
+# Войдите в контекст с экземпляром клиента API
 with client.ApiClient(configuration) as api_client:
-    # Создать экземпляр класса API
+    # Создайте экземпляр класса API
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     badges_user_id = 'badges_user_id_example' # str |  (необязательно)
@@ -44,3 +44,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->get_manual_badges_for_user: %s\n" % e)
 [inline-code-end]
+
+---

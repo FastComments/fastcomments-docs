@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| options | const GetApiIdsOptions& | Da |  |
+| tenantId | string | Да |  |
+| options | const GetApiIdsOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationAPIGetCommentIdsResponse.h)
+Враћа: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationAPIGetCommentIdsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getApiIds Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getApiIds'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 GetApiIdsOptions options;

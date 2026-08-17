@@ -1,22 +1,22 @@
-Past komentari na stranici koji NISU trenutno online. Sortirani po displayName.  
-Koristite ovo nakon što potrošite /users/online kako biste prikazali sekciju „Members“.  
-Kursor paginacija po commenterName: server prolazi kroz delimični indeks {tenantId, urlId, commenterName} od afterName napred korišćenjem $gt, bez troška $skip.
+Претходни коментатори на страници који ТРЕНУТНО нису онлајн. Сортирани по displayName.  
+Користите ово након што исцрпите /users/online да прикажете одељак „Чланови“.  
+Курсорска пагинација на commenterName: сервер пролази кроз парцијални {tenantId, urlId, commenterName} индекс од afterName напред помоћу $gt, без $skip трошкова.
 
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | options | const GetOfflineUsersOptions& | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Враћа: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getOfflineUsers Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");

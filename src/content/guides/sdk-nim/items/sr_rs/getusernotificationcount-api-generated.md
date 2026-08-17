@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| sso | string = "" | No |  |
+| tenantId | string | Да |  |
+| sso | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetUserNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notification_count_response.nim)
+Враћа: [`Option[GetUserNotificationCountResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_notification_count_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getUserNotificationCount Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserNotificationCount Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.getUserNotificationCount(tenantId = "my-tenant-123", sso = "")
 if optResp.isSome:

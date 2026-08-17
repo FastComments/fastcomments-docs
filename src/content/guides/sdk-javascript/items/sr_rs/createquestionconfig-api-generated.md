@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
+Враћа: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createQuestionConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 
@@ -23,7 +23,7 @@ const customOption: QuestionConfigCustomOptionsInner = {
 const createQuestionConfigBody: CreateQuestionConfigBody = {
   questionText: "What is your favorite color?",
   isActive: true,
-  // opcionalna polja se mogu izostaviti
+  // опционална поља могу бити изостављена
   customOptions: [customOption],
 };
 
@@ -32,5 +32,3 @@ const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
   createQuestionConfigBody
 );
 [inline-code-end]
-
----

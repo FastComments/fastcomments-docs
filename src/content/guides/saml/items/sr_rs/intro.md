@@ -1,3 +1,4 @@
-FastComments podržava SAML 2.0 autentifikaciju za korisnike na Flex i Pro planovima. SAML omogućava sigurnu jedinstvenu prijavu (SSO) 
-autentifikaciju putem provajdera identiteta vaše organizacije, omogućavajući korisnicima da pristupe FastComments koristeći svoje postojeće korporativne akreditive. 
-Ovaj vodič pokriva postavljanje, konfiguraciju i rešavanje problema SAML autentifikacije.
+---
+FastComments подржава SAML 2.0 аутентификацију за кориснике на Flex и Pro плановима. SAML омогућава безбедно једнократно пријављивање (SSO) 
+аутентификацију преко вашег провајдера идентитета, дозвољавајући корисницима да приступе FastComments користећи своје постојеће корпоративне акредитиве. 
+Овај водич обухвата поставку, конфигурацију и решавање проблема SAML аутентификације.

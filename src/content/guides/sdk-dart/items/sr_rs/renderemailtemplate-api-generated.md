@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | locale | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Returns: `RenderEmailTemplateResponse`
+Враћа: `RenderEmailTemplateResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'renderEmailTemplate Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'renderEmailTemplate Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуриши ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite dole da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -31,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->renderEmailTemplate: $e\n');
 }
 [inline-code-end]
-
----

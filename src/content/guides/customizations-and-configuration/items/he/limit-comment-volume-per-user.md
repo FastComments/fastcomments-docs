@@ -4,7 +4,7 @@ This is tracked by user id, anon user id, and ip address (hashed).
 
 This can be customized without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='שדה מקסימום תגובות לדקה בעמוד התאמת הווידג\'ט, מוגדר ל‑5 כברירת מחדל'; title='הגבלת נפח תגובות לכל משתמש' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comments-per-minute'; alt='שדה מקסימום תגובות לדקה בעמוד התאמת הווידג\'ט, מוגדר ל‑5 כברירת מחדל'; title='הגבלת נפח התגובות לכל משתמש' app-screenshot-end]
 
 Note that if you're using the comment creation API may want to pass the user's original `ip` address in the request to our backend so rate limiting is applied
 per user and not globally to your account.

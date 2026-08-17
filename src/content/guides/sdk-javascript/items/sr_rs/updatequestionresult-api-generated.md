@@ -1,29 +1,29 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
+Враћа: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateQuestionResult Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runUpdate() {
     const tenantId: string = "acme-corp-01";
     const id: string = "qr-20230915-001";
 
     const updateQuestionResultBody: UpdateQuestionResultBody = {
-        // obavezna polja
+        // обавезна поља
         answer: "No",
-        // opcionalna polja
+        // опционо поља
         comment: "User clarified their response",
-        // drugoOpcionalnoPolje?: value,
+        // anotherOptionalField?: value,
     };
 
     const result: UpdateQuestionResultResponse = await updateQuestionResult(

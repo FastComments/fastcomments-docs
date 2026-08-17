@@ -1,11 +1,11 @@
-[related-parameter-start name = 'commentCountFormat'; type = 'string'; related-parameter-end]
+[related-parameter-start name = 'commentCountFormat'; type =string; related-parameter-end]
 
-Broj komentara prikazan na vrhu widgeta za komentare može se prilagoditi.
+Број коментара приказан на врху виџета за коментаре може се прилагодити.
 
-Ovo se može zameniti bilo kojim stringom, a vrednost **[count]** će biti zamenjena vrednošću broja, lokalizovanom za korisnika.
+Ово се може заменити било којим низом знакова, а вредност **[count]** ће бити замењена вредношћу броја, локализованом за корисника.
 
-[code-example-start config = {commentCountFormat: "There are [count] comments."}; linesToHighlight = [6]; title = 'Prilagođavanje teksta broja komentara'; code-example-end]
+[code-example-start config = {commentCountFormat: "There are [count] comments."}; linesToHighlight = [6]; title = 'Прилагођавање текста броја коментара'; code-example-end]
 
-Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
+Ово се може прилагодити без кода, на страници за прилагођавање виџета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.comment-count'; alt='Polje teksta broja komentara na stranici za prilagođavanje widgeta, gde se [count] zamenjuje trenutnim ukupnim brojem'; title='Prilagođavanje teksta broja komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.comment-count'; alt='Поље за текст броја коментара на страници за прилагођавање виџета, где се [count] замењује живим укупним бројем'; title='Прилагођавање текста броја коментара' app-screenshot-end]

@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_banned_users_from_comment_response.rb)
+Returns: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_banned_users_from_comment_response.rb)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_ban_users_from_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

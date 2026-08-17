@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| sendEmail | string | Ne |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| sendEmail | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModeratorResponse.ts)
+Враћа: [`DeleteModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModeratorResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteModerator Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример deleteModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runDeleteModeratorExample() {
   const tenantId: string = "tenant_2023";
@@ -23,3 +23,5 @@ async function runDeleteModeratorExample() {
   const resultWithoutEmail: DeleteModeratorResponse = await deleteModerator(tenantId, moderatorId);
 }
 [inline-code-end]
+
+---

@@ -1,22 +1,22 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: `APIEmptySuccessResponse`
+Враћа: `APIEmptySuccessResponse`
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserBadge'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -28,6 +28,6 @@ try {
     final result = api_instance.updateUserBadge(tenantId, id, updateUserBadgeParams);
     print(result);
 } catch (e) {
-    print('Izuzetak prilikom pozivanja DefaultApi->updateUserBadge: $e\n');
+    print('Exception when calling DefaultApi->updateUserBadge: $e\n');
 }
 [inline-code-end]

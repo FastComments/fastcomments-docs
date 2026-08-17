@@ -1,19 +1,19 @@
+---
 [related-parameter-start name = 'enableThirdPartyCookieBypass'; type = 'boolean'; related-parameter-end]
 
-Za autentifikaciju, FastComments zavisi od toga da su kolačići trećih strana omogućeni u vašem pregledaču. Bez njih, korisnici će uvek morati da
-ostave svoj email da bi komentarisali (osim ako je polje za unos email-a sakriveno), i njihovi komentari će uvek biti prikazani kao neverifikovani (po podrazumevanju).
+За аутентификацију, FastComments зависи од омогућених колачића трећих страна у вашем прегледачу. Без њих, корисници ће увек морати
+да оставе своју е‑пошту за коментарисање (осим ако је поље за унос е‑поште скривено), и њихови коментари ће увек бити приказани као непотврђени (подразумевано).
 
-Da biste zaobišli ovo, možete omogućiti zaobilaženje kolačića trećih strana.
+Да би заобиšli ово, можете омогућити заобилажење колачића трећих страна.
 
-Kada je ovo podešavanje omogućeno, pojaviće se mali popup koji prikazuje poruku da se korisnik prijavljuje. Ovaj popup
-se prikazuje kad god korisnik interaguje sa widgetom za komentare; na primer, ako ostavi komentar.
+Када је ово подешавање омогућено, то ће изазвати мали искачући прозор који приказује поруку да се корисник пријављује. Овај искачући прозор се приказује кад год корисник интерагује са виџетом за коментаре; на пример, ако остави коментар.
 
-Ovo možemo uraditi u kodu postavljanjem zastavice **enableThirdPartyCookieBypass** na true:
+Ово можемо урадити у коду постављањем заставице **enableThirdPartyCookieBypass** на true:
 
-[code-example-start config = {enableThirdPartyCookieBypass: true}; linesToHighlight = [6]; title = 'Enabling Third-Party Cookie Bypass'; code-example-end]
+[code-example-start config = {enableThirdPartyCookieBypass: true}; linesToHighlight = [6]; title = 'Омогућавање заобилажења колачића трећих страна'; code-example-end]
 
-Ovo takođe možemo podesiti putem UI-ja za prilagođavanje widgeta, pod `Enable Third-Party Cookie Popup`:
+Ово такође можемо подесити преко корисничког интерфејса за прилагођавање виџета, под `Enable Third-Party Cookie Popup`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Stranica za prilagođavanje widgeta sa označenim poljem Enable Third-Party Cookie Popup'; title='Omogućavanje zaobilaženja kolačića trećih strana' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Страница за прилагођавање виџета са означеним пољем за омогућавање искачућег прозора за колачиће трећих страна'; title='Омогућавање заобилажења колачића трећих страна' app-screenshot-end]
 
 ---

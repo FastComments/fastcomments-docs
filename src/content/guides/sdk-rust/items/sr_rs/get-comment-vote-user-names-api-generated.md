@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | comment_id | String | Yes |  |
 | dir | i32 | Yes |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_vote_user_names_success_response.rs)
+Враћа: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_vote_user_names_success_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_comment_vote_user_names'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_comment_vote_user_names'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn demo(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetCommentVoteUserNamesParams {

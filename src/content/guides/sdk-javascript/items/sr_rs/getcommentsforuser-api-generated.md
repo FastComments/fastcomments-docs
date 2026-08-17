@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | userId | string | No |  |
 | direction | SortDirections | No |  |
 | repliesToUserId | string | No |  |
@@ -10,11 +10,11 @@
 | locale | string | No |  |
 | isCrawler | boolean | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
+Враћа: [`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getCommentsForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

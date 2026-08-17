@@ -1,6 +1,6 @@
 Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='RSS 피드 액세스 활성화 체크박스, 피드 URL 및 복사와 보기 버튼이 포함된 계정 RSS 피드 페이지'; title='RSS 피드 구성' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='RSS 피드 액세스 활성화 체크박스, 피드 URL, 복사 및 보기 버튼이 있는 계정 RSS 피드 페이지'; title='RSS 피드 구성' app-screenshot-end]
 
 On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 

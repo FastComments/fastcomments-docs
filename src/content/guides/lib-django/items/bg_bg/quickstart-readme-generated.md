@@ -1,5 +1,5 @@
 ---
-Configure your tenant in `settings.py`:
+Конфигурирайте вашия тенант в `settings.py`:
 
 ```python
 import os
@@ -9,7 +9,7 @@ FASTCOMMENTS = {
 }
 ```
 
-Drop the widget into any template:
+Поставете уиджета във всеки шаблон:
 
 ```django
 {% load fastcomments %}

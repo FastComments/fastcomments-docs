@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| startDate | string | No |  |
-| questionId | string | No |  |
-| questionIds | string | No |  |
-| skip | number | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Не |  |
+| userId | string | Не |  |
+| startDate | string | Не |  |
+| questionId | string | Не |  |
+| questionIds | string | Не |  |
+| skip | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse1.ts)
+Враћа: [`GetQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "acme-corp-123";

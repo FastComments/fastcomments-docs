@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| domainToUpdate | string | Yes |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| domainToUpdate | string | Да |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutDomainConfigResponse.ts)
+Враћа: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutDomainConfigResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'putDomainConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +19,7 @@ async function runExample() {
   const domainToUpdate: string = 'comments.mywebsite.org';
   const updateDomainConfigParams: UpdateDomainConfigParams = {
     enableModeration: true,
-    // opciono polje izostavljeno, npr., maxCommentLength?: number
+    // опционално поље изостављено, нпр., maxCommentLength?: number
   };
   const result: PutDomainConfigResponse = await putDomainConfig(
     tenantId,

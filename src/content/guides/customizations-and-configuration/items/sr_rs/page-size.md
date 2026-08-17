@@ -1,15 +1,15 @@
-By default, the FastComments page size is `30`. This includes replies in threads.
+Подразумевано, величина странице у FastComments је `30`. Ово укључује одговоре у темама.
 
-The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in varying sizes ranging from `10` to `200`.
+Величина странице се може прилагодити у [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) у различитим величинама од `10` до `200`.
 
-Note that changing the page size requires recalculating all the comment threads in your account. This may take a couple of minutes.
+Имајте у виду да промена величине странице захтева поновно израчунавање свих тема коментара у вашем налогу. Ово може потрајати неколико минута.
 
-This cannot be configured in the client side widget as pages are calculated server-side.
+Ово се не може конфигурисати у виџету на страни клијента јер се странице израчунавају на серверу.
 
-Example configuration is shown below:
+Пример конфигурације је приказан испод:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Selektor veličine stranice na stranici za prilagođavanje widgeta, gde se može izabrati vrednost od 10 do 200'; title='Prilagođene veličine stranica' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Селектор величине странице на страници за прилагођавање виџета, где се може изабрати вредност од 10 до 200'; title='Прилагођене величине страница' app-screenshot-end]
 
-Page sizes can be customized globally, or per-domain, or per-page, by creating different customization rules.
+Величине страница се могу прилагодити глобално, по домену или по страници, креирањем различитих правила прилагођавања.
 
-This will affect all clients, integrations, and frameworks that you may be using to show comments via our platform.
+Ово ће утицати на све клијенте, интеграције и оквире које користите за приказивање коментара преко наше платформе.

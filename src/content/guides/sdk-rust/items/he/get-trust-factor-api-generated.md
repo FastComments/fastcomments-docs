@@ -1,18 +1,18 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | user_id | String | No |  |
 | sso | String | No |  |
 
-## Response
+## תגובה
 
-Returns: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_trust_factor_response.rs)
+מחזיר: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_trust_factor_response.rs)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה get_trust_factor'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת get_trust_factor'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = GetTrustFactorParams {
@@ -24,3 +24,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

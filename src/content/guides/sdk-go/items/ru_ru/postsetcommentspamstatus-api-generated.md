@@ -1,19 +1,19 @@
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Местоположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| spam | boolean | query | No |  |
-| permNotSpam | boolean | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| spam | boolean | query | Нет |  |
+| permNotSpam | boolean | query | Нет |  |
+| broadcastId | string | query | Нет |  |
+| sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример PostSetCommentSpamStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	spam := true // bool |  (опционально)
-	permNotSpam := true // bool |  (опционально)
-	broadcastId := "broadcastId_example" // string |  (опционально)
-	sso := "sso_example" // string |  (опционально)
+	spam := true // bool |  (необязательно)
+	permNotSpam := true // bool |  (необязательно)
+	broadcastId := "broadcastId_example" // string |  (необязательно)
+	sso := "sso_example" // string |  (необязательно)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

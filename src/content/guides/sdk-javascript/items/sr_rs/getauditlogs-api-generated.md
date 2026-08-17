@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | Да |  |
+| limit | number | Не |  |
+| skip | number | Не |  |
+| order | SORTDIR | Не |  |
+| after | number | Не |  |
+| before | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
+Враћа: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,7 +22,7 @@ Vraća: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-s
   const limit: number = 100;
   const skip: number = 10;
   const order: SORTDIR = "desc";
-  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // pre 3 dana
+  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // пре 3 дана
 
   const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
     tenantId,

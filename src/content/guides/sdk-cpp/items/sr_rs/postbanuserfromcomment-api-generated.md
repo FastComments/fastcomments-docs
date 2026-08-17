@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| options | const PostBanUserFromCommentOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| options | const PostBanUserFromCommentOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
+Враћа: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postBanUserFromComment Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t commentId = U("comment-456789");
@@ -22,9 +22,9 @@ options.durationDays = boost::optional<int>(30);
 
 api->postBanUserFromComment(tenantId, commentId, options)
     .then([](std::shared_ptr<BanUserFromCommentResult> result) {
-        // obrada rezultata
+        // обрада резултата
     })
     .then([](pplx::task<void> t) {
-        try { t.get(); } catch (const std::exception& e) { /* obrada greške */ }
+        try { t.get(); } catch (const std::exception& e) { /* обрада грешке */ }
     });
 [inline-code-end]

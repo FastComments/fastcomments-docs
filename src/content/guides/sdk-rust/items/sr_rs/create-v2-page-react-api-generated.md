@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| id | String | Yes |  |
-| title | String | No |  |
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| id | String | Да |  |
+| title | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateV1PageReact`
+Враћа: `CreateV1PageReact`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer create_v2_page_react'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_v2_page_react пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = CreateV2PageReactParams {
@@ -26,5 +26,3 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

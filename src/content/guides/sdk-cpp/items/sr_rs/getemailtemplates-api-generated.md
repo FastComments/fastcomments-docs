@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| skip | double | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| skip | double | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplatesResponse.h)
+Враћа: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplatesResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getEmailTemplates'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getEmailTemplates'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 boost::optional<double> skip = 10.0;
@@ -20,3 +20,5 @@ api->getEmailTemplates(tenantId, skip)
         (void)resp;
     });
 [inline-code-end]
+
+---

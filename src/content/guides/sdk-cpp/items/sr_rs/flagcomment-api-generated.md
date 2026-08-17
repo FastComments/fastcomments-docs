@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| options | const FlagCommentOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| options | const FlagCommentOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
+Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer flagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flagComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto opts = std::make_shared<FlagCommentOptions>();
 opts->reason = utility::conversions::to_string_t("spam");

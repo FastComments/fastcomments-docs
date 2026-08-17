@@ -1,26 +1,26 @@
-Objekat `Subscription` predstavlja pretplatu za korisnika.
+A `Subscription` object represents a subscription for a user.
 
-`Subscription` objekti se kreiraju kada korisnik klikne na zvonce za obaveštenja u widgetu za komentare i klikne "Subscribe to this page".
+`Subscription` objects are created when a user clicks the notification bell in the comment widget and clicks "Subscribe to this page".
 
-Pretplate se takođe mogu kreirati putem API-ja.
+Subscriptions can also be created via the API.
 
-Imanje objekta `Subscription` uzrokuje kreiranje objekata `Notification` i slanje emailova kada se ostave novi komentari na korenu povezane stranice za koju je ta `Subscription`. Slanje emailova zavisi od tipa korisnika. Za obične korisnike to zavisi od `optedInNotifications`. Za SSO korisnike to zavisi od `optedInSubscriptionNotifications`. Imajte na umu da neke aplikacije možda nemaju koncept web-pristupačne stranice, u kom slučaju jednostavno postavite `urlId` na id stavke na koju se pretplaćujete (ista vrednost za `urlId` koju biste prosledili widgetu za komentare).
+Having a `Subscription` object causes `Notification` objects to be generated, and emails sent, when new comments are left on the root of the associated page
+that the `Subscription` is for. Sending of emails depends on the type of user. For regular users this depends on `optedInNotifications`. For SSO Users this depends on `optedInSubscriptionNotifications`. Note that some applications may not have the concept of a web-accessible page, in which case simply set `urlId` to
+the id of the item you are subscribing to (same value for `urlId` you would pass to the comment widget).
 
-Struktura za objekat `Subscription` je sledeća:
+The structure for the `Subscription` object is as follows:
 
-[inline-code-attrs-start title = 'Struktura objekta Subscription'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура претплате'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Subscription {
     id: string
     tenantId: string
-    /** Sa SSO-om, korisnički id je u formatu `<tenant id>:<user id>`. **/
+    /** Са SSO, ID корисника је у формату `<tenant id>:<user id>`. **/
     userId: string
     anonUserId?: string
     urlId: string
     url?: string
     pageTitle?: string
-    createdAt: string // string datuma
+    createdAt: string // date string
 }
 [inline-code-end]
-
----

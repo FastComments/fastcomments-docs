@@ -1,25 +1,25 @@
-## Parameters
+## Параметри
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | skip | number | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
+Враћа: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUsersResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getSSOUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSSOUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runExample(): Promise<void> {
     const tenantId: string = "tenant_12345";
 
-    // Poziv bez opcionalnog `skip`
+    // Позив без опционо `skip`
     const firstPage: GetSSOUsersResponse = await getSSOUsers(tenantId);
 
-    // Poziv sa opcionalnim `skip`
+    // Позив са опционо `skip`
     const secondPage: GetSSOUsersResponse = await getSSOUsers(tenantId, 100);
 
     console.log(firstPage, secondPage);

@@ -1,20 +1,22 @@
-Prethodni komentatori na stranici koji NISU trenutno online. Sortirano po displayName.  
-Koristite ovo nakon što iscrpite /users/online da prikažete sekciju „Members“.  
-Cursor paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName} indeks od afterName napred putem $gt, bez troška $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Користите ово након што исцрпите /users/online да прикажете одељак „Чланови“.
+
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+Курсорска пагинација на commenterName: сервер пролази парцијални {tenantId, urlId, commenterName} индекс од afterName унапред помоћу $gt, без трошка $skip.
 
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | options | GetOfflineUsersOptions | No |  |
 
 ## Response
 
-Vraća: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

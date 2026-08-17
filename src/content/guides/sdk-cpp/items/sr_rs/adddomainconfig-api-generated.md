@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| addDomainConfigParams | AddDomainConfigParams | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| addDomainConfigParams | AddDomainConfigParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddDomainConfigResponse.h)
+Враћа: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddDomainConfigResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'addDomainConfig Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addDomainConfig пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 AddDomainConfigParams params;
@@ -25,3 +25,5 @@ api->addDomainConfig(tenantId, params).then([](pplx::task<std::shared_ptr<AddDom
     }
 });
 [inline-code-end]
+
+---

@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| postId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| postId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
+Враћа: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_feed_post_public Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_feed_post_public Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import DeleteFeedPostPublicOptions
@@ -21,21 +21,21 @@ from client.models.delete_feed_post_public_response import DeleteFeedPostPublicR
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумевано је https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
-    broadcast_id = 'broadcast_id_example' # str |  (opciono)
-    sso = 'sso_example' # str |  (opciono)
+    broadcast_id = 'broadcast_id_example' # str |  (опционално)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.delete_feed_post_public(tenant_id, post_id, DeleteFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))

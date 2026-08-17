@@ -1,15 +1,15 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Ναι |  |
+| sso | String | Όχι |  |
 
-## Response
+## Απόκριση
 
-Returns: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notification_count_response.rs)
+Επιστρέφει: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_notification_count_response.rs)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'get_user_notification_count Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

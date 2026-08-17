@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| redirectURL | string = "" | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | No |  |
+| redirectURL | string = "" | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'sendLoginLink Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример sendLoginLink'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (maybeResp, httpResp) = client.sendLoginLink(
   tenantId = "my-tenant-123",

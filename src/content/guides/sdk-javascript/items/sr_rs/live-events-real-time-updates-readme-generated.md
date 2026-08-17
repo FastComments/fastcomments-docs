@@ -1,8 +1,8 @@
-Pretplatite se na događaje uživo da biste dobili ažuriranja u realnom vremenu za komentare, glasove i druge aktivnosti.
+Subscribe to live events to get real-time updates for comments, votes, and other activities.
 
-### Događaji na nivou stranice
+### Догађаји на нивоу странице
 
-Slušajte događaje uživo na određenoj stranici (komentari, glasovi, itd.):
+Слушајте живе догађаје на одређеној страници (коментари, гласови, итд.):
 
 ```typescript
 import { subscribeToChanges, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
@@ -12,23 +12,23 @@ const config = {
   urlId: 'page-url-id',
 };
 
-// Pretplatite se na događaje uživo za stranicu
+// Пријавите се на живе догађаје за страницу
 const subscription = subscribeToChanges(
   config,
   'your-tenant-id', // tenantIdWS
   'page-url-id',    // urlIdWS  
-  'user-session-id', // userIdWS (dohvatite ovo iz odgovora getComments)
+  'user-session-id', // userIdWS (добавите ово из getComments одговора)
   (event: LiveEvent) => {
     console.log('Live event received:', event);
     
     switch (event.type) {
       case LiveEventType.new_comment:
         console.log('New comment:', event.comment);
-        // Ažurirajte vaš korisnički interfejs sa novim komentarom
+        // Ажурирајте ваш UI новим коментаром
         break;
       case LiveEventType.new_vote:
         console.log('New vote:', event.vote);
-        // Ažurirajte broj glasova u vašem korisničkom interfejsu
+        // Ажурирајте број гласа у вашем UI-у
         break;
       case LiveEventType.updated_comment:
         console.log('Comment updated:', event.comment);
@@ -37,29 +37,29 @@ const subscription = subscribeToChanges(
         console.log('Other event type:', event.type);
     }
     
-    return true; // Vrati true ako je događaj obrađen
+    return true; // Вратите true ако је догађај обрађен
   },
   (isConnected: boolean) => {
     console.log('Connection status:', isConnected ? 'Connected' : 'Disconnected');
   }
 );
 
-// Zatvorite pretplatu kada završite
+// Затворите претплату када завршите
 subscription.close();
 ```
 
-### Pretplata na događaje korisnika
+### Пријава на корисничке догађаје
 
-Slušajte događaje specifične za korisnika (obaveštenja, pominjanja, itd.):
+Слушајте догађаје специфичне за корисника (обавештења, помињањања, итд.):
 
 ```typescript
 import { subscribeToUserFeed, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
 
 const userConfig = {
-  userIdWS: 'user-session-id', // Dohvatite ovo iz odgovora getComments
+  userIdWS: 'user-session-id', // Добијте ово из getComments одговора
 };
 
-// Pretplatite se na lični feed korisnika
+// Пријавите се на лични фид
 const userSubscription = subscribeToUserFeed(
   userConfig,
   (event: LiveEvent) => {
@@ -68,7 +68,7 @@ const userSubscription = subscribeToUserFeed(
     switch (event.type) {
       case LiveEventType.notification:
         console.log('New notification:', event.notification);
-        // Prikažite obaveštenje u vašem korisničkom interfejsu
+        // Прикажите обавештење у вашем UI-у
         break;
       case LiveEventType.notification_update:
         console.log('Notification updated:', event.notification);
@@ -84,13 +84,13 @@ const userSubscription = subscribeToUserFeed(
   }
 );
 
-// Zatvorite kada završite
+// Затворите када завршите
 userSubscription.close();
 ```
 
-### Kako dobiti userIdWS
+### Добијање userIdWS
 
-Parametar `userIdWS` je obavezan za događaje uživo i može se dobiti iz odgovora API-ja:
+Параметар `userIdWS` је потребан за живе догађаје и може се добити из API одговора:
 
 ```typescript
 const response = await sdk.publicApi.getCommentsPublic({
@@ -98,11 +98,11 @@ const response = await sdk.publicApi.getCommentsPublic({
   urlId: 'page-id'
 });
 
-// Izvucite userIdWS iz odgovora
+// Extract userIdWS from the response
 const userIdWS = response.data?.userSessionInfo?.userIdWS;
 
 if (userIdWS) {
-  // Sada se možete pretplatiti na događaje uživo
+  // Now you can subscribe to live events
   const subscription = subscribeToChanges(config, tenantIdWS, urlIdWS, userIdWS, handleEvent);
 }
 ```

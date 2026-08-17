@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
+Враћа: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,9 +19,7 @@ async function fetchVotes(): Promise<void> {
 
   const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
 
-  // Primer pristupa opcionom polju u odgovoru
+  // Пример приступања опционој пољу у одговору
   const firstVoteId: string | undefined = response?.votes?.[0]?.id;
 }
 [inline-code-end]
-
----

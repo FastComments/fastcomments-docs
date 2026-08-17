@@ -1,20 +1,20 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filter | string | query | No |  |
-| searchFilters | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| text-search | string | query | Не |  |
+| byIPFromComment | string | query | Не |  |
+| filter | string | query | Не |  |
+| searchFilters | string | query | Не |  |
+| demo | boolean | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Response
 
-Vraća: `ModerationAPICountCommentsResponse`
+Враћа: `ModerationAPICountCommentsResponse`
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getCount'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

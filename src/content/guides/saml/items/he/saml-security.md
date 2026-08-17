@@ -1,249 +1,249 @@
-SAML implementation security is critical for protecting your organization's authentication infrastructure and user data.
+SAML implementation security הוא קריטי להגנה על תשתית האימות של הארגון ונתוני המשתמשים.
 
-### SAML Security Fundamentals
+### יסודות אבטחת SAML
 
-#### Digital Signatures
+#### חתימות דיגיטליות
 
-**SAML Response Signing**:
-- All SAML responses must be digitally signed by the IdP
-- FastComments validates signatures using the IdP's public certificate
-- Prevents tampering with authentication assertions
-- Ensures responses originate from trusted IdP
+**חתימת תגובת SAML**:
+- כל תגובות SAML חייבות להיות חתומות דיגיטלית על‑ידי ה‑IdP
+- FastComments מאמתת חתימות באמצעות האישור הציבורי של ה‑IdP
+- מונעת שינוי בתביעות האימות
+- מבטיחה שהתגובות נוצרות על‑ידי IdP מהימן
 
-**Certificate Validation**:
-- Certificates are validated against configured IdP certificate
-- Certificate chain validation ensures trust hierarchy
-- Expired or invalid certificates are rejected
-- Certificate rotation should be planned and coordinated
+**אימות תעודות**:
+- תעודות נבדקות מול תעודת ה‑IdP המוגדרת
+- אימות שרשרת תעודות מבטיח היררכיית אמון
+- תעודות שפג תוקפן או שאינן תקפות נדחות
+- יש לתכנן ולתאם רוטציית תעודות
 
-#### Assertion Security
+#### אבטחת תביעות
 
-**Audience Restriction**:
-- SAML assertions include audience restriction (SP Entity ID)
-- Prevents assertion replay attacks against other service providers
-- FastComments validates audience matches tenant configuration
-- Reject assertions intended for other applications
+**הגבלת קהל**:
+- תביעות SAML כוללות הגבלת קהל (SP Entity ID)
+- מונעת התקפות השמעת תביעות נגד ספקי שירות אחרים
+- FastComments מאמתת שהקהל תואם להגדרת השוכר
+- דוחים תביעות המיועדות ליישומים אחרים
 
-**Time-Based Validation**:
-- Assertions include time-based validity windows
-- `NotBefore` and `NotOnOrAfter` conditions are enforced
-- Prevents replay of old assertions
-- Clock skew tolerance is configurable
+**אימות מבוסס זמן**:
+- תביעות כוללות חלונות תוקף מבוססי זמן
+- תנאי `NotBefore` ו‑`NotOnOrAfter` נאכפים
+- מונע השמעת תביעות ישנות
+- סובלנות להטיית שעון ניתנת להגדרה
 
-### Communication Security
+### אבטחת תקשורת
 
-#### Transport Layer Security
+#### אבטחת שכבת תעבורה
 
-**HTTPS Requirements**:
-- All SAML communication occurs over HTTPS
-- TLS 1.2 or higher is required
-- Certificate validation prevents man-in-the-middle attacks
-- Secure communication protects sensitive authentication data
+**דרישות HTTPS**:
+- כל תקשורת SAML מתבצעת דרך HTTPS
+- נדרש TLS 1.2 או גבוה יותר
+- אימות תעודה מונע התקפות אדם-בינוני
+- תקשורת מאובטחת מגנה על נתוני אימות רגישים
 
-**Endpoint Security**:
-- SAML endpoints use secure, authenticated connections
-- IdP and SP endpoints must support modern TLS
-- Weak cipher suites are rejected
-- Certificate pinning may be implemented for additional security
+**אבטחת נקודות קצה**:
+- נקודות קצה של SAML משתמשות בחיבורים מאובטחים ומאומתים
+- נקודות קצה של IdP ו‑SP חייבות לתמוך ב‑TLS מודרני
+- ערכות הצפנה חלשות נדחות
+- ניתן ליישם נעיצת תעודה (certificate pinning) לאבטחה נוספת
 
-#### Data Protection
+#### הגנת נתונים
 
-**Sensitive Data Handling**:
-- SAML assertions may contain sensitive user information
-- Data is encrypted in transit and processed securely
-- Temporary storage is minimized and secured
-- User data retention follows privacy requirements
+**טיפול בנתונים רגישים**:
+- תביעות SAML עשויות להכיל מידע משתמש רגיש
+- הנתונים מוצפנים במעבר ומעובדים בצורה מאובטחת
+- אחסון זמני מצומצם ומאובטח
+- שמירת נתוני משתמש מתבצעת בהתאם לדרישות פרטיות
 
-**Assertion Encryption** *(Optional)*:
-- SAML assertions can be encrypted for additional security
-- Useful when assertions traverse untrusted networks
-- Requires private key configuration in FastComments
-- Most deployments rely on TLS encryption instead
+**הצפנת תביעות** *(אופציונלי)*:
+- ניתן להצפין תביעות SAML לאבטחה נוספת
+- שימושי כאשר תביעות חוצות רשתות לא מהימנות
+- דורש קונפיגורציית מפתח פרטי ב‑FastComments
+- רוב ההפעלות מסתמכות על הצפנת TLS במקום זאת
 
-### Authentication Security
+### אבטחת אימות
 
-#### Single Sign-On Benefits
+#### יתרונות כניסה יחידה (SSO)
 
-**Centralized Authentication**:
-- Reduces password-related security risks
-- Enables consistent security policies
-- Provides single point for access control
-- Facilitates compliance with security standards
+**אימות מרוכז**:
+- מצמצם סיכוני אבטחה הקשורים לסיסמאות
+- מאפשר מדיניות אבטחה עקבית
+- מספק נקודת שליטה אחת לבקרת גישה
+- מסייע לעמידה בתקני אבטחה
 
-**Session Management**:
-- SAML enables secure session establishment
-- Session timeouts can be centrally managed
-- Single logout capabilities (if supported by IdP)
-- Reduces credential exposure across applications
+**ניהול מושב**:
+- SAML מאפשר הקמת מושב מאובטחת
+- ניתן לנהל פקיעת מושב מרכזית
+- תכונת יציאה משותפת (single logout) (אם נתמכת על‑ידי IdP)
+- מצמצם חשיפת אישורים בין יישומים
 
-#### Multi-Factor Authentication
+#### אימות רב‑שלבי
 
-**IdP MFA Integration**:
-- MFA requirements enforced by identity provider
-- FastComments inherits IdP security policies
-- Supports various MFA methods (SMS, authenticator apps, hardware tokens)
-- Centralized MFA policy management
+**שילוב MFA של IdP**:
+- דרישות MFA נאכפות על‑ידי ספק הזהות
+- FastComments יורשת מדיניות האבטחה של IdP
+- תומך במגוון שיטות MFA (SMS, אפליקציות מאמתות, אסימונים חומרתיים)
+- ניהול מדיניות MFA מרוכז
 
-### Access Control Security
+### אבטחת בקרת גישה
 
-#### Role-Based Access Control
+#### בקרת גישה מבוססת תפקידים (RBAC)
 
-**Principle of Least Privilege**:
-- Assign minimum necessary permissions to users
-- Use specific roles rather than overly broad permissions
-- Regular review of role assignments
-- Remove access when no longer needed
+**עיקרון המינימום**:
+- הקצאת ההרשאות המינימליות הנדרשות למשתמשים
+- שימוש בתפקידים ספציפיים במקום בהרשאות רחבות מדי
+- סקירה תקופתית של הקצאות תפקידים
+- הסרת גישה כאשר אינה נדרשת יותר
 
-**Role Validation**:
-- SAML role attributes are validated and sanitized
-- Unknown roles are ignored (not rejected)
-- Role changes are applied immediately upon login
-- Audit trail maintained for role changes
+**אימות תפקידים**:
+- תכונות תפקיד של SAML נבדקות ומנוקות
+- תפקידים לא מוכרים מתעלמים מהם (לא נדחים)
+- שינויי תפקידים חלים מיידית עם הכניסה
+- נשמר רישום ביקורת לשינויים בתפקידים
 
-#### Administrative Access
+#### גישה מנהלית
 
-**Admin Role Protection**:
-- Administrative roles require explicit assignment
-- Monitor administrative access and activities
-- Implement approval workflows for sensitive role assignments
-- Regular auditing of administrative accounts
+**הגנתק תפקיד מנהל**:
+- תפקידים מנהליים דורשים הקצאה מפורשת
+- ניטור גישה ופעילות מנהלתית
+- יישום תהליכי אישור להקצאות תפקיד רגישות
+- ביקורת שוטפת של חשבונות מנהליים
 
-### Identity Provider Security
+### אבטחת ספק זהות (IdP)
 
-#### IdP Configuration Security
+#### אבטחת קונפיגורציית IdP
 
-**Certificate Management**:
-- Use strong certificates (RSA-2048 or higher)
-- Implement proper certificate rotation procedures
-- Secure private key storage at IdP
-- Monitor certificate expiration dates
+**ניהול תעודות**:
+- השתמשו בתעודות חזקות (RSA‑2048 או גבוה יותר)
+- יישום נהלי רוטציית תעודות נכונים
+- אחסון מאובטח של המפתח הפרטי ב‑IdP
+- ניטור תאריכי תפוגת תעודות
 
-**Access Control**:
-- Restrict who can modify SAML application configuration
-- Implement approval processes for configuration changes
-- Monitor configuration changes and access
-- Regular security reviews of IdP configuration
+**בקרת גישה**:
+- הגבלת מי יכול לשנות קונפיגורציית יישום SAML
+- יישום תהליכי אישור לשינויים בקונפיגורציה
+- ניטור שינויים בגישה ובקונפיגורציה
+- סקירות אבטחה תקופתיות של קונפיגורציית IdP
 
-#### Attribute Security
+#### אבטחת תכונות
 
-**Sensitive Attribute Protection**:
-- Minimize sensitive data in SAML attributes
-- Use role identifiers rather than sensitive group names
-- Encrypt assertions containing sensitive information
-- Follow data minimization principles
+**הגנת תכונות רגישות**:
+- צמצום נתונים רגישים בתכונות SAML
+- שימוש במזהי תפקידים במקום שמות קבוצות רגישים
+- הצפנת תביעות המכילות מידע רגיש
+- שמירה על עקרונות צמצום נתונים
 
-**Attribute Validation**:
-- Validate all incoming SAML attributes
-- Sanitize attribute values to prevent injection attacks
-- Implement attribute value restrictions where appropriate
-- Log suspicious or malformed attributes
+**אימות תכונות**:
+- אימות כל תכונות SAML נכנסות
+- ניקוי ערכי תכונות למניעת התקפות הזרקה
+- יישום מגבלות ערכי תכונות במידת הצורך
+- רישום תכונות חשודות או פגומות
 
-### Monitoring and Auditing
+### ניטור וביקורת
 
-#### Authentication Monitoring
+#### ניטור אימות
 
-**Failed Authentication Tracking**:
-- Monitor failed SAML authentication attempts
-- Alert on unusual authentication patterns
-- Track certificate validation failures
-- Log configuration-related errors
+**מעקב אחרי אימותים נכשלו**:
+- ניטור ניסיונות אימות SAML נכשלו
+- התראה על דפוסי אימות חריגים
+- מעקב אחרי כשלי אימות תעודות
+- רישום שגיאות הקשורות לקונפיגורציה
 
-**Success Monitoring**:
-- Monitor successful authentication rates
-- Track user role assignments and changes
-- Verify normal authentication flow timing
-- Monitor for unexpected user creation
+**ניטור הצלחה**:
+- ניטור שיעורי אימות מוצלחים
+- מעקב אחרי הקצאות תפקידים ושינויים של משתמשים
+- אימות תזמון זרימת האימות הרגילה
+- ניטור יצירת משתמשים בלתי צפויה
 
-#### Security Event Logging
+#### רישום אירועי אבטחה
 
-**Audit Trail Maintenance**:
-- Log all SAML authentication events
-- Maintain records of configuration changes
-- Track administrative actions and access
-- Store logs securely with tamper protection
+**תחזוקת רישום ביקורת**:
+- רישום כל אירועי אימות SAML
+- שמירת רישומי שינויי קונפיגורציה
+- מעקב אחרי פעולות מנהליות וגישה
+- אחסון רישומים בצורה מאובטחת עם הגנה מפני שינוי
 
-**Alert Configuration**:
-- Set up alerts for security-relevant events
-- Monitor for certificate expiration
-- Alert on repeated authentication failures
-- Notify of unusual administrative activity
+**קונפיגורציית התראות**:
+- הגדרת התראות לאירועי אבטחה רלוונטיים
+- ניטור תפוגת תעודות
+- התראה על כשלי אימות חוזרים
+- הודעה על פעילות מנהלית חריגה
 
-### Compliance Considerations
+### שיקולי ציות
 
-#### Data Privacy
+#### פרטיות נתונים
 
-**User Data Protection**:
-- Follow GDPR, CCPA, and relevant privacy regulations
-- Minimize personal data collection and processing
-- Provide user control over personal information
-- Implement data retention and deletion policies
+**הגנת נתוני משתמש**:
+- שמירה על GDPR, CCPA ותקנות פרטיות רלוונטיות
+- צמצום איסוף ועיבוד נתונים אישיים
+- מתן שליטה למשתמש על המידע האישי שלו
+- יישום מדיניות שמירת ומחיקת נתונים
 
-**Cross-Border Data Transfer**:
-- Consider data residency requirements
-- Implement appropriate safeguards for international transfers
-- Document data flows between IdP and FastComments
-- Ensure compliance with local privacy laws
+**העברת נתונים חוצת גבולות**:
+- התחשבות בדרישות מגורים של נתונים
+- יישום אמצעי הגנה מתאימים להעברות בינלאומיות
+- תיעוד זרימת הנתונים בין IdP ל‑FastComments
+- הבטחת ציות לחוקי פרטיות מקומיים
 
-#### Security Standards
+#### תקני אבטחה
 
-**Industry Standards Compliance**:
-- Follow SAML 2.0 security best practices
-- Implement NIST authentication guidelines
-- Consider SOC 2 and ISO 27001 requirements
-- Regular security assessments and penetration testing
+**ציות לתקני תעשייה**:
+- שמירה על שיטות האבטחה הטובות של SAML 2.0
+- יישום הנחיות האימות של NIST
+- התחשבות בדרישות SOC 2 ו‑ISO 27001
+- הערכות אבטחה תקופתיות ובדיקות חדירה
 
-### Incident Response
+### תגובה לאירוע
 
-#### Security Incident Procedures
+#### נוהלי אירועי אבטחה
 
-**Breach Response**:
-- Immediate containment of security incidents
-- Notification of affected parties
-- Investigation and root cause analysis
-- Implementation of corrective measures
+**תגובה להפרה**:
+- בידוד מיידי של אירועי אבטחה
+- הודעה לצדדים המושפעים
+- חקירה וניתוח שורש הבעיה
+- יישום צעדים מתקנים
 
-**Certificate Compromise**:
-- Immediate revocation of compromised certificates
-- Emergency certificate rotation procedures
-- User notification and re-authentication requirements
-- Security review and strengthening measures
+**פגיעה בתעודה**:
+- שלילה מיידית של תעודות פגועות
+- נוהלי רוטציית תעודות חירום
+- הודעת משתמשים ודרישות אימות מחדש
+- סקירת אבטחה וחיזוק האמצעים
 
-#### Business Continuity
+#### המשכיות עסקית
 
-**Backup Authentication Methods**:
-- Maintain alternative authentication methods
-- Document emergency access procedures
-- Regular testing of backup authentication
-- Clear communication during outages
+**שיטות אימות גיבוי**:
+- תחזוקת שיטות אימות חלופיות
+- תיעוד נוהלי גישה חירום
+- בדיקות תקופתיות של אימות גיבוי
+- תקשורת ברורה במהלך תקלות
 
-**Disaster Recovery**:
-- Document SAML configuration for disaster recovery
-- Maintain copies of certificates and configuration
-- Test recovery procedures regularly
-- Coordinate with IdP disaster recovery plans
+**שחזור מאסון**:
+- תיעוד קונפיגורציית SAML לשחזור מאסון
+- שמירת עותקים של תעודות וקונפיגורציה
+- בדיקת נוהלי שחזור באופן קבוע
+- תיאום עם תוכניות שחזור מאסון של IdP
 
-### Security Best Practices Summary
+### סיכום מיטב שיטות אבטחה
 
-#### Implementation Security
+#### אבטחת יישום
 
-1. **Use Strong Certificates**: RSA-2048 or higher with proper validation
-2. **Enforce HTTPS**: All communication over secure, encrypted channels
-3. **Validate All Input**: Sanitize and validate all SAML attributes
-4. **Monitor Continuously**: Implement comprehensive monitoring and alerting
-5. **Regular Reviews**: Conduct periodic security reviews and updates
+1. **השתמשו בתעודות חזקות**: RSA‑2048 או גבוה יותר עם אימות תקין  
+2. **אכפו HTTPS**: כל התקשורת דרך ערוצים מאובטחים ומוצפנים  
+3. **אמתו את כל הקלט**: נקהו ואמתו את כל תכונות SAML  
+4. **ניטור מתמשך**: יישום ניטור והתרעות מקיפים  
+5. **סקירות תקופתיות**: ערכו ביקורות אבטחה ועדכונים באופן קבוע  
 
-#### Operational Security
+#### אבטחה תפעולית
 
-1. **Principle of Least Privilege**: Assign minimal necessary permissions
-2. **Regular Auditing**: Review access, roles, and configurations regularly
-3. **Documentation**: Maintain current security documentation
-4. **Training**: Ensure staff understand SAML security requirements
-5. **Incident Preparedness**: Have incident response procedures ready
+1. **עיקרון המינימום**: הקצאת ההרשאות המינימליות הנדרשות  
+2. **ביקורת שוטפת**: סקירת גישה, תפקידים וקונפיגורציות באופן קבוע  
+3. **תיעוד**: תחזוקת תיעוד אבטחה עדכני  
+4. **הכשרה**: הבטחת הבנת צוות דרישות האבטחה של SAML  
+5. **הכנת אירוע**: קיום נוהלי תגובה לאירועים מוכנים  
 
-#### Organizational Security
+#### אבטחה ארגונית
 
-1. **Change Management**: Implement controlled change processes
-2. **Separation of Duties**: Divide administrative responsibilities
-3. **Regular Updates**: Keep all systems and certificates current
-4. **Vendor Management**: Monitor security of IdP and related services
-5. **Compliance Monitoring**: Ensure ongoing compliance with regulations
+1. **ניהול שינוי**: יישום תהליכי שינוי מבוקרים  
+2. **הפרדת תפקידים**: חלוקת אחריות מנהלית  
+3. **עדכונים שוטפים**: שמירה על מערכות ותעודות מעודכנות  
+4. **ניהול ספקים**: ניטור אבטחת IdP ושירותים קשורים  
+5. **ניטור ציות**: הבטחת ציות מתמשך לתקנות ותקנים

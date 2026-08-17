@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| deleteComments | boolean | No |  |
-| commentDeleteMode | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| deleteComments | boolean | Не |  |
+| commentDeleteMode | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSSOUserAPIResponse.ts)
+Враћа: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSSOUserAPIResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteSSOUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteSSOUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-corp-tenant";
 const userId: string = "sso-user-42";

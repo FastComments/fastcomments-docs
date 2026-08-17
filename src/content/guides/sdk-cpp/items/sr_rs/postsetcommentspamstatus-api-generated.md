@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | options | const PostSetCommentSpamStatusOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postSetCommentSpamStatus Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto options = PostSetCommentSpamStatusOptions{};
 options.isSpam = true;
@@ -26,3 +26,5 @@ api->postSetCommentSpamStatus(U("my-tenant-123"), U("comment-789"), options)
         try { t.get(); } catch(const std::exception&) {}
     });
 [inline-code-end]
+
+---

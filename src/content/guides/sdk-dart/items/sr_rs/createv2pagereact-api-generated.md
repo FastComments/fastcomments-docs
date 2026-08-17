@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| id | string | query | Yes |  |
-| title | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| id | string | query | Да |  |
+| title | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateV1PageReact`
+Враћа: `CreateV1PageReact`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createV2PageReact'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

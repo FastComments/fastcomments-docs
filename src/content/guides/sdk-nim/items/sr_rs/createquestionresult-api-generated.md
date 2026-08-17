@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createQuestionResultBody | CreateQuestionResultBody | No |  |
+| tenantId | string | Да |  |
+| createQuestionResultBody | CreateQuestionResultBody | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`Option[CreateQuestionResultResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_result_response.nim)
+Враћа: [`Option[CreateQuestionResultResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_question_result_response.nim)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer createQuestionResult'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let tenantId = "my-tenant-123"
 let body = CreateQuestionResultBody()

@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| create_comment_params | Vec<models::CreateCommentParams> | Yes |  |
-| is_live | bool | No |  |
-| do_spam_check | bool | No |  |
-| send_emails | bool | No |  |
-| populate_notifications | bool | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| create_comment_params | Vec<models::CreateCommentParams> | Да |  |
+| is_live | bool | Не |  |
+| do_spam_check | bool | Не |  |
+| send_emails | bool | Не |  |
+| populate_notifications | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `Vec<models::SaveCommentsBulkResponse>`
+Враћа: `Vec<models::SaveCommentsBulkResponse>`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'save_comments_bulk Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'save_comments_bulk Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -34,3 +34,5 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 [inline-code-end]
+
+---

@@ -1,8 +1,8 @@
-Svi API metodi u ovom SDK‑u vraćaju `pplx::task<std::shared_ptr<ResponseType>>` iz C++ REST SDK‑a. Ovo vam daje fleksibilnost u načinu na koji obrađujete API odgovore.
+Све API методе у овом SDK-у враћају `pplx::task<std::shared_ptr<ResponseType>>` из C++ REST SDK-а. Ово вам пружа флексибилност у начину на који руковате API одговорима.
 
-### Sinhroni pozivi sa `.get()`
+### Синхроне позиве са `.get()`
 
-Koristite `.get()` da blokirate nit pozivaoca dok zahtev ne bude završen i da sinhrono preuzmete rezultat:
+Користите `.get()` да блокирате позивни нит док захтев не заврши и да синхроно добијете резултат:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Obavezni parametri su pozicioni; opciona idu u strukturu opcija
+// Потребни параметри су позиционални; опционо су у структури options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Pozovite .get() da blokirate i sinhrono dobijete rezultat
+// Позовите .get() да блокирате и добијете резултат синхроно
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Blokira dok HTTP zahtev ne bude završen
+).get();  // Блокира док HTTP захтев не заврши
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### Asinhroni pozivi sa `.then()`
+### Асинхроне позиве са `.then()`
 
-Koristite `.then()` za neblokirajuće asinhrono izvršavanje sa povratnim pozivima:
+Користите `.then()` за не-блокирајуће асинхроно извршавање са повратним позивима:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Obavezni parametri su pozicioni; opciona idu u strukturu opcija
+// Потребни параметри су позиционални; опционо су у структури options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Koristite .then() za asinhrono izvršavanje zasnovano na povratnim pozivima
+// Користите .then() за асинхрону извршавање засновано на повратним позивима
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // Ovo se izvršava asinhrono kada zahtev bude završen
+    // Ово се извршава асинхроно када се захтев заврши
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Izvršavanje nastavlja odmah bez blokiranja
+// Извршавање наставља одмах без блокирања
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Izbor između sinhronog i asinhronog pristupa
+### Одабир између синхроног и асинхроног
 
-Izbor zavisi od vašeg okruženja za izvršavanje i arhitekture aplikacije:
+Избор зависи од вашег окружења за извршавање и архитектуре апликације:
 
-**`.get()` (Sinhrono blokiranje)**
-- Blokira nit pozivaoca dok HTTP zahtev ne bude završen
-- Jednostavniji tok koda, lakše za razumevanje
-- Pogodno za posvećene radne niti, batch obradu ili alate komandne linije
-- **Neodgovarajuće** za petlje događaja, GUI niti ili jednonitne servere
+**`.get()` (Синхроно блокирање)**
+- Блокира позивни нит док HTTP захтев не заврши
+- Једноставнији ток кода, лакше за разумевање
+- Погодно за посвећене радне нити, пакетну обраду или алате командне линије
+- **Није погодно** за петље догађаја, GUI нити или једнонитне сервере
 
-**`.then()` (Asinhrono neblokiranje)**
-- Vraća se odmah, povratni poziv se izvršava kada zahtev bude završen
-- Ne blokira nit pozivaoca
-- Neophodno za event‑driven arhitekture, GUI aplikacije ili jednonitne petlje događaja
-- Omogućava ulančavanje višestrukih operacija
-- Složeniji tok kontrole
+**`.then()` (Асинхроно не-блокирање)**
+- Враћа се одмах, повратни позив се извршава када се захтев заврши
+- Не блокира позивни нит
+- Потребно за архитектуре засноване на догађајима, GUI апликације или једнонитне петље догађаја
+- Омогућава ланцирање више операција
+- Сложенији ток контроле
 
-Test paket SDK‑a koristi isključivo `.get()`, ali to je prikladno za test okruženje u kome je blokiranje prihvatljivo.
+Тестни скуп SDK‑а користи искључиво `.get()`, али ово је прикладно за тестно окружење где је блокирање прихватљиво.

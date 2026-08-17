@@ -1,4 +1,4 @@
-Sve FastComments widget opcije se podešavaju pod `[params.fastcomments]` u `hugo.toml`, i mogu se prepisati po strani u front matter pod `[fastcomments]`. Prednost, od najniže do najviše: parametri sajta, front matter stranice, parametri shortcode-a.
+Све FastComments виџет опције се постављају под `[params.fastcomments]` у `hugo.toml`, и могу се преписати по страници у front matter‑у под `[fastcomments]`. Приоритет, од најниже до највише: параметри сајта, front matter странице, параметри кратког кода.
 
 ```toml
 # hugo.toml
@@ -10,7 +10,7 @@ Sve FastComments widget opcije se podešavaju pod `[params.fastcomments]` u `hug
 ```
 
 ```toml
-# front matter stranice
+# a page's front matter
 +++
 title = "Article"
 [fastcomments]
@@ -19,11 +19,11 @@ title = "Article"
 +++
 ```
 
-Kada nisu navedeni ni `url` ni `urlId`, `url` podrazumevano koristi permalink stranice kako bi niti komentara ostale vezane za stabilan URL.
+Када ни `url` ни `urlId` нису наведени, `url` подразумевано добија permalink странице тако да теме коментара остану везане за стабилну URL адресу.
 
-### EU rezidencija podataka
+### Резиденција података у ЕУ
 
-EU kupci postavljaju `region = "eu"` da usmere widget na `cdn-eu.fastcomments.com`:
+Клијенти из ЕУ постављају `region = "eu"` да би усмерили виџет ка `cdn-eu.fastcomments.com`:
 
 ```toml
 [params.fastcomments]
@@ -31,6 +31,6 @@ EU kupci postavljaju `region = "eu"` da usmere widget na `cdn-eu.fastcomments.co
   region = "eu"
 ```
 
-### Napomena o pisanju ključeva (casing)
+### Напомена о великим/малим словима у кључевима
 
-Hugo pretvara svaki ključ u `hugo.toml` i front matter u mala slova, ali FastComments widgeti zahtevaju camelCase ključeve (`tenantId`, `hasDarkBackground`). Ovaj komponent automatski vraća ispravan zapis velikih/malih slova za svaku poznatu top-level opciju, tako da pišite opcije u njihovom uobičajenom camelCase obliku. Ključevi ugnježdeni unutar vrednosti objekta (na primer ključevi mape `translations`, ili polja `pageReactConfig`) se ne vraćaju. Podesite te kroz kontrolni panel FastComments za prilagođavanje umesto toga.
+Hugo претвара сваки кључ у `hugo.toml` и front matter у мала слова, али FastComments виџети захтевају camelCase кључеве (`tenantId`, `hasDarkBackground`). Ова компонента аутоматски враћа исправно велико/мало слово за сваку познату опцију највишег нивоа, па пишите опције у њиховом уобичајеном camelCase облику. Кључеви угнеждени унутар објектних вредности (на пример кључеви мапе `translations` или поља `pageReactConfig`) се не враћају. Конфигуришите их преко FastComments контролне табле за прилагођавање уместо тога.

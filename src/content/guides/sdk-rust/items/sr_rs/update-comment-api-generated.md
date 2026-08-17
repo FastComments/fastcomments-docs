@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 | updatable_comment_params | models::UpdatableCommentParams | Yes |  |
@@ -9,13 +9,13 @@
 | do_spam_check | bool | No |  |
 | is_live | bool | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer update_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за update_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_update() -> Result<(), Error> {
     let updatable = models::UpdatableCommentParams {
@@ -34,3 +34,5 @@ async fn run_update() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

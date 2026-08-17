@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| createTenantPackageBody | CreateTenantPackageBody | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
+Враћа: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant-9876";
@@ -19,7 +19,7 @@ Vraća: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcom
   const body: CreateTenantPackageBody = {
     packageName: "Standard",
     quota: 5000,
-    // opciono polje
+    // опционално поље
     description: "Standard package for medium traffic",
   };
 
@@ -27,5 +27,3 @@ Vraća: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcom
   console.log(result);
 })();
 [inline-code-end]
-
----

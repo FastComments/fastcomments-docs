@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | textSearch | string | No |  |
 | byIPFromComment | string | No |  |
 | filter | string | No |  |
@@ -10,13 +10,13 @@
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
+Враћа: [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getCount Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCount Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function main(): Promise<void> {
   const count: GetCountResponse = await getCount({
@@ -31,3 +31,5 @@ async function main(): Promise<void> {
 }
 main();
 [inline-code-end]
+
+---

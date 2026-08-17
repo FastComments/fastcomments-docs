@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetUserTrustFactorResponse`
+Враћа: `GetUserTrustFactorResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getTrustFactor Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTrustFactor Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -28,3 +28,5 @@ try {
     print('Exception when calling ModerationApi->getTrustFactor: $e\n');
 }
 [inline-code-end]
+
+---

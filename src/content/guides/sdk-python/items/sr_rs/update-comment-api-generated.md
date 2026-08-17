@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| contextUserId | string | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| isLive | boolean | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| contextUserId | string | query | Не |  |
+| doSpamCheck | boolean | query | Не |  |
+| isLive | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'update_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,33 +23,29 @@ from client.models.updatable_comment_params import UpdatableCommentParams
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
+# у складу са безбедносном политиком API сервера.
+# Примери за сваки метод аутентификације су дати испод, користите пример који
+# задовољава ваш случај употребе аутентификације.
 
-# Klijent mora da konfiguriše parametre autentikacije i autorizacije
-# u skladu sa politikom bezbednosti API servera.
-# Primeri za svaki metod autentikacije su prikazani ispod, koristite primer koji
-# zadovoljava vaš slučaj korišćenja autentikacije.
-
-# Konfigurišite autorizaciju API ključa: api_key
+# Конфигуришите ауторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Unesite kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     id = 'id_example' # str | 
     updatable_comment_params = client.UpdatableCommentParams() # UpdatableCommentParams | 
-    context_user_id = 'context_user_id_example' # str |  (opciono)
-    do_spam_check = True # bool |  (opciono)
-    is_live = True # bool |  (opciono)
+    context_user_id = 'context_user_id_example' # str |  (optional)
+    do_spam_check = True # bool |  (optional)
+    is_live = True # bool |  (optional)
 
     try:
         api_response = api_instance.update_comment(tenant_id, id, updatable_comment_params, UpdateCommentOptions(context_user_id=context_user_id, do_spam_check=do_spam_check, is_live=is_live))

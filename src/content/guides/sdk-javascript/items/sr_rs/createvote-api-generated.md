@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | direction | CreateVoteDirectionEnum | Yes |  |
 | userId | string | No |  |
 | anonUserId | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateVoteResponse.ts)
+Враћа: [`CreateVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateVoteResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const commentId: string = "comment_987654";

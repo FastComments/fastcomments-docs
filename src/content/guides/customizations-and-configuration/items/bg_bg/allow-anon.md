@@ -1,8 +1,10 @@
-By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,  
-their comment will display an "Unverified Comment" label.
+---
+По подразбиране FastComments изисква имейл за коментиране. Не е необходимо имейлът да е валиден, но докато потребителят не кликне върху изпратения линк, неговият коментар ще показва етикет „Непроверен коментар“.
 
-However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
+Въпреки това можем да премахнем изискването за имейл. Полето за въвеждане на имейл ще се показва, но вече няма да бъде задължително.
 
-This can be configured via the widget customization UI:
+Това може да се конфигурира чрез UI за персонализиране на уиджета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Опция за анонимни коментари в UI за персонализиране на уиджета, която прави полето за имейл незадължително'; title='Enabling Anonymous Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Опция за анонимни коментари в UI за персонализиране на уиджета, която прави полето за имейл незадължително'; title='Активиране на анонимни коментари' app-screenshot-end]
+
+---

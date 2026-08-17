@@ -1,16 +1,16 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| userId | string | No |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
+| userId | string | 아니오 |  |
 
-## Response
+## 응답
 
-Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSubscriptionAPIResponse.ts)
+반환: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteSubscriptionAPIResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'deleteSubscription 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

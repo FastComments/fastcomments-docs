@@ -1,126 +1,128 @@
-Once FastComments is registered with the platform, instructors add it to course content using the platform's standard external tool flows. This page covers Sakai 23.x and Schoology Enterprise.
+Once FastComments がプラットフォームに登録されると、インストラクターはプラットフォームの標準的な外部ツールフローを使用してコースコンテンツに追加します。このページは Sakai 23.x と Schoology Enterprise を対象としています。
 
-#### Lock Down Public Access (Recommended)
+#### 公開アクセスのロックダウン（推奨）
 
-By default, FastComments comment data is publicly readable on either platform. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Sakai or Schoology. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+デフォルトでは、FastComments のコメントデータはどちらのプラットフォームでも公開されて読み取れます。スレッドの URL や API エンドポイントを推測できる人は誰でも、Sakai や Schoology の外部でもコメントを閲覧できます。コースディスカッションでは、閲覧を登録された学生のみに制限することがほぼ必須です。
 
-Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">ウィジェットカスタマイズページ</a> を開き、**Require SSO To View Comments** を有効にしたルールを作成し、セキュリティレベルを **Secure SSO** に設定します。これにより、スレッドは署名された LTI 起動を通じてのみロードされます。
 
-See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+完全な手順については、[Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) を参照してください。ルールを単一ドメインまたはページにスコープする方法も含まれます。
 
 #### Sakai
 
-**1. Add FastComments to a site**
+**1. サイトに FastComments を追加**
 
-The site maintainer enables the tool on a per-site basis:
+サイト管理者はサイトごとにツールを有効にします：
 
-1. Open the site and click **Site Info** in the left navigation.
-2. Click **Manage Tools**.
-3. Scroll to the **External Tools** list and toggle **FastComments** on.
-4. Click **Continue**, review the tool list, then click **Finish**.
+1. サイトを開き、左側ナビゲーションの **Site Info** をクリックします。
+2. **Manage Tools** をクリックします。
+3. **External Tools** リストまでスクロールし、**FastComments** をオンに切り替えます。
+4. **Continue** をクリックし、ツールリストを確認したら **Finish** をクリックします。
 
-FastComments now appears as a left-nav item in the site.
+FastComments がサイトの左側ナビゲーション項目として表示されます。
 
-**2. Reorder the left-nav entry**
+**2. 左側ナビゲーション項目の順序変更**
 
-Go to **Site Info** > **Tool Order**. Drag **FastComments** to the desired position and click **Save**. You can also rename the nav label and hide it from students from this screen.
+**Site Info** > **Tool Order** に移動します。**FastComments** を希望の位置にドラッグし、**Save** をクリックします。この画面からナビラベルの名前を変更したり、学生から非表示にしたりすることもできます。
 
-**3. Embed inline in a Lessons page**
+**3. Lessons ページにインラインで埋め込む**
 
-To place FastComments directly inside a Lessons page rather than as a standalone left-nav tool:
+FastComments をスタンドアロンの左側ナビツールではなく、Lessons ページ内に直接配置するには：
 
-1. Open the **Lessons** tool in the site.
-2. Click **Add Content** > **Add External Tool**.
-3. Select **FastComments** from the list.
-4. If FastComments advertised Deep Linking during registration, Sakai opens the tool's content selector so you can pick or label the thread. If Deep Linking wasn't advertised, Sakai inserts a default launch link.
-5. Save the Lessons item.
+1. サイト内の **Lessons** ツールを開きます。
+2. **Add Content** > **Add External Tool** をクリックします。
+3. リストから **FastComments** を選択します。
+4. FastComments が登録時に Deep Linking を宣伝している場合、Sakai はツールのコンテンツセレクタを開き、スレッドを選択またはラベル付けできます。Deep Linking が宣伝されていない場合、Sakai はデフォルトの起動リンクを挿入します。
+5. Lessons アイテムを保存します。
 
-Each embedded instance gets its own thread, scoped to that resource link.
+埋め込まれた各インスタンスは、そのリソースリンクにスコープされた独自のスレッドを取得します。
 
-**4. Permission tweaks for student access**
+**4. 学生アクセスの権限調整**
 
-Sakai gates external tool launches through Realms. To confirm students can launch FastComments:
+Sakai は外部ツールの起動を Realms で制御します。学生が FastComments を起動できることを確認するには：
 
-1. Sign in as a Sakai admin and open **Administration Workspace** > **Realms**.
-2. Open the relevant realm (for example, `!site.template.course` or the specific site realm).
-3. Confirm the `access` role has `lti.launch` enabled and that the role permissions in the **external.tools** group are granted.
-4. Save the realm.
+1. Sakai 管理者としてサインインし、**Administration Workspace** > **Realms** を開きます。
+2. 該当する realm を開きます（例: `!site.template.course` または特定のサイト realm）。
+3. `access` ロールに `lti.launch` が有効であり、**external.tools** グループのロール権限が付与されていることを確認します。
+4. realm を保存します。
 
-For site-level overrides, the maintainer can adjust per-role tool visibility from **Site Info** > **Tool Order** by hiding or showing FastComments per role.
+サイトレベルのオーバーライドについては、管理者は **Site Info** > **Tool Order** からロールごとに FastComments の表示/非表示を調整できます。
 
-**5. What students see**
+**5. 学生が見るもの**
 
-Students click the FastComments left-nav item (or scroll to the embedded Lessons block) and land directly in the threaded comment view. SSO is automatic: Sakai sends the user's identity in the LTI launch and FastComments signs them in under their Sakai account.
+学生は FastComments の左側ナビ項目をクリック（または埋め込まれた Lessons ブロックまでスクロール）し、直接スレッド化されたコメントビューに移動します。SSO は自動的に行われます：Sakai は LTI 起動時にユーザーの ID を送信し、FastComments はその Sakai アカウントでサインインさせます。
 
-Role mapping:
+ロールマッピング:
 
-- Sakai `Instructor` -> FastComments moderator
-- Sakai `Admin` (admin in Administration Workspace) -> FastComments admin
-- Sakai `Student` / `access` -> FastComments commenter
+- Sakai `Instructor` → FastComments モデレーター
+- Sakai `Admin`（Administration Workspace の管理者）→ FastComments 管理者
+- Sakai `Student` / `access` → FastComments コメント投稿者
 
-**6. Sakai gotchas**
+**6. Sakai の注意点**
 
-- **Tool not visible in Manage Tools.** If FastComments doesn't appear in the External Tools list, the Sakai admin needs to open the tool registry (**Administration Workspace** > **External Tools** > **FastComments**) and set **Stealthed** to `false`. Stealthed tools are hidden from the per-site Manage Tools picker.
-- **Launches breaking in shared-session browsers.** Sakai's portal CSRF token is bound to the browser session. If a student is signed in to two Sakai sites in different tabs or has a stale session, the launch returns a 403. Fix: close other Sakai tabs, sign out, sign back in, and relaunch. Admins can also raise `sakai.csrf.token.cache.ttl` if this happens cluster-wide.
-- **Frame embedding.** Confirm `lti.frameheight` in `sakai.properties` is large enough (600 or higher) so the comment thread isn't clipped inside a Lessons page.
+- **Tool not visible in Manage Tools.** FastComments が External Tools リストに表示されない場合、Sakai 管理者はツールレジストリ（**Administration Workspace** > **External Tools** > **FastComments**）を開き、**Stealthed** を `false` に設定する必要があります。Stealthed ツールはサイトごとの Manage Tools ピッカーから非表示になります。
+- **Launches breaking in shared-session browsers.** Sakai のポータル CSRF トークンはブラウザセッションに紐付いています。学生が異なるタブで 2 つの Sakai サイトにサインインしている、またはセッションが古い場合、起動は 403 を返します。対処法：他の Sakai タブを閉じ、サインアウトしてから再度サインインし、再起動します。管理者はクラスター全体でこの問題が発生した場合、`sakai.csrf.token.cache.ttl` を上げることもできます。
+- **Frame embedding.** `sakai.properties` の `lti.frameheight` が十分に大きい（600 以上）ことを確認してください。これにより、Lessons ページ内でコメントスレッドが切り取られません。
 
 #### Schoology
 
-Schoology Enterprise has two installation scenarios. Confirm which one applies before adding the tool to a course.
+Schoology Enterprise には 2 つのインストールシナリオがあります。ツールをコースに追加する前に、どちらが適用されるか確認してください。
 
-**1. Two installation scenarios**
+**1. 2 つのインストールシナリオ**
 
-- **(a) Enterprise-level install.** The Schoology System Administrator installed FastComments at the organization level and assigned it to all courses or to specific course templates. Instructors skip installation and go straight to "Add Materials".
-- **(b) Instructor self-install.** The instructor installs the tool into a single course from **Course Options** > **External Tools** > **Install LTI Apps**. Self-install requires the System Administrator to have approved the FastComments app at the org level first.
+- **(a) Enterprise-level install.** Schoology システム管理者が組織レベルで FastComments をインストールし、すべてのコースまたは特定のコーステンプレートに割り当てました。インストラクターはインストールをスキップし、直接「Add Materials」に進みます。
+- **(b) Instructor self-install.** インストラクターは **Course Options** > **External Tools** > **Install LTI Apps** からツールを単一コースにインストールします。自己インストールには、システム管理者が事前に組織レベルで FastComments アプリを承認している必要があります。
 
-**2. Add FastComments as a course material**
+**2. FastComments をコース教材として追加**
 
-Inside the course:
+コース内で：
 
-1. Open the course and go to **Materials**.
-2. Click **Add Materials** > **Add File/Link/External Tool**.
-3. Choose **External Tool**.
-4. Select **FastComments** from the registered tools list.
-5. Set a **Name** (this is what students see in the materials list) and an optional **Description**.
-6. Leave **Enable Grading** (grade passback) **OFF**. FastComments does not report grades back to Schoology, so enabling grade passback creates an empty gradebook column.
-7. Click **Submit**.
+1. コースを開き、**Materials** に移動します。
+2. **Add Materials** > **Add File/Link/External Tool** をクリックします。
+3. **External Tool** を選択します。
+4. 登録済みツールリストから **FastComments** を選択します。
+5. **Name** を設定します（これは学生が教材リストで見る名前です）。任意で **Description** も設定できます。
+6. **Enable Grading**（成績パスバック）を **OFF** のままにします。FastComments は Schoology に成績を返さないため、成績パスバックを有効にすると空の成績ブック列が作成されます。
+7. **Submit** をクリックします。
 
-The material now appears in the course materials list and opens the FastComments thread when clicked.
+教材はコース教材リストに表示され、クリックすると FastComments スレッドが開きます。
 
-**3. Inline embedding via the Rich Text editor**
+**3. リッチテキストエディタによるインライン埋め込み**
 
-If the System Administrator enabled Deep Linking placement for FastComments during registration, instructors can embed the comment thread inside any Rich Text field (assignment instructions, page bodies, discussion prompts):
+システム管理者が登録時に FastComments の Deep Linking 配置を有効にしている場合、インストラクターは任意のリッチテキストフィールド（課題指示、ページ本文、ディスカッションプロンプト）内にコメントスレッドを埋め込むことができます：
 
-1. Open the Rich Text editor on the target page.
-2. Click the **External Tool** (puzzle piece) icon in the toolbar.
-3. Choose **FastComments**.
-4. Configure the embed in the deep-linking dialog and click **Insert**.
-5. Save the page.
+1. 対象ページでリッチテキストエディタを開きます。
+2. ツールバーの **External Tool**（パズルピース）アイコンをクリックします。
+3. **FastComments** を選択します。
+4. Deep Linking ダイアログで埋め込みを設定し、**Insert** をクリックします。
+5. ページを保存します。
 
-If the External Tool button doesn't appear in the Rich Text editor, Deep Linking is disabled for this tool on this tenant. See the gotchas below.
+リッチテキストエディタに External Tool ボタンが表示されない場合、このテナントでこのツールの Deep Linking が無効になっています。以下の注意点をご参照ください。
 
-**4. Visibility and section assignments**
+**4. 可視性とセクション割り当て**
 
-Schoology scopes tool availability per section through Course Options:
+Schoology は Course Options を通じてセクションごとにツールの利用可能性をスコープします：
 
-1. From the course, click **Course Options** > **External Tools**.
-2. For each installed LTI app, you control whether it's available to all sections in the course or to specific sections.
-3. To restrict FastComments to certain sections, uncheck the sections that should not see the tool.
-4. Section-level access also gates which sections see the **Add Materials** > **External Tool** entry for FastComments.
+1. コースから **Course Options** > **External Tools** をクリックします。
+2. インストールされた各 LTI アプリについて、コース内のすべてのセクションで利用可能にするか、特定のセクションに限定するかを制御します。
+3. FastComments を特定のセクションに限定するには、ツールを表示させたくないセクションのチェックを外します。
+4. セクションレベルのアクセスは、どのセクションが **Add Materials** > **External Tool** エントリで FastComments を見るかも制御します。
 
-**5. What students see**
+**5. 学生が見るもの**
 
-Students click the FastComments material (or scroll to the inline embed) and land in the threaded discussion. SSO is automatic via the Schoology LTI launch under their Schoology account.
+学生は FastComments の教材（またはインライン埋め込み）をクリックし、スレッド化されたディスカッションに移動します。SSO は Schoology アカウントでの LTI 起動により自動的に行われます。
 
-Role mapping:
+ロールマッピング:
 
-- Schoology `Administrator` -> FastComments admin
-- Schoology `Instructor` -> FastComments moderator
-- Schoology `Student` -> FastComments commenter
+- Schoology `Administrator` → FastComments 管理者
+- Schoology `Instructor` → FastComments モデレーター
+- Schoology `Student` → FastComments コメント投稿者
 
-**6. Schoology gotchas**
+**6. Schoology の注意点**
 
-- **Enterprise-only.** Personal and free Schoology accounts cannot install LTI 1.3 tools. If your tenant is on the free tier, the **External Tools** option is absent from Course Options. Upgrade to Schoology Enterprise to use FastComments.
-- **Deep Linking disabled by tenant default.** Some Schoology tenants restrict Deep Linking placement at the org level. When this is the case, instructors see only the **Add Materials** > **External Tool** flow and not the External Tool button in the Rich Text editor. To enable inline embedding, the System Administrator goes to **System Settings** > **Integration** > **LTI 1.3** > **FastComments** and enables the **Content Item / Deep Linking** placement, then saves.
-- **Per-section assignment override.** If FastComments is assigned at the enterprise level but the instructor cannot see it in **Add Materials**, the course's section is excluded in the org-level assignment. Ask the System Administrator to add the section to the FastComments app assignment.
-- **Material name vs. thread identity.** Renaming the material in Schoology does not move the comment thread. Threads are keyed on the LTI resource link ID, so a rename keeps the same thread; deleting and recreating the material creates a new, empty thread.
+- **Enterprise-only.** 個人および無料の Schoology アカウントでは LTI 1.3 ツールをインストールできません。テナントが無料プランの場合、Course Options に **External Tools** オプションがありません。FastComments を使用するには Schoology Enterprise にアップグレードしてください。
+- **Deep Linking disabled by tenant default.** 一部の Schoology テナントは組織レベルで Deep Linking 配置を制限しています。この場合、インストラクターは **Add Materials** > **External Tool** フローのみを見、リッチテキストエディタの External Tool ボタンは表示されません。インライン埋め込みを有効にするには、システム管理者が **System Settings** > **Integration** > **LTI 1.3** > **FastComments** に移動し、**Content Item / Deep Linking** 配置を有効にして保存します。
+- **Per-section assignment override.** FastComments がエンタープライズレベルで割り当てられているが、インストラクターが **Add Materials** で見えない場合、コースのセクションが組織レベルの割り当てから除外されています。システム管理者にセクションを FastComments アプリの割り当てに追加するよう依頼してください。
+- **Material name vs. thread identity.** Schoology で教材名を変更しても、コメントスレッドは移動しません。スレッドは LTI リソースリンク ID でキー付けされるため、名前変更は同じスレッドを保持します。教材を削除して再作成すると、新しい空のスレッドが作成されます。
+
+---

@@ -1,15 +1,15 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
 
-## Response
+## 응답
 
-Returns: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
+반환: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'deleteTenantPackage 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

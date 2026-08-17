@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | Yes |  |
-| title | string | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| id | string | Да |  |
+| title | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateV1PageReact.h)
+Враћа: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateV1PageReact.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createV2PageReact'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 api->createV2PageReact(
     utility::string_t(U("my-tenant-789")),

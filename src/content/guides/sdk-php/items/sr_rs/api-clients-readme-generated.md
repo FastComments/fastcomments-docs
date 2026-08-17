@@ -1,21 +1,21 @@
-The SDK izlaže tri klase klijenta API-ja:
+SDK излаже три класе клијентских API-ја:
 
-- **`DefaultApi`** – metode autentifikovane API ključem za upotrebu na serveru. Konfigurišite API ključ kao što je prikazano u [Getting Started](#getting-started-readme-generated).
-- **`PublicApi`** – javne metode koje ne zahtevaju API ključ, bezbedne za pozivanje iz pretraživača i mobilnih aplikacija.
-- **`ModerationApi`** – opsežan skup API‑ja za moderaciju u realnom vremenu i brzu. Svaka metoda `ModerationApi` prihvata parametar `$sso` i može se autentifikovati putem SSO‑a ili sesijskog kolačića FastComments.com.
+- **`DefaultApi`** - Методи аутентификовани API кључем за серверско коришћење. Конфигуришите API кључ као што је приказано у [Getting Started](#getting-started-readme-generated).
+- **`PublicApi`** - Јавни методи који не захтевају API кључ, безбедни за позив из прегледача и мобилних апликација.
+- **`ModerationApi`** - Обиман скуп живих и брзих API-ја за модерацију. Сваки `ModerationApi` метод прихвата параметар `$sso` и може се аутентификовати преко SSO или FastComments.com сесијског колачића.
 
-### Korišćenje PublicApi
+### Коришћење PublicApi
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Javne metode ne zahtevaju API ključ.
+// Јавни методи не захтевају API кључ.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
+$url_id = 'url_id_example'; // стринг
 
 try {
     $result = $apiInstance->getCommentsPublic($tenant_id, $url_id);
@@ -25,7 +25,7 @@ try {
 }
 ```
 
-### Korišćenje ModerationApi
+### Коришћење ModerationApi
 
 ```php
 <?php
@@ -34,7 +34,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - SSO payload koji autentifikuje moderatora
+$sso = 'sso_example'; // стринг - SSO податак који аутентификује модератора
 
 try {
     $result = $apiInstance->getCount([

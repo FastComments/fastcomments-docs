@@ -1,22 +1,22 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sorts | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportResponse.php)
+Враћа: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportResponse.php)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'postApiExport Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,19 +24,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, `GuzzleHttp\Client` ће бити коришћен као подразумевано.
+    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
 $options = [
-    'text_search' => 'text_search_example', // string
-    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
-    'filters' => 'filters_example', // string
-    'search_filters' => 'search_filters_example', // string
-    'sorts' => 'sorts_example', // string
-    'sso' => 'sso_example', // string
+    'text_search' => 'text_search_example', // стринг
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // стринг
+    'filters' => 'filters_example', // стринг
+    'search_filters' => 'search_filters_example', // стринг
+    'sorts' => 'sorts_example', // стринг
+    'sso' => 'sso_example', // стринг
 ];
 
 

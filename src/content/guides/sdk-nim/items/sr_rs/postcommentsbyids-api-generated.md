@@ -1,23 +1,23 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentsByIdsParams | CommentsByIdsParams | Ne |  |
-| sso | string = "" | Ne |  |
+| tenantId | string | Yes |  |
+| commentsByIdsParams | CommentsByIdsParams | No |  |
+| sso | string = "" | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
+Враћа: [`Option[ModerationAPIChildCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_child_comments_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postCommentsByIds Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postCommentsByIds Пример'; type = 'nim; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let tenantId = "my-tenant-123"
 let params = CommentsByIdsParams(commentIds = @["cmt-001", "cmt-002"])
 let (maybeResp, httpResp) = client.postCommentsByIds(tenantId = tenantId, commentsByIdsParams = params, sso = "")
 if maybeResp.isSome:
   let resp = maybeResp.get()
-  # koristite resp po potrebi
+  # use resp as needed
 [inline-code-end]

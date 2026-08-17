@@ -1,38 +1,38 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
+Враћа: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_from_comment_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_ban_users_from_comment Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_ban_users_from_comment'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.get_banned_users_from_comment_response import GetBannedUsersFromCommentResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje host-a je opcionalno i podrazumeva https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    sso = 'sso_example' # str |  (opcionalno)
+    sso = 'sso_example' # str |  (опционо)
 
     try:
         api_response = api_instance.get_ban_users_from_comment(tenant_id, comment_id, sso=sso)

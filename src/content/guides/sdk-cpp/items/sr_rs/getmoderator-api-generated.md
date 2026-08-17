@@ -1,17 +1,17 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetModeratorResponse.h)
+Враћа: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetModeratorResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getModerator'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getModerator'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 auto moderatorId = utility::string_t(U("moderator-789"));
@@ -23,3 +23,5 @@ api->getModerator(tenantId, moderatorId)
         }
     });
 [inline-code-end]
+
+---

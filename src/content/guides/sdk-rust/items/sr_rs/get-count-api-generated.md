@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | text_search | String | No |  |
 | by_ip_from_comment | String | No |  |
@@ -10,13 +10,13 @@
 | demo | bool | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationApiCountCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_count_comments_response.rs)
+Враћа: [`ModerationApiCountCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_count_comments_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_count Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetCountParams {

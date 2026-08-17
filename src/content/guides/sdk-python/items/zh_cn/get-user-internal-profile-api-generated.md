@@ -1,18 +1,18 @@
-## Parameters
+## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 响应
 
-Returns: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_internal_profile_response.py)
+返回: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_user_internal_profile_response.py)
 
-## Example
+## 示例
 
-[inline-code-attrs-start title = '获取用户内部资料 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_internal_profile 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.moderation_api import GetUserInternalProfileOptions
@@ -21,7 +21,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # 定义 host 是可选的，默认值为 https://fastcomments.com
-# 请参阅 configuration.py 了解所有受支持的配置参数列表.
+# 查看 configuration.py 以获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,8 +32,8 @@ with client.ApiClient(configuration) as api_client:
     # 创建 API 类的实例
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    comment_id = 'comment_id_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    comment_id = 'comment_id_example' # str |  （可选）
+    sso = 'sso_example' # str |  （可选）
 
     try:
         api_response = api_instance.get_user_internal_profile(tenant_id, GetUserInternalProfileOptions(comment_id=comment_id, sso=sso))
@@ -42,3 +42,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->get_user_internal_profile: %s\n" % e)
 [inline-code-end]
+
+---

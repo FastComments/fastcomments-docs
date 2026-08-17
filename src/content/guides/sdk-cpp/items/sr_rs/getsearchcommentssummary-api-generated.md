@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| options | const GetSearchCommentsSummaryOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | const GetSearchCommentsSummaryOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
+Враћа: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getSearchCommentsSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchCommentsSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto options = std::make_shared<GetSearchCommentsSummaryOptions>();

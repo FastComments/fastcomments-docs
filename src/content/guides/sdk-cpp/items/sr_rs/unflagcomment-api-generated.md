@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | options | const UnFlagCommentOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
+Враћа: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer unFlagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unFlagComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto options = UnFlagCommentOptions{};
 options.reason = boost::optional<utility::string_t>(U("Resolved by moderator"));
@@ -20,14 +20,14 @@ api->unFlagComment(U("my-tenant-123"), U("comment-456"), options)
     .then([](std::shared_ptr<FlagCommentResponse> response) {
         if (response) {
             auto status = response->status;
-            // obradi status po potrebi
+            // обради статус ако је потребно
         }
     })
     .then([](pplx::task<void> previous) {
         try {
             previous.get();
         } catch (const std::exception& e) {
-            // obradi grešku
+            // обради грешку
         }
     });
 [inline-code-end]

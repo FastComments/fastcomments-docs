@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| badgeId | string | Da |  |
-| userId | string | Ne |  |
-| commentId | string | Ne |  |
-| broadcastId | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| badgeId | string | Yes |  |
+| userId | string | No |  |
+| commentId | string | No |  |
+| broadcastId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutAwardBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutAwardBadgeResponse.ts)
+Враћа: [`PutAwardBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutAwardBadgeResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putAwardBadge Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
     const badgeId: string = "badge-superstar"

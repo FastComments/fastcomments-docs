@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| largeInternalURLSanitized | string | query | Da |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| largeInternalURLSanitized | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GifGetLargeResponse`
+Враћа: `GifGetLargeResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getGifLarge'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifLarge Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

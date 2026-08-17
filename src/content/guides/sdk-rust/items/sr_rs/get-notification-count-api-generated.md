@@ -1,20 +1,20 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| url_id | String | No |  |
-| from_comment_id | String | No |  |
-| viewed | bool | No |  |
+| tenant_id | String | Да |  |
+| user_id | String | Не |  |
+| url_id | String | Не |  |
+| from_comment_id | String | Не |  |
+| viewed | bool | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
+Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'get_notification_count Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notification_count Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetNotificationCountParams {
@@ -28,3 +28,5 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

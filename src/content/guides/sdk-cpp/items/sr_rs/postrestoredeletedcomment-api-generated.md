@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| options | const PostRestoreDeletedCommentOptions& | Yes |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | const PostRestoreDeletedCommentOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postRestoreDeletedComment Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t commentId = U("cmt-987654");

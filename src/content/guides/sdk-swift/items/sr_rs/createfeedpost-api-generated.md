@@ -1,30 +1,30 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | broadcastId | string | query | No |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
 | skipDupCheck | boolean | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostsResponse.swift)
+Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateFeedPostsResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createFeedPost Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createFeedPost'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći kod primeri su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let createFeedPostParams = CreateFeedPostParams(title: "title_example", contentHTML: "contentHTML_example", media: [FeedPostMediaItem(title: "title_example", linkUrl: "linkUrl_example", sizes: [FeedPostMediaItemAsset(w: 123, h: 123, src: "src_example")])], links: [FeedPostLink(text: "text_example", title: "title_example", description: "description_example", url: "url_example")], fromUserId: "fromUserId_example", fromUserDisplayName: "fromUserDisplayName_example", tags: ["tags_example"], meta: "TODO") // CreateFeedPostParams | 
-let broadcastId = "broadcastId_example" // String |  (optional)
-let isLive = true // Bool |  (optional)
-let doSpamCheck = true // Bool |  (optional)
-let skipDupCheck = true // Bool |  (optional)
+let broadcastId = "broadcastId_example" // String |  (опционално)
+let isLive = true // Bool |  (опционално)
+let doSpamCheck = true // Bool |  (опционално)
+let skipDupCheck = true // Bool |  (опционално)
 
 DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPostParams, options: DefaultAPI.CreateFeedPostOptions(broadcastId: broadcastId, isLive: isLive, doSpamCheck: doSpamCheck, skipDupCheck: skipDupCheck)) { (response, error) in
     guard error == nil else {

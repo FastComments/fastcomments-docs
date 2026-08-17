@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| create_question_result_body | models::CreateQuestionResultBody | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| create_question_result_body | models::CreateQuestionResultBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_question_result_response.rs)
+Враћа: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_question_result_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'create_question_result Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_question_result Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let mut metadata = std::collections::HashMap::new();
 metadata.insert("source".to_string(), "web".to_string());

@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| createModeratorBody | CreateModeratorBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| createModeratorBody | CreateModeratorBody | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
+Враћа: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createModerator Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 CreateModeratorBody moderatorBody;
 moderatorBody.email = utility::conversions::to_string_t("moderator@example.com");

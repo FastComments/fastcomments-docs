@@ -1,4 +1,4 @@
-## Parameters
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
@@ -8,13 +8,13 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
 Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer PostSetCommentReviewStatus'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostSetCommentReviewStatus Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -28,9 +28,9 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	reviewed := true // bool |  (опционо)
-	broadcastId := "broadcastId_example" // string |  (опционо)
-	sso := "sso_example" // string |  (опционо)
+	reviewed := true // bool |  (опционално)
+	broadcastId := "broadcastId_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentReviewStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetCommentReviewStatus`: APIEmptyResponse
+	// одговор од `PostSetCommentReviewStatus`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentReviewStatus`: %v\n", resp)
 }
 [inline-code-end]

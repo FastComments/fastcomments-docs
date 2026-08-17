@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_config_response.nim)
+Враћа: [`Option[GetQuestionConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_question_config_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'getQuestionConfig Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_pending_webhook_event Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_pending_webhook_event Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = DeletePendingWebhookEventParams {
@@ -22,3 +22,5 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
+
+---

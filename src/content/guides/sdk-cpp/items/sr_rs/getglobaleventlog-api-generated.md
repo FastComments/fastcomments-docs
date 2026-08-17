@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userIdWS | string | Da |  |
-| startTime | int64_t | Da |  |
-| endTime | int64_t | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| userIdWS | string | Да |  |
+| startTime | int64_t | Да |  |
+| endTime | int64_t | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEventLogResponse.h)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEventLogResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getGlobalEventLog Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getGlobalEventLog'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 api->getGlobalEventLog(
     U("my-tenant-123"),

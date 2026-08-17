@@ -1,27 +1,27 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-----|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | commentId | string | path | Yes |  |
 | broadcastId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Returns: `APIEmptyResponse`
+Враћа: `APIEmptyResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'lockComment Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'lockComment Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
-final tenantId = tenantId_example; // String | 
-final commentId = commentId_example; // String | 
-final broadcastId = broadcastId_example; // String | 
-final sso = sso_example; // String | 
+final tenantId = tenantId_example; // Стринг | 
+final commentId = commentId_example; // Стринг | 
+final broadcastId = broadcastId_example; // Стринг | 
+final sso = sso_example; // Стринг | 
 
 try {
     final result = api_instance.lockComment(tenantId, commentId, broadcastId, sso);

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | const GetPendingWebhookEventCountOptions& | Da |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | const GetPendingWebhookEventCountOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPendingWebhookEventCountResponse.h)
+Враћа: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPendingWebhookEventCountResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getPendingWebhookEventCount Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getPendingWebhookEventCount'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 GetPendingWebhookEventCountOptions opts;

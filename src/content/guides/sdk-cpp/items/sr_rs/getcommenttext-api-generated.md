@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| options | const GetCommentTextOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | const GetCommentTextOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicAPIGetCommentTextResponse.h)
+Враћа: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicAPIGetCommentTextResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getCommentText'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

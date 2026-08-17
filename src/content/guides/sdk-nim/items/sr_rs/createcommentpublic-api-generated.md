@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| broadcastId | string | Ne |  |
-| commentData | CommentData | Ne |  |
-| options | CreateCommentPublicOptions | Ne |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | No |  |
+| commentData | CommentData | No |  |
+| options | CreateCommentPublicOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[SaveCommentsResponseWithPresence]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_save_comments_response_with_presence.nim)
+Враћа: [`Option[SaveCommentsResponseWithPresence]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_save_comments_response_with_presence.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createCommentPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createCommentPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let
   tenantId = "my-tenant-123"

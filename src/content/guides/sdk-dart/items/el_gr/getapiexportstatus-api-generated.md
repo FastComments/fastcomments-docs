@@ -1,18 +1,18 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
 | tenantId | string | query | Yes |  |
 | batchJobId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Απάντηση
 
-Returns: `ModerationExportStatusResponse`
+Επιστρέφει: `ModerationExportStatusResponse`
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getApiExportStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Παράδειγμα'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -28,3 +28,5 @@ try {
     print('Exception when calling ModerationApi->getApiExportStatus: $e\n');
 }
 [inline-code-end]
+
+---

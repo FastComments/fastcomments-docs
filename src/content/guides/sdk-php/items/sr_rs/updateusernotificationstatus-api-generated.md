@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| notificationId | string | path | Yes |  |
-| newStatus | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| notificationId | string | path | Да |  |
+| newStatus | string | path | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatusResponse.php)
+Returns: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationStatusResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateUserNotificationStatus Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за updateUserNotificationStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -21,15 +21,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // string
-$notification_id = 'notification_id_example'; // string
-$new_status = 'new_status_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
+$notification_id = 'notification_id_example'; // стринг
+$new_status = 'new_status_example'; // стринг
+$sso = 'sso_example'; // стринг
 
 
 try {

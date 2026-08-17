@@ -1,23 +1,23 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | id | string | path | Yes |  |
 | updateComments | boolean | query | No |  |
 
-## Response
+## 応答
 
-Returns: `PatchSSOUserAPIResponse`
+戻り値: `PatchSSOUserAPIResponse`
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'patchSSOUser の例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO APIキー認証を設定する: api_key
+// TODO APIキー認証を設定: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// 必要に応じて、APIキーのプレフィックス（例：Bearer）を設定するために以下のコメントアウトを解除してください
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには、以下のコメントを解除してください
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

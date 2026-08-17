@@ -1,27 +1,27 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | urlId | string | query | Yes |  |
 | userId | string | query | No |  |
 | anonUserId | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
+Враћа: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetVotesForUserResponse.swift)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getVotesForUser'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje beta. Ako imate neki problem, molimo vas da ga prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, молимо пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let userId = "userId_example" // String |  (optional)
-let anonUserId = "anonUserId_example" // String |  (optional)
+let userId = "userId_example" // String |  (опционално)
+let anonUserId = "anonUserId_example" // String |  (опционално)
 
 DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI.GetVotesForUserOptions(userId: userId, anonUserId: anonUserId)) { (response, error) in
     guard error == nil else {

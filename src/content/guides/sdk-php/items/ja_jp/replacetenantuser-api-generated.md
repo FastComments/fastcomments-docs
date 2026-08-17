@@ -1,40 +1,40 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| updateComments | string | query | No |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
+| updateComments | string | query | いいえ |  |
 
-## Response
+## レスポンス
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
+返り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
 
-## Example
+## 例
 
-[inline-code-attrs-start title = 'replaceTenantUser の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantUser 例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API キー認証を設定します: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて以下のコメントを外してプレフィックス (例: Bearer) を設定します
+// 必要に応じて、以下のコメントを外してAPIキーのプレフィックス（例: Bearer）を設定
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装するクライアントを渡してください。
+    // カスタムHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
     // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
 
-$tenant_id = 'tenant_id_example'; // 文字列
-$id = 'id_example'; // 文字列
+$tenant_id = 'tenant_id_example'; // string
+$id = 'id_example'; // string
 $replace_tenant_user_body = new \FastComments\Client\Model\ReplaceTenantUserBody(); // \FastComments\Client\Model\ReplaceTenantUserBody
-$update_comments = 'update_comments_example'; // 文字列
+$update_comments = 'update_comments_example'; // string
 
 
 try {

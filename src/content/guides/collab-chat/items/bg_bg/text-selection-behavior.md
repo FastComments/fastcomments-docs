@@ -1,44 +1,43 @@
-### How Text Selection Works
+### Как работи избора на текст
 
-When users select text within the Collab Chat container, the widget captures that selection and allows them to start a discussion. The selection can be as small as a single word or as large as multiple paragraphs spanning different elements.
+Когато потребителите избират текст в контейнера Collab Chat, уиджетът улавя този избор и им позволява да започнат дискусия. Изборът може да бъде толкова малък, колкото една дума, или толкова голям, колкото няколко абзаца, обхващащи различни елементи.
 
-### Selection Delay
+### Забавяне при избора
 
-On desktop devices, there's a 3.5 second delay between when a user selects text and when the discussion prompt appears. This prevents the UI from flickering when users are simply highlighting text to copy or read. On mobile devices, the prompt appears immediately since text selection is more deliberate on touch screens.
+На настолни устройства има закъснение от 3.5 секунди между момента, в който потребителят избира текст, и появата на подсказката за дискусия. Това предотвратява трептене на потребителския интерфейс, когато потребителите просто маркират текст за копиране или четене. На мобилни устройства подсказката се появява незабавно, тъй като избора на текст е по-съзнателен на сензорните екрани.
 
+### Уникални идентификатори на разговори
 
-### Unique Conversation IDs
+Всеки разговор получава уникален `urlId`, който комбинира URL адреса на страницата, пътя до DOM елемента и сериализирания текстов диапазон. Това гарантира, че всеки избор на текст създава отделен разговор, който може да бъде намерен отново по-късно.
 
-Each conversation gets a unique `urlId` that combines the page URL, the DOM element path, and the serialized text range. This ensures that each text selection creates a distinct conversation that can be found again later.
+Ако предоставите персонализиран `urlId` във вашата конфигурация, той ще бъде комбиниран с пътя до елемента и текстовия диапазон, за да се създаде окончателният идентификатор.
 
-If you provide a custom `urlId` in your configuration, it will be combined with the element path and text range to create the final identifier.
+### Визуални подчертавания
 
-### Visual Highlights
+Когато за конкретен избор на текст съществува дискусия, този текст получава визуално подчертаване. Подчертаването се реализира чрез фонови цветове и се появява при задържане с мишката или когато свързаният прозорец за чат е отворен.
 
-When a discussion exists for a particular text selection, that text receives a visual highlight. The highlight is implemented using background colors and appears on hover or when the associated chat window is open.
+Системата за подчертаване работи, като обвива избрания текст в специален елемент, който може да се стилизира. Този подход гарантира, че подчертаванията остават точни дори когато основната HTML структура е сложна.
 
-The highlighting system works by wrapping the selected text in a special element that can be styled. This approach ensures that highlights remain accurate even when the underlying HTML structure is complex.
+### Позициониране на прозореца за чат
 
-### Chat Window Positioning
+Когато потребител кликне върху подчертаване или създаде нова анотация, прозорец за чат се появява близо до избрания текст. Уиджетът автоматично изчислява най-добрата позиция за този прозорец въз основа на наличното пространство във визуалната област.
 
-When a user clicks on a highlight or creates a new annotation, a chat window appears near the selected text. The widget automatically calculates the best position for this window based on available viewport space.
+Системата за позициониране използва CSS класове като `to-right`, `to-left`, `to-top` и `to-bottom`, за да посочи в коя посока прозорецът за чат трябва да се разшири от подчертаването. На мобилни устройства (екрани под 768px ширина) прозорецът за чат винаги се показва на цял екран за по-добра удобност.
 
-The positioning system uses CSS classes like `to-right`, `to-left`, `to-top`, and `to-bottom` to indicate which direction the chat window should extend from the highlight. On mobile devices (screens under 768px wide), the chat window always appears fullscreen for better usability.
+### Размери на прозореца за чат
 
-### Chat Window Dimensions
+Прозорците за чат са широки 410px на настолни устройства, с разстояние от 20px и визуална стрелка от 16px, сочеща към подчертанения текст. Тези размери са фиксирани, за да осигурят последователно поведение, но можете да персонализирате външния вид чрез CSS.
 
-Chat windows are 410px wide on desktop with 20px spacing and a 16px visual arrow pointing to the highlighted text. These dimensions are fixed to ensure consistent behavior, but you can customize the appearance with CSS.
+### Избори, обхващащи множество елементи
 
-### Cross-Element Selections
+Потребителите могат да избират текст, който обхваща няколко HTML елемента, например маркиране от средата на един абзац до началото на друг. Системата за сериализация на диапазона обработва това правилно и ще подчертае целия избран текст, дори през границите на елементите.
 
-Users can select text that spans multiple HTML elements, such as highlighting from the middle of one paragraph through the start of another. The range serialization system handles this correctly and will highlight all the selected text even across element boundaries.
+### Съвместимост с браузъри
 
-### Browser Compatibility
+Системата за избор на текст използва стандартния API `window.getSelection()`, който се поддържа във всички съвременни браузъри. За по-стари версии на Internet Explorer се използва `document.selection` за съвместимост.
 
-The text selection system uses the standard `window.getSelection()` API which is supported in all modern browsers. For older versions of Internet Explorer, it falls back to `document.selection` for compatibility.
+### Запазване на избора
 
-### Selection Persistence
+След като се създаде разговор за избор на текст, тази анотация се запазва дори ако страницата се презареди. Сериализираният диапазон и пътят в DOM позволяват на уиджета да възстанови подчертаванията в точно същото място, когато потребителите се върнат на страницата.
 
-Once a conversation is created for a text selection, that annotation persists even if the page is reloaded. The serialized range and DOM path allow the widget to restore highlights in the exact same location when users return to the page.
-
-This works reliably as long as your page content remains stable. If you change the text content or restructure your HTML, existing annotations may no longer align correctly with the text. For this reason, it's best to avoid major content changes on pages with active annotations, or consider migrating annotations when content changes are necessary.
+Това работи надеждно, докато съдържанието на вашата страница остава стабилно. Ако промените текстовото съдържание или преработите вашия HTML, съществуващите анотации може да не съвпадат правилно с текста. Поради това е най-добре да избягвате големи промени в съдържанието на страници с активни анотации или да обмислите мигриране на анотациите, когато са необходими промени в съдържанието.

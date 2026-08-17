@@ -1,15 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pages_api_response.nim)
+Враћа: [`Option[GetPagesAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_pages_api_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getPages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getPages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (pagesOpt, httpResp) = client.getPages(tenantId = "my-tenant-123")
 if pagesOpt.isSome:

@@ -4,7 +4,7 @@ calling `update()` on the widget instances to swap them out with a different thr
 The below is an interactive example (hit run in the top left) which allows you to add and swap comment threads on demand.
 We could remove them as well by calling `instance.destroy` instead of update.
 
-[inline-code-attrs-start title = 'הוספה והחלפה של שרשורי תגובות'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'הוספה והחלפת שרשראות תגובות'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
     <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 
@@ -34,7 +34,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
     <script>
         (function () {
             const target = document.getElementById('fastcomments-widgets');
-            const tenantId = "demo"; // הכנס כאן את מזהה ה-tenant שלך
+            const tenantId = "demo"; // הכנס כאן את מזהה השוכר שלך
     
             function setHeading(heading, {name, productID}) {
                 heading.innerHTML = `${name} (${productID})`;
@@ -52,8 +52,8 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 target.append(outer);
                 window.FastCommentsUI(widgetTarget, {
                     "tenantId": tenantId,
-                    "pageTitle": name, // עבור מיילי התראות ולוח הבקרה של המודרציה
-                    "url": productURL, // עבור מיילי התראות ולוח הבקרה של המודרציה
+                    "pageTitle": name, // להודעות דוא"ל של התראות ולוח ניהול
+                    "url": productURL, // להודעות דוא"ל של התראות ולוח ניהול
                     "urlId": productID,
                     "showLiveRightAway": true
                 });
@@ -77,7 +77,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 alert(`Product ${oldId} not found to replace!`);
             }
     
-            // add some widgets
+            // הוספת כמה ווידג'טים
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -110,7 +110,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
     
         .demo-form section label {
             display: block;
-            margin-bottom: 20px;
+            margin-bottom:20px;
         }
     </style>
 [inline-code-end]

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| namespace | string | path | Yes |  |
-| component | string | path | Yes |  |
-| locale | string | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| namespace | string | path | Да |  |
+| component | string | path | Да |  |
+| locale | string | query | Не |  |
+| useFullTranslationIds | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Returns: `GetTranslationsResponse`
+Враћа: `GetTranslationsResponse`
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTranslations'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

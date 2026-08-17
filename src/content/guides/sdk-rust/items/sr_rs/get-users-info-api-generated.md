@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Груписане информације о корисницима за закупца. Дати userIds, враћају се подаци за приказ из User / SSOUser.  
+Користи се у виџету за коментаре да обогати кориснике који су управо појавили путем догађаја присутности.  
+Без контекста странице: приватност се примењује уједначено (приватни профили су маскирани).
 
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenant_id | String | Yes |  |
 | ids | String | Yes |  |
 
-## Response
+## Одговор
 
 Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

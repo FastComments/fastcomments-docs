@@ -1,4 +1,3 @@
----
 Agent cost is **token-based**. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
 
 ### What's billed

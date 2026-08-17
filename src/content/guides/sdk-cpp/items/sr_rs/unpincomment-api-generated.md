@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| broadcastId | string | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
+Враћа: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'unPinComment Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer unPinComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto task = api->unPinComment(
     utility::conversions::to_string_t("my-tenant-123"),

@@ -1,11 +1,11 @@
-With FastComments, mnogi korisnici mogu biti dodati u vaš tenant, a njihove dozvole mogu biti postavljene na osnovu uloga u vašoj organizaciji.
+Са FastComments, многи корисници могу бити додати у ваш tenant, а њихове дозволе могу бити подешене на основу улога у вашој организацији.
 
-[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Forma za novog korisnika za dodavanje nekoga u vaš tenant, sa opcijama dozvola za njihovu ulogu'; title='Dodavanje korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Форма за новог корисника за додавање некога у ваш tenant, са опцијама дозвола за њихову улогу'; title='Додавање корисника' app-screenshot-end]
 
-Korisnici se mogu dodati putem ovog UI‑ja. Ako imate mnogo korisnika, možemo ih uvesti za vas [preko korisničke podrške](https://fastcomments.com/auth/my-account/help).
+Корисници се могу додати преко овог корисничког интерфејса. Ако имате много корисника, можемо их увезти за вас [преко корисничке подршке](https://fastcomments.com/auth/my-account/help).
 
-Za dodavanje moderatora, pogledajte [odgovarajuću dokumentaciju](/guide-moderation.html#moderators-adding).
+За додавање модератора, погледајте [одговарајућу документацију](/guide-moderation.html#moderators-adding).
 
-### Napomena o autentifikaciji
+### Напомена о аутентификацији
 
-Vaši korisnici možda traže mesto za unos svoje lozinke. FastComments koristi „magijske linkove“ za prijavu – tako da lozinke nisu potrebne.
+Ваши корисници можда траже место за унос своје лозинке. FastComments користи "magic links" за пријављивање – тако да лозинке нису потребне.

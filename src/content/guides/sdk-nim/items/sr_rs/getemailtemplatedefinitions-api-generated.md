@@ -1,19 +1,21 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| tenantId | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetEmailTemplateDefinitionsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_definitions_response.nim)
+Враћа: [`Option[GetEmailTemplateDefinitionsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_email_template_definitions_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getEmailTemplateDefinitions'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEmailTemplateDefinitions Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (responseOpt, httpResponse) = client.getEmailTemplateDefinitions(tenantId = "my-tenant-123")
 if responseOpt.isSome:
   let definitions = responseOpt.get()
   echo definitions
 [inline-code-end]
+
+---

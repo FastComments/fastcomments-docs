@@ -1,29 +1,29 @@
-req
-tenantId
-urlId
+захтев  
+tenantId  
+urlId  
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | const GetCommentsPublicOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| options | const GetCommentsPublicOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsResponseWithPresence_PublicComment_`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsResponseWithPresence_PublicComment_.h)
+Враћа: [`GetCommentsResponseWithPresence_PublicComment_`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsResponseWithPresence_PublicComment_.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-auto tenantId = U("my-tenant-123");
-auto urlId = U("article-456");
-GetCommentsPublicOptions opts;
-opts.pageSize = 20;
-opts.includeDeleted = false;
-api->getCommentsPublic(tenantId, urlId, opts).then([](std::shared_ptr<GetCommentsResponseWithPresence_PublicComment_> resp) {
-    (void)resp;
-});
+[inline-code-attrs-start title = 'Primer getCommentsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+auto tenantId = U("my-tenant-123");  
+auto urlId = U("article-456");  
+GetCommentsPublicOptions opts;  
+opts.pageSize = 20;  
+opts.includeDeleted = false;  
+api->getCommentsPublic(tenantId, urlId, opts).then([](std::shared_ptr<GetCommentsResponseWithPresence_PublicComment_> resp) {  
+    (void)resp;  
+});  
 [inline-code-end]

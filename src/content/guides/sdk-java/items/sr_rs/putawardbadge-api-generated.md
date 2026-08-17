@@ -1,6 +1,6 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
@@ -9,15 +9,15 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
+Враћа: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/AwardUserBadgeResponse.java)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putAwardBadge Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -45,10 +45,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Izuzetak prilikom poziva ModerationApi#putAwardBadge");
-      System.err.println("Statusni kod: " + e.getCode());
-      System.err.println("Razlog: " + e.getResponseBody());
-      System.err.println("Zaglavlja odgovora: " + e.getResponseHeaders());
+      System.err.println("Exception when calling ModerationApi#putAwardBadge");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

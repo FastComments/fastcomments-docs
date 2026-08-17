@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| domain | String | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| domain | String | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
+Враћа: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_domain_config_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_domain_config Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_domain_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = DeleteDomainConfigParams {
@@ -22,3 +22,5 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
+
+---

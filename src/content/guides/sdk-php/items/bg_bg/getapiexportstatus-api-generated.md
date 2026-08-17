@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
+| tenantId | string | query | Да |  |
+| batchJobId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Response
+## Отговор
 
-Returns: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
+Връща: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationExportStatusResponse.php)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getApiExportStatus Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getApiExportStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -20,15 +20,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Ако искате да използвате персонализиран HTTP клиент, предайте клиент, който имплементира `GuzzleHttp\ClientInterface`.
-    // Това е незадължително, по подразбиране ще се използва `GuzzleHttp\Client`.
+    // Ако искате да използвате персонализиран HTTP клиент, предайте вашия клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е по избор, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // низ
+$tenant_id = 'tenant_id_example'; // string
 $options = [
-    'batch_job_id' => 'batch_job_id_example', // низ
-    'sso' => 'sso_example', // низ
+    'batch_job_id' => 'batch_job_id_example', // string
+    'sso' => 'sso_example', // string
 ];
 
 

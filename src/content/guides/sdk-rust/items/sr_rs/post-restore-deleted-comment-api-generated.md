@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| broadcast_id | String | Ne |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| broadcast_id | String No |  |
+| sso | String No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_restore_deleted_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_restore_deleted_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn restore_comment() -> Result<(), Error> {
     let config: &configuration::Configuration = get_configuration();

@@ -2,22 +2,22 @@ req
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| afterId | string | query | Ne |  |
-| limit | integer | query | Ne |  |
-| tags | array | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| afterId | string | query | No |  |
+| limit | integer | query | No |  |
+| tags | array | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
+Враћа: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_feed_posts_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_feed_posts Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_feed_posts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.default_api import GetFeedPostsOptions
@@ -25,31 +25,31 @@ from client.models.get_feed_posts_response import GetFeedPostsResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora konfigurisati parametre autentifikacije i autorizacije
-# u skladu sa sigurnosnom politikom API servera.
-# Primeri za svaki metod autentifikacije su date ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
+# у складу са безбедносном политиком API сервера.
+# Примери за сваки метод аутентификације су дати испод, користите пример који
+# задовољава ваш случај употребе аутентификације.
 
-# Konfigurišite autorizaciju API ključa: api_key
+# Конфигуришите ауторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    after_id = 'after_id_example' # str |  (opciono)
-    limit = 56 # int |  (opciono)
-    tags = ['tags_example'] # List[str] |  (opciono)
+    tenant_id = 'tenant_id_example' # str |
+    after_id = 'after_id_example' # str |  (опционално)
+    limit = 56 # int |  (опционално)
+    tags = ['tags_example'] # List[str] |  (опционално)
 
     try:
         api_response = api_instance.get_feed_posts(tenant_id, GetFeedPostsOptions(after_id=after_id, limit=limit, tags=tags))
@@ -58,5 +58,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_feed_posts: %s\n" % e)
 [inline-code-end]
-
----

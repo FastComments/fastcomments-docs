@@ -1,19 +1,22 @@
-A `NotificationCount` object represents the unread notification count and metadata for a user.
+---
+`NotificationCount` 객체는 사용자의 읽지 않은 알림 수와 메타데이터를 나타냅니다.
 
-If there are no unread notifications, there will be no `NotificationCount` for the user.
+읽지 않은 알림이 없으면 해당 사용자에 대한 `NotificationCount`가 존재하지 않습니다.
 
-`NotificationCount` objects are created automatically and cannot be created via the API. They also expire after one year.
+`NotificationCount` 객체는 자동으로 생성되며 API를 통해 생성할 수 없습니다. 또한 1년 후에 만료됩니다.
 
-You can clear a user's unread notification count by deleting their `NotificationCount`.
+사용자의 `NotificationCount`를 삭제하면 읽지 않은 알림 수를 초기화할 수 있습니다.
 
-The structure for the `NotificationCount` object is as follows:
+`NotificationCount` 객체의 구조는 다음과 같습니다:
 
 [inline-code-attrs-start title = 'NotificationCount 구조'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface NotificationCount {
-    id: string // 사용자 id
+    id: string // 사용자 ID
     count: number
     createdAt: string // 날짜 문자열
     expireAt: string // 날짜 문자열
 }
 [inline-code-end]
+
+---

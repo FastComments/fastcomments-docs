@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | notificationId | string | Yes |  |
 | newStatus | UpdateUserNotificationStatusNewStatusEnum | Yes |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatusResponse.ts)
+Враћа: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatusResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-corp";
 const notificationId: string = "notif-20231101-001";

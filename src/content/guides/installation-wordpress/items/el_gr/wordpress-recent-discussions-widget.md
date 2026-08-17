@@ -2,32 +2,32 @@ The Recent Discussions widget displays the pages on your site with the most rece
 
 ## Options
 
-- **Title** (optional): The heading shown above the list. Defaults to "Recent Discussions".
-- **Count** (optional): How many discussions to show. Range 1 to 50. Defaults to 20.
+- **Title** (optional): Ο τίτλος που εμφανίζεται πάνω από τη λίστα. Προεπιλογή είναι "Πρόσφατες Συζητήσεις".
+- **Count** (optional): Πόσες συζητήσεις να εμφανιστούν. Εύρος 1 έως 50. Προεπιλογή είναι 20.
 
 ## How to Add It
 
 ### Inside a Post or Page
 
-In the block editor, add a **Shortcode** block and paste:
+Στον επεξεργαστή μπλοκ, προσθέστε ένα μπλοκ **Shortcode** και επικολλήστε:
 
-[inline-code-attrs-start title = 'Σύντομος κώδικας Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σύντομος κώδικας πρόσφατων συζητήσεων'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+Το χαρακτηριστικό `count` δέχεται οποιαδήποτε τιμή μεταξύ 1 και 50.
 
 ### In a Sidebar or Footer (Classic Themes)
 
-Go to **Appearance > Widgets** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Recent Discussions**. Drag it into a sidebar, header, or footer area, then configure the title and count from the widget panel.
+Μεταβείτε στο **Appearance > Widgets** στη διαχείριση του WordPress. Από τον εισαγωγέα μπλοκ, αναζητήστε το "FastComments" και επιλέξτε **FastComments: Recent Discussions**. Σύρετε το σε μια πλευρική στήλη, κεφαλίδα ή περιοχή υποσέλιδου, στη συνέχεια ρυθμίστε τον τίτλο και την καταμέτρηση από τον πίνακα του widget.
 
 ### In a Block Theme (Full Site Editing)
 
-Open the **Site Editor** under **Appearance > Editor**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Recent Discussions** from the dropdown.
+Ανοίξτε τον **Site Editor** μέσω του **Appearance > Editor**. Περιηγηθείτε στο τμήμα προτύπου όπου πρέπει να εμφανιστεί το widget, εισάγετε ένα μπλοκ **Legacy Widget** και επιλέξτε **FastComments: Recent Discussions** από το αναπτυσσόμενο μενού.
 
 ## Troubleshooting
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+Το widget εμφανίζεται μόνο μετά την ολοκλήρωση της ρύθμισης του FastComments και την αποθήκευση ενός tenant ID. Εάν η περιοχή του widget είναι κενή, ολοκληρώστε τη ρύθμιση μέσω του **FastComments** στη διαχείριση του WordPress και φορτώστε ξανά τη σελίδα.
 
-If discussion ordering looks stale, check that the underlying pages have finished syncing in the FastComments dashboard. The widget reads live data, so freshly imported comments may take a moment to surface.
+Εάν η σειρά των συζητήσεων φαίνεται παλιά, ελέγξτε ότι οι υποκείμενες σελίδες έχουν ολοκληρώσει το συγχρονισμό στον πίνακα ελέγχου του FastComments. Το widget διαβάζει ζωντανά δεδομένα, έτσι τα πρόσφατα εισαχθέντα σχόλια μπορεί να χρειαστούν λίγο χρόνο για να εμφανιστούν.

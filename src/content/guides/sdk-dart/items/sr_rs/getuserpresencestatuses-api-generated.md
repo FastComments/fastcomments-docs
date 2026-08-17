@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | urlIdWS | string | query | Yes |  |
 | userIds | string | query | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: `GetUserPresenceStatusesResponse`
+Враћа: `GetUserPresenceStatusesResponse`
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserPresenceStatuses'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserPresenceStatuses'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

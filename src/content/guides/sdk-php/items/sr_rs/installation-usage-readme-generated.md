@@ -1,11 +1,11 @@
-### Zahtevi
+### Захтеви
 
-PHP 7.4 i noviji.
-Takođe bi trebalo da radi sa PHP 8.0.
+PHP 7.4 и новији.  
+Треба такође да ради са PHP 8.0.
 
 ### Composer
 
-Da biste instalirali bindinge putem [Composer](https://getcomposer.org/), dodajte sledeće u `composer.json`:
+Да бисте инсталирали везе преко [Composer](https://getcomposer.org/), додајте следеће у `composer.json`:
 
 ```json
 {
@@ -21,11 +21,11 @@ Da biste instalirali bindinge putem [Composer](https://getcomposer.org/), dodajt
 }
 ```
 
-Zatim pokrenite `composer install`
+Затим покрените `composer install`
 
-### Ručno instaliranje
+### Ручна инсталација
 
-Preuzmite datoteke i uključite `autoload.php`:
+Преузмите датотеке и укључите `autoload.php`:
 
 ```php
 <?php

@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Yes |  |
-| userId | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateAPIUserSubscriptionData | UpdateAPIUserSubscriptionData | Да |  |
+| userId | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
+Враћа: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateSubscription'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateSubscription Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 UpdateAPIUserSubscriptionData subscriptionData;
 subscriptionData.plan = utility::conversions::to_string_t("premium");

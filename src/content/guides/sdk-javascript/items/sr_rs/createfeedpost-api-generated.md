@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createFeedPostParams | CreateFeedPostParams | Yes |  |
 | broadcastId | string | No |  |
@@ -9,13 +9,13 @@
 | doSpamCheck | boolean | No |  |
 | skipDupCheck | boolean | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`CreateFeedPostResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse1.ts)
+Returns: [`CreateFeedPostResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createFeedPost Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createFeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function run() {
   const tenantId = "tenant-12345";

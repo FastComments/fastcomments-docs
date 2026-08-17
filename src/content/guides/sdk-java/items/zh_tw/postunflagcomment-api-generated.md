@@ -1,17 +1,17 @@
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 回傳
 
 Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'postUnFlagComment 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

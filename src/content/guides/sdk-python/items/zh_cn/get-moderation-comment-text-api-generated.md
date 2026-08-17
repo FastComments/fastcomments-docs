@@ -1,16 +1,16 @@
-## Parameters
+## 参数
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
-## Response
+## 响应
 
-Returns: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_text_response.py)
+返回: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_comment_text_response.py)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'get_moderation_comment_text 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # 定义 host 是可选的，默认值为 https://fastcomments.com
-# 请参阅 configuration.py 获取所有受支持的配置参数列表。
+# 请参阅 configuration.py 以获取所有受支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -41,3 +41,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->get_moderation_comment_text: %s\n" % e)
 [inline-code-end]
+
+---

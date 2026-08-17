@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Potrebno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| domain | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| domain | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[DeleteDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_domain_config_response.nim)
+Враћа: [`Option[DeleteDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_domain_config_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteDomainConfig Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteDomainConfig Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.deleteDomainConfig(tenantId = "my-tenant-123", domain = "news.example.com")
 if optResp.isSome:

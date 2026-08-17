@@ -1,14 +1,15 @@
-Omogućite SSO i izaberite režim u `settings.py`. Secure SSO potpisuje korisnika na serveru koristeći HMAC‑SHA256 sa vašim API tajnim ključem i preporučuje se.
+Enable SSO and choose a mode in `settings.py`. Secure SSO signs the user
+server-side with HMAC-SHA256 using your API secret and is recommended.
 
 ```python
 FASTCOMMENTS = {
     "TENANT_ID": os.environ["FASTCOMMENTS_TENANT_ID"],
-    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # vaš API tajni ključ; potpisuje Secure SSO
+    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # ваш API тајн; потписује Secure SSO
     "SSO": {
         "ENABLED": True,
         "MODE": "secure",                            # "secure" | "simple"
-        # Mapirajte FastComments polja na vaš korisnički model. Vrednosti mogu biti atribut
-        # ime, putu razdvojenom tačkama ("profile.avatar_url"), poziv(user), ili None.
+        # Мапира FastComments поља на ваш кориснички модел. Вредности могу бити атрибут
+        # име, путања са тачкама ("profile.avatar_url"), позив (callable(user)), или None.
         "USER_MAP": {
             "id": "id",
             "email": "email",
@@ -17,30 +18,27 @@ FASTCOMMENTS = {
             "display_name": None,
             "website_url": None,
         },
-        "IS_ADMIN": lambda user: user.is_staff,      # poziv(user) -> bool, ili put razdvojen tačkama
+        "IS_ADMIN": lambda user: user.is_staff,      # позив (user) -> bool, или путања са тачкама
         "IS_MODERATOR": None,
-        "GROUP_IDS": None,                           # poziv(user) -> list, ili put razdvojen tačkama
+        "GROUP_IDS": None,                           # позив (user) -> list, или путања са тачкама
     },
 }
 ```
 
-> **Izaberite SSO `id` namerno.** FastComments `id` je trajni
-> identifikator za istoriju komentara korisnika. Podrazumevani `USER_MAP` ga mapira na vaš
-> Django primarni ključ radi praktičnosti bez dodatne konfiguracije, ali sekvencijalni integer PK‑ovi su
-> brojivi i teško ih je menjati kasnije (promena `id` korisnika deli njihovu
-> istoriju u novi nalog). Za sve što prevazilazi demo, mapirajte `id` na stabilnu,
-> neprozirnu vrednost izabranu unapred (UUID ili posvećeni javni id), i nikada ne stavljajte
-> privatne podatke u njega. Primer aplikacije koristi id zasnovan na korisničkom imenu iz ovog razloga.
+> **Изаберите SSO `id` свесно.** FastComments `id` је трајни идентификатор за историју коментара корисника. Подразумевани `USER_MAP` мапира га на ваш Django примарни кључ за зручност без подешавања, али секвентни целобројни PK‑ови су набројиви и тешко их је касније променити (промена `id` корисника дели њихову историју у нови налог). За све осим демо примера, мапирајте `id` на стабилну, непрозирну вредност изабрану унапред (UUID или посебан јавни id), и никада не стављајте приватне податке у њега. Пример апликације користи id заснован на корисничком имену из овог разлога.
 
-SSO se automatski ubacuje u `{% fastcomments %}`, `{% fastcomments_live_chat %}`, `{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}` i `{% fastcomments_user_activity %}` za trenutnog korisnika.
+SSO is injected automatically into `{% fastcomments %}`, `{% fastcomments_live_chat %}`,
+`{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}`, and
+`{% fastcomments_user_activity %}` for the current user.
 
-URL‑ovi za prijavu/odjavu koji se prikazuju posetiocima koji nisu prijavljeni podrazumevano su `reverse("login")` / `reverse("logout")`; možete ih prepisati koristeći `SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
+Login/logout URLs shown to signed-out visitors default to `reverse("login")` /
+`reverse("logout")`; override them with `SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
 
-### Prilagođeno mapiranje
+### Прилагођено мапирање
 
-Postoje dve opcije višeg prioriteta koje nadmašuju `USER_MAP`:
+Two higher-precedence options beat `USER_MAP`:
 
-- **Metod na vašem korisničkom modelu** (Python analog interfejsa):
+- **Метод на вашем корисничком моделу** (the Pythonic analog of an interface):
 
   ```python
   class User(AbstractUser):
@@ -48,10 +46,10 @@ Postoje dve opcije višeg prioriteta koje nadmašuju `USER_MAP`:
           return {"id": self.pk, "email": self.email, "username": self.get_username()}
   ```
 
-- **Globalni mapirator**, put razdvojen tačkama do `callable(user) -> dict`:
+- **Глобални мапер**, a dotted path to `callable(user) -> dict`:
 
   ```python
   FASTCOMMENTS = {"SSO": {"USER_MAPPER": "myapp.sso.map_user"}}
   ```
 
-Prioritet je `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.
+Precedence is `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.

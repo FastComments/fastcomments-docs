@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | urlId | string | Yes |  |
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutReopenThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutReopenThreadResponse.ts)
+Враћа: [`PutReopenThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutReopenThreadResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'putReopenThread Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

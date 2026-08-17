@@ -1,25 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| skip | number | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
+Враћа: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant_12345";
 
-  // Call without optional 'skip'
+  // Позив без опционо 'skip'
   const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
 
-  // Call with optional 'skip' parameter
+  // Позив са опционо 'skip' параметром
   const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
 })();
 [inline-code-end]
+
+---

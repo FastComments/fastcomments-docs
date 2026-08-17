@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| userIdWS | string | query | Da |  |
-| startTime | integer | query | Da |  |
-| endTime | integer | query | Ne |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| userIdWS | string | query | Да |  |
+| startTime | integer | query | Да |  |
+| endTime | integer | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetEventLogResponse`
+Враћа: `GetEventLogResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getEventLog'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEventLog Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

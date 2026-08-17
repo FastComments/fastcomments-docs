@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | options | const GetUserReactsPublicOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UserReactsResponse.h)
+Враћа: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UserReactsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserReactsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserReactsPublic Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto options = GetUserReactsPublicOptions{};
 options.userId = boost::optional<utility::string_t>(U("user@example.com"));

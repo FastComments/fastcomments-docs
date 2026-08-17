@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
 | options | DeleteCommentOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
+Враћа: [`Option[DeleteCommentResult]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_delete_comment_result.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (delResult, httpResponse) = client.deleteComment(
   tenantId = "my-tenant-123",
@@ -24,3 +24,5 @@ if delResult.isSome:
   let result = delResult.get()
   echo result
 [inline-code-end]
+
+---

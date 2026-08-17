@@ -1,27 +1,27 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| afterId | string | No |  |
-| afterCreatedAt | number | No |  |
-| unreadOnly | boolean | No |  |
-| dmOnly | boolean | No |  |
-| noDm | boolean | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| afterId | string | Не |  |
+| afterCreatedAt | number | Не |  |
+| unreadOnly | boolean | Не |  |
+| dmOnly | boolean | Не |  |
+| noDm | boolean | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ResetUserNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse1.ts)
+Враћа: [`ResetUserNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'resetUserNotifications Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotifications пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant-001";
   const afterId: string = "notif-123";
-  const afterCreatedAt: number = 1697049600; // primer UNIX vremenskog žiga
+  const afterCreatedAt: number = 1697049600; // example UNIX timestamp
   const unreadOnly: boolean = true;
   const dmOnly: boolean = false;
   const noDm: boolean = false;

@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | Yes |  |
-| updateComments | boolean | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | Да |  |
+| updateComments | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchSSOUserAPIResponse.ts)
+Враћа: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchSSOUserAPIResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer patchSSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchSSOUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "c1f2a3b4-5678-90ab-cdef-1234567890ab";
 const userId: string = "user-987654321";

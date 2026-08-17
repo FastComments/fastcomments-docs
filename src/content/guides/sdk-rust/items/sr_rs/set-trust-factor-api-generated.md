@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | user_id | String | No |  |
 | trust_factor | String | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_user_trust_factor_response.rs)
+Враћа: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_user_trust_factor_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'set_trust_factor Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'set_trust_factor Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn update_trust() -> Result<(), Error> {
     let params = SetTrustFactorParams {

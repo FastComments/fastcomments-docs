@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | Ne |  |
-| updateComments | bool | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | Не |  |
+| updateComments | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[PatchSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_sso_user_api_response.nim)
+Враћа: [`Option[PatchSSOUserAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_sso_user_api_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'patchSSOUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,3 +26,5 @@ if responseOpt.isSome:
   echo response
 echo httpResponse.statusCode
 [inline-code-end]
+
+---

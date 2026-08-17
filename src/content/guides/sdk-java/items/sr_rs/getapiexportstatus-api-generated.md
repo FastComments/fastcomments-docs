@@ -1,6 +1,6 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | batchJobId | string | query | No |  |
@@ -8,13 +8,13 @@
 
 ## Response
 
-Returns: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
+Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/ModerationExportStatusResponse.java)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -37,7 +37,6 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Izuzetak prilikom poziva ModerationApi#getApiExportStatus
       System.err.println("Exception when calling ModerationApi#getApiExportStatus");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

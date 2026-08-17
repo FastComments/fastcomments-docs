@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
@@ -9,15 +9,15 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer postSetCommentSpamStatus'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,12 +30,12 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String commentId = "commentId_example"; // String | 
-    Boolean spam = true; // Boolean | 
-    Boolean permNotSpam = true; // Boolean | 
-    String broadcastId = "broadcastId_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String commentId = "commentId_example"; // String |
+    Boolean spam = true; // Boolean |
+    Boolean permNotSpam = true; // Boolean |
+    String broadcastId = "broadcastId_example"; // String |
+    String sso = "sso_example"; // String |
     try {
       APIEmptyResponse result = apiInstance.postSetCommentSpamStatus(tenantId, commentId)
             .spam(spam)
@@ -45,10 +45,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ModerationApi#postSetCommentSpamStatus");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Изузетак приликом позивања ModerationApi#postSetCommentSpamStatus");
+      System.err.println("Статус код: " + e.getCode());
+      System.err.println("Разлог: " + e.getResponseBody());
+      System.err.println("Заглавља одговора: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

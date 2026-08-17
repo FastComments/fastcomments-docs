@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetV2PageReacts]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_reacts.nim)
+Враћа: [`Option[GetV2PageReacts]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_reacts.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getV2PageReacts Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getV2PageReacts'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (reactsOpt, httpResp) = client.getV2PageReacts(tenantId = "my-tenant-123", urlId = "news/article-title")
 if reactsOpt.isSome:

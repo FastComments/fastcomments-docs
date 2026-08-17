@@ -2,18 +2,18 @@ List pages for a tenant. Used by the FChat desktop client to populate its room l
 Requires `enableFChat` to be true on the resolved custom config for each page.
 Pages that require SSO are filtered against the requesting user's group access.
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | GetPagesPublicOptions | Ne |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | GetPagesPublicOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
+Returns: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

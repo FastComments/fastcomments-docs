@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createFeedPostParams | CreateFeedPostParams | Ne |  |
-| options | CreateFeedPostPublicOptions | Ne |  |
+| tenantId | string | Да |  |
+| createFeedPostParams | CreateFeedPostParams | Не |  |
+| options | CreateFeedPostPublicOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
+Враћа: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPostPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let params = CreateFeedPostParams(
   urlId: "news/big-event",

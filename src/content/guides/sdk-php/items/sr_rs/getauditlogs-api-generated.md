@@ -1,46 +1,46 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
-| order | string | query | No |  |
-| after | number | query | No |  |
-| before | number | query | No |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
+| order | string | query | Не |  |
+| after | number | query | Не |  |
+| before | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
+Враћа: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetAuditLogsResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getAuditLogs'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
+// Конфигуриши ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
+// Одкоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti po podrazumevanju.
+    // Ако желиш да користиш прилагођени http клијент, проследи свој клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
 
-$tenant_id = 'tenant_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
 $options = [
-    'limit' => 3.4, // float
-    'skip' => 3.4, // float
+    'limit' => 3.4, // флоат
+    'skip' => 3.4, // флоат
     'order' => new \FastComments\Client\Model\\FastComments\Client\Model\SORTDIR(), // \FastComments\Client\Model\SORTDIR
-    'after' => 3.4, // float
-    'before' => 3.4, // float
+    'after' => 3.4, // флоат
+    'before' => 3.4, // флоат
 ];
 
 

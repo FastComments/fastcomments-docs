@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-----|
-| tenantId | string | Yes |  |
-| createModeratorBody | CreateModeratorBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| createModeratorBody | CreateModeratorBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Враћа: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runExample() {
   const tenantId: string = "tenant_9876";
   const moderatorPayload: CreateModeratorBody = {
     name: "Alice Johnson",
     email: "alice.johnson@example.com"
-    // opcionalna polja poput opisa su izostavljena
+    // опционална поља као што је опис изостављена
   };
   const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
   console.log(result);

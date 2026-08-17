@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| domainToUpdate | string | No |  |
-| patchDomainConfigParams | PatchDomainConfigParams | No |  |
+| tenantId | string | Да |  |
+| domainToUpdate | string | Не |  |
+| patchDomainConfigParams | PatchDomainConfigParams | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[PatchDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_domain_config_response.nim)
+Враћа: [`Option[PatchDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_patch_domain_config_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patchDomainConfig Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchDomainConfig Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.patchDomainConfig(
   tenantId = "my-tenant-123",

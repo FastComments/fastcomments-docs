@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Response
+## Отговор
 
-Returns: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
+Връща: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'PostSetCommentText Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,8 +28,8 @@ func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
 	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams | 
-	broadcastId := "broadcastId_example" // string |  (optional)
-	sso := "sso_example" // string |  (optional)
+	broadcastId := "broadcastId_example" // string |  (по избор)
+	sso := "sso_example" // string |  (по избор)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentText``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PostSetCommentText`: SetCommentTextResponse
+	// отговор от `PostSetCommentText`: SetCommentTextResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentText`: %v\n", resp)
 }
 [inline-code-end]

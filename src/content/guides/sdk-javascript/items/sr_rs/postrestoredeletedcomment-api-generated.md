@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| commentId | string | Yes |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| commentId | string | Да |  |
+| broadcastId | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostRestoreDeletedCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRestoreDeletedCommentResponse.ts)
+Враћа: [`PostRestoreDeletedCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRestoreDeletedCommentResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'postRestoreDeletedComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,21 +1,21 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 예 |  |
 
-## Response
+## 응답
 
-Returns: `CreateHashTagResponse`
+반환: `CreateHashTagResponse`
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'addHashTag 예시'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag 예제'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 // TODO API 키 인증 구성: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// 필요에 따라 API 키에 대한 접두사(예: Bearer)를 설정하려면 아래 주석을 해제하세요
+// 아래의 주석을 해제하여 API 키에 대한 접두사(예: Bearer)를 설정합니다, 필요 시
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

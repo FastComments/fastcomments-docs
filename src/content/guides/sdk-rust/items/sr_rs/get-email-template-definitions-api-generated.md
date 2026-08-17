@@ -1,14 +1,14 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_definitions_response.rs)
+Враћа: [`GetEmailTemplateDefinitionsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_email_template_definitions_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'get_email_template_definitions Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,3 +20,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

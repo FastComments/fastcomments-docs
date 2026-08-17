@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| commentId | string | Yes |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| commentId | string | Да |  |
+| broadcastId | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRemoveCommentResponse.ts)
+Враћа: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRemoveCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postRemoveComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRemoveComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function removeCommentExample(): Promise<void> {
   const commentId: string = "cmt_7f9a3e2b";

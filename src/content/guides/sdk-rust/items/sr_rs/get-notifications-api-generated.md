@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| url_id | String | No |  |
-| from_comment_id | String | No |  |
-| viewed | bool | No |  |
-| skip | f64 | No |  |
+| tenant_id | String | Да |  |
+| user_id | String | Не |  |
+| url_id | String | Не |  |
+| from_comment_id | String | Не |  |
+| viewed | bool | Не |  |
+| skip | f64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notifications_response.rs)
+Враћа: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notifications_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_notifications Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_notifications'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_notifications(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetNotificationsParams {

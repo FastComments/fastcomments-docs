@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
-| updateTenantBody | UpdateTenantBody | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| updateTenantBody | UpdateTenantBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'updateTenant Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

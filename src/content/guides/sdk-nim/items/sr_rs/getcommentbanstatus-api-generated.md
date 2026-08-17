@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| sso | string = "" | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| sso | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetCommentBanStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_ban_status_response.nim)
+Враћа: [`Option[GetCommentBanStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comment_ban_status_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getCommentBanStatus Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentBanStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (banStatusOpt, httpResp) = client.getCommentBanStatus(
   tenantId = "my-tenant-123",

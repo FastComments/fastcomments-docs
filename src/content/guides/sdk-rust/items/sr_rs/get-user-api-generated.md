@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_response.rs)
+Враћа: [`GetUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetUserParams {
@@ -23,3 +23,5 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
+
+---

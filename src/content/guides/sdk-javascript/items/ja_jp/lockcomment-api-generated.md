@@ -1,17 +1,17 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | broadcastId | string | Yes |  |
 | sso | string | No |  |
 
-## Response
+## 応答
 
-Returns: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockCommentResponse.ts)
+返却: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockCommentResponse.ts)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'lockComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ Returns: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sd
   const commentId: string = "cmt_98765";
   const broadcastId: string = "brd_54321";
 
-  // 任意の SSO トークンあり
+  // オプションの SSO トークンあり
   const ssoToken: string = "user-abc123";
   const lockedWithSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
 

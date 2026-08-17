@@ -1,14 +1,14 @@
 [api-resource-header-start name = 'DomainConfig'; route = 'GET /api/v1/domain-configs/:domain'; creditsCost = 1; api-resource-header-end]
 
-Pojedinačni DomainConfigs mogu se dohvatiti pomoću odgovarajućeg `domain`. 
+Појединачни DomainConfigs могу бити преузети помоћу њиховог одговарајућег `domain`. 
 
-[inline-code-attrs-start title = 'Primer cURL zahteva za Domain Config po domenu'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Конфигурација домена по домену cURL пример'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/domain-configs/example.com?tenantId=demo&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahteva za Domain Config po domenu'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Конфигурација домена по домену структура захтева'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigsByDomainRequestQueryParams {
     tenantId: string
@@ -16,13 +16,13 @@ interface DomainConfigsByDomainRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za Domain Config po domenu'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Конфигурација домена по домену структура одговора'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigResponse {
     status: 'success' | 'failed'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Укључено у случају неуспеха. **/
     code?: 'internal' | 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-domain' | 'update-would-create-duplicate' | 'domain-does-not-exist'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Укључено у случају неуспеха. **/
     reason?: string
     configuration?: DomainConfig | null
 }

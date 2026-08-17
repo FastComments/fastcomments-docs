@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 | update_question_result_body | models::UpdateQuestionResultBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'update_question_result Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_question_result Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = UpdateQuestionResultParams {
@@ -28,3 +28,5 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

@@ -1,18 +1,19 @@
+---
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano, FastComments ima omogućeno komentarisanje u realnom vremenu.
+Подразумевано, FastComments ће имати омогућено живо коментарисање.
 
-Ovo znači da svaki posmatrač niti komentara vidi isti sadržaj.
+То значи да сваки гледаоца нити коментара треба да види исти садржај.
 
-Na primer, ako se doda komentar, taj komentar treba da se prikaže. Ako se komentar izmeni ili ukloni,
-tada će ti komentari biti izmenjeni ili uklonjeni za sve posmatrače niti. Isto važi i za glasove i sve akcije moderacije.
+На пример, ако се дода коментар, тај коментар треба да се прикаже. Ако се коментар уреди или уклони,
+онда ће се ти коментари уредити или уклонити за све гледаоце нити. Исто важи за гласове и све радње модерације.
 
-Međutim, možemo ovo onemogućiti:
+Међутим, можемо да онемогућимо ово:
 
-[code-example-start config = {disableLiveCommenting: true}; linesToHighlight = [6]; title = 'Onemogući komentarisanje u realnom vremenu'; code-example-end]
+[code-example-start config = {disableLiveCommenting: true}; linesToHighlight = [6]; title = 'Disable Live Commenting'; code-example-end]
 
-Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Onemogući komentarisanje u realnom vremenu“.
+Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте одељак „Disable Live Commenting“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Odeljak „Onemogući komentarisanje u realnom vremenu“ na stranici za prilagođavanje widgeta, isključivanje ažuriranja niti u realnom vremenu'; title='Onemogući komentarisanje u realnom vremenu' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Одељак „Disable Live Commenting“ на страници за прилагођавање виџета, искључује ажурирања нити у реалном времену'; title='Онемогућено живо коментарисање' app-screenshot-end]
 
 ---

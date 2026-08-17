@@ -1,18 +1,18 @@
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| editKey | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Да |  |
+| editKey | string | query | Нет |  |
+| sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
-Returns: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
+Возвращает: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/public_api_set_comment_text_response.py)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример set_comment_text'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,7 +23,7 @@ from client.models.public_api_set_comment_text_response import PublicAPISetComme
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста необязательно и по умолчанию https://fastcomments.com
+# Определение хоста необязательно и по умолчанию равно https://fastcomments.com
 # См. configuration.py для списка всех поддерживаемых параметров конфигурации.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -38,8 +38,8 @@ with client.ApiClient(configuration) as api_client:
     comment_id = 'comment_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
     comment_text_update_request = client.CommentTextUpdateRequest() # CommentTextUpdateRequest | 
-    edit_key = 'edit_key_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    edit_key = 'edit_key_example' # str |  (необязательно)
+    sso = 'sso_example' # str |  (необязательно)
 
     try:
         api_response = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, SetCommentTextOptions(edit_key=edit_key, sso=sso))

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_result_response.rs)
+Враћа: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_result_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_question_result'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_question_result(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetQuestionResultParams {
@@ -23,5 +23,3 @@ async fn fetch_question_result(config: &configuration::Configuration) -> Result<
     Ok(())
 }
 [inline-code-end]
-
----

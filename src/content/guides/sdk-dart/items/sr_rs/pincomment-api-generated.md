@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| commentId | string | path | Da |  |
-| broadcastId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `ChangeCommentPinStatusResponse`
+Враћа: `ChangeCommentPinStatusResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'pinComment Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'pinComment Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

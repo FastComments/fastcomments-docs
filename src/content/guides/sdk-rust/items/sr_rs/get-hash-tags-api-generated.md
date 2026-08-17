@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Da |  |
-| page | f64 | Ne |  |
+| tenant_id | String | Да |  |
+| page | f64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
+Враћа: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_hash_tags Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_hash_tags Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetHashTagsParams {
@@ -22,5 +22,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

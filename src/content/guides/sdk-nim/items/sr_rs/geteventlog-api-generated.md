@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userIdWS | string | Ne |  |
-| startTime | int64 | Ne |  |
-| endTime | int64 | Ne |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| userIdWS | string | No |  |
+| startTime | int64 | No |  |
+| endTime | int64 | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
+Враћа: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getEventLog Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEventLog Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (eventLogOpt, httpResp) = client.getEventLog(
   tenantId = "my-tenant-123",
@@ -33,3 +33,5 @@ if eventLogOpt.isSome:
   let eventLog = eventLogOpt.get()
   echo eventLog
 [inline-code-end]
+
+---

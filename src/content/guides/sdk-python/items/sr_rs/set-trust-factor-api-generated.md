@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| trustFactor | string | query | No |  |
-| sso | string | query | No |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| trustFactor | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_user_trust_factor_response.py)
+Враћа: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/set_user_trust_factor_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'set_trust_factor Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'set_trust_factor Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.moderation_api import SetTrustFactorOptions
@@ -21,21 +21,21 @@ from client.models.set_user_trust_factor_response import SetUserTrustFactorRespo
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (optional)
-    trust_factor = 'trust_factor_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    user_id = 'user_id_example' # str |  (опционално)
+    trust_factor = 'trust_factor_example' # str |  (опционално)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.set_trust_factor(tenant_id, SetTrustFactorOptions(user_id=user_id, trust_factor=trust_factor, sso=sso))

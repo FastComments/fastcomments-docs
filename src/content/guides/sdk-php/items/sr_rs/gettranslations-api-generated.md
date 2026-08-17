@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| namespace | string | path | Da |  |
-| component | string | path | Da |  |
-| locale | string | query | Ne |  |
-| useFullTranslationIds | boolean | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| namespace | string | path | Да |  |
+| component | string | path | Да |  |
+| locale | string | query | Не |  |
+| useFullTranslationIds | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
+Враћа: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTranslations'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,16 +21,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevani.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
-$namespace = 'namespace_example'; // string
-$component = 'component_example'; // string
+$namespace = 'namespace_example'; // стринг
+$component = 'component_example'; // стринг
 $options = [
-    'locale' => 'locale_example', // string
-    'use_full_translation_ids' => True, // bool
+    'locale' => 'locale_example', // стринг
+    'use_full_translation_ids' => True, // бул
 ];
 
 
@@ -41,3 +41,5 @@ try {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

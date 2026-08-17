@@ -12,9 +12,9 @@ We natively support importing exports from the following providers:
 - WordPress (via the plugin)
 - AnyComment (Via WordPress Import/Export)
 
-By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) you can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Сторінка імпорту FastComments з вибором провайдера та полями завантаження файлу експорту'; title='Форма сторінки імпорту' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Сторінка імпорту FastComments з вибором провайдера та полями завантаження файлу для файлу експорту'; title='Форма сторінки імпорту' app-screenshot-end]
 
 ### Monitoring Imports
 
@@ -24,7 +24,7 @@ FastComments uses a job processing system for processing imports and exports. On
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 
-If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
+If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we’ll reach out to you to see if we can help.
 
 ### Re-Running The Import
 
@@ -35,5 +35,3 @@ Re-importing the same content **will not create duplicates**.
 ### Data Security and Expiration
 
 Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
-
----

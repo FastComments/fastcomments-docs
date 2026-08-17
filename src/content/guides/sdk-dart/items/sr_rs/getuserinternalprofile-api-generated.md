@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: `GetUserInternalProfileResponse`
+Враћа: `GetUserInternalProfileResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getUserInternalProfile'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

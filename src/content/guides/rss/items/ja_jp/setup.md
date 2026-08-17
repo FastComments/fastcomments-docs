@@ -1,15 +1,15 @@
-Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
+アカウントのダッシュボードに移動き、[RSS Feed page](https://fastcomments.com/auth/my-account/rss)へ進みます。
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='「Enable RSS Feed Access」チェックボックス、フィード URL、コピーおよびビュー フィード ボタンがあるアカウント RSS フィードページ'; title='RSS フィード設定' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='「RSS フィードアクセスを有効化」チェックボックス、フィード URL、そして「コピー」および「フィード表示」ボタンがあるアカウントの RSS フィードページ'; title='RSS フィード設定' app-screenshot-end]
 
-On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
+RSS Feedページで、"Enable RSS Feed Access" チェックボックスをオンにして、固有の RSS フィード URL を生成します。
 
-When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
+フィードを有効にすると、リンクを知っている誰でもコメントにアクセスできることを説明するセキュリティ通知が表示されます。
 
-Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
+有効になると、固有の RSS フィード URL が表示されます。"Copy" ボタンをクリックして、URL をクリップボードにコピーします。
 
-Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
+RSS リーダーアプリケーションを開き、コピーした URL を新しいフィード購読として追加します。手順はリーダーによって異なりますが、通常は "Add Feed" または "Subscribe" ボタンを探し、RSS フィード URL を貼り付け、フィードに名前を付けます。
 
-You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
+RSS Feedページの "View Feed" ボタンをクリックすると、ブラウザで直接フィードを表示できます。
 
-To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.
+RSS フィードへのアクセスを無効にするには、単に "Enable RSS Feed Access" チェックボックスのチェックを外します。これによりフィードへのアクセスは防止されますが、後で再度有効にした場合でも URL は同じままです。

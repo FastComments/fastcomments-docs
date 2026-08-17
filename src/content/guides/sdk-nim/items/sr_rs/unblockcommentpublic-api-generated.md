@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Ne |  |
-| sso | string = "" | Ne |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Не |  |
+| sso | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
+Враћа: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer unBlockCommentPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

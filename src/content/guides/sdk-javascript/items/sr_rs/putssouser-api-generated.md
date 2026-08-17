@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| updateAPISSOUserData | UpdateAPISSOUserData | Da |  |
-| updateComments | boolean | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateAPISSOUserData | UpdateAPISSOUserData | Да |  |
+| updateComments | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutSSOUserAPIResponse.ts)
+Враћа: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutSSOUserAPIResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putSSOUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putSSOUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant_abc123";

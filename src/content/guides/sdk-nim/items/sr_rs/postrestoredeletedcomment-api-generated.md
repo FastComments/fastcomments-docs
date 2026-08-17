@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| options | PostRestoreDeletedCommentOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | PostRestoreDeletedCommentOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postRestoreDeletedComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRestoreDeletedComment пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (respOpt, httpResp) = client.postRestoreDeletedComment(
   tenantId = "my-tenant-123",
@@ -24,5 +24,3 @@ if respOpt.isSome:
   let empty = respOpt.get()
   echo "Comment restored"
 [inline-code-end]
-
----

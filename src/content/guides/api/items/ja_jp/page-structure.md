@@ -1,9 +1,8 @@
-A `Page` object represents the page that many comments may belong to. This relationship is defined by
-`urlId`.
+`Page` オブジェクトは、多くのコメントが属する可能性のあるページを表します。この関係は `urlId` によって定義されます。
 
-A `Page` stores information such as the page title, comment count, and `urlId`.
+`Page` は、ページタイトル、コメント数、`urlId` などの情報を保存します。
 
-The structure for the Page object is as follows:
+Page オブジェクトの構造は以下の通りです:
 
 [inline-code-attrs-start title = 'ページ構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,11 +14,9 @@ interface Page {
     createdAt: string
     commentCount: number
     rootCommentCount: number
-    /** これを null に設定すると、すべての SSO ユーザーがページを閲覧できます。空のリストは、すべてのユーザーに対して閉じられていることを意味します。 **/
+    /** Setting this to null means all SSO users can see the page. An empty list means it is closed to all users. **/
     accessibleByGroupIds?: string[] | null
-    /** このページは新しいコメントの受付を停止していますか？ **/
+    /** Is this page closed for new comments? **/
     isClosed?: boolean
 }
 [inline-code-end]
-
----

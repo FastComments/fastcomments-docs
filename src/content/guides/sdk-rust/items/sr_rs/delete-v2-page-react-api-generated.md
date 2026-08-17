@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| url_id | String | Da |  |
-| id | String | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| url_id | String | Yes |  |
+| id | String | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateV1PageReact`
+Враћа: `CreateV1PageReact`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_v2_page_react Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_v2_page_react Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = DeleteV2PageReactParams {

@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| commentData | CommentData | Yes |  |
-| options | const CreateCommentPublicOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| broadcastId | string | Да |  |
+| commentData | CommentData | Да |  |
+| options | const CreateCommentPublicOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
+Враћа: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createCommentPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto comment = CommentData();
 comment.body = U("This is a test comment");

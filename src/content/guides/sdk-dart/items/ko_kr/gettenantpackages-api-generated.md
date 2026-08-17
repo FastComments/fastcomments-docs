@@ -1,22 +1,22 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | 예 |  |
+| skip | number | query | 아니오 |  |
 
-## Response
+## 응답
 
-Returns: `GetTenantPackagesResponse`
+반환: `GetTenantPackagesResponse`
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'getTenantPackages 예시'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 // TODO API 키 인증 구성: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// 아래의 주석을 해제하여 API 키에 대한 프리픽스 (예: Bearer)를 설정하세요, 필요시
+// 아래의 주석을 해제하여 API 키에 대한 접두사(예: Bearer)를 설정합니다, 필요 시
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getTenantPackages: $e\n');
 }
 [inline-code-end]
-
----

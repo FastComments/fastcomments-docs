@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| updateNotificationBody | UpdateNotificationBody | Da |  |
-| userId | string | Ne |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateNotificationBody | UpdateNotificationBody | Да |  |
+| userId | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateNotification Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateNotification Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto updateBody = std::make_shared<UpdateNotificationBody>();
 updateBody->title = utility::conversions::to_string_t("System Maintenance");

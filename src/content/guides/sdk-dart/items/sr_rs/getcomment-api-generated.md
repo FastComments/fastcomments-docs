@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIGetCommentResponse`
+Враћа: `APIGetCommentResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getComment'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getComment'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO: Konfiguriši autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentariši dole da postaviš prefiks (npr. Bearer) za API ključ, po potrebi
+// откоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

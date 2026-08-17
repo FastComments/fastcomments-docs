@@ -1,20 +1,20 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| commentId | string | path | Da |  |
-| includeEmail | boolean | query | Ne |  |
-| includeIP | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| includeEmail | boolean | query | Не |  |
+| includeIP | boolean | query | Не |  |
+| sno | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `ModerationAPICommentResponse`
+Враћа: `ModerationAPICommentResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getModerationComment'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getModerationComment'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -32,5 +32,3 @@ try {
     print('Exception when calling ModerationApi->getModerationComment: $e\n');
 }
 [inline-code-end]
-
----

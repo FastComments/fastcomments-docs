@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
-| locale | string | Ne |  |
+| tenantId | string | Да |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | Да |  |
+| locale | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`RenderEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplateResponse1.ts)
+Враћа: [`RenderEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplateResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'renderEmailTemplate Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

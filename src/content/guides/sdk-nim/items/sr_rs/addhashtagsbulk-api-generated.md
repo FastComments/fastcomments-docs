@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Ne |  |
+| tenantId | string | Да |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[BulkCreateHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_create_hash_tags_response.nim)
+Враћа: [`Option[BulkCreateHashTagsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_bulk_create_hash_tags_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'addHashTagsBulk Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.addHashTagsBulk(
   tenantId = "my-tenant-123",

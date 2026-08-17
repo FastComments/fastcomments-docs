@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | GetTrustFactorOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | GetTrustFactorOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
+Враћа: [`Option[GetUserTrustFactorResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_trust_factor_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTrustFactor'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,3 +18,5 @@ if trustOpt.isSome:
   let trust = trustOpt.get()
   discard trust
 [inline-code-end]
+
+---

@@ -1,18 +1,17 @@
-A `Notification` object represents a notification for a user.
+A `Notification` 物件代表使用者的通知。
 
-`Notification` objects are created automatically and cannot be created via the API. They also expire after one year.
-Notifications cannot be deleted. They can however be updated to set `viewed` to `false`, and you can query by `viewed`.
+`Notification` 物件會自動產生，無法透過 API 建立。它們也會在一年後過期。  
+通知無法被刪除。但可以更新將 `viewed` 設為 `false`，且您可以依 `viewed` 進行查詢。
 
-A user may also opt out of notifications for a specific comment by setting `optedOut` in the notification to `true`. You can opt in again by setting it to `false`.
+使用者也可以透過將通知中的 `optedOut` 設為 `true` 來取消特定評論的通知。再將其設為 `false` 即可重新訂閱。
 
-There are different notification types - check `relatedObjectType` and `type`.
+有不同的通知類型 ─ 請檢查 `relatedObjectType` 與 `type`。
 
-The ways notifications are created is quite flexible and can be triggered by many scenarios (see `NotificationType`).
+通知的產生方式相當彈性，可由多種情境觸發（請參考 `NotificationType`）。
 
-As of today, the existence of a `Notification` does not actually imply an email is or should be sent. Rather, the notifications
-are used for the notification feed and related integrations.
+截至目前，`Notification` 的存在並不代表會或應該發送電子郵件。相反地，通知用於通知資訊流與相關整合。
 
-The structure for the `Notification` object is as follows:
+`Notification` 物件的結構如下：
 
 [inline-code-attrs-start title = '通知結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,52 +22,50 @@ enum NotificationObjectType {
 }
 
 enum NotificationType {
-    /** 如果有人回覆了你。 **/
+    /** 如果有人回覆您。 **/
     RepliedToMe = 0,
-    /** 如果有人在你評論之討論串中的任何地方回覆（即使是子留言的子留言）。 **/
+    /** 如果有人在您曾評論過的討論串的任何位置回覆（即使是子回覆的子回覆）。 **/
     RepliedTransientChild = 1,
-    /** 如果你的評論被按讚。 **/
-    VotedMyComment = 2,
-    /** 如果在你訂閱的頁面的根層有新評論。 **/
-    SubscriptionReplyRoot = 3,
-    /** 如果有人在你的個人資料上評論。 **/
-    CommentedOnProfile = 4,
-    /** 如果你有私人訊息。 **/
-    DirectMessage = 5,
-    /** TrialLimits 僅適用於租戶用戶。 **/
-    TrialLimits = 6,
-    /** 如果你被 @ 提及。 **/
-    Mentioned = 7
+    /** 如果您的評論被讚。 **/
+    VotedMyComment =2,
+    /** 如果在您訂閱的頁面根部留下新評論。 **/
+    SubscriptionReplyRoot =3,
+    /** 如果有人在您的個人檔案上留言。 **/
+    CommentedOnProfile =4,
+    /** 如果您收到私訊。 **/
+    DirectMessage =5,
+    /** TrialLimits 僅適用於租戶使用者。 **/
+    TrialLimits =6,
+    /** 如果您被 @ 提及。 **/
+    Mentioned =7
 }
 
 interface Notification {
     id: string
     tenantId: string
-    /** With SSO, the user id is in the format `<tenant id>:<user id>`. **/
+    /** 使用 SSO 時，使用者 ID 采用 `<tenant id>:<user id>` 格式。 **/
     userId?: string
-    /** When working with SSO, you only have to worry about `userId`. **/
+    /** 使用 SSO 時，您只需關注 `userId`。 **/
     anonUserId?: string
-    /** urlId is almost always defined. It is only optional for tenant-level notifications, which are infrequent. **/
+    /** urlId 幾乎總是已定義。僅在租戶層級的通知（較少見）時才是可選的。 **/
     urlId?: string
-    /** URL is cached for quick navigation to the source of the notification. **/
+    /** URL 已快取，以便快速導向通知來源。 **/
     url?: string
-    /** Page Title is cached for quick reading of notification source. **/
+    /** 頁面標題已快取，以便快速閱讀通知來源。 **/
     pageTitle?: string
     relatedObjectType: NotificationObjectType
-    /** For example, comment id. **/
+    /** 例如，評論 ID。 **/
     relatedObjectId: string
     viewed: boolean
-    createdAt: string // 日期字串
+    createdAt: string // date string
     type: NotificationType
     fromCommentId?: string
     fromVoteId?: string
-    /** fromUserName and fromUserAvatarSrc are cached here for quick displaying of the notification. They are updated when the user is updated. **/
+    /** fromUserName 與 fromUserAvatarSrc 於此快取，以便快速顯示通知。當使用者資訊更新時，這些也會同步更新。 **/
     fromUserName: string
     fromUserId: string
     fromUserAvatarSrc?: string
-    /** Set this to true to stop getting notifications for this object. **/
+    /** 將此設為 true 可停止接收此物件的通知。 **/
     optedOut?: boolean
 }
 [inline-code-end]
-
----

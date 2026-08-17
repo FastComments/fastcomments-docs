@@ -2,21 +2,21 @@ req
 tenantId
 urlId
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | GetCommentsPublicOptions | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| options | GetCommentsPublicOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetCommentsResponseWithPresencePublicComment]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_response_with_presence_public_comment.nim)
+Враћа: [`Option[GetCommentsResponseWithPresencePublicComment]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_comments_response_with_presence_public_comment.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getCommentsPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentsPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.getCommentsPublic(
   tenantId = "my-tenant-123",
@@ -33,5 +33,3 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp
 [inline-code-end]
-
----

@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| url_id | String | Da |  |
-| username_starts_with | String | Ne |  |
-| mention_group_ids | Vec<String> | Ne |  |
-| sso | String | Ne |  |
-| search_section | String | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| username_starts_with | String | Не |  |
+| mention_group_ids | Vec<String> | Не |  |
+| sso | String | Не |  |
+| search_section | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/search_users_result.rs)
+Враћа: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/search_users_result.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'search_users Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'search_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_search() -> Result<(), Error> {
     let params = SearchUsersParams {
@@ -30,3 +30,5 @@ async fn run_search() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

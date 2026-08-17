@@ -1,126 +1,128 @@
-After configuring SAML in FastComments, you need to set up FastComments as a Service Provider in your identity provider.
+---  
+לאחר קביעת תצורת SAML ב‑FastComments, עליך להגדיר את FastComments כספק שירות (Service Provider) בספק הזהות שלך.
 
-### General IdP Configuration
+### תצורת IdP כללית
 
-Most identity providers require the following information to add FastComments as a SAML application:
+רוב ספקי הזהות דורשים את המידע הבא כדי להוסיף את FastComments כיישום SAML:
 
-#### Required Service Provider Information
+#### מידע נדרש על ספק השירות
 
-These values are automatically generated and displayed in your FastComments SAML configuration page:
+הערכים האלה נוצרים אוטומטית ומוצגים בדף תצורת SAML של FastComments:
 
-**SP Entity ID / Audience**
-- Format: `https://fastcomments.com/saml/{your-tenant-id}`
-- This uniquely identifies your FastComments instance
+**SP Entity ID / Audience**  
+- פורמט: `https://fastcomments.com/saml/{your-tenant-id}`  
+- מזהה באופן ייחודי את המופע של FastComments שלך  
 
-**Assertion Consumer Service (ACS) URL**
-- Format: `https://fastcomments.com/saml/callback/{your-tenant-id}`
-- Where your IdP sends SAML responses after authentication
+**Assertion Consumer Service (ACS) URL**  
+- פורמט: `https://fastcomments.com/saml/callback/{your-tenant-id}`  
+- המקום שבו ה‑IdP שלך שולח תגובות SAML לאחר האימות  
 
-**SP Metadata URL** *(if supported by your IdP)*
-- Format: `https://fastcomments.com/saml/metadata/{your-tenant-id}`
-- Provides complete SAML configuration in XML format
+**SP Metadata URL** *(אם נתמך על ידי ה‑IdP שלך)*  
+- פורמט: `https://fastcomments.com/saml/metadata/{your-tenant-id}`  
+- מספק תצורת SAML מלאה בפורמט XML  
 
-**SAML Login URL**
-- Format: `https://fastcomments.com/saml/login/{your-tenant-id}`
-- Direct link to initiate SAML authentication
+**SAML Login URL**  
+- פורמט: `https://fastcomments.com/saml/login/{your-tenant-id}`  
+- קישור ישיר להתחלת אימות SAML  
 
-### Required SAML Attributes
+### תכונות SAML נדרשות
 
-Configure your identity provider to send these attributes with SAML responses:
+הגדר את ספק הזהות שלך לשלוח את התכונות האלה עם תגובות SAML:
 
-#### Essential Attributes
+#### תכונות חיוניות
 
-**Email Address** *(Required)*
-- **Attribute Name**: `email`, `emailAddress`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`
-- **Purpose**: Unique user identification and notifications
-- **Format**: Valid email address
+**כתובת דוא"ל** *(נדרש)*  
+- **שם תכונה**: `email`, `emailAddress`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  
+- **מטרה**: זיהוי משתמש ייחודי והודעות  
+- **פורמט**: כתובת דוא"ל תקינה  
 
-#### Optional Attributes
+#### תכונות אופציונליות
 
-**First Name**
-- **Attribute Names**: `firstName`, `givenName`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
-- **Purpose**: User display name
+**שם פרטי**  
+- **שמות תכונות**: `firstName`, `givenName`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`  
+- **מטרה**: שם תצוגה של המשתמש  
 
-**Last Name**
-- **Attribute Names**: `lastName`, `surname`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`
-- **Purpose**: User display name
+**שם משפחה**  
+- **שמות תכונות**: `lastName`, `surname`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`  
+- **מטרה**: שם תצוגה של המשתמש  
 
-**Roles** *(Important for access control)*
-- **Attribute Names**: `roles`, `groups`, `memberOf`, or custom attribute names
-- **Purpose**: FastComments role assignment and permissions
-- **Format**: Array of role strings or comma-separated values
+**תפקידים** *(חשוב לבקרת גישה)*  
+- **שמות תכונות**: `roles`, `groups`, `memberOf`, or custom attribute names  
+- **מטרה**: הקצאת תפקידים והרשאות ב‑FastComments  
+- **פורמט**: מערך של מחרוזות תפקיד או ערכים מופרדים בפסיקים  
 
-### Common Identity Provider Configurations
+### תצורות נפוצות של ספקי זהות
 
 #### Microsoft Azure AD
 
-1. **Add Enterprise Application**
-   - Search for "FastComments" or create a custom SAML application
-   - Use the SP information provided by FastComments
+1. **הוספת יישום ארגוני**  
+   - חפש את "FastComments" או צור יישום SAML מותאם אישית  
+   - השתמש במידע SP שסופק על ידי FastComments  
 
-2. **Configure Attributes**
-   - Email: `user.mail` or `user.userprincipalname`
-   - First Name: `user.givenname`
-   - Last Name: `user.surname`
-   - Roles: `user.assignedroles` or directory groups
+2. **הגדרת תכונות**  
+   - דוא"ל: `user.mail` or `user.userprincipalname`  
+   - שם פרטי: `user.givenname`  
+   - שם משפחה: `user.surname`  
+   - תפקידים: `user.assignedroles` or directory groups  
 
 #### Okta
 
-1. **Create SAML Application**
-   - Use "Create New App" and select SAML 2.0
-   - Configure with FastComments SP information
+1. **יצירת יישום SAML**  
+   - השתמש ב-"Create New App" ובחר SAML 2.0  
+   - הגדר עם מידע SP של FastComments  
 
-2. **Attribute Statements**
-   - Email: `user.email`
-   - FirstName: `user.firstName`
-   - LastName: `user.lastName`
-   - Roles: `user.groups` or custom attributes
+2. **הצהרות תכונה**  
+   - דוא"ל: `user.email`  
+   - שם פרטי: `user.firstName`  
+   - שם משפחה: `user.lastName`  
+   - תפקידים: `user.groups` or custom attributes  
 
 #### Google Workspace
 
-1. **Add SAML Application**
-   - Go to Apps > Web and mobile apps > Add App > Add custom SAML app
-   - Configure with FastComments SP information
+1. **הוספת יישום SAML**  
+   - עבור ל‑Apps > Web and mobile apps > Add App > Add custom SAML app  
+   - הגדר עם מידע SP של FastComments  
 
-2. **Attribute Mapping**
-   - Email: Primary email
-   - First Name: First name
-   - Last Name: Last name
-   - Roles: Groups or custom attributes
+2. **מיפוי תכונות**  
+   - דוא"ל: דוא"ל ראשי  
+   - שם פרטי: שם פרטי  
+   - שם משפחה: שם משפחה  
+   - תפקידים: קבוצות או תכונות מותאמות  
 
 #### Active Directory Federation Services (ADFS)
 
-1. **Add Relying Party Trust**
-   - Use the FastComments metadata URL or manual configuration
-   - Configure SP information as provided
+1. **הוספת אמון של צד תלוי**  
+   - השתמש בכתובת URL של מטא‑נתונים של FastComments או בתצורה ידנית  
+   - הגדר מידע SP כפי שסופק  
 
-2. **Claim Rules**
-   - Email: Email Address claim
-   - Name: Name ID claim
-   - Roles: Group membership or custom claims
+2. **כללי תביעות**  
+   - דוא"ל: תביעת כתובת דוא"ל  
+   - שם: תביעת Name ID  
+   - תפקידים: חברות בקבוצה או תביעות מותאמות  
 
-### Attribute Name Flexibility
+### גמישות בשם תכונה
 
-FastComments accepts role information from multiple attribute names to accommodate different IdP configurations:
+FastComments מקבל מידע תפקידים ממספר שמות תכונות כדי להתאים לתצורות IdP שונות:
 
-- `roles`
-- `groups`
-- `memberOf`
-- `role`
-- `group`
-- `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
-- `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role`
+- `roles`  
+- `groups`  
+- `memberOf`  
+- `role`  
+- `group`  
+- `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`  
+- `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role`  
 
-This flexibility ensures compatibility with various identity providers without requiring specific attribute naming conventions.
+גמישות זו מבטיחה תאימות עם ספקי זהות שונים מבלי לדרוש קונציות שמות תכונות ספציפיות.
 
-### Testing Your Configuration
+### בדיקת התצורה שלך
 
-After configuring your identity provider:
+לאחר תצורת ספק הזהות שלך:
 
-1. Save the IdP configuration
-2. Test with a dedicated test user account
-3. Verify that attributes are being sent correctly
-4. Check that roles are properly mapped
-5. Ensure the authentication flow completes successfully
+1. שמור את תצורת ה‑IdP  
+2. בדוק עם חשבון משתמש בדיקה ייעודי  
+3. אמת שהתכונות נשלחות כראוי  
+4. בדוק שהתפקידים ממופים כהלכה  
+5. וודא שהזרם האימותי מסתיים בהצלחה  
 
-Most identity providers offer SAML testing tools to validate the configuration before deploying to production users.
+רוב ספקי הזהות מציעים כלי בדיקת SAML לאימות התצורה לפני פריסת משתמשים בייצור.  
+---

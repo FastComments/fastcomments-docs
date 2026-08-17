@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Da |  |
+| tenant_id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetPagesApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_pages_api_response.rs)
+Враћа: [`GetPagesApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_pages_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_pages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_pages'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_pages(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetPagesParams {
@@ -20,5 +20,3 @@ async fn fetch_pages(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

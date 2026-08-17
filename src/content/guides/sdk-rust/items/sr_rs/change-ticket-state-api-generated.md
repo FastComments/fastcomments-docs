@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenant_id | String | Yes |  |
 | user_id | String | Yes |  |
 | id | String | Yes |  |
 | change_ticket_state_body | models::ChangeTicketStateBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_ticket_state_response.rs)
+Враћа: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_ticket_state_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'change_ticket_state Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'change_ticket_state Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(config: &configuration::Configuration) -> Result<(), Error> {
     let body = models::ChangeTicketStateBody {

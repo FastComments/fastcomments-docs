@@ -1,6 +1,6 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 형식 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
@@ -10,11 +10,11 @@
 | sessionId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## 응답
 
-Returns: [`VoteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteCommentResponse.ts)
+반환: [`VoteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteCommentResponse.ts)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'voteComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,7 +25,7 @@ const broadcastId: string = "bcast_2024_01";
 
 const voteBodyParams: VoteBodyParams = {
   vote: "up",               // 예: "up" | "down"
-  weight: 1,                // 투표의 가중치 (옵션)
+  weight: 1,                // 투표의 가중치(선택 사항)
 };
 
 const sessionId: string = "sess_abc123def";

@@ -2,9 +2,9 @@
 
 | Ime | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| value | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| value | string | query | Не |  |
+| sso | string | query | Не |  |
 
 ## Odgovor
 
@@ -12,7 +12,7 @@ Vraća: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcom
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer get_search_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_users Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.moderation_api import GetSearchUsersOptions
@@ -20,8 +20,8 @@ from client.models.moderation_user_search_response import ModerationUserSearchRe
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje host-a je opcionalno i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,8 +32,8 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    value = 'value_example' # str |  (neobavezno)
-    sso = 'sso_example' # str |  (neobavezno)
+    value = 'value_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (opciono)
 
     try:
         api_response = api_instance.get_search_users(tenant_id, GetSearchUsersOptions(value=value, sso=sso))

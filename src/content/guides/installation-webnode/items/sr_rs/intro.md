@@ -1,3 +1,3 @@
 ---
-Webnode‑ov HTML blok je ono što ćemo koristiti za ugradnju widgeta za komentar. Od 26. juna 2023., ovaj blok je plaćena funkcija Webnode‑a: nije dostupan u besplatnom planu, a projekti kreirani posle tog datuma zahtevaju premium paket da bi ga koristili. Ako ne vidite opciju `HTML` u editoru, nadogradite svoj Webnode plan i ona će se pojaviti.
+HTML блок Webnode‑а је оно што ћемо користити за уграђивање виџета за коментаре. Од 26. јуна 2023. овај блок је плаћена функција Webnode‑а: није доступан у бесплатном плану, а пројекти креирани након тог датума захтевају премиум пакет за коришћење. Ако не видите опцију `HTML` у уређивачу, надоградите ваш Webnode план и она ће се појавити.
 ---

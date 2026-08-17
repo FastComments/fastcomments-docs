@@ -1,47 +1,47 @@
-req
-tenantId
-urlId
+захтев  
+tenantId  
+urlId  
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| page | number | Ne |  |
-| direction | SortDirections | Ne |  |
-| sso | string | Ne |  |
-| skip | number | Ne |  |
-| skipChildren | number | Ne |  |
-| limit | number | Ne |  |
-| limitChildren | number | Ne |  |
-| countChildren | boolean | Ne |  |
-| fetchPageForCommentId | string | Ne |  |
-| includeConfig | boolean | Ne |  |
-| countAll | boolean | Ne |  |
-| includei10n | boolean | Ne |  |
-| locale | string | Ne |  |
-| modules | string | Ne |  |
-| isCrawler | boolean | Ne |  |
-| includeNotificationCount | boolean | Ne |  |
-| asTree | boolean | Ne |  |
-| maxTreeDepth | number | Ne |  |
-| useFullTranslationIds | boolean | Ne |  |
-| parentId | string | Ne |  |
-| searchText | string | Ne |  |
-| hashTags | Array<string> | Ne |  |
-| userId | string | Ne |  |
-| customConfigStr | string | Ne |  |
-| afterCommentId | string | Ne |  |
-| beforeCommentId | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes  |
+| page | number | No  |
+| direction | SortDirections | No  |
+| sso | string | No  |
+| skip | number | No  |
+| skipChildren | number | No  |
+| limit | number | No  |
+| limitChildren | number | No  |
+| countChildren | boolean | No  |
+| fetchPageForCommentId | string | No  |
+| includeConfig | boolean | No  |
+| countAll | boolean | No  |
+| includei10n | boolean | No  |
+| locale | string | No  |
+| modules | string | No |
+| isCrawler | boolean | No |
+| includeNotificationCount | boolean | No |
+| asTree | boolean | No |
+| maxTreeDepth | number | No |
+| useFullTranslationIds | boolean | No |
+| parentId | string | No |
+| searchText | string | No |
+| hashTags | Array<string> | No |
+| userId | string | No |
+| customConfigStr | string | No |
+| afterCommentId | string | No |
+| beforeCommentId | string | No |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
+Враћа: [`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchComments() {
   const tenantId: string = 'acme-corp';

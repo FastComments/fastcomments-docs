@@ -1,18 +1,18 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| url_id | String | No |  |
-| from_comment_id | String | No |  |
-| viewed | bool | No |  |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
+| tenant_id | String | Ναι |  |
+| user_id | String | Όχι |  |
+| url_id | String | Όχι |  |
+| from_comment_id | String | Όχι |  |
+| viewed | bool | Όχι |  |
 
-## Response
+## Απόκριση
 
-Returns: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
+Επιστρέφει: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_notification_count_response.rs)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα get_notification_count'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

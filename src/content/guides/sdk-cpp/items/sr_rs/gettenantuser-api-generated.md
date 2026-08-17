@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantUserResponse.h)
+Враћа: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantUserResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTenantUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUser Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto userId = utility::conversions::to_string_t("user@example.com");
@@ -19,9 +19,9 @@ api->getTenantUser(tenantId, userId)
     .then([](pplx::task<std::shared_ptr<GetTenantUserResponse>> task) {
         try {
             auto response = task.get();
-            // Koristite odgovor po potrebi
+            // Користите одговор по потреби
         } catch (const std::exception&) {
-            // Obrada greške
+            // Обрада грешке
         }
     });
 [inline-code-end]

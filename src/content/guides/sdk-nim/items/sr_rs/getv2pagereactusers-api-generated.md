@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| id | string | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`Option[GetV2PageReactUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_react_users_response.nim)
+Враћа: [`Option[GetV2PageReactUsersResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v2_page_react_users_response.nim)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getV2PageReactUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,3 +24,5 @@ if maybeResponse.isSome:
   let resp = maybeResponse.get()
   echo resp
 [inline-code-end]
+
+---

@@ -1,21 +1,21 @@
-Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+Агрегира документе груписањем (ако је наведен groupBy) и примењивањем више операција. Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| aggregation_request | models::AggregationRequest | Yes |  |
-| parent_tenant_id | String | No |  |
-| include_stats | bool | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| aggregation_request | models::AggregationRequest | Да |  |
+| parent_tenant_id | String | Не |  |
+| include_stats | bool | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`AggregateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregate_response.rs)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/aggregate_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer agregacije'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'пример агрегирања'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let config = configuration::Configuration::default();

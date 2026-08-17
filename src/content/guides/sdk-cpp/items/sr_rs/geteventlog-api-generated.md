@@ -3,21 +3,21 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| userIdWS | string | Yes |  |
-| startTime | int64_t | Yes |  |
-| endTime | int64_t | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| userIdWS | string | Да |  |
+| startTime | int64_t | Да |  |
+| endTime | int64_t | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEventLogResponse.h)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEventLogResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getEventLog'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,3 +29,5 @@ api->getEventLog(U("my-tenant-123"), U("article-456"), U("user@example.com"), st
         (void)copy;
     });
 [inline-code-end]
+
+---

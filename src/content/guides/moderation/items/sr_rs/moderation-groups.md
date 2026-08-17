@@ -1,16 +1,19 @@
-Moderatori se mogu dodeliti grupama kako bi moderirali različite stranice ili kategorije sadržaja.
+---
+Модератори се могу распоредити у групе како би модерирали различите странице или категорије садржаја.
 
-Kada moderator pripada jednoj ili više grupa, on/ona će na stranici „Moderiraj komentare“ videti samo komentare iz tih grupa.
+Када модератор припада једној или више група, он ће у страници за модерирање коментара видети само коментаре из тих група.
 
-Na primer, recimo da vodimo sajt koji prikazuje video zapise po kategorijama. Možda želimo da imamo različite moderatore za video zapise Mačka, Pas i Papagaj, pa [dodajmo te grupe](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
+На пример, рећи ћемо да имамо сајт који приказује видео записе по категоријама. Можда желимо различите модераторе за видео записе о мачкама, псима и папагајима, па [додајмо те групе](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='Lista grupa za moderaciju sa grupama Mačka, Pas i Papagaj kreiranim za svaku video kategoriju'; title='Stranica grupa za moderaciju' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='Листа група за модерацију са групама за мачке, псе и папагаје креираним за сваку категорију видеа'; title='Страница група за модерацију' app-screenshot-end]
 
-Kada dodamo moderatora, sada imamo opciju da izaberemo jednu ili više grupa kojima će moderator pripadati:
+Када додајемо модератора, сада имамо могућност да изаберемо једну или више група којима ће модератор припадати:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Forma za dodavanje moderatora sa selektorom grupa koji se koristi za dodeljivanje moderatora jednoj ili više grupa'; title='Dodavanje moderatora i izbor grupe' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Форма за додавање модератора са изборником група који се користи за доделу модератора једној или више група'; title='Додавање модератора и избор групе' app-screenshot-end]
 
-Na kraju, komentari moraju biti povezani sa jednom ili više grupa kako bi ih videli odgovarajući moderatori.
+На крају, коментари морају бити повезани са једном или више група како би их прави модератори видели.
 
-Ovo se može postaviti [dodavanjem nekih grupa](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) i zatim navođenjem odgovarajućih `Moderation Group` ID‑ova u vidžetu za komentare,
-[kao što je opisano ovde](/guide-customizations-and-configuration.html#moderation-group-ids).
+Ово се може поставити [додавањем неких група](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) и затим навођењем одговарајућих `Moderation Group` ID‑ева у виџету за коментаре,
+[као што је описано овде](/guide-customizations-and-configuration.html#moderation-group-ids).
+
+---

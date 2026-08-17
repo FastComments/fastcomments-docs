@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| commentData | CommentData | Yes |  |
-| sessionId | string | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| broadcastId | string | Да |  |
+| commentData | CommentData | Да |  |
+| sessionId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateCommentPublicResponse.ts)
+Враћа: [`CreateCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateCommentPublicResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant-abc123";

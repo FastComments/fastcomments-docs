@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| banUserUndoParams | BanUserUndoParams | Da |  |
-| sso | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| banUserUndoParams | BanUserUndoParams | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postBanUserUndo Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserUndo Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 BanUserUndoParams banParams;
@@ -21,6 +21,6 @@ banParams.reason = utility::string_t(U("reinstated"));
 boost::optional<utility::string_t> sso = utility::string_t(U("sso-token-abc"));
 
 api->postBanUserUndo(tenantId, banParams, sso).then([](std::shared_ptr<APIEmptyResponse> resp){
-    // obradi uspeh
+    // обради успех
 });
 [inline-code-end]

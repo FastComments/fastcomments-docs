@@ -1,15 +1,15 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | GetCountOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | GetCountOptions | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`Option[ModerationAPICountCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_count_comments_response.nim)
+Враћа: [`Option[ModerationAPICountCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_count_comments_response.nim)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getCount'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

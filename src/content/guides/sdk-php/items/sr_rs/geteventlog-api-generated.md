@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| userIdWS | string | query | Da |  |
-| startTime | integer | query | Da |  |
-| endTime | integer | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| userIdWS | string | query | Да |  |
+| startTime | integer | query | Да |  |
+| endTime | integer | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetEventLogResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getEventLog'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getEventLog Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,14 +27,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
-$user_id_ws = 'user_id_ws_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
+$url_id = 'url_id_example'; // стринг
+$user_id_ws = 'user_id_ws_example'; // стринг
 $start_time = 56; // int
 $end_time = 56; // int
 
@@ -46,3 +46,5 @@ try {
     echo 'Exception when calling PublicApi->getEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

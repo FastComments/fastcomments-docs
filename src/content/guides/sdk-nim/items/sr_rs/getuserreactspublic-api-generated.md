@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | GetUserReactsPublicOptions | No |  |
+| tenantId | string | Да |  |
+| options | GetUserReactsPublicOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_user_reacts_response.nim)
+Враћа: [`Option[UserReactsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_user_reacts_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'getUserReactsPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

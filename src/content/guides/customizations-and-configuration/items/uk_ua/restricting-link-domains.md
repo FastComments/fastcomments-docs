@@ -1,10 +1,12 @@
-By default, FastComments allows linking to any external site.
+---
+За замовчуванням FastComments дозволяє посилання на будь‑який зовнішній сайт.
 
-This can be restricted to instead a desired list of sites, or domains. Attempting to post a link to a site, or domain,
-not in the defined list will cause an error to be shown to the user.
+Це можна обмежити бажаним списком сайтів або доменів. Спроба опублікувати посилання на сайт або домен,
+який не входить у визначений список, призведе до показу помилки користувачеві.
 
-This validation is only for the Comment Widget and API. Imports are not affected.
+Ця перевірка застосовується лише до віджета коментарів та API. Імпорти не підлягають впливу.
 
-This is done without code, on the widget customization page:
+Це здійснюється без коду, на сторінці налаштування віджета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Налаштування зовнішніх посилань зі списком обмежених доменів, куди вводяться дозволені сайти'; title='Обмежити домени зовнішніх посилань' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Налаштування зовнішніх посилань зі списком обмежених доменів, де вводяться дозволені сайти'; title='Обмежити домени зовнішніх посилань' app-screenshot-end]
+---

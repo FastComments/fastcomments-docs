@@ -1,8 +1,8 @@
-### Osnovni primer
+### Основни пример
 
-Najjednostavniji način korišćenja Image Chat-a je ciljanje jednog elementa slike. Ovaj primer pokazuje kako omogućiti interaktivne diskusije na slici:
+Најједноставнији начин за коришћење Image Chat‑а је да се циља један елемент слике. Овај пример показује како омогућити интерактивне дискусије на слици:
 
-[inline-code-attrs-start title = 'Osnovni primer Image Chata'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Основни пример Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
@@ -22,11 +22,11 @@ Najjednostavniji način korišćenja Image Chat-a je ciljanje jednog elementa sl
 </html>
 [inline-code-end]
 
-### Primer sa elementom kontejnera
+### Пример са контејнер елементом
 
-Takođe možete proslediti element kontejnera koji sadrži sliku:
+Можете такође проследити контејнер елемент који садржи слику унутар себе:
 
-[inline-code-attrs-start title = 'Image Chat sa kontejnerom'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Image Chat са контејнером'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <div id="image-container">
     <img src="https://fastcomments.com/images/image-chat-demo-1.jpg" alt="System Diagram" />
@@ -40,28 +40,28 @@ Takođe možete proslediti element kontejnera koji sadrži sliku:
 </script>
 [inline-code-end]
 
-### Primer sa prilagođenim URL ID-jem
+### Пример са прилагођеним URL ID
 
-Po defaultu, Image Chat koristi URL stranice kombinovan sa izvorom slike i koordinatama kako bi identifikovao razgovore. Možete navesti prilagođeni `urlId`:
+Подразумевано, Image Chat користи URL странице у комбинацији са извором слике и координатама за идентификацију разговора. Можете обезбедити прилагођени `urlId`:
 
-[inline-code-attrs-start title = 'Image Chat sa prilagođenim URL ID-jem'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Image Chat са прилагођеним URL ID'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 <script>
     FastCommentsImageChat(document.getElementById('product-image'), {
-        tenantId: 'demo',
+        tenantId: 'demo,
         urlId: 'product-v2-main-image'
     });
 </script>
 [inline-code-end]
 
-Ovo je korisno ako se struktura vaših URL-ova promeni, ali želite da zadržite iste razgovore, ili ako želite da delite iste tačke diskusije na više stranica.
+Ово је корисно ако се ваша структура URL‑а промени, али желите да задржите исте разговоре, или ако желите да делите исте тачке дискусије на више страница.
 
-### Primer sa tamnim režimom
+### Пример са тамним режимом
 
-Ako vaša stranica ima tamnu pozadinu i vidžet je ne detektuje automatski kako bi trebalo, možemo ručno omogućiti podršku za tamni režim:
+Ако ваш сајт има тамну позадину и виџет не открива то аутоматски као што треба, можемо ручно омогућити подршку за тамни режим:
 
-[inline-code-attrs-start title = 'Image Chat sa tamnim režimom'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Image Chat са тамним режимом'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 <script>
@@ -72,11 +72,11 @@ Ako vaša stranica ima tamnu pozadinu i vidžet je ne detektuje automatski kako 
 </script>
 [inline-code-end]
 
-### Primer sa prilagođenom veličinom kvadratića za chat
+### Пример са прилагођеном величином квадрата за ћаскање
 
-Možete podesiti veličinu klikabilnih kvadratića koji se pojavljuju na slici. Veličina se navodi kao procenat širine slike:
+Можете подесити величину кликљивих квадрата који се појављују на слици. Величина се задаје као проценат ширине слике:
 
-[inline-code-attrs-start title = 'Image Chat sa prilagođenom veličinom kvadrata'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Image Chat са прилагођеном величином квадрата'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
@@ -90,18 +90,18 @@ Možete podesiti veličinu klikabilnih kvadratića koji se pojavljuju na slici. 
     <script>
         FastCommentsImageChat(document.getElementById('product-image'), {
             tenantId: 'demo',
-            chatSquarePercentage: 2, // Manji kvadratići (podrazumevano je 5)
+            chatSquarePercentage: 2, // Мањи квадрати (подразумевано је 5)
         });
     </script>
 </body>
 </html>
 [inline-code-end]
 
-### Primer sa callback-om za broj komentara
+### Пример са повратним позивом за број коментара
 
-Pratite kada se komentari dodaju ili ažuriraju koristeći callback `commentCountUpdated`:
+Пратите када се коментари додају или ажурирају користећи `commentCountUpdated` повратни позив:
 
-[inline-code-attrs-start title = 'Image Chat sa callback-om za broj komentara'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Image Chat са повратним позивом за број коментара'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 <script>
@@ -115,29 +115,27 @@ Pratite kada se komentari dodaju ili ažuriraju koristeći callback `commentCoun
 </script>
 [inline-code-end]
 
-### Primer sa više slika
+### Пример са више слика
 
-Možete inicijalizovati Image Chat na više slika. Svaka slika će imati svoje nezavisne tačke diskusije:
+Можете иницијализовати Image Chat на више слика. Свака слика ће имати своје независне тачке дискусије:
 
-[inline-code-attrs-start title = 'Image Chat na više slika'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Image Chat на више слика'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <img id="image-1" src="https://fastcomments.com/images/image-chat-demo-1.jpg" alt="Photo 1" />
 <img id="image-2" src="https://fastcomments.com/images/image-chat-demo-1.jpg" alt="Photo 2" />
 
 <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 <script>
-    // Inicijalizuj na prvoj slici
+    // Initialize on first image
     FastCommentsImageChat(document.getElementById('image-1'), {
         tenantId: 'demo',
         urlId: 'gallery-photo-1'
     });
 
-    // Inicijalizuj na drugoj slici
+    // Initialize on second image
     FastCommentsImageChat(document.getElementById('image-2'), {
         tenantId: 'demo',
         urlId: 'gallery-photo-2'
     });
 </script>
 [inline-code-end]
-
----

@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | No |  |
 | userId | string = "" | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket_response.nim)
+Враћа: [`Option[GetTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_ticket_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

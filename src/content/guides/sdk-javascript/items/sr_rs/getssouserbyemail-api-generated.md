@@ -1,15 +1,16 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| email | string | Da |  |
+| tenantId | string | Да |  |
+| 
+| email | string | Да | |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByEmailAPIResponse.ts)
+Враћа: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByEmailAPIResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getSSOUserByEmail'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,5 +22,3 @@ async function fetchSSOUser() {
   const user: APISSOUser | undefined = result?.user;
 }
 [inline-code-end]
-
----

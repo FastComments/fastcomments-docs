@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| domainToUpdate | string | path | Da |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| domainToUpdate | string | path | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `PutDomainConfigResponse`
+Враћа: `PutDomainConfigResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer putDomainConfig'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -31,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->putDomainConfig: $e\n');
 }
 [inline-code-end]
-
----

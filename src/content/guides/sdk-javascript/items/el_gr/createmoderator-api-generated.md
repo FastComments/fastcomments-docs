@@ -1,17 +1,17 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createModeratorBody | CreateModeratorBody | Yes |  |
 
-## Response
+## Απάντηση
 
-Returns: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Επιστρέφει: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'createModerator Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runExample() {
   const tenantId: string = "tenant_9876";

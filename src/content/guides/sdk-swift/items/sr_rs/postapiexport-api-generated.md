@@ -1,33 +1,33 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| sso | string | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| text-search | string | query | Не |  |
+| byIPFromComment | string | query | Не |  |
+| filters | string | query | Не |  |
+| searchFilters | string | query | Не |  |
+| sorts | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportResponse.swift)
+Враћа: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postApiExport Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći kod primeri su i dalje beta. Za bilo koji problem, molimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, молимо пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let textSearch = "textSearch_example" // String |  (opcionalno)
-let byIPFromComment = "byIPFromComment_example" // String |  (opcionalno)
-let filters = "filters_example" // String |  (opcionalno)
-let searchFilters = "searchFilters_example" // String |  (opcionalno)
-let sorts = "sorts_example" // String |  (opcionalno)
-let sso = "sso_example" // String |  (opcionalno)
+let textSearch = "textSearch_example" // String |  (опционално)
+let byIPFromComment = "byIPFromComment_example" // String |  (опционално)
+let filters = "filters_example" // String |  (опционално)
+let searchFilters = "searchFilters_example" // String |  (опционално)
+let sorts = "sorts_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
 ModerationAPI.postApiExport(tenantId: tenantId, options: ModerationAPI.PostApiExportOptions(textSearch: textSearch, byIPFromComment: byIPFromComment, filters: filters, searchFilters: searchFilters, sorts: sorts, sso: sso)) { (response, error) in
     guard error == nil else {

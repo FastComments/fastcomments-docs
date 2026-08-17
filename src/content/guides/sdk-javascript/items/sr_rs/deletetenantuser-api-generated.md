@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | deleteComments | string | No |  |
 | commentDeleteMode | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+Враћа: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoDeleteTenantUser() {
   const tenantId: string = "acme-corp-tenant";
   const userId: string = "user-9876";
 
-  // Izbrišite korisnika i sve njegove komentare, koristeći hard delete režim
+  // Обришите корисника и све његове коментаре, користећи режим трајног брисања
   const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
     tenantId,
     userId,
@@ -27,7 +27,9 @@ async function demoDeleteTenantUser() {
     "hard"
   );
 
-  // Izbrišite korisnika bez uklanjanja komentara (podrazumevano ponašanje)
+  // Обришите корисника без уклањања коментара (подразумевано понашање)
   const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
 }
 [inline-code-end]
+
+---

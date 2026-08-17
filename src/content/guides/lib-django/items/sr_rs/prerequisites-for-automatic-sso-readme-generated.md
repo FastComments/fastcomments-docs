@@ -1,11 +1,8 @@
 ---
-Da biste automatski prosledili prijavljenog korisnika widgetu, tagovi čitaju
-trenutnog korisnika iz zahteva. Uverite se da vaš projekat ima oba ova
-podešavanja (podrazumevano su uključena u standardnom Django projektu):
+Да бисте аутоматски прослали пријављеног корисника у виџет, ознаке читају тренутног корисника из захтева. Уверите се да ваш пројекат има оба ова (они су подразумевано укључени у стандардном Django пројекту):
 
-- `django.template.context_processors.request` u `TEMPLATES["OPTIONS"]["context_processors"]`
-- `django.contrib.auth.middleware.AuthenticationMiddleware` u `MIDDLEWARE`
+- `django.template.context_processors.request` у `TEMPLATES["OPTIONS"]["context_processors"]`
+- `django.contrib.auth.middleware.AuthenticationMiddleware` у `MIDDLEWARE`
 
-Bez zahteva u kontekstu šablona, widgeti se renderuju za anonimnog
-posetioca. Uvek možete izričito proslediti korisnika: `{% fastcomments user=some_user %}`.
+Без захтева у контексту шаблона, виџети се приказују за анонимног посетилаца. Увек можете експлицитно проследити корисника: `{% fastcomments user=some_user %}`.
 ---

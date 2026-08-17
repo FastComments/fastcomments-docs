@@ -1,15 +1,15 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| page | f64 | No |  |
+| tenant_id | String | はい |  |
+| page | f64 | いいえ |  |
 
-## Response
+## 応答
 
-Returns: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
+返却: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_hash_tags_response.rs)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'get_hash_tags の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,5 +22,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

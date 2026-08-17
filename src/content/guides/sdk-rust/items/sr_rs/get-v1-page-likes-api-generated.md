@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetV1PageLikes`
+Враћа: `GetV1PageLikes`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_v1_page_likes'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_v1_page_likes'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetV1PageLikesParams {
@@ -22,3 +22,5 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
+
+---

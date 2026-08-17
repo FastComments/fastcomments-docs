@@ -1,17 +1,14 @@
-With FastComments, `username` must be unique across all sites and communities. This is because it used to log you in to fastcomments.com.
+---
+עם FastComments, `username` חייב להיות ייחודי בכל האתרים והקהילות. זה מכיוון שהוא משמש להתחברות ל‑fastcomments.com.
 
-The exception is SSO - since SSO users are tied to a specific FastComments.com Tenant - they can have any username within that community.
+החריגה היא SSO - מכיוון שמשתמשי SSO קשורים לשוכר ספציפי של FastComments.com - הם יכולים להשתמש בכל שם משתמש בתוך הקהילה ההיא.
 
-#### Display Names
+#### שמות תצוגה
 
-FastComments also supports `Display Name`. Display names do not have to be unique, and may contain emojis. You can set your display name
-on the [Account Details](https://fastcomments.com/auth/my-account/edit-details) page.
+FastComments תומכת גם ב‑`Display Name`. שמות תצוגה אינם חייבים להיות ייחודיים, ויכולים לכלול אימוג'ים. ניתן להגדיר את שם התצוגה שלך בעמוד [Account Details](https://fastcomments.com/auth/my-account/edit-details).
 
-#### Display Name Uniqueness
+#### ייחודיות שם תצוגה
 
-If two FastComments.com users, on two very different major communities both have similar names, then we'd like
-them to just be able to set their preferred display name. However, we can't restrict where people comment with their global FastComments account, so sometimes this may
-result in confusion.
+אם שני משתמשי FastComments.com, בשתי קהילות גדולות ושונות מאוד, יש להם שמות דומים, נרצה שהם יוכלו פשוט להגדיר את שם התצוגה המועדף שלהם. עם זאת, איננו יכולים להגביל היכן אנשים מגיבים עם חשבון FastComments גלובלי שלהם, ולכן לפעמים זה עלול לגרום לבלבול.
 
-Having a similar name to another user, or a moderator, by itself is not a case for abuse. However, if you abuse this by intentionally impersonating other users, we may
-disable this feature on your account, and you will be limited to just using `username`.
+להיות בעל שם דומה למשתמש אחר או למנהל אינו בפני עצמו מקרה של ניצול לרעה. עם זאת, אם אתה מנצל זאת על ידי התחזות מכוונת למשתמשים אחרים, ייתכן שנבטל את התכונה הזו בחשבונך, ותוגבל לשימוש רק ב‑`username`.

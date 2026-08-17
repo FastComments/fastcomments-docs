@@ -1,10 +1,10 @@
 [api-resource-header-start name = 'TenantDailyUsage'; route = 'GET /api/v1/tenant-daily-usage'; creditsCost = 1; api-resource-header-end]
 
-This route allows searching for the usage of a tenant by year, month, and day. Up to 365 objects can be returned, and the cost is 1 api credit per 10 objects.
+Цей маршрут дозволяє шукати використання орендаря за роком, місяцем і днем. Можна повернути до 365 об’єктів, а вартість становить 1 кредит API за 10 об’єктів.
 
-Response objects are sorted by the date they are created (the oldest first).
+Об’єкти відповіді сортуються за датою їх створення (найстаріші першими).
 
-[inline-code-attrs-start title = 'Приклад cURL-запиту для пошуку TenantDailyUsage'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад cURL запиту TenantDailyUsage Search'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/tenant-daily-usage?tenantId=demo&API_KEY=DEMO_API_SECRET&yearNumber=2022&monthNumber=2&dayNumber=10'
@@ -15,11 +15,11 @@ curl --request GET \
 interface TenantDailyUsageQueryParams {
     tenantId: string
     API_KEY: string
-    /** На основі UTC. **/
+    /** Based on UTC. **/
     yearNumber?: number
-    /** Нульова індексація. На основі UTC. **/
+    /** Zero-based. Based on UTC. **/
     monthNumber?: number
-    /** Індексація з одиниці. На основі UTC. **/
+    /** One-based. Based on UTC. **/
     dayNumber?: number
 }
 [inline-code-end]
@@ -28,9 +28,9 @@ interface TenantDailyUsageQueryParams {
 [inline-code-start]
 interface TenantDailyUsageResponse {
     status: 'success' | 'failed'
-    /** Включається при невдачі. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
-    /** Включається при невдачі. **/
+    /** Included on failure. **/
     reason?: string
     tenantDailyUsages: TenantDailyUsage[]
 }

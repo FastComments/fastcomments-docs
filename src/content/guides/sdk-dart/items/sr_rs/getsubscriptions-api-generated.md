@@ -1,22 +1,22 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
 
-## Odgovor
+## Response
 
-Vraća: `GetSubscriptionsAPIResponse`
+Враћа: `GetSubscriptionsAPIResponse`
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getSubscriptions'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 // TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// ukomentarišite donji red da podesite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// откоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -30,3 +30,5 @@ try {
     print('Exception when calling DefaultApi->getSubscriptions: $e\n');
 }
 [inline-code-end]
+
+---

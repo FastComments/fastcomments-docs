@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| urlId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| voteBodyParams | VoteBodyParams | Yes |  |
-| sessionId | string | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| urlId | string | Да |  |
+| broadcastId | string | Да |  |
+| voteBodyParams | VoteBodyParams | Да |  |
+| sessionId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteCommentResponse.ts)
+Враћа: [`VoteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'voteComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример voteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-corp";
 const commentId: string = "cmt_9f8e7d6c";
@@ -24,8 +24,8 @@ const urlId: string = "url_123456";
 const broadcastId: string = "bcast_2024_01";
 
 const voteBodyParams: VoteBodyParams = {
-  vote: "up",               // e.g., "up" | "down"
-  weight: 1,                // optional weighting of the vote
+  vote: "up",               // нпр., "up" | "down"
+  weight: 1,                // опционо што одређује тежину гласа
 };
 
 const sessionId: string = "sess_abc123def";

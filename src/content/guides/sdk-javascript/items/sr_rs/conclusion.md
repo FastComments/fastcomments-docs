@@ -1,12 +1,12 @@
-## Trebate pomoć?
+## Потребна помоћ?
 
-Ako naiđete na bilo kakve probleme ili imate pitanja u vezi JavaScript/TypeScript SDK-a, molimo:
+Ако наиђете на било какве проблеме или имате питања у вези са JavaScript/TypeScript SDK-ом, молимо вас:
 
-- [Otvorite issue na GitHubu](https://github.com/FastComments/fastcomments-sdk-js/issues)
-- [Kontaktirajte podršku FastComments](https://fastcomments.com/auth/my-account/help)
+- [Отворите проблем на GitHub](https://github.com/FastComments/fastcomments-sdk-js/issues)
+- [Контактирајте FastComments подршку](https://fastcomments.com/auth/my-account/help)
 
-## Doprinosi
+## Допринес
 
-Doprinosi su dobrodošli! Posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-sdk-js) za smernice o doprinosu.
+Доприноси су добродошли! Молимо посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-sdk-js) за смернице за допринос.
 
 ---

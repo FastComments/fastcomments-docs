@@ -1,7 +1,7 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | page | integer | query | No |  |
 | limit | integer | query | No |  |
@@ -20,19 +20,19 @@
 | fromDate | integer | query | No |  |
 | toDate | integer | query | No |  |
 
-## Odgovor
+## Response
 
-Vraća: `APIGetCommentsResponse`
+Враћа: `APIGetCommentsResponse`
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer getComments'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComments Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Конфигуриши ауторизацију API кључа: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// odkomentari dole da postaviš prefiks (npr. Bearer) за API кључ, ако је потребно
+// одкоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
 final tenantId = tenantId_example; // String | 

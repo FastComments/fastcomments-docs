@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| comment_id | String | Yes |  |
-| vote_id | String | Yes |  |
-| broadcast_id | String | No |  |
-| sso | String | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| comment_id | String | Да |  |
+| vote_id | String | Да |  |
+| broadcast_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_moderation_vote Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_moderation_vote Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = DeleteModerationVoteParams {

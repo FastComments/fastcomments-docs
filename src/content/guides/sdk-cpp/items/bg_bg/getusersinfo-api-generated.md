@@ -24,9 +24,9 @@ boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
     try{
         auto response = t.get();
-        // process response
+        // обработка на отговора
     }catch(const std::exception&){
-        // handle error
+        // обработка на грешка
     }
 });
 [inline-code-end]

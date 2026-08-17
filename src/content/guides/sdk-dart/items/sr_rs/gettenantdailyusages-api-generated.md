@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| yearNumber | number | query | Ne |  |
-| monthNumber | number | query | Ne |  |
-| dayNumber | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetTenantDailyUsagesResponse`
+Returns: `GetTenantDailyUsagesResponse`
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTenantDailyUsages'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Конфигуриши ауторизацију API кључа: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// одкоментариши доле да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

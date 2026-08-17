@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| urlId | string | query | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIEmptyResponse`
+Враћа: `APIEmptyResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putReopenThread Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putReopenThread Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

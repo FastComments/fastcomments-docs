@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantManualBadgesResponse.java)
+Враћа: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetTenantManualBadgesResponse.java)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getManualBadges'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,18 +26,18 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     ModerationApi apiInstance = new ModerationApi(defaultClient);
-    String tenantId = "tenantId_example"; // String |
-    String sso = "sso_example"; // String |
+    String tenantId = "tenantId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetTenantManualBadgesResponse result = apiInstance.getManualBadges(tenantId)
             .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Izuzetak prilikom pozivanja ModerationApi#getManualBadges");
-      System.err.println("Status kod: " + e.getCode());
-      System.err.println("Razlog: " + e.getResponseBody());
-      System.err.println("Zaglavlja odgovora: " + e.getResponseHeaders());
+      System.err.println("Изузетак приликом позивања ModerationApi#getManualBadges");
+      System.err.println("Статус код: " + e.getCode());
+      System.err.println("Разлог: " + e.getResponseBody());
+      System.err.println("Заглавља одговора: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

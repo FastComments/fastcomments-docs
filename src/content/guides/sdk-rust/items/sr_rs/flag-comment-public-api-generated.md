@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| is_flagged | bool | Da |  |
-| sso | String | Ne |  |
+| tenant_id | String | Да |  |
+| comment_id | String | Да |  |
+| is_flagged | bool | Да |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer flag_comment_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'flag_comment_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = FlagCommentPublicParams {

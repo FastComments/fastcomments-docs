@@ -1,16 +1,16 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 응답
 
-Returns: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationSiteSearchResponse.php)
+반환: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationSiteSearchResponse.php)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'getSearchSites 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,14 +21,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이것은 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 이는 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // string
+$tenant_id = 'tenant_id_example'; // 문자열
 $options = [
-    'value' => 'value_example', // string
-    'sso' => 'sso_example', // string
+    'value' => 'value_example', // 문자열
+    'sso' => 'sso_example', // 문자열
 ];
 
 

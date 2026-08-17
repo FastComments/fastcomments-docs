@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | usernameStartsWith | string | query | No |  |
@@ -9,11 +9,11 @@
 | sso | string | query | No |  |
 | searchSection | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
+Враћа: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SearchUsersResult.php)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'searchUsers Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,19 +22,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+$apiInstance = new FastComments\Client\Api\PublicApi(
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
+$url_id = 'url_id_example'; // стринг
 $options = [
-    'username_starts_with' => 'username_starts_with_example', // string
-    'mention_group_ids' => array('mention_group_ids_example'), // string[]
-    'sso' => 'sso_example', // string
-    'search_section' => 'search_section_example', // string
+    'username_starts_with' => 'username_starts_with_example', // стринг
+    'mention_group_ids' => array('mention_group_ids_example'), // стринг[]
+    'sso' => 'sso_example', // стринг
+    'search_section' => 'search_section_example', // стринг
 ];
 
 
@@ -45,5 +45,3 @@ try {
     echo 'Exception when calling PublicApi->searchUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

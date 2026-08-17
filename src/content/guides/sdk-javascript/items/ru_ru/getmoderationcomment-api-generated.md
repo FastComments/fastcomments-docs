@@ -1,6 +1,6 @@
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | commentId | string | Yes |  |
 | includeEmail | boolean | No |  |
@@ -8,11 +8,11 @@
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## Ответ
 
-Returns: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Возвращает: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,9 +32,11 @@ async function fetchCommentDetails() {
     sso
   );
 
-  // Минимальный вызов, используя только обязательный аргумент
+  // Минимальный вызов, использующий только обязательный аргумент
   const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
 
   // Используйте результаты по мере необходимости...
 }
 [inline-code-end]
+
+---

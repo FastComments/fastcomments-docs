@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createCommentParams | CreateCommentParams | Yes |  |
 | options | const SaveCommentOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
+Враћа: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'saveComment Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 CreateCommentParams commentParams;
 commentParams.body = utility::string_t(U("Great article!"));
@@ -27,3 +27,5 @@ api->saveComment(utility::string_t(U("my-tenant-123")), commentParams, options)
         auto commentId = response->commentId;
     });
 [inline-code-end]
+
+---

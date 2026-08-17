@@ -1,27 +1,25 @@
-The **FastComments - Recent Discussions** block lists the pages on your store with the most recent comment activity, one entry per page. Use it when you want visitors to discover active threads rather than individual comments.
+The **FastComments - Recent Discussions** block מציג את הדפים בחנות שלך עם פעילות ההערות העדכנית ביותר, ערך אחד לכל דף. השתמש בו כאשר ברצונך שהמבקרים יגלו שרשורים פעילים במקום הערות בודדות.
 
-### Add the block
+### הוספת הבלוק
 
-1. Open the Shopify theme editor.
-2. Open the template where you want the feed, such as a sidebar, footer, blog index, or homepage section.
-3. Click **Add block** in the section that should hold it.
-4. Under **Apps**, select **FastComments - Recent Discussions**.
-5. Click **Save**.
+1. פתח את עורך ערכת הנושא של Shopify.  
+2. פתח את התבנית שבה אתה רוצה את הפיד, כגון סרגל צד, כותרת תחתונה, אינדקס בלוג, או מקטע בדף הבית.  
+3. לחץ על **Add block** בחלק שבו הוא צריך להיות.  
+4. תחת **Apps**, בחר ב-**FastComments - Recent Discussions**.  
+5. לחץ על **Save**.
 
-### Settings
+### הגדרות
 
-| Setting | What it does | Default |
+| הגדרה | מה עושה | ברירת מחדל |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the feed reads from. Leave blank to use the store's automatically-configured tenant. | (blank) |
-| Number of comments | How many recent discussions to show. Range 1 to 50. | 20 |
+| Tenant ID (אופציונלי) | עוקף את ה‑tenant של FastComments שממנו הפיד קורא. השאר ריק כדי להשתמש ב‑tenant שהוגדר אוטומטית עבור החנות. | (blank) |
+| Number of comments | כמה שיחות עדכניות להציג. טווח 1 עד 50. | 20 |
 
-### Recent Discussions vs Recent Comments
+### שיחות עדכניות מול הערות עדכניות
 
-Both blocks pull from the same data, but they show different views:
+שני הבלוקים מושכים את אותם הנתונים, אך הם מציגים תצוגות שונות:
 
-- **Recent Comments**: a flat list of the latest individual comments. Best for "what was just said".
-- **Recent Discussions**: one entry per page, ordered by most recent activity. Best for "which threads are alive right now".
+- **Recent Comments**: רשימה שטוחה של ההערות הבודדות האחרונות. מתאים ל-"מה שנאמר זה עתה".  
+- **Recent Discussions**: ערך אחד לכל דף, ממויין לפי הפעילות העדכנית ביותר. מתאים ל-"אילו שרשורים פעילים כרגע".
 
-You can use both on the same store. For example, Recent Comments in the blog sidebar and Recent Discussions on the home page.
-
----
+אתה יכול להשתמש בשניהם באותה חנות. לדוגמה, Recent Comments בסרגל הצד של הבלוג ו‑Recent Discussions בדף הבית.

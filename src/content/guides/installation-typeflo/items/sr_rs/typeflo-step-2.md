@@ -1,6 +1,6 @@
-U odeljku **Footer** na kartici Custom Code, nalepite sledeći kod:
+In the **Footer** section of the Custom Code tab, paste the following code:
 
-[inline-code-attrs-start title = 'Typeflo.io Isječak koda za komentare uživo'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Typeflo.io Live коментари исечак'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js" async></script>
 <script>
@@ -44,12 +44,12 @@ U odeljku **Footer** na kartici Custom Code, nalepite sledeći kod:
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Nalepite kod u odeljak Footer</div>
-    <img class="screenshot-image" src="/images/installation-guides/typeflo-step-3-paste-code-in-footer-section.png" alt="Nalepite FastComments kod u odeljak Footer" />
+    <div class="title">Налепите код у одељку подножја</div>
+    <img class="screenshot-image" src="/images/installation-guides/typeflo-step-3-paste-code-in-footer-section.png" alt="Налепите FastComments код у одељку подножја" />
 </div>
 
-Nakon što nalepite kod, kliknite dugme **Sačuvaj** da primenite izmene.
+After pasting the code, click the **Save** button to apply your changes.
 
-Napomena: Ovaj kod sadrži logiku za dinamičko postavljanje FastComments widgeta u optimalnu poziciju na vašim Typeflo.io blog objavama. Ostali isječci koda neće ispravno raditi sa rasporedom Typeflo.io.
+**Напомена:** Овај код садржи логику за динамичко постављање FastComments виџета на оптимално место у вашим Typeflo.io блог постовима. Други кодни исечци неће исправно радити са распоредом Typeflo.io‑а.
 
-Zapamtite da zamenite 'demo' stvarnim FastComments tenant ID-om nakon registracije. Ako ste prijavljeni na FastComments.com, on bi već trebalo da bude zamenjen.
+Запамтите да замените `'demo'` вашим стварним FastComments tenant ID‑јем након регистрације. Ако сте пријављени на FastComments.com, он би већ требао бити замењен.

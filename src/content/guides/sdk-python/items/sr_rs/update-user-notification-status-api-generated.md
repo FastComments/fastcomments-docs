@@ -1,40 +1,40 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| notificationId | string | path | Da |  |
-| newStatus | string | path | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| notificationId | string | path | Да |  |
+| newStatus | string | path | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
+Враћа: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/update_user_notification_status_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer za update_user_notification_status'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_status Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.update_user_notification_status_response import UpdateUserNotificationStatusResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     notification_id = 'notification_id_example' # str | 
     new_status = 'new_status_example' # str | 
-    sso = 'sso_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.update_user_notification_status(tenant_id, notification_id, new_status, sso=sso)

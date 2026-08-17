@@ -1,15 +1,15 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| create_tenant_package_body | models::CreateTenantPackageBody | Yes |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|------|------|
+| tenant_id | String | 예 |  |
+| create_tenant_package_body | models::CreateTenantPackageBody | 예 |  |
 
-## Response
+## 응답
 
-Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_response.rs)
+반환: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_package_response.rs)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'create_tenant_package 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

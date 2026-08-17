@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | value | string | No |  |
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSearchUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchUsersResponse.ts)
+Враћа: [`GetSearchUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchUsersResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSearchUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSearchUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoSearch() {
     const query: string = "john.doe@example.com";
@@ -23,5 +23,3 @@ async function demoSearch() {
     const resultWithoutSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId);
 }
 [inline-code-end]
-
----

@@ -1,18 +1,17 @@
----
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| create_apisso_user_data | models::CreateApissoUserData | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| create_apisso_user_data | models::CreateApissoUserData | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AddSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_sso_user_api_response.rs)
+Враћа: [`AddSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_sso_user_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'add_sso_user Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_sso_user Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let user_data = models::CreateApissoUserData {

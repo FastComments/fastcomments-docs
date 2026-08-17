@@ -1,31 +1,31 @@
-req
+запит
 tenantId
 afterId
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
+| Назва | Тип | Розташування | Обов’язково | Опис |
+|------|------|--------------|-------------|------|
+| tenantId | string | query | Так |  |
+| afterId | string | query | Ні |  |
+| limit | integer | query | Ні |  |
+| tags | array | query | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
+Повертає: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще є бета‑версією. У разі будь‑якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (optional)
-let limit = 987 // Int |  (optional)
-let tags = ["inner_example"] // [String] |  (optional)
+let afterId = "afterId_example" // String | (необов’язково)
+let limit = 987 // Int | (необов’язково)
+let tags = ["inner_example"] // [String] | (необов’язково)
 
 DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {

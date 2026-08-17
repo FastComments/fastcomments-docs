@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | commentId | string | Yes |  |
 | includeByUserIdAndEmail | boolean | No |  |
@@ -9,13 +9,13 @@
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPreBanSummaryResponse.ts)
+Враћа: [`GetPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPreBanSummaryResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const commentId: string = "5f8d0c2e4b1a2c3d4e5f6a7b";
 const includeByUserIdAndEmail: boolean = true;
@@ -33,3 +33,5 @@ const preBanSummary: GetPreBanSummaryResponse = await getPreBanSummary(
   sso
 );
 [inline-code-end]
+
+---

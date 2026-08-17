@@ -2,7 +2,7 @@
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 예 |  |
 
 ## Response
 
@@ -10,15 +10,15 @@ Returns: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-
 
 ## Example
 
-[inline-code-attrs-start title = 'addHashTag 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API 키 인증 설정: api_key
+// API 키 인증 구성: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 필요에 따라 API 키에 접두사(예: Bearer)를 설정하려면 아래 주석을 해제하세요
+// 필요에 따라 API 키에 대한 접두사(e.g. Bearer)를 설정하려면 아래 주석을 해제하세요
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 

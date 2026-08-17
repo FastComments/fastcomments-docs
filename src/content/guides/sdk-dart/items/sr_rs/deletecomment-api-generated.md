@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| contextUserId | string | query | Ne |  |
-| isLive | boolean | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
+| contextUserId | string | query | Не |  |
+| isLive | boolean | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `DeleteCommentResult`
+Враћа: `DeleteCommentResult`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteComment Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteComment Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// откоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -31,6 +31,6 @@ try {
     final result = api_instance.deleteComment(tenantId, id, DeleteCommentOptions(contextUserId: contextUserId, isLive: isLive));
     print(result);
 } catch (e) {
-    print('Izuzetak prilikom pozivanja DefaultApi->deleteComment: $e\n');
+    print('Exception when calling DefaultApi->deleteComment: $e\n');
 }
 [inline-code-end]

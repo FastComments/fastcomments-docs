@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| create_api_user_subscription_data | models::CreateApiUserSubscriptionData | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| create_api_user_subscription_data | models::CreateApiUserSubscriptionData | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_subscription_api_response.rs)
+Враћа: [`CreateSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_subscription_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'create_subscription Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_subscription Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run(configuration: &configuration::Configuration) -> Result<(), Error> {
     let subscription_data = models::CreateApiUserSubscriptionData {

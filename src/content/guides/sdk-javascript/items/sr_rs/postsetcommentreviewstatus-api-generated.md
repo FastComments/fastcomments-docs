@@ -1,23 +1,24 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| commentId | string | Da |  |
-| reviewed | boolean | Ne |  |
-| broadcastId | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| commentId | string | Да |  |
+| reviewed | boolean | Не |  |
+| broadcastId | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostSetCommentReviewStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentReviewStatusResponse.ts)
+Враћа: [`PostSetCommentReviewStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentReviewStatusResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postSetCommentReviewStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentReviewStatus Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function updateCommentReviewStatus(): Promise<void> {
   const commentId: string = "cmt_9f8a7b6c5d4e3f2a1b0c";
+  // ...
   const reviewed: boolean = true;
   const broadcastId: string = "broadcast_2024Q1";
   const tenantId: string = "tenant_1001";
@@ -34,3 +35,5 @@ async function updateCommentReviewStatus(): Promise<void> {
   console.log(response);
 }
 [inline-code-end]
+
+---

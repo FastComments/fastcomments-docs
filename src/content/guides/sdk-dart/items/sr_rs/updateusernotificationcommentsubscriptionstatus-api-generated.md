@@ -1,22 +1,22 @@
-Enable or disable notifications for a specific comment.
+Омогућите или онемогућите обавештења за одређени коментар.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
 | tenantId | string | query | Yes |  |
 | notificationId | string | path | Yes |  |
 | optedInOrOut | string | path | Yes |  |
 | commentId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
 Returns: `UpdateUserNotificationCommentSubscriptionStatusResponse`
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationCommentSubscriptionStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

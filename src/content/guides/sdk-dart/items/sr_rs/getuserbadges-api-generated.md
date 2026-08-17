@@ -1,27 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| badgeId | string | query | No |  |
-| type | number | query | No |  |
-| displayedOnComments | boolean | query | No |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| badgeId | string | query | Не |  |
+| type | number | query | Не |  |
+| displayedOnComments | boolean | query | Не |  |
+| limit | number | query | Не |  |
+| skip | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIGetUserBadgesResponse`
+Враћа: `APIGetUserBadgesResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getUserBadges Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBadges'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментаришите доле да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -40,5 +40,3 @@ try {
     print('Exception when calling DefaultApi->getUserBadges: $e\n');
 }
 [inline-code-end]
-
----

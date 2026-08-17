@@ -1,15 +1,15 @@
-A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): a left-rail + main-stage  
-app with a page per widget and a **sign-in page listing pre-seeded demo users**.  
-Sign in as any of them and the comment and live‑chat widgets authenticate that  
-identity via **Secure SSO**. From that directory:
+実行可能なデモは[`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example)にあります: 左側レール + メインステージ  
+ウィジェットごとにページがあるアプリで、**事前にシードされたデモユーザーを一覧表示するサインインページ**です。  
+それらのいずれかでサインインすると、コメントとライブチャットウィジェットがその  
+ID を **Secure SSO** で認証します。そのディレクトリから:
 
 ```bash
 python manage.py migrate
-# Secure SSO を実際に見るために自分のテナントを使用してください（API シークレットが必要です）:
+# Use your own tenant to see Secure SSO in action (an API secret enables it):
 FASTCOMMENTS_TENANT_ID=... FASTCOMMENTS_API_KEY=... python manage.py runserver
 ```
 
-Without an API secret it falls back to the public `demo` tenant (anonymous).  
-[`example/browser_smoke.py`](https://github.com/FastComments/fastcomments-django/blob/main/example/browser_smoke.py) is a Playwright e2e  
-that loads the page in a real browser and posts a comment as the Secure‑SSO  
-user。
+APIシークレットがない場合、パブリックな `demo` テナント（匿名）にフォールバックします。  
+[`example/browser_smoke.py`](https://github.com/FastComments/fastcomments-django/blob/main/example/browser_smoke.py) は Playwright の e2e  
+実際のブラウザでページを読み込み、Secure-SSO  
+ユーザーとしてコメントを投稿します。

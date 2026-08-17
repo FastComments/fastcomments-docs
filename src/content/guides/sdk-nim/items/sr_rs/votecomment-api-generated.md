@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| urlId | string | Da |  |
-| broadcastId | string | Ne |  |
-| voteBodyParams | VoteBodyParams | Ne |  |
-| options | VoteCommentOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | No |  |
+| voteBodyParams | VoteBodyParams | No |  |
+| options | VoteCommentOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
+Враћа: [`Option[VoteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'voteComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (voteRespOpt, httpResp) = client.voteComment(
   tenantId = "my-tenant-123",

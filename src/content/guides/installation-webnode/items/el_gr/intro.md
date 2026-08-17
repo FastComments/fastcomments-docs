@@ -1,1 +1,3 @@
-Webnode's HTML block is what we'll use to embed the comment widget. Since June 26, 2023, this block is a paid Webnode feature: it is not available on the free plan, and projects created after that date need a premium package to use it. If you don't see the `HTML` option in the editor, upgrade your Webnode plan and it will appear.
+---
+Το μπλοκ HTML του Webnode είναι αυτό που θα χρησιμοποιήσουμε για να ενσωματώσουμε το widget σχολίων. Από τις 26 Ιουνίου 2023, αυτό το μπλοκ είναι μια επί πληρωμή λειτουργία του Webnode: δεν είναι διαθέσιμο στο δωρεάν πρόγραμμα, και τα έργα που δημιουργήθηκαν μετά από αυτήν την ημερομηνία χρειάζονται ένα premium πακέτο για να το χρησιμοποιήσουν. Εάν δεν βλέπετε την επιλογή `HTML` στον επεξεργαστή, αναβαθμίστε το πρόγραμμα Webnode σας και θα εμφανιστεί.
+---

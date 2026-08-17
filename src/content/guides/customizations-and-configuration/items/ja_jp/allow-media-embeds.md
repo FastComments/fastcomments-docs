@@ -4,7 +4,7 @@ For security, this is not a client-side widget config flag. It is a server-side 
 
 This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='ウィジェットカスタマイズページでメディア埋め込み設定が有効になり、コメント投稿者が信頼できる iframe 埋め込みを貼り付けられるようになります'; title='メディア埋め込みを許可' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='ウィジェットカスタマイズページでメディア埋め込み設定がオンになり、コメント投稿者が信頼できる iframe 埋め込みを貼り付けられるようになります'; title='メディア埋め込みを許可' app-screenshot-end]
 
 ### Adding Your Own Providers
 

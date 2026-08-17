@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
 | userId | string | query | No |  |
@@ -9,13 +9,13 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_remove_user_badge_response.go)
+Враћа: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_remove_user_badge_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'PutRemoveBadge Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PutRemoveBadge Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	badgeId := "badgeId_example" // string | 
-	userId := "userId_example" // string |  (opcionalno)
-	commentId := "commentId_example" // string |  (opcionalno)
-	broadcastId := "broadcastId_example" // string |  (opcionalno)
-	sso := "sso_example" // string |  (opcionalno)
+	userId := "userId_example" // string |  (опционално)
+	commentId := "commentId_example" // string |  (опционално)
+	broadcastId := "broadcastId_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutRemoveBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor iz `PutRemoveBadge`: RemoveUserBadgeResponse
+	// одговор од `PutRemoveBadge`: RemoveUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutRemoveBadge`: %v\n", resp)
 }
 [inline-code-end]

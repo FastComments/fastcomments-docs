@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetV2PageReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactsResponse.ts)
+Враћа: [`GetV2PageReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactsResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getV2PageReacts Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReacts Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoGetPageReacts(): Promise<void> {
     const tenantId: string = "acme-corp-tenant";
@@ -19,7 +19,7 @@ async function demoGetPageReacts(): Promise<void> {
 
     const reacts: GetV2PageReactsResponse = await getV2PageReacts(tenantId, urlId);
 
-    // primer opcionalnog pristupa svojstvu
+    // пример приступа опционој својини
     const customConfig: CustomConfigParameters | undefined = reacts.customConfig;
     console.log(reacts);
 }

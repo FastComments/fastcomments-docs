@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetBannedUsersCountResponse`
+Враћа: `GetBannedUsersCountResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getCounts Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCounts Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

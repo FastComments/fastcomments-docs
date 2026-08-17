@@ -1,16 +1,16 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | banUserUndoParams | BanUserUndoParams | Yes |  |
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## Απόκριση
 
-Returns: [`PostBanUserUndoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserUndoResponse.ts)
+Επιστρέφει: [`PostBanUserUndoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserUndoResponse.ts)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'postBanUserUndo Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

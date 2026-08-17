@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | Yes |  |
-| updateComments | string | No |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | Да |  |
+| updateComments | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ReplaceTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantUserResponse.ts)
+Враћа: [`ReplaceTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantUserResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'replaceTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function updateUser() {
   const tenantId: string = "c3d1f2e4-5b6a-4c7d-9f2e-1234567890ab";

@@ -1,12 +1,12 @@
-| Ključ | Podrazumevano | Opis |
+| Кључ | Подразумевано | Опис |
 |---|---|---|
-| `TENANT_ID` | `""` | Vaš FastComments tenant ID (`demo` za testiranje). |
-| `API_KEY` | `""` | Vaša API tajna. Potpisuje Secure SSO i autentifikuje `admin()`. |
-| `REGION` | `None` | `None` za SAD, `"eu"` za EU region. |
-| `SSO.ENABLED` | `False` | Uključite SSO. |
-| `SSO.MODE` | `"secure"` | `"secure"` (HMAC) ili `"simple"` (nepotpisano). |
-| `SSO.LOGIN_URL` / `SSO.LOGOUT_URL` | `None` | Prikazano posetiocima koji su odjavljeni; podrazumevano na `reverse("login"/"logout")`. |
-| `SSO.USER_MAP` | id/email/username | FastComments polje do korisničkog atributa/putanje/funkcije. |
-| `SSO.IS_ADMIN` / `IS_MODERATOR` / `GROUP_IDS` | `None` | `callable(user)` ili putanja sa tačkama. |
-| `SSO.USER_MAPPER` | `None` | Putanja sa tačkama do `callable(user) -> dict`; najviši prioritet. |
-| `WIDGET_DEFAULTS` | `{}` | Konfiguracija spojena u svaki widget (camelCase ključevi). |
+| `TENANT_ID` | `""` | Ваш FastComments tenant ID (`demo` за тестирање). |
+| `API_KEY` | `""` | Ваш API тајн. Потписује Secure SSO и аутентификује `admin()`. |
+| `REGION` | `None` | `None` за САД, `"eu"` за EU регион. |
+| `SSO.ENABLED` | `False` | Укључите SSO. |
+| `SSO.MODE` | `"secure"` | `"secure"` (HMAC) или `"simple"` (непотписано). |
+| `SSO.LOGIN_URL` / `SSO.LOGOUT_URL` | `None` | Приказује се одјављеним посетиоцима; подразумевано је `reverse("login"/"logout")`. |
+| `SSO.USER_MAP` | id/email/username | FastComments поље у атрибут/пут/функцију корисника. |
+| `SSO.IS_ADMIN` / `IS_MODERATOR` / `GROUP_IDS` | `None` | `callable(user)` или путања са тачкама. |
+| `SSO.USER_MAPPER` | `None` | Путања са тачкама до `callable(user) -> dict`; највиши приоритет. |
+| `WIDGET_DEFAULTS` | `{}` | Конфигурација спојена у сваки виџет (camelCase кључеви). |

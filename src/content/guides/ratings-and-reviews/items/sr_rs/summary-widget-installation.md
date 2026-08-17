@@ -1,7 +1,7 @@
 ---
-Ispod se nalazi Vanilla JS kod za instalaciju vidžeta sažetka. React biblioteka takođe sadrži ovaj vidžet.
+Испод је Vanilla JS код за инсталацију Сажетог Виџета. React библиотека такође има овај виџет.
 
-[inline-code-attrs-start title = 'Instalacija vidžeta sažetka'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталација Сажетог Виџета'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
@@ -12,8 +12,8 @@ Ispod se nalazi Vanilla JS kod za instalaciju vidžeta sažetka. React bibliotek
 </script>
 [inline-code-end]
 
-Vidžet će automatski pronaći pitanja koja treba prikazati u sažetku na osnovu odgovarajuće konfiguracije vidžeta za tu stranicu/sajt.
+Виџет ће аутоматски пронаћи питања за приказ у сажетку на основу одговарајуће конфигурације виџета за ту страницу/сајт.
 
-Ako vam je potreban vidžet u jednoj od naših drugih biblioteka koja ga nema, otvorite tiket za podršku kako bismo znali da ga dodamo.
+Ако вам је потребан виџет у некој од наших других библиотека која га не садржи, отворите тикет за подршку како бисмо знали да га додамо.
 
 ---

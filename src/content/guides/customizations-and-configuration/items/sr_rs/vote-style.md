@@ -1,15 +1,15 @@
 [related-parameter-start name = 'voteStyle'; type = 'number'; related-parameter-end]
 
-Podrazumevano, FastComments će prikazati opcije glasanja kao strelice za gore i dole, omogućavajući korisnicima da glasaju gore ili dole za komentar.
+Подразумевано, FastComments ће приказати опције гласања као стрелице за горе и доле, омогућавајући корисницима да гласују горе или доле на коментар.
 
-Međutim, moguće je promeniti stil trake za glasanje. Trenutne opcije su podrazumevane dugmiće Gore/Dole, ili korišćenje mehanizma glasanja u obliku srca.
+Међутим, могуће је променити стил траке за гласање. Тренутне опције су подразумевана дугмад за горе/доле, или коришћење механизма гласања у облику срца.
 
-Koristimo zastavicu **voteStyle** na sledeći način:
+Користимо заставицу **voteStyle** на следећи начин:
 
-[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Enable Heart Button'; code-example-end]
+[code-example-start config = {voteStyle: 1}; linesToHighlight = [6]; title = 'Omogući dugme srca'; code-example-end]
 
-Preporučujemo da ovo uradite bez koda, jer tako omogućavate i server‑side validacije. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Vote Style“.
+Топло вам препоручујемо да ово урадите без кода, јер тако такође омогућавате серверску валидацију. На страници за прилагођавање виџета, погледајте одељак „Vote Style“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='Podešavanje stila glasanja na stranici za prilagođavanje widgeta, nudi strelice za gore i dole ili glasanje srcem'; title='Promeni stil glasanja' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='Подешавање стила гласања на страници за прилагођавање виџета, нуди стрелице за горе и доле или гласовање срцем'; title='Промени стил гласања' app-screenshot-end]
 
-Glasanje se takođe može onemogućiti, pogledajte `Disable Voting` iznad opcija za stil.
+Гласање се такође може онемогућити, погледајте `Disable Voting` изнад опција стила.

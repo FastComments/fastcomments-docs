@@ -1,6 +1,5 @@
 ---
-The `Comment Count` badge type is awarded based on a given threshold. It is only awarded based on approved comments.
+`Comment Count` 徽章類型是根據給定的門檻授予的。它僅在已批准的評論上授予。
 
-Note: Removing comments does not remove this badge.
-
+注意：刪除評論不會移除此徽章。
 ---

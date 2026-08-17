@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | const GetSearchPagesOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | const GetSearchPagesOptions& | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationPageSearchResponse.h)
+Враћа: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationPageSearchResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSearchPages Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getSearchPages Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GetSearchPagesOptions options;
 options.pageNumber = boost::optional<int>(1);
@@ -22,9 +22,9 @@ api->getSearchPages(U("my-tenant-123"), options)
     .then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> task) {
         try {
             auto response = task.get();
-            // koristi odgovor
+            // користи одговор
         } catch (const std::exception& e) {
-            // obradi grešku
+            // обради грешку
         }
     });
 [inline-code-end]

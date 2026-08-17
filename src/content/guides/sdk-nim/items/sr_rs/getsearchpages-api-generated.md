@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| options | GetSearchPagesOptions | Ne |  |
+| tenantId | string | Yes |  |
+| options | GetSearchPagesOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationPageSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_page_search_response.nim)
+Враћа: [`Option[ModerationPageSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_page_search_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSearchPages Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSearchPages'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (searchResp, httpResp) = client.getSearchPages(
   tenantId = "my-tenant-123",

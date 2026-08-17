@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| user_id_ws | String | Yes |  |
-| start_time | i64 | Yes |  |
-| end_time | i64 | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| user_id_ws | String | Да |  |
+| start_time | i64 | Да |  |
+| end_time | i64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_event_log_response.rs)
+Враћа: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_event_log_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_event_log'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_event_log Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_event_log(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetEventLogParams {

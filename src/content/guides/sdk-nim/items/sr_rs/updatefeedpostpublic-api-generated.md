@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| postId | string | Ne |  |
-| updateFeedPostParams | UpdateFeedPostParams | Ne |  |
-| options | UpdateFeedPostPublicOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| postId | string | No |  |
+| updateFeedPostParams | UpdateFeedPostParams | No |  |
+| options | UpdateFeedPostPublicOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
+Враћа: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'updateFeedPostPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

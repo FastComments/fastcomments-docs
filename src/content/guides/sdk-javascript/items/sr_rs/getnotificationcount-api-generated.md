@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| urlId | string | No |  |
-| fromCommentId | string | No |  |
-| viewed | boolean | No |  |
-| type | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| userId | string | Не |  |
+| urlId | string | Не |  |
+| fromCommentId | string | Не |  |
+| viewed | boolean | Не |  |
+| type | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse1.ts)
+Враћа: [`GetNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationCountResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getNotificationCount Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoNotificationCount() {
     const tenantId: string = "tenant_001";

@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| createTicketBody | CreateTicketBody | No |  |
+| tenantId | string | Да |  |
+| userId | string | Не |  |
+| createTicketBody | CreateTicketBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[CreateTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_ticket_response.nim)
+Враћа: [`Option[CreateTicketResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_ticket_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createTicket'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let tenantId = "my-tenant-123"
 let userId = "user-456"

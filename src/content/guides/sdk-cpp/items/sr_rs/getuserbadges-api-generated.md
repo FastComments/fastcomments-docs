@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Potrebno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | const GetUserBadgesOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | const GetUserBadgesOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgesResponse.h)
+Враћа: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgesResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getUserBadges Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBadges'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GetUserBadgesOptions opts;
 opts.userId = boost::make_optional(U("user@example.com"));

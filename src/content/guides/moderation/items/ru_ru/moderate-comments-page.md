@@ -1,11 +1,14 @@
-The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
+---
+Место, где происходит большинство модераций, — страница модерации комментариев. Например, вот скриншот нашего текущего демо‑аккаунта:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Полная страница модерации комментариев для демонстрационного аккаунта, показывающая фильтры, поиск и три комментария на странице'; title='Страница модерации комментариев' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Полная страница модерации комментариев для демо‑каунта, показывающая фильтры, поиск и три комментария на страницу'; title='Страница модерации комментариев' app-screenshot-end]
 
-We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
+Мы установили количество комментариев на странице равным трем, чтобы скриншот был разумного размера. На практике по умолчанию будет отображаться 50 комментариев на странице.
 
-The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
+Страница модерации также поддерживает [Keyboard Shortcuts](#keyboard-shortcuts) для навигации между комментариями и выполнения действий без использования мыши. Нажмите **?** на странице модерации, чтобы увидеть все доступные сочетания клавиш.
 
-The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
+Страница также **live** — когда приходят новые комментарии, соответствующие вашим текущим фильтрам, в верхней части появляется баннер с оповещением. Смотрите [Live Moderating](#comment-actions-live) для подробностей.
 
-Let's go into the features shown here.
+Давайте рассмотрим показанные здесь функции.
+
+---

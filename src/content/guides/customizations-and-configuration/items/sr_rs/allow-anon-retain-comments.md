@@ -1,7 +1,9 @@
-FastComments se može konfigurisati da uklanja neproverene komentare nakon željenog broja dana. Ovo pomaže u borbi protiv spama.
+---
+FastComments може да се подеси да уклања непотврђене коментаре након жељеног броја дана. Ово помаже у борби против спама.
 
-Podrazumevano, ne uklanja.
+Подразумевано, то не ради.
 
-Ovo se može konfigurisati ili onemogućiti putem stranice <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Podešavanja moderacije</a>.
+Ово се може подесити, или онемогућити, преко странице <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Подешавања модерације</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.account-block form'; alt='Obrazac Podešavanja moderacije gde postavljate koliko dana se neprovereni komentari čuvaju pre uklanjanja'; title='Podešavanja moderacije' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/settings'; selector = '.account-block form'; alt='Форма Подешавања модерације где подешавате колико дана се непотврђени коментари задржавају пре уклањања'; title='Подешавања модерације' app-screenshot-end]
+---

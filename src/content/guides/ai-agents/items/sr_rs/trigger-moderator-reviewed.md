@@ -1,21 +1,24 @@
-Pokreće se kada moderator označi komentar kao pregledan.
+---
+Окида се када модератор означи коментар као прегледан.
 
-### Kontekst koji agent prima
+### Контекст који агент прима
 
-- Komentar.
-- ID **triggering user ID** - moderator koji je pregledao.
-- Opcionalna istorija niti / korisnika / kontekst stranice kako je konfigurisano.
+- Коментар.
+- **ID корисника који покреће** – модератор који је прегледао.
+- Опциони контекст нити / историје корисника / странице према подешавањима.
 
-### Ko pokreće ovaj događaj
+### Ко ово окида
 
-Akcija ljudskog moderatora na stranici za moderaciju, u widgetu komentara ili putem API-ja.
+Акција људског модератора на страници за модерацију, виджету коментара или преко API‑ја.
 
-### Uobičajene upotrebe
+### Уобичајена употреба
 
-- **Prosleđivanje audita** putem [Webhooks](#webhooks-overview).
-- **Zapisivanje u memoriju** - zabeležite napomenu u memoriji da je ovaj komentar pregledao čovek kako drugi agenti ne bi obradili dvaput.
+- **Audit forwarding** преко [Webhooks](#webhooks-overview).
+- **Memory writes** – забележи напомену у меморији да је овај коментар прегледан од стране човека, како други агенти не би двоструко обрађивали.
 
-### Napomene
+### Важно
 
-- "Reviewed" je jedno od stanja u redu za moderaciju koje se prati odvojeno od "approved" i "spam". Komentar može biti approved-and-reviewed, approved-but-not-reviewed, itd. Pogledajte [How Approvals Work](/guide-moderation.html#moderation-approvals) u vodiču za moderaciju.
-- Ovaj okidač je visoke učestalosti na tenantima sa mnogo moderatora. Pretplatite se selektivno i planirajte budžet u skladu s tim.
+- „Reviewed“ је једно од стања реда за модерацију које се прати одвојено од „approved“ и „spam“. Коментар може бити approved‑and‑reviewed, approved‑but‑not‑reviewed, итд. Погледајте [Како функционишу одобрења](/guide-moderation.html#moderation-approvals) у водичу за модерацију.
+- Овај окидач је високе фреквенције код tenants са многим модераторима. Претплатите се селективно и планирајте буџет у складу.
+
+---

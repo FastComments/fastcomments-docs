@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | tag | string | Yes |  |
 | updateHashTagBody | UpdateHashTagBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
+Враћа: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patchHashTag Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t tag = U("important");
@@ -29,5 +29,3 @@ api->patchHashTag(tenantId, tag, *body)
        }
    });
 [inline-code-end]
-
----

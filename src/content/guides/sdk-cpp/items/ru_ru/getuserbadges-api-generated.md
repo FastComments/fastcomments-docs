@@ -1,15 +1,15 @@
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetUserBadgesOptions& | Yes |  |
+| tenantId | string | Да |  |
+| options | const GetUserBadgesOptions& | Да |  |
 
-## Response
+## Ответ
 
-Returns: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgesResponse.h)
+Возвращает: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgesResponse.h)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getUserBadges'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

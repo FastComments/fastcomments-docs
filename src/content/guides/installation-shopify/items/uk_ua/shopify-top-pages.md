@@ -2,19 +2,19 @@ The **FastComments - Top Pages** block lists the pages on your store with the mo
 
 ### Add the block
 
-1. Open the Shopify theme editor.
-2. Open the template where you want the list, such as a sidebar, footer, or blog index section.
-3. Click **Add block** in the section that should hold it.
-4. Under **Apps**, select **FastComments - Top Pages**.
-5. Click **Save**.
+1. Відкрийте редактор тем Shopify.  
+2. Відкрийте шаблон, у якому ви хочете розмістити список, наприклад, бічну панель, підвал або розділ індексу блогу.  
+3. Натисніть **Add block** у розділі, який має його містити.  
+4. У розділі **Apps** виберіть **FastComments - Top Pages**.  
+5. Натисніть **Save**.
 
 ### Settings
 
 | Setting | What it does | Default |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the list reads from. Leave blank to use the store's automatically-configured tenant. | (blank) |
+| Tenant ID (optional) | Перевизначає, який орендар FastComments використовується для читання списку. Залиште порожнім, щоб використовувати автоматично налаштований орендар магазину. | (blank) |
 
 ### Top Pages vs Recent Discussions
 
-- **Top Pages** ranks by total engagement, so the same posts tend to stay near the top for a while. Good for a "popular posts" sidebar.
-- **Recent Discussions** ranks by most recent activity, so the list churns. Good for a "what's hot right now" panel.
+- **Top Pages** ранжується за загальним залученням, тому ті самі пости залишаються ближче до верху протягом деякого часу. Добре підходить для бічної панелі «популярних постів».  
+- **Recent Discussions** ранжується за найновішою активністю, тому список часто оновлюється. Добре підходить для панелі «що зараз популярно».

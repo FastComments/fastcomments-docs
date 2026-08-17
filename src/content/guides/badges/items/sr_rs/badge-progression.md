@@ -1,26 +1,21 @@
-FastComments prikazuje napredak putem znački na više načina.
+FastComments приказује напредак преко значки на више начина.
 
-Za sledeće primere imaćemo postavljene značke:
+За следеће примере имати ћемо подешене значке:
 
-1. New User (Značka broja komentara sa pragom = 1)
-2. Newbie (Značka broja komentara sa pragom = 10)
-3. Top Member (Značka broja komentara sa pragom = 100)
+1. New User (Значка броја коментара са праговом = 1)  
+2. Newbie (Значка броја коментара са праговом = 10)  
+3. Top Member (Значка броја коментара са праговом = 100)  
 
-### Nakupljanje znački
+### Слагање значки
 
-Nakupljanje je podrazumevano ponašanje znački. Kada korisnik osvoji novu značku, ona se jednostavno dodaje na njihov profil i prikazuje
-se na svim njihovim komentarima. Prikazuje se najviše 15 znački.
+Слагање је подразумевано понашање значки. Када корисник освоји нову значку, она се једноставно додаје на његов профил и приказује на свим његовим коментарима. Приказује се до 15 значки.
 
-### Zamena znački
+### Замена значки
 
-Značke se mogu konfigurisati da zamenjuju druge značke. Prilikom uređivanja značke, možete izabrati koju značku nova značka zamenjuje.
+Значке се могу конфигурисати да замене друге значке. При уређивању значке, можете изабрати коју значку нова значка замењује.
 
-Možemo podesiti `Newbie` da zameni `New User` i `Top Member` da zameni `Newbie`. Na taj način prethodna značka
-se automatski skriva i prikazuje se nova sjajna značka. Sve verzije i dalje ostaju u nalogu korisnika. Korisnik uvek može
-sakriti značku `Top Member` ako želi i prikazati značku `Newbie`.
+Можемо конфигурисати `Newbie` да замени `New User` и `Top Member` да замени `Newbie`. На тај начин, претходна значка се аутоматски скрива, а нова сјајна значка се приказује. Све верзије и даље остају у налогу корисника. Они могу у сваком тренутку да сакрију значку `Top Member` ако желе и да прикажу значку `Newbie`.
 
-### Provera napretka
+### Провера напретка
 
-Korisnik može videti napredak u sticanju značke na svom profilu. Na vrhu profila prikazaće se koliko su blizu dobijanju značke (na primer, koliko komentara su ostavili i koliko još treba da ostave, ili koliko dugo su članovi, itd).
-
----
+Корисник може да види напредак у стицању значке на свом профилу. На врху профила ће се приказати колико су далеко у стицању значке (на пример, колико коментара су оставили и колико им је потребно да оставе, или колико дуго су члан, итд).

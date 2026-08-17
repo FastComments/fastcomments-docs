@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Yes |  |
+| tenantId | string | Да |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
+Враћа: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'addHashTagsBulk Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 BulkCreateHashTagsBody bulkBody;

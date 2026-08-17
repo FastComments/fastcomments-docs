@@ -1,19 +1,19 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | כן |  |
+| commentId | string | path | כן |  |
+| broadcastId | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## Response
 
-Returns: `PostRemoveCommentApiResponse`
+מחזיר: `PostRemoveCommentApiResponse`
 
 ## Example
 
-[inline-code-attrs-start title = 'post_remove_comment דוגמה'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה post_remove_comment'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

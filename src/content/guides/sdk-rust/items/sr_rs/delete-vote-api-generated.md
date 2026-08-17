@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| edit_key | String | Ne |  |
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| edit_key | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_vote Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_vote Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = DeleteVoteParams {
@@ -24,5 +24,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

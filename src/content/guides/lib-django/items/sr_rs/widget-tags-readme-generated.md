@@ -1,37 +1,37 @@
-Every widget has its own tag. All of them accept `**extra` keyword arguments,
-which are merged into the widget config as‑is (use camelCase keys) for anything
-not covered by the named arguments below.
+Сваки виџет има своју ознаку. Сви они прихватају `**extra` кључне аргументе,
+који се спајају у конфигурацију виџета без измена (користите camelCase кључеве) за све
+што није обухваћено именованим аргументима испод.
 
 | Tag | Widget |
 |---|---|
-| `{% fastcomments %}` | Komentari |
-| `{% fastcomments_live_chat %}` | Uživo čet |
-| `{% fastcomments_comment_count %}` | Značka broja komentara |
-| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | Skupni brojevi komentara |
-| `{% fastcomments_collab_chat target="#el" %}` | Kolaborativni (inline) čet |
-| `{% fastcomments_image_chat target="#el" %}` | Čet za anotaciju slika |
-| `{% fastcomments_recent_comments %}` | Nedavni komentari |
-| `{% fastcomments_recent_discussions %}` | Nedavne diskusije |
-| `{% fastcomments_reviews_summary %}` | Pregled recenzija |
-| `{% fastcomments_top_pages %}` | Najviše diskutovane stranice |
-| `{% fastcomments_user_activity user_id="..." %}` | Tok aktivnosti korisnika |
+| `{% fastcomments %}` | Коментари |
+| `{% fastcomments_live_chat %}` | Уживо ћаскање |
+| `{% fastcomments_comment_count %}` | Ознака броја коментара |
+| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | Масовни број коментара |
+| `{% fastcomments_collab_chat target="#el" %}` | Колаборативно (уграђено) ћаскање |
+| `{% fastcomments_image_chat target="#el" %}` | ћаскање за анотацију слика |
+| `{% fastcomments_recent_comments %}` | Скорашњи коментари |
+| `{% fastcomments_recent_discussions %}` | Скорашње дискусије |
+| `{% fastcomments_reviews_summary %}` | Сажетак рецензија |
+| `{% fastcomments_top_pages %}` | Најдискусијније странице |
+| `{% fastcomments_user_activity user_id="..." %}` | Фид активности корисника |
 
-Named arguments map to the widget's camelCase config keys:
+Именовани аргументи мапирају се на camelCase кључеве конфигурације виџета:
 
 | Argument | Config key | Tags |
 |---|---|---|
-| `url_id` | `urlId` | komentari, uživo čet, broj komentara, kolaborativni/čet za slike, nedavni komentari, pregled recenzija |
-| `url` | `url` | komentari, uživo čet, kolaborativni/čet za slike |
-| `readonly` | `readonly` | komentari, uživo čet, kolaborativni/čet za slike |
-| `locale` | `locale` | komentari, uživo čet, kolaborativni/čet za slike, aktivnost korisnika |
-| `has_dark_background` | `hasDarkBackground` | sve |
-| `default_sort_direction` | `defaultSortDirection` | komentari, uživo čet, kolaborativni/čet za slike |
-| `number_only` | `numberOnly` | broj komentara |
-| `is_live` | `isLive` | broj komentara |
-| `count` | `count` | nedavni komentari, nedavne diskusije |
-| `target` | (querySelector, not sent) | kolaborativni čet, čet za slike |
-| `chat_square_percentage` | `chatSquarePercentage` | čet za slike |
-| `user_id` | `userId` | aktivnost korisnika |
+| `url_id` | `urlId` | коментари, уживо ћаскање, број коментара, колаб/слика ћаскање, скорашњи коментари, сажетак рецензија |
+| `url` | `url` | коментари, уживо ћаскање, колаб/слика ћаскање |
+| `readonly` | `readonly` | коментари, уживо ћаскање, колаб/слика ћаскање |
+| `locale` | `locale` | коментари, уживо ћаскање, колаб/слика ћаскање, активност корисника |
+| `has_dark_background` | `hasDarkBackground` | сви |
+| `default_sort_direction` | `defaultSortDirection` | коментари, уживо ћаскање, колаб/слика ћаскање |
+| `number_only` | `numberOnly` | број коментара |
+| `is_live` | `isLive` | број коментара |
+| `count` | `count` | скорашњи коментари, скорашње дискусије |
+| `target` | (querySelector, not sent) | колаб ћаскање, слика ћаскање |
+| `chat_square_percentage` | `chatSquarePercentage` | слика ћаскање |
+| `user_id` | `userId` | активност корисника |
 
 Examples:
 
@@ -42,13 +42,13 @@ Examples:
 
 {% fastcomments_live_chat url_id="room-1" %}
 
-Comments: {% fastcomments_comment_count url_id="my-page" number_only=True %}
+Коментари: {% fastcomments_comment_count url_id="my-page" number_only=True %}
 
-{# Kolaborativni čet se prikači na postojeći element na stranici #}
+{# Колаб ћаскање се прикаче на постојећи елемент на страници #}
 <article id="post-body">...</article>
 {% fastcomments_collab_chat target="#post-body" %}
 
-{# Skupni brojevi: postavite markere, zatim jedan skupni učitač popuni sve #}
+{# Масовни бројеви: поставите маркере, затим један масовни учитавач их све попуњава #}
 {% for post in posts %}
     <a href="\{{ post.url }}">\{{ post.title }}</a>
     {% fastcomments_count_marker url_id=post.url_id %}

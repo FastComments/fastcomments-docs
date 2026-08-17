@@ -1,11 +1,11 @@
 [api-resource-header-start name = 'Moderator'; route = 'POST /api/v1/moderators'; creditsCost = 1; api-resource-header-end]
 
-Ovaj endpoint omogućava dodavanje jednog `Moderator`.
+Овај рут пружа могућност додавања једног `Moderator`.
 
-Kreiranje `Moderator` objekta ima sledeća ograničenja:
+Креирање `Moderator`-а има следећа ограничења:
 
-- Uvek je potrebno navesti `name` i `email`. `userId` je opciono.
-- Sledeće vrednosti ne smeju biti prosleđene prilikom kreiranja `Moderator`:
+- `name` и `email` морају увек бити наведени. `userId` је опционо.
+- Следеће вредности не смеју бити наведене приликом креирања `Moderator`-а:
     - `acceptedInvite`
     - `markReviewedCount`
     - `deletedCount`
@@ -15,13 +15,13 @@ Kreiranje `Moderator` objekta ima sledeća ograničenja:
     - `bannedCount`
     - `verificationId`
     - `createdAt`
-- Kada je `userId` naveden, taj korisnik mora postojati.
-- Kada je `userId` naveden, mora pripadati istom `tenantId` koji je naveden u parametrima upita.
-- Dva moderatora u istom tenantu ne mogu biti dodata sa istim `email`.
+- Када је наведен `userId`, тај корисник мора постојати.
+- Када је наведен `userId`, он/она мора припадати истом `tenantId` наведеном у параметрима упита.
+- Два модератора у истом тенанту не могу бити додата са истим `email`-ом.
 
-Možemo kreirati `Moderator` za korisnika za kojeg znamo samo `email`:
+Можемо креирати `Moderator` за корисника кога познајемо само по е‑пошти:
 
-[inline-code-attrs-start title = 'Primer cURL zahteva za kreiranje Moderatora putem e-pošte'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за креирање модератора путем е‑поште'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/moderators?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -32,9 +32,9 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Ili možemo kreirati `Moderator` za korisnika koji pripada našem tenantu, kako bismo pratili njihove statistike moderacije:
+Или можемо креирати `Moderator` за корисника који припада нашем тенанту, како бисмо пратили њихове статистике модерације:
 
-[inline-code-attrs-start title = 'Primer cURL zahteva za kreiranje Moderatora za korisnika koji pripada tenantu'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за креирање модератора путем корисника из тенанта'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/moderators?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -46,7 +46,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahteva za kreiranje Moderatora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура захтева за креирање модератора'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorPostQueryParams {
     tenantId: string
@@ -54,16 +54,14 @@ interface ModeratorPostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za kreiranje Moderatora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура одговора за креирање модератора'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorPostResponse {
     status: 'success' | 'failed'
-    /** Uključeno u slučaju greške. **/
+    /** Укључено у случају неуспеха. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'name-required' | 'email-required' | 'unexpected-param' | 'not-found'
-    /** Uključeno u slučaju greške. **/
+    /** Укључено у случају неуспеха. **/
     reason?: string
-    moderator?: Moderator; // U slučaju uspeha vraćamo kompletno kreiranog moderatora.
+    moderator?: Moderator; // Враћамо комплетног креираног модератора при успеху.
 }
 [inline-code-end]
-
----

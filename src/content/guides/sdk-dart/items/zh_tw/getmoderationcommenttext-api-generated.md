@@ -1,16 +1,16 @@
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
-## Response
+## 回應
 
-Returns: `GetCommentTextResponse`
+返回： `GetCommentTextResponse`
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getModerationCommentText 範例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

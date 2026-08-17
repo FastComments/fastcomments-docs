@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| badges_user_id | String | No |  |
-| comment_id | String | No |  |
-| sso | String | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| badges_user_id | String | Не |  |
+| comment_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_manual_badges_response.rs)
+Враћа: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_manual_badges_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_manual_badges_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_manual_badges_for_user Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_badges(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetManualBadgesForUserParams {

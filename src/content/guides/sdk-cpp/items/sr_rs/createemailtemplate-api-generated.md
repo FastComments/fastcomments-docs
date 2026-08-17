@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateEmailTemplateResponse.h)
+Враћа: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateEmailTemplateResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'createEmailTemplate Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

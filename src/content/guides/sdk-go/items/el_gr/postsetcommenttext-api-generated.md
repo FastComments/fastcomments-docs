@@ -1,19 +1,20 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| 
+| commentId | string | path | Yes | |
+| broadcastId | string | query | No | |
+| sso | string | query | No | |
 
-## Response
+## Απόκριση
 
-Returns: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
+Επιστρέφει: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_set_comment_text_response.go)
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'PostSetCommentText Παράδειγμα'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα PostSetCommentText'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,20 +26,20 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string | 
-	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams | 
-	broadcastId := "broadcastId_example" // string |  (optional)
-	sso := "sso_example" // string |  (optional)
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |
+	setCommentTextParams := *openapiclient.NewSetCommentTextParams("Comment_example") // SetCommentTextParams |
+	broadcastId := "broadcastId_example" // string |  (προαιρετικό)
+	sso := "sso_example" // string |  (προαιρετικό)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.ModerationAPI.PostSetCommentText(context.Background(), commentId).TenantId(tenantId).SetCommentTextParams(setCommentTextParams).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Σφάλμα κατά την κλήση του `ModerationAPI.PostSetCommentText``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Πλήρης απόκριση HTTP: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostSetCommentText``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// απόκριση από `PostSetCommentText`: SetCommentTextResponse
-	fmt.Fprintf(os.Stdout, "Απόκριση από `ModerationAPI.PostSetCommentText`: %v\n", resp)
+	// απάντηση από `PostSetCommentText`: SetCommentTextResponse
+	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentText`: %v\n", resp)
 }
 [inline-code-end]

@@ -1,9 +1,9 @@
-Omogućite ili onemogućite obaveštenja za stranicu. Kada su korisnici pretplaćeni na stranicu, obaveštenja se kreiraju za nove korenske komentare, i takođe
+Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове коренске коментаре, и такође
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | url_id | String | Yes |  |
 | url | String | Yes |  |
@@ -11,13 +11,13 @@ Omogućite ili onemogućite obaveštenja za stranicu. Kada su korisnici pretpla�
 | subscribed_or_unsubscribed | String | Yes |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
+Враћа: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_page_subscription_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {
     let params = UpdateUserNotificationPageSubscriptionStatusParams {

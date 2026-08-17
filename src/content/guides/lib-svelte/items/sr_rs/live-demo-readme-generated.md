@@ -1,12 +1,12 @@
 ---
-Isprobajte svaki vidžet uživo na <https://fastcomments.com/commenting-system-for-svelte/>.
+Пробајте сваки виџет уживо на <https://fastcomments.com/commenting-system-for-svelte/>.
 
-Skup Svelte vidžeta i omotača za FastComments. `src/routes` sadrži pokretljive primere – jednostavno pokrenite:
+Скуп Svelte виџета и омотача за FastComments. `src/routes` садржи извршне примере – једноставно покрените:
 
     npm install
     npm run dev
 
-Zatim možete videti sve vidžete i uređivati ih – na primer da unesete svoj tenant id ili isprobate različitu konfiguraciju.
+Тада можете видети све виџете и уређивати их – на пример да унесете ваш сопствени tenant id или испробате различиту конфигурацију.
 
-Korišćen je TypeScript kako biste mogli da pregledate objekte konfiguracije za svaki vidžet i vidite koje opcije prihvata.
+TypeScript је коришћен како бисте могли да прегледате конфигурационе објекте за сваки виџет и видите које опције прихвата.
 ---

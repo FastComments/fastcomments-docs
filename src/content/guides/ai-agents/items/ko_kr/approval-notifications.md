@@ -1,54 +1,54 @@
 When the agent queues an approval, the platform notifies reviewers via email. Two settings on the edit form control this: **who** is notified and **how often**.
 
-### Who: notify mode
+### 누가: 알림 모드
 
-Two modes:
+두 가지 모드:
 
-- **All admins and moderators** (default) - every account owner, super admin, and comment moderator admin on the tenant is a candidate reviewer.
-- **Specific users** - hand-pick a list from a dual-list picker on the edit form.
+- **모든 관리자 및 중재자** (기본) - 테넌트의 모든 계정 소유자, 슈퍼 관리자, 그리고 댓글 중재자 관리자는 검토 후보가 됩니다.
+- **특정 사용자** - 편집 양식의 이중 목록 선택기에서 목록을 직접 선택합니다.
 
-Either way, a candidate reviewer must have an account on the tenant and a valid email address to receive notifications.
+어느 경우든, 검토 후보자는 테넌트에 계정이 있어야 하며 알림을 받기 위해 유효한 이메일 주소가 필요합니다.
 
-### How often: per-user frequency
+### 얼마나 자주: 사용자별 빈도
 
-Each candidate reviewer's **own profile** sets their personal notification frequency for agent approvals:
+각 검토 후보자의 **개인 프로필**에서 에이전트 승인에 대한 개인 알림 빈도를 설정합니다:
 
-- **Immediate** (default) - one email per pending approval, sent as soon as the approval is created.
-- **Hourly** - one digest email per hour summarizing all approvals queued in that hour.
-- **Daily** - one digest email per 24 hours.
-- **Disabled** - no emails. The user can still review approvals via the inbox UI; they just are not pinged.
+- **즉시** (기본) - 보류 중인 승인당 하나의 이메일이 전송되며, 승인이 생성되는 즉시 발송됩니다.
+- **시간당** - 해당 시간에 대기열에 들어간 모든 승인을 요약한 한 번의 다이제스트 이메일이 매시간 전송됩니다.
+- **일일** - 24시간마다 한 번의 다이제스트 이메일이 전송됩니다.
+- **비활성화** - 이메일이 전송되지 않습니다. 사용자는 여전히 인박스 UI를 통해 승인을 검토할 수 있지만 알림을 받지 않습니다.
 
-The user changes this setting on their own profile, not on the agent edit form. This is intentional - one tenant might have ten agents, and a moderator should not have to set their preferred frequency on every agent independently.
+사용자는 에이전트 편집 양식이 아니라 자신의 프로필에서 이 설정을 변경합니다. 이는 의도된 동작으로, 하나의 테넌트에 열 명의 에이전트가 있을 수 있으며, 중재자는 각 에이전트마다 선호하는 빈도를 개별적으로 설정할 필요가 없습니다.
 
-### Cron jobs that drive digests
+### 다이제스트를 구동하는 Cron 작업
 
-- **`hourly-agent-approval-digest`** - sweeps every hour, batches approvals queued since each user's last digest, sends one email per user.
-- **`daily-agent-approval-digest`** - same, daily.
-- **`agent-approval-reaper`** - prunes approvals that have aged past 90 days regardless of state.
+- **`hourly-agent-approval-digest`** - 매시간 실행되며, 각 사용자의 마지막 다이제스트 이후 대기열에 들어간 승인을 묶어 사용자당 한 번의 이메일을 보냅니다.
+- **`daily-agent-approval-digest`** - 동일하게, 매일 실행됩니다.
+- **`agent-approval-reaper`** - 상태와 관계없이 90일 이상 된 승인을 정리합니다.
 
-The hourly and daily digest crons are scoped per-recipient: a user with hourly frequency is processed by the hourly cron and skipped by the daily one (and vice versa). Immediate-frequency users are notified by the approval-create code path, not by the crons.
+시간당 및 일일 다이제스트 Cron은 수신자별로 범위가 지정됩니다: 시간당 빈도를 선택한 사용자는 시간당 Cron에 의해 처리되고 일일 Cron은 건너뛰며, 그 반대도 마찬가지입니다. 즉시 빈도 사용자는 Cron이 아니라 승인 생성 코드 경로를 통해 알림을 받습니다.
 
-### Dedup state
+### 중복 방지 상태
 
-The platform tracks which users have already been emailed about each approval. Once a user has been notified (immediately or in a digest), they will not be emailed again for the same approval - even if they change their frequency from immediate to daily mid-cycle.
+플랫폼은 각 승인에 대해 이미 이메일을 받은 사용자를 추적합니다. 사용자가 (즉시 또는 다이제스트로) 알림을 받으면 동일한 승인에 대해 다시 이메일이 전송되지 않습니다—중간에 빈도를 즉시에서 일일로 변경하더라도 마찬가지입니다.
 
-### Approving from the email
+### 이메일에서 승인하기
 
-Each notification email contains a one-click signed login link that takes the reviewer directly to the approval detail page, already authenticated. They can approve, reject, or open the [Refine Prompts](#refining-prompts) flow from there.
+각 알림 이메일에는 검토자를 바로 승인 상세 페이지로 이동시키는 원클릭 서명 로그인 링크가 포함되어 있으며, 이미 인증된 상태입니다. 검토자는 여기서 승인을 승인하거나 거부하거나 [프롬프트 다듬기](#refining-prompts) 흐름을 열 수 있습니다.
 
-### What if no admins exist
+### 관리자가 없을 경우
 
-If `notifyMode` is `All admins and moderators` but the tenant has no super admins, comment moderator admins, or account owners with valid emails, the platform logs a warning and the approval still queues - just nobody gets notified about it. It will sit in the inbox until someone happens to look.
+`notifyMode`가 `All admins and moderators`이지만 테넌트에 슈퍼 관리자, 댓글 중재자 관리자, 또는 유효한 이메일을 가진 계정 소유자가 없을 경우, 플랫폼은 경고를 기록하고 승인은 여전히 대기열에 들어갑니다—단지 아무도 알림을 받지 못합니다. 이는 누군가가 확인할 때까지 인박스에 남아 있습니다.
 
-If `notifyMode` is `Specific users` but you have not selected any users, same outcome.
+`notifyMode`가 `Specific users`이지만 사용자를 선택하지 않은 경우에도 결과는 동일합니다.
 
-### What if billing notifications are disabled
+### 청구 알림이 비활성화된 경우
 
-[Budget Alerts](#budget-alerts) - the budget-related emails - go to billing admins **regardless of the per-user notification preference**. This is intentional: budget overruns affect cost, and the billing owner needs to know.
+[예산 알림](#budget-alerts) - 예산 관련 이메일은 **사용자별 알림 선호도와 무관하게** 청구 관리자에게 전송됩니다. 이는 의도된 동작으로, 예산 초과는 비용에 영향을 미치며 청구 담당자가 이를 알아야 합니다.
 
-Approval notifications honor only the per-user agent-approval frequency setting. They do not check the broader admin-notifications opt-out - a user who has opted out of admin notifications will still receive approval emails if they are on the reviewer list, unless their agent-approval frequency is set to **Disabled**.
+승인 알림은 사용자별 에이전트 승인 빈도 설정만을 따릅니다. 더 넓은 관리자 알림 옵트아웃을 확인하지 않으며—관리자 알림을 옵트아웃한 사용자라도 검토자 목록에 포함되어 있으면 승인 이메일을 받게 됩니다. 단, 에이전트 승인 빈도가 **비활성화**로 설정된 경우는 제외됩니다.
 
 ### See also
 
-- [Approval Workflow](#approval-workflow) for the full lifecycle of an approval.
-- [Refining Prompts](#refining-prompts) for the "I keep approving the same kind of mistake" workflow.
+- [승인 워크플로우](#approval-workflow) - 승인의 전체 수명 주기를 확인합니다.
+- [프롬프트 다듬기](#refining-prompts) - "같은 종류의 실수를 계속 승인한다"는 워크플로우를 위한 가이드입니다.

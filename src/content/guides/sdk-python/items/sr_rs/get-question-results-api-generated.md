@@ -1,22 +1,22 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| urlId | string | query | Ne |  |
-| userId | string | query | Ne |  |
-| startDate | string | query | Ne |  |
-| questionId | string | query | Ne |  |
-| questionIds | string | query | Ne |  |
-| skip | number | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| urlId | string | query | Не |  |
+| userId | string | query | Не |  |
+| startDate | string | query | Не |  |
+| questionId | string | query | Не |  |
+| questionIds | string | query | Не |  |
+| skip | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
+Враћа: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_question_results_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_question_results Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_question_results'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.default_api import GetQuestionResultsOptions
@@ -24,34 +24,34 @@ from client.models.get_question_results_response import GetQuestionResultsRespon
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
-# u skladu sa politikom sigurnosti API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
+# у складу са безбедносном политиком API сервера.
+# Примери за сваки метод аутентификације су дати испод, користите пример који
+# задовољава ваш случај употребе аутентификације.
 
-# Konfigurišite autorizaciju API ključa: api_key
+# Конфигуришите ауторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Unesite kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str |  (optional)
-    user_id = 'user_id_example' # str |  (optional)
-    start_date = 'start_date_example' # str |  (optional)
-    question_id = 'question_id_example' # str |  (optional)
-    question_ids = 'question_ids_example' # str |  (optional)
-    skip = 3.4 # float |  (optional)
+    url_id = 'url_id_example' # str |  (опционално)
+    user_id = 'user_id_example' # str |  (опционално)
+    start_date = 'start_date_example' # str |  (опционално)
+    question_id = 'question_id_example' # str |  (опционално)
+    question_ids = 'question_ids_example' # str |  (опционално)
+    skip = 3.4 # float |  (опционално)
 
     try:
         api_response = api_instance.get_question_results(tenant_id, GetQuestionResultsOptions(url_id=url_id, user_id=user_id, start_date=start_date, question_id=question_id, question_ids=question_ids, skip=skip))

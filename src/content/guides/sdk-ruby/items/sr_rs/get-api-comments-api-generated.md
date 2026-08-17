@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| page | number | query | No |  |
-| count | number | query | No |  |
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sorts | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| page | number | query | Не |  |
+| count | number | query | Не |  |
+| text-search | string | query | Не |  |
+| byIPFromComment | string | query | Не |  |
+| filters | string | query | Не |  |
+| searchFilters | string | query | Не |  |
+| sorts | string | query | Не |  |
+| demo | boolean | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_api_get_comments_response.rb)
+Враћа: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_api_get_comments_response.rb)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_api_comments Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_api_comments'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'

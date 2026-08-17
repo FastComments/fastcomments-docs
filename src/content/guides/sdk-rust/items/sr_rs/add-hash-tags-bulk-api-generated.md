@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| bulk_create_hash_tags_body | models::BulkCreateHashTagsBody | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| bulk_create_hash_tags_body | models::BulkCreateHashTagsBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/bulk_create_hash_tags_response.rs)
+Враћа: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/bulk_create_hash_tags_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'add_hash_tags_bulk Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'add_hash_tags_bulk Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = AddHashTagsBulkParams {
@@ -28,3 +28,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

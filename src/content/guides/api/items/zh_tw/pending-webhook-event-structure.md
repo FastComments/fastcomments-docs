@@ -1,15 +1,13 @@
----
-A `PendingWebhookEvent` object represents a queued webhook event that is pending.
+A `PendingWebhookEvent` 物件代表一個排隊中的 webhook 事件，處於待處理狀態。
 
-`PendingWebhookEvent` objects are created automatically and cannot be manually created via the API. They also expire after one year.
-They can be deleted which removes the task from the queue.
+`PendingWebhookEvent` 物件會自動建立，且無法透過 API 手動建立。它們也會在一年後過期。  
+可以刪除它們，這會將任務從佇列中移除。
 
-There are different event types - check `eventType` (`OutboundSyncEventType`) and `type` (`OutboundSyncType`).
+有不同的事件類型 - 請檢查 `eventType`（`OutboundSyncEventType`）和 `type`（`OutboundSyncType`）。
 
-A common use case for this API is to implement custom monitoring. You may want to call the `/count` endpoint periodically
-to poll the outstanding count for given filters.
+此 API 的常見使用情境是實作自訂監控。您可能會定期呼叫 `/count` 端點，以根據給定的篩選條件查詢未處理的計數。
 
-The structure for the `PendingWebhookEvent` object is as follows:
+`PendingWebhookEvent` 物件的結構如下：
 
 [inline-code-attrs-start title = 'PendingWebhookEvent 結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,33 +18,31 @@ enum OutboundSyncEventType {
 }
 
 enum OutboundSyncType {
-    /** WordPress 專用的同步任務。 **/
+    /** 針對 WordPress 的同步任務。 **/
     WP: 0,
     Webhook: 1
 }
 
 interface PendingWebhookEvent {
     id: string
-    /** 與事件相關聯的評論 id。 **/
+    /** 與事件相關聯的評論 ID。 **/
     commentId: string
-    /** 事件發生時對應的評論物件。我們從 2023 年 11 月開始加入這些資訊。 **/
+    /** 事件發生時的評論物件。我們於 2023 年 11 月開始加入此欄位。 **/
     comment: Comment
-    /** 可能與評論相關聯的外部 id。 **/
+    /** 可能與評論相關聯的外部 ID。 **/
     externalId: string | null
     createdAt: Date
     tenantId: string
     attemptCount: number
-    /** 在第一次嘗試前以及每次失敗後設定。 **/
+    /** 在首次嘗試之前以及每次失敗後設定。 **/
     nextAttemptAt: Date
-    /** 表示這是建立、刪除或更新事件之一... **/
+    /** 此事件是建立、刪除或更新... **/
     eventType: OutboundSyncEventType
     /** 要執行的同步類型（WordPress、呼叫 API 等）。 **/
     type: OutboundSyncType
-    /** 與評論相符合的網域。我們使用此網域來選擇 API 金鑰。 **/
+    /** 與評論匹配的網域。我們使用此網域來選擇 API 金鑰。 **/
     domain: string
-    /** 最近發生的錯誤。此欄位未具型別，為對發生內容的「傾印」。通常包含一個具有 statusCode、body 與 headers 地圖的物件。 **/
+    /** 最近發生的錯誤。此類型未定型，為發生情況的「轉儲」。通常包含具有 statusCode、body 以及 headers 映射的物件。 **/
     lastError: object | null
 }
 [inline-code-end]
-
----

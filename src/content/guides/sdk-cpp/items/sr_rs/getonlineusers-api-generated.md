@@ -1,21 +1,21 @@
-Trenutno online posmatrači stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.  
-Vraća anonCount + totalCount (pretplatnici u celoj sobi, uključujući anonimne posmatrače koje ne izlistavamo).
+Тренутно онлајн посматрачи странице: људи чија вебсокет сесија је претплаћена на страницу тренутно.  
+Враћа anonCount + totalCount (претплатници у целој соби, укључујући анонимне посматраче које не набрајамо).
 
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | options | const GetOnlineUsersOptions& | Yes |  |
 
-## Response
+## Одговор
 
-Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Враћа: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getOnlineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("article-456");

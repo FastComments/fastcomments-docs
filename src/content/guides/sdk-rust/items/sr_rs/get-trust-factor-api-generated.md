@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| sso | String | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenant_id | String | Да |  |
+| user_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_trust_factor_response.rs)
+Враћа: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_trust_factor_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_trust_factor Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_trust_factor Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = GetTrustFactorParams {

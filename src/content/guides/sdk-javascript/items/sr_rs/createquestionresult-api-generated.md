@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
+| tenantId | string | Да |  |
+| createQuestionResultBody | CreateQuestionResultBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
+Враћа: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-corp-tenant";
 
@@ -24,7 +24,7 @@ const questionResultBody: CreateQuestionResultBody = {
   questionId: "question-42",
   answer: "Positive",
   metadata: [metaItem]
-  // opcionalna polja kao što su napomene su izostavljena
+  // опционална поља као што су белешке су изостављена
 };
 
 const result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);

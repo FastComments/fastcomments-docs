@@ -1,3 +1,4 @@
+---
 Install from a release tag (this project is distributed via git tags, not PyPI):
 
 ```bash
@@ -19,3 +20,4 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
+---

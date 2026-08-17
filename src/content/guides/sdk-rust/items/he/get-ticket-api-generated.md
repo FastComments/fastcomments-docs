@@ -1,16 +1,16 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 | user_id | String | No |  |
 
-## Response
+## תגובה
 
-Returns: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_ticket_response.rs)
+מחזיר: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_ticket_response.rs)
 
-## Example
+## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת get_ticket'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,3 +24,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

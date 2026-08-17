@@ -1,23 +1,23 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| commentId | string | Yes |  |
-| includeEmail | boolean | No |  |
-| includeIP | boolean | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| commentId | string | Да |  |
+| includeEmail | boolean | Не |  |
+| includeIP | boolean | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Враћа: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchCommentDetails() {
-  // Kompletan skup parametara
+  // Пун скуп параметара
   const commentId: string = "cmt_12345abc";
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
@@ -32,9 +32,9 @@ async function fetchCommentDetails() {
     sso
   );
 
-  // Minimalni poziv koristeći samo obavezni argument
+  // Минимални позив користећи само потребан аргумент
   const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
 
-  // Koristite rezultate po potrebi...
+  // Користите резултате по потреби...
 }
 [inline-code-end]

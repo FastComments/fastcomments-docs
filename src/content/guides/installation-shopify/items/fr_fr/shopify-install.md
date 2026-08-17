@@ -1,34 +1,34 @@
-### Install from the Shopify App Store
+### Installer depuis le Shopify App Store
 
-1. Open the [FastComments listing on the Shopify App Store](https://apps.shopify.com/fastcomments).
-2. Click **Add app** and pick the plan you want during the install flow.
-3. Shopify redirects you back into the FastComments admin inside Shopify when the install completes.
+1. Ouvrez la [liste FastComments sur le Shopify App Store](https://apps.shopify.com/fastcomments).
+2. Cliquez sur **Add app** et choisissez le plan souhaité pendant le processus d'installation.
+3. Shopify vous redirige vers l'administration FastComments dans Shopify une fois l'installation terminée.
 
-That's the full install. There is nothing to paste into your theme files.
+C’est l’installation complète. Il n’y a rien à coller dans vos fichiers de thème.
 
-### What gets set up for you
+### Ce qui est configuré pour vous
 
-The install runs everything you would otherwise do by hand:
+L’installation exécute tout ce que vous feriez manuellement :
 
-- A FastComments tenant is created for your store and linked to your shop domain.
-- Your shop's store URL is added to the tenant's authorized domains, so comments load without a domain error.
-- A `fastcomments.tenant_id` shop metafield is written so every block knows which tenant to render against.
-- Single sign-on for your Shopify customers is enabled by default.
-- Billing runs through Shopify Managed Pricing. Charges appear on your regular Shopify bill. Upgrade, downgrade, or cancel from **Settings > Apps and sales channels > FastComments** in your Shopify admin.
+- Un locataire FastComments est créé pour votre boutique et lié à votre domaine de boutique.
+- L’URL de votre boutique est ajoutée aux domaines autorisés du locataire, de sorte que les commentaires se chargent sans erreur de domaine.
+- Un champ méta de boutique `fastcomments.tenant_id` est écrit afin que chaque bloc sache quel locataire utiliser.
+- L’authentification unique (SSO) pour vos clients Shopify est activée par défaut.
+- La facturation passe par Shopify Managed Pricing. Les frais apparaissent sur votre facture Shopify habituelle. Mettez à niveau, rétrogradez ou annulez depuis **Settings > Apps and sales channels > FastComments** dans votre admin Shopify.
 
-If your shop was already a FastComments customer before you installed the app, the install reuses the existing tenant instead of creating a new one.
+Si votre boutique était déjà cliente FastComments avant d’installer l’application, l’installation réutilise le locataire existant au lieu d’en créer un nouveau.
 
-### The embedded admin
+### L’administration intégrée
 
-When you open the FastComments app from your Shopify admin, you land on a dashboard with one-click tiles into the full FastComments backend:
+Lorsque vous ouvrez l’application FastComments depuis votre admin Shopify, vous accédez à un tableau de bord avec des tuiles en un clic vers le backend complet de FastComments :
 
-- **Dashboard**: account settings, usage, and subscription details.
-- **Moderation Queue**: approve, reject, and reply to comments across your store.
-- **Customize**: adjust widget colors, fonts, moderation rules, and configuration.
-- **Ratings & Reviews Helper**: set up star ratings and review questions if you want to use the Reviews Summary block.
+- **Dashboard** : paramètres du compte, utilisation et détails de l’abonnement.
+- **Moderation Queue** : approuver, rejeter et répondre aux commentaires dans toute votre boutique.
+- **Customize** : ajuster les couleurs du widget, les polices, les règles de modération et la configuration.
+- **Ratings & Reviews Helper** : configurer les évaluations par étoiles et les questions d’avis si vous souhaitez utiliser le bloc Résumé des avis.
 
-Each tile opens FastComments with a single-use login link, so you don't need a separate sign-in.
+Chaque tuile ouvre FastComments avec un lien de connexion à usage unique, vous n’avez donc pas besoin d’une connexion séparée.
 
-### Next: add blocks to your store
+### Prochaine étape : ajouter des blocs à votre boutique
 
-Open your Shopify theme editor (**Online Store > Themes > Customize**), open the template you want to add commenting or reviews to, and click **Add block**. The FastComments blocks appear under **Apps**. The rest of this guide covers each one.
+Ouvrez l’éditeur de thème Shopify (**Online Store > Themes > Customize**), ouvrez le modèle auquel vous souhaitez ajouter des commentaires ou des avis, puis cliquez sur **Add block**. Les blocs FastComments apparaissent sous **Apps**. Le reste de ce guide couvre chacun d’eux.

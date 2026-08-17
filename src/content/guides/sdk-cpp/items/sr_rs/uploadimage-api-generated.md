@@ -1,20 +1,20 @@
-Upload and resize an image
+Отпреми и промени величину слике
 
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| file | HttpContent | Yes |  |
-| options | const UploadImageOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| file | HttpContent | Да |  |
+| options | const UploadImageOptions& | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
+Враћа: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer uploadImage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'uploadImage Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto fileStream = concurrency::streams::fstream::open_istream(U("avatar.png"), std::ios::in).get();
 HttpContent file(fileStream, U("image/png"));

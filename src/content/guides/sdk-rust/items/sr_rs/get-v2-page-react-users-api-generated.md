@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | url_id | String | Yes |  |
 | id | String | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetV2PageReactUsersResponse`
+Враћа: `GetV2PageReactUsersResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_v2_page_react_users Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_v2_page_react_users Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetV2PageReactUsersParams {

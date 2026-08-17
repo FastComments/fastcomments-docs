@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| direction | string | Da |  |
-| options | const CreateVoteOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| direction | string | Да |  |
+| options | const CreateVoteOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteResponse.h)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createVote'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto commentId = utility::conversions::to_string_t("cmt-456");
@@ -24,5 +24,3 @@ optionsPtr->ipAddress = boost::optional<utility::string_t>(utility::conversions:
 api->createVote(tenantId, commentId, direction, *optionsPtr)
     .then([](std::shared_ptr<VoteResponse> resp){});
 [inline-code-end]
-
----

@@ -1,18 +1,18 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| approved | boolean | query | No |  |
-| broadcastId | string | query | No |  |
-| sSO | string | query | No |  |
+| tenantId | string | query | 예 |  |
+| commentId | string | path | 예 |  |
+| approved | boolean | query | 아니오 |  |
+| broadcastId | string | query | 아니오 |  |
+| sso | string | query | 아니오 |  |
 
-## Response
+## 응답
 
-Returns: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentApprovedResponse.php)
+반환: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/SetCommentApprovedResponse.php)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,8 +22,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // 커스텀 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이는 선택 사항이며, 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하십시오.
+    // 이것은 선택 사항이며, 기본값으로 `GuzzleHttp\Client`가 사용됩니다.
     new GuzzleHttp\Client()
 );
 
@@ -43,3 +43,5 @@ try {
     echo 'Exception when calling ModerationApi->postSetCommentApprovalStatus: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

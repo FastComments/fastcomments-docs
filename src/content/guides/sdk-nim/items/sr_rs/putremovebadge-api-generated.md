@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| badgeId | string | Ne |  |
-| options | PutRemoveBadgeOptions | Ne |  |
+| tenantId | string | Да |  |
+| badgeId | string | Не |  |
+| options | PutRemoveBadgeOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[RemoveUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_remove_user_badge_response.nim)
+Враћа: [`Option[RemoveUserBadgeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_remove_user_badge_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putRemoveBadge Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (maybeResp, httpResp) = client.putRemoveBadge(
   tenantId = "my-tenant-123",

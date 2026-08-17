@@ -1,8 +1,5 @@
----
-With FastComments we can easily add live commenting to any site built with Godaddy.
+С FastComments можем лесно да добавим живи коментари към всеки сайт, създаден с Godaddy.
 
-Note that this tutorial requires a FastComments account. It's recommended that you sign up first and then come back here. [You can create an account here.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+Обърнете внимание, че това ръководство изисква акаунт в FastComments. Препоръчително е първо да се регистрирате и след това да се върнете тук. [Можете да създадете акаунт тук.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
 
-We'll be covering adding FastComments to a blog built with Godaddy, but the same general instructions apply to any site.
-
----
+Ще разгледаме добавянето на FastComments към блог, създаден с Godaddy, но същите общи инструкции се прилагат за всеки сайт.

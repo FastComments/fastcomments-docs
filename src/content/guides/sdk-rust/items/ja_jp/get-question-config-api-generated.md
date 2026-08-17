@@ -1,15 +1,15 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| tenant_id | String | はい |  |
+| id | String | はい |  |
 
-## Response
+## レスポンス
 
-Returns: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
+返却: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_question_config_response.rs)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'get_question_config の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

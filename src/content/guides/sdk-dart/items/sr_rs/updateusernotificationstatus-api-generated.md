@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| notificationId | string | path | Da |  |
-| newStatus | string | path | Da |  |
-| sso | string | query | Ne |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| notificationId | string | path | Да |  |
+| newStatus | string | path | Да |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: `UpdateUserNotificationStatusResponse`
+Враћа: `UpdateUserNotificationStatusResponse`
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'updateUserNotificationStatus Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

@@ -1,19 +1,19 @@
 [api-resource-header-start name = 'Aggregate'; route = 'GET /api/v1/aggregate'; creditsCost = 1; api-resource-header-end]
 
-Ovaj API agregira dokumente grupišući ih (ako je naveden groupBy) i primenjujući više operacija.
-Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
+Овај API агрегира документе груписањем (ако је наведен groupBy) и примењивањем више операција.
+Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
-Cena je **varijabilna**. Na svakih 500 pregledanih objekata troši se 1 API kredit.
+Трошак је **променљив**. Сваких 500 скенираних објеката кошта 1 API кредит.
 
-Maksimalna dozvoljena upotreba memorije po API pozivu podrazumevano je 64MB, i podrazumevano možete imati samo jednu agregaciju koja radi u jednom trenutku. Ako pošaljete više agregacija istovremeno, biće stavljene u red i izvršene redosledom slanja. Agregacije koje čekaju biće zadržane najduže 60 sekundi, nakon čega će zahtev isteći (timeout). Pojedinačne agregacije mogu se izvršavati do 5 minuta.
+Максимална употреба меморије дозвољена по API позиву подразумевано је 64MB, а подразумевано можете имати само једно агрегирање у исто време. Ако пошаљете више агрегирања истовремено, они ће бити стављени у ред и извршавани редом у којем су послати. Чекајућа агрегирања ће чекати највише 60 секунди, након чега ће захтев истећи. Појединачна агрегирања могу трајати до 5 минута.
 
-Ako imate upravljane tenante, možete agregirati sve resurse podređenih tenant-a u jednom pozivu tako što ćete proslediti query parametar `parentTenantId`.
+Ако имате управљане закупце, можете агрегирати све ресурсе под‑закупца у једном позиву прослеђивањем query параметра `parentTenantId`.
 
-## Primeri
+## Примери
 
-### Primer: Brojanje jedinstvenih
+### Пример: Бројање јединствених
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Brojanje jedinstvenih vrednosti'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за бројање јединствених вредности'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -24,7 +24,7 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Odgovor: Brojanje jedinstvenih vrednosti'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за бројање јединствених вредности'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -49,9 +49,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }
 [inline-code-end]
 
-### Primer: Prebrojavanje različitih vrednosti
+### Пример: Бројање различитих
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Prebrojavanje različitih vrednosti'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за бројање различитих вредности'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -62,9 +62,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Prebrojavanje različitih vrednosti'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за бројање различитих вредности'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -78,9 +78,9 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Sabiranje vrednosti više polja
+### Пример: Збир вредности више поља
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Sabiranje vrednosti'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за збир вредности'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -91,9 +91,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Sabiranje vrednosti'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за збир вредности'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -107,9 +107,9 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Prosečne vrednosti više polja
+### Пример: Просек вредности више поља
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Prosečne vrednosti'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за просек вредности'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -120,9 +120,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Prosečne vrednosti'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за просек вредности'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -136,9 +136,9 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Minimalne/Maksimalne vrednosti više polja
+### Пример: Минимум/Максимум вредности више поља
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Minimalne/Maksimalne vrednosti'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за минимум/максимум вредности'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -151,9 +151,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Minimalne/Maksimalne vrednosti'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за минимум/максимум вредности'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -169,9 +169,9 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Brojanje jedinstvenih vrednosti više polja
+### Пример: Бројање јединствених вредности више поља
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Brojanje jedinstvenih vrednosti'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за бројање јединствених вредности'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -182,9 +182,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Brojanje jedinstvenih vrednosti'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за бројање јединствених вредности'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -207,9 +207,9 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Kreiranje upita
+### Пример: Креирање упита
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Kreiranje upita'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за креирање упита'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -224,9 +224,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Kreiranje upita'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за креирање упита'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -240,9 +240,9 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Brojanje komentara na čekanju za pregled
+### Пример: Бројање коментара на чекању за преглед
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Brojanje komentara na čekanju za pregled'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за бројање коментара на чекању за преглед'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
@@ -250,14 +250,14 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
         { "key": "reviewed", "value": true, "operator": "not_eq" }
     ],
     "operations": [
-        { "op": "count", "field": "id", "alias": "count" }
+        { "op": "count", "field": "id", "alias": "count"}
     ]
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Brojanje komentara na čekanju za pregled'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за бројање коментара на чекању за преглед'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -268,12 +268,13 @@ Odgovor:
 }
 [inline-code-end]
 
-### Primer: Raspodela odobrenih, pregledanih i spam komentara
+### Пример: Расподела одобрених, прегледаних и спам коментара
 
-[inline-code-attrs-start title = 'Primer cURL zahteva: Raspodela komentara'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за расподелу коментара'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=demo&API_KEY=DEMO_API_SECRET&includeStats=true' --header 'Content-Type: application/json' --data '{
     "resourceName": "Comment",
+    ",
     "operations": [
         { "op": "distinct", "field": "approved", "alias": "approved" },
         { "op": "distinct", "field": "reviewed", "alias": "reviewed" },
@@ -282,9 +283,9 @@ curl --request POST --url 'https://fastcomments.com/api/v1/aggregate?tenantId=de
 }'
 [inline-code-end]
 
-Odgovor:
+Одговор:
 
-[inline-code-attrs-start title = 'Odgovor: Raspodela komentara'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Одговор за расподелу коментара'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",
@@ -299,19 +300,19 @@ Odgovor:
 }
 [inline-code-end]
 
-### Strukture
+### Структуре
 
-[inline-code-attrs-start title = 'Struktura zahteva za agregaciju'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура захтева за агрегирање'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export type AggregationOpType = 'sum' | 'countDistinct' | 'distinct' | 'avg' | 'min' | 'max' | 'count';
 
-/** Operacija koja će se primeniti na polje */
+/** An operation that will be applied on a field */
 export interface AggregationOperation {
-    /** Polje na kojem će se operacija izvršiti */
+    /** The field to operate on */
     field: string;
-    /** Tip operacije */
+    /** The type of operation */
     op: AggregationOpType;
-    /** Opcioni alias za izlaz; ako nije naveden, izračunava se podrazumevani alias */
+    /** Optional alias for the output; if not provided, a default alias is computed */
     alias?: string;
     expandArray?: boolean;
 }
@@ -345,7 +346,7 @@ export type AggregationValue = {
 };
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za agregaciju'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура одговора за агрегирање'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export type AggregationItem = Record<string, AggregationValue> & { groups?: GroupValues };
 
@@ -359,7 +360,7 @@ export interface AggregationResponse {
 }
 [inline-code-end]
 
-Sledeći resursi mogu biti agregirani:
+Следећи ресурси се могу агрегирати:
 
 - AffiliateEvent
 - AnonymousVote

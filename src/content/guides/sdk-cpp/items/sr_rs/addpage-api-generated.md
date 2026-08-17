@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| createAPIPageData | CreateAPIPageData | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+ createAPIPageData | CreateAPIPageData | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddPageAPIResponse.h)
+Враћа: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddPageAPIResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'addPage Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addPage Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto createData = CreateAPIPageData{};
 createData.title = utility::string_t(U("Welcome Page"));
@@ -21,9 +21,9 @@ createData.description = boost::optional<utility::string_t>(utility::string_t(U(
 api->addPage(utility::string_t(U("my-tenant-123")), createData)
     .then([](std::shared_ptr<AddPageAPIResponse> response) {
         if (response && response->success) {
-            // obradi uspešno dodavanje
+            // обради успешно додавање
         } else {
-            // obradi grešku
+            // обради грешку
         }
     });
 [inline-code-end]

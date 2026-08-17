@@ -1,6 +1,6 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължително | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | badgeId | string | query | Yes |  |
@@ -9,13 +9,13 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Отговор
 
-Returns: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_award_user_badge_response.go)
+Връща: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_award_user_badge_response.go)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'PutAwardBadge Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за PutAwardBadge'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -41,7 +41,9 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PutAwardBadge``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutAwardBadge`: AwardUserBadgeResponse
+	// отговор от `PutAwardBadge`: AwardUserBadgeResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PutAwardBadge`: %v\n", resp)
 }
 [inline-code-end]
+
+---

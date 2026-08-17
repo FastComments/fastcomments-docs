@@ -1,17 +1,17 @@
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | postId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 回應
 
-Returns: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
+返回：[`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/delete_feed_post_public_response.py)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'delete_feed_post_public 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,14 +28,14 @@ configuration = client.Configuration(
 )
 
 
-# 以 API 客戶端實例建立上下文
+# 以 API 客戶端實例進入上下文
 with client.ApiClient(configuration) as api_client:
     # 建立 API 類別的實例
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     post_id = 'post_id_example' # str | 
-    broadcast_id = 'broadcast_id_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    broadcast_id = 'broadcast_id_example' # str |  （可選）
+    sso = 'sso_example' # str |  （可選）
 
     try:
         api_response = api_instance.delete_feed_post_public(tenant_id, post_id, DeleteFeedPostPublicOptions(broadcast_id=broadcast_id, sso=sso))

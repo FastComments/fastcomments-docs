@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | No |  |
-| options | UnBlockUserFromCommentOptions | No |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Не |  |
+| options | UnBlockUserFromCommentOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
+Returns: [`Option[UnblockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_unblock_success.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer unBlockUserFromComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockUserFromComment Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.unBlockUserFromComment(
   tenantId = "my-tenant-123",

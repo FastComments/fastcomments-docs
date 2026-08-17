@@ -1,17 +1,19 @@
-Masovne informacije o korisnicima za zakupca. Na osnovu userId‑ova, vraća se prikazna informacija iz User / SSOUser. Koristi se u vidžetu za komentare kako bi obogatio korisnike koji su upravo pojavljeni putem događaja prisutnosti. Bez konteksta stranice: privatnost se dosledno primenjuje (privatni profili su maskirani).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| ids | string | query | Yes | UserId‑ovi odvojeni zarezom. |
+| ids | string | query | Yes | UserIds раздвојени запетама. |
 
-## Odgovor
+## Response
 
-Vraća: `PageUsersInfoResponse`
+Returns: `PageUsersInfoResponse`
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +21,7 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final ids = ids_example; // String | UserId‑ovi odvojeni zarezom.
+final ids = ids_example; // String | UserIds раздвојени запетама.
 
 try {
     final result = api_instance.getUsersInfo(tenantId, ids);

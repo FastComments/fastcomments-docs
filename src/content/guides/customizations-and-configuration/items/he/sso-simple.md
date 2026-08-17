@@ -1,17 +1,17 @@
 [related-parameter-start name = 'simpleSSO'; type = 'FastCommentsSSOSimple'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L14' related-parameter-end]
 
-With Simple SSO, we can provide the commenting widget with information about the user so that they don't have to enter their username or email to comment.
+עם Simple SSO, אנו יכולים לספק לוידג'ט ההערות מידע על המשתמש כך שהם לא יצטרכו להזין שם משתמש או אימייל כדי להגיב.
 
-We can configure Simple SSO as follows:
+אנו יכולים להגדיר Simple SSO כך:
 
 [code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob", displayName: "Bob's Name", displayLabel: "VIP User", loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', badgeConfig: { badgeIds: ['badge-id-1', 'badge-id-2'], pageBadgeIds: ['badge-id-3'], override: false } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]; title = 'Simple SSO'; code-example-end]
 
-The user will be logged in, and will create an SSO User behind the scenes. The user will have `createdFromSimpleSSO` set to `true` if fetched from the API.
+המשתמש ייכנס למערכת, ותיווצר עבורו משתמש SSO ברקע. למשתמש יהיה `createdFromSimpleSSO` מוגדר ל-`true` אם הוא נלקח מה-API.
 
-Notes: 
+הערות:
 
-- Email is the unique identifier for Simple SSO.
-- Providing an email with Simple SSO is not required, however by default their comments will show as "Unverified". <b>If no email is provided, the user cannot be fully authenticated.</b>
-- **NEW** Since Jan 2022: Usernames do not have to be unique across all of fastcomments.com
-- Simple SSO can automatically create and update SSO users, if an email is provided, and the user was not originally created from Secure SSO.
-- You can specify badges for the user with the `badgeConfig` property. The `badgeIds` array contains the IDs of global badges to associate with the user. The `pageBadgeIds` array contains badge IDs scoped to the current page (`urlId`) — these badges are only displayed on the page where they were assigned. If `override` is set to `true`, it will replace existing displayed badges (global and page-scoped are overridden independently); if `false` it will add to existing badges.
+- האימייל הוא מזהה ייחודי עבור Simple SSO.
+- מתן אימייל עם Simple SSO אינו נדרש, עם זאת כברירת מחדל ההערות שלהם יופיעו כ"לא מאומת". <b>אם לא סופק אימייל, המשתמש לא יכול להיות מאומת במלואו.</b>
+- **חדש** מאז ינואר 2022: שמות משתמש אינם חייבים להיות ייחודיים בכל fastcomments.com
+- Simple SSO יכול ליצור ולעדכן משתמשי SSO באופן אוטומטי, אם סופק אימייל, והמשתמש לא נוצר במקור מ- Secure SSO.
+- אתה יכול לציין תגיות (`badges`) עבור המשתמש באמצעות המאפיין `badgeConfig`. המערך `badgeIds` מכיל את המזהים של תגיות גלובליות שיש לשייך למשתמש. המערך `pageBadgeIds` מכיל מזהי תגיות המוגדרים לעמוד הנוכחי (`urlId`) — תגיות אלו מוצגות רק בעמוד שבו הן הוקצו. אם `override` מוגדר ל-`true`, הוא יחליף תגיות מוצגות קיימות (גלובליות ותגיות ספציפיות לעמוד מוחלפות באופן עצמאי); אם `false` הוא יוסיף לתגיות הקיימות.

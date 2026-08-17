@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | post_ids | Vec<String> | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
+Враћа: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_user_reacts_public Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_user_reacts_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_user_reacts() -> Result<(), Error> {
     let params = GetUserReactsPublicParams {

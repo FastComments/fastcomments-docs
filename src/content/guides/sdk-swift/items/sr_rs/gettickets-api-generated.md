@@ -1,29 +1,29 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| state | number | query | No |  |
-| skip | number | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| state | number | query | Не |  |
+| skip | number | query | Не |  |
+| limit | number | query | Не |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
+Враћа: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTicketsResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTickets'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su još u beta fazi. Za bilo koji problem, molimo vas da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let userId = "userId_example" // String |  (opciono)
-let state = 987 // Double |  (opciono)
-let skip = 987 // Double |  (opciono)
-let limit = 987 // Double |  (opciono)
+let userId = "userId_example" // String |  (опционално)
+let state = 987 // Double |  (опционално)
+let skip = 987 // Double |  (опционално)
+let limit = 987 // Double |  (опционално)
 
 DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(userId: userId, state: state, skip: skip, limit: limit)) { (response, error) in
     guard error == nil else {

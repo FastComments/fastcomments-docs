@@ -1,6 +1,6 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | includeByUserIdAndEmail | boolean | query | No |  |
@@ -8,11 +8,11 @@
 | includeByEmailDomain | boolean | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 응답
 
-Returns: `BulkPreBanSummary`
+반환: `BulkPreBanSummary`
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'postBulkPreBanSummary 예시'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -33,3 +33,5 @@ try {
     print('Exception when calling ModerationApi->postBulkPreBanSummary: $e\n');
 }
 [inline-code-end]
+
+---

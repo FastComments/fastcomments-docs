@@ -1,14 +1,13 @@
 ---
-Podrazumevano, korisnici mogu da obrišu svoje komentare. Takođe, brisanje njihovog komentara automatski briše sve podkomentare i privremene komentare u niti. Ovo ponašanje je takođe aktivno.
+Подразумевано, корисници могу да обришу своје коментаре. Такође, брисање коментара аутоматски брише све подкоментаре и привремене коментаре у нити. Ово понашање је такође активно.
 
-Možete da ograničite ovo na sledeće načine:
+Ово можете ограничити на следеће начине:
 
-- Umesto toga, anonimizujte obrisani komentar (postavite ime i tekst na `[deleted]` ili prilagođenu vrednost).
-- Nemojte dozvoliti brisanje komentara kada postoje odgovori. Prikazuje se prilagodljiva poruka o grešci.
-- Ograničite brisanje kada komentar ima odgovore samo na administratore i moderatore.
+- Уместо тога, анонимизујте обрисани коментар (поставите име и текст на `[deleted]` или прилагођену вредност).
+- Не дозволите брисање коментара када постоје одговори. Приказује се прилагодљива порука о грешци.
+- Ограничите брисање када коментар има одговоре само на администраторе и модераторе.
 
-Ovo se može konfigurisati putem sekcije `Comment Thread Deletion` u UI prilagođavanja widgeta.
+Ово се може подесити преко одељка `Comment Thread Deletion` у корисничком интерфејсу прилагођавања виџета.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opcije za brisanje niti komentara u UI prilagođavanja widgeta za anonimizaciju ili ograničavanje brisanja sa odgovorima'; title='Prilagodite ponašanje brisanja za odgovore' app-screenshot-end]
-
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Опције брисања нити коментара у корисничком интерфејсу прилагођавања виџета за анонимизовање или ограничавање брисања са одговорима'; title='Прилагодите понашање брисања за одговоре' app-screenshot-end]
 ---

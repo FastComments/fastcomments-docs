@@ -1,4 +1,5 @@
-Configure your tenant in `settings.py`:
+---
+Kiracınızı `settings.py` içinde yapılandırın:
 
 ```python
 import os
@@ -8,10 +9,11 @@ FASTCOMMENTS = {
 }
 ```
 
-Drop the widget into any template:
+Widget'ı herhangi bir şablona ekleyin:
 
 ```django
 {% load fastcomments %}
 
 {% fastcomments url_id="my-page" %}
 ```
+---

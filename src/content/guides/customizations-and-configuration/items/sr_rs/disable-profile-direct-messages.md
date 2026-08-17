@@ -1,11 +1,14 @@
+---
 [related-parameter-start name = 'disableProfileDirectMessages'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano, FastComments prikazuje karticu „Direktne poruke“ na korisničkim profilima, omogućavajući posetiocima da pošalju direktne poruke korisniku.
+Подразумевано, FastComments ће приказати језичак „Direct Messages“ на корисничким профилима, омогућавајући посетиоцима да шаљу директне поруке кориснику.
 
-Međutim, možemo onemogućiti ovu karticu:
+Међутим, можемо онемогућити овај језичак:
 
-[code-example-start config = {disableProfileDirectMessages: true}; linesToHighlight = [6]; title = 'Onemogući direktne poruke na profilu'; code-example-end]
+[code-example-start config = {disableProfileDirectMessages: true}; linesToHighlight = [6]; title = 'Онемогући директне поруке профила'; code-example-end]
 
-Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Onemogući direktne poruke“.
+Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте одељак „Онемогући директне поруке“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; alt='Stranica za prilagođavanje widgeta sa označenim poljem za onemogućavanje direktnih poruka, čime se sakriva kartica poruka na profilu'; title='Onemogući direktne poruke na profilu' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; alt='Страница за прилагођавање виџета са означеним пољем „Онемогући директне поруке“ за скривање језичка порука на профилу'; title='Онемогући директне поруке профила' app-screenshot-end]
+
+---

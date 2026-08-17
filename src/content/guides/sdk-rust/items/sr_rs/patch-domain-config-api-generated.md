@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | domain_to_update | String | Yes |  |
 | patch_domain_config_params | models::PatchDomainConfigParams | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_domain_config_response.rs)
+Враћа: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_domain_config_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patch_domain_config Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_domain_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_example() -> Result<(), Error> {
     let config = configuration::Configuration::default();

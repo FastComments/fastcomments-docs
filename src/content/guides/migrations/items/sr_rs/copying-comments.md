@@ -1,23 +1,23 @@
-U slučaju da je potrebno premestiti podatke, FastComments pruža alat za samostalno premještanje komentara između stranica i članaka.
+У случају да подаци треба да се премештају, FastComments пружа алат за самосталну услугу за премештање коментара између страница и чланака.
 
-Evo kako izgleda forma za kopiranje komentara:
+Ево како изгледа образац за копирање коментара:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Forma za kopiranje komentara sa poljem From URL ID i poljima To URL ID i URL'; title='Forma za kopiranje komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Образац за копирање коментара са пољем „From URL ID“ и пољима „To URL ID“ и „URL“'; title='Образац за копирање коментара' app-screenshot-end]
 
-### Popunjavanje polja „From“
+### Попуњавање поља "From"
 
-Da bismo odredili odakle da premestimo komentare, potrebno je da znamo izvorni `URL ID`.
+Да бисмо одредили одакле да преместимо коментаре, потребно је само да знамо изворни `URL ID`.
 
-Ako ne prosleđujete vrednost za `urlId` u konfiguraciji widgeta za komentare, onda će ovo biti „čista“ verzija URL‑a stranice.
+Ако у конфигурацији виџета за коментаре не прослеђујете вредност за `urlId`, онда ће ово бити „чиста“ верзија URL‑а странице.
 
-Vrednosti `URL ID` koje imaju vaši komentari možete videti tako što ćete ih izvesti.
+Можете видети које вредности ваши коментари имају за `URL ID` тако што их извезете.
 
-### Popunjavanje polja „To“
+### Попуњавање поља "To"
 
-Da bismo odredili gde da premestimo komentare, potrebno je da znamo ciljni `URL ID` i `URL`.
+Да бисмо одредили куда да преместимо коментаре, потребно је да знамо циљни `URL ID` и `URL`.
 
-`URL ID` će biti kantu (bucket) u koju komentar ide. Polje `URL` se koristi kako biste mogli direktno da pristupite komentaru iz e‑mailova i alata za moderaciju.
+`URL ID` ће бити контејнер у који коментар иде. Поље `URL` се користи како бисте могли директно да се крећете до коментара из имејлова и алата за модерацију.
 
 #### WordPress
 
-Ako koristite WordPress, na primer biste uneli ID‑ove članaka u polja To/From `URL ID` u alatu za migraciju, umesto URL‑a.
+Ако користите WordPress, на пример бисте у поља To/From `URL ID` у алату за миграцију унети ID‑је чланака, уместо URL‑а.

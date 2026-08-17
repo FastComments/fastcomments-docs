@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| options | const GetCommentsForUserOptions& | Yes |  |
+| options | const GetCommentsForUserOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsForUserResponse.h)
+Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsForUserResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentsForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentsForUser'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto options = GetCommentsForUserOptions{
     utility::conversions::to_string_t("my-tenant-123"),
@@ -25,3 +25,5 @@ api->getCommentsForUser(options).then([](pplx::task<std::shared_ptr<GetCommentsF
     }catch(const std::exception&){}
 });
 [inline-code-end]
+
+---

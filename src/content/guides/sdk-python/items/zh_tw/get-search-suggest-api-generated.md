@@ -1,16 +1,16 @@
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | text-search | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 回應
 
-Returns: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_suggest_response.py)
+返回：[`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_suggest_response.py)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'get_search_suggest 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,7 +21,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # 定義主機是可選的，預設為 https://fastcomments.com
-# 查看 configuration.py 以取得所有支援的設定參數清單。
+# 請參閱 configuration.py 以取得所有支援的設定參數清單。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -42,5 +42,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->get_search_suggest: %s\n" % e)
 [inline-code-end]
-
----

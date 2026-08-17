@@ -1,16 +1,16 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
+| userId | string | query | いいえ |  |
 
-## Response
+## レスポンス
 
-Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteSubscriptionAPIResponse.php)
+返却: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/DeleteSubscriptionAPIResponse.php)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'deleteSubscription の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,15 +18,15 @@ Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// API キー認証を構成します: api_key
+// APIキー認証を設定: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// 必要に応じて API キーのプレフィックス (例: Bearer) を設定するには、以下のコメントを外してください
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには、以下のコメントを外してください
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡します。
-    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これはオプションです。デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client(),
     $config
 );
@@ -43,3 +43,5 @@ try {
     echo 'Exception when calling DefaultApi->deleteSubscription: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,4 +1,5 @@
-Configure your tenant in `settings.py`:
+---
+Διαμορφώστε το ενοικιαστή σας στο `settings.py`:
 
 ```python
 import os
@@ -8,10 +9,11 @@ FASTCOMMENTS = {
 }
 ```
 
-Drop the widget into any template:
+Τοποθετήστε το widget σε οποιοδήποτε πρότυπο:
 
 ```django
 {% load fastcomments %}
 
 {% fastcomments url_id="my-page" %}
 ```
+---

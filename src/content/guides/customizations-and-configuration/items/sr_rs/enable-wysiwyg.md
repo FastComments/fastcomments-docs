@@ -1,9 +1,11 @@
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano, funkcionalnosti formatiranja u FastComments se ostvaruju dodavanjem vidljivih anchor tagova poput `<b></b>` oko vašeg teksta. Klikom na alatnu traku ili korišćenjem prečica to se radi za vas. Međutim, neke zajednice mogu želeti da koriste formatiranje bez anchor tagova. Ovo se naziva omogućavanje WYSIWYG (what you see is what you get) uređivača. Ovaj uređivač izgleda identično podrazumevanom, osim što učitava dodatni kod koji omogućava korisnicima da podebljaju, podvlače, itd. svoj tekst bez vidljivih anchor tagova.
+Подразумевано, функционалност форматирања у FastComments се реализује додавањем видљивих anchor ознака као `<b></b>` око вашег текста. Клик на траку са алаткама или коришћење пречица то ради за вас. Међутим, неке заједнице могу желети да користе форматирање без anchor ознака. Ово се назива омогућавање WYSIWYG (what you see is what you get) уређивача. Овај уређивач изгледа потпуно исто као подразумевани, осим што учитава додатни код који омогућава корисницима да подебљају, подвлаче и сл. свој текст без видљивих anchor ознака.
 
-[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Omogućavanje WYSIWYG uređivanja'; code-example-end]
+[code-example-start config = {enableWYSIWYG: true}; linesToHighlight = [6]; title = 'Омогућавање WYSIWYG уређивања'; code-example-end]
 
-Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte opciju "Enable Advanced Formatting" option.
+Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте опцију "Enable Advanced Formatting" option.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Stranica za prilagođavanje widgeta sa čekiranim poljem Omogući napredno formatiranje za uključivanje WYSIWYG uređivača'; title='Omogući WYSIWYG' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Страница за прилагођавање виџета са означеним пољетом Enable Advanced Formatting за укључивање WYSIWYG уређивача'; title='Омогући WYSIWYG' app-screenshot-end]
+
+---

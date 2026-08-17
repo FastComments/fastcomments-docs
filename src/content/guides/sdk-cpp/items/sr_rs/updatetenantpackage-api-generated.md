@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateTenantPackage Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за updateTenantPackage'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto body = std::make_shared<UpdateTenantPackageBody>();
 body->packageId = utility::conversions::to_string_t("premium-plan");
@@ -25,9 +25,9 @@ api->updateTenantPackage(utility::conversions::to_string_t("my-tenant-123"),
     .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {
         try {
             auto response = task.get();
-            // success handling
+            // обрада успеха
         } catch (const std::exception& ex) {
-            // error handling
+            // обрада грешке
         }
     });
 [inline-code-end]

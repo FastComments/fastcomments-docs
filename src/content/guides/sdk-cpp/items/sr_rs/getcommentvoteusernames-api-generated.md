@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| dir | int32_t | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| dir | int32_t | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentVoteUserNamesSuccessResponse.h)
+Враћа: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentVoteUserNamesSuccessResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentVoteUserNames'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentVoteUserNames Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto task = api->getCommentVoteUserNames(
     utility::conversions::to_string_t("my-tenant-123"),

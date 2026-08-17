@@ -1,7 +1,6 @@
 ---
-FastComments Collab Chat podiže Super.so sajtove na viši nivo dodavanjem živih diskusija direktno u tekstu. Korisnici mogu označavati i komentarisati
-delove teksta saradnički, zajedno - uživo!
+FastComments Collab Chat доводи Super.so сајтове на следећи ниво додавањем живих инлајн дискусија. Корисници могу да истакну и коментаришу
+делове текста заједно, уживо!
 
-Ovde ćemo obraditi korake instalacije koji bi trebalo da traju samo nekoliko minuta.
-
+Овде ћемо обрадити кораке инсталације који би требало да трају само неколико минута.
 ---

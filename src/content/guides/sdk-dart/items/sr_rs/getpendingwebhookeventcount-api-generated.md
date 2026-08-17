@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | No |  |
 | externalId | string | query | No |  |
@@ -10,18 +10,18 @@
 | domain | string | query | No |  |
 | attemptCountGT | number | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: `GetPendingWebhookEventCountResponse`
+Враћа: `GetPendingWebhookEventCountResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getPendingWebhookEventCount Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEventCount Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -40,5 +40,3 @@ try {
     print('Exception when calling DefaultApi->getPendingWebhookEventCount: $e\n');
 }
 [inline-code-end]
-
----

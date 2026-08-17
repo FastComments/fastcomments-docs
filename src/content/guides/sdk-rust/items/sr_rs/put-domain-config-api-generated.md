@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| domain_to_update | String | Yes |  |
-| update_domain_config_params | models::UpdateDomainConfigParams | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| domain_to_update | String | Да |  |
+| update_domain_config_params | models::UpdateDomainConfigParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/put_domain_config_response.rs)
+Враћа: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/put_domain_config_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'put_domain_config Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_domain_config Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn update_domain(configuration: &configuration::Configuration) -> Result<(), Error> {
     let update_params = models::UpdateDomainConfigParams {

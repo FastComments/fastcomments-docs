@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| vote_id | String | Da |  |
-| url_id | String | Da |  |
-| broadcast_id | String | Da |  |
-| edit_key | String | Ne |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| vote_id | String | Yes |  |
+| url_id | String | Yes |  |
+| broadcast_id | String | Yes |  |
+| edit_key | String | No |  |
+| sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_comment_vote Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_vote Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 #[tokio::main]
 async fn main() -> Result<(), Error> {

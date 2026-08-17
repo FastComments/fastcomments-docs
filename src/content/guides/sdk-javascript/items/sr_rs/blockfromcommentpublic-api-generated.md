@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | Yes |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BlockFromCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublicResponse.ts)
+Враћа: [`BlockFromCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublicResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockFromCommentPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demo() {
   const tenantId: string = "tenant_9f8b7c";

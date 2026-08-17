@@ -1,22 +1,22 @@
-Enable or disable notifications for a specific comment.
+Омогућите или онемогућите обавештења за одређени коментар.
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Da |  |
-| notification_id | String | Da |  |
-| opted_in_or_out | String | Da |  |
-| comment_id | String | Da |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| notification_id | String | Yes |  |
+| opted_in_or_out | String | Yes |  |
+| comment_id | String | Yes |  |
+| sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_comment_subscription_status_response.rs)
+Враћа: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_comment_subscription_status_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_comment_subscription_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = UpdateUserNotificationCommentSubscriptionStatusParams {
@@ -30,3 +30,5 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
+
+---

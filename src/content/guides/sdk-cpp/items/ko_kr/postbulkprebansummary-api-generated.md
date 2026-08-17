@@ -1,18 +1,18 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| bulkPreBanParams | BulkPreBanParams | Yes |  |
-| options | const PostBulkPreBanSummaryOptions& | Yes |  |
+| tenantId | string | 예 |  |
+| bulkPreBanParams | BulkPreBanParams | 예 |  |
+| options | const PostBulkPreBanSummaryOptions& | 예 |  |
 
-## Response
+## 응답
 
-Returns: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkPreBanSummary.h)
+반환: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkPreBanSummary.h)
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'postBulkPreBanSummary 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBulkPreBanSummary 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 BulkPreBanParams bulkPreBanParams;

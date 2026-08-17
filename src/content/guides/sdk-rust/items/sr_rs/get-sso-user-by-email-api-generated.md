@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| email | String | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| email | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSsoUserByEmailApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_sso_user_by_email_api_response.rs)
+Враћа: [`GetSsoUserByEmailApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_sso_user_by_email_api_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_sso_user_by_email'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

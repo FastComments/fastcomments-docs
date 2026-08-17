@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | упит | Да |  |
+| id | string | путања | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_empty_response.rb)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_empty_response.rb)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer update_question_result'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_question_result Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# Podešavanje autorizacije
+# подеси ауторизацију
 FastCommentsClient.configure do |config|
-  # Konfigurišite autorizaciju API ključa: api_key
+  # Конфигуриши ауторизацију API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. 'Bearer' (podrazumevano je nil)
+  # Одкоментариши следећу линију да подесиш префикс за API кључ, нпр. 'Bearer' (подразумевано је nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 
@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_question_result: #{e}"
 end
 [inline-code-end]
-
----

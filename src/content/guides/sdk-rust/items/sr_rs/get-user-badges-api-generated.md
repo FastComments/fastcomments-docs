@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| badge_id | String | No |  |
-| displayed_on_comments | bool | No |  |
-| limit | f64 | No |  |
-| skip | f64 | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| user_id | String | Не |  |
+| badge_id | String | Не |  |
+| displayed_on_comments | bool | Не |  |
+| limit | f64 | Не |  |
+| skip | f64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`ApiGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badges_response.rs)
+Враћа: [`ApiGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badges_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_user_badges'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_user_badges'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetUserBadgesParams {
@@ -30,3 +30,5 @@ async fn fetch_badges(configuration: &configuration::Configuration) -> Result<()
     Ok(())
 }
 [inline-code-end]
+
+---

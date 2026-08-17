@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| commentIds | string | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| commentIds | string | Yes |  |
+| sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CheckedCommentsForBlockedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CheckedCommentsForBlockedResponse.ts)
+Враћа: [`CheckedCommentsForBlockedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CheckedCommentsForBlockedResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример checkedCommentsForBlocked'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "acme-corp-123";

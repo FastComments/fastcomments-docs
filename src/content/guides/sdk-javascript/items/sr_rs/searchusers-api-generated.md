@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| usernameStartsWith | string | No |  |
-| mentionGroupIds | Array<string> | No |  |
-| sso | string | No |  |
-| searchSection | SearchUsersSearchSectionEnum | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| usernameStartsWith | string | Не |  |
+| mentionGroupIds | Array<string> | Не |  |
+| sso | string | Не |  |
+| searchSection | SearchUsersSearchSectionEnum | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SearchUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResponse1.ts)
+Враћа: [`SearchUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'searchUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'searchUsers Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoSearch(): Promise<void> {
     const tenantId: string = "tenant_12345";

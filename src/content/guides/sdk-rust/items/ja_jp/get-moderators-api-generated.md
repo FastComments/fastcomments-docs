@@ -1,15 +1,15 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| skip | f64 | No |  |
+| tenant_id | String | はい |  |
+| skip | f64 | いいえ |  |
 
-## Response
+## レスポンス
 
-Returns: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderators_response.rs)
+返却: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_moderators_response.rs)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'get_moderators の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

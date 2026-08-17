@@ -1,22 +1,22 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| locale | string | query | No |  |
+| tenantId | string | query | כן |  |
+| locale | string | query | לא |  |
 
-## Response
+## תגובה
 
-Returns: `RenderEmailTemplateResponse`
+מחזיר: `RenderEmailTemplateResponse`
 
-## Example
+## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת renderEmailTemplate'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO קבע הגדרת הרשאת מפתח API: api_key
+// TODO הגדר הרשאת מפתח API: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח API, אם נדרש
+// בטל את ההערה למטה כדי להגדיר קידומת (למשל Bearer) למפתח ה-API, אם נדרש
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -31,3 +31,5 @@ try {
     print('Exception when calling DefaultApi->renderEmailTemplate: $e\n');
 }
 [inline-code-end]
+
+---

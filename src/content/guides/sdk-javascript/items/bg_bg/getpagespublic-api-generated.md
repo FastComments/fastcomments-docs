@@ -1,10 +1,10 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Списък на страниците за наемател. Използва се от настолната клиентска програма FChat за попълване на списъка с стаи.  
+Изисква `enableFChat` да бъде true в разрешената персонализирана конфигурация за всяка страница.  
+Страници, които изискват SSO, се филтрират спрямо груповия достъп на заявилия потребител.
 
 ## Parameters
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | cursor | string | No |  |
@@ -15,11 +15,11 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## Response
 
-Returns: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+Връща: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
 
 ## Example
 
-[inline-code-attrs-start title = 'getPagesPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchPages() {
   const tenantId: string = "tenant_12345";
@@ -41,3 +41,5 @@ async function fetchPages() {
   console.log(response);
 }
 [inline-code-end]
+
+---

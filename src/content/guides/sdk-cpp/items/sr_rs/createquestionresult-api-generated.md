@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createQuestionResultBody | CreateQuestionResultBody | Da |  |
+| tenantId | string | Да |  |
+| createQuestionResultBody | CreateQuestionResultBody | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateQuestionResultResponse.h)
+Враћа: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateQuestionResultResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer createQuestionResult'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 CreateQuestionResultBody body;

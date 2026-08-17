@@ -1,93 +1,93 @@
-Badges are visual achievements that appear on your User Profile, recognizing your contributions and activity across FastComments communities.
+Badges er visuelle præstationer, der vises på din brugerprofil, og anerkender dine bidrag og aktivitet på tværs af FastComments-fællesskaber.
 
-### What Are Badges?
+### Hvad er Badges?
 
-Badges are earned recognition for various activities such as:
-- Number of comments posted
-- Upvotes received
-- Replies generated
-- Moderator actions
-- Time as a community member
-- Special achievements
+Badges er optjent anerkendelse for forskellige aktiviteter såsom:
+- Antal indlægte kommentarer
+- Modtagne upvotes
+- Genererede svar
+- Moderatorhandlinger
+- Tid som fællesskabsmedlem
+- Særlige præstationer
 
-Each badge displays on your profile and can optionally appear next to your name in comments.
+Hver badge vises på din profil og kan valgfrit vises ved siden af dit navn i kommentarer.
 
-### Viewing Your Badges
+### Sådan ser du dine Badges
 
-Your earned badges appear on your profile page in the header section. There are two categories:
+Dine optjente badges vises på din profils side i header‑sektionen. Der er to kategorier:
 
-1. **Earned Badges** - Badges you've fully earned and unlocked
-2. **In Progress** - Badges you're working toward, with progress bars showing how close you are
+1. **Earned Badges** - Badges du har fuldt optjent og låst op  
+2. **In Progress** - Badges du arbejder på, med fremdriftslinjer der viser, hvor tæt du er på  
 
-### Badge Display
+### Badge‑visning
 
-You have full control over how badges appear:
+Du har fuld kontrol over, hvordan badges vises:
 
-**On Your Profile:**
-All earned badges are displayed on your profile header for others to see.
+**På din profil:**  
+Alle optjente badges vises i din profilheader, så andre kan se dem.
 
-**On Your Comments:**
-You can choose which badges appear next to your name when you comment:
+**På dine kommentarer:**  
+Du kan vælge, hvilke badges der vises ved siden af dit navn, når du kommenterer:
 
-1. Visit your profile page
-2. Click "Manage Badges" or access the badge management dialog
-3. Toggle which badges should appear on your comments
-4. Reorder badges by dragging them to set display priority
+1. Besøg din profils side  
+2. Klik på "Manage Badges" eller få adgang til badge‑styringsdialogen  
+3. Skift hvilke badges, der skal vises i dine kommentarer  
+4. Omarranger badges ved at trække dem for at sætte visningsprioritet  
 
-This allows you to showcase your most meaningful achievements without cluttering your comment signature.
+Dette giver dig mulighed for at fremvise dine mest betydningsfulde præstationer uden at rodet din kommentar‑signatur.
 
-### Badge Types
+### Badge‑typer
 
-Badges come in various types based on different achievement categories. For a complete overview of all available badge types and how to earn them, see the [Badges Guide](/guide-badges.html).
+Badges findes i forskellige typer baseret på forskellige præstationskategorier. For en komplet oversigt over alle tilgængelige badge‑typer og hvordan du optjener dem, se [Badges Guide](/guide-badges.html).
 
-Common badge categories include:
+Almindelige badge‑kategorier inkluderer:
 
-- **Engagement Badges** - Based on comment count, replies, and interaction
-- **Quality Badges** - Based on upvotes and community reception
-- **Time-Based Badges** - Veteran status, night owl activity
-- **Moderator Badges** - Recognition for moderation actions
-- **Special Badges** - Manually awarded or community-specific achievements
+- **Engagement Badges** - Baseret på antal kommentarer, svar og interaktion  
+- **Quality Badges** - Baseret på upvotes og fællesskabets modtagelse  
+- **Time-Based Badges** - Veteranstatus, natugle‑aktivitet  
+- **Moderator Badges** - Anerkendelse for moderation handlinger  
+- **Special Badges** - Manuelt tildelte eller fællesskabsspecifikke præstationer  
 
-### Community-Specific Badges
+### Fællesskabsspecifikke Badges
 
-Badges can be earned across different FastComments communities:
+Badges kan optjenes på tværs af forskellige FastComments‑fællesskaber:
 
-- **Global Badges** - Earned across all FastComments usage
-- **Community Badges** - Earned within specific sites/tenants
+- **Global Badges** - Optjent på tværs af al FastComments‑brug  
+- **Community Badges** - Optjent inden for specifikke sites/tenants  
 
-Your profile shows which community awarded each badge, helping visitors understand your areas of expertise and participation.
+Din profil viser, hvilket fællesskab der tildelte hver badge, så besøgende kan forstå dine ekspertiseområder og deltagelse.
 
-### Badge Progress Tracking
+### Badge‑fremskridts‑sporing
 
-For badges you haven't fully earned yet, your profile shows:
+For badges du endnu ikke har optjent fuldt ud, viser din profil:
 
-- **Progress Bar** - Visual indicator of how close you are to earning the badge
-- **Requirements** - What you need to do to unlock the badge
-- **Community Context** - Which community the badge is associated with
+- **Progress Bar** - Visuel indikator for hvor tæt du er på at optjene badge'en  
+- **Requirements** - Hvad du skal gøre for at låse badge'en op  
+- **Community Context** - Hvilket fællesskab badge'en er knyttet til  
 
-This motivates continued participation and gives you clear goals to work toward.
+Dette motiverer fortsat deltagelse og giver dig klare mål at arbejde hen imod.
 
-### Customizing Badge Display
+### Tilpasning af Badge‑visning
 
-**Badge Order:**
-You can reorder badges to control which appear first. The order you set determines:
-- Priority in the profile display
-- Which badges show in limited space situations
-- Personal preference for highlighting achievements
+**Badge‑rækkefølge:**  
+Du kan omarrangere badges for at styre, hvilke der vises først. Den rækkefølge du angiver bestemmer:
+- Prioritet i profilvisningen
+- Hvilke badges der vises i situationer med begrænset plads
+- Personlig præference for at fremhæve præstationer  
 
-**Visibility:**
-Toggle individual badges on/off for comment display while keeping them visible on your profile.
+**Synlighed:**  
+Slå individuelle badges til/fra for kommentarvisning, mens de forbliver synlige på din profil.
 
-### Manual Badges
+### Manuelle Badges
 
-Community administrators can award special manual badges to recognize:
-- Special contributions
-- Contest winners
-- VIP members
-- Custom achievements
+Fællesskabsadministratorer kan tildele specielle manuelle badges for at anerkende:
+- Særlige bidrag
+- Konkurrencevindere
+- VIP‑medlemmer
+- Tilpassede præstationer  
 
-These badges appear alongside automatically earned badges on your profile.
+Disse badges vises sammen med automatisk optjente badges på din profil.
 
-### For More Information
+### For mere information
 
-For complete details on the badge system, including all badge types, earning criteria, and administrative configuration, see the comprehensive [Badges Guide](/guide-badges.html).
+For komplette detaljer om badge‑systemet, inklusive alle badge‑typer, optjeningskriterier og administrativ konfiguration, se den omfattende [Badges Guide](/guide-badges.html).

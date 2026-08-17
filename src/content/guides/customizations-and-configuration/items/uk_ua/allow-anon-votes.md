@@ -1,5 +1,7 @@
-When users attempt to vote on a comment, and they are not logged in, they will be asked to provide their username and email.
+---
+Коли користувачі намагаються проголосувати за коментар, і вони не ввійшли в систему, їх просять вказати ім'я користувача та електронну пошту.
 
-We can remove this requirement, allowing anyone to vote on a comment without leaving any information.
+Ми можемо прибрати цю вимогу, дозволяючи будь-кому голосувати за коментар, не залишаючи жодної інформації.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='Сторінка налаштування віджету з увімкненою опцією анонімних голосувань, тому для голосування не потрібні ім\'я чи електронна пошту'; title='Дозволити анонімні голосування' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='Сторінка налаштування віджету з увімкненою опцією анонімних голосувань, тому голосування не потребує імені чи електронної пошти'; title='Дозволити анонімні голосування' app-screenshot-end]
+---

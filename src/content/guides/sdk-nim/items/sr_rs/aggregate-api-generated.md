@@ -1,21 +1,21 @@
-Agregira dokumente grupišući ih (ako je naveden groupBy) i primenjujući više operacija.  
-Različite operacije (npr. sum, countDistinct, avg, itd.) su podržane.
+Агрегира документе груписањем (ако је наведен groupBy) и примењивањем више операција.  
+Подржане су различите операције (нпр. sum, countDistinct, avg, итд.).
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| aggregationRequest | AggregationRequest | No |  |
-| options | AggregateOptions | No |  |
+| tenantId | string | Да |  |
+| aggregationRequest | AggregationRequest | Не |  |
+| options | AggregateOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
+Returns: [`Option[AggregateResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_aggregate_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer agregacije'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'пример агрегирања'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (aggResp, httpResp) = client.aggregate(tenantId = "my-tenant-123", aggregationRequest = AggregationRequest(), options = AggregateOptions())
 if aggResp.isSome:

@@ -1,15 +1,13 @@
-### Korišćenje resursa
+### Употреба ресурса
 
-Treba napomenuti da se preuzimanje podataka sa API-ja računa kao potrošnja na vašem nalogu.
+Треба напоменути да се преузимање података са API‑ја рачуна као употреба на вашем налогу.
 
-Svaki resurs će u svojoj sekciji navesti kolika je ta potrošnja.
+Сваки ресурс ће у свом одељку навести каква је та употреба.
 
-Neki resursi su skuplji za posluživanje od drugih. Svaki endpoint ima fiksnu cenu u kreditima po API pozivu. Za neke endpoint-e, broj kredita varira u zavisnosti od opcija i veličine odgovora.
+Неки ресурси коштају више за обраду него други. Свака крајња тачка има одређену цену у кредитима по API позиву. За неке крајње тачке, број кредита варира у зависности од опција и величине одговора.
 
-Upotreba API-ja se može proveriti na stranici [Analitika naplate](https://fastcomments.com/auth/my-account/analytics/billing) i ažurira se svakih nekoliko minuta.
+Употребу API‑ја можете проверити на страници [Аналитика наплате](https://fastcomments.com/auth/my-account/analytics/billing) и она се ажурира сваких неколико минута.
 
-#### Napomena!
+#### Напомена!
 
-Preporučujemo da prvo pročitate dokumentaciju Pages, kako biste smanjili zabunu prilikom određivanja koje vrednosti treba proslediti za `urlId` u Comment API-ju.
-
----
+Препоручујемо да прво прочитате документацију о страницама, како би се смањила збрка приликом одређивања које вредности проследити за `urlId` у Коментар API‑ју.

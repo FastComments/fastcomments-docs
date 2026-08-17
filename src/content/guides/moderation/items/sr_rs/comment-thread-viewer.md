@@ -1,16 +1,16 @@
-Kada moderirate i pregledate niti komentara, poželjno je moći direktno skočiti na nit kako biste dobili kontekst tokom moderacije.
+Када се модерира и прегледају теме коментара, пожељно је имати могућност да се директно скочи на тему како би се добио контекст током модерирања.
 
-Ovo znači da korisnikov tok počinje na stranici **Comment Moderation**, a zatim bi morao da pređe sa pojedinačnog komentara na
-stranicu koja sadrži taj komentar, sačeka da se stranica učita, sačeka da se učitaju komentari i potom se pomeri do tog komentara.
+То значи да кориснички ток почиње на страници за модерацију коментара, а затим би морао да иде од појединачног коментара до
+странице која садржи тај коментар, сачека да се та страница учита, сачека да се учитају коментари, и затим скролује до тог коментара.
 
-Međutim, FastComments nudi brži način. Na stranici **Moderate Comments**, pored svakog komentara, nalazi se dugme „View Comment“ u donjem desnom uglu.
+Међутим, FastComments пружа бржи начин. На страници „Moderate Comments“, поред сваког коментара, постоји дугме „View Comment“ у доњем десном углу.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Jedan komentar u listi moderacije, sa dugmetom View Comment u donjem desnom uglu'; title='Komentar' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Један коментар у листи за модерацију, са дугметом „View Comment“ у доњем десном углу'; title='Коментар' app-screenshot-end]
 
-Ako ovaj komentar ima odgovore, tekst na dugmetu će umesto toga prikazivati broj odgovora, ali klik na dugme izvršava istu radnju.
+Ако овај коментар има одговоре, текст дугмета ће уместо тога приказати број одговора, али ће клик на њега извршити исту радњу.
 
-Ovo dugme će vas odvesti do **Comment Thread Viewer**‑a.
+Ово дугме ће вас одвести до **Comment Thread Viewer**.
 
-**Comment Thread Viewer** je mala, brzo učitavajuća aplikacija koju hostuje FastComments i koja renderuje nit komentara za stranicu na kojoj se komentar nalazi, te se pomera do tog komentara.
+Comment Thread Viewer је мала, брзо учитавајућа апликација коју хостује FastComments, која приказује тему коментара за страницу на којој се коментар налази и скролује до тог коментара.
 
-Ovo omogućava moderatorima da brzo prikupe potreban kontekst, bez čekanja da se učita druga stranica.
+Ово омогућава модераторима да брзо прикупе потребан контекст, без потребе да чекају учитавање друге странице.

@@ -1,19 +1,19 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| namespace | string | path | Yes |  |
-| component | string | path | Yes |  |
-| locale | string | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
+| namespace | string | path | はい |  |
+| component | string | path | はい |  |
+| locale | string | query | いいえ |  |
+| useFullTranslationIds | boolean | query | いいえ |  |
 
-## Response
+## レスポンス
 
-Returns: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
+返却: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTranslationsResponse.php)
 
-## Example
+## 例
 
-[inline-code-attrs-start title = 'getTranslations の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTranslations 例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -41,3 +41,5 @@ try {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,25 +1,20 @@
----
-A `HashTag` object represents a tag that can be left by a user. HashTags can be used to link to an external piece of content or to
-tie related comments together.
+A `HashTag` object представляет тег, который может быть оставлен пользователем. HashTag'и могут использоваться для ссылки на внешний контент или для связывания связанных комментариев.
 
-The structure for the `HashTag` object is as follows:
+Структура объекта `HashTag` выглядит следующим образом:
 
 [inline-code-attrs-start title = 'Структура HashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTag {
-    /** Должен начинаться с символа "#" или другого желаемого символа. **/
+    /** Should start with the "#" or desired character. **/
     tag: string
-    /** Необязательный URL, на который может указывать хештег. Вместо фильтрации комментариев по хештегу интерфейс при клике перенаправит на этот URL. **/
+    /** An optional URL that the hashtag can point to. Instead of filtering comments by hashtag, the UI will redirect to this upon click. **/
     url?: string
-    /** Только для чтения **/
+    /** READONLY **/
     createdAt: string
 }
 [inline-code-end]
 
-Notes:
+Примечания:
 
-- In some API endpoints you will see that the hashtag is used in the URL. Remember to URI-Encoded values. For example, `#` should instead be represented as `%23`.
-- Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
- 
-
----
+- В некоторых конечных точках API вы увидите, что хэштег используется в URL. Не забудьте кодировать значения в URI. Например, `#` следует представлять как `%23`.
+- Некоторые из этих полей помечены как `READONLY` — они возвращаются API, но не могут быть заданы.

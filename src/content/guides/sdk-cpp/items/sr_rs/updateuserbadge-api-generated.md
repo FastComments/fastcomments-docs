@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
+Враћа: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateUserBadge Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserBadge Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto userId = utility::conversions::to_string_t("user@example.com");
@@ -27,3 +27,5 @@ api->updateUserBadge(tenantId, userId, params)
         std::cerr << "Error updating badge: " << e.what() << "\n";
     });
 [inline-code-end]
+
+---

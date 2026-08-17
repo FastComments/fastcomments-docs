@@ -1,8 +1,9 @@
-Dodajte FastCommentsUI u vaš projekat koristeći Swift Package Manager.
+---
+Додајте FastCommentsUI у ваш пројекат користећи Swift Package Manager.
 
-U Xcode‑u: **File > Add Package Dependencies**, zatim unesite URL repozitorijuma.
+У Xcode-у: **File > Add Package Dependencies**, затим унесите URL репозиторијума.
 
-Ili ga dodajte u vaš `Package.swift`:
+Или га додајте у ваш `Package.swift`:
 
 ```swift
 dependencies: [
@@ -10,7 +11,7 @@ dependencies: [
 ]
 ```
 
-Zatim dodajte proizvod u vaš cilj:
+Затим додајте производ у ваш циљ:
 
 ```swift
 .target(
@@ -21,9 +22,10 @@ Zatim dodajte proizvod u vaš cilj:
 )
 ```
 
-Uvezite oba modula gde je potrebno:
+Увезите оба модула где је потребно:
 
 ```swift
 import FastCommentsUI
 import FastCommentsSwift
 ```
+---

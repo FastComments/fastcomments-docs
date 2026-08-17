@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | No |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
+Враћа: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateTenantPackage Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateTenantPackage'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let body = UpdateTenantPackageBody()
 let (optResp, httpResp) = client.updateTenantPackage(
@@ -23,5 +23,3 @@ let (optResp, httpResp) = client.updateTenantPackage(
 if optResp.isSome:
   let empty = optResp.get()
 [inline-code-end]
-
----

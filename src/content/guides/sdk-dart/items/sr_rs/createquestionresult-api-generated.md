@@ -1,21 +1,22 @@
-## Parametri
+---
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 
-## Odgovor
+## Одговор
 
-Returns: `CreateQuestionResultResponse`
+Враћа: `CreateQuestionResultResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createQuestionResult Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite dole da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// уклоните коментар испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -29,3 +30,5 @@ try {
     print('Exception when calling DefaultApi->createQuestionResult: $e\n');
 }
 [inline-code-end]
+
+---

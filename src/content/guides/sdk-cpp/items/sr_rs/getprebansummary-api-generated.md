@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
-| options | const GetPreBanSummaryOptions& | Yes |  |
+| options const GetPreBanSummaryOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PreBanSummary.h)
+Враћа: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PreBanSummary.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getPreBanSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPreBanSummary Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto commentId = utility::conversions::to_string_t("cmt-456789");
@@ -23,9 +23,9 @@ api->getPreBanSummary(tenantId, commentId, options)
     .then([](pplx::task<std::shared_ptr<PreBanSummary>> t) {
         try {
             auto summary = t.get();
-            // obradi rezime
+            // обради сажетак
         } catch (const std::exception&) {
-            // obradi grešku
+            // обради грешку
         }
     });
 [inline-code-end]

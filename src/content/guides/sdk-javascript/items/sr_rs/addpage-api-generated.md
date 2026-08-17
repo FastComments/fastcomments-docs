@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| createAPIPageData | CreateAPIPageData | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| createAPIPageData | CreateAPIPageData | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddPageAPIResponse.ts)
+Враћа: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddPageAPIResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'addPage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

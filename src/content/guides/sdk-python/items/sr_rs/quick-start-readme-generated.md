@@ -1,25 +1,25 @@
-### Korišćenje autentifikovanih API‑ja (DefaultApi)
+### Коришћење аутентификованих API‑ја (DefaultApi)
 
-**Važno:** Morate postaviti vaš API ključ u Configuration pre nego što izvršite autentifikovane zahteve. Ako to ne uradite, zahtevi će propasti sa greškom 401.
+**Важно:** Морате поставити ваш API кључ у Configuration пре него што извршите аутентификоване захтеве. Ако то не урадите, захтеви ће пропасти са грешком 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Create and configure the API client
+# Креирање и конфигурисање API клијента
 config = Configuration()
 config.host = "https://fastcomments.com"
 
-# REQUIRED: Set your API key (get this from your FastComments dashboard)
+# ОБАВЕЗНО: Поставите ваш API кључ (преузмите га са вашег FastComments контролне табле)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
-# Create the API instance with the configured client
+# Креирање API инстанце са конфигурисаним клијентом
 api_client = ApiClient(configuration=config)
 api = DefaultApi(api_client)
 
-# Now you can make authenticated API calls
+# Сада можете извршавати аутентификоване API позиве
 try:
-    # Example: Add an SSO user
+    # Пример: Додавање SSO корисника
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,14 +31,14 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Common errors:
-    # - 401: API key is missing or invalid
-    # - 400: Request validation failed
+    # Уобичајене грешке:
+    # - 401: API кључ недостаје или је неважећи
+    # - 400: Валидација захтева није успела
 ```
 
-### Korišćenje javnih API‑ja (PublicApi)
+### Коришћење јавних API‑ја (PublicApi)
 
-Javni krajnji poeni ne zahtevaju autentifikaciju:
+Јавни крајњи тачке не захтевају аутентификацију:
 
 ```python
 from client import ApiClient, Configuration, PublicApi
@@ -56,9 +56,9 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Korišćenje kontrolne table za moderaciju (ModerationApi)
+### Коришћење контролне табле за модерацију (ModerationApi)
 
-`ModerationApi` pokreće kontrolnu tablu moderatora. Metode se pozivaju u ime moderatora prosleđivanjem `sso` tokena:
+„ModerationApi“ покреће контролну таблу за модераторе. Методи се позивају у име модератора прослеђивањем `sso` токена:
 
 ```python
 from client import ApiClient, Configuration, ModerationApi
@@ -71,21 +71,21 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Count the comments awaiting moderation
+    # Бројање коментара који чекају на модерацију
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
     print(f"Error: {e}")
 ```
 
-### Korišćenje SSO (Single Sign-On)
+### Коришћење SSO (Single Sign-On)
 
-SDK uključuje alate za generisanje sigurnih SSO tokena:
+SDK укључује алате за генерисање безбедних SSO токена:
 
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Create user data (id, email, and username are required)
+# Креирање података о кориснику (ид, имејл и корисничко име су обавезни)
 user_data = SecureSSOUserData(
     id="user-123",
     email="user@example.com",
@@ -93,21 +93,22 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Sign it with your API secret (HMAC-SHA256)
+# Потпишите га вашим API тајном (HMAC‑SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Generate the SSO token to pass to the widget or an API call
+# Генерисање SSO токена за прослеђивање у виџет или API позив
 sso_token = sso.create_token()
 
-# Use this token in your frontend or pass to API calls
+# Користите овај токен у вашој фронтенд апликацији или га проследите у API позиве
 print(f"SSO Token: {sso_token}")
 ```
 
-Za jednostavni SSO (manje siguran, za testiranje):
+За једноставни SSO (мање безбедан, за тестирање):
 
 ```python
 from sso import FastCommentsSSO, SimpleSSOUserData
 
+# Креирање података о кориснику
 user_data = SimpleSSOUserData(
     username="johndoe",
     email="user@example.com"
@@ -117,9 +118,9 @@ sso = FastCommentsSSO.new_simple(user_data)
 sso_token = sso.create_token()
 ```
 
-### Pretplate u realnom vremenu (PubSub)
+### Живе претплате (PubSub)
 
-`pubsub` modul vam omogućava da se pretplatite na događaje komentara u realnom vremenu (novi komentari, glasanja, izmene, obaveštenja, itd.) preko WebSocket‑a, što je analogno `LiveEventSubscriber`‑u iz FastComments Java SDK‑a. Zahteva `pubsub` dodatak, koji dodaje WebSocket klijent na vrh generisanog API klijenta:
+Модул `pubsub` вам омогућава претплату на догађаје коментара у реалном времену (нови коментари, гласови, измене, обавештења, итд.) преко WebSocket‑а, реплицирајући `LiveEventSubscriber` из FastComments Java SDK‑а. Захтева `pubsub` екстра, који додаје WebSocket клијента изнад генерисаног API клијента:
 
 ```bash
 pip install "fastcomments[pubsub] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
@@ -139,25 +140,23 @@ result = subscriber.subscribe_to_changes(
     tenant_id_ws="YOUR_TENANT_ID",
     url_id="page-url-id",
     url_id_ws="page-url-id",
-    user_id_ws="a-unique-presence-id",  # e.g. a UUID for this session
+    user_id_ws="a-unique-presence-id",  # нпр. UUID за ову сесију
     handle_live_event=handle_live_event,
     on_connection_status_change=lambda connected, last_event_time: print(
         f"connected={connected}"
     ),
-    region=None,  # set to "eu" for the EU region
+    region=None,  # поставити на "eu" за EU регион
 )
 
-# ...later, when you no longer want updates:
+# ...касније, када више не желите ажурирања:
 result.close()
 ```
 
-Pretplatnik pokreće vezu na pozadinskoj daemon niti, transparentno se ponovo povezuje uz jitter i preuzima sve događaje koje je propustio dok je bio isključen sa endpoint‑a za log događaja prilikom ponovnog povezivanja. Prosledite opcioni `can_see_comments` callback (`List[str] -> Dict[str, str]`, koji vraća ID‑ove koje korisnik NE sme da vidi) da filtrirate događaje za komentare koje korisnik nije ovlašćen da vidi. Postavite `disable_live_commenting=True` da `subscribe_to_changes` postane no‑op koji vraća `None`.
+### Уобичајени проблеми
 
-### Česti problemi
-
-1. **401 greška "missing-api-key"**: Uverite se da ste postavili `config.api_key = {"api_key": "YOUR_KEY"}` pre kreiranja DefaultApi instance.
-2. **Pogrešna API klasa**: Koristite `DefaultApi` za server‑side autentifikovane zahteve, `PublicApi` za klijentske/javne zahteve i `ModerationApi` za zahteve kontrolne table moderatora.
-3. **Greške pri uvozu**: Uverite se da uvozite iz ispravnog modula:
-   - API klijent: `from client import ...`
-   - SSO alati: `from sso import ...`
-   - Live pretplate: `from pubsub import ...` (zahteva `pubsub` dodatak)
+1. **401 грешка „missing-api-key“**: Уверите се да сте поставили `config.api_key = {"api_key": "YOUR_KEY"}` пре креирања DefaultApi инстанце.  
+2. **Погрешна API класа**: Користите `DefaultApi` за серверске аутентификоване захтеве, `PublicApi` за клијентске/јавне захтеве, и `ModerationApi` за захтеве контролне табле модератора.  
+3. **Грешке при увозу**: Уверите се да увозите из исправног модула:  
+   - API клијент: `from client import ...`  
+   - SSO алати: `from sso import ...`  
+   - Живе претплате: `from pubsub import ...` (захтева `pubsub` екстра)

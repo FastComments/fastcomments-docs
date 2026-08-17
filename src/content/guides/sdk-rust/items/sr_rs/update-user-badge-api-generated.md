@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 | update_user_badge_params | models::UpdateUserBadgeParams | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
+Враћа: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'update_user_badge Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_badge Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = UpdateUserBadgeParams {

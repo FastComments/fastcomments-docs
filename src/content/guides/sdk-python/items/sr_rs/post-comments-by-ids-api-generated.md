@@ -1,17 +1,17 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_child_comments_response.py)
+Враћа: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_api_child_comments_response.py)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'post_comments_by_ids Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_comments_by_ids Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.models.comments_by_ids_params import CommentsByIdsParams
@@ -20,7 +20,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametra konfiguracije.
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -32,7 +32,7 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comments_by_ids_params = client.CommentsByIdsParams() # CommentsByIdsParams | 
-    sso = 'sso_example' # str |  (opciono)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.post_comments_by_ids(tenant_id, comments_by_ids_params, sso=sso)

@@ -1,15 +1,15 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetSearchCommentsSummaryOptions& | Yes |  |
+| tenantId | string | Ναι |  |
+| options | const GetSearchCommentsSummaryOptions& | Ναι |  |
 
-## Response
+## Απάντηση
 
-Returns: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
+Επιστρέφει: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getSearchCommentsSummary'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

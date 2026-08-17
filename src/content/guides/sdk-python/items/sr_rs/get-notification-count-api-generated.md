@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| urlId | string | query | Ne |  |
-| fromCommentId | string | query | Ne |  |
-| viewed | boolean | query | Ne |  |
-| type | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| urlId | string | query | Не |  |
+| fromCommentId | string | query | Не |  |
+| viewed | boolean | query | Не |  |
+| type | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
+Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_notification_count'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_notification_count Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.default_api import GetNotificationCountOptions
@@ -25,31 +25,23 @@ from pprint import pprint
 
 # Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
-configuration = client.Configuration(
-    host = "https://fastcomments.com"
-)
-
-# Klijent mora da konfiguriše parametre autentikacije i autorizacije
+# Klijent mora da konfiguriše parametre autentifikacije i autorizacije
 # u skladu sa sigurnosnom politikom API servera.
-# Primera za svaki metod autentikacije su dati ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentikacije.
+# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
+# zadovoljava vaš slučaj upotrebe autentifikacije.
 
 # Konfigurišite autorizaciju API ključa: api_key
-configuration.api_key['api_key'] = os.environ["API_KEY"]
-
-# Otkomentarišite ispod da biste postavili prefiks (npr. Bearer) za API ključ, ako je potrebno
-# configuration.api_key_prefix['api_key'] = 'Bearer'
-
+# Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
 # Uđite u kontekst sa instancom API klijenta
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    user_id = 'user_id_example' # str |  (opciono)
-    url_id = 'url_id_example' # str |  (opciono)
-    from_comment_id = 'from_comment_id_example' # str |  (opciono)
-    viewed = True # bool |  (opciono)
-    type = 'type_example' # str |  (opciono)
+    tenant_id = 'tenant_id_example' # str |
+    user_id = 'user_id_example' # str |  (опционално)
+    url_id = 'url_id_example' # str |  (опционално)
+    from_comment_id = 'from_comment_id_example' # str |  (опционално)
+    viewed = True # bool |  (опционално)
+    type = 'type_example' # str |  (опционално)
 
     try:
         api_response = api_instance.get_notification_count(tenant_id, GetNotificationCountOptions(user_id=user_id, url_id=url_id, from_comment_id=from_comment_id, viewed=viewed, type=type))

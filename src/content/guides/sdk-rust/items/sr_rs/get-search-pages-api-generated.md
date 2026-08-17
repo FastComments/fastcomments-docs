@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | О | |
+|------|------|----------|-------------|---|
 | tenant_id | String | Yes |  |
 | value | String | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_page_search_response.rs)
+Враћа: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_page_search_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_search_pages Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_pages Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetSearchPagesParams {

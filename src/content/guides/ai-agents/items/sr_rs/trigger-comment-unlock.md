@@ -1,19 +1,19 @@
-Pokreće se kada je komentar otključan.
+Покреће се када се коментар откључа.
 
-### Kontekst koji agent prima
+### Context the agent receives
 
-- Otključani komentar.
-- Opcionalna istorija teme / korisnika / kontekst stranice prema konfiguraciji.
+- Откључани коментар.
+- Опциони контекст нити / историје корисника / странице према подешавањима.
 
-### Ko pokreće ovo
+### Who fires this
 
-- Moderator koji koristi akciju otključavanja.
+- Модератор који користи акцију откључавања.
 
-### Uobičajene upotrebe
+### Common uses
 
-- **Ponovno vrednovanje** - ponovo otvorena tema je prilika za agenta da ponovo sažme ili da resetuje stav moderacije.
-- **Revizijski trag** putem [Webhooks](#webhooks-overview).
+- **Re-evaluation** – поново отворена нити је прилика за агента да поново сажме или ресетује став модерације.
+- **Audit trail** преко [Webhooks](#webhooks-overview).
 
-### Par
+### Pair
 
-Pogledajte [Okidač: Komentar zaključan](#trigger-comment-lock).
+Види [Trigger: Comment Locked](#trigger-comment-lock).

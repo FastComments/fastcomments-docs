@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
 | userId | string | No |  |
 | anonUserId | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UnBlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockUserFromCommentResponse.ts)
+Враћа: [`UnBlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockUserFromCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'unBlockUserFromComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer unBlockUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoUnblock() {
   const tenantId: string = "acme-corp-tenant";
@@ -32,7 +32,7 @@ async function demoUnblock() {
     commentId,
     params,
     userId
-    // anonUserId izostavljen
+    // anonUserId omitted
   );
 
   console.log(result);

@@ -1,17 +1,17 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetUserBadgeProgressListOptions& | Yes |  |
+| tenantId | string | 예 |  |
+| options | const GetUserBadgeProgressListOptions& | 예 |  |
 
-## Response
+## 응답
 
-Returns: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressListResponse.h)
+반환: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressListResponse.h)
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'getUserBadgeProgressList 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadgeProgressList 예시'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 GetUserBadgeProgressListOptions options;
@@ -22,7 +22,9 @@ api->getUserBadgeProgressList(tenantId, options)
     .then([](std::shared_ptr<APIGetUserBadgeProgressListResponse> resp) {
         if (!resp) return;
         for (const auto& badge : resp->badges) {
-            // process badge
+            // 배지 처리
         }
     });
 [inline-code-end]
+
+---

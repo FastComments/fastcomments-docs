@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| value | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| value | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Response
+## Одговор
 
-Returns: [`GetSearchSitesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSitesResponse.ts)
+Враћа: [`GetSearchSitesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSitesResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getSearchSites'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

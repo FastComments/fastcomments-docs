@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | id | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetV2PageReactUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactUsersResponse1.ts)
+Враћа: [`GetV2PageReactUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactUsersResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getV2PageReactUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getV2PageReactUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchReactUsers() {
   const tenantId: string = 'tenant_12345';
@@ -23,3 +23,5 @@ async function fetchReactUsers() {
 }
 fetchReactUsers();
 [inline-code-end]
+
+---

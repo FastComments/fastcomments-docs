@@ -1,20 +1,20 @@
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| batchJobId | string | query | Нет |  |
+| sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
-Returns: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportStatusResponse.swift)
+Возвращает: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/ModerationExportStatusResponse.swift)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие образцы кода находятся в бете. При любой проблеме пожалуйста сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При любой проблеме, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

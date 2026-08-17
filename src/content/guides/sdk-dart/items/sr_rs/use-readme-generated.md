@@ -3,13 +3,14 @@ dependencies:
   fastcomments_dart: ^3.0.0
 ```
 
-SSO pomoćnici su uključeni u paket (`package:fastcomments_dart/sso/...`).
+SSO помоћници су укључени у пакет (`package:fastcomments_dart/sso/...`).
 
-Klijent izlaže tri API klase:
+Клијент излаже три API класе:
 
-- `DefaultApi` - metode autentifikovane API ključem za server‑side upotrebu.
-- `PublicApi` - javne metode koje ne zahtevaju API ključ, sigurne za pretraživače i mobilne klijente.
-- `ModerationApi` - opsežan skup API‑ja za moderaciju u realnom vremenu i brzu moderaciju. Svaka `ModerationApi` metoda prima `sso` parametar i može se autentifikovati putem SSO ili FastComments.com sesijskog kolačića.
+- `DefaultApi` - методе аутентификоване API кључем за серверско коришћење.
+- `PublicApi` - јавне методе које не захтевају API кључ, безбедне за прегледаче и  
+  мобилне клијенте.
+- `ModerationApi` - обиман скуп живих и брзих API‑ја за модерацију. Свака `ModerationApi` метода прихвата `sso` параметар и може се аутентификоваћe путем SSO‑а или FastComments.com сесијског колачића.
 
 ```dart
 import 'package:fastcomments_dart/api.dart';

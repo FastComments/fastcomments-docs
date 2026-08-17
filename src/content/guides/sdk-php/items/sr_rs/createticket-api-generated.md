@@ -1,36 +1,37 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Da |  |
+| tenantId | string | query | Да |  |
+| userId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
 Returns: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateTicketResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createTicket Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createTicket'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Konfigurišite autorizaciju API ključa: api_key
+
+// Конфигуришите ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
+// Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti po defaultu.
+    // Ако желите да користите прилагођени http клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
 
-$tenant_id = 'tenant_id_example'; // string
-$user_id = 'user_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
+$user_id = 'user_id_example'; // стринг
 $create_ticket_body = new \FastComments\Client\Model\CreateTicketBody(); // \FastComments\Client\Model\CreateTicketBody
 
 
@@ -41,3 +42,5 @@ try {
     echo 'Exception when calling DefaultApi->createTicket: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
+
+---

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
+| Име̏н|тип|обавезно|опис|
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| createUserBadgeParams | CreateUserBadgeParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
+Враћа: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createUserBadge Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createUserBadge'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = U("my-tenant-123");
 CreateUserBadgeParams badgeParams;
@@ -23,4 +23,4 @@ api->createUserBadge(tenantId, badgeParams).then([](std::shared_ptr<APICreateUse
         auto result = std::make_shared<APICreateUserBadgeResponse>(*resp);
     }
 });
-[inline-code-end]
+inline-code-end

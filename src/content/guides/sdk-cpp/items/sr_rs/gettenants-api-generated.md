@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | const GetTenantsOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | const GetTenantsOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantsResponse.h)
+Враћа: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantsResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTenants'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

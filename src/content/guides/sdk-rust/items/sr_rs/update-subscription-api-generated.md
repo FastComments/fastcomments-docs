@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 | update_api_user_subscription_data | models::UpdateApiUserSubscriptionData | Yes |  |
 | user_id | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_subscription_api_response.rs)
+Враћа: [`UpdateSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_subscription_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'update_subscription Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_subscription Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(config: &configuration::Configuration) -> Result<(), Error> {
     let params = UpdateSubscriptionParams {

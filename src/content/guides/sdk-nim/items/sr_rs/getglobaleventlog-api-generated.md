@@ -3,23 +3,23 @@ tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userIdWS | string | Ne |  |
-| startTime | int64 | Ne |  |
-| endTime | int64 | Ne |  |
+| Име|тип|обавезно|опис|
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| userIdWS | string | Не |  |
+| startTime | int64 | Не |  |
+| endTime | int64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
+Враћа: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getGlobalEventLog'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGlobalEventLog Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (eventLogOpt, httpResp) = client.getGlobalEventLog(
   tenantId = "my-tenant-123",

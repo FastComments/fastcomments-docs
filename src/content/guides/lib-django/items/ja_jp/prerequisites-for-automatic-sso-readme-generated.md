@@ -1,9 +1,11 @@
-To pass the logged-in user to the widget automatically, the tags read the
-current user from the request. Make sure your project has both of these (they
-are on by default in a standard Django project):
+---
+ログインしたユーザーをウィジェットに自動的に渡すには、タグはリクエストから現在のユーザーを  
+取得します。プロジェクトに以下の2つが設定されていることを確認してください（  
+標準的な Django プロジェクトではデフォルトで有効になっています）:
 
 - `django.template.context_processors.request` in `TEMPLATES["OPTIONS"]["context_processors"]`
 - `django.contrib.auth.middleware.AuthenticationMiddleware` in `MIDDLEWARE`
 
-Without a request in the template context, widgets render for an anonymous
-visitor. You can always pass a user explicitly: `{% fastcomments user=some_user %}`.
+テンプレートコンテキストにリクエストが無い場合、ウィジェットは匿名の  
+訪問者向けにレンダリングされます。常にユーザーを明示的に渡すこともできます: `{% fastcomments user=some_user %}`.
+---

@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | create_tenant_user_body | models::CreateTenantUserBody | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_user_response.rs)
+Враћа: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_user_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer create_tenant_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_tenant_user Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = CreateTenantUserParams {

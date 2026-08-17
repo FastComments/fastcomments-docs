@@ -1,15 +1,15 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
 Returns: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_tenant_manual_badges_response.py)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_manual_badges'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +19,7 @@ from client.rest import ApiException
 from pprint import pprint
 
 # Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih konfiguracionih parametara.
+# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -30,7 +30,7 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    sso = 'sso_example' # str |  (optional)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.get_manual_badges(tenant_id, sso=sso)

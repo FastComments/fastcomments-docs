@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | questionId | string | No |  |
 | questionIds | Array<string> | No |  |
@@ -10,11 +10,11 @@
 | startDate | Date | No |  |
 | forceRecalculate | boolean | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse1.ts)
+Враћа: [`AggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

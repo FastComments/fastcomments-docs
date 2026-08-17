@@ -1,44 +1,44 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| yearNumber | number | query | Ne |  |
-| monthNumber | number | query | Ne |  |
-| dayNumber | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| yearNumber | number | query | No |  |
+| monthNumber | number | query | No |  |
+| dayNumber | number | query | No |  |
+| skip | number | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
+Враћа: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetTenantDailyUsagesResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTenantDailyUsages'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantDailyUsages Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
+// Конфигуриши ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite dole da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Одкоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желиш да користиш прилагођени HTTP клијент, проследи свој клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
 
-$tenant_id = 'tenant_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
 $options = [
-    'year_number' => 3.4, // float
-    'month_number' => 3.4, // float
-    'day_number' => 3.4, // float
-    'skip' => 3.4, // float
+    'year_number' => 3.4, // флоат
+    'month_number' => 3.4, // флоат
+    'day_number' => 3.4, // флоат
+    'skip' => 3.4, // флоат
 ];
 
 

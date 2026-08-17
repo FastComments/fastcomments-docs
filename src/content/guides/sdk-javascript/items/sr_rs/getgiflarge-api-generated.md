@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| largeInternalURLSanitized | string | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------
+| tenantId | string | Да |  |
+| largeInternalURLSanitized | string | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLargeResponse.ts)
+Враћа: [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLargeResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getGifLarge Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = 'c9f4a1b2-3d5e-4f6a-8b9c-0d1e2f3a4b5c';
@@ -20,3 +20,5 @@ Vraća: [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk
   console.log(result);
 })();
 [inline-code-end]
+
+---

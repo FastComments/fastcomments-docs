@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | createCommentParams | Array<CreateCommentParams> | Yes |  |
@@ -9,13 +9,13 @@
 | sendEmails | boolean | No |  |
 | populateNotifications | boolean | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `Array<SaveCommentsBulkResponse`
+Враћа: `Array<SaveCommentsBulkResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'saveCommentsBulk Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveCommentsBulk Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_9f8b7c6d";
 
@@ -40,6 +40,6 @@ const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
   true,      // isLive
   false,     // doSpamCheck
   true,      // sendEmails
-  undefined  // populateNotifications (koristeći podrazumevano)
+  undefined  // populateNotifications (using default)
 );
 [inline-code-end]

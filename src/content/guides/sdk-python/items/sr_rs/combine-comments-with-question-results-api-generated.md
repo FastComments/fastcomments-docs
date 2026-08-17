@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| questionId | string | query | No |  |
-| questionIds | array | query | No |  |
-| urlId | string | query | No |  |
-| startDate | string | query | No |  |
-| forceRecalculate | boolean | query | No |  |
-| minValue | number | query | No |  |
-| maxValue | number | query | No |  |
-| limit | number | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| questionId | string | query | Не |  |
+| questionIds | array | query | Не |  |
+| urlId | string | query | Не |  |
+| startDate | string | query | Не |  |
+| forceRecalculate | boolean | query | Не |  |
+| minValue | number | query | Не |  |
+| maxValue | number | query | Не |  |
+| limit | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
+Враћа: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/combine_question_results_with_comments_response.py)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'combine_comments_with_question_results Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combine_comments_with_question_results Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.default_api import CombineCommentsWithQuestionResultsOptions
@@ -26,36 +26,36 @@ from client.models.combine_question_results_with_comments_response import Combin
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za spisak svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# Klijent mora da konfiguriše parametre za autentifikaciju i autorizaciju
-# u skladu sa politikom sigurnosti API servera.
-# Primeri za svaki metod autentifikacije su dati ispod, koristite primer koji
-# zadovoljava vaš slučaj upotrebe autentifikacije.
+# Клијент мора да конфигурише параметре аутентификације и ауторизације
+# у складу са безбедносном политиком API сервера.
+# Примери за сваки метод аутентификације су дати испод, користите пример који
+# задовољава ваш случај употребе аутентификације.
 
-# Konfigurišite autorizaciju API ključem: api_key
+# Конфигуришите ауторизацију API кључа: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# Otkomentarišite donju liniju da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+# Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Креирајте инстанцу API класе
     api_instance = client.DefaultApi(api_client)
-    tenant_id = 'tenant_id_example' # str | 
-    question_id = 'question_id_example' # str |  (optional)
-    question_ids = ['question_ids_example'] # List[str] |  (optional)
-    url_id = 'url_id_example' # str |  (optional)
-    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    force_recalculate = True # bool |  (optional)
-    min_value = 3.4 # float |  (optional)
-    max_value = 3.4 # float |  (optional)
-    limit = 3.4 # float |  (optional)
+    tenant_id = 'tenant_id_example' # str |
+    question_id = 'question_id_example' # str |  (опционално)
+    question_ids = ['question_ids_example'] # List[str] |  (опционално)
+    url_id = 'url_id_example' # str |  (опционално)
+    start_date = '2013-10-20T19:20:30+01:00' # datetime |  (опционално)
+    force_recalculate = True # bool |  (опционално)
+    min_value = 3.4 # float |  (опционално)
+    max_value = 3.4 # float |  (опционално)
+    limit = 3.4 # float |  (опционално)
 
     try:
         api_response = api_instance.combine_comments_with_question_results(tenant_id, CombineCommentsWithQuestionResultsOptions(question_id=question_id, question_ids=question_ids, url_id=url_id, start_date=start_date, force_recalculate=force_recalculate, min_value=min_value, max_value=max_value, limit=limit))

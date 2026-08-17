@@ -1,23 +1,23 @@
-zahtev
+req
 tenantId
 afterId
 
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| after_id | String | Ne |  |
-| limit | i32 | Ne |  |
-| tags | Vec<String> | Ne |  |
+| tenant_id | String | Да |  |
+| after_id | String | Не |  |
+| limit | i32 | Не |  |
+| tags | Vec<String> | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_response.rs)
+Враћа: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_feed_posts_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_feed_posts'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_feed_posts'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_feed(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetFeedPostsParams {

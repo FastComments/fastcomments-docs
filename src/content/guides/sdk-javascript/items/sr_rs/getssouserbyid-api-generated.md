@@ -1,17 +1,17 @@
-## Parametri
+## Параметриметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByIdAPIResponse.ts)
+Враћа: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSSOUserByIdAPIResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getSSOUserById'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSSOUserById'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchUser() {
   const tenantId: string = "tenant-987654321";
@@ -20,3 +20,5 @@ async function fetchUser() {
   const ssoUser: APISSOUser = result.user;
 }
 [inline-code-end]
+
+---

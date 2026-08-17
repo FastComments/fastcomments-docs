@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| publicBlockFromCommentParams | PublicBlockFromCommentParams | No |  |
-| sso | string = "" | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | Не |  |
+| sso | string = "" | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_block_success.nim)
+Враћа: [`Option[BlockSuccess]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_block_success.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'blockFromCommentPublic Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

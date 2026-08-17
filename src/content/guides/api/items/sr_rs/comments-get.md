@@ -1,121 +1,121 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-Ovaj API se koristi za dobavljanje komentara za prikaz korisniku. Na primer, automatski filtrira neodobrene ili spam komentare.
+Овај API се користи за добијање коментара за приказ кориснику. На пример, аутоматски филтрира неодобрене или спам коментаре.
 
-### Pagination
+### Пагинација
 
-Paginacija se može izvesti na jedan od dva načina, u zavisnosti od zahteva za performansama i slučaja upotrebe:
+Пагинација се може извршити на један од два начина, у зависности од захтева за перформансама и случаја употребе:
 
-1. **Najbrže:** **Prekalkulisana Paginacija**:
-   1. Ovo je način na koji FastComments funkcioniše kada koristite naše unapred izgrađene vidžete i klijente.
-   2. Klikom na „next“ (sledeće) jednostavno se povećava broj stranice.
-   3. Ovo možete zamisliti kao preuzimanje iz skladišta ključ‑vrednost.
-   4. Na ovaj način, jednostavno definišite parametar `page` počevši od `0` i smer sortiranja kao `direction`.
-   5. Veličine stranica mogu se prilagoditi putem pravila prilagođavanja.
-2. **Najfleksibilnije:** **Fleksibilna Paginacija**:
-   1. Na ovaj način možete definisati prilagođene parametre `limit` i `skip`. Ne prosleđujte `page`.
-   2. Sortiranje `direction` je takođe podržano.
-   3. `limit` je ukupan broj koji se vraća nakon što se primeni `skip`.
-      - Primer: postavite `skip = 200, limit = 100` kada je `page size = 100` i `page = 2`.
-   4. Podkomentari i dalje broje u paginaciji. Možete zaobići ovo korišćenjem opcije `asTree`.
-      - Možete paginirati podkomentare putem `limitChildren` i `skipChildren`.
-      - Možete ograničiti dubinu vraćenih niti putem `maxTreeDepth`.
+1. Најбрже: **Precalculated Pagination**:
+   1. Ово је начин на који FastComments функционише када користите наше унапред изграђене виџете и клијенте.
+   2. Кликом на „next“ једноставно се повећава број странице.
+   3. Ово можете замислити као преузимање из кључ-врједност складишта.
+   4. На овај начин, једноставно дефинишете параметар `page` који почиње од `0` и смер сортирања као `direction`.
+   5. Величине страница се могу прилагодити преко правила прилагођавања.
+2. Најфлексибилније: **Flexible Pagination**:
+   1. На овај начин можете дефинисати прилагођене параметре `limit` и `skip`. Не прослеђујте `page`.
+   2. Сортирање `direction` је такође подржано.
+   3. `limit` је укупан број који се враћа након што се примени `skip`.
+      - Пример: поставите `skip = 200, limit = 100` када је `page size = 100` и `page = 2`.
+   4. Коментари-дете и даље улазе у пагинацију. Ово можете заобићи коришћењем опције `asTree`.
+      - Можете пагинирати децу преко `limitChildren` и `skipChildren`.
+      - Можете ограничити дубину веза које се враћају преко `maxTreeDepth`.
 
-### Threads
+### Теме
 
-1. Kada se koristi `Prekalkulisana Paginacija`, komentari su grupisani po *stranici* i komentari u nitima utiču na ukupnu stranicu.
-   1. Na ovaj način, niti se mogu odrediti na klijentu na osnovu `parentId`.
-   2. Na primer, sa stranicom koja ima jedan komentar najvišeg nivoa i 29 odgovora, i postavljanjem `page=0` u API‑u – dobićete samo komentar najvišeg nivoa i 29 podkomentara.
-2. Kada se koristi `Fleksibilna Paginacija`, možete definisati parametar `parentId`.
-   1. Postavite ga na null da biste dobili samo komentare najvišeg nivoa.
-   2. Zatim, da biste videli niti, ponovo pozovite API i prosledite `parentId`.
-   3. Uobičajeno rešenje je da napravite API poziv za komentare najvišeg nivoa, a zatim paralelne API pozive da dobijete komentare za podkomentare svakog komentara.
-3. __NOVO od februara 2023!__ Dohvatite kao stablo koristeći `&asTree=true`.
-   1. Ovo možete zamisliti kao `Fleksibilna Paginacija kao Stablo`.
-   2. Samo komentari najvišeg nivoa broje u paginaciji.
-   3. Postavite `parentId=null` da započnete stablo od korena (morate postaviti `parentId`).
-   4. Postavite `skip` i `limit` za paginaciju.
-   5. Postavite `asTree` na `true`.
-   6. Trošak kredita se povećava za `2x`, jer naš backend mora da uradi mnogo više posla u ovom scenariju.
-   7. Postavite `maxTreeDepth`, `limitChildren` i `skipChildren` po želji.
+1. Када се користи `Precalculated Pagination`, коментари се групишу по *страници* и коментари у темама утичу на целокупну страницу.
+   1. На овај начин, теме се могу одредити на клијенту на основу `parentId`.
+   2. На пример, са страницом која има један коментар највишег нивоа и 29 одговора, и постављањем `page=0` у API-ју - добићете само коментар највишег нивоа и 29 деце.
+2. Када се користи `Flexible Pagination`, можете дефинисати параметар `parentId`.
+   1. Поставите га на null да бисте добили само коментаре највишег нивоа.
+   2. Затим, да бисте видели теме, позовите API поново и проследите `parentId`.
+   3. Уобичајено решење је да направите API позив за коментаре највишег нивоа, а затим паралелне API позиве да добијете коментаре за децу сваког коментара.
+3. __НОВО Од фебруара 2023!__ Дохватите као дрво користећи `&asTree=true`.
+   1. Ово можете замислити као `Flexible Pagination as a Tree`.
+   2. Само коментари највишег нивоа се рачунају у пагинацији.
+   3. Поставите `parentId=null` да започнете дрво од корена (морате поставити `parentId`).
+   4. Поставите `skip` и `limit` за пагинацију.
+   5. Поставите `asTree` на `true`.
+   6. Трошак кредита се повећава за `2x`, јер наш бекенд мора да уради много више посла у овом сценарију.
+   7. Поставите `maxTreeDepth`, `limitChildren` и `skipChildren` по жељи.
 
-### Trees Explained
+### Објашњење Дрвених Структура
 
-Kada se koristi `asTree`, može biti teško razumeti paginaciju. Evo praktične grafike:
+Када се користи `asTree`, може бити тешко размотрити пагинацију. Ево практичне графике:
 
 <div class="screenshot white-bg">
-    <div class="title">Tree Pagination Diagram</div>
-    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Tree Pagination Diagram" />
+    <div class="title">Дијаграм Пагинације Дрва</div>
+    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Дијаграм Пагинације Дрва" />
 </div>
 
-### Fetching Comments in The Context of a User
+### Дохватање Коментара у Контексту Корисника
 
-API `/comments` može se koristiti u dva konteksta, za različite slučajeve upotrebe:
+API `/comments` може да се користи у два контекста, за различите случајеве употребе:
 
-- Za vraćanje komentara sortiranih i označenih informacijama za izgradnju vašeg sopstvenog klijenta.
-  - U ovom slučaju, definišite upitni parametar `contextUserId`.
-- Za dohvat komentara iz vašeg backend‑a za prilagođene integracije.
-  - Platforma će podrazumevano koristiti ovo bez `contextUserId`. 
+- За враћање коментара сортираних и означених информацијама за изградњу вашег сопственог клијента.
+  - У овом случају, дефинишите параметар упита `contextUserId`.
+- За дохватање коментара из вашег бекенда за прилагођене интеграције.
+  - Платформа ће подразумевано користити ово без `contextUserId`. 
 
-[inline-code-attrs-start title = 'Komentari Prekalkulisana Paginacija'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Претходно Израђена Пагинација'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&page=0&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Komentari Fleksibilna Paginacija'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Флексибилна Пагинација'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Komentari Fleksibilna Paginacija u Korisničkom Kontekstu'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Флексибилна Пагинација у Корисничком Контексту'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Komentari Fleksibilna Paginacija u Korisničkom Kontekstu samo za Komentare Najvišeg Nivoa'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Флексибилна Пагинација у Корисничком Контексту Само за Коментаре Највишег Нивоа'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null'
 [inline-code-end]
 
-### Get Comments as a Tree
+### Дохватање Коментара као Дрво
 
-Moguće je dobiti komentare vraćene kao stablo, pri čemu paginacija broji samo komentare najvišeg nivoa.
+Могуће је добити коментаре враћене као дрво, при чему пагинација броји само коментаре највишег нивоа.
 
-[inline-code-attrs-start title = 'Komentari Kao-Stablo u Korisničkom Kontekstu'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Као-Дрво у Корисничком Контексту'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
-Želite li da dobijete samo komentare najvišeg nivoa i neposredne podkomentare? Evo jednog načina:
+Желите ли да добијете само коментаре највишег нивоа и непосредну децу? Ево једног начина:
 
-[inline-code-attrs-start title = 'Komentari Kao-Stablo sa Maksimalnom Dubinom'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Као-Дрво са Максималном Дубином'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
 [inline-code-end]
 
-Međutim, u vašem UI‑ju možda ćete morati da znate da li da prikažete dugme „prikaži odgovore“ na svakom komentaru. Kada se komentari dohvaćaju putem stabla, na komentare se dodaje svojstvo `hasChildren` kada je primenljivo.
+Међутим, у вашем UI можда ћете морати знати да ли да прикажете дугме „прикажи одговоре“ на сваком коментару. При дохватању коментара преко дрвета постоји својство `hasChildren` означено на коментарима када је применљиво.
 
-### Get Comments as a Tree, Searching by Hash Tag
+### Дохватање Коментара као Дрво, Претрага по Хеш Тагу
 
-Moguće je pretraživati po heš tagu koristeći API, kroz ceo vaš tenant (nije ograničeno na jednu stranicu ili `urlId`).
+Могуће је претраживати по хеш тагу користећи API, преко целог вашег tenancy (не ограничено на једну страницу или `urlId`).
 
-U ovom primeru izostavljamo `urlId` i pretražujemo po više heš tagova. API će vratiti samo komentare koji imaju sve tražene heš tagove.
+У овом примеру, изостављамо `urlId` и претражујемо по више хеш тагова. API ће вратити само коментаре који имају све захтеване хеш тагове.
 
-[inline-code-attrs-start title = 'Komentari Kao-Stablo u Korisničkom Kontekstu, po Heš Tagu'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментари Као-Дрво у Корисничком Контексту, По Хеш Тагу'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
-### All Request Params
+### Сви Параметри Захтева
 
-[inline-code-attrs-start title = 'Struktura Zahteva za Komentare'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура Захтева за Коментаре'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string
@@ -151,9 +151,9 @@ interface CommentsRequestQueryParams {
 }
 [inline-code-end]
 
-### The Response
+### Одговор
 
-[inline-code-attrs-start title = 'Struktura Odgovora za Komentare'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура Одговора за Коментаре'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
     status: 'success' | 'failed'
@@ -166,20 +166,20 @@ interface CommentsResponse {
 }
 [inline-code-end]
 
-### Helpful Tips
+### Корисни Савети
 
 #### URL ID
 
-Verovatno želite da koristite `Comment` API sa parametrom `urlId`. Možete prvo pozvati `Pages` API da vidite kako izgledaju dostupne vrednosti `urlId`.
+Вероватно желите да користите API `Comment` са параметром `urlId`. Прво можете позвати API `Pages` да видите како изгледају доступне `urlId` вредности.
 
-#### Anonymous Actions
+#### Анонимне Радње
 
-Za anonimno komentarisanje verovatno želite da prosledite `anonUserId` prilikom dohvaćanja komentara, kao i prilikom označavanja i blokiranja.
+За анонимно коментарисање вероватно желите да проследите `anonUserId` приликом дохватања коментара, као и приликом означавања и блокирања.
 
-(!) Ovo je obavezno za mnoge prodavnice aplikacija jer korisnici moraju moći da označe sadržaj koji su kreirali drugi korisnici, čak i ako nisu prijavljeni. Nepoštovanje može dovesti do uklanjanja vaše aplikacije iz te prodavnice.
+(!) Ово је потребно за многе продавнице апликација јер корисници морају моћи да означе садржај који су створили други корисници, чак и ако нису пријављени. Не испуњавање ове захтева може довести до уклањања ваше апликације из те продавнице.
 
-#### Comments Not Being Returned
+#### Коментари Не Се Враћају
 
-Proverite da li su vaši komentari odobreni i da nisu spam.
+Проверите да ли су ваши коментари одобрени и да нису спам.
 
 ---

@@ -1,25 +1,25 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Yes |  |
-| page | f64 | No |  |
-| count | f64 | No |  |
-| text_search | String | No |  |
-| by_ip_from_comment | String | No |  |
-| filters | String | No |  |
-| search_filters | String | No |  |
-| sorts | String | No |  |
-| demo | bool | No |  |
-| sso | String | No |  |
+| tenant_id | String | Да |  |
+| page | f64 | Не |  |
+| count | f64 | Не |  |
+| text_search | String | Не |  |
+| by_ip_from_comment | String | Не |  |
+| filters | String | Не |  |
+| search_filters | String | Не |  |
+| sorts | String | Не |  |
+| demo | bool | Не |  |
+| sso | String | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`ModerationApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comments_response.rs)
+Враћа: [`ModerationApiGetCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_get_comments_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_api_comments'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_comments Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = GetApiCommentsParams {
@@ -38,3 +38,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

@@ -1,9 +1,9 @@
 ## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
-| urlId | string | query | No | Koristi se za određivanje da li je trenutna stranica pretplaćena. |
+| urlId | string | query | No | Користи се за одређивање да ли је тренутна страница претплаћена. |
 | pageSize | integer | query | No |  |
 | afterId | string | query | No |  |
 | includeContext | boolean | query | No |  |
@@ -17,7 +17,7 @@
 
 ## Response
 
-Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetMyNotificationsResponse.php)
+Враћа: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetMyNotificationsResponse.php)
 
 ## Example
 
@@ -29,14 +29,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $options = [
-    'url_id' => 'url_id_example', // string | Koristi se za određivanje da li je trenutna stranica pretplaćena.
+    'url_id' => 'url_id_example', // string | Користи се за одређивање да ли је тренутна страница претплаћена.
     'page_size' => 56, // int
     'after_id' => 'after_id_example', // string
     'include_context' => True, // bool

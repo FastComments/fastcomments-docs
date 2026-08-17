@@ -1,10 +1,12 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-svelte/>.  
+---
+Пробвайте всяко уиджет на живо на <https://fastcomments.com/commenting-system-for-svelte/>.
 
-A set of Svelte widgets and wrappers for FastComments. `src/routes` contains runnable examples - simply run:
+Набор от Svelte уиджети и обвивки за FastComments. `src/routes` съдържа изпълними примери – просто изпълнете:
 
     npm install
     npm run dev
 
-Then you can see all the widgets and edit them - for example to put in your own tenant id or try different configuration.
+След това можете да видите всички уиджети и да ги редактирате – например да въведете вашия собствен tenant id или да изпробвате различна конфигурация.
 
-TypeScript has been used so that you can inspect the config objects for each widget to see what options they take.
+TypeScript е използван, за да можете да инспектирате обектите за конфигурация на всеки уиджет и да видите какви опции приемат.
+---

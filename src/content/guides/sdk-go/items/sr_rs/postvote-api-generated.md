@@ -1,6 +1,6 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
@@ -8,13 +8,13 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_vote_response.go)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'PostVote Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PostVote Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -28,9 +28,9 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	direction := "direction_example" // string |  (opcionalno)
-	broadcastId := "broadcastId_example" // string |  (opcionalno)
-	sso := "sso_example" // string |  (opcionalno)
+	direction := "direction_example" // string |  (опционално)
+	broadcastId := "broadcastId_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,9 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostVote``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `PostVote`: VoteResponse
+	// одговор од `PostVote`: VoteResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

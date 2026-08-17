@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | editKey | string | No |  |
 
-## Response
+## Одговор
 
-Returns: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'deleteVote Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,9 +21,9 @@ boost::optional<utility::string_t> editKey = utility::conversions::to_string_t("
 api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<VoteDeleteResponse>> task) {
     try {
         auto response = task.get();
-        // Obradi odgovor po potrebi
+        // Обради одговор по потреби
     } catch (const std::exception&) {
-        // Obradi grešku
+        // Обради грешку
     }
 });
 [inline-code-end]

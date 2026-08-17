@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| options | GetUserBadgesOptions | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | GetUserBadgesOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIGetUserBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badges_response.nim)
+Враћа: [`Option[APIGetUserBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_user_badges_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getUserBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,5 +18,3 @@ let (badgesOpt, httpResp) = client.getUserBadges(tenantId = "my-tenant-123", opt
 if badgesOpt.isSome:
   let badges = badgesOpt.get()
 [inline-code-end]
-
----

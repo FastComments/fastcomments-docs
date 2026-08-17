@@ -8,7 +8,7 @@ We'll also use our own logo in the footer of these emails.
 
 If you have FastComments Flex or Pro, this all can be customized on a per-domain basis via the "My Domains page":
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Φόρμα ρυθμίσεων email ανά domain με τα πεδία Όνομα Αποστολέα, Email Αποστολέα και μεταφόρτωση λογότυπου'; title='Προσαρμογή Ονόματος Αποστολέα, Email και Λογότυπου' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Φόρμα ρυθμίσεων email ανά domain με τα πεδία Όνομα Αποστολέα, Email Αποστολέα και μεταφόρτωση λογότυπου'; title='Προσαρμογή Όνομα Αποστολέα, Email και Λογότυπου' app-screenshot-end]
 
 When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
 
@@ -45,3 +45,5 @@ Enable this under "Show Advanced" on the My Domains page, in the "Email Link Obf
 When enabled, links in mention, reply, new-comment, subscribed-page, profile-comment, and digest emails are rewritten to short tokens that redirect to the original page on click. The destination is bound to your tenant: the redirect only forwards to URLs whose host matches one of your configured domains, and tokens auto-expire after 30 days.
 
 The clicked-through experience is unchanged. Readers still land on your page with the comment scrolled into view.
+
+---

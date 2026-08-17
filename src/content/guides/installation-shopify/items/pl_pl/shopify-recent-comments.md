@@ -1,24 +1,21 @@
----
-The **FastComments - Recent Comments** block shows the most recent comments across your whole store. Use it to show fresh activity in a sidebar, footer, or homepage section.
+The **FastComments - Recent Comments** block wyświetla najnowsze komentarze w całym całym sklepie. Użyj go, aby pokazać świeżą aktywność w pasku bocznym, stopce lub sekcji strony głównej.
 
-### Add the block
+### Dodaj blok
 
-1. Open the Shopify theme editor.
-2. Open the template where you want the feed. A sidebar section, the home page, or the blog index all work well.
-3. Click **Add block** in the section that should hold it.
-4. Under **Apps**, select **FastComments - Recent Comments**.
-5. Click **Save**.
+1. Otwórz edytor motywu Shopify.  
+2. Otwórz szablon, w którym chcesz umieścić kanał. Sekcja paska bocznego, strona główna lub indeks bloga sprawdzą się dobrze.  
+3. Kliknij **Add block** w sekcji, w której ma się znajdować.  
+4. W sekcji **Apps wybierz **FastComments - Recent Comments**.  
+5. Kliknij **Save**.
 
 ### Settings
 
-| Setting | What it does | Default |
+| Ustawienie | Co robi | Domyślne |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the feed reads from. Leave blank to use the store's automatically-configured tenant. | (blank) |
-| Number of comments | How many recent comments to show. Range 1 to 50. | 5 |
+| Tenant ID (optional) | Zastąp, z którego najemcy FastComments kanał odczytuje komentarze. Pozostaw puste, aby używać najemcy automatycznie skonfigurowanego dla sklepu. | (blank) |
+| Number of comments | Ile najnowszych komentarzy wyświetlić. Zakres od 1 do 50. | 5 |
 
-### Tips
+### Wskazówki
 
-- Each comment links to the page it was posted on, so the block doubles as a "what people are talking about right now" navigation hint.
-- The feed is store-wide. To show recent comments for a single page, use the **FastComments** block on that page instead.
-
----
+- Każdy komentarz linkuje do strony, na której został opublikowany, więc blok pełni również funkcję wskazówki nawigacyjnej „co ludzie teraz omawiają”.  
+- Kanał obejmuje cały sklep. Aby wyświetlić najnowsze komentarze dla jednej strony, użyj zamiast tego bloku **FastComments** na tej stronie.

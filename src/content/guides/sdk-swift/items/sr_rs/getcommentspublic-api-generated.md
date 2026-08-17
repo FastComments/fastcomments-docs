@@ -2,9 +2,9 @@ req
 tenantId
 urlId
 
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
@@ -35,45 +35,45 @@ urlId
 | afterCommentId | string | query | No |  |
 | beforeCommentId | string | query | No |  |
 
-## Odgovor
+## Одговор
 
 Returns: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getCommentsPublic Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo vas da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, молимо пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let page = 987 // Int |  (optional)
-let direction = SortDirections() // SortDirections |  (optional)
-let sso = "sso_example" // String |  (optional)
-let skip = 987 // Int |  (optional)
-let skipChildren = 987 // Int |  (optional)
-let limit = 987 // Int |  (optional)
-let limitChildren = 987 // Int |  (optional)
-let countChildren = true // Bool |  (optional)
-let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (optional)
-let includeConfig = true // Bool |  (optional)
-let countAll = true // Bool |  (optional)
-let includei10n = true // Bool |  (optional)
-let locale = "locale_example" // String |  (optional)
-let modules = "modules_example" // String |  (optional)
-let isCrawler = true // Bool |  (optional)
-let includeNotificationCount = true // Bool |  (optional)
-let asTree = true // Bool |  (optional)
-let maxTreeDepth = 987 // Int |  (optional)
-let useFullTranslationIds = true // Bool |  (optional)
-let parentId = "parentId_example" // String |  (optional)
-let searchText = "searchText_example" // String |  (optional)
-let hashTags = ["inner_example"] // [String] |  (optional)
-let userId = "userId_example" // String |  (optional)
-let customConfigStr = "customConfigStr_example" // String |  (optional)
-let afterCommentId = "afterCommentId_example" // String |  (optional)
-let beforeCommentId = "beforeCommentId_example" // String |  (optional)
+let page = 987 // Int |  (опционално)
+let direction = SortDirections() // SortDirections |  (опционално)
+let sso = "sso_example" // String |  (опционално)
+let skip = 987 // Int |  (опционално)
+let skipChildren = 987 // Int |  (опционално)
+let limit = 987 // Int |  (опционално)
+let limitChildren = 987 // Int |  (опционално)
+let countChildren = true // Bool |  (опционално)
+let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (опционално)
+let includeConfig = true // Bool |  (опционално)
+let countAll = true // Bool |  (опционално)
+let includei10n = true // Bool |  (опционално)
+let locale = "locale_example" // String |  (опционално)
+let modules = "modules_example" // String |  (опционално)
+let isCrawler = true // Bool |  (опционално)
+let includeNotificationCount = true // Bool |  (опционално)
+let asTree = true // Bool |  (опционално)
+let maxTreeDepth = 987 // Int |  (опционално)
+let useFullTranslationIds = true // Bool |  (опционално)
+let parentId = "parentId_example" // String |  (опционално)
+let searchText = "searchText_example" // String |  (опционално)
+let hashTags = ["inner_example"] // [String] |  (опционално)
+let userId = "userId_example" // String |  (опционално)
+let customConfigStr = "customConfigStr_example" // String |  (опционално)
+let afterCommentId = "afterCommentId_example" // String |  (опционално)
+let beforeCommentId = "beforeCommentId_example" // String |  (опционално)
 
 PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
     guard error == nil else {

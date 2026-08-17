@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateQuestionConfigResponse`
+Враћа: `CreateQuestionConfigResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createQuestionConfig'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createQuestionConfig'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite dole da podesite prefiks (npr. Bearer) za API ključ, po potrebi
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -26,6 +26,6 @@ try {
     final result = api_instance.createQuestionConfig(tenantId, createQuestionConfigBody);
     print(result);
 } catch (e) {
-    print('Exception when calling DefaultApi->createQuestionConfig: $e\n');
+    print('Изузетак при позиву DefaultApi->createQuestionConfig: $e\n');
 }
 [inline-code-end]

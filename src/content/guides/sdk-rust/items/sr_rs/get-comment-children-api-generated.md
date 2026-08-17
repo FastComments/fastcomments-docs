@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | comment_id | String | Yes |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationApiChildCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_child_comments_response.rs)
+Враћа: [`ModerationApiChildCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_child_comments_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_comment_children'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comment_children Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_children(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetCommentChildrenParams {

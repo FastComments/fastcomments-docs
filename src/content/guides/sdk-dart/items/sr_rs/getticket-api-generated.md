@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| userId | string | query | No |  |
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
+| userId | string | query | Ne |  |
 
 ## Odgovor
 

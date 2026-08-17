@@ -1,18 +1,18 @@
-## Params
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| user_id | String | No |  |
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| user_id | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_subscription_api_response.rs)
+Враћа: [`DeleteSubscriptionApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_subscription_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer delete_subscription'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример delete_subscription'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = DeleteSubscriptionParams {
@@ -24,3 +24,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

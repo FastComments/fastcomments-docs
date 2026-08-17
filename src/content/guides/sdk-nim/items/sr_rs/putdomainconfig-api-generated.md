@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| domainToUpdate | string | Ne |  |
-| updateDomainConfigParams | UpdateDomainConfigParams | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| domainToUpdate | string | Не |  |
+| updateDomainConfigParams | UpdateDomainConfigParams | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
+Враћа: [`Option[PutDomainConfigResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_put_domain_config_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'putDomainConfig Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putDomainConfig Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.putDomainConfig(
   tenantId = "my-tenant-123",
@@ -24,5 +24,3 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp
 [inline-code-end]
-
----

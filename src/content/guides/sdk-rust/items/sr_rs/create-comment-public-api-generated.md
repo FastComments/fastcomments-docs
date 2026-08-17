@@ -1,21 +1,22 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| url_id | String | Da |  |
-| broadcast_id | String | Da |  |
-| comment_data | models::CommentData | Da |  |
-| session_id | String | Ne |  |
-| sso | String | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| broadcast_id | String | Да |  |
+| comment_data | models::CommentData | Да |  |
+| session_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/save_comments_response_with_presence.rs)
+Враћа: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/save_comments_response_with_presence.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'create_comment_public Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'create_comment_public пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let params = CreateCommentPublicParams {
     tenant_id: "acme-corp-tenant".to_string(),
@@ -29,3 +30,5 @@ let params = CreateCommentPublicParams {
 };
 let response = create_comment_public(&configuration, params).await?;
 [inline-code-end]
+
+---

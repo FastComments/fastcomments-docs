@@ -1,16 +1,16 @@
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id_ws | String | Yes |  |
-| user_ids | String | Yes |  |
+| tenant_id | String | Да |  |
+| url_id_ws | String | Да |  |
+| user_ids | String | Да |  |
 
-## Response
+## Ответ
 
-Returns: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_presence_statuses_response.rs)
+Возвращает: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_presence_statuses_response.rs)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример get_user_presence_statuses'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

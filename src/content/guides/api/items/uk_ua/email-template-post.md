@@ -1,46 +1,46 @@
 [api-resource-header-start name = 'EmailTemplate'; route = 'POST /api/v1/email-templates'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create email templates.
+Цей API‑ендпоінт надає можливість створювати шаблони електронної пошти.
 
-Notes:
+Примітки:
 
-- You can't have multiple templates with the same `emailTemplateId` with the same domain.
-- But you can have a wildcard template (`domain` = `*` and a domain specific template for the same `emailTemplateId`).
-- Specifying `domain` is only relevant if you have different domains, or want to use specific templates for testing (`domain` set to `localhost` etc).
-- If you do specify `domain` it must match a `DomainConfig`. On error a list of valid domains is provided.
-- The template syntax is EJS and is rendered with a 500ms timeout. P99 for rendering is <5ms, so if you hit 500ms something is wrong.
-- **Your template must render with your given `testData`** to save. Render errors are aggregated and reported on in the dashboard (soon available via API). 
+- Ви не можете мати кілька шаблонів з однаковим `emailTemplateId` у тому ж домені.
+- Але ви можете мати шаблон‑заміни (`domain` = `*`) та домен‑специфічний шаблон для того ж `emailTemplateId`.
+- Вказування `domain` має сенс лише якщо у вас є різні домени або ви хочете використовувати конкретні шаблони для тестування (`domain` встановлено на `localhost` тощо).
+- Якщо ви вказуєте `domain`, він має відповідати `DomainConfig`. При помилці надається список дійсних доменів.
+- Синтаксис шаблону — EJS, і він рендериться з тайм‑аутом 500 мс. P99 для рендерингу <5 мс, тому якщо ви досягаєте 500 мс, щось не так.
+- **Ваш шаблон повинен рендеритися з вашими `testData`**, щоб зберегти. Помилки рендерингу агрегуються та відображаються у панелі (скоро буде доступно через API). 
 
-The minimum data required to add a template is as follows:
+Мінімальні дані, необхідні для додавання шаблону, виглядають так:
 
-[inline-code-attrs-start title = 'Мінімальний приклад cURL POST для EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Мінімальний приклад POST cURL для EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/email-templates?tenantId=demo&API_KEY=DEMO_API_SECRET' \
   --header 'Content-Type: application/json' \
   --data '{
     "emailTemplateId": "comment-user-mention",
-    "displayName": "I'm a custom template.",
+    "displayName": "I\'m a custom template.",
     "ejs": "This is an @mention notification! My name is <%= comment.commenterName %>."
 }'
 [inline-code-end]
 
-You may want to have templates per-site, in which case you define `domain`:
+Ви можете захотіти мати шаблони для кожного сайту, у цьому випадку ви визначаєте `domain`:
 
-[inline-code-attrs-start title = 'Приклад cURL POST для EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад POST cURL для EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/email-templates?tenantId=demo&API_KEY=DEMO_API_SECRET' \
   --header 'Content-Type: application/json' \
   --data '{
     "emailTemplateId": "comment-user-mention",
-    "displayName": "I'm a custom template.",
+    "displayName": "I\'m a custom template.",
     "ejs": "This is some email content!",
     "domain": "somespecificsite.com",
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура POST-запиту EmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура запиту POST для EmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface EmailTemplatePostQueryParams {
     tenantId: string
@@ -53,11 +53,11 @@ interface EmailTemplatePostQueryParams {
 
 interface EmailTemplatePostResponse {
     status: 'success' | 'failed'
-    /** Додається у разі невдачі. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unauthorized' | 'unexpected-param' | 'invalid-email-template-id' | 'domain-invalid' | 'duplicate' | 'does-not-render';
-    /** Додається у разі невдачі. **/
+    /** Included on failure. **/
     reason?: string
-    /** Створений шаблон. **/
+    /** The created template. **/
     emailTemplate?: EmailTemplate
 }
 [inline-code-end]

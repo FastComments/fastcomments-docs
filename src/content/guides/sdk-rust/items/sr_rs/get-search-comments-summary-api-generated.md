@@ -1,20 +1,20 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| value | String | No |  |
-| filters | String | No |  |
-| search_filters | String | No |  |
-| sso | String | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| value | String | Не |  |
+| filters | String | Не |  |
+| search_filters | String | Не |  |
+| sso | String | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_comment_search_response.rs)
+Враћа: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_comment_search_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'get_search_comments_summary Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_comments_summary Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetSearchCommentsSummaryParams {

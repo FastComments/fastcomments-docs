@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV1PageLikes.h)
+Враћа: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV1PageLikes.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getV1PageLikes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getV1PageLikes'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto urlId = utility::conversions::to_string_t("article-789");

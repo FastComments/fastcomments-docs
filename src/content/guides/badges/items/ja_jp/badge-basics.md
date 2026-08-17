@@ -1,41 +1,33 @@
-FastComments User Badges are configured by administrators with the `Customize Data` permission.
+FastComments のユーザーバッジは、`Customize Data` 権限を持つ管理者によって設定されます。
 
-This is done via [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) in your admin dashboard.
+これは、管理者ダッシュボードの [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) から行います。
 
-When a user is awarded a badge it becomes displayed on their profile and on their comments.
+ユーザーにバッジが付与されると、プロフィールとコメントに表示されます。
 
-When adding a badge we can setup a `Display Label`, which is the name the user sees associated with the badge. For example, if we add a `Comment Count` badge
-we probably don't want to show that technical name because it's very lame. We might call it `Super Member` or similar. Badges can also stack and replace each other, as we'll cover
-later in this document.
+バッジを追加する際には、`Display Label` を設定できます。これは、ユーザーがバッジに関連付けて見る名前です。例えば、`Comment Count` バッジを追加する場合、その技術的な名前は非常に陳腐なので表示したくありません。代わりに `Super Member` などと呼ぶことができます。バッジはスタックしたり互いに置き換えたりすることもでき、これについては後述します。この文書の後半で説明します。
 
-Badges also have configurable thresholds.
+バッジには設定可能なしきい値もあります。
 
-Badges can be created, and then later disabled by unchecking `Enabled`. Disabling a badge means it will no longer be automatically awarded, and won't show in the Award Manual Badge menu, but
-users will keep the badge.
+バッジは作成でき、後で `Enabled` のチェックを外すことで無効化できます。バッジを無効化すると、以後自動的に付与されず、Award Manual Badge メニューにも表示されませんが、ユーザーはバッジを保持し続けます。
 
-### Badge Display Types
+### バッジ表示タイプ
 
-Badges can be images or text badges, which support some basic styling (text color, background color, and border color). You can also style badges via CSS.
+バッジは画像バッジまたはテキストバッジにでき、基本的なスタイリング（文字色、背景色、枠線色）をサポートします。CSS を使用してバッジをスタイル設定することも可能です。
 
-Image badges can be GIF images to show animated badges.
+画像バッジは GIF 画像にでき、アニメーションバッジを表示できます。
 
-### Tip - Do Not Remove Badges!
+### ヒント - バッジを削除しないでください！
 
-Users love badges. They tend to really care about them, even if it's a bug that you added by mistake, and you want to change the badge icon.
+ユーザーはバッジが大好きです。たとえ誤って追加したバグであっても、バッジのアイコンを変更したくても、ユーザーはそれを非常に気にします。
 
-If we've learned anything, it's extremely difficult to take something away from users. Removing a badge because you as an owner of the site no
-longer like it, or want to make changes, may result in a very angry crowd of users that suddenly leave your site out of frustration. For this reason
-`Delete` was not even an option for the first few months we released this feature - however we ended up having to add it. But please, use delete with caution. We have
-seen many long time, multi-year, users get very frustrated and leave their communities because administrators decided to delete a badge.
+私たちが学んだことがあるとすれば、ユーザーから何かを奪うことは極めて困難だということです。サイトの所有者としてバッジを削除するのは、もう好きでなくなったり、変更したいと思ったりするからといって削除すると、突然フラストレーションからサイトを離れる非常に怒ったユーザーの群れを招く可能性があります。このため、`Delete` はこの機能をリリースした最初の数か月間はオプションすらありませんでしたが、最終的に追加せざるを得ませんでした。ただし、削除は慎重に使用してください。私たちは、長期間（数年）にわたって利用していたユーザーが、管理者がバッジを削除したことにより非常にフラストレーションを抱き、コミュニティを離れるケースを多数目にしています。
 
-If you must stop using a badge suggest you simply disable it so that users keep their badge.
+バッジの使用を停止しなければならない場合は、単に無効化することを推奨します。そうすればユーザーはバッジを保持できます。
 
-### Badge Reprocessing
+### バッジの再処理
 
-When a badge is added or changed, the system will retroactively check anyone that interacted with your site to see if they should get the badge. This will be
-visible in the Badges page in the admin dashboard, as a spinner will be shown instead of the number of users that have the badge. This is because the number of users
-is being determined.
+バッジが追加または変更されると、システムは過去にサイトとやり取りしたすべてのユーザーを遡ってチェックし、バッジを取得すべきかどうかを判断します。これにより、管理者ダッシュボードのバッジページで、バッジを持つユーザー数の代わりにスピナーが表示されます。これはユーザー数が算出中であるためです。ユーザー数が決定されている最中です。
 
-### Seeing Who Has a Badge
+### バッジを持っているユーザーの確認
 
-In the Badges list each link has a `View Users` option to show the list of users which has earned or was manually awarded a badge.
+バッジ一覧では、各リンクに `View Users` オプションがあり、バッジを取得した、または手動で付与されたユーザーのリストを表示します。

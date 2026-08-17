@@ -1,54 +1,54 @@
-User Profiles in FastComments provide a dedicated space for each user to showcase their identity, activity, and contributions across your community.
+User Profiles u FastComments pružaju posvećeni prostor za svakog korisnika da prikaže svoj identitet, aktivnost i doprinose u vašoj zajednici.
 
 ### What is a User Profile?
 
-A User Profile is a personalized page for each FastComments user that displays:
+Korisnički profil je personalizovana stranica za svakog FastComments korisnika koja prikazuje:
 
-- **Profile Header** - A customizable background image that personalizes the profile
-- **Avatar** - The user's profile picture with online/offline status indicator
-- **Display Information** - Username, display name, and optional country flag
-- **Bio** - A personal description or introduction
-- **Social Links** - Connections to the user's social media profiles and website
-- **Badges** - Earned achievements and recognition
-- **Statistics** - User karma and total comment count
-- **Communities** - Which sites/domains the user is active in
+- **Profile Header** - Prilagodljiva pozadinska slika koja personalizuje profil
+- **Avatar** - Slika profila korisnika sa indikatorom statusa online/offline
+- **Display Information** - Korisničko ime, prikazano ime i opcionalna zastava zemlje
+- **Bio** - Lični opis ili uvod
+- **Social Links** - Veze ka društvenim mrežama korisnika i web sajtu
+- **Badges** - Osvojene nagrade i priznanja
+- **Statistics** - Korisnička karma i ukupan broj komentara
+- **Communities** - Na kojim sajtovima/domenima je korisnik aktivan
 
 ### Accessing User Profiles
 
-There are several ways to access a user's profile:
+Postoji nekoliko načina za pristup korisničkom profilu:
 
-1. **Click on an avatar** - In the comment widget, click any user's avatar to view their profile
-2. **Click on a username** - Usernames in comments are clickable links to profiles
-3. **Direct URL** - Visit `https://fastcomments.com/auth/user-profile/[userId]`
+1. **Click on an avatar** - U widgetu za komentare, kliknite na avatar bilo kog korisnika da vidite njegov profil
+2. **Click on a username** - Korisnička imena u komentarima su klikabilni linkovi ka profilima
+3. **Direct URL** - Posetite `https://fastcomments.com/auth/user-profile/[userId]`
 
 ### Profile Views
 
-When viewing a profile, you'll see different tabs depending on whether you're viewing your own profile or someone else's:
+Kada pregledate profil, videćete različite kartice u zavisnosti da li gledate svoj profil ili nečiji drugi:
 
 #### Your Own Profile
-- **Notifications** - Your notifications and mentions
-- **Recent Activity** - Your comment history across all communities
-- **Profile Comments** - Comments others have left on your profile page
-- **Direct Messages** - Private conversations with other users
+- **Notifications** - Vaša obaveštenja i spominjanja
+- **Recent Activity** - Vaša istorija komentara kroz sve zajednice
+- **Profile Comments** - Komentari koje su drugi ostavili na vašoj stranici profila
+- **Direct Messages** - Privatni razgovori sa drugim korisnicima
 
 #### Other Users' Profiles
-- **Recent Activity** - Their public comment history (if not set to private)
-- **Profile Comments** - Comments on their profile (if not set to private)
-- **Direct Messages** - Start or continue a private conversation (if they allow DMs)
+- **Recent Activity** - Njihova javna istorija komentara (ako nije postavljena kao privatna)
+- **Profile Comments** - Komentari na njihovom profilu (ako nije postavljena kao privatna)
+- **Direct Messages** - Započnite ili nastavite privatni razgovor (ako dozvoljavaju DM-ove)
 
 ### Online Status
 
-User profiles display real-time online status:
-- **Green indicator** - User is currently online
-- **No indicator** - User is offline
+Korisnički profili prikazuju status online u realnom vremenu:
+- **Green indicator** - Korisnik je trenutno online
+- **No indicator** - Korisnik je offline
 
-This helps you know when someone is actively using the platform, which is especially useful for direct messaging.
+Ovo vam pomaže da znate kada je neko aktivno na platformi, što je posebno korisno za direktno slanje poruka.
 
 ### User Types
 
-FastComments supports two types of users with profiles:
+FastComments podržava dva tipa korisnika sa profilima:
 
-1. **Regular Users** - Users who signed up directly with FastComments
-2. **SSO Users** - Users who authenticate through your site's Single Sign-On integration
+1. **Regular Users** - Korisnici koji su se registrovali direktno na FastComments
+2. **SSO Users** - Korisnici koji se autentifikuju putem Single Sign-On integracije vašeg sajta
 
-Both user types have access to the full profile system, though SSO users may have some restrictions on editing certain fields (like avatars) depending on your SSO configuration.
+Oba tipa korisnika imaju pristup celom sistemu profila, iako SSO korisnici mogu imati neka ograničenja u uređivanju određenih polja (kao što su avatari) u zavisnosti od vaše SSO konfiguracije.

@@ -63,7 +63,7 @@ Here's an example with all callbacks used:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments 按页面默认排序排序，可能是最相关（例如最多投票等）或最新优先
+            // comments 按页面默认排序排列，可能是最相关（例如点赞最多等）或最新优先
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }

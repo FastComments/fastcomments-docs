@@ -1,23 +1,23 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| commentId | string | query | Ne |  |
-| externalId | string | query | Ne |  |
-| eventType | string | query | Ne |  |
-| type | string | query | Ne |  |
-| domain | string | query | Ne |  |
-| attemptCountGT | number | query | Ne |  |
-| skip | number | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| commentId | string | query | No |  |
+| externalId | string | query | No |  |
+| eventType | string | query | No |  |
+| type | string | query | No |  |
+| domain | string | query | No |  |
+| attemptCountGT | number | query | No |  |
+| skip | number | query | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_response.go)
+Враћа: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_pending_webhook_events_response.go)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer GetPendingWebhookEvents'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GetPendingWebhookEvents Пример'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,14 +29,14 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string |  (neobavezno)
-	externalId := "externalId_example" // string |  (neobavezno)
-	eventType := "eventType_example" // string |  (neobavezno)
-	type_ := "type__example" // string |  (neobavezno)
-	domain := "domain_example" // string |  (neobavezno)
-	attemptCountGT := float64(1.2) // float64 |  (neobavezno)
-	skip := float64(1.2) // float64 |  (neobavezno)
+	tenantId := "tenantId_example" // string |
+	commentId := "commentId_example" // string |  (опционално)
+	externalId := "externalId_example" // string |  (опционално)
+	eventType := "eventType_example" // string |  (опционално)
+	type_ := "type__example" // string |  (опционално)
+	domain := "domain_example" // string |  (опционално)
+	attemptCountGT := float64(1.2) // float64 |  (опционално)
+	skip := float64(1.2) // float64 |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.GetPendingWebhookEvents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetPendingWebhookEvents`: GetPendingWebhookEventsResponse
+	// одговор од `GetPendingWebhookEvents`: GetPendingWebhookEventsResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEvents`: %v\n", resp)
 }
 [inline-code-end]

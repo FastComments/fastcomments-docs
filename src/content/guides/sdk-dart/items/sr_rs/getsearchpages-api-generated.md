@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | value | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `ModerationPageSearchResponse`
+Враћа: `ModerationPageSearchResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSearchPages Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSearchPages'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -28,5 +28,3 @@ try {
     print('Exception when calling ModerationApi->getSearchPages: $e\n');
 }
 [inline-code-end]
-
----

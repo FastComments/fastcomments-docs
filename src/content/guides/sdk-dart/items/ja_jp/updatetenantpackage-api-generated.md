@@ -1,22 +1,22 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名前 | タイプ | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
 
-## Response
+## レスポンス
 
-Returns: `APIEmptyResponse`
+返却: `APIEmptyResponse`
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'updateTenantPackage の例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO APIキー認証を設定: api_key
+// TODO APIキー認証を設定してください: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// 必要に応じて API キーのプレフィックス (例: Bearer) を設定するには、以下のコメントを解除してください
+// 必要に応じて、APIキーのプレフィックス（例: Bearer）を設定するには以下のコメントを外してください
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

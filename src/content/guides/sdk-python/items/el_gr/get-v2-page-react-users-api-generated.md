@@ -1,17 +1,16 @@
----
-## Parameters
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
 
-## Response
+## Απάντηση
 
-Returns: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_v2_page_react_users_response.py)
+Επιστρέφει: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_v2_page_react_users_response.py)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'get_v2_page_react_users Παράδειγμα'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,14 +19,14 @@ from client.models.get_v2_page_react_users_response import GetV2PageReactUsersRe
 from client.rest import ApiException
 from pprint import pprint
 
-# Ορισμός του host είναι προαιρετικός και έχει προεπιλογή το https://fastcomments.com
-# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους ρυθμίσεων.
+# Ο ορισμός του host είναι προαιρετικός και προεπιλεγμένος στο https://fastcomments.com
+# Δείτε το configuration.py για μια λίστα με όλες τις υποστηριζόμενες παραμέτρους διαμόρφωσης.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Εισέλθετε σε ένα context με ένα στιγμιότυπο του πελάτη API
+# Εισάγετε ένα context με ένα στιγμιότυπο του πελάτη API
 with client.ApiClient(configuration) as api_client:
     # Δημιουργήστε ένα στιγμιότυπο της κλάσης API
     api_instance = client.PublicApi(api_client)
@@ -42,5 +41,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_v2_page_react_users: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,25 +1,25 @@
 FastComments webhook requests include multiple authentication mechanisms for security.
 
-## Headers Sent
+## Відправлені заголовки
 
-| Header | Description |
-|--------|-------------|
-| `token` | Your API Secret (for backwards compatibility) |
-| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256 signature of the payload |
+| Заголовок | Опис |
+|-----------|------|
+| `token` | Ваш API Secret (для зворотної сумісності) |
+| `X-FastComments-Timestamp` | Unix-часова мітка (секунди) коли запит був підписаний |
+| `X-FastComments-Signature` | HMAC-SHA256 підпис навантаження |
 
-## HMAC Signature Verification (Recommended)
+## Перевірка підпису HMAC (рекомендовано)
 
-We strongly recommend verifying the HMAC signature to ensure webhook payloads are authentic and haven't been tampered with.
+Ми настійно рекомендуємо перевіряти підпис HMAC, щоб переконатися, що навантаження вебхука є автентичними і не були підроблені.
 
-**Signature Format:** `sha256=<hex-encoded-signature>`
+**Формат підпису:** `sha256=<hex-encoded-signature>`
 
-**How the signature is computed:**
-1. Concatenate: `timestamp + "." + JSON_payload_body`
-2. Compute HMAC-SHA256 using your API Secret as the key
-3. Hex-encode the result
+**Як обчислюється підпис:**
+1. Конкатенувати: `timestamp + "." + JSON_payload_body`
+2. Обчислити HMAC-SHA256, використовуючи ваш API Secret як ключ
+3. Перетворити результат у шістнадцятковий формат
 
-### Example Verification (Node.js)
+### Приклад перевірки (Node.js)
 
 ```javascript
 const crypto = require('crypto');
@@ -32,13 +32,13 @@ function verifyWebhookSignature(req, apiSecret) {
         return false;
     }
 
-    // Перевірити, що мітка часу є актуальною (протягом 5 хвилин)
+    // Перевірити, чи часова мітка недавня (протягом 5 хвилин)
     const now = Math.floor(Date.now() / 1000);
     if (Math.abs(now - parseInt(timestamp, 10)) > 300) {
-        return false;  // Запобігання повторним атакам (replay attacks)
+        return false;  // Запобігання повторній атаці
     }
 
-    // Перевірка підпису
+    // Перевірити підпис
     const payload = JSON.stringify(req.body);
     const expectedSignature = crypto
         .createHmac('sha256', apiSecret)
@@ -49,7 +49,7 @@ function verifyWebhookSignature(req, apiSecret) {
 }
 ```
 
-### Example Verification (Python)
+### Приклад перевірки (Python)
 
 ```python
 import hmac
@@ -64,12 +64,12 @@ def verify_webhook_signature(headers, body, api_secret):
     if not timestamp or not signature:
         return False
 
-    # Перевірте, що мітка часу є актуальною
+    # Перевірити, чи часова мітка недавня
     now = int(time.time())
     if abs(now - int(timestamp)) > 300:
         return False
 
-    # Перевірка підпису
+    # Перевірити підпис
     payload = json.dumps(body, separators=(',', ':'))
     message = f"{timestamp}.{payload}"
     expected = hmac.new(
@@ -81,7 +81,7 @@ def verify_webhook_signature(headers, body, api_secret):
     return signature == f"sha256={expected}"
 ```
 
-### Example Verification (PHP)
+### Приклад перевірки (PHP)
 
 ```php
 function verifyWebhookSignature($headers, $body, $apiSecret) {
@@ -92,13 +92,13 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
         return false;
     }
 
-    // Перевірте, що мітка часу є актуальною (протягом 5 хвилин)
+    // Перевірити, чи часова мітка недавня (протягом 5 хвилин)
     $now = time();
     if (abs($now - intval($timestamp)) > 300) {
         return false;
     }
 
-    // Перевірка підпису
+    // Перевірити підпис
     $payload = json_encode($body, JSON_UNESCAPED_SLASHES);
     $message = $timestamp . '.' . $payload;
     $expectedSignature = 'sha256=' . hash_hmac('sha256', $message, $apiSecret);
@@ -107,8 +107,8 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 }
 ```
 
-## Legacy Authentication
+## Спадкова автентифікація
 
-The `token` header containing your API Secret is still sent for backwards compatibility. However, we recommend migrating to HMAC verification for improved security as it protects against replay attacks.
+Заголовок `token`, що містить ваш API Secret, все ще надсилається для зворотної сумісності. Однак ми рекомендуємо перейти на перевірку HMAC для підвищеної безпеки, оскільки вона захищає від повторних атак.
 
 ---

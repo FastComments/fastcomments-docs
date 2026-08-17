@@ -1,14 +1,14 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigsResponse.ts)
+Враћа: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetDomainConfigsResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getDomainConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,3 +18,5 @@ async function fetchDomainConfigs(): Promise<void> {
   console.log(configs);
 }
 [inline-code-end]
+
+---

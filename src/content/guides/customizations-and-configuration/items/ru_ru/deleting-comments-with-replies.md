@@ -1,12 +1,12 @@
-By default, users can delete their own comments. Also, deleting their comment automatically
-deletes all child and transient comments in the thread. This behavior is also live.
+---
+По умолчанию пользователи могут удалять свои собственные комментарии. Кроме того, удаление их комментария автоматически удаляет все дочерние и временные комментарии в ветке. Это поведение также активно.
 
-You can restrict this in the following ways:
+Вы можете ограничить это следующими способами:
 
-- Instead, anonymize the deleted comment (set name and text to `[deleted]` or a custom value).
-- Don't allow deleting comments when there are replies. A customizable error message is shown.
-- Restrict deleting when a comment has replies to only administrators and moderators.
+- Вместо этого анонимизировать удалённый комментарий (установить имя и текст в `[deleted]` или пользовательское значение).
+- Не разрешать удалять комментарии, когда есть ответы. Показано настраиваемое сообщение об ошибке.
+- Ограничить удаление, когда у комментария есть ответы, только администраторам и модераторам.
 
-This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
+Это можно настроить через раздел `Comment Thread Deletion` в пользовательском интерфейсе настройки виджета.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Параметры удаления ветки комментариев в пользовательском интерфейсе настройки виджета для анонимизации или ограничения удалений с ответами'; title='Настройка поведения удаления для ответов' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Опции удаления ветки комментариев в пользовательском интерфейсе настройки виджета для анонимизации или ограничения удалений с ответами'; title='Настройка поведения удаления для ответов' app-screenshot-end]

@@ -1,15 +1,15 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
 | tenantId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Returns: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_count_response.py)
+Враћа: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_banned_users_count_response.py)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_counts'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,7 +18,7 @@ from client.models.get_banned_users_count_response import GetBannedUsersCountRes
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -30,7 +30,7 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    sso = 'sso_example' # str |  (neobavezno)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.get_counts(tenant_id, sso=sso)
@@ -39,5 +39,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->get_counts: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,19 +1,22 @@
+---
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
-Komentarisanje se može zaključati tako da se ne mogu ostaviti novi komentari ili glasovi postavljanjem zastavice readonly na true.
+Коментари могу бити закључани тако да се нови коментари или гласови не могу оставити постављањем заставице readonly на true.
 
-Komentari takođe neće moći da se uređuju ili brišu.
+Коментари такође неће моћи бити уређивани или обрисани.
 
 [code-example-start config = {readonly: true}; linesToHighlight = [6]; title = 'Making The Comment Thread Readonly'; code-example-end]
 
-Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta, za ceo domen ili stranicu:
+Ово се може прилагодити без кода, на страници за прилагођавање виџета, за цео домен или страницу:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; alt='Postavka za sprečavanje novih odgovora na stranici za prilagođavanje widgeta, koja zaključava nit za domen ili stranicu'; title='Postavljanje niti komentara u režim samo za čitanje' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.prevent-new-replies'; alt='Подешавање за спречавање нових одговора на страници за прилагођавање виџета, које закључава тему за домен или страницу'; title='Постављање теме коментара у режим само за читање' app-screenshot-end]
 
-## Ažuriranje!
+## Update!
 
-Od novembra 2022, niti se mogu zaključati ili otključati **uživo** od strane administratora i moderatora putem menija sa tri tačke iznad oblasti za odgovor.
+Од новембра 2022, теме се могу закључати или откључавати **у реалном времену** од стране администратора и модератора преко менија са три тачке изнад простора за одговор.
 
-Ovo će sprečiti nove komentare, dok će i dalje omogućiti glasanje i omogućiti korisnicima da izbrišu svoje komentare po želji, dok `readonly` ne dozvoljava ove stvari. 
+Ово ће спречити нове коментаре, док ће и даље омогућити гласање и омогућити корисницима да избришу своје коментаре ако желе, док `readonly` не дозвољава ове ствари. 
 
-Ovo odgovara polju `isClosed` u `Page` API-ju.
+Ово одговара пољу `isClosed` у `Page` API-ју.
+
+---

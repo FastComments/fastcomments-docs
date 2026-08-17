@@ -1,24 +1,22 @@
-Pokreće agenta kada se komentar izmeni.
+Fires the agent when a comment is edited.
 
-### Kontekst koji agent prima
+### Context the agent receives
 
-- Komentar u svom trenutnom (posle izmene) obliku.
-- **prethodni tekst komentara** kao zaseban fenced blok (`PREVIOUS_TEXT`). Ovo je jedinstveno za okidač izmene - agent može da uporedi pre i posle.
-- Opcionalna istorija teme / korisnika / stranice u zavisnosti od konfiguracije.
+- The comment in its current (post-edit) form.
+- The **previous comment text** as a separate fenced block (`PREVIOUS_TEXT`). This is unique to the edit trigger - the agent can compare before/after.
+- Optional thread / user history / page context as configured.
 
-### Napomene
+### Notable
 
-- Okidač se pokreće za svaku uspešnu izmenu, uključujući izmene koje su izvršili moderatori u ime korisnika.
-- Agentima nije dostupan alat za izmenu komentara; agenti uopšte ne mogu da menjaju komentare.
-- Prethodni tekst komentara je ograničen kao nepoveren ulaz. Sistem prompt platforme podseća model da ne sledi instrukcije iz unutrašnjosti ograda - ovo je važno jer zlonameran korisnik može izmeniti komentar da ubaci payload "ignore your previous instructions" usmeren na bilo kog agenta koji prati događaje izmena.
+- The trigger fires for any successful edit, including edits performed by moderators on behalf of a user.
+- Agents have no edit-comment tool exposed to them; agents cannot edit comments at all.
+- The previous comment text is fenced as untrusted input. The platform's system prompt reminds the model not to follow instructions from inside fences - this matters here, because a malicious user could edit a comment to insert a "ignore your previous instructions" payload aimed at any agent watching edit events.
 
-### Uobičajene upotrebe
+### Common uses
 
-- **Otkrivanje maskiranog sadržaja** - korisnik izmeni prethodno čist komentar da umetne spam nakon što se moderator ode.
-- **Praćenje manjih izmena** - ako vaša zajednica tretira izmene kao zasebne događaje iz bilo kog revizijskog razloga.
+- **Catching laundered content** - a user edits a previously-clean comment to insert spam after the moderator has moved on.
+- **Tracking minor edits** - if your community treats edits as separate events for any audit reason.
 
-### Napomena o troškovima
+### Cost note
 
 Edit triggers see two copies of the comment text (the new version in the standard COMMENT block, the old version in the PREVIOUS_TEXT block). For long comments this roughly doubles the token cost of the run vs. a `COMMENT_ADD` trigger - keep that in mind when budgeting.
-
----

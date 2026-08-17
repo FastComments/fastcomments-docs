@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'PostRestoreDeletedComment Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за PostRestoreDeletedComment'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -25,19 +25,19 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	commentId := "commentId_example" // string | 
-	broadcastId := "broadcastId_example" // string |  (optional)
-	sso := "sso_example" // string |  (optional)
+	tenantId := "tenantId_example" // стринг | 
+	commentId := "commentId_example" // стринг | 
+	broadcastId := "broadcastId_example" // стринг |  (опционално)
+	sso := "sso_example" // стринг |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 	resp, r, err := apiClient.ModerationAPI.PostRestoreDeletedComment(context.Background(), commentId).TenantId(tenantId).BroadcastId(broadcastId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		fmt.Fprintf(os.Stderr, "Грешка при позиву `ModerationAPI.PostRestoreDeletedComment``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Пун HTTP одговор: %v\n", r)
 	}
-	// odgovor od `PostRestoreDeletedComment`: APIEmptyResponse
-	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostRestoreDeletedComment`: %v\n", resp)
+	// одговор од `PostRestoreDeletedComment`: APIEmptyResponse
+	fmt.Fprintf(os.Stdout, "Одговор од `ModerationAPI.PostRestoreDeletedComment`: %v\n", resp)
 }
 [inline-code-end]

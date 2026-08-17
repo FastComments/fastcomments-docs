@@ -1,30 +1,30 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-Pri prikazivanju niza komentara ili ostavljanju komentara, FastComments mora da zna kojoj stranici, članku ili proizvodu ti komentari pripadaju.
+Приликом приказивања нити коментара, или остављања коментара, FastComments треба да зна којој страници, или чланку, или производу ти коментари припадају.
 
-Za to koristimo nešto što nazivamo „URL ID“. To je ili identifikator, poput niza znakova ili broja, ili URL.
+За то користимо нешто што називамо „URL ID“. То је или идентификатор, као што је ниска или број, или URL.
 
-Podrazumevano, ako ne navedete urlId, on će postati URL stranice. Uzimaćemo trenutni URL stranice i očistiti ga da ukloni sve uobičajene marketinške parametre ili identifikatore praćenja.
+Подразумевано, ако не наведете urlId, он ће постати URL странице. Узимаћемо тренутни URL странице и очистити га да уклони све уобичајене маркетиншке параметре или идентификаторе за праћење.
 
-U slučaju integracija trećih strana, poput WordPress-a, naš dodatak će obično koristiti identifikator koji predstavlja trenutne informacije koje se pregledaju kao URL ID, na primer ID članka/strane.
+У случају интеграција трећих страна, као што је WordPress, наш додатак ће обично користити идентификатор који представља тренутну информацију која се приказује као URL ID, на пример ID чланка/странице.
 
-[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Definisanje prilagođenog URL ID-a'; code-example-end]
+[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Defining a Custom URL ID'; code-example-end]
 
-Jedna stvar na koju ćemo često ukazivati u ovom dokumentu je <a href="https://fastcomments.com/auth/my-account/customize-widget/new">UI za prilagođavanje widgeta</a>.
+Једна ствар коју ћемо често помињати у овом документу је <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Корисничко сучеље за прилагођавање виџета</a>.
 
-Ovaj UI se može koristiti za mnoge izmene widgeta za komentare bez korišćenja koda.
+Ово сучеље се може користити за многе измене виџета за коментаре без потребе за кодом.
 
-Kada kreiramo pravilo prilagođavanja, često ćemo želeti da se primeni na sve stranice našeg sajta. Međutim, u nekim slučajevima želimo da prilagodimo widget za komentare na određenoj stranici, bilo da primenimo prilagođeni stil ili možda učinimo komentare na toj stranici anonimnim. Takođe, na primer, možete imati da se živi komentari odmah prikazuju na nekim stranicama, dok su na drugim skriveni iza dugmeta za obaveštenja.
+Када правимо правило за прилагођавање, често желимо да се примени на све странице нашег сајта. Међутим, у неким случајевима желимо да прилагодимо виџет за коментаре на одређеној страници, било да применимо прилагођени стил, или можда да учинимо коментаре за ту страницу анонимним. Такође, на пример, можете имати живе коментаре који се одмах појављују на неким страницама, док их на другим скривате испод дугмади за обавештење.
 
-Sve ovo je moguće putem polja za unos URL ID-a na ovoj stranici, koje izgleda ovako:
+Све ово је могуће преко поља за унос URL ID на овој страници, које изгледа овако:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Polje URL ID koje se koristi za ograničavanje pravila prilagođavanja na jednu stranicu, ili na šablon kao što je */blog/*'; title='Unos URL ID-a na stranici za prilagođavanje widgeta' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Поље URL ID које се користи за ограничење правила прилагођавања на једну страницу, или на шаблон као што је */blog/*'; title='Унос URL ID у страници за прилагођавање виџета' app-screenshot-end]
 
-Vrednost u ovom polju treba da se podudara sa parametrom *urlId* prosleđenim widgetu za komentare. Ako želite da vaše pravilo prilagođavanja bude neutralno prema *urlId*, ostavite ovo polje prazno ili unesite *.
+Вредност у овом пољу треба да се поклапа са параметром *urlId* који се прослеђује виџету за коментаре. Ако желите да ваше правило прилагођавања буде независно од *urlId*, оставите ово поље празно или унесите *.
 
-Od 2023. godine, polje `URL ID` u prilagođavanju widgeta sada takođe prihvata obrasce! Na primer, možete imati `*/blog/*` da dodate stil specifičan za vaš blog i `*/store/*` da imate stil specifičan za vašu prodavnicu, sve dok koristite isti domen.
+Од 2023. године поље `URL ID` у прилагођавању виџета сада такође прихвата шаблоне! На пример, можете имати `*/blog/*` да додате стил специфичан за ваш блог и `*/store/*` да имате стил специфичан за вашу продавницу, све док користите исти домен.
 
-### Zamke
+### Загонетке
 
-1. Ako vaša stranica ima hash parametre (kao example.com#page-1) – to će podrazumevano postati deo URL ID-a.  
-2. Tokom migracija, na primer sa WordPress-a na Gatsby, možda ćete morati da migrirate vrednosti URL ID komentara nakon početne migracije. Za to nas kontaktirajte.
+1. Ако ваша страница има хеш параметре (на пример example.com#page-1) – то ће подразумевано постати део URL ID.
+2. Током миграција, на пример са WordPress-а на Gatsby, можда ћете морати да мигрирате вредности коментара URL ID након првобитне миграције. За то, контактирајте нас.

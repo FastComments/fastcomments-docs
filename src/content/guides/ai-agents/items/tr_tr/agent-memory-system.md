@@ -1,74 +1,74 @@
-Agent memory is a tenant-scoped, **shared** key-value pool that every agent in your tenant can read from and write to. It exists so agents can carry context across runs.
+Agent hafızası, kiracı kapsamlı, **paylaşılan** bir anahtar‑değer havuzudur ve kiracınızdaki her ajan bunu okuyabilir ve üzerine yazabilir. Ajanların çalıştırmalar arasında bağlam taşıyabilmesi için vardır.
 
-### Why memory exists
+### Hafıza neden var
 
-LLM context is per-run. Without memory, an agent that issues a warning to a user has no way to know about that warning the next time it sees the same user. The platform's escalation policy - "warn before banning" - depends on the agent being able to find the prior warning. Memory is what makes that work.
+LLM bağlamı çalıştırma başına geçerlidir. Hafıza olmadan, bir kullanıcıya uyarı veren bir ajan, aynı kullanıcıyı bir sonraki sefer gördüğünde bu uyarıyı bilmenin bir yolu yoktur. Platformun yükseltme politikası - "yasaklamadan önce uyar" - ajanın önceki uyarıyı bulabilmesine dayanır. Hafıza, bunun çalışmasını sağlar.
 
-### Two kinds of memory
+### İki tür hafıza
 
-- **WARNING** - written automatically as part of the [`warn_user`](#tool-warn-user) flow. The agent does not write `WARNING` records by hand; they are a side effect of warning a user.
-- **NOTE** - written by [`save_memory`](#tools-overview). General-purpose context the agent wants future agents to know.
+- **WARNING** - [`warn_user`](#tool-warn-user) akışının bir parçası olarak otomatik olarak yazılır. Ajan, `WARNING` kayıtlarını elle yazmaz; bunlar bir kullanıcıyı uyarmanın yan etkisidir.
+- **NOTE** - [`save_memory`](#tools-overview) tarafından yazılır. Ajanın gelecekteki ajanların bilmesini istediği genel amaçlı bağlam.
 
-The escalation policy looks specifically for `WARNING` records when deciding whether a ban is justified.
+Yükseltme politikası, bir yasağın haklı olup olmadığını karar verirken özellikle `WARNING` kayıtlarına bakar.
 
-### Tenant-scoped, agent-shared
+### Kiracı kapsamlı, ajan paylaşımlı
 
-All agents in your tenant share **one memory pool**. A note saved by Agent A is visible to Agent B's `search_memory` calls. This is intentional - you want a triage agent's notes to inform a moderator agent's decisions.
+Kiracınızdaki tüm ajanlar **tek bir hafıza havuzunu** paylaşır. Ajan A tarafından kaydedilen bir not, Ajan B'nin `search_memory` çağrılarında görülebilir. Bu kasıtlıdır - bir triage ajanın notları, moderatör ajanın kararlarını bilgilendirmelidir.
 
-`tenantId` is set by the executor from the agent's own tenant - never from LLM args - so cross-tenant memory leaks are impossible by construction.
+`tenantId`, yürütücü tarafından ajanın kendi kiracısından ayarlanır - LLM argümanlarından asla - bu yüzden kiracılar arası hafıza sızıntıları yapı itibarıyla imkânsızdır.
 
-### What's in a memory record
+### Bir hafıza kaydında neler var
 
-Each memory entry contains:
+Her hafıza girişi şunları içerir:
 
-- **Which agent wrote it**, and when.
-- **Who it's about** - the user this memory describes. The agent cannot fabricate this; the platform fills it in automatically from whatever triggered the agent.
-- **A hidden alt-account signal** - the platform also records (privately) the IP fingerprint of the originating comment, so future memory searches can surface notes about other accounts posting from the same IP. The fingerprint is never shown to the agent or the LLM.
-- **The note itself** - up to 2000 characters of free text.
-- **Tags** for retrieval - up to 10 short tags.
-- **A kind** - either a warning or a general note.
-- **An optional comment link** - if the memory is tied to a specific comment.
+- **Hangi ajan** tarafından yazıldığı ve ne zaman.
+- **Kiminle ilgili olduğu** - bu hafızanın tanımladığı kullanıcı. Ajan bunu uyduramaz; platform, ajanın neyle tetiklendiğine bağlı olarak otomatik olarak doldurur.
+- **Gizli bir alt‑hesap sinyali** - platform ayrıca (özel olarak) orijinal yorumun IP parmak izini kaydeder, böylece gelecekteki hafıza aramaları aynı IP'den gönderi yapan diğer hesapların notlarını ortaya çıkarabilir. Parmak izi ajana veya LLM'ye asla gösterilmez.
+- **Notun kendisi** - 2000 karaktere kadar serbest metin.
+- **Etiketler** - geri getirme için, en fazla 10 kısa etiket.
+- **Bir tür** - ya bir uyarı ya da genel bir not.
+- **İsteğe bağlı bir yorum bağlantısı** - hafıza belirli bir yorumla ilişkilendirilmişse.
 
-### Search behavior
+### Arama davranışı
 
-[`search_memory`](#tools-overview) returns up to 25 records, sorted newest-first, scoped automatically to (the trigger's user) OR (other accounts on the trigger's IP). The results are also char-capped at 8000 total characters across all returned content - older entries are dropped if the cap is hit.
+[`search_memory`](#tools-overview) en fazla 25 kayıt döndürür, en yeni önce sıralanır ve otomatik olarak (tetikleyicinin kullanıcısına) VEYA (tetikleyicinin IP'sindeki diğer hesaplara) kapsamlandırılır. Sonuçlar ayrıca tüm döndürülen içeriklerde toplam 8000 karakterle sınırlıdır – limit aşıldığında daha eski girişler atılır.
 
-The agent does not pass `userId` or `targetIpHash`. Both are set by the executor.
+Ajan, `userId` veya `targetIpHash` parametresini geçmez. Her ikisi de yürütücü tarafından ayarlanır.
 
-### Persistence
+### Kalıcılık
 
-Memory has **no TTL**. Records persist until explicitly removed. WARNING records about a user are intentionally never auto-deleted - the escalation history must be findable indefinitely or the platform's "search before banning" check is meaningless.
+Hafızanın **TTL'si yoktur**. Kayıtlar, açıkça kaldırılana kadar kalıcıdır. Bir kullanıcıyla ilgili WARNING kayıtlar kasıtlı olarak asla otomatik silinmez – yükseltme geçmişi süresiz bulunabilir olmalı, aksi takdirde platformun "yasaklamadan önce arama" kontrolü anlamsızdır.
 
-The three ways memory is removed:
+Hafızanın kaldırılmasının üç yolu:
 
-- A moderator deletes the underlying comment - any memory tied to that comment is cascaded.
-- A user is deleted - all memory entries about that user are removed in the same transaction.
-- Your tenant is deleted.
+- Bir moderatör, temel yorumu siler – o yorumla ilişkili tüm hafıza kademeli olarak silinir.
+- Bir kullanıcı silinir – o kullanıcıyla ilgili tüm hafıza girişleri aynı işlemde kaldırılır.
+- Kiracınız silinir.
 
-There is no admin UI for deleting individual memory records today.
+Bugün, bireysel hafıza kayıtlarını silmek için bir yönetici UI'si yoktur.
 
-### Memory in dry-run
+### Kuru çalıştırmada hafıza
 
-Dry-run agents do **not** write memory. This is by design: a dry-run agent's hypothetical decisions should not pollute the shared memory pool. Read-back via `search_memory` works in dry-run normally - the agent can see real memories from live agents - it just cannot add to them.
+Kuru çalıştırma ajanları hafıza **yazmaz**. Bu tasarım gereğidir: bir kuru çalıştırma ajanın varsayımsal kararları paylaşılan hafıza havuzunu kirletmemelidir. `search_memory` aracılığıyla geri okuma, kuru çalıştırmada normal şekilde çalışır – ajan, canlı ajanların gerçek hafızalarını görebilir – ancak onlara ekleyemez.
 
-### Memory in replays
+### Tekrar çalıştırmalarda hafıza
 
-Same as dry-run: replay agents do not write memory. Replays are preview-only. See [Test Runs (Replays)](#test-runs-replays).
+Kuru çalıştırma gibi: tekrar (replay) ajanları hafıza yazmaz. Tekrarlar sadece ön izleme amaçlıdır. Bkz. [Test Runs (Replays)](#test-runs-replays).
 
-### Constraints summary
+### Kısıtlamalar özeti
 
-| Limit | Value |
+| Sınır | Değer |
 |---|---|
-| Memory content max length | 2000 chars |
-| Memory tag max length | 64 chars |
-| Memory tags max count | 10 |
-| Memory query max length | 200 chars |
-| Memory search result limit | 25 records |
-| Memory search total content cap | 8000 chars |
+| Hafıza içeriği maksimum uzunluğu | 2000 chars |
+| Hafıza etiketi maksimum uzunluğu | 64 chars |
+| Hafıza etiketleri maksimum sayısı | 10 |
+| Hafıza sorgusu maksimum uzunluğu | 200 chars |
+| Hafıza arama sonuç limiti | 25 records |
+| Hafıza arama toplam içerik sınırı | 8000 chars |
 
-### See also
+### Ayrıca bakınız
 
-- [Tool: save_memory](#tools-overview) for writing.
-- [Tool: search_memory](#tools-overview) for reading.
-- [Tool: warn_user](#tool-warn-user) - the only tool that writes WARNING-kind memory.
-- [Tool: ban_user](#tool-ban-user) - the system prompt requires `search_memory` to be called before this.
+- [Tool: save_memory](#tools-overview) yazmak için.
+- [Tool: search_memory](#tools-overview) okumak için.
+- [Tool: warn_user](#tool-warn-user) - WARNING türü hafıza yazan tek araç.
+- [Tool: ban_user](#tool-ban-user) - sistem istemi, bundan önce `search_memory` çağrılmasını gerektirir.

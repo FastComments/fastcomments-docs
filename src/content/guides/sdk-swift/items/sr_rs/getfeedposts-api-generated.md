@@ -1,32 +1,31 @@
----
-zahtev
+req
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| afterId | string | query | No |  |
-| limit | integer | query | No |  |
-| tags | array | query | No |  |
+| tenantId | string | query | Да |  |
+| afterId | string | query | Не |  |
+| limit | integer | query | Не |  |
+| tags | array | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
+Враћа: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetFeedPostsResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getFeedPosts Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getFeedPosts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći uzorci koda su i dalje beta. Za bilo koji problem, molimo da ga prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, молимо пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let afterId = "afterId_example" // String |  (opciono)
-let limit = 987 // Int |  (opciono)
-let tags = ["inner_example"] // [String] |  (opciono)
+let afterId = "afterId_example" // String |  (опционално)
+let limit = 987 // Int |  (опционално)
+let tags = ["inner_example"] // [String] |  (опционално)
 
 DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOptions(afterId: afterId, limit: limit, tags: tags)) { (response, error) in
     guard error == nil else {
@@ -39,5 +38,3 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOpti
     }
 }
 [inline-code-end]
-
----

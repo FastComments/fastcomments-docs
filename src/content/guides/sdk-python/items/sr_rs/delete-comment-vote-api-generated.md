@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | commentId | string | path | Yes |  |
 | voteId | string | path | Yes |  |
@@ -10,13 +10,13 @@
 | editKey | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
+Враћа: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/vote_delete_response.py)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'delete_comment_vote Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment_vote Пример'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import DeleteCommentVoteOptions
@@ -24,24 +24,24 @@ from client.models.vote_delete_response import VoteDeleteResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opciono i podrazumevano je https://fastcomments.com
-# Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
+# Дефинисање хоста је опционо и подразумева https://fastcomments.com
+# Погледајте configuration.py за листу свих подржаних параметара конфигурације.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst sa instancom API klijenta
+# Уђите у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Креирајте инстанцу API класе
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
     vote_id = 'vote_id_example' # str | 
     url_id = 'url_id_example' # str | 
     broadcast_id = 'broadcast_id_example' # str | 
-    edit_key = 'edit_key_example' # str |  (opcionalno)
-    sso = 'sso_example' # str |  (opcionalno)
+    edit_key = 'edit_key_example' # str |  (опционално)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.delete_comment_vote(tenant_id, comment_id, vote_id, url_id, broadcast_id, DeleteCommentVoteOptions(edit_key=edit_key, sso=sso))
@@ -50,3 +50,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_comment_vote: %s\n" % e)
 [inline-code-end]
+
+---

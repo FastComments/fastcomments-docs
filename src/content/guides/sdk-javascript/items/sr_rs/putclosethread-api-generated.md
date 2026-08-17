@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| urlId | string | Da |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| urlId | string | Да |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`PutCloseThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutCloseThreadResponse.ts)
+Враћа: [`PutCloseThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutCloseThreadResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer putCloseThread'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putCloseThread пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function closeThreadDemo(): Promise<void> {
   const urlId: string = "article-2023-09-15";

@@ -1,21 +1,22 @@
-## Parameters
+---
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| badgeId | string | Yes |  |
-| userId | string | No |  |
-| commentId | string | No |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|--------------|------|
+| badgeId | string | Так |  |
+| userId | string | Ні |  |
+| commentId | string | Ні |  |
+| broadcastId | string | Ні |  |
+| tenantId | string | Ні |  |
+| sso | string | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
+Повертає: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
 
-## Example
+## Приклад
 
-[inline-code-attrs-start title = 'putRemoveBadge Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putRemoveBadge Приклад'; type = 'typescript'; isFunctional false; inline-code-attrs-end]
 [inline-code-start]
 const badgeId: string = "badge-12345";
 const userId: string = "user-9876";

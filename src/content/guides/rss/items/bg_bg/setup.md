@@ -1,6 +1,7 @@
-Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
+---
+Navigate to your account dashboard and go to the [RSS Feed страница](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Страница на акаунта за RSS хранилка с отметка „Enable RSS Feed Access“, URL на хранилката и бутони „Copy“ и „View Feed“'; title='Конфигурация на RSS хранилка' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Страница на акаунта за RSS Feed с отметката „Enable RSS Feed Access“, URL на фийда и бутоните „Copy“ и „View Feed“'; title='Конфигурация на RSS Feed' app-screenshot-end]
 
 On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
 
@@ -13,3 +14,5 @@ Open your RSS reader application and add the copied URL as a new feed subscripti
 You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
 
 To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.
+
+---

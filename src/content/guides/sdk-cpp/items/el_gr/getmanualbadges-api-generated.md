@@ -1,15 +1,15 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenantId | string | Yes |  |
 | sso | string | No |  |
 
-## Response
+## Απόκριση
 
-Returns: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantManualBadgesResponse.h)
+Επιστρέφει: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantManualBadgesResponse.h)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getManualBadges'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,9 +20,11 @@ api->getManualBadges(tenantId, sso)
     .then([](pplx::task<std::shared_ptr<GetTenantManualBadgesResponse>> t) {
         try {
             auto response = t.get();
-            // επεξεργασία της απάντησης, π.χ., response->badgeList
+            // επεξεργασία απόκρισης, π.χ., response->badgeList
         } catch (const std::exception& ex) {
             // διαχείριση σφάλματος
         }
     });
 [inline-code-end]
+
+---

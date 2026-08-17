@@ -1,28 +1,28 @@
-## Parameters
+## Параметри
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| tag | string | path | Da |  |
+| tenantId | string | query | Yes |  |
+| tag | string | path | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: `UpdateHashTagResponse`
+Returns: `UpdateHashTagResponse`
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'patchHashTag Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, po potrebi
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
-final tenantId = tenantId_example; // String | 
-final tag = tag_example; // String | 
-final updateHashTagBody = UpdateHashTagBody(); // UpdateHashTagBody | 
+final tenantId = tenantId_example; // String |
+final tag = tag_example; // String |
+final updateHashTagBody = UpdateHashTagBody(); // UpdateHashTagBody |
 
 try {
     final result = api_instance.patchHashTag(tenantId, tag, updateHashTagBody);
@@ -31,3 +31,5 @@ try {
     print('Exception when calling DefaultApi->patchHashTag: $e\n');
 }
 [inline-code-end]
+
+---

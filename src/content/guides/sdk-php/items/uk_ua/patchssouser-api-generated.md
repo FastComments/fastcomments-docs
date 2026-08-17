@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
-| updateComments | boolean | query | No |  |
+| tenantId | string | query | Так |  |
+| id | string | path | Так |  |
+| updateComments | boolean | query | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchSSOUserAPIResponse.php)
+Повертає: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PatchSSOUserAPIResponse.php)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'patchSSOUser Приклад'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,18 +18,15 @@ Returns: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure API key authorization: api_key
-// Налаштування авторизації API ключа: api_key
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Розкоментуйте нижче, щоб встановити префікс (наприклад, Bearer) для API ключа, за потреби
+// Налаштування авторизації ключа API: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Розкоментуйте нижче, щоб налаштувати префікс (наприклад, Bearer) для ключа API, якщо потрібно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // Якщо ви хочете використовувати кастомний HTTP-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    // Це необов’язково, `GuzzleHttp\Client` буде використаний за замовчуванням.
+    // Якщо ви хочете використовувати власний HTTP-клієнт, передайте ваш клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, `GuzzleHttp\Client` буде використаний за замовчуванням.
     new GuzzleHttp\Client(),
     $config
 );

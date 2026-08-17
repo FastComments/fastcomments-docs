@@ -1,20 +1,20 @@
-## Parameters
+## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| value | string | query | No |  |
-| filters | string | query | No |  |
-| searchFilters | string | query | No |  |
-| sso | string | query | No |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
+| value | string | query | Ne |  |
+| filters | string | query | Ne |  |
+| searchFilters | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Response
+## Odgovor
 
 Vraća: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/moderation_comment_search_response.py)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'Primer get_search_comments_summary'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_search_comments_summary Primer'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.moderation_api import GetSearchCommentsSummaryOptions
@@ -22,7 +22,7 @@ from client.models.moderation_comment_search_response import ModerationCommentSe
 from client.rest import ApiException
 from pprint import pprint
 
-# Definisanje hosta je opcionalno i podrazumevano je https://fastcomments.com
+# Definisanje host-a je opciono i podrazumevano je https://fastcomments.com
 # Pogledajte configuration.py za listu svih podržanih parametara konfiguracije.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
@@ -34,10 +34,10 @@ with client.ApiClient(configuration) as api_client:
     # Kreirajte instancu API klase
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    value = 'value_example' # str |  (optional)
-    filters = 'filters_example' # str |  (optional)
-    search_filters = 'search_filters_example' # str |  (optional)
-    sso = 'sso_example' # str |  (optional)
+    value = 'value_example' # str |  (опционално)
+    filters = 'filters_example' # str |  (опционално)
+    search_filters = 'search_filters_example' # str |  (опционално)
+    sso = 'sso_example' # str |  (опционално)
 
     try:
         api_response = api_instance.get_search_comments_summary(tenant_id, GetSearchCommentsSummaryOptions(value=value, filters=filters, search_filters=search_filters, sso=sso))

@@ -1,9 +1,8 @@
-To pass the logged-in user to the widget automatically, the tags read the
-current user from the request. Make sure your project has both of these (they
-are on by default in a standard Django project):
+---
+Για να περάσετε τον συνδεδεμένο χρήστη στο widget αυτόματα, οι ετικέτες διαβάζουν τον τρέχοντα χρήστη από το αίτημα. Βεβαιωθείτε ότι το έργο σας περιλαμβάνει και τα δύο (είναι ενεργοποιημένα εξ ορισμού σε ένα τυπικό έργο Django):
 
 - `django.template.context_processors.request` in `TEMPLATES["OPTIONS"]["context_processors"]`
 - `django.contrib.auth.middleware.AuthenticationMiddleware` in `MIDDLEWARE`
 
-Without a request in the template context, widgets render for an anonymous
-visitor. You can always pass a user explicitly: `{% fastcomments user=some_user %}`.
+Χωρίς ένα αίτημα στο πλαίσιο του προτύπου, τα widgets αποδίδονται για έναν ανώνυμο επισκέπτη. Μπορείτε πάντα να περάσετε έναν χρήστη ρητά: `{% fastcomments user=some_user %}`.
+---

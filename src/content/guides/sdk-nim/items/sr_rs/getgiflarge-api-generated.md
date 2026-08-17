@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| largeInternalURLSanitized | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| largeInternalURLSanitized | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GifGetLargeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_gif_get_large_response.nim)
+Враћа: [`Option[GifGetLargeResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_gif_get_large_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getGifLarge Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getGifLarge'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (gifOpt, httpResp) = client.getGifLarge(
   tenantId = "my-tenant-123",

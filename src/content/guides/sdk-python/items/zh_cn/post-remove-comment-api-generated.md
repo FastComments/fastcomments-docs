@@ -1,17 +1,17 @@
-## Parameters
+## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| broadcastId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
-## Response
+## 响应
 
-Returns: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_api_response.py)
+返回：[`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/post_remove_comment_api_response.py)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'post_remove_comment 示例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,8 +21,8 @@ from client.models.post_remove_comment_api_response import PostRemoveCommentApiR
 from client.rest import ApiException
 from pprint import pprint
 
-# 定义 host 是可选的，默认值为 https://fastcomments.com
-# 请参阅 configuration.py 获取所有受支持的配置参数列表。
+# 定义主机是可选的，默认值为 https://fastcomments.com
+# 请参阅 configuration.py 获取所有支持的配置参数列表。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -34,8 +34,8 @@ with client.ApiClient(configuration) as api_client:
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    broadcast_id = 'broadcast_id_example' # str |  （可选）
-    sso = 'sso_example' # str |  （可选）
+    broadcast_id = 'broadcast_id_example' # str |  (optional)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.post_remove_comment(tenant_id, comment_id, PostRemoveCommentOptions(broadcast_id=broadcast_id, sso=sso))
@@ -44,3 +44,5 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->post_remove_comment: %s\n" % e)
 [inline-code-end]
+
+---

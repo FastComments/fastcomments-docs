@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| urlIdWS | string | Da |  |
-| userIds | string | Da |  |
+| tenantId | string | Yes |  |
+| urlIdWS | string | Yes |  |
+| userIds | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserPresenceStatusesResponse.h)
+Враћа: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserPresenceStatusesResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserPresenceStatuses'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserPresenceStatuses Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = U("my-tenant-123");
 auto urlIdWS = U("article-789");

@@ -1,22 +1,21 @@
----
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Да |  |
 
-## Response
+## Ответ
 
-Returns: `GetDomainConfigsResponse`
+Возвращает: `GetDomainConfigsResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getDomainConfigs'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Настройте авторизацию API-ключа: api_key
+// TODO Настроить авторизацию ключа API: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// раскомментируйте ниже, чтобы установить префикс (например, Bearer) для API-ключа, если необходимо
+// раскомментировать ниже, чтобы установить префикс (например, Bearer) для ключа API, если необходимо
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

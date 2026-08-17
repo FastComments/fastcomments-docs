@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| commentId | string | Yes |  |
-| banEmail | boolean | No |  |
-| banEmailDomain | boolean | No |  |
-| banIP | boolean | No |  |
-| deleteAllUsersComments | boolean | No |  |
-| bannedUntil | string | No |  |
-| isShadowBan | boolean | No |  |
-| updateId | string | No |  |
-| banReason | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| commentId | string | Да |  |
+| banEmail | boolean | Не |  |
+| banEmailDomain | boolean | Не |  |
+| banIP | boolean | Не |  |
+| deleteAllUsersComments | boolean | Не |  |
+| bannedUntil | string | Не |  |
+| isShadowBan | boolean | Не |  |
+| updateId | string | Не |  |
+| banReason | string | Не |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
+Враћа: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'postBanUserFromComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,21 +1,21 @@
 Upload and resize an image
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| file | std::path::PathBuf | Yes |  |
-| size_preset | models::SizePreset | No |  |
-| url_id | String | No |  |
+| tenant_id | String | Да |  |
+| file | std::path::PathBuf | Да |  |
+| size_preset | models::SizePreset | Не |  |
+| url_id | String | Не |  |
 
-## Response
+## Одговор
 
-Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
+Враћа: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/upload_image_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'upload_image Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример upload_image'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = UploadImageParams {

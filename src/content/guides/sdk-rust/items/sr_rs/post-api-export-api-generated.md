@@ -1,22 +1,22 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| text_search | String | Ne |  |
-| by_ip_from_comment | String | Ne |  |
-| filters | String | Ne |  |
-| search_filters | String | Ne |  |
-| sorts | String | Ne |  |
-| sso | String | Ne |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| text_search | String | No |  |
+| by_ip_from_comment | String | No |  |
+| filters | String | No |  |
+| search_filters | String | No |  |
+| sorts | String | No |  |
+| sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_export_response.rs)
+Returns: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_export_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer post_api_export'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_api_export пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn export_moderation() -> Result<(), Error> {
     let params = PostApiExportParams {

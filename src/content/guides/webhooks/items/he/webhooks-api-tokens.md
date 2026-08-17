@@ -2,24 +2,24 @@ FastComments webhook requests include multiple authentication mechanisms for sec
 
 ## Headers Sent
 
-| Header | Description |
+| כותרת | תיאור |
 |--------|-------------|
-| `token` | Your API Secret (for backwards compatibility) |
-| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256 signature of the payload |
+| `token` | סוד ה-API שלך (לתאימות לאחור) |
+| `X-FastComments-Timestamp` | חותמת זמן Unix (שניות) כאשר הבקשה נחתמה |
+| `X-FastComments-Signature` | חתימת HMAC-SHA256 של המטען |
 
 ## HMAC Signature Verification (Recommended)
 
-We strongly recommend verifying the HMAC signature to ensure webhook payloads are authentic and haven't been tampered with.
+אנו ממליצים בחום לאמת את חתימת ה-HMAC כדי להבטיח שמטעני ה-webhook הם אותנטיים ולא שונו.
 
-**Signature Format:** `sha256=<hex-encoded-signature>`
+**פורמט החתימה:** `sha256=<hex-encoded-signature>`
 
-**How the signature is computed:**
-1. Concatenate: `timestamp + "." + JSON_payload_body`
-2. Compute HMAC-SHA256 using your API Secret as the key
-3. Hex-encode the result
+**איך החתימה מחושבת:**
+1. צירוף: `timestamp + "." + JSON_payload_body`
+2. חישוב HMAC-SHA256 באמצעות סוד ה-API שלך כמפתח
+3. קידוד תוצאה כ-hex
 
-### Example Verification (Node.js)
+### דוגמת אימות (Node.js)
 
 ```javascript
 const crypto = require('crypto');
@@ -32,13 +32,13 @@ function verifyWebhookSignature(req, apiSecret) {
         return false;
     }
 
-    // וידא שחותמת הזמן עדכנית (בתוך 5 דקות)
+    // אימות שהחותמת זמן עדכנית (בתוך 5 דקות)
     const now = Math.floor(Date.now() / 1000);
     if (Math.abs(now - parseInt(timestamp, 10)) > 300) {
-        return false;  // מניעת התקפת replay
+        return false;  // מניעת התקפת השמעה
     }
 
-    // אמת את החתימה
+    // אימות החתימה
     const payload = JSON.stringify(req.body);
     const expectedSignature = crypto
         .createHmac('sha256', apiSecret)
@@ -49,7 +49,7 @@ function verifyWebhookSignature(req, apiSecret) {
 }
 ```
 
-### Example Verification (Python)
+### דוגמת אימות (Python)
 
 ```python
 import hmac
@@ -64,12 +64,12 @@ def verify_webhook_signature(headers, body, api_secret):
     if not timestamp or not signature:
         return False
 
-    # אמת שחותמת הזמן עדכנית
+    # אימות שהחותמת זמן עדכנית
     now = int(time.time())
     if abs(now - int(timestamp)) > 300:
         return False
 
-    # אמת את החתימה
+    # אימות החתימה
     payload = json.dumps(body, separators=(',', ':'))
     message = f"{timestamp}.{payload}"
     expected = hmac.new(
@@ -81,7 +81,7 @@ def verify_webhook_signature(headers, body, api_secret):
     return signature == f"sha256={expected}"
 ```
 
-### Example Verification (PHP)
+### דוגמת אימות (PHP)
 
 ```php
 function verifyWebhookSignature($headers, $body, $apiSecret) {
@@ -92,13 +92,13 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
         return false;
     }
 
-    // וידא שחותמת הזמן עדכנית (בתוך 5 דקות)
+    // אימות שהחותמת זמן עדכנית (בתוך 5 דקות)
     $now = time();
     if (abs($now - intval($timestamp)) > 300) {
         return false;
     }
 
-    // אמת את החתימה
+    // אימות החתימה
     $payload = json_encode($body, JSON_UNESCAPED_SLASHES);
     $message = $timestamp . '.' . $payload;
     $expectedSignature = 'sha256=' . hash_hmac('sha256', $message, $apiSecret);
@@ -109,4 +109,6 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 
 ## Legacy Authentication
 
-The `token` header containing your API Secret is still sent for backwards compatibility. However, we recommend migrating to HMAC verification for improved security as it protects against replay attacks.
+כותרת `token` המכילה את סוד ה-API שלך עדיין נשלחת לתאימות לאחור. עם זאת, אנו ממליצים לעבור לאימות HMAC לשיפור האבטחה מכיוון שהיא מגנה מפני התקפות השמעה.
+
+---

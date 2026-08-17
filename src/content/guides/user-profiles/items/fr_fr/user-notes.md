@@ -1,170 +1,170 @@
-User Notes allow you to keep private, personal annotations about other FastComments users. These notes are completely private and only visible to you.
+Les notes d'utilisateur vous permettent de conserver des annotations privées et personnelles concernant d'autres utilisateurs de FastComments. Ces notes sont entièrement privées et ne sont visibles que par vous.
 
-### What Are User Notes?
+### Que sont les notes d'utilisateur ?
 
-User Notes are:
-- **Private annotations** you create about other users
-- **Visible only to you** - the user you're writing about cannot see them
-- **Persistent** - saved and accessible whenever you view that user's profile
-- **Helpful for remembering** context, interactions, or important details about users
+Les notes d'utilisateur sont :
+- **Annotations privées** que vous créez à propos d'autres utilisateurs
+- **Visibles uniquement par vous** – l'utilisateur dont vous écrivez la note ne peut pas les voir
+- **Persistantes** – enregistrées et accessibles chaque fois que vous consultez le profil de cet utilisateur
+- **Utiles pour se souvenir** du contexte, des interactions ou des détails importants concernant les utilisateurs
 
-### Why Use User Notes?
+### Pourquoi utiliser les notes d'utilisateur ?
 
-User Notes are useful for:
+Les notes d'utilisateur sont utiles pour :
 
-**Moderators:**
-- Track history of interactions with specific users
-- Note warning patterns or behavioral observations
-- Remember context for moderation decisions
-- Document why certain actions were taken
+**Modérateurs :**
+- Suivre l'historique des interactions avec des utilisateurs spécifiques
+- Noter les schémas d'avertissement ou les observations comportementales
+- Se souvenir du contexte pour les décisions de modération
+- Documenter pourquoi certaines actions ont été prises
 
-**Community Managers:**
-- Remember valuable contributors and their expertise
-- Note users who might be good candidates for special roles
-- Track follow-ups needed with community members
+**Gestionnaires de communauté :**
+- Se souvenir des contributeurs précieux et de leur expertise
+- Noter les utilisateurs qui pourraient être de bons candidats pour des rôles spéciaux
+- Suivre les relances nécessaires avec les membres de la communauté
 
-**Regular Users:**
-- Remember how you know someone across different communities
-- Note topics you've discussed with specific users
-- Keep track of helpful contributors in your areas of interest
-- Remember personal details shared in conversations (within appropriate bounds)
+**Utilisateurs réguliers :**
+- Se souvenir de la façon dont vous connaissez quelqu'un à travers différentes communautés
+- Noter les sujets que vous avez abordés avec des utilisateurs spécifiques
+- Garder une trace des contributeurs utiles dans vos domaines d'intérêt
+- Se souvenir des détails personnels partagés dans les conversations (dans les limites appropriées)
 
-### Creating a User Note
+### Créer une note d'utilisateur
 
-To add a note about a user:
+Pour ajouter une note à propos d'un utilisateur :
 
-1. Visit the user's profile page
-2. Look for the "User Note" or "Add Note" section
-3. Click to create a new note
-4. Type your note (up to 1000 characters)
-5. Save the note
+1. Visitez la page de profil de l'utilisateur
+2. Recherchez la section « Note d'utilisateur » ou « Ajouter une note »
+3. Cliquez pour créer une nouvelle note
+4. Saisissez votre note (jusqu'à 1000 caractères)
+5. Enregistrez la note
 
-The note will be saved and appear whenever you view that user's profile.
+La note sera enregistrée et apparaîtra chaque fois que vous consultez le profil de cet utilisateur.
 
-### Viewing User Notes
+### Voir les notes d'utilisateur
 
-Your notes appear when viewing the associated user's profile:
+Vos notes apparaissent lorsque vous consultez le profil de l'utilisateur concerné :
 
-- **Location:** Typically in a dedicated section on the profile page
-- **Visibility:** Only visible to you when you're logged in
-- **Context:** Appears alongside the user's public information
+- **Emplacement :** Généralement dans une section dédiée sur la page de profil
+- **Visibilité :** Visible uniquement par vous lorsque vous êtes connecté
+- **Contexte :** S'affiche à côté des informations publiques de l'utilisateur
 
-This makes it easy to remember important context about users you interact with regularly.
+Cela facilite la mémorisation du contexte important concernant les utilisateurs avec lesquels vous interagissez régulièrement.
 
-### Editing User Notes
+### Modifier les notes d'utilisateur
 
-To update an existing note:
+Pour mettre à jour une note existante :
 
-1. Visit the user's profile
-2. Find your existing note
-3. Click "Edit" or click into the note field
-4. Make your changes
-5. Save the updated note
+1. Visitez le profil de l'utilisateur
+2. Trouvez votre note existante
+3. Cliquez sur « Modifier » ou cliquez dans le champ de la note
+4. Apportez vos modifications
+5. Enregistrez la note mise à jour
 
-### Deleting User Notes
+### Supprimer les notes d'utilisateur
 
-To remove a note:
+Pour supprimer une note :
 
-1. Visit the user's profile
-2. Find your note
-3. Click "Delete" or the remove option
-4. Confirm deletion
+1. Visitez le profil de l'utilisateur
+2. Trouvez votre note
+3. Cliquez sur « Supprimer » ou l'option de retrait
+4. Confirmez la suppression
 
-Once deleted, the note is permanently removed and cannot be recovered.
+Une fois supprimée, la note est définitivement retirée et ne peut pas être récupérée.
 
-### Character Limit
+### Limite de caractères
 
-User Notes are limited to **1000 characters**. This encourages:
-- Concise, focused notes
-- Key points rather than lengthy narratives
-- Quick reference information
+Les notes d'utilisateur sont limitées à **1000 caractères**. Cela encourage :
+- Des notes concises et ciblées
+- Des points clés plutôt que des récits longs
+- Des informations de référence rapides
 
-If you need more space, consider keeping separate documentation outside of FastComments.
+Si vous avez besoin de plus d'espace, envisagez de conserver une documentation séparée en dehors de FastComments.
 
-### Privacy and Security
+### Confidentialité et sécurité
 
-**Complete Privacy:**
-- Notes are stored with your user ID
-- Only you can see notes you've created
-- The user you're writing about cannot see your notes
-- Other users cannot see your notes
-- Site administrators cannot see your personal notes (they're stored separately from moderation logs)
+**Confidentialité totale :**
+- Les notes sont stockées avec votre ID utilisateur
+- Vous seul pouvez voir les notes que vous avez créées
+- L'utilisateur dont vous écrivez la note ne peut pas voir vos notes
+- Les autres utilisateurs ne peuvent pas voir vos notes
+- Les administrateurs du site ne peuvent pas voir vos notes personnelles (elles sont stockées séparément des journaux de modération)
 
-**Note on Moderation:**
-User Notes are different from moderation notes or flags:
-- Use User Notes for personal reference
-- Use moderation reporting tools for violations or issues
-- User Notes don't trigger any actions or alerts
+**Note sur la modération :**
+Les notes d'utilisateur sont différentes des notes ou drapeaux de modération :
+- Utilisez les notes d'utilisateur pour une référence personnelle
+- Utilisez les outils de signalement de modération pour les violations ou problèmes
+- Les notes d'utilisateur ne déclenchent aucune action ni alerte
 
-### Best Practices
+### Bonnes pratiques
 
-**What to Include:**
-- How you met or know the user
-- Topics they're knowledgeable about
-- Previous helpful interactions
-- Context from past conversations
-- Areas of expertise or interest
-- Reminders for follow-up
+**Ce qu'il faut inclure :**
+- Comment vous avez rencontré ou connaissez l'utilisateur
+- Sujets sur lesquels il est compétent
+- Interactions utiles précédentes
+- Contexte des conversations passées
+- Domaines d'expertise ou d'intérêt
+- Rappels pour les relances
 
-**What to Avoid:**
-- Don't use notes to store sensitive personal information
-- Avoid inflammatory or inappropriate content even in private notes
-- Don't rely on notes for critical information (keep backups elsewhere)
-- Remember notes are just for your reference, not official records
+**Ce qu'il faut éviter :**
+- Ne pas utiliser les notes pour stocker des informations personnelles sensibles
+- Éviter le contenu inflammatoire ou inapproprié même dans les notes privées
+- Ne pas compter sur les notes pour des informations critiques (conservez des sauvegardes ailleurs)
+- Rappelez-vous que les notes sont uniquement pour votre référence, pas des dossiers officiels
 
-**Professional Use:**
-For moderators and community managers:
-- Keep notes factual and objective
-- Include dates for time-sensitive information
-- Note patterns rather than isolated incidents
-- Use notes to supplement (not replace) official moderation logs
+**Utilisation professionnelle :**
+Pour les modérateurs et les gestionnaires de communauté :
+- Gardez les notes factuelles et objectives
+- Incluez des dates pour les informations sensibles au temps
+- Notez les tendances plutôt que des incidents isolés
+- Utilisez les notes pour compléter (et non remplacer) les journaux de modération officiels
 
-### Use Cases
+### Cas d'utilisation
 
-**Example 1: Community Manager**
-> "Active in tech discussions. Works as a backend developer. Has offered to help with documentation. Follow up about contributing to wiki."
+**Exemple 1 : Gestionnaire de communauté**  
+> "Actif dans les discussions technologiques. Travaille comme développeur backend. A proposé d'aider à la documentation. Relancer concernant la contribution au wiki."
 
-**Example 2: Moderator**
-> "Helpful user but sometimes gets into heated debates. Generally respectful. Responded well to previous reminder about civility."
+**Exemple 2 : Modérateur**  
+> "Utilisateur utile mais parfois engagé dans des débats passionnés. Généralement respectueux. A bien réagi au rappel précédent concernant la civilité."
 
-**Example 3: Regular User**
-> "Met in gaming threads. Plays same games I do. Shared helpful tutorial link. Based in UK timezone."
+**Exemple 3 : Utilisateur régulier**  
+> "Rencontré dans des fils de discussion de jeux. Joue aux mêmes jeux que moi. A partagé un lien de tutoriel utile. Basé dans le fuseau horaire du Royaume-Uni."
 
 ### Limitations
 
-**What User Notes Don't Do:**
-- They don't sync across devices (unless you're logged into the same account)
-- They don't appear in comments or other contexts, only on profiles
-- They don't affect the user's profile or visibility in any way
-- They aren't searchable (currently)
-- They don't trigger notifications or actions
+**Ce que les notes d'utilisateur ne font pas :**
+- Elles ne se synchronisent pas entre les appareils (à moins d'être connecté au même compte)
+- Elles n'apparaissent pas dans les commentaires ou autres contextes, uniquement sur les profils
+- Elles n'affectent pas le profil de l'utilisateur ni sa visibilité de quelque manière que ce soit
+- Elles ne sont pas recherchables (actuellement)
+- Elles ne déclenchent aucune notification ou action
 
-**Storage:**
-- Notes are stored indefinitely unless you delete them
-- Maximum 1000 characters per note
-- One note per user (update the existing note rather than creating multiple)
+**Stockage :**
+- Les notes sont conservées indéfiniment sauf si vous les supprimez
+- Maximum 1000 caractères par note
+- Une note par utilisateur (mettez à jour la note existante plutôt que d'en créer plusieurs)
 
-### Technical Details
+### Détails techniques
 
-User Notes are:
-- Stored in the database with your user ID as the creator
-- Associated with the target user's ID
-- Encrypted in transit (HTTPS)
-- Subject to standard FastComments data retention policies
-- Not included in public data exports or API responses
+Les notes d'utilisateur sont :
+- Stockées dans la base de données avec votre ID utilisateur en tant que créateur
+- Associées à l'ID de l'utilisateur cible
+- Chiffrées pendant le transport (HTTPS)
+- Soumises aux politiques standard de conservation des données de FastComments
+- Non incluses dans les exportations de données publiques ou les réponses d'API
 
-### Troubleshooting
+### Dépannage
 
-**Note Not Saving:**
-- Check that you're logged in
-- Ensure the note is under 1000 characters
-- Try refreshing the page and adding again
-- Check your internet connection
+**Note qui ne s'enregistre pas :**
+- Vérifiez que vous êtes connecté
+- Assurez-vous que la note fait moins de 1000 caractères
+- Essayez d'actualiser la page et d'ajouter à nouveau
+- Vérifiez votre connexion Internet
 
-**Note Not Appearing:**
-- Make sure you're logged into the account that created the note
-- Refresh the user's profile page
-- Clear browser cache if needed
+**Note qui n'apparaît pas :**
+- Assurez-vous d'être connecté au compte qui a créé la note
+- Rafraîchissez la page de profil de l'utilisateur
+- Videz le cache du navigateur si nécessaire
 
-**Accidentally Deleted Note:**
-Unfortunately, deleted notes cannot be recovered. Consider keeping backups of important information outside of FastComments.
+**Note supprimée accidentellement :**
+Malheureusement, les notes supprimées ne peuvent pas être récupérées. Envisagez de conserver des sauvegardes des informations importantes en dehors de FastComments.

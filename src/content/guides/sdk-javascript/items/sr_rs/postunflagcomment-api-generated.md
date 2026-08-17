@@ -1,26 +1,26 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | commentId | string | Yes |  |
 | broadcastId | string | No |  |
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
+Враћа: [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postUnFlagComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async () => {
   const response: PostUnFlagCommentResponse = await postUnFlagComment(
     "cmt_12345",          // commentId
-    "brd_67890",          // broadcastId (optional)
-    "tenant_abc",         // tenantId (optional)
-    "sso_user_token_789"  // sso (optional)
+    "brd_67890",          // broadcastId (опционално)
+    "tenant_abc",         // tenantId (опционално)
+    "sso_user_token_789"  // sso (опционално)
   );
 };
 [inline-code-end]

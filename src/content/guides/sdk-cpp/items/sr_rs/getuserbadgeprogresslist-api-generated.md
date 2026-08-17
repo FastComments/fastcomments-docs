@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | options | const GetUserBadgeProgressListOptions& | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressListResponse.h)
+Враћа: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressListResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserBadgeProgressList'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBadgeProgressList'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 GetUserBadgeProgressListOptions options;
@@ -22,7 +22,7 @@ api->getUserBadgeProgressList(tenantId, options)
     .then([](std::shared_ptr<APIGetUserBadgeProgressListResponse> resp) {
         if (!resp) return;
         for (const auto& badge : resp->badges) {
-            // obradi značku
+            // обради значку
         }
     });
 [inline-code-end]

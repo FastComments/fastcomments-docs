@@ -1,35 +1,39 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
+Returns: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateHashTagResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'addHashTag Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfiguriši autorizaciju API ključa: api_key
-$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite ispod da postaviš prefiks (npr. Bearer) za API ključ, po potrebi
+// Configure API key authorization: api_key
+// Конфигуриши ауторизацију API кључа: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Одкоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želiš koristiti prilagođeni http klijent, prosledi svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen kao podrazumevani.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Ако желиш да користиш прилагођени HTTP клијент, проследи свој клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
 
 $tenant_id = 'tenant_id_example'; // string
+// стринг
 $create_hash_tag_body = new \FastComments\Client\Model\CreateHashTagBody(); // \FastComments\Client\Model\CreateHashTagBody
 
 
@@ -40,5 +44,3 @@ try {
     echo 'Exception when calling DefaultApi->addHashTag: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

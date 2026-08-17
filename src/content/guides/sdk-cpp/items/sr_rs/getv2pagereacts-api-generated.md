@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV2PageReacts.h)
+Враћа: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV2PageReacts.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getV2PageReacts'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getV2PageReacts'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t("my-tenant-123");
 auto urlId = utility::string_t("https://example.com/article/42");

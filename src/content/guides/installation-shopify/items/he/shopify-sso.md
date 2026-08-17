@@ -1,39 +1,37 @@
----
-The **FastComments** block supports single sign-on so your Shopify customers can comment as themselves without creating a separate FastComments account.
+The **FastComments** block תומך ב‑single sign-on כך שלקוחות Shopify שלך יכולים להגיב בשם עצמם מבלי ליצור חשבון FastComments נפרד.
 
-### How it works
+### איך זה עובד
 
-When a visitor who is logged into your store opens a page with the **FastComments** block:
+כאשר מבקר שנכנס לחנות שלך פותח דף עם החלק **FastComments**:
 
-1. The block detects the Shopify `customer` object.
-2. It sends the customer's name and email to FastComments through a signed app proxy request.
-3. FastComments creates or matches a user keyed by `shopify-{customerId}`, so the same customer always maps to the same FastComments user across sessions and re-installs.
-4. The visitor's name shows up on their comments. They are not prompted to log in again.
+1. החלק מזהה את האובייקט `customer` של Shopify.  
+2. הוא שולח את שם הלקוח והדוא"ל שלו ל‑FastComments דרך בקשת פרוקסי חתומה.  
+3. FastComments יוצר או משייך משתמש עם מפתח `shopify-{customerId}`, כך שהלקוח זהה תמיד ממופה לאותו משתמש FastComments לאורך סשנים והתקנות מחדש.  
+4. שם המבקר מופיע בתגובות שלו. הוא לא מתבקש להתחבר שוב.
 
-If the visitor is not logged into the store, the block falls back to anonymous commenting (or the FastComments sign-in flow, depending on your widget configuration).
+אם המבקר אינו מחובר לחנות, החלק חוזר למצב תגובות אנונימיות (או לזרימת ההתחברות של FastComments, בהתאם להגדרות הווידג'ט שלך).
 
-### Turning SSO off
+### כיבוי SSO
 
-SSO is on by default for every **FastComments** block. To turn it off on a specific block:
+SSO מופעל כברירת מחדל עבור כל חלק **FastComments**. כדי לכבות אותו בחלק ספציפי:
 
-1. Open the Shopify theme editor.
-2. Open the template that contains the block and click the block to select it.
-3. Uncheck **SSO**.
-4. Click **Save**.
+1. פתח את עורך ערכת הנושא של Shopify.  
+2. פתח את התבנית שמכילה את החלק ולחץ על החלק כדי לבחור אותו.  
+3. בטל את הסימון של **SSO**.  
+4. לחץ על **Save**.
 
-Turn SSO off if you want commenters to choose a separate identity for the conversation. For example, an internal community page where staff comment under a different display name.
+כבה את SSO אם אתה רוצה שהמגיבים יבחרו זהות נפרדת לשיחה. לדוגמה, דף קהילה פנימי שבו הצוות מגיב תחת שם תצוגה שונה.
 
-### What FastComments receives
+### מה FastComments מקבל
 
-The SSO payload sent for each customer contains:
+הנתונים של SSO שנשלחים עבור כל לקוח כוללים:
 
-- A user ID derived from the Shopify customer ID (`shopify-{customerId}`).
-- The customer's email (used to identify the user; not displayed publicly).
-- The customer's display name (used as their comment author name).
+- מזהה משתמש שמקורו במזהה הלקוח של Shopify (`shopify-{customerId}`).
+- כתובת הדוא"ל של הלקוח (משמשת לזיהוי המשתמש; אינה מוצגת לציבור).
+- שם התצוגה של הלקוח (משמש כשם המחבר של התגובה).
 
-No order history, payment, or address data is sent. The payload is signed server-side; the customer's browser never sees a credential.
+לא נשלחת היסטוריית הזמנות, תשלומים או נתוני כתובת. הנתונים נחתמים בצד השרת; הדפדפן של הלקוח לעולם לא רואה אישור.
 
-### Login and logout links
+### קישורי כניסה ויציאה
 
-When SSO is on, the comment widget's sign-in and sign-out links point at `/account/login` and `/account/logout`, the standard Shopify customer account routes. There is nothing to configure. The links work for any store with customer accounts enabled.
----
+כאשר SSO מופעל, קישורי הכניסה והיציאה של וידג'ט התגובות מצביעים ל‑`/account/login` ול‑`/account/logout`, הנתיבים הסטנדרטיים של חשבון הלקוח ב‑Shopify. אין צורך להגדיר דבר. הקישורים פועלים עבור כל חנות עם חשבונות לקוחות מופעלים.

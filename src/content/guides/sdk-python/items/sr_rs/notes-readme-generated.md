@@ -1,3 +1,5 @@
-### Broadcast IDs
+---
+### Идентификатори емитовања
 
-Videćete da treba da prosledite `broadcast_id` u nekim API pozivima. Kada primite događaje, dobićete ovaj ID nazad, pa ćete znati da ignorišete događaj ako planirate da optimistično primenite izmene na klijentu (što ćete verovatno želeti, jer pruža najbolje iskustvo). Prosledite ovde UUID. ID treba da bude dovoljno jedinstven da se ne pojavi dva puta u okviru jedne sesije pregledača.
+Видећете да треба да проследите `broadcast_id` у неким API позивима. Када примате догађаје, добићете овај ID назад, тако да знате да игноришете догађај ако планирате оптимистички да примените промене на клијенту (што ћете вероватно желети да урадите јер пружа најбоље искуство). Проследите UUID овде. ID треба да буде довољно јединствен да се не појави два пута у сесији прегледача.
+---

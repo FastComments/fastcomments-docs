@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| page | double | No |  |
+| tenantId | string | Да |  |
+| page | double | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
+Враћа: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getHashTags'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getHashTags Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 boost::optional<double> page = 2.0;
@@ -20,9 +20,11 @@ api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsR
     try {
         auto resultPtr = task.get();
         auto response = std::make_shared<GetHashTagsResponse>(*resultPtr);
-        // koristite response
+        // користи одговор
     } catch (const std::exception&) {
-        // obradi grešku
+        // обради грешку
     }
 });
 [inline-code-end]
+
+---

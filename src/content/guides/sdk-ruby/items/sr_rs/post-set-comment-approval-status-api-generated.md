@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| approved | boolean | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| approved | boolean | query | Не |  |
+| broadcastId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_approved_response.rb)
+Returns: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/set_comment_approved_response.rb)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_set_comment_approval_status Primer'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_approval_status Пример'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -33,6 +33,6 @@ begin
   result = api_instance.post_set_comment_approval_status(tenant_id, comment_id, opts)
   p result
 rescue FastCommentsClient::ApiError => e
-  puts "Greška prilikom pozivanja ModerationApi->post_set_comment_approval_status: #{e}"
+  puts "Error when calling ModerationApi->post_set_comment_approval_status: #{e}"
 end
 [inline-code-end]

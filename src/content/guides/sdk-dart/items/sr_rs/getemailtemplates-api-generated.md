@@ -1,22 +1,22 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| skip | number | query | Не |  |
 
-## Response
+## Одговор
 
-Returns: `GetEmailTemplatesResponse`
+Враћа: `GetEmailTemplatesResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getEmailTemplates'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API кључ, ako je potrebno
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

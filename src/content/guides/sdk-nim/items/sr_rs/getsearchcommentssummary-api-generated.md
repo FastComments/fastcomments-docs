@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | GetSearchCommentsSummaryOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | GetSearchCommentsSummaryOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_comment_search_response.nim)
+Враћа: [`Option[ModerationCommentSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_comment_search_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSearchCommentsSummary Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getSearchCommentsSummary'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (summaryOpt, httpResp) = client.getSearchCommentsSummary(
   tenantId = "my-tenant-123",
@@ -22,3 +22,5 @@ if summaryOpt.isSome:
   let summary = summaryOpt.get()
   echo summary
 [inline-code-end]
+
+---

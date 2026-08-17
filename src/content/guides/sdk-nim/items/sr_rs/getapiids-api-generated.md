@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | options | GetApiIdsOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationAPIGetCommentIdsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_comment_ids_response.nim)
+Враћа: [`Option[ModerationAPIGetCommentIdsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_get_comment_ids_response.nim)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getApiIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,5 +19,3 @@ if maybeResponse.isSome:
   let response = maybeResponse.get()
   echo response
 [inline-code-end]
-
----

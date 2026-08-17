@@ -1,25 +1,26 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| pageSize | number | No |  |
-| afterId | string | No |  |
-| includeContext | boolean | No |  |
-| afterCreatedAt | number | No |  |
-| unreadOnly | boolean | No |  |
-| dmOnly | boolean | No |  |
-| noDm | boolean | No |  |
-| includeTranslations | boolean | No |  |
-| includeTenantNotifications | boolean | No |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Не |  |
+| pageSize | number | Не |  |
+| afterId | string | Не |  |
+| includeContext | boolean | Не |  |
+| afterCreatedAt | number | Не |  |
+| unreadOnly | boolean | Не |  |
+| dmOnly | boolean | Не |  |
+| noDm | boolean | Не |  |
+| includeTranslations | boolean | Не |  |
+| includeTenantNotifications | boolean | Не |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationsResponse.ts)
+Враћа: [`GetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationsResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getUserNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -51,3 +52,5 @@ async function fetchUserNotifications() {
     console.log(notifications);
 }
 [inline-code-end]
+
+---

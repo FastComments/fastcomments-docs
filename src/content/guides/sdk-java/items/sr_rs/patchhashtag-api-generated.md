@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| tag | string | path | Da |  |
+| tenantId | string | query | Да |  |
+| tag | string | path | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
+Враћа: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/UpdateHashTagResponse.java)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patchHashTag Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchHashTag Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,21 +26,22 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriši autorizaciju API ključa: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentariši sledeću liniju da postaviš prefiks za API ključ, npr. "Token" (podrazumevano null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String |
-    String tag = "tag_example"; // String |
-    UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody |
+    String tenantId = "tenantId_example"; // String | 
+    String tag = "tag_example"; // String | 
+    UpdateHashTagBody updateHashTagBody = new UpdateHashTagBody(); // UpdateHashTagBody | 
     try {
       UpdateHashTagResponse result = apiInstance.patchHashTag(tenantId, tag)
             .updateHashTagBody(updateHashTagBody)
             .execute();
       System.out.println(result);
+    );
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#patchHashTag");
       System.err.println("Status code: " + e.getCode());

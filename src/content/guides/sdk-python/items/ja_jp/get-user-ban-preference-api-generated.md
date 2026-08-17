@@ -1,15 +1,15 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| sso | string | query | いいえ |  |
 
-## Response
+## 応答
 
-Returns: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_moderate_get_user_ban_preferences_response.py)
+返り値: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_moderate_get_user_ban_preferences_response.py)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'get_user_ban_preference の例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,19 +18,19 @@ from client.models.api_moderate_get_user_ban_preferences_response import APIMode
 from client.rest import ApiException
 from pprint import pprint
 
-# ホストの定義はオプションで、デフォルトは https://fastcomments.com です
-# configuration.py でサポートされているすべての設定パラメータの一覧をご確認ください。
+# ホストの定義は任意で、デフォルトは https://fastcomments.com です
+# configuration.py でサポートされているすべての設定パラメータの一覧を確認できます。
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# API クライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成する
+    # API クラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    sso = 'sso_example' # str |  (オプション)
+    sso = 'sso_example' # str |  (optional)
 
     try:
         api_response = api_instance.get_user_ban_preference(tenant_id, sso=sso)

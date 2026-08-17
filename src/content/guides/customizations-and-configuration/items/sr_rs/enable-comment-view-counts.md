@@ -1,19 +1,19 @@
 [related-parameter-start name = 'enableViewCounts'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano, FastComments ne prati ko je pogledao svaki komentar niti pruža bilo kakve statistike u vezi s tim.
+Подразумевано, FastComments не прати ко је прегледао сваки коментар нити пружа било какве статистике у вези с тим.
 
-Međutim, možemo omogućiti ovu funkciju, i tada će sistem početi da prati kako svaki korisnik skroluje do komentara.
+Међутим, можемо можемо омогућити ову функцију, и тада ће систем почети да прати док сваки корисник скролује до коментара.
 
-Kada se to desi, broj pored ikone oka prikazane na svakom komentaru će se povećati. Broj se ažurira u realnom vremenu i skraćuje prema lokalnom podešavanju korisnika.
+Када се то деси, број поред иконе ока приказан на сваком коментару ће се повећати. Број се ажурира у реалном времену и скраћује у складу са локалом корисника.
 
-Možemo ovo omogućiti postavljanjem zastavice **enableViewCounts** na true:
+Ово можемо омогућити постављањем заставице **enableViewCounts** на true:
 
-[code-example-start config = {enableViewCounts: true}; linesToHighlight = [6]; title = 'Omogućavanje broja pregleda komentara'; code-example-end]
+[code-example-start config = {enableViewCounts: true}; linesToHighlight = [6]; title = 'Омогућавање бројања прегледа коментара'; code-example-end]
 
-Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
+Ово се може прилагодити без кода, на страници за прилагођавање виџета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='Stranica za prilagođavanje widgeta sa označenim poljem za broj pregleda tako da svaki komentar prikazuje ikonu oka i broj'; title='Omogućavanje broja pregleda komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='Страница за прилагођавање виџета са означеним пољем за бројање прегледа, тако да сваки коментар приказује икону ока и број'; title='Омогућавање бројања прегледа коментара' app-screenshot-end]
 
-Pratimo ID korisnika* koji je pogledao komentar, tako da se pri ponovnom gledanju komentara ne povećava. Ako pogledate komentar ponovo nakon dve godine, broj će se povećati više.
+Тракујемо ID корисника* који је прегледао коментар, тако да ако поново прегледате коментар, број се не повећава. Ако прегледате коментар поново након две године, број ће се повећати више.
 
-- *Napomena: ili anonimus ID sesije, ili IP korisnika kao heširana vrednost.
+- *Напомена: или анонимни ID сесије, или IP корисника као хеширана вредност.

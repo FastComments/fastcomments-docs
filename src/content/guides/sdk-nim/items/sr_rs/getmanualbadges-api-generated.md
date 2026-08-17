@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| sso | string = "" | Ne |  |
+| tenantId | string | Yes |  |
+| sso | string = "" | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetTenantManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_manual_badges_response.nim)
+Враћа: [`Option[GetTenantManualBadgesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_tenant_manual_badges_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getManualBadges Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getManualBadges'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (manualBadgesOpt, httpResponse) = client.getManualBadges(tenantId = "my-tenant-123", sso = "")
 if manualBadgesOpt.isSome:

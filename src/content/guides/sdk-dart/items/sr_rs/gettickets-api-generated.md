@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| userId | string | query | Ne |  |
-| state | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| limit | number | query | Ne |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| state | number | query | Не |  |
+| skip | number | query | Не |  |
+| limit | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetTicketsResponse`
+Враћа: `GetTicketsResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTickets'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTickets'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO: Конфигуришите ауторизацију API кључа: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// Уклони коментар испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
+// откоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

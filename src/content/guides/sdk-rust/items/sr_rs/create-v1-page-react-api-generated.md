@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| title | String | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| title | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateV1PageReact`
+Враћа: `CreateV1PageReact`
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'create_v1_page_react Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

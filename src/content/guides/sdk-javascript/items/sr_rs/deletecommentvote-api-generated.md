@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
@@ -10,13 +10,13 @@
 | editKey | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Returns: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteCommentVote Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function removeVote() {
   const tenantId: string = "tenant_12345";
@@ -25,7 +25,7 @@ async function removeVote() {
   const urlId: string = "url_56789";
   const broadcastId: string = "brd_001";
   const editKey: string = "edit_456";
-  // sso је опционално и изостављено
+  // sso је опционо и изостављено
 
   const response: DeleteCommentVoteResponse = await deleteCommentVote(
     tenantId,

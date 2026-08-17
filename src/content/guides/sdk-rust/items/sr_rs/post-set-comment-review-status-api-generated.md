@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| reviewed | bool | Ne |  |
-| broadcast_id | String | Ne |  |
-| sso | String | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| comment_id | String | Да |  |
+| reviewed | bool | Не |  |
+| broadcast_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_set_comment_review_status Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_review_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn update_review_status(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = PostSetCommentReviewStatusParams {
@@ -28,3 +28,5 @@ async fn update_review_status(configuration: &configuration::Configuration) -> R
     Ok(())
 }
 [inline-code-end]
+
+---

@@ -1,19 +1,19 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| locale | string | query | No |  |
-| rating | string | query | No |  |
-| page | number | query | No |  |
+| tenantId | string | path | Да |  |
+| locale | string | query | Не |  |
+| rating | string | query | Не |  |
+| page | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetGifsTrendingResponse`
+Враћа: `GetGifsTrendingResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getGifsTrending Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsTrending Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

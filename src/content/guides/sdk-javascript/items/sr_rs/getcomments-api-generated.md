@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | page | number | No |  |
@@ -20,13 +20,13 @@
 | fromDate | number | No |  |
 | toDate | number | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Враћа: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComments Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const page: number = 2;
@@ -34,7 +34,7 @@ const limit: number = 50;
 const asTree: boolean = true;
 const urlId: string = "article_5678";
 const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // pre nedelju dana
+const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // пре недељу дана
 const toDate: number = Date.now();
 
 const commentsResponse: GetCommentsResponse = await getComments({
@@ -48,5 +48,3 @@ const commentsResponse: GetCommentsResponse = await getComments({
   toDate,
 });
 [inline-code-end]
-
----

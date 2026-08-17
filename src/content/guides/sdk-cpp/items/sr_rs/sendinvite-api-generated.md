@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| fromName | string | Da |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| fromName | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'sendInvite Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'sendInvite Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 boost::optional<utility::string_t> cc = utility::conversions::to_string_t("cc@example.com");
 api->sendInvite(
@@ -20,8 +20,6 @@ api->sendInvite(
     utility::conversions::to_string_t("invitee@example.com"),
     utility::conversions::to_string_t("John Doe")
 ).then([](std::shared_ptr<APIEmptyResponse> resp) {
-    // handle successful invite
+    // обради успешан позив
 });
 [inline-code-end]
-
----

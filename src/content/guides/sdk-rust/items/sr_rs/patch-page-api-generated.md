@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| update_api_page_data | models::UpdateApiPageData | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| update_api_page_data | models::UpdateApiPageData | Да |  |
 
-## Response
+## Одговор
 
-Vraća: [`PatchPageApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_page_api_response.rs)
+Враћа: [`PatchPageApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_page_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patch_page Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_page Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run_patch_page() -> Result<(), Error> {
     let update = models::UpdateApiPageData {

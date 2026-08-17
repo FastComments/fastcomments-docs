@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | after_id | String | No |  |
@@ -10,13 +10,13 @@
 | no_dm | bool | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
+Враћа: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/reset_user_notifications_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'reset_user_notifications Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reset_user_notifications Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = ResetUserNotificationsParams {

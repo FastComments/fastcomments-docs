@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
+Враћа: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'deleteTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,7 +18,7 @@ async function removeTenantPackage(): Promise<void> {
   const packageId: string = "pkg_67890";
 
   const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);
-  // koristi rezultat po potrebi
+  // koristite rezultat po potrebi
 }
 
 removeTenantPackage();

@@ -2,20 +2,20 @@ req
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| options | const GetFeedPostsPublicOptions& | Da |  |
+| tenantId | string | Yes |  |
+| options | const GetFeedPostsPublicOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
+Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getFeedPostsPublic Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getFeedPostsPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto options = GetFeedPostsPublicOptions{};
 options.limit = boost::optional<int>{20};
@@ -25,9 +25,9 @@ api->getFeedPostsPublic(U("my-tenant-123"), options).then([](pplx::task<std::sha
     try{
         auto response = task.get();
         auto processed = std::make_shared<PublicFeedPostsResponse>(*response);
-        // Koristite processed po potrebi
+        // Користите обрађени резултат по потреби
     }catch(const std::exception&){
-        // Rukujte greškom
+        // Обради грешку
     }
 });
 [inline-code-end]

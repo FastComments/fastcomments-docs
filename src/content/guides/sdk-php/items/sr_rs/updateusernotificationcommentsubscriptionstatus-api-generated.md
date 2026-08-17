@@ -16,7 +16,7 @@ Returns: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://git
 
 ## Example
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationCommentSubscriptionStatus'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,16 +24,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // string
-$notification_id = 'notification_id_example'; // string
-$opted_in_or_out = 'opted_in_or_out_example'; // string
-$comment_id = 'comment_id_example'; // string
-$sso = 'sso_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
+$notification_id = 'notification_id_example'; // стринг
+$opted_in_or_out = 'opted_in_or_out_example'; // стринг
+$comment_id = 'comment_id_example'; // стринг
+$sso = 'sso_example'; // стринг
 
 
 try {

@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| commentId | string | Да |  |
+| tenantId | string | Не |  |
+| sso | string | Не |  |
 
-## Response
+## Одговор
 
-Returns: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
+Враћа: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getCommentChildren'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,3 +21,5 @@ const sso: string = "sso_987654";
 const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
 const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
 [inline-code-end]
+
+---

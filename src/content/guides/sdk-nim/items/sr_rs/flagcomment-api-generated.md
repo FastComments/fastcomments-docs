@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | No |  |
-| options | FlagCommentOptions | No |  |
+| tenantId | string | Да |  |
+| id | string | Не |  |
+| options | FlagCommentOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
+Враћа: [`Option[FlagCommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_flag_comment_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'flagComment Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример flagComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let options = FlagCommentOptions(reason: "spam content", note: "Automated posting detected", isSpam: true, categories: @["spam"])
 let (flagRes, httpRes) = client.flagComment(tenantId = "my-tenant-123", id = "cmt-789", options = options)

@@ -1,12 +1,12 @@
-## Trebate pomoć?
+## Потребна помоћ?
 
-Ako naiđete na bilo kakve probleme ili imate pitanja u vezi sa Vue 3 Library, molimo:
+Ако наиђете на било какве проблеме или имате питања у вези са Vue 3 библиотеком, молимо вас:
 
-- [Otvorite issue na GitHub](https://github.com/FastComments/fastcomments-vue-next/issues)
-- [Kontaktirajte FastComments podršku](https://fastcomments.com/auth/my-account/help)
+- [Отворите проблем на GitHub](https://github.com/FastComments/fastcomments-vue-next/issues)
+- [Контактирајте FastComments подршку](https://fastcomments.com/auth/my-account/help)
 
-## Doprinosi
+## Допринес
 
-Doprinosi su dobrodošli! Molimo posetite [repozitorijum na GitHub-u](https://github.com/FastComments/fastcomments-vue-next) za smernice o doprinosu.
+Доприноси су добродошли! Молимо вас да посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-vue-next) за смернице за допринос.
 
 ---

@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Yes |  |
-| create_comment_params | models::CreateCommentParams | Yes |  |
-| is_live | bool | No |  |
-| do_spam_check | bool | No |  |
-| send_emails | bool | No |  |
-| populate_notifications | bool | No |  |
+| tenant_id | String | Да |  |
+| create_comment_params | models::CreateCommentParams | Да |  |
+| is_live | bool | Не |  |
+| do_spam_check | bool | Не |  |
+| send_emails | bool | Не |  |
+| populate_notifications | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiSaveCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_save_comment_response.rs)
+Враћа: [`ApiSaveCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_save_comment_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'save_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'save_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = SaveCommentParams {
@@ -34,5 +34,3 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

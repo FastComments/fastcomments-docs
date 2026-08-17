@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| update_apisso_user_data | models::UpdateApissoUserData | Yes |  |
-| update_comments | bool | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| update_apisso_user_data | models::UpdateApissoUserData | Да |  |
+| update_comments | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PatchSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_sso_user_api_response.rs)
+Враћа: [`PatchSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/patch_sso_user_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'patch_sso_user Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patch_sso_user Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let config = configuration::Configuration::default();
@@ -31,5 +31,3 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

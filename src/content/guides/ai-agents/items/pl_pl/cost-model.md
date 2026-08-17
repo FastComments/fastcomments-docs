@@ -1,50 +1,47 @@
----
 Agent cost is **token-based**. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
 
-### What's billed
+### Co jest rozliczane
 
-- **All LLM calls**, including the call that produces zero tool actions ("the agent decided to do nothing"). Inference is paid even when no action results.
-- **Dry-run calls**. Dry-run is "do not act, but still call the LLM" - the LLM call costs the same. See [Dry-Run Mode](#dry-run-mode).
-- **Replay calls**. Replays are dry-run runs against historical comments. They cost tokens. See [Test Runs (Replays)](#test-runs-replays).
+- **Wszystkie wywołania LLM**, w tym wywołanie, które nie generuje żadnych akcji narzędziowych („agent postanowił nic nie robić”). Inference jest płatna nawet gdy nie powstaje żadna akcja.
+- **Wywołania w trybie dry‑run**. Dry‑run to „nie wykonuj, ale nadal wywołaj LLM” – koszt wywołania LLM jest taki sam. Zobacz [Dry-Run Mode](#dry-run-mode).
+- **Wywołania replay**. Replay to uruchomienia dry‑run na historycznych komentarzach. Kosztują tokeny. Zobacz [Test Runs (Replays)](#test-runs-replays).
 
-### What's not billed
+### Co nie jest rozliczane
 
-- **Triggers that never produce an LLM call.** Dropped-before-LLM cases (over budget, rate limited, scope mismatch, billing invalid, loop prevention) cost zero tokens. See [Drop Reasons](#drop-reasons).
-- **Tool dispatch.** Calling `pin_comment` or any other tool does not itself cost tokens - only the LLM round-trip does.
-- **`search_memory`.** It is read-only and does not produce its own LLM round-trip.
+- **Wyzwalacze, które nigdy nie generują wywołania LLM.** Przypadki odrzucone przed LLM (przekroczony budżet, limit szybkości, niezgodność zakresu, nieprawidłowe rozliczenie, zapobieganie pętli) kosztują zero tokenów. Zobacz [Drop Reasons](#drop-reasons).
+- **Wysyłanie narzędzi.** Wywołanie `pin_comment` lub dowolnego innego narzędzia nie kosztuje tokenów – kosztuje jedynie podróż LLM w obie strony.
+- **`search_memory`.** Jest tylko do odczytu i nie generuje własnej podróży LLM.
 
-### Cost per run
+### Koszt na uruchomienie
 
-A single agent run can call the LLM multiple times - each tool call result is fed back into the model so it can either call another tool or finish. So `tokensUsed` on a run is the sum across all LLM round-trips in that run.
+Jedno uruchomienie agenta może wywołać LLM wiele razy – wynik każdego wywołania narzędzia jest zwracany do modelu, który może wywołać kolejne narzędzie lub zakończyć działanie. Dlatego `tokensUsed` w uruchomieniu jest sumą wszystkich podróży LLM w tym uruchomieniu.
 
-The biggest contributors to per-run token cost:
+Największe czynniki wpływające na koszt tokenów na uruchomienie:
 
-- **Long [initial prompts](#personality-prompt) and [community guidelines](#community-guidelines)** - they go in on every run.
-- **[Context options](#context-options)** - thread context, user history, page metadata. Each adds tokens.
-- **The comment text itself** - long comments cost more.
-- **Multiple tool calls in one run** - each tool's result message is sent back to the model.
-- **Memory reads** - `search_memory` returns up to 25 records (capped at 8000 chars total content). Most of those bytes go into the next prompt.
+- **Długie [początkowe podpowiedzi](#personality-prompt) i [wytyczne społeczności](#community-guidelines)** – pojawiają się w każdym uruchomieniu.
+- **[Opcje kontekstu](#context-options)** – kontekst wątku, historia użytkownika, metadane strony. Każda z nich dodaje tokeny.
+- **Sam tekst komentarza** – długie komentarze kosztują więcej.
+- **Wiele wywołań narzędzi w jednym uruchomieniu** – wynik każdego narzędzia jest wysyłany z powrotem do modelu.
+- **Odczyty pamięci** – `search_memory` zwraca do 25 rekordów (ograniczone do 8000 znaków łącznej treści). Większość tych bajtów trafia do kolejnej podpowiedzi.
 
-**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
+**Maksymalna liczba tokenów na wyzwalacz** (domyślnie 20 000) ogranicza rozmiar **odpowiedzi** na wywołanie LLM. Nie ogranicza rozmiaru wejścia.
 
-### Token-to-cents conversion
+### Konwersja tokenów na centy
 
-The platform applies a single per-tenant-package rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Cost-per-token is package-level, not per-model - both available models ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) bill at the same rate on a given package. The [Run Detail View](#run-detail-view) shows the per-run cost in your currency once a run completes.
+Platforma stosuje jedną stawkę na pakiet najemcy (`flexLLMCostCents` za `flexLLMUnit` tokenów). Koszt za token jest określany na poziomie pakietu, a nie modelu – oba dostępne modele ([GLM 5.1 i GPT‑OSS Turbo](#choosing-a-model)) rozliczane są według tej samej stawki w ramach danego pakietu. [Run Detail View](#run-detail-view) wyświetla koszt na uruchomienie w Twojej walucie po zakończeniu uruchomienia.
 
-### Where cost is recorded
+### Gdzie koszt jest rejestrowany
 
-Each run records its raw token count and per-run cost. Daily and monthly totals roll up into the [Analytics page](#analytics-page).
+Każde uruchomienie zapisuje surową liczbę tokenów i koszt na uruchomienie. Dzienna i miesięczna suma jest agregowana na [Analytics page](#analytics-page).
 
-### How to read cost
+### Jak odczytywać koszt
 
-- **Per-run cost**: [Run Detail View](#run-detail-view) -> `Cost` field.
-- **Daily / monthly aggregate**: [Analytics page](#analytics-page) -> Budget usage and Daily cost charts.
-- **Per-action cost**: also on Run Detail View, useful for tuning when an agent's tool-loop is unusually long.
+- **Koszt na uruchomienie**: [Run Detail View](#run-detail-view) → pole `Cost`.
+- **Agregat dzienny / miesięczny**: [Analytics page](#analytics-page) → wykresy użycia budżetu oraz dziennego kosztu.
+- **Koszt na akcję**: również w Run Detail View, przydatny przy optymalizacji, gdy pętla narzędziowa agenta jest wyjątkowo długa.
 
-### See also
+### Zobacz także
 
-- [Choosing a Model](#choosing-a-model) - the bigger lever on cost.
-- [Context Options](#context-options) - where added cost comes from.
-- [Budgets Overview](#budgets-overview) - hard caps that prevent runaway cost.
-
----
+- [Choosing a Model](#choosing-a-model) – największy czynnik wpływający na koszt.
+- [Context Options](#context-options) – skąd pochodzi dodatkowy koszt.
+- [Budgets Overview](#budgets-overview) – twarde limity zapobiegające niekontrolowanemu wzrostowi kosztów.

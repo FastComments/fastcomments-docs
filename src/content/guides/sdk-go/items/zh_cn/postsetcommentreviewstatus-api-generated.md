@@ -1,18 +1,18 @@
-## Parameters
+## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| reviewed | boolean | query | No |  |
-| broadcastId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | path | 是 |  |
+| reviewed | boolean | query | 否 |  |
+| broadcastId | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
-## Response
+## 响应
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'PostSetCommentReviewStatus 示例'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -43,3 +43,5 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostSetCommentReviewStatus`: %v\n", resp)
 }
 [inline-code-end]
+
+---

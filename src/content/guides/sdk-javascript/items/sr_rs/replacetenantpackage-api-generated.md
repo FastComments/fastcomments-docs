@@ -1,30 +1,30 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
+Враћа: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'replaceTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'replaceTenantPackage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
     const tenantId: string = "acme-corp-tenant-01";
     const packageId: string = "pkg-2024-annual";
 
     const config: CustomConfigParameters = {
-        // prilagođena polja konfiguracije ovde
+        // прилагођена поља конфигурације овде
     };
 
     const body: ReplaceTenantPackageBody = {
         name: "Enterprise Package",
-        // opcionalna prilagođena konfiguracija
+        // опциона прилагођена конфигурација
         customConfig: config,
     };
 

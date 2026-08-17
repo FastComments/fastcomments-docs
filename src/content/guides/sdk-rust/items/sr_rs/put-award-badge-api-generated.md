@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| badge_id | String | Da |  |
-| user_id | String | Ne |  |
-| comment_id | String | Ne |  |
-| broadcast_id | String | Ne |  |
-| sso | String | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| badge_id | String | Да |  |
+| user_id | String | Не |  |
+| comment_id | String | Не |  |
+| broadcast_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/award_user_badge_response.rs)
+Враћа: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/award_user_badge_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'put_award_badge Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_award_badge Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = PutAwardBadgeParams {
@@ -30,5 +30,3 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

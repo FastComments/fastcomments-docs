@@ -1,10 +1,13 @@
-By default, FastComments will allow users to edit their comments.
+---
+По умолчанию FastComments позволяет пользователям редактировать их комментарии.
 
-However, it is possible to prevent this.
+Однако это можно предотвратить.
 
-In the widget customization page, see the "Disable Editing" option.
+На странице настройки виджета смотрите опцию «Отключить редактирование».
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Опция отключения редактирования на странице настройки виджета, предотвращающая редактирование комментариев пользователями'; title='Отключить редактирование комментариев' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Опция отключения редактирования на странице настройки виджета, предотвращающая возможность комментаторов редактировать их комментарии'; title='Отключить редактирование комментариев' app-screenshot-end]
 
-- This only impacts regular Commenters and not moderators or admins, who will still be able to edit.
-- This will also impact API integrations for when `contextUserId` is passed.
+- Это затрагивает только обычных комментаторов и не затрагивает модераторов или администраторов, которые всё равно смогут редактировать.
+- Это также повлияет на интеграции API, когда передаётся `contextUserId`. 
+
+---

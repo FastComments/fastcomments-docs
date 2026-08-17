@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| includeByUserIdAndEmail | boolean | query | Ne |  |
-| includeByIP | boolean | query | Ne |  |
-| includeByEmailDomain | boolean | query | Ne |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| includeByUserIdAndEmail | boolean | query | Не |  |
+| includeByIP | boolean | query | Не |  |
+| includeByEmailDomain | boolean | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `BulkPreBanSummary`
+Враћа: `BulkPreBanSummary`
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'postBulkPreBanSummary Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

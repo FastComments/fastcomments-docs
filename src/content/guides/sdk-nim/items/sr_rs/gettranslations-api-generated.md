@@ -1,18 +1,18 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| namespace | string | Ne |  |
-| component | string | Ne |  |
-| options | GetTranslationsOptions | Ne |  |
+| namespace | string | Не |  |
+| component | string | Не |  |
+| options | GetTranslationsOptions | Не |  |
 
-## Odgovor
+## Response
 
-Vraća: [`Option[GetTranslationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_translations_response.nim)
+Враћа: [`Option[GetTranslationsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_translations_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getTranslations'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getTranslations'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let opts = GetTranslationsOptions()
 let (maybeResp, httpResp) = client.getTranslations(namespace = "my-tenant-123", component = "news/article-title", options = opts)

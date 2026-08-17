@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| user_id | String | Ne |  |
+| tenant_id | String | Yes |  |
+| user_id | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_subscriptions_api_response.rs)
+Враћа: [`GetSubscriptionsApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_subscriptions_api_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_subscriptions'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,13 +1,13 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse1.ts)
+Враћа: [`GetUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse1.ts)
 
 ## Primer
 
@@ -19,3 +19,5 @@ Vraća: [`GetUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js
   const result: GetUserResponse1 = await getUser(tenantId, userId);
 })();
 [inline-code-end]
+
+---

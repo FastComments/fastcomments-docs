@@ -1,26 +1,26 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| isLive | boolean | query | No |  |
-| doSpamCheck | boolean | query | No |  |
-| sendEmails | boolean | query | No |  |
-| populateNotifications | boolean | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| isLive | boolean | query | Не |  |
+| doSpamCheck | boolean | query | Не |  |
+| sendEmails | boolean | query | Не |  |
+| populateNotifications | boolean | query | Не |  |
 
-## Odgovor
+## Response
 
-Vraća: `APISaveCommentResponse`
+Returns: `APISaveCommentResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'saveComment Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 // TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 
 final api_instance = DefaultApi();
 final tenantId = tenantId_example; // String | 

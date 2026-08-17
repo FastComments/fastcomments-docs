@@ -1,21 +1,21 @@
-### Brzi početak
+### Брзи почетак
 
-Početak rada sa Collab Chat je jednostavan. Potrebni su vam FastComments Collab Chat skripta, HTML element koji sadrži tekst koji želite da anotirate i objekat konfiguracije sa vašim Tenant ID.
+Започети са Collab Chat-ом је једноставно. Потребни су вам FastComments Collab Chat скрипт, HTML елемент који садржи текст који желите да анотирате, и објекат конфигурације са вашим Tenant ID-ом.
 
-### Instalacija
+### Инсталација
 
-Dodajte Collab Chat skriptu na vašu stranicu:
+Додајте Collab Chat скрипту на вашу страницу:
 
 [inline-code-attrs-start title = 'Učitavanje Collab Chat skripte'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 [inline-code-end]
 
-### Osnovna implementacija
+### Основна имплементација
 
-Evo minimalnog primera:
+Ево минималног примера:
 
-[inline-code-attrs-start title = 'Osnovna implementacija Collab Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Osnovna implementacija Collab Chat-a'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
@@ -23,17 +23,17 @@ Evo minimalnog primera:
     <title>My Article with Collab Chat</title>
 </head>
 <body>
-    <!-- Vaš kontejner sa sadržajem -->
+    <!-- Ваш контејнер садржаја -->
     <div id="article-content" style="min-height: 500px;">
         <h1>My Article Title</h1>
         <p>This is a paragraph that users can annotate. Simply highlight any text to start a discussion!</p>
         <p>You can have multiple paragraphs, and users can highlight text across any of them.</p>
     </div>
 
-    <!-- Učitaj Collab Chat skriptu -->
+    <!-- Учитај Collab Chat скрипту -->
     <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 
-    <!-- Inicijalizuj Collab Chat -->
+    <!-- Иницијализуј Collab Chat -->
     <script>
         FastCommentsCollabChat(document.getElementById('article-content'), {
             tenantId: 'demo'
@@ -43,20 +43,22 @@ Evo minimalnog primera:
 </html>
 [inline-code-end]
 
-Zamenite `'demo'` sa vašim stvarnim FastComments Tenant ID-jem ako već nije, koji možete pronaći na vašem [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+Замените `'demo'` вашим стварним FastComments Tenant ID-ом ако већ није постављен, који можете пронаћи у вашој [FastComments контролној табли](https://fastcomments.com/auth/my-account/api-secret).
 
-### Kako radi
+### Како функционише
 
-Kada je inicijalizovano, korisnici mogu selektovati bilo koji tekst unutar ciljnog elementa. Nakon kratkog zadržavanja (3.5 sekundi na desktopu), pojavljuje se upit koji im omogućava da započnu diskusiju. Kada se diskusija kreira, vizuelno isticanje se pojavljuje na tekstu. Drugi korisnici mogu preći mišem preko ili kliknuti na isticanje da bi videli i učestvovali u diskusiji. Sve diskusije se sinhronizuju u realnom vremenu među svim posetiocima.
+Након иницијализације, корисници могу да изаберу било који текст унутар циљног елемента. Након кратког кашњења (3,5 секунде на десктопу), појављује се упит који им омогућава да започну дискусију. Када се дискусија креира, визуелно истицање се појављује на тексту. Други корисници могу да пређу мишем преко или кликну на истицање да би видели и учествовали у дискусији. Све дискусије се синхронизују у реалном времену за све посетиоце.
 
-### Demo uživo
+### Живи демо
 
-Možete videti Collab Chat u akciji na našoj [stranici demonstracije uživo](https://fastcomments.com/product/collab-chat).
+Можете видети Collab Chat у акцији на нашој [страници живог демоа](https://fastcomments.com/product/collab-chat).
 
-### Sledeći koraci
+### Следећи кораци
 
-Sada kada imate osnovno funkcionalnost, možete prilagoditi izgled i ponašanje u Vodiču za opcije konfiguracije. Pogledajte Vodič za ponašanje pri izboru teksta da biste razumeli kako funkcioniše selekcija teksta. Saznajte o stilizaciji i podršci za tamni režim u Vodiču za prilagođavanje. Za napredne integracije, istražite API referencu.
+Сада када имате основну функционалност, можете прилагодити изглед и понашање у водичу за **Опције конфигурације**. Погледајте водич за **Понашање при избору текста** да бисте разумели како функционише избор текста. Сазнајте о стилизовању и подршци за тамни режим у водичу за **Прилагођавање**. За напредне интеграције, истражите **API референцу**.
 
-### Frontend biblioteke
+### Фронтенд библиотеке
 
-Sve FastComments frontend biblioteke (react, vue, angular, itd.) imaju Collab Chat.
+Све FastComments фронтенд библиотеке (react, vue, angular, итд.) имају Collab Chat.
+
+---

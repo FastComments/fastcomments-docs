@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | user_id | String | No |  |
 | direction | models::SortDirections | No |  |
@@ -10,11 +10,11 @@
 | locale | String | No |  |
 | is_crawler | bool | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comments_for_user_response.rs)
+Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comments_for_user_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer get_comments_for_user'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

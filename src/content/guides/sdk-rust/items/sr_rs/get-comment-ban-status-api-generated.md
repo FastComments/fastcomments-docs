@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | comment_id | String | Yes |  |
 | sso | String | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_ban_status_response.rs)
+Враћа: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_ban_status_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_comment_ban_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_comment_ban_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetCommentBanStatusParams {

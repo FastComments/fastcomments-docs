@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| dir | number | Yes |  |
-| sso | string | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| dir | number | Да |  |
+| sso | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentVoteUserNamesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesResponse.ts)
+Враћа: [`GetCommentVoteUserNamesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentVoteUserNames'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentVoteUserNames Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoGetCommentVoteUserNames() {
   const tenantId: string = "acme-corp";
   const commentId: string = "cmt_5f2a1e3b";
-  const dir: number = 1; // uzlazno
+  const dir: number = 1; // растући
 
   const votesWithoutSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(
     tenantId,
@@ -37,3 +37,5 @@ async function demoGetCommentVoteUserNames() {
   console.log(votesWithoutSSO, votesWithSSO);
 }
 [inline-code-end]
+
+---

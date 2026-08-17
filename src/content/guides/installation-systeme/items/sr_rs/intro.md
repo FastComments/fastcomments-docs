@@ -1,7 +1,6 @@
 ---
-Uz FastComments možemo lako dodati komentare uživo na bilo koji Systeme.io blog.
+Помоћу FastComments можемо лако да додамо коментарисање уживо на било који Systeme.io блог.
 
-Uputstva u nastavku su za blog izgrađen na Systeme.io, ali embed kod se takođe može ručno dodati na bilo koju stranicu uređivanjem drugih fajlova teme. FastComments podrška takođe može pomoći u tome.
+Упутства испод су за блог изграђен на Systeme.io, али кôд за уграђивање се такође може ручно додати на било коју страницу уређивањем других датотека теме. FastComments подршка такође може помоћи у вези с тим.
 
-Imajte na umu da ovaj vodič zahteva FastComments nalog. Preporučuje se da se prvo registrujete, pa se onda vratite ovde. [Možete kreirati nalog ovde.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
----
+Имајте на уму да овај туторијал захтева FastComments налог. Препоручује се да се прво региструјете, а затим се вратите овде. [Можете направити налог овде.](https://fastcomments.com/auth/tenant-signup?packageId=flex)

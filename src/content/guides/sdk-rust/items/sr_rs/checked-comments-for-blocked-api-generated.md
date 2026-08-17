@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenant_id | String | Yes |  |
 | comment_ids | String | Yes |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/check_blocked_comments_response.rs)
+Враћа: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/check_blocked_comments_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'checked_comments_for_blocked Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checked_comments_for_blocked пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = CheckedCommentsForBlockedParams {

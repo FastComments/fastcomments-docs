@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| options | GetModerationCommentOptions | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | GetModerationCommentOptions | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
+Враћа: [`Option[ModerationAPICommentResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_api_comment_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getModerationComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getModerationComment'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (maybeComment, httpResponse) = client.getModerationComment(
   tenantId = "my-tenant-123",
@@ -24,3 +24,5 @@ if maybeComment.isSome:
   let comment = maybeComment.get()
   echo comment
 [inline-code-end]
+
+---

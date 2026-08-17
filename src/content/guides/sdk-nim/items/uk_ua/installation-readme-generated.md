@@ -1,24 +1,24 @@
-### Using Nimble
+### Використання Nimble
 
 ```bash
 nimble install fastcomments
 ```
 
-### Building from Source
+### Збірка з джерела
 
 ```bash
 nimble build
 ```
 
-### Library Contents
+### Вміст бібліотеки
 
-This library contains the generated API client and the SSO utilities to make working with the API easier.
+Ця бібліотека містить згенерований клієнт API та утиліти SSO, які спрощують роботу з API.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### Публічні та захищені API
 
-For the API client, there are three API modules, `api_default`, `api_public`, and `api_moderation`. The `api_default` contains methods that require your API key, and `api_public` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication. The `api_moderation` module contains methods for the moderator dashboard.
+Для клієнта API існує три модулі API: `api_default`, `api_public` та `api_moderation`. `api_default` містить методи, які вимагають ваш API‑ключ, а `api_public` містить виклики API,
+які можна виконувати безпосередньо з браузера/мобільного пристрою тощо без автентифікації. Модуль `api_moderation` містить методи для панелі модератора.
 
-The `api_moderation` module provides an extensive suite of live and fast moderation APIs. Every `api_moderation` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Модуль `api_moderation` надає розширений набір живих та швидких API модерації. Кожен метод `api_moderation` приймає параметр `sso` і може автентифікуватися через SSO або за допомогою cookie сесії FastComments.com.

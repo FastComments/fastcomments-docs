@@ -1,47 +1,48 @@
-Past komentatori na stranici koji NISU trenutno online. Sortirani po displayName.  
-Koristite ovo nakon što iscrpite /users/online da prikažete sekciju „Članovi“.  
-Kursor paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName} indeks od afterName napred putem $gt, bez troška $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.  
+Use this after exhausting /users/online to render a "Members" section.  
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
+index from afterName forward via $gt, no $skip cost.
 
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da | Identifikator URL-a stranice (čišćen na serveru). |
-| afterName | string | query | Ne | Kursor: prosledite nextAfterName iz prethodnog odgovora. |
-| afterUserId | string | query | Ne | Kursor razdvajač: prosledite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako vezani nazivi ne bi izostavili unose. |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes | Идентификатор URL странице (очишћен на серверу). |
+| afterName | string | query | No | Курсор: проследите nextAfterName из претходног одговора. |
+| afterUserId | string | query | No | Тијебрејкер курсора: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName постављен како називни везани уноси не би били изгубљени. |
 
-## Odgovor
+## Response
 
-Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-// $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, podrazumevano će se koristiti `GuzzleHttp\Client`.
-    new GuzzleHttp\Client()
-);
-
-$tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Identifikator URL-a stranice (čišćen na serveru).
-$options = [
-    'after_name' => 'after_name_example', // string | Kursor: prosledite nextAfterName iz prethodnog odgovora.
-    'after_user_id' => 'after_user_id_example', // string | Kursor razdvajač: prosledite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako vezani nazivi ne bi izostavili unose.
-];
+[inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+<?php  
+require_once(__DIR__ . '/vendor/autoload.php');  
 
 
-try {
-    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PublicApi->getOfflineUsers: ', $e->getMessage(), PHP_EOL;
-}
+
+$apiInstance = new FastComments\Client\Api\PublicApi(  
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.  
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.  
+    new GuzzleHttp\Client()  
+);  
+
+$tenant_id = 'tenant_id_example'; // string  
+$url_id = 'url_id_example'; // string | Идентификатор URL странице (очишћен на серверу).  
+$options = [  
+    'after_name' => 'after_name_example', // string | Курсор: проследите nextAfterName из претходног одговора.  
+    'after_user_id' => 'after_user_id_example', // string | Тијебрејкер курсора: проследите nextAfterUserId из претходног одговора. Обавезно када је afterName постављен како називни везани уноси не би били изгубљени.  
+];  
+
+
+try {  
+    $result = $apiInstance->getOfflineUsers($tenant_id, $url_id, $options);  
+    print_r($result);  
+} catch (Exception $e) {  
+    echo 'Exception when calling PublicApi->getOfflineUsers: ', $e->getMessage(), PHP_EOL;  
+}  
 [inline-code-end]

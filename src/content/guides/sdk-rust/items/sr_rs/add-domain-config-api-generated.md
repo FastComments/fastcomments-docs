@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Yes |  |
-| add_domain_config_params | models::AddDomainConfigParams | Yes |  |
+| tenant_id | String | Да |  |
+| add_domain_config_params | models::AddDomainConfigParams | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_domain_config_response.rs)
+Враћа: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/add_domain_config_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'add_domain_config Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

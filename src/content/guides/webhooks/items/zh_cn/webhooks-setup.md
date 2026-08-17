@@ -1,10 +1,10 @@
 Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+First, navigate to the [Webhooks 管理](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
 
 The configuration page appears as follows:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='带有域选择器和每个评论事件的端点 URL 字段的 Webhooks 管理页面，以及发送测试负载'; title='Webhooks 配置'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Webhooks 管理页面，包含域选择器和每个评论事件的端点 URL 字段，以及发送测试负载'; title='Webhooks 配置'; cacheBuster = 'v3' app-screenshot-end]
 
 In this page you can specify endpoints for each type of comment event.
 

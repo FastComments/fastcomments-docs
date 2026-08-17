@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | const GetApiExportStatusOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| options | const GetApiExportStatusOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationExportStatusResponse.h)
+Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationExportStatusResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getApiExportStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiExportStatus Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto opts = GetApiExportStatusOptions{};
 opts.exportId = boost::make_optional<utility::string_t>(U("export-456"));
@@ -23,5 +23,3 @@ api->getApiExportStatus(U("my-tenant-123"), opts)
         }
     });
 [inline-code-end]
-
----

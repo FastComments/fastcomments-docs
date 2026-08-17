@@ -1,20 +1,22 @@
+---
 The FastComments Rust SDK consists of several modules:
 
-- **Client Module** - API client for FastComments REST APIs
-  - Complete type definitions for all API models
-  - Three API clients covering all FastComments methods:
-    - `default_api` (**DefaultApi**) - API-key-authenticated methods for server-side use
-    - `public_api` (**PublicApi**) - public, no-API-key methods that are safe to call from browsers and mobile apps
-    - `moderation_api` (**ModerationApi**) - an extensive suite of live and fast moderation APIs. Every Moderation method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
-  - Full async/await support with tokio
-  - See [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) for detailed API documentation
+- **Client Module** - Klient API dla FastComments REST APIs
+  - Pełne definicje typów dla wszystkich modeli API
+  - Trzy klientów API obejmujących wszystkie metody FastComments:
+    - `default_api` (**DefaultApi**) - Metody uwierzytelniane kluczem API do użycia po stronie serwera
+    - `public_api` (**PublicApi**) - publiczne, nie wymagające klucza API metody, które są bezpieczne do wywoływania z przeglądarek i aplikacji mobilnych
+    - `moderation_api` (**ModerationApi**) - rozbudowany zestaw szybkich i bieżących API moderacji. Każda metoda Moderacji przyjmuje parametr `sso` i może uwierzytelnić się za pomocą SSO lub ciasteczka sesji FastComments.com.
+  - Pełne wsparcie async/await z tokio
+  - Zobacz [client/README.md](https://github.com/FastComments/fastcomments-rust/blob/main/client/README.md) po szczegółową dokumentację API
 
-- **SSO Module** - Server-side Single Sign-On utilities
-  - Secure token generation for user authentication
-  - Support for both simple and secure SSO modes
-  - HMAC-SHA256 based token signing
+- **SSO Module** - Narzędzia Single Sign-On po stronie serwera
+  - Bezpieczne generowanie tokenów do uwierzytelniania użytkowników
+  - Obsługa zarówno prostych, jak i bezpiecznych trybów SSO
+  - Podpisywanie tokenów oparte na HMAC-SHA256
 
-- **Core Types** - Shared type definitions and utilities
-  - Comment models and metadata structures
-  - User and tenant configurations
-  - Helper functions for common operations
+- **Core Types** - Wspólne definicje typów i narzędzia
+  - Modele komentarzy i struktury metadanych
+  - Konfiguracje użytkowników i najemców
+  - Funkcje pomocnicze dla typowych operacji
+---

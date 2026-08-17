@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer updateEmailTemplate'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateEmailTemplate Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t templateId = U("welcome-email");
@@ -22,9 +22,9 @@ body.content = U("<p>Hello \{{userName}}, welcome aboard!</p>");
 body.isActive = boost::optional<bool>(true);
 api->updateEmailTemplate(tenantId, templateId, body)
     .then([](std::shared_ptr<APIEmptyResponse> response) {
-        // obrada uspeha
+        // успешно руковање
     })
     .then([](pplx::task<void> t) {
-        try { t.get(); } catch (const std::exception &) { /* obrada greške */ }
+        try { t.get(); } catch (const std::exception &) { /* обрада грешке */ }
     });
 [inline-code-end]

@@ -1,7 +1,7 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | userId | string | No |  |
 | badgeId | string | No |  |
@@ -10,13 +10,13 @@
 | limit | number | No |  |
 | skip | number | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
+Враћа: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function example() {
   const tenantId: string = "tenant-01";
@@ -41,3 +41,5 @@ async function example() {
 }
 example();
 [inline-code-end]
+
+---

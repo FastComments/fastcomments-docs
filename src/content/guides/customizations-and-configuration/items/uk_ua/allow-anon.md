@@ -1,8 +1,9 @@
-By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,
-their comment will display an "Unverified Comment" label.
+---
+За замовчуванням FastComments вимагатиме електронну пошту для коментування. Вона не обов’язково має бути дійсною, проте доки користувач не натисне посилання, яке йому надіслано,
+його коментар буде позначений міткою «Неперевірений коментар».
 
-However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
+Проте ми можемо прибрати вимогу електронної пошти. Поле вводу електронної пошти все ще буде показане, але воно більше не буде обов’язковим.
 
-This can be configured via the widget customization UI:
+Це можна налаштувати через інтерфейс налаштування віджета:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Опція анонімних коментарів у UI налаштування віджета, яка робить поле електронної пошти необов’язковим'; title='Увімкнення анонімних коментарів' app-screenshot-end]

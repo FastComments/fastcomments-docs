@@ -1,74 +1,71 @@
----
 There are four agent webhook event types. Each event has a numeric enum value (used in payloads) and a canonical string name (used in the `event` envelope field and in the `X-FastComments-Agent-Event` HTTP header).
 
 | Event name | Enum | Fires when |
 |---|---|---|
-| `trigger.succeeded` | 0 | An agent run completes with status `SUCCESS`. |
-| `trigger.failed` | 1 | An agent run completes with status `ERROR`. |
-| `approval.requested` | 2 | An approval is queued in `PENDING` state. |
-| `approval.decided` | 3 | An approval transitions to `APPROVED`, `REJECTED`, or `EXECUTION_FAILED`. |
+| `trigger.succeeded` | 0 | エージェントの実行がステータス`SUCCESS`で完了したとき。 |
+| `trigger.failed` | 1 | エージェントの実行がステータス`ERROR`で完了したとき。 |
+| `approval.requested` | 2 | 承認が`PENDING`状態でキューに入れられたとき。 |
+| `approval.decided` | 3 | 承認が`APPROVED`、`REJECTED`、または`EXECUTION_FAILED`に遷移したとき。 |
 
 ### `trigger.succeeded`
 
-Fires after the agent's run finishes without error. The payload's `data` field includes:
+エージェントの実行がエラーなく完了した後に発火します。ペイロードの`data`フィールドには以下が含まれます：
 
-- `triggerId` - the unique run ID.
-- `triggerType` - the [trigger reason enum](#triggers-overview) that started the run.
-- `status` - `SUCCESS` (string).
-- `tokensUsed` - tokens consumed in this run.
-- `wasDryRun` - true if the agent was in [dry-run mode](#dry-run-mode).
-- `actions` - array of `TenantAgentAction` records (see [Webhook Payloads](#webhook-payloads)).
-- `commentId`, `url`, `urlId` - if the trigger had them.
+- `triggerId` - ユニークな実行ID。
+- `triggerType` - 実行を開始した[トリガー理由enum](#triggers-overview)。
+- `status` - `SUCCESS`（文字列）。
+- `tokensUsed` - この実行で消費されたトークン。
+- `wasDryRun` - エージェントが[ドライランモード](#dry-run-mode)だった場合はtrue。
+- `actions` - `TenantAgentAction`レコードの配列（[Webhook Payloads](#webhook-payloads)参照）。
+- `commentId`, `url`, `urlId` - トリガーがそれらを持っている場合。
 
-If the run took zero actions, the `actions` array is empty - this is a successful "the agent decided to do nothing" run, which is useful to know.
+実行がゼロアクションであった場合、`actions`配列は空になります。これは「エージェントが何もしないことを決定めた」成功した実行であり、知っておくと便利です。
 
 ### `trigger.failed`
 
-Fires when a run errors. Same payload shape as `trigger.succeeded`, with `status: 'ERROR'` and an additional `errorMessage` field describing what went wrong. Possible errors include LLM call failures, tool dispatch failures, and budget exhaustion mid-run.
+実行がエラーになると発火します。ペイロードの形は`trigger.succeeded`と同じで、`status: 'ERROR'`と、何が問題だったかを示す追加の`errorMessage`フィールドがあります。考えられるエラーには、LLM呼び出しの失敗、ツールのディスパッチ失敗、実行中の予算枯渇などがあります。
 
-`actions` may still contain entries for tool calls that completed before the error.
+`actions`にはエラーが発生する前に完了したツール呼び出しのエントリが含まれる場合があります。
 
 ### `approval.requested`
 
-Fires the moment an approval is queued in `PENDING` state. Payload includes:
+`PENDING`状態で承認がキューに入れられた瞬間に発火します。ペイロードには以下が含まれます：
 
-- `approvalId`, `triggerId`.
-- `toolName`, `actionType`.
-- `status: 'PENDING'`.
-- `args` - the tool's arguments **passed through verbatim** from the LLM call. The shape is per-tool and not a stable public contract - the schema can change as new tools are added.
-- `createdAt`.
-- `justification`, `confidence` - if the agent supplied them.
-- `contextSnapshot` - the comment / page context the approval relates to.
+- `approvalId`, `triggerId`。
+- `toolName`, `actionType`。
+- `status: 'PENDING'`。
+- `args` - ツールの引数で、LLM呼び出しから**そのまま**渡されます。形状はツールごとに異なり、安定した公開契約ではありません。新しいツールが追加されるとスキーマが変わる可能性があります。
+- `createdAt`。
+- `justification`, `confidence` - エージェントが提供した場合。
+- `contextSnapshot` - 承認が関連するコメント/ページのコンテキスト。
 
-Useful for forwarding pending approvals into a chat ops channel: a Slack bot subscribed to `approval.requested` can post the action and reasoning into a moderation channel for at-a-glance review.
+保留中の承認をチャットOpsチャンネルに転送するのに便利です。`approval.requested`を購読したSlackボットは、アクションとその理由をモデレーションチャンネルに投稿し、一目でレビューできるようにします。
 
 ### `approval.decided`
 
-Fires when an approval moves out of `PENDING`. Payload includes:
+`PENDING`から承認が移動したときに発火します。ペイロードには以下が含まれます：
 
-- `approvalId`, `triggerId`.
-- `toolName`, `actionType`.
-- `status` - `APPROVED`, `REJECTED`, or `EXECUTION_FAILED`.
-- `decidedBy` - the user ID of the moderator who decided.
-- `decidedAt` - when they decided.
-- `executedAt` - if APPROVED, when the platform executed the approved action.
-- `executionResult` - if APPROVED, a string describing the executor's result.
-- `contextSnapshot` - the comment / page context.
+- `approvalId`, `triggerId`。
+- `toolName`, `actionType`。
+- `status` - `APPROVED`、`REJECTED`、または`EXECUTION_FAILED`。
+- `decidedBy` - 決定したモデレーターのユーザーID。
+- `decidedAt` - 彼らが決定した時刻。
+- `executedAt` - `APPROVED`の場合、プラットフォームが承認されたアクションを実行した時刻。
+- `executionResult` - `APPROVED`の場合、実行者の結果を示す文字列。
+- `contextSnapshot` - コメント/ページのコンテキスト。
 
-This event covers all decision outcomes:
+このイベントはすべての決定結果をカバーします：
 
-- **Approved + executed cleanly** -> `status: APPROVED`, `executedAt` set, `executionResult` is the success message.
-- **Approved + executor failed** -> `status: EXECUTION_FAILED`, `executedAt` set, `executionResult` describes the failure.
-- **Rejected** -> `status: REJECTED`, `executedAt` is null, `executionResult` is null.
+- **承認され、正常に実行** -> `status: APPROVED`、`executedAt`が設定、`executionResult`は成功メッセージ。
+- **承認されたが実行者が失敗** -> `status: EXECUTION_FAILED`、`executedAt`が設定、`executionResult`は失敗を記述。
+- **却下** -> `status: REJECTED`、`executedAt`はnull、`executionResult`はnull。
 
 ### Header
 
-Every delivery includes an `X-FastComments-Agent-Event` HTTP header with the event's canonical string name (`trigger.succeeded`, etc.). Useful if your endpoint is a single URL handling multiple event types.
+すべての配信には、イベントの正規文字列名（`trigger.succeeded`など）を含む`X-FastComments-Agent-Event` HTTPヘッダーが含まれます。エンドポイントが複数のイベントタイプを処理する単一のURLの場合に便利です。
 
 ### See also
 
-- [Webhook Payloads](#webhook-payloads) for full per-event payload schemas.
-- [Webhook Signing](#webhook-signing) for the HMAC scheme.
-- [Webhook Retries](#webhook-retries) for delivery semantics.
-
----
+- 各イベントのペイロードスキーマ全体については[Webhook Payloads](#webhook-payloads)をご覧ください。
+- HMAC方式については[Webhook Signing](#webhook-signing)をご覧ください。
+- 配信セマンティクスについては[Webhook Retries](#webhook-retries)をご覧ください。

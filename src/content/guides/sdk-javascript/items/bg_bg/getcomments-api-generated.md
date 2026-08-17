@@ -1,28 +1,28 @@
 ## Parameters
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| page | number | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| asTree | boolean | No |  |
-| skipChildren | number | No |  |
-| limitChildren | number | No |  |
-| maxTreeDepth | number | No |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
-| contextUserId | string | No |  |
-| hashTag | string | No |  |
-| parentId | string | No |  |
-| direction | SortDirections | No |  |
-| fromDate | number | No |  |
-| toDate | number | No |  |
+| tenantId | string | Да |  |
+| page | number | Не |  |
+| limit | number | Не |  |
+| skip | number | Не |  |
+| asTree | boolean | Не |  |
+| skipChildren | number | Не |  |
+| limitChildren | number | Не |  |
+| maxTreeDepth | number | Не |  |
+| urlId | string | Не |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
+| contextUserId | string | Не |  |
+| hashTag | string | Не |  |
+| parentId | string | Не |  |
+| direction | SortDirections | Не |  |
+| fromDate | number | Не |  |
+| toDate | number | Не |  |
 
 ## Response
 
-Returns: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Връща: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
 
 ## Example
 

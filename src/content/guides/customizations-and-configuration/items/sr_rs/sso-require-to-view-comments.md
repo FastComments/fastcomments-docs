@@ -1,39 +1,42 @@
-FastComments SSO (<a href="#sso">detalji ovde</a>) omogućava vašim korisnicima da komentarišu bez potrebe da se prijave na drugu platformu.
+---
+FastComments SSO (<a href="#sso">детаљи овде</a>) пружа вашим корисницима начин за коментарисање без потребе да се пријаве на другу платформу.
 
-Međutim, ovo samo po sebi ne štiti vaše niti komentara, jer su podaci o komentarima po podrazumevanom javno dostupni – svako ko može da vidi stranicu može da vidi i komentare.
+Међутим, ово само по себи не обезбеђује безбедност ваших нити коментара, јер су подаци о коментарима подразумевано јавно доступни – свако ко може да види страницу може да види и коментаре.
 
-Promenom jedne postavke možemo ograničiti preuzimanje komentara osim ako to ne radi administrator ili validni SSO korisnik.
+Променом подешавања можемо ограничити преузимање коментара осим ако то не уради администратор или важећи SSO корисник.
 
 #### No-Code Setup
 
-Možemo sprečiti pregled i interakciju sa našim nitima komentara, kada je SSO podešen, tako što ćemo kreirati <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">pravilo prilagođavanja</a>.
+Можемо спречити прегледање и интеракцију са нашим нитима коментара, када је SSO подешен, креирањем <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">правила прилагођавања</a>.
 
-Pri tome, potražite SSO i naći ćete ovu opciju:
+При том, претражите SSO и наћи ћете ову опцију:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='Opcija „Zahtevajte SSO“ za pregled komentara omogućena u pravilu prilagođavanja, uz izbor nivoa sigurnosti'; title='Zahtevajte SSO za pregled komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='Опција „Захтевај SSO за преглед коментара“ омогућена у правилу прилагођавања, са избором нивоа безбедности'; title='Захтевај SSO за преглед коментара' app-screenshot-end]
 
-Omogućite je i sačuvajte pravilo prilagođavanja.
+Омогућите је и сачувајте правило прилагођавања.
 
-#### Only Protect a Certain Domain or Page
+#### Заштити само одређени домен или страницу
 
-Da biste zaštitili samo određeni domen ili stranicu, jednostavno ćemo podesiti pravilo prilagođavanja da to uradi.
+Да заштитимо само одређени домен или страницу, једноставно ћемо подесити правило прилагођавања.
 
-Na vrhu UI‑ja za prilagođavanje naći ćete dva polja, Domen i URL ID.
+На врху корисничког интерфејса за прилагођавање, пронаћи ћете два уноса, Домен и URL ID.
 
-Da biste zaštitili određeni domen, unesite taj domen u polje "domain".
+Да заштитите само одређени домен, унесите тај домен у поље „domain“.
 
-Da biste zaštitili određenu stranicu, unesite URL stranice u polje "URL ID". Ako imate prilagođenu integraciju sa FastComments, ovde možete uneti tip ID‑ja umesto URL‑a.
+Да заштитите одређену страницу, унесите URL странице у поље „URL ID“. Ако имате прилагођену интеграцију са FastComments, овде можете унети врсту ID уместо URL‑а.
 
-#### Security Levels
+#### Нивои безбедности
 
-Kada zahtevate SSO, treba da odlučite da li želite jednostavni SSO ili siguran SSO. Ako izaberete jednostavni SSO, oba su dozvoljena, ali ako izaberete siguran SSO, sadržaj mora biti preuzet uz Secure SSO payload koji je hash‑ovan vašim API ključem da bi se mogao pregledati.
+Када захтевате SSO, желели бисте да одлучите да ли је потребан једноставни SSO или безбедни SSO. Ако захтевате једноставни SSO, онда су оба дозвољена, али ако захтевате безбедни SSO, садржај мора бити преузет са безбедним SSO пакетом који је хеширан вашом API кључем како би се могао прегледати.
 
-Opcija nivoa sigurnosti će se pojaviti kada izaberete "Require SSO To View Comments".
+Опција нивоа безбедности ће се појавити када изаберете „Захтевај SSO за преглед коментара“.
 
-#### Protection Beyond Reading
+#### Заштита поред читања
 
-Omogućavanje ove opcije zaštitiće stranicu ili domen od komentarisanja, osim ako korisnik nije prijavljen putem SSO.
+Омогућавање ове опције заштитиће страницу или домен од коментарисања осим ако корисник није пријављен преко SSO.
 
-#### Gotchas
+#### Замке
 
-Korisnici koji su kreirali komentare pre vaše SSO integracije neće moći da ih vide, osim ako se ne prijave putem vaše SSO integracije.
+Сви корисници који су креирали коментаре пре ваше SSO интеграције неће моћи да их виде, осим ако се пријаве преко ваше SSO интеграције.
+
+---

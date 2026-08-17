@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| update_apisso_user_data | models::UpdateApissoUserData | Yes |  |
-| update_comments | bool | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| update_apisso_user_data | models::UpdateApissoUserData | Да |  |
+| update_comments | bool | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PutSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/put_sso_user_api_response.rs)
+Враћа: [`PutSsoUserApiResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/put_sso_user_api_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'put_sso_user Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'put_sso_user Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let update_data = UpdateApissoUserData {

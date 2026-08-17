@@ -1,23 +1,23 @@
-req
+リクエスト
 tenantId
 urlId
 userIdWS
 
-## Parameters
+## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| userIdWS | string | No |  |
-| startTime | int64 | No |  |
-| endTime | int64 | No |  |
+| tenantId | string | はい |  |
+| urlId | string | はい |  |
+| userIdWS | string | いいえ |  |
+| startTime | int64 | いいえ |  |
+| endTime | int64 | いいえ |  |
 
-## Response
+## レスポンス
 
-Returns: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
+返り値: [`Option[GetEventLogResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_event_log_response.nim)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getGlobalEventLog の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

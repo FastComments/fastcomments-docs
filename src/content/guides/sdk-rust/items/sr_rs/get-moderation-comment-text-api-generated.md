@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| sso | String | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| comment_id | String | Yes |  |
+| sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_text_response.rs)
+Враћа: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_comment_text_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_moderation_comment_text Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_moderation_comment_text'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetModerationCommentTextParams {
@@ -25,5 +25,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

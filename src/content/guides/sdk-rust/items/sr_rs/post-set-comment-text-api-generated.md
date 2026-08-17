@@ -1,20 +1,20 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenant_id | String | Da |  |
-| comment_id | String | Da |  |
-| set_comment_text_params | models::SetCommentTextParams | Da |  |
-| broadcast_id | String | Ne |  |
-| sso | String | Ne |  |
+| tenant_id | String | Да |  |
+| comment_id | String | Да |  |
+| set_comment_text_params | models::SetCommentTextParams | Да |  |
+| broadcast_id | String | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_comment_text_response.rs)
+Враћа: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_comment_text_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_set_comment_text Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_set_comment_text Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn update_comment(config: &configuration::Configuration) -> Result<(), Error> {
     let params = PostSetCommentTextParams {

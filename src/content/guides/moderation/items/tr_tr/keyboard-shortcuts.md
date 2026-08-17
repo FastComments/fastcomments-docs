@@ -4,61 +4,61 @@ Press **?** at any time on the moderation page to open a help dialog listing all
 
 ## Navigation
 
-| Key | Action |
+| Tuş | Eylem |
 |-----|--------|
-| `j` | Focus next comment |
-| `k` | Focus previous comment |
-| `x` or `Enter` | Toggle select on focused comment |
-| `Shift+j` | Select focused comment & move to next |
-| `Shift+k` | Select focused comment & move to previous |
+| `j` | Sonraki yorumu odakla |
+| `k` | Önceki yorumu odakla |
+| `x` or `Enter` | Odaklanmış yorumda seçimi değiştir |
+| `Shift+j` | Odaklanmış yorumu seç ve sonraki yoruma geç |
+| `Shift+k` | Odaklanmış yorumu seç ve önceki yoruma geç |
 
-The focused comment is highlighted with a blue outline. This is separate from "selected" (checked) comments.
+Odaklanmış yorum mavi bir kenarlıkla vurgulanır. Bu, "seçili" (işaretli) yorumlardan ayrı bir durumdur.
 
 ## Actions on Focused Comment
 
-| Key | Action |
+| Tuş | Eylem |
 |-----|--------|
-| `a` | Toggle approve / unapprove |
-| `s` | Toggle spam / not spam |
-| `d` | Delete |
-| `u` | Undelete |
-| `r` | Toggle reviewed / not reviewed |
-| `e` | Edit |
-| `b` | Ban / manage ban |
-| `p` | Toggle pin / unpin |
-| `f` | Unflag |
-| `i` | View all comments from IP |
-| `t` | Set trust factor |
-| `m` | Manage badges |
-| `l` | View logs |
-| `c` | Toggle context |
+| `a` | Onayla / onayı kaldır |
+| `s` | Spam / spam değil olarak değiştir |
+| `d` | Sil |
+| `u` | Silme işlemini geri al |
+| `r` | İncelendi / incelenmedi olarak değiştir |
+| `e` | Düzenle |
+| `b` | Yasakla / yasak yönet |
+| `p` | Sabitle / sabitlemeyi kaldır |
+| `f` | İşareti kaldır |
+| `i` | IP'den gelen tüm yorumları görüntüle |
+| `t` | Güven faktörünü ayarla |
+| `m` | Rozetleri yönet |
+| `l` | Kayıtları görüntüle |
+| `c` | Bağlamı değiştir |
 
-These shortcuts only apply when a comment is focused. If no comment is focused, press `j` or `k` first.
+Bu kısayollar yalnızca bir yorum odaklandığında geçerlidir. Eğer hiçbir yorum odaklanmamışsa, önce `j` veya `k` tuşuna basın.
 
 ## Global Shortcuts
 
-| Key | Action |
+| Tuş | Eylem |
 |-----|--------|
-| `Ctrl+a` | Select all comments |
-| `Ctrl+z` | Undo last action |
-| `?` | Show keyboard shortcuts help |
-| `g` | Toggle shortcut guiders overlay |
-| `/` | Focus search input |
+| `Ctrl+a` | Tüm yorumları seç |
+| `Ctrl+z` | Son eylemi geri al |
+| `?` | Klavye kısayolları yardımını göster |
+| `g` | Kısayol rehberleri katmanını değiştir |
+| `/` | Arama girişine odaklan |
 
 ## Pagination
 
-| Key | Action |
+| Tuş | Eylem |
 |-----|--------|
-| `[` | Previous page |
-| `]` | Next page |
+| `[` | Önceki sayfa |
+| `]` | Sonraki sayfa |
 
 ## Shortcut Guiders
 
-Press `g` to toggle guiders mode. When active, small badges appear on the focused comment's action buttons showing the keyboard shortcut for each button. This is useful while learning the shortcuts. Press `g` again to hide them.
+`g` tuşuna basarak rehber modunu değiştirin. Aktif olduğunda, odaklanmış yorumun eylem düğmelerinde her bir düğmenin klavye kısayolunu gösteren küçük rozetler görünür. Kısayolları öğrenirken bu faydalıdır. `g` tuşuna tekrar basarak rozetleri gizleyin.
 
 ## Input Suppression
 
-Shortcuts are automatically suppressed when:
+Kısayollar aşağıdaki durumlarda otomatik olarak devre dışı bırakılır:
 
-- The cursor is in the search box, a text input, or a content-editable field. Press `Escape` to blur the field and return to shortcuts.
-- A dialog is open. Close the dialog first.
+- İmleç arama kutusunda, bir metin girişinde veya içerik düzenlenebilir bir alanda olduğunda. Alanı bulanıklaştırmak ve kısayollara geri dönmek için `Escape` tuşuna basın.
+- Bir iletişim kutusu açık olduğunda. Önce iletişim kutusunu kapatın.

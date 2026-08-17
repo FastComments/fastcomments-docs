@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Yes |  |
+| tenantId | string | Да |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateSubscriptionAPIResponse.h)
+Враћа: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateSubscriptionAPIResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createSubscription Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createSubscription Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = U("my-tenant-123");
 CreateAPIUserSubscriptionData subscriptionData;

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIModerateGetUserBanPreferencesResponse.h)
+Враћа: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIModerateGetUserBanPreferencesResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getUserBanPreference'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserBanPreference'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 boost::optional<utility::string_t> sso = boost::optional<utility::string_t>(U("user@example.com"));
@@ -24,5 +24,3 @@ api->getUserBanPreference(tenantId, sso)
         }
     });
 [inline-code-end]
-
----

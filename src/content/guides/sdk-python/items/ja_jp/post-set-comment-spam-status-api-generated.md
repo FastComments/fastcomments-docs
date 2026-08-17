@@ -1,6 +1,6 @@
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
@@ -9,11 +9,11 @@
 | broadcastId | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 応答
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'post_set_comment_spam_status 例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,22 +24,22 @@ from client.rest import ApiException
 from pprint import pprint
 
 # ホストの定義はオプションで、デフォルトは https://fastcomments.com です
-# configuration.py でサポートされているすべての構成パラメータのリストを確認できます。
+# すべてのサポートされている設定パラメータの一覧は configuration.py を参照してください
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API クライアントのインスタンスでコンテキストに入ります
+# APIクライアントのインスタンスでコンテキストに入ります
 with client.ApiClient(configuration) as api_client:
-    # API クラスのインスタンスを作成します
+    # APIクラスのインスタンスを作成します
     api_instance = client.ModerationApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     comment_id = 'comment_id_example' # str | 
-    spam = True # bool |  (optional) → (オプション)
-    perm_not_spam = True # bool |  (optional) → (オプション)
-    broadcast_id = 'broadcast_id_example' # str |  (optional) → (オプション)
-    sso = 'sso_example' # str |  (optional) → (オプション)
+    spam = True # bool |  （オプション）
+    perm_not_spam = True # bool |  （オプション）
+    broadcast_id = 'broadcast_id_example' # str |  （オプション）
+    sso = 'sso_example' # str |  （オプション）
 
     try:
         api_response = api_instance.post_set_comment_spam_status(tenant_id, comment_id, PostSetCommentSpamStatusOptions(spam=spam, perm_not_spam=perm_not_spam, broadcast_id=broadcast_id, sso=sso))

@@ -1,32 +1,32 @@
-#### How Comments Appear in Your Courses
+#### Yorumların Kurslarınızda Nasıl Göründüğü
 
-Once the LTI integration is enabled and the External App is installed, FastComments works automatically based on the placements you configured:
+LTI entegrasyonu etkinleştirildiğinde ve Harici Uygulama yüklendiğinde, FastComments yapılandırdığınız yerleştirmelere göre otomatik olarak çalışır:
 
-#### Assignment View
+#### Ödev Görünümü
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+Eğer **Assignment View** yerleştirmesi etkinse, yorumlar kurs içindeki her ödevin altında otomatik olarak görünür. Öğrenciler ve eğitmenler bir ödevi görüntülediklerinde bir konu başlıklı yorum bölümü görürler — ödev başına ekstra bir kurulum gerekmez.
 
-Each assignment gets its own separate comment thread.
+Her ödev kendi ayrı yorum konusuna sahiptir.
 
-#### Rich Content Editor Button
+#### Zengin İçerik Düzenleyici Düğmesi
 
-If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
+Eğer **Editor Button** yerleştirmesi etkinse, eğitmenler FastComments'i Zengin İçerik Düzenleyicisi kullanan herhangi bir içeriğe gömebilirler:
 
-1. Edit a **Page**, **Quiz**, or **Announcement**.
-2. In the Rich Content Editor toolbar, click the **FastComments** button.
-3. FastComments is automatically embedded into the content.
-4. Save the page.
+1. **Sayfa**, **Quiz** veya **Duyuru** düzenleyin.  
+2. Zengin İçerik Düzenleyicisi araç çubuğunda, **FastComments** düğmesine tıklayın.  
+3. FastComments otomatik olarak içeriğe gömülür.  
+4. Sayfayı kaydedin.
 
-When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
+Öğrenciler sayfayı görüntülediğinde, gömülü FastComments widget'ı o sayfaya özgü bir yorum konusuyla yüklenir.
 
-#### Automatic SSO
+#### Otomatik SSO
 
-In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch, no separate login is needed.
+Her iki yerleştirmede de, öğrenciler Canvas hesaplarıyla otomatik olarak oturum açar. İsimler, e-posta adresleri ve avatarlar LTI başlatmasıyla senkronize edilir, ayrı bir giriş gerekmez.
 
-#### Lock Down Public Access (Recommended)
+#### Genel Erişimi Kapatma (Önerilir)
 
-By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Canvas. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+Varsayılan olarak, FastComments yorum verileri herkese açık olarak okunabilir. Bir konunun URL'sini veya API uç noktasını tahmin edebilen herkes, Canvas dışındaki durumlarda bile yorumları görebilir. Kurs tartışmaları için muhtemelen görüntülemeyi yalnızca kayıtlı öğrencilere sınırlamak istersiniz.
 
-Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget özelleştirme sayfası</a>nı açın ve **Require SSO To View Comments** etkinleştirilmiş bir kural oluşturun, ardından güvenlik seviyesini **Secure SSO** olarak ayarlayın, böylece konular yalnızca imzalı LTI başlatmasıyla yüklenebilir.
 
-See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+Tam kılavuz için [Tek Oturum Açma ile Yorum Konularını Koruma](/guide-customizations-and-configuration.html#sso-require-to-view-comments) sayfasına bakın, kuralı tek bir alan adı veya sayfaya nasıl uygulayacağınızı da içerir.

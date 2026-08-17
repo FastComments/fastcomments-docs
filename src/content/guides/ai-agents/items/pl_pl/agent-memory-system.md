@@ -1,74 +1,74 @@
-Agent memory is a tenant-scoped, **shared** key-value pool that every agent in your tenant can read from and write to. It exists so agents can carry context across runs.
+Agent memory jest pulą klucz‑wartość o zakresie najemcy, **współdzieloną**, do której każdy agent w Twoim najemcy może odczytywać i zapisywać. Istnieje, aby agenci mogli przenosić kontekst pomiędzy uruchomieniami.
 
-### Why memory exists
+### Dlaczego istnieje pamięć
 
-LLM context is per-run. Without memory, an agent that issues a warning to a user has no way to know about that warning the next time it sees the same user. The platform's escalation policy - "warn before banning" - depends on the agent being able to find the prior warning. Memory is what makes that work.
+Kontekst LLM jest określany na każde uruchomienie. Bez pamięci agent, który wydaje ostrzeżenie użytkownikowi, nie ma możliwości poznania tego ostrzeżenia przy następnym spotkaniu z tym samym użytkownikiem. Polityka eskalacji platformy – „ostrzeż przed zbanowaniem” – zależy od tego, że agent może odnaleźć poprzednie ostrzeżenie. Pamięć jest tym, co to umożliwia.
 
-### Two kinds of memory
+### Dwa rodzaje pamięci
 
-- **WARNING** - written automatically as part of the [`warn_user`](#tool-warn-user) flow. The agent does not write `WARNING` records by hand; they are a side effect of warning a user.
-- **NOTE** - written by [`save_memory`](#tools-overview). General-purpose context the agent wants future agents to know.
+- **WARNING** – zapisywane automatycznie jako część przepływu [`warn_user`](#tool-warn-user). Agent nie zapisuje rekordów `WARNING` ręcznie; są one skutkiem ubocznym ostrzegania użytkownika.
+- **NOTE** – zapisywane przez [`save_memory`](#tools-overview). Ogólny kontekst, który agent chce, aby przyszłe agenty znały.
 
-The escalation policy looks specifically for `WARNING` records when deciding whether a ban is justified.
+Polityka eskalacji szuka konkretnie rekordów `WARNING` przy decydowaniu, czy ban jest uzasadniony.
 
-### Tenant-scoped, agent-shared
+### Zakres najemcy, współdzielona przez agenta
 
-All agents in your tenant share **one memory pool**. A note saved by Agent A is visible to Agent B's `search_memory` calls. This is intentional - you want a triage agent's notes to inform a moderator agent's decisions.
+Wszyscy agenci w Twoim najemcy współdzielą **jedną pulę pamięci**. Notatka zapisana przez Agenta A jest widoczna w wywołaniach `search_memory` Agenta B. Jest to zamierzone – chcesz, aby notatki agenta triage informowały decyzje agenta moderatora.
 
-`tenantId` is set by the executor from the agent's own tenant - never from LLM args - so cross-tenant memory leaks are impossible by construction.
+`tenantId` jest ustawiane przez wykonawcę z własnego najemcy agenta – nigdy z argumentów LLM – więc wycieki pamięci między najemcami są niemożliwe z konstrukcji.
 
-### What's in a memory record
+### Co znajduje się w rekordzie pamięci
 
-Each memory entry contains:
+Każdy wpis pamięci zawiera:
 
-- **Which agent wrote it**, and when.
-- **Who it's about** - the user this memory describes. The agent cannot fabricate this; the platform fills it in automatically from whatever triggered the agent.
-- **A hidden alt-account signal** - the platform also records (privately) the IP fingerprint of the originating comment, so future memory searches can surface notes about other accounts posting from the same IP. The fingerprint is never shown to the agent or the LLM.
-- **The note itself** - up to 2000 characters of free text.
-- **Tags** for retrieval - up to 10 short tags.
-- **A kind** - either a warning or a general note.
-- **An optional comment link** - if the memory is tied to a specific comment.
+- **Który agent go zapisał**, oraz kiedy.
+- **Kogo dotyczy** – użytkownika, którego opisuje ta pamięć. Agent nie może tego wymyślić; platforma wypełnia to automatycznie na podstawie tego, co wywołało agenta.
+- **Ukryty sygnał alternatywnego konta** – platforma również rejestruje (prywatnie) odcisk palca IP pochodzącego komentarza, aby przyszłe wyszukiwania pamięci mogły wyświetlać notatki o innych kontach publikujących z tego samego IP. Odcisk palca nigdy nie jest pokazywany agentowi ani LLM.
+- **Sama notatka** – do 2000 znaków wolnego tekstu.
+- **Tagi** do wyszukiwania – do 10 krótkich tagów.
+- **Rodzaj** – albo ostrzeżenie, albo ogólna notatka.
+- **Opcjonalny link do komentarza** – jeśli pamięć jest powiązana z konkretnym komentarzem.
 
-### Search behavior
+### Zachowanie wyszukiwania
 
-[`search_memory`](#tools-overview) returns up to 25 records, sorted newest-first, scoped automatically to (the trigger's user) OR (other accounts on the trigger's IP). The results are also char-capped at 8000 total characters across all returned content - older entries are dropped if the cap is hit.
+[`search_memory`](#tools-overview) zwraca maksymalnie 25 rekordów, posortowanych od najnowszych, automatycznie ograniczonych do (użytkownika wyzwalacza) LUB (innych kont na IP wyzwalacza). Wyniki są również ograniczone do 8000 znaków łącznej treści wszystkich zwróconych elementów – starsze wpisy są pomijane, jeśli limit zostanie przekroczony.
 
-The agent does not pass `userId` or `targetIpHash`. Both are set by the executor.
+Agent nie przekazuje `userId` ani `targetIpHash`. Oba są ustawiane przez wykonawcę.
 
-### Persistence
+### Trwałość
 
-Memory has **no TTL**. Records persist until explicitly removed. WARNING records about a user are intentionally never auto-deleted - the escalation history must be findable indefinitely or the platform's "search before banning" check is meaningless.
+Pamięć ma **brak TTL**. Rekordy pozostają, dopóki nie zostaną wyraźnie usunięte. Rekordy WARNING dotyczące użytkownika są celowo nigdy nie usuwane automatycznie – historia eskalacji musi być dostępna bezterminowo, w przeciwnym razie sprawdzenie platformy „wyszukaj przed zbanowaniem” jest bez sensu.
 
-The three ways memory is removed:
+Trzy sposoby usuwania pamięci:
 
-- A moderator deletes the underlying comment - any memory tied to that comment is cascaded.
-- A user is deleted - all memory entries about that user are removed in the same transaction.
-- Your tenant is deleted.
+- Moderator usuwa podstawowy komentarz – każda pamięć powiązana z tym komentarzem jest kaskadowo usuwana.
+- Użytkownik zostaje usunięty – wszystkie wpisy pamięci dotyczące tego użytkownika są usuwane w tej samej transakcji.
+- Twój najemca zostaje usunięty.
 
-There is no admin UI for deleting individual memory records today.
+Obecnie nie ma interfejsu administracyjnego do usuwania pojedynczych rekordów pamięci.
 
-### Memory in dry-run
+### Pamięć w trybie dry-run
 
-Dry-run agents do **not** write memory. This is by design: a dry-run agent's hypothetical decisions should not pollute the shared memory pool. Read-back via `search_memory` works in dry-run normally - the agent can see real memories from live agents - it just cannot add to them.
+Agenci w trybie dry-run **nie** zapisują pamięci. Jest to zamierzone: hipotetyczne decyzje agenta dry-run nie powinny zanieczyszczać współdzielonej puli pamięci. Odczyt za pomocą `search_memory` działa w trybie dry-run normalnie – agent może zobaczyć rzeczywiste pamięci od żywych agentów – po prostu nie może ich dodawać.
 
-### Memory in replays
+### Pamięć w powtórkach (replays)
 
-Same as dry-run: replay agents do not write memory. Replays are preview-only. See [Test Runs (Replays)](#test-runs-replays).
+Tak samo jak dry-run: agenci powtórek nie zapisują pamięci. Powtórki są tylko podglądem. Zobacz [Test Runs (Replays)](#test-runs-replays).
 
-### Constraints summary
+### Podsumowanie ograniczeń
 
-| Limit | Value |
+| Limit | Wartość |
 |---|---|
-| Memory content max length | 2000 chars |
-| Memory tag max length | 64 chars |
-| Memory tags max count | 10 |
-| Memory query max length | 200 chars |
-| Memory search result limit | 25 records |
-| Memory search total content cap | 8000 chars |
+| Maksymalna długość treści pamięci | 2000 znaków |
+| Maksymalna długość tagu pamięci | 64 znaki |
+| Maksymalna liczba tagów pamięci | 10 |
+| Maksymalna długość zapytania pamięci | 200 znaków |
+| Limit wyników wyszukiwania pamięci | 25 rekordów |
+| Całkowity limit treści wyników wyszukiwania pamięci | 8000 znaków |
 
-### See also
+### Zobacz także
 
-- [Tool: save_memory](#tools-overview) for writing.
-- [Tool: search_memory](#tools-overview) for reading.
-- [Tool: warn_user](#tool-warn-user) - the only tool that writes WARNING-kind memory.
-- [Tool: ban_user](#tool-ban-user) - the system prompt requires `search_memory` to be called before this.
+- [Tool: save_memory](#tools-overview) do zapisu.
+- [Tool: search_memory](#tools-overview) do odczytu.
+- [Tool: warn_user](#tool-warn-user) – jedyne narzędzie, które zapisuje pamięć rodzaju WARNING.
+- [Tool: ban_user](#tool-ban-user) – systemowy prompt wymaga wywołania `search_memory` przed tym.

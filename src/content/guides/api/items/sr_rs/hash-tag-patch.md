@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'HashTag'; route = 'PATCH /api/v1/hash-tags/:tag'; creditsCost = 1; api-resource-header-end]
 
-Ova ruta omogućava ažuriranje jedne `HashTag`.
+Ова рута пружа могућност ажурирања једног `HashTag`.
 
-[inline-code-attrs-start title = 'Primer cURL zahteva za ažuriranje HashTag-a'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL захтева за ажурирање HashTag-а'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/hash-tags/%23example_hash_tag?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -12,7 +12,7 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahteva za ažuriranje HashTag-a'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура захтева за ажурирање HashTag-а'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTagPatchQueryParams {
     tenantId: string
@@ -20,16 +20,14 @@ interface HashTagPatchQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za ažuriranje HashTag-a'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура одговора за ажурирање HashTag-а'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTagPatchResponse {
     status: 'success' | 'failed'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Укључено у случају неуспеха. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-hash-tag' | 'tag-does-not-exist' | 'url-too-long' | 'invalid-tag' |  'already-exists'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Укључено у случају неуспеха. **/
     reason?: string
-    hashTag?: HashTag; // Vraćamo kompletan ažurirani HashTag pri uspehu.
+    hashTag?: HashTag; // Враћамо комплетан ажурирани хештаг при успеху.
 }
 [inline-code-end]
-
----

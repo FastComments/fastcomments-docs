@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
+Returns: [`ApiEmptySuccessResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_success_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer delete_user_badge'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_user_badge Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error> {
     let params: DeleteUserBadgeParams = DeleteUserBadgeParams {
@@ -22,5 +22,3 @@ async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error
     Ok(())
 }
 [inline-code-end]
-
----

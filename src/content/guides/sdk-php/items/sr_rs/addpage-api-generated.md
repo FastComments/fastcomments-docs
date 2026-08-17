@@ -1,14 +1,14 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
 
-## Odgovor
+## Response
 
-Vraća: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddPageAPIResponse.php)
+Returns: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AddPageAPIResponse.php)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'addPage Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -16,19 +16,24 @@ Vraća: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-php/
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
-// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Configure API key authorization: api_key
+// Конфигуришите ауторизацију API кључа: api_key
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će biti korišćen po difoltu.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
 
 $tenant_id = 'tenant_id_example'; // string
+// стринг
 $create_api_page_data = new \FastComments\Client\Model\CreateAPIPageData(); // \FastComments\Client\Model\CreateAPIPageData
 
 

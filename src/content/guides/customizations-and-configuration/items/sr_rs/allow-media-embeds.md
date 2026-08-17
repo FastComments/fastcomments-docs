@@ -4,7 +4,7 @@ For security, this is not a client-side widget config flag. It is a server-side 
 
 This is done without code, on the widget customization page:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Podešavanje medijskih ugradnji uključeno na stranici prilagođavanja widgeta, omogućavajući komentatorima da nalepi pouzdane iframe ugradnje'; title='Dozvoli medijske ugradnje' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Подешавање медијских уграђивања укључено на страници за прилагођавање виџета, омогућавајући коментаторима да налепе поуздане iframe уграђивања'; title='Dozvoli медijske уграђивања' app-screenshot-end]
 
 ### Adding Your Own Providers
 

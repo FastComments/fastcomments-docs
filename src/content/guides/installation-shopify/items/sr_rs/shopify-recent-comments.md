@@ -1,23 +1,21 @@
-The **FastComments - Recent Comments** block shows the most recent comments across your whole store. Use it to show fresh activity in a sidebar, footer, or homepage section.
+Блок **FastComments - Recent Comments** приказује најновије коментаре у целој вашој продавници. Користите га да прикажете свежу активност у бочној траци, подножју или одељку почетне странице.
 
-### Dodajte blok
+### Додајте блок
 
-1. Otvorite uređivač tema Shopify-a.
-2. Otvorite šablon u kojem želite feed. Sekcija bočne trake, početna stranica ili indeks bloga svi su pogodni.
-3. Kliknite na **Add block** u sekciji koja treba da ga sadrži.
-4. Pod **Apps**, odaberite **FastComments - Recent Comments**.
-5. Kliknite na **Save**.
+1. Отворите уређивач теме у Shopify-у.  
+2. Отворите шаблон у којем желите да поставите фид. Одељак бочне траке, почетна страница или индекс блога су сви добар избор.  
+3. Кликните на **Add block** у одељку који треба да га садржи.  
+4. Под **Apps**, изаберите **FastComments - Recent Comments**.  
+5. Кликните на **Save**.
 
-### Podešavanja
+### Подешавања
 
-| Podešavanje | Šta radi | Podrazumevano |
+| Подешавање | Шта ради | Подразумевано |
 |---|---|---|
-| Tenant ID (optional) | Odredite sa kog FastComments tenant-a feed učitava komentare. Ostavite prazno da biste koristili tenant koji je automatski konfigurisan za prodavnicu. | (prazno) |
-| Number of comments | Koliko najnovijih komentara prikazati. Opseg 1 do 50. | 5 |
+| Tenant ID (optional) | Преписује који FastComments tenant се користи за читање фида. Оставите празно да се користи tenant који је аутоматски подешен за продавницу. | (blank) |
+| Number of comments | Колико најновијих коментара приказати. Опсег од 1 до 50. | 5 |
 
-### Saveti
+### Савети
 
-- Svaki komentar vodi na stranicu na kojoj je objavljen, tako da blok istovremeno služi kao naznaka navigacije "o čemu ljudi trenutno pričaju".
-- Feed pokriva celu prodavnicu. Da biste prikazali najnovije komentare za pojedinačnu stranicu, umesto toga koristite blok **FastComments** na toj stranici.
-
----
+- Сваки коментар води на страницу на којој је објављен, тако да блок служи и као навигациони подсетник „о чему људи тренутно говоре“.  
+- Фид је за целу продавницу. Да бисте приказали најновије коментаре за појединачну страницу, уместо тога користите блок **FastComments** на тој страници.

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | options | const PostApiExportOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationExportResponse.h)
+Враћа: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationExportResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postApiExport Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postApiExport Пример'; type = 'cpp; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 PostApiExportOptions options;
@@ -23,7 +23,7 @@ options.endDate = boost::optional<utility::datetime>(utility::datetime::from_str
 api->postApiExport(tenantId, options)
     .then([](std::shared_ptr<ModerationExportResponse> response) {
         if (response) {
-            // obradi uspešan odgovor izvoza
+            // обради успешан одговор извоза
         }
     })
     .wait();

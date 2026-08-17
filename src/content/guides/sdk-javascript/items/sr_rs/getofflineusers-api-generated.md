@@ -1,21 +1,22 @@
-Prethodni komentatori na stranici koji NISU trenutno online. Sortirano po displayName.  
-Koristite ovo nakon što iscrpite /users/online za prikaz sekcije „Članovi”.  
-Kursor paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName} indeks od afterName napred putem $gt, bez troška $skip.
+Past commenters on the page who are NOT currently online. Sorted by displayName.
+Користите ово након што исцрпите /users/online да прикажете одељак "Members" section.
+Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
+index from afterName forward via $gt, no $skip cost.
 
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| afterName | string | Ne |  |
-| afterUserId | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
+Враћа: [`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

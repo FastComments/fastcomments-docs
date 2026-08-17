@@ -1,18 +1,18 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| id | String | Yes |  |
+| tenant_id | String | 예 |  |
+| url_id | String | 예 |  |
+| id | String | 예 |  |
 
-## Response
+## 응답
 
-Returns: `CreateV1PageReact`
+반환: `CreateV1PageReact`
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'delete_v2_page_react 예제'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_v2_page_react 예시'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = DeleteV2PageReactParams {
@@ -24,3 +24,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

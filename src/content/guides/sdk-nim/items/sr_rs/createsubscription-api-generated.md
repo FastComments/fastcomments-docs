@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | Ne |  |
+| tenantId | string | Yes |  |
+| createAPIUserSubscriptionData | CreateAPIUserSubscriptionData | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[CreateSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_subscription_api_response.nim)
+Враћа: [`Option[CreateSubscriptionAPIResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_subscription_api_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createSubscription Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createSubscription Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (respOpt, httpResp) = client.createSubscription(
   tenantId = "my-tenant-123",

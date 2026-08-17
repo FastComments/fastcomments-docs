@@ -1,20 +1,23 @@
-Each instance of the comment widget is isolated. Because of this, FastComments inherently supports more than one instance per page, or multiple instances pointing to the same chat thread.
+Свака инстанца widget-а за коментаре је изолована. Због тога FastComments природно подржава више од једне инстанце по страници, или више
+инстанци које упућују на исту конверзацију.
 
-In the case of the VanillaJS library for example, you simply have to tie the comment widget to different DOM nodes. If you want to simply update the current thread on the page, see [Switching Comment Threads Without Reloading The Page](guide-customizations-and-configuration.html#switching-comment-threads);
+У случају VanillaJS библиотеке, на пример, једноставно треба да повежете widget за коментаре са различитим DOM чворовима. Ако желите само
+да ажурирате тренутну конверзацију на страници, погледајте [Switching Comment Threads Without Reloading The Page](guide-customizations-and-configuration.html#switching-comment-threads);
 
-### Syncing Authentication State Across Multiple Instances
+### Синхронизација стања аутентификације између више инстанци
 
-Let's go over the example of a custom single-page-application that is a list of frequently asked questions with their own comment thread.
+Прегледајмо пример прилагођене једностраничне апликације која је листа често постављаних питања са својом конверзацијом за коментаре.
 
-In this case, we have multiple instances of FastComments in the DOM at once.
+У овом случају, имамо више инстанци FastComments у DOM-у истовремено.
 
-This is fine, but it poses some challenges for user experience.
+То је у реду, али представља неке изазове за корисничко искуство.
 
-Consider this flow:
+Размотрите овај ток:
 
-1. The user visits the page with a list of questions, each with their own comment widget.
-2. The user enters their username and email and leaves a question on one of the threads.
-3. They see another FAQ item they have a question about.
-4. They go to comment again. Do they have to enter their email and username again?
+1. Корисник посећује страницу са листом питања, свако са сопственим widget-ом за коментаре.  
+2. Корисник уноси своје корисничко име и имејл и оставља питање у једној од конверзација.  
+3. Видише још један FAQ ставку о којој има питање.  
+4. Поново иду да коментаришу. Да ли морају поново унети свој имејл и корисничко име?
 
-In this case, FastComments handles syncing the authentication state across widget instances for you. In step four, the user will already be temporarily authenticated since they entered their username and email on the same page.
+У овом случају, FastComments за вас управља синхронизацијом стања аутентификације између инстанци widget-а. У четвртом кораку, корисник
+ће већ бити привремено аутентификован јер је унео своје корисничко име и имејл на истој страници.

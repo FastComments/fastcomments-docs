@@ -1,40 +1,40 @@
-**Dry Run** je bezbednosni režim u kojem svaki novi agent počinje. Agent se izvršava od početka do kraja osim dela u kome utiče na vašu zajednicu.
+**Dry Run** је режим безбедности у коме сваки нови агент почиње. Агент се извршава од почетка до краја осим дела где утиче на вашу заједницу.
 
-### What runs in Dry Run
+### Шта се извршава у Dry Run
 
-- Okidači se pokreću normalno.
-- Prompt agenta, [smernice zajednice](#community-guidelines) i [kontekst](#context-options) se sastavljaju.
-- LLM se poziva.
-- Model bira pozive alata i daje opravdanja + ocene pouzdanosti.
-- Izvršavanje se beleži sa značkom **Dry Run** kako bi se jasno razlikovalo od živih izvršavanja.
+- Окидачи се активирају нормално.
+- Порука агента, [правилник заједнице](#community-guidelines), и [контекст](#context-options) се састављају.
+- Позива се LLM.
+- Модел бира позиве алата и обезбеђује оправдања + оцене поверења.
+- Извршавање се бележи са ознаком **Dry Run** како би било јасно разликово од живих извршавања.
 
-### What does not run in Dry Run
+### Шта се НЕ извршава у Dry Run
 
-- Nijedan komentar nije objavljen, nijedan glas nije dat, nijedan komentar nije zakačen/odkačen/zaključan/otključan.
-- Nijedan komentar nije označen kao spam, odobren ili pregledan.
-- Nijedan korisnik nije zabranjen, upozoren, niti nagrađen značkom.
-- Nijedan email nije poslat.
-- Ništa se ne upisuje u memoriju. (Da — uključujući memoriju. Dry-run agenti ne mogu zatrovati zajednički prostor za memoriju hipotetičkim odlukama.)
-- Ne pokreću se webhooks za radnje alata. (Webhooks na nivou okidača `trigger.succeeded` / `trigger.failed` i dalje se pokreću i payload uključuje `wasDryRun: true`. Pogledajte [Podaci webhook-a](#webhook-payloads).)
+- Ниједан коментар се не објављује, ниједан глас се не даје, ниједан коментар се не закачи/откачи/закључа/откључа.
+- Ниједан коментар се не означава као спам, одобрен или прегледан.
+- Ниједан корисник се не забрањује, не упозорава или не добија ознаку.
+- Ниједан имејл се не шаље.
+- Ниједна меморија се не уписује. (Да, укључујући меморију. Dry-run агенти не могу отровити заједнички пул меморије хипотетичким одлукама.)
+- Ниједан вебхоок не активира за радње алата. (Вебхоокови на нивоу окидача `trigger.succeeded` / `trigger.failed` и даље се активирају и у оптерећу се `wasDryRun: true`. Погледајте [Webhook Payloads](#webhook-payloads).)
 
-### What it costs
+### Колико кошта
 
-Dry Run pokreće **isti LLM poziv** koji bi izvršavanje u stanju **Enabled** pokrenulo. Tokeni se naplaćuju, primenjuju se [ograničenja budžeta](#budgets-overview), i izvršavanja se računaju u dnevne/mesečne limite po agentu i po tenant-u.
+Dry Run извршава **исти LLM позив** као и Enabled извршавање. Токени се наплаћују, примењују се [границе буџета](#budgets-overview), а извршавања се рачунају према дневним/месечним ограничењима по агенту и по закупцу.
 
-Ta cena je cena za veran pregled. Režim „preskoči LLM poziv“ ne bi vam dao nikakav signal o tome kako bi se agent ponašao.
+Тај трошак је цена добијања верног прегледа. Режим „прескочи LLM позив“ не би вам пружио никакву сигналу о томе како би агент реаговао.
 
-### Reading dry-run results
+### Читање резултата dry-run
 
-U [Run History](#run-history), dry-run izvršavanja su označena značkom **Dry Run** u koloni statusa. Radnje unutar svakog izvršavanja izgledaju identično kao žive radnje — isti naziv alata, isti argumenti, ista opravdanja i ocene pouzdanosti — osim što nijedna od njih nije zaista izvršena.
+У [Run History](#run-history), dry-run извршавања су означена ознаком **Dry Run** у колони статусa. Радње унутар сваког извршавања изгледају идентично живим радњама – исто име алата, исти аргументи, исто оправдање и поверење – осим што се ниједна од њих није догодила.
 
-Stranica [Analytics](#analytics-page) razlaže "dry-run vs live" izvršavanja po mesecima tako da možete videti koliko je vašeg troška tokena otišlo na posmatranje.
+[Analytics page](#analytics-page) разлаже „dry-run vs live“ извршавања по месецу како бисте видели колико вашег трошења токена је отишло у посматрање.
 
-### Switching out of Dry Run
+### Прелазак из Dry Run
 
-Izmenite agenta i promenite **Status** u **Enabled**. Sledeći okidač će se pokrenuti uživo.
+Уредите агента и промените **Status** у **Enabled**. Следећи окидач се извршава живо.
 
-Takođe možete prebaciti i u suprotnom smeru — sa **Enabled** nazad na **Dry Run** — ako agent počne da radi stvari koje vam se ne dopadaju. Nema kazne.
+Такође можете променити у супротном смеру – из Enabled назад у Dry Run – ако агент почиње да ради ствари које вам се не свиђају. Не постоји казна.
 
-### Replays force Dry Run
+### Реплеји форсирају Dry Run
 
-Funkcija [Test Runs (Replays)](#test-runs-replays) pokreće agenta protiv istorijskih komentara **uvek u dry-run režimu**, bez obzira na sačuvani status agenta. Replay-i ne mogu preduzimati stvarne radnje na prethodnim komentarima. To je namerno — replay je alat za pregled, a ne alat za moderaciju.
+Функција [Test Runs (Replays)](#test-runs-replays) извршава агента против историјских коментара **увек у dry-run**, без обзира на сачувани статус агента. Реплеји не могу предузети стварне радње над прошлим коментарима. Ово је по дизајну – реплеј је алат за преглед, а не за модерацију.

@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| options | GetApiExportStatusOptions | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| options | GetApiExportStatusOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[ModerationExportStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_export_status_response.nim)
+Враћа: [`Option[ModerationExportStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_moderation_export_status_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getApiExportStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getApiExportStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (exportStatusOpt, httpResp) = client.getApiExportStatus(
   tenantId = "my-tenant-123",
@@ -19,5 +19,5 @@ let (exportStatusOpt, httpResp) = client.getApiExportStatus(
 )
 if exportStatusOpt.isSome:
   let exportStatus = exportStatusOpt.get()
-  # koristite exportStatus po potrebi
+  # користите exportStatus по потреби
 [inline-code-end]

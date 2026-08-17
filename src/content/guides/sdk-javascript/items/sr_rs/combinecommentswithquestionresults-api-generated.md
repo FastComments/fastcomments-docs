@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | questionId | string | No |  |
@@ -12,13 +12,13 @@
 | maxValue | number | No |  |
 | limit | number | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CombineCommentsWithQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineCommentsWithQuestionResultsResponse.ts)
+Враћа: [`CombineCommentsWithQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CombineCommentsWithQuestionResultsResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const questionIds: string[] = ["question_1", "question_2"];

@@ -1,21 +1,21 @@
-Upload and resize an image
+Загрузка и изменение размера изображения
 
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | file | Blob | Yes |  |
 | sizePreset | SizePreset | No |  |
 | urlId | string | No |  |
 
-## Response
+## Ответ
 
-Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
+Возвращает: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UploadImageResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'uploadImage Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример uploadImage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-tenant-01";
 const imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: "image/png" });

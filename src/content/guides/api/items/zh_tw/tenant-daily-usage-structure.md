@@ -1,9 +1,8 @@
-A `TenantDailyUsage` object represents the usage for a tenant on a given day. If there was no activity for a given tenant on a given
-day, that day will not have a `TenantDailyUsage` object.
+A `TenantDailyUsage` 物件代表租戶在特定日期的使用情況。如果在特定日期內該租戶沒有任何活動，則該日不會有 `TenantDailyUsage` 物件。
 
-The `TenantDailyUsage` object is **not** real time and may be minutes behind actual usage.
+`TenantDailyUsage` 物件 **不是**即時的，可能會比實際使用量落後數分鐘。
 
-The structure for the `TenantDailyUsage` object is as follows:
+`TenantDailyUsage` 物件的結構如下：
 
 [inline-code-attrs-start title = 'TenantDailyUsage 結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,9 +22,7 @@ export interface TenantDailyUsage {
     apiCreditsUsed?: number
     createdAt: string
     billed: boolean
-    /** 計費時忽略。 **/
+    /** Ignored for billing. **/
     ignored: boolean
 }
 [inline-code-end]
-
----

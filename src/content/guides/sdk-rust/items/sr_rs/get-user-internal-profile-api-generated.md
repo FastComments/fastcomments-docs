@@ -1,18 +1,18 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | comment_id | String | No |  |
 | sso | String | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_internal_profile_response.rs)
+Враћа: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_user_internal_profile_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_user_internal_profile'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_user_internal_profile'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_profile() -> Result<(), Error> {
     let params = GetUserInternalProfileParams {

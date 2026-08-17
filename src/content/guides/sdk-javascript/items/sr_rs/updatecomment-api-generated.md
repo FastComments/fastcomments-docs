@@ -1,28 +1,28 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| updatableCommentParams | UpdatableCommentParams | Da |  |
-| contextUserId | string | Ne |  |
-| doSpamCheck | boolean | Ne |  |
-| isLive | boolean | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
+Враћа: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const commentId: string = "cmt_98765";
 
 const updatableCommentParams: UpdatableCommentParams = {
-  // primer polja; stvarni oblik zavisi od definicije API-ja
-  // npr., body: "Edited comment content",
+  // пример поља; стварни облик зависи од дефиниције API‑ја
+  // нпр., body: "Edited comment content",
 };
 
 const contextUserId: string = "user_abcde";

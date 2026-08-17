@@ -1,25 +1,25 @@
 **Template ID:** `welcome_greeter`
 
-Agent Dobrodošlice srdačno odgovara korisnicima koji prvi put komentarišu. To je predložak sa najmanjim rizikom (bez destruktivnih alata) i dobar prvi agent za puštanje u produkciju.
+The **Welcome Greeter** replies warmly to first-time commenters. It is the lowest-risk template (no destructive tools) and a good first agent to ship live.
 
-### Okidači
+### Triggers
 
-- **Novi korisnik objavi svoj prvi komentar na ovom sajtu** (`NEW_USER_FIRST_COMMENT`).
+- **New user posts their first comment on this site** (`NEW_USER_FIRST_COMMENT`).
 
-Ovaj događaj se aktivira tačno jednom po korisniku, tako da agent ne može da se ponavlja. Vidi [Okidač: New User First Comment](#trigger-new-user-first-comment).
+This event fires exactly once per user, so the agent cannot loop. See [Trigger: New User First Comment](#trigger-new-user-first-comment).
 
-### Dozvoljeni alati
+### Allowed tools
 
 - [`write_comment`](#tools-overview)
 
-To je jedini alat — agent zapravo ne može da moderira, glasa, banuje ili šalje privatne poruke.
+That is the only tool - the agent literally cannot moderate, vote, ban, or DM.
 
-### Preporučene dopune pre puštanja uživo
+### Recommended additions before going live
 
-- **Podesite prikazano ime** na nešto pristupačno - "Community Bot", maskota sajta, ili ime vašeg brenda. Prikazano ime je ono što čitaoci vide prikačeno uz pozdravni odgovor.
-- **Označite "Uključi naslov stranice, podnaslov, opis i meta tagove"** u [Opcije konteksta](#context-options). Odgovori agenta dobrodošlice postaju primetno bolji kada može da se pozove na to o čemu stranica zapravo govori.
-- **Razmotrite ograničenja za lokalizaciju** ako poslujete na više jezika. Pozdrav na pogrešnom jeziku više uznemirava nego propušteni odgovor. Vidi [Opseg: URL and Locale Filters](#scope-url-locale).
+- **Set the Display name** to something inviting - "Community Bot", your site mascot, or your brand name. The display name is what readers see attached to the welcome reply.
+- **Tick "Include page title, subtitle, description, and meta tags"** in [Context Options](#context-options). The greeter's replies become noticeably better when it can reference what the page is actually about.
+- **Consider locale restrictions** if you operate in multiple languages. A welcome reply in the wrong language is more jarring than a missed reply. See [Scope: URL and Locale Filters](#scope-url-locale).
 
-### Zašto odobrenja nisu potrebna
+### Why no approvals are needed
 
-Agent samo piše nove komentare i samo na jednokratni okidač. U najgorem slučaju: nezgrapan pozdrav. Nema destruktivne akcije koja zahteva kontrolu. Većina operatera pokreće ovog agenta bez ikakvih odobrenja kada probni rad (dry-run) izgleda u redu.
+The agent only writes new comments and only on a one-shot trigger. Worst case: an awkward greeting. There is no destructive action to gate. Most operators run this one with no approvals at all once dry-run looks clean.

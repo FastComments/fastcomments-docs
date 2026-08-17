@@ -1,4 +1,4 @@
-Registrujte dodatak u vašoj Eleventy konfiguraciji (`.eleventy.js` ili `eleventy.config.js`):
+Региструјте плугин у вашој Eleventy конфигурацији (`.eleventy.js` или `eleventy.config.js`):
 
 ```js
 const { fastcommentsPlugin } = require('fastcomments-11ty');
@@ -8,7 +8,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Ili sa ESM:
+Или са ESM:
 
 ```js
 import { fastcommentsPlugin } from 'fastcomments-11ty';
@@ -18,16 +18,16 @@ export default function(eleventyConfig) {
 }
 ```
 
-Zatim koristite shortcode-ove u vašim šablonima. U Nunjucks (`.njk`):
+Затим користите шорткодове у вашим шаблонима. У Nunjucks (`.njk`):
 
 ```njk
 {% fastcomments { tenantId: "demo" } %}
 ```
 
-U Liquid (`.liquid`):
+У Liquid (`.liquid`):
 
 ```liquid
 {% fastcomments tenantId: "demo" %}
 ```
 
-Zamenite `"demo"` svojim FastComments tenant ID-jem.
+Замените `"demo"` са вашим FastComments tenant ID-ом.

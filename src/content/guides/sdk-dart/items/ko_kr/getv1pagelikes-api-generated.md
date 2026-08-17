@@ -1,17 +1,17 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 
-## Response
+## 응답
 
-Returns: `GetV1PageLikes`
+반환: `GetV1PageLikes`
 
-## Example
+## 예시
 
-[inline-code-attrs-start title = 'getV1PageLikes 예시'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV1PageLikes 예제'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -26,5 +26,3 @@ try {
     print('Exception when calling PublicApi->getV1PageLikes: $e\n');
 }
 [inline-code-end]
-
----

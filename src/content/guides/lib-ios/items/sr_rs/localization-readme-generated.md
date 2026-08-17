@@ -1,5 +1,5 @@
 ---
-Prosledite kod lokaliteta (locale) u konfiguraciji da biste lokalizovali stringove koje obezbeđuje server:
+Проследите код локала у конфигурацији да бисте локализовали стрингове које обезбеђује сервер:
 
 ```swift
 let config = FastCommentsWidgetConfig(
@@ -9,6 +9,7 @@ let config = FastCommentsWidgetConfig(
 )
 ```
 
-Tekstovi korisničkog interfejsa na klijentskoj strani koriste lokalizaciju zasnovanu na iOS bundle-u.
+Стрингови корисничког интерфејса на клијентској страни користе iOS пакетно базирану локализацију.
+
 ---
 ---

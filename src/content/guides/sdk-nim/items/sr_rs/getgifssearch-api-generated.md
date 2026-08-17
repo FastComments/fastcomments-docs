@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Yes |  |
 | search | string | No |  |
 | options | GetGifsSearchOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
+Враћа: [`Option[GetGifsSearchResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_gifs_search_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getGifsSearch'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsSearch Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let opts = GetGifsSearchOptions(limit = 10, rating = "g")
 let (responseOpt, httpResponse) = client.getGifsSearch(tenantId = "my-tenant-123", search = "funny cats", options = opts)
 if responseOpt.isSome:
   let resp = responseOpt.get()
-  # koristite resp po potrebi
+  # користите одговор по потреби
 [inline-code-end]

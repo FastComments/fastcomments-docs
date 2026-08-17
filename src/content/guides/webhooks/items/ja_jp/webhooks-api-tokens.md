@@ -1,26 +1,25 @@
----
-FastComments webhook requests include multiple authentication mechanisms for security.
+FastComments の webhook リクエストは、セキュリティのために複数の認証メカニズムを含みます。
 
-## Headers Sent
+## 送信されるヘッダー
 
-| Header | Description |
+| ヘッダー | 説明 |
 |--------|-------------|
-| `token` | Your API Secret (for backwards compatibility) |
-| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256 signature of the payload |
+| `token` | API シークレット (下位互換性のため) |
+| `X-FastComments-Timestamp` | リクエストが署名されたときの Unix タイムスタンプ（秒） |
+| `X-FastComments-Signature` | ペイロードの HMAC-SHA256 署名 |
 
-## HMAC Signature Verification (Recommended)
+## HMAC 署名検証（推奨）
 
-We strongly recommend verifying the HMAC signature to ensure webhook payloads are authentic and haven't been tampered with.
+Webhook のペイロードが正当で改ざんされていないことを保証するために、HMAC 署名の検証を強く推奨します。
 
-**Signature Format:** `sha256=<hex-encoded-signature>`
+**署名形式:** `sha256=<hex-encoded-signature>`
 
-**How the signature is computed:**
-1. Concatenate: `timestamp + "." + JSON_payload_body`
-2. Compute HMAC-SHA256 using your API Secret as the key
-3. Hex-encode the result
+**署名の計算方法:**
+1. 連結: `timestamp + "." + JSON_payload_body`
+2. API シークレットをキーとして HMAC-SHA256 を計算
+3. 結果を十六進エンコード
 
-### Example Verification (Node.js)
+### 検証例 (Node.js)
 
 ```javascript
 const crypto = require('crypto');
@@ -33,13 +32,13 @@ function verifyWebhookSignature(req, apiSecret) {
         return false;
     }
 
-    // タイムスタンプが最近のものであることを検証する（5分以内）
+    // タイムスタンプが最近（5 分以内）かを確認
     const now = Math.floor(Date.now() / 1000);
     if (Math.abs(now - parseInt(timestamp, 10)) > 300) {
-        return false;  // リプレイ攻撃の防止
+        return false;  // リプレイ攻撃防止
     }
 
-    // 署名を検証する
+    // 署名を確認
     const payload = JSON.stringify(req.body);
     const expectedSignature = crypto
         .createHmac('sha256', apiSecret)
@@ -50,7 +49,7 @@ function verifyWebhookSignature(req, apiSecret) {
 }
 ```
 
-### Example Verification (Python)
+### 検証例 (Python)
 
 ```python
 import hmac
@@ -65,12 +64,12 @@ def verify_webhook_signature(headers, body, api_secret):
     if not timestamp or not signature:
         return False
 
-    # タイムスタンプが最近のものであることを検証する
+    # タイムスタンプが最近かを確認
     now = int(time.time())
     if abs(now - int(timestamp)) > 300:
         return False
 
-    # 署名を検証する
+    # 署名を確認
     payload = json.dumps(body, separators=(',', ':'))
     message = f"{timestamp}.{payload}"
     expected = hmac.new(
@@ -82,7 +81,7 @@ def verify_webhook_signature(headers, body, api_secret):
     return signature == f"sha256={expected}"
 ```
 
-### Example Verification (PHP)
+### 検証例 (PHP)
 
 ```php
 function verifyWebhookSignature($headers, $body, $apiSecret) {
@@ -93,13 +92,13 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
         return false;
     }
 
-    // タイムスタンプが最近のものであることを検証する（5分以内）
+    // タイムスタンプが最近（5 分以内）かを確認
     $now = time();
     if (abs($now - intval($timestamp)) > 300) {
         return false;
     }
 
-    // 署名を検証する
+    // 署名を確認
     $payload = json_encode($body, JSON_UNESCAPED_SLASHES);
     $message = $timestamp . '.' . $payload;
     $expectedSignature = 'sha256=' . hash_hmac('sha256', $message, $apiSecret);
@@ -108,8 +107,6 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 }
 ```
 
-## Legacy Authentication
+## レガシー認証
 
-The `token` header containing your API Secret is still sent for backwards compatibility. However, we recommend migrating to HMAC verification for improved security as it protects against replay attacks.
-
----
+`token` ヘッダーは下位互換性のために引き続き送信されますが、リプレイ攻撃から保護するために、セキュリティ向上の観点から HMAC 検証への移行を推奨します。

@@ -1,18 +1,19 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| options | const PostUnFlagCommentOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | const PostUnFlagCommentOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer postUnFlagComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t commentId = U("cmt-456789");
@@ -20,9 +21,11 @@ PostUnFlagCommentOptions opts;
 opts.notifyUser = boost::optional<bool>(true);
 api->postUnFlagComment(tenantId, commentId, opts)
     .then([](std::shared_ptr<APIEmptyResponse> resp) {
-        // obrada se može izvršiti ovde
+        // обрада може бити обављена овде
     })
     .then([](pplx::task<void> t) {
         try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
+
+---

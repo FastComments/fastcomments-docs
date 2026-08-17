@@ -1,5 +1,5 @@
-When users attempt to vote on a comment, and they are not logged in, they will be asked to provide their username and email.
+Когда пользователи пытаются проголосовать за комментарий и не вошли в систему, им будет предложено указать имя пользователя и электронную почту.
 
-We can remove this requirement, allowing anyone to vote on a comment without leaving any information.
+Мы можем убрать это требование, позволяя любому голосовать за комментарий, не оставляя никакой информации.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-votes']; selector = '.allow-anonymous-votes'; alt='Страница настройки виджета с включённой опцией анонимных голосов, поэтому для голосования не требуется имя или электронная почта'; title='Разрешить анонимные голоса' app-screenshot-end]

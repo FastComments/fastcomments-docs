@@ -1,17 +1,17 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | Yes |  |
-| updateComments | string | No |  |
+| tenantId | string | כן |  |
+| id | string | כן |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | כן |  |
+| updateComments | string | לא |  |
 
-## Response
+## תגובה
 
-Returns: [`ReplaceTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantUserResponse.ts)
+מחזיר: [`ReplaceTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantUserResponse.ts)
 
-## Example
+## דוגמה
 
 [inline-code-attrs-start title = 'replaceTenantUser דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

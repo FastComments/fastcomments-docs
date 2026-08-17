@@ -2,46 +2,46 @@ req
 tenantId
 urlId
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| page | integer | query | Ne |  |
-| direction | string | query | Ne |  |
-| sso | string | query | Ne |  |
-| skip | integer | query | Ne |  |
-| skipChildren | integer | query | Ne |  |
-| limit | integer | query | Ne |  |
-| limitChildren | integer | query | Ne |  |
-| countChildren | boolean | query | Ne |  |
-| fetchPageForCommentId | string | query | Ne |  |
-| includeConfig | boolean | query | Ne |  |
-| countAll | boolean | query | Ne |  |
-| includei10n | boolean | query | Ne |  |
-| locale | string | query | Ne |  |
-| modules | string | query | Ne |  |
-| isCrawler | boolean | query | Ne |  |
-| includeNotificationCount | boolean | query | Ne |  |
-| asTree | boolean | query | Ne |  |
-| maxTreeDepth | integer | query | Ne |  |
-| useFullTranslationIds | boolean | query | Ne |  |
-| parentId | string | query | Ne |  |
-| searchText | string | query | Ne |  |
-| hashTags | array | query | Ne |  |
-| userId | string | query | Ne |  |
-| customConfigStr | string | query | Ne |  |
-| afterCommentId | string | query | Ne |  |
-| beforeCommentId | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
+Враћа: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsResponseWithPresencePublicComment.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getCommentsPublic Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentsPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -49,8 +49,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite da koristite prilagođeni http klijent, prosledite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 

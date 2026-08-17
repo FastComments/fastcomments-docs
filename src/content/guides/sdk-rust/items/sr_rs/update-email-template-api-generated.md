@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| id | String | Yes |  |
-| update_email_template_body | models::UpdateEmailTemplateBody | Yes |  |
+| tenant_id | String | Да |  |
+| id | String | Да |  |
+| update_email_template_body | models::UpdateEmailTemplateBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
+Враћа: [`ApiEmptyResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_empty_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Пример update_email_template'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,3 +28,5 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

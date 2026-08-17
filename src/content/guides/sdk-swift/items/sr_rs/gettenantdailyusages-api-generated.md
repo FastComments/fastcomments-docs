@@ -10,20 +10,20 @@
 
 ## Response
 
-Returns: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
+Враћа: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetTenantDailyUsagesResponse.swift)
 
 ## Example
 
 [inline-code-attrs-start title = 'Primer getTenantDailyUsages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су и даље бета. За било који проблем, молимо пријавите га путем http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let yearNumber = 987 // Double |  (optional)
-let monthNumber = 987 // Double |  (optional)
-let dayNumber = 987 // Double |  (optional)
-let skip = 987 // Double |  (optional)
+let yearNumber = 987 // Double |  (опционо)
+let monthNumber = 987 // Double |  (опционо)
+let dayNumber = 987 // Double |  (опционо)
+let skip = 987 // Double |  (опционо)
 
 DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenantDailyUsagesOptions(yearNumber: yearNumber, monthNumber: monthNumber, dayNumber: dayNumber, skip: skip)) { (response, error) in
     guard error == nil else {
@@ -36,3 +36,5 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenan
     }
 }
 [inline-code-end]
+
+---

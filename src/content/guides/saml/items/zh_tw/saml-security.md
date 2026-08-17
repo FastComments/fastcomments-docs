@@ -1,249 +1,249 @@
-SAML implementation security is critical for protecting your organization's authentication infrastructure and user data.
+SAML 實作安全對於保護貴組織的驗證基礎設施與使用者資料至關重要。
 
-### SAML Security Fundamentals
+### SAML 安全基礎
 
-#### Digital Signatures
+#### 數位簽章
 
-**SAML Response Signing**:
-- All SAML responses must be digitally signed by the IdP
-- FastComments validates signatures using the IdP's public certificate
-- Prevents tampering with authentication assertions
-- Ensures responses originate from trusted IdP
+**SAML 回應簽署**：
+- 所有 SAML 回應必須由 IdP 以數位方式簽署
+- FastComments 使用 IdP 的公鑰憑證驗證簽章
+- 防止驗證斷言被竄改
+- 確保回應來自受信任的 IdP
 
-**Certificate Validation**:
-- Certificates are validated against configured IdP certificate
-- Certificate chain validation ensures trust hierarchy
-- Expired or invalid certificates are rejected
-- Certificate rotation should be planned and coordinated
+**憑證驗證**：
+- 憑證會根據已設定的 IdP 憑證進行驗證
+- 憑證鏈驗證確保信任層級
+- 已過期或無效的憑證會被拒絕
+- 憑證輪換應事先規劃與協調
 
-#### Assertion Security
+#### 斷言安全
 
-**Audience Restriction**:
-- SAML assertions include audience restriction (SP Entity ID)
-- Prevents assertion replay attacks against other service providers
-- FastComments validates audience matches tenant configuration
-- Reject assertions intended for other applications
+**受眾限制**：
+- SAML 斷言包含受眾限制（SP 實體 ID）
+- 防止斷言在其他服務提供者上重放攻擊
+- FastComments 驗證受眾是否符合租戶設定
+- 拒絕針對其他應用程式的斷言
 
-**Time-Based Validation**:
-- Assertions include time-based validity windows
-- `NotBefore` and `NotOnOrAfter` conditions are enforced
-- Prevents replay of old assertions
-- Clock skew tolerance is configurable
+**基於時間的驗證**：
+- 斷言包含基於時間的有效窗口
+- 強制執行 `NotBefore` 與 `NotOnOrAfter` 條件
+- 防止舊斷言被重放
+- 時鐘偏差容忍度可設定
 
-### Communication Security
+### 通訊安全
 
-#### Transport Layer Security
+#### 傳輸層安全
 
-**HTTPS Requirements**:
-- All SAML communication occurs over HTTPS
-- TLS 1.2 or higher is required
-- Certificate validation prevents man-in-the-middle attacks
-- Secure communication protects sensitive authentication data
+**HTTPS 要求**：
+- 所有 SAML 通訊皆透過 HTTPS 進行
+- 必須使用 TLS 1.2 或更高版本
+- 憑證驗證可防止中間人攻擊
+- 安全的通訊可保護敏感的驗證資料
 
-**Endpoint Security**:
-- SAML endpoints use secure, authenticated connections
-- IdP and SP endpoints must support modern TLS
-- Weak cipher suites are rejected
-- Certificate pinning may be implemented for additional security
+**端點安全**：
+- SAML 端點使用安全且已驗證的連線
+- IdP 與 SP 端點必須支援現代 TLS
+- 弱加密套件會被拒絕
+- 可實作憑證釘選以提升安全性
 
-#### Data Protection
+#### 資料保護
 
-**Sensitive Data Handling**:
-- SAML assertions may contain sensitive user information
-- Data is encrypted in transit and processed securely
-- Temporary storage is minimized and secured
-- User data retention follows privacy requirements
+**敏感資料處理**：
+- SAML 斷言可能包含敏感的使用者資訊
+- 資料在傳輸過程中加密，且以安全方式處理
+- 臨時儲存會被最小化且受到保護
+- 使用者資料保留遵循隱私需求
 
-**Assertion Encryption** *(Optional)*:
-- SAML assertions can be encrypted for additional security
-- Useful when assertions traverse untrusted networks
-- Requires private key configuration in FastComments
-- Most deployments rely on TLS encryption instead
+**斷言加密** *(可選)*：
+- SAML 斷言可加密以提升安全性
+- 在斷言經過不受信任的網路時特別有用
+- 需要在 FastComments 中配置私鑰
+- 大多數部署改以 TLS 加密為主
 
-### Authentication Security
+### 驗證安全
 
-#### Single Sign-On Benefits
+#### 單一登入的好處
 
-**Centralized Authentication**:
-- Reduces password-related security risks
-- Enables consistent security policies
-- Provides single point for access control
-- Facilitates compliance with security standards
+**集中式驗證**：
+- 降低與密碼相關的安全風險
+- 使安全政策保持一致
+- 提供單一的存取控制點
+- 促進符合安全標準
 
-**Session Management**:
-- SAML enables secure session establishment
-- Session timeouts can be centrally managed
-- Single logout capabilities (if supported by IdP)
-- Reduces credential exposure across applications
+**會話管理**：
+- SAML 可建立安全的會話
+- 會話逾時可集中管理
+- 單點登出功能（若 IdP 支援）
+- 減少憑證在各應用程式間的暴露
 
-#### Multi-Factor Authentication
+#### 多因素驗證
 
-**IdP MFA Integration**:
-- MFA requirements enforced by identity provider
-- FastComments inherits IdP security policies
-- Supports various MFA methods (SMS, authenticator apps, hardware tokens)
-- Centralized MFA policy management
+**IdP 多因素驗證整合**：
+- 多因素驗證需求由身分提供者強制執行
+- FastComments 繼承 IdP 的安全政策
+- 支援多種 MFA 方法（簡訊、驗證器應用程式、硬體令牌）
+- 集中式 MFA 政策管理
 
-### Access Control Security
+### 存取控制安全
 
-#### Role-Based Access Control
+#### 基於角色的存取控制
 
-**Principle of Least Privilege**:
-- Assign minimum necessary permissions to users
-- Use specific roles rather than overly broad permissions
-- Regular review of role assignments
-- Remove access when no longer needed
+**最小權限原則**：
+- 為使用者分配最低必要的權限
+- 使用具體角色而非過於寬泛的權限
+- 定期檢視角色分配
+- 當不再需要時移除存取權
 
-**Role Validation**:
-- SAML role attributes are validated and sanitized
-- Unknown roles are ignored (not rejected)
-- Role changes are applied immediately upon login
-- Audit trail maintained for role changes
+**角色驗證**：
+- SAML 角色屬性會被驗證與清理
+- 未知角色會被忽略（不會被拒絕）
+- 角色變更會在登入時立即套用
+-  - 會保留角色變更的稽核紀錄
 
-#### Administrative Access
+#### 管理員存取
 
-**Admin Role Protection**:
-- Administrative roles require explicit assignment
-- Monitor administrative access and activities
-- Implement approval workflows for sensitive role assignments
-- Regular auditing of administrative accounts
+**管理員角色保護**：
+- 管理員角色需明確指派
+- 監控管理員的存取與活動
+- 為敏感角色指派實作批准工作流程
+- 定期稽核管理員帳號
 
-### Identity Provider Security
+### 身分提供者安全
 
-#### IdP Configuration Security
+#### IdP 設定安全
 
-**Certificate Management**:
-- Use strong certificates (RSA-2048 or higher)
-- Implement proper certificate rotation procedures
-- Secure private key storage at IdP
-- Monitor certificate expiration dates
+**憑證管理**：
+- 使用強度高的憑證（RSA-2048 或更高）
+- 實作適當的憑證輪換程序
+- 在 IdP 端安全儲存私鑰
+- 監控憑證到期日
 
-**Access Control**:
-- Restrict who can modify SAML application configuration
-- Implement approval processes for configuration changes
-- Monitor configuration changes and access
-- Regular security reviews of IdP configuration
+**存取控制**：
+- 限制誰能修改 SAML 應用程式設定
+- 為設定變更實作批准流程
+- 監控設定變更與存取
+- 定期進行 IdP 設定的安全檢查
 
-#### Attribute Security
+#### 屬性安全
 
-**Sensitive Attribute Protection**:
-- Minimize sensitive data in SAML attributes
-- Use role identifiers rather than sensitive group names
-- Encrypt assertions containing sensitive information
-- Follow data minimization principles
+**敏感屬性保護**：
+- 在 SAML 屬性中盡量減少敏感資料
+- 使用角色識別碼而非敏感的群組名稱
+- 加密包含敏感資訊的斷言
+- 遵循資料最小化原則
 
-**Attribute Validation**:
-- Validate all incoming SAML attributes
-- Sanitize attribute values to prevent injection attacks
-- Implement attribute value restrictions where appropriate
-- Log suspicious or malformed attributes
+**屬性驗證**：
+- 驗證所有傳入的 SAML 屬性
+- 清理屬性值以防止注入攻擊
+- 在適當情況下實作屬性值限制
+- 記錄可疑或格式錯誤的屬性
 
-### Monitoring and Auditing
+### 監控與稽核
 
-#### Authentication Monitoring
+#### 驗證監控
 
-**Failed Authentication Tracking**:
-- Monitor failed SAML authentication attempts
-- Alert on unusual authentication patterns
-- Track certificate validation failures
-- Log configuration-related errors
+**失敗驗證追蹤**：
+- 監控失敗的 SAML 驗證嘗試
+- 異常驗證模式時發出警報
+- 追蹤憑證驗證失敗
+- 記錄與設定相關的錯誤
 
-**Success Monitoring**:
-- Monitor successful authentication rates
-- Track user role assignments and changes
-- Verify normal authentication flow timing
-- Monitor for unexpected user creation
+**成功監控**：
+- 監控成功驗證的比例
+- 追蹤使用者角色分配與變更
+- 驗證正常驗證流程的時間
+- 監控意外的使用者建立
 
-#### Security Event Logging
+#### 安全事件記錄
 
-**Audit Trail Maintenance**:
-- Log all SAML authentication events
-- Maintain records of configuration changes
-- Track administrative actions and access
-- Store logs securely with tamper protection
+**稽核紀錄維護**：
+- 記錄所有 SAML 驗證事件
+- 保留設定變更的紀錄
+- 追蹤管理員操作與存取
+- 以防篡改的方式安全儲存日誌
 
-**Alert Configuration**:
-- Set up alerts for security-relevant events
-- Monitor for certificate expiration
-- Alert on repeated authentication failures
-- Notify of unusual administrative activity
+**警報設定**：
+- 為安全相關事件設定警報
+- 監控憑證到期
+- 重複驗證失敗時發出警報
+- 通知異常的管理員活動
 
-### Compliance Considerations
+### 合規性考量
 
-#### Data Privacy
+#### 資料隱私
 
-**User Data Protection**:
-- Follow GDPR, CCPA, and relevant privacy regulations
-- Minimize personal data collection and processing
-- Provide user control over personal information
-- Implement data retention and deletion policies
+**使用者資料保護**：
+- 遵循 GDPR、CCPA 及相關隱私法規
+- 最小化個人資料的收集與處理
+- 提供使用者對個人資訊的控制權
+- 實作資料保留與刪除政策
 
-**Cross-Border Data Transfer**:
-- Consider data residency requirements
-- Implement appropriate safeguards for international transfers
-- Document data flows between IdP and FastComments
-- Ensure compliance with local privacy laws
+**跨境資料傳輸**：
+- 考慮資料所在地的要求
+- 為國際傳輸實作適當的防護措施
+- 記錄 IdP 與 FastComments 之間的資料流
+- 確保符合當地隱私法規
 
-#### Security Standards
+#### 安全標準
 
-**Industry Standards Compliance**:
-- Follow SAML 2.0 security best practices
-- Implement NIST authentication guidelines
-- Consider SOC 2 and ISO 27001 requirements
-- Regular security assessments and penetration testing
+**產業標準合規**：
+- 遵循 SAML 2.0 安全最佳實踐
+- 實作 NIST 驗證指南
+- 考慮 SOC 2 與 ISO 27001 的要求
+- 定期進行安全評估與滲透測試
 
-### Incident Response
+### 事件回應
 
-#### Security Incident Procedures
+#### 安全事件程序
 
-**Breach Response**:
-- Immediate containment of security incidents
-- Notification of affected parties
-- Investigation and root cause analysis
-- Implementation of corrective measures
+**違規回應**：
+- 立即遏止安全事件
+- 通知受影響的各方
+- 進行調查與根本原因分析
+- 實施矯正措施
 
-**Certificate Compromise**:
-- Immediate revocation of compromised certificates
-- Emergency certificate rotation procedures
-- User notification and re-authentication requirements
-- Security review and strengthening measures
+**憑證洩漏**：
+- 立即撤銷受洩漏的憑證
+- 緊急憑證輪換程序
+- 通知使用者並要求重新驗證
+- 進行安全檢討與加強措施
 
-#### Business Continuity
+#### 業務持續性
 
-**Backup Authentication Methods**:
-- Maintain alternative authentication methods
-- Document emergency access procedures
-- Regular testing of backup authentication
-- Clear communication during outages
+**備援驗證方法**：
+- 保持備用的驗證方法
+- 記錄緊急存取程序
+- 定期測試備援驗證
+- 停機期間提供清晰的溝通
 
-**Disaster Recovery**:
-- Document SAML configuration for disaster recovery
-- Maintain copies of certificates and configuration
-- Test recovery procedures regularly
-- Coordinate with IdP disaster recovery plans
+**災難復原**：
+- 記錄 SAML 設定以供災難復原使用
+- 保留憑證與設定的副本
+- 定期測試復原程序
+- 與 IdP 的災難復原計畫協調
 
-### Security Best Practices Summary
+### 安全最佳實踐摘要
 
-#### Implementation Security
+#### 實作安全
 
-1. **Use Strong Certificates**: RSA-2048 or higher with proper validation
-2. **Enforce HTTPS**: All communication over secure, encrypted channels
-3. **Validate All Input**: Sanitize and validate all SAML attributes
-4. **Monitor Continuously**: Implement comprehensive monitoring and alerting
-5. **Regular Reviews**: Conduct periodic security reviews and updates
+1. **使用強度憑證**：RSA-2048 或更高，並進行適當驗證
+2. **強制使用 HTTPS**：所有通訊皆透過安全、加密的通道
+3. **驗證所有輸入**：清理並驗證所有 SAML 屬性
+4. **持續監控**：實作完整的監控與警報機制
+5. **定期檢討**：執行定期的安全檢查與更新
 
-#### Operational Security
+#### 作業安全
 
-1. **Principle of Least Privilege**: Assign minimal necessary permissions
-2. **Regular Auditing**: Review access, roles, and configurations regularly
-3. **Documentation**: Maintain current security documentation
-4. **Training**: Ensure staff understand SAML security requirements
-5. **Incident Preparedness**: Have incident response procedures ready
+1. **最小權限原則**：分配最低必要的權限
+2. **定期稽核**：定期檢視存取、角色與設定
+3. **文件化**：維持最新的安全文件
+4. **訓練**：確保員工了解 SAML 安全需求
+5. **事件準備**：備妥事件回應程序
 
-#### Organizational Security
+#### 組織安全
 
-1. **Change Management**: Implement controlled change processes
-2. **Separation of Duties**: Divide administrative responsibilities
-3. **Regular Updates**: Keep all systems and certificates current
-4. **Vendor Management**: Monitor security of IdP and related services
-5. **Compliance Monitoring**: Ensure ongoing compliance with regulations
+1. **變更管理**：實作受控的變更流程
+2. **職責分離**：分割管理職責
+3. **定期更新**：保持所有系統與憑證為最新
+4. **供應商管理**：監控 IdP 與相關服務的安全性
+5. **合規監控**：確保持續符合規範

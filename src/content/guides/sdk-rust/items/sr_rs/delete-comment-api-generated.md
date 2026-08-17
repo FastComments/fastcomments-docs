@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| id | String | Da |  |
-| context_user_id | String | Ne |  |
-| is_live | bool | Ne |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Yes |  |
+| id | String | Yes |  |
+| context_user_id | String | No |  |
+| is_live | bool | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_comment_result.rs)
+Враћа: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/delete_comment_result.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'delete_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'delete_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn main() -> Result<(), Error> {
     let params = DeleteCommentParams {

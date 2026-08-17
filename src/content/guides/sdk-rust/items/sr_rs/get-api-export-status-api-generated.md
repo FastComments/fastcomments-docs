@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Da |  |
-| batch_job_id | String | Ne |  |
-| sso | String | Ne |  |
+| tenant_id | String | Yes |  |
+| batch_job_id | String | No |  |
+| sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_export_status_response.rs)
+Враћа: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_export_status_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_api_export_status'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_api_export_status Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = GetApiExportStatusParams {

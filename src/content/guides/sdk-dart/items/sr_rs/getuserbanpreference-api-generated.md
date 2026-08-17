@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| sso | string | query | Ne |  |
+| tenantId | string | query | Yes |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIModerateGetUserBanPreferencesResponse`
+Враћа: `APIModerateGetUserBanPreferencesResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getUserBanPreference Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBanPreference Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -26,5 +26,3 @@ try {
     print('Exception when calling ModerationApi->getUserBanPreference: $e\n');
 }
 [inline-code-end]
-
----

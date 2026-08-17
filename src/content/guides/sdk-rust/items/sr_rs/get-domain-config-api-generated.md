@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| domain | String | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| domain | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_config_response.rs)
+Враћа: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_domain_config_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_domain_config Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_domain_config'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -24,3 +24,5 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

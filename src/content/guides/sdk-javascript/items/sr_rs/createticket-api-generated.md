@@ -1,28 +1,28 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| createTicketBody | CreateTicketBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| userId | string | Да |  |
+| createTicketBody | CreateTicketBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
+Враћа: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createTicket Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTicket пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const userId: string = "user_98765";
 
 const ticketBody: CreateTicketBody = {
   subject: "Issue with payment processing"
-  // description?: string je opciona i izostavljena
+  // description?: string је опционо и изостављено
 };
 
 const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
-// Primer upotrebe opcionalnog polja iz odgovora
+// Пример коришћења опционо поље из одговора
 // console.log(response.ticket?.id);
 [inline-code-end]

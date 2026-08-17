@@ -1,17 +1,19 @@
-When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
+---
+當審核與檢視評論串時，能直接跳到特定串以取得審核時的上下文是很理想的。
 
-This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
-the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
+這表示使用者的流程會從「評論審核」頁面開始，然後必須從單一評論跳到
+包含該評論的頁面，等待該頁面載入，等待評論載入，然後再捲動到該評論。
 
-However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
+然而，FastComments 提供了更快的方式。在「審核評論」頁面中，每則評論的右下角都有一個「檢視評論」按鈕。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='審核清單中的單一評論，右下角有「View Comment」按鈕'; title='評論' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='審核清單中的單一評論，右下角有「檢視評論」按鈕'; title='一則評論' app-screenshot-end]
 
-If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
+如果此評論有回覆，按鈕文字會改為回覆數量，但點擊後執行的動作相同。
 
-This button will take you to the **Comment Thread Viewer**.
+此按鈕會將您帶到 **Comment Thread Viewer**。
 
-The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
-the comment is on, and scrolls to that comment.
+Comment Thread Viewer 是 FastComments 所託管的一個小型、快速載入的應用程式，會為該評論所在的頁面渲染評論串，並捲動至該評論。
 
-This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
+這讓審核者能快速取得所需的上下文，而不必等待另一個頁面載入。
+
+---

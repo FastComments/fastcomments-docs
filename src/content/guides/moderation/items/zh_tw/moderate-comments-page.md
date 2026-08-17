@@ -1,13 +1,14 @@
-The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
+---
+大多數審核發生的地方是「評論審核」頁面。例如，以下是我們目前示範帳號的螢幕截圖：
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='完整的示範帳戶評論審核頁面，顯示篩選條件、搜尋以及每頁三則評論'; title='評論審核頁面' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='示範帳號的完整評論審核頁面，顯示篩選條件、搜尋以及每頁三則評論'; title='評論審核頁面' app-screenshot-end]
 
-We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
+我們將每頁的數量設定為三，以使此螢幕截圖尺寸適中。實際上，預設情況下每頁會顯示 50 則評論。
 
-The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
+審核頁面也支援[鍵盤快捷鍵](#keyboard-shortcuts) 以在評論之間導航並執行操作，無需使用滑鼠。按下審核頁面的 **?** 鍵即可查看所有可用的快捷鍵。
 
-The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
+此頁面亦為 **即時** — 當有符合您目前篩選條件的新評論到達時，頁面頂部會顯示一個橫幅提醒您。詳情請參閱[即時審核](#comment-actions-live)。
 
-Let's go into the features shown here.
+讓我們深入了解此處顯示的功能。
 
 ---

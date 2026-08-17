@@ -1,24 +1,24 @@
-#### Open Developer Keys in Canvas
+#### Отворете Developer Keys в Canvas
 
-Log in to Canvas as an administrator. Go to **Admin** (in the left sidebar) > select your account > **Developer Keys**.
+Влезте в Canvas като администратор. Отидете на **Admin** (в левия страничен панел) > изберете вашия акаунт > **Developer Keys**.
 
-#### Create an LTI Developer Key
+#### Създайте LTI Developer Key
 
-Click **+ Developer Key** and select **LTI Key**.
+Кликнете **+ Developer Key** и изберете **LTI Key**.
 
-In the configuration form:
+В конфигурационната форма:
 
-1. In the **Redirect URIs** field (left side), paste the **Launch URL** from the FastComments setup page.
-2. On the right, set **Method** to **Enter URL**.
-3. Paste the **Configuration URL** you copied from FastComments into the **JSON URL** field.
-4. Canvas will load the LTI configuration automatically.
-5. Give the key a name (e.g. "FastComments").
-6. Click **Save**.
+1. В полето **Redirect URIs** (отляво) поставете **Launch URL** от страницата за настройка на FastComments.
+2. Отдясно задайте **Method** на **Enter URL**.
+3. Поставете **Configuration URL**, който копирахте от FastComments, в полето **JSON URL**.
+4. Canvas ще зареди LTI конфигурацията автоматично.
+5. Дайте на ключа име (например "FastComments").
+6. Кликнете **Save**.
 
-#### Enable the Developer Key
+#### Активирайте Developer Key
 
-After saving, the new key will appear in the Developer Keys table with its **State** set to **OFF**. Click the toggle to set it to **ON**. Canvas may prompt you to confirm — click **Allow** to enable the key.
+След запазване новият ключ ще се появи в таблицата Developer Keys със **State** зададено на **OFF**. Кликнете превключвателя, за да го зададете на **ON**. Canvas може да ви подкани за потвърждение — кликнете **Allow**, за да активирате ключа.
 
-#### Copy the Client ID
+#### Копирайте Client ID
 
-The Developer Keys table shows a numeric **Client ID** in the Details column (e.g. `17000000000042`). Copy this number - you will need it in the next step.
+Таблицата Developer Keys показва числов **Client ID** в колоната Details (например `17000000000042`). Копирайте това число – ще ви е необходимо в следващата стъпка.

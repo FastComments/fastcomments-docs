@@ -1,11 +1,11 @@
-req
+захтев
 tenantId
 urlId
 
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | url_id | String | Yes |  |
 | page | i32 | No |  |
@@ -35,13 +35,13 @@ urlId
 | after_comment_id | String | No |  |
 | before_comment_id | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetCommentsResponseWithPresencePublicComment`
+Враћа: `GetCommentsResponseWithPresencePublicComment`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_comments_public Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_comments_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_comments() -> Result<(), Error> {
     let params = GetCommentsPublicParams {

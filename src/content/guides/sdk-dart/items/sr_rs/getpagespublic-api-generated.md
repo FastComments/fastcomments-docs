@@ -1,35 +1,35 @@
-Izlistava stranice za tenant. Koristi se od strane FChat desktop klijenta za popunjavanje liste soba.  
-Zahteva da `enableFChat` bude postavljen na true u razrešenom prilagođenom konfiguraciji za svaku stranicu.  
-Stranice koje zahtevaju SSO se filtriraju u odnosu na grupni pristup korisnika koji zahteva.
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## Parameters
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
-| cursor | string | query | No | Neprozirni kursor paginacije vraćen kao `nextCursor` iz prethodnog zahteva. Povezan je sa istim `sortBy`. |
-| limit | integer | query | No | 1..200, podrazumevano 50 |
-| q | string | query | No | Opcioni filter prefiksa naslova neosetljiv na veličinu slova. |
-| sortBy | string | query | No | Redosled sortiranja. `updatedAt` (podrazumevano, najnovije prvo), `commentCount` (najviše komentara prvo), ili `title` (abecedno). |
-| hasComments | boolean | query | No | Ako je true, vraća samo stranice koje imaju bar jedan komentar. |
+| cursor | string | query | No | Непрозирни курсор за пагинацију који се враћа као `nextCursor` из претходног захтева. Везан за исти `sortBy`. |
+| limit | integer | query | No | 1..200, подразумевано 50 |
+| q | string | query | No | Опционални филтер префикса наслова без разликовања величине слова. |
+| sortBy | string | query | No | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (абецедно). |
+| hasComments | boolean | query | No | Ако је истинито, враћа само странице са бар једним коментаром. |
 
 ## Response
 
-Vraća: `GetPublicPagesResponse`
+Враћа: `GetPublicPagesResponse`
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getPagesPublic Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPagesPublic'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final cursor = cursor_example; // String | Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`.
-final limit = 56; // int | 1..200, default 50
-final q = q_example; // String | Optional case-insensitive title prefix filter.
-final sortBy = ; // PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical).
-final hasComments = true; // bool | If true, only return pages with at least one comment.
+final cursor = cursor_example; // String | Непрозирни курсор за пагинацију који се враћа као `nextCursor` из претходног захтева. Везан за исти `sortBy`.
+final limit = 56; // int | 1..200, подразумевано 50
+final q = q_example; // String | Опционални филтер префикса наслова без разликовања величине слова.
+final sortBy = ; // PagesSortBy | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (абецедно).
+final hasComments = true; // bool | Ако је истинито, враћа само странице са бар једним коментаром.
 
 try {
     final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));

@@ -1,24 +1,24 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
-| commentIds | string | query | Yes | Lista odvojenih zarezom ID-ova komentara. |
+| commentIds | string | query | Yes | Листа ID‑ја коментара раздвојена запетама. |
 | sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CheckBlockedCommentsResponse`
+Враћа: `CheckBlockedCommentsResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer checkedCommentsForBlocked'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final commentIds = commentIds_example; // String | Lista odvojenih zarezom ID-ova komentara.
+final commentIds = commentIds_example; // String | Листа ID‑ја коментара раздвојена запетама.
 final sso = sso_example; // String | 
 
 try {
@@ -28,3 +28,5 @@ try {
     print('Exception when calling PublicApi->checkedCommentsForBlocked: $e\n');
 }
 [inline-code-end]
+
+---

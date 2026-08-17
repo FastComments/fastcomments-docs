@@ -1,26 +1,27 @@
-## Parametri
+---
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | commentId | string | Yes |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Yes |  |
 | broadcastId | string | No |  |
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
+Враћа: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postAdjustCommentVotes Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postAdjustCommentVotes пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const commentId: string = "cmt_9f8b7a6d";
 
 const adjustParams: AdjustCommentVotesParams = {
   voteDelta: 1,
-  // additional fields as required by AdjustCommentVotesParams
+  // додатна поља према потребама AdjustCommentVotesParams
 };
 
 const broadcastId: string = "brd_20230915";
@@ -35,3 +36,5 @@ const result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(
   sso
 );
 [inline-code-end]
+
+---

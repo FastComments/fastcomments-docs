@@ -1,17 +1,17 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetSearchSitesOptions& | Yes |  |
+| tenantId | string | Да |  |
+| options | const GetSearchSitesOptions& | Да |  |
 
-## Response
+## Отговор
 
-Returns: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
+Връща: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getSearchSites Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getSearchSites'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 GetSearchSitesOptions options;
@@ -24,12 +24,10 @@ api->getSearchSites(tenantId, options)
            auto response = t.get();
            auto respPtr = std::make_shared<ModerationSiteSearchResponse>(*response);
            for (const auto& site : respPtr->sites) {
-               // обработка
+               // логика за обработка
            }
        } catch (const std::exception&) {
            // обработка на грешки
        }
    });
 [inline-code-end]
-
----

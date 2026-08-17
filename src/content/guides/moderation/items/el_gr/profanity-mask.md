@@ -1,10 +1,12 @@
-By default, FastComments comes with a word blacklist of ~450 phrases and words.
+---
+Από προεπιλογή, το FastComments περιλαμβάνει μια λίστα αποκλεισμού λέξεων με περίπου 450 φράσεις και λέξεις.
 
-If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
+Εάν κείμενο από τη λίστα αποκλεισμού λέξεων βρεθεί σε ένα νέο σχόλιο, το κείμενο αυτό θα αντικατασταθεί με αστερίσκους (***).
 
-The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or  
-by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">here</a>.
+Η σελίδα για την προσαρμογή της λίστας αποκλεισμού μπορεί να βρεθεί μέσω Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, ή πηγαίνοντας απευθείας <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">εδώ</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Επεξεργαστής μαύρης λίστας λέξεων όπου μπορούν να προστεθούν ή να αφαιρεθούν οι προεπιλεγμένες αποκλεισμένες λέξεις και φράσεις'; title='Μαύρη Λίστα Λέξεων Σχολίων' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Επεξεργαστής λίστας αποκλεισμού λέξεων όπου μπορούν να προστεθούν ή να αφαιρεθούν οι προεπιλεγμένες αποκλεισμένες λέξεις και φράσεις'; title='Λίστα Αποκλεισμού Λέξεων Σχολίων' app-screenshot-end]
 
-Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a> page.
+Επιπλέον, μπορείτε να απενεργοποιήσετε την ανίχνευση βωμολοχίας στη <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a> σελίδα.
+
+---

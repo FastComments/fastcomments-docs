@@ -1,16 +1,16 @@
 ### Using Authenticated APIs (DefaultApi)
 
-**Important:** You must set your API key on the Configuration before making authenticated requests. If you don't, requests will fail with a 401 error.
+**Important:** Трябва да зададете вашия API ключ в Configuration преди да правите удостоверени заявки. Ако не го направите, заявките ще се провалят с грешка 401.
 
 ```python
 from client import ApiClient, Configuration, DefaultApi
 from client.models import CreateAPISSOUserData
 
-# Създаване и конфигуриране на API клиента
+# Create and configure the API client
 config = Configuration()
 config.host = "https://fastcomments.com"
 
-# ЗАДЪЛЖИТЕЛНО: Задайте вашия API ключ (вземете го от таблото на FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key = {"api_key": "YOUR_API_KEY_HERE"}
 
 # Create the API instance with the configured client
@@ -19,7 +19,7 @@ api = DefaultApi(api_client)
 
 # Now you can make authenticated API calls
 try:
-    # Пример: Добавяне на SSO потребител
+    # Example: Add an SSO user
     user_data = CreateAPISSOUserData(
         id="user-123",
         email="user@example.com",
@@ -31,9 +31,9 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-    # Чести грешки:
-    # - 401: API ключът липсва или е невалиден
-    # - 400: Валидирането на заявката е неуспешно
+    # Common errors:
+    # - 401: API key is missing or invalid
+    # - 400: Request validation failed
 ```
 
 ### Using Public APIs (PublicApi)
@@ -71,7 +71,7 @@ api_client = ApiClient(configuration=config)
 moderation_api = ModerationApi(api_client)
 
 try:
-    # Брой на коментарите, чакащи модерация
+    # Count the comments awaiting moderation
     response = moderation_api.get_count(GetCountOptions(sso="SSO_TOKEN"))
     print(response)
 except Exception as e:
@@ -85,7 +85,7 @@ The SDK includes utilities for generating secure SSO tokens:
 ```python
 from sso import FastCommentsSSO, SecureSSOUserData
 
-# Създаване на данни за потребителя (id, email и username са задължителни)
+# Create user data (id, email, and username are required)
 user_data = SecureSSOUserData(
     id="user-123",
     email="user@example.com",
@@ -93,13 +93,13 @@ user_data = SecureSSOUserData(
     avatar="https://example.com/avatar.jpg"
 )
 
-# Подпишете го с вашия API таен ключ (HMAC-SHA256)
+# Sign it with your API secret (HMAC-SHA256)
 sso = FastCommentsSSO.new_secure("YOUR_API_SECRET", user_data)
 
-# Генерирайте SSO токена, който да предадете на уиджета или API заявка
+# Generate the SSO token to pass to the widget or an API call
 sso_token = sso.create_token()
 
-# Използвайте този токен във вашия фронтенд или го предайте на API заявки
+# Use this token in your frontend or pass to API calls
 print(f"SSO Token: {sso_token}")
 ```
 
@@ -139,15 +139,15 @@ result = subscriber.subscribe_to_changes(
     tenant_id_ws="YOUR_TENANT_ID",
     url_id="page-url-id",
     url_id_ws="page-url-id",
-    user_id_ws="a-unique-presence-id",  # напр. UUID за тази сесия
+    user_id_ws="a-unique-presence-id",  # e.g. a UUID for this session
     handle_live_event=handle_live_event,
     on_connection_status_change=lambda connected, last_event_time: print(
         f"connected={connected}"
     ),
-    region=None,  # задайте "eu" за регион EU
+    region=None,  # set to "eu" for the EU region
 )
 
-# ...по-късно, когато вече не искате актуализации:
+# ...later, when you no longer want updates:
 result.close()
 ```
 
@@ -155,9 +155,9 @@ The subscriber runs the connection on a background daemon thread, transparently 
 
 ### Common Issues
 
-1. **401 "missing-api-key" error**: Make sure you set `config.api_key = {"api_key": "YOUR_KEY"}` before creating the DefaultApi instance.
-2. **Wrong API class**: Use `DefaultApi` for server-side authenticated requests, `PublicApi` for client-side/public requests, and `ModerationApi` for moderator dashboard requests.
-3. **Import errors**: Make sure you're importing from the correct module:
+1. **401 "missing-api-key" error**: Уверете се, че сте задали `config.api_key = {"api_key": "YOUR_KEY"}` преди да създадете инстанцията DefaultApi.
+2. **Wrong API class**: Използвайте `DefaultApi` за сървърни удостоверени заявки, `PublicApi` за клиентски/публични заявки и `ModerationApi` за заявки към таблото за модератори.
+3. **Import errors**: Уверете се, че импортирате от правилния модул:
    - API client: `from client import ...`
    - SSO utilities: `from sso import ...`
    - Live subscriptions: `from pubsub import ...` (needs the `pubsub` extra)

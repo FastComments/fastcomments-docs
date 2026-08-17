@@ -1,15 +1,15 @@
-## Parameters
+## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| skip | double | No |  |
+| tenantId | string | 是 |  |
+| skip | double | 否 |  |
 
-## Response
+## 回應
 
-Returns: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplatesResponse.h)
+返回：[`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplatesResponse.h)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getEmailTemplates 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

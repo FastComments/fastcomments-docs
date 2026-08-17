@@ -1,8 +1,8 @@
-All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+Све API методе у овом SDK‑у враћају торке `(Option[ResponseType], Response)`. Први елемент садржи парсиран одговор ако је успео, а други елемент је сирови HTTP одговор.
 
-Obavezni parametri i telo zahteva se prosleđuju pozicioni. Preostali opcioni parametri se skupljaju u jedan objekat `Api<Operation>Options`, koji je poslednji argument. Operacije bez opcionalnih parametara ne uzimaju objekat opcija.
+Обавезни параметри и тело захтева се прослеђују позиционално. Преостали опциона параметри се прикупљају у један објекат `Api<Operation>Options`, који је последњи аргумент. Операције без опциона параметара не узимају објекат опција.
 
-### Primer: Dohvatanje komentara
+### Пример: Прибављање коментара
 
 ```nim
 import httpclient

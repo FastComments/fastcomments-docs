@@ -1,19 +1,18 @@
----
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
+| tenantId | string | query | Да |  |
 
-## Odgovor
+## одговор
 
-Vraća: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPagesAPIResponse.java)
+Враћа: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPagesAPIResponse.java)
 
-## Primer
+## пример
 
-[inline-code-attrs-start title = 'getPages Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPages Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,10 +25,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriši autorizaciju API ključa: api_key
+    // Конфигуриши ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Otkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. "Token" (podrazumevano null)
+    // Одкоментариши следећу линију да подесиш префикс за API кључ, нпр. "Token" (подразумевано је null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -38,7 +37,7 @@ public class Example {
       GetPagesAPIResponse result = apiInstance.getPages(tenantId)
             .execute();
       System.out.println(result);
-    } catch (ApiException e) {
+    } catch (ApiException e) e) {
       System.err.println("Exception when calling DefaultApi#getPages");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -48,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

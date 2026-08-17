@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
 | tenant_id | String | Yes |  |
 | comment_id | String | Yes |  |
 | ban_email | bool | No |  |
@@ -14,13 +14,13 @@
 | ban_reason | String | No |  |
 | sso | String | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/ban_user_from_comment_result.rs)
+Враћа: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/ban_user_from_comment_result.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_ban_user_from_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_ban_user_from_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = PostBanUserFromCommentParams {

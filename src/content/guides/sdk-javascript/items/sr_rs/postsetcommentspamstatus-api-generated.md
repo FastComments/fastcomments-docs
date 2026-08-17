@@ -1,7 +1,7 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | commentId | string | Yes |  |
 | spam | boolean | No |  |
 | permNotSpam | boolean | No |  |
@@ -9,21 +9,21 @@
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`PostSetCommentSpamStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentSpamStatusResponse.ts)
+Враћа: [`PostSetCommentSpamStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentSpamStatusResponse.ts)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'postSetCommentSpamStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postSetCommentSpamStatus Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoSpamStatus(): Promise<void> {
   const commentId: string = "cmt_5f2a1b3c4d6e7f8g9h0i";
 
-  // Samo obavezni parametar
+  // Само потребан параметар
   const resultSimple: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(commentId, true);
 
-  // Svi opcioni parametri su prosleđeni
+  // Сви опциони параметри су прослеђени
   const resultFull: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(
     commentId,
     false,

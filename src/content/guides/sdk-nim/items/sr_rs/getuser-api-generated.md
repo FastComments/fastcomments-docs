@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
+Враћа: [`Option[GetUserResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_user_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getUser Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUser'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (userOpt, httpResp) = client.getUser(tenantId = "my-tenant-123", id = "user-456")
 if userOpt.isSome:
@@ -20,3 +20,5 @@ if userOpt.isSome:
 else:
   echo "User not found"
 [inline-code-end]
+
+---

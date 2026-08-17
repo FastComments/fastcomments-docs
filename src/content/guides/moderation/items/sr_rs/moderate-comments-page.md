@@ -9,5 +9,3 @@ The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for 
 The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
 
 Let's go into the features shown here.
-
----

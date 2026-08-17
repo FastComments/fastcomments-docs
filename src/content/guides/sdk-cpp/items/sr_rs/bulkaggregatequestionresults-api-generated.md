@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | bulkAggregateQuestionResultsRequest | BulkAggregateQuestionResultsRequest | Yes |  |
 | forceRecalculate | bool | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
+Враћа: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'bulkAggregateQuestionResults Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

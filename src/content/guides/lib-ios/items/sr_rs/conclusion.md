@@ -1,10 +1,12 @@
-## Trebate pomoć?
+## Потребна помоћ?
 
-Ako naiđete na bilo kakve probleme ili imate pitanja u vezi iOS biblioteke, molimo:
+Ако наиђете на било какве проблеме или имате питања у вези са iOS библиотеком, молимо вас:
 
-- [Otvorite issue na GitHubu](https://github.com/FastComments/fastcomments-ios/issues)
-- [Kontaktirajte FastComments podršku](https://fastcomments.com/auth/my-account/help)
+- [Отворите проблем на GitHub](https://github.com/FastComments/fastcomments-ios/issues)
+- [Контактирајте FastComments подршку](https://fastcomments.com/auth/my-account/help)
 
-## Doprinos
+## Допринес
 
-Doprinosi su dobrodošli! Posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-ios) za smernice o doprinosu.
+Доприноси су добродошли! Молимо вас да посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-ios) за смернице за допринос.
+
+---

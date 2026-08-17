@@ -1,17 +1,18 @@
-## Parametri
+---
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| url_id | String | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetV2PageReacts`
+Враћа: `GetV2PageReacts`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_v2_page_reacts Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer get_v2_page_reacts'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn run() -> Result<(), Error> {
     let params = GetV2PageReactsParams {
@@ -24,3 +25,5 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

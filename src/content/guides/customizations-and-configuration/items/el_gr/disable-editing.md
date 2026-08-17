@@ -1,10 +1,13 @@
-By default, FastComments will allow users to edit their comments.
+---
+Από προεπιλογή, το FastComments θα επιτρέπει στους χρήστες να επεξεργάζονται τα σχόλιά τους.
 
-However, it is possible to prevent this.
+Ωστόσο, είναι δυνατόν να αποτραπεί αυτό.
 
-In the widget customization page, see the "Disable Editing" option.
+Στη σελίδα προσαρμογής widget, δείτε την επιλογή "Απενεργοποίηση Επεξεργασίας".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Επιλογή απενεργοποίησης επεξεργασίας στη σελίδα προσαρμογής widget, αποτρέποντας τους σχολιαστές από το να επεξεργάζονται τα σχόλιά τους'; title='Απενεργοποίηση Επεξεργασίας Σχολίου' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Επιλογή Απενεργοποίησης Επεξεργασίας στη σελίδα προσαρμογής widget, αποτρέποντας τους σχολιαστές από το να επεξεργάζονται τα σχόλιά τους'; title='Απενεργοποίηση Επεξεργασίας Σχολίου' app-screenshot-end]
 
-- This only impacts regular Commenters and not moderators or admins, who will still be able to edit.
-- This will also impact API integrations for when `contextUserId` is passed.
+- Αυτό επηρεάζει μόνο τους κανονικούς Σχολιαστές και όχι τους συντονιστές ή διαχειριστές, οι οποίοι θα μπορούν ακόμη να επεξεργάζονται.
+- Αυτό θα επηρεάσει επίσης τις ενσωματώσεις API όταν περνιέται το `contextUserId`.
+
+---

@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | urlId | string | Yes |  |
@@ -9,13 +9,13 @@
 | voteBodyParams | VoteBodyParams | Yes |  |
 | options | const VoteCommentOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteResponse.h)
+Враћа: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer voteComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'voteComment Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto commentId = utility::conversions::to_string_t("comment-7890");
@@ -33,7 +33,7 @@ api->voteComment(tenantId, commentId, urlId, broadcastId, voteParams, options)
    .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {
        try {
            auto response = t.get();
-           // handle response
+           // обради одговор
        } catch (const std::exception&) {
        }
    });

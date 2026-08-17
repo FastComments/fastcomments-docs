@@ -1,13 +1,14 @@
-Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations.
-Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+Aggregates documents by grouping them (if groupBy is provided) and applying multiple operations. Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
+
+ドキュメントをグループ化（groupBy が提供されている場合）し、複数の操作を適用して集計します。sum、countDistinct、avg などのさまざまな操作がサポートされています。
 
 ## Parameters
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| aggregationRequest | AggregationRequest | No |  |
-| options | AggregateOptions | No |  |
+| tenantId | string | はい |  |
+| aggregationRequest | AggregationRequest | いいえ |  |
+| options | AggregateOptions | いいえ |  |
 
 ## Response
 
@@ -23,5 +24,3 @@ if aggResp.isSome:
   echo response
 echo httpResp
 [inline-code-end]
-
----

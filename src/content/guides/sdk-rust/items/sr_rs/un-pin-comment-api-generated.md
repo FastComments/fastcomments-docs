@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | comment_id | String | Yes |  |
 | broadcast_id | String | Yes |  |
 | sso | String | No |  |
 
-## Response
+## Одговор
 
-Vraća: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_comment_pin_status_response.rs)
+Враћа: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/change_comment_pin_status_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'un_pin_comment Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'un_pin_comment Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn unpin_example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = UnPinCommentParams {

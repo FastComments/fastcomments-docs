@@ -1,15 +1,15 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Kada korisnik prvi put komentariše pomoću FastComments, pokušaćemo da preuzmemo njegov avatar sa <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>.
+Када корисник први пут коментарише помоћу FastComments, покушаћемо да преузмемо његову аватару са <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>.
 
-Međutim, ako ne pronađemo avatar, ili korisnik nikada ne postavi jedan u svom nalogu, prikazaćemo statičku podrazumevanu sliku avatara.
+Међутим, ако не пронађемо аватару, или корисник никада не постави једну у свом налогу, приказаћемо статичку подразумевану слику аватаре.
 
-Da biste naveli svoju statičku sliku avatara, možete koristiti podešavanje *defaultAvatarSrc*.
+Да бисте навели сопствену статичку слику аватаре, можете користити подешавање *defaultAvatarSrc*.
 
-[code-example-start config = {defaultAvatarSrc: "https://example.com/some-image.png"}; linesToHighlight = [6]; title = 'Zameni podrazumevani avatar'; code-example-end]
+[code-example-start config = {defaultAvatarSrc: "https://example.com/some-image.png"}; linesToHighlight = [6]; title = 'Замените подразумевану аватару'; code-example-end]
 
-Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, pogledajte odeljak „Default Avatar“.
+Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте одељак "Default Avatar".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; alt='Odeljak podrazumevanog avatara na stranici za prilagođavanje widgeta, gde postavljate URL rezervne slike avatara'; title='Prilagođavanje podrazumevanog avatara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-avatar'; alt='Одељак „Default Avatar“ на страници за прилагођавање виџета, где постављате URL резервне слике аватаре'; title='Прилагођавање подразумеване аватаре' app-screenshot-end]
 
-Napomena da definisanje avatara za određenog korisnika, kao što je SSO, je pokriveno u svom odeljku.
+Имајте на уму да је дефинисање аватаре за конкретног корисника, као што је случај са SSO, обрађено у посебном одељку.

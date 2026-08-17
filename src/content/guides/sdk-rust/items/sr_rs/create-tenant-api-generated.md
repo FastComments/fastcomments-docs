@@ -1,15 +1,15 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| create_tenant_body | models::CreateTenantBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| create_tenant_body | models::CreateTenantBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_response.rs)
+Returns: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/create_tenant_response.rs)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'create_tenant Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

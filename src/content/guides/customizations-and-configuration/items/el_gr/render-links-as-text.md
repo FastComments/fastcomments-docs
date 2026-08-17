@@ -1,8 +1,11 @@
-By default, FastComments will render links like this: [https://exmaple.com](https://exmaple.com) - where the link URL becomes a clickable  
+---
+Από προεπιλογή, το FastComments θα αποδίδει συνδέσμους όπως αυτός: [https://exmaple.com](https://exmaple.com) - όπου το URL του συνδέσμου γίνεται ένα κλικ‑δυνατό  
 HTML anchor tag.
 
-Some sites may want to disable this, for example to discourage scammers. We provide this by setting the `Comment HTML Rendering Option` to `Links as Text`.
+Ορισμένοι ιστότοποι μπορεί να θέλουν να απενεργοποιήσουν αυτό, για παράδειγμα για να αποτρέψουν απατεώνες. Παρέχουμε αυτό ορίζοντας την `Comment HTML Rendering Option` σε `Links as Text`.
 
-This can be customized without code, on the widget customization page, for an entire domain, or page:
+Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής widget, για ολόκληρο το domain ή τη σελίδα:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='Η επιλογή Comment HTML Rendering Option ορίστηκε σε Links as Text κάτω από τις Προηγμένες Επιλογές στην προσαρμογή widget'; title='Απόδοση συνδέσμων ως κείμενο' app-screenshot-end]
+
+---

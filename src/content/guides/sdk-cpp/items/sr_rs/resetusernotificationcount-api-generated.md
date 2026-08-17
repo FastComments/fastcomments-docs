@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
+Враћа: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'resetUserNotificationCount Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotificationCount Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto resetTask = api->resetUserNotificationCount(
     U("my-tenant-123"),
@@ -19,3 +19,5 @@ auto resetTask = api->resetUserNotificationCount(
 ).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
 });
 [inline-code-end]
+
+---

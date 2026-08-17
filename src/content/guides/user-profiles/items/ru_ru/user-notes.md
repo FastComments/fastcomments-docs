@@ -1,170 +1,170 @@
-User Notes allow you to keep private, personal annotations about other FastComments users. These notes are completely private and only visible to you.
+User Notes позволяют вам хранить личные, приватные аннотации о других пользователях FastComments. Эти заметки полностью приватны и видны только вам.
 
-### What Are User Notes?
+### Что такое User Notes?
 
-User Notes are:
-- **Private annotations** you create about other users
-- **Visible only to you** - the user you're writing about cannot see them
-- **Persistent** - saved and accessible whenever you view that user's profile
-- **Helpful for remembering** context, interactions, or important details about users
+User Notes представляют собой:
+- **Приватные аннотации**, которые вы создаёте о других пользователях
+- **Видимые только вам** — пользователь, о котором вы пишете, не может их увидеть
+- **Постоянные** — сохраняются и доступны каждый раз, когда вы просматриваете профиль этого пользователя
+- **Полезные для запоминания** контекста, взаимодействий или важных деталей о пользователях
 
-### Why Use User Notes?
+### Зачем использовать User Notes?
 
-User Notes are useful for:
+User Notes полезны для:
 
-**Moderators:**
-- Track history of interactions with specific users
-- Note warning patterns or behavioral observations
-- Remember context for moderation decisions
-- Document why certain actions were taken
+**Модераторов:**
+- Отслеживание истории взаимодействий с конкретными пользователями
+- Запись шаблонов предупреждений или наблюдений за поведением
+- Запоминание контекста для решений по модерации
+- Документирование причин принятия определённых действий
 
-**Community Managers:**
-- Remember valuable contributors and their expertise
-- Note users who might be good candidates for special roles
-- Track follow-ups needed with community members
+**Менеджеров сообщества:**
+- Запоминание ценных участников и их экспертизы
+- Отметка пользователей, которые могут стать кандидатами на специальные роли
+- Отслеживание последующих действий, необходимых с членами сообщества
 
-**Regular Users:**
-- Remember how you know someone across different communities
-- Note topics you've discussed with specific users
-- Keep track of helpful contributors in your areas of interest
-- Remember personal details shared in conversations (within appropriate bounds)
+**Обычных пользователей:**
+- Запоминание, как вы знаете кого‑то в разных сообществах
+- Запись тем, которые вы обсуждали с конкретными пользователями
+- Ведение списка полезных участников в ваших областях интересов
+- Запоминание личных деталей, поделившихся в разговорах (в рамках допустимого)
 
-### Creating a User Note
+### Создание User Note
 
-To add a note about a user:
+Чтобы добавить заметку о пользователе:
 
-1. Visit the user's profile page
-2. Look for the "User Note" or "Add Note" section
-3. Click to create a new note
-4. Type your note (up to 1000 characters)
-5. Save the note
+1. Откройте страницу профиля пользователя
+2. Найдите раздел «User Note» или «Add Note»
+3. Нажмите, чтобы создать новую заметку
+4. Введите свою заметку (до 1000 символов)
+5. Сохраните заметку
 
-The note will be saved and appear whenever you view that user's profile.
+Заметка будет сохранена и появится каждый раз, когда вы просматриваете профиль этого пользователя.
 
-### Viewing User Notes
+### Просмотр User Notes
 
-Your notes appear when viewing the associated user's profile:
+Ваши заметки отображаются при просмотре профиля соответствующего пользователя:
 
-- **Location:** Typically in a dedicated section on the profile page
-- **Visibility:** Only visible to you when you're logged in
-- **Context:** Appears alongside the user's public information
+- **Местоположение:** Обычно в отдельном разделе на странице профиля
+- **Видимость:** Видимы только вам, когда вы вошли в систему
+- **Контекст:** Появляются рядом с публичной информацией пользователя
 
-This makes it easy to remember important context about users you interact with regularly.
+Это упрощает запоминание важного контекста о пользователях, с которыми вы регулярно взаимодействуете.
 
-### Editing User Notes
+### Редактирование User Notes
 
-To update an existing note:
+Чтобы обновить существующую заметку:
 
-1. Visit the user's profile
-2. Find your existing note
-3. Click "Edit" or click into the note field
-4. Make your changes
-5. Save the updated note
+1. Откройте профиль пользователя
+2. Найдите свою текущую заметку
+3. Нажмите «Edit» или кликните в поле заметки
+4. Внесите изменения
+5. Сохраните обновлённую заметку
 
-### Deleting User Notes
+### Удаление User Notes
 
-To remove a note:
+Чтобы удалить заметку:
 
-1. Visit the user's profile
-2. Find your note
-3. Click "Delete" or the remove option
-4. Confirm deletion
+1. Откройте профиль пользователя
+2. Найдите свою заметку
+3. Нажмите «Delete» или вариант удаления
+4. Подтвердите удаление
 
-Once deleted, the note is permanently removed and cannot be recovered.
+После удаления заметка будет удалена без возможности восстановления.
 
-### Character Limit
+### Ограничение по количеству символов
 
-User Notes are limited to **1000 characters**. This encourages:
-- Concise, focused notes
-- Key points rather than lengthy narratives
-- Quick reference information
+User Notes ограничены **1000 символами**. Это способствует:
+- Кратким, сфокусированным заметкам
+- Выделению ключевых моментов вместо длинных повествований
+- Быстрому справочному использованию информации
 
-If you need more space, consider keeping separate documentation outside of FastComments.
+Если требуется больше места, рассмотрите возможность ведения отдельной документации вне FastComments.
 
-### Privacy and Security
+### Конфиденциальность и безопасность
 
-**Complete Privacy:**
-- Notes are stored with your user ID
-- Only you can see notes you've created
-- The user you're writing about cannot see your notes
-- Other users cannot see your notes
-- Site administrators cannot see your personal notes (they're stored separately from moderation logs)
+**Полная конфиденциальность:**
+- Заметки хранятся с вашим идентификатором пользователя
+- Только вы можете видеть созданные вами заметки
+- Пользователь, о котором вы пишете, не может видеть ваши заметки
+- Другие пользователи не могут видеть ваши заметки
+- Администраторы сайта не могут видеть ваши личные заметки (они хранятся отдельно от журналов модерации)
 
-**Note on Moderation:**
-User Notes are different from moderation notes or flags:
-- Use User Notes for personal reference
-- Use moderation reporting tools for violations or issues
-- User Notes don't trigger any actions or alerts
+**Примечание о модерации:**
+User Notes отличаются от модерационных заметок или флагов:
+- Используйте User Notes для личных справок
+- Для нарушений или проблем используйте инструменты модерации
+- User Notes не вызывают никаких действий или оповещений
 
-### Best Practices
+### Лучшие практики
 
-**What to Include:**
-- How you met or know the user
-- Topics they're knowledgeable about
-- Previous helpful interactions
-- Context from past conversations
-- Areas of expertise or interest
-- Reminders for follow-up
+**Что включать:**
+- Как вы познакомились или знаете пользователя
+- Темы, в которых он компетентен
+- Предыдущие полезные взаимодействия
+- Контекст из прошлых разговоров
+- Области экспертизы или интересов
+- Напоминания о последующих действиях
 
-**What to Avoid:**
-- Don't use notes to store sensitive personal information
-- Avoid inflammatory or inappropriate content even in private notes
-- Don't rely on notes for critical information (keep backups elsewhere)
-- Remember notes are just for your reference, not official records
+**Чего избегать:**
+- Не храните в заметках чувствительную личную информацию
+- Избегайте оскорбительного или неприемлемого контента, даже в приватных заметках
+- Не полагайтесь на заметки для критически важной информации (делайте резервные копии в другом месте)
+- Помните, что заметки предназначены только для вашей справки, а не как официальные записи
 
-**Professional Use:**
-For moderators and community managers:
-- Keep notes factual and objective
-- Include dates for time-sensitive information
-- Note patterns rather than isolated incidents
-- Use notes to supplement (not replace) official moderation logs
+**Профессиональное использование:**
+Для модераторов и менеджеров сообщества:
+- Делайте заметки фактическими и объективными
+- Указывайте даты для информации, чувствительной к времени
+- Записывайте шаблоны, а не отдельные инциденты
+- Используйте заметки как дополнение (а не замену) официальных журналов модерации
 
-### Use Cases
+### Сценарии использования
 
-**Example 1: Community Manager**
-> "Active in tech discussions. Works as a backend developer. Has offered to help with documentation. Follow up about contributing to wiki."
+**Пример 1: Менеджер сообщества**
+> «Активен в технических обсуждениях. Работает бэкенд‑разработчиком. Предлагал помочь с документацией. Нужно уточнить участие в вики.»
 
-**Example 2: Moderator**
-> "Helpful user but sometimes gets into heated debates. Generally respectful. Responded well to previous reminder about civility."
+**Пример 2: Модератор**
+> «Полезный пользователь, но иногда вступает в жаркие споры. В целом вежлив. Хорошо отреагировал на предыдущее напоминание о вежливости.»
 
-**Example 3: Regular User**
-> "Met in gaming threads. Plays same games I do. Shared helpful tutorial link. Based in UK timezone."
+**Пример 3: Обычный пользователь**
+> «Познакомились в игровых темах. Играет в те же игры, что и я. Поделился полезной ссылкой на учебник. Живёт в часовом поясе Великобритании.»
 
-### Limitations
+### Ограничения
 
-**What User Notes Don't Do:**
-- They don't sync across devices (unless you're logged into the same account)
-- They don't appear in comments or other contexts, only on profiles
-- They don't affect the user's profile or visibility in any way
-- They aren't searchable (currently)
-- They don't trigger notifications or actions
+**Что User Notes не делают:**
+- Не синхронизируются между устройствами (если вы не вошли в один и тот же аккаунт)
+- Не появляются в комментариях или других контекстах, только в профилях
+- Не влияют на профиль пользователя или его видимость каким‑либо образом
+- Не поддаются поиску (на данный момент)
+- Не вызывают уведомления или действия
 
-**Storage:**
-- Notes are stored indefinitely unless you delete them
-- Maximum 1000 characters per note
-- One note per user (update the existing note rather than creating multiple)
+**Хранение:**
+- Заметки хранятся бесконечно, пока вы их не удалите
+- Максимум 1000 символов на одну заметку
+- Одна заметка на пользователя (обновляйте существующую, а не создавайте несколько)
 
-### Technical Details
+### Технические детали
 
-User Notes are:
-- Stored in the database with your user ID as the creator
-- Associated with the target user's ID
-- Encrypted in transit (HTTPS)
-- Subject to standard FastComments data retention policies
-- Not included in public data exports or API responses
+User Notes:
+- Хранятся в базе данных с вашим идентификатором пользователя как создателем
+- Связаны с идентификатором целевого пользователя
+- Шифруются при передаче (HTTPS)
+- Подчиняются стандартным политикам хранения данных FastComments
+- Не включаются в публичные экспорты данных или ответы API
 
-### Troubleshooting
+### Устранение неполадок
 
-**Note Not Saving:**
-- Check that you're logged in
-- Ensure the note is under 1000 characters
-- Try refreshing the page and adding again
-- Check your internet connection
+**Заметка не сохраняется:**
+- Проверьте, что вы вошли в систему
+- Убедитесь, что заметка содержит менее 1000 символов
+- Попробуйте обновить страницу и добавить её снова
+- Проверьте подключение к интернету
 
-**Note Not Appearing:**
-- Make sure you're logged into the account that created the note
-- Refresh the user's profile page
-- Clear browser cache if needed
+**Заметка не отображается:**
+- Убедитесь, что вы вошли в аккаунт, который создал заметку
+- Обновите страницу профиля пользователя
+- При необходимости очистите кэш браузера
 
-**Accidentally Deleted Note:**
-Unfortunately, deleted notes cannot be recovered. Consider keeping backups of important information outside of FastComments.
+**Случайно удалённая заметка:**
+К сожалению, удалённые заметки восстановить нельзя. Рассмотрите возможность создания резервных копий важной информации вне FastComments.

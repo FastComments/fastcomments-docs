@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Da |  |
-| userId | string | Da |  |
-| id | string | Da |  |
-| changeTicketStateBody | ChangeTicketStateBody | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| id | string | Yes |  |
+| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
+Враћа: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "acme-corp";
 const userId: string = "user-97123";
@@ -21,7 +21,7 @@ const ticketId: string = "ticket-45001";
 
 const changeTicketStateBody: ChangeTicketStateBody = {
   state: "closed",
-  // opciono polje u telu
+  // опционално поље у телу
   comment: "Issue resolved after code fix"
 };
 

@@ -1,6 +1,6 @@
 ### Maven
 
-Dodajte Repsy repozitorijum u POM vašeg projekta:
+Додајте Repsy репозиторијум у POM вашег пројекта:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Dodajte Repsy repozitorijum u POM vašeg projekta:
 </repositories>
 ```
 
-Zatim dodajte zavisnosti koje su vam potrebne:
+Затим додајте зависности које су вам требају:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@ Zatim dodajte zavisnosti koje su vam potrebne:
 
 ### Gradle
 
-Dodajte Repsy repozitorijum u vaš build.gradle fajl:
+Додајте Repsy репозиторијум у ваш build.gradle фајл:
 
 ```groovy
 repositories {
@@ -65,16 +65,14 @@ dependencies {
 
 ### Library Contents
 
-Ova biblioteka sadrži tri modula. Generisani API klijent, core Java biblioteka koja sadrži ručno napisane alate
-za olakšavanje rada sa API‑jem, i `pubsub` modul koji je biblioteka za pretplatu na promene feed‑ova.
+Ова библиотека садржи три модула. Генерисани API клијент, основна Java библиотека која садржи ручно написане алате за лакше рад са API-јем, и `pubsub` модул који је библиотека за претплату на измене.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Документација API клијент библиотеке](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документација основне библиотеке, укључујући SSO примере](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Документација PubSub библиотеке](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-Za API klijent postoje tri klase, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtevaju vaš API ključ, a `PublicApi` sadrži metode
-koje se mogu pozvati direktno iz pregledača/mobilnog uređaja itd. bez autentifikacije.
+За API клијент постоје три класе, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` садржи методе који захтевају ваш API кључ, а `PublicApi` садржи методе које се могу позивати директно из прегледача/мобилног уређаја/итд без аутентификације.
 
-`ModerationApi` pruža opsežan skup live i brzih moderacionih API‑ja. Svaka metoda `ModerationApi` prihvata `sso` parametar i može se autentifikovati putem SSO‑a ili FastComments.com sesijskog kolačića.
+`ModerationApi` пружа обиман скуп живих и брзих API-ја за модерацију. Сваки `ModerationApi` метод прихвата `sso` параметар и може се аутентификоваћи преко SSO или FastComments.com сесијског колачића.

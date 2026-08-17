@@ -1,50 +1,49 @@
-### Required Components
+### 必要元件
 
-For On-Prem, FastComments just consists of an application server and a database. We have simplified the deployment so that
-the application can serve all traffic directly without adding other components.
+對於本地部署（On-Prem），FastComments 只包含應用伺服器與資料庫。我們已簡化部署，使應用程式能直接處理所有流量，無需加入其他元件。
 
-The application server is provided in a Docker image and can be deployed with any container management solution.
+應用伺服器以 Docker 映像檔提供，可使用任何容器管理解決方案部署。
 
-The database, MongoDB, can be self-ran or hosted by another provider like AWS DocumentDB or MongoDB Atlas.
+資料庫 MongoDB 可以自行運行，或由其他供應商（如 AWS DocumentDB 或 MongoDB Atlas）託管。
 
-FastComments is currently tested with MongoDB 7, however we aim to be DocumentDB compatible to ease deployment.
+FastComments 目前已在 MongoDB 7 上測試，然而我們的目標是與 DocumentDB 相容，以簡化部署。
 
-### Instance Sizes
+### 執行個體規模
 
-You will find that FastComments is fairly well optimized and doesn't require large machines for the application itself to keep low P99s.
+您會發現 FastComments 已相當優化，應用本身不需要大型機器即可維持低 P99 延遲。
 
-All batch and cron jobs use streaming to limit total memory usage.
+所有批次與 cron 工作皆使用串流，以限制總記憶體使用量。
 
-The below tables for the application server and database can assist with sizing.
+以下的應用伺服器與資料庫表格可協助您進行規模規劃。
 
-### Application Server Instances
+### 應用伺服器執行個體
 
+| 同時使用者數 | 叢集總 CPU 數 | 叢集總記憶體 |
+|--------------|--------------|--------------|
+| 100          | 1            | 256mb        |
+| 1K           | 2            | 512mb        |
+| 10K          | 8            | 1gb          |
+| 100K         | 32           | 8gb          |
+| 1M           | 64           | 64gb         |
 
-| Concurrent Users | Total Cluster CPUs | Total Cluster Memory |
-|------------------|--------------------|----------------------|
-| 100              | 1                  | 256mb                |
-| 1K               | 2                  | 512mb                |
-| 10K              | 8                  | 1gb                  |
-| 100K             | 32                 | 8gb                  |
-| 1M               | 64                 | 64gb                 |
+例如，單核心每秒處理約 100 個評論串，通常不會超過 250mb RSS。
 
-For example, a single core serving around 100 comment threads a second usually never uses more than 250mb RSS.
+### 資料庫伺服器執行個體
 
-### Database Server Instances
+資料庫的規模取決於工作集大小，即您在特定時間點存取的資料量，以及同時請求數。
 
-Sizing the database depends on working set size, which is the amount of data you access at a given point in time, as well as concurrent requests.
+FastComments 對 Mongo 相當友善，對於熱查詢會使用索引提示、串流游標，且在多個領域設有併發限制，以防止下游系統過載。
 
-FastComments is fairly kind to Mongo, in that for the hot queries it uses index hints, streaming cursors, and has concurrency limits in various areas
-to prevent overloading of downstream systems.
+以下提供資料庫執行個體規模的一般指引。**請注意，這是 __每個執行個體__ 的規格，而非叢集的總資源**。
 
-The below is a general guideline on database instance sizes. **Note that this is __per instance__, not total resources in the cluster**.
+| 同時使用者數 | 已儲存評論數 | 每個執行個體的 CPU 數 | 每個執行個體的記憶體 |
+|--------------|--------------|------------------------|------------------------|
+| 100          | 1k           | 1                      | 256mb                  |
+| 1K           | 5k           | 2                      | 512mb                  |
+| 10K          | 100k         | 8                      | 2gb                    |
+| 100K         | 500k         | 16                     | 8gb                    |
+| 1M           | 5M           | 32                     | 32gb                   |
 
-| Concurrent Users | Comments Stored | CPUs Per Instance | Memory Per Instance |
-|------------------|-----------------|-------------------|---------------------|
-| 100              | 1k              | 1                 | 256mb               |
-| 1K               | 5k              | 2                 | 512mb               |
-| 10K              | 100k            | 8                 | 2gb                 |
-| 100K             | 500k            | 16                | 8gb                 |
-| 1M               | 5M              | 32                | 32gb                |
+上述表格為保守估計。實際需求可能因您的具體設定（頁面大小、評論量等）而有所不同。
 
-The above tables are conservative estimates. You may find actual requirements differ based on your specific configuration (page sizes, comment volume, etc).
+---

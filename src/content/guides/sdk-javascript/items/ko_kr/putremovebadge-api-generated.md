@@ -1,6 +1,6 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
 | badgeId | string | Yes |  |
 | userId | string | No |  |
@@ -9,11 +9,11 @@
 | tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## 응답
 
-Returns: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
+반환: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'putRemoveBadge 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

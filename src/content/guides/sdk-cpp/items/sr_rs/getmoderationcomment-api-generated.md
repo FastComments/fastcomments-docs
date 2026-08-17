@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | options | const GetModerationCommentOptions& | Yes |  |
 
-## Response
+## Одговор
 
-Vraća: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
+Враћа: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getModerationComment'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,9 +23,9 @@ api->getModerationComment(tenantId, commentId, options)
     .then([](pplx::task<std::shared_ptr<ModerationAPICommentResponse>> task) {
         try {
             auto response = task.get();
-            // Obradi odgovor po potrebi
+            // Обради одговор по потреби
         } catch (const std::exception& ex) {
-            // Rukuj greškom
+            // Обради грешку
         }
     });
 [inline-code-end]

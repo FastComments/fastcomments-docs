@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sessionId | string | query | No |  |
-| sso | string | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | путања | Да |  |
+| commentId | string | путања | Да |  |
+| urlId | string | упит | Да |  |
+| broadcastId | string | упит | Да |  |
+| sessionId | string | упит | Не |  |
+| sso | string | упит | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `VoteResponse`
+Враћа: `VoteResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer voteComment'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример voteComment'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

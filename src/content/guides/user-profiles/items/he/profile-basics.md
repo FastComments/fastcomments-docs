@@ -1,54 +1,54 @@
-User Profiles in FastComments provide a dedicated space for each user to showcase their identity, activity, and contributions across your community.
+פרופילי משתמשים ב-FastComments מספקים מרחב ייעודי לכל משתמש להציג את הזהות, הפעילות והתרומות שלו בקהילה שלכם.
 
-### What is a User Profile?
+### מהו פרופיל משתמש?
 
-A User Profile is a personalized page for each FastComments user that displays:
+פרופיל משתמש הוא דף מותאם אישית לכל משתמש FastComments שמציג:
 
-- **Profile Header** - A customizable background image that personalizes the profile
-- **Avatar** - The user's profile picture with online/offline status indicator
-- **Display Information** - Username, display name, and optional country flag
-- **Bio** - A personal description or introduction
-- **Social Links** - Connections to the user's social media profiles and website
-- **Badges** - Earned achievements and recognition
-- **Statistics** - User karma and total comment count
-- **Communities** - Which sites/domains the user is active in
+- **כותרת פרופיל** - תמונת רקע שניתנת להתאמה אישית שמעצבת את הפרופיל
+- **אווטר** - תמונת הפרופיל של המשתמש עם אינדיקטור מצב מקוון/לא מקוון
+- **מידע תצוגה** - שם משתמש, שם תצוגה, ודגל מדינה אופציונלי
+- **ביוגרפיה** - תיאור אישי או הקדמה
+- **קישורים חברתיים** - קישורים לפרופילים של המשתמש ברשתות החברתיות ולאתר האינטרנט שלו
+- **תגים** - הישגים והכרה שהושגו
+- **סטטיסטיקות** - קארמה של המשתמש וספירת התגובות הכוללת
+- **קהילות** - באילו אתרים/דומיינים המשתמש פעיל
 
-### Accessing User Profiles
+### גישה לפרופילי משתמשים
 
-There are several ways to access a user's profile:
+ישנן מספר דרכים לגשת לפרופיל של משתמש:
 
-1. **Click on an avatar** - In the comment widget, click any user's avatar to view their profile
-2. **Click on a username** - Usernames in comments are clickable links to profiles
-3. **Direct URL** - Visit `https://fastcomments.com/auth/user-profile/[userId]`
+1. **לחץ על אווטר** - בווידג'ט של ההערות, לחץ על האווטר של כל משתמש כדי לצפות בפרופיל שלו
+2. **לחץ על שם משתמש** - שמות משתמשים בתגובות הם קישורים שניתן ללחוץ עליהם כדי להגיע לפרופילים
+3. **כתובת URL ישירה** - בקר ב-`https://fastcomments.com/auth/user-profile/[userId]`
 
-### Profile Views
+### תצוגות פרופיל
 
-When viewing a profile, you'll see different tabs depending on whether you're viewing your own profile or someone else's:
+כאשר מציגים פרופיל, תראו כרטיסיות שונות בהתאם אם אתם מציגים את הפרופיל שלכם או של מישהו אחר:
 
-#### Your Own Profile
-- **Notifications** - Your notifications and mentions
-- **Recent Activity** - Your comment history across all communities
-- **Profile Comments** - Comments others have left on your profile page
-- **Direct Messages** - Private conversations with other users
+#### הפרופיל שלך
+- **התראות** - ההתראות והאזכורים שלך
+- **פעילות אחרונה** - היסטוריית ההערות שלך בכל הקהילות
+- **תגובות בפרופיל** - תגובות שאחרים השאירו בדף הפרופיל שלך
+- **הודעות ישירות** - שיחות פרטיות עם משתמשים אחרים
 
-#### Other Users' Profiles
-- **Recent Activity** - Their public comment history (if not set to private)
-- **Profile Comments** - Comments on their profile (if not set to private)
-- **Direct Messages** - Start or continue a private conversation (if they allow DMs)
+#### פרופילי משתמשים אחרים
+- **פעילות אחרונה** - היסטוריית ההערות הציבורית שלהם (אם לא הוגדרה כפרטית)
+- **תגובות בפרופיל** - תגובות על הפרופיל שלהם (אם לא הוגדר כפרטי)
+- **הודעות ישירות** - התחלת או המשך של שיחה פרטית (אם הם מאפשרים הודעות ישירות)
 
-### Online Status
+### מצב מקוון
 
-User profiles display real-time online status:
-- **Green indicator** - User is currently online
-- **No indicator** - User is offline
+פרופילי משתמשים מציגים מצב מקוון בזמן אמת:
+- **אינדיקטור ירוק** - המשתמש נמצא כרגע במצב מקוון
+- **אין אינדיקטור** - המשתמש אינו מקוון
 
-This helps you know when someone is actively using the platform, which is especially useful for direct messaging.
+זה עוזר לך לדעת מתי מישהו משתמש בפלטפורמה באופן פעיל, דבר שמועיל במיוחד להודעות ישירות.
 
-### User Types
+### סוגי משתמשים
 
-FastComments supports two types of users with profiles:
+FastComments תומכת בשני סוגי משתמשים עם פרופילים:
 
-1. **Regular Users** - Users who signed up directly with FastComments
-2. **SSO Users** - Users who authenticate through your site's Single Sign-On integration
+1. **משתמשים רגילים** - משתמשים שנרשמו ישירות ל-FastComments
+2. **משתמשי SSO** - משתמשים שמאמתים דרך אינטגרציית Single Sign-On של האתר שלכם
 
-Both user types have access to the full profile system, though SSO users may have some restrictions on editing certain fields (like avatars) depending on your SSO configuration.
+שני סוגי המשתמשים יכולים לגשת למערכת הפרופילים המלאה, אם כי למשתמשי SSO עשויות להיות מגבלות מסוימות בעריכת שדות מסוימים (כמו אווטרים) בהתאם לתצורת ה-SSO שלכם.

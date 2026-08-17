@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| id | string | Yes |  |
-| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| userId | string | Да |  |
+| id | string | Да |  |
+| changeTicketStateBody | ChangeTicketStateBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
+Враћа: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'changeTicketState Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto body = std::make_shared<ChangeTicketStateBody>();
 body->state = U("closed");

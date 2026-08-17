@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
+Враћа: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetQuestionConfigResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getQuestionConfig'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfig Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto questionId = utility::conversions::to_string_t("question-456");
@@ -20,9 +20,9 @@ api->getQuestionConfig(tenantId, questionId)
     .then([](pplx::task<std::shared_ptr<GetQuestionConfigResponse>> task) {
         try {
             auto response = task.get();
-            // Koristite odgovor po potrebi
+            // Use response as needed
         } catch (const std::exception&) {
-            // Obradite grešku
+            // Handle error
         }
     });
 [inline-code-end]

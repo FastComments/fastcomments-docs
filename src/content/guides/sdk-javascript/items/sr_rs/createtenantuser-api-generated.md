@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createTenantUserBody | CreateTenantUserBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
+Враћа: [`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'createTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "a1b2c3d4-5678-90ab-cdef-1234567890ab";
 
@@ -20,10 +20,12 @@ const newUser: CreateTenantUserBody = {
   firstName: "Jane",
   lastName: "Doe",
   role: "admin",
-  // opcioni parametri
+  // опционални параметри
   phoneNumber: "+15551234567",
   isActive: true,
 };
 
 const result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);
 [inline-code-end]
+
+---

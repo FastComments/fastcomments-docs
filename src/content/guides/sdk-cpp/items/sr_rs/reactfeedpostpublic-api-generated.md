@@ -1,19 +1,20 @@
-## Parametri
+---
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| reactBodyParams | ReactBodyParams | Yes |  |
-| options | const ReactFeedPostPublicOptions& | Yes |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| postId | string | Да |  |
+| reactBodyParams | ReactBodyParams | Да |  |
+| options | const ReactFeedPostPublicOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
+Враћа: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'reactFeedPostPublic Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto postId = utility::conversions::to_string_t("post-987");
@@ -26,3 +27,5 @@ api->reactFeedPostPublic(tenantId, postId, reactBody, options)
     .then([](std::shared_ptr<ReactFeedPostResponse> resp) {
     });
 [inline-code-end]
+
+---

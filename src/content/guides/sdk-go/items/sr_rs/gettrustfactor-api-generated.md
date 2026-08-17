@@ -1,12 +1,12 @@
-## Parameters
+## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| userId | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
-## Response
+## Odgovor
 
 Vraća: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_get_user_trust_factor_response.go)
 
@@ -25,8 +25,8 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	userId := "userId_example" // string |  (opcionalno)
-	sso := "sso_example" // string |  (opcionalno)
+	userId := "userId_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -35,9 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetTrustFactor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetTrustFactor`: GetUserTrustFactorResponse
+	// одговор од `GetTrustFactor`: GetUserTrustFactorResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetTrustFactor`: %v\n", resp)
 }
 [inline-code-end]
-
----

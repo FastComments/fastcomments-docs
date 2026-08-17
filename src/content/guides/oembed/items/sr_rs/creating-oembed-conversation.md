@@ -1,11 +1,14 @@
-Sa FastComments-om, razgovor mora prvo da se kreira pre nego što se može ugraditi.
+---
+Са FastComments, разговор мора прво бити креиран пре него што се може уградити.
 
-Da biste to uradili, jednostavno posetite [fastcomments.com/create](https://fastcomments.com/create).
+Да бисте то урадили, једноставно посетите [fastcomments.com/create](https://fastcomments.com/create).
 
-[app-screenshot-start url='/create'; selector = '.content'; alt='Stranica fastcomments.com/create sa poljem za ime razgovora i dugmetom koje generiše sigurnu vezu'; title='Forma za kreiranje razgovora' app-screenshot-end]
+[app-screenshot-start url='/create'; selector = '.content'; alt='Страница fastcomments.com/create са пољем за име разговора и дугметом које генерише безбедни линк'; title='Форма за креирање разговора' app-screenshot-end]
 
-Nakon odabira imena, biće kreirana sigurna veza. 
+Након избора имена, биће генерисан безбедни линк. 
 
-Ova veza se može posetiti i koristiti kao zaseban čet. Ili se može direktno pružiti aplikaciji koja podržava oEmbed, ili https://embed.ly, da ubaci razgovor.
+Овај линк се може посетити и користити као сопствени ћаскање. Или се може директно проследити апликацији која подржава oEmbed, или https://embed.ly, да уметне разговор.
 
-Ugrađeni razgovori se mogu prilagoditi baš kao i bilo koja druga FastComments instalacija koristeći UI za prilagođavanje. Pročitajte o prilagođavanju vidžeta za komentare [ovde](/guide-customizations-and-configuration.html).
+Уграђени разговори се могу прилагодити као и било која друга FastComments инсталација помоћу UI за прилагођавање. Прочитајте о прилагођавању виџета за коментаре [овде](/guide-customizations-and-configuration.html).
+
+---

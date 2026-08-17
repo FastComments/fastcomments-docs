@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | locale | string | No |  |
 | rating | string | No |  |
 | page | number | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
+Враћа: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifsTrendingResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getGifsTrending'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsTrending Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runExample(): Promise<void> {
   const tenantId: string = "tenant_9f8b7c6d";
@@ -24,10 +24,12 @@ async function runExample(): Promise<void> {
   const trendingAll: GetGifsTrendingResponse = await getGifsTrending(tenantId, locale, rating, page);
   console.log(trendingAll);
 
-  // Korišćenje samo obaveznog parametra
+  // Користећи само потребан параметар
   const trendingMinimal: GetGifsTrendingResponse = await getGifsTrending(tenantId);
   console.log(trendingMinimal);
 }
 
 runExample();
 [inline-code-end]
+
+---

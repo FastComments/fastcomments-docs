@@ -1,19 +1,19 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | postId | string | No |  |
 | updateFeedPostParams | UpdateFeedPostParams | No |  |
 | options | UpdateFeedPostPublicOptions | No |  |
 
-## Response
+## Отговор
 
-Returns: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
+Връща: [`Option[CreateFeedPostResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_create_feed_post_response.nim)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'updateFeedPostPublic Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за updateFeedPostPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.updateFeedPostPublic(
   tenantId = "my-tenant-123",

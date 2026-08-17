@@ -1,11 +1,11 @@
-Cene su zasnovane na cenama za komentare, tj. za ocene i recenzije se naplaćuje isto kao za komentare — u zavisnosti od vašeg paketa.
+Цене су засноване на ценама коментара, тј. наплаћујете оцене и рецензије исто као и коментаре – у зависности од вашег пакета.
 
-Naplaćuje vam se (na Flexu) ili ste ograničeni (na fiksnim planovima) na osnovu sledećeg:
+Наплаћује се (на Flex плану) или је ограничено (на фиксним плановима) на основу следећег:
 
-- Broj recenzija koje imate na svom nalogu (isto kao kod cena za komentare).
-- Korišćenje widgeta sažetka:
-  - Svako učitavanje stranice koristi 1 API kredit za svako pitanje + pod-pitanje ako je agregacija keširana, i dvostruko više ako nije.
-  - Dakle, ako imate jedno glavno pitanje i tri pod-pitanja, većinu vremena se pri svakom učitavanju stranice naplaćuju 4 kredita, a ponekad, kada je potrebno ponovo izračunati rezultate, naplaćuju se 8 kredita.
-- Korišćenje API-ja (upotreba kredita za svaki API poziv je uključena u odgovarajućoj dokumentaciji).
+- Број рецензија које имате на свом налогу (исто као цена коментара).
+- Користење summary widget‑а:
+  - Свако учитавање странице користи 1 API кредит за свако питање + подпитање ако је агрегaција кеширана, и дупло више ако није.
+  - Дакле, ако имате главно питање и три подпитања, већину времена се наплаћује 4 кредита по учитавању странице, а понекад, када је потребно поново израчунати резултате, наплаћује се 8 кредита.
+- Користење API‑ја (потрошња кредита за сваки API позив, како је наведено у одговарајућој документацији).
 
-Kada se rezultati agregiraju bilo putem API-ja ili putem widgeta sažetka, takođe vam se naplaćuju troškovi.
+Када се резултати агрегирају било путем API‑ја или путем summary widget‑а, такође се наплаћује.

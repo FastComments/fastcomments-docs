@@ -1,21 +1,21 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | upit | Da |  |
-| commentId | string | put | Da |  |
-| includeByUserIdAndEmail | boolean | upit | Ne |  |
-| includeByIP | boolean | upit | Ne |  |
-| includeByEmailDomain | boolean | upit | Ne |  |
-| sso | string | upit | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| includeByUserIdAndEmail | boolean | query | Не |  |
+| includeByIP | boolean | query | Не |  |
+| includeByEmailDomain | boolean | query | Не |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
+Враћа: [`PreBanSummary`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_pre_ban_summary.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример GetPreBanSummary'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,10 +29,10 @@ import (
 func main() {
 	tenantId := "tenantId_example" // string | 
 	commentId := "commentId_example" // string | 
-	includeByUserIdAndEmail := true // bool |  (opciono)
-	includeByIP := true // bool |  (opciono)
-	includeByEmailDomain := true // bool |  (opciono)
-	sso := "sso_example" // string |  (opciono)
+	includeByUserIdAndEmail := true // bool |  (опционално)
+	includeByIP := true // bool |  (опционално)
+	includeByEmailDomain := true // bool |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.GetPreBanSummary``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `GetPreBanSummary`: PreBanSummary
+	// одговор од `GetPreBanSummary`: PreBanSummary
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetPreBanSummary`: %v\n", resp)
 }
 [inline-code-end]

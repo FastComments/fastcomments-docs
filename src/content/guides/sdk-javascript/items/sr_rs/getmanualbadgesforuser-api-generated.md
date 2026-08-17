@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| badgesUserId | string | Ne |  |
-| commentId | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| badgesUserId | string | No |  |
+| commentId | string | No |  |
+| tenantId | string | No |  |
+| sso | string | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetManualBadgesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesForUserResponse.ts)
+Враћа: [`GetManualBadgesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesForUserResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getManualBadgesForUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getManualBadgesForUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const userId: string = "user_42";
@@ -25,5 +25,3 @@ Vraća: [`GetManualBadgesForUserResponse`](https://github.com/FastComments/fastc
   const limitedBadges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId);
 })();
 [inline-code-end]
-
----

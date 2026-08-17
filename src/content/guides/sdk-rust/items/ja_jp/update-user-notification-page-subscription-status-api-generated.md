@@ -1,8 +1,8 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also  
+ページの通知を有効または無効にします。ユーザーがページを購読している場合、新しいルートコメントに対して通知が作成され、さらに
 
 ## Parameters
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | url_id | String | Yes |  |
@@ -13,11 +13,11 @@ Enable or disable notifications for a page. When users are subscribed to a page,
 
 ## Response
 
-Returns: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
+返却: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 
-## Example
+## 例
 
-[inline-code-attrs-start title = 'update_user_notification_page_subscription_status の例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'update_user_notification_page_subscription_status 例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusResponse, Error> {
     let params = UpdateUserNotificationPageSubscriptionStatusParams {

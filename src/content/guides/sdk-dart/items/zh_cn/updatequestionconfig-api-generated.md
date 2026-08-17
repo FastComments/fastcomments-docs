@@ -1,22 +1,22 @@
-## Parameters
+## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | 是 |  |
+| id | string | path | 是 |  |
 
-## Response
+## 响应
 
-Returns: `APIEmptyResponse`
+返回： `APIEmptyResponse`
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'updateQuestionConfig 示例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 // TODO 配置 API 密钥授权: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// 取消注释以下内容以设置前缀（例如 Bearer）用于 API 密钥（如有需要）
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();

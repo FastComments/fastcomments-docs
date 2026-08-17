@@ -1,25 +1,26 @@
+---
 req
 tenantId
 urlId
 userIdWS
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| userIdWS | string | query | Da |  |
-| startTime | integer | query | Da |  |
-| endTime | integer | query | Ne |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| userIdWS | string | query | Да |  |
+| startTime | integer | query | Да |  |
+| endTime | integer | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetEventLogResponse`
+Враћа: `GetEventLogResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getGlobalEventLog'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGlobalEventLog Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -37,3 +38,5 @@ try {
     print('Exception when calling PublicApi->getGlobalEventLog: $e\n');
 }
 [inline-code-end]
+
+---

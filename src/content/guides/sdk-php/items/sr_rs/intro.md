@@ -1,9 +1,10 @@
-Ovo je zvanični PHP SDK za FastComments.
+---
+Ово је званични PHP SDK за FastComments.
 
-Zvanični PHP SDK za FastComments API
+Управљајте коментарима, корисницима, SSO-ом и модерацијом из ваших PHP апликација.
 
-## Repozitorijum
+## Репозиторијум
 
-[Pogledajte na GitHub-u](https://github.com/FastComments/fastcomments-php)
+[Погледајте на GitHub](https://github.com/FastComments/fastcomments-php)
 
 ---

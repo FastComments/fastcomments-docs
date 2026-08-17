@@ -1,3 +1,5 @@
 ---
-Zamenite `fastcomments/widget.html` tako što ćete postaviti svoju kopiju ranije na putanju za pretragu šablona (projekat `templates/fastcomments/widget.html`). Ovo je Django analog Laravel‑ovog `vendor:publish --tag=fastcomments-views`.
+Замените `fastcomments/widget.html` тако што ћете ставити сопствену копију раније у
+путању за претрагу шаблона (у пројекту `templates/fastcomments/widget.html`). Ово је
+Django аналог Laravel-овог `vendor:publish --tag=fastcomments-views`.
 ---

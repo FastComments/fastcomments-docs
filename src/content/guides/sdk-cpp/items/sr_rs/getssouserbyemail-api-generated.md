@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| email | string | Da |  |
+| tenantId | string | Да |  |
+| email | string | Да |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSSOUserByEmailAPIResponse.h)
+Враћа: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSSOUserByEmailAPIResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getSSOUserByEmail Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getSSOUserByEmail'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto correlationId = boost::optional<utility::string_t>(utility::conversions::to_string_t("corr-001"));
 
@@ -25,5 +25,3 @@ api->getSSOUserByEmail(
     }
 });
 [inline-code-end]
-
----

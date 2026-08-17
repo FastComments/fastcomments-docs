@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| commentId | string | path | Yes |  |
-| broadcastId | string | query | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | path | Да |  |
+| commentId | string | path | Да |  |
+| broadcastId | string | query | Да |  |
+| sso | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `APIEmptyResponse`
+Returns: `APIEmptyResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer unLockComment'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unLockComment Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

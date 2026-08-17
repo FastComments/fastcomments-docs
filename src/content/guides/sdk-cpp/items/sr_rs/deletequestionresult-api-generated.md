@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'deleteQuestionResult Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteQuestionResult Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 boost::optional<utility::string_t> optTenant = utility::conversions::to_string_t( "my-tenant-123" );
 utility::string_t questionId = utility::conversions::to_string_t( "question-456" );
@@ -24,11 +24,11 @@ if ( optTenant )
             try
             {
                 auto resp = t.get();
-                // obrada uspeha
+                // успешно руковање
             }
             catch ( const std::exception& e )
             {
-                // obrada greške
+                // руковање грешком
             }
         } );
 }

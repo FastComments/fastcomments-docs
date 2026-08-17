@@ -1,21 +1,20 @@
----
-Otpremanje i promena veličine slike
+Upload and resize an image
 
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| sizePreset | string | query | Ne | Podešavanje veličine: "Default" (1000x1000px) ili "CrossPlatform" (kreira veličine za popularne uređaje) |
-| urlId | string | query | Ne | ID stranice sa koje se vrši otpremanje, za konfiguraciju |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| sizePreset | string | query | No | Претподешавање величине: "Default" (1000x1000px) или "CrossPlatform" (прави величине за популарне уређаје) |
+| urlId | string | query | No | Идентификатор странице са које се врши отпремање, за подешавање |
 
-## Odgovor
+## Response
 
-Vraća: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/upload_image_response.rb)
+Враћа: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/upload_image_response.rb)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer za upload_image'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за upload_image'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
@@ -24,8 +23,8 @@ api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
 file = File.new('/path/to/some/file') # File | 
 opts = {
-  size_preset: FastCommentsClient::SizePreset::DEFAULT, # SizePreset | Podešavanje veličine: \"Default\" (1000x1000px) ili \"CrossPlatform\" (kreira veličine za popularne uređaje)
-  url_id: 'url_id_example' # String | ID stranice sa koje se vrši otpremanje, za konfiguraciju
+  size_preset: FastCommentsClient::SizePreset::DEFAULT, # SizePreset | Претподешавање величине: "Default" (1000x1000px) или "CrossPlatform" (прави величине за популарне уређаје)
+  url_id: 'url_id_example' # String | Идентификатор странице са које се врши отпремање, за подешавање
 }
 
 begin
@@ -36,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->upload_image: #{e}"
 end
 [inline-code-end]
-
----

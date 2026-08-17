@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| comments_by_ids_params | models::CommentsByIdsParams | Yes |  |
-| sso | String | No |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| comments_by_ids_params | models::CommentsByIdsParams | Да |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationApiChildCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_child_comments_response.rs)
+Враћа: [`ModerationApiChildCommentsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/moderation_api_child_comments_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'post_comments_by_ids Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'post_comments_by_ids Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = PostCommentsByIdsParams {

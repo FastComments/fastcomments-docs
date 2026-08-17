@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createHashTagBody | CreateHashTagBody | Yes |  |
+| tenantId | string | Да |  |
+| createHashTagBody | CreateHashTagBody | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateHashTagResponse.h)
+Враћа: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateHashTagResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer addHashTag'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 CreateHashTagBody request;
 request.tag = utility::conversions::to_string_t("feature-request");

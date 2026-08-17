@@ -1,57 +1,58 @@
 [related-parameter-start name = 'customCSS'; type = 'string'; related-parameter-end]
 
-FastComments je dizajniran da bude prilagodljiv. Sam widget za komentarisanje radi unutar iframe‑a iz sigurnosnih razloga, pa da primenite prilagođeni stil morate slediti jedan od dva pristupa.
+FastComments је дизајниран да се прилагођава. Сам виџет за коментарисање ради унутар iframe-а из безбедносних разлога, па да
+примените прилагођено стилизовање морате да следите један од два приступа.
 
-Prvi, najlakši pristup, i onaj koji mi preporučujemo, je da koristite [stranicu za prilagođavanje widgeta](https://fastcomments.com/auth/my-account/customize-widget).
+Први, најлакши приступ, и који нам је префериран, је да користите [страницу за прилагођавање виџета](https://fastcomments.com/auth/my-account/customize-widget).
 
-Na stranici za prilagođavanje widgeta, pogledajte odeljak „Show Advanced Options“, ispod kojeg se nalazi oblast označena „Custom CSS“:
+На страници за прилагођавање виџета, погледајте одељак „Show Advanced Options“, испод кога се налази област означена „Custom CSS“:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='Uređivač prilagođenog CSS-a ispod Opcije za napredne postavke na stranici za prilagođavanje widgeta'; title='Oblast unosa prilagođenog CSS-a' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='Уређивач прилагођеног CSS-а испод Прикажи напредне опције на страници за прилагођавање виџета'; title='Област уноса прилагођеног CSS-а' app-screenshot-end]
 
-Ovaj pristup ima neke prednosti:
-1. Uneti CSS se minifikuje pre slanja korisniku, a formatiranje se održava doslednim u UI za uređivanje.
-2. Dobijate sve prednosti UI‑a za prilagođavanje widgeta, na primer lako prilagođavanje widgeta za komentarisanje različito za različite sajtove.
-3. Kada napravimo promene na widgetu za komentarisanje, vaš prilagođeni stil će biti testiran kao deo našeg procesa izdavanja.
+Овај приступ има неке предности:
+1. Унети CSS се минификује пре него што се пошаље кориснику, а форматирање се задржава конзистентним у UI-ју за уређивање.
+2. Добијате све предности UI-ja за прилагођавање виџета, на пример лако прилагођавање виџета за коментарисање различито за различите сајтове.
+3. Када направимо измене у виџету за коментарисање, ваше прилагођено стилизовање ће бити тестирано као део нашег процеса издавања.
 
-Drugi pristup je da navedete parametar **customCSS** u konfiguraciji widgeta, na sledeći način:
+Други приступ је да наведете параметар **customCSS** у конфигурацији виџета, на следећи начин:
 
-[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Passing Custom CSS'; code-example-end]
+[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Prosleđivanje prilagođenog CSS-a'; code-example-end]
 
-Međutim, ovo ima *ograničenja*:
-1. Postoji ograničenje koliko prilagođenog CSS‑a može biti prosleđeno pre nego što naši serveri odbiju zahtev, zbog veličine zaglavlja.
-2. Morate upravljati prilagođenim CSS‑om u vašoj infrastrukturi i sistemu za izgradnju. Ovo može biti i prednost, a ne samo nedostatak.
-3. Postoji dodatni trošak slanja prilagođenog CSS‑a preko mreže **dva puta** u ovom slučaju, jer se mora poslati našim serverima, a zatim nazad u sadržaj iframe‑a. Međutim, za većinu veličina opterećenja, to nije primetno.
-4. Uobičajena optimizacija je minifikacija CSS‑a kako bi se smanjila njegova veličina preko mreže, ali sa ovim pristupom vi ćete to morati da uradite.
-5. Vaš prilagođeni CSS neće biti testiran kada mi napravimo promene.
+Међутим, ово има *ограничења*:
+1. Постоји ограничење колико прилагођеног CSS-а може бити прослеђено пре него што наши сервери одбију захтев, због величине заглавља.
+2. Морате управљати прилагођеним CSS-ом у вашој инфраструктури и систему за изградњу. Ово може бити предност, а не манја.
+3. Постоји додатни трошак слања прилагођеног CSS-а преко мреже **два пута** у овом случају, јер се он мора послати нашим серверима, а затим врати у садржај iframe-а. Међутим, за већину величина оптерећења, то није приметно.
+4. Уобичајена оптимизација је минификување CSS-а да се смањи његова величина преко мреже, али са овим приступом мораћете то сами да урадите.
+5. Ваш прилагођени CSS неће бити тестирани када направимо измене.
 
-### External CSS Files
+### Екстерни CSS фајлови
 
-Možete reći widgetu da preuzme eksterni fajl koristeći `@import`!
+Можете рећи виџету да преузме екстерни фајл користећи `@import`!
 
-Preporučuje se da `@import` stavite u pravilo prilagođavanja. Na taj način, ako ikada budemo morali da promenimo widget za komentarisanje, možemo koristiti našu automatizaciju da proverimo vaše podešavanje. Na primer, kreirali biste pravilo prilagođavanja u UI‑u za prilagođavanje widgeta, kliknuli na `Advanced` i uneli u `Custom CSS`:
+Препоручује се да `@import` ставите у правило за прилагођавање. На тај начин, ако икада треба да направимо измену у виџету за коментарисање, можемо користити нашу аутоматизацију да проверимо вашу поставку. На пример, креирали бисте правило за прилагођавање у UI-ју за прилагођавање виџета, кликнули `Advanced`, и унели у `Custom CSS`:
 
     @import url(https://example.com/styles.css);
 
-#### In Code - Not Recommended
+#### У коду – није препоручено
 
-Možete takođe učitati eksterni CSS fajl putem svojstva `customCSS`:
+Можете такође учитати екстерни CSS фајл преко својства `customCSS`:
 
-[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'External CSS File'; code-example-end]
+[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'Eksterni CSS fajl'; code-example-end]
 
-Međutim, imajte na umu da vaš CSS neće moći da bude testiran od strane nas ako to uradite.
+Међутим, имајте у виду да ваш CSS неће бити тестирани од стране нас ако ово урадите. 
 
-### User Profile Modal Styling
+### Стиловање модала корисничког профила
 
-Modalni prozori korisničkih profila takođe mogu biti stilizovani prilagođenim CSS‑om. Međutim, da bi se osiguralo da se prilagođeni stil primeni na korisničke profile, svi CSS selektori moraju biti prefiksirani sa `.user-profile`. Bez ovog prefiksa, prilagođeni stil će biti ignorisan za modalne prozore korisničkih profila.
+Модали корисничког профила такође могу бити стилизовани прилагођеним CSS-ом. Међутим, да би се осигурало да се прилагођено стилизовање примени на корисничке профиле, сви CSS селектори морају имати префикс `.user-profile`. Без овог префикса, прилагођено стилизовање ће бити игнорисано за модале корисничког профила.
 
-Na primer:
+На пример:
 
-[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'User Profile CSS'; code-example-end]
+[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'CSS за кориснички профил'; code-example-end]
 
-### Backwards Compatibility
+### Уназадна компатибилност
 
-U FastComments‑u znamo da naši korisnici prilagođavaju widget za komentarisanje. To je po dizajnu – poslednja stvar koju želimo je da naš proizvod izazove nedoslednosti u dizajnu vašeg proizvoda.
+У FastComments-у знамо да наши корисници прилагођавају виџет за коментарисање. То је по дизајну – последња ствар коју желимо је да наш производ изазове недоследности у дизајну вашег производа.
 
-Pošto je ovo važan deo našeg proizvoda, imamo pipeline za izgradnju koji nam omogućava da pregledamo promene widgeta za komentarisanje, po korisniku, pri svakom izdanju.
+Пошто је ово важан део нашег производа, имамо процес изградње који нам омогућава да прегледамо измене у виџету за коментарисање, по кориснику, при сваком издању.
 
-Ako pronađemo manje probleme, ažuriraćemo vaš nalog kako bismo osigurali da izdanje prođe glatko. Ako uočimo veće, razarajuće promene, to nam omogućava da zaustavimo izdanje.
+Ако пронађемо мање проблеме, ажурираћемо ваш налог како би наше издање прошло глатко. Ако видимо велике кључне измене, ово нам омогућава да зауставимо издање.

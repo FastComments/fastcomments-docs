@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | limit | f64 | No |  |
@@ -9,13 +9,13 @@
 | after | f64 | No |  |
 | before | f64 | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_audit_logs_response.rs)
+Враћа: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_audit_logs_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'get_audit_logs Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_audit_logs Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_audit_logs(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetAuditLogsParams {

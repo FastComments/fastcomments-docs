@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| options | GetCommentsOptions | Ne |  |
+| tenantId | string | Yes |  |
+| options | GetCommentsOptions | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`Option[APIGetCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comments_response.nim)
+Враћа: [`Option[APIGetCommentsResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_get_comments_response.nim)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getComments'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'пример getComments'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let options = GetCommentsOptions(
   urlId = "news/article-title",

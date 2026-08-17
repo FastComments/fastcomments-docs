@@ -1,13 +1,10 @@
----
-Podrazumevano, FastComments dozvoljava korisnicima da uređuju svoje komentare.
+Подразумевано, FastComments ће дозволити корисницима да уређују своје коментаре.
 
-Međutim, moguće je sprečiti to.
+Међутим, могуће је спречити то.
 
-Na stranici za prilagođavanje widgeta, pogledajte opciju "Disable Editing".
+На страници за прилагођавање виџета, погледајте опцију „Онемогући уређивање“.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Opcija onemogućavanja uređivanja na stranici prilagođavanja widgeta, sprečava komentatore da uređuju svoje komentare'; title='Onemogući uređivanje komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Опција за онемогућавање уређивања на страници за прилагођавање виџета, која спречава коментаторе да уређују своје коментаре'; title='Онемогући уређивање коментара' app-screenshot-end]
 
-- Ovo utiče samo na obične komentatore i ne na moderatore ili administratore, koji i dalje mogu da uređuju.
-- Ovo će takođe uticati na API integracije kada se prosleđuje `contextUserId`. 
-
----
+- Ово утиче само на редовне коментаторе, а не на модераторе или администраторе, који ће и даље моћи да уређују.  
+- Ово ће такође утицати на API интеграције када се проследи `contextUserId`.

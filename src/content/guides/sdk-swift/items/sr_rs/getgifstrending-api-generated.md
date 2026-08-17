@@ -1,27 +1,27 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Da |  |
-| locale | string | query | Ne |  |
-| rating | string | query | Ne |  |
-| page | number | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| locale | string | query | Не |  |
+| rating | string | query | Не |  |
+| page | number | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
+Враћа: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetGifsTrendingResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getGifsTrending'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGifsTrending Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći kod primeri su još u beta fazi. Za bilo koji problem, prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String |
-let locale = "locale_example" // String |  (opcionalno)
-let rating = "rating_example" // String |  (opcionalno)
-let page = 987 // Double |  (opcionalno)
+let tenantId = "tenantId_example" // String | 
+let locale = "locale_example" // String |  (опционално)
+let rating = "rating_example" // String |  (опционално)
+let page = 987 // Double |  (опционално)
 
 PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrendingOptions(locale: locale, rating: rating, page: page)) { (response, error) in
     guard error == nil else {
@@ -34,5 +34,3 @@ PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrending
     }
 }
 [inline-code-end]
-
----

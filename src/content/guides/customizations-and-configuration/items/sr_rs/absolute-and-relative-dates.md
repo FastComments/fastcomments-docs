@@ -1,11 +1,11 @@
 [related-parameter-start name = 'absoluteAndRelativeDates'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano se koriste lokalizovani relativni datumi. Na primer, pored nedavno ostavljenog komentara možete videti "pre 11 minuta".
+Подразумевано се користе локализовани релативни датуми. На пример, поред недавно остављеног коментара можете видети "пре 11 минута".
 
-Može biti potrebno ili poželjno zadržati ovaj relativni format datuma, ali takođe prikazati puni datum pored njega, u kom slučaju postavite ovaj parametar na true. 
+Може бити потребно или жељено да се задржи овај релативни формат датума, али исто тако прикаже пуни датум поред њега, у ком случају постављате овај параметар на true. 
 
-[code-example-start config = {absoluteAndRelativeDates: true}; linesToHighlight = [6]; title = 'Use Both Absolute and Relative Dates'; code-example-end]
+[code-example-start config = {absoluteAndRelativeDates: true}; linesToHighlight = [6]; title = 'Користи и апсолутне и релативне датуме'; code-example-end]
 
-Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta, pod naprednim opcijama. Prvo ćete morati da omogućite Apsolutne datume da biste videli ovu opciju u korisničkom interfejsu.
+Ово се може прилагодити без кода, на страници за прилагођавање виџета, у одељку Напредне опције. Прво ћете морати да омогућите Апсолутне датуме да бисте видели ову опцију у корисничком интерфејсу.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; alt='Napredne opcije na stranici za prilagođavanje widgeta sa oba apsolutna datuma i omogućenom kombinovanom postavkom relativnog datuma'; title='Koristite i apsolutne i relativne datume' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; alt='Напредне опције на страници за прилагођавање виџета са омогућеним и апсолутним датумима и комбинираним подешавањем релативног датума'; title='Користи и апсолутне и релативне датуме' app-screenshot-end]

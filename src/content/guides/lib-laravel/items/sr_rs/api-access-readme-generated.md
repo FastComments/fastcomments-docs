@@ -1,20 +1,20 @@
-### Putem Facade
+### Кроз фасаду
 
 ```php
 use FastComments\Laravel\Facades\FastComments;
 
-// Admin API (zahteva API ključ)
+// Admin API (requires API key)
 $comments = FastComments::admin()->getComments('tenant-id');
 
 // Public API
 $comments = FastComments::publicApi()->getCommentsPublic('tenant-id', 'url-id');
 
-// SSO (jedinstvena prijava)
+// SSO
 $ssoPayload = FastComments::sso()->forWidget();
 $token = FastComments::sso()->tokenFor($user);
 ```
 
-### Putem injektovanja zavisnosti
+### Преко инјекције зависности
 
 ```php
 use FastComments\Laravel\FastCommentsManager;
@@ -29,7 +29,7 @@ class CommentController extends Controller
 }
 ```
 
-### Direktan pristup SDK-u
+### Директан приступ SDK-у
 
 ```php
 use FastComments\Client\Api\DefaultApi;

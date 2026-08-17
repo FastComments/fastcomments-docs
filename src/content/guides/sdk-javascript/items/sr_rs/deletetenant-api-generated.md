@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| sure | string | No |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| sure | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
+Враћа: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'deleteTenant Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,11 +19,11 @@ async function runExample() {
     const id: string = "resource_98765";
     const sure: string = "confirm";
 
-    // Poziv sa opcionalnim parametrom 'sure'
+    // Позив са опционом 'sure' параметром
     const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
     console.log(responseWithSure);
 
-    // Poziv bez opcionalnog parametra 'sure'
+    // Позив без опционо 'sure' параметра
     const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
     console.log(responseWithoutSure);
 }

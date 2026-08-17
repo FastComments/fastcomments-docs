@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| batchJobId | string | query | No |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Да |  |
+| batchJobId | string | query | Не |  |
+| sso | string | query | Не |  |
 
-## Response
+## Одговор
 
-Vraća: `ModerationExportStatusResponse`
+Враћа: `ModerationExportStatusResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Primer getApiExportStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

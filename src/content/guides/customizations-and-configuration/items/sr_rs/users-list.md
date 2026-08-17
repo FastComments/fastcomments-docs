@@ -1,30 +1,31 @@
+---
 [related-parameter-start name = 'usersListLocation'; type = 'number'; related-parameter-end]
 [related-parameter-start name = 'usersListIncludeOffline'; type = 'boolean'; related-parameter-end]
 
-Podrazumevano, FastComments ne prikazuje listu korisnika na stranici.
+Подразумевано, FastComments не приказује листу корисника на страници.
 
-Možete prikazati listu ljudi koji trenutno gledaju stranicu, uz widget za komentare. Lista se ažurira u realnom vremenu kako se korisnici pridružuju i napuštaju, i prikazuje njihovo ime, avatar i indikator online statusa.
+Можете приказати листу људи који тренутно прегледају страницу, поред виџета за коментаре. Листа се ажурира уживо док се корисници придружују и напуштају, и приказује њихово име, аватар и индикатор присутности.
 
-Postoje tri opcije rasporeda:
+Постоје три опције распореда:
 
-- `1` - Gornji: horizontalni red preklapajućih avatara prikazan iznad komentara.
-- `2` - Levi: bočna traka sa imenima i online tačkama prikazana levo od widgeta.
-- `3` - Desni: ista bočna traka prikazana desno od widgeta.
+- `1` - Горе: хоризонтални ред преклапајућих се аватара приказан изнад коментара.
+- `2` - Лево: бочна трака са именима и индикаторима присутности приказана лево од виџета.
+- `3` - Десно: иста бочна трака приказана десно од виџета.
 
-Postavite **usersListLocation** zastavicu da omogućite ovu funkciju:
+Подесите заставицу **usersListLocation** да бисте омогућили функцију:
 
-[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Prikaži listu korisnika desno'; code-example-end]
+[code-example-start config = {usersListLocation: 3}; linesToHighlight = [6]; title = 'Прикажи листу корисника десно'; code-example-end]
 
-Podrazumevano, lista prikazuje samo korisnike koji su trenutno online. Da biste takođe uključili ljude koji su u prošlosti komentarisali stranicu (ali je trenutno ne gledaju), postavite **usersListIncludeOffline** na true:
+Подразумевано листа приказује само кориснике који су тренутно онлајн. Да бисте такође укључили људе који су у прошлости коментарисали страницу (али је тренутно не прегледају), поставите **usersListIncludeOffline** на true:
 
-[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Uključi prethodne komentatore'; code-example-end]
+[code-example-start config = {usersListLocation: 3, usersListIncludeOffline: true}; linesToHighlight = [6, 7]; title = 'Укључи претходне коментаторе'; code-example-end]
 
-Prethodni komentatori se prikazuju bez zelene online tačke kako bi bilo jasno ko je trenutno prisutan.
+Претходни коментатори се приказују без зеленог индикатора присутности, тако да је јасно ко је присутан тренутно.
 
-Korisnici sa privatnim profilima se prikazuju sa generičkim avatarom i oznakom „Privatan profil“ kako bi broj ostao tačan bez otkrivanja identiteta.
+Корисници са приватним профилима се приказују са генеричким аватаром и ознаком „Приватни профил“ како би број остао тачан без откривања идентитета.
 
-Ovo se takođe može konfigurisati bez koda. Na stranici za prilagođavanje widgeta, pogledajte opciju „Lokacija liste korisnika“. Kada je lokacija postavljena na bilo šta osim „Isključeno“, pojavljuje se potvrdno polje „Uključi prethodne komentatore“ ispod nje.
+Ово се такође може подесити без кода. На страници за прилагођавање виџета, погледајте опцију „Локација листе корисника“. Када је локација постављена на било шта осим „Искључено“, појављује се поље за потврду „Укључи претходне коментаторе“ испод њега.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; alt='Lokacija liste korisnika postavljena na desno, sa potvrdnim poljem „Uključi prethodne komentatore“ prikazanim ispod.'; title='Podešavanja liste korisnika'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; alt='Локација листе корисника постављена на десно, са пољем за укључивање претходних коментатора приказаним испод'; title='Подешавања листе корисника'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
 
-Posle 500 aktivnih korisnika, lista može biti zastarela do 30 sekundi.
+За последњих 500 живих корисника, листа може бити за до 30 секунди застарела.

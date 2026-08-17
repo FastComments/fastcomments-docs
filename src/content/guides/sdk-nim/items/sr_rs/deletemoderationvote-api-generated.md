@@ -1,19 +1,19 @@
-## Parametri
+## Parameters
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | voteId | string | No |  |
 | options | DeleteModerationVoteOptions | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
+Враћа: [`Option[VoteDeleteResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_vote_delete_response.nim)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'deleteModerationVote Primer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Пример'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (respOpt, httpResp) = client.deleteModerationVote(
   tenantId = "my-tenant-123",

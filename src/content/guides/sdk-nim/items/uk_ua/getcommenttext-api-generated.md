@@ -1,16 +1,16 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| options | GetCommentTextOptions | No |  |
+| tenantId | string | Так |  |
+| commentId | string | Так |  |
+| options | GetCommentTextOptions | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_get_comment_text_response.nim)
+Повертає: [`Option[PublicAPIGetCommentTextResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_public_api_get_comment_text_response.nim)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getCommentText'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

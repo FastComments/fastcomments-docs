@@ -1,30 +1,30 @@
-Widget Najpopularnije stranice prikazuje stranice sa najviše komentara na vašem sajtu. Koristan je za isticanje najinteresantnijeg sadržaja novim posetiocima i za povećanje vremena provedenog na sajtu.
+The Top Pages widget displays the most-commented pages on your site. It's useful for surfacing your most-engaging content to new visitors and increasing time on site.
 
-## Opcije
+## Опције
 
-- **Naslov** (opciono): Naslov koji se prikazuje iznad liste. Podrazumevano je "Najpopularnije stranice".
+- **Наслов** (опционално): Наслов приказан изнад листе. Подразумевано је "Top Pages".
 
-Widget Najpopularnije stranice bira svoj raspored na osnovu dostupnih podataka i ne prihvata atribut count.
+Виџет Топ странице бира сопствени распоред на основу доступних података и не прихвата атрибут count.
 
-## Kako ga dodati
+## Како га додати
 
-### Unutar objave ili stranice
+### Унутар поста или странице
 
-U editoru blokova dodajte blok **Kratki kod** i nalepite:
+У уређивачу блокова, додајте блок **Shortcode** и налепите:
 
-[inline-code-attrs-start title = 'Kratki kod za Najpopularnije stranice'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Кратки код за Топ странице'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_top_pages]
 [inline-code-end]
 
-### U bočnoj traci ili podnožju (klasične teme)
+### У бочној траци или подножју (класичне теме)
 
-Idite na **Izgled > Vidžeti** u vašoj WordPress administraciji. Iz blok insertera potražite "FastComments" i izaberite **FastComments: Najpopularnije stranice**. Prevucite ga u bočnu traku, zaglavlje ili podnožje, zatim podesite naslov iz panela vidžeta.
+Идите на **Appearance > Widgets** у вашој WordPress администраторској конзоли. Из уметача блокова, потражите "FastComments" и изаберите **FastComments: Top Pages**. Превуците га у бочну траку, заглавље или подножје, а затим поставите наслов из панела виџета.
 
-### U temi blokova (puno uređivanje sajta)
+### У блок теми (потпуно уређивање сајта)
 
-Otvorite **Uređivač sajta** pod **Izgled > Uređivač**. Idite do dela šablona gde bi vidžet trebao da se pojavi, umetnite blok **Legacy Widget**, i iz padajućeg menija izaberite **FastComments: Najpopularnije stranice**.
+Отворите **Site Editor** под **Appearance > Editor**. Идите до дела шаблона где би виџет требао да се појави, уметните блок **Legacy Widget**, и изаберите **FastComments: Top Pages** из падајућег списка.
 
-## Rešavanje problema
+## Решавање проблема
 
-Vidžet se prikazuje tek nakon što je podešavanje FastComments završeno i tenant ID je sačuvan. Ako je oblast vidžeta prazna, završite podešavanje u **FastComments** u WordPress administraciji i osvežite stranicu.
+Виџет се приказује тек након што је FastComments подешавање завршено и tenant ID је сачуван. Ако је област виџета празна, завршите подешавање у оквиру **FastComments** у WordPress администраторском панелу и поново учитајте страницу.

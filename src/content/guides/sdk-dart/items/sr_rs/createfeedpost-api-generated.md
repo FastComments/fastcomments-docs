@@ -1,25 +1,25 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | broadcastId | string | query | No |  |
 | isLive | boolean | query | No |  |
 | doSpamCheck | boolean | query | No |  |
 | skipDupCheck | boolean | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CreateFeedPostsResponse`
+Враћа: `CreateFeedPostResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer createFeedPost'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createFeedPost Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// odkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -37,5 +37,3 @@ try {
     print('Exception when calling DefaultApi->createFeedPost: $e\n');
 }
 [inline-code-end]
-
----

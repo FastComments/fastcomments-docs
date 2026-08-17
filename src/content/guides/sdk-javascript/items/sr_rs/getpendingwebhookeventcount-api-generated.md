@@ -1,25 +1,27 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Ne |  |
-| externalId | string | Ne |  |
-| eventType | string | Ne |  |
-| type | string | Ne |  |
-| domain | string | Ne |  |
-| attemptCountGT | number | Ne |  |
+| tenantId | string | Да |  |
+| commentId | string | Не |  |
+| externalId | string | Не |  |
+| eventType | string | Не |  |
+| type | string | Не |  |
+| domain | string | Не |  |
+| attemptCountGT | number | Не |  |
 
-## Odgovor
+## Одговор
 
-Returns: [`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
+Враћа: [`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getPendingWebhookEventCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "tenant_001";
+
+  ";
 
   const responseAll: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(
     tenantId,

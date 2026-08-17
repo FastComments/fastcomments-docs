@@ -1,18 +1,19 @@
-## Parametri
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
-| userId | string | query | Ne |  |
+| tenantId | string | query | Да |  |
+| 
+| id | string | path | Да | |
+| userId | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer UpdateNotification'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример UpdateNotification'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -24,10 +25,10 @@ import (
 )
 
 func main() {
-	tenantId := "tenantId_example" // string | 
-	id := "id_example" // string | 
-	updateNotificationBody := *openapiclient.NewUpdateNotificationBody() // UpdateNotificationBody | 
-	userId := "userId_example" // string |  (neobavezno)
+	tenantId := "tenantId_example" // стринг |
+	id := "id_example" // стринг |
+	updateNotificationBody := *openapiclient.NewUpdateNotificationBody() // UpdateNotificationBody |
+	userId := "userId_example" // стринг |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -36,9 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `UpdateNotification`: APIEmptyResponse
+	// одговор од `UpdateNotification`: APIEmptyResponse
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateNotification`: %v\n", resp)
 }
 [inline-code-end]
-
----

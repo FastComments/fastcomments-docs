@@ -1,29 +1,29 @@
-## Parameters
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| questionId | string | query | Ne |  |
-| questionIds | array | query | Ne |  |
-| urlId | string | query | Ne |  |
-| startDate | string | query | Ne |  |
-| forceRecalculate | boolean | query | Ne |  |
-| minValue | number | query | Ne |  |
-| maxValue | number | query | Ne |  |
-| limit | number | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| questionId | string | query | No |  |
+| questionIds | array | query | No |  |
+| urlId | string | query | No |  |
+| startDate | string | query | No |  |
+| forceRecalculate | boolean | query | No |  |
+| minValue | number | query | No |  |
+| maxValue | number | query | No |  |
+| limit | number | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `CombineQuestionResultsWithCommentsResponse`
+Враћа: `CombineQuestionResultsWithCommentsResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO Konfigurišite autorizaciju API ključa: api_key
+// TODO Конфигуришите ауторизацију API кључа: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -41,6 +41,6 @@ try {
     final result = api_instance.combineCommentsWithQuestionResults(tenantId, CombineCommentsWithQuestionResultsOptions(questionId: questionId, questionIds: questionIds, urlId: urlId, startDate: startDate, forceRecalculate: forceRecalculate, minValue: minValue, maxValue: maxValue, limit: limit));
     print(result);
 } catch (e) {
-    print('Izuzetak prilikom poziva DefaultApi->combineCommentsWithQuestionResults: $e\n');
+    print('Exception when calling DefaultApi->combineCommentsWithQuestionResults: $e\n');
 }
 [inline-code-end]

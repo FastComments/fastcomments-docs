@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| user_id | String | No |  |
-| limit | f64 | No |  |
-| skip | f64 | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| user_id | String | Не |  |
+| limit | f64 | Не |  |
+| skip | f64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ApiGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badge_progress_list_response.rs)
+Враћа: [`ApiGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_user_badge_progress_list_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_user_badge_progress_list'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_badge_progress_list Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_badge_progress(conf: &configuration::Configuration) -> Result<(), Error> {
     let params = GetUserBadgeProgressListParams {
@@ -26,3 +26,5 @@ async fn fetch_badge_progress(conf: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
+
+---

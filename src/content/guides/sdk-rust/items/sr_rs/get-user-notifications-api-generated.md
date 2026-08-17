@@ -1,27 +1,27 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Da |  |
-| url_id | String | Ne |  |
-| page_size | i32 | Ne |  |
-| after_id | String | Ne |  |
-| include_context | bool | Ne |  |
-| after_created_at | i64 | Ne |  |
-| unread_only | bool | Ne |  |
-| dm_only | bool | Ne |  |
-| no_dm | bool | Ne |  |
-| include_translations | bool | Ne |  |
-| include_tenant_notifications | bool | Ne |  |
-| sso | String | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| url_id | String | Не |  |
+| page_size | i32 | Не |  |
+| after_id | String | Не |  |
+| include_context | bool | Не |  |
+| after_created_at | i64 | Не |  |
+| unread_only | bool | Не |  |
+| dm_only | bool | Не |  |
+| no_dm | bool | Не |  |
+| include_translations | bool | Не |  |
+| include_tenant_notifications | bool | Не |  |
+| sso | String | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_my_notifications_response.rs)
+Враћа: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_my_notifications_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_user_notifications'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_user_notifications Primer'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example() -> Result<(), Error> {
     let params = GetUserNotificationsParams {

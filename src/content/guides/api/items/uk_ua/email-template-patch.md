@@ -1,13 +1,13 @@
 [api-resource-header-start name = 'EmailTemplate'; route = 'PATCH /api/v1/email-templates/:id'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to update an email template by only specifying the id and the attributes to update.
+Цей API‑ендпоінт надає можливість оновити шаблон електронної пошти, вказавши лише id та атрибути, які потрібно оновити.
 
-Note that all the same validations for creating a template also apply, for example:
+Зверніть увагу, що всі ті ж самі перевірки, які застосовуються при створенні шаблону, також діють, наприклад:
 
-- The template must render. This is checked with each update.
-- You can't have duplicate templates for the same domain (otherwise one would be silently ignored).
+- Шаблон повинен рендеритися. Це перевіряється при кожному оновленні.
+- Ви не можете мати дублікати шаблонів для одного домену (інакше один буде тихо проігнорований).
 
-[inline-code-attrs-start title = 'Приклад cURL запиту EmailTemplate PATCH'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад cURL запиту PATCH EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/email-templates/xyz?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -17,7 +17,7 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура запиту EmailTemplate PATCH'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура запиту PATCH EmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface EmailTemplatePatchQueryParams {
     tenantId: string
@@ -25,16 +25,16 @@ interface EmailTemplatePatchQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура відповіді EmailTemplate PATCH'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура відповіді PATCH EmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface EmailTemplatePatchResponse {
     status: 'success' | 'failed'
-    /** Додається у разі помилки. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'empty-request' | 'internal' | 'invalid-input' | 'not-found' | 'unexpected-param' | 'invalid-email-template-id' | 'unauthorized' | 'domain-invalid' | 'duplicate' | 'does-not-render';  
-    /** Додається у разі помилки. **/
+    /** Included on failure. **/
     reason?: string
-    /** Оновлений email-шаблон. **/
+    /** The updated email template. **/
     emailTemplate?: EmailTemplate
 }
 [inline-code-end]

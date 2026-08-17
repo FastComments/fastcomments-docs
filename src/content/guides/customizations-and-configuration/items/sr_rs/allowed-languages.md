@@ -1,6 +1,6 @@
-By default, FastComments does not limit languages used to comment.  
+By default, FastComments does not limit languages used to comment. 
 
-It may be desirable to limit the languages a community uses.  
+It may be desirable to limit the languages a community uses.
 
 This can be configured without code, on the widget customization page:
 

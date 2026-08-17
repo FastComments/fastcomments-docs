@@ -1,46 +1,46 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| userId | string | query | Не |  |
+| urlId | string | query | Не |  |
+| fromCommentId | string | query | Не |  |
+| viewed | boolean | query | Не |  |
+| type | string | query | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationCountResponse.php)
+Враћа: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetNotificationCountResponse.php)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getNotificationCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Konfigurišite autorizaciju API ključa: api_key
+// Конфигуришите ауторизацију API кључа: api_key
 $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Otkomentarišite ispod da postavite prefiks (npr. Bearer) za API ključ, ako je potrebno
+// Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
 // $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new FastComments\Client\Api\DefaultApi(
-    // Ako želite da koristite prilagođeni HTTP klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client(),
     $config
 );
 
-$tenant_id = 'tenant_id_example'; // string
+$tenant_id = 'tenant_id_example'; // стринг
 $options = [
-    'user_id' => 'user_id_example', // string
-    'url_id' => 'url_id_example', // string
-    'from_comment_id' => 'from_comment_id_example', // string
-    'viewed' => True, // bool
-    'type' => 'type_example', // string
+    'user_id' => 'user_id_example', // стринг
+    'url_id' => 'url_id_example', // стринг
+    'from_comment_id' => 'from_comment_id_example', // стринг
+    'viewed' => True, // бул
+    'type' => 'type_example', // стринг
 ];
 
 

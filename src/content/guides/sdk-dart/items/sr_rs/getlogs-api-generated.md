@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `ModerationAPIGetLogsResponse`
+Враћа: `ModerationAPIGetLogsResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getLogs'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getLogs Пример'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

@@ -1,20 +1,21 @@
-## Parametri
+---
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| blockFromCommentParams | BlockFromCommentParams | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| blockFromCommentParams | BlockFromCommentParams | Да |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`BlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockUserFromCommentResponse.ts)
+Враћа: [`BlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockUserFromCommentResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'blockUserFromComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'blockUserFromComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = 'tenant_42';
 const commentId: string = 'cmt_20231101';
@@ -24,7 +25,7 @@ const blockParams: BlockFromCommentParams = {
   blockDurationHours: 24,
 };
 
-const userId: string = 'user_123'; // opcioni parametar
+const userId: string = 'user_123'; // опциони параметар
 
 const response: BlockUserFromCommentResponse = await blockUserFromComment(
   tenantId,
@@ -33,3 +34,5 @@ const response: BlockUserFromCommentResponse = await blockUserFromComment(
   userId
 );
 [inline-code-end]
+
+---

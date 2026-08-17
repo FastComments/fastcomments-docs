@@ -1,20 +1,20 @@
-By default, FastComments will show the user's name as they entered it, or how it was passed to us via SSO.
+---
+По подразбиране FastComments ще показва името на потребителя така, както е въведено, или както е предадено чрез SSO.
 
-However, it may be desirable to mask or show the user's name in a different way. For example, if the user's name is Allen Rex, maybe
-you want to only show "Allen R.".
+Въпреки това, може да е желателно да се маскира или покаже името на потребителя по различен начин. Например, ако името на потребителя е Allen Rex, може би искате да показвате само „Allen R.“.
 
-This can be done without code in the Widget Customization UI, under the setting called `Commenter Name Format`:
+Това може да се направи без код в потребителския интерфейс за персонализиране на уиджета, под настройката, наречена `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Падащо меню Формат на името на коментатора отворено с опции като Capitalize, Last Initial и All Initials'; title='Промяна на формата на името' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Падащо меню Commenter Name Format отворено с опции като Capitalize, Last Initial и All Initials'; title='Промяна на формата на името' app-screenshot-end]
 
-The available formats are:
+Наличните формати са:
 
-- Capitalize (display example user as Example User)
-- Last Initial (display Example User as Example U.)
-- All Initials (display Example User as E. U.)
+- Capitalize (показва примерен потребител като Example User)
+- Last Initial (показва Example User като Example U.)
+- All Initials (показва Example User като E. U.)
 - Show "Anonymous"
 
-The effect of changing this is immediate. User's will still see their full username at the top of the comment area, for themselves, but their comments will show
-the modified username.
+Ефектът от промяната е незабавен. Потребителите все още ще виждат пълното си потребителско име в горната част на областта за коментари, за себе си, но техните коментари ще показват модифицираното потребителско име.
 
-Usernames are masked server-side to protect users.
+Потребителските имена се маскират от сървъра, за защита на потребителите.
+---

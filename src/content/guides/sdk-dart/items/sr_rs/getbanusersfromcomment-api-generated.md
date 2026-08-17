@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| commentId | string | path | Da |  |
-| sso | string | query | Ne |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetBannedUsersFromCommentResponse`
+Враћа: `GetBannedUsersFromCommentResponse`
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getBanUsersFromComment'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

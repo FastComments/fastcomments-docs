@@ -1,17 +1,15 @@
 [related-parameter-start name = 'countAll'; type = 'boolean'; related-parameter-end]
 
-Brojač komentara koji se prikazuje na vrhu komentarskog vidžeta može da prikaže ili sve "komentare najvišeg nivoa", što znači one odgovore koji su odgovori direktno na stranicu ili članak, ili može biti broj **svih** ugnježdenih komentara.
+Број коментара приказан на врху виџета за коментаре може или приказати све „највишег нивоа“ коментаре, што значи одговоре који су директно одговори на саму страницу или чланак, или може бити број **свих** угнежђених коментара.
 
-Podrazumevano je `true` - radi se o brojanju potonjeg - svih komentara. U starijim verzijama komentarskog vidžeta podrazumevana vrednost je `false`.
+Подразумевано, ово је `true` – то је број последњег – свих коментара. У старијим верзијама виџета за коментаре подразумевана вредност је `false`.
 
-Možemo promeniti ponašanje, tako da bude broj **svih** ugnježdenih komentara postavljanjem zastavice **countAll** na true.
+Можемо променити понашање тако да буде број **свих** угнежђених коментара постављањем заставице **countAll** на true.
 
-[code-example-start config = {countAll: true}; linesToHighlight = [6]; title = 'Counting All Comments'; code-example-end]
+[code-example-start config = {countAll: true}; linesToHighlight = [6]; title = 'Бројање свих коментара'; code-example-end]
 
-Ako želimo da broj odražava samo komentare najvišeg nivoa, postavimo zastavicu na false.
+Ако желимо да број одражава само коментаре највишег нивоа, постављамо заставицу на false.
 
-[code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
+[code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Бројање коментара највишег нивоа'; code-example-end]
 
-Trenutno se ovo ne može prilagoditi bez izmena koda.
-
----
+Ово тренутно не може да се прилагоди без измена кода.

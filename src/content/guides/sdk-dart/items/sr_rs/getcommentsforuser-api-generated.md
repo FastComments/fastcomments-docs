@@ -1,7 +1,7 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | userId | string | query | No |  |
 | direction | string | query | No |  |
 | repliesToUserId | string | query | No |  |
@@ -10,13 +10,13 @@
 | locale | string | query | No |  |
 | isCrawler | boolean | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: `GetCommentsForUserResponse`
+Враћа: `GetCommentsForUserResponse`
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer getCommentsForUser'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentsForUser'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

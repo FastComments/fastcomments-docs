@@ -1,17 +1,17 @@
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | id | String | Yes |  |
 
-## Response
+## Ответ
 
-Returns: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
+Возвращает: [`ApiGetCommentResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/api_get_comment_response.rs)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'get_comment пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_comment'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_comment() -> Result<(), Error> {
     let params = GetCommentParams {
@@ -24,3 +24,5 @@ async fn fetch_comment() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

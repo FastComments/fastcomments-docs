@@ -1,20 +1,20 @@
-## Parameters
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| postId | string | Da |  |
-| updateFeedPostParams | UpdateFeedPostParams | Da |  |
-| broadcastId | string | Ne |  |
-| sso | string | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| postId | string | Да |  |
+| updateFeedPostParams | UpdateFeedPostParams | Да |  |
+| broadcastId | string | Не |  |
+| sso | string | Не |  |
 
-## Response
+## Одговор
 
-Vraća: [`UpdateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateFeedPostPublicResponse.ts)
+Враћа: [`UpdateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateFeedPostPublicResponse.ts)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'updateFeedPostPublic Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateFeedPostPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function updatePostExample() {
   const tenantId: string = 'tenant-9f8b7c';

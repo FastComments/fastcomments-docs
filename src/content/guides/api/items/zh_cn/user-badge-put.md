@@ -1,8 +1,8 @@
-This endpoint allows you to update a user badge assignment.
+此端点允许您更新用户徽章分配。
 
-Currently, the only property that can be updated is `displayedOnComments`, which controls whether the badge is displayed on the user's comments.
+当前唯一可更新的属性是 `displayedOnComments`，它控制徽章是否显示在用户的评论中。
 
-Example Request:
+示例请求：
 
 [inline-code-attrs-start title = 'PUT 请求示例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -13,7 +13,7 @@ curl -X PUT "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=demo&
 }'
 [inline-code-end]
 
-Example Response:
+示例响应：
 
 [inline-code-attrs-start title = '响应'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -22,7 +22,7 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+可能的错误响应：
 
 [inline-code-attrs-start title = '错误：缺少租户 ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

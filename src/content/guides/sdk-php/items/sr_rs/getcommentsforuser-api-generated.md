@@ -1,6 +1,6 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | userId | string | query | No |  |
 | direction | string | query | No |  |
@@ -10,11 +10,11 @@
 | locale | string | query | No |  |
 | isCrawler | boolean | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
+Враћа: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetCommentsForUserResponse.php)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getCommentsForUser'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,8 +24,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ako želite koristiti prilagođeni http klijent, prosledite vaš klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opciono, `GuzzleHttp\Client` će se koristiti kao podrazumevano.
+    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
     new GuzzleHttp\Client()
 );
 

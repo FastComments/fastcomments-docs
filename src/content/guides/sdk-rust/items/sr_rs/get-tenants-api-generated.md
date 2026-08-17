@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenant_id | String | Yes |  |
-| meta | String | No |  |
-| skip | f64 | No |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenant_id | String | Да |  |
+| meta | String | Не |  |
+| skip | f64 | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenants_response.rs)
+Враћа: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_tenants_response.rs)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_tenants'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_tenants Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetTenantsParams {
@@ -24,3 +24,5 @@ async fn example(config: &configuration::Configuration) -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
+
+---

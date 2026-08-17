@@ -1,20 +1,20 @@
-## Parameters
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| text-search | string | query | No |  |
-| byIPFromComment | string | query | No |  |
-| filter | string | query | No |  |
-| searchFilters | string | query | No |  |
-| demo | boolean | query | No |  |
-| sso | string | query | No |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | query | Ναι |  |
+| text-search | string | query | Όχι |  |
+| byIPFromComment | string | query | Όχι |  |
+| filter | string | query | Όχι |  |
+| searchFilters | string | query | Όχι |  |
+| demo | boolean | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
-## Response
+## Απόκριση
 
-Returns: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICountCommentsResponse.php)
+Επιστρέφει: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationAPICountCommentsResponse.php)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getCount'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,19 +24,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\ModerationApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // συμβολοσειρά
+$tenant_id = 'tenant_id_example'; // string
 $options = [
-    'text_search' => 'text_search_example', // συμβολοσειρά
-    'by_ip_from_comment' => 'by_ip_from_comment_example', // συμβολοσειρά
-    'filter' => 'filter_example', // συμβολοσειρά
-    'search_filters' => 'search_filters_example', // συμβολοσειρά
-    'demo' => True, // λογικό
-    'sso' => 'sso_example', // συμβολοσειρά
+    'text_search' => 'text_search_example', // string
+    'by_ip_from_comment' => 'by_ip_from_comment_example', // string
+    'filter' => 'filter_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'demo' => True, // bool
+    'sso' => 'sso_example', // string
 ];
 
 

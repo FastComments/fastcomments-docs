@@ -1,16 +1,14 @@
----
-Možda ćete dobiti grešku autorizacije, sličnu sledećoj:
+You may get an authorization error, like the following:
 
 <div class="screenshot white-bg">
-    <div class="title">Nedostaje konfiguracija domena</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Nedostaje konfiguracija domena" />
+    <div class="title">Недостаје конфигурација домена</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Недостаје конфигурација домена" />
 </div>
 
-To je zato što FastComments ne zna da treba da dozvoli korišćenje vašeg naloga na ovom domenu.
+This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
 
-U tom slučaju, rešenje je jednostavno. Samo treba da dodate svoj sajt u svoj FastComments.com nalog.
+In this case, the fix is simple. You just have to add your site to your FastComments.com account.
 
-[Kliknite ovde da dodate svoj sajt u svoj nalog.](https://fastcomments.com/auth/my-account/configure-domains)
+[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Sada bi vaš sajt trebalo da ima brze komentare uživo!
----
+Now you should have fast, live, commenting added to your site!

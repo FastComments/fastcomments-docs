@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | badgeId | string | Yes |  |
 | options | const PutAwardBadgeOptions& | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
+Враћа: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'putAwardBadge Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,4 +26,4 @@ api->putAwardBadge(tenantId, badgeId, opts).then([](pplx::task<std::shared_ptr<A
     }catch(const std::exception& e){
     }
 });
-[inline-code-end]
+[inline-end]

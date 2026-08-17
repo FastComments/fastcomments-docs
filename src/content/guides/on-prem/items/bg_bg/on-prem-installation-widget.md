@@ -9,9 +9,9 @@ The front end code snippets and libraries for On-Prem are the same as the SaaS p
         target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
-        // ... може също да предадете SSO payload и т.н.
+        // ... може също да предаде SSO полезен товар и т.н.
     }];
 </script>
 [inline-code-end]
 
-The above is a very simple example. We could also use the 1st-party React, Angular, Vue, Svelte, etc, libraries.
+Горното е много прост пример. Също така можем да използваме първостранните библиотеки за React, Angular, Vue, Svelte и др.

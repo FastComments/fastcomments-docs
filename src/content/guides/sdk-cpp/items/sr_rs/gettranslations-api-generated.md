@@ -1,16 +1,16 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| r_namespace | string | Yes |  |
-| component | string | Yes |  |
-| options | const GetTranslationsOptions& | Yes |  |
+| r_namespace | string | Да |  |
+| component | string | Да |  |
+| options | const GetTranslationsOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTranslationsResponse.h)
+Враћа: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTranslationsResponse.h)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'Primer getTranslations'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,3 +27,5 @@ api->getTranslations(ns, comp, *optsPtr)
         }
     });
 [inline-code-end]
+
+---

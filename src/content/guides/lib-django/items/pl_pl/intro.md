@@ -1,7 +1,10 @@
-This is the official Django Package for FastComments.
+---
+To jest oficjalny pakiet Django dla FastComments.
 
-Live commenting and chat components with Secure SSO via template tags.
+Komponenty komentarzy na żywo i czatu z bezpiecznym SSO za pomocą tagów szablonu.
 
 ## Repository
 
-[View on GitHub](https://github.com/FastComments/fastcomments-django)
+[Zobacz na GitHubie](https://github.com/FastComments/fastcomments-django)
+
+---

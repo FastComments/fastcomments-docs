@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| skip | double | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| skip | double | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplateRenderErrorsResponse.h)
+Враћа: [`GetEmailTemplateRenderErrorsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplateRenderErrorsResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getEmailTemplateRenderErrors Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getEmailTemplateRenderErrors'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t id = U("email-template-789");
@@ -22,9 +22,9 @@ api->getEmailTemplateRenderErrors(tenantId, id, skip)
     .then([](pplx::task<std::shared_ptr<GetEmailTemplateRenderErrorsResponse>> task) {
         try {
             auto response = task.get();
-            // Koristite odgovor po potrebi
+            // Користите одговор по потреби
         } catch (const std::exception& ex) {
-            // Obradi grešku
+            // Обрадите грешку
         }
     });
 [inline-code-end]

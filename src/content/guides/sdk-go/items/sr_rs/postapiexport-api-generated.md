@@ -1,22 +1,22 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| text-search | string | query | Ne |  |
-| byIPFromComment | string | query | Ne |  |
-| filters | string | query | Ne |  |
-| searchFilters | string | query | Ne |  |
-| sorts | string | query | Ne |  |
-| sso | string | query | Ne |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| text-search | string | query | No |  |
+| byIPFromComment | string | query | No |  |
+| filters | string | query | No |  |
+| searchFilters | string | query | No |  |
+| sorts | string | query | No |  |
+| sso | string | query | No |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
+Враћа: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_moderation_export_response.go)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'PostApiExport Primer'; type = 'go'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример PostApiExport'; type = 'go'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 package main
 
@@ -29,12 +29,12 @@ import (
 
 func main() {
 	tenantId := "tenantId_example" // string | 
-	textSearch := "textSearch_example" // string |  (opciono)
-	byIPFromComment := "byIPFromComment_example" // string |  (opciono)
-	filters := "filters_example" // string |  (opciono)
-	searchFilters := "searchFilters_example" // string |  (opciono)
-	sorts := "sorts_example" // string |  (opciono)
-	sso := "sso_example" // string |  (opciono)
+	textSearch := "textSearch_example" // string |  (опционално)
+	byIPFromComment := "byIPFromComment_example" // string |  (опционално)
+	filters := "filters_example" // string |  (опционално)
+	searchFilters := "searchFilters_example" // string |  (опционално)
+	sorts := "sorts_example" // string |  (опционално)
+	sso := "sso_example" // string |  (опционално)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ModerationAPI.PostApiExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// odgovor od `PostApiExport`: ModerationExportResponse
+	// одговор од `PostApiExport`: ModerationExportResponse
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.PostApiExport`: %v\n", resp)
 }
 [inline-code-end]

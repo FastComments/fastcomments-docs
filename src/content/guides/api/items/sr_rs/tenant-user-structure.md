@@ -1,13 +1,12 @@
----
-`TenantUser` definiše `User` koji je upravljan od strane određenog `Tenant`. Njihov nalog se u potpunosti nalazi pod kontrolom `Tenant` sa kojim su povezani, i njihov nalog može biti ažuriran ili izbrisan putem [UI](https://fastcomments.com/auth/my-account/users) ili API.
+The `TenantUser` дефинише `User` који се управља од стране специфичног тенанта. Њихов налог је у потпуној контроли тенанта са којим су повезани, и њихов налог може бити ажуриран или обрисан преко [UI](https://fastcomments.com/auth/my-account/users) или API‑ја.
 
-`Tenant` korisnici mogu biti administratori sa svim dozvolama i pristupom `Tenant`, ili mogu biti ograničeni na određene dozvole za moderisanje komentara, pristup API ključevima itd.
+Тенант корисници могу бити администратори са свим дозволама и приступом `Tenant`, или могу бити ограничени на специфичне дозволе за модерирање коментара, приступ API кључевима, итд.
 
-Struktura za `TenantUser` objekat je sledeća:
+Структура за `TenantUser` објекат је следећа:
 
-[inline-code-attrs-start title = 'Struktura TenantUser objekta'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-/** Ovo je za obaveštenja. **/
+/** Ово је за обавештења. **/
 export enum UserDigestEmailFrequency {
     Disabled = -1,
     Daily = 0,
@@ -19,7 +18,7 @@ export interface TenantUser {
     id: string
     tenantId: string
     username: string
-    /** Na primer, link ka blogu komentatora. **/
+    /** Веза ка блогу коментатора, на пример. **/
     websiteUrl?: string
     email: string
     signUpDate: number
@@ -31,7 +30,7 @@ export interface TenantUser {
     optedInTenantNotifications: boolean
     hideAccountCode: boolean
     avatarSrc?: string
-    /** Da li korisnik prima zahteve za pomoć od komentatora? **/
+    /** Да ли корисник прима захтеве за помоћ од коментатора? **/
     isHelpRequestAdmin: boolean
     isAccountOwner: boolean
     isAdminAdmin: boolean
@@ -49,5 +48,3 @@ export interface TenantUser {
     karma?: number
 }
 [inline-code-end]
-
----

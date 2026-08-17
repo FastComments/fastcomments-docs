@@ -1,18 +1,18 @@
-## Parametri
+## Параметри
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| commentId | string | Da |  |
-| options | const PostRemoveCommentOptions& | Da |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| options | const PostRemoveCommentOptions& | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PostRemoveCommentApiResponse.h)
+Враћа: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PostRemoveCommentApiResponse.h)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'postRemoveComment Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postRemoveComment пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 auto commentId = utility::string_t(U("cmt-456789"));
@@ -22,9 +22,9 @@ api->postRemoveComment(tenantId, commentId, options)
     .then([](pplx::task<std::shared_ptr<PostRemoveCommentApiResponse>> task) {
         try {
             auto response = task.get();
-            // Obradi odgovor
+            // Обради одговор
         } catch (const std::exception& ex) {
-            // Obradi grešku
+            // Обради грешку
         }
     });
 [inline-code-end]

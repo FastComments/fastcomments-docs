@@ -1,17 +1,17 @@
 [related-parameter-start name = 'simpleSSO'; type = 'FastCommentsSSOSimple'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L14' related-parameter-end]
 
-With Simple SSO, we can provide the commenting widget with information about the user so that they don't have to enter their username or email to comment.
+Uz Simple SSO možemo pružiti widgetu za komentiranje informacije o korisniku kako ne bi morali unositi svoje korisničko ime ili e‑mail za komentiranje.
 
-We can configure Simple SSO as follows:
+Simple SSO možemo konfigurirati na sljedeći način:
 
-[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob", displayName: "Bob's Name", displayLabel: "VIP User", loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', badgeConfig: { badgeIds: ['badge-id-1', 'badge-id-2'], pageBadgeIds: ['badge-id-3'], override: false } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]; title = 'Simple SSO'; code-example-end]
+[code-example-start config = {simpleSSO: { username: "Bob", email: "bob@example.com", avatar: "https://example.com/bob.png", websiteUrl: "https://example.com/profiles/bob", displayName: "Bob's Name", displayLabel: "VIP User", loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', badgeConfig: { badgeIds: ['badge-id-1', 'badge-id-2'], pageBadgeIds: ['badge-id-3'], override: false } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]; title = 'Jednostavni SSO'; code-example-end]
 
-The user will be logged in, and will create an SSO User behind the scenes. The user will have `createdFromSimpleSSO` set to `true` if fetched from the API.
+Korisnik će biti prijavljen i u pozadini će se stvoriti SSO korisnik. Korisnik će imati `createdFromSimpleSSO` postavljeno na `true` ako je dohvaćen putem API‑ja.
 
-Notes: 
+Napomene: 
 
-- Email is the unique identifier for Simple SSO.
-- Providing an email with Simple SSO is not required, however by default their comments will show as "Unverified". <b>If no email is provided, the user cannot be fully authenticated.</b>
-- **NEW** Since Jan 2022: Usernames do not have to be unique across all of fastcomments.com
-- Simple SSO can automatically create and update SSO users, if an email is provided, and the user was not originally created from Secure SSO.
-- You can specify badges for the user with the `badgeConfig` property. The `badgeIds` array contains the IDs of global badges to associate with the user. The `pageBadgeIds` array contains badge IDs scoped to the current page (`urlId`) — these badges are only displayed on the page where they were assigned. If `override` is set to `true`, it will replace existing displayed badges (global and page-scoped are overridden independently); if `false` it will add to existing badges.
+- E‑mail je jedinstveni identifikator za Simple SSO.
+- Navođenje e‑maila uz Simple SSO nije obavezno, međutim prema zadanim postavkama njihovi će komentari biti prikazani kao "Unverified". <b>Ako nije naveden e‑mail, korisnik se ne može potpuno autentificirati.</b>
+- **NOVO** Od siječnja 2022.: Korisnička imena ne moraju biti jedinstvena na cijelom fastcomments.com
+- Simple SSO može automatski stvoriti i ažurirati SSO korisnike, ako je e‑mail naveden i korisnik nije izvorno stvoren putem Secure SSO.
+- Možete odrediti značke za korisnika pomoću svojstva `badgeConfig`. Polje `badgeIds` sadrži ID‑ove globalnih znački koje se povezuju s korisnikom. Polje `pageBadgeIds` sadrži ID‑ove znački ograničenih na trenutnu stranicu (`urlId`) — ove značke se prikazuju samo na stranici na kojoj su dodijeljene. Ako je `override` postavljeno na `true`, zamijenit će postojeće prikazane značke (globalne i na stranici ograničene značke zamjenjuju se neovisno); ako je `false`, dodati će se uz postojeće značke.

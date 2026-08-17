@@ -1,14 +1,14 @@
-RSS feeds in FastComments are secured using unique, non-guessable UUIDs. However, when you enable your RSS feed, anyone who has the URL can access your comments.
+RSS-feeds i FastComments er sikret ved hjælp af unikke, ikke‑gætbare UUID'er. Men når du aktiverer dit RSS‑feed, kan enhver, der har URL'en, få adgang til dine kommentarer.
 
-The feed is not password-protected, so the URL should be treated as sensitive information and shared only with trusted RSS readers or services.
+Feedet er ikke passwordbeskyttet, så URL'en bør betragtes som følsomme oplysninger og kun deles med betroede RSS‑læser‑tjenester eller -tjenester.
 
-Best practices:
+**Bedste praksis**:
 
-- **Keep Your URL Private**: Don't share your RSS feed URL publicly or in locations where unauthorized users might find it.
-- **Use Trusted RSS Readers**: Only add your feed to RSS reader services you trust, as they will have access to your comment data.
-- **Monitor Access**: If you suspect your feed URL has been compromised, you can disable and re-enable the feed to generate a new URL.
-- **Disable When Not Needed**: If you're no longer using the RSS feed, disable it in your dashboard to prevent any access.
+- **Hold din URL privat**: Del ikke din RSS‑feed‑URL offentligt eller på steder, hvor uautoriserede brugere kan finde den.  
+- **Brug betroede RSS‑læser**: Tilføj kun dit feed til RSS‑læsertjenester, du har tillid til, da de vil have adgang til dine kommentardata.  
+- **Overvåg adgang**: Hvis du mistænker, at din feed‑URL er blevet kompromitteret, kan du deaktivere og genaktivere feedet for at generere en ny URL.  
+- **Deaktiver når den ikke er nødvendig**: Hvis du ikke længere bruger RSS‑feedet, skal du deaktivere det i dit kontrolpanel for at forhindre adgang.
 
-The RSS feed contains comment text and HTML content, commenter names, comment dates, links to the pages where comments were made, and vote counts.
+RSS‑feedet indeholder kommentartekst og HTML‑indhold, kommentatornavne, kommentardatoer, links til siderne, hvor kommentarer blev lavet, og stemmetal.
 
-The feed does **not** contain commenter email addresses, IP addresses, or other sensitive user information.
+Feedet indeholder **ikke** kommentatorers e‑mailadresser, IP‑adresser eller andre følsomme brugeroplysninger.

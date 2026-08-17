@@ -1,15 +1,15 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 
-## Response
+## 응답
 
-Returns: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
+반환: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'getCachedNotificationCount 예제'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,9 +20,9 @@ api->getCachedNotificationCount(tenantId.value(), userId.value())
     .then([](pplx::task<std::shared_ptr<GetCachedNotificationCountResponse>> task) {
         try {
             auto response = task.get();
-            // process response
+            // 응답 처리
         } catch (const std::exception&) {
-            // handle error
+            // 오류 처리
         }
     });
 [inline-code-end]

@@ -1,18 +1,16 @@
-A `Notification` object represents a notification for a user.
+A `Notification` 객체는 사용자를 위한 알림을 나타냅니다.
 
-`Notification` objects are created automatically and cannot be created via the API. They also expire after one year.
-Notifications cannot be deleted. They can however be updated to set `viewed` to `false`, and you can query by `viewed`.
+`Notification` 객체는 자동으로 생성되며 API를 통해 생성할 수 없습니다. 또한 1년 후에 만료됩니다. 알림은 삭제할 수 없습니다. 하지만 `viewed`를 `false`로 설정하여 업데이트할 수 있으며, `viewed`로 조회할 수 있습니다.
 
-A user may also opt out of notifications for a specific comment by setting `optedOut` in the notification to `true`. You can opt in again by setting it to `false`.
+사용자는 알림에서 특정 댓글에 대해 `optedOut`을 `true`로 설정하여 알림을 받지 않도록 선택할 수 있습니다. `false`로 설정하면 다시 수신하도록 할 수 있습니다.
 
-There are different notification types - check `relatedObjectType` and `type`.
+알림 유형은 다양합니다 - `relatedObjectType`와 `type`을 확인하세요.
 
-The ways notifications are created is quite flexible and can be triggered by many scenarios (see `NotificationType`).
+알림이 생성되는 방식은 매우 유연하며 다양한 시나리오에 의해 트리거될 수 있습니다 (`NotificationType` 참조).
 
-As of today, the existence of a `Notification` does not actually imply an email is or should be sent. Rather, the notifications
-are used for the notification feed and related integrations.
+현재 `Notification`이 존재한다고 해서 이메일이 전송되거나 전송되어야 함을 의미하지 않습니다. 대신 알림은 알림 피드와 관련 통합에 사용됩니다.
 
-The structure for the `Notification` object is as follows:
+`Notification` 객체의 구조는 다음과 같습니다:
 
 [inline-code-attrs-start title = '알림 구조'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,21 +21,21 @@ enum NotificationObjectType {
 }
 
 enum NotificationType {
-    /** 누군가가 당신에게 답글을 남긴 경우. **/
+    /** If someone replied to you. **/
     RepliedToMe = 0,
-    /** 당신이 댓글을 남긴 스레드의 어느 곳(자식의 자식 등 포함)에서 누군가가 답글을 남긴 경우. **/
+    /** If someone replied anywhere in a thread (even children of children) of a thread you commented on. **/
     RepliedTransientChild = 1,
-    /** 당신의 댓글이 업보트된 경우. **/
+    /** If your comment was up-voted. **/
     VotedMyComment = 2,
-    /** 당신이 구독한 페이지의 루트에 새 댓글이 달린 경우. **/
+    /** If a new comment is left on the root of a page you're subscribed to. **/
     SubscriptionReplyRoot = 3,
-    /** 누군가가 당신의 프로필에 댓글을 남긴 경우. **/
+    /** If someone commented on your profile. **/
     CommentedOnProfile = 4,
-    /** 당신에게 DM(다이렉트 메시지)이 도착한 경우. **/
+    /** If you have a DM. **/
     DirectMessage = 5,
-    /** TrialLimits는 테넌트 사용자 전용입니다. **/
+    /** TrialLimits is for tenant users only. **/
     TrialLimits = 6,
-    /** 당신이 @언급된 경우. **/
+    /** If you were @mentioned. **/
     Mentioned = 7
 }
 
@@ -46,27 +44,29 @@ interface Notification {
     tenantId: string
     /** With SSO, the user id is in the format `<tenant id>:<user id>`. **/
     userId?: string
-    /** SSO를 사용할 때에는 `userId`만 신경 쓰면 됩니다. **/
+    /** When working with SSO, you only have to worry about `userId`. **/
     anonUserId?: string
-    /** urlId는 거의 항상 정의됩니다. 테넌트 수준의 알림에는 선택적이며, 이는 드뭅니다. **/
+    /** urlId is almost always defined. It is only optional for tenant-level notifications, which are infrequent. **/
     urlId?: string
-    /** URL은 알림 출처로 빠르게 이동하기 위해 캐시됩니다. **/
+    /** URL is cached for quick navigation to the source of the notification. **/
     url?: string
-    /** 페이지 제목은 알림 출처를 빠르게 확인하기 위해 캐시됩니다. **/
+    /** Page Title is cached for quick reading of notification source. **/
     pageTitle?: string
     relatedObjectType: NotificationObjectType
-    /** 예: 댓글 ID. **/
+    /** For example, comment id. **/
     relatedObjectId: string
     viewed: boolean
-    createdAt: string // 날짜 문자열
+    createdAt: string // date string
     type: NotificationType
     fromCommentId?: string
     fromVoteId?: string
-    /** fromUserName 및 fromUserAvatarSrc는 알림을 빠르게 표시하기 위해 여기에 캐시됩니다. 사용자가 업데이트되면 함께 업데이트됩니다. **/
+    /** fromUserName and fromUserAvatarSrc are cached here for quick displaying of the notification. They are updated when the user is updated. **/
     fromUserName: string
     fromUserId: string
     fromUserAvatarSrc?: string
-    /** 이 값을 true로 설정하면 이 객체에 대한 알림 수신을 중단합니다. **/
+    /** Set this to true to stop getting notifications for this object. **/
     optedOut?: boolean
 }
 [inline-code-end]
+
+---
