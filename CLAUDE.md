@@ -241,6 +241,38 @@ run via `./rust/target/release/sitegen build` in `build.sh`). `src/guides.js` is
 `src/templates/` (e.g. `page.html`). The deploy build also runs `trans check`/`trans run`
 (the Rust `trans` tool, DeepInfra) to auto-fill missing translations before generating.
 
+### Every `src=` a page emits has to exist
+
+```bash
+./rust/target/release/sitegen validate-assets
+```
+
+Walks the generated HTML, resolves every root-relative `src="..."` against
+`src/static/generated/`, and fails the build on the first one that isn't there. It is the
+last `build.sh` phase before `indexer`, and it has to run **after** `build-static` - that
+is what copies `src/static/images/**` into `generated/`.
+
+It exists because `process_screenshots` inlines the `<img>` for an `[app-screenshot-*]`
+marker **before** it captures the PNG, and a failed capture is a `warn!` in a 6000-line log,
+so the build exits 0 with a dangling reference. Two things made that invisible:
+
+- **A screenshot filename is `md5(url-selector-title)`, and `title` is translated.** So
+  re-wording a `title=` in one locale silently renames that locale's PNG. The old file is
+  never deleted, so the tree still looks complete - `9d8122ad…png` 404'd on
+  `guide-comment-vote-verification-ja_jp.html` because `コメント確認メール` became
+  `コメント検証メール` and only the capture under the new name failed. `be2869c3…png`, the
+  old name, is still sitting in prod referenced by nothing.
+- **The other two screenshots on that same page regenerated fine**, so nothing about the
+  build looked wrong. Only an external crawl caught it.
+
+`process_screenshots` now retries a capture 3 times (`with_page` drops the session on
+error, so each attempt relaunches the browser), because the usual cause is transient - the
+app being screenshotted restarting mid-build. The gate is the backstop for when it isn't.
+
+`url=` in these markers is quoted with a **backtick** as often as a single quote (it is
+evaluated as JavaScript). Any tooling that recomputes these hashes has to handle both, or
+it invents missing images that are actually fine.
+
 ## SEO / canonical policy
 
 **Each page is self-canonical per locale.** A translated page's `canonicalUrl` is its

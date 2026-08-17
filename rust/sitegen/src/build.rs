@@ -761,13 +761,33 @@ async fn process_screenshots(
         }
         let width = args.width.unwrap_or(screenshot::DEFAULT_WIDTH);
         let url_for_log = args.url.clone();
-        let cap_res = browser_pool
-            .with_page(width, |page, host| {
-                Box::pin(async move {
-                    screenshot::capture(page, &args, &target_path, host).await
+        // Retry before giving up. The `<img>` is already inlined in the
+        // page by this point, so a single failed attempt ships a 404 -
+        // and the usual cause is transient (the app being screenshotted
+        // restarted mid-build, or the CDP session died). `with_page`
+        // drops the session on error, so each attempt gets a fresh
+        // browser.
+        const CAPTURE_ATTEMPTS: u32 = 3;
+        let mut cap_res = Ok(());
+        for attempt in 1..=CAPTURE_ATTEMPTS {
+            let attempt_args = args.clone();
+            let attempt_target = target_path.clone();
+            cap_res = browser_pool
+                .with_page(width, move |page, host| {
+                    Box::pin(async move {
+                        screenshot::capture(page, &attempt_args, &attempt_target, host).await
+                    })
                 })
-            })
-            .await;
+                .await;
+            match &cap_res {
+                Ok(()) => break,
+                Err(e) if attempt < CAPTURE_ATTEMPTS => {
+                    warn!(url = %url_for_log, attempt, error = %format!("{e:#}"), "screenshot failed; retrying");
+                    tokio::time::sleep(std::time::Duration::from_secs(2 * attempt as u64)).await;
+                }
+                Err(_) => {}
+            }
+        }
         match cap_res {
             Ok(()) => {
                 if let Err(e) = cache.update(&args_json, &file_name) {
@@ -775,7 +795,11 @@ async fn process_screenshots(
                 }
             }
             Err(e) => {
-                warn!(url = %url_for_log, error = %format!("{e:#}"), "screenshot failed; HTML still references the (possibly missing) image");
+                // Not fatal here - the page HTML is mid-render and there
+                // is no partial-build to salvage. `sitegen validate-assets`
+                // is the gate: it fails the build if this left a dangling
+                // `<img>`.
+                warn!(url = %url_for_log, attempts = CAPTURE_ATTEMPTS, error = %format!("{e:#}"), "screenshot failed; HTML still references the (now missing) image - validate-assets will fail the build");
             }
         }
     }

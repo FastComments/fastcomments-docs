@@ -220,6 +220,18 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     exit 1
   fi
 
+  # Asset gate. `process_screenshots` inlines the <img> for an
+  # [app-screenshot-*] marker before it captures the PNG, so a capture
+  # that fails leaves a dangling reference and the build still exits 0.
+  # That shipped a 404 image on the ja_jp comment-vote-verification page
+  # that only an external crawl caught. Runs after build-static because
+  # that is what puts src/static/images/** under generated/.
+  validate_assets_run() { ./rust/target/release/sitegen validate-assets; }
+  if ! phase "sitegen validate-assets" validate_assets_run; then
+    echo "ERROR: generated pages reference assets that do not exist"
+    exit 1
+  fi
+
   # Search indexes. Use the prebuilt binary directly so we don't pay
   # cargo's resolve+check cost on every prod run. The Rust server in
   # run.sh reads exactly these `index/<locale>/` dirs.

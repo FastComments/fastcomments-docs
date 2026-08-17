@@ -1,6 +1,6 @@
 //! Replaces `src/app.js` + `src/custom-styling-guide-generator.js` +
 //! `build-static.sh`. Subcommands: `build`, `custom-styling`,
-//! `build-static`, `validate-headings`.
+//! `build-static`, `validate-headings`, `validate-assets`.
 //!
 //! The actual work lives in submodules; this file is just the CLI router.
 
@@ -8,6 +8,7 @@ mod build;
 mod custom_styling;
 mod og_image;
 mod static_build;
+mod validate_assets;
 mod validate_headings;
 
 use anyhow::Result;
@@ -35,8 +36,9 @@ async fn main() -> Result<()> {
         "custom-styling" => custom_styling::run().await,
         "build-static" => static_build::run().await,
         "validate-headings" => validate_headings::run().await,
+        "validate-assets" => validate_assets::run().await,
         other => anyhow::bail!(
-            "unknown subcommand: {other}\nusage: sitegen [build|custom-styling|build-static|validate-headings]"
+            "unknown subcommand: {other}\nusage: sitegen [build|custom-styling|build-static|validate-headings|validate-assets]"
         ),
     }
 }
