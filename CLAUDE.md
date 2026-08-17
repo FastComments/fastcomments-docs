@@ -132,6 +132,25 @@ the back-catalog. Two things to know:
 used by the gates, `check`, and `run`'s task discovery. Keep it that way: if `run` used a
 narrower rule it would skip a file the gate rejects.
 
+### Generated reference indexes are copied, not translated
+
+`snapshot::source_is_reference_index` exempts a file from translation entirely when it has
+50+ non-blank lines and under 5% of them are prose - an API endpoint table or a model list,
+in other words. `run` copies the source verbatim for those, the same way it handles `en_us`.
+
+This is not an optimization, it's a correctness fix.
+`sdk-cpp/documentation-for-fastcomments-readme-generated.md` is 592 lines: 211 table rows,
+360 `- [Type](url)` bullets, 8 headings, and **4 lines of real prose**. Translations of it
+came back holding between 0 and 259 of the 360 links, with some URLs truncated to
+`docs/Models/`. There is nothing to pair up, so no merge can repair it, so it fails link
+parity forever - which means `run` re-translates all 66KB of it, per locale, on every build,
+producing a fresh truncation each time. Shipping an English model index beats shipping a
+truncated one.
+
+Across the whole tree the predicate selects exactly five files (the cpp and nim endpoint
+indexes, three sdk-php ones) with no near misses - the next-closest page is above 12% prose.
+If you widen it, re-check that separation.
+
 ### Propagating a link-only English edit
 
 `scripts/propagate-link-fixes.js` carries a URL-only change from `items/en/` into every

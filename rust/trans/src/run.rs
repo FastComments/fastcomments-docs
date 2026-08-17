@@ -493,9 +493,13 @@ async fn process_one_task(
     );
     let started = std::time::Instant::now();
 
-    // en_us special-case: copy source verbatim. Mirrors
-    // the legacy Node translator:362-366.
-    let translation = if task.locale == "en_us" {
+    // Copy source verbatim for en_us (mirrors the legacy Node
+    // translator:362-366) and for generated reference indexes, which have no
+    // prose to translate and which the LLM truncates - see
+    // snapshot::source_is_reference_index.
+    let translation = if task.locale == "en_us"
+        || crate::snapshot::source_is_reference_index(&source)
+    {
         source.clone()
     } else {
         let prompt = build_prompt(&source, &task.locale, locales);
