@@ -1,30 +1,29 @@
-Add this line to your application's Gemfile:
+Προσθέστε αυτή τη γραμμή στο Gemfile της εφαρμογής σας:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+Και στη συνέχεια εκτελέστε:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+Ή εγκαταστήστε το μόνοι σας ως:
 
 ```bash
 gem install fastcomments
 ```
 
-### Library Contents
+### Περιεχόμενα Βιβλιοθήκης
 
-This library contains the generated API client and the SSO utilities to make working with the API easier.
+Αυτή η βιβλιοθήκη περιέχει τον παραγόμενο πελάτη API και τα εργαλεία SSO για να διευκολύνει τη χρήση του API.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### Δημόσια vs Ασφαλισμένα API
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, και η `PublicApi` περιέχει κλήσεις API που μπορούν να γίνουν απευθείας από έναν φυλλομετρητή/συσκευή κινητής τηλεφωνίας κ.λπ. χωρίς έλεγχο ταυτότητας. Η `ModerationApi` περιέχει τις μεθόδους που τροφοδοτούν τον πίνακα ελέγχου του συντονιστή.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Η `ModerationApi` παρέχει μια εκτενή σειρά ζωντανών και γρήγορων API συντονισμού. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή μέσω cookie συνεδρίας FastComments.com.
