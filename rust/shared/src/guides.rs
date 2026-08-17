@@ -52,6 +52,21 @@ pub struct GuideMeta {
     pub extra: serde_json::Map<String, serde_json::Value>,
 }
 
+impl GuideMeta {
+    /// True when this guide is a nav-only redirect stub: it has a `url`
+    /// pointing into another guide and no content of its own.
+    ///
+    /// These exist so the homepage can show a card for a topic that
+    /// lives as a section elsewhere (`sso` -> `/guide-customizations-
+    /// and-configuration.html#sso`). The card is real; the page is not,
+    /// so `guide-<id>.html` must never be generated or listed in the
+    /// sitemap. Doing both shipped 23 empty, orphaned `guide-sso-*.html`
+    /// URLs that an external crawl flagged as thin content.
+    pub fn is_redirect_stub(&self) -> bool {
+        self.items_ordered.is_empty() && self.url.is_some()
+    }
+}
+
 /// A discovered guide directory, plus the locale-resolved meta for it.
 #[derive(Debug, Clone)]
 pub struct Guide {
@@ -160,6 +175,11 @@ impl GuidesRoot {
 
             let meta = self.load_meta(&meta_path)?;
 
+            // A guide earns a listing if it has content, or if it is a
+            // redirect stub whose card links elsewhere. Stubs stay in
+            // this list because the homepage still renders their card;
+            // callers that emit pages or sitemap entries filter them
+            // back out with `is_redirect_stub`.
             let has_items = !meta.items_ordered.is_empty() || meta.url.is_some();
             if !has_items {
                 continue;

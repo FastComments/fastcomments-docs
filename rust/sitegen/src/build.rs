@@ -123,15 +123,20 @@ pub async fn run(args: Vec<String>) -> Result<()> {
     // drop links to the unfiltered guides.
     let all_guides = root.walk(&locales.default_locale)?;
     // Filtered set used for the per-guide HTML build loops. When
-    // --guide is absent this is just a clone of all_guides; the
-    // watcher passes the flag in dev to skip rebuilding untouched
-    // guides.
+    // --guide is absent this is every buildable guide; the watcher
+    // passes the flag in dev to skip rebuilding untouched guides.
+    // Redirect stubs are dropped here, not from `all_guides`: the index
+    // still needs their homepage card (which links at `meta.url`), but
+    // generating `guide-<id>.html` for one produces an empty page that
+    // nothing links to.
+    let buildable: Vec<&Guide> =
+        all_guides.iter().filter(|g| !g.meta.is_redirect_stub()).collect();
     let selected_guides: Vec<Guide> = match &guide_filter {
         Some(allow) => {
-            let filtered: Vec<Guide> = all_guides
+            let filtered: Vec<Guide> = buildable
                 .iter()
                 .filter(|g| allow.iter().any(|id| id == &g.id))
-                .cloned()
+                .map(|g| (*g).clone())
                 .collect();
             if filtered.is_empty() {
                 warn!(
@@ -144,7 +149,7 @@ pub async fn run(args: Vec<String>) -> Result<()> {
             }
             filtered
         }
-        None => all_guides.clone(),
+        None => buildable.iter().map(|g| (*g).clone()).collect(),
     };
     // Build the link validator BEFORE any per-guide tasks run, so every
     // guide's item set is registered when validate() fires. Mirrors
@@ -1105,9 +1110,10 @@ fn build_index_page(
     // (verbatim) as its homepage card link. The intent is "this card
     // redirects users to a section inside another guide" — e.g. SSO's
     // meta.url is `/guide-customizations-and-configuration.html#sso`.
-    // Without this, Rust always emitted `guide-sso.html` which still
-    // exists as a near-empty page but skips the cross-reference target
-    // that Node intentionally pointed at.
+    // Without this, Rust always emitted `guide-sso.html` and skipped
+    // the cross-reference target that Node intentionally pointed at.
+    // The card is the ONLY thing a stub produces; `is_redirect_stub`
+    // keeps it out of the page loop and the sitemap.
     //
     // Node does not interpolate the locale into meta.url (the field is
     // a literal path); we match that, even though it means non-default
@@ -1184,10 +1190,20 @@ fn build_index_page(
 ///
 /// = (1 + non_code_guides) × locales. Lifted into a free function so
 /// the URL cap can be tested without building the full sitemap string.
+///
+/// Redirect stubs are excluded on top of Node's formula: they never get
+/// a generated page, so listing them advertises a 23-locale set of empty
+/// URLs. This is a deliberate divergence from Node parity.
 fn sitemap_url_count(guides: &[Guide], locales: &Locales) -> usize {
     let locale_count = locales.locales.len();
-    let non_code_guides = guides.iter().filter(|g| !g.id.starts_with("code-")).count();
-    locale_count + non_code_guides * locale_count
+    let listed_guides = guides.iter().filter(|g| is_sitemap_listed(g)).count();
+    locale_count + listed_guides * locale_count
+}
+
+/// Single definition of "this guide gets URLs in the sitemap", shared by
+/// the cap check and the XML writer so the two can't disagree.
+fn is_sitemap_listed(g: &Guide) -> bool {
+    !g.id.starts_with("code-") && !g.meta.is_redirect_stub()
 }
 
 fn write_sitemap(
@@ -1231,7 +1247,7 @@ fn write_sitemap(
 
     // Guide pages.
     for g in guides {
-        if g.id.starts_with("code-") {
+        if !is_sitemap_listed(g) {
             continue;
         }
         for (loc, _) in &locales.locales {
@@ -1587,6 +1603,19 @@ mod sitemap_cap_tests {
         }
     }
 
+    /// A nav-only stub: `meta.json` carries a `url` pointing into
+    /// another guide and has no items of its own.
+    fn redirect_stub(id: &str, url: &str) -> Guide {
+        Guide {
+            id: id.to_string(),
+            meta: GuideMeta {
+                url: Some(url.to_string()),
+                ..GuideMeta::default()
+            },
+            items_dir: std::path::PathBuf::new(),
+        }
+    }
+
     /// Mirrors Node's formula at src/app.js:176 verbatim:
     ///   allLocaleKeys.length + non_code_guides * allLocaleKeys.length
     /// = (1 + non_code_guides) * locales
@@ -1646,6 +1675,50 @@ mod sitemap_cap_tests {
             !tmp.join("sitemap.xml").exists(),
             "sitemap.xml should not be written when URL cap trips"
         );
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    /// A guide with a `url` and no items is a nav-only redirect stub:
+    /// its card links into another guide, so `guide-<id>.html` is never
+    /// generated and must not be listed. Pre-fix these shipped 23 empty
+    /// `guide-sso-*.html` URLs (one per locale) that nothing linked to.
+    #[test]
+    fn redirect_stubs_excluded_from_count() {
+        let l = locales_with(2);
+        let g = vec![
+            guide("real-1"),
+            redirect_stub("sso", "/guide-customizations-and-configuration.html#sso"),
+            guide("real-2"),
+        ];
+        // 2 locales + 2 real guides * 2 locales = 6 (stub contributes 0)
+        assert_eq!(sitemap_url_count(&g, &l), 6);
+    }
+
+    /// The count and the emitted XML must agree; a stub excluded from
+    /// one but not the other would silently re-list the empty pages.
+    #[test]
+    fn redirect_stubs_absent_from_sitemap_xml() {
+        let l = locales_with(2);
+        let g = vec![
+            guide("real-1"),
+            redirect_stub("sso", "/guide-customizations-and-configuration.html#sso"),
+        ];
+        let tmp = std::env::temp_dir().join(format!(
+            "fcdocs-sitemap-stub-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap_or_default()
+                .as_nanos()
+        ));
+        std::fs::create_dir_all(&tmp).unwrap();
+        write_sitemap(&tmp, &g, &l).unwrap();
+        let xml = std::fs::read_to_string(tmp.join("sitemap.xml")).unwrap();
+        assert!(
+            !xml.contains("guide-sso"),
+            "redirect stub must not appear in sitemap.xml (as <loc> or hreflang alternate)"
+        );
+        assert!(xml.contains("guide-real-1"), "real guides must still be listed");
         let _ = std::fs::remove_dir_all(&tmp);
     }
 

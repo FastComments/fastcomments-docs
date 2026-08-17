@@ -48,3 +48,42 @@ fn resolves_item_path_with_fallback() {
     let (path2, _) = root.resolve_item_path("installation", "wordpress.md", "fr_fr");
     assert!(path2.exists());
 }
+
+/// `sso` is the live example of a nav-only redirect stub: its meta.json
+/// has a `url` into the customizations guide and zero items. It must
+/// still be walked (the homepage renders its card) but must report as a
+/// stub so sitegen skips generating `guide-sso*.html` for it.
+#[test]
+fn sso_is_a_redirect_stub_but_still_walked() {
+    let root = GuidesRoot::new(repo_root().join("src/content/guides"), "en");
+    let guides = root.walk("en").unwrap();
+
+    let sso = guides.iter().find(|g| g.id == "sso").expect("sso guide is still listed");
+    assert!(sso.meta.items_ordered.is_empty(), "sso has no items of its own");
+    assert_eq!(
+        sso.meta.url.as_deref(),
+        Some("/guide-customizations-and-configuration.html#sso")
+    );
+    assert!(sso.meta.is_redirect_stub());
+
+    // A guide with real content must never be classified as a stub.
+    let installation =
+        guides.iter().find(|g| g.id == "installation").expect("installation guide present");
+    assert!(!installation.meta.is_redirect_stub());
+}
+
+/// Guides with neither items nor a `url` (`authentication`, `wordpress`)
+/// are dropped by the walk entirely, so they never reached the page
+/// loop in the first place. Pinned so the stub filter isn't mistaken
+/// for what excludes them.
+#[test]
+fn contentless_guides_without_a_url_are_not_walked() {
+    let root = GuidesRoot::new(repo_root().join("src/content/guides"), "en");
+    let guides = root.walk("en").unwrap();
+    for id in ["authentication", "wordpress"] {
+        assert!(
+            !guides.iter().any(|g| g.id == id),
+            "{id} has no items and no url, so it should not be walked"
+        );
+    }
+}
