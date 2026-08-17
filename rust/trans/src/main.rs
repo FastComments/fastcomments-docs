@@ -15,6 +15,11 @@
 //!             - build gate: every translated item must reference the
 //!               exact same images as its default-locale source.
 //!               Exits non-zero on any mismatch.
+//!   `validate-links`
+//!             - build gate: every translated item must link exactly
+//!               where its default-locale source links. URLs are
+//!               technical identifiers, and a translator that alters
+//!               one ships a 404. Exits non-zero on any mismatch.
 
 mod check;
 mod cleanup;
@@ -22,6 +27,7 @@ mod discover;
 mod images;
 mod meta_json;
 mod json_translator;
+mod links;
 mod llm_client;
 mod run;
 mod snapshot;
@@ -38,7 +44,8 @@ async fn main() -> Result<()> {
     let cmd = args.next().unwrap_or_else(|| "check".to_string());
     match cmd.as_str() {
         "check" => check::run().await,
-        "validate-images" => validate::run_with(args).await,
+        "validate-images" => validate::run_with(validate::Gate::Images, args).await,
+        "validate-links" => validate::run_with(validate::Gate::Links, args).await,
         "cleanup" => {
             let opts = cleanup::parse_options(args)?;
             cleanup::run_with(opts).await

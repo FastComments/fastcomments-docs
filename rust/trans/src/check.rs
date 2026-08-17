@@ -150,7 +150,9 @@ pub async fn run() -> Result<()> {
     // branches into `trans run`, which re-translates the offending
     // files instead of letting the gate fail with nothing having tried
     // to fix it.
-    let image_mismatches = crate::validate::audit(&guides_dir, &locales);
+    // Covers images, app-screenshot parse errors, AND link targets - see
+    // `validate::file_problem`, the shared definition `run` also uses.
+    let parity_mismatches = crate::validate::audit(&guides_dir, &locales);
 
     // UI translations gap check. See audit_ui_translations.
     let ui_audit = audit_ui_translations(&translations_json, &ui_cache, &locales);
@@ -170,7 +172,7 @@ pub async fn run() -> Result<()> {
         missing_meta_json = meta_missing,
         stale_meta_json = meta_stale,
         inline_code_mismatches = inline_code_errors.len(),
-        image_mismatches = image_mismatches.len(),
+        parity_mismatches = parity_mismatches.len(),
     );
     if !stale_sample.is_empty() {
         info!("first 10 stale UI strings (source value edited since translation):");
@@ -201,9 +203,9 @@ pub async fn run() -> Result<()> {
             );
         }
     }
-    if !image_mismatches.is_empty() {
-        info!("image mismatches (translated item's images differ from the source's):");
-        for m in image_mismatches.iter().take(10) {
+    if !parity_mismatches.is_empty() {
+        info!("parity mismatches (translated item's images or link targets differ from the source's):");
+        for m in parity_mismatches.iter().take(10) {
             info!("  {}", m.describe());
         }
     }
@@ -224,7 +226,7 @@ pub async fn run() -> Result<()> {
         || meta_gaps > 0
         || !needs_migration.is_empty()
         || !inline_code_errors.is_empty()
-        || !image_mismatches.is_empty()
+        || !parity_mismatches.is_empty()
     {
         std::process::exit(1);
     }

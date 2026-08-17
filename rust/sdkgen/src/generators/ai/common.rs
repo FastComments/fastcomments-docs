@@ -160,23 +160,30 @@ pub fn format_resource_name(tag: Option<&str>, path: Option<&str>) -> String {
 }
 
 /// Build the GitHub blob URL for a model file. `prepend_models_path`
-/// captures the per-language quirk: cpp/typescript concatenate the
-/// configured `modelsPath` in front of the file path (matching the
-/// doubled-path Node bug we preserve for byte parity); nim/rust use
-/// the path AS-IS because it's already repo-root-relative.
+/// captures the per-language quirk: typescript/rust parsers hand back a
+/// bare filename and need the configured `modelsPath` in front of it,
+/// while cpp/nim already resolve to a repo-root-relative path.
+///
+/// Returns `None` when the resolved path doesn't exist in the checkout,
+/// so a drifted model name renders as unlinked text instead of a 404.
 pub fn type_github_url(
     file_path: &str,
     sdk: &crate::config::SdkConfig,
     models_path_rel: &str,
     prepend_models_path: bool,
-) -> String {
+    repo_path: &std::path::Path,
+) -> Option<String> {
     let base = sdk.repo.trim_end_matches(".git").trim_end_matches('/');
     let branch = &sdk.branch;
-    if prepend_models_path {
-        format!("{base}/blob/{branch}/{models_path_rel}{file_path}")
+    let rel = if prepend_models_path {
+        format!("{models_path_rel}{file_path}")
     } else {
-        format!("{base}/blob/{branch}/{file_path}")
+        file_path.to_string()
+    };
+    if !repo_path.join(&rel).exists() {
+        return None;
     }
+    Some(format!("{base}/blob/{branch}/{rel}"))
 }
 
 /// Initialized context shared by every per-language AI generator —
@@ -189,6 +196,8 @@ pub struct AiContext {
     pub models_path: String,
     pub api_files: Vec<String>,
     pub llm: LlmClient,
+    /// Checkout root, so link builders can stat a path before linking it.
+    pub repo_path: std::path::PathBuf,
 }
 
 /// Look up `<lang>AiConfig.{specPath, modelsPath, apiFiles}` on the
@@ -244,6 +253,7 @@ pub fn init_ai_context(
         models_path,
         api_files,
         llm,
+        repo_path: ctx.repo_path.clone(),
     })
 }
 
@@ -429,6 +439,7 @@ pub fn build_method_section<M: MethodForSection>(
     code_example: &str,
     sdk: &crate::config::SdkConfig,
     models_path_rel: &str,
+    repo_path: &std::path::Path,
 ) -> Option<DocSection> {
     let params = method.section_params();
     let response_display = method.section_response_display();
@@ -448,6 +459,7 @@ pub fn build_method_section<M: MethodForSection>(
         },
         sdk,
         models_path_rel,
+        repo_path,
     )
 }
 
@@ -460,6 +472,7 @@ pub fn render_method_section(
     input: SectionInput<'_>,
     sdk: &crate::config::SdkConfig,
     models_path_rel: &str,
+    repo_path: &std::path::Path,
 ) -> Option<DocSection> {
     if input.name.is_empty() {
         return None;
@@ -484,11 +497,18 @@ pub fn render_method_section(
     if !input.response_type.is_empty() {
         lines.push("## Response".to_string());
         lines.push(String::new());
-        if let Some(file_path) = input.nested_file_path {
-            let url = type_github_url(file_path, sdk, models_path_rel, input.prepend_models_path);
-            lines.push(format!("Returns: [`{}`]({url})", input.response_display));
-        } else {
-            lines.push(format!("Returns: `{}`", input.response_display));
+        let url = input.nested_file_path.and_then(|file_path| {
+            type_github_url(
+                file_path,
+                sdk,
+                models_path_rel,
+                input.prepend_models_path,
+                repo_path,
+            )
+        });
+        match url {
+            Some(url) => lines.push(format!("Returns: [`{}`]({url})", input.response_display)),
+            None => lines.push(format!("Returns: `{}`", input.response_display)),
         }
         lines.push(String::new());
     }
@@ -554,8 +574,15 @@ pub async fn fanout_methods<M>(
     llm: Arc<LlmClient>,
     sdk: Arc<crate::config::SdkConfig>,
     models_path: String,
+    repo_path: Arc<std::path::PathBuf>,
     prompt_fn: fn(&M) -> String,
-    section_fn: fn(&M, &str, &crate::config::SdkConfig, &str) -> Option<DocSection>,
+    section_fn: fn(
+        &M,
+        &str,
+        &crate::config::SdkConfig,
+        &str,
+        &std::path::Path,
+    ) -> Option<DocSection>,
 ) -> (Vec<DocSection>, usize)
 where
     M: Send + Sync + Serialize + 'static,
@@ -565,6 +592,7 @@ where
         let llm = llm.clone();
         let sdk = sdk.clone();
         let models_path = models_path.clone();
+        let repo_path = repo_path.clone();
         tasks.push(tokio::spawn(async move {
             let prompt = prompt_fn(&method);
             let code = match cached_or_generate(&llm, &method, &prompt).await {
@@ -572,7 +600,10 @@ where
                 Ok(None) => return (idx, Ok(None)),
                 Err(e) => return (idx, Err(e)),
             };
-            (idx, Ok(section_fn(&method, &code, &sdk, &models_path)))
+            (
+                idx,
+                Ok(section_fn(&method, &code, &sdk, &models_path, &repo_path)),
+            )
         }));
     }
     let mut indexed: Vec<(usize, Option<DocSection>)> = Vec::new();
@@ -607,7 +638,13 @@ pub async fn run_ai_generator<M>(
     ai: AiContext,
     sdk: crate::config::SdkConfig,
     prompt_fn: fn(&M) -> String,
-    section_fn: fn(&M, &str, &crate::config::SdkConfig, &str) -> Option<DocSection>,
+    section_fn: fn(
+        &M,
+        &str,
+        &crate::config::SdkConfig,
+        &str,
+        &std::path::Path,
+    ) -> Option<DocSection>,
 ) -> crate::generators::base::GeneratedDocs
 where
     M: Send + Sync + Serialize + 'static,
@@ -617,6 +654,7 @@ where
         Arc::new(ai.llm),
         Arc::new(sdk),
         ai.models_path,
+        Arc::new(ai.repo_path),
         prompt_fn,
         section_fn,
     )
@@ -632,6 +670,54 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn cpp_sdk() -> crate::config::SdkConfig {
+        serde_json::from_value(serde_json::json!({
+            "id": "sdk-cpp",
+            "name": "C++",
+            "repo": "https://github.com/FastComments/fastcomments-cpp",
+            "branch": "master",
+        }))
+        .expect("SdkConfig")
+    }
+
+    const CPP_MODELS: &str = "client/include/FastCommentsClient/model/";
+
+    #[test]
+    fn cpp_url_does_not_repeat_the_models_path() {
+        // cpp's parser hands back a repo-root-relative path, so prepending
+        // `modelsPath` produced `.../model/client/include/.../model/X.h`.
+        let dir = tempfile::tempdir().expect("tempdir");
+        std::fs::create_dir_all(dir.path().join(CPP_MODELS)).expect("mkdir");
+        let rel = format!("{CPP_MODELS}APIEmptyResponse.h");
+        std::fs::write(dir.path().join(&rel), "").expect("write");
+        assert_eq!(
+            type_github_url(&rel, &cpp_sdk(), CPP_MODELS, false, dir.path()).as_deref(),
+            Some("https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h")
+        );
+    }
+
+    #[test]
+    fn no_url_when_the_file_is_missing_from_the_checkout() {
+        let dir = tempfile::tempdir().expect("tempdir");
+        let rel = format!("{CPP_MODELS}Gone.h");
+        assert_eq!(
+            type_github_url(&rel, &cpp_sdk(), CPP_MODELS, false, dir.path()),
+            None
+        );
+    }
+
+    #[test]
+    fn prepending_still_works_for_parsers_that_return_a_bare_filename() {
+        // typescript/rust hand back `Foo.ts` / `foo.rs` and need the prefix.
+        let dir = tempfile::tempdir().expect("tempdir");
+        std::fs::create_dir_all(dir.path().join(CPP_MODELS)).expect("mkdir");
+        std::fs::write(dir.path().join(format!("{CPP_MODELS}Bare.h")), "").expect("write");
+        assert_eq!(
+            type_github_url("Bare.h", &cpp_sdk(), CPP_MODELS, true, dir.path()).as_deref(),
+            Some("https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/Bare.h")
+        );
+    }
 
     #[test]
     fn capitalize_first_handles_empty_and_unicode() {

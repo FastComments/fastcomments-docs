@@ -81,7 +81,7 @@ fn parse_readme(
     let matches: Vec<_> = H2.find_iter(&content).collect();
     if matches.is_empty() {
         let converted =
-            convert_relative_links_for_sdk(&content, repo_url, branch, "", Some(sdk_id), Some(repo_path));
+            convert_relative_links_for_sdk(&content, repo_url, branch, "", Some(sdk_id), repo_path);
         out.push(DocSection {
             name: "Overview".to_string(),
             file: Some("overview-readme-generated.md".to_string()),
@@ -111,7 +111,7 @@ fn parse_readme(
         let body = H2.replace(raw, "").trim_start_matches('\n').to_string();
         let body = body.trim().to_string();
         let body =
-            convert_relative_links_for_sdk(&body, repo_url, branch, "", Some(sdk_id), Some(repo_path));
+            convert_relative_links_for_sdk(&body, repo_url, branch, "", Some(sdk_id), repo_path);
         let sub_cat = categorize(&title);
         if should_skip_section(&title) {
             continue;
@@ -152,7 +152,7 @@ fn parse_docs_dir(
             branch,
             "docs/",
             Some(sdk_id),
-            Some(repo_path),
+            repo_path,
         );
         let title = extract_title(&converted).unwrap_or_else(|| {
             p.file_stem()
@@ -236,7 +236,7 @@ pub fn convert_relative_links_for_sdk(
     branch: &str,
     base_path: &str,
     sdk_id: Option<&str>,
-    repo_path: Option<&std::path::Path>,
+    repo_path: &std::path::Path,
 ) -> String {
     map_outside_code_fences(content, &|chunk: &str| {
         let chunk = convert_markdown_links(chunk, repo_url, branch, base_path, sdk_id, repo_path);
@@ -250,7 +250,7 @@ fn convert_markdown_links(
     branch: &str,
     base_path: &str,
     sdk_id: Option<&str>,
-    repo_path: Option<&std::path::Path>,
+    repo_path: &std::path::Path,
 ) -> String {
     static LINK: Lazy<Regex> =
         Lazy::new(|| Regex::new(r"(!?)\[([^\]]+)\]\(([^)]+)\)").expect("regex"));
@@ -283,7 +283,18 @@ fn convert_markdown_links(
         };
         let normalized = posix_normalize(&resolved);
         let repo_clean = repo_url.trim_end_matches(".git").trim_end_matches('/');
-        format!("[{text}]({repo_clean}/blob/{branch}/{normalized})")
+        // READMEs drift: they link directories (GitHub 301s /blob/ to /tree/)
+        // and files that were renamed or deleted (404). The checkout is the
+        // only place to tell those apart, so a missing target loses its link
+        // rather than shipping a dead one.
+        let target = repo_path.join(&normalized);
+        if target.is_dir() {
+            format!("[{text}]({repo_clean}/tree/{branch}/{normalized})")
+        } else if target.exists() {
+            format!("[{text}]({repo_clean}/blob/{branch}/{normalized})")
+        } else {
+            text.to_string()
+        }
     })
     .into_owned()
 }
@@ -294,7 +305,7 @@ fn convert_html_img_srcs(
     branch: &str,
     base_path: &str,
     sdk_id: Option<&str>,
-    repo_path: Option<&std::path::Path>,
+    repo_path: &std::path::Path,
 ) -> String {
     // `\s` before `src`, not `\b`: `\b` also matches inside `data-src`, and
     // the lazy `[^>]*?` would then rewrite the placeholder instead of the src.
@@ -323,7 +334,7 @@ fn resolve_asset_href(
     branch: &str,
     base_path: &str,
     sdk_id: Option<&str>,
-    repo_path: Option<&std::path::Path>,
+    repo_path: &std::path::Path,
 ) -> Option<String> {
     let trimmed = href.trim();
     if trimmed.is_empty()
@@ -340,8 +351,8 @@ fn resolve_asset_href(
         None => posix_join(base_path, trimmed),
     };
     let normalized = posix_normalize(&resolved);
-    if let (Some(id), Some(rp)) = (sdk_id, repo_path) {
-        if let Some(local) = copy_image_to_static(id, rp, &normalized) {
+    if let Some(id) = sdk_id {
+        if let Some(local) = copy_image_to_static(id, repo_path, &normalized) {
             return Some(local);
         }
     }
@@ -606,8 +617,19 @@ mod tests {
     const RAW: &str =
         "https://raw.githubusercontent.com/FastComments/fastcomments-react-native-sdk/main";
 
+    /// Link rewriting stats the checkout, so tests need a real tree.
+    /// `sub/f.ts` is the file case; `sub/` is the directory case;
+    /// anything else is the "target is gone" case.
+    fn fixture_repo() -> tempfile::TempDir {
+        let dir = tempfile::tempdir().expect("tempdir");
+        std::fs::create_dir_all(dir.path().join("sub")).expect("mkdir");
+        std::fs::write(dir.path().join("sub/f.ts"), "").expect("write");
+        dir
+    }
+
     fn convert(content: &str) -> String {
-        convert_relative_links_for_sdk(content, REPO, "main", "", None, None)
+        let repo = fixture_repo();
+        convert_relative_links_for_sdk(content, REPO, "main", "", None, repo.path())
     }
 
     #[test]
@@ -670,5 +692,22 @@ mod tests {
                 "![shot]({RAW}/y.png) [src]({REPO}/blob/main/sub/f.ts) [top](#getting-started-readme-generated) [ext](https://a.b)"
             )
         );
+    }
+
+    #[test]
+    fn links_a_directory_as_tree_not_blob() {
+        // fastcomments-angular's README links `projects/fastcomments-angular`;
+        // GitHub 301s /blob/ to /tree/ for a directory.
+        assert_eq!(
+            convert("[the lib](sub)"),
+            format!("[the lib]({REPO}/tree/main/sub)")
+        );
+    }
+
+    #[test]
+    fn drops_the_link_when_the_target_is_gone() {
+        // fastcomments-python's README links ./sso/README.md, which
+        // doesn't exist — better unlinked text than a 404.
+        assert_eq!(convert("[SSO docs](sso/README.md)"), "SSO docs");
     }
 }

@@ -180,6 +180,21 @@ if [ "$PARTIAL_BUILD" != "true" ]; then
     exit 1
   fi
 
+  # Link parity gate. Same argument as the image gate, for the other class
+  # of technical value a translator mangles: it has dropped a path segment,
+  # injected a zero-width space into a hostname, and truncated paths
+  # outright, each shipping a 404 that only an external crawl ever caught.
+  # `trans run` now restores link targets from the source deterministically,
+  # so this can only fail on something that pass didn't cover. Link COUNT
+  # mismatches are deliberately not fatal - there is no deterministic repair
+  # for a dropped link, so gating on it would wedge the build behind the
+  # translator; those re-translate via `trans check` instead.
+  validate_links_run() { ./rust/target/release/trans validate-links; }
+  if ! phase "trans validate-links" validate_links_run; then
+    echo "ERROR: translated guides link somewhere the reference locale does not"
+    exit 1
+  fi
+
   # MAX_BROWSERS=1 caps chromiumoxide concurrency for the screenshot marker.
   sitegen_build() { MAX_BROWSERS=1 ./rust/target/release/sitegen build; }
   if ! phase "sitegen build" sitegen_build; then

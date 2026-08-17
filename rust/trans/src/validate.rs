@@ -22,12 +22,17 @@ use tracing::info;
 
 use crate::discover::default_locale_files;
 use crate::images::{extract_screenshot_bodies, image_diff, ImageDiff};
+use crate::links::LinkDiff;
 
 /// Why a translated file fails the gate.
 #[derive(Debug, Clone)]
 pub enum Problem {
     /// Its image references differ from the source's.
     Images(ImageDiff),
+    /// Its link targets differ from the source's. URLs are technical
+    /// identifiers, so a translation that alters one ships a 404 that
+    /// only an external crawl ever notices - see [`crate::links`].
+    Links(LinkDiff),
     /// An `[app-screenshot-*]` block doesn't evaluate as JavaScript -
     /// usually an unescaped apostrophe in a translated `title` / `alt`,
     /// which terminates the quoted value early. `sitegen` reacts to
@@ -41,6 +46,7 @@ impl Problem {
     pub fn describe(&self) -> String {
         match self {
             Problem::Images(diff) => diff.describe(),
+            Problem::Links(diff) => diff.describe(),
             Problem::UnparseableScreenshot { body, error } => {
                 format!("app-screenshot block does not parse ({error}): [app-screenshot-start{body}app-screenshot-end]")
             }
@@ -77,6 +83,9 @@ impl Mismatch {
 pub fn file_problem(source: &str, translated: &str) -> Option<Problem> {
     if let Some(diff) = image_diff(source, translated) {
         return Some(Problem::Images(diff));
+    }
+    if let Some(diff) = crate::links::link_diff(source, translated) {
+        return Some(Problem::Links(diff));
     }
     // Only the translation is evaluated. A source block that doesn't
     // parse is an authoring bug, not a translation bug, and flagging it
@@ -158,7 +167,7 @@ pub fn audit(guides_dir: &Path, locales: &Locales) -> Vec<Mismatch> {
 /// carry corrupted URLs and unescaped apostrophes, and translations of a
 /// generated item still carry whatever `src` the source had when they were
 /// written. Idempotent - a second run changes nothing.
-fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> {
+fn fix_translated_files(guides_dir: &Path, locales: &Locales) -> Result<usize> {
     let mut fixed = 0usize;
     let Ok(entries) = std::fs::read_dir(guides_dir) else {
         return Ok(0);
@@ -180,7 +189,8 @@ fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> 
             };
             let has_screenshots = !crate::images::extract_screenshot_bodies(&source).is_empty();
             let has_html_images = source.contains("<img");
-            if !has_screenshots && !has_html_images {
+            let has_links = !crate::links::extract_link_urls(&source).is_empty();
+            if !has_screenshots && !has_html_images && !has_links {
                 continue;
             }
             for (locale, _) in &locales.locales {
@@ -193,6 +203,7 @@ fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> 
                 };
                 let merged = crate::images::merge_screenshot_blocks(&source, &translated);
                 let merged = crate::images::merge_image_srcs(&source, &merged);
+                let merged = crate::links::merge_link_urls(&source, &merged);
                 if merged != translated {
                     std::fs::write(&target, &merged)?;
                     fixed += 1;
@@ -204,13 +215,58 @@ fn fix_screenshot_blocks(guides_dir: &Path, locales: &Locales) -> Result<usize> 
     Ok(fixed)
 }
 
+/// Which class of problem a gate invocation reports. Both share one walker
+/// and one definition of "broken" ([`file_problem`]), so `check` and `run`
+/// stay in agreement with them; they differ only in what they print and
+/// what fails the build, which keeps each build.sh phase's failure message
+/// pointing at the thing that actually broke.
+#[derive(Clone, Copy, PartialEq)]
+pub enum Gate {
+    Images,
+    Links,
+}
+
+impl Gate {
+    fn covers(&self, problem: &Problem) -> bool {
+        match (self, problem) {
+            (Gate::Images, Problem::Images(_) | Problem::UnparseableScreenshot { .. }) => true,
+            // Count mismatches still re-translate (they reach `run` through
+            // `file_problem`), they just don't fail the build.
+            (Gate::Links, Problem::Links(diff)) => diff.has_altered_target(),
+            _ => false,
+        }
+    }
+
+    fn tag(&self) -> &'static str {
+        match self {
+            Gate::Images => "image-mismatch",
+            Gate::Links => "link-mismatch",
+        }
+    }
+
+    fn ok_message(&self) -> &'static str {
+        match self {
+            Gate::Images => "image parity OK - every translated item has the same images as its source, and every app-screenshot block parses",
+            Gate::Links => "link parity OK - every translated item links exactly where its source links",
+        }
+    }
+
+    fn fail_message(&self) -> &'static str {
+        match self {
+            Gate::Images => "translated items have broken images (see [image-mismatch] lines above)",
+            Gate::Links => "translated items link somewhere their source does not (see [link-mismatch] lines above)",
+        }
+    }
+}
+
 /// Subcommand entry point. Exits non-zero (failing the build) when any
-/// translated file's images don't match the source's.
+/// translated file fails `gate`.
 ///
-/// `--fix` first rebuilds every translated `[app-screenshot-*]` block
-/// from its source. That is a maintenance action, never part of the
-/// build: build.sh calls this with no arguments so it only ever reports.
-pub async fn run_with<I: IntoIterator<Item = String>>(args: I) -> Result<()> {
+/// `--fix` first restores every translated file's `[app-screenshot-*]`
+/// blocks, `<img src>` values, and link targets from its source. That is a
+/// maintenance action, never part of the build: build.sh calls this with no
+/// arguments so it only ever reports.
+pub async fn run_with<I: IntoIterator<Item = String>>(gate: Gate, args: I) -> Result<()> {
     let mut fix = false;
     for arg in args {
         match arg.as_str() {
@@ -223,24 +279,24 @@ pub async fn run_with<I: IntoIterator<Item = String>>(args: I) -> Result<()> {
     let locales = Locales::load_from(&repo.join("src/locales.json"))?;
 
     if fix {
-        let n = fix_screenshot_blocks(&guides_dir, &locales)?;
-        info!(files = n, "rebuilt app-screenshot blocks from source");
+        let n = fix_translated_files(&guides_dir, &locales)?;
+        info!(files = n, "restored images and link targets from source");
     }
 
-    let mismatches = audit(&guides_dir, &locales);
+    let mismatches: Vec<Mismatch> = audit(&guides_dir, &locales)
+        .into_iter()
+        .filter(|m| gate.covers(&m.problem))
+        .collect();
     if mismatches.is_empty() {
-        info!("image parity OK - every translated item has the same images as its source, and every app-screenshot block parses");
+        info!("{}", gate.ok_message());
         return Ok(());
     }
     // Print all of them, not a sample: this fails the build, so the
     // log has to contain everything needed to fix it.
     for m in &mismatches {
-        tracing::error!("[image-mismatch] {}", m.describe());
+        tracing::error!("[{}] {}", gate.tag(), m.describe());
     }
-    tracing::error!(
-        count = mismatches.len(),
-        "translated items have broken images (see [image-mismatch] lines above)"
-    );
+    tracing::error!(count = mismatches.len(), "{}", gate.fail_message());
     std::process::exit(1);
 }
 

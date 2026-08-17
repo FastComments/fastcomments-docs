@@ -503,16 +503,22 @@ async fn process_one_task(
         let raw = call_llm(client, api_key, model, &system, &prompt, &task.filename)
             .await
             .context("LLM call")?;
-        // Three deterministic passes over the model's output. Two are for
+        // Four deterministic passes over the model's output. Two are for
         // the markers whose bodies are evaluated as JavaScript at build
         // time: escape apostrophes in [inline-code-attrs-*], and rebuild
         // [app-screenshot-*] blocks from the source so only the translated
         // title/alt survive. Neither marker tolerates a creative
         // translator, and prompt rules alone did not stop one. The third
-        // undoes a translator promoting the opening paragraph to a
-        // heading, which puts a second <h1> on the page.
+        // restores link targets from the source, for the same reason: a
+        // URL is a technical identifier, and the translator has dropped a
+        // path segment, injected a zero-width space into a hostname, and
+        // truncated paths outright - each one a 404 nothing but an
+        // external crawl would catch. The fourth undoes a translator
+        // promoting the opening paragraph to a heading, which puts a
+        // second <h1> on the page.
         let cleaned =
             crate::images::merge_screenshot_blocks(&source, &sanitize_inline_code_attrs(&raw));
+        let cleaned = crate::links::merge_link_urls(&source, &cleaned);
         match_leading_heading(&source, &cleaned)
     };
 
@@ -533,6 +539,18 @@ async fn process_one_task(
         if let Some(diff) = crate::images::image_diff(&source, &translation) {
             warn!(
                 "[warning] image mismatch in {}/{}/{}: {}",
+                task.guide_id,
+                task.locale,
+                task.filename,
+                diff.describe()
+            );
+        }
+        // Only reachable when the counts differ, since `merge_link_urls`
+        // rewrites every target when they match. Hard gate is
+        // `trans validate-links`.
+        if let Some(diff) = crate::links::link_diff(&source, &translation) {
+            warn!(
+                "[warning] link mismatch in {}/{}/{}: {}",
                 task.guide_id,
                 task.locale,
                 task.filename,
@@ -694,21 +712,21 @@ fn build_task_list_filtered(
                     || !target.exists()
                     || cached_hash != Some(&source_hash);
                 // Cache-fresh but the existing translation lost /
-                // duplicated / rewrote an image. Without this the
-                // `validate-images` gate would fail the build forever:
-                // `check` flags the mismatch, build.sh branches into
-                // `run`, and `run` skips the file because its hash
-                // still matches. Re-translate it instead. Same
-                // criterion as validate::audit, including the absence
-                // of a "source has no images" shortcut — an invented
-                // image fails the gate too and must be re-translated.
+                // duplicated / rewrote an image, or links somewhere the
+                // source doesn't. Without this the parity gates would
+                // fail the build forever: `check` flags the mismatch,
+                // build.sh branches into `run`, and `run` skips the file
+                // because its hash still matches. Re-translate it
+                // instead. `validate::file_problem` is deliberately the
+                // shared criterion — if this test were narrower, `run`
+                // would skip a file the gate rejects.
                 if !needs {
                     if let Ok(translated) = std::fs::read_to_string(&target) {
-                        if let Some(diff) = crate::images::image_diff(&content, &translated) {
+                        if let Some(problem) = crate::validate::file_problem(&content, &translated) {
                             warn!(
-                                "[image-mismatch] {guide_id}/{locale}/{}: {} - re-translating",
+                                "[parity-mismatch] {guide_id}/{locale}/{}: {} - re-translating",
                                 src.filename,
-                                diff.describe()
+                                problem.describe()
                             );
                             needs = true;
                         }

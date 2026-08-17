@@ -483,6 +483,12 @@ fn generate_type_github_url(
     let base_url = sdk.repo.trim_end_matches(".git").to_string();
     let branch = &sdk.branch;
     let file_path = get_type_file_path(type_name, sdk, repo_path)?;
+    // Several languages compute the path from the type name instead of
+    // finding it, so confirm it before linking — a drifted name renders
+    // as unlinked text rather than a 404.
+    if !repo_path.join(&file_path).is_file() {
+        return None;
+    }
     Some(format!("{base_url}/blob/{branch}/{file_path}"))
 }
 
@@ -503,7 +509,7 @@ fn get_type_file_path(type_name: &str, sdk: &crate::config::SdkConfig, repo_path
         "swift" => Some(format!(
             "client/FastCommentsSwift/Models/{type_name}.swift"
         )),
-        "ruby" => Some(ruby_type_file_path(type_name)),
+        "ruby" => ruby_type_file_path(type_name, repo_path),
         "nim" => Some(nim_type_file_path(type_name)),
         _ => None,
     }
@@ -523,19 +529,11 @@ fn python_type_file_path(type_name: &str, sdk: &crate::config::SdkConfig, repo_p
 
 fn rust_type_file_path(type_name: &str, repo_path: &Path) -> Option<String> {
     let models_dir = repo_path.join("client/src/models");
-    if !models_dir.exists() {
-        return None;
-    }
     let pattern = Regex::new(&format!(r"pub\s+(?:struct|enum)\s+{}\b", regex::escape(type_name)))
         .ok()?;
-    for entry in std::fs::read_dir(&models_dir).ok()?.flatten() {
-        let p = entry.path();
-        if p.extension().and_then(|s| s.to_str()) != Some("rs") {
-            continue;
-        }
-        if let Ok(content) = std::fs::read_to_string(&p) {
+    for fname in sorted_file_names(&models_dir, "rs")? {
+        if let Ok(content) = std::fs::read_to_string(models_dir.join(&fname)) {
             if pattern.is_match(&content) {
-                let fname = p.file_name()?.to_string_lossy().into_owned();
                 return Some(format!("client/src/models/{fname}"));
             }
         }
@@ -545,9 +543,6 @@ fn rust_type_file_path(type_name: &str, repo_path: &Path) -> Option<String> {
 
 fn go_type_file_path(type_name: &str, repo_path: &Path) -> Option<String> {
     let models_dir = repo_path.join("client");
-    if !models_dir.exists() {
-        return None;
-    }
     let mut tn = type_name.to_string();
     if let Some(rest) = tn.strip_prefix("[]") {
         tn = rest.to_string();
@@ -557,15 +552,11 @@ fn go_type_file_path(type_name: &str, repo_path: &Path) -> Option<String> {
         regex::escape(&tn)
     ))
     .ok()?;
-    for entry in std::fs::read_dir(&models_dir).ok()?.flatten() {
-        let p = entry.path();
-        let Some(fname) = p.file_name().and_then(|s| s.to_str()) else {
-            continue;
-        };
-        if !fname.starts_with("model_") || !fname.ends_with(".go") {
+    for fname in sorted_file_names(&models_dir, "go")? {
+        if !fname.starts_with("model_") {
             continue;
         }
-        if let Ok(content) = std::fs::read_to_string(&p) {
+        if let Ok(content) = std::fs::read_to_string(models_dir.join(&fname)) {
             if pattern.is_match(&content) {
                 return Some(format!("client/{fname}"));
             }
@@ -574,9 +565,36 @@ fn go_type_file_path(type_name: &str, repo_path: &Path) -> Option<String> {
     None
 }
 
-fn ruby_type_file_path(type_name: &str) -> String {
-    let snake = pascal_to_snake(type_name);
-    format!("client/lib/fastcomments-client/models/{snake}.rb")
+/// openapi-generator's ruby filenames aren't derivable from the type name
+/// (`GetPageByURLIdAPIResponse` lives in `get_page_by_urlid_api_response.rb`),
+/// so find the declaring file the way rust/go already do.
+fn ruby_type_file_path(type_name: &str, repo_path: &Path) -> Option<String> {
+    const MODELS_DIR: &str = "client/lib/fastcomments-client/models";
+    let models_dir = repo_path.join(MODELS_DIR);
+    let pattern =
+        Regex::new(&format!(r"(?m)^\s*class\s+{}\b", regex::escape(type_name))).ok()?;
+    for fname in sorted_file_names(&models_dir, "rb")? {
+        if let Ok(content) = std::fs::read_to_string(models_dir.join(&fname)) {
+            if pattern.is_match(&content) {
+                return Some(format!("{MODELS_DIR}/{fname}"));
+            }
+        }
+    }
+    None
+}
+
+/// Filenames with `ext` in `dir`, sorted. `read_dir` order is unspecified
+/// (inode order on ext4), and a scan that returns the first match must not
+/// depend on it, or the generated URL flaps between machines.
+fn sorted_file_names(dir: &Path, ext: &str) -> Option<Vec<String>> {
+    let mut names: Vec<String> = std::fs::read_dir(dir)
+        .ok()?
+        .flatten()
+        .filter(|e| e.path().extension().and_then(|s| s.to_str()) == Some(ext))
+        .filter_map(|e| e.file_name().to_str().map(String::from))
+        .collect();
+    names.sort();
+    Some(names)
 }
 
 fn nim_type_file_path(type_name: &str) -> String {
@@ -746,5 +764,62 @@ trait SdkExtra {
 impl SdkExtra for crate::config::SdkConfig {
     fn extra(&self) -> &serde_json::Map<String, Value> {
         self.extra.as_ref().expect("SdkConfig.extra populated")
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn ruby_fixture() -> tempfile::TempDir {
+        let dir = tempfile::tempdir().expect("tempdir");
+        let models = dir.path().join("client/lib/fastcomments-client/models");
+        std::fs::create_dir_all(&models).expect("mkdir");
+        // Real openapi-generator output: the filename is not derivable
+        // from the class name, so the class declaration is the only key.
+        std::fs::write(
+            models.join("get_page_by_urlid_api_response.rb"),
+            "module FastCommentsClient\n  class GetPageByURLIdAPIResponse < ApiModelBase\n  end\nend\n",
+        )
+        .expect("write");
+        std::fs::write(
+            models.join("api_empty_response.rb"),
+            "module FastCommentsClient\n  class APIEmptyResponse < ApiModelBase\n  end\nend\n",
+        )
+        .expect("write");
+        dir
+    }
+
+    #[test]
+    fn ruby_path_resolves_by_class_declaration_not_by_name_mangling() {
+        let dir = ruby_fixture();
+        assert_eq!(
+            ruby_type_file_path("APIEmptyResponse", dir.path()).as_deref(),
+            Some("client/lib/fastcomments-client/models/api_empty_response.rb")
+        );
+        // `pascal_to_snake` would have produced `get_page_by_u_r_l_id_...`.
+        assert_eq!(
+            ruby_type_file_path("GetPageByURLIdAPIResponse", dir.path()).as_deref(),
+            Some("client/lib/fastcomments-client/models/get_page_by_urlid_api_response.rb")
+        );
+    }
+
+    #[test]
+    fn ruby_path_is_none_for_a_type_the_checkout_does_not_declare() {
+        let dir = ruby_fixture();
+        assert_eq!(ruby_type_file_path("VoteResponseStatus", dir.path()), None);
+    }
+
+    #[test]
+    fn ruby_path_ignores_a_reference_that_is_not_a_declaration() {
+        let dir = tempfile::tempdir().expect("tempdir");
+        let models = dir.path().join("client/lib/fastcomments-client/models");
+        std::fs::create_dir_all(&models).expect("mkdir");
+        std::fs::write(
+            models.join("other.rb"),
+            "# see APIEmptyResponse\nclass Other < APIEmptyResponse\nend\n",
+        )
+        .expect("write");
+        assert_eq!(ruby_type_file_path("APIEmptyResponse", dir.path()), None);
     }
 }

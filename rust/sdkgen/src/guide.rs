@@ -283,6 +283,17 @@ async fn generate_one(checkout: &Checkout, guides_dir: &Path) -> Result<SdkOutco
         // to interpret e.g. Blade syntax. Mirrors
         // src/sdk-guide-generator.js:229.
         let escaped = section.content.replace("{{", "\\{{");
+        for bad in crate::linkcheck::bad_links(
+            &escaped,
+            &checkout.sdk.repo,
+            &checkout.sdk.branch,
+            &checkout.path,
+        ) {
+            outcome.validation_errors.push(format!(
+                "sdk={} file={filename} : broken link {} ({})",
+                checkout.sdk.id, bad.url, bad.reason
+            ));
+        }
         std::fs::write(&file_path, escaped)
             .with_context(|| format!("write {file_path:?}"))?;
         section.file = Some(filename);

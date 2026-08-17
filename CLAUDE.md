@@ -104,12 +104,79 @@ has one (even when the translation cache says it's fresh) so the gate can't dead
 build. Extraction + comparison + merge live in `rust/trans/src/images.rs`; the walker is
 `rust/trans/src/validate.rs`.
 
+### Link targets are restored, not trusted
+
+Same story, same shape, for URLs - `rust/trans/src/links.rs` plus
+`./rust/target/release/trans validate-links [--fix]`. A translated page must link exactly
+where the English page links, and the translator does not respect that on its own: it has
+dropped `_status_` out of the middle of a path, injected a zero-width space into a hostname
+(`fastcomment\u{200b}s-nim`), and truncated paths down to `docs/Models/`. Each one ships a
+404 that only an external crawl ever notices.
+
+So `trans run` runs `links::merge_link_urls` over fresh output, restoring the source's
+targets positionally while keeping the translated link text, and `validate-links` catches
+the back-catalog. Two things to know:
+
+- **A link COUNT mismatch is not fatal.** There is no deterministic repair for a link the
+  translator dropped or invented, so gating on it would wedge the build behind an LLM that
+  may never produce the right count. Those files fail `validate::file_problem` instead,
+  which makes `trans check` non-zero and `trans run` re-translate them. Only an *altered
+  target* - same count, different URL - fails the build, and that class cannot survive
+  `merge_link_urls`.
+- **The label pattern allows one level of nested brackets.** Generated SDK pages are full of
+  ``Returns: [`Option[T]`](url)``, and a pattern that stops at the first `]` matches none of
+  them and reports a clean file. That is exactly how the zero-width space above survived the
+  first pass at this check.
+
+`validate::file_problem` is the single shared definition of "this translation is broken",
+used by the gates, `check`, and `run`'s task discovery. Keep it that way: if `run` used a
+narrower rule it would skip a file the gate rejects.
+
+### Propagating a link-only English edit
+
+`scripts/propagate-link-fixes.js` carries a URL-only change from `items/en/` into every
+translated copy and reseals `src/translation-cache.json`, so a link fix across hundreds of
+generated files doesn't queue thousands of DeepInfra calls. It refuses to touch anything it
+isn't sure about: the English change must reduce to the same text with links stripped, each
+rewrite must find the old URL as a whole link target the same number of times English had
+it, and the result must end up with exactly English's URL list. Copies that fail any of
+those keep their stale cache entry and re-translate normally.
+
+**This is a maintenance action, never a build step.** As a standing `build.sh` phase it
+would suppress re-translation on every English edit. Same rule as `validate-images --fix`.
+
 ### Batching strategy
 
 For large translation runs, work in batches:
 - Translate all files for one guide + one locale before moving to the next.
 - Use `--guide` and `--locale` flags to scope the work.
 - Commit after completing each guide or after a reasonable batch size.
+
+## Generated links must resolve in the checkout
+
+Every GitHub URL `sdkgen` emits is built from a path it has just stat'd in
+`src/content/sdks-checkout/<sdk-id>/`, in all three places that build one:
+`generators/readme.rs` (relative links in an upstream README), `generators/openapi.rs`
+(`Returns:` links for go/java/php/python/ruby/swift/dart), and
+`generators/ai/common.rs` (`Returns:` links for cpp/typescript/rust/nim). A path that
+isn't there renders as unlinked text rather than a 404, and a directory gets `/tree/`
+rather than `/blob/` (GitHub 301s the latter).
+
+Two rules worth keeping:
+
+- **Don't compute a filename you can find instead.** `openapi-generator`'s Ruby output puts
+  `GetPageByURLIdAPIResponse` in `get_page_by_urlid_api_response.rb`, which no
+  `underscore`-style algorithm predicts. `ruby_type_file_path` scans the models dir for
+  `class <TypeName>`, the way `rust_type_file_path` / `go_type_file_path` already did.
+- **Sort `read_dir` before taking the first match.** Directory order is unspecified (inode
+  order on ext4), so an unsorted scan can emit a different URL on a different machine and
+  flap 22 locales into re-translation. `sorted_file_names` exists for this.
+
+`linkcheck.rs` is the backstop, run inside `guide::generate_one` on the markdown as it is
+written: any link into the SDK's own repo that doesn't resolve becomes a validation error
+and fails the build through the existing end-of-run report. It lives there rather than in a
+later `build.sh` phase because that is the only point where the checkout is guaranteed
+fresh - `checkout.rs` pulls at the start of the same run.
 
 ## Site generation
 

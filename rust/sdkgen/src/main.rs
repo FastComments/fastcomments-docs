@@ -23,6 +23,7 @@ mod checkout;
 mod config;
 mod generators;
 mod guide;
+mod linkcheck;
 
 use anyhow::Result;
 

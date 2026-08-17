@@ -49,7 +49,8 @@ impl super::common::DescriptionOverride for Method {
 
 impl super::common::MethodForSection for Method {
     const LANG_TAG: &'static str = "cpp";
-    const PREPEND_MODELS_PATH: bool = true;
+    // `load_type_definition` already returns a repo-root-relative path.
+    const PREPEND_MODELS_PATH: bool = false;
     fn section_name(&self) -> &str { &self.name }
     fn section_description(&self) -> &str { &self.description }
     fn section_params(&self) -> Vec<(String, String, bool)> {
