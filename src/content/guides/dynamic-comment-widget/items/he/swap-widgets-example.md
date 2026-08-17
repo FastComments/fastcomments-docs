@@ -77,7 +77,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 alert(`Product ${oldId} not found to replace!`);
             }
     
-            // הוסף כמה וידג'טים
+            // הוסף כמה ווידג'טים
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -121,3 +121,5 @@ With the React and related libraries we can simply update the configuration and 
 will handle refreshing the widget for us. With VanillaJS we have to manage it ourselves as shown.
 
 Feel free to ask any questions below and we'll do our best to help!
+
+---
