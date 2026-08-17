@@ -8,8 +8,8 @@ Il meccanismo è progettato per non sovraccaricare la tua installazione WordPres
 
 ### CloudFlare & FireWalls
 
-Affinché la configurazione automatica di WordPress funzioni, dobbiamo effettuare chiamate alla tua installazione WordPress. I firewall come Cloudflare potrebbero bloccarci e causare il fallimento dell'integrazione. In tali casi, [possiamo fornirti](https://fastcomments.com/auth/my-account/help) un insieme di IP da inserire nella whitelist per l'integrazione.
+Affinché la configurazione automatica di WordPress funzioni, dobbiamo effettuare chiamate alla tua installazione WordPress. I firewall come Cloudflare potrebbero bloccarci e far fallire l'integrazione. In tali casi, [possiamo fornirti](https://fastcomments.com/auth/my-account/help) un insieme di IP da inserire nella whitelist per l'integrazione.
 
 ### Data Ownership
 
-Nel caso della nostra migrazione WordPress, tutti i nuovi o aggiornati dati dei commenti vengono sincronizzati automaticamente con la tua installazione WordPress in background. Ciò significa che, mentre i commenti sono serviti da FastComments stesso per ridurre il carico sulla tua installazione WordPress, noi **salviamo anche** i commenti nel tuo database come backup. Questo significa anche che, se desideri passare a un altro sistema, i tuoi dati sono già migrati e aggiornati.
+Nel caso della nostra migrazione WordPress, tutti i nuovi dati o i dati dei commenti aggiornati vengono sincronizzati automaticamente con la tua installazione WordPress in background. Ciò significa che, mentre i commenti sono serviti da FastComments stesso per ridurre il carico sulla tua installazione WordPress, noi **salviamo anche** i commenti nel tuo database come backup. Questo significa anche che, se desideri passare a un altro sistema, i tuoi dati sono già migrati e aggiornati.
