@@ -1,26 +1,26 @@
-### Install from GitHub
+### Εγκατάσταση από το GitHub
 
-Install directly from a release tag (recommended, fully reproducible):
+Εγκαταστήστε απευθείας από μια ετικέτα έκδοσης (συνιστάται, πλήρως αναπαραγώγιμο):
 
 ```bash
 pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
+Καρφιτρώστε την ετικέτα αντί για ένα κλαδί ώστε οι κατασκευές να είναι καθοριστικές. Η ίδια μορφή λειτουργεί στο `requirements.txt`:
 
 ```
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
+Κάθε ετικετοποιημένη [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) έχει επίσης ένα προ-κατασκευασμένο wheel συνδεδεμένο εάν προτιμάτε να εγκαταστήσετε ένα δυαδικό τεχνητό άμεσα.
 
-### Library Contents
+### Περιεχόμενα Βιβλιοθήκης
 
-This library contains two modules: the generated API client and the core Python library which contains hand-written utilities to make working with the API easier, including SSO support.
+Αυτή η βιβλιοθήκη περιέχει δύο modules: τον παραγόμενο πελάτη API και τη βασική βιβλιοθήκη Python που περιέχει χειρογράφως γραμμένα βοηθητικά εργαλεία για να διευκολύνει τη χρήση του API, συμπεριλαμβανομένης της υποστήριξης SSO.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Τεκμηρίωση Κύριας Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Public vs Secured APIs
+### Δημόσια vs Ασφαλή APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Για τον πελάτη API, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi` και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το κλειδί API σας, και η `PublicApi` περιέχει μεθόδους που μπορούν να κληθούν απευθείας από έναν περιηγητή/συσκευή κινητού κ.λπ. χωρίς έλεγχο ταυτότητας. Η `ModerationApi` παρέχει μια εκτενή σειρά ζωντανών και γρήγορων APIs διαmoderation. Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να πιστοποιηθεί μέσω SSO ή ενός cookie συνεδρίας FastComments.com.

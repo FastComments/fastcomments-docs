@@ -12,7 +12,7 @@ Yapıların deterministik olmasını sağlamak için bir dal yerine etiketi sabi
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Her etiketli [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) ayrıca doğrudan bir ikili artefakt kurmayı tercih ederseniz eklenmiş bir wheel dosyasına sahiptir.
+Her etiketli [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) ayrıca doğrudan bir ikili artefakt kurmayı tercih ederseniz eklenmiş bir wheel içerir.
 
 ### Kütüphane İçeriği
 

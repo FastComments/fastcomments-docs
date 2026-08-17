@@ -1,18 +1,18 @@
 ### Instalacja z GitHub
 
-Zainstaluj bezpośrednio z tagu wydania (zalecane, w pełni odtwarzalne):
+Instaluj bezpośrednio z tagu wydania (zalecane, w pełni odtwarzalne):
 
 ```bash
 pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Przypnij tag zamiast gałęzi, aby kompilacje były deterministyczne. Ten sam format działa w `requirements.txt`:
+Zablokuj tag zamiast gałęzi, aby kompilacje były deterministyczne. Ten sam format działa w `requirements.txt`:
 
 ```
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Każde otagowane [wydanie GitHub](https://github.com/fastcomments/fastcomments-python/releases) ma również dołączony zbudowany plik wheel, jeśli wolisz zainstalować binarny artefakt bezpośrednio.
+Każde otagowane [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) ma również dołączony zbudowany plik wheel, jeśli wolisz zainstalować binarny artefakt bezpośrednio.
 
 ### Zawartość biblioteki
 
@@ -23,4 +23,4 @@ Ta biblioteka zawiera dwa moduły: wygenerowanego klienta API oraz podstawową b
 
 ### Publiczne vs zabezpieczone API
 
-Dla klienta API dostępne są trzy klasy, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` zawiera metody wymagające klucza API, a `PublicApi` zawiera metody, które mogą być wywoływane bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelnienia. `ModerationApi` oferuje rozbudowany zestaw szybkich i bieżących API moderacji. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelnić się za pomocą SSO lub ciasteczka sesji FastComments.com.
+Dla klienta API dostępne są trzy klasy, `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` zawiera metody wymagające klucza API, a `PublicApi` zawiera metody, które mogą być wywoływane bezpośrednio z przeglądarki/urządzenia mobilnego/etc. bez uwierzytelnienia. `ModerationApi` oferuje rozbudowany zestaw szybkich i bieżących API moderacji. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelnić się za pomocą SSO lub ciasteczka sesji FastComments.com.

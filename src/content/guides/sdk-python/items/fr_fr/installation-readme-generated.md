@@ -12,11 +12,11 @@ pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Chaque version balisée [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) possède également une roue (wheel) construite en pièce jointe si vous préférez installer directement un artefact binaire.
+Chaque version balisée [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) possède également une roue (wheel) construite en pièce jointe si vous préférez installer directement un artefact binaire.
 
 ### Contenu de la bibliothèque
 
-Cette bibliothèque contient deux modules : le client API généré et la bibliothèque Python principale qui contient des utilitaires écrits à la main pour faciliter l'utilisation de l'API, y compris la prise en charge du SSO.
+Cette bibliothèque contient deux modules : le client API généré et la bibliothèque Python principale qui contient des utilitaires écrits à la main pour faciliter l'utilisation de l'API, y compris le support SSO.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
 - [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)

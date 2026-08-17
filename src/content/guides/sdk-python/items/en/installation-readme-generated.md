@@ -12,7 +12,7 @@ Pin the tag rather than a branch so builds are deterministic. The same form work
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Each tagged [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
+Each tagged [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
 
 ### Library Contents
 

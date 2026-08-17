@@ -12,14 +12,14 @@ Fastgør tagget i stedet for en gren, så builds er deterministiske. Den samme f
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Hver tagget [GitHub Release](https://github.com/fastcomments/fastcomments-python/releases) har også et bygget wheel vedhæftet, hvis du foretrækker at installere en binær artefakt direkte.
+Hver tagget [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) har også et bygget wheel vedhæftet, hvis du foretrækker at installere en binær artefakt direkte.
 
 ### Biblioteksindhold
 
-Dette bibliotek indeholder to moduler: den genererede API-klient og kerne-Python-biblioteket, som indeholder håndskrevne værktøjer for at gøre arbejdet med API'en lettere, inklusive SSO-understøttelse.
+Dette bibliotek indeholder to moduler: den genererede API-klient og kernebiblioteket i Python, som indeholder håndskrevne værktøjer for at gøre arbejdet med API'en lettere, inklusive SSO-understøttelse.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [API-klientbibliotekets dokumentation](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Kernebibliotekets dokumentation, inklusive SSO-eksempler](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
 ### Offentlige vs Sikrede API'er
 
