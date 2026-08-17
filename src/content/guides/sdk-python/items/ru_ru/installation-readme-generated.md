@@ -3,8 +3,7 @@
 Install directly from a release tag (recommended, fully reproducible):
 
 ```bash
-pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
-```
+pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0```
 
 Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
 

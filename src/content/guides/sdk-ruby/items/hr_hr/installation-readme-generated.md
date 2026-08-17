@@ -16,13 +16,13 @@ Or install it yourself as:
 gem install fastcomments
 ```
 
-### Library Contents
+### Sadržaj biblioteke
 
 This library contains the generated API client and the SSO utilities to make working with the API easier.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Dokumentacija biblioteke API klijenta](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### Javni vs zaštićeni API-ji
 
 For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
 that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
