@@ -12,7 +12,7 @@ Podprte so različne operacije (npr. sum, countDistinct, avg itd.).
 
 ## Odgovor
 
-Vrne: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Vrne: `AggregateResponse`
 
 ## Primer
 

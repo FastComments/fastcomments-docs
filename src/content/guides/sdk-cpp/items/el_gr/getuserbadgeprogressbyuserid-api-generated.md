@@ -7,7 +7,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
+Επιστρέφει: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeProgressResponse.h)
 
 ## Παράδειγμα
 

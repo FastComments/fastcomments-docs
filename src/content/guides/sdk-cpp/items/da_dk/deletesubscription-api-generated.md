@@ -8,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
+Returnerer: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeleteSubscriptionAPIResponse.h)
 
 ## Eksempel
 

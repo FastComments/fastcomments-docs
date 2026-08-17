@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
+Retourneert: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
 
 ## Voorbeeld
 

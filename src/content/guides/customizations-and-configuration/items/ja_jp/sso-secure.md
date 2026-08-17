@@ -113,6 +113,6 @@ For admins and moderators, pass the respective `isAdmin` or `isModerator` flags 
 
 #### Direct Examples for Serializing and Hashing User Data
 
-詳細な例は <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">こちら</a>（js）、<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">こちら</a>（java）、および <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">こちら</a>（php）にあります。
+詳細な例は <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">こちら</a>（js）、<a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">こちら</a>（java）、および <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">こちら</a>（php）にあります。
 
 統合は複雑で困難な場合があることを理解しています。担当者に連絡するか、<a href="https://fastcomments.com/auth/my-account/help" target="_blank">サポートページ</a>を利用してください。

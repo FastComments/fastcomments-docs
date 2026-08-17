@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotesResponse.h)
+Vraća: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetVotesResponse.h)
 
 ## Primer
 

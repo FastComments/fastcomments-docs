@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
+מחזיר: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
 
 ## דוגמה
 

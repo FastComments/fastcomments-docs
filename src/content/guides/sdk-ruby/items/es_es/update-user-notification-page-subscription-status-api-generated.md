@@ -13,7 +13,7 @@ Habilitar o deshabilitar las notificaciones para una página. Cuando los usuario
 
 ## Respuesta
 
-Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
+Devuelve: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
 ## Ejemplo
 

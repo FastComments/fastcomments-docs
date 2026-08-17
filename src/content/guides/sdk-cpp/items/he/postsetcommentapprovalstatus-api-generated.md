@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
+מחזיר: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
 
 ## דוגמה
 

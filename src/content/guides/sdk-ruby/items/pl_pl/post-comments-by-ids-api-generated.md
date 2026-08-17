@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_a_p_i_child_comments_response.rb)
+Zwraca: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/moderation_api_child_comments_response.rb)
 
 ## Przykład
 

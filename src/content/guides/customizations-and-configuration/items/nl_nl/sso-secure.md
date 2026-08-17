@@ -113,7 +113,7 @@ Deze gebruikers kunnen niet reageren en krijgen in plaats daarvan een inlogberic
 
 #### Direct Examples for Serializing and Hashing User Data
 
-Meer details en voorbeelden zijn <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">hier</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">hier</a> (java) en <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
+Meer details en voorbeelden zijn <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">hier</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">hier</a> (java) en <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
 
 We begrijpen dat elke integratie een gecompliceerd en pijnlijk proces kan zijn. Aarzel niet om contact op te nemen met uw vertegenwoordiger of gebruik te maken van de <a href="https://fastcomments.com/auth/my-account/help" target="_blank">ondersteuningspagina</a>.
 

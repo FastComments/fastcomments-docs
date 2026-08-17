@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetDomainConfigResponse.h)
+מחזיר: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetDomainConfigResponse.h)
 
 ## דוגמה
 

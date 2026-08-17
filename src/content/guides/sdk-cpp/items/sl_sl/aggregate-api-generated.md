@@ -10,7 +10,7 @@ Aggregira dokumente z grupiranjem (če je podan parameter **groupBy**) in uporab
 
 ## Response
 
-Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Returns: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Example
 

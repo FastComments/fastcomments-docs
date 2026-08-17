@@ -9,7 +9,7 @@ Bulk informacije o korisnicima za tenant. На основу userIds, враћа 
 
 ## Odgovor
 
-Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## Primer
 

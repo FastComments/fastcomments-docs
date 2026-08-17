@@ -11,7 +11,7 @@
 
 ## Ответ
 
-Возвращает: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Возвращает: `AggregateResponse`
 
 ## Пример
 

@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回：[`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
+返回：[`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
 
 ## 示例
 

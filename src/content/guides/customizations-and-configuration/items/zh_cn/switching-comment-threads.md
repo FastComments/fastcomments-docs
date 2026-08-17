@@ -8,7 +8,7 @@
 
 #### Angular、React、Vue 等
 
-使用我们的库（例如 Angular 和 React），只需更新传递给组件的 `urlId` 属性即可使评论组件刷新。例如，你可以在 React 应用中看到实际效果，<a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">这里</a>。
+使用我们的库（例如 Angular 和 React），只需更新传递给组件的 `urlId` 属性即可使评论组件刷新。例如，你可以在 React 应用中看到实际效果，<a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">这里</a>。
 
 #### VanillaJS
 

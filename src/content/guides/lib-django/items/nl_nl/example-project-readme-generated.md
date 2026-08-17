@@ -1,4 +1,4 @@
-Een uitvoerbare showcase bevindt zich in [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): een left-rail + main-stage app met een pagina per widget en een **inlogpagina die vooraf ingestelde demo‑gebruikers vermeldt**.  
+Een uitvoerbare showcase bevindt zich in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): een left-rail + main-stage app met een pagina per widget en een **inlogpagina die vooraf ingestelde demo‑gebruikers vermeldt**.  
 Log in als een van hen en de commentaar‑ en live‑chat‑widgets authenticeren die identiteit via **Secure SSO**. Van die map:
 
 ```bash

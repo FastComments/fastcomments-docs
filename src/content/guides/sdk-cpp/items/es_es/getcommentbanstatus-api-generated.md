@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentBanStatusResponse.h)
+Devuelve: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentBanStatusResponse.h)
 
 ## Ejemplo
 

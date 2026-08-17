@@ -11,7 +11,7 @@ Returnerer anonCount + totalCount (rum‑bred abonnenter, inklusive anonyme seer
 
 ## Svar
 
-Returnerer: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Returnerer: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Eksempel
 

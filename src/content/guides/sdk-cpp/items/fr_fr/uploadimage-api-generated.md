@@ -10,7 +10,7 @@ Téléverser et redimensionner une image
 
 ## Réponse
 
-Retourne : [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UploadImageResponse.h)
+Retourne : [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 
 ## Exemple
 

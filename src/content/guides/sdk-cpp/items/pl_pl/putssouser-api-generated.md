@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
+Zwraca: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
 
 ## Przykład
 

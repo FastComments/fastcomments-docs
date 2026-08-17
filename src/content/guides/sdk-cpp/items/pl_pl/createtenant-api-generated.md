@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantResponse.h)
+Zwraca: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTenantResponse.h)
 
 ## Przykład
 

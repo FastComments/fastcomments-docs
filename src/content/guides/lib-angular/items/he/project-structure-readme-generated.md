@@ -5,5 +5,5 @@
 
 ב "projects" תמצאו את ספריית fastcomments.
 
-ראו את ה-README של ngx-fastcomments [כאן](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)
+ראו את ה-README של ngx-fastcomments [כאן](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular)
 ---

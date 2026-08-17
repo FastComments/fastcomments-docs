@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_page_a_p_i_response.rb)
+Devuelve: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/patch_page_api_response.rb)
 
 ## Ejemplo
 

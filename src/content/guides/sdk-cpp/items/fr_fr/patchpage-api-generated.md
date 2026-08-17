@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie : [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
+Renvoie : [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
 
 ## Exemple
 

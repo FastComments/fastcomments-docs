@@ -12,7 +12,7 @@ Strani, ki zahtevajo SSO, so filtrirane glede na skupinski dostop zahtevanega up
 
 ## Odgovor
 
-Vrne: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Vrne: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Primer
 

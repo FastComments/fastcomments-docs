@@ -11,7 +11,7 @@ No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Resposta
 
-Retorna: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Retorna: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## Exemplo
 

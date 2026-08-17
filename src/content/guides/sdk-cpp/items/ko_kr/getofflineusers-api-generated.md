@@ -17,7 +17,7 @@ commenterName에 대한 커서 페이지네이션: 서버는 {tenantId, urlId, c
 
 ## 응답
 
-반환: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+반환: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## 예제
 

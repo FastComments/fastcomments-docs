@@ -19,7 +19,7 @@
 *DefaultApi* | [**createQuestionConfig**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createquestionconfig) | **POST** /api/v1/question-configs | 
 *DefaultApi* | [**createQuestionResult**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createquestionresult) | **POST** /api/v1/question-results | 
 *DefaultApi* | [**createSubscription**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createsubscription) | **POST** /api/v1/subscriptions | 
-*DefaultApi* | [**createTenant**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createttenant) | **POST** /api/v1/tenants | 
+*DefaultApi* | [**createTenant**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createtenant) | **POST** /api/v1/tenants | 
 *DefaultApi* | [**createTenantPackage**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createtenantpackage) | **POST** /api/v1/tenant-packages | 
 *DefaultApi* | [**createTenantUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createtenantuser) | **POST** /api/v1/tenant-users | 
 *DefaultApi* | [**createTicket**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#createticket) | **POST** /api/v1/tickets | 

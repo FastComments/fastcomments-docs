@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetV1PageLikes.h)
+מחזיר: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV1PageLikes.h)
 
 ## דוגמה
 

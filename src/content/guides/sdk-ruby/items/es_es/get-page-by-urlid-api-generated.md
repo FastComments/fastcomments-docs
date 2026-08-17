@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_page_by_u_r_l_id_a_p_i_response.rb)
+Devuelve: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_page_by_urlid_api_response.rb)
 
 ## Ejemplo
 

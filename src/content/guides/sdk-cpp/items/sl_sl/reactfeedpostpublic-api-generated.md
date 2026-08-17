@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vrne: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
+Vrne: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
 ## Primer
 

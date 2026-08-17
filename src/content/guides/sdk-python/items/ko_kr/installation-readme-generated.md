@@ -19,7 +19,7 @@ fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.
 이 라이브러리는 두 개의 모듈을 포함합니다: 생성된 API 클라이언트와 API 사용을 더 쉽게 만들기 위한 수작업 유틸리티를 포함한 핵심 Python 라이브러리이며, SSO 지원도 포함됩니다.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core Library Docs, Including SSO Examples
 
 ### 공개 API와 보안 API
 

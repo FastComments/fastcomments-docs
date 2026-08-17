@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie : [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPIGetLogsResponse.h)
+Renvoie : [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationAPIGetLogsResponse.h)
 
 ## Exemple
 

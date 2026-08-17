@@ -8,7 +8,7 @@
 
 ## Отговор
 
-Връща: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PostRemoveCommentApiResponse.h)
+Връща: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PostRemoveCommentApiResponse.h)
 
 ## Пример
 

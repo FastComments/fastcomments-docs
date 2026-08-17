@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTranslationsResponse.h)
+Vraća: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTranslationsResponse.h)
 
 ## Primer
 

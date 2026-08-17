@@ -10,7 +10,7 @@ dynamisk uden en ny sideindlæsning?
 #### Angular, React, Vue, osv.
 
 Med vores biblioteker som Angular og React vil en simpel opdatering af `urlId`-egenskaben, der sendes til widget'en,
-få kommentarswidget'en til at opdatere. Du kan se dette i praksis for React-appen, for eksempel, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">her</a>.
+få kommentarswidget'en til at opdatere. Du kan se dette i praksis for React-appen, for eksempel, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">her</a>.
 
 #### VanillaJS
 

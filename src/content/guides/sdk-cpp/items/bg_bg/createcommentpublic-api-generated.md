@@ -10,7 +10,7 @@
 
 ## Отговор
 
-Връща: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
+Връща: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
 ## Пример
 

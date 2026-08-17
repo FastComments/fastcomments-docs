@@ -1,4 +1,4 @@
-FastComments Email Templates utilizza il [linguaggio di template EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email Templates utilizza il [linguaggio di template EJS](https://ejs.co/#docs).
 
 La sintassi di esempio è `<%= object.someValue %>` per stampare variabili, e le istruzioni condizionali possono essere fatte così:
 

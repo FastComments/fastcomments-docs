@@ -7,7 +7,7 @@
 
 ## 回應
 
-返回：[`GetTicketsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTicketsResponse.h)
+返回：[`GetTicketsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTicketsResponse.h)
 
 ## 範例
 

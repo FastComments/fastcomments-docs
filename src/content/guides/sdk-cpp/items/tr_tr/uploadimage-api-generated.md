@@ -10,7 +10,7 @@ Bir resmi yükle ve yeniden boyutlandır
 
 ## Yanıt
 
-Döndürür: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UploadImageResponse.h)
+Döndürür: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 
 ## Örnek
 

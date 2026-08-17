@@ -8,7 +8,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
+Zwraca: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
 
 ## Przykład
 

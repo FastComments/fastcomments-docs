@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
+Zwraca: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
 
 ## Przykład
 

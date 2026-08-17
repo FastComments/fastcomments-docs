@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
+Повертає: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
 
 ## Приклад
 

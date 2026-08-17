@@ -11,7 +11,7 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## 応答
 
-戻り値: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+戻り値: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## 例
 

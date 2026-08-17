@@ -13,7 +13,7 @@ Paginação por cursor em **commenterName**: o servidor percorre o parcial `{ten
 
 ## Response
 
-Retorna: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Retorna: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Example
 

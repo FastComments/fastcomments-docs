@@ -9,7 +9,7 @@
 
 ## Відповідь
 
-Повертає: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockSuccess.h)
+Повертає: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BlockSuccess.h)
 
 ## Приклад
 

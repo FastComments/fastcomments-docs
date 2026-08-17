@@ -112,7 +112,7 @@ Diese Benutzer können nicht kommentieren; stattdessen wird ihnen eine Login-Nac
 
 #### Direkte Beispiele zum Serialisieren und Hashen von Benutzerdaten
 
-Weitere Details und Beispiele finden Sie <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">hier</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">hier</a> (java) und <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
+Weitere Details und Beispiele finden Sie <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">hier</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">hier</a> (java) und <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
 
 Wir verstehen, dass jede Integration kompliziert und mühsam sein kann. Zögern Sie nicht, sich an Ihren Ansprechpartner zu wenden oder die <a href="https://fastcomments.com/auth/my-account/help" target="_blank">Support-Seite</a> zu nutzen.
 

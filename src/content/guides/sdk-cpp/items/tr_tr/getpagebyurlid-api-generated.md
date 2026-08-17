@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPageByURLIdAPIResponse.h)
+Döndürür: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPageByURLIdAPIResponse.h)
 
 ## Örnek
 

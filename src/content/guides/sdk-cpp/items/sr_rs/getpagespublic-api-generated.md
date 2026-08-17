@@ -11,7 +11,7 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## Response
 
-Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Example
 

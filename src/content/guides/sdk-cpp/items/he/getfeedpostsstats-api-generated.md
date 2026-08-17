@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
+מחזיר: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
 
 ## דוגמה
 

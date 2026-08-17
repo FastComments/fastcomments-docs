@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Rückgabe: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserResponse.h)
+Rückgabe: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserResponse.h)
 
 ## Beispiel
 

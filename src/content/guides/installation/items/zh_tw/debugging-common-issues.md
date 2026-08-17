@@ -30,7 +30,7 @@ FastComments 需要知道哪些網域是您擁有的，以便驗證與您的帳�
 
 ### 設定未按預期運作
 
-請嘗試使用我們的 [Chrome 擴充功能](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) 來查看傳遞給評論小工具的設定。如果仍然失敗，請截圖該 Chrome 擴充功能所顯示的內容，然後[聯絡我們](https://fastcomments.com/auth/my-account/help)。
+請嘗試使用我們的 [Chrome 擴充功能](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) 來查看傳遞給評論小工具的設定。如果仍然失敗，請截圖該 Chrome 擴充功能所顯示的內容，然後[聯絡我們](https://fastcomments.com/auth/my-account/help)。
 
 ### 相同 URL 但不同 Hash Bang 的評論遺失
 

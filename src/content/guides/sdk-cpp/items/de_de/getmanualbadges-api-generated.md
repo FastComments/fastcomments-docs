@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Rückgabe: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantManualBadgesResponse.h)
+Rückgabe: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantManualBadgesResponse.h)
 
 ## Beispiel
 

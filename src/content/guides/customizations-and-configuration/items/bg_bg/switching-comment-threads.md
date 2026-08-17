@@ -8,7 +8,7 @@
 
 #### Angular, React, Vue и др
 
-С нашите библиотеки като Angular и React, просто обновяването на свойството `urlId`, което се подава на джаджата, ще накара джаджата за коментари да се обнови. Можете да видите това в действие за React приложението, например <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">тук</a>.
+С нашите библиотеки като Angular и React, просто обновяването на свойството `urlId`, което се подава на джаджата, ще накара джаджата за коментари да се обнови. Можете да видите това в действие за React приложението, например <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">тук</a>.
 
 #### VanillaJS
 

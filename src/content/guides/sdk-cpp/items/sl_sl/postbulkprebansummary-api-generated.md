@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vrne: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkPreBanSummary.h)
+Vrne: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkPreBanSummary.h)
 
 ## Primer
 

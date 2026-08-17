@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
+Restituisce: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CombineQuestionResultsWithCommentsResponse.h)
 
 ## Esempio
 

@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_subscription_a_p_i_response.rb)
+Vraća: [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_subscription_api_response.rb)
 
 ## Primjer
 

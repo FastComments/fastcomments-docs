@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetGifsSearchResponse.h)
+Επιστρέφει: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetGifsSearchResponse.h)
 
 ## Παράδειγμα
 

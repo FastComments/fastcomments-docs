@@ -10,7 +10,7 @@
 
 ## 回應
 
-返回: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnblockSuccess.h)
+返回: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UnblockSuccess.h)
 
 ## 範例
 

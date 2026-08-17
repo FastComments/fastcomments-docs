@@ -7,7 +7,7 @@
 
 ## Одговор
 
-Враћа: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateResponse.h)
+Враћа: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplateResponse.h)
 
 ## Пример
 

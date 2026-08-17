@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
+Returnerer: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
 ## Eksempel
 

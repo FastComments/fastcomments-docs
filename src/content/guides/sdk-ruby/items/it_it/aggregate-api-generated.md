@@ -10,7 +10,7 @@ Aggrega documenti raggruppandoli (se viene fornito groupBy) e applicando più op
 
 ## Risposta
 
-Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Restituisce: `AggregateResponse`
 
 ## Esempio
 

@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Rückgabe: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
+Rückgabe: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
 
 ## Beispiel
 

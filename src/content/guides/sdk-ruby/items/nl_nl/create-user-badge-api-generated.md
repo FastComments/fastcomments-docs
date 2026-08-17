@@ -6,7 +6,7 @@
 
 ## Antwoord
 
-Retourneert: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_create_user_badge_response.rb)
+Retourneert: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_create_user_badge_response.rb)
 
 ## Voorbeeld
 

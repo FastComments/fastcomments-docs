@@ -11,7 +11,7 @@ Vraća anonCount + totalCount (pretplatnici na cijelu sobu, uključujući anonim
 
 ## Odgovor
 
-Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Primjer
 

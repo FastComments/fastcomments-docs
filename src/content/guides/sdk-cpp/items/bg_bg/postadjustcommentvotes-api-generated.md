@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
+Връща: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
 
 ## Пример
 

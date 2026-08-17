@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSubscriptionsAPIResponse.h)
+Devuelve: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSubscriptionsAPIResponse.h)
 
 ## Ejemplo
 

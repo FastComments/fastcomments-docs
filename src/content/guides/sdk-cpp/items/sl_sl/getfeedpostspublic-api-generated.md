@@ -11,7 +11,7 @@ afterId
 
 ## Odgovor
 
-Vrne: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
+Vrne: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
 
 ## Primer
 

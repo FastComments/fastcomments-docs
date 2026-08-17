@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantResponse.h)
+Returnerer: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantResponse.h)
 
 ## Eksempel
 

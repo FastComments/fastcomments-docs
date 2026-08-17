@@ -7,7 +7,7 @@
 
 ## Respons
 
-Returnerer: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
+Returnerer: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
 
 ## Eksempel
 

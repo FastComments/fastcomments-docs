@@ -8,7 +8,7 @@
 
 ## Ответ
 
-Возвращает: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
+Возвращает: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
 
 ## Пример
 

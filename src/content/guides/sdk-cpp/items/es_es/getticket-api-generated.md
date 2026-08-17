@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTicketResponse.h)
+Devuelve: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTicketResponse.h)
 
 ## Ejemplo
 

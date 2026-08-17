@@ -1,4 +1,4 @@
-Pokretljivi showcase nalazi se u [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): aplikacija s lijevom trakom + glavnom pozornicom s po jednom stranicom po widgetu i **stranicom za prijavu koja prikazuje unaprijed postavljene demo korisnike**.  
+Pokretljivi showcase nalazi se u [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): aplikacija s lijevom trakom + glavnom pozornicom s po jednom stranicom po widgetu i **stranicom za prijavu koja prikazuje unaprijed postavljene demo korisnike**.  
 Prijavite se kao bilo koji od njih i widgeti za komentare i live‑chat autentificiraju taj identitet putem **Secure SSO**. Iz tog direktorija:
 
 ```bash

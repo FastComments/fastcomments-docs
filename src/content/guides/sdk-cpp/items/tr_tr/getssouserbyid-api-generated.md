@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSSOUserByIdAPIResponse.h)
+Döndürür: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSSOUserByIdAPIResponse.h)
 
 ## Örnek
 

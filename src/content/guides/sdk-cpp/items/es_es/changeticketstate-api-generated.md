@@ -9,7 +9,7 @@
 
 ## Respuesta
 
-Devuelve: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
+Devuelve: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
 
 ## Ejemplo
 

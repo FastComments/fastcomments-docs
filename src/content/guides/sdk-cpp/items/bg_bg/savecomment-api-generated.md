@@ -8,7 +8,7 @@
 
 ## Отговор
 
-Връща: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
+Връща: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
 
 ## Пример
 

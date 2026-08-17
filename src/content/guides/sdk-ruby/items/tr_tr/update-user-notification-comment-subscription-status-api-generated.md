@@ -13,7 +13,7 @@ Belirli bir yorum için bildirimleri etkinleştirir veya devre dışı bırakır
 
 ## Yanıt
 
-Döndürür: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
+Döndürür: `UpdateUserNotificationCommentSubscriptionStatusResponse`
 
 ## Örnek
 

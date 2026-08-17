@@ -113,6 +113,6 @@ Questi utenti non potranno commentare e invece verranno presentati con un messag
 
 #### Esempi diretti per serializzare e calcolare l'hash dei dati utente
 
-Ulteriori dettagli ed esempi sono disponibili <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">qui</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">qui</a> (java) e <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">qui</a> (php).
+Ulteriori dettagli ed esempi sono disponibili <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">qui</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">qui</a> (java) e <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">qui</a> (php).
 
 Comprendiamo che qualsiasi integrazione può essere un processo complicato e doloroso. Non esitare a contattare il tuo referente o a utilizzare la <a href="https://fastcomments.com/auth/my-account/help" target="_blank">pagina di supporto</a>.

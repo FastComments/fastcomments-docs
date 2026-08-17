@@ -9,7 +9,7 @@
 
 ## Response
 
-Retourneert: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnblockSuccess.h)
+Retourneert: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UnblockSuccess.h)
 
 ## Voorbeeld
 

@@ -10,7 +10,7 @@
 
 ## 响应
 
-返回: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
+返回: `SaveCommentsBulkResponse`
 
 ## 示例
 

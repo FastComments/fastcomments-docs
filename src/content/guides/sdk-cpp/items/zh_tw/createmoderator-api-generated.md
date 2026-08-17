@@ -7,7 +7,7 @@
 
 ## 回應
 
-返回：[`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
+返回：[`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
 ## 範例
 

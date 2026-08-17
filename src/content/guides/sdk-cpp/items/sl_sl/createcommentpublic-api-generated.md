@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
+Vrne: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
 ## Primer
 

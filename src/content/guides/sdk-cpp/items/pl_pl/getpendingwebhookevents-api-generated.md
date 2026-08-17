@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPendingWebhookEventsResponse.h)
+Zwraca: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPendingWebhookEventsResponse.h)
 
 ## Przykład
 

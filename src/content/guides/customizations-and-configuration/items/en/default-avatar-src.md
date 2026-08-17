@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-When a user comments with FastComments for the first time we will try fetch their avatar from <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+When a user comments with FastComments for the first time we will try fetch their avatar from <a href="https://gravatar.com/" target="_blank">https://gravatar.com/</a>.
 
 However, if we don't find an avatar, or the user never sets one in their account, we render a static default avatar image.
 

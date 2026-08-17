@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantPackageResponse.h)
+Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTenantPackageResponse.h)
 
 ## Przykład
 

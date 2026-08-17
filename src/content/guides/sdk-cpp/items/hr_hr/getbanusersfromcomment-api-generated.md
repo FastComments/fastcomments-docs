@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetBannedUsersFromCommentResponse.h)
+Vraća: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetBannedUsersFromCommentResponse.h)
 
 ## Primjer
 

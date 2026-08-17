@@ -8,7 +8,7 @@
 
 ## Respons
 
-Retourneert: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
+Retourneert: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
 
 ## Voorbeeld
 

@@ -19,7 +19,7 @@ fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.
 Αυτή η βιβλιοθήκη περιέχει δύο modules: τον παραγόμενο πελάτη API και τη βασική βιβλιοθήκη Python που περιέχει χειρογράφως γραμμένα βοηθητικά εργαλεία για να διευκολύνει τη χρήση του API, συμπεριλαμβανομένης της υποστήριξης SSO.
 
 - [Τεκμηρίωση Βιβλιοθήκης Πελάτη API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Τεκμηρίωση Βασικής Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Τεκμηρίωση Βασικής Βιβλιοθήκης, Συμπεριλαμβανομένων Παραδειγμάτων SSO
 
 ### Δημόσια vs Ασφαλισμένα APIs
 

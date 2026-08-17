@@ -7,7 +7,7 @@
 
 ## 回應
 
-返回：[`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
+返回：[`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
 
 ## 範例
 

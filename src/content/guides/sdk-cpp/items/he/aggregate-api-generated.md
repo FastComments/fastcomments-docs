@@ -10,7 +10,7 @@
 
 ## Response
 
-מחזיר: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+מחזיר: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Example
 

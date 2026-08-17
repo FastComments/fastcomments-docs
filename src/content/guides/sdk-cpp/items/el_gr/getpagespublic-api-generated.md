@@ -11,7 +11,7 @@ List pages for a tenant. Used by the FChat desktop client to populate its room l
 
 ## Απάντηση
 
-Επιστρέφει: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Επιστρέφει: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Παράδειγμα
 

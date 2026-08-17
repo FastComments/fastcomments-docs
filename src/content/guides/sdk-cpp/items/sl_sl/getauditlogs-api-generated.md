@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
+Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
 
 ## Primer
 

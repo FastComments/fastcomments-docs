@@ -11,7 +11,7 @@ afterId
 
 ## Odpowiedź
 
-Zwraca: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
+Zwraca: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
 
 ## Przykład
 

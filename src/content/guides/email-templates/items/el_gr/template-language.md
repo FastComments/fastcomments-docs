@@ -1,5 +1,5 @@
 ---
-Τα πρότυπα email του FastComments χρησιμοποιούν τη [γλώσσα προτύπων EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+Τα πρότυπα email του FastComments χρησιμοποιούν τη [γλώσσα προτύπων EJS](https://ejs.co/#docs).
 
 Παράδειγμα σύνταξης είναι `<%= object.someValue %>` για την εκτύπωση μεταβλητών, και οι συνθήκες μπορούν να γίνουν ως εξής:
 

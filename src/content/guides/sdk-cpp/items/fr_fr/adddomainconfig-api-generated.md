@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Retourne : [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddDomainConfigResponse.h)
+Retourne : [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddDomainConfigResponse.h)
 
 ## Exemple
 

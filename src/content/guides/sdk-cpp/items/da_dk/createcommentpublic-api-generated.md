@@ -10,7 +10,7 @@
 
 ## Respons
 
-Returnerer: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
+Returnerer: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
 ## Eksempel
 

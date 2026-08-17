@@ -37,7 +37,7 @@ u stanju da se učita. Ako se ništa ne vidi, obično je to indikator skript gre
 
 ### Desired Configuration Not Working as Expected
 
-Isprobajte našu [Chrome ekstenziju](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) da vidite koju
+Isprobajte našu [Chrome ekstenziju](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) da vidite koju
 konfiguraciju komentar widget dobija. Ako ništa ne pomogne, napravite screenshot onoga što Chrome ekstenzija prikazuje
 i [kontaktirajte nas](https://fastcomments.com/auth/my-account/help).
 

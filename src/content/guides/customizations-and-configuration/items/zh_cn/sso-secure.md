@@ -112,7 +112,7 @@ interface SSOUser {
 
 #### 序列化和哈希用户数据的直接示例
 
-更多示例详见 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">此处（js）</a>、<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">此处（java）</a> 和 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">此处（php）</a>。
+更多示例详见 <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">此处（js）</a>、<a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">此处（java）</a> 和 <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">此处（php）</a>。
 
 我们理解任何集成都可能是复杂且令人头疼的过程。如有疑问，请随时联系您的客户代表或使用 <a href="https://fastcomments.com/auth/my-account/help" target="_blank">支持页面</a>。
 

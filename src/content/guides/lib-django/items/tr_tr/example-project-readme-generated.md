@@ -1,4 +1,4 @@
-A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): bir sol-kenar + ana-sahne uygulaması; her widget için bir sayfa ve **önceden doldurulmuş demo kullanıcılarını listeleyen bir giriş sayfası**.
+A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): bir sol-kenar + ana-sahne uygulaması; her widget için bir sayfa ve **önceden doldurulmuş demo kullanıcılarını listeleyen bir giriş sayfası**.
 
 Bunlardan herhangi biriyle oturum açın ve yorum ve canlı‑chat widget’ları bu kimliği **Secure SSO** aracılığıyla doğrular.
 

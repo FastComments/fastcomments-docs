@@ -11,7 +11,7 @@ Kein Seitenkontext: Datenschutz wird einheitlich durchgesetzt (private Profile w
 
 ## Response
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## Example
 

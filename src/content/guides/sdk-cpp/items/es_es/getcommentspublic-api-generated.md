@@ -13,7 +13,7 @@ urlId
 
 ## Respuesta
 
-Devuelve: [`GetCommentsResponseWithPresence_PublicComment_`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentsResponseWithPresence_PublicComment_.h)
+Devuelve: [`GetCommentsResponseWithPresence_PublicComment_`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsResponseWithPresence_PublicComment_.h)
 
 ## Ejemplo
 

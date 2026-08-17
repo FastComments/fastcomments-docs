@@ -11,7 +11,7 @@ afterId
 
 ## Respuesta
 
-Devuelve: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
+Devuelve: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicFeedPostsResponse.h)
 
 ## Ejemplo
 

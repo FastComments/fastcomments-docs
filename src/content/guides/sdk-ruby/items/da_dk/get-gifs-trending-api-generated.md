@@ -9,7 +9,7 @@
 
 ## Svar
 
-Returnerer: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_gifs_trending_response.rb)
+Returnerer: `GetGifsTrendingResponse`
 
 ## Eksempel
 

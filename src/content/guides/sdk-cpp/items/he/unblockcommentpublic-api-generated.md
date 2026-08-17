@@ -9,7 +9,7 @@
 
 ## תגובה
 
-מחזיר: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UnblockSuccess.h)
+מחזיר: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UnblockSuccess.h)
 
 ## דוגמה
 

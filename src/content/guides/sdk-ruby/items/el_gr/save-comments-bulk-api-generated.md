@@ -10,7 +10,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/save_comments_bulk_response.rb)
+Επιστρέφει: `SaveCommentsBulkResponse`
 
 ## Παράδειγμα
 

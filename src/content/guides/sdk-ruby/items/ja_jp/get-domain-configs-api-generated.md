@@ -6,7 +6,7 @@
 
 ## レスポンス
 
-戻り値: [`GetDomainConfigsResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_configs_response.rb)
+戻り値: `GetDomainConfigsResponse`
 
 ## 例
 

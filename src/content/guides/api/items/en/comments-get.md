@@ -27,7 +27,6 @@ Pagination can be done in one of two ways, depending on performance requirements
 1. When using `Precalculated Pagination`, comments are grouped by *page* and comments in threads affect the overall page.
    1. In this way, threads can be determined on the client based on `parentId`.
    2. For example, with a page with one top-level comment, and 29 replies, and setting `page=0` in the API - you will get just the top level comment and the 29 children.
-   3. [Example image here illustrating multiple pages.](https://blog.winricklabs.com/images/fc-pagination02.png)
 2. When using `Flexible Pagination`, you may define a `parentId` parameter.
    1. Set this to null to only get top-level comments.
    2. Then to view threads, call the API again and pass `parentId`.

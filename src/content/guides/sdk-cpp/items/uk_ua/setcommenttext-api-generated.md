@@ -10,7 +10,7 @@
 
 ## Відповідь
 
-Повертає: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicAPISetCommentTextResponse.h)
+Повертає: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicAPISetCommentTextResponse.h)
 
 ## Приклад
 

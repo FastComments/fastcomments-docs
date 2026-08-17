@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationSuggestResponse.h)
+Döndürür: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationSuggestResponse.h)
 
 ## Örnek
 

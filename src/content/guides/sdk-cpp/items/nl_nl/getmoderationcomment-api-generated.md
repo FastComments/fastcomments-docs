@@ -8,7 +8,7 @@
 
 ## Respons
 
-Retourneert: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
+Retourneert: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationAPICommentResponse.h)
 
 ## Voorbeeld
 

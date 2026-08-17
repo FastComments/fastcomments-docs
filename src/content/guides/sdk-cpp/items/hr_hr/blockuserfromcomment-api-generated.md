@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockSuccess.h)
+Vraća: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BlockSuccess.h)
 
 ## Primjer
 

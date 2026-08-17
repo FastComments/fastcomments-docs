@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSubscriptionsAPIResponse.h)
+Повертає: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSubscriptionsAPIResponse.h)
 
 ## Приклад
 

@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateQuestionResultResponse.h)
+Restituisce: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateQuestionResultResponse.h)
 
 ## Esempio
 

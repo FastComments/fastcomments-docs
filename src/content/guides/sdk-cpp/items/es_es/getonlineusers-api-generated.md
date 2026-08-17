@@ -11,7 +11,7 @@ Devuelve anonCount + totalCount (suscriptores de toda la sala, incluidos los esp
 
 ## Respuesta
 
-Devuelve: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Devuelve: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Ejemplo
 

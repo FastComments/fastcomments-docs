@@ -8,7 +8,7 @@
 
 #### Angular, React, Vue 등
 
-Angular 및 React와 같은 라이브러리를 사용하는 경우, 위젯에 전달되는 `urlId` 속성을 단순히 업데이트하면 댓글 위젯이 새로고침됩니다. 예를 들어 React 앱에서 동작하는 모습을 <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">여기</a>에서 확인할 수 있습니다.
+Angular 및 React와 같은 라이브러리를 사용하는 경우, 위젯에 전달되는 `urlId` 속성을 단순히 업데이트하면 댓글 위젯이 새로고침됩니다. 예를 들어 React 앱에서 동작하는 모습을 <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">여기</a>에서 확인할 수 있습니다.
 
 #### VanillaJS
 

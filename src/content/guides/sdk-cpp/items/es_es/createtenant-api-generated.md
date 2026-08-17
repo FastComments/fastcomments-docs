@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantResponse.h)
+Devuelve: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTenantResponse.h)
 
 ## Ejemplo
 

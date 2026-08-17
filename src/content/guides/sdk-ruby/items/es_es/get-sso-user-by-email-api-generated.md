@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_user_by_email_a_p_i_response.rb)
+Devuelve: [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_sso_user_by_email_api_response.rb)
 
 ## Ejemplo
 

@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_page_a_p_i_response.rb)
+Restituisce: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_page_api_response.rb)
 
 ## Esempio
 

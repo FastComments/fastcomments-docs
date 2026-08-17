@@ -9,7 +9,7 @@ Bulk user info for a tenant. Given userIds, return display info from User / SSOU
 
 ## 响应
 
-返回：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+返回：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## 示例
 

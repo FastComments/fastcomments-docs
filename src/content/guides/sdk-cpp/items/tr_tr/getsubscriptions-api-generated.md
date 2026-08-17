@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSubscriptionsAPIResponse.h)
+Döndürür: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSubscriptionsAPIResponse.h)
 
 ## Örnek
 

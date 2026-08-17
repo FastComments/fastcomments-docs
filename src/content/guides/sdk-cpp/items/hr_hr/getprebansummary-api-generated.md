@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PreBanSummary.h)
+Vraća: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PreBanSummary.h)
 
 ## Primjer
 

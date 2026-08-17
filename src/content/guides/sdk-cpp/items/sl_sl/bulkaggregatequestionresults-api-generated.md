@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vrne: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
+Vrne: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
 
 ## Primer
 

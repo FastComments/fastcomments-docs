@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPendingWebhookEventCountResponse.h)
+Retorna: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPendingWebhookEventCountResponse.h)
 
 ## Exemplo
 

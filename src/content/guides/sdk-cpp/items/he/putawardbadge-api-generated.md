@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
+מחזיר: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
 
 ## דוגמה
 

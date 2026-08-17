@@ -13,7 +13,7 @@ Enable oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer e
 
 ## Antwort
 
-Rückgabe: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
+Rückgabe: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
 ## Beispiel
 

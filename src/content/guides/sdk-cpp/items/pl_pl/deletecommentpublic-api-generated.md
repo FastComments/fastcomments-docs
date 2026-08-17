@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicAPIDeleteCommentResponse.h)
+Zwraca: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicAPIDeleteCommentResponse.h)
 
 ## Przykład
 

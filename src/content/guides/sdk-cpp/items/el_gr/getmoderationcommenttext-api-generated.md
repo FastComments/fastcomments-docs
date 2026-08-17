@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentTextResponse.h)
+Επιστρέφει: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentTextResponse.h)
 
 ## Παράδειγμα
 

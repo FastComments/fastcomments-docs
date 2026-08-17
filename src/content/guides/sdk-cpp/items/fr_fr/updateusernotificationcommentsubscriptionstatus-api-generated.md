@@ -12,7 +12,7 @@ Activer ou désactiver les notifications pour un commentaire spécifique.
 
 ## Réponse
 
-Retourne : [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
+Retourne : [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
 ## Exemple
 

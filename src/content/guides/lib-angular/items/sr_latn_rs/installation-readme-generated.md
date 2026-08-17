@@ -5,5 +5,5 @@ npm install fastcomments-typescript --save
 npm install ngx-fastcomments --save
 ```
 
-Pogledajte [ngx-fastcomments README](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular) za upotrebu.
+Pogledajte [ngx-fastcomments README](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular) za upotrebu.
 ---

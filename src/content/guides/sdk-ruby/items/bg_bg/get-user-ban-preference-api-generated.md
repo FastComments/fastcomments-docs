@@ -7,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_moderate_get_user_ban_preferences_response.rb)
+Връща: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_moderate_get_user_ban_preferences_response.rb)
 
 ## Пример
 

@@ -11,7 +11,7 @@ Verschillende bewerkingen (bijv. sum, countDistinct, avg, enz.) worden ondersteu
 
 ## Antwoord
 
-Geeft terug: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Geeft terug: `AggregateResponse`
 
 ## Voorbeeld
 

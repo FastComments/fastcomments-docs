@@ -14,7 +14,7 @@ Returns anonCount + totalCount (room-wide subscribers, including anon viewers we
 
 ## Response
 
-Повертає: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Повертає: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Приклад
 

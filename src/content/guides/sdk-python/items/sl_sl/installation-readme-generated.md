@@ -19,7 +19,7 @@ Vsaka označena [GitHub Release](https://github.com/fastcomments/fastcomments-py
 Ta knjižnica vsebuje dva modula: ustvarjenega API odjemalca in jedrno Python knjižnico, ki vsebuje ročno napisane pripomočke za olajšanje dela z API-jem, vključno s podporo SSO.
 
 - [API Client Library Documentation](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Documentation, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core Library Documentation, Including SSO Examples
 
 ### Javni vs Zavarovani API-ji
 

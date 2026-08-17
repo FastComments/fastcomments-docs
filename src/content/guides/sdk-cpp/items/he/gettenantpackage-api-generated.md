@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantPackageResponse.h)
+מחזיר: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantPackageResponse.h)
 
 ## דוגמה
 

@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
+Retorna: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ResetUserNotificationsResponse.h)
 
 ## Exemplo
 

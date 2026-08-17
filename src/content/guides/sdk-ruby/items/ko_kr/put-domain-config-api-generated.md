@@ -7,7 +7,7 @@
 
 ## 응답
 
-반환: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_domain_config_response.rb)
+반환: `PutDomainConfigResponse`
 
 ## 예제
 

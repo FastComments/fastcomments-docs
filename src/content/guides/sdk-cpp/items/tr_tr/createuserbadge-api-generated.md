@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
+Döndürür: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
 
 ## Örnek
 

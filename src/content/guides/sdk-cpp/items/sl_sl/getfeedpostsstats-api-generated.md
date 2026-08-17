@@ -8,7 +8,7 @@
 
 ## Odziv
 
-Vračajo: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
+Vračajo: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
 
 ## Primer
 

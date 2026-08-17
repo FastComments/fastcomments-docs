@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_get_comment_text_response.rb)
+반환: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_api_get_comment_text_response.rb)
 
 ## 예제
 

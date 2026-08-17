@@ -11,7 +11,7 @@ afterId
 
 ## 响应
 
-返回: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
+返回: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
 
 ## 示例
 

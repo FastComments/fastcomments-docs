@@ -8,7 +8,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
+Επιστρέφει: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateFeedPostsResponse.h)
 
 ## Παράδειγμα
 

@@ -10,7 +10,7 @@ Upload and resize an image
 
 ## Antwort
 
-Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UploadImageResponse.h)
+Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 
 ## Beispiel
 

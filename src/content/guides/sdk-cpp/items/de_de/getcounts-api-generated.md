@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Rückgabe: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetBannedUsersCountResponse.h)
+Rückgabe: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetBannedUsersCountResponse.h)
 
 ## Beispiel
 

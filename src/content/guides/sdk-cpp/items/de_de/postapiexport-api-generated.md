@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Rückgabe: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationExportResponse.h)
+Rückgabe: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationExportResponse.h)
 
 ## Beispiel
 

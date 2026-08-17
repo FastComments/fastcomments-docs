@@ -8,7 +8,7 @@
 
 #### Angular、React、Vue 等
 
-使用我們的函式庫（例如 Angular 與 React），只要更新傳入 widget 的 `urlId` 屬性，評論元件就會重新整理。你可以在 React 範例中看到這個行為，例如 <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">這裡</a>。
+使用我們的函式庫（例如 Angular 與 React），只要更新傳入 widget 的 `urlId` 屬性，評論元件就會重新整理。你可以在 React 範例中看到這個行為，例如 <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">這裡</a>。
 
 #### VanillaJS
 

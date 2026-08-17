@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
+Повертає: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
 
 ## Приклад
 

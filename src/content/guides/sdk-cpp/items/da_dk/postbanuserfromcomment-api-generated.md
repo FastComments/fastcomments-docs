@@ -8,7 +8,7 @@
 
 ## Respons
 
-Returnerer: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
+Returnerer: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
 
 ## Eksempel
 

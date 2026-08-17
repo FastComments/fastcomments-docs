@@ -8,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTranslationsResponse.h)
+Returnerer: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTranslationsResponse.h)
 
 ## Eksempel
 

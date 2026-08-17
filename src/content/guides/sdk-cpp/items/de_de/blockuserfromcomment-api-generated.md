@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Rückgabe: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BlockSuccess.h)
+Rückgabe: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BlockSuccess.h)
 
 ## Beispiel
 

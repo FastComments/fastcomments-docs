@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserResponse.h)
+Повертає: [`GetUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserResponse.h)
 
 ## Приклад
 

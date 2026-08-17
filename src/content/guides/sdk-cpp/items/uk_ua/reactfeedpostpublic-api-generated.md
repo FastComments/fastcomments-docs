@@ -9,7 +9,7 @@
 
 ## Відповідь
 
-Повертає: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
+Повертає: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
 ## Приклад
 

@@ -8,7 +8,7 @@
 
 ## Respons
 
-Retourneert: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
+Retourneert: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
 
 ## Voorbeeld
 

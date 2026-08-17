@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Rückgabe: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchSSOUserAPIResponse.h)
+Rückgabe: [`PatchSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchSSOUserAPIResponse.h)
 
 ## Beispiel
 

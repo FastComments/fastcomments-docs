@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_response.rb)
+מחזיר: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_get_user_badge_response.rb)
 
 ## דוגמה
 

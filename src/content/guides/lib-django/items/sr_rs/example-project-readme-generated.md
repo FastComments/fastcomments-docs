@@ -1,5 +1,5 @@
 ---
-Pokretljiva demonstracija se nalazi u [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): aplikacija sa levim panelom + glavnom scenom
+Pokretljiva demonstracija se nalazi u [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): aplikacija sa levim panelom + glavnom scenom
 sa stranicom po widgetu i **stranicom za prijavu koja prikazuje unapred semplovane demo korisnike**.
 Prijavite se kao bilo koji od njih i widgeti za komentare i live‑chat autentišu taj identitet putem **Secure SSO**. Iz tog direktorijuma:
 

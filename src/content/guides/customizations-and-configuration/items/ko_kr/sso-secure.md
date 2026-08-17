@@ -112,6 +112,6 @@ interface SSOUser {
 
 #### 사용자 데이터 직렬화 및 해싱에 대한 직접 예제
 
-자세한 예제는 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">여기</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">여기</a> (java) 및 <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">여기</a> (php)를 참조하세요.
+자세한 예제는 <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">여기</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">여기</a> (java) 및 <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">여기</a> (php)를 참조하세요.
 
 어떤 통합 작업도 복잡하고 어려울 수 있다는 것을 이해합니다. 담당자에게 문의하거나 <a href="https://fastcomments.com/auth/my-account/help" target="_blank">support page</a>를 이용하는 것을 주저하지 마세요.

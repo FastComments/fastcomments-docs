@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Rückgabe: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
+Rückgabe: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BanUserFromCommentResult.h)
 
 ## Beispiel
 

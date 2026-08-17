@@ -12,7 +12,7 @@ anonCount + totalCount değerini döndürür (odadaki tüm aboneler, numaraland�
 
 ## Response
 
-Döndürür: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Döndürür: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Example
 

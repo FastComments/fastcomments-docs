@@ -6,7 +6,7 @@
 
 ## 响应
 
-返回: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_s_s_o_user_a_p_i_response.rb)
+返回: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_sso_user_api_response.rb)
 
 ## 示例
 

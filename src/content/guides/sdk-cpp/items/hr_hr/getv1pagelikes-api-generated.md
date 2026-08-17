@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetV1PageLikes.h)
+Vraća: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV1PageLikes.h)
 
 ## Primjer
 

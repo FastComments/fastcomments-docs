@@ -11,7 +11,7 @@ Stranice koje zahtijevaju SSO filtriraju se prema pristupu grupi korisnika koji 
 
 ## Odgovor
 
-Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Primjer
 

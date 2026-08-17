@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPageByURLIdAPIResponse.h)
+Повертає: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPageByURLIdAPIResponse.h)
 
 ## Приклад
 

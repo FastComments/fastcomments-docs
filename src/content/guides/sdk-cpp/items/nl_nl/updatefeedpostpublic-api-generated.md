@@ -9,7 +9,7 @@
 
 ## Response
 
-Retourneert: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateFeedPostResponse.h)
+Retourneert: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateFeedPostResponse.h)
 
 ## Voorbeeld
 

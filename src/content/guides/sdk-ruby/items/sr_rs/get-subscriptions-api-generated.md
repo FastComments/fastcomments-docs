@@ -7,7 +7,7 @@
 
 ## Респонс
 
-Враћа: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_subscriptions_a_p_i_response.rb)
+Враћа: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_subscriptions_api_response.rb)
 
 ## Пример
 

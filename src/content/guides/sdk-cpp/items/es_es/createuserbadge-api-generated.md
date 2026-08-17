@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
+Devuelve: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
 
 ## Ejemplo
 

@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationUserSearchResponse.h)
+Retourneert: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationUserSearchResponse.h)
 
 ## Voorbeeld
 

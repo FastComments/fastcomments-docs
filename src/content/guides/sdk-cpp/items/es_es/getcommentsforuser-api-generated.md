@@ -6,7 +6,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentsForUserResponse.h)
+Devuelve: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsForUserResponse.h)
 
 ## Ejemplo
 

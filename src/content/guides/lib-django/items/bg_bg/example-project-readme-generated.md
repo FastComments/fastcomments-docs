@@ -1,4 +1,4 @@
-A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): a left-rail + main-stage app with a page per widget and a **sign-in page listing pre-seeded demo users**.  
+A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): a left-rail + main-stage app with a page per widget and a **sign-in page listing pre-seeded demo users**.  
 Sign in as any of them and the comment and live‑chat widgets authenticate that identity via **Secure SSO**. From that directory:
 
 ```bash

@@ -1,4 +1,4 @@
-Una demostración ejecutable se encuentra en [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): una aplicación de carril izquierdo + escenario principal con una página por widget y una **página de inicio de sesión que enumera usuarios de demostración pre-semilla**.  
+Una demostración ejecutable se encuentra en [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): una aplicación de carril izquierdo + escenario principal con una página por widget y una **página de inicio de sesión que enumera usuarios de demostración pre-semilla**.  
 Inicia sesión con cualquiera de ellos y los widgets de comentarios y chat en vivo autentican esa identidad a través de **Secure SSO**. Desde ese directorio:
 
 ```bash

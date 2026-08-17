@@ -8,7 +8,7 @@
 
 ## תשובה
 
-מחזיר: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
+מחזיר: [`BulkAggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkAggregateQuestionResultsResponse.h)
 
 ## דוגמה
 

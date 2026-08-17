@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
+Vraća: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
 
 ## Primjer
 

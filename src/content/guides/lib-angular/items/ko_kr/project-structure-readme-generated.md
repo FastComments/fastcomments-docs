@@ -5,5 +5,5 @@
 
 "projects"에서는 fastcomments 라이브러리를 찾을 수 있습니다.
 
-ngx-fastcomments에 대한 README는 [여기](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)에서 확인하세요.
+ngx-fastcomments에 대한 README는 [여기](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular)에서 확인하세요.
 ---

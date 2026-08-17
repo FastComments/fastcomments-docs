@@ -19,7 +19,7 @@ Svaka označena [GitHub Release](https://github.com/fastcomments/fastcomments-py
 Ova biblioteka sadrži dva modula: generisani API klijent i osnovnu Python biblioteku koja sadrži ručno napisane alate za olakšavanje rada sa API‑jem, uključujući SSO podršku.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core Library Docs, Including SSO Examples
 
 ### Public vs Secured APIs
 

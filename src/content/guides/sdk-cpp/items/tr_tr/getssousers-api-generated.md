@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSSOUsersResponse.h)
+Döndürür: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSSOUsersResponse.h)
 
 ## Örnek
 

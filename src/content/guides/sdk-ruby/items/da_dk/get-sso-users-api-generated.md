@@ -7,7 +7,7 @@
 
 ## Respons
 
-Returnerer: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_users_response.rb)
+Returnerer: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_sso_users_response.rb)
 
 ## Eksempel
 

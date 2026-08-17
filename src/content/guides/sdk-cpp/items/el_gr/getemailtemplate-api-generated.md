@@ -7,7 +7,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEmailTemplateResponse.h)
+Επιστρέφει: [`GetEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEmailTemplateResponse.h)
 
 ## Παράδειγμα
 

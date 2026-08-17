@@ -1,4 +1,4 @@
-A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): a left-rail + main-stage
+A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): a left-rail + main-stage
 app with a page per widget and a **sign-in page listing pre-seeded demo users**.  
 Log ind som en af dem, og kommentar‑ og live‑chat‑widgetsene autentificerer den identitet via **Secure SSO**. Fra den mappe:
 

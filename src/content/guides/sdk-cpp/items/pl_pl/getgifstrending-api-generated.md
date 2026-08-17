@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetGifsTrendingResponse.h)
+Zwraca: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetGifsTrendingResponse.h)
 
 ## Przykład
 

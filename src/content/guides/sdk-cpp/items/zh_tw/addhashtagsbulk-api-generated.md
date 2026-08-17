@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳：[`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
+回傳：[`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
 
 ## 範例
 

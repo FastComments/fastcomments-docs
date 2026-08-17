@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_s_s_o_user_a_p_i_response.rb)
+Zwraca: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_sso_user_api_response.rb)
 
 ## Przykład
 

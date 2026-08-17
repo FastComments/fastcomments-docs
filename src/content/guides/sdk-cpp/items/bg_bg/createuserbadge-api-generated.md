@@ -7,7 +7,7 @@
 
 ## Отговор
 
-Връща: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
+Връща: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
 
 ## Пример
 

@@ -8,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
+Returnerer: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
 
 ## Eksempel
 

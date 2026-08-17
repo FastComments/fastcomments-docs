@@ -8,7 +8,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
+Zwraca: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
 
 ## Przykład
 

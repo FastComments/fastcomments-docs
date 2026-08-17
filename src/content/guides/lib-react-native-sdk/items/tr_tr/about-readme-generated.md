@@ -10,6 +10,6 @@ Her şey FastComments backend üzerinde çalışır, bu yüzden yalnızca UI'yi 
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Daha fazla örnek için [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src)'e bakın.
+Daha fazla örnek için [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src)'e bakın.
 
 Mevcut React Native uygulamanıza canlı sohbet ekleyin veya hatta bir sosyal ağ oluşturun!

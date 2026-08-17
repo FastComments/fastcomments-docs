@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTicketsResponse.h)
+Döndürür: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTicketsResponse.h)
 
 ## Örnek
 

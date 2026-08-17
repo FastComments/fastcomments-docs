@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetDomainConfigResponse.h)
+Returnerer: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetDomainConfigResponse.h)
 
 ## Eksempel
 

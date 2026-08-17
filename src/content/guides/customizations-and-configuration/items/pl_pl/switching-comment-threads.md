@@ -10,7 +10,7 @@ zmienia się dynamicznie bez pełnego przeładowania strony?
 #### Angular, React, Vue itp.
 
 W naszych bibliotekach, takich jak Angular i React, wystarczy zaktualizować właściwość `urlId` przekazywaną do widżetu,
-aby widżet komentarzy odświeżył się. Możesz zobaczyć to w akcji dla aplikacji React, na przykład <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">tutaj</a>.
+aby widżet komentarzy odświeżył się. Możesz zobaczyć to w akcji dla aplikacji React, na przykład <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">tutaj</a>.
 
 #### VanillaJS
 

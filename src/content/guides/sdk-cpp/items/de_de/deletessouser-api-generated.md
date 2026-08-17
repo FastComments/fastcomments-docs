@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Rückgabe: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSSOUserAPIResponse.h)
+Rückgabe: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeleteSSOUserAPIResponse.h)
 
 ## Beispiel
 

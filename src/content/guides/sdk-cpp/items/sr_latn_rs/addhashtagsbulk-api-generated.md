@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vraća: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
+Vraća: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkCreateHashTagsResponse.h)
 
 ## Primer
 

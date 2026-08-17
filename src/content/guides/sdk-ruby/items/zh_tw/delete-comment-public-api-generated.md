@@ -10,7 +10,7 @@
 
 ## 回應
 
-回傳：[`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
+回傳：[`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_api_delete_comment_response.rb)
 
 ## 範例
 

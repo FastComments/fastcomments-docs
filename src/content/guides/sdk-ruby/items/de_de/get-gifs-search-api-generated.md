@@ -10,7 +10,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_gifs_search_response.rb)
+Gibt zurück: `GetGifsSearchResponse`
 
 ## Beispiel
 

@@ -10,7 +10,7 @@ dynamiquement sans rechargement complet de la page ?
 #### Angular, React, Vue, etc
 
 Avec nos bibliothèques telles qu'Angular et React, il suffit de mettre à jour la propriété `urlId` passée au widget
-pour provoquer le rafraîchissement du widget de commentaires. Vous pouvez voir cela en action pour l'application React, par exemple, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">ici</a>.
+pour provoquer le rafraîchissement du widget de commentaires. Vous pouvez voir cela en action pour l'application React, par exemple, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">ici</a>.
 
 #### VanillaJS
 

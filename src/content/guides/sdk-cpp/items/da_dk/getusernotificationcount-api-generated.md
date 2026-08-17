@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
+Returnerer: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
 
 ## Eksempel
 

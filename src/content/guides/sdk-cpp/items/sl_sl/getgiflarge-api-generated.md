@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vrne: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
+Vrne: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
 
 ## Primer
 

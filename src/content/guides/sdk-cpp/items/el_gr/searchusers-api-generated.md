@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SearchUsersResult.h)
+Επιστρέφει: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SearchUsersResult.h)
 
 ## Παράδειγμα
 

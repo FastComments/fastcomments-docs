@@ -8,7 +8,7 @@
 
 ## Réponse
 
-Renvoie : [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantsResponse.h)
+Renvoie : [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantsResponse.h)
 
 ## Exemple
 

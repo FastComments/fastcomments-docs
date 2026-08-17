@@ -7,7 +7,7 @@
 
 ## Response
 
-Retourneert: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
+Retourneert: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
 
 ## Example
 

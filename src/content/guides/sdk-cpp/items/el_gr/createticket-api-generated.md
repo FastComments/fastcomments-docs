@@ -8,7 +8,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTicketResponse.h)
+Επιστρέφει: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTicketResponse.h)
 
 ## Παράδειγμα
 

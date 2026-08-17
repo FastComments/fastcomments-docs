@@ -10,7 +10,7 @@ dinámicamente sin recargar la página?
 #### Angular, React, Vue, etc
 
 Con nuestras librerías como Angular y React, simplemente actualizar la propiedad `urlId` que se pasa al widget
-hará que el widget de comentarios se actualice. Puedes ver esto en acción para la aplicación React, por ejemplo, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">aquí</a>.
+hará que el widget de comentarios se actualice. Puedes ver esto en acción para la aplicación React, por ejemplo, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">aquí</a>.
 
 #### VanillaJS
 

@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
+戻り値: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
 
 ## 例
 

@@ -10,7 +10,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicAPISetCommentTextResponse.h)
+Επιστρέφει: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicAPISetCommentTextResponse.h)
 
 ## Παράδειγμα
 

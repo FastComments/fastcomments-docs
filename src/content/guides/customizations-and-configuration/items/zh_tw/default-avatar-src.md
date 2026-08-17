@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-當使用者首次使用 FastComments 發表評論時，我們會嘗試從 <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a> 取得他們的頭像。
+當使用者首次使用 FastComments 發表評論時，我們會嘗試從 <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a> 取得他們的頭像。
 
 然而，如果找不到頭像，或使用者從未在其帳戶中設定頭像，我們會顯示一個靜態的預設頭像圖像。
 

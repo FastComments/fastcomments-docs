@@ -8,7 +8,7 @@
 
 ## Risposta
 
-Restituisce: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PreBanSummary.h)
+Restituisce: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PreBanSummary.h)
 
 ## Esempio
 

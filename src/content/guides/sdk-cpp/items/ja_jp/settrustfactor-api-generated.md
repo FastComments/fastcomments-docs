@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-戻り値: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
+戻り値: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
 
 ## 例
 

@@ -9,7 +9,7 @@
 
 ## Réponse
 
-Retourne : [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
+Retourne : [`UpdateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateSubscriptionAPIResponse.h)
 
 ## Exemple
 

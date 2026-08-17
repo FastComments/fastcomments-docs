@@ -12,7 +12,7 @@ Paginazione con cursore su commenterName: il server percorre il parziale `{tenan
 
 ## Risposta
 
-Restituisce: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Restituisce: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Esempio
 

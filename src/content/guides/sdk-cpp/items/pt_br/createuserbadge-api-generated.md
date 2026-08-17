@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
+Retorna: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APICreateUserBadgeResponse.h)
 
 ## Exemplo
 

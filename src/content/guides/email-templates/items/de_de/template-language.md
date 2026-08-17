@@ -1,4 +1,4 @@
-FastComments-E-Mail-Vorlagen verwenden die [EJS-Template-Sprache](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments-E-Mail-Vorlagen verwenden die [EJS-Template-Sprache](https://ejs.co/#docs).
 
 Die Beispielsyntax ist `<%= object.someValue %>` zum Ausgeben von Variablen, und bedingte Anweisungen können wie folgt geschrieben werden:
 

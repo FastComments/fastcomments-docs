@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserTrustFactorResponse.h)
+Returnerer: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserTrustFactorResponse.h)
 
 ## Eksempel
 

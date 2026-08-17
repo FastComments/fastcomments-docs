@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
+Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeTicketStateResponse.h)
 
 ## Primjer
 

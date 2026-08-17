@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Gibt zurück: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_s_s_o_user_a_p_i_response.rb)
+Gibt zurück: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_sso_user_api_response.rb)
 
 ## Beispiel
 

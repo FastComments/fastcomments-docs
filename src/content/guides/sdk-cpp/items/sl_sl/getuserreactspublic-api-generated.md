@@ -7,7 +7,7 @@
 
 ## Odgovor
 
-Vrne: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UserReactsResponse.h)
+Vrne: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UserReactsResponse.h)
 
 ## Primer
 

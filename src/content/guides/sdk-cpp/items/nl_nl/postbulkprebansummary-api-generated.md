@@ -8,7 +8,7 @@
 
 ## Respons
 
-Retourneert: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/BulkPreBanSummary.h)
+Retourneert: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BulkPreBanSummary.h)
 
 ## Voorbeeld
 

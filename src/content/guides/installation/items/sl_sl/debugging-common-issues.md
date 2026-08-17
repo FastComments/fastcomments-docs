@@ -30,7 +30,7 @@ Pri večini napačnih konfiguracij se bo komentarni vtičnik vsaj prikazal z nap
 
 ### Želena konfiguracija ne deluje po pričakovanjih
 
-Poskusite naš [Chrome razširitev](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), da vidite, katera konfiguracija se posreduje komentarjem. Če vse odpove, naredite posnetek zaslona tistega, kar pove razširitev, in nam [pišite](https://fastcomments.com/auth/my-account/help).
+Poskusite naš [Chrome razširitev](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj), da vidite, katera konfiguracija se posreduje komentarjem. Če vse odpove, naredite posnetek zaslona tistega, kar pove razširitev, in nam [pišite](https://fastcomments.com/auth/my-account/help).
 
 ### Komentarji manjkajo na istem URL z različnim hash-bangom
 

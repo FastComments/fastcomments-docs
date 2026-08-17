@@ -9,7 +9,7 @@
 
 ## レスポンス
 
-戻り値: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
+戻り値: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
 
 ## 例
 

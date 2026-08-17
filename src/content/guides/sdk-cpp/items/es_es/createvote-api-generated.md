@@ -9,7 +9,7 @@
 
 ## Respuesta
 
-Devuelve: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteResponse.h)
+Devuelve: [`VoteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteResponse.h)
 
 ## Ejemplo
 

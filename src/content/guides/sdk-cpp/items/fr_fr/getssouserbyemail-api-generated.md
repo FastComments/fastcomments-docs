@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie : [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetSSOUserByEmailAPIResponse.h)
+Renvoie : [`GetSSOUserByEmailAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetSSOUserByEmailAPIResponse.h)
 
 ## Exemple
 

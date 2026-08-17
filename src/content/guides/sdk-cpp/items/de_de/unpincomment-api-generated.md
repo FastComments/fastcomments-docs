@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Rückgabe: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
+Rückgabe: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ChangeCommentPinStatusResponse.h)
 
 ## Beispiel
 

@@ -9,7 +9,7 @@
 
 ## 回應
 
-回傳: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
+回傳: `UpdateUserNotificationStatusResponse`
 
 ## 範例
 

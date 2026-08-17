@@ -4,4 +4,4 @@
 
 Στο "projects" θα βρείτε τη βιβλιοθήκη fastcomments.
 
-Δείτε το README για το ngx-fastcomments [εδώ](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)
+Δείτε το README για το ngx-fastcomments [εδώ](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular)

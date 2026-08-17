@@ -11,6 +11,6 @@ Sve radi na FastComments backendu, tako da trebate samo uključiti UI:
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Pogledajte [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) za više primjera.
+Pogledajte [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) za više primjera.
 
 Dodajte live chat svojoj postojećoj React Native aplikaciji, ili čak izgradite društvenu mrežu!

@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_users_response.rb)
+回傳: [`GetSSOUsersResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_sso_users_response.rb)
 
 ## 範例
 

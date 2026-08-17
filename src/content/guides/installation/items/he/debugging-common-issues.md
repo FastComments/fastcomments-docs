@@ -30,7 +30,7 @@ FastComments צריך לדעת אילו דומיינים שייכים לך כד�
 
 ### התצורה הרצויה לא פועלת כמצופה
 
-נסו את [ההרחבה של Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) כדי לראות איזו תצורה הווידג'ט מקבל. אם כלום לא עוזר, צלמו צילום מסך של מה שההרחבה מציגה ו[פנו אלינו](https://fastcomments.com/auth/my-account/help).
+נסו את [ההרחבה של Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) כדי לראות איזו תצורה הווידג'ט מקבל. אם כלום לא עוזר, צלמו צילום מסך של מה שההרחבה מציגה ו[פנו אלינו](https://fastcomments.com/auth/my-account/help).
 
 ### חסרות תגובות באותו URL עם Hash Bang שונה
 

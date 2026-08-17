@@ -19,7 +19,7 @@ fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.
 ספרייה זו מכילה שני מודולים: לקוח ה‑API שנוצר והספרייה המרכזית של Python שמכילה כלי כתיבה ידנית שמקלים על העבודה עם ה‑API, כולל תמיכה ב‑SSO.
 
 - [תיעוד ספריית לקוח ה‑API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [תיעוד הספרייה המרכזית, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- תיעוד הספרייה המרכזית, כולל דוגמאות SSO
 
 ### API ציבוריים מול מאובטחים
 

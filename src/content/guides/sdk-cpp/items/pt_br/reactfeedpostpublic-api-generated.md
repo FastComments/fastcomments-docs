@@ -9,7 +9,7 @@
 
 ## Response
 
-Retorna: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
+Retorna: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ReactFeedPostResponse.h)
 
 ## Exemplo
 

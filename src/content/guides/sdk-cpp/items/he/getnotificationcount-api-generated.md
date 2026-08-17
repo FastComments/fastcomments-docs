@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationCountResponse.h)
+מחזיר: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetNotificationCountResponse.h)
 
 ## דוגמה
 

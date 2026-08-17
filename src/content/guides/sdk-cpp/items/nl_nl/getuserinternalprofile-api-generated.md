@@ -7,7 +7,7 @@
 
 ## Reactie
 
-Retourneert: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserInternalProfileResponse.h)
+Retourneert: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserInternalProfileResponse.h)
 
 ## Voorbeeld
 

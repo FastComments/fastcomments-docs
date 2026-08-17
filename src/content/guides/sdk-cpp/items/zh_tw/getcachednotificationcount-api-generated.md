@@ -7,7 +7,7 @@
 
 ## 回應
 
-返回：[`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
+返回：[`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
 
 ## 範例
 

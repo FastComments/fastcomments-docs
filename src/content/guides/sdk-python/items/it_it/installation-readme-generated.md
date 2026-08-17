@@ -19,7 +19,7 @@ Ogni [GitHub Release](https://github.com/fastcomments/fastcomments-python/releas
 Questa libreria contiene due moduli: il client API generato e la libreria core Python che contiene utility scritte a mano per facilitare l'uso dell'API, incluso il supporto SSO.
 
 - [Documentazione della Libreria Client API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Documentazione della Libreria Core, Inclusi Esempi SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Documentazione della Libreria Core, Inclusi Esempi SSO
 
 ### API Pubbliche vs Sicure
 

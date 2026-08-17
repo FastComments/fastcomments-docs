@@ -113,6 +113,6 @@ interface SSOUser {
 
 #### Direct Examples for Serializing and Hashing User Data
 
-פרטים נוספים ודוגמאות נמצאים <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">כאן</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">כאן</a> (java) ו-<a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">כאן</a> (php).
+פרטים נוספים ודוגמאות נמצאים <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">כאן</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">כאן</a> (java) ו-<a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">כאן</a> (php).
 
 אנו מבינים שכל אינטגרציה יכולה להיות תהליך מסובך וכואב. אל תהססו ליצור קשר עם הנציג שלכם או להשתמש בדף התמיכה <a href="https://fastcomments.com/auth/my-account/help" target="_blank">support page</a>.

@@ -1,5 +1,5 @@
 ---
-Шаблони електронної пошти FastComments використовують [мову шаблонів EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+Шаблони електронної пошти FastComments використовують [мову шаблонів EJS](https://ejs.co/#docs).
 
 Приклад синтаксису: `<%= object.someValue %>` для виведення змінних, а умовні вирази можна записати так:
 

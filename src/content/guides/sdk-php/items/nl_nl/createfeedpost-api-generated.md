@@ -10,7 +10,7 @@
 
 ## Respons
 
-Retourneert: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
+Retourneert: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
 
 ## Voorbeeld
 

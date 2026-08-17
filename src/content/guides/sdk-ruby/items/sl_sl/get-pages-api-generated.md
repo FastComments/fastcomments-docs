@@ -6,7 +6,7 @@
 
 ## Odgovor
 
-Vrne: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pages_a_p_i_response.rb)
+Vrne: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_pages_api_response.rb)
 
 ## Primer
 

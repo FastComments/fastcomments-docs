@@ -30,7 +30,7 @@ Para a maioria das configurações incorretas, o widget de comentários ao menos
 
 ### Desired Configuration Not Working as Expected
 
-Tente nossa [extensão do Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) para ver qual configuração está sendo passada ao widget de comentários. Se tudo falhar, tire uma captura de tela do que a extensão do Chrome mostra e [entre em contato conosco](https://fastcomments.com/auth/my-account/help).
+Tente nossa [extensão do Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) para ver qual configuração está sendo passada ao widget de comentários. Se tudo falhar, tire uma captura de tela do que a extensão do Chrome mostra e [entre em contato conosco](https://fastcomments.com/auth/my-account/help).
 
 ### Comments Missing on Same URL With Different Hash Bang
 

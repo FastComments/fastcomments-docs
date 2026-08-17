@@ -10,7 +10,7 @@
 
 ## Svar
 
-Returnerer: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_set_comment_text_response.rb)
+Returnerer: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_api_set_comment_text_response.rb)
 
 ## Eksempel
 

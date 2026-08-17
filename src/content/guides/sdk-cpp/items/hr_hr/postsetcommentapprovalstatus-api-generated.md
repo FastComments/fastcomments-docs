@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
+Vraća: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
 
 ## Primjer
 

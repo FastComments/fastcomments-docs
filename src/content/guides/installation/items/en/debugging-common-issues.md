@@ -37,7 +37,7 @@ able to load. Seeing nothing is usually an indication of a scripting error.
 
 ### Desired Configuration Not Working as Expected
 
-Try our [Chrome extension](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) to see what
+Try our [Chrome extension](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) to see what
 configuration the comment widget is being passed. If all fails, take as screenshot of what the chrome extension says
 and [reach out to us](https://fastcomments.com/auth/my-account/help).
 

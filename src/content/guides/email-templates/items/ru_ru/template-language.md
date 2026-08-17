@@ -1,4 +1,4 @@
-Шаблоны писем FastComments используют [язык шаблонов EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+Шаблоны писем FastComments используют [язык шаблонов EJS](https://ejs.co/#docs).
 
 Пример синтаксиса: `<%= object.someValue %>` для вывода переменных, а условные операторы можно записать так:
 

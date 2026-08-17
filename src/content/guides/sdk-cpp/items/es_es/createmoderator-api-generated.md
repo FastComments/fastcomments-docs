@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
+Devuelve: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
 ## Ejemplo
 

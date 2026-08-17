@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vrne: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
+Vrne: [`PatchDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchDomainConfigResponse.h)
 
 ## Primer
 

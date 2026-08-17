@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Rückgabe: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetModeratorResponse.h)
+Rückgabe: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetModeratorResponse.h)
 
 ## Beispiel
 

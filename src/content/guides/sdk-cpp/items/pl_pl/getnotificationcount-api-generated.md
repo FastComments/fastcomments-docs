@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationCountResponse.h)
+Zwraca: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetNotificationCountResponse.h)
 
 ## Przykład
 

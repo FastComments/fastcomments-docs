@@ -1,5 +1,5 @@
 ---
-FastComments Email Templates bruger [EJS skabelonsprog](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email Templates bruger [EJS skabelonsprog](https://ejs.co/#docs).
 
 Eksempel på syntaks er `<%= object.someValue %>` for at udskrive variabler, og betingede udsagn kan laves således:
 

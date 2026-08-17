@@ -8,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTicketResponse.h)
+Returnerer: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTicketResponse.h)
 
 ## Eksempel
 

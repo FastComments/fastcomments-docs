@@ -9,7 +9,7 @@
 
 ## Odgovor
 
-Vraća: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
+Vraća: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
 
 ## Primer
 

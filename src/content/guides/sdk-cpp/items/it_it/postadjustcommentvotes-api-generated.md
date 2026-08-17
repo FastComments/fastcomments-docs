@@ -9,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
+Restituisce: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
 
 ## Esempio
 

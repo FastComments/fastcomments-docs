@@ -10,7 +10,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PublicAPISetCommentTextResponse.h)
+Zwraca: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PublicAPISetCommentTextResponse.h)
 
 ## Przykład
 

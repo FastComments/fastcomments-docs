@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
+Returnerer: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
 
 ## Eksempel
 

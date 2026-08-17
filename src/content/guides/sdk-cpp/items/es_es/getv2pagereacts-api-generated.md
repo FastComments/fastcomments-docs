@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetV2PageReacts.h)
+Devuelve: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetV2PageReacts.h)
 
 ## Ejemplo
 

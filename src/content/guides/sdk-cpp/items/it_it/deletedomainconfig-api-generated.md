@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteDomainConfigResponse.h)
+Restituisce: [`DeleteDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeleteDomainConfigResponse.h)
 
 ## Esempio
 

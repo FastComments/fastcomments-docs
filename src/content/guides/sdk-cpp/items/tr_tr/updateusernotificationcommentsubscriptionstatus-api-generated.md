@@ -12,7 +12,7 @@ Enable or disable notifications for a specific comment.
 
 ## Yanıt
 
-Döndürür: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
+Döndürür: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationCommentSubscriptionStatusResponse.h)
 
 ## Örnek
 

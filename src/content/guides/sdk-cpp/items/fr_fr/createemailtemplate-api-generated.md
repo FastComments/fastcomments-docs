@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Retourne : [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateEmailTemplateResponse.h)
+Retourne : [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateEmailTemplateResponse.h)
 
 ## Exemple
 

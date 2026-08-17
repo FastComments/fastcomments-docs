@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
+Retorna: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
 
 ## Exemplo
 

@@ -1,5 +1,5 @@
 ---
-FastComments E-mailsjablonen gebruiken de [EJS-sjabloontaal](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments E-mailsjablonen gebruiken de [EJS-sjabloontaal](https://ejs.co/#docs).
 
 Voorbeeldsyntaxis is `<%= object.someValue %>` om variabelen weer te geven, en voorwaardelijke instructies kunnen als volgt worden geschreven:
 

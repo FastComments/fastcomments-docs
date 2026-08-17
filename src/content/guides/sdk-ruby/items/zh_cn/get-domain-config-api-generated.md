@@ -7,7 +7,7 @@
 
 ## 响应
 
-返回：[`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config_response.rb)
+返回：`GetDomainConfigResponse`
 
 ## 示例
 

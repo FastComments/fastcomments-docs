@@ -1,5 +1,5 @@
 ---
-可运行的演示位于 [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example)：一个 left-rail + main-stage  
+可运行的演示位于 [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example)：一个 left-rail + main-stage  
 应用，每个部件都有一个页面，并且包含一个**列出预先种子演示用户的登录页面**。  
 使用其中任意用户登录，评论和实时聊天部件将通过**Secure SSO** 验证该身份。  
 在该目录下运行：

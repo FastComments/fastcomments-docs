@@ -9,7 +9,7 @@
 
 ## 응답
 
-반환: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
+반환: `UpdateUserNotificationStatusResponse`
 
 ## 예제
 

@@ -10,7 +10,7 @@
 
 ## תגובה
 
-מחזיר: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
+מחזיר: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SaveCommentsResponseWithPresence.h)
 
 ## דוגמה
 

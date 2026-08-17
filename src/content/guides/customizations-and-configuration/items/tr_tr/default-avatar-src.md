@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Bir kullanıcı FastComments ile ilk kez yorum yaptığında avatarını <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a> adresinden almaya çalışacağız.
+Bir kullanıcı FastComments ile ilk kez yorum yaptığında avatarını <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a> adresinden almaya çalışacağız.
 
 Ancak, bir avatar bulamazsak ya da kullanıcı hesabında hiç avatar ayarlamazsa, statik bir varsayılan avatar resmi gösteririz.
 

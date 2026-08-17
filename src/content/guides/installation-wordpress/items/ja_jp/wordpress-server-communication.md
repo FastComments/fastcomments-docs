@@ -6,4 +6,4 @@
 すべての通信は HTTPS 経由で行われます。
 
 すべての通信はあなたの WordPress サーバーから FastComments.com への *アウトバウンド* であり、WordPress インストールへの同期（*バック*）を含みます。これは、実装されている
-あなたの WordPress インストールの [cron](https://developer.wordpress.org/plugins/cron/) 設定からの [polling](https://en.wikipedia.org/wiki/Polling_(computer_science)) を介して行われます。
+あなたの WordPress インストールの [cron](https://en.wikipedia.org/wiki/Polling_(computer_science) 設定からの [polling](https://developer.wordpress.org/plugins/cron/)) を介して行われます。

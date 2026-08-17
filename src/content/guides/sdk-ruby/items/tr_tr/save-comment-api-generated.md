@@ -10,7 +10,7 @@
 
 ## Yanıt
 
-Döndürür: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_save_comment_response.rb)
+Döndürür: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_save_comment_response.rb)
 
 ## Örnek
 

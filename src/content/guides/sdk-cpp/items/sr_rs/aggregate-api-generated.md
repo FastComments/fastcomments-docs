@@ -11,7 +11,7 @@ Aggregates documents by grouping them (if groupBy is provided) and applying mult
 
 ## Response
 
-Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Враћа: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Пример
 

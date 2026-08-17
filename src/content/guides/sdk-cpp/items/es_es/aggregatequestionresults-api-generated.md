@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
+Devuelve: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateQuestionResultsResponse.h)
 
 ## Ejemplo
 

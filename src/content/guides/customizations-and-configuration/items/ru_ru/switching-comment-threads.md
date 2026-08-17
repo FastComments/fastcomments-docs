@@ -10,7 +10,7 @@
 #### Angular, React, Vue и т. д.
 
 В наших библиотеках, таких как Angular и React, простое обновление свойства `urlId`, передаваемого виджету,
-вызывает обновление виджета комментариев. Например, вы можете увидеть это в действии для React-приложения <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">здесь</a>.
+вызывает обновление виджета комментариев. Например, вы можете увидеть это в действии для React-приложения <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">здесь</a>.
 
 #### VanillaJS
 

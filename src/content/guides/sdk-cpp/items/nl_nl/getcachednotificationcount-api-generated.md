@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
+Retourneert: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCachedNotificationCountResponse.h)
 
 ## Voorbeeld
 

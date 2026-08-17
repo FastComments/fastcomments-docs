@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantPackageResponse.h)
+Retourneert: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTenantPackageResponse.h)
 
 ## Voorbeeld
 

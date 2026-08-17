@@ -14,7 +14,7 @@ Vrne anonCount + totalCount (naročniki po celotni sobi, vključno z anonimnimi 
 
 ## Response
 
-Vrne: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Vrne: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Example
 

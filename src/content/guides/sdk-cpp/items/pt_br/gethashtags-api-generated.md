@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
+Retorna: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
 
 ## Exemplo
 

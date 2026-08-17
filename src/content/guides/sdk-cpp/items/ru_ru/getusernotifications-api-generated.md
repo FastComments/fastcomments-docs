@@ -7,7 +7,7 @@
 
 ## Ответ
 
-Возвращает: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetMyNotificationsResponse.h)
+Возвращает: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetMyNotificationsResponse.h)
 
 ## Пример
 

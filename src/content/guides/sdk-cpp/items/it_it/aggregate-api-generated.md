@@ -11,7 +11,7 @@ Sono supportate diverse operazioni (ad es. sum, countDistinct, avg, ecc.).
 
 ## Risposta
 
-Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Restituisce: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Esempio
 

@@ -8,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badge_progress_response.rb)
+Returnerer: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_get_user_badge_progress_response.rb)
 
 ## Eksempel
 

@@ -9,7 +9,7 @@
 
 ## Antwort
 
-Gibt zurück: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_gifs_trending_response.rb)
+Gibt zurück: `GetGifsTrendingResponse`
 
 ## Beispiel
 

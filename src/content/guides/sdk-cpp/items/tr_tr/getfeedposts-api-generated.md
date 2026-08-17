@@ -11,7 +11,7 @@ afterId
 
 ## Yanıt
 
-Döndürür: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
+Döndürür: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
 
 ## Örnek
 

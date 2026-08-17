@@ -30,7 +30,7 @@ FastComments는 계정과 연관된 요청을 인증하기 위해 어떤 도메�
 
 ### 원하는 구성대로 작동하지 않는 경우
 
-댓글 위젯에 전달된 구성을 확인하려면 [Chrome 확장 프로그램](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US)을 사용해 보세요. 그래도 해결되지 않으면, Chrome 확장 프로그램이 보여주는 내용을 스크린샷으로 찍어 [문의해 주세요](https://fastcomments.com/auth/my-account/help).
+댓글 위젯에 전달된 구성을 확인하려면 [Chrome 확장 프로그램](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj)을 사용해 보세요. 그래도 해결되지 않으면, Chrome 확장 프로그램이 보여주는 내용을 스크린샷으로 찍어 [문의해 주세요](https://fastcomments.com/auth/my-account/help).
 
 ### 서로 다른 해시뱅으로 동일한 URL에서 댓글이 누락되는 경우
 

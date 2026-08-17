@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזירה: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetGifsSearchResponse.h)
+מחזירה: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetGifsSearchResponse.h)
 
 ## דוגמה
 

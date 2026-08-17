@@ -8,7 +8,7 @@
 
 ## Yanıt
 
-Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
+Döndürür: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
 
 ## Örnek
 

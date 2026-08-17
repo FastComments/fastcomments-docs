@@ -9,7 +9,7 @@
 
 ## Odziv
 
-Vrne: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
+Vrne: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PutSSOUserAPIResponse.h)
 
 ## Primer
 

@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Retourne : [`GetVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotesResponse.h)
+Retourne : [`GetVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetVotesResponse.h)
 
 ## Exemple
 

@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantsResponse.h)
+Повертає: [`GetTenantsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantsResponse.h)
 
 ## Приклад
 

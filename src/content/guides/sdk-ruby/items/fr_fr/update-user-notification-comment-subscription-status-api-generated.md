@@ -12,7 +12,7 @@ Activer ou désactiver les notifications pour un commentaire spécifique.
 
 ## Réponse
 
-Renvoie: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
+Renvoie: `UpdateUserNotificationCommentSubscriptionStatusResponse`
 
 ## Exemple
 

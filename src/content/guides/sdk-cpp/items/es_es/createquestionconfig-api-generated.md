@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateQuestionConfigResponse.h)
+Devuelve: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateQuestionConfigResponse.h)
 
 ## Ejemplo
 

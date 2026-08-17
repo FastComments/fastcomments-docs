@@ -11,7 +11,7 @@ afterId
 
 ## Réponse
 
-Retourne : [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
+Retourne : [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
 
 ## Exemple
 

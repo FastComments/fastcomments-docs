@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
+Повертає: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
 
 ## Приклад
 

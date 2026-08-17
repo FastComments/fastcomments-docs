@@ -11,7 +11,7 @@ Zwraca anonCount + totalCount (subskrybenci w całym pokoju, w tym anonimowi wid
 
 ## Odpowiedź
 
-Zwraca: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Zwraca: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Przykład
 

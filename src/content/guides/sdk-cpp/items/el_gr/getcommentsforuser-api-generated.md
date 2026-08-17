@@ -6,7 +6,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetCommentsForUserResponse.h)
+Επιστρέφει: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetCommentsForUserResponse.h)
 
 ## Παράδειγμα
 

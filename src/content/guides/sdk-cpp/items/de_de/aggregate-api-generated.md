@@ -10,7 +10,7 @@ Aggregiert Dokumente, indem sie (falls *groupBy* angegeben ist) gruppiert und 
 
 ## Antwort
 
-Rückgabe: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Rückgabe: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Beispiel
 

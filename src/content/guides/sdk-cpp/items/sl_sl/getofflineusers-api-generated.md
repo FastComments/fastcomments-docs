@@ -12,7 +12,7 @@ Cursor paginiranje po commenterName: strežnik hodi po delnem {tenantId, urlId, 
 
 ## Odgovor
 
-Vrne: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Vrne: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Primer
 

@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Коли користувач коментує за допомогою FastComments вперше, ми спробуємо отримати його аватарку з <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Коли користувач коментує за допомогою FastComments вперше, ми спробуємо отримати його аватарку з <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
 
 Однак, якщо аватарку не знайдено або користувач ніколи не встановлює її у своєму обліковому записі, ми відображаємо статичне зображення типового аватара.
 

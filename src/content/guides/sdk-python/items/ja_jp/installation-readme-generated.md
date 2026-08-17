@@ -19,7 +19,7 @@ fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.
 このライブラリには、生成された API クライアントと、API の利用を容易にする手書きユーティリティ（SSO サポートを含む）を含むコア Python ライブラリの 2 つのモジュールが含まれています。
 
 - [API クライアント ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [コア ライブラリ ドキュメント（SSO の例を含む）](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- コア ライブラリ ドキュメント（SSO の例を含む）
 
 ### パブリック API と保護された API
 

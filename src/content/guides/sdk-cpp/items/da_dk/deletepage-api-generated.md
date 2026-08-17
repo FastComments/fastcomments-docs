@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
+Returnerer: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
 
 ## Eksempel
 

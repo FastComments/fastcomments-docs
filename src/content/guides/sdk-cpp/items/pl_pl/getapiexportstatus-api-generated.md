@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationExportStatusResponse.h)
+Zwraca: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationExportStatusResponse.h)
 
 ## Przykład
 

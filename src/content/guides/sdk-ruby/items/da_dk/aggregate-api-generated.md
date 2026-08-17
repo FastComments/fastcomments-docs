@@ -10,7 +10,7 @@ Aggregerer dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende f
 
 ## Svar
 
-Returnerer: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Returnerer: `AggregateResponse`
 
 ## Eksempel
 

@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`[SaveCommentsBulkResponse]`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/[SaveCommentsBulkResponse].swift)
+Returns: `[SaveCommentsBulkResponse]`
 
 ## Example
 

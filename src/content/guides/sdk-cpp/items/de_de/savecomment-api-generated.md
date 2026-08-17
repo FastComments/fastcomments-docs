@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Rückgabewert: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
+Rückgabewert: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APISaveCommentResponse.h)
 
 ## Beispiel
 

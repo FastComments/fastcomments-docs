@@ -19,7 +19,7 @@ Elke getagde [GitHub Release](https://github.com/fastcomments/fastcomments-pytho
 Deze bibliotheek bevat twee modules: de gegenereerde API‑client en de core Python‑bibliotheek die handgeschreven hulpprogramma’s bevat om het werken met de API gemakkelijker te maken, inclusief SSO‑ondersteuning.
 
 - [API‑clientbibliotheekdocumentatie](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core‑bibliotheekdocumentatie, inclusief SSO‑voorbeelden](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core‑bibliotheekdocumentatie, inclusief SSO‑voorbeelden
 
 ### Openbare vs Beveiligde API’s
 

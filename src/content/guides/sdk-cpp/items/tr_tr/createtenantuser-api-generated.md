@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
+Döndürür: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateTenantUserResponse.h)
 
 ## Örnek
 

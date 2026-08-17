@@ -7,7 +7,7 @@
 
 ## 响应
 
-返回：[`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateSubscriptionAPIResponse.h)
+返回：[`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateSubscriptionAPIResponse.h)
 
 ## 示例
 

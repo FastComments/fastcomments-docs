@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳：[`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPageByURLIdAPIResponse.h)
+回傳：[`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPageByURLIdAPIResponse.h)
 
 ## 範例
 

@@ -9,7 +9,7 @@
 
 ## תגובה
 
-מחזירה: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
+מחזירה: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
 ## דוגמה
 

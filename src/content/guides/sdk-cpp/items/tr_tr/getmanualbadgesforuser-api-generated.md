@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserManualBadgesResponse.h)
+Döndürür: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserManualBadgesResponse.h)
 
 ## Örnek
 

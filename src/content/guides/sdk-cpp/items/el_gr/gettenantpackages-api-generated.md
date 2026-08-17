@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantPackagesResponse.h)
+Επιστρέφει: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantPackagesResponse.h)
 
 ## Παράδειγμα
 

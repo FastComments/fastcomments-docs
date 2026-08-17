@@ -12,7 +12,7 @@ Omogoči ali onemogoči obvestila za določen komentar.
 
 ## Odgovor
 
-Vrne: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
+Vrne: `UpdateUserNotificationCommentSubscriptionStatusResponse`
 
 ## Primer
 

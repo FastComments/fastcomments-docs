@@ -9,7 +9,7 @@
 
 ## Одговор
 
-Враћа: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_get_comment_text_response.rb)
+Враћа: [`PublicAPIGetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_api_get_comment_text_response.rb)
 
 ## Пример
 

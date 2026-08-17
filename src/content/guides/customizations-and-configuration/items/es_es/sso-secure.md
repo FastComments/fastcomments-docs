@@ -112,6 +112,6 @@ Estos usuarios no podrán comentar y, en su lugar, se les presentará un mensaje
 
 #### Direct Examples for Serializing and Hashing User Data
 
-Más detalles y ejemplos <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">aquí</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">aquí</a> (java) y <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">aquí</a> (php).
+Más detalles y ejemplos <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">aquí</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">aquí</a> (java) y <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">aquí</a> (php).
 
 Entendemos que cualquier integración puede ser un proceso complicado y doloroso. No dudes en contactar a tu representante o usar la <a href="https://fastcomments.com/auth/my-account/help" target="_blank">página de soporte</a>.

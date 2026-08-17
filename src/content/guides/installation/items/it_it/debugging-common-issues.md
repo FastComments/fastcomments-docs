@@ -30,7 +30,7 @@ Per la maggior parte delle errate configurazioni, il widget dei commenti mostrer
 
 ### La configurazione desiderata non funziona come previsto
 
-Prova la nostra [estensione Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) per vedere quale configurazione viene passata al widget dei commenti. Se tutto fallisce, fai uno screenshot di ciò che indica l'estensione Chrome e [contattaci](https://fastcomments.com/auth/my-account/help).
+Prova la nostra [estensione Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) per vedere quale configurazione viene passata al widget dei commenti. Se tutto fallisce, fai uno screenshot di ciò che indica l'estensione Chrome e [contattaci](https://fastcomments.com/auth/my-account/help).
 
 ### Commenti mancanti sulla stessa URL con differenti Hash Bang
 

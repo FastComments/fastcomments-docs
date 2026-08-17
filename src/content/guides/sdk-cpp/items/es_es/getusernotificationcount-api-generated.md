@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
+Devuelve: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserNotificationCountResponse.h)
 
 ## Ejemplo
 

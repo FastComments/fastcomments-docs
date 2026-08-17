@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
+Devuelve: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
 
 ## Ejemplo
 

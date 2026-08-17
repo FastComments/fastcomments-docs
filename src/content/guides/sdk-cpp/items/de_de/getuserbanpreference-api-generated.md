@@ -7,7 +7,7 @@
 
 ## Antwort
 
-Rückgabe: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIModerateGetUserBanPreferencesResponse.h)
+Rückgabe: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIModerateGetUserBanPreferencesResponse.h)
 
 ## Beispiel
 

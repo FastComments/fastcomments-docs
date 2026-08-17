@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateQuestionResultResponse.h)
+Zwraca: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateQuestionResultResponse.h)
 
 ## Przykład
 

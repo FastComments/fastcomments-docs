@@ -9,7 +9,7 @@
 
 ## 响应
 
-返回：[`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
+返回：[`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AdjustVotesResponse.h)
 
 ## 示例
 

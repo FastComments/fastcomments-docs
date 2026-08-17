@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PreBanSummary.h)
+Devuelve: [`PreBanSummary`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PreBanSummary.h)
 
 ## Ejemplo
 

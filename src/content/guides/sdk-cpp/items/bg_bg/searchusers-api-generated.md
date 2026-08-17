@@ -8,7 +8,7 @@
 
 ## Отговор
 
-Връща: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SearchUsersResult.h)
+Връща: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SearchUsersResult.h)
 
 ## Пример
 

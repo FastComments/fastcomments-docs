@@ -8,7 +8,7 @@
 
 ## レスポンス
 
-戻り値: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
+戻り値: [`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FeedPostsStatsResponse.h)
 
 ## 例
 

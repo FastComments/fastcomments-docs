@@ -9,7 +9,7 @@
 
 ## 回應
 
-返回：[`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
+返回：[`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
 
 ## 範例
 

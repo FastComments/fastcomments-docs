@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
+Επιστρέφει: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
 ## Παράδειγμα
 

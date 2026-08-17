@@ -8,7 +8,7 @@
 
 ## Respons
 
-Retourneert: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RemoveUserBadgeResponse.h)
+Retourneert: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/RemoveUserBadgeResponse.h)
 
 ## Voorbeeld
 

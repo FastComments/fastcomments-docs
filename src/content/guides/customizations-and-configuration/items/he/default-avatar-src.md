@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-כאשר משתמש מגיב עם FastComments בפעם הראשונה, ננסה לאחזר את תמונת הפרופיל שלו מ-<a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+כאשר משתמש מגיב עם FastComments בפעם הראשונה, ננסה לאחזר את תמונת הפרופיל שלו מ-<a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
 
 עם זאת, אם לא נמצא תמונת פרופיל, או שהמשתמש אף פעם לא מגדיר אחת בחשבונו, נציג תמונת ברירת מחדל סטטית.
 

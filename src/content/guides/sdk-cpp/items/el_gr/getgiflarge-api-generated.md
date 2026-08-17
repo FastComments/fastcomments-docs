@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
+Επιστρέφει: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GifGetLargeResponse.h)
 
 ## Παράδειγμα
 

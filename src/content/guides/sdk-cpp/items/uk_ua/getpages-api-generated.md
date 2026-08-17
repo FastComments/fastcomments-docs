@@ -6,7 +6,7 @@
 
 ## Відповідь
 
-Повертає: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPagesAPIResponse.h)
+Повертає: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPagesAPIResponse.h)
 
 ## Приклад
 

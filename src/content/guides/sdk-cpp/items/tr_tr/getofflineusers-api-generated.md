@@ -12,7 +12,7 @@ commenterName üzerinde imleç sayfalama: sunucu, {tenantId, urlId, commenterNam
 
 ## Yanıt
 
-Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Örnek
 

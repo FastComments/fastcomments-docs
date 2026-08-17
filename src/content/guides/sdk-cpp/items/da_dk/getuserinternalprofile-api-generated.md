@@ -7,7 +7,7 @@
 
 ## Svar
 
-Returnerer: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserInternalProfileResponse.h)
+Returnerer: [`GetUserInternalProfileResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserInternalProfileResponse.h)
 
 ## Eksempel
 

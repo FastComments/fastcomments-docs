@@ -8,7 +8,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
+Zwraca: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
 
 ## Przykład
 

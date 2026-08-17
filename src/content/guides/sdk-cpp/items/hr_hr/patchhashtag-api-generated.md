@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
+Vraća: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
 
 ## Primjer
 

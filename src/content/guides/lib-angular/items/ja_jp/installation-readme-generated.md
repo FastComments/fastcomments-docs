@@ -6,5 +6,5 @@ npm install fastcomments-typescript --save
 npm install ngx-fastcomments --save
 ```
 
-使用方法は、[ngx-fastcomments README](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular) を参照してください。
+使用方法は、[ngx-fastcomments README](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular) を参照してください。
 ---

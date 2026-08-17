@@ -8,7 +8,7 @@
 
 ## 回應
 
-返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
+返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/VoteDeleteResponse.h)
 
 ## 範例
 

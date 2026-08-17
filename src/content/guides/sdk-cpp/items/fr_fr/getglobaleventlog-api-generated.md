@@ -15,7 +15,7 @@ userIdWS
 
 ## Réponse
 
-Renvoie : [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetEventLogResponse.h)
+Renvoie : [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetEventLogResponse.h)
 
 ## Exemple
 

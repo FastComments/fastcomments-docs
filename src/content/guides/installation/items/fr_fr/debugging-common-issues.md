@@ -30,7 +30,7 @@ Pour la plupart des mauvaises configurations, le widget de commentaires afficher
 
 ### La configuration souhaitée ne fonctionne pas comme attendu
 
-Essayez notre [extension Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) pour voir quelle configuration est passée au widget de commentaires. Si tout échoue, prenez une capture d'écran de ce que l'extension Chrome indique et [contactez-nous](https://fastcomments.com/auth/my-account/help).
+Essayez notre [extension Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) pour voir quelle configuration est passée au widget de commentaires. Si tout échoue, prenez une capture d'écran de ce que l'extension Chrome indique et [contactez-nous](https://fastcomments.com/auth/my-account/help).
 
 ### Commentaires manquants sur la même URL avec un hashbang différent
 

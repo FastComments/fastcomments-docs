@@ -8,7 +8,7 @@
 
 ## 回應
 
-回傳：[`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
+回傳：[`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PatchPageAPIResponse.h)
 
 ## 範例
 

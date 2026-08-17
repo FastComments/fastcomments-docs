@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Kiedy użytkownik po raz pierwszy komentuje przy użyciu FastComments, spróbujemy pobrać jego awatar z <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Kiedy użytkownik po raz pierwszy komentuje przy użyciu FastComments, spróbujemy pobrać jego awatar z <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
 
 Jednakże, jeśli nie znajdziemy awatara lub użytkownik nigdy nie ustawi go w swoim koncie, wyświetlimy statyczny domyślny obraz awatara.
 

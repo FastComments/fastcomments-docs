@@ -19,7 +19,7 @@ Każde otagowane [wydanie GitHub](https://github.com/fastcomments/fastcomments-p
 Ta biblioteka zawiera dwa moduły: wygenerowanego klienta API oraz podstawową bibliotekę Pythona, która zawiera ręcznie napisane narzędzia ułatwiające pracę z API, w tym obsługę SSO.
 
 - [Dokumentacja biblioteki klienta API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Dokumentacja biblioteki podstawowej, w tym przykłady SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Dokumentacja biblioteki podstawowej, w tym przykłady SSO
 
 ### Publiczne vs zabezpieczone API
 

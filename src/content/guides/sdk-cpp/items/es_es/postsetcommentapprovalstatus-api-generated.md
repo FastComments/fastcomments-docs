@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
+Devuelve: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
 
 ## Ejemplo
 

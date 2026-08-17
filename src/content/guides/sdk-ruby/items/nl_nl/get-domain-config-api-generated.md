@@ -7,7 +7,7 @@
 
 ## Response
 
-Geeft terug: [`GetDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_domain_config_response.rb)
+Geeft terug: `GetDomainConfigResponse`
 
 ## Voorbeeld
 

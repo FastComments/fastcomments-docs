@@ -11,7 +11,7 @@ afterId
 
 ## Απόκριση
 
-Επιστρέφει: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
+Επιστρέφει: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetFeedPostsResponse.h)
 
 ## Παράδειγμα
 

@@ -1,4 +1,4 @@
-FastComments Email Templates używa [języka szablonów EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email Templates używa [języka szablonów EJS](https://ejs.co/#docs).
 
 Przykładowa składnia to `<%= object.someValue %>` do wypisywania zmiennych, a instrukcje warunkowe można zapisać w ten sposób:
 

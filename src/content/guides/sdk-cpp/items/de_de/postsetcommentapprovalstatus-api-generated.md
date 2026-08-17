@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Rückgabe: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
+Rückgabe: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentApprovedResponse.h)
 
 ## Beispiel
 

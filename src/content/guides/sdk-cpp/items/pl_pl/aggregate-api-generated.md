@@ -10,7 +10,7 @@ Aggreguje dokumenty, grupując je (jeśli podano `groupBy`) i stosując wiele 
 
 ## Odpowiedź
 
-Zwraca: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Zwraca: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Przykład
 

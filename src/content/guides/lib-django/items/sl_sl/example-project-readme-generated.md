@@ -1,5 +1,5 @@
 ---
-Izvedljiva predstavitev se nahaja v [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): lev stolpec + glavni oder  
+Izvedljiva predstavitev se nahaja v [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): lev stolpec + glavni oder  
 aplikacija z eno stranjo na pripomoček in **prijavno stranjo, ki prikazuje vnaprej vnešene demo uporabnike**.  
 Prijavite se kot kateri koli od njih, in pripomočki za komentarje ter klepet v živo overijo to  
 identiteto prek **Secure SSO**. Iz tega direktorija:

@@ -13,7 +13,7 @@ Włącz lub wyłącz powiadomienia dla strony. Gdy użytkownicy subskrybują str
 
 ## Response
 
-Zwraca: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_page_subscription_status_response.rb)
+Zwraca: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
 ## Przykład
 

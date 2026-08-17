@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
+Vraća: [`AwardUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AwardUserBadgeResponse.h)
 
 ## Primjer
 

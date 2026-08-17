@@ -112,9 +112,9 @@ Classe | Méthode | Requête HTTP | Description
 *DefaultApi* | [**updateQuestionConfig**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatequestionconfig) | **PATCH** /api/v1/question-configs/{id} | 
 *DefaultApi* | [**updateQuestionResult**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatequestionresult) | **PATCH** /api/v1/question-results/{id} | 
 *DefaultApi* | [**updateSubscription**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatesubscription) | **PATCH** /api/v1/subscriptions/{id} | 
-*DefaultApi* | [**updateTenant**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatettenant) | **PATCH** /api/v1/tenants/{id} | 
+*DefaultApi* | [**updateTenant**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatetenant) | **PATCH** /api/v1/tenants/{id} | 
 *DefaultApi* | [**updateTenantPackage**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatetenantpackage) | **PATCH** /api/v1/tenant-packages/{id} | 
-*DefaultApi* | [**updateTenantUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatettenantuser) | **PATCH** /api/v1/tenant-users/{id} | 
+*DefaultApi* | [**updateTenantUser**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updatetenantuser) | **PATCH** /api/v1/tenant-users/{id} | 
 *DefaultApi* | [**updateUserBadge**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/DefaultApi.md#updateuserbadge) | **PUT** /api/v1/user-badges/{id} | 
 *PublicApi* | [**blockFromCommentPublic**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/PublicApi.md#blockfromcommentpublic) | **POST** /block-from-comment/{commentId} | 
 *PublicApi* | [**checkedCommentsForBlocked**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/PublicApi.md#checkedcommentsforblocked) | **GET** /check-blocked-comments | 

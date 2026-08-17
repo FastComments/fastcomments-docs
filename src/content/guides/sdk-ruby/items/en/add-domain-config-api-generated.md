@@ -6,7 +6,7 @@
 
 ## Response
 
-Returns: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config_response.rb)
+Returns: `AddDomainConfigResponse`
 
 ## Example
 

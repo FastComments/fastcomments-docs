@@ -9,7 +9,7 @@
 
 ## Отговор
 
-Връща: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/post_remove_comment_api_response.rb)
+Връща: `PostRemoveCommentApiResponse`
 
 ## Пример
 

@@ -30,7 +30,7 @@ Bij de meeste verkeerd geconfigureerde situaties zal de reactie-widget in ieder 
 
 ### Gewenste configuratie werkt niet zoals verwacht
 
-Probeer onze [Chrome-extensie](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) om te zien welke configuratie aan de reactie-widget wordt doorgegeven. Als alles faalt, maak een screenshot van wat de Chrome-extensie aangeeft en [neem contact met ons op](https://fastcomments.com/auth/my-account/help).
+Probeer onze [Chrome-extensie](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) om te zien welke configuratie aan de reactie-widget wordt doorgegeven. Als alles faalt, maak een screenshot van wat de Chrome-extensie aangeeft en [neem contact met ons op](https://fastcomments.com/auth/my-account/help).
 
 ### Reacties ontbreken op dezelfde URL met verschillende hashbangs
 

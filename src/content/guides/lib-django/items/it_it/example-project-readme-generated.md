@@ -1,5 +1,5 @@
 ---
-Una demo eseguibile si trova in [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): un'app a colonna laterale sinistra + stage principale con una pagina per widget e una **pagina di accesso che elenca gli utenti demo pre‑caricati**.  
+Una demo eseguibile si trova in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): un'app a colonna laterale sinistra + stage principale con una pagina per widget e una **pagina di accesso che elenca gli utenti demo pre‑caricati**.  
 Accedi con uno qualsiasi di loro e i widget di commento e chat live autenticano quell’identità tramite **Secure SSO**. Da quella directory:
 
 ```bash

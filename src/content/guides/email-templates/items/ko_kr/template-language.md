@@ -1,5 +1,5 @@
 ---
-FastComments 이메일 템플릿은 [EJS 템플릿 언어](https://github.com/mde/ejs/blob/main/docs/syntax.md)를 사용합니다.
+FastComments 이메일 템플릿은 [EJS 템플릿 언어](https://ejs.co/#docs)를 사용합니다.
 
 변수를 출력하는 예시 문법은 `<%= object.someValue %>`이며, 조건문은 다음과 같이 작성할 수 있습니다:
 

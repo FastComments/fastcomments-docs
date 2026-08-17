@@ -10,7 +10,7 @@
 #### Angular, React, Vue, וכו'
 
 עם הספריות שלנו כגון Angular ו-React, עדכון פשוט של מאפיין `urlId` שמועבר ל-widget
-יגרום ל-widget של התגובות להתעדכן. ניתן לראות זאת בפעולה עבור אפליקציית ה-React, למשל, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">כאן</a>.
+יגרום ל-widget של התגובות להתעדכן. ניתן לראות זאת בפעולה עבור אפליקציית ה-React, למשל, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">כאן</a>.
 
 #### VanillaJS
 

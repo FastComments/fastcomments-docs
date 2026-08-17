@@ -12,7 +12,7 @@
 
 ## Antwort
 
-Gibt zurück: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_user_badges_response.rb)
+Gibt zurück: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_get_user_badges_response.rb)
 
 ## Beispiel
 

@@ -9,7 +9,7 @@
 
 ## 响应
 
-返回: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_gifs_trending_response.rb)
+返回: `GetGifsTrendingResponse`
 
 ## 示例
 

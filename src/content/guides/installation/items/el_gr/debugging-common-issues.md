@@ -37,7 +37,7 @@ tenant μας. Για να χρησιμοποιήσετε τον δικό σας
 
 ### Desired Configuration Not Working as Expected
 
-Δοκιμάστε την [επέκταση Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) για να δείτε ποια
+Δοκιμάστε την [επέκταση Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) για να δείτε ποια
 ρύθμιση περνάει στο widget σχολίων. Αν όλα αποτύχουν, πάρτε ένα screenshot από ό,τι λέει η επέκταση Chrome
 και [επικοινωνήστε μαζί μας](https://fastcomments.com/auth/my-account/help).
 

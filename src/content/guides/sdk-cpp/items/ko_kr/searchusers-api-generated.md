@@ -8,7 +8,7 @@
 
 ## 응답
 
-반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SearchUsersResult.h)
+반환: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SearchUsersResult.h)
 
 ## 예시
 

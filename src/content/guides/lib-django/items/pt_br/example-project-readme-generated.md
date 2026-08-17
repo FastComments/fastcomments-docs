@@ -1,4 +1,4 @@
-Um showcase executável está em [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example): um aplicativo de barra lateral esquerda + palco principal com uma página por widget e uma **página de login listando usuários de demonstração pré-carregados**. Faça login como qualquer um deles e os widgets de comentário e chat ao vivo autenticam essa identidade via **Secure SSO**. A partir desse diretório:
+Um showcase executável está em [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): um aplicativo de barra lateral esquerda + palco principal com uma página por widget e uma **página de login listando usuários de demonstração pré-carregados**. Faça login como qualquer um deles e os widgets de comentário e chat ao vivo autenticam essa identidade via **Secure SSO**. A partir desse diretório:
 
 ```bash
 python manage.py migrate

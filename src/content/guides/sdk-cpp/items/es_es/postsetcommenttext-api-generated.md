@@ -9,7 +9,7 @@
 
 ## Respuesta
 
-Devuelve: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
+Devuelve: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
 
 ## Ejemplo
 

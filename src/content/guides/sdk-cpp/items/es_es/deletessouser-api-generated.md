@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteSSOUserAPIResponse.h)
+Devuelve: [`DeleteSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeleteSSOUserAPIResponse.h)
 
 ## Ejemplo
 

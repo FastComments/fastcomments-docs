@@ -10,7 +10,7 @@
 
 ## Odgovor
 
-Vrne: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostResponse.php)
+Vrne: [`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CreateFeedPostsResponse.php)
 
 ## Primer
 

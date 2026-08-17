@@ -8,7 +8,7 @@
 
 ## Response
 
-Επιστρέφει: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetVotesForUserResponse.h)
+Επιστρέφει: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetVotesForUserResponse.h)
 
 ## Example
 

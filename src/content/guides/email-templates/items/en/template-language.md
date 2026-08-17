@@ -1,4 +1,4 @@
-FastComments Email Templates uses the [EJS template language](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email Templates uses the [EJS template language](https://ejs.co/#docs).
 
 Example syntax is `<%= object.someValue %>` to print variables, and conditional statements can be done as so:
 

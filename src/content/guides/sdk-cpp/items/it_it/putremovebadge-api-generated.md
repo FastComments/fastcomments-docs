@@ -8,7 +8,7 @@
 
 ## Risposta
 
-Restituisce: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RemoveUserBadgeResponse.h)
+Restituisce: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/RemoveUserBadgeResponse.h)
 
 ## Esempio
 

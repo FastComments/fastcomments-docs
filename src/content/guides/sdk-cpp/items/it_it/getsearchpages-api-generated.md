@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationPageSearchResponse.h)
+Restituisce: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationPageSearchResponse.h)
 
 ## Esempio
 

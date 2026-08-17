@@ -8,7 +8,7 @@ Takođe, da rezimiramo, ako nije definisan, `urlId` će podrazumevano biti URL t
 
 #### Angular, React, Vue, i dr.
 
-Sa našim bibliotekama kao što su Angular i React, jednostavno ažuriranje `urlId` svojstva prosleđenog widgetu prouzrokovaće osvežavanje widgeta za komentare. To možete videti u praksi za React aplikaciju, na primer, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">ovde</a>.
+Sa našim bibliotekama kao što su Angular i React, jednostavno ažuriranje `urlId` svojstva prosleđenog widgetu prouzrokovaće osvežavanje widgeta za komentare. To možete videti u praksi za React aplikaciju, na primer, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">ovde</a>.
 
 #### VanillaJS
 

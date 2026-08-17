@@ -11,7 +11,7 @@
 
 ## 回應
 
-回傳: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
+回傳: `SearchUsersResult`
 
 ## 範例
 

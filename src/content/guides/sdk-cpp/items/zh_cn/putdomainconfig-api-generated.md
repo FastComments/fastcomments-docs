@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回：[`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
+返回：[`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PutDomainConfigResponse.h)
 
 ## 示例
 

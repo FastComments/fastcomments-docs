@@ -30,7 +30,7 @@ Bei den meisten Fehlkonfigurationen zeigt das Kommentar-Widget zumindest einen F
 
 ### Gewünschte Konfiguration funktioniert nicht wie erwartet
 
-Versuchen Sie unsere [Chrome-Erweiterung](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), um zu sehen, welche Konfiguration an das Kommentar-Widget übergeben wird. Wenn alles fehlschlägt, machen Sie einen Screenshot von dem, was die Chrome-Erweiterung anzeigt, und [kontaktieren Sie uns](https://fastcomments.com/auth/my-account/help).
+Versuchen Sie unsere [Chrome-Erweiterung](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj), um zu sehen, welche Konfiguration an das Kommentar-Widget übergeben wird. Wenn alles fehlschlägt, machen Sie einen Screenshot von dem, was die Chrome-Erweiterung anzeigt, und [kontaktieren Sie uns](https://fastcomments.com/auth/my-account/help).
 
 ### Kommentare fehlen bei gleicher URL mit unterschiedlichem Hashbang
 

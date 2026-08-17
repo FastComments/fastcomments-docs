@@ -11,7 +11,7 @@
 
 ## 回應
 
-回傳: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+回傳: `AggregateResponse`
 
 ## 範例
 

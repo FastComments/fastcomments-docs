@@ -10,6 +10,6 @@
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-更多示例请参见 [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src)。
+更多示例请参见 [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src)。
 
 将实时聊天添加到您现有的 React Native 应用，甚至构建一个社交网络！

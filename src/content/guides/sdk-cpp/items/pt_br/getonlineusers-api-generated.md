@@ -11,7 +11,7 @@ Retorna anonCount + totalCount (assinantes de toda a sala, incluindo visualizado
 
 ## Resposta
 
-Retorna: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Retorna: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Exemplo
 

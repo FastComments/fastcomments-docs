@@ -8,7 +8,7 @@
 
 #### Angular, React, Vue, etc
 
-Са нашим библиотекама као што су Angular и React, једноставно ажурирање `urlId` својства које се прослеђује видгету ће натерати видгет за коментаре да се освежи. Ово можете видети у акцији за React апликацију, на пример, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">овде</a>.
+Са нашим библиотекама као што су Angular и React, једноставно ажурирање `urlId` својства које се прослеђује видгету ће натерати видгет за коментаре да се освежи. Ово можете видети у акцији за React апликацију, на пример, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">овде</a>.
 
 #### VanillaJS
 

@@ -19,7 +19,7 @@ fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.
 Тази библиотека съдържа два модула: генерирания API клиент и основната Python библиотека, която съдържа ръчно написани помощни функции за улесняване на работата с API, включително поддръжка на SSO.
 
 - [Документация за API клиентската библиотека](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Документация за основната библиотека, включително примери за SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Документация за основната библиотека, включително примери за SSO
 
 ### Публични vs Защитени API
 

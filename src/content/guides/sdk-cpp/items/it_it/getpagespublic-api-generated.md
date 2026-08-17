@@ -11,7 +11,7 @@ Le pagine che richiedono SSO sono filtrate in base all'accesso al gruppo dell'ut
 
 ## Response
 
-Restituisce: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Restituisce: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Example
 

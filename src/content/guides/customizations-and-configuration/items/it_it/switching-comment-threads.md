@@ -8,7 +8,7 @@ Che succede con le SPA, o applicazioni a pagina singola, dove la pagina o il con
 
 #### Angular, React, Vue, ecc.
 
-Con le nostre librerie come Angular e React, aggiornare semplicemente la proprietà `urlId` passata al widget farà sì che il widget dei commenti si aggiorni. Puoi vedere questo in azione per l'app React, per esempio, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">qui</a>.
+Con le nostre librerie come Angular e React, aggiornare semplicemente la proprietà `urlId` passata al widget farà sì che il widget dei commenti si aggiorni. Puoi vedere questo in azione per l'app React, per esempio, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">qui</a>.
 
 #### VanillaJS
 

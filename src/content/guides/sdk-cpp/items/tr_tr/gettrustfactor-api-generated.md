@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetUserTrustFactorResponse.h)
+Döndürür: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetUserTrustFactorResponse.h)
 
 ## Örnek
 

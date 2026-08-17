@@ -11,7 +11,7 @@
 
 ## Réponse
 
-Renvoie : [`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
+Renvoie : `SearchUsersResult`
 
 ## Exemple
 

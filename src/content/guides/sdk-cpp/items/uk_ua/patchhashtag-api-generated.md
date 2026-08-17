@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
+Повертає: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateHashTagResponse.h)
 
 ## Приклад
 

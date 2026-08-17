@@ -11,7 +11,7 @@ Se admiten diferentes operaciones (p. ej. sum, countDistinct, avg, etc.).
 
 ## Respuesta
 
-Devuelve: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Devuelve: `AggregateResponse`
 
 ## Ejemplo
 

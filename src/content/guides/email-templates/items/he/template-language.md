@@ -1,5 +1,5 @@
 ---
-תבניות הדוא"ל של FastComments משתמשות ב[שפת התבניות EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+תבניות הדוא"ל של FastComments משתמשות ב[שפת התבניות EJS](https://ejs.co/#docs).
 
 דוגמת התחביר היא `<%= object.someValue %>` להדפסת משתנים, ומשפטי תנאי יכולים להיעשות כך:
 

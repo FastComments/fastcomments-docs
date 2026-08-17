@@ -8,7 +8,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
+Επιστρέφει: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptySuccessResponse.h)
 
 ## Παράδειγμα
 

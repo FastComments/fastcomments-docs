@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזיר: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetTenantUsersResponse.h)
+מחזיר: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetTenantUsersResponse.h)
 
 ## דוגמה
 

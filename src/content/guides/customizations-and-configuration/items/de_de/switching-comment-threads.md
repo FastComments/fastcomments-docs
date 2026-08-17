@@ -10,7 +10,7 @@ dynamisch ändert, ohne dass die Seite neu geladen wird?
 #### Angular, React, Vue, etc
 
 Mit unseren Bibliotheken wie Angular und React bewirkt das einfache Aktualisieren der an das Widget übergebenen `urlId`-Eigenschaft,
-dass das Kommentar-Widget aktualisiert wird. Sie können dies beispielsweise in der React-App <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">hier</a> sehen.
+dass das Kommentar-Widget aktualisiert wird. Sie können dies beispielsweise in der React-App <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">hier</a> sehen.
 
 #### VanillaJS
 

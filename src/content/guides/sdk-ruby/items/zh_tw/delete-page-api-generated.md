@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_page_a_p_i_response.rb)
+回傳: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_page_api_response.rb)
 
 ## 範例
 

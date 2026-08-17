@@ -10,6 +10,6 @@
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Погледајте [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) за више примера.
+Погледајте [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) за више примера.
 
 Додајте ћаскање уживо у вашу постојећу React Native апликацију, или чак изградите друштвену мрежу!

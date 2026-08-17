@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateSubscriptionAPIResponse.h)
+מחזיר: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateSubscriptionAPIResponse.h)
 
 ## דוגמה
 

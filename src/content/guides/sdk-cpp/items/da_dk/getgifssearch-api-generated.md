@@ -8,7 +8,7 @@
 
 ## Svar
 
-Returnerer: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetGifsSearchResponse.h)
+Returnerer: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetGifsSearchResponse.h)
 
 ## Eksempel
 

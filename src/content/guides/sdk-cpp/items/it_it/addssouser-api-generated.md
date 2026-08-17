@@ -7,7 +7,7 @@
 
 ## Risposta
 
-Restituisce: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddSSOUserAPIResponse.h)
+Restituisce: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddSSOUserAPIResponse.h)
 
 ## Esempio
 

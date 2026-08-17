@@ -9,7 +9,7 @@ Lijst pagina’s voor een tenant. Wordt gebruikt door de FChat‑desktopclient o
 
 ## Respons
 
-Retourneert: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Retourneert: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Voorbeeld
 

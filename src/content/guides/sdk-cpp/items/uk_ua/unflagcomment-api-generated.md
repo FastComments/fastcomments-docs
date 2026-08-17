@@ -8,7 +8,7 @@
 
 ## Відповідь
 
-Повертає: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
+Повертає: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
 ## Приклад
 

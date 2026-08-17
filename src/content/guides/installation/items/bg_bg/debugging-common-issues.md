@@ -30,7 +30,7 @@ FastComments трябва да знае кои домейни са собств�
 
 ### Желаната конфигурация не работи както се очаква
 
-Опитайте нашето [разширение за Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), за да видите каква конфигурация се предава на виджета за коментари. Ако нищо не помогне, направете екранна снимка на това, което казва разширението за Chrome, и [свържете се с нас](https://fastcomments.com/auth/my-account/help).
+Опитайте нашето [разширение за Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj), за да видите каква конфигурация се предава на виджета за коментари. Ако нищо не помогне, направете екранна снимка на това, което казва разширението за Chrome, и [свържете се с нас](https://fastcomments.com/auth/my-account/help).
 
 ### Липсват коментари за един и същи URL с различни hash bang
 

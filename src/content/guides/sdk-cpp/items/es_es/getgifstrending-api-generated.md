@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetGifsTrendingResponse.h)
+Devuelve: [`GetGifsTrendingResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetGifsTrendingResponse.h)
 
 ## Ejemplo
 

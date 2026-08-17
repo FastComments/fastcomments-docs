@@ -10,7 +10,7 @@
 
 ## レスポンス
 
-戻り値: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_gifs_search_response.rb)
+戻り値: `GetGifsSearchResponse`
 
 ## 例
 

@@ -11,7 +11,7 @@
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-さらに詳しい例は [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) を参照してください。
+さらに詳しい例は [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) を参照してください。
 
 既存の React Native アプリケーションにライブチャットを追加するか、あるいはソーシャルネットワークを構築することもできます！
 ---

@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
+Επιστρέφει: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetHashTagsResponse.h)
 
 ## Παράδειγμα
 

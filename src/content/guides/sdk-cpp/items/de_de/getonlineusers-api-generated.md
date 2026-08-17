@@ -11,7 +11,7 @@ Gibt `anonCount + totalCount` zurück (räumweite Abonnenten, einschlie�
 
 ## Response
 
-Rückgabe: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Rückgabe: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Beispiel
 

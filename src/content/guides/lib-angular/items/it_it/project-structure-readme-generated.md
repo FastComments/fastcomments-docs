@@ -4,4 +4,4 @@ In "src" troverai un'applicazione che è semplicemente un'app di esempio per tes
 
 In "projects" troverai la libreria fastcomments.
 
-Consulta il README di ngx-fastcomments [qui](https://github.com/FastComments/fastcomments-angular/blob/main/projects/fastcomments-angular)
+Consulta il README di ngx-fastcomments [qui](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular)

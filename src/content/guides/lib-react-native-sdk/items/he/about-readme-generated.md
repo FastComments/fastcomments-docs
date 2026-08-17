@@ -11,6 +11,6 @@
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-עיין ב-[example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) לדוגמאות נוספות.
+עיין ב-[example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) לדוגמאות נוספות.
 
 הוסף צ'אט חי לאפליקציית React Native קיימת שלך, או אפילו בנה רשת חברתית!

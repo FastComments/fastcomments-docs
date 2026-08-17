@@ -7,7 +7,7 @@
 
 ## Réponse
 
-Renvoie: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_s_s_o_user_by_id_a_p_i_response.rb)
+Renvoie: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_sso_user_by_id_api_response.rb)
 
 ## Exemple
 

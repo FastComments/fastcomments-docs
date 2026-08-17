@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回：[`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/FlagCommentResponse.h)
+返回：[`FlagCommentResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/FlagCommentResponse.h)
 
 ## 示例
 

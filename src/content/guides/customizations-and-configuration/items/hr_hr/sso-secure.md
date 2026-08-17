@@ -112,7 +112,7 @@ Ti korisnici neće moći komentirati, već će im se prikazati poruka za prijavu
 
 #### Izravni primjeri serijalizacije i hashiranja podataka korisnika
 
-Više detalja i primjeri dostupni su <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ovdje</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ovdje</a> (java) i <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovdje</a> (php).
+Više detalja i primjeri dostupni su <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">ovdje</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">ovdje</a> (java) i <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovdje</a> (php).
 
 Razumijemo da svaka integracija može biti kompliciran i bolan proces. Ne oklijevajte kontaktirati svog predstavnika ili koristiti <a href="https://fastcomments.com/auth/my-account/help" target="_blank">stranicu podrške</a>.
 

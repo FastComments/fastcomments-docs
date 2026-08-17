@@ -8,7 +8,7 @@
 
 ## תגובה
 
-מחזירה: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RemoveUserBadgeResponse.h)
+מחזירה: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/RemoveUserBadgeResponse.h)
 
 ## דוגמה
 

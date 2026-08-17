@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
+Döndürür: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
 
 ## Örnek
 

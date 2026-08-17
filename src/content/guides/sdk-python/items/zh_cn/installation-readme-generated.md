@@ -19,7 +19,7 @@ fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.
 该库包含两个模块：生成的 API 客户端和核心 Python 库，后者包含手写的实用工具，以简化 API 的使用，包括 SSO 支持。
 
 - [API 客户端库文档](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [核心库文档，含 SSO 示例](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- 核心库文档，含 SSO 示例
 
 ### 公共 API 与受限 API
 

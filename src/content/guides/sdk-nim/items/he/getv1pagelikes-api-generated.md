@@ -7,7 +7,7 @@
 
 ## תגובה
 
-מחזיר: [`Option[GetV1PageLikes]`](https://github.com/FastComments/fastcomment​s-nim/blob/master/client/fastcomments/models/model_get_v1_page_likes.nim)
+מחזיר: [`Option[GetV1PageLikes]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_v1_page_likes.nim)
 
 ## דוגמה
 

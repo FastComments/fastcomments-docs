@@ -1,4 +1,4 @@
-FastComments Email Templates користи [EJS језик шаблона](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email Templates користи [EJS језик шаблона](https://ejs.co/#docs).
 
 Пример синтаксе је `<%= object.someValue %>` за испис променљивих, а условне наредбе могу се писати на следећи начин:
 

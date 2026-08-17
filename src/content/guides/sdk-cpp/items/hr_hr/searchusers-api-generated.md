@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SearchUsersResult.h)
+Vraća: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SearchUsersResult.h)
 
 ## Primjer
 

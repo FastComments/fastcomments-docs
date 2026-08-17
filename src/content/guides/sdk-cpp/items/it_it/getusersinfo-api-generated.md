@@ -11,7 +11,7 @@ Nessun contesto di pagina: la privacy è applicata uniformemente (i profili priv
 
 ## Risposta
 
-Restituisce: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Restituisce: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## Esempio
 

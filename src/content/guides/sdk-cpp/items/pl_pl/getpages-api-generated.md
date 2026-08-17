@@ -6,7 +6,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPagesAPIResponse.h)
+Zwraca: [`GetPagesAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPagesAPIResponse.h)
 
 ## Przykład
 

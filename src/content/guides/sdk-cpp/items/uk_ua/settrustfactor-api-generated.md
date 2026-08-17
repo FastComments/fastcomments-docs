@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
+Повертає: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
 
 ## Приклад
 

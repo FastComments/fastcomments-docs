@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
+Döndürür: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
 
 ## Örnek
 

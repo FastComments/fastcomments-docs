@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
+Retourneert: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetAuditLogsResponse.h)
 
 ## Voorbeeld
 

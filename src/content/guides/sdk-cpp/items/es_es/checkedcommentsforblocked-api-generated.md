@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
+Devuelve: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
 
 ## Ejemplo
 

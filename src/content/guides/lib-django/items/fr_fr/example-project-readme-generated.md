@@ -1,4 +1,4 @@
-Une démonstration exécutable se trouve dans [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example) : une application à rail latéral + scène principale avec une page par widget et une **page de connexion répertoriant des utilisateurs de démonstration pré‑alimentés**.  
+Une démonstration exécutable se trouve dans [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example) : une application à rail latéral + scène principale avec une page par widget et une **page de connexion répertoriant des utilisateurs de démonstration pré‑alimentés**.  
 Connectez‑vous avec l’un d’eux et les widgets de commentaire et de chat en direct authentifient cette identité via **Secure SSO**. Depuis ce répertoire :
 
 ```bash

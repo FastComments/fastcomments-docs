@@ -8,7 +8,7 @@ Kaj pa SPAs oziroma Single-Page Applications, kjer se stran ali vsebina, s kater
 
 #### Angular, React, Vue, etc
 
-Z našimi knjižnicami, kot sta Angular in React, bo preprosta posodobitev lastnosti `urlId`, posredovane pripomočku, povzročila osvežitev komentarnega pripomočka. To si lahko ogledate v delovanju za aplikacijo React, na primer <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">tukaj</a>.
+Z našimi knjižnicami, kot sta Angular in React, bo preprosta posodobitev lastnosti `urlId`, posredovane pripomočku, povzročila osvežitev komentarnega pripomočka. To si lahko ogledate v delovanju za aplikacijo React, na primer <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">tukaj</a>.
 
 #### VanillaJS
 

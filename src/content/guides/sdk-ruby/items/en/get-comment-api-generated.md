@@ -7,7 +7,7 @@
 
 ## Response
 
-Returns: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_get_comment_response.rb)
+Returns: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_get_comment_response.rb)
 
 ## Example
 

@@ -8,7 +8,7 @@
 
 ## Antwort
 
-Rückgabe: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeleteCommentResult.h)
+Rückgabe: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeleteCommentResult.h)
 
 ## Beispiel
 

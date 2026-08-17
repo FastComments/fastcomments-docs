@@ -8,7 +8,7 @@
 
 ## Odgovor
 
-Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
+Vraća: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
 
 ## Primjer
 

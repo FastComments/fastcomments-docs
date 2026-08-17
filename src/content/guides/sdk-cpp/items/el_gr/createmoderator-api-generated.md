@@ -7,7 +7,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
+Επιστρέφει: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateModeratorResponse.h)
 
 ## Παράδειγμα
 

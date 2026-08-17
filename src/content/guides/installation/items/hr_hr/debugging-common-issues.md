@@ -31,7 +31,7 @@ Za većinu pogrešne konfiguracije, widget za komentare će se barem prikazati s
 
 ### Željena konfiguracija ne radi kako se očekuje
 
-Isprobajte našu [Chrome ekstenziju](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) da vidite koju konfiguraciju widget za komentare zapravo prima. Ako ništa ne pomogne, snimite zaslon onoga što Chrome ekstenzija prikazuje i [obratite nam se](https://fastcomments.com/auth/my-account/help).
+Isprobajte našu [Chrome ekstenziju](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) da vidite koju konfiguraciju widget za komentare zapravo prima. Ako ništa ne pomogne, snimite zaslon onoga što Chrome ekstenzija prikazuje i [obratite nam se](https://fastcomments.com/auth/my-account/help).
 
 ### Komentari nedostaju na istoj URL-u s različitim hash-bangom
 

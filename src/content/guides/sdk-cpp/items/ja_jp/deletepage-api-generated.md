@@ -7,7 +7,7 @@
 
 ## レスポンス
 
-戻り値: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
+戻り値: [`DeletePageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/DeletePageAPIResponse.h)
 
 ## 例
 

@@ -33,7 +33,7 @@ FastComments は、アカウントに関連するリクエストを認証する�
 
 ### Desired Configuration Not Working as Expected
 
-ウィジェットに渡されている設定を確認するには、[Chrome 拡張機能](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) をお試しください。すべて失敗した場合は、拡張機能の表示をスクリーンショットに撮って [お問い合わせください](https://fastcomments.com/auth/my-account/help)。
+ウィジェットに渡されている設定を確認するには、[Chrome 拡張機能](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) をお試しください。すべて失敗した場合は、拡張機能の表示をスクリーンショットに撮って [お問い合わせください](https://fastcomments.com/auth/my-account/help)。
 
 ### Comments Missing on Same URL With Different Hash Bang
 

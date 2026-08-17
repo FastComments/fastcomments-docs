@@ -1,5 +1,5 @@
 ---
-一個可執行的示範位於 [`example/`](https://github.com/FastComments/fastcomments-django/blob/main/example)：一個左側導覽列 + 主舞台的
+一個可執行的示範位於 [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example)：一個左側導覽列 + 主舞台的
 應用程式，為每個 widget 提供一個頁面，並有 **列出預先種子化示範使用者的登入頁面**。  
 使用其中任何一個帳號登入，評論與即時聊天 widget 會透過 **Secure SSO** 驗證該身分。從該目錄：
 

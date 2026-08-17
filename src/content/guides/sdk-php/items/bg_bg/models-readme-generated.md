@@ -258,7 +258,7 @@
 - [PatchPageAPIResponse](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PatchPageAPIResponse.md)
 - [PatchSSOUserAPIResponse](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PatchSSOUserAPIResponse.md)
 - [PendingCommentToSyncOutbound](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PendingCommentToSyncOutbound.md)
-- [PostRemoveCommentResponse](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PostRemoveCommentResponse.md)
+- PostRemoveCommentResponse
 - [PreBanSummary](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PreBanSummary.md)
 - [PubSubComment](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PubSubComment.md)
 - [PubSubCommentBase](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/PubSubCommentBase.md)
@@ -357,7 +357,7 @@
 - [VoteBodyParams](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteBodyParams.md)
 - [VoteDeleteResponse](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteDeleteResponse.md)
 - [VoteResponse](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteResponse.md)
-- [VoteResponseStatus](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteResponseStatus.md)
+- VoteResponseStatus
 - [VoteResponseUser](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteResponseUser.md)
 - [VoteStyle](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteStyle.md)
 ---

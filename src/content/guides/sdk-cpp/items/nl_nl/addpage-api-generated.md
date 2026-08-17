@@ -7,7 +7,7 @@
 
 ## Respons
 
-Retourneert: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddPageAPIResponse.h)
+Retourneert: [`AddPageAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddPageAPIResponse.h)
 
 ## Voorbeeld
 

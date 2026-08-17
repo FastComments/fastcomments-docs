@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_status_response.rb)
+Zwraca: `UpdateUserNotificationStatusResponse`
 
 ## Przykład
 

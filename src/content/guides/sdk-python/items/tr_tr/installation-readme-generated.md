@@ -19,7 +19,7 @@ Her etiketli [GitHub Release](https://github.com/fastcomments/fastcomments-pytho
 Bu kütüphane iki modül içerir: oluşturulan API istemcisi ve API ile çalışmayı, SSO desteği dahil, kolaylaştıran el yazısı yardımcı programları içeren temel Python kütüphanesi.
 
 - [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Temel Kütüphane Belgeleri, SSO Örnekleri Dahil](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Temel Kütüphane Belgeleri, SSO Örnekleri Dahil
 
 ### Genel vs Güvenli API'ler
 

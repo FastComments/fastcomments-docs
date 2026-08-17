@@ -11,7 +11,7 @@ Retourneert anonCount + totalCount (abonnees in de hele ruimte, inclusief anonie
 
 ## Response
 
-Retourneert: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Retourneert: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Voorbeeld
 

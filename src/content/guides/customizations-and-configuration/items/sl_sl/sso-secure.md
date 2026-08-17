@@ -113,7 +113,7 @@ Ti uporabniki ne bodo mogli komentirati; namesto tega jim bo prikazano sporočil
 
 #### Direct Examples for Serializing and Hashing User Data
 
-Več podrobnosti in primerov je <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">tukaj</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">tukaj</a> (java) in <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">tukaj</a> (php).
+Več podrobnosti in primerov je <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">tukaj</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">tukaj</a> (java) in <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">tukaj</a> (php).
 
 Zavedamo se, da je kakršnakoli integracija lahko zapleten in naporen proces. Ne oklevajte in se obrnite na svojega predstavnika ali uporabite <a href="https://fastcomments.com/auth/my-account/help" target="_blank">stran za podporo</a>.
 

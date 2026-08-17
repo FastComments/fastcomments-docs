@@ -30,7 +30,7 @@ W przypadku większości błędnych konfiguracji widżet komentarzy przynajmniej
 
 ### Żądana konfiguracja nie działa zgodnie z oczekiwaniami
 
-Wypróbuj nasze [rozszerzenie Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), aby zobaczyć, jaka konfiguracja jest przekazywana do widżetu komentarzy. Jeśli wszystko zawiedzie, zrób zrzut ekranu tego, co pokazuje rozszerzenie Chrome i [skontaktuj się z nami](https://fastcomments.com/auth/my-account/help).
+Wypróbuj nasze [rozszerzenie Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj), aby zobaczyć, jaka konfiguracja jest przekazywana do widżetu komentarzy. Jeśli wszystko zawiedzie, zrób zrzut ekranu tego, co pokazuje rozszerzenie Chrome i [skontaktuj się z nami](https://fastcomments.com/auth/my-account/help).
 
 ### Brak komentarzy przy tym samym URL z różnymi hashbangami
 

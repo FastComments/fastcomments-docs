@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Ko uporabnik prvič komentira z FastComments, poskušamo pridobiti njegov avatar iz <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Ko uporabnik prvič komentira z FastComments, poskušamo pridobiti njegov avatar iz <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
 
 Vendar, če avatarja ne najdemo ali uporabnik nikoli ne nastavi avatarja v svojem računu, prikažemo statično privzeto sliko avatarja.
 

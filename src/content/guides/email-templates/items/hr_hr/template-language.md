@@ -1,4 +1,4 @@
-FastComments Email predlošci koriste [EJS jezik predložaka](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email predlošci koriste [EJS jezik predložaka](https://ejs.co/#docs).
 
 Primjer sintakse je `<%= object.someValue %>` za ispis varijabli, a uvjetne izjave mogu se napraviti ovako:
 

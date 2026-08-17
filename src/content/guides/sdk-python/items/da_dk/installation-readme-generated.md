@@ -19,7 +19,7 @@ Hver tagget [GitHub Release](https://github.com/fastcomments/fastcomments-python
 Dette bibliotek indeholder to moduler: den genererede API-klient og kerne‑Python‑biblioteket, som indeholder håndskrevne værktøjer for at gøre arbejdet med API’en lettere, inklusive SSO‑understøttelse.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core Library Docs, Including SSO Examples
 
 ### Offentlige vs Sikrede API’er
 

@@ -10,7 +10,7 @@
 #### Angular, React, Vue, etc
 
 Με τις βιβλιοθήκες μας όπως οι Angular και React, απλώς η ενημέρωση της ιδιότητας `urlId` που περνάει στο widget
-θα προκαλέσει την ανανέωση του widget σχολίων. Μπορείτε να δείτε αυτό σε δράση για την εφαρμογή React, για παράδειγμα, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">εδώ</a>.
+θα προκαλέσει την ανανέωση του widget σχολίων. Μπορείτε να δείτε αυτό σε δράση για την εφαρμογή React, για παράδειγμα, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">εδώ</a>.
 
 #### VanillaJS
 

@@ -10,7 +10,7 @@
 
 ## Svar
 
-Returnerer: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_a_p_i_delete_comment_response.rb)
+Returnerer: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_api_delete_comment_response.rb)
 
 ## Eksempel
 

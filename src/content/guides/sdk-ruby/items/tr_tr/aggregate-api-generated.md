@@ -11,7 +11,7 @@ Farklı işlemler (ör. sum, countDistinct, avg vb.) desteklenir.
 
 ## Yanıt
 
-Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/aggregate_response.rb)
+Döndürür: `AggregateResponse`
 
 ## Örnek
 

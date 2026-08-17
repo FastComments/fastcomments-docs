@@ -1,5 +1,5 @@
 ---
-FastComments Email Templates utilise le [langage de templates EJS](https://github.com/mde/ejs/blob/main/docs/syntax.md).
+FastComments Email Templates utilise le [langage de templates EJS](https://ejs.co/#docs).
 
 La syntaxe d'exemple est `<%= object.someValue %>` pour afficher des variables, et les instructions conditionnelles peuvent être écrites ainsi :
 

@@ -12,7 +12,7 @@ Restituisce anonCount + totalCount (abbonati a livello di stanza, inclusi gli sp
 
 ## Response
 
-Restituisce: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Restituisce: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Example
 

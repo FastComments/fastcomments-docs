@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
+Zwraca: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationCommentSearchResponse.h)
 
 ## Przykład
 

@@ -10,7 +10,7 @@ Aggregates documents by grouping them (if groupBy is provided) and applying mult
 
 ## Response
 
-Возвращает: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Возвращает: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Пример
 

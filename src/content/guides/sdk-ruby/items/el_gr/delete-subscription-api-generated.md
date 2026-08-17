@@ -8,7 +8,7 @@
 
 ## Απόκριση
 
-Επιστρέφει: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_subscription_a_p_i_response.rb)
+Επιστρέφει: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/delete_subscription_api_response.rb)
 
 ## Παράδειγμα
 

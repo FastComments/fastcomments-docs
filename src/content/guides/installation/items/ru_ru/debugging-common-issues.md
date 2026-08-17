@@ -37,7 +37,7 @@ FastComments должен знать, какие домены принадлеж
 
 ### Конфигурация не работает как ожидалось
 
-Попробуйте наше [расширение для Chrome](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US), чтобы посмотреть,
+Попробуйте наше [расширение для Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj), чтобы посмотреть,
 какая конфигурация передаётся виджету комментариев. Если ничего не помогает, сделайте скриншот того, что показывает расширение Chrome,
 и [свяжитесь с нами](https://fastcomments.com/auth/my-account/help).
 

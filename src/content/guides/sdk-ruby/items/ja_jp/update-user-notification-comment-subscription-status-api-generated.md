@@ -12,7 +12,7 @@
 
 ## レスポンス
 
-戻り値: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
+戻り値: `UpdateUserNotificationCommentSubscriptionStatusResponse`
 
 ## 例
 

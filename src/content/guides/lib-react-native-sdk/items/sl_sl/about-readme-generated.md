@@ -10,6 +10,6 @@ Vse deluje na FastComments backendu, zato morate vključiti le uporabniški vmes
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Oglejte si [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) za več primerov.
+Oglejte si [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) za več primerov.
 
 Dodajte klepet v živo v vašo obstoječo aplikacijo React Native, ali pa celo zgradite družbeno omrežje!

@@ -11,6 +11,6 @@
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Вижте [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) за повече примери.
+Вижте [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) за повече примери.
 
 Добавете жив чат към съществуващото си приложение на React Native, или дори изградете социална мрежа!

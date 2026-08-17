@@ -11,7 +11,7 @@ Sider, der kræver SSO, filtreres i forhold til den anmodende brugers gruppeadga
 
 ## Response
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## Example
 

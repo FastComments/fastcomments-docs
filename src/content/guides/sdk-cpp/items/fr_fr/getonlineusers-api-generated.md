@@ -11,7 +11,7 @@ Retourne anonCount + totalCount (abonnés à l’ensemble de la salle, y compris
 
 ## Réponse
 
-Retourne : [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
+Retourne : [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOnlineResponse.h)
 
 ## Exemple
 

@@ -6,7 +6,7 @@
 
 ## 回應
 
-回傳：[`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/add_domain_config_response.rb)
+回傳：`AddDomainConfigResponse`
 
 ## 範例
 

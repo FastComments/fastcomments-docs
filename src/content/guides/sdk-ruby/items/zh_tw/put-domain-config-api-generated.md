@@ -7,7 +7,7 @@
 
 ## 回應
 
-回傳：[`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_domain_config_response.rb)
+回傳：`PutDomainConfigResponse`
 
 ## 範例
 

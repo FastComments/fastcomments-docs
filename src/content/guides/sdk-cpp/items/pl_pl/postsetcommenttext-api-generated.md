@@ -9,7 +9,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
+Zwraca: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
 
 ## Przykład
 

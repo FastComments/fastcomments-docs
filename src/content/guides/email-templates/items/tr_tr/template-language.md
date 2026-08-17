@@ -1,5 +1,5 @@
 ---
-FastComments E-posta Şablonları, [EJS şablon dili](https://github.com/mde/ejs/blob/main/docs/syntax.md) kullanır.
+FastComments E-posta Şablonları, [EJS şablon dili](https://ejs.co/#docs) kullanır.
 
 Değişkenleri yazdırmak için örnek sözdizimi `<%= object.someValue %>` şeklindedir ve koşullu ifadeler şu şekilde yapılabilir:
 

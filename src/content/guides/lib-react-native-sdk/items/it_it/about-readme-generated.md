@@ -11,6 +11,6 @@ Tutto funziona sul backend di FastComments, quindi devi solo integrare l'interfa
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-Vedi [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) per altri esempi.
+Vedi [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) per altri esempi.
 
 Aggiungi una chat in tempo reale alla tua applicazione React Native esistente, o crea persino un social network!

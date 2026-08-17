@@ -19,7 +19,7 @@ Chaque version balisée [GitHub Release](https://github.com/fastcomments/fastcom
 Cette bibliothèque contient deux modules : le client API généré et la bibliothèque Python principale qui contient des utilitaires écrits à la main pour faciliter l'utilisation de l'API, y compris la prise en charge du SSO.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core Library Docs, Including SSO Examples
 
 ### API publiques vs sécurisées
 

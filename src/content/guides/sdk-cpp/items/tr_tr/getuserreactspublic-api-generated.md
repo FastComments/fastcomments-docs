@@ -7,7 +7,7 @@
 
 ## Yanıt
 
-Döndürür: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/UserReactsResponse.h)
+Döndürür: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UserReactsResponse.h)
 
 ## Örnek
 

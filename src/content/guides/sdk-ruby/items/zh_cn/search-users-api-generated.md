@@ -11,7 +11,7 @@
 
 ## 响应
 
-返回：[`SearchUsersResult`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/search_users_result.rb)
+返回：`SearchUsersResult`
 
 ## 示例
 

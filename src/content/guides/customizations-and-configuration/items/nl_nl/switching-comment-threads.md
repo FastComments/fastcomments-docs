@@ -8,7 +8,7 @@ Hoe zit het met SPA's, of Single-Page Applications, waarbij de pagina of inhoud 
 
 #### Angular, React, Vue, enz.
 
-Met onze bibliotheken zoals Angular en React zal het bijwerken van de `urlId`-eigenschap die aan de widget wordt doorgegeven ervoor zorgen dat de reactie-widget wordt vernieuwd. Je kunt dit in actie zien voor de React-app, bijvoorbeeld <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">hier</a>.
+Met onze bibliotheken zoals Angular en React zal het bijwerken van de `urlId`-eigenschap die aan de widget wordt doorgegeven ervoor zorgen dat de reactie-widget wordt vernieuwd. Je kunt dit in actie zien voor de React-app, bijvoorbeeld <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">hier</a>.
 
 #### VanillaJS
 

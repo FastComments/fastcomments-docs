@@ -38,7 +38,7 @@ kan indlæses. At intet vises er normalt et tegn på en script-fejl.
 
 ### Desired Configuration Not Working as Expected
 
-Prøv vores [Chrome-udvidelse](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) for at se, hvilken
+Prøv vores [Chrome-udvidelse](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) for at se, hvilken
 konfiguration kommentar-widgetten får. Hvis intet hjælper, tag et skærmbillede af, hvad Chrome-udvidelsen siger
 og [kontakt os](https://fastcomments.com/auth/my-account/help).
 

@@ -30,7 +30,7 @@ Eğer yorum widget'ı görünmüyorsa, hatalar için Chrome geliştirici konsolu
 
 ### Desired Configuration Not Working as Expected
 
-Yorum widget'ına hangi yapılandırmanın geçirildiğini görmek için [Chrome uzantımızı](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US) deneyin. Eğer yine de sorun çözülmezse, Chrome uzantısının gösterdiklerinin bir ekran görüntüsünü alın ve [reach out to us](https://fastcomments.com/auth/my-account/help).
+Yorum widget'ına hangi yapılandırmanın geçirildiğini görmek için [Chrome uzantımızı](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) deneyin. Eğer yine de sorun çözülmezse, Chrome uzantısının gösterdiklerinin bir ekran görüntüsünü alın ve [reach out to us](https://fastcomments.com/auth/my-account/help).
 
 ### Comments Missing on Same URL With Different Hash Bang
 

@@ -30,7 +30,7 @@ FastComments 需要知道哪些域名属于您，以便对与您帐户相关的�
 
 ### 期望的配置未按预期工作
 
-尝试使用我们的[Chrome 扩展](https://chrome.google.com/webstore/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj?hl=en-US)查看传递给评论小部件的配置。如果仍然无法解决，请截取 Chrome 扩展显示内容的屏幕截图并[联系我们](https://fastcomments.com/auth/my-account/help)。
+尝试使用我们的[Chrome 扩展](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj)查看传递给评论小部件的配置。如果仍然无法解决，请截取 Chrome 扩展显示内容的屏幕截图并[联系我们](https://fastcomments.com/auth/my-account/help)。
 
 ### 相同 URL 但不同 Hash Bang 时评论缺失
 

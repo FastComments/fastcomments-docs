@@ -7,7 +7,7 @@
 
 ## Resposta
 
-Retorna: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
+Retorna: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetUserTrustFactorResponse.h)
 
 ## Exemplo
 

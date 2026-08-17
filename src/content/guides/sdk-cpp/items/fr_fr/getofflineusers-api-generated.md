@@ -12,7 +12,7 @@ Pagination par curseur sur commenterName : le serveur parcourt la partie {tena
 
 ## Response
 
-Retourne : [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Retourne : [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Exemple
 

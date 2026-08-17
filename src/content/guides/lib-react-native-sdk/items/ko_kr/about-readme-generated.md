@@ -11,6 +11,6 @@ It supports live commenting, chat, threads, emoticons, notifications, SSO, skins
     <FastCommentsLiveCommenting config={config} styles={styles} callbacks={callbacks} assets={assets}/>
 ```
 
-더 많은 예제는 [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src) 를 참조하세요.
+더 많은 예제는 [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) 를 참조하세요.
 
 기존 React Native 애플리케이션에 라이브 채팅을 추가하거나, 심지어 소셜 네트워크를 구축하세요!

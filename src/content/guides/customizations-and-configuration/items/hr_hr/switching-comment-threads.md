@@ -8,7 +8,7 @@ A što je s SPA-ovima, odnosno Single-Page Applicationima, gdje se stranica ili 
 
 #### Angular, React, Vue, itd
 
-S našim bibliotekama poput Angulara i Reacta, jednostavnim ažuriranjem svojstva `urlId` koje se prosljeđuje widgetu, widget za komentare će se osvježiti. Ovo možete vidjeti u praksi za React aplikaciju, na primjer, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">ovdje</a>.
+S našim bibliotekama poput Angulara i Reacta, jednostavnim ažuriranjem svojstva `urlId` koje se prosljeđuje widgetu, widget za komentare će se osvježiti. Ovo možete vidjeti u praksi za React aplikaciju, na primjer, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">ovdje</a>.
 
 #### VanillaJS
 

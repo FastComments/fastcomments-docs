@@ -12,7 +12,7 @@
 
 ## 响应
 
-返回: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/update_user_notification_comment_subscription_status_response.rb)
+返回: `UpdateUserNotificationCommentSubscriptionStatusResponse`
 
 ## 示例
 

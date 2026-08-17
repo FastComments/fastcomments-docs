@@ -9,7 +9,7 @@
 
 ## Risposta
 
-Restituisce: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
+Restituisce: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SetCommentTextResponse.h)
 
 ## Esempio
 

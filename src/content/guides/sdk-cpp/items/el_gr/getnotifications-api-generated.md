@@ -7,7 +7,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
+Επιστρέφει: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetNotificationsResponse.h)
 
 ## Παράδειγμα
 

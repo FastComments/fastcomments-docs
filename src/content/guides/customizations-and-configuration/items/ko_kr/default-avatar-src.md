@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-사용자가 FastComments로 처음 댓글을 달면, 우리는 <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>에서 아바타를 가져오려고 시도합니다.
+사용자가 FastComments로 처음 댓글을 달면, 우리는 <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>에서 아바타를 가져오려고 시도합니다.
 
 하지만 아바타를 찾지 못하거나 사용자가 계정에 아바타를 설정하지 않은 경우, 정적인 기본 아바타 이미지를 표시합니다.
 

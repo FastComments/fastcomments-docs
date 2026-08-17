@@ -8,7 +8,7 @@
 
 ## Respuesta
 
-Devuelve: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
+Devuelve: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/RenderEmailTemplateResponse.h)
 
 ## Ejemplo
 

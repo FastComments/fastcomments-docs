@@ -7,7 +7,7 @@
 
 ## Odpowiedź
 
-Zwraca: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AddSSOUserAPIResponse.h)
+Zwraca: [`AddSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AddSSOUserAPIResponse.h)
 
 ## Przykład
 

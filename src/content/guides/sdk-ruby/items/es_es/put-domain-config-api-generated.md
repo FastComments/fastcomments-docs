@@ -7,7 +7,7 @@
 
 ## Respuesta
 
-Devuelve: [`PutDomainConfigResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/put_domain_config_response.rb)
+Devuelve: `PutDomainConfigResponse`
 
 ## Ejemplo
 

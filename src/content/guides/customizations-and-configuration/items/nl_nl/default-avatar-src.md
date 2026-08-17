@@ -1,6 +1,6 @@
 [related-parameter-start name = 'defaultAvatarSrc'; type = 'string'; related-parameter-end]
 
-Wanneer een gebruiker voor het eerst een reactie plaatst met FastComments, proberen we hun avatar op te halen van <a href="http://gravatar.com/" target="_blank">http://gravatar.com/</a>.
+Wanneer een gebruiker voor het eerst een reactie plaatst met FastComments, proberen we hun avatar op te halen van <a href="https://gravatar.com/" target="_blank">http://gravatar.com/</a>.
 
 Als we echter geen avatar vinden, of de gebruiker er nooit een instelt in zijn account, tonen we een statische standaardavatarafbeelding.
 

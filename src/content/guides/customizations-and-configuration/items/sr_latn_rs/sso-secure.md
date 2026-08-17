@@ -112,7 +112,7 @@ Ovi korisnici neće moći da komentarišu, već će im se prikazati poruka za pr
 
 #### Direktni primeri za serializaciju i heširanje podataka korisnika
 
-Više detalja i primeri možete naći <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/nodejs/routes/index.js#L26" target="_blank">ovde</a> (js), <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/java/src/main/java/com/winricklabs/ssodemo/DemoController.java#L54" target="_blank">ovde</a> (java) i <a href="https://github.com/fastcomments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovde</a> (php).
+Više detalja i primeri možete naći <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">ovde</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">ovde</a> (java) i <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">ovde</a> (php).
 
 Razumemo da svaka integracija može biti komplikovan i bolan proces. Ne oklevajte da se obratite svom predstavniku ili koristite <a href="https://fastcomments.com/auth/my-account/help" target="_blank">stranicu za podršku</a>.
 

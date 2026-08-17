@@ -7,7 +7,7 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
+Επιστρέφει: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/ModerationSiteSearchResponse.h)
 
 ## Παράδειγμα
 

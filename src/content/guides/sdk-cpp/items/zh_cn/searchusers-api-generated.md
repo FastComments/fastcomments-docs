@@ -8,7 +8,7 @@
 
 ## 响应
 
-返回：[`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/SearchUsersResult.h)
+返回：[`SearchUsersResult`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/SearchUsersResult.h)
 
 ## 示例
 

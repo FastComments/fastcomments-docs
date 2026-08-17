@@ -8,7 +8,7 @@
 
 #### Angular, React, Vue тощо
 
-У наших бібліотеках, таких як Angular та React, достатньо оновити властивість `urlId`, передану віджету, щоб віджет коментарів оновився. Ви можете побачити це на прикладі React-додатку, наприклад, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">тут</a>.
+У наших бібліотеках, таких як Angular та React, достатньо оновити властивість `urlId`, передану віджету, щоб віджет коментарів оновився. Ви можете побачити це на прикладі React-додатку, наприклад, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">тут</a>.
 
 #### VanillaJS
 

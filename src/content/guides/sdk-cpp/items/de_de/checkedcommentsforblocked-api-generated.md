@@ -9,7 +9,7 @@
 
 ## Response
 
-Rückgabe: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
+Rückgabe: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CheckBlockedCommentsResponse.h)
 
 ## Example
 

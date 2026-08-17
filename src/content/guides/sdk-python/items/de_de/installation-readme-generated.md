@@ -19,7 +19,7 @@ Jeder getaggte [GitHub Release](https://github.com/fastcomments/fastcomments-pyt
 Diese Bibliothek enthält zwei Module: den generierten API-API‑Client und die Kern‑Python‑Bibliothek, die handgeschriebene Hilfsprogramme enthält, um die Arbeit mit der API zu erleichtern, einschließlich SSO‑Unterstützung.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- Core Library Docs, Including SSO Examples
 
 ### Öffentliche vs gesicherte APIs
 

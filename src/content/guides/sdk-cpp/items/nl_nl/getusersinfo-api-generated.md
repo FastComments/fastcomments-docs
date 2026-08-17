@@ -11,7 +11,7 @@ Geen paginacontext: privacy wordt uniform afgedwongen (privéprofielen worden ge
 
 ## Response
 
-Retourneert: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Retourneert: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## Voorbeeld
 

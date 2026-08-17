@@ -7,7 +7,7 @@
 
 ## Відповідь
 
-Повертає: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/a_p_i_empty_success_response.rb)
+Повертає: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_empty_success_response.rb)
 
 ## Приклад
 

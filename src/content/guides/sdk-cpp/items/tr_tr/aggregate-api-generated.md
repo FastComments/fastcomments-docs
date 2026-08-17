@@ -11,7 +11,7 @@ Different operations (e.g. sum, countDistinct, avg, etc.) are supported.
 
 ## Yanıt
 
-Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/client/include/FastCommentsClient/model/AggregateResponse.h)
+Döndürür: [`AggregateResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/AggregateResponse.h)
 
 ## Örnek
 

@@ -10,7 +10,7 @@ dynamically without a fresh page reload?
 #### Angular、React、Vue など
 
 With our libraries such as Angular and React, simply updating the `urlId` property passed to the widget
-will cause the comment widget to refresh. You can see this in action for the React app, for example, <a href="https://github.com/FastComments/fastcomments-react/blob/master/example/src/PaginatedApp.tsx#L39" target="_blank">こちら</a>.
+will cause the comment widget to refresh. You can see this in action for the React app, for example, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">こちら</a>.
 
 #### VanillaJS
 
