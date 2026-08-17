@@ -1,8 +1,6 @@
-This is all done by configuring the [urlId](/guide-customizations-and-configuration.html#url-id) and related parameters and
-calling `update()` on the widget instances to swap them out with a different thread.
+זה נעשה על ידי קביעת תצורת ה-[urlId](/guide-customizations-and-configuration.html#url-id) והפרמטרים הקשורים, וקוראת ל-`update()` על מופעי הווידג'ט כדי להחליף אותם בשרשרת אחרת.
 
-The below is an interactive example (hit run in the top left) which allows you to add and swap comment threads on demand.
-We could remove them as well by calling `instance.destroy` instead of update.
+הלהלן דוגמה אינטראקטיבית (הקלק על הפעל למעלה משמאל) המאפשרת לך להוסיף ולהחליף שרשראות תגובות לפי דרישה. ניתן גם להסיר אותן על ידי קריאה ל-`instance.destroy` במקום update.
 
 [inline-code-attrs-start title = 'הוספה והחלפת שרשראות תגובות'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -52,8 +50,8 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 target.append(outer);
                 window.FastCommentsUI(widgetTarget, {
                     "tenantId": tenantId,
-                    "pageTitle": name, // עבור הודעות דוא"ל ולוח ניהול
-                    "url": productURL, // עבור הודעות דוא"ל ולוח ניהול
+                    "pageTitle": name, // עבור הודעות דוא"ל של התראות ולוח ניהול
+                    "url": productURL, // עבור הודעות דוא"ל של התראות ולוח ניהול
                     "urlId": productID,
                     "showLiveRightAway": true
                 });
@@ -77,7 +75,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 alert(`Product ${oldId} not found to replace!`);
             }
     
-            // הוסף כמה ווידג'טים
+            // הוסף כמה וידג'טים
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -115,8 +113,8 @@ We could remove them as well by calling `instance.destroy` instead of update.
     </style>
 [inline-code-end]
 
-This is similar to how pagination works.
+זה דומה לאופן שבו פגינציה עובדת.
 
-With the React and related libraries we can simply update the configuration and the library (React, Angular, Vue) will handle refreshing the widget for us. With VanillaJS we have to manage it ourselves as shown.
+עם React והספריות הקשורות נוכל פשוט לעדכן את התצורה והספרייה (React, Angular, Vue) תטפל ברענון הווידג'ט עבורנו. עם VanillaJS עלינו לנהל זאת בעצמנו כפי שמוצג.
 
-Feel free to ask any questions below and we'll do our best to help!
+אל תהססו לשאול שאלות למטה ונעשה כמיטב יכולתנו לעזור!

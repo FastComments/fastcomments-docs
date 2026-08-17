@@ -1,14 +1,13 @@
 ---
-By default, FastComments does not limit languages used to comment. 
+Από προεπιλογή, το FastComments δεν περιορίζει τις γλώσσες που χρησιμοποιούνται για σχόλια. 
 
-It may be desirable to limit the languages a community uses.
+Μπορεί να είναι επιθυμητό να περιοριστούν οι γλώσσες που χρησιμοποιεί μια κοινότητα.
 
-This can be configured without code, on the widget customization page:
+Αυτό μπορεί να ρυθμιστεί χωρίς κώδικα, στη σελίδα προσαρμογής του widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Επιλογέας επιτρεπόμενων γλωσσών στη σελίδα προσαρμογής widget για τον περιορισμό των γλωσσών που μπορούν να χρησιμοποιηθούν στα σχόλια'; title='Επιτρεπόμενες Γλώσσες' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Επιλογέας επιτρεπόμενων γλωσσών στη σελίδα προσαρμογής του widget για τον περιορισμό των γλωσσών που μπορούν να χρησιμοποιηθούν στα σχόλια'; title='Επιτρεπόμενες Γλώσσες' app-screenshot-end]
 
-The system will parse their comment and determine its language, and then match it with the allowed list.
+Το σύστημα θα αναλύσει το σχόλιό τους, θα προσδιορίσει τη γλώσσα του και στη συνέχεια θα το συγκρίνει με τη λίστα των επιτρεπόμενων.
 
-If the comment is written in a language that is not allowed, then a localized error message is shown. 
-
+Εάν το σχόλιο είναι γραμμένο σε γλώσσα που δεν επιτρέπεται, τότε εμφανίζεται ένα τοπικοποιημένο μήνυμα σφάλματος. 
 ---
