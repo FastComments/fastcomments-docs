@@ -1,5 +1,5 @@
-Onze [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) heeft een krachtig UI-gebaseerd importmechanisme. Na het installeren van de plugin,
-zal deze je begeleiden bij het koppelen van je WordPress‑installatie met FastComments en het kopiëren van je bestaande commentaargegevens over.
+Onze [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) heeft een krachtig UI‑gebaseerd importmechanisme. Na het installeren van de plugin,
+zal deze je begeleiden bij het koppelen van je WordPress‑installatie met FastComments en het overzetten van je bestaande commentaargegevens.
 
 **Dit gebeurt zonder handmatig iets te kopiëren of te downloaden.**
 
@@ -14,5 +14,8 @@ Firewalls zoals Cloudflare kunnen ons blokkeren en ervoor zorgen dat de integrat
 
 ### Data Ownership
 
-In het geval van onze WordPress‑migratie wordt alle nieuwe of bijgewerkte commentaargegevens automatisch achter de schermen gesynchroniseerd met je WordPress‑installatie. Dit betekent dat, terwijl de reacties door FastComments zelf worden geleverd om de belasting van je WordPress‑implementatie te verlagen,
-we **ook** ze in je database opslaan als backup. Dit betekent ook dat als je wilt overstappen van FastComments, je gegevens al gemigreerd en up‑to‑date zijn.
+In het geval van onze WordPress‑migratie wordt alle nieuwe of bijgewerkte commentaargegevens automatisch gesynchroniseerd terug naar je WordPress‑installatie
+achter de schermen. Dit betekent dat, terwijl de reacties door FastComments zelf worden geleverd om de belasting van je WordPress‑implementatie te verlagen,
+we ze **ook** opslaan in je database als backup. Dit betekent ook dat als je wilt overstappen van FastComments, je gegevens al gemigreerd en up‑to‑date zijn.
+
+---
