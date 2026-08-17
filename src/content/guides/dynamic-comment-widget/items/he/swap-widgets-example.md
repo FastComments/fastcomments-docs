@@ -1,10 +1,10 @@
 This is all done by configuring the [urlId](/guide-customizations-and-configuration.html#url-id) and related parameters and
-calling `update()` on the widget instances to swap them out with a different thread.
+calling `update()` on the widget instances to swap them out with a different threads.
 
 The below is an interactive example (hit run in the top left) which allows you to add and swap comment threads on demand.
 We could remove them as well by calling `instance.destroy` instead of update.
 
-[inline-code-attrs-start title = 'הוספה והחלפת שרשראות תגובות'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'הוסף והחלף שרשראות תגובות'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
     <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 
@@ -35,11 +35,11 @@ We could remove them as well by calling `instance.destroy` instead of update.
         (function () {
             const target = document.getElementById('fastcomments-widgets');
             const tenantId = "demo"; // הכנס כאן את מזהה השוכר שלך
-    
+
             function setHeading(heading, {name, productID}) {
                 heading.innerHTML = `${name} (${productID})`;
             }
-    
+
             function addWidget({name, productID, productURL}) {
                 const outer = document.createElement('div');
                 const heading = document.createElement('h5');
@@ -52,13 +52,13 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 target.append(outer);
                 window.FastCommentsUI(widgetTarget, {
                     "tenantId": tenantId,
-                    "pageTitle": name, // עבור הודעות דוא"ל ולוח ניהול מודרציה
-                    "url": productURL, // עבור הודעות דוא"ל ולוח ניהול מודרציה
+                    "pageTitle": name, // עבור הודעות דוא"ל ולוח ניהול
+                    "url": productURL, // עבור הודעות דוא"ל ולוח ניהול
                     "urlId": productID,
                     "showLiveRightAway": true
                 });
             }
-    
+
             function switchProduct(oldId, {name, productID, productURL}) {
                 for (const instanceWrapped of fcUIInstances) {
                     if (instanceWrapped.targetElement) {
@@ -76,18 +76,18 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 }
                 alert(`Product ${oldId} not found to replace!`);
             }
-    
+
             // הוסף כמה ווידג'טים
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
-    
+
             const form = document.querySelector('.demo-form');
             form.querySelector('button').addEventListener('click', function() {
                 const name = form.querySelector('input[name=name]').value;
                 const productID = form.querySelector('input[name=id]').value;
                 const productURL = form.querySelector('input[name=url]').value;
                 const replaces_id = form.querySelector('input[name=replaces_id]').value;
-    
+
                 if (replaces_id) {
                     switchProduct(replaces_id, {
                         name,
@@ -107,7 +107,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
         #fastcomments-widgets > div {
             width: 100%;
         }
-    
+
         .demo-form section label {
             display: block;
             margin-bottom: 20px;
