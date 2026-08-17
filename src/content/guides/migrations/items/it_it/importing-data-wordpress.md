@@ -14,7 +14,7 @@ I firewall come Cloudflare possono bloccarci e causare il fallimento dell’inte
 
 ### Data Ownership
 
-Nel caso della nostra migrazione WordPress, tutti i nuovi o aggiornati dati dei commenti vengono sincronizzati automaticamente con la tua installazione WordPress
+Nel caso della nostra migrazione WordPress, qualsiasi dato di commento nuovo o aggiornato viene sincronizzato automaticamente con la tua installazione WordPress
 in background. Questo significa che, mentre i commenti sono serviti da FastComments stesso per ridurre il carico sulla tua distribuzione WordPress,
 noi **salviamo anche** i commenti nel tuo database come backup. Questo significa anche che, se desideri passare a un altro servizio, i tuoi dati sono
 già migrati e aggiornati.
