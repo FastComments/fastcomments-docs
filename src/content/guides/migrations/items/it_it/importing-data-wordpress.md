@@ -12,4 +12,4 @@ Perché la configurazione automatica di WordPress funzioni, dobbiamo effettuare 
 
 ### Data Ownership
 
-Nel caso della nostra migrazione WordPress, tutti i nuovi o aggiornati dati dei commenti vengono sincronizzati automaticamente con la tua installazione WordPress in background. Questo significa che, mentre i commenti sono serviti da FastComments stesso per ridurre il carico sulla tua distribuzione WordPress, **salviamo anche** una copia nel tuo database come backup. Significa anche che, se desideri passare a un altro servizio, i tuoi dati sono già migrati e aggiornati.
+Nel caso della nostra migrazione WordPress, tutti i nuovi o aggiornati dati dei commenti vengono sincronizzati automaticamente con la tua installazione WordPress in background. Ciò significa che, mentre i commenti sono serviti da FastComments stesso per ridurre il carico sulla tua distribuzione WordPress, noi **salviamo anche** i commenti nel tuo database come backup. Questo implica anche che, se desideri passare a un altro servizio, i tuoi dati sono già migrati e aggiornati.
