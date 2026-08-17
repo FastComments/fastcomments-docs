@@ -3,17 +3,17 @@ WordPress kurulumunuzu FastComments ile bağlamanıza ve mevcut yorum verilerini
 
 **Bu, hiçbir şeyi manuel olarak kopyalamadan veya indirmeden yapılır.**
 
-Göç süreci, UI üzerinden size gösterilecektir. Çoğu göç sadece birkaç dakika sürer.
+Göç süreci, göç sırasında UI üzerinden size gösterilecektir. Çoğu göç sadece birkaç dakika sürer.
 
 Mekanizma, göç sırasında WordPress kurulumunuza aşırı yük bindirmeyecek şekilde tasarlanmıştır.
 
 ### CloudFlare & Güvenlik Duvarları
 
-Otomatik WordPress kurulumunun çalışması için WordPress kurulumunuza çağrılar yapmamız gerekir.
-Cloudflare gibi güvenlik duvarları bizi engelleyebilir ve entegrasyonun başarısız olmasına neden olabilir. Böyle durumlarda, [size](https://fastcomments.com/auth/my-account/help) entegrasyon için beyaz listeye eklenmesi gereken IP setini sağlayabiliriz.
+Otomatik WordPress kurulumunun çalışabilmesi için WordPress kurulumunuza çağrılar yapmamız gerekir.
+Cloudflare gibi güvenlik duvarları bizi engelleyebilir ve entegrasyonun başarısız olmasına neden olabilir. Bu gibi durumlarda, [size sağlayabiliriz](https://fastcomments.com/auth/my-account/help) entegrasyon için beyaz listeye eklenmesi gereken IP setini.
 
 ### Veri Sahipliği
 
-WordPress göçümüz durumunda, yeni veya güncellenen yorum verileri otomatik olarak arka planda WordPress kurulumunuza senkronize edilir.
-Bu, yorumların FastComments tarafından sunulup WordPress dağıtımınızın yükünü hafifletirken,
-bizim **aynı zamanda** bir yedek olarak veritabanınıza kaydettiğimiz anlamına gelir. Bu aynı zamanda FastComments'tan ayrılmak isterseniz, verilerinizin zaten göç edilmiş ve güncel olduğu anlamına gelir.
+WordPress göçümüz durumunda, yeni veya güncellenmiş yorum verileri otomatik olarak WordPress kurulumunuza arka planda senkronize edilir.
+Bu, yorumların FastComments tarafından sunulup WordPress dağıtımınızın yükünü azaltırken,
+biz **aynı zamanda** bunları bir yedek olarak veritabanınıza kaydederiz anlamına gelir. Bu aynı zamanda FastComments'tan ayrılmak isterseniz, verilerinizin zaten göç edilmiş ve güncel olduğu anlamına gelir.

@@ -4,7 +4,7 @@ Moderasyon Grupları sayfasından oluşturulan kimliklerin bir listesi.
 
 Belirtildiğinde, belirtilen yapılandırma kullanılarak bırakılan yorumlar aynı `moderationGroupIds` kümesini içerecektir.
 
-Bir `Moderator` bir veya daha fazla Moderasyon Grubu tanımlamışsa, yalnızca grup(lar)ına bağlı `Moderate Comments` sayfasındaki yorumları görecektir.
+Bir `Moderator`'ün bir veya daha fazla [Moderasyon Grupları](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) tanımlıysa, yalnızca grup(lar)ına bağlı `Moderate Comments` sayfasındaki yorumları görecektir.
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Moderasyon Gruplarını Belirle'; code-example-end]
 
