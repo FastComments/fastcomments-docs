@@ -10,12 +10,10 @@ Het mechanisme is ontworpen om geen overmatige belasting op je WordPress‑insta
 ### CloudFlare & FireWalls
 
 Om de geautomatiseerde WordPress‑configuratie te laten werken, moeten we oproepen doen naar je WordPress‑installatie.
-Firewalls zoals Cloudflare kunnen ons blokkeren en ervoor zorgen dat de integratie mislukt. In dergelijke gevallen [kunnen we je](https://fastcomments.com/auth/my-account/help) een reeks IP's geven om op de whitelist te zetten voor de integratie.
+Firewalls zoals Cloudflare kunnen ons blokkeren en ervoor zorgen dat de integratie mislukt. In dergelijke gevallen [kunnen we je](https://fastcomments.com/auth/my-account/help) een reeks IP’s geven om op de whitelist te zetten voor de integratie.
 
 ### Data Ownership
 
-In het geval van onze WordPress‑migratie wordt alle nieuwe of bijgewerkte commentaargegevens automatisch gesynchroniseerd terug naar je WordPress‑installatie
-achter de schermen. Dit betekent dat, terwijl de reacties door FastComments zelf worden geleverd om de belasting van je WordPress‑implementatie te verlagen,
-we ze **ook** opslaan in je database als backup. Dit betekent ook dat als je wilt overstappen van FastComments, je gegevens al gemigreerd en up‑to‑date zijn.
-
----
+In het geval van onze WordPress‑migratie wordt alle nieuwe of bijgewerkte commentaargegevens automatisch achter de schermen gesynchroniseerd met je WordPress‑installatie.
+Dit betekent dat, terwijl de reacties door FastComments zelf worden geleverd om de belasting van je WordPress‑implementatie te verlagen,
+we **ook** een back‑up in je database opslaan. Dit betekent ook dat als je wilt overstappen van FastComments, je gegevens al gemigreerd en up‑to‑date zijn.
