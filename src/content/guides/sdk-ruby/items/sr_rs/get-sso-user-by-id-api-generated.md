@@ -1,25 +1,25 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
-## Response
+## Одговор
 
-Returns: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_sso_user_by_id_api_response.rb)
+Враћа: [`GetSSOUserByIdAPIResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/get_sso_user_by_id_api_response.rb)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Primer get_sso_user_by_id'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример get_sso_user_by_id'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 require 'time'
 require 'fastcomments-client'
-# подешавање ауторизације
+# подеси ауторизацију
 FastCommentsClient.configure do |config|
   # Конфигуриши ауторизацију API кључа: api_key
   config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Одкоментариши следећи ред да подесиш префикс за API кључ, нпр. 'Bearer' (подразумевано nil)
+  # Одкоментариши следећи ред да подесиш префикс за API кључ, нпр. 'Bearer' (подразумевано је nil)
   # config.api_key_prefix['x-api-key'] = 'Bearer'
 end
 

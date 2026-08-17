@@ -1,11 +1,11 @@
-The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
+Место где се обавља већина модерације је страница за модерацију коментара. На пример, ево снимка екрана нашег тренутног демо налога:
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Пуна страница за модерацију коментара за демо налог, приказује филтере, претрагу и три коментара по страници'; title='Страница за модерацију коментара' app-screenshot-end]
 
-We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
+Подесили смо број по страници на три како би овај снимак екрана био разумне величине. У пракси, подразумевано би радили са 50 коментара по страници.
 
-The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
+Страница за модерацију такође подржава [Keyboard Shortcuts](#keyboard-shortcuts) за навигацију између коментара и извршавање радњи без коришћења миша. Притисните **?** на страници за модерацију да видите све доступне пречице.
 
-The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
+Страница је такође **live** — када стигну нови коментари који одговарају вашим тренутним филтерима, банер се појављује на врху и упозорава вас. Погледајте [Live Moderating](#comment-actions-live) за детаље.
 
-Let's go into the features shown here.
+Хајде да уђемо у функције приказане овде.

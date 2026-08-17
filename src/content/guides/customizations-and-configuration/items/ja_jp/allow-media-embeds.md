@@ -1,13 +1,16 @@
-By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
+---
+デフォルトでは、FastComments はコメント内で iframe を許可していません。メディア埋め込みを有効にすると、コメント投稿者は YouTube、Vimeo、SoundCloud、Spotify などの信頼できるプロバイダーから埋め込みコード（`<iframe>` スニペット）を貼り付けることができ、コメント内にインラインで表示されます。
 
-For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
+セキュリティ上、これはクライアント側のウィジェット設定フラグではありません。サーバー側の設定で、各コメントが保存される際に検証されるため、ページ上からオンにすることはできません。組み込みの信頼できるプロバイダーリストに該当する iframe のみが許可され、その他の iframe は削除されます。
 
-This is done without code, on the widget customization page:
+これはコードを書かずに、ウィジェットカスタマイズページで行えます：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='ウィジェットカスタマイズページでメディア埋め込み設定がオンになり、コメント投稿者が信頼できる iframe 埋め込みを貼り付けられるようになります'; title='メディア埋め込みを許可' app-screenshot-end]
 
-### Adding Your Own Providers
+### 独自のプロバイダーを追加する
 
-If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
+組み込みの信頼リストにないプロバイダーからの埋め込みを許可したい場合は、同じページの「Additional Embed Domains」フィールドにそのホスト名を追加します。これらのホスト名は組み込みプロバイダーに加えて許可されます。マッチは完全一致なので、フルホスト名（例: player.example.com）を入力してください。リストに含めなかったものはブロックされたままです。
 
-Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.
+プレーンなコメントボックスと WYSIWYG エディタの両方で埋め込みの貼り付けがサポートされています。WYSIWYG エディタでは、埋め込みは削除可能なブロックとして挿入されます。
+
+---

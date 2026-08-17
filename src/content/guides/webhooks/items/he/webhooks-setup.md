@@ -1,11 +1,11 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+עקבו אחרי אותם הצעדים עבור `localhost` כפי שהייתם עושים בייצור. ודאו שיש לכם תחומי ייצור והגדרות סודות API.
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+ראשית, נווטו אל [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). ניתן לגשת לכך דרך Manage Data -> Webhooks.
 
-The configuration page appears as follows:
+דף התצורה מופיע כך:
 
 [app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='דף ניהול Webhooks עם בורר תחום ושדה כתובת URL של נקודת קצה לכל אירוע תגובה, בנוסף כפתור שליחת מטען בדיקה'; title='תצורת Webhooks'; cacheBuster = 'v3' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+בדף זה ניתן לציין נקודות קצה לכל סוג של אירוע תגובה.
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+עבור כל סוג של אירוע, הקפידו ללחוץ על Send Test Payload כדי לוודא שהגדרתם את האינטגרציה כראוי. ראו את הסעיף הבא, "Testing", לפרטים.

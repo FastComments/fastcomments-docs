@@ -2,7 +2,7 @@ All API methods in this SDK return tuples of `(Option[ResponseType], Response)`.
 
 Required parameters and the request body are passed positionally. The remaining optional parameters are collected into a single `Api<Operation>Options` object, which is the last argument. Operations with no optional parameters take no options object.
 
-### Example: Fetching Comments
+### Örnek: Yorumları Getirme
 
 ```nim
 import httpclient
@@ -28,3 +28,4 @@ if httpResponse.code == Http200:
     if resp.comments.isSome:
       echo "Found ", resp.comments.get().len, " comments"
 ```
+---

@@ -1,22 +1,22 @@
-Enable or disable notifications for a specific comment.
+Омогућите или онемогућите обавештења за одређени коментар.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
 | tenantId | string | query | Yes |  |
 | notificationId | string | path | Yes |  |
 | optedInOrOut | string | path | Yes |  |
 | commentId | string | query | Yes |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Returns: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
+Враћа: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationCommentSubscriptionStatusResponse.php)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Primer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');

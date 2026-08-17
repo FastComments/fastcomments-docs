@@ -1,49 +1,47 @@
-Sometimes FastComments has to email your users, especially if you are not using Secure SSO.
+Μερικές φορές το FastComments πρέπει να στέλνει email στους χρήστες σας, ειδικά εάν δεν χρησιμοποιείτε ασφαλή SSO.
 
-Examples of this includes verifying their account or activity when commenting for the first time. FastComments will also send them notifications for replies to their comments.
+Παραδείγματα αυτού περιλαμβάνουν την επαλήθευση του λογαριασμού ή της δραστηριότητάς τους όταν σχολιάζουν για πρώτη φορά. Το FastComments θα τους στέλνει επίσης ειδοποιήσεις για απαντήσεις στα σχόλιά τους.
 
-When FastComments emails your users, we will use a default From Name and Email of `FastComments Robot` and `noreply@fastcomments.com`.
+Όταν το FastComments στέλνει email στους χρήστες σας, θα χρησιμοποιεί προεπιλεγμένο Όνομα Αποστολέα και Email `FastComments Robot` και `noreply@fastcomments.com`.
 
-We'll also use our own logo in the footer of these emails.
+Θα χρησιμοποιούμε επίσης το δικό μας λογότυπο στο υποσέλιδο αυτών των email.
 
-If you have FastComments Flex or Pro, this all can be customized on a per-domain basis via the "My Domains page":
+Εάν έχετε FastComments Flex ή Pro, όλα αυτά μπορούν να προσαρμοστούν ανά τομέα μέσω της σελίδας "My Domains":
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Φόρμα ρυθμίσεων email ανά domain με τα πεδία Όνομα Αποστολέα, Email Αποστολέα και μεταφόρτωση λογότυπου'; title='Προσαρμογή Όνομα Αποστολέα, Email και Λογότυπου' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Φόρμα ρυθμίσεων email ανά τομέα με τα πεδία Όνομα Αποστολέα, Email Αποστολέα και μεταφόρτωση λογότυπου'; title='Προσαρμογή Ονόματος Αποστολέα, Email και Λογότυπου' app-screenshot-end]
 
-When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
+Κατά την προσαρμογή του λογότυπου που εμφανίζεται στα email, βεβαιωθείτε ότι το μέγεθος που ανεβάζετε είναι το ίδιο μέγεθος που θέλετε να εμφανίζεται στο υποσέλιδο του email.
 
-### When Customizing The `From Domain`
+### Κατά την προσαρμογή του `From Domain`
 
-If you customize the `From Domain`, Email providers and clients need to know that FastComments is authorized to send emails on your behalf. Otherwise,
-defining the `From Domain` and not following the below steps likely will result in emails going to spam.
+Εάν προσαρμόσετε το `From Domain`, οι πάροχοι email και οι πελάτες πρέπει να γνωρίζουν ότι το FastComments είναι εξουσιοδοτημένο να στέλνει email εκ μέρους σας. Διαφορετικά, ο ορισμός του `From Domain` χωρίς να ακολουθήσετε τα παρακάτω βήματα πιθανότατα θα οδηγήσει τα email στο spam.
 
-#### 1. Setup SPF
+#### 1. Ρύθμιση SPF
 
-To allow FastComments to securely send email as your domain, ensure you add an SPF record that allows us to do so.
+Για να επιτρέψετε στο FastComments να στέλνει email με ασφάλεια ως το δικό σας domain, βεβαιωθείτε ότι προσθέτετε μια εγγραφή SPF που το επιτρέπει.
 
-Ensure there are SPF records to allow `mail.fastcomments.com` and `sib.fastcomments.com` to send mail as your domain.
+Βεβαιωθείτε ότι υπάρχουν εγγραφές SPF που επιτρέπουν στο `mail.fastcomments.com` και στο `sib.fastcomments.com` να στέλνουν email ως το domain σας.
 
-Some more information on how to do this is here: https://mailtrap.io/blog/multiple-spf-records/
+Περισσότερες πληροφορίες για το πώς να το κάνετε βρίσκονται εδώ: https://mailtrap.io/blog/multiple-spf-records/
 
-#### 2. Setup DKIM
+#### 2. Ρύθμιση DKIM
 
-In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, you can click "Show Advanced" in the domain configurations page
-to show the DKIM settings per-domain.
+Εκτός από το SPF, θα πρέπει να ρυθμίσετε το DKIM. Μόλις η διαμόρφωση DNS είναι έτοιμη, μπορείτε να κάνετε κλικ στο "Εμφάνιση Προχωρημένων" στη σελίδα ρυθμίσεων domain για να εμφανίσετε τις ρυθμίσεις DKIM ανά domain.
 
-You can also [invoke the API](/guide-api.html#domain-config-structure) to set DKIM configuration.
+Μπορείτε επίσης να [καλέσετε το API](/guide-api.html#domain-config-structure) για να ορίσετε τη ρύθμιση DKIM.
 
-### Unsubscribe Links
+### Σύνδεσμοι Απεγγραφής
 
-When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api.html#domain-config-structure).
+Κατά τη χρήση SSO, οι λειτουργίες απεγγραφής που χρησιμοποιούνται σε email και ειδοποιήσεις μπορούν να προσαρμοστούν [μέσω του DomainConfigs API](/guide-api.html#domain-config-structure).
 
-### Email Link Obfuscation
+### Απόκρυψη Συνδέσμων Email
 
-If your site's domain reputation is causing notification emails to land in spam, you can route the "view comment" buttons through `fastcomments.com` instead of linking directly to your page. Mailbox providers score every link in the email body against the destination's reputation, so when your domain is being flagged the bare links contribute to the spam score regardless of how clean your sending setup is.
+Εάν η φήμη του domain του ιστότοπού σας προκαλεί τα email ειδοποιήσεων να καταλήγουν στο spam, μπορείτε να δρομολογήσετε τα κουμπιά "προβολή σχολίου" μέσω του `fastcomments.com` αντί να συνδέετε απευθείας στη σελίδα σας.
 
-Enable this under "Show Advanced" on the My Domains page, in the "Email Link Obfuscation" section. The setting is per-domain.
+Οι πάροχοι γραμματοκιβωτίων αξιολογούν κάθε σύνδεσμο στο σώμα του email με βάση τη φήμη του προορισμού, έτσι όταν το domain σας επισημαίνεται, οι άμεσοι σύνδεσμοι συμβάλλουν στο σκορ spam ανεξάρτητα από το πόσο καθαρή είναι η ρύθμιση αποστολής σας.
 
-When enabled, links in mention, reply, new-comment, subscribed-page, profile-comment, and digest emails are rewritten to short tokens that redirect to the original page on click. The destination is bound to your tenant: the redirect only forwards to URLs whose host matches one of your configured domains, and tokens auto-expire after 30 days.
+Ενεργοποιήστε αυτό υπό "Εμφάνιση Προχωρημένων" στη σελίδα My Domains, στην ενότητα "Απόκρυψη Συνδέσμων Email". Η ρύθμιση είναι ανά domain.
 
-The clicked-through experience is unchanged. Readers still land on your page with the comment scrolled into view.
+Όταν ενεργοποιηθεί, οι σύνδεσμοι σε mention, reply, new-comment, subscribed-page, profile-comment, and digest emails ξαναγράφονται σε σύντομες μάρκες που ανακατευθύνουν στη αρχική σελίδα όταν κάνετε κλικ. Ο προορισμός είναι δεσμευμένος στον ενοικιαστή σας: η ανακατεύθυνση προωθεί μόνο σε URL των οποίων ο κεντρικός υπολογιστής ταιριάζει με ένα από τα ρυθμισμένα domain σας, και οι μάρκες λήγουν αυτόματα μετά από 30 ημέρες.
 
----
+Η εμπειρία μετά το κλικ παραμένει αμετάβλητη. Οι αναγνώστες εξακολουθούν να φτάνουν στη σελίδα σας με το σχόλιο να είναι ήδη ορατό.

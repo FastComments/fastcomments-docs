@@ -1,4 +1,4 @@
-Configure your tenant in `settings.py`:
+Konfigurišite svoj tenant u `settings.py`:
 
 ```python
 import os
@@ -8,7 +8,7 @@ FASTCOMMENTS = {
 }
 ```
 
-Drop the widget into any template:
+Ubacite widget u bilo koji šablon:
 
 ```django
 {% load fastcomments %}

@@ -1,6 +1,6 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | broadcastId | string | query | No |  |
@@ -8,11 +8,11 @@
 | doSpamCheck | boolean | query | No |  |
 | skipDupCheck | boolean | query | No |  |
 
-## Response
+## Одговор
 
-Returns: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
+Враћа: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/create_feed_posts_response.py)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример create_feed_post'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,11 +30,15 @@ from pprint import pprint
 # Примери за сваки метод аутентификације су дати испод, користите пример који
 # задовољава ваш случај употребе аутентификације.
 
-# Конфигуришите ауторизацију API кључа: api_key
-# Одкоментаришите испод да подесите префикс (нпр. Bearer) за API кључ, ако је потребно
-# Уђите у контекст са инстанцом API клијента
+# Конфигуриши ауторизацију API кључа: api_key
+configuration.api_key['api_key'] = os.environ["API_KEY"]
+
+# Одкоментариши испод да подесиш префикс (нпр. Bearer) за API кључ, ако је потребно
+# configuration.api_key_prefix['api_key'] = 'Bearer'
+
+# Уђи у контекст са инстанцом API клијента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Креирај инстанцу API класе
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     create_feed_post_params = client.CreateFeedPostParams() # CreateFeedPostParams | 

@@ -34,7 +34,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
     <script>
         (function () {
             const target = document.getElementById('fastcomments-widgets');
-            const tenantId = "demo"; // הכנס כאן את מזהה השוכר שלך
+            const tenantId = "demo"; // PUT YOUR TENANT ID HERE
     
             function setHeading(heading, {name, productID}) {
                 heading.innerHTML = `${name} (${productID})`;
@@ -52,8 +52,8 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 target.append(outer);
                 window.FastCommentsUI(widgetTarget, {
                     "tenantId": tenantId,
-                    "pageTitle": name, // להודעות דוא"ל של התראות ולוח ניהול
-                    "url": productURL, // להודעות דוא"ל של התראות ולוח ניהול
+                    "pageTitle": name, // for notification emails and moderation dashboard
+                    "url": productURL, // for notification emails and moderation dashboard
                     "urlId": productID,
                     "showLiveRightAway": true
                 });
@@ -77,7 +77,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
                 alert(`Product ${oldId} not found to replace!`);
             }
     
-            // הוספת כמה ווידג'טים
+            // add some widgets
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -110,7 +110,7 @@ We could remove them as well by calling `instance.destroy` instead of update.
     
         .demo-form section label {
             display: block;
-            margin-bottom:20px;
+            margin-bottom: 20px;
         }
     </style>
 [inline-code-end]

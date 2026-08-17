@@ -2,7 +2,7 @@ The Recent Comments Widget displays a list of the most recent comments across yo
 
 ## Basic Installation
 
-[inline-code-attrs-start title = 'Инсталација виџета за недавне коментаре'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталација Recent Comments Видгета'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -24,7 +24,7 @@ The Recent Comments Widget displays a list of the most recent comments across yo
 
 The widget renders with the following HTML structure:
 
-[inline-code-attrs-start title = 'HTML структура виџета за недавне коментаре'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Comments Widget HTML Structure'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -46,7 +46,7 @@ The widget renders with the following HTML structure:
 
 ## Default CSS Reference
 
-[inline-code-attrs-start title = 'Подразумевани CSS виџета за недавне коментаре'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Подразумевани CSS за Recent Comments Видгет'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -72,7 +72,7 @@ The widget renders with the following HTML structure:
 
 ## Customization Examples
 
-### Change Avatar Size
+### Промена величине аватара
 
 [inline-code-attrs-start title = 'Прилагођена величина аватара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,7 +82,7 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Show More Lines of Comment Text
+### Прикажи више линија текста коментара
 
 [inline-code-attrs-start title = 'Прикажи више линија коментара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -91,7 +91,7 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Уклони ивицу контејнера
 
 [inline-code-attrs-start title = 'Уклони ивицу контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

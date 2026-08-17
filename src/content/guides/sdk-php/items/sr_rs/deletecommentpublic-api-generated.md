@@ -1,6 +1,6 @@
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | commentId | string | path | Yes |  |
@@ -8,11 +8,11 @@
 | editKey | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## Одговор
 
-Returns: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
+Враћа: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PublicAPIDeleteCommentResponse.php)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'deleteCommentPublic Пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

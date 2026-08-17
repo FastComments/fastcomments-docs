@@ -1,8 +1,8 @@
-All libraries for the comment widget (currently Angular, React, Vue) support callbacks.
+所有评论小部件的库（目前包括 Angular、React、Vue）都支持回调。
 
-The callbacks are specified in the configuration object, with the same signature for each library.
+回调在配置对象中指定，对每个库的签名相同。
 
-The callbacks supported are:
+支持的回调包括：
 
 - onInit
 - onAuthenticationChange
@@ -15,9 +15,9 @@ The callbacks supported are:
 - onCommentSubmitStart
 - onCommentsRendered
 
-The exact signatures can be found in the [TypeScript definitions](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124).
+可以在[TypeScript 定义](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L124)中找到确切的签名。
 
-Here's an example with all callbacks used:
+以下是使用所有回调的示例：
 
 [inline-code-attrs-start title = '回调示例'; inline-code-attrs-end]
 [inline-code-start]
@@ -50,7 +50,7 @@ Here's an example with all callbacks used:
         },
         onOpenProfile: function (userId) {
             console.log('User tried to open profile', userId);
-            // return true; // 返回 true 以阻止默认行为（打开 fastcomments.com 用户资料）。
+            // 返回 true; // 返回 true 以阻止默认行为（打开 fastcomments.com 用户资料）。
         },
         onCommentSubmitStart: function(comment, continueSubmitFn, cancelFn) {
             console.log('Trying to submit comment', comment);
@@ -63,7 +63,7 @@ Here's an example with all callbacks used:
             }, 1000);
         },
         onCommentsRendered: function(comments) {
-            // comments 按页面默认排序排列，可能是最相关（例如点赞最多等）或最新优先
+            // comments 按页面默认排序排序，可能是最相关（例如最多投票等）或最新优先
             const topCommentInList = comments[0];
             console.log('First Comment Rendered:', topCommentInList.avatarSrc, topCommentInList.commenterName, topCommentInList.commentHTML);
         }

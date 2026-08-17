@@ -1,19 +1,20 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+---
+Групова информация за потребители за наемател. При зададени userIds, връща информация за показване от User / SSOUser.  
+Използва се от уиджета за коментари, за да обогати потребителите, които току‑що се появяват чрез събитие за присъствие.  
+Без контекст на страницата: поверителността се прилага еднородно (частните профили се маскират).
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Да |  |
+| ids | string | Да |  |
 
-## Response
+## Отговор
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Връща: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,3 +31,5 @@ api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInf
     }
 });
 [inline-code-end]
+
+---

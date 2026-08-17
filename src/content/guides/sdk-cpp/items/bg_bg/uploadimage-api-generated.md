@@ -1,14 +1,6 @@
 Upload and resize an image
-Качване и преоразмеряване на изображение
 
 ## Parameters
-## Параметри
-
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| file | HttpContent | Yes |  |
-| options | const UploadImageOptions& | Yes |  |
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
@@ -17,13 +9,10 @@ Upload and resize an image
 | options | const UploadImageOptions& | Да |  |
 
 ## Response
-## Отговор
 
-Returns: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 Връща: [`UploadImageResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UploadImageResponse.h)
 
 ## Example
-## Пример
 
 [inline-code-attrs-start title = 'uploadImage Пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -37,5 +26,3 @@ api->uploadImage(U("my-tenant-123"), file, options).then([](pplx::task<std::shar
     auto resp = t.get();
 });
 [inline-code-end]
-
----

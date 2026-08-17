@@ -1,16 +1,16 @@
-Add this line to your application's Gemfile:
+הוסף שורה זו לקובץ Gemfile של היישום שלך:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+ואז הפעל:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+או התקן זאת בעצמך כ:
 
 ```bash
 gem install fastcomments
@@ -18,13 +18,12 @@ gem install fastcomments
 
 ### Library Contents
 
-This library contains the generated API client and the SSO utilities to make working with the API easier.
+ספרייה זו מכילה את לקוח ה‑API שנוצר ואת כלי ה‑SSO שמקלים על העבודה עם ה‑API.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
 ### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
+ללקוח ה‑API יש שלוש מחלקות: `DefaultApi`, `PublicApi` ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות מפתח API שלך, וה‑`PublicApi` מכילה קריאות API שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו׳ ללא אימות. ה‑`ModerationApi` מכילה את השיטות שמפעילות את לוח המחוונים של המודרטור.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+ה‑`ModerationApi` מספקת חבילה נרחבת של API מודרציה בזמן אמת ומהירה. כל שיטה ב‑`ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או קוביית סשן של FastComments.com.

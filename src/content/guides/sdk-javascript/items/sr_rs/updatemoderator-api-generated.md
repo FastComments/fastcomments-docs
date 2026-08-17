@@ -12,7 +12,7 @@ Returns: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomment
 
 ## Example
 
-[inline-code-attrs-start title = 'updateModerator Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demoUpdateModerator(): Promise<void> {
     const tenantId: string = "tenant_42abc";
@@ -20,7 +20,7 @@ async function demoUpdateModerator(): Promise<void> {
     const updateBody: UpdateModeratorBody = {
         isActive: true,
         role: "admin",
-        // optional field
+        // опционално поље
         notes: "Promoted to senior moderator"
     };
     const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
