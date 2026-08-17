@@ -1461,8 +1461,28 @@ static HEADING_TAGS: Lazy<Regex> =
 /// back fenced in `---` (an empty-front-matter habit, visible in any
 /// `items/<locale>/intro.md`), which is invisible in rendered markdown but
 /// would land verbatim in a `content="..."` attribute.
+///
+/// The fence is not reliably a WRAPPER, which is the whole reason
+/// `fence_segments` exists rather than a `replace_all`.
 static FENCE_LINE: Lazy<Regex> =
     Lazy::new(|| Regex::new(r"(?m)^\s*-{3,}\s*$").expect("regex"));
+
+/// Split a translated file on its fence lines and return the
+/// whitespace-normalized, non-empty pieces between them.
+///
+/// Deleting the fences and joining the remainder is NOT equivalent. The
+/// translator usually wraps (`---\nbody\n---`, one segment), but it also
+/// echoes the English source and uses a lone `---` as a SEPARATOR before
+/// the translation (two segments). Joining that produced descriptions
+/// holding both languages, which is how `sdk-go/ja_jp` came to read
+/// "Call the FastComments API from Go. Go から FastComments API を…".
+fn fence_segments(raw: &str) -> Vec<String> {
+    FENCE_LINE
+        .split(raw)
+        .map(|s| s.split_whitespace().collect::<Vec<_>>().join(" "))
+        .filter(|s| !s.is_empty())
+        .collect()
+}
 
 /// The authored SEO meta description for this guide + locale.
 ///
@@ -1475,10 +1495,38 @@ fn read_meta_desc(root: &GuidesRoot, guide_id: &str, locale: &str) -> Option<Str
     let raw = std::fs::read_to_string(&path)
         .map_err(|e| warn!(path = ?path, error = %e, "unreadable meta-desc"))
         .ok()?;
-    let stripped = FENCE_LINE.replace_all(&raw, "");
     // Descriptions are single-line by definition; the source is soft-wrapped.
-    let text = stripped.split_whitespace().collect::<Vec<_>>().join(" ");
-    (!text.is_empty()).then_some(text)
+    let segments = fence_segments(&raw);
+    if segments.len() < 2 {
+        return segments.into_iter().next();
+    }
+
+    // Two or more segments means the fence separated rather than wrapped.
+    // Drop any segment that is verbatim the default-locale source: that is
+    // the translator echoing its input, not part of the translation. Never
+    // do this for the default locale itself, which would drop every
+    // English description.
+    let echoed: Vec<String> = if locale == root.default_locale {
+        Vec::new()
+    } else {
+        root.meta_desc_path(guide_id, &root.default_locale)
+            .and_then(|p| std::fs::read_to_string(p).ok())
+            .map(|s| fence_segments(&s))
+            .unwrap_or_default()
+    };
+    let kept: Vec<&String> = segments.iter().filter(|s| !echoed.contains(s)).collect();
+
+    // Whatever survives, take the LAST piece: the translation follows the
+    // fence. Falling back to the full set covers a file that is nothing but
+    // the echoed source, which is the separate "untranslated" defect and is
+    // gated in `trans`, not here.
+    let chosen = kept.last().copied().or_else(|| segments.last())?;
+    warn!(
+        path = ?path,
+        segments = segments.len(),
+        "meta-desc has an unmatched translator fence; using the last segment"
+    );
+    Some(chosen.clone())
 }
 
 /// A guide's authored `description`, but only when it is actually in this
@@ -2237,6 +2285,100 @@ mod meta_desc_tests {
         assert_eq!(
             read_meta_desc(&root, "demo", "ja_jp").as_deref(),
             Some("コメントを追加する方法を 学びます。")
+        );
+    }
+
+    /// The failure this guards: the translator sometimes echoes the
+    /// English source, then uses `---` as a SEPARATOR before its
+    /// translation instead of wrapping the translation in a pair of
+    /// them. Deleting fence lines and joining what's left glued both
+    /// languages into one description; four shipped that way
+    /// (`saml/ja_jp`, `sdk-go/ja_jp`, `sdk-go/ko_kr`, `ssr/ja_jp`) and a
+    /// crawl caught two of them only because they were wide enough to
+    /// trip a SERP-truncation check.
+    #[test]
+    fn echoed_source_above_a_separator_fence_is_dropped() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "Call the FastComments API from Go.");
+        write(
+            guides,
+            "demo/items/ja_jp/meta-desc.txt",
+            "Call the FastComments API from Go.\n\n--- \n\nGo から API を呼び出します。\n",
+        );
+        let root = GuidesRoot::new(guides, "en");
+        assert_eq!(
+            read_meta_desc(&root, "demo", "ja_jp").as_deref(),
+            Some("Go から API を呼び出します。")
+        );
+    }
+
+    /// Same shape, but the echo is soft-wrapped so it doesn't match the
+    /// source byte-for-byte until both sides are whitespace-normalized.
+    #[test]
+    fn echoed_source_is_matched_after_normalizing_whitespace() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "Render comments into your\ninitial HTML.");
+        write(
+            guides,
+            "demo/items/ja_jp/meta-desc.txt",
+            "Render comments   into your initial\nHTML.\n---\nコメントをレンダリングします。\n",
+        );
+        let root = GuidesRoot::new(guides, "en");
+        assert_eq!(
+            read_meta_desc(&root, "demo", "ja_jp").as_deref(),
+            Some("コメントをレンダリングします。")
+        );
+    }
+
+    /// An unmatched fence with no recognizable echo above it: keep the
+    /// last segment, since the translation is what follows the fence.
+    /// Never join across the fence, which is what produced the bug.
+    #[test]
+    fn unmatched_fence_keeps_the_last_segment_not_the_join() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "Something else entirely.");
+        write(
+            guides,
+            "demo/items/ja_jp/meta-desc.txt",
+            "Leading noise.\n---\nコメントの説明。\n",
+        );
+        let root = GuidesRoot::new(guides, "en");
+        assert_eq!(
+            read_meta_desc(&root, "demo", "ja_jp").as_deref(),
+            Some("コメントの説明。")
+        );
+    }
+
+    /// A file that is ONLY the echoed source is untranslated, a separate
+    /// defect that `trans` gates on. Keep returning the English rather
+    /// than dropping to None, so behavior there is unchanged.
+    #[test]
+    fn a_wholly_untranslated_file_still_returns_its_text() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "English description.");
+        write(guides, "demo/items/ja_jp/meta-desc.txt", "---\nEnglish description.\n---\n");
+        let root = GuidesRoot::new(guides, "en");
+        assert_eq!(
+            read_meta_desc(&root, "demo", "ja_jp").as_deref(),
+            Some("English description.")
+        );
+    }
+
+    /// The default locale's own file is never compared against itself,
+    /// or every English description would be dropped as an echo.
+    #[test]
+    fn default_locale_is_never_treated_as_an_echo() {
+        let tmp = tempfile::tempdir().unwrap();
+        let guides = tmp.path();
+        write(guides, "demo/meta-desc.txt", "English description.\n---\nMore English.");
+        let root = GuidesRoot::new(guides, "en");
+        assert_eq!(
+            read_meta_desc(&root, "demo", "en").as_deref(),
+            Some("More English.")
         );
     }
 

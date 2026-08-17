@@ -1,5 +1,3 @@
-Set up SAML 2.0 single sign-on so staff and members reach FastComments through your corporate identity provider. Role mapping, testing, and common errors.
-
---- 
-
+---
 スタッフとメンバーが企業のアイデンティティプロバイダーを通じて FastComments にアクセスできるように、SAML 2.0 シングルサインオンを設定します。ロールマッピング、テスト、一般的なエラー。
+---
