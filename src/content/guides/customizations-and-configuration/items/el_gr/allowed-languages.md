@@ -10,4 +10,5 @@ This can be configured without code, on the widget customization page:
 The system will parse their comment and determine its language, and then match it with the allowed list.
 
 If the comment is written in a language that is not allowed, then a localized error message is shown. 
+
 ---
