@@ -1,1 +1,3 @@
-すべてのウィジェットをライブでお試しください: <https://fastcomments.com/commenting-system-for-astro>.
+---
+すべてのウィジェットをライブで試すには <https://fastcomments.com/commenting-system-for-astro/>。
+---

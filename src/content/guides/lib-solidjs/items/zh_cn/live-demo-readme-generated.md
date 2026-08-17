@@ -1,1 +1,3 @@
-在 <https://fastcomments.com/commenting-system-for-solidjs> 实时试用每个小部件。
+---
+在 <https://fastcomments.com/commenting-system-for-solidjs/> 实时尝试所有小部件。
+---

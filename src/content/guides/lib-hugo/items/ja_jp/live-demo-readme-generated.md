@@ -1,1 +1,3 @@
-すべてのウィジェットを <https://fastcomments.com/commenting-system-for-hugo> でライブでお試しください。
+---
+すべてのウィジェットをライブで試すには <https://fastcomments.com/commenting-system-for-hugo/>。
+---

@@ -1,1 +1,3 @@
-Wypróbuj każdy widżet na żywo pod adresem <https://fastcomments.com/commenting-system-for-solidjs>.
+---
+Wypróbuj każdy widget na żywo pod adresem <https://fastcomments.com/commenting-system-for-solidjs/>.
+---

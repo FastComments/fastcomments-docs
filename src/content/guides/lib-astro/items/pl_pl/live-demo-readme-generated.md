@@ -1,1 +1,3 @@
-Wypróbuj wszystkie widżety na żywo pod adresem <https://fastcomments.com/commenting-system-for-astro>.
+---
+Wypróbuj każdy widget na żywo pod adresem <https://fastcomments.com/commenting-system-for-astro/>.
+---

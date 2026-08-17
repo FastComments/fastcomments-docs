@@ -1,1 +1,1 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-react-native>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-react-native/>.

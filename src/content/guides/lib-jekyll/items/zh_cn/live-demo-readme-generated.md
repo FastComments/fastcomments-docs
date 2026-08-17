@@ -1,1 +1,3 @@
-在 <https://fastcomments.com/commenting-system-for-jekyll> 在线试用每个小部件。
+---
+在 <https://fastcomments.com/commenting-system-for-jekyll/> 实时尝试所有小部件。
+---

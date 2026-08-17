@@ -1,1 +1,3 @@
-Wypróbuj każdy widżet na żywo pod adresem <https://fastcomments.com/commenting-system-for-angular>.
+---
+Wypróbuj każdy widget na żywo pod adresem <https://fastcomments.com/commenting-system-for-angular/>.
+---

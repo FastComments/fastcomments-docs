@@ -1,1 +1,3 @@
-Tüm widget'ları canlı olarak deneyin: <https://fastcomments.com/commenting-system-for-astro>.
+---
+Her widget'ı canlı olarak deneyin <https://fastcomments.com/commenting-system-for-astro/>.
+---

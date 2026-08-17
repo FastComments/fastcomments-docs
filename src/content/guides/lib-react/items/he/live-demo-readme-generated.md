@@ -1,1 +1,3 @@
-נסה כל הווידג'טים בשידור חי ב <https://fastcomments.com/commenting-system-for-react>.
+---
+נסה כל וידג'ט בשידור חי ב <https://fastcomments.com/commenting-system-for-react/>.
+---

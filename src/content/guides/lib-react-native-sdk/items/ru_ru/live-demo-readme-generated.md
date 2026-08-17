@@ -1,1 +1,3 @@
-Попробуйте каждый виджет вживую на <https://fastcomments.com/commenting-system-for-react-native>.
+---
+Попробуйте каждый виджет вживую по адресу <https://fastcomments.com/commenting-system-for-react-native/>.
+---

@@ -1,12 +1,10 @@
----
-Prova ogni widget dal vivo su <https://fastcomments.com/commenting-system-for-svelte>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-svelte/>.  
 
-Un insieme di widget e wrapper Svelte per FastComments. `src/routes` contiene esempi eseguibili - esegui semplicemente:
+A set of Svelte widgets and wrappers for FastComments. `src/routes` contains runnable examples - simply run:
 
     npm install
     npm run dev
 
-Poi puoi vedere tutti i widget e modificarli - ad esempio per inserire il tuo tenant id o provare diverse configurazioni.
+Then you can see all the widgets and edit them - for example to put in your own tenant id or try different configuration.
 
-TypeScript è stato utilizzato in modo che tu possa ispezionare gli oggetti di configurazione per ogni widget per vedere quali opzioni accettano.
----
+TypeScript has been used so that you can inspect the config objects for each widget to see what options they take.

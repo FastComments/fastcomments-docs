@@ -1,1 +1,3 @@
-Попробуйте все виджеты вживую на <https://fastcomments.com/commenting-system-for-vue>.
+---
+Попробуйте каждый виджет вживую по адресу <https://fastcomments.com/commenting-system-for-vue/>.
+---

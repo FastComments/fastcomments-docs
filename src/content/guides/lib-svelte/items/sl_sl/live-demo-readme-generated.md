@@ -1,10 +1,12 @@
-Preizkusite vse komponente v živo na <https://fastcomments.com/commenting-system-for-svelte>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-svelte/>.
 
-Nabor Svelte komponent in ovojnike za FastComments. `src/routes` vsebuje primere, ki jih je mogoče zagnati - preprosto zaženite:
+A set of Svelte widgets and wrappers for FastComments. `src/routes` contains runnable examples - simply run:
 
-    npm install
-    npm run dev
+```bash
+npm install
+npm run dev
+```
 
-Potem lahko vidite vse komponente in jih urejate - na primer, da vnesete svoj tenant id ali preizkusite drugačno konfiguracijo.
+Then you can see all the widgets and edit them - for example to put in your own tenant id or try different configuration.
 
-Uporabljen je bil TypeScript, da lahko pregledate konfiguracijske objekte za vsako komponento in vidite, katere možnosti sprejemajo.
+TypeScript has been used so that you can inspect the config objects for each widget to see what options they take.

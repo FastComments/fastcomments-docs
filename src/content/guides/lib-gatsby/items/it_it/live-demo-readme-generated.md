@@ -1,1 +1,3 @@
-Prova ogni widget dal vivo su <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+Prova ogni widget live su <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

@@ -1,1 +1,3 @@
-Probieren Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-astro> aus.
+---
+Testen Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-astro/>.
+---

@@ -1,1 +1,3 @@
-Prueba cada widget en vivo en <https://fastcomments.com/commenting-system-for-react-native>.
+---
+Prueba cada widget en vivo en <https://fastcomments.com/commenting-system-for-react-native/>.
+---

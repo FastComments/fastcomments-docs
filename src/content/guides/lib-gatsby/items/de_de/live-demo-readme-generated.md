@@ -1,1 +1,3 @@
-Testen Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+Probieren Sie jedes Widget live aus unter <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

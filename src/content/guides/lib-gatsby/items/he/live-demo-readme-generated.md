@@ -1,1 +1,3 @@
-נסה כל ווידג'ט בשידור חי ב <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+נסו כל וידג'ט באופן חי ב <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

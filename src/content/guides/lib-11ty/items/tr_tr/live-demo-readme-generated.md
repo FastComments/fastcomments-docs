@@ -1,1 +1,3 @@
-Her widget'ı canlı olarak <https://fastcomments.com/commenting-system-for-11ty> adresinde deneyin.
+---
+Her widget'ı canlı olarak deneyin <https://fastcomments.com/commenting-system-for-11ty/>.
+---

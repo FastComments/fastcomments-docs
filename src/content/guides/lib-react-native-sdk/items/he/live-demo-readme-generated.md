@@ -1,1 +1,3 @@
-נסה את כל הווידג'טים בשידור חי ב<https://fastcomments.com/commenting-system-for-react-native>.
+---
+נסה כל וידג'ט בזמן אמת ב <https://fastcomments.com/commenting-system-for-react-native/>.
+---

@@ -1,1 +1,3 @@
-Изпробвайте всеки уиджет на живо на <https://fastcomments.com/commenting-system-for-11ty>.
+---
+Изпробвайте всяко уиджет на живо на <https://fastcomments.com/commenting-system-for-11ty/>.
+---

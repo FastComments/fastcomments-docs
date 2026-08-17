@@ -1,1 +1,3 @@
-Wypróbuj wszystkie widżety na żywo pod adresem <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+Wypróbuj każdy widget na żywo pod adresem <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

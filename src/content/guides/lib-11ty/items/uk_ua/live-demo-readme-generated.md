@@ -1,1 +1,3 @@
-Спробуйте всі віджети наживо на <https://fastcomments.com/commenting-system-for-11ty>.
+---
+Спробуйте кожен віджет у реальному часі за адресою <https://fastcomments.com/commenting-system-for-11ty/>.
+---

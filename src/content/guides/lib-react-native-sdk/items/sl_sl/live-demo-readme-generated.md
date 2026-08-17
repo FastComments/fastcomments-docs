@@ -1,1 +1,3 @@
-Preizkusite vse gradnike v živo na <https://fastcomments.com/commenting-system-for-react-native>.
+---
+Preizkusite vsak pripomoček v živo na <https://fastcomments.com/commenting-system-for-react-native/>.
+---

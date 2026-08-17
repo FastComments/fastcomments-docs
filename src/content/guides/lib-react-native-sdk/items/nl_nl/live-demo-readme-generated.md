@@ -1,1 +1,3 @@
-Probeer elke widget live op <https://fastcomments.com/commenting-system-for-react-native>.
+---
+Probeer elke widget live op <https://fastcomments.com/commenting-system-for-react-native/>.
+---

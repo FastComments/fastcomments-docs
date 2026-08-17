@@ -1,1 +1,3 @@
-Prøv alle widgets live på <https://fastcomments.com/commenting-system-for-hugo>.
+---
+Prøv hver widget live på <https://fastcomments.com/commenting-system-for-hugo/>.
+---

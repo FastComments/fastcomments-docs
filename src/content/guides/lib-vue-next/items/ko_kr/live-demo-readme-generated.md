@@ -1,3 +1,3 @@
 ---
-모든 위젯을 <https://fastcomments.com/commenting-system-for-vue>에서 실시간으로 사용해 보세요.
+모든 위젯을 실시간으로 체험해 보세요 <https://fastcomments.com/commenting-system-for-vue/>.
 ---

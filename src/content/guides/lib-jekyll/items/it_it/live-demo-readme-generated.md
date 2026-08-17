@@ -1,1 +1,3 @@
-Prova ogni widget dal vivo su <https://fastcomments.com/commenting-system-for-jekyll>.
+---
+Prova ogni widget in diretta su <https://fastcomments.com/commenting-system-for-jekyll/>.
+---

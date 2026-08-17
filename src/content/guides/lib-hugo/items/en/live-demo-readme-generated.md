@@ -1,1 +1,1 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-hugo>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-hugo/>.

@@ -1,1 +1,1 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-solidjs>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-solidjs/>.

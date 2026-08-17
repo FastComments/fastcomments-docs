@@ -1,1 +1,3 @@
-Спробуйте кожен віджет наживо на <https://fastcomments.com/commenting-system-for-vue>.
+---
+Спробуйте кожен віджет у реальному часі за <https://fastcomments.com/commenting-system-for-vue/>.
+---

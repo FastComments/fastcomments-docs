@@ -1,1 +1,3 @@
-在 <https://fastcomments.com/commenting-system-for-jekyll> 即時試用每個小工具。
+---
+立即在 <https://fastcomments.com/commenting-system-for-jekyll/> 試用所有小工具。
+---

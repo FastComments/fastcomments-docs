@@ -1,1 +1,3 @@
-Спробуйте кожен віджет у реальному часі на <https://fastcomments.com/commenting-system-for-angular>.
+---
+Спробуйте кожен віджет у реальному часі за <https://fastcomments.com/commenting-system-for-angular/>.
+---

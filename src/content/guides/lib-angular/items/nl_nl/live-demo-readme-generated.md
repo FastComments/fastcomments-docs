@@ -1,1 +1,3 @@
-Probeer elke widget live op <https://fastcomments.com/commenting-system-for-angular>.
+---
+Probeer elke widget live op <https://fastcomments.com/commenting-system-for-angular/>.
+---

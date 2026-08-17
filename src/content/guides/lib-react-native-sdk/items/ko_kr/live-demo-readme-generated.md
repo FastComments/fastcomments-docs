@@ -1,1 +1,3 @@
-모든 위젯을 <https://fastcomments.com/commenting-system-for-react-native>에서 실시간으로 사용해 보세요.
+---
+실시간으로 모든 위젯을 사용해 보세요 <https://fastcomments.com/commenting-system-for-react-native/>.
+---

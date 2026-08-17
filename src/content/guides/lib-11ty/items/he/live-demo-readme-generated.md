@@ -1,1 +1,3 @@
-נסה כל הווידג'טים בשידור חי ב <https://fastcomments.com/commenting-system-for-11ty>.
+---
+נסו כל וידג'ט באופן חי ב <https://fastcomments.com/commenting-system-for-11ty/>.
+---

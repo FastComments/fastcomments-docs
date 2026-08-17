@@ -1,1 +1,3 @@
-Probieren Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-vue>.
+---
+Testen Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-vue/>.
+---

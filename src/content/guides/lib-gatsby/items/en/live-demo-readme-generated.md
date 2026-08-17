@@ -1,1 +1,1 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-gatsby>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-gatsby/>.

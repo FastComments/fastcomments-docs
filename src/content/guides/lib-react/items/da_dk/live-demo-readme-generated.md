@@ -1,1 +1,3 @@
-Prøv hver widget live på <https://fastcomments.com/commenting-system-for-react>.
+---
+Prøv hver widget live på <https://fastcomments.com/commenting-system-for-react/>.
+---

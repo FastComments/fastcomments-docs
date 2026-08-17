@@ -1,1 +1,3 @@
-在 <https://fastcomments.com/commenting-system-for-astro> 立即線上試用所有小工具。
+---
+即時試用所有小工具於 <https://fastcomments.com/commenting-system-for-astro/>。
+---

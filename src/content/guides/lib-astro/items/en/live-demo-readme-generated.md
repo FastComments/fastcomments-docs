@@ -1,1 +1,1 @@
-Try every widget live at <https://fastcomments.com/commenting-system-for-astro>.
+Try every widget live at <https://fastcomments.com/commenting-system-for-astro/>.

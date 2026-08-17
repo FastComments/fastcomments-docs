@@ -1,1 +1,3 @@
-すべてのウィジェットをライブでお試しください <https://fastcomments.com/commenting-system-for-jekyll>.
+---
+すべてのウィジェットをライブで試すには <https://fastcomments.com/commenting-system-for-jekyll/>。
+---

@@ -1,1 +1,3 @@
-Isprobajte svaki vidžet uživo na <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+Isprobajte svaki widget uživo na <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

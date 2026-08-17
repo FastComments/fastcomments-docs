@@ -1,1 +1,3 @@
-Изпробвайте всеки виджет на живо на <https://fastcomments.com/commenting-system-for-angular>.
+---
+Изпробвайте всяко уиджет на живо на <https://fastcomments.com/commenting-system-for-angular/>.
+---

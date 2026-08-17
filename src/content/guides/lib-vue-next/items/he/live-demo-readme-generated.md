@@ -1,1 +1,3 @@
-נסה את כל הווידג'טים באופן חי ב־<https://fastcomments.com/commenting-system-for-vue>.
+---
+נסו כל וידג'ט באופן חי ב-<https://fastcomments.com/commenting-system-for-vue/>.
+---

@@ -1,3 +1,3 @@
 ---
-すべてのウィジェットをライブでお試しください: <https://fastcomments.com/commenting-system-for-solidjs>.
+すべてのウィジェットをライブで試すには <https://fastcomments.com/commenting-system-for-solidjs/>。
 ---

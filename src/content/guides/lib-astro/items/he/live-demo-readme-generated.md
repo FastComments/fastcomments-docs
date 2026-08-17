@@ -1,1 +1,3 @@
-נסה כל ווידג'ט בשידור חי ב־<https://fastcomments.com/commenting-system-for-astro>.
+---
+נסו כל וידג'ט בזמן אמת ב <https://fastcomments.com/commenting-system-for-astro/>.
+---

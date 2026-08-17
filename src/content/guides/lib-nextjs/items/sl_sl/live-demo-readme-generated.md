@@ -1,1 +1,3 @@
-Preizkusite vse pripomočke v živo na <https://fastcomments.com/commenting-system-for-nextjs>.
+---
+Preizkusite vsak pripomoček v živo na <https://fastcomments.com/commenting-system-for-nextjs/>.
+---

@@ -1,1 +1,3 @@
-すべてのウィジェットをライブで試すには <https://fastcomments.com/commenting-system-for-11ty> をご覧ください。
+---
+すべてのウィジェットをライブで試す <https://fastcomments.com/commenting-system-for-11ty/>.
+---

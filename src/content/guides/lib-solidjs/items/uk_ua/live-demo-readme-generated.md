@@ -1,1 +1,3 @@
-Перегляньте всі віджети в режимі реального часу за адресою <https://fastcomments.com/commenting-system-for-solidjs>.
+---
+Спробуйте кожен віджет у реальному часі за <https://fastcomments.com/commenting-system-for-solidjs/>.
+---

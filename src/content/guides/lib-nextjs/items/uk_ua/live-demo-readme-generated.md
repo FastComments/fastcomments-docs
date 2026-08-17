@@ -1,1 +1,3 @@
-Спробуйте кожен віджет онлайн на <https://fastcomments.com/commenting-system-for-nextjs>.
+---
+Спробуйте кожен віджет у реальному часі за <https://fastcomments.com/commenting-system-for-nextjs/>.
+---

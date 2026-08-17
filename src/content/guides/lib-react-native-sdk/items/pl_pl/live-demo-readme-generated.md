@@ -1,1 +1,3 @@
-Wypróbuj każdy widżet na żywo pod <https://fastcomments.com/commenting-system-for-react-native>.
+---
+Wypróbuj każdy widget na żywo pod adresem <https://fastcomments.com/commenting-system-for-react-native/>.
+---

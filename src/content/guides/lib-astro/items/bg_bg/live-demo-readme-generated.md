@@ -1,3 +1,3 @@
 ---
-Опитайте всеки уиджет на живо на <https://fastcomments.com/commenting-system-for-astro>.
+Изпробвайте всеки уиджет на живо на <https://fastcomments.com/commenting-system-for-astro/>.
 ---

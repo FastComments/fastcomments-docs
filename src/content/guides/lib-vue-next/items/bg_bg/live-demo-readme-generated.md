@@ -1,1 +1,3 @@
-Опитайте всеки уиджет на живо на <https://fastcomments.com/commenting-system-for-vue>.
+---
+Изпробвайте всяко уиджет на живо на <https://fastcomments.com/commenting-system-for-vue/>.
+---

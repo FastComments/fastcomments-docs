@@ -1,1 +1,3 @@
-Testen Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-angular>.
+---
+Testen Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-angular/>.
+---

@@ -1,3 +1,3 @@
 ---
-Tüm widget'leri canlı olarak <https://fastcomments.com/commenting-system-for-vue> adresinde deneyin.
+Her widget'ı canlı olarak deneyin <https://fastcomments.com/commenting-system-for-vue/>.
 ---

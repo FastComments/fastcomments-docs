@@ -1,1 +1,3 @@
-נסה כל הווידג'טים בזמן אמת ב<https://fastcomments.com/commenting-system-for-nextjs>.
+---
+נסו כל וידג'ט בזמן אמת ב-<https://fastcomments.com/commenting-system-for-nextjs/>.
+---

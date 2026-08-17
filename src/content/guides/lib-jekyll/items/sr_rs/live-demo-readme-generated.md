@@ -1,1 +1,3 @@
-Испробајте све видгете уживо на <https://fastcomments.com/commenting-system-for-jekyll>.
+---
+Isprobajte svaki vidžet uživo na <https://fastcomments.com/commenting-system-for-jekyll/>.
+---

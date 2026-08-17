@@ -1,1 +1,3 @@
-נסו כל הווידג'טים בשידור חי ב <https://fastcomments.com/commenting-system-for-hugo>.
+---
+נסו כל וידג'ט באופן חי ב-<https://fastcomments.com/commenting-system-for-hugo/>.
+---

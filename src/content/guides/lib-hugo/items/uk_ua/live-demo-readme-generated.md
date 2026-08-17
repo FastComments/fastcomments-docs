@@ -1,1 +1,3 @@
-Спробуйте всі віджети наживо на <https://fastcomments.com/commenting-system-for-hugo>.
+---
+Спробуйте кожен віджет у реальному часі за <https://fastcomments.com/commenting-system-for-hugo/>.
+---

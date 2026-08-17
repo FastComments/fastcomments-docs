@@ -1,3 +1,3 @@
 ---
-Prøv alle widgets live på <https://fastcomments.com/commenting-system-for-gatsby>.
+Prøv hver widget live på <https://fastcomments.com/commenting-system-for-gatsby/>.
 ---

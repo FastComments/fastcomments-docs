@@ -1,3 +1,3 @@
 ---
-Испробајте сваки видџет уживо на <https://fastcomments.com/commenting-system-for-astro>.
+Isprobajte svaki vidžet uživo na <https://fastcomments.com/commenting-system-for-astro/>.
 ---

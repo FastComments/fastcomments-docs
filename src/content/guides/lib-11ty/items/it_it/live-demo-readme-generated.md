@@ -1,1 +1,3 @@
-Prova ogni widget dal vivo su <https://fastcomments.com/commenting-system-for-11ty>.
+---
+Prova ogni widget in diretta su <https://fastcomments.com/commenting-system-for-11ty/>.
+---

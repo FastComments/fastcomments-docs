@@ -1,1 +1,3 @@
-すべてのウィジェットをライブでお試しください <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+すべてのウィジェットをライブで試す <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

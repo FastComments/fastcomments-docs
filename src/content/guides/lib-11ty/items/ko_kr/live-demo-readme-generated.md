@@ -1,1 +1,3 @@
-모든 위젯을 라이브로 사용해 보세요: <https://fastcomments.com/commenting-system-for-11ty>.
+---
+모든 위젯을 실시간으로 사용해 보세요 <https://fastcomments.com/commenting-system-for-11ty/>.
+---

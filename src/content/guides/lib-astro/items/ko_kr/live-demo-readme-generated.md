@@ -1,1 +1,3 @@
-모든 위젯을 <https://fastcomments.com/commenting-system-for-astro>에서 라이브로 사용해 보세요.
+---
+모든 위젯을 실시간으로 사용해 보세요 <https://fastcomments.com/commenting-system-for-astro/>.
+---

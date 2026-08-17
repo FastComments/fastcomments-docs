@@ -1,1 +1,3 @@
-Попробуйте каждый виджет вживую на <https://fastcomments.com/commenting-system-for-nextjs>.
+---
+Попробуйте каждый виджет вживую по адресу <https://fastcomments.com/commenting-system-for-nextjs/>.
+---

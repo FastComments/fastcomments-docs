@@ -1,1 +1,3 @@
-Probieren Sie jedes Widget live unter <https://fastcomments.com/commenting-system-for-jekyll> aus.
+---
+Probieren Sie jedes Widget live aus unter <https://fastcomments.com/commenting-system-for-jekyll/>.
+---

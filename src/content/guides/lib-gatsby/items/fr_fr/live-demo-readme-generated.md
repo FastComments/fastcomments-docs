@@ -1,1 +1,3 @@
-Essayez tous les widgets en ligne sur <https://fastcomments.com/commenting-system-for-gatsby>.
+---
+Essayez chaque widget en direct sur <https://fastcomments.com/commenting-system-for-gatsby/>.
+---

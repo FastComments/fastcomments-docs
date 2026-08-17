@@ -1,1 +1,3 @@
-Испробајте сваки виџет уживо на <https://fastcomments.com/commenting-system-for-hugo>.
+---
+Isprobajte svaki widget uživo na <https://fastcomments.com/commenting-system-for-hugo/>.
+---

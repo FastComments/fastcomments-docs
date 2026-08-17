@@ -1,1 +1,3 @@
-Пробвайте всеки уиджет на живо на <https://fastcomments.com/commenting-system-for-nextjs>.
+---
+Изпробвайте всяко уиджет на живо на <https://fastcomments.com/commenting-system-for-nextjs/>.
+---

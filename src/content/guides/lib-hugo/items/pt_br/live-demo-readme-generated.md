@@ -1,1 +1,3 @@
-Experimente todos os widgets ao vivo em <https://fastcomments.com/commenting-system-for-hugo>.
+---
+Experimente todos os widgets ao vivo em <https://fastcomments.com/commenting-system-for-hugo/>.
+---

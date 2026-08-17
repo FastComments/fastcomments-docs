@@ -1,1 +1,3 @@
-Her widget'i canlı olarak <https://fastcomments.com/commenting-system-for-hugo> adresinde deneyin.
+---
+Her widget'ı canlı olarak deneyin <https://fastcomments.com/commenting-system-for-hugo/>.
+---
