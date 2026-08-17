@@ -1,26 +1,26 @@
-### Install from GitHub
+### Установка с GitHub
 
-Install directly from a release tag (recommended, fully reproducible):
+Установите напрямую из тега релиза (рекомендовано, полностью воспроизводимо):
 
 ```bash
 pip install git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Pin the tag rather than a branch so builds are deterministic. The same form works in `requirements.txt`:
+Закрепите тег вместо ветки, чтобы сборки были детерминированными. Та же форма работает в `requirements.txt`:
 
 ```
 fastcomments @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0
 ```
 
-Each tagged [GitHub Release](https://github.com/FastComments/fastcomments-python/releases) also has a built wheel attached if you prefer to install a binary artifact directly.
+Каждый помеченный [Выпуск GitHub](https://github.com/FastComments/fastcomments-python/releases) также имеет прикреплённый готовый wheel, если вы предпочитаете установить бинарный артефакт напрямую.
 
-### Library Contents
+### Содержимое библиотеки
 
-This library contains two modules: the generated API client and the core Python library which contains hand-written utilities to make working with the API easier, including SSO support.
+Эта библиотека содержит два модуля: сгенерированный клиент API и основную библиотеку Python, которая содержит написанные вручную утилиты, упрощающие работу с API, включая поддержку SSO.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
+- [Документация клиентской библиотеки API](https://github.com/FastComments/fastcomments-python/blob/main/client/README.md)
+- [Документация основной библиотеки, включая примеры SSO](https://github.com/FastComments/fastcomments-python/blob/main/sso/README.md)
 
-### Public vs Secured APIs
+### Публичные и защищённые API
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Для клиента API существует три класса, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` содержит методы, требующие ваш API‑ключ, а `PublicApi` содержит методы, которые можно вызывать напрямую из браузера/мобильного устройства и т.д. без аутентификации. `ModerationApi` предоставляет обширный набор живых и быстрых API модерации. Каждый метод `ModerationApi` принимает параметр `sso` и может аутентифицироваться через SSO или сессионный cookie FastComments.com.
