@@ -1,3 +1,1 @@
----
-Instalirajte WordPress dodatak za live komentare, moderaciju sa vaše kontrolne table, niti samo za članove putem SSO, i sinhronizovane brojeve komentara nazad na objave.
----
+Инсталирајте WordPress додатак за коментаре уживо, модерацију из контролне табле, теме само за чланове преко SSO и број коментара синхронизован назад на објаве.

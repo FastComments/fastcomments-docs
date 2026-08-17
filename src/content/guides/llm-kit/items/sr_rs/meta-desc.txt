@@ -1,3 +1,1 @@
----
-Usmerite Claude, ChatGPT ili Cursor na FastComments dokumentaciju kako bi napisali ispravan kod za integraciju. Dodajte LLM Kit isječak ili povežite MCP server.
----
+Усмерите Claude, ChatGPT или Cursor на FastComments документацију да пишу исправан код за интеграцију. Додајте LLM Kit исечак или повежите MCP сервер.

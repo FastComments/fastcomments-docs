@@ -1,3 +1,1 @@
----
-Dodajte live komentare na Squarespace na tri načina: samo na blog postove, na svaku stranicu na celom sajtu putem umetanja koda, ili na jednu određenu stranicu pomoću blok koda.
----
+Додајте коментаре уживо на Squarespace на три начина: само на блог објаве, на цео сајт преко убацивања кода, или на једну страницу помоћу блока кода.

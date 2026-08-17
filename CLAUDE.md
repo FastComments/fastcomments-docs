@@ -132,6 +132,42 @@ the back-catalog. Two things to know:
 used by the gates, `check`, and `run`'s task discovery. Keep it that way: if `run` used a
 narrower rule it would skip a file the gate rejects.
 
+### A translation has to actually be in the target language
+
+`validate::file_problem` also rejects two failures that every other check was blind to,
+because both produce a perfectly well-formed file:
+
+- **`Untranslated`** - the model handed its input back. Images match, links match, inline
+  code matches, and the cache gets stamped fresh, so nothing was ever going to retry it.
+- **`WrongScript`** - the prose came back in the wrong writing system. `sr_rs` is Serbian
+  **Cyrillic**; nothing in the prompt said so, so the model wrote Latin, which is byte-identical
+  to what `sr_latn_rs` already holds. That shipped the same meta description on two URLs for
+  33 guides and an external crawl flagged every one.
+
+`rust/trans/src/script.rs` owns the locale -> writing-system table, and it has two consumers
+that must agree: `build_prompt` names the script in the prompt (rule 15, added only for
+non-Latin locales - `build_prompt_node_parity` stays byte-identical to the legacy Node
+translator, which is what the fixture tests assert), and `file_problem` rejects output that
+came back without it.
+
+Both checks are **deliberately conservative**, and stay that way:
+
+- Skipped entirely for `en_us` and generated reference indexes, which `run` copies verbatim
+  on purpose.
+- Skipped unless the source has 40+ characters of *prose* - `prose_only` strips code fences,
+  marker blocks, inline code, HTML tags and URLs first. A page that is mostly `curl` examples
+  legitimately survives translation nearly unchanged, and flagging it would queue a
+  re-translation that can never succeed.
+
+**Neither one fails the build.** Same reasoning as a link *count* mismatch: there is no
+deterministic repair, so gating on it would wedge the build behind an LLM that may never
+comply. They make `trans check` non-zero, `build.sh` branches into `trans run`, and `run`
+re-translates them. Worst case is a file retried once per build, never a stuck build.
+
+`trans check` prints mismatch counts per class before the sample; `TRANS_PARITY_LIST=1`
+dumps the full list, which is what you want when triaging a backlog rather than watching a
+build.
+
 ### Generated reference indexes are copied, not translated
 
 `snapshot::source_is_reference_index` exempts a file from translation entirely when it has

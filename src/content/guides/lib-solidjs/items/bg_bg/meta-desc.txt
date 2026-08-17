@@ -1,1 +1,1 @@
-Add comments to a SolidJS app with the official package, including an imperative handle for changing widget config without a remount.
+Добавете коментари към SolidJS приложение с официалния пакет, включително императивен handle за смяна на конфигурацията на уиджета без повторно монтиране.

@@ -1,3 +1,1 @@
----
-Dozvolite čitaocima da odgovaraju GIF‑ovima. Koji animirani formati se čisto otpremaju, kako se obrađuju korisnička otpremanja i kako uključiti ugrađeni GIF birač.
----
+Дозволите читаоцима да одговарају GIF-овима. Који анимирани формати се исправно отпремају, како се обрађују отпремања и како укључити уграђени GIF бирач.

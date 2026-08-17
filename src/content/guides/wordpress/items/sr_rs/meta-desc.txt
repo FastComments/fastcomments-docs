@@ -1,1 +1,1 @@
-Dodajte komentarisanje u realnom vremenu na WordPress uz zvanični dodatak: moderacija na kontrolnoj tabli, SSO za sajtove sa članstvom i sinhronizovani brojevi komentara nazad na objave.
+Додајте коментарисање уживо на WordPress уз званични додатак: модерација са контролне табле, SSO за сајтове са чланством и број коментара синхронизован са објавама.

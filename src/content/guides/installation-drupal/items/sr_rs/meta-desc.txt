@@ -1,3 +1,1 @@
----
-Instalirajte Drupal modul za live komentare kao vidžete blokove ili polja tipa sadržaja, sa SSO, dozvolama po ulozi i rezidencijom podataka u EU.
----
+Инсталирајте Drupal модул за коментаре уживо као блокове виџета или поља типа садржаја, са SSO, дозволама по улози и чувањем података у EU.

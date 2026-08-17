@@ -1,3 +1,1 @@
----
-Prikažite broj živih komentara pored bilo koje objave ili proizvoda pomoću samostalnog vidžeta, po jednoj stranici ili u grupi kroz čitav spisak.
----
+Прикажите број коментара уживо поред било које објаве или производа помоћу самосталног виџета, за једну страницу или групно за цео списак.

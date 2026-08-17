@@ -1,3 +1,1 @@
----
-Dodajte komentare na Jekyll sajt koristeći zvanični gem. Instalirajte ga, dodajte Liquid tag u raspored vašeg posta i konfigurišite widget iz _config.yml.
----
+Додајте коментаре на Jekyll сајт помоћу званичног gem-а. Инсталирајте га, додајте Liquid таг у распоред објаве и подесите виџет из _config.yml.

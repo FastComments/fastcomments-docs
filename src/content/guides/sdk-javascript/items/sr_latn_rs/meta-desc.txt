@@ -1,1 +1,1 @@
-Call the FastComments API from Node.js or the browser. Install with npm, then create and moderate comments, subscribe to live events, and set up SSO.
+Pozivajte FastComments API iz Node.js-a ili iz pregledača. Instalirajte ga preko npm-a, kreirajte i moderišite komentare, pratite događaje uživo i podesite SSO.

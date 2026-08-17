@@ -1,3 +1,1 @@
----
-Kontrolišite koje e‑mailove FastComments šalje vašim čitaocima, kako se oni odjavljuju, kako se obaveštenja ponašaju za SSO korisnike i kako se obrađuju suzdržane adrese.
----
+Контролишите које имејлове FastComments шаље читаоцима, како се они одјављују, како се обавештења понашају за SSO кориснике и како се обрађују потиснуте адресе.

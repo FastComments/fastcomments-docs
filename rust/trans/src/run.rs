@@ -726,7 +726,9 @@ fn build_task_list_filtered(
                 // would skip a file the gate rejects.
                 if !needs {
                     if let Ok(translated) = std::fs::read_to_string(&target) {
-                        if let Some(problem) = crate::validate::file_problem(&content, &translated) {
+                        if let Some(problem) =
+                            crate::validate::file_problem(&content, &translated, locale)
+                        {
                             warn!(
                                 "[parity-mismatch] {guide_id}/{locale}/{}: {} - re-translating",
                                 src.filename,
@@ -767,8 +769,34 @@ fn system_message(locale: &str, locales: &Locales) -> String {
     )
 }
 
-/// Verbatim port of `buildPrompt` at the legacy Node translator:156-188.
+/// The prompt actually sent: the Node-parity shape plus, for locales whose
+/// script the model will not infer, an explicit writing-system directive.
+///
+/// The directive is a deliberate divergence from Node, which is why it lives
+/// here rather than in [`build_prompt_node_parity`]: nothing told the model
+/// that `sr_rs` means Cyrillic, so it wrote Serbian in Latin - identical to
+/// `sr_latn_rs` - on 97 of 108 meta descriptions. Long `.md` bodies carried
+/// enough context to get it right; one-line descriptions did not. See
+/// [`crate::script`], which [`crate::validate`] uses to reject the output.
 fn build_prompt(content: &str, locale: &str, locales: &Locales) -> String {
+    let base = build_prompt_node_parity(content, locale, locales);
+    let Some(script) = crate::script::expected_for(locale) else {
+        return base;
+    };
+    let native = locales.native_name_or_key(locale);
+    base.replace(
+        "\n\nThe title attributes in",
+        &format!(
+            "\n15. Write the translation in the {} script. {native} ({locale}) is written in {}, \
+             and output in any other script is wrong even when the wording is correct.\
+             \n\nThe title attributes in",
+            script.name, script.name
+        ),
+    )
+}
+
+/// Verbatim port of `buildPrompt` at the legacy Node translator:156-188.
+fn build_prompt_node_parity(content: &str, locale: &str, locales: &Locales) -> String {
     let native = locales.native_name_or_key(locale);
     let mut lines: Vec<String> = Vec::new();
     lines.push(format!(
@@ -1428,7 +1456,12 @@ mod prompt_parity_tests {
     //! single-case test never exercised: inline-code blocks,
     //! inline-code-attrs, escaped apostrophes, fenced code, and
     //! api-resource-header tags.
-    use super::{build_prompt, system_message};
+    //! Note these assert `build_prompt_node_parity`, not `build_prompt`.
+    //! The sent prompt adds a writing-system directive for non-Latin locales
+    //! (`ja_jp` here is one), which Node never had - an intentional
+    //! divergence, covered by `script_directive_*` below rather than
+    //! silently baked into these fixtures.
+    use super::{build_prompt, build_prompt_node_parity, system_message};
     use fcdocs_shared::locales::Locales;
     use serde_json::Value;
     use std::path::PathBuf;
@@ -1488,7 +1521,7 @@ mod prompt_parity_tests {
         let node = node_data();
         for loc in ["fr_fr", "de_de", "ja_jp"] {
             for (name, content) in fixtures() {
-                let rust = build_prompt(content, loc, &locales);
+                let rust = build_prompt_node_parity(content, loc, &locales);
                 let expected = node
                     .get(loc)
                     .and_then(|v| v.get("prompts"))
@@ -1502,6 +1535,34 @@ mod prompt_parity_tests {
                     "build_prompt diverged from Node for locale={loc} fixture={name}"
                 );
             }
+        }
+    }
+
+    #[test]
+    fn script_directive_is_added_for_non_latin_locales() {
+        let locales = locales();
+        let prompt = build_prompt("Hello world.", "sr_rs", &locales);
+        assert!(
+            prompt.contains("15. Write the translation in the Cyrillic script."),
+            "sr_rs prompt must name its script:\n{prompt}"
+        );
+        // Slotted into the numbered rules, not appended after the examples.
+        let rule_15 = prompt.find("15. Write").expect("rule 15 present");
+        let source = prompt.find("SOURCE CONTENT:").expect("source marker");
+        let titles = prompt.find("The title attributes in").expect("titles para");
+        assert!(rule_15 < titles && titles < source);
+    }
+
+    #[test]
+    fn script_directive_is_absent_for_latin_locales() {
+        let locales = locales();
+        for loc in ["fr_fr", "sr_latn_rs", "en_us"] {
+            let prompt = build_prompt("Hello world.", loc, &locales);
+            assert_eq!(
+                prompt,
+                build_prompt_node_parity("Hello world.", loc, &locales),
+                "{loc} writes Latin - nothing to add"
+            );
         }
     }
 }

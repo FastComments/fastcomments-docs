@@ -1,3 +1,1 @@
----
-Dozvolite komentatorima da objavljuju izvršivi, sintaksom istaknut kod u vašim temama. Koji jezici su podržani i kako omogućiti deljenje isječaka.
----
+Дозволите коментаторима да објављују извршив код са истакнутом синтаксом у вашим нитима. Који језици су подржани и како да укључите дељење исечака.

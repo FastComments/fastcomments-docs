@@ -1,3 +1,1 @@
----
-Dodajte komentare u Laravel aplikaciju pomoću Blade komponenti. Omotava PHP SDK za pun pristup API-ju i automatski povezuje SSO sa vašim autentifikovanim korisnikom.
----
+Додајте коментаре у Laravel апликацију помоћу Blade компоненти. Омотава PHP SDK за пун приступ API-ју и аутоматски повезује SSO са пријављеним корисником.

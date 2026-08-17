@@ -1,3 +1,1 @@
----
-Dodajte live komentare na Zyro sajt pomoću widgeta za kod, i dodajte plutajući dugme za lajkove kako bi čitaoci mogli da reaguju bez pisanja komentara.
----
+Додајте коментаре уживо на Zyro сајт помоћу виџета за код и додајте плутајуће дугме за лајкове да читаоци могу да реагују без писања коментара.

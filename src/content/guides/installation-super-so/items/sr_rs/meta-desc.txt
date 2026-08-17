@@ -1,3 +1,1 @@
----
-Dodajte inline diskusije na Super.so sajt uz Collab Chat, kako bi čitaoci mogli da istaknu tekst na vašim Notion stranicama i razgovaraju o tome zajedno.
----
+Додајте inline дискусије на Super.so сајт уз Collab Chat, како би читаоци могли да означе текст на вашим Notion страницама и разговарају о њему.

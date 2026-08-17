@@ -1,3 +1,1 @@
-Call the FastComments API from Go. Install with go get, then create, fetch, and moderate comments, with SSO helpers and every endpoint documented.
-
----
+Wywołaj API FastComments z Go. Zainstaluj przez go get, a następnie twórz, pobieraj i moderuj komentarze, korzystając z pomocników SSO oraz dokumentacji wszystkich endpointów.

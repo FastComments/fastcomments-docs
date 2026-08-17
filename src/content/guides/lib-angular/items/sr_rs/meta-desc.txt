@@ -1,3 +1,1 @@
----
-Dodajte komentare u Angular aplikaciju pomoću zvaničnog paketa. Instalirajte ga, ubacite komponentu u šablon i prosledite svoj tenant i ID stranice.
----
+Додајте коментаре у Angular апликацију помоћу званичног пакета. Инсталирајте га, убаците компоненту у шаблон и проследите свој tenant и ID странице.

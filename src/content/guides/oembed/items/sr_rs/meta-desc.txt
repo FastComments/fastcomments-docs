@@ -1,3 +1,1 @@
----
-Ugradite FastComments nit bilo gde koja prihvata oEmbed URL, tako da komentari putuju sa sadržajem umesto da budu vezani za jednu stranicu.
----
+Уградите FastComments нит свуда где се прихвата oEmbed URL, тако да коментари путују са садржајем уместо да буду везани за једну страницу.

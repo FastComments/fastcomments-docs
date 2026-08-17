@@ -1,3 +1,1 @@
----
-Dodajte komentare u Vue 2 aplikaciju. Instalirajte paket, prikažite komponentu widgeta i ažurirajte trenutnu stranicu kada vaša jednopage aplikacija promeni rute.
----
+Додајте коментаре у Vue 2 апликацију. Инсталирајте пакет, прикажите компоненту виџета и ажурирајте текућу страницу када једностранична апликација промени руту.

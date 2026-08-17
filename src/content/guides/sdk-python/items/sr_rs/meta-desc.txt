@@ -1,1 +1,1 @@
-Pozovite FastComments API iz Pythona. Instalirajte pomoću pip‑a, zatim kreirajte, preuzmite i moderirajte komentare, uz SSO pomoćnike i sve dokumentovane krajnje tačke.
+Позовите FastComments API из Python-а. Инсталирајте помоћу pip-а, па креирајте, преузимајте и модерирајте коментаре, уз SSO помоћнике и све крајње тачке.

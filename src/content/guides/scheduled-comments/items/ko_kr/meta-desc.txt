@@ -1,1 +1,1 @@
-Drip comments into a thread over time so a new page does not look empty. How to schedule the playback and the import format it expects.
+새 페이지가 비어 보이지 않도록 댓글을 시간에 걸쳐 스레드에 순차적으로 노출합니다. 재생 일정을 설정하는 방법과 필요한 가져오기 형식을 안내합니다.

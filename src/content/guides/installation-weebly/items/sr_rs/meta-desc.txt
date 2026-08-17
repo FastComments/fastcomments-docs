@@ -1,3 +1,1 @@
----
-Dodajte live komentare na Weebly blog tako što ćete zalepiti FastComments snippet u postavke bloga, a zatim objaviti sajt.
----
+Додајте коментаре уживо на Weebly блог тако што ћете налепити FastComments исечак у подешавања блога, а затим објавити сајт.

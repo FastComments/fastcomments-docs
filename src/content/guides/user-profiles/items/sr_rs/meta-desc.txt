@@ -1,3 +1,1 @@
----
-Dajte svojoj zajednici prave profile: avatare, biografije, društvene veze, osvojene značke, direktno slanje poruka i feed aktivnosti, uz kontrole privatnosti kroz ceo sistem.
----
+Дајте својој заједници праве профиле: аватаре, биографије, линкове ка друштвеним мрежама, значке, директне поруке и фид активности, уз контроле приватности.

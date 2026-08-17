@@ -1,3 +1,1 @@
----
-Dodajte live komentare na GoDaddy sajt pomoću oblasti za kod, objavite i ispravite grešku domena koja se pojavljuje kada widget radi na neregistrovanom domenu.
----
+Додајте коментаре уживо на GoDaddy сајт помоћу области за кôд, објавите и исправите грешку домена која се појављује када виџет ради на нерегистрованом домену.

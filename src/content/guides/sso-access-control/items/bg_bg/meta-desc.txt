@@ -1,1 +1,1 @@
-Decide per user who can read and who can post, straight from your SSO payload. The spec, how to implement it, and example API calls.
+Определяйте за всеки потребител кой може да чете и кой може да публикува, направо от вашия SSO payload. Спецификацията, как да я внедрите и примерни API заявки.

@@ -40,15 +40,43 @@ pub enum Problem {
     /// and dropping the ENTIRE page from the build, so it has to be a
     /// hard failure here rather than a warning nobody reads.
     UnparseableScreenshot { body: String, error: String },
+    /// The "translation" is the English source, unchanged - the model echoed
+    /// its input back. Nothing downstream can tell that apart from a good
+    /// translation, so the page ships an English description that collides
+    /// with the English page and with every other locale that failed the
+    /// same way. 13 `meta-desc.txt` files were sitting like this, and the
+    /// cache had them stamped as fresh, so nothing was ever going to retry.
+    Untranslated,
+    /// The translation is not in the locale's writing system - `sr_rs`
+    /// (Serbian Cyrillic) coming back in Latin, which makes it byte-identical
+    /// to `sr_latn_rs`. See [`crate::script`].
+    WrongScript { expected: &'static str },
 }
 
 impl Problem {
+    /// Short stable label for grouping a large mismatch list by failure mode.
+    pub fn class(&self) -> &'static str {
+        match self {
+            Problem::Images(_) => "images",
+            Problem::Links(_) => "link targets",
+            Problem::UnparseableScreenshot { .. } => "unparseable app-screenshot",
+            Problem::Untranslated => "untranslated (English echoed back)",
+            Problem::WrongScript { .. } => "wrong script",
+        }
+    }
+
     pub fn describe(&self) -> String {
         match self {
             Problem::Images(diff) => diff.describe(),
             Problem::Links(diff) => diff.describe(),
             Problem::UnparseableScreenshot { body, error } => {
                 format!("app-screenshot block does not parse ({error}): [app-screenshot-start{body}app-screenshot-end]")
+            }
+            Problem::Untranslated => {
+                "identical to the English source - the model echoed its input back".to_string()
+            }
+            Problem::WrongScript { expected } => {
+                format!("contains no {expected} characters - translated into the wrong script")
             }
         }
     }
@@ -80,7 +108,10 @@ impl Mismatch {
 /// agree: if `run` used a narrower rule it would skip a file the gate
 /// rejects, and the build would fail forever with nothing trying to fix
 /// it.
-pub fn file_problem(source: &str, translated: &str) -> Option<Problem> {
+pub fn file_problem(source: &str, translated: &str, locale: &str) -> Option<Problem> {
+    if let Some(problem) = language_problem(source, translated, locale) {
+        return Some(problem);
+    }
     if let Some(diff) = image_diff(source, translated) {
         return Some(Problem::Images(diff));
     }
@@ -103,6 +134,106 @@ pub fn file_problem(source: &str, translated: &str) -> Option<Problem> {
     }
     None
 }
+
+/// A source needs at least this much prose before "did the language actually
+/// change?" is answerable. Under it, an unchanged translation is normal: a
+/// stub whose only words are product names, or an item that is one code
+/// block and a caption, legitimately survives translation byte-for-byte.
+const MIN_PROSE_FOR_LANGUAGE_CHECKS: usize = 40;
+
+/// Did the text come back in the wrong language, or not translated at all?
+///
+/// Deliberately conservative. Both checks are skipped unless the source
+/// carries real prose, and skipped entirely for the two cases `run` copies
+/// verbatim on purpose (`en_us`, and generated reference indexes - see
+/// [`crate::snapshot::source_is_reference_index`]). A false positive here is
+/// not a cosmetic bug: it queues a re-translation that can never succeed, on
+/// every build, forever.
+fn language_problem(source: &str, translated: &str, locale: &str) -> Option<Problem> {
+    if locale == "en_us" || crate::snapshot::source_is_reference_index(source) {
+        return None;
+    }
+    if prose_only(source).chars().count() < MIN_PROSE_FOR_LANGUAGE_CHECKS {
+        return None;
+    }
+    // Compare normalized: translated files come back wrapped in `---` fences
+    // and re-wrapped inconsistently, so raw equality would miss the echo.
+    if normalized(translated) == normalized(source) {
+        return Some(Problem::Untranslated);
+    }
+    let script = crate::script::expected_for(locale)?;
+    if !script.present_in(&prose_only(translated)) {
+        return Some(Problem::WrongScript {
+            expected: script.name,
+        });
+    }
+    None
+}
+
+/// `text` with the `---` fences translators add and all whitespace runs
+/// collapsed, so two spellings of the same content compare equal.
+fn normalized(text: &str) -> String {
+    text.lines()
+        .filter(|l| !FENCE_LINE.is_match(l))
+        .flat_map(|l| l.split_whitespace())
+        .collect::<Vec<_>>()
+        .join(" ")
+}
+
+/// `text` with everything that survives translation unchanged removed: code
+/// fences, marker blocks, inline code, HTML tags, and URLs.
+///
+/// What is left is the natural-language text, which is the only part either
+/// language check can say anything about. Without this, a page that is mostly
+/// `curl` examples looks like untranslated English no matter how good the
+/// translation of its two prose sentences is.
+fn prose_only(text: &str) -> String {
+    let mut out = String::with_capacity(text.len());
+    let mut in_fence = false;
+    let mut in_marker = false;
+    for line in text.lines() {
+        let trimmed = line.trim();
+        if trimmed.starts_with("```") {
+            in_fence = !in_fence;
+            continue;
+        }
+        if in_fence {
+            continue;
+        }
+        // Marker blocks span lines: `[inline-code-start]` .. `[inline-code-end]`.
+        if MARKER_START.is_match(trimmed) {
+            in_marker = true;
+        }
+        let marker_ends_here = MARKER_END.is_match(trimmed);
+        if in_marker {
+            if marker_ends_here {
+                in_marker = false;
+            }
+            continue;
+        }
+        if FENCE_LINE.is_match(trimmed) {
+            continue;
+        }
+        let stripped = INLINE_NOISE.replace_all(trimmed, " ");
+        out.push_str(stripped.trim());
+        out.push(' ');
+    }
+    out.split_whitespace().collect::<Vec<_>>().join(" ")
+}
+
+static FENCE_LINE: once_cell::sync::Lazy<regex::Regex> =
+    once_cell::sync::Lazy::new(|| regex::Regex::new(r"^\s*-{3,}\s*$").expect("regex"));
+
+static MARKER_START: once_cell::sync::Lazy<regex::Regex> =
+    once_cell::sync::Lazy::new(|| regex::Regex::new(r"\[[a-z-]+-start\b").expect("regex"));
+
+static MARKER_END: once_cell::sync::Lazy<regex::Regex> =
+    once_cell::sync::Lazy::new(|| regex::Regex::new(r"[a-z-]+-end\]").expect("regex"));
+
+/// Inline code spans, HTML tags, and bare URLs - none of them translated.
+static INLINE_NOISE: once_cell::sync::Lazy<regex::Regex> = once_cell::sync::Lazy::new(|| {
+    regex::Regex::new(r"`[^`]*`|<[^>]+>|https?://\S+").expect("regex")
+});
 
 /// Compare every existing translated item against its default-locale
 /// source. Files that don't exist yet are NOT reported here - that's
@@ -140,7 +271,7 @@ pub fn audit(guides_dir: &Path, locales: &Locales) -> Vec<Mismatch> {
                 let Ok(translated) = std::fs::read_to_string(&target) else {
                     continue; // not translated yet - `check` owns that gap
                 };
-                if let Some(problem) = file_problem(&source, &translated) {
+                if let Some(problem) = file_problem(&source, &translated, locale) {
                     out.push(Mismatch {
                         guide_id: guide_id.clone(),
                         locale: locale.clone(),
@@ -329,6 +460,69 @@ mod tests {
         let p = root.join(rel);
         std::fs::create_dir_all(p.parent().unwrap()).unwrap();
         std::fs::write(&p, body).unwrap();
+    }
+
+    /// The exact file that shipped on docs.fastcomments.com: the model
+    /// handed back its input, the cache stamped it fresh, and three URLs
+    /// carried the same English meta description.
+    const GATSBY_EN: &str = "Add comments to a Gatsby site. A complete working example \
+                             project you can copy, showing where the widget goes and how \
+                             to pass the page ID.";
+
+    #[test]
+    fn echoed_source_is_untranslated() {
+        assert!(matches!(
+            file_problem(GATSBY_EN, GATSBY_EN, "ja_jp"),
+            Some(Problem::Untranslated)
+        ));
+    }
+
+    #[test]
+    fn echoed_source_is_caught_through_the_fence_wrapper() {
+        let wrapped = format!("---\n{GATSBY_EN}\n---\n");
+        assert!(matches!(
+            file_problem(GATSBY_EN, &wrapped, "bg_bg"),
+            Some(Problem::Untranslated)
+        ));
+    }
+
+    #[test]
+    fn a_real_translation_passes() {
+        let ja = "Gatsby サイトにコメントを追加します。ウィジェットを配置する場所と\
+                  ページ ID の渡し方を示す、コピーできる完全な動作サンプルプロジェクトです。";
+        assert!(file_problem(GATSBY_EN, ja, "ja_jp").is_none());
+    }
+
+    #[test]
+    fn serbian_latin_output_fails_for_the_cyrillic_locale() {
+        let latin = "Dodajte komentare na Gatsby sajt. Potpuni radni primer projekta koji \
+                     možete kopirati, pokazujući gde se postavlja widget.";
+        assert!(matches!(
+            file_problem(GATSBY_EN, latin, "sr_rs"),
+            Some(Problem::WrongScript { expected: "Cyrillic" })
+        ));
+        // Same bytes are correct for the Latin locale.
+        assert!(file_problem(GATSBY_EN, latin, "sr_latn_rs").is_none());
+    }
+
+    #[test]
+    fn en_us_is_copied_verbatim_on_purpose() {
+        assert!(file_problem(GATSBY_EN, GATSBY_EN, "en_us").is_none());
+    }
+
+    #[test]
+    fn a_source_without_prose_is_not_judged() {
+        // All code and identifiers: an unchanged translation is correct here,
+        // and flagging it would queue a re-translation that never converges.
+        let src = "```bash\nnpm i fastcomments\n```\n";
+        assert!(file_problem(src, src, "ja_jp").is_none());
+    }
+
+    #[test]
+    fn prose_is_measured_with_code_removed() {
+        // Enough bytes overall, but almost all of it is a fenced command.
+        let src = "Run it.\n\n```bash\ncurl -X POST https://example.com/api/v1/comments\n```\n";
+        assert!(file_problem(src, src, "ja_jp").is_none());
     }
 
     #[test]

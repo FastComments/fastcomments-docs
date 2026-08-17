@@ -1,3 +1,1 @@
----
-Instalirajte FastComments Moodle dodatak da biste dodali komentare na kurseve i aktivnosti. SSO je automatski, tako da studenti nikada ne moraju da se prijave dva puta.
----
+Инсталирајте FastComments Moodle додатак да додате коментаре на курсеве и активности. SSO је аутоматски, па студенти никада не морају да се пријављују двапут.

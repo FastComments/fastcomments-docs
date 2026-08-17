@@ -1,3 +1,1 @@
----
-Dozvolite čitaocima da se prijave putem linka poslatog e‑mailom umesto da pamte lozinku. Kako funkcionišu linkovi za prijavu, ko ih prima i kako ostaju sigurni.
----
+Дозволите читаоцима да се пријаве преко линка послатог имејлом уместо да памте лозинку. Како раде линкови за пријаву, ко их добија и како остају безбедни.

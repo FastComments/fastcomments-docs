@@ -1,3 +1,1 @@
----
-Dodajte komentare u realnom vremenu na blogu Systeme.io tako što ćete ubaciti isječak u šablon teme bloga, ili u bilo koji drugi šablon stranice koji možete uređivati.
----
+Додајте коментаре уживо на Systeme.io блог тако што ћете налепити исечак кода у шаблон теме блога или у било који други шаблон странице који можете да мењате.

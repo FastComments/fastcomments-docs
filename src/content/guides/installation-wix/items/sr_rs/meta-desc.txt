@@ -1,3 +1,1 @@
----
-Dodajte live komentare na Wix pomoću embed bloka i postavite ID teme tako da svaka stranica i blog post imaju svoj razgovor umesto da dele jedan.
----
+Додајте коментаре уживо на Wix помоћу embed блока и подесите ID теме тако да свака страница и блог објава имају свој разговор уместо заједничког.

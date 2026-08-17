@@ -1,1 +1,1 @@
-Add comments to a Gatsby site. A complete working example project you can copy, showing where the widget goes and how to pass the page ID.
+Gatsby サイトにコメントを追加します。そのままコピーできる完全な動作サンプルプロジェクトで、ウィジェットの配置場所とページ ID の渡し方がわかります。

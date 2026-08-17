@@ -1,1 +1,1 @@
-Call the FastComments API from Rust. Install with cargo add, then create, fetch, and moderate comments, with SSO helpers and every endpoint documented.
+Извиквайте FastComments API от Rust. Инсталирайте с cargo add и създавайте, извличайте и модерирайте коментари, със SSO помощници и документиран всеки endpoint.

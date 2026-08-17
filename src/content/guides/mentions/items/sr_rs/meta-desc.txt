@@ -1,3 +1,1 @@
----
-Dozvolite komentatorima da označavaju jedni druge pomoću @pomena, pokrenu obaveštenje i unapred popune pominjanja iz vašeg koda. Uključuje kako automatsko dovršavanje razrešava imena.
----
+Дозволите коментаторима да означавају једни друге помоћу @помена, што шаље обавештење, и попуните помене из свог кода. Аутоматско довршавање разрешава имена.

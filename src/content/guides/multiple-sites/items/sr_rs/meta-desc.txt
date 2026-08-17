@@ -1,3 +1,1 @@
----
-Pokrenite više domena ili poddomena sa jednog FastComments naloga, sa imenima pošiljaoca i logotipima po domenu, tenantom po okruženju i deljenim nitima.
----
+Водите више домена или поддомена са једног FastComments налога, уз имена пошиљаоца и логотипе по домену, засебан tenant по окружењу и дељене нити.

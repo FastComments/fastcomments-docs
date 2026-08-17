@@ -1,3 +1,1 @@
----
-Dozvolite čitaocima da označe bilo koju rečenicu na vašoj stranici i da je diskutuju u liniji. Niti se sidre na tačan tekst i sinhronizuju uživo kod svih koji čitaju.
----
+Дозволите читаоцима да означе било коју реченицу на страници и разговарају одмах ту. Нити се везују за тачан текст и синхронизују уживо код свих читалаца.

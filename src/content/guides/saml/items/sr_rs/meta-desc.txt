@@ -1,3 +1,1 @@
----
-Postavite SAML 2.0 jedinstvenu prijavu tako da osoblje i članovi pristupaju FastComments putem vašeg korporativnog provajdera identiteta. Mapiranje uloga, testiranje i česte greške.
----
+Подесите SAML 2.0 јединствену пријаву да особље и чланови приступају FastComments-у преко корпоративног провајдера идентитета. Мапирање улога, тестирање, грешке.

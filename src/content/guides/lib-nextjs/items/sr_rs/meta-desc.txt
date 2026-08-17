@@ -1,3 +1,1 @@
----
-Dodajte komentare u Next.js aplikaciju pomoću zvaničnog paketa, sa spremnim komponentama i napomenama za implementaciju na Vercel.
----
+Додајте коментаре у Next.js апликацију помоћу званичног пакета, уз готове компоненте и напомене за постављање на Vercel.

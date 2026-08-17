@@ -1,3 +1,1 @@
----
-Dodajte odeljak za komentare u ThriveCart Learn+ kurseve pomoću podešavanja prilagođenog koda, kako bi studenti mogli postavljati pitanja unutar svake lekcije.
----
+Додајте одељак за коментаре у ThriveCart Learn+ курсеве помоћу подешавања прилагођеног кода, да полазници могу да постављају питања у свакој лекцији.

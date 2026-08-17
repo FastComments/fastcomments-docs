@@ -1,4 +1,1 @@
----
-Dozvolite čitaocima da kliknu na mesto na slici i započnu razgovor o tome. Vizuelni markeri zakačuju svaku nit na tačnu tačku i sinhronizuju se uživo kod svih gledalaca.
-
----
+Дозволите читаоцима да кликну на место на слици и започну разговор о њему. Визуелни маркери каче сваку нит за тачну тачку и синхронизују се уживо.

@@ -1,2 +1,1 @@
----
-Pokrenite FastComments u potpunosti na svojoj infrastrukturi. Instance, konfiguracija, režim održavanja, zaključavanja, više domena i sigurnosni model.
+Покрените FastComments у потпуности на сопственој инфраструктури. Инстанце, конфигурација, режим одржавања, закључавања, више домена и безбедносни модел.

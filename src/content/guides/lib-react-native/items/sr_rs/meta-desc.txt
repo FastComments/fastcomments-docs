@@ -1,3 +1,1 @@
----
-Ugradite vidžete za uživo komentare i čet u React Native aplikaciju sa SSO, plus kada se odlučiti za native SDK umesto webview vidžeta.
----
+Уградите виџете за коментаре и чет уживо у React Native апликацију уз SSO, и сазнајте када уместо webview виџета треба посегнути за нативним SDK-ом.

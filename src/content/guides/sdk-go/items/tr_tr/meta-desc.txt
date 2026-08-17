@@ -1,1 +1,1 @@
-Call the FastComments API from Go. Install with go get, then create, fetch, and moderate comments, with SSO helpers and every endpoint documented.
+FastComments API'sini Go'dan çağırın. go get ile kurun, ardından yorumları oluşturun, alın ve denetleyin; SSO yardımcıları ve tüm uç noktalar belgelenmiştir.

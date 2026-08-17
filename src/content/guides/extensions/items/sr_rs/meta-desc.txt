@@ -1,3 +1,1 @@
----
-Dodajte svoj sopstveni markup, event listener‑e i logiku u widget za komentare pomoću Ekstenzija. Životni ciklus, objekat ekstenzije i API koji možete pozvati.
----
+Додајте сопствени markup, ослушкиваче догађаја и логику у виџет за коментаре помоћу Екстензија. Животни циклус, објекат екстензије и API који можете позвати.

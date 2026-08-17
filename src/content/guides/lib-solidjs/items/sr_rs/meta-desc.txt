@@ -1,3 +1,1 @@
----
-Dodajte komentare u SolidJS aplikaciju koristeći zvanični paket, uključujući imperativni rukovalac za promenu konfiguracije widgeta bez ponovnog učitavanja.
----
+Додајте коментаре у SolidJS апликацију помоћу званичног пакета, укључујући императивни хендл за промену конфигурације виџета без поновног монтирања.

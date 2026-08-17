@@ -1,1 +1,1 @@
-Dodajte sekciju za komentare u Bubble.io aplikaciju pomoću HTML bloka, uključujući podešavanja širine i rasporeda koja sprečavaju da se vidžet iseče.
+Додајте секцију за коментаре у Bubble.io апликацију помоћу HTML блока, укључујући подешавања ширине и распореда која спречавају да се виџет исече.

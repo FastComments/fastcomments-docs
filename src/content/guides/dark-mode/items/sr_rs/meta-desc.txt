@@ -1,3 +1,1 @@
----
-Neka komentari prate tamnu temu vašeg sajta. Detektujte je iz operativnog sistema, prebacite je sami ili koristite ugrađenu podršku za WordPress Networker.
----
+Нека коментари прате тамну тему вашег сајта. Детектујте је из оперативног система, пребацујте је сами или користите уграђену подршку за WordPress Networker.

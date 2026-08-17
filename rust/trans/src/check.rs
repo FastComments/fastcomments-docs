@@ -204,8 +204,24 @@ pub async fn run() -> Result<()> {
         }
     }
     if !parity_mismatches.is_empty() {
-        info!("parity mismatches (translated item's images or link targets differ from the source's):");
-        for m in parity_mismatches.iter().take(10) {
+        info!("parity mismatches (translated item's images, link targets, language, or script differ from the source's):");
+        // Counts per class first: at four figures, a 10-line sample says
+        // nothing about whether this is one systemic failure or a long tail.
+        let mut by_class: BTreeMap<&'static str, usize> = BTreeMap::new();
+        for m in &parity_mismatches {
+            *by_class.entry(m.problem.class()).or_default() += 1;
+        }
+        for (class, count) in &by_class {
+            info!("  {count} x {class}");
+        }
+        // TRANS_PARITY_LIST=1 dumps every one, for triaging a backlog
+        // rather than watching a build.
+        let sample = if std::env::var("TRANS_PARITY_LIST").is_ok() {
+            parity_mismatches.len()
+        } else {
+            10
+        };
+        for m in parity_mismatches.iter().take(sample) {
             info!("  {}", m.describe());
         }
     }

@@ -1,3 +1,1 @@
----
-Dodajte live komentare na Framer sajt pomoću embed bloka i Framer‑specifičnog snippet‑a, uz podešavanja visine koja sprečavaju da se widget iseče.
----
+Додајте коментаре уживо на Framer сајт помоћу embed блока и snippet-а за Framer, уз подешавања висине која спречавају да се виџет пресече.

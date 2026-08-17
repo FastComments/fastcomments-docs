@@ -1,3 +1,1 @@
----
-Razumite administratore, moderatore i komentatore u FastComments. Kako funkcionišu korisnička imena, kako dodati svaki tip i kako promeniti administratorska ovlašćenja.
----
+Упознајте администраторе, модераторе и коментаторе у FastComments-у. Како раде корисничка имена, како додати сваки тип и променити администраторске дозволе.

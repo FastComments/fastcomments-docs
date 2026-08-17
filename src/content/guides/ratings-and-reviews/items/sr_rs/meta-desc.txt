@@ -1,3 +1,1 @@
----
-Prikupljajte ocene u zvezdicama i pisane recenzije, definišite svoja pitanja i prikažite rezultate pomoću widgeta za pregled ili ih preuzmite putem API-ja.
----
+Прикупљајте оцене звездицама и писане рецензије, дефинишите сопствена питања и прикажите резултате збирним виџетом или их преузмите преко API-ја.

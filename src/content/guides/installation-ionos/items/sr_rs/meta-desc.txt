@@ -1,3 +1,1 @@
----
-Dodajte live komentare na IONOS veb sajt. Trik je element kontakt forme, koji je mesto gde IONOS builder omogućava da nalepite prilagođeni kod.
----
+Додајте коментаре уживо на IONOS веб-сајт. Трик је елемент контакт форме, јер је то место где IONOS builder дозвољава лепљење сопственог кода.

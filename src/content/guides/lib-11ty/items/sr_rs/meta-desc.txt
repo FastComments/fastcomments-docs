@@ -1,3 +1,1 @@
----
-Dodajte komentare na Eleventy sajt koristeći zvanični dodatak. Ubacite kratki kod u vaš šablon, ili ručno povežite widget i preskočite dodatak.
----
+Додајте коментаре на Eleventy сајт помоћу званичног додатка. Убаците shortcode у свој шаблон или ручно повежите виџет и потпуно прескочите додатак.

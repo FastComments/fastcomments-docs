@@ -1,3 +1,1 @@
----
-Dozvolite čitaocima da reaguju na stranicu bez pisanja komentara, koristeći prilagodljive emoji reakcije iznad teme ili plutajući dugme za lajkove.
----
+Дозволите читаоцима да реагују на страницу без писања коментара, помоћу прилагодљивих емоџи реакција изнад нити или плутајућег дугмета за лајкове.

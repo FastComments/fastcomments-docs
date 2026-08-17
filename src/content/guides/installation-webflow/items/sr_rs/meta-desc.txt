@@ -1,3 +1,1 @@
----
-Dodajte live komentare u Webflow pomoću embed block, na statičnoj stranici ili kroz čitavu kolekciju, zatim objavite da bi bili aktivni.
----
+Додајте коментаре уживо у Webflow помоћу embed блока, на статичној страници или у целој колекцији, а затим објавите сајт да постану активни.

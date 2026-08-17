@@ -1,3 +1,1 @@
----
-Dodajte komentare, live chat i recenzije u Vue 3 aplikaciju. Instalirajte paket, renderujte komponentu i prebacujte teme dok se vaša jednopage aplikacija navigira.
----
+Додајте коментаре, live chat и рецензије у Vue 3 апликацију. Инсталирајте пакет, рендерујте компоненту и мењајте нити док се крећете кроз апликацију.

@@ -1,3 +1,1 @@
----
-Pozovite FastComments API direktno iz React Native aplikacije da kreirate, preuzimate i moderirate komentare bez prolaska kroz widget.
----
+Позовите FastComments API директно из React Native апликације да креирате, преузимате и модерирате коментаре без коришћења виџета.

@@ -1,3 +1,1 @@
----
-Dozvolite čitaocima da komentarišu bez prepreka. Uporedite linkove za prijavu bez lozinke, lozinke, SSO i SAML da izaberete metod prijave koji će vaša publika prihvatiti.
----
+Дозволите читаоцима да коментаришу без препрека. Упоредите линкове за пријаву без лозинке, лозинке, SSO и SAML и изаберите начин који ће публика прихватити.

@@ -1,3 +1,1 @@
----
-Generišite potpisane FastComments SSO tokena u PHP-u tako da vaši prijavljeni korisnici komentarišu pod svojim imenom, bez dodatnog naloga i dodatnog koraka za prijavu.
----
+Генеришите потписане FastComments SSO токене у PHP-у да ваши пријављени корисници коментаришу под својим именом, без другог налога и додатног корака пријаве.

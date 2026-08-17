@@ -1,3 +1,1 @@
----
-Prodajte komentarisanje pod vašim brendom. Kreirajte i upravljajte zakupcima putem API-ja ili kontrolne table, pri čemu naplatu obavljate vi ili FastComments.
----
+Продајте коментарисање под сопственим брендом. Креирајте tenant налоге и управљајте њима преко API-ја или контролне табле, уз наплату коју водите ви или FastComments.

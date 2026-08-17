@@ -1,3 +1,1 @@
----
-Pređite na FastComments sa Disqus-a ili drugog provajdera, uvezite WordPress komentare, premestite korisnike i domene između zakupaca i izvezite svoje podatke bilo kada.
----
+Пређите на FastComments са Disqus-а или другог провајдера, увезите WordPress коментаре, преместите кориснике и домене између tenant-а и извезите податке.

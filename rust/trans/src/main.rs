@@ -30,6 +30,7 @@ mod json_translator;
 mod links;
 mod llm_client;
 mod run;
+mod script;
 mod snapshot;
 mod ui;
 mod validate;

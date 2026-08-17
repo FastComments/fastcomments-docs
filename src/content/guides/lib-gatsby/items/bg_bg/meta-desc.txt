@@ -1,1 +1,1 @@
-Add comments to a Gatsby site. A complete working example project you can copy, showing where the widget goes and how to pass the page ID.
+Добавете коментари към Gatsby сайт. Пълен работещ примерен проект за копиране, който показва къде се поставя уиджетът и как да подадете ID на страницата.

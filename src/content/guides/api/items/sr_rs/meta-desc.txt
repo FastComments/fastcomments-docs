@@ -1,3 +1,1 @@
----
-Kreirajte, preuzimajte, moderirajte i izvozite komentare putem HTTP-a. Svaki FastComments endpoint sa svojim tipovima zahteva i odgovora, uključujući glasove, korisnike i stranice.
----
+Креирајте, преузимајте, модерирајте и извозите коментаре преко HTTP-а. Сваки FastComments endpoint са типовима захтева и одговора: гласови, корисници, странице.

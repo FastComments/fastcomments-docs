@@ -1,4 +1,1 @@
----
-Dodajte nativne komentare, čet i feedove u Android aplikaciju. Bezbedan SSO, potpuna prilagodba tema i smernice za memoriju za dugotrajne ekrane.
-
----
+Додајте нативне коментаре, чет и фидове у Android апликацију. Secure SSO, потпуно прилагођавање теме и смернице за меморију на дуготрајним екранима.

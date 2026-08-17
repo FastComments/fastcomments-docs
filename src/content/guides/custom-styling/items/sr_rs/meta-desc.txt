@@ -1,3 +1,1 @@
----
-Preoblikujte svaki deo vidžeta za komentare svojim CSS-om. Potpuni podrazumevani stil za v2, plus vidžeti za najnovije komentare i najraspravljanije.
----
+Преобликујте сваки део виџета за коментаре сопственим CSS-ом. Комплетан подразумевани стилски лист за v2, плус виџети за најновије и најразматраније коментаре.

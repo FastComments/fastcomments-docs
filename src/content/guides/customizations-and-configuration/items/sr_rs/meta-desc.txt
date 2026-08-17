@@ -1,3 +1,1 @@
----
-Konfigurišite komentar widget od početka do kraja: na kojoj stranici pripada tema, prilagođeni CSS i fontovi, tamni režim, zamene teksta, podrazumevane postavke moderacije i SSO.
----
+Подесите виџет за коментаре у потпуности: којој страници нит припада, прилагођени CSS и фонтови, тамни режим, замене текста, модерација и SSO.

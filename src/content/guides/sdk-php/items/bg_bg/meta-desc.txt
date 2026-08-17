@@ -1,1 +1,1 @@
-Call the FastComments API from PHP. Install with Composer, then create, fetch, and moderate comments, with request models and SSO helpers included.
+Извиквайте FastComments API от PHP. Инсталирайте със Composer и създавайте, извличайте и модерирайте коментари, с включени модели на заявки и SSO помощници.

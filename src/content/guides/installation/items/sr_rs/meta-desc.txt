@@ -1,3 +1,1 @@
----
-Dodajte sekciju za komentare na bilo koji veb sajt za otprilike pet minuta. Gotovi isječci za WordPress, React, Vue, Angular, React Native i običan HTML.
----
+Додајте секцију за коментаре на било који сајт за отприлике пет минута. Готови исечци кода за WordPress, React, Vue, Angular, React Native и обичан HTML.
