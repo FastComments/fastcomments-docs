@@ -1,19 +1,21 @@
-Our [WordPress Eklentisi](https://wordpress.org/plugins/fastcomments/) güçlü bir UI tabanlı içe aktarma mekanizmasına sahiptir. Eklentiyi kurduğunuzda,
-WordPress kurulumunuzu FastComments ile bağlamanıza ve mevcut yorum verilerinizi kopyalamanıza rehberlik edecektir.
+Our [WordPress Eklentisi](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
+it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
 
 **Bu, hiçbir şeyi manuel olarak kopyalamadan veya indirmeden yapılır.**
 
-Göç süreci, göç sırasında UI üzerinden size gösterilecektir. Çoğu göç sadece birkaç dakika sürer.
+The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
 
-Mekanizma, göç sırasında WordPress kurulumunuza aşırı yük bindirmeyecek şekilde tasarlanmıştır.
+The mechanism is designed to not put excessive load on your WordPress installation during the migration.
 
-### CloudFlare & Güvenlik Duvarları
+### CloudFlare & FireWalls
 
-Otomatik WordPress kurulumunun çalışabilmesi için WordPress kurulumunuza çağrılar yapmamız gerekir.
-Cloudflare gibi güvenlik duvarları bizi engelleyebilir ve entegrasyonun başarısız olmasına neden olabilir. Bu gibi durumlarda, [size sağlayabiliriz](https://fastcomments.com/auth/my-account/help) entegrasyon için beyaz listeye eklenmesi gereken IP setini.
+In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
+Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
+you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
 
-### Veri Sahipliği
+### Data Ownership
 
-WordPress göçümüz durumunda, yeni veya güncellenmiş yorum verileri otomatik olarak WordPress kurulumunuza arka planda senkronize edilir.
-Bu, yorumların FastComments tarafından sunulup WordPress dağıtımınızın yükünü azaltırken,
-biz **aynı zamanda** bunları bir yedek olarak veritabanınıza kaydederiz anlamına gelir. Bu aynı zamanda FastComments'tan ayrılmak isterseniz, verilerinizin zaten göç edilmiş ve güncel olduğu anlamına gelir.
+In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
+behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
+we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
+already migrated and up to date.
