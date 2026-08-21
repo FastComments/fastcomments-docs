@@ -2,13 +2,13 @@ There are two ways to ban users from commenting on your site with FastComments.
 
 The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Moderate Comments 아래에 있는 차단된 사용자 목록으로, 차단된 이메일 주소와 새 차단을 추가하는 버튼이 포함됩니다.'; title='차단된 사용자 페이지' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Moderate Comments 아래에 있는 차단된 사용자 목록으로, 차단된 이메일 주소와 새 차단을 추가하는 버튼이 포함됩니다'; title='차단된 사용자 페이지' app-screenshot-end]
 
 This page can be accessed via Moderate Comments -> Banned Users
 
 When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='이메일 필드와 영구 차단 또는 영구 섀도우 차단 중 선택할 수 있는 차단 유형 옵션이 있는 새 차단 양식'; title='사용자 차단' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='이메일 필드와 영구 차단 또는 영구 섀도우 차단 중 선택할 수 있는 차단 유형이 있는 새 차단 양식'; title='사용자 차단' app-screenshot-end]
 
 The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
@@ -30,7 +30,7 @@ Unless a tenant wishes to opt out, FastComments supports banning via IP by stori
 
 Once your list grows past a page or two, you can narrow it with the search row above the table.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Search By 드롭다운, Match 드롭다운 및 Value 입력란이 있는 차단된 사용자 페이지의 검색 행'; title='차단된 사용자 검색' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='차단된 사용자 페이지의 검색 행으로, \'Search By\' 드롭다운, \'Match\' 드롭다운 및 \'Value\' 입력란이 있습니다'; title='차단된 사용자 검색' app-screenshot-end]
 
 There are three controls:
 

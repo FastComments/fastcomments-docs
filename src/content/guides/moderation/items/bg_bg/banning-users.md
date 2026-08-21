@@ -1,14 +1,14 @@
 There are two ways to ban users from commenting on your site with FastComments.
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a> page.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">забранени потребители</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Списък с блокирани потребители под „Moderate Comments“, с блокираните имейл адреси и бутон за добавяне на нова блокировка'; title='Страницата с блокирани потребители' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Списък с забранени потребители под „Moderate Comments“, с забранените имейл адреси и бутон за добавяне на нова забрана'; title='Страницата със забранени потребители' app-screenshot-end]
 
 This page can be accessed via Moderate Comments -> Banned Users
 
 When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Формуляр за нова блокировка с поле за имейл и избор на тип блокировка – постоянна или постоянна сянка'; title='Блокиране на потребител' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Формуляр за нова забрана с поле за имейл и избор на тип забрана – постоянна или постоянна сянка'; title='Забрана на потребител' app-screenshot-end]
 
 The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
@@ -32,7 +32,7 @@ Unless a tenant wishes to opt out, FastComments supports banning via IP by stori
 
 Once your list grows past a page or two, you can narrow it with the search row above the table.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Ред за търсене на страницата с блокирани потребители с падащо меню „Search By“, падащо меню „Match“ и поле за въвеждане „Value“'; title='Търсене в блокираните потребители' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Ред за търсене на страницата със забранени потребители с падащо меню „Search By“, падащо меню „Match“ и поле за въвеждане „Value“'; title='Търсене в забранени потребители' app-screenshot-end]
 
 There are three controls:
 

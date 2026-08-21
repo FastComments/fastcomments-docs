@@ -8,7 +8,7 @@ This page can be accessed via Moderate Comments -> Banned Users
 
 When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Форма нового бану з полем електронної пошти та вибором типу бану: Постійний або Постійний прихований бан'; title='Бан користувача' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Нова форма бану з полем електронної пошти та вибором типу бану: Постійний або Постійний прихований бан'; title='Бан користувача' app-screenshot-end]
 
 The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
@@ -30,7 +30,7 @@ Unless a tenant wishes to opt out, FastComments supports banning via IP by stori
 
 Once your list grows past a page or two, you can narrow it with the search row above the table.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Рядок пошуку на сторінці забанених користувачів з випадаючим списком «Шукати за», випадаючим списком «Збіг» та полем вводу «Значення»'; title='Пошук забанених користувачів' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Рядок пошуку на сторінці Забанених користувачів з випадаючим списком Пошук за, випадаючим списком Відповідність та полем вводу Значення'; title='Пошук забанених користувачів' app-screenshot-end]
 
 There are three controls:
 
