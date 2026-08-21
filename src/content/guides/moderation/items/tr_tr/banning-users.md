@@ -1,29 +1,51 @@
-There are two ways to ban users from commenting on your site with FastComments.
+FastComments ile sitenizdeki kullanıcıların yorum yapmasını yasaklamanın iki yolu vardır.
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">yasaklı kullanıcılar</a> page.
+İlk yol, eğer e-posta adreslerini zaten biliyorsanız, bunu <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">yasaklı kullanıcılar</a> sayfasına girebilirsiniz.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Moderate Comments altında yasaklı kullanıcılar listesi, yasaklı e-posta adresleri ve yeni bir yasak eklemek için bir düğme'; title='Yasaklı Kullanıcılar Sayfası' app-screenshot-end]
 
-This page can be accessed via Moderate Comments -> Banned Users
+Bu sayfaya Moderatör Yorumları -> Yasaklı Kullanıcılar üzerinden erişilebilir.
 
-When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
+Bir kullanıcıyı yasaklamak istediğimizde, kalıcı veya kalıcı gölge yasak olmak üzere bir tür seçebiliriz:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Yeni yasak formu, bir e-posta alanı ve Kalıcı veya Kalıcı Gölge Yasak seçeneği'; title='Kullanıcıyı Yasaklama' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Kalıcı veya Kalıcı Gölge Yasak seçeneğiyle bir e-posta alanı içeren yeni yasak formu'; title='Bir Kullanıcıyı Yasaklama' app-screenshot-end]
 
-The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
+Kullanıcıyı yasaklamanın ikinci yolu, Yorum Moderasyonu sayfasındaki her yorumun üzerine yerleştirilmiş yasaklama düğmesine tıklamaktır.
 
-When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
+Yasaklama düğmesine tıkladığınızda, yasak türünü ve süresini belirleyebileceğiniz bazı seçenekler karşınıza çıkar.
 
-### Email Aliases
+### E-posta Takma Adları
 
-When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
+Bir kullanıcıyı e-posta ile yasaklarken, FastComments otomatik olarak `+` takma adlarını görmezden gelir. Örneğin, `user+alias@gmail.com` adresini yasaklamak, aynı zamanda `user@gmail.com` ve bu adresin diğer `+` varyasyonlarını, örneğin `user+other@gmail.com` adresini de yasaklar.
 
-### Shadow Bans
+### Gölge Yasaklar
 
-A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
+Gölge yasak, kullanıcının yorumunun veya oyununun başarılı bir şekilde kaydedildiği izlenimini veren, ancak gerçekte kaydedilmediği bir yasak türüdür. Bu, belirli durumlarda istenebilir.
 
-### Banning Via IP Address
+### IP Adresi Üzerinden Yasaklama
 
-Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
+Bir kiracı çıkmayı tercih etmedikçe, FastComments yorumcunun IP adresinin hashlenmiş bir sürümünü saklayarak IP üzerinden yasaklamayı destekler.
 
----
+### Yasaklı Kullanıcıları Arama
+
+Listeniz bir iki sayfayı aştığında, tablo üzerindeki arama satırıyla daraltabilirsiniz.
+
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Yasaklı Kullanıcılar sayfasında bir Arama satırı, Search By açılır menüsü, Match açılır menüsü ve Value girişi'; title='Yasaklı Kullanıcıları Arama' app-screenshot-end]
+
+Üç kontrol vardır:
+
+- **Search By** hangi alanda arama yapılacağını seçer: Any Field, Email, Name, Banned By veya Banned For Saying. Son dört, tabloda aynı isimdeki sütunlara karşılık gelir.
+- **Match** karşılaştırma şeklini seçer. **Contains** değerinizi alanda herhangi bir yerde bulur, **Equals** ise tüm alanla eşleşir.
+- **Value** aranan metindir.
+
+Tüm alanlar büyük/küçük harfe duyarsız eşleşir, bu yüzden `SPAMMER@EXAMPLE.COM` araması, `spammer@example.com` olarak saklanan bir yasağı bulur.
+
+Bilmeniz gereken birkaç nokta:
+
+- **Banned For Saying** kullanıcının yasaklanmasına neden olan yorum metnini arar. Bu, belirli bir ifadeyi içeren tüm yasaklıları bulmanızı sağlar.
+- **Banned By** yasağı veren moderatörün adını arar, bu da başka bir moderatörün kararlarını gözden geçirmek için faydalıdır.
+- Joker karakterli yasaklar `*` ile saklanır, bu yüzden `bademail.com` için bir **Contains** araması `*@bademail.com` yasaklamasını bulur.
+- **Name** Name sütununda gösterilen isimle eşleşir, bu sayede yasaklandıktan sonra adını değiştirmiş bir kullanıcıyı ve yasaklamayı sadece e-posta girerek oluşturduğunuzda kaydedilmemiş bir ismi bile bulur. Yasakta kaydedilen isim de eşleşir, bu yüzden eski ya da mevcut isimle arama yapılabilir.
+- **Any Field** e-posta, isim, yasaklayan moderatör ve yasaklanan yorum metnini birlikte arar.
+
+Aramanız sayfa URL'sinin bir parçasıdır, bu yüzden filtrelenmiş bir listeyi diğer moderatörlerle diğer moderasyon bağlantılarını paylaştığınız gibi paylaşabilirsiniz. Sonuçlarda sayfalama yaparken arama uygulanmış kalır, yeni bir arama başlatmak sizi ilk sayfaya döndürür ve **Clear** tam listeye geri döner.

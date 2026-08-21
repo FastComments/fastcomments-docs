@@ -1,29 +1,53 @@
----
-Има два начина да забраните на потребителите да коментират вашия сайт с FastComments.
+There are two ways to ban users from commenting on your site with FastComments.
 
-Първият е, ако вече знаете техния имейл, можете да го въведете на страницата <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">забранени потребители</a>.
+The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a> page.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Списък със забранени потребители под Moderate Comments, с забранените имейл адреси и бутон за добавяне на нова забрана'; title='Страницата със забранени потребители' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Списък с блокирани потребители под „Moderate Comments“, с блокираните имейл адреси и бутон за добавяне на нова блокировка'; title='Страницата с блокирани потребители' app-screenshot-end]
 
-Тази страница може да се достъпи чрез Moderate Comments -> Забранени потребители
+This page can be accessed via Moderate Comments -> Banned Users
 
-Когато искаме да забраним потребител, можем да изберем тип, или Permanent, или Permanent Shadow Ban:
+When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Нова форма за забрана с поле за имейл и избор на тип забрана – Permanent или Permanent Shadow Ban'; title='Забрана на потребител' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Формуляр за нова блокировка с поле за имейл и избор на тип блокировка – постоянна или постоянна сянка'; title='Блокиране на потребител' app-screenshot-end]
 
-Вторият начин за забрана на потребител е като кликнете върху бутона за забрана, поставен под всеки коментар на страницата за модериране на коментари.
+The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
 
-Когато кликнете бутона за забрана, ще ви бъдат представени някои опции, където можем да зададем тип на забраната и продължителност.
+When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
 
-### Имейл алиаси
+### Email Aliases
 
-Когато забранявате потребител по имейл, FastComments автоматично игнорира `+` алиасите. Например, забрана на `user+alias@gmail.com` ще забрани също `user@gmail.com` и всяка друга `+` вариация на този адрес, като `user+other@gmail.com`.
+When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
+also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
 
-### Сенчести забрани
+### Shadow Bans
 
-Сенчестата забрана е тип забрана, който прави видимост, че коментарът или гласът на потребителя е записан успешно, въпреки че в действителност не е. Това може да бъде желателно в определени ситуации.
+A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
+desirable in certain situations.
 
-### Забрана чрез IP адрес
+### Banning Via IP Address
 
-Освен ако наемателят не желае да се откаже, FastComments поддържа забрана чрез IP, като съхранява хеширана версия на IP адреса на коментатора.
----
+Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
+
+### Searching Banned Users
+
+Once your list grows past a page or two, you can narrow it with the search row above the table.
+
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Ред за търсене на страницата с блокирани потребители с падащо меню „Search By“, падащо меню „Match“ и поле за въвеждане „Value“'; title='Търсене в блокираните потребители' app-screenshot-end]
+
+There are three controls:
+
+- **Search By** picks which field to look in: Any Field, Email, Name, Banned By, or Banned For Saying. The last four correspond to the columns of the same name in the table.
+- **Match** picks how to compare. **Contains** finds your value anywhere in the field, and **Equals** matches the whole field.
+- **Value** is the text to look for.
+
+Every field is matched without regard to case, so searching for `SPAMMER@EXAMPLE.COM` finds a ban stored as `spammer@example.com`.
+
+A few things worth knowing:
+
+- **Banned For Saying** searches the text of the comment that got the user banned. This is how you find everyone banned over a particular phrase.
+- **Banned By** searches the name of the moderator who issued the ban, which is useful for reviewing another moderator's decisions.
+- Wildcard bans are stored with their `*`, so a **Contains** search for `bademail.com` finds a `*@bademail.com` ban.
+- **Name** matches the name shown in the Name column, so it finds a user even if they have changed their name since being banned, and even if you created the ban by entering an email address and no name was recorded at the time. The name recorded on the ban still matches too, so searching for either the old or the current name works.
+- **Any Field** searches the email, name, banned-by moderator, and banned comment text together.
+
+Your search is part of the page URL, so you can share a filtered list with other moderators the same way you share other moderation links. Paging through results keeps the search applied, starting a new search returns you to the first page, and **Clear** returns to the full list.
