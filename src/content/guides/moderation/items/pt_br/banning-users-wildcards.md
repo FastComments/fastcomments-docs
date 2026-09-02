@@ -1,27 +1,22 @@
-It is possible to ban users using certain email providers using wildcards.
+É possível banir usuários que utilizam determinados provedores de email usando curingas.
 
-For example, if you find that all comments from **@bademail.com** are spam, you can simply ban
-that whole email provider by entering "*@bademail.com" in the email input field when adding a banned user.
+Por exemplo, se você descobrir que todos os comentários de **@bademail.com** são spam, pode simplesmente banir todo o provedor de email inserindo "*@bademail.com" no campo de email ao adicionar um usuário banido.
 
-Note the "*" before the @ in the email.
+Observe o "*" antes do @ no email.
 
-### Subdomains
+### Subdomínios
 
-A domain ban also covers every subdomain of that domain. Banning `*@bademail.com` also bans
-`someone@mail.bademail.com` and `someone@eu.mail.bademail.com`, so there is no need to add a separate ban for each subdomain.
+Um banimento de domínio também cobre todos os subdomínios desse domínio. Banir `*@bademail.com` também bane `someone@mail.bademail.com` e `someone@eu.mail.bademail.com`, portanto não há necessidade de adicionar um banimento separado para cada subdomínio.
 
-If you only want to ban a specific subdomain, enter that subdomain instead, for example `*@mail.bademail.com`. That ban
-does not affect `someone@bademail.com`.
+Se você quiser banir apenas um subdomínio específico, insira esse subdomínio em vez disso, por exemplo `*@mail.bademail.com`. Esse banimento não afeta `someone@bademail.com`.
 
-### Banning a Domain From a Comment
+### Banindo um Domínio a partir de um Comentário
 
-You do not have to type the pattern yourself. When you ban a user from a comment on the Moderate Comments page, the ban dialog
-has a "Ban All @domain Users" checkbox that creates the same `*@domain` ban for the commenter's email domain.
+Você não precisa digitar o padrão manualmente. Quando você bane um usuário a partir de um comentário na página Moderar Comentários, a caixa de diálogo de banimento possui a opção “Ban All @domain Users” que cria o mesmo banimento `*@domain` para o domínio de email do comentarista.
 
-### Supported Patterns
+### Padrões Suportados
 
-The only supported wildcard form is a single `*` in place of the whole name part, followed by `@` and a domain. Other forms
-are rejected when you try to save them:
+A única forma de curinga suportada é um único `*` no lugar da parte inteira do nome, seguido por `@` e um domínio. Outras formas são rejeitadas ao tentar salvá‑las:
 
-- `*@*.bademail.com` is not needed, because `*@bademail.com` already covers subdomains.
-- `name*@bademail.com` and `*bademail.com` are not supported.
+- `*@*.bademail.com` não é necessário, pois `*@bademail.com` já cobre subdomínios.
+- `name*@bademail.com` e `*bademail.com` não são suportados.
