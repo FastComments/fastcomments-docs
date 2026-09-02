@@ -1,22 +1,24 @@
-It is possible to ban users using certain email providers using wildcards.
+Het is mogelijk om gebruikers te verbannen die bepaalde e‑mailproviders gebruiken met behulp van wildcards.
 
-For example, if you find that all comments from **@bademail.com** are spam, you can simply ban that whole email provider by entering "*@bademail.com" in the email input field when adding a banned user.
+Voorbeeld, als je merkt dat alle reacties van **@bademail.com** spam zijn, kun je eenvoudig die hele e‑mailprovider verbannen door "*@bademail.com" in te voeren in het e‑mail invoerveld bij het toevoegen van een verbannen gebruiker.
 
-Note the "*" before the @ in the email.
+Let op het "*" vóór de @ in het e‑mailadres.
 
 ### Subdomains
 
-A domain ban also covers every subdomain of that domain. Banning `*@bademail.com` also bans `someone@mail.bademail.com` and `someone@eu.mail.bademail.com`, so there is no need to add a separate ban for each subdomain.
+Een domeinverbod dekt ook elk subdomein van dat domein. Het verbannen van `*@bademail.com` verbiedt ook `someone@mail.bademail.com` en `someone@eu.mail.bademail.com`, dus er is geen noodzaak om een apart verbod voor elk subdomein toe te voegen.
 
-If you only want to ban a specific subdomain, enter that subdomain instead, for example `*@mail.bademail.com`. That ban does not affect `someone@bademail.com`.
+Als je alleen een specifiek subdomein wilt verbannen, voer dan dat subdomein in, bijvoorbeeld `*@mail.bademail.com`. Dat verbod heeft geen invloed op `someone@bademail.com`.
 
 ### Banning a Domain From a Comment
 
-You do not have to type the pattern yourself. When you ban a user from a comment on the Moderate Comments page, the ban dialog has a "Ban All @domain Users" checkbox that creates the same `*@domain` ban for the commenter's email domain.
+Je hoeft het patroon niet zelf in te typen. Wanneer je een gebruiker verbant vanuit een reactie op de pagina Moderate Comments, bevat het verboddialoogvenster een selectievakje "Ban All @domain Users" dat hetzelfde `*@domain` verbod maakt voor het e‑maildomein van de reageerder.
 
 ### Supported Patterns
 
-The only supported wildcard form is a single `*` in place of the whole name part, followed by `@` and a domain. Other forms are rejected when you try to save them:
+De enige ondersteunde wildcard‑vorm is een enkel `*` in plaats van het volledige naamgedeelte, gevolgd door `@` en een domein. Andere vormen worden afgewezen wanneer je probeert ze op te slaan:
 
-- `*@*.bademail.com` is not needed, because `*@bademail.com` already covers subdomains.
-- `name*@bademail.com` and `*bademail.com` are not supported.
+- `*@*.bademail.com` is niet nodig, omdat `*@bademail.com` al subdomeinen dekt.
+- `name*@bademail.com` en `*bademail.com` worden niet ondersteund.
+
+---

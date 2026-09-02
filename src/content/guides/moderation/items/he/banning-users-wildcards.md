@@ -25,5 +25,3 @@ are rejected when you try to save them:
 
 - `*@*.bademail.com` is not needed, because `*@bademail.com` already covers subdomains.
 - `name*@bademail.com` and `*bademail.com` are not supported.
-
----
