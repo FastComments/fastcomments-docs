@@ -1,27 +1,22 @@
-It is possible to ban users using certain email providers using wildcards.
+特定のメールプロバイダーを使用するユーザーを、ワイルドカードで禁止することができます。
 
-For example, if you find that all comments from **@bademail.com** are spam, you can simply ban
-that whole email provider by entering "*@bademail.com" in the email input field when adding a banned user.
+例えば、**@bademail.com** からのすべてのコメントがスパムであることが判明した場合、禁止ユーザーを追加する際のメール入力欄に「*@bademail.com」と入力するだけで、そのメールプロバイダー全体を禁止できます。
 
-Note the "*" before the @ in the email.
+メールアドレスの @ の前に「*」があることに注意してください。
 
 ### Subdomains
 
-A domain ban also covers every subdomain of that domain. Banning `*@bademail.com` also bans
-`someone@mail.bademail.com` and `someone@eu.mail.bademail.com`, so there is no need to add a separate ban for each subdomain.
+ドメインの禁止は、そのドメインのすべてのサブドメインにも適用されます。`*@bademail.com` を禁止すると、`someone@mail.bademail.com` や `someone@eu.mail.bademail.com` も禁止されるため、各サブドメインごとに個別の禁止を追加する必要はありません。
 
-If you only want to ban a specific subdomain, enter that subdomain instead, for example `*@mail.bademail.com`. That ban
-does not affect `someone@bademail.com`.
+特定のサブドメインだけを禁止したい場合は、そのサブドメインを入力してください。例えば `*@mail.bademail.com` のようにします。この禁止は `someone@bademail.com` には影響しません。
 
 ### Banning a Domain From a Comment
 
-You do not have to type the pattern yourself. When you ban a user from a comment on the Moderate Comments page, the ban dialog
-has a "Ban All @domain Users" checkbox that creates the same `*@domain` ban for the commenter's email domain.
+パターンを自分で入力する必要はありません。コメントのモデレートページでユーザーを禁止すると、禁止ダイアログに「Ban All @domain Users」チェックボックスがあり、コメント投稿者のメールドメインに対して同じ `*@domain` の禁止を自動的に作成します。
 
 ### Supported Patterns
 
-The only supported wildcard form is a single `*` in place of the whole name part, followed by `@` and a domain. Other forms
-are rejected when you try to save them:
+サポートされているワイルドカード形式は、名前部分全体の代わりに単一の `*` を置き、続けて `@` とドメインを指定するものだけです。他の形式は保存しようとすると拒否されます。
 
-- `*@*.bademail.com` is not needed, because `*@bademail.com` already covers subdomains.
-- `name*@bademail.com` and `*bademail.com` are not supported.
+- `*@*.bademail.com` は不要です。`*@bademail.com` だけでサブドメインをカバーしています。
+- `name*@bademail.com` と `*bademail.com` はサポートされていません。
