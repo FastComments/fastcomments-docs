@@ -3,7 +3,8 @@
 //!
 //! 1. Launch chromium with `--no-sandbox --disable-setuid-sandbox
 //!    --enable-font-antialiasing`.
-//! 2. Open a new page, set viewport, navigate to `<host>/auth/login`.
+//! 2. Open a new page, set viewport, navigate to
+//!    `<host>/auth/login?fromDocs=true`.
 //! 3. Type `demo` into `input[name="username"]` and
 //!    `demo@fastcomments.com` into `input[name="email"]`, submit.
 //! 4. Wait for `body`.
@@ -160,8 +161,10 @@ pub async fn launch_logged_in(
 ) -> Result<(Browser, Page, tokio::task::JoinHandle<()>)> {
     let (browser, handler_task) = launch(width, height).await?;
 
+    // fromDocs opts this headless login out of the captcha, which the server honours only for the
+    // demo credentials below.
     let page = browser
-        .new_page(format!("{}/auth/login", host_cfg.host))
+        .new_page(format!("{}/auth/login?fromDocs=true", host_cfg.host))
         .await
         .context("open login page")?;
 
@@ -182,6 +185,16 @@ pub async fn launch_logged_in(
     submit.click().await.context("click submit")?;
     let _ = page.wait_for_navigation().await;
     let _ = page.find_element("body").await;
+
+    // A rejected login (captcha, missing demo user) re-renders the login form. Fail here so a
+    // broken login costs one clear error instead of every authenticated screenshot timing out on
+    // selectors that only exist behind it.
+    let landed = page.url().await.ok().flatten().unwrap_or_default();
+    if landed.contains("/auth/login") {
+        anyhow::bail!(
+            "login did not succeed, still on {landed} - check the fromDocs captcha opt-out and demo credentials"
+        );
+    }
 
     Ok((browser, page, handler_task))
 }
