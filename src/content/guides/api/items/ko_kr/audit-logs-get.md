@@ -12,13 +12,13 @@ Sorting can be done by setting `order` to either `ASC` or `DESC`. The default is
 
 Querying by date is possible via `before` and `after` as timestamps with milliseconds. `before` and `after` are NOT inclusive, and either can be used on its own.
 
-## Finding what happened to a person
+## 사람에게 무슨 일이 있었는지 찾기
 
 Every event records who performed it (`username`, `userId`, `ip`) and, separately, what it was performed on. `targetLabel` is a human-readable label for that object, for example `jsmith (jsmith@example.com)`, and `targetId` is its id. Use `target` for a case-insensitive substring match on the label when you know a person's name or email but not their id.
 
 Deletes capture the label at the time of the event, so a removed user or moderator can still be identified after the underlying record is gone.
 
-## Managed tenants
+## 관리되는 테넌트
 
 If your tenant manages other tenants, set `includeManagedTenants=true` to return events from your tenant and every tenant it manages in one response. Each returned log's `tenantId` tells you which tenant it came from.
 
