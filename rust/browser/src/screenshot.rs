@@ -183,20 +183,39 @@ pub async fn launch_logged_in(
         .await
         .context("find submit button")?;
     submit.click().await.context("click submit")?;
-    let _ = page.wait_for_navigation().await;
-    let _ = page.find_element("body").await;
 
-    // A rejected login (captcha, missing demo user) re-renders the login form. Fail here so a
-    // broken login costs one clear error instead of every authenticated screenshot timing out on
-    // selectors that only exist behind it.
-    let landed = page.url().await.ok().flatten().unwrap_or_default();
-    if landed.contains("/auth/login") {
-        anyhow::bail!(
-            "login did not succeed, still on {landed} - check the fromDocs captcha opt-out and demo credentials"
-        );
-    }
+    // `wait_for_navigation` resolves immediately while the already-loaded login page is still the
+    // main frame, i.e. before the form POST has even started, so it cannot be used to detect the
+    // post-login redirect. Poll the URL instead: a successful demo login leaves /auth/login for
+    // /auth/my-account, while a rejected one (captcha, missing demo user) re-renders the form. Fail
+    // here so a broken login costs one clear error instead of every authenticated screenshot
+    // timing out on selectors that only exist behind it.
+    let landed = wait_for_url_leaving(&page, "/auth/login", Duration::from_secs(20)).await?;
+    let _ = page.find_element("body").await;
+    tracing::debug!(url = %landed, "logged in");
 
     Ok((browser, page, handler_task))
+}
+
+/// Poll the page URL until it no longer contains `fragment`, returning the URL it settled on.
+async fn wait_for_url_leaving(page: &Page, fragment: &str, timeout: Duration) -> Result<String> {
+    let start = tokio::time::Instant::now();
+    let mut last = String::new();
+    loop {
+        if let Ok(Some(url)) = page.url().await {
+            if !url.contains(fragment) {
+                return Ok(url);
+            }
+            last = url;
+        }
+        if start.elapsed() > timeout {
+            anyhow::bail!(
+                "login did not succeed, still on {last} after {}s - check the fromDocs captcha opt-out and demo credentials",
+                timeout.as_secs()
+            );
+        }
+        tokio::time::sleep(Duration::from_millis(150)).await;
+    }
 }
 
 async fn type_into(page: &Page, selector: &str, value: &str) -> Result<()> {
