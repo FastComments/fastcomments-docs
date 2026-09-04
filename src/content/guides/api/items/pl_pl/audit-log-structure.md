@@ -1,11 +1,12 @@
-Obiekt `AuditLog` reprezentuje zdarzenie podlegające audytowi dla tenantów, którzy mają dostęp do tej funkcji.
+An `AuditLog` jest obiektem, który reprezentuje zdarzenie audytowane dla najemców, którzy mają dostęp do tej funkcji.
 
-Struktura obiektu AuditLog wygląda następująco:
+Struktura obiektu AuditLog jest następująca:
 
-[inline-code-attrs-start title = 'Struktura obiektu AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface AuditLog {
     id: string;
+    /** Kto wykonał zdarzenie. **/
     userId?: string;
     username?: string;
     resourceName: string;
@@ -13,13 +14,23 @@ interface AuditLog {
     from: string;
     url?: string;
     ip?: string;
+    /** Przeglądarka, która wykonała zdarzenie, jeśli pochodziło ono z przeglądarki. **/
+    ua?: string;
+    /** Hash sesji, z której pochodzi zdarzenie, służący do powiązania działań jednej osoby. Nigdy nie samej sesji. **/
+    sIdHashed?: string;
     when: string;
     description?: string;
     serverStartDate: string;
+    /** Identyfikator obiektu, na którym wykonano zdarzenie, w przeciwieństwie do tego, kto je wykonał. **/
+    targetId?: string;
+    /** Czytelna etykieta tego obiektu, np. "jsmith (jsmith@example.com)". **/
+    targetLabel?: string;
     objectDetails?: object;
 }
 [inline-code-end]
 
-Dziennik audytu jest niezmienny. Nie można też zapisywać do niego ręcznie. FastComments.com decyduje jedynie, kiedy zapisywać wpisy w dzienniku audytu. Możesz jednak odczytywać go za pomocą tego API.
+`targetId` i `targetLabel` opisują, na czym zdarzenie zostało wykonane; `userId` i `username` opisują, kto je wykonał. W przypadku aktualizacji, `objectDetails.changes` zawiera mapę `{field: {from, to}}` przedstawiającą, co faktycznie się zmieniło.
 
-Wpisy w dzienniku audytu wygasają po dwóch latach.
+Dziennik audytu jest niezmienny. Nie może być również zapisywany ręcznie. FastComments.com może jedynie decydować, kiedy zapisać do dziennika audytu. Jednak możesz odczytywać go za pomocą tego API.
+
+Zdarzenia w dzienniku audytu wygasają po dwóch latach.

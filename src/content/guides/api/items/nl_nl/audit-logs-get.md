@@ -1,18 +1,28 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Deze API gebruikt paginering, geleverd door de parameters `skip`, `before` en `after`. AuditLogs worden geretourneerd in pagina's van `1000`, geordend op `when` en `id`.
+Deze API gebruikt paginering, geleverd door de parameters `skip`, `limit`, `before` en `after`. AuditLogs worden standaard in pagina's van `100` geretourneerd, tot een maximum `limit` van `200`, gesorteerd op `when` en `id`.
 
-Het ophalen van elke `1000` logs kost `10` credits.
+Elke `100` geretourneerde logs kost `1` credit.
 
-Standaard ontvangt u een lijst met **de nieuwste items eerst**. Op deze manier kunt u beginnen met pollen met `skip=0`, en pagineren totdat u het laatste record vindt dat u hebt geconsumeerd.
+Standaard ontvang je een lijst met **de nieuwste items eerst**. Op deze manier kun je pollen beginnend met `skip=0`, paginerend totdat je de laatste verbruikte record vindt.
 
-Als alternatief kunt u sorteren op oudste-eerst en pagineren totdat er geen records meer zijn.
+Alternatief kun je sorteren van oud naar nieuw, en pagineren tot er geen records meer zijn.
 
-Sorteren kan worden gedaan door `order` in te stellen op `ASC` of `DESC`. De standaard is `ASC`.
+Sorteren kan door `order` in te stellen op `ASC` of `DESC`. Standaard is `DESC`.
 
-Zoeken op datum is mogelijk via `before` en `after` als tijdstempels met milliseconden. `before` en `after` zijn NIET inclusief.
+Opvragen op datum is mogelijk via `before` en `after` als timestamps met milliseconden. `before` en `after` zijn NIET inclusief, en elk kan afzonderlijk worden gebruikt.
 
-[inline-code-attrs-start title = 'AuditLog cURL Voorbeeld'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+## Finding what happened to a person
+
+Elk evenement registreert wie het heeft uitgevoerd (`username`, `userId`, `ip`) en, apart, waarop het is uitgevoerd. `targetLabel` is een menselijk leesbaar label voor dat object, bijvoorbeeld `jsmith (jsmith@example.com)`, en `targetId` is de id. Gebruik `target` voor een hoofdletterongevoelige substring-match op het label wanneer je de naam of e‑mail van een persoon kent, maar niet de id.
+
+Verwijderingen leggen het label vast op het moment van het evenement, zodat een verwijderde gebruiker of moderator nog steeds kan worden geïdentificeerd nadat het onderliggende record is verdwenen.
+
+## Managed tenants
+
+Als jouw tenant andere tenants beheert, stel `includeManagedTenants=true` in om evenementen van jouw tenant en elke tenant die het beheert in één respons te retourneren. De `tenantId` van elke geretourneerde log vertelt je van welke tenant deze afkomstig is.
+
+[inline-code-attrs-start title = 'AuditLog cURL-voorbeeld'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
@@ -20,27 +30,40 @@ curl --request GET \
 
 [inline-code-attrs-start title = 'AuditLog Verzoekstructuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsRequestQueryParams {
+interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    limit?: number
     skip?: number
     before?: number
     after?: number
+    /** Only events performed by this username. **/
+    username?: string
+    /** Only events from this IP address. **/
+    ip?: string
+    /** Only events of this type. **/
+    crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
+    /** Only events for this resource, e.g. User or Moderator. **/
+    resourceName?: string
+    /** Only events whose affected object has this id. **/
+    targetId?: string
+    /** Case-insensitive substring match on the affected object's label. **/
+    target?: string
+    /** Also return events from tenants this tenant manages. **/
+    includeManagedTenants?: boolean
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'AuditLog Antwoordstructuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'AuditLog Responsstructuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsResponse {
+interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Opgenomen bij een fout. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Opgenomen bij een fout. **/
+    /** Included on failure. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
+    /** Included on failure. **/
     reason?: string
-    /** De logs! **/
+    /** The logs! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]
-
----

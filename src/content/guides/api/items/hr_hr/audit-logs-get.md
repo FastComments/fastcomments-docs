@@ -1,44 +1,69 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Ovaj API koristi paginaciju, koju omogućuju parametri `skip`, `before` i `after`. AuditLogs se vraćaju na stranicama od `1000`, poredani po `when` i `id`.
+Ovaj API koristi paginaciju, koju pružaju parametri `skip`, `limit`, `before` i `after`. AuditLog zapisi se vraćaju u stranicama od `100` po zadanim postavkama, do maksimalnog `limit` od `200`, poredani po `when` i `id`.
 
-Dohvaćanje svakih `1000` zapisnika ima trošak kredita od `10`.
+Svaki `100` zapisa koji se vrati ima trošak od `1` kredita.
 
-Prema zadanim postavkama, primit ćete popis s **najnovijim stavkama na prvom mjestu**. Na taj način možete početi s `skip=0`, paginirajući dok ne pronađete zadnji zapis koji ste konzumirali.
+Prema zadanim postavkama, dobit ćete popis s **najnovijim stavkama prvo**. Na ovaj način možete dohvatiti podatke počevši od `skip=0`, paginirajući sve dok ne pronađete posljednji zapis koji ste obradili.
 
-Alternativno, možete sortirati od najstarijeg prema naprijed i paginirati dok nema više zapisa.
+Alternativno, možete sortirati najstarije prvo i paginirati dok ne ostane više zapisa.
 
-Sortiranje se može izvršiti postavljanjem `order` na `ASC` ili `DESC`. Zadano je `ASC`.
+Sortiranje se može izvršiti postavljanjem `order` na `ASC` ili `DESC`. Zadano je `DESC`.
 
-Upit prema datumu moguć je putem `before` i `after` kao vremenskih oznaka s milisekundama. `before` i `after` NISU uključivi.
+Upiti po datumu su mogući putem `before` i `after` kao vremenskih oznaka u milisekundama. `before` i `after` NISU inkluzivni i svaki se može koristiti samostalno.
 
-[inline-code-attrs-start title = 'Primjer cURL za AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+## Finding what happened to a person
+
+Svaki događaj bilježi tko ga je izvršio (`username`, `userId`, `ip`) i, odvojeno, na čemu je izvršen. `targetLabel` je čitljiva oznaka za taj objekt, na primjer `jsmith (jsmith@example.com)`, a `targetId` je njegov ID. Koristite `target` za podudaranje podstringa neosjetljivo na veličinu slova na oznaci kada znate ime ili e‑mail osobe, ali ne i njen ID.
+
+Brisanja bilježe oznaku u trenutku događaja, tako da se uklonjeni korisnik ili moderator i dalje mogu identificirati nakon što je osnovni zapis uklonjen.
+
+## Managed tenants
+
+Ako vaš najam upravlja drugim najmovima, postavite `includeManagedTenants=true` kako biste vratili događaje iz vašeg najma i svakog najma koji on upravlja u jednom odgovoru. Svaki vraćeni zapis ima `tenantId` koji vam govori iz kojeg najma potječe.
+
+[inline-code-attrs-start title = 'AuditLog cURL primjer'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahtjeva AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'AuditLog struktura zahtjeva'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsRequestQueryParams {
+interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    limit?: number
     skip?: number
     before?: number
     after?: number
+    /** Samo događaji izvršeni od strane ovog korisničkog imena. **/
+    username?: string
+    /** Samo događaji s ove IP adrese. **/
+    ip?: string
+    /** Samo događaji ove vrste. **/
+    crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
+    /** Samo događaji za ovaj resurs, npr. User ili Moderator. **/
+    resourceName?: string
+    /** Samo događaji čiji je zahvaćeni objekt ima ovaj ID. **/
+    targetId?: string
+    /** Podudaranje podstringa neosjetljivo na veličinu slova na oznaci zahvaćenog objekta. **/
+    target?: string
+    /** Također vrati događaje iz najma koje ovaj najam upravlja. **/
+    includeManagedTenants?: boolean
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'AuditLog struktura odgovora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsResponse {
+interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Included on failure. **/
+    /** Uključeno pri neuspjehu. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
+    /** Uključeno pri neuspjehu. **/
     reason?: string
-    /** The logs! **/
+    /** Zapisnici! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]

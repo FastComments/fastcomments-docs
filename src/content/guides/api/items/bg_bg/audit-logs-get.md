@@ -1,44 +1,71 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Този API използва странициране, предоставено от параметрите `skip`, `before` и `after`. AuditLogs се връщат на страници от `1000`, подредени по `when` и `id`.
+Този API използва пагинация, предоставена от параметрите `skip`, `limit`, `before` и `after`. AuditLogs се връщат в страници по `100` по подразбиране, до максимален `limit` от `200`, подредени по `when` и `id`.
 
-Извличането на всеки `1000` лога има кредитна цена от `10`.
+Всеки `100` върнати логове имат цена от `1` кредит.
 
-По подразбиране ще получите списък с **най-новите елементи първи**. По този начин можете да анкетирате, започвайки от `skip=0`, страници докато намерите последния запис, който сте консумирали.
+По подразбиране ще получите списък с **най-новите елементи първо**. По този начин можете да правите заявки, започвайки с `skip=0`, пагинирайки докато намерите последния запис, който сте консумирали.
 
-Алтернативно, можете да сортирате най-старите първи и да страницирате докато няма повече записи.
+Алтернативно, можете да сортирате от най-старите към най-новите и да пагинирате, докато не останат повече записи.
 
-Сортирането може да се направи като зададете `order` на `ASC` или `DESC`. По подразбиране е `ASC`.
+Сортирането може да се извърши, като зададете `order` на `ASC` или `DESC`. По подразбиране е `DESC`.
 
-Заявка по дата е възможна чрез `before` и `after` като времеви печати с милисекунди. `before` и `after` НЕ са включителни.
+Запитване по дата е възможно чрез `before` и `after` като времеви печати в милисекунди. `before` и `after` НЕ са включващи и всяко от тях може да се използва самостоятелно.
 
-[inline-code-attrs-start title = 'Пример за AuditLog с cURL'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+## Откриване какво се е случило с лице
+
+Всеки събитие записва кой го е извършил (`username`, `userId`, `ip`) и, отделно, върху какво е извършено. `targetLabel` е четим за хора етикет за този обект, например `jsmith (jsmith@example.com)`, а `targetId` е неговият идентификатор. Използвайте `target` за нечувствително към регистъра съвпадение на подниз в етикета, когато знаете името или имейла на лицето, но не неговия идентификатор.
+
+Изтриванията запазват етикета към момента на събитието, така че премахнат потребител или модератор все още може да бъде идентифициран след като основният запис е изтрит.
+
+## Управлявани наематели
+
+Ако вашият наемател управлява други наематели, задайте `includeManagedTenants=true`, за да върнете събития от вашия наемател и всеки наемател, който той управлява, в един отговор. `tenantId` на всеки върнат лог ви казва от кой наемател идва.
+
+[inline-code-attrs-start title = 'Пример за cURL на AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура на заявката за AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура на заявка за AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsRequestQueryParams {
+interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    limit?: number
     skip?: number
     before?: number
     after?: number
+    /** Само събития, извършени от това потребителско име. **/
+    username?: string
+    /** Само събития от този IP адрес. **/
+    ip?: string
+    /** Само събития от този тип. **/
+    crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
+    /** Само събития за този ресурс, напр. Потребител или Модератор. **/
+    resourceName?: string
+    /** Само събития, чиито засегнат обект има този идентификатор. **/
+    targetId?: string
+    /** Съвпадение на подниз без значение за регистъра върху етикета на засегнатия обект. **/
+    target?: string
+    /** Също така върнете събития от наематели, които този наемател управлява. **/
+    includeManagedTenants?: boolean
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура на отговора за AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура на отговор за AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsResponse {
+interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Included on failure. **/
+    /** Включено при неуспех. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
+    /** Включено при неуспех. **/
     reason?: string
-    /** The logs! **/
+    /** Логовете! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]
+
+---

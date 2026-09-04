@@ -1,16 +1,26 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Ovaj API koristi paginaciju, koju obezbeđuju parametri `skip`, `before` i `after`. AuditLogs se vraćaju u stranicama od po `1000`, sortirani po `when` i `id`.
+Ovaj API koristi paginaciju, koju obezbeđuju parametri `skip`, `limit`, `before` i `after`. AuditLog‑ovi se vraćaju u stranicama po `100` po podrazumevanju, do maksimalnog `limit`‑a od `200`, poređani po `when` i `id`.
 
-Preuzimanje svakih `1000` zapisa košta `10` kredita.
+Svaki `100` vraćenih logova košta `1` kredit.
 
-Po podrazumevanoj vrednosti dobićete listu sa **najnovijim stavkama na vrhu**. Na ovaj način možete započeti polling sa `skip=0`, paginirati dok ne nađete poslednji zapis koji ste obradili.
+Podrazumevano, dobićete listu sa **najnovijim stavkama prvo**. Na ovaj način možete da poll‑ujete počevši od `skip=0`, paginirajući dok ne pronađete poslednji zapis koji ste potrošili.
 
-Alternativno, možete sortirati od najstarijih i paginirati dok ne bude više zapisa.
+Alternativno, možete sortirati najstarije prvo i paginirati dok ne ostane više zapisa.
 
-Sortiranje se radi podešavanjem `order` na `ASC` ili `DESC`. Podrazumevano je `ASC`.
+Sortiranje se može izvršiti postavljanjem `order` na `ASC` ili `DESC`. Podrazumevano je `DESC`.
 
-Pretraga po datumu je moguća pomoću `before` i `after` kao timestamp-a u milisekundama. `before` i `after` nisu uključivi.
+Upit po datumu je moguć putem `before` i `after` kao vremenskih oznaka u milisekundama. `before` i `after` NISU inkluzivni, i bilo koji se može koristiti samostalno.
+
+## Pronalaženje šta se desilo osobi
+
+Svaki događaj beleži ko ga je izvršio (`username`, `userId`, `ip`) i, odvojeno, na čemu je izvršen. `targetLabel` je čitljiva oznaka za taj objekat, na primer `jsmith (jsmith@example.com)`, a `targetId` je njegov ID. Koristite `target` za podudaranje podstringa neosetljivog na veličinu slova na oznaku kada znate ime ili e‑mail osobe, ali ne njen ID.
+
+Brisanja zabeleže oznaku u trenutku događaja, tako da uklonjeni korisnik ili moderator i dalje mogu biti identifikovani nakon što osnovni zapis nestane.
+
+## Upravljani tenant‑i
+
+Ako vaš tenant upravlja drugim tenant‑ima, postavite `includeManagedTenants=true` da biste vratili događaje iz vašeg tenant‑a i svakog tenant‑a koji on upravlja u jednom odgovoru. `tenantId` svakog vraćenog loga pokazuje iz kojeg tenant‑a potiče.
 
 [inline-code-attrs-start title = 'Primer cURL zahteva za AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,25 +30,42 @@ curl --request GET \
 
 [inline-code-attrs-start title = 'Struktura zahteva za AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsRequestQueryParams {
+interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    limit?: number
     skip?: number
     before?: number
     after?: number
+    /** Samo događaji izvršeni od strane ovog korisničkog imena. **/
+    username?: string
+    /** Samo događaji sa ove IP adrese. **/
+    ip?: string
+    /** Samo događaji ovog tipa. **/
+    crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
+    /** Samo događaji za ovaj resurs, npr. User ili Moderator. **/
+    resourceName?: string
+    /** Samo događaji čiji pogođeni objekat ima ovaj ID. **/
+    targetId?: string
+    /** Podudaranje podstringa neosetljivog na veličinu slova na oznaku pogođenog objekta. **/
+    target?: string
+    /** Takođe vrati događaje iz tenant‑a koje ovaj tenant upravlja. **/
+    includeManagedTenants?: boolean
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Struktura odgovora za AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsResponse {
+interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Uključeno u slučaju neuspeha. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Uključeno u slučaju greške. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
+    /** Uključeno u slučaju greške. **/
     reason?: string
     /** Logovi! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]
+
+---

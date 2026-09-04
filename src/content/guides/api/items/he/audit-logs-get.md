@@ -1,18 +1,28 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-API זה משתמש בעימוד, המסופק על ידי הפרמטרים `skip`, `before` ו-`after`. AuditLogs מוחזרים בדפים של `1000`, ממוינים לפי `when` ו-`id`.
+API זה משתמש בעימוד, המסופק על ידי הפרמטרים `skip`, `limit`, `before` ו-`after`. AuditLogs מוחזרים בעמודים של `100` כברירת מחדל, עד למגבלה מרבית של `200`, ממוינים לפי `when` ו-`id`.
 
-אחזור של כל `1000` יומנים עולה `10` קרדיטים.
+כל `100` רשומות שמוחזרות בעלות קרדיט של `1`.
 
-כברירת מחדל, תקבל רשימה עם **הפריטים החדשים ביותר ראשונים**. בדרך זו, אתה יכול לתשאל החל מ-`skip=0`, לדפדף עד שתמצא את הרשומה האחרונה שצרכת.
+בברירת מחדל, תקבל רשימה עם **הפריטים החדשים ביותר ראשונים**. כך תוכל לבצע סקר (poll) החל מ-`skip=0`, לעבור בין העמודים עד שתמצא את הרשומה האחרונה שנצרכה.
 
-לחלופין, אתה יכול למיין מהישן לחדש, ולדפדף עד שאין יותר רשומות.
+חלופית, ניתן למיין מהישן לחדש, ולעבור בין העמודים עד שלא נותרות רשומות.
 
-ניתן לבצע מיון על ידי הגדרת `order` ל-`ASC` או `DESC`. ברירת המחדל היא `ASC`.
+ניתן למיין על ידי הגדרת `order` ל-`ASC` או `DESC`. ברירת המחדל היא `DESC`.
 
-שאילתה לפי תאריך אפשרית דרך `before` ו-`after` כחותמות זמן עם מילישניות. `before` ו-`after` אינם כוללניים.
+ניתן לבצע שאילתות לפי תאריך באמצעות `before` ו-`after` כתזמונים במילישניות. `before` ו-`after` אינם כוללים, וכל אחד מהם ניתן לשימוש בנפרד.
 
-[inline-code-attrs-start title = 'דוגמת cURL ל-AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+## מציאת מה קרה לאדם
+
+כל אירוע מתעד מי ביצע אותו (`username`, `userId`, `ip`) ובנפרד, על מה הוא בוצע. `targetLabel` הוא תווית קריאה לבן אדם עבור האובייקט, לדוגמה `jsmith (jsmith@example.com)`, ו-`targetId` הוא המזהה שלו. השתמש ב-`target` להתאמת תת‑מחרוזת ללא תלות ברישיות על התווית כאשר אתה יודע את שם האדם או האימייל אך לא את המזהה שלו.
+
+מחיקות תופסות את התווית בזמן האירוע, כך שמשתמש או מודרטור שהוסרו עדיין ניתנים לזיהוי לאחר שהרשומה הבסיסית נעלמה.
+
+## שכירי מנוהלים
+
+אם השוכר שלך מנהל שכירים אחרים, הגדר `includeManagedTenants=true` כדי לקבל אירועים מהשוכר שלך ומכל שוכר שהוא מנהל בתגובה אחת. כל `tenantId` של רשומה מוחזרת מצביע על השוכר שממנו היא הגיעה.
+
+[inline-code-attrs-start title = 'דוגמת cURL של AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
@@ -20,25 +30,40 @@ curl --request GET \
 
 [inline-code-attrs-start title = 'מבנה בקשת AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsRequestQueryParams {
+interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    limit?: number
     skip?: number
     before?: number
     after?: number
+    /** רק אירועים שבוצעו על ידי שם משתמש זה. **/
+    username?: string
+    /** רק אירועים מכתובת IP זו. **/
+    ip?: string
+    /** רק אירועים מסוג זה. **/
+    crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
+    /** רק אירועים עבור המשאב הזה, למשל משתמש או מודרטור. **/
+    resourceName?: string
+    /** רק אירועים שהאובייקט המושפע שלו הוא בעל מזהה זה. **/
+    targetId?: string
+    /** התאמת תת‑מחרוזת ללא תלות ברישיות על תווית האובייקט המושפע. **/
+    target?: string
+    /** גם מחזיר אירועים משוכרים שהשוכר הזה מנהל. **/
+    includeManagedTenants?: boolean
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'מבנה תגובת AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsResponse {
+interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Included on failure. **/
+    /** כלול במקרה של כשל. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
+    /** כלול במקרה של כשל. **/
     reason?: string
-    /** The logs! **/
+    /** הרשומות! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]

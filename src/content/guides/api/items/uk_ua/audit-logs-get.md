@@ -1,18 +1,28 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Цей API використовує пагінацію, яку забезпечують параметри `skip`, `before` та `after`. AuditLogs повертаються сторінками по `1000`, впорядкованими за `when` та `id`.
+Цей API використовує пагінацію, яку забезпечують параметри `skip, limit, before` та `after`. AuditLogs повертаються сторінками по `100` за замовчуванням, до максимальної `limit` у `200`, впорядковані за `when` та `id`.
 
-Отримання кожних `1000` логів коштує `10` кредитів.
+Кожні `100` повернутих записів коштують `1` кредит.
 
-За замовчуванням ви отримаєте список з **найновішими елементами першими**. Таким чином ви можете опитувати, починаючи з `skip=0`, пагінувати далі, поки не знайдете останній запис, який вже оброблено.
+За замовчуванням ви отримуєте список з **найновішими елементами спочатку**. Таким чином, ви можете опитувати, починаючи з `skip=0`, пагінуючи, доки не знайдете останній запис, який ви спожили.
 
-Альтернативно, можна сортувати спочатку найстаріші та пагінувати, поки записи не закінчаться.
+Альтернативно, ви можете сортувати від найстаріших, і пагінувати, доки не залишиться записів.
 
-Сортування задається параметром `order` зі значенням `ASC` або `DESC`. За замовчуванням — `ASC`.
+Сортування можна виконати, встановивши `order` в `ASC` або `DESC`. За замовчуванням — `DESC`.
 
-Фільтрувати за датою можна за допомогою `before` та `after` як міток часу в мілісекундах. `before` та `after` НЕ включні.
+Запит за датою можливий за допомогою `before` та `after` у вигляді міток часу з мілісекундами. `before` і `after` НЕ включають зазначені значення, і кожен з них можна використовувати окремо.
 
-[inline-code-attrs-start title = 'Приклад cURL-запиту AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+## Пошук того, що сталося з особою
+
+Кожна подія записує, хто її виконав (`username`, `userId`, `ip`) і, окремо, над чим вона була виконана. `targetLabel` — це зрозуміла мітка для цього об’єкта, наприклад `jsmith (jsmith@example.com)`, а `targetId` — його ідентифікатор. Використовуйте `target` для нечутливого до регістру пошуку підрядка в мітці, коли ви знаєте ім’я або електронну пошту особи, але не її ідентифікатор.
+
+Видалення зберігає мітку на момент події, тому видалений користувач або модератор все ще можуть бути ідентифіковані після того, як базовий запис зник.
+
+## Керовані орендарі
+
+Якщо ваш орендар керує іншими орендарями, встановіть `includeManagedTenants=true`, щоб отримати події від вашого орендаря та всіх орендарів, якими він керує, в одному відповіді. `tenantId` кожного поверненого запису вказує, від якого орендаря він походить.
+
+[inline-code-attrs-start title = 'Приклад cURL для AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
@@ -20,25 +30,40 @@ curl --request GET \
 
 [inline-code-attrs-start title = 'Структура запиту AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsRequestQueryParams {
+interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    limit?: number
     skip?: number
     before?: number
     after?: number
+    /** Тільки події, виконані цим ім'ям користувача. **/
+    username?: string
+    /** Тільки події з цієї IP-адреси. **/
+    ip?: string
+    /** Тільки події цього типу. **/
+    crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
+    /** Тільки події для цього ресурсу, напр. User або Moderator. **/
+    resourceName?: string
+    /** Тільки події, у яких уражений об’єкт має цей ідентифікатор. **/
+    targetId?: string
+    /** Пошук підрядка в мітці ураженого об’єкта без урахування регістру. **/
+    target?: string
+    /** Також повернути події від орендарів, якими керує цей орендар. **/
+    includeManagedTenants?: boolean
 }
 [inline-code-end]
 
 [inline-code-attrs-start title = 'Структура відповіді AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-interface CommentsResponse {
+interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Включається у випадку невдачі. **/
-    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Включається у випадку невдачі. **/
+    /** Включено у випадку помилки. **/
+    code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
+    /** Включено у випадку помилки. **/
     reason?: string
-    /** Журнали! **/
+    /** Логи! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]

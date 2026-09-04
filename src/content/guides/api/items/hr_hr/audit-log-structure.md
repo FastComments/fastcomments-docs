@@ -1,11 +1,12 @@
-`AuditLog` je objekt koji predstavlja revidirani događaj za stanare koji imaju pristup ovoj značajci.
+An `AuditLog` je objekt koji predstavlja revizijski događaj za najamnike koji imaju pristup ovoj značajci.
 
-Struktura za AuditLog objekt je sljedeća:
+Struktura objekta AuditLog je sljedeća:
 
-[inline-code-attrs-start title = 'Struktura AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura AuditLoga'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface AuditLog {
     id: string;
+    /** Tko je izvršio događaj. **/
     userId?: string;
     username?: string;
     resourceName: string;
@@ -13,13 +14,23 @@ interface AuditLog {
     from: string;
     url?: string;
     ip?: string;
+    /** Preglednik koji je izvršio događaj, kada je došao iz preglednika. **/
+    ua?: string;
+    /** Hash sesije iz koje je došao događaj, za povezivanje radnji jedne osobe. Nikada sama sesija. **/
+    sIdHashed?: string;
     when: string;
     description?: string;
     serverStartDate: string;
+    /** ID objekta na kojem je izvršen događaj, nasuprot tko ga je izvršio. **/
+    targetId?: string;
+    /** Ljudski čitljiva oznaka za taj objekt, npr. "jsmith (jsmith@example.com)". **/
+    targetLabel?: string;
     objectDetails?: object;
 }
 [inline-code-end]
 
-Revizijski zapisnik je nepromjenjiv. Također se ne može ručno pisati u njega. FastComments.com može odlučiti samo kada pisati u revizijski zapisnik. Međutim, možete ga čitati putem ovog API-ja.
+`targetId` i `targetLabel` opisuju na čemu je događaj izvršen; `userId` i `username` opisuju tko ga je izvršio. Za ažuriranja, `objectDetails.changes` sadrži mapu `{field: {from, to}}` koja prikazuje što se zapravo promijenilo.
 
-Događaji u revizijskom zapisniku istječu nakon dvije godine.
+Revizijski zapis je nepromjenjiv. Također se ne može ručno zapisivati. FastComments.com može odlučiti kada zapisati u revizijski zapis. Međutim, možete ga čitati putem ovog API-ja.
+
+Događaji u revizijskom zapisu istječu nakon dvije godine.

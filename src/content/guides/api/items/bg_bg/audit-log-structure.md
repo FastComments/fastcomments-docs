@@ -1,4 +1,4 @@
-`AuditLog` е обект, който представлява одитирано събитие за наематели, които имат достъп до тази функция.
+An `AuditLog` е обект, който представлява одитирано събитие за наематели, които имат достъп до тази функция.
 
 Структурата на обекта AuditLog е следната:
 
@@ -6,6 +6,7 @@
 [inline-code-start]
 interface AuditLog {
     id: string;
+    /** Who performed the event. **/
     userId?: string;
     username?: string;
     resourceName: string;
@@ -13,13 +14,23 @@ interface AuditLog {
     from: string;
     url?: string;
     ip?: string;
+    /** The browser that performed the event, when it came from one. **/
+    ua?: string;
+    /** A hash of the session the event came from, for correlating one person's actions. Never the session itself. **/
+    sIdHashed?: string;
     when: string;
     description?: string;
     serverStartDate: string;
+    /** The id of the object the event was performed on, as opposed to who performed it. **/
+    targetId?: string;
+    /** A human-readable label for that object, e.g. "jsmith (jsmith@example.com)". **/
+    targetLabel?: string;
     objectDetails?: object;
 }
 [inline-code-end]
 
-Одитният дневник е неизменяем. Също така не може да се записва ръчно. Само FastComments.com може да реши кога да записва в одитния дневник. Въпреки това можете да четете от него чрез този API.
+`targetId` и `targetLabel` описват върху какво е извършено събитието; `userId` и `username` описват кой го е извършил. При актуализации, `objectDetails.changes` съдържа карта `{field: {from, to}}` на това, което действително е променено.
 
-Събитията в одитния дневник изтичат след две години.
+Одитният журнал е неизменяем. Също така не може да се записва ръчно. FastComments.com може единствено да реши кога да записва в одитния журнал. Въпреки това, можете да четете от него чрез това API.
+
+Събитията в одитния журнал изтичат след две години.
