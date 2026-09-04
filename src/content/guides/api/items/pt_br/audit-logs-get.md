@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Esta API usa paginação, fornecida pelos parâmetros `skip`, `limit`, `before` e `after`. Os AuditLogs são retornados em páginas de `100` por padrão, até um `limit` máximo de `200`, ordenados por `when` e `id`.
+Esta API usa paginação, fornecida pelos parâmetros `skip`, `limit`, `before` e `after`. Os AuditLogs são retornados em páginas de `5000` por padrão, até um `limit` máximo de `10000`, ordenados por `when` e `id`. As páginas são grandes porque este endpoint geralmente é usado para exportar o histórico em vez de paginar interativamente.
 
 Cada `100` logs retornados tem um custo de crédito de `1`.
 
@@ -16,11 +16,11 @@ Consultar por data é possível via `before` e `after` como timestamps em miliss
 
 Cada evento registra quem o realizou (`username`, `userId`, `ip`) e, separadamente, sobre o que ele foi realizado. `targetLabel` é um rótulo legível para aquele objeto, por exemplo `jsmith (jsmith@example.com)`, e `targetId` é seu id. Use `target` para uma correspondência de substring sem distinção entre maiúsculas e minúsculas no rótulo quando você conhece o nome ou e‑mail de uma pessoa, mas não seu id.
 
-As exclusões capturam o rótulo no momento do evento, de modo que um usuário ou moderador removido ainda pode ser identificado após o registro subjacente ser excluído.
+Exclusões capturam o rótulo no momento do evento, de modo que um usuário ou moderador removido ainda pode ser identificado após o registro subjacente ser excluído.
 
 ## Managed tenants
 
-Se o seu tenant gerencia outros tenants, defina `includeManagedTenants=true` para retornar eventos do seu tenant e de todos os tenants que ele gerencia em uma única resposta. O `tenantId` de cada log retornado indica de qual tenant ele veio.
+Se seu tenant gerencia outros tenants, defina `includeManagedTenants=true` para retornar eventos do seu tenant e de todos os tenants que ele gerencia em uma única resposta. O `tenantId` de cada log retornado indica de qual tenant ele provém.
 
 [inline-code-attrs-start title = 'Exemplo cURL de AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,12 +28,13 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estrutura de Requisição de AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estrutura de Requisição AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    /** Max 10000. Defaults to 5000. **/
     limit?: number
     skip?: number
     before?: number
@@ -55,7 +56,7 @@ interface AuditLogsRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estrutura de Resposta de AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estrutura de Resposta AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface AuditLogsResponse {
     status: 'success' | 'failed'
@@ -67,3 +68,5 @@ interface AuditLogsResponse {
     auditLogs: AuditLog[]
 }
 [inline-code-end]
+
+---

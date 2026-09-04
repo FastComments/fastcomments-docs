@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Cette API utilise la pagination, fournie par les paramètres `skip`, `limit`, `before` et `after`. Les AuditLogs sont renvoyés en pages de `100` par défaut, jusqu'à une `limit` maximale de `200`, triés par `when` et `id`.
+Cette API utilise la pagination, fournie par les paramètres `skip`, `limit`, `before` et `after`. Les AuditLogs sont renvoyés par pages de `5000` par défaut, jusqu'à une `limit` maximale de `10000`, triés par `when` et `id`. Les pages sont volumineuses car ce point de terminaison est généralement utilisé pour extraire l'historique plutôt que pour le parcourir de façon interactive.
 
 Chaque tranche de `100` journaux renvoyés coûte `1` crédit.
 
@@ -22,7 +22,7 @@ Les suppressions capturent l'étiquette au moment de l'événement, de sorte qu'
 
 Si votre locataire gère d'autres locataires, définissez `includeManagedTenants=true` pour renvoyer les événements de votre locataire et de chaque locataire qu'il gère dans une seule réponse. Le `tenantId` de chaque journal renvoyé indique de quel locataire il provient.
 
-[inline-code-attrs-start title = 'Exemple cURL AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple cURL d\'AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/audit-logs?tenantId=demo&API_KEY=DEMO_API_SECRET&skip=0&order=ASC&before=123&after=456'
@@ -34,6 +34,7 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    /** Max 10000. Defaults to 5000. **/
     limit?: number
     skip?: number
     before?: number
@@ -67,5 +68,3 @@ interface AuditLogsResponse {
     auditLogs: AuditLog[]
 }
 [inline-code-end]
-
----

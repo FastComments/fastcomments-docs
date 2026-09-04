@@ -1,26 +1,26 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-この API は `skip`、`limit`、`before`、`after` パラメータによるページングを使用します。AuditLogs はデフォルトで `100` 件ずつ返され、最大 `limit` は `200`、`when` と `id` の順序で並びます。
+この API は `skip`、`limit`、`before`、`after` パラメータによるページネーションを使用します。AuditLogs はデフォルトで `5000` 件のページで返され、最大 `limit` は `10000` です。`when` と `id` の順序で並びます。このエンドポイントは通常、履歴を一括で取得するために使用され、対話的にページングするためではないため、ページは大きくなります。
 
 返される `100` 件のログごとにクレジットコストは `1` です。
 
-デフォルトでは **最新の項目が最初** にリストされます。このため、`skip=0` からポーリングを開始し、最後に取得したレコードが見つかるまでページングできます。
+デフォルトでは、**最新の項目が最初** のリストが返されます。これにより、`skip=0` からポーリングを開始し、取得した最後のレコードが見つかるまでページングできます。
 
-あるいは、古い順にソートして、レコードがなくなるまでページングすることも可能です。
+あるいは、古い順にソートし、レコードがなくなるまでページングできます。
 
-ソートは `order` を `ASC` または `DESC` に設定して行います。デフォルトは `DESC` です。
+`order` を `ASC` または `DESC` に設定することでソートできます。デフォルトは `DESC` です。
 
-日付でのクエリは、ミリ秒単位のタイムスタンプとして `before` と `after` を使用して行えます。`before` と `after` は **含まれません**。どちらか一方だけでも使用できます。
+`before` と `after` をミリ秒単位のタイムスタンプとして使用することで日付でのクエリが可能です。`before` と `after` は含まれません（排他的）で、どちらか単独でも使用できます。
 
-## 人に何が起きたかを確認する
+## 人物に何が起きたかを確認する
 
-すべてのイベントは、実行者（`username`、`userId`、`ip`）と、実行対象を別々に記録します。`targetLabel` はそのオブジェクトの人間が読めるラベルで、例として `jsmith (jsmith@example.com)` のようになり、`targetId` はその ID です。`target` を使用すると、名前やメールアドレスは分かっても ID が分からない場合に、ラベルに対する大文字小文字を区別しない部分文字列検索ができます。
+各イベントは、実行者（`username`、`userId`、`ip`）と、実行対象を別々に記録します。`targetLabel` はそのオブジェクトの人間が読めるラベルで、例として `jsmith (jsmith@example.com)` のようになります。`targetId` はその ID です。人物の名前やメールアドレスは分かっているが ID が分からない場合は、`target` を使用してラベルに対する大文字小文字を区別しない部分文字列検索を行います。
 
-削除イベントはイベント時点のラベルを保持するため、基になるレコードが削除された後でも、削除されたユーザーやモデレーターを特定できます。
+削除はイベント時点のラベルを取得するため、基になるレコードが削除された後でも、削除されたユーザーやモデレーターを特定できます。
 
 ## 管理テナント
 
-テナントが他のテナントを管理している場合、`includeManagedTenants=true` を設定すると、あなたのテナントと管理下のすべてのテナントからのイベントを 1 つのレスポンスで取得できます。返された各ログの `tenantId` が、どのテナントからのものかを示します。
+テナントが他のテナントを管理している場合、`includeManagedTenants=true` を設定すると、あなたのテナントと管理下のすべてのテナントからのイベントを 1 つのレスポンスで返します。返される各ログの `tenantId` がどのテナントからのものかを示します。
 
 [inline-code-attrs-start title = 'AuditLog cURL 例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -34,6 +34,7 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    /** 最大 10000。デフォルトは 5000。 **/
     limit?: number
     skip?: number
     before?: number
@@ -44,11 +45,11 @@ interface AuditLogsRequestQueryParams {
     ip?: string
     /** このタイプのイベントのみ。 **/
     crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
-    /** このリソース（例: User または Moderator）のイベントのみ。 **/
+    /** このリソース（例: ユーザーまたはモデレーター）のイベントのみ。 **/
     resourceName?: string
-    /** 影響を受けたオブジェクトの ID がこのもののイベントのみ。 **/
+    /** 影響を受けたオブジェクトがこの ID を持つイベントのみ。 **/
     targetId?: string
-    /** 影響を受けたオブジェクトのラベルに対する大文字小文字を区別しない部分文字列検索。 **/
+    /** 影響を受けたオブジェクトのラベルに対する大文字小文字を区別しない部分文字列一致。 **/
     target?: string
     /** このテナントが管理するテナントからのイベントも返す。 **/
     includeManagedTenants?: boolean
@@ -67,3 +68,5 @@ interface AuditLogsResponse {
     auditLogs: AuditLog[]
 }
 [inline-code-end]
+
+---

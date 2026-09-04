@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Questa API utilizza la paginazione, fornita dai parametri `skip`, `limit`, `before` e `after`. I AuditLog vengono restituiti in pagine di `100` per impostazione predefinita, fino a un `limit` massimo di `200`, ordinati per `when` e `id`.
+Questa API utilizza la paginazione, fornita dai parametri `skip`, `limit`, `before` e `after`. Gli AuditLog vengono restituiti in pagine di `5000` per impostazione predefinita, fino a un `limit` massimo di `10000`, ordinati per `when` e `id`. Le pagine sono grandi perché questo endpoint è solitamente usato per scaricare la cronologia piuttosto che per scorrere i risultati interattivamente.
 
 Ogni `100` log restituiti hanno un costo di credito di `1`.
 
@@ -10,11 +10,11 @@ In alternativa, puoi ordinare dal più vecchio al più recente e paginare fino a
 
 L'ordinamento può essere effettuato impostando `order` su `ASC` o `DESC`. Il valore predefinito è `DESC`.
 
-È possibile interrogare per data tramite `before` e `after` come timestamp in millisecondi. `before` e `after` NON sono inclusivi e ciascuno può essere usato da solo.
+È possibile interrogare per data tramite `before` e `after` come timestamp in millisecondi. `before` e `after` NON sono inclusivi, e ciascuno può essere usato da solo.
 
 ## Trovare cosa è successo a una persona
 
-Ogni evento registra chi lo ha eseguito (`username`, `userId`, `ip`) e, separatamente, su cosa è stato eseguito. `targetLabel` è un'etichetta leggibile dall'uomo per quell'oggetto, ad esempio `jsmith (jsmith@example.com)`, e `targetId` è il suo ID. Usa `target` per una corrispondenza di sottostringa non sensibile al maiuscolo/minuscolo sull'etichetta quando conosci il nome o l'email di una persona ma non il suo ID.
+Ogni evento registra chi lo ha eseguito (`username`, `userId`, `ip`) e, separatamente, su cosa è stato eseguito. `targetLabel` è un'etichetta leggibile dall'uomo per quell'oggetto, ad esempio `jsmith (jsmith@example.com)`, e `targetId` è il suo ID. Usa `target` per una corrispondenza di sottostringa case-insensitive sull'etichetta quando conosci il nome o l'email di una persona ma non il suo ID.
 
 Le cancellazioni catturano l'etichetta al momento dell'evento, così un utente o moderatore rimosso può ancora essere identificato dopo che il record sottostante è stato eliminato.
 
@@ -34,6 +34,7 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
+    /** Max 10000. Defaults to 5000. **/
     limit?: number
     skip?: number
     before?: number
