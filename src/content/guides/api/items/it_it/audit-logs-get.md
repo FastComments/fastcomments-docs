@@ -1,24 +1,34 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Questa API utilizza la paginazione, fornita dai parametri `skip`, `limit`, `before` e `after`. Gli AuditLog vengono restituiti in pagine di `5000` per impostazione predefinita, fino a un `limit` massimo di `10000`, ordinati per `when` e `id`. Le pagine sono grandi perché questo endpoint è solitamente usato per scaricare la cronologia piuttosto che per scorrere i risultati interattivamente.
+Questa API utilizza la paginazione, fornita dai parametri `skip`, `limit`, `before` e `after`. I AuditLogs vengono restituiti in pagine di `1000` per impostazione predefinita, fino a un `limit` massimo di `10000`, ordinati per `when` e `id`. Le pagine sono grandi perché questo endpoint è solitamente usato per scaricare la cronologia piuttosto che per scorrere interattivamente.
 
 Ogni `100` log restituiti hanno un costo di credito di `1`.
 
 Per impostazione predefinita, riceverai un elenco con **gli elementi più recenti per primi**. In questo modo, puoi effettuare il polling iniziando con `skip=0`, paginando fino a trovare l'ultimo record consumato.
 
-In alternativa, puoi ordinare dal più vecchio al più recente e paginare fino a quando non ci sono più record.
+In alternativa, puoi ordinare dal più vecchio al più recente e paginare finché non ci sono più record.
 
 L'ordinamento può essere effettuato impostando `order` su `ASC` o `DESC`. Il valore predefinito è `DESC`.
 
-È possibile interrogare per data tramite `before` e `after` come timestamp in millisecondi. `before` e `after` NON sono inclusivi, e ciascuno può essere usato da solo.
+È possibile interrogare per data tramite `before` e `after` come timestamp in millisecondi. `before` e `after` NON sono inclusivi e ciascuno può essere usato da solo.
+
+## Finding what happened to a person
 
 ## Trovare cosa è successo a una persona
 
-Ogni evento registra chi lo ha eseguito (`username`, `userId`, `ip`) e, separatamente, su cosa è stato eseguito. `targetLabel` è un'etichetta leggibile dall'uomo per quell'oggetto, ad esempio `jsmith (jsmith@example.com)`, e `targetId` è il suo ID. Usa `target` per una corrispondenza di sottostringa case-insensitive sull'etichetta quando conosci il nome o l'email di una persona ma non il suo ID.
+Every event records who performed it (`username`, `userId`, `ip`) and, separately, what it was performed on. `targetLabel` is a human-readable label for that object, for example `jsmith (jsmith@example.com)`, and `targetId` is its id. Use `target` for a case-insensitive substring match on the label when you know a person's name or email but not their id.
 
-Le cancellazioni catturano l'etichetta al momento dell'evento, così un utente o moderatore rimosso può ancora essere identificato dopo che il record sottostante è stato eliminato.
+Ogni evento registra chi lo ha eseguito (`username`, `userId`, `ip`) e, separatamente, su cosa è stato eseguito. `targetLabel` è un'etichetta leggibile dall'uomo per quell'oggetto, ad esempio `jsmith (jsmith@example.com)`, e `targetId` è il suo ID. Usa `target` per una corrispondenza di sottostringa case‑insensitive sull'etichetta quando conosci il nome o l'email di una persona ma non il suo ID.
+
+Deletes capture the label at the time of the event, so a removed user or moderator can still be identified after the underlying record is gone.
+
+Le cancellazioni catturano l'etichetta al momento dell'evento, quindi un utente o moderatore rimosso può ancora essere identificato dopo che il record sottostante è stato eliminato.
+
+## Managed tenants
 
 ## Tenant gestiti
+
+If your tenant manages other tenants, set `includeManagedTenants=true` to return events from your tenant and every tenant it manages in one response. Each returned log's `tenantId` tells you which tenant it came from.
 
 Se il tuo tenant gestisce altri tenant, imposta `includeManagedTenants=true` per restituire gli eventi dal tuo tenant e da tutti i tenant che gestisce in una singola risposta. Il `tenantId` di ogni log restituito indica da quale tenant proviene.
 
@@ -34,24 +44,24 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
-    /** Max 10000. Defaults to 5000. **/
+    /** Max 10000. Predefinito a 1000. **/
     limit?: number
     skip?: number
     before?: number
     after?: number
-    /** Only events performed by this username. **/
+    /** Solo gli eventi eseguiti da questo username. **/
     username?: string
-    /** Only events from this IP address. **/
+    /** Solo gli eventi da questo indirizzo IP. **/
     ip?: string
-    /** Only events of this type. **/
+    /** Solo gli eventi di questo tipo. **/
     crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
-    /** Only events for this resource, e.g. User or Moderator. **/
+    /** Solo gli eventi per questa risorsa, ad es. Utente o Moderatore. **/
     resourceName?: string
-    /** Only events whose affected object has this id. **/
+    /** Solo gli eventi il cui oggetto interessato ha questo ID. **/
     targetId?: string
-    /** Case-insensitive substring match on the affected object's label. **/
+    /** Corrispondenza di sottostringa case‑insensitive sull'etichetta dell'oggetto interessato. **/
     target?: string
-    /** Also return events from tenants this tenant manages. **/
+    /** Restituisce anche gli eventi dai tenant che questo tenant gestisce. **/
     includeManagedTenants?: boolean
 }
 [inline-code-end]
@@ -60,11 +70,11 @@ interface AuditLogsRequestQueryParams {
 [inline-code-start]
 interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Incluso in caso di errore. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
-    /** Included on failure. **/
+    /** Incluso in caso di errore. **/
     reason?: string
-    /** The logs! **/
+    /** I log! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]
