@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-This API uses pagination, provided by the `skip`, `limit`, `before`, and `after` parameters. AuditLogs are returned in pages of `5000` by default, up to a maximum `limit` of `10000`, ordered by `when` and `id`. The pages are large because this endpoint is usually used to dump history rather than to page through it interactively.
+This API uses pagination, provided by the `skip`, `limit`, `before`, and `after` parameters. AuditLogs are returned in pages of `1000` by default, up to a maximum `limit` of `10000`, ordered by `when` and `id`. The pages are large because this endpoint is usually used to dump history rather than to page through it interactively.
 
 Every `100` logs returned has a credit cost of `1`.
 
@@ -34,7 +34,7 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
-    /** Max 10000. Defaults to 5000. **/
+    /** Max 10000. Defaults to 1000. **/
     limit?: number
     skip?: number
     before?: number
