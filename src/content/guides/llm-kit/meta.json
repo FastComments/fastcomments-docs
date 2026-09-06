@@ -11,6 +11,11 @@
       "name": "MCP Server",
       "file": "mcp-server.md",
       "subCat": "MCP Server"
+    },
+    {
+      "name": "Let an Agent Set Up Your Account",
+      "file": "agent-account-setup.md",
+      "subCat": "Agent Account Setup"
     }
   ]
 }
