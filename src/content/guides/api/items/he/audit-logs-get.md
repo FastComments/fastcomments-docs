@@ -1,22 +1,22 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-API זה משתמש בעימוד, המסופק על ידי הפרמטרים `skip`, `limit`, `before` ו-`after`. AuditLogs מוחזרים בעמודים של `5000` כברירת מחדל, עד למגבלה מרבית של `limit` של `10000`, ממוינים לפי `when` ו-`id`. העמודים גדולים מכיוון שהקצה זה משמש בדרך כלל לייצוא היסטוריה במקום לעבור עליו באופן אינטראקטיבי.
+API זה משתמש בעימוד, המסופק על ידי הפרמטרים `skip`, `limit`, `before`, ו-`after`. AuditLogs מוחזרים בעמודים של `1000` כברירת מחדל, עד למקסימום `limit` של `10000`, ממוינים לפי `when` ו-`id`. העמודים גדולים מכיוון שהקצה זה משמש בדרך כלל לייצוא היסטוריה במקום לעבור בעמודים באופן אינטראקטיבי.
 
-כל `100` לוגים שמוחזרים עולה `1` קרדיט.
+כל `100` רשומות שמוחזרות בעלות קרדיט של `1`.
 
-בברירת מחדל, תקבל רשימה עם **הפריטים החדשים ביותר ראשונים**. כך תוכל לבצע סקר החל מ-`skip=0`, לעבור על העמודים עד שתמצא את הרשומה האחרונה שצברת.
+בברירת מחדל, תקבל רשימה עם **הפריטים החדשים ביותר ראשונים**. כך, תוכל לבצע polling החל מ-`skip=0`, לעבור בעמודים עד שתמצא את הרשומה האחרונה שצורכת.
 
-לחלופין, ניתן למיין מהישן לחדש, ולעבור על העמודים עד שלא נותרו רשומות.
+לחלופין, אתה יכול למיין מהישן לחדש, ולעבור בעמודים עד שאין עוד רשומות.
 
 ניתן למיין על ידי הגדרת `order` ל-`ASC` או `DESC`. ברירת המחדל היא `DESC`.
 
-ניתן לבצע שאילתות לפי תאריך באמצעות `before` ו-`after` כתזמונים במילישניות. `before` ו-`after` אינם כולליים, וכל אחד מהם ניתן לשימוש באופן עצמאי.
+ניתן לבצע שאילתא לפי תאריך באמצעות `before` ו-`after` כתזמונים במילישניות. `before` ו-`after` אינם כולליים, וכל אחד מהם ניתן לשימוש בנפרד.
 
-## מציאת מה שקרה לאדם
+## מציאת מה קרה לאדם
 
-כל אירוע מתעד מי ביצע אותו (`username`, `userId`, `ip`) ובנפרד, על מה הוא בוצע. `targetLabel` הוא תווית קריאה לבן אדם עבור האובייקט, לדוגמה `jsmith (jsmith@example.com)`, ו-`targetId` הוא המזהה שלו. השתמש ב-`target` להתאמת תת‑מחרוזת ללא תלות ברישיות על התווית כאשר אתה יודע את שם האדם או האימייל אך לא את המזהה שלו.
+כל אירוע מתעד מי ביצע אותו (`username`, `userId`, `ip`) ובנפרד, על מה הוא בוצע. `targetLabel` הוא תווית קריאה לבן אדם עבור האובייקט, לדוגמה `jsmith (jsmith@example.com)`, ו-`targetId` הוא המזהה שלו. השתמש ב-`target` להתאמת תת-מחרוזת ללא תלות ברישיות על התווית כאשר אתה יודע את שם האדם או האימייל אך לא את המזהה שלו.
 
-מחיקות תופסות את התווית בזמן האירוע, כך שמשתמש או מודרטור שהוסרו עדיין ניתן לזהות לאחר שהרשומה הבסיסית נעלמה.
+מחיקות קולטות את התווית בזמן האירוע, ולכן משתמש או מודרטור שהוסרו עדיין ניתן לזהות לאחר שהרשומה הבסיסית נעלמה.
 
 ## שכירים מנוהלים
 
@@ -34,24 +34,24 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
-    /** Max 10000. Defaults to 5000. **/
+    /** מקסימום 10000. ברירת מחדל 1000. **/
     limit?: number
     skip?: number
     before?: number
     after?: number
-    /** Only events performed by this username. **/
+    /** רק אירועים שבוצעו על ידי שם משתמש זה. **/
     username?: string
-    /** Only events from this IP address. **/
+    /** רק אירועים מכתובת IP זו. **/
     ip?: string
-    /** Only events of this type. **/
+    /** רק אירועים מסוג זה. **/
     crudType?: 'c' | 'r' | 'u' | 'd' | 'login'
-    /** Only events for this resource, e.g. User or Moderator. **/
+    /** רק אירועים עבור משאב זה, למשל משתמש או מודרטור. **/
     resourceName?: string
-    /** Only events whose affected object has this id. **/
+    /** רק אירועים שהאובייקט המושפע שלהם בעל מזהה זה. **/
     targetId?: string
-    /** Case-insensitive substring match on the affected object's label. **/
+    /** התאמת תת-מחרוזת ללא תלות ברישיות על תווית האובייקט המושפע. **/
     target?: string
-    /** Also return events from tenants this tenant manages. **/
+    /** גם החזר אירועים משוכרים שהשוכר הזה מנהל. **/
     includeManagedTenants?: boolean
 }
 [inline-code-end]
@@ -60,11 +60,11 @@ interface AuditLogsRequestQueryParams {
 [inline-code-start]
 interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** כלול בכשל. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
-    /** Included on failure. **/
+    /** כלול בכשל. **/
     reason?: string
-    /** The logs! **/
+    /** הלוגים! **/
     auditLogs: AuditLog[]
 }
 [inline-code-end]

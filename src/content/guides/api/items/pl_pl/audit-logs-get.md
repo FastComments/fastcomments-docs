@@ -1,26 +1,26 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-This API uses pagination, provided by the `skip`, `limit`, `before`, and `after` parameters. AuditLogs are returned in pages of `5000` by default, up to a maximum `limit` of `10000`, ordered by `when` and `id`. The pages are large because this endpoint is usually used to dump history rather than to page through it interactively.
+To API używa paginacji, udostępnianej przez parametry `skip`, `limit`, `before` i `after`. AuditLogi są zwracane w stronach po `1000` domyślnie, do maksymalnego `limit` wynoszącego `10000`, uporządkowane według `when` i `id`. Strony są duże, ponieważ ten endpoint jest zazwyczaj używany do zrzutu historii, a nie do interaktywnego przewijania.
 
-Every `100` logs returned has a credit cost of `1`.
+Każde `100` zwróconych logów kosztuje `1` kredyt.
 
-By default, you will receive a list with **the newest items first**. This way, you can poll starting with `skip=0`, paginating until you find the last record you've consumed.
+Domyślnie otrzymasz listę z **najnowszymi elementami jako pierwsze**. W ten sposób możesz pollować zaczynając od `skip=0`, paginując aż znajdziesz ostatni rekord, który już pobrałeś.
 
-Alternatively, you can sort oldest-first, and paginate until there are no more records.
+Alternatywnie możesz sortować od najstarszych, i paginować aż nie będzie już więcej rekordów.
 
-Sorting can be done by setting `order` to either `ASC` or `DESC`. The default is `DESC`.
+Sortowanie można wykonać ustawiając `order` na `ASC` lub `DESC`. Domyślnie jest `DESC`.
 
-Querying by date is possible via `before` and `after` as timestamps with milliseconds. `before` and `after` are NOT inclusive, and either can be used on its own.
+Zapytania według daty są możliwe przy użyciu `before` i `after` jako znaczników czasu w milisekundach. `before` i `after` NIE są inkluzywne i każde z nich może być użyte samodzielnie.
 
-## Finding what happened to a person
+## Znalezienie, co stało się z osobą
 
-Every event records who performed it (`username`, `userId`, `ip`) and, separately, what it was performed on. `targetLabel` is a human-readable label for that object, for example `jsmith (jsmith@example.com)`, and `targetId` is its id. Use `target` for a case-insensitive substring match on the label when you know a person's name or email but not their id.
+Każde zdarzenie rejestruje, kto je wykonał (`username`, `userId`, `ip`) oraz, osobno, na czym zostało wykonane. `targetLabel` to czytelna etykieta tego obiektu, na przykład `jsmith (jsmith@example.com)`, a `targetId` to jego identyfikator. Użyj `target` do dopasowania podciągu (bez uwzględniania wielkości liter) w etykiecie, gdy znasz imię lub e‑mail osoby, ale nie jej identyfikator.
 
-Deletes capture the label at the time of the event, so a removed user or moderator can still be identified after the underlying record is gone.
+Usunięcia przechwytują etykietę w momencie zdarzenia, więc usunięty użytkownik lub moderator może być nadal zidentyfikowany po usunięciu pierwotnego rekordu.
 
-## Managed tenants
+## Zarządzane najemcy
 
-If your tenant manages other tenants, set `includeManagedTenants=true` to return events from your tenant and every tenant it manages in one response. Each returned log's `tenantId` tells you which tenant it came from.
+Jeśli Twój tenant zarządza innymi tenantami, ustaw `includeManagedTenants=true`, aby zwrócić zdarzenia z Twojego tenantu oraz ze wszystkich tenantów, które on zarządza, w jednej odpowiedzi. `tenantId` każdego zwróconego logu informuje, z którego tenantu pochodzi.
 
 [inline-code-attrs-start title = 'Przykład cURL AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -34,7 +34,7 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
-    /** Maksymalnie 10000. Domyślnie 5000. **/
+    /** Maksymalnie 10000. Domyślnie 1000. **/
     limit?: number
     skip?: number
     before?: number
@@ -49,9 +49,9 @@ interface AuditLogsRequestQueryParams {
     resourceName?: string
     /** Tylko zdarzenia, których dotknięty obiekt ma ten identyfikator. **/
     targetId?: string
-    /** Nieczułe na wielkość liter dopasowanie podciągu w etykiecie dotkniętego obiektu. **/
+    /** Dopasowanie podciągu (bez uwzględniania wielkości liter) w etykiecie dotkniętego obiektu. **/
     target?: string
-    /** Również zwróć zdarzenia od najemców, których ten najemca zarządza. **/
+    /** Również zwróć zdarzenia z tenantów, które ten tenant zarządza. **/
     includeManagedTenants?: boolean
 }
 [inline-code-end]
@@ -60,9 +60,9 @@ interface AuditLogsRequestQueryParams {
 [inline-code-start]
 interface AuditLogsResponse {
     status: 'success' | 'failed'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Zawarte w przypadku niepowodzenia. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'invalid-limit' | 'invalid-skip'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Zawarte w przypadku niepowodzenia. **/
     reason?: string
     /** Logi! **/
     auditLogs: AuditLog[]

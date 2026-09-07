@@ -2,6 +2,22 @@
 
 Documentation and Tutorials that lives at https://docs.fastcomments.com
 
+## AI coding agents
+
+[![skills.sh](https://skills.sh/b/fastcomments/skills)](https://skills.sh/fastcomments/skills)
+
+Give your coding agent the FastComments context it needs - widgets, configuration, Secure SSO, the REST API, and the SDKs:
+
+```bash
+npx skills add fastcomments/skills
+```
+
+The skill lives at [FastComments/skills](https://github.com/FastComments/skills). These docs also expose a search API that needs no API key:
+
+```bash
+curl "https://docs-search.fastcomments.com/search?query=sso&full=true&tenantId=demo"
+```
+
 ## Contributing
 
 Before starting work, please open an issue describing the improvement you want to make so that your work is not

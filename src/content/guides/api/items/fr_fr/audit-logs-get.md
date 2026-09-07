@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'AuditLog'; route = 'GET /api/v1/audit-logs'; creditsCost = 10; api-resource-header-end]
 
-Cette API utilise la pagination, fournie par les paramètres `skip`, `limit`, `before` et `after`. Les AuditLogs sont renvoyés par pages de `5000` par défaut, jusqu'à une `limit` maximale de `10000`, triés par `when` et `id`. Les pages sont volumineuses car ce point de terminaison est généralement utilisé pour extraire l'historique plutôt que pour le parcourir de façon interactive.
+Cette API utilise la pagination, fournie par les paramètres `skip`, `limit`, `before` et `after`. Les AuditLogs sont renvoyés en pages de `1000` par défaut, jusqu'à une `limit` maximale de `10000`, triés par `when` et `id`. Les pages sont volumineuses car ce point de terminaison est généralement utilisé pour extraire l'historique plutôt que pour le parcourir de façon interactive.
 
-Chaque tranche de `100` journaux renvoyés coûte `1` crédit.
+Chaque tranche de `100` logs renvoyés coûte `1` crédit.
 
 Par défaut, vous recevrez une liste avec **les éléments les plus récents en premier**. Ainsi, vous pouvez interroger en commençant par `skip=0`, en paginant jusqu'à ce que vous trouviez le dernier enregistrement que vous avez consommé.
 
@@ -14,13 +14,13 @@ Il est possible de filtrer par date via `before` et `after` en tant qu'horodatag
 
 ## Trouver ce qui est arrivé à une personne
 
-Chaque événement enregistre qui l'a effectué (`username`, `userId`, `ip`) et, séparément, sur quoi il a été effectué. `targetLabel` est une étiquette lisible par l'homme pour cet objet, par exemple `jsmith (jsmith@example.com)`, et `targetId` est son identifiant. Utilisez `target` pour une correspondance insensible à la casse sur l'étiquette lorsque vous connaissez le nom ou l'email d'une personne mais pas son identifiant.
+Chaque événement enregistre qui l'a effectué (`username`, `userId`, `ip`) et, séparément, sur quoi il a été effectué. `targetLabel` est une étiquette lisible par l'homme pour cet objet, par exemple `jsmith (jsmith@example.com)`, et `targetId` est son identifiant. Utilisez `target` pour une correspondance insensible à la casse d'une sous-chaîne sur l'étiquette lorsque vous connaissez le nom ou l'email d'une personne mais pas son identifiant.
 
 Les suppressions capturent l'étiquette au moment de l'événement, de sorte qu'un utilisateur ou modérateur supprimé puisse encore être identifié après la disparition de l'enregistrement sous-jacent.
 
 ## Locataires gérés
 
-Si votre locataire gère d'autres locataires, définissez `includeManagedTenants=true` pour renvoyer les événements de votre locataire et de chaque locataire qu'il gère dans une seule réponse. Le `tenantId` de chaque journal renvoyé indique de quel locataire il provient.
+Si votre locataire gère d'autres locataires, définissez `includeManagedTenants=true` pour renvoyer les événements de votre locataire et de chaque locataire qu'il gère dans une seule réponse. Le `tenantId` de chaque log renvoyé indique de quel locataire il provient.
 
 [inline-code-attrs-start title = 'Exemple cURL d\'AuditLog'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -34,7 +34,7 @@ interface AuditLogsRequestQueryParams {
     tenantId: string
     API_KEY: string
     order?: 'ASC' | 'DESC'
-    /** Max 10000. Defaults to 5000. **/
+    /** Max 10000. Defaults to 1000. **/
     limit?: number
     skip?: number
     before?: number
@@ -68,3 +68,5 @@ interface AuditLogsResponse {
     auditLogs: AuditLog[]
 }
 [inline-code-end]
+
+---
