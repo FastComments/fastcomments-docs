@@ -1,9 +1,9 @@
 [![skills.sh](https://skills.sh/b/fastcomments/skills)](https://skills.sh/fastcomments/skills)
 
-Give your coding agent the FastComments context it needs - widgets, configuration, Secure SSO, the REST API, and the SDKs:
+Daj swojemu agentowi kodującemu kontekst FastComments, którego potrzebuje - widgety, konfiguracja, Secure SSO, REST API i SDK:
 
 ```bash
 npx skills add fastcomments/skills
 ```
 
-Works with Claude Code, Codex, Cursor, Copilot, Gemini, and every other agent the [skills CLI](https://github.com/vercel-labs/skills) supports.
+Działa z Claude Code, Codex, Cursor, Copilot, Gemini i każdym innym agentem, którego obsługuje [skills CLI](https://github.com/vercel-labs/skills).
