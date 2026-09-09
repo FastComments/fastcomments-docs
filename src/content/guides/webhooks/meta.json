@@ -38,6 +38,11 @@
       "subCat": "Implementation"
     },
     {
+      "name": "Managing Webhooks via the API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementation"
+    },
+    {
       "name": "How it Works & Handling Retries",
       "file": "webhooks-how-it-works.md",
       "subCat": "Behind The Scenes"
