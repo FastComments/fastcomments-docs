@@ -1,4 +1,5 @@
-To see every widget and flow running locally against the public `demo` tenant, clone the repo and run:
+---
+Če želite videti vsak pripomoček in tok, ki tečejo lokalno proti javnemu najemniku `demo`, klonirajte repozitorij in zaženite:
 
 ```bash
 npm install
@@ -8,6 +9,7 @@ npm install
 npm run dev
 ```
 
-The examples link to the library via `file:../..`, so the root `npm run build` step is needed once to produce `dist/`.
+Primeri se povežejo s knjižnico prek `file:../..`, zato je korak `npm run build` v korenu potreben enkrat, da se ustvari `dist/`.
 
-Each widget/flow has its own view under `examples/example-showcase/src/views/` that you can copy straight into your own React app.
+Vsak pripomoček/tok ima svoj pogled v `examples/example-showcase/src/views/`, ki ga lahko neposredno kopirate v svojo React aplikacijo.
+---
