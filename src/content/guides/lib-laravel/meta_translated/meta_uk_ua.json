@@ -1,7 +1,13 @@
 {
   "name": "Пакет Laravel",
-  "pageHeader": "Додайте коментарі до вашого застосунку Laravel",
+  "pageHeader": "Додайте коментарі до вашого Laravel застосунку",
   "itemsOrdered": [
+    {
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Вимоги",
       "file": "requirements-readme-generated.md",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Єдиний вхід (SSO)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -29,17 +35,17 @@
     {
       "name": "Доступ до API",
       "file": "api-access-readme-generated.md",
-      "subCat": "Довідник API",
+      "subCat": "Довідка API",
       "type": "readme"
     },
     {
-      "name": "Довідник конфігурації",
+      "name": "Довідка з конфігурації",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "Довідник API",
+      "subCat": "Довідка API",
       "type": "readme"
     },
     {
-      "name": "Налаштування подань",
+      "name": "Налаштування виглядів",
       "file": "customizing-views-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

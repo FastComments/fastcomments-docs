@@ -1,11 +1,13 @@
----
-Om elke widget en flow lokaal te zien draaien tegen de openbare `demo` tenant, kloon de repo en voer uit:
+To see every widget and flow running locally against the public `demo` tenant, clone the repo and run:
 
 ```bash
+npm install
+npm run build
 cd examples/example-showcase
 npm install
 npm run dev
 ```
 
-Elke widget/flow heeft zijn eigen view onder `examples/example-showcase/src/views/` die je rechtstreeks kunt kopiëren naar je eigen React-app.
----
+The examples link to the library via `file:../..`, so the root `npm run build` step is needed once to produce `dist/`.
+
+Each widget/flow has its own view under `examples/example-showcase/src/views/` that you can copy straight into your own React app.

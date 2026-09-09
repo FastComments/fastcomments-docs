@@ -1,16 +1,21 @@
 {
-  "name": "LLM-Kit",
+  "name": "LLM Kit",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "LLM-Kit erhalten",
+      "name": "Erhalte das LLM Kit",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM-Integration"
     },
     {
-      "name": "MCP-Server",
+      "name": "MCP Server",
       "file": "mcp-server.md",
-      "subCat": "MCP-Server"
+      "subCat": "MCP Server"
+    },
+    {
+      "name": "Lass einen Agenten dein Konto einrichten",
+      "file": "agent-account-setup.md",
+      "subCat": "Agenten-Kontoeinrichtung"
     }
   ]
 }

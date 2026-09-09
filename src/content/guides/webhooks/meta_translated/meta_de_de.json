@@ -5,15 +5,15 @@
     {
       "name": "Was sind Webhooks",
       "file": "what-are-webhooks.md",
-      "subCat": "Überblick"
+      "subCat": "Übersicht"
     },
     {
-      "name": "Unterstützte Ereignisse und Ressourcen",
+      "name": "Unterstützte Ereignisse & Ressourcen",
       "file": "webhooks-supported-events-resources.md",
-      "subCat": "Überblick"
+      "subCat": "Übersicht"
     },
     {
-      "name": "Einrichtung der lokalen Entwicklungsumgebung",
+      "name": "Lokale Entwicklungsumgebung",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementierung"
     },
@@ -38,7 +38,12 @@
       "subCat": "Implementierung"
     },
     {
-      "name": "Funktionsweise und Umgang mit Wiederholungsversuchen",
+      "name": "Verwalten von Webhooks über die API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementierung"
+    },
+    {
+      "name": "Wie es funktioniert & Umgang mit Wiederholungen",
       "file": "webhooks-how-it-works.md",
       "subCat": "Hinter den Kulissen"
     }

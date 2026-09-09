@@ -1,29 +1,35 @@
 {
   "name": "Laravel 套件",
-  "pageHeader": "在你的 Laravel 應用中新增評論",
+  "pageHeader": "在您的 Laravel 應用程式中加入註解",
   "itemsOrdered": [
+    {
+      "name": "AI 程式編寫代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文件說明",
+      "type": "readme"
+    },
     {
       "name": "需求",
       "file": "requirements-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "入門",
+      "subCat": "快速入門",
       "type": "readme"
     },
     {
       "name": "Blade 元件",
       "file": "blade-components-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
       "name": "單一登入",
       "file": "sso-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
@@ -41,7 +47,7 @@
     {
       "name": "自訂視圖",
       "file": "customizing-views-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     }
   ]

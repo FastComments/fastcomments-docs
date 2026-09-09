@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u svoju Django aplikaciju",
   "itemsOrdered": [
     {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Zahtjevi",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -17,7 +23,7 @@
     {
       "name": "Brzi početak",
       "file": "quickstart-readme-generated.md",
-      "subCat": "Korištenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Prilagodba ugradbenog markup-a",
+      "name": "Prilagodba ugrađenog markup-a",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -65,7 +71,7 @@
     {
       "name": "Primjer projekta",
       "file": "example-project-readme-generated.md",
-      "subCat": "Korištenje",
+      "subCat": "Upotreba",
       "type": "readme"
     }
   ]

@@ -3,13 +3,19 @@
   "pageHeader": "Vue 3 앱에 댓글 추가하기",
   "itemsOrdered": [
     {
-      "name": "라이브 데모",
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "실시간 데모",
       "file": "live-demo-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "라이브 쇼케이스",
+      "name": "실시간 쇼케이스",
       "file": "live-showcase-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "현재 페이지 업데이트 (SPA 예제)",
+      "name": "현재 페이지 업데이트 (SPA 예시)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"
     },
     {
-      "name": "프로덕션 환경",
+      "name": "프로덕션에서",
       "file": "in-production-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

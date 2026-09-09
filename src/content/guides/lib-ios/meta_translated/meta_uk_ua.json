@@ -1,7 +1,13 @@
 {
-  "name": "Бібліотека для iOS",
-  "pageHeader": "Додайте коментарі до вашого iOS-додатка",
+  "name": "iOS бібліотека",
+  "pageHeader": "Додайте коментарі до вашого iOS додатку",
   "itemsOrdered": [
+    {
+      "name": "AI агенти кодування",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Функції",
       "file": "features-readme-generated.md",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Вкладені коментарі",
+      "name": "Тематичні коментарі",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Теми оформлення",
+      "name": "Тематизація",
       "file": "theming-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

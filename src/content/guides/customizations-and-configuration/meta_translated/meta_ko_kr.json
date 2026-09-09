@@ -1,24 +1,24 @@
 {
-  "name": "사용자 정의 및 구성",
+  "name": "맞춤 설정 및 구성",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "계정 식별",
       "file": "tenant-id.md",
-      "subCat": "기본 사항"
+      "subCat": "기본"
     },
     {
-      "name": "댓글이 페이지와 기사에 연결되는 방법",
+      "name": "댓글이 페이지와 기사에 연결되는 방식",
       "file": "url-id.md",
-      "subCat": "기본 사항"
+      "subCat": "기본"
     },
     {
-      "name": "다른 페이지에서 동일한 댓글 표시",
+      "name": "다른 페이지에 동일한 댓글 표시",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "기본 사항"
+      "subCat": "기본"
     },
     {
-      "name": "맞춤 스타일",
+      "name": "맞춤 스타일링",
       "file": "custom-css.md",
       "subCat": "모양 및 느낌"
     },
@@ -33,7 +33,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "어두운 배경(다크 모드) 지원",
+      "name": "다크 배경 지원 (다크 모드)",
       "file": "has-dark-background.md",
       "subCat": "모양 및 느낌"
     },
@@ -63,12 +63,12 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "댓글에서 페이지로 링크하기",
+      "name": "댓글에서 페이지로 연결",
       "file": "url.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "답글을 기본적으로 접기",
+      "name": "기본적으로 답글 접기",
       "file": "collapse-replies.md",
       "subCat": "모양 및 느낌"
     },
@@ -78,12 +78,12 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "도구 모음 비활성화",
+      "name": "툴바 비활성화",
       "file": "disable-toolbar.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "차단 기능 비활성화",
+      "name": "차단 비활성화",
       "file": "disable-blocking.md",
       "subCat": "모양 및 느낌"
     },
@@ -93,17 +93,17 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "페이지 새로고침 없이 댓글 스레드 전환",
+      "name": "페이지를 새로 고치지 않고 댓글 스레드 전환",
       "file": "switching-comment-threads.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "절대 날짜(사람 친화적 타임스탬프 비활성화)",
+      "name": "절대 날짜 (인간 친화적 타임스탬프 비활성화)",
       "file": "absolute-dates.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "절대 및 상대 날짜 동시 표시",
+      "name": "절대 날짜와 상대 날짜 모두 표시",
       "file": "absolute-and-relative-dates.md",
       "subCat": "모양 및 느낌"
     },
@@ -123,12 +123,12 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "댓글 수 문구 사용자화",
+      "name": "댓글 수 텍스트 맞춤 설정",
       "file": "comment-count-format.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "이미지 리디렉션 비활성화",
+      "name": "이미지 리다이렉트 비활성화",
       "file": "disable-image-redirect.md",
       "subCat": "모양 및 느낌"
     },
@@ -153,7 +153,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "프로필 다이렉트 메시지 비활성화",
+      "name": "프로필 직접 메시지 비활성화",
       "file": "disable-profile-direct-messages.md",
       "subCat": "모양 및 느낌"
     },
@@ -183,12 +183,12 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "수정 비활성화",
+      "name": "편집 비활성화",
       "file": "disable-editing.md",
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "새 댓글 강조 표시",
+      "name": "새 댓글 강조",
       "file": "highlighting-new-comments.md",
       "subCat": "모양 및 느낌"
     },
@@ -228,7 +228,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "댓글 조회수 표시 활성화",
+      "name": "댓글 조회수 활성화",
       "file": "enable-comment-view-counts.md",
       "subCat": "모양 및 느낌"
     },
@@ -250,52 +250,57 @@
     {
       "name": "무한 스크롤 활성화",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "페이지 매김 및 정렬"
+      "subCat": "페이지네이션 및 정렬"
     },
     {
       "name": "기본 정렬 방향 변경",
       "file": "default-sort-direction.md",
-      "subCat": "페이지 매김 및 정렬"
+      "subCat": "페이지네이션 및 정렬"
     },
     {
-      "name": "모든 댓글 한 번에 렌더링 - 페이지네이션 비활성화",
+      "name": "한 번에 모든 댓글 렌더링 - 페이지네이션 비활성화",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "페이지 매김 및 정렬"
+      "subCat": "페이지네이션 및 정렬"
     },
     {
-      "name": "답글 입력 상자를 댓글 뒤로 이동",
+      "name": "답글 박스를 댓글 뒤로 이동",
       "file": "input-after-comments.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
     },
     {
       "name": "댓글 길이 제한",
       "file": "max-comment-character-length.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
     },
     {
-      "name": "다중 줄 댓글 비활성화",
+      "name": "다중 라인 댓글 비활성화",
       "file": "use-single-line-comment-input.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
     },
     {
-      "name": "사용자별 댓글 수 제한",
+      "name": "사용자당 댓글 수 제한",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
     },
     {
-      "name": "새 최상위 댓글 금지",
+      "name": "새 최상위 댓글 방지",
       "file": "no-new-root-comments.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
     },
     {
       "name": "최대 답글 깊이",
       "file": "max-reply-depth.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
     },
     {
-      "name": "이용 약관 동의 필수",
+      "name": "서비스 약관 동의 필요",
       "file": "terms-of-service.md",
-      "subCat": "답글 입력 상자"
+      "subCat": "답글 박스"
+    },
+    {
+      "name": "전송되지 않은 댓글이 있을 때 떠나기 전 경고",
+      "file": "warn-on-unsaved-comment.md",
+      "subCat": "답글 박스"
     },
     {
       "name": "싱글 사인온(SSO) 개요",
@@ -308,7 +313,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "맞춤 통합 - 단순 싱글 사인온(SSO)",
+      "name": "맞춤 통합 - 간단 싱글 사인온(SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -323,7 +328,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "SSO로 댓글 스레드 보호",
+      "name": "싱글 사인온으로 댓글 스레드 보호",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -343,7 +348,7 @@
       "subCat": "익명 댓글"
     },
     {
-      "name": "미확인 라벨 비활성화",
+      "name": "미인증 라벨 비활성화",
       "file": "disable-unverified-label.md",
       "subCat": "익명 댓글"
     },
@@ -378,7 +383,7 @@
       "subCat": "기타"
     },
     {
-      "name": "새 답글 금지 및 투표 비활성화",
+      "name": "새 답글 방지 및 투표 비활성화",
       "file": "readonly.md",
       "subCat": "기타"
     },
@@ -388,7 +393,7 @@
       "subCat": "기타"
     },
     {
-      "name": "댓글 수 및 모든 중첩 답글 포함 카운트",
+      "name": "댓글 수 및 모든 중첩 답글 계산",
       "file": "count-all.md",
       "subCat": "기타"
     },
@@ -398,17 +403,17 @@
       "subCat": "기타"
     },
     {
-      "name": "모더레이션 그룹",
+      "name": "중재 그룹",
       "file": "moderation-group-ids.md",
       "subCat": "기타"
     },
     {
-      "name": "멘션 그룹 ID",
+      "name": "그룹 ID 멘션",
       "file": "mention-group-ids.md",
       "subCat": "기타"
     },
     {
-      "name": "타사 쿠키 우회",
+      "name": "제3자 쿠키 우회",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "기타"
     },

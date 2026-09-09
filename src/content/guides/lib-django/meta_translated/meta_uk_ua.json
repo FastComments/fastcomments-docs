@@ -1,7 +1,13 @@
 {
   "name": "Пакет Django",
-  "pageHeader": "Додайте коментарі до вашого Django‑додатку",
+  "pageHeader": "Додайте коментарі до вашого Django-додатку",
   "itemsOrdered": [
+    {
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
     {
       "name": "Вимоги",
       "file": "requirements-readme-generated.md",
@@ -21,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "Передумови для автоматичного SSO",
+      "name": "Вимоги для автоматичного SSO",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Теги віджету",
+      "name": "Теги віджета",
       "file": "widget-tags-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -41,7 +47,7 @@
     {
       "name": "Доступ до API на боці сервера",
       "file": "server-side-api-access-readme-generated.md",
-      "subCat": "Довідник API",
+      "subCat": "Довідка API",
       "type": "readme"
     },
     {
@@ -57,9 +63,9 @@
       "type": "readme"
     },
     {
-      "name": "Довідник налаштувань",
+      "name": "Довідка щодо налаштувань",
       "file": "settings-reference-readme-generated.md",
-      "subCat": "Довідник API",
+      "subCat": "Довідка API",
       "type": "readme"
     },
     {

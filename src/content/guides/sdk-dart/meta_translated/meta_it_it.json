@@ -3,6 +3,12 @@
   "pageHeader": "FastComments SDK Dart",
   "itemsOrdered": [
     {
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Layout",
       "file": "layout-readme-generated.md",
       "subCat": "Documentazione",
@@ -29,7 +35,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Log di audit",
+      "subCat": "Registri di audit",
       "type": "api"
     },
     {
@@ -635,7 +641,7 @@
     {
       "name": "postVote",
       "file": "postvote-api-generated.md",
-      "subCat": "Moderazione",
+      "subCat": "Voti",
       "type": "api"
     },
     {
@@ -851,79 +857,79 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni domanda",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni domanda",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni domanda",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni domanda",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurazioni domande",
+      "subCat": "Configurazioni domanda",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati domanda",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati domanda",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati domanda",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati domanda",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Risultati domande",
+      "subCat": "Risultati domanda",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregazione risultati domande",
+      "subCat": "Aggregazione risultati domanda",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregazione risultati domande",
+      "subCat": "Aggregazione risultati domanda",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregazione risultati domande",
+      "subCat": "Aggregazione risultati domanda",
       "type": "api"
     },
     {
@@ -1235,7 +1241,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Stato presenza utente",
+      "subCat": "User Presence Status",
       "type": "api"
     },
     {

@@ -1,7 +1,13 @@
 {
   "name": "Eleventy (11ty) Bibliotek",
-  "pageHeader": "Tilføj kommentarer til dit Eleventy (11ty) websted",
+  "pageHeader": "Tilføj kommentarer til dit Eleventy (11ty) site",
   "itemsOrdered": [
+    {
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Live-demo",
       "file": "live-demo-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Installér",
+      "name": "Installation",
       "file": "install-readme-generated.md",
       "subCat": "Kom i gang",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Manuel brug (uden plugin)",
+      "name": "Manuel brug (uden pluginet)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"

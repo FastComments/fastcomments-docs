@@ -3,6 +3,12 @@
   "pageHeader": "FastComments PHP SDK",
   "itemsOrdered": [
     {
+      "name": "AI コーディングエージェント",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "インストールと使用方法",
       "file": "installation-usage-readme-generated.md",
       "subCat": "はじめに",
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "作成者",
+      "name": "作者",
       "file": "author-readme-generated.md",
       "subCat": "認証",
       "type": "readme"
@@ -51,127 +57,127 @@
       "type": "api"
     },
     {
-      "name": "監査ログを取得",
+      "name": "取得監査ログ",
       "file": "getauditlogs-api-generated.md",
       "subCat": "監査ログ",
       "type": "api"
     },
     {
-      "name": "公開ログアウト",
+      "name": "ログアウト（公開）",
       "file": "logoutpublic-api-generated.md",
       "subCat": "認証",
       "type": "api"
     },
     {
-      "name": "コメントからブロック",
+      "name": "コメントからブロック（公開）",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "コメントからのブロック",
+      "subCat": "コメントからブロック",
       "type": "api"
     },
     {
-      "name": "公開コメントのブロック解除",
+      "name": "コメントブロック解除（公開）",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "コメントからのブロック",
+      "subCat": "コメントからブロック",
       "type": "api"
     },
     {
-      "name": "ブロック済みコメントの確認",
+      "name": "ブロック済みコメントのチェック",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "ブロックされたコメントの確認",
+      "subCat": "ブロック済みコメントの確認",
       "type": "api"
     },
     {
-      "name": "ユーザーをコメントからブロック",
+      "name": "コメントからユーザーをブロック",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "公開コメントを作成",
+      "name": "コメント作成（公開）",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを削除",
+      "name": "コメント削除",
       "file": "deletecomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "公開コメントを削除",
+      "name": "コメント削除（公開）",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントの投票を削除",
+      "name": "コメント投票削除",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを通報",
+      "name": "コメント通報",
       "file": "flagcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを取得",
+      "name": "コメント取得",
       "file": "getcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメント一覧を取得",
+      "name": "コメント一覧取得",
       "file": "getcomments-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "公開コメント一覧を取得",
+      "name": "コメント一覧取得（公開）",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメント本文を取得",
+      "name": "コメントテキスト取得",
       "file": "getcommenttext-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメント投票者のユーザー名を取得",
+      "name": "コメント投票ユーザー名取得",
       "file": "getcommentvoteusernames-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントをロック",
+      "name": "コメントロック",
       "file": "lockcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントをピン留め",
+      "name": "コメント固定",
       "file": "pincomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを保存",
+      "name": "コメント保存",
       "file": "savecomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを一括保存",
+      "name": "コメント一括保存",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメント本文を設定",
+      "name": "コメントテキスト設定",
       "file": "setcommenttext-api-generated.md",
       "subCat": "コメント",
       "type": "api"
@@ -183,1117 +189,1117 @@
       "type": "api"
     },
     {
-      "name": "コメントの通報を解除",
+      "name": "コメント通報解除",
       "file": "unflagcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントのロック解除",
+      "name": "コメントロック解除",
       "file": "unlockcomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントのピン留め解除",
+      "name": "コメント固定解除",
       "file": "unpincomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントを更新",
+      "name": "コメント更新",
       "file": "updatecomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "コメントに投票",
+      "name": "コメント投票",
       "file": "votecomment-api-generated.md",
       "subCat": "コメント",
       "type": "api"
     },
     {
-      "name": "ユーザーのためのコメントを取得",
+      "name": "ユーザーのコメント取得",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "ユーザーのコメント",
+      "subCat": "ユーザー向けコメント",
       "type": "api"
     },
     {
-      "name": "ドメイン設定を追加",
+      "name": "ドメイン設定追加",
       "file": "adddomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "ドメイン設定を削除",
+      "name": "ドメイン設定削除",
       "file": "deletedomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "ドメイン設定を取得",
+      "name": "ドメイン設定取得",
       "file": "getdomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "ドメイン設定一覧を取得",
+      "name": "ドメイン設定一覧取得",
       "file": "getdomainconfigs-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "ドメイン設定を部分更新",
+      "name": "ドメイン設定パッチ",
       "file": "patchdomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "ドメイン設定を置換",
+      "name": "ドメイン設定更新",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "ドメイン設定",
       "type": "api"
     },
     {
-      "name": "メールテンプレートを作成",
+      "name": "メールテンプレート作成",
       "file": "createemailtemplate-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレートを削除",
+      "name": "メールテンプレート削除",
       "file": "deleteemailtemplate-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレートのレンダーエラーを削除",
+      "name": "メールテンプレートレンダーエラー削除",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレートを取得",
+      "name": "メールテンプレート取得",
       "file": "getemailtemplate-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレート定義を取得",
+      "name": "メールテンプレート定義取得",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレートのレンダーエラーを取得",
+      "name": "メールテンプレートレンダーエラー取得",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレート一覧を取得",
+      "name": "メールテンプレート一覧取得",
       "file": "getemailtemplates-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレートをレンダリング",
+      "name": "メールテンプレートレンダー",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "メールテンプレートを更新",
+      "name": "メールテンプレート更新",
       "file": "updateemailtemplate-api-generated.md",
       "subCat": "メールテンプレート",
       "type": "api"
     },
     {
-      "name": "イベントログを取得",
+      "name": "イベントログ取得",
       "file": "geteventlog-api-generated.md",
       "subCat": "イベントログ",
       "type": "api"
     },
     {
-      "name": "グローバルイベントログを取得",
+      "name": "全体イベントログ取得",
       "file": "getglobaleventlog-api-generated.md",
       "subCat": "イベントログ",
       "type": "api"
     },
     {
-      "name": "フィード投稿を作成",
+      "name": "フィード投稿作成",
       "file": "createfeedpost-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を作成",
+      "name": "フィード投稿作成（公開）",
       "file": "createfeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を削除",
+      "name": "フィード投稿削除（公開）",
       "file": "deletefeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "フィード投稿一覧を取得",
+      "name": "フィード投稿取得",
       "file": "getfeedposts-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開フィード投稿一覧を取得",
+      "name": "フィード投稿取得（公開）",
       "file": "getfeedpostspublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "フィード投稿の統計を取得",
+      "name": "フィード投稿統計取得",
       "file": "getfeedpostsstats-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開ユーザーのリアクションを取得",
+      "name": "ユーザーリアクション取得（公開）",
       "file": "getuserreactspublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "フィード投稿に公開でリアクション",
+      "name": "フィード投稿にリアクション（公開）",
       "file": "reactfeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "フィード投稿を更新",
+      "name": "フィード投稿更新",
       "file": "updatefeedpost-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開フィード投稿を更新",
+      "name": "フィード投稿更新（公開）",
       "file": "updatefeedpostpublic-api-generated.md",
       "subCat": "フィード投稿",
       "type": "api"
     },
     {
-      "name": "公開コメントを通報",
+      "name": "コメント通報（公開）",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "コメントの通報",
+      "subCat": "コメント通報",
       "type": "api"
     },
     {
-      "name": "大きいGIFを取得",
+      "name": "大きいGIF取得",
       "file": "getgiflarge-api-generated.md",
       "subCat": "GIF",
       "type": "api"
     },
     {
-      "name": "GIF検索を取得",
+      "name": "GIF検索取得",
       "file": "getgifssearch-api-generated.md",
       "subCat": "GIF",
       "type": "api"
     },
     {
-      "name": "トレンドのGIFを取得",
+      "name": "トレンドGIF取得",
       "file": "getgifstrending-api-generated.md",
       "subCat": "GIF",
       "type": "api"
     },
     {
-      "name": "ハッシュタグを追加",
+      "name": "ハッシュタグ追加",
       "file": "addhashtag-api-generated.md",
       "subCat": "ハッシュタグ",
       "type": "api"
     },
     {
-      "name": "ハッシュタグを一括追加",
+      "name": "ハッシュタグ一括追加",
       "file": "addhashtagsbulk-api-generated.md",
       "subCat": "ハッシュタグ",
       "type": "api"
     },
     {
-      "name": "ハッシュタグを削除",
+      "name": "ハッシュタグ削除",
       "file": "deletehashtag-api-generated.md",
       "subCat": "ハッシュタグ",
       "type": "api"
     },
     {
-      "name": "ハッシュタグ一覧を取得",
+      "name": "ハッシュタグ取得",
       "file": "gethashtags-api-generated.md",
       "subCat": "ハッシュタグ",
       "type": "api"
     },
     {
-      "name": "ハッシュタグを部分更新",
+      "name": "ハッシュタグパッチ",
       "file": "patchhashtag-api-generated.md",
       "subCat": "ハッシュタグ",
       "type": "api"
     },
     {
-      "name": "モデレーション投票を削除",
+      "name": "モデレーション投票削除",
       "file": "deletemoderationvote-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "APIコメントを取得",
+      "name": "APIコメント取得",
       "file": "getapicomments-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "APIエクスポート状況を取得",
+      "name": "APIエクスポートステータス取得",
       "file": "getapiexportstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "API ID を取得",
+      "name": "API ID取得",
       "file": "getapiids-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントからの禁止ユーザーを取得",
+      "name": "コメントからのユーザーバン取得",
       "file": "getbanusersfromcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントの禁止状況を取得",
+      "name": "コメントバンステータス取得",
       "file": "getcommentbanstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントの子コメントを取得",
+      "name": "コメント子取得",
       "file": "getcommentchildren-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "カウントを取得",
+      "name": "カウント取得",
       "file": "getcount-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "複数のカウントを取得",
+      "name": "カウント一覧取得",
       "file": "getcounts-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "ログを取得",
+      "name": "ログ取得",
       "file": "getlogs-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "手動バッジを取得",
+      "name": "手動バッジ取得",
       "file": "getmanualbadges-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "ユーザーのための手動バッジを取得",
+      "name": "ユーザーの手動バッジ取得",
       "file": "getmanualbadgesforuser-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "モデレーション対象のコメントを取得",
+      "name": "モデレーションコメント取得",
       "file": "getmoderationcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "モデレーションコメント本文を取得",
+      "name": "モデレーションコメントテキスト取得",
       "file": "getmoderationcommenttext-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "事前禁止サマリーを取得",
+      "name": "事前バン概要取得",
       "file": "getprebansummary-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "検索コメントのサマリーを取得",
+      "name": "コメント検索概要取得",
       "file": "getsearchcommentssummary-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "検索ページを取得",
+      "name": "ページ検索取得",
       "file": "getsearchpages-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "検索サイトを取得",
+      "name": "サイト検索取得",
       "file": "getsearchsites-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "検索サジェストを取得",
+      "name": "検索サジェスト取得",
       "file": "getsearchsuggest-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "検索ユーザーを取得",
+      "name": "ユーザー検索取得",
       "file": "getsearchusers-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "信頼係数を取得",
+      "name": "信頼度取得",
       "file": "gettrustfactor-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "ユーザーの禁止設定を取得",
+      "name": "ユーザーバン設定取得",
       "file": "getuserbanpreference-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "ユーザー内部プロファイルを取得",
+      "name": "ユーザー内部プロファイル取得",
       "file": "getuserinternalprofile-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメント投票の調整を投稿",
+      "name": "コメント投票調整",
       "file": "postadjustcommentvotes-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "APIエクスポートを投稿",
+      "name": "APIエクスポート実行",
       "file": "postapiexport-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントからユーザーを禁止にする",
+      "name": "コメントからユーザーをバン",
       "file": "postbanuserfromcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "ユーザー禁止を元に戻す",
+      "name": "ユーザーバン取り消し",
       "file": "postbanuserundo-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "一括事前禁止サマリーを投稿",
+      "name": "一括事前バン概要",
       "file": "postbulkprebansummary-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "IDによるコメント群を投稿",
+      "name": "IDでコメント取得",
       "file": "postcommentsbyids-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントを通報（投稿）",
+      "name": "コメント通報",
       "file": "postflagcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメント削除を投稿",
+      "name": "コメント削除",
       "file": "postremovecomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "削除済みコメントを復元（投稿）",
+      "name": "削除コメント復元",
       "file": "postrestoredeletedcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメント承認ステータスを設定（投稿）",
+      "name": "コメント承認ステータス設定",
       "file": "postsetcommentapprovalstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントレビュー状態を設定（投稿）",
+      "name": "コメントレビュー状態設定",
       "file": "postsetcommentreviewstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメントスパム状態を設定（投稿）",
+      "name": "コメントスパム状態設定",
       "file": "postsetcommentspamstatus-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "コメント本文を設定（投稿）",
+      "name": "コメントテキスト設定",
       "file": "postsetcommenttext-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "通報解除を投稿",
+      "name": "コメント通報解除",
       "file": "postunflagcomment-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "投票を投稿",
+      "name": "投票実行",
       "file": "postvote-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "バッジを付与（PUT）",
+      "name": "バッジ付与",
       "file": "putawardbadge-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "スレッドを閉鎖（PUT）",
+      "name": "スレッド閉鎖",
       "file": "putclosethread-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "バッジを削除（PUT）",
+      "name": "バッジ削除",
       "file": "putremovebadge-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "スレッドを再開（PUT）",
+      "name": "スレッド再開",
       "file": "putreopenthread-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "信頼係数を設定",
+      "name": "信頼度設定",
       "file": "settrustfactor-api-generated.md",
       "subCat": "モデレーション",
       "type": "api"
     },
     {
-      "name": "モデレーターを作成",
+      "name": "モデレーター作成",
       "file": "createmoderator-api-generated.md",
       "subCat": "モデレーター",
       "type": "api"
     },
     {
-      "name": "モデレーターを削除",
+      "name": "モデレーター削除",
       "file": "deletemoderator-api-generated.md",
       "subCat": "モデレーター",
       "type": "api"
     },
     {
-      "name": "モデレーターを取得",
+      "name": "モデレーター取得",
       "file": "getmoderator-api-generated.md",
       "subCat": "モデレーター",
       "type": "api"
     },
     {
-      "name": "モデレーター一覧を取得",
+      "name": "モデレーター一覧取得",
       "file": "getmoderators-api-generated.md",
       "subCat": "モデレーター",
       "type": "api"
     },
     {
-      "name": "招待を送信",
+      "name": "招待送信",
       "file": "sendinvite-api-generated.md",
       "subCat": "モデレーター",
       "type": "api"
     },
     {
-      "name": "モデレーターを更新",
+      "name": "モデレーター更新",
       "file": "updatemoderator-api-generated.md",
       "subCat": "モデレーター",
       "type": "api"
     },
     {
-      "name": "通知数を削除",
+      "name": "通知カウント削除",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "通知数",
+      "subCat": "通知カウント",
       "type": "api"
     },
     {
-      "name": "キャッシュされた通知数を取得",
+      "name": "キャッシュ通知カウント取得",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "通知数",
+      "subCat": "通知カウント",
       "type": "api"
     },
     {
-      "name": "通知数を取得",
+      "name": "通知カウント取得",
       "file": "getnotificationcount-api-generated.md",
       "subCat": "通知",
       "type": "api"
     },
     {
-      "name": "通知一覧を取得",
+      "name": "通知取得",
       "file": "getnotifications-api-generated.md",
       "subCat": "通知",
       "type": "api"
     },
     {
-      "name": "通知を更新",
+      "name": "通知更新",
       "file": "updatenotification-api-generated.md",
       "subCat": "通知",
       "type": "api"
     },
     {
-      "name": "V1 ページリアクションを作成",
+      "name": "V1ページリアクト作成",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "V2 ページリアクションを作成",
+      "name": "V2ページリアクト作成",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "V1 ページリアクションを削除",
+      "name": "V1ページリアクト削除",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "V2 ページリアクションを削除",
+      "name": "V2ページリアクト削除",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "V1 ページいいねを取得",
+      "name": "V1ページいいね取得",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "V2 ページリアクションを取得",
+      "name": "V2ページリアクト取得",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "V2 ページリアクションのユーザーを取得",
+      "name": "V2ページリアクトユーザー取得",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "ページリアクション",
+      "subCat": "ページリアクト",
       "type": "api"
     },
     {
-      "name": "ページを追加",
+      "name": "ページ追加",
       "file": "addpage-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "ページを削除",
+      "name": "ページ削除",
       "file": "deletepage-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "オフラインユーザーを取得",
+      "name": "オフラインユーザー取得",
       "file": "getofflineusers-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "オンラインユーザーを取得",
+      "name": "オンラインユーザー取得",
       "file": "getonlineusers-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "URL ID でページを取得",
+      "name": "URL IDでページ取得",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "ページ一覧を取得",
+      "name": "ページ一覧取得",
       "file": "getpages-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "公開ページ一覧を取得",
+      "name": "ページ一覧取得（公開）",
       "file": "getpagespublic-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "ユーザー情報を取得",
+      "name": "ユーザー情報取得",
       "file": "getusersinfo-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "ページを部分更新",
+      "name": "ページパッチ",
       "file": "patchpage-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
     {
-      "name": "保留中のWebhookイベントを削除",
+      "name": "保留中Webhookイベント削除",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "保留中のWebhookイベント",
+      "subCat": "保留中Webhookイベント",
       "type": "api"
     },
     {
-      "name": "保留中のWebhookイベント数を取得",
+      "name": "保留中Webhookイベント数取得",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "保留中のWebhookイベント",
+      "subCat": "保留中Webhookイベント",
       "type": "api"
     },
     {
-      "name": "保留中のWebhookイベント一覧を取得",
+      "name": "保留中Webhookイベント取得",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "保留中のWebhookイベント",
+      "subCat": "保留中Webhookイベント",
       "type": "api"
     },
     {
-      "name": "質問設定を作成",
+      "name": "質問設定作成",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "質問設定",
       "type": "api"
     },
     {
-      "name": "質問設定を削除",
+      "name": "質問設定削除",
       "file": "deletequestionconfig-api-generated.md",
       "subCat": "質問設定",
       "type": "api"
     },
     {
-      "name": "質問設定を取得",
+      "name": "質問設定取得",
       "file": "getquestionconfig-api-generated.md",
       "subCat": "質問設定",
       "type": "api"
     },
     {
-      "name": "質問設定一覧を取得",
+      "name": "質問設定一覧取得",
       "file": "getquestionconfigs-api-generated.md",
       "subCat": "質問設定",
       "type": "api"
     },
     {
-      "name": "質問設定を更新",
+      "name": "質問設定更新",
       "file": "updatequestionconfig-api-generated.md",
       "subCat": "質問設定",
       "type": "api"
     },
     {
-      "name": "質問結果を作成",
+      "name": "質問結果作成",
       "file": "createquestionresult-api-generated.md",
       "subCat": "質問結果",
       "type": "api"
     },
     {
-      "name": "質問結果を削除",
+      "name": "質問結果削除",
       "file": "deletequestionresult-api-generated.md",
       "subCat": "質問結果",
       "type": "api"
     },
     {
-      "name": "質問結果を取得",
+      "name": "質問結果取得",
       "file": "getquestionresult-api-generated.md",
       "subCat": "質問結果",
       "type": "api"
     },
     {
-      "name": "質問結果一覧を取得",
+      "name": "質問結果一覧取得",
       "file": "getquestionresults-api-generated.md",
       "subCat": "質問結果",
       "type": "api"
     },
     {
-      "name": "質問結果を更新",
+      "name": "質問結果更新",
       "file": "updatequestionresult-api-generated.md",
       "subCat": "質問結果",
       "type": "api"
     },
     {
-      "name": "質問結果を集計",
+      "name": "質問結果集計",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "質問結果の集計",
+      "subCat": "質問結果集計",
       "type": "api"
     },
     {
-      "name": "質問結果を一括集計",
+      "name": "質問結果一括集計",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "質問結果の集計",
+      "subCat": "質問結果集計",
       "type": "api"
     },
     {
-      "name": "コメントと質問結果を結合",
+      "name": "コメントと質問結果の結合",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "質問結果の集計",
+      "subCat": "質問結果集計",
       "type": "api"
     },
     {
-      "name": "SSOユーザーを追加",
+      "name": "SSOユーザー追加",
       "file": "addssouser-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "SSOユーザーを削除",
+      "name": "SSOユーザー削除",
       "file": "deletessouser-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "メールでSSOユーザーを取得",
+      "name": "メールでSSOユーザー取得",
       "file": "getssouserbyemail-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "IDでSSOユーザーを取得",
+      "name": "IDでSSOユーザー取得",
       "file": "getssouserbyid-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "SSOユーザー一覧を取得",
+      "name": "SSOユーザー一覧取得",
       "file": "getssousers-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "SSOユーザーを部分更新",
+      "name": "SSOユーザー更新",
       "file": "patchssouser-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "SSOユーザーを置換",
+      "name": "SSOユーザー設定",
       "file": "putssouser-api-generated.md",
       "subCat": "SSOユーザー",
       "type": "api"
     },
     {
-      "name": "サブスクリプションを作成",
+      "name": "サブスクリプション作成",
       "file": "createsubscription-api-generated.md",
       "subCat": "サブスクリプション",
       "type": "api"
     },
     {
-      "name": "サブスクリプションを削除",
+      "name": "サブスクリプション削除",
       "file": "deletesubscription-api-generated.md",
       "subCat": "サブスクリプション",
       "type": "api"
     },
     {
-      "name": "サブスクリプション一覧を取得",
+      "name": "サブスクリプション取得",
       "file": "getsubscriptions-api-generated.md",
       "subCat": "サブスクリプション",
       "type": "api"
     },
     {
-      "name": "サブスクリプションを更新",
+      "name": "サブスクリプション更新",
       "file": "updatesubscription-api-generated.md",
       "subCat": "サブスクリプション",
       "type": "api"
     },
     {
-      "name": "テナントの日次使用量を取得",
+      "name": "テナント日次使用量取得",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "テナントの日次使用量",
+      "subCat": "テナント日次使用量",
       "type": "api"
     },
     {
-      "name": "テナントパッケージを作成",
+      "name": "テナントパッケージ作成",
       "file": "createtenantpackage-api-generated.md",
       "subCat": "テナントパッケージ",
       "type": "api"
     },
     {
-      "name": "テナントパッケージを削除",
+      "name": "テナントパッケージ削除",
       "file": "deletetenantpackage-api-generated.md",
       "subCat": "テナントパッケージ",
       "type": "api"
     },
     {
-      "name": "テナントパッケージを取得",
+      "name": "テナントパッケージ取得",
       "file": "gettenantpackage-api-generated.md",
       "subCat": "テナントパッケージ",
       "type": "api"
     },
     {
-      "name": "テナントパッケージ一覧を取得",
+      "name": "テナントパッケージ一覧取得",
       "file": "gettenantpackages-api-generated.md",
       "subCat": "テナントパッケージ",
       "type": "api"
     },
     {
-      "name": "テナントパッケージを置換",
+      "name": "テナントパッケージ置換",
       "file": "replacetenantpackage-api-generated.md",
       "subCat": "テナントパッケージ",
       "type": "api"
     },
     {
-      "name": "テナントパッケージを更新",
+      "name": "テナントパッケージ更新",
       "file": "updatetenantpackage-api-generated.md",
       "subCat": "テナントパッケージ",
       "type": "api"
     },
     {
-      "name": "テナントユーザーを作成",
+      "name": "テナントユーザー作成",
       "file": "createtenantuser-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "テナントユーザーを削除",
+      "name": "テナントユーザー削除",
       "file": "deletetenantuser-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "テナントユーザーを取得",
+      "name": "テナントユーザー取得",
       "file": "gettenantuser-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "テナントユーザー一覧を取得",
+      "name": "テナントユーザー一覧取得",
       "file": "gettenantusers-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "テナントユーザーを置換",
+      "name": "テナントユーザー置換",
       "file": "replacetenantuser-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "ログインリンクを送信",
+      "name": "ログインリンク送信",
       "file": "sendloginlink-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "テナントユーザーを更新",
+      "name": "テナントユーザー更新",
       "file": "updatetenantuser-api-generated.md",
       "subCat": "テナントユーザー",
       "type": "api"
     },
     {
-      "name": "テナントを作成",
+      "name": "テナント作成",
       "file": "createtenant-api-generated.md",
       "subCat": "テナント",
       "type": "api"
     },
     {
-      "name": "テナントを削除",
+      "name": "テナント削除",
       "file": "deletetenant-api-generated.md",
       "subCat": "テナント",
       "type": "api"
     },
     {
-      "name": "テナントを取得",
+      "name": "テナント取得",
       "file": "gettenant-api-generated.md",
       "subCat": "テナント",
       "type": "api"
     },
     {
-      "name": "テナント一覧を取得",
+      "name": "テナント一覧取得",
       "file": "gettenants-api-generated.md",
       "subCat": "テナント",
       "type": "api"
     },
     {
-      "name": "テナントを更新",
+      "name": "テナント更新",
       "file": "updatetenant-api-generated.md",
       "subCat": "テナント",
       "type": "api"
     },
     {
-      "name": "チケット状態を変更",
+      "name": "チケット状態変更",
       "file": "changeticketstate-api-generated.md",
       "subCat": "チケット",
       "type": "api"
     },
     {
-      "name": "チケットを作成",
+      "name": "チケット作成",
       "file": "createticket-api-generated.md",
       "subCat": "チケット",
       "type": "api"
     },
     {
-      "name": "チケットを取得",
+      "name": "チケット取得",
       "file": "getticket-api-generated.md",
       "subCat": "チケット",
       "type": "api"
     },
     {
-      "name": "チケット一覧を取得",
+      "name": "チケット一覧取得",
       "file": "gettickets-api-generated.md",
       "subCat": "チケット",
       "type": "api"
     },
     {
-      "name": "翻訳を取得",
+      "name": "翻訳取得",
       "file": "gettranslations-api-generated.md",
       "subCat": "翻訳",
       "type": "api"
     },
     {
-      "name": "画像をアップロード",
+      "name": "画像アップロード",
       "file": "uploadimage-api-generated.md",
       "subCat": "画像アップロード",
       "type": "api"
     },
     {
-      "name": "バッジ進捗をIDで取得",
+      "name": "IDでユーザーバッジ進捗取得",
       "file": "getuserbadgeprogressbyid-api-generated.md",
       "subCat": "ユーザーバッジ進捗",
       "type": "api"
     },
     {
-      "name": "ユーザーIDでバッジ進捗を取得",
+      "name": "ユーザーIDでバッジ進捗取得",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
       "subCat": "ユーザーバッジ進捗",
       "type": "api"
     },
     {
-      "name": "ユーザーバッジ進捗一覧を取得",
+      "name": "ユーザーバッジ進捗一覧取得",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "ユーザーバッジ進捗",
       "type": "api"
     },
     {
-      "name": "ユーザーバッジを作成",
+      "name": "ユーザーバッジ作成",
       "file": "createuserbadge-api-generated.md",
       "subCat": "ユーザーバッジ",
       "type": "api"
     },
     {
-      "name": "ユーザーバッジを削除",
+      "name": "ユーザーバッジ削除",
       "file": "deleteuserbadge-api-generated.md",
       "subCat": "ユーザーバッジ",
       "type": "api"
     },
     {
-      "name": "ユーザーバッジを取得",
+      "name": "ユーザーバッジ取得",
       "file": "getuserbadge-api-generated.md",
       "subCat": "ユーザーバッジ",
       "type": "api"
     },
     {
-      "name": "ユーザーバッジ一覧を取得",
+      "name": "ユーザーバッジ一覧取得",
       "file": "getuserbadges-api-generated.md",
       "subCat": "ユーザーバッジ",
       "type": "api"
     },
     {
-      "name": "ユーザーバッジを更新",
+      "name": "ユーザーバッジ更新",
       "file": "updateuserbadge-api-generated.md",
       "subCat": "ユーザーバッジ",
       "type": "api"
     },
     {
-      "name": "ユーザーの通知数を取得",
+      "name": "ユーザー通知カウント取得",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザーの通知一覧を取得",
+      "name": "ユーザー通知取得",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザーの通知数をリセット",
+      "name": "ユーザー通知カウントリセット",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザーの通知をリセット",
+      "name": "ユーザー通知リセット",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザーのコメント購読ステータスを更新",
+      "name": "コメント通知購読ステータス更新",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザーのページ購読ステータスを更新",
+      "name": "ページ通知購読ステータス更新",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザーの通知ステータスを更新",
+      "name": "ユーザー通知ステータス更新",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "ユーザーの通知",
+      "subCat": "ユーザー通知",
       "type": "api"
     },
     {
-      "name": "ユーザー在席ステータスを取得",
+      "name": "ユーザー在席状態取得",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "ユーザー在席ステータス",
+      "subCat": "ユーザー在席状態",
       "type": "api"
     },
     {
-      "name": "ユーザーを検索",
+      "name": "ユーザー検索",
       "file": "searchusers-api-generated.md",
       "subCat": "ユーザー検索",
       "type": "api"
     },
     {
-      "name": "ユーザーを取得",
+      "name": "ユーザー取得",
       "file": "getuser-api-generated.md",
       "subCat": "ユーザー",
       "type": "api"
     },
     {
-      "name": "投票を作成",
+      "name": "投票作成",
       "file": "createvote-api-generated.md",
       "subCat": "投票",
       "type": "api"
     },
     {
-      "name": "投票を削除",
+      "name": "投票削除",
       "file": "deletevote-api-generated.md",
       "subCat": "投票",
       "type": "api"
     },
     {
-      "name": "投票一覧を取得",
+      "name": "投票取得",
       "file": "getvotes-api-generated.md",
       "subCat": "投票",
       "type": "api"
     },
     {
-      "name": "ユーザーの投票を取得",
+      "name": "ユーザーの投票取得",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "投票",
       "type": "api"

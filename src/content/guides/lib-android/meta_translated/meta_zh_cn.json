@@ -3,6 +3,12 @@
   "pageHeader": "在您的 Android 应用中添加评论",
   "itemsOrdered": [
     {
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
       "name": "功能",
       "file": "features-readme-generated.md",
       "subCat": "文档",
@@ -17,19 +23,19 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "快速开始",
+      "subCat": "入门",
       "type": "readme"
     },
     {
-      "name": "基本用法",
+      "name": "基本使用",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "安全单点登录（SSO）认证",
+      "name": "安全单点登录认证",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "身份验证",
+      "subCat": "认证",
       "type": "readme"
     },
     {
@@ -47,7 +53,7 @@
     {
       "name": "示例项目",
       "file": "example-projects-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "全面的主题自定义",
+      "name": "全面的主题定制",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "文档",
       "type": "readme"

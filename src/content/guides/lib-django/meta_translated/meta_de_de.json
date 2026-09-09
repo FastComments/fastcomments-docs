@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Django-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "KI-Programmieragenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Anforderungen",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentation",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On)",
+      "name": "SSO (Einmalige Anmeldung)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

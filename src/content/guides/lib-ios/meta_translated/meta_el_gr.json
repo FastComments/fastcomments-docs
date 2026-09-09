@@ -3,6 +3,12 @@
   "pageHeader": "Προσθήκη σχολίων στην εφαρμογή iOS σας",
   "itemsOrdered": [
     {
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Χαρακτηριστικά",
       "file": "features-readme-generated.md",
       "subCat": "Τεκμηρίωση",
@@ -17,7 +23,7 @@
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Πρώτα βήματα",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
@@ -27,9 +33,9 @@
       "type": "readme"
     },
     {
-      "name": "Έλεγχος ταυτότητας (SSO)",
+      "name": "Αυθεντικοποίηση (SSO)",
       "file": "authentication-sso-readme-generated.md",
-      "subCat": "Έλεγχος ταυτότητας",
+      "subCat": "Αυθεντικοποίηση",
       "type": "readme"
     },
     {
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Θεματοποίηση",
+      "name": "Θέματα",
       "file": "theming-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Επιμέλεια",
+      "name": "Συντονισμός",
       "file": "moderation-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -81,7 +87,7 @@
       "type": "readme"
     },
     {
-      "name": "Κατάσταση και Παρατηρησιμότητα",
+      "name": "Κατάσταση και παρατηρησιμότητα",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -99,7 +105,7 @@
       "type": "readme"
     },
     {
-      "name": "Μεταφορτώσεις εικόνων",
+      "name": "Ανέβασμα εικόνων",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
-  "name": "iOS knjižnica",
-  "pageHeader": "Dodavanje komentara u vašu iOS aplikaciju",
+  "name": "iOS biblioteka",
+  "pageHeader": "Dodajte komentare u svoju iOS aplikaciju",
   "itemsOrdered": [
+    {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Značajke",
       "file": "features-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Komentari u nitima",
+      "name": "Ugniježđeni komentari",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Razgovor uživo",
+      "name": "Uživo chat",
       "file": "live-chat-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -51,13 +57,13 @@
       "type": "readme"
     },
     {
-      "name": "Teme",
+      "name": "Tematizacija",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Prilagođeni gumbi na alatnoj traci",
+      "name": "Prilagođeni gumbi alatne trake",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -75,19 +81,19 @@
       "type": "readme"
     },
     {
-      "name": "Straničenje",
+      "name": "Paginacija",
       "file": "pagination-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Stanje i observabilnost",
+      "name": "Stanje i promatračivost",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Regija EU",
+      "name": "EU regija",
       "file": "eu-region-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -99,13 +105,13 @@
       "type": "readme"
     },
     {
-      "name": "Prijenos slika",
+      "name": "Učitavanje slika",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Označavanje korisnika",
+      "name": "Spominjanje korisnika",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -117,7 +123,7 @@
       "type": "readme"
     },
     {
-      "name": "Rukovanje pogreškama",
+      "name": "Rukovanje greškama",
       "file": "error-handling-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

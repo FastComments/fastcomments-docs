@@ -33,8 +33,13 @@
       "subCat": "Реализация"
     },
     {
-      "name": "Безопасность и API-токены",
+      "name": "Безопасность и токены API",
       "file": "webhooks-api-tokens.md",
+      "subCat": "Реализация"
+    },
+    {
+      "name": "Управление вебхуками через API",
+      "file": "webhooks-api-subscriptions.md",
       "subCat": "Реализация"
     },
     {

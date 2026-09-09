@@ -13,12 +13,12 @@
       "subCat": "Overzicht"
     },
     {
-      "name": "Lokale ontwikkelomgeving instellen",
+      "name": "Lokale ontwikkelomgeving",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementatie"
     },
     {
-      "name": "Installatie",
+      "name": "Configuratie",
       "file": "webhooks-setup.md",
       "subCat": "Implementatie"
     },
@@ -28,7 +28,7 @@
       "subCat": "Implementatie"
     },
     {
-      "name": "Datastructuren",
+      "name": "Gegevensstructuren",
       "file": "webhooks-structures.md",
       "subCat": "Implementatie"
     },
@@ -38,7 +38,12 @@
       "subCat": "Implementatie"
     },
     {
-      "name": "Hoe het werkt & het afhandelen van herhaalpogingen",
+      "name": "Webhooks beheren via de API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementatie"
+    },
+    {
+      "name": "Hoe het werkt en het afhandelen van herpogingen",
       "file": "webhooks-how-it-works.md",
       "subCat": "Achter de schermen"
     }

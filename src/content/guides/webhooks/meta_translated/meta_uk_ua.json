@@ -15,27 +15,32 @@
     {
       "name": "Налаштування локальної розробки",
       "file": "webhooks-local-dev.md",
-      "subCat": "Реалізація"
+      "subCat": "Впровадження"
     },
     {
       "name": "Налаштування",
       "file": "webhooks-setup.md",
-      "subCat": "Реалізація"
+      "subCat": "Впровадження"
     },
     {
       "name": "Тестування",
       "file": "webhooks-testing.md",
-      "subCat": "Реалізація"
+      "subCat": "Впровадження"
     },
     {
       "name": "Структури даних",
       "file": "webhooks-structures.md",
-      "subCat": "Реалізація"
+      "subCat": "Впровадження"
     },
     {
-      "name": "Безпека та API-токени",
+      "name": "Безпека та токени API",
       "file": "webhooks-api-tokens.md",
-      "subCat": "Реалізація"
+      "subCat": "Впровадження"
+    },
+    {
+      "name": "Керування вебхуками через API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Впровадження"
     },
     {
       "name": "Як це працює та обробка повторних спроб",

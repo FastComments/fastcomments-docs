@@ -1,9 +1,15 @@
 {
-  "name": "Angular-bibliotheek",
-  "pageHeader": "Voeg opmerkingen toe aan je Angular-app",
+  "name": "Angular Bibliotheek",
+  "pageHeader": "Voeg opmerkingen toe aan uw Angular-app",
   "itemsOrdered": [
     {
-      "name": "Live demo",
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live-demo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"

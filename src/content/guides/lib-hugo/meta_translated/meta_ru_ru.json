@@ -1,9 +1,15 @@
 {
   "name": "Библиотека Hugo",
-  "pageHeader": "Добавление комментариев на сайт Hugo",
+  "pageHeader": "Добавьте комментарии на ваш сайт Hugo",
   "itemsOrdered": [
     {
-      "name": "Живая демонстрация",
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живой демо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Интеграция с темой",
+      "name": "Интеграция темы",
       "file": "theme-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

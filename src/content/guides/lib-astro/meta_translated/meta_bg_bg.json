@@ -1,7 +1,13 @@
 {
-  "name": "Astro библиотека",
-  "pageHeader": "Добавяне на коментари към вашия Astro сайт",
+  "name": "Библиотека Astro",
+  "pageHeader": "Добавете коментари към вашия Astro сайт",
   "itemsOrdered": [
+    {
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Демонстрация на живо",
       "file": "live-demo-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Показ на живо",
+      "name": "Жив показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "Инсталиране",
       "file": "install-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Въведение",
       "type": "readme"
     },
     {
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус на поддръжката",
+      "name": "Статус на поддръжка",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
-  "name": "Knjiznica za Android",
-  "pageHeader": "Dodajte komentarje v vašo Android aplikacijo",
+  "name": "Android knjižnica",
+  "pageHeader": "Dodajte komentarje v svojo Android aplikacijo",
   "itemsOrdered": [
+    {
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Značilnosti",
       "file": "features-readme-generated.md",
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Vzorčni projekti",
+      "name": "Primeri projektov",
       "file": "example-projects-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"

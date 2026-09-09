@@ -3,13 +3,19 @@
   "pageHeader": "Kommentare zu Ihrer Hugo-Website hinzufügen",
   "itemsOrdered": [
     {
+      "name": "KI-Programmieragenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Live-Demo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Live-Präsentation",
+      "name": "Live-Vorführung",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Theme-Integration",
+      "name": "Themenintegration",
       "file": "theme-integration-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Massen-Kommentaranzahlen",
+      "name": "Massenkommentarzähler",
       "file": "bulk-comment-counts-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Referenz zur Widget-Konfiguration",
+      "name": "Widget-Konfigurationsreferenz",
       "file": "widget-configuration-reference-readme-generated.md",
       "subCat": "API-Referenz",
       "type": "readme"

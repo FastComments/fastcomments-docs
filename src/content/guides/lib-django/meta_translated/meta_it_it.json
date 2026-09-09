@@ -3,6 +3,12 @@
   "pageHeader": "Aggiungi commenti alla tua app Django",
   "itemsOrdered": [
     {
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Requisiti",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentazione",
@@ -11,13 +17,13 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Iniziare",
       "type": "readme"
     },
     {
-      "name": "Guida rapida",
+      "name": "Avvio rapido",
       "file": "quickstart-readme-generated.md",
-      "subCat": "Uso",
+      "subCat": "Utilizzo",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Accesso Singolo)",
+      "name": "SSO (Accesso unico)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Riferimento alle impostazioni",
+      "name": "Riferimento impostazioni",
       "file": "settings-reference-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
@@ -65,7 +71,7 @@
     {
       "name": "Progetto di esempio",
       "file": "example-project-readme-generated.md",
-      "subCat": "Uso",
+      "subCat": "Utilizzo",
       "type": "readme"
     }
   ]

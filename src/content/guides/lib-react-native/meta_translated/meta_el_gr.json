@@ -1,9 +1,15 @@
 {
   "name": "Βιβλιοθήκη React Native",
-  "pageHeader": "Προσθέστε widgets σχολίων στην εφαρμογή React Native σας",
+  "pageHeader": "Προσθήκη Widgets Σχολίων στην Εφαρμογή React Native σας",
   "itemsOrdered": [
     {
-      "name": "Ζωντανή επίδειξη",
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή Παρουσίαση",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -15,19 +21,19 @@
       "type": "readme"
     },
     {
-      "name": "Εξετάστε το Native SDK",
+      "name": "Λάβετε υπόψη το Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Χρήση - Το ζωντανό widget σχολίων",
+      "name": "Χρήση - Το Ζωντανό Widget Σχολίων",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Χρήση - Το ζωντανό widget συνομιλίας",
+      "name": "Χρήση - Το Ζωντανό Widget Συνομιλίας",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
@@ -39,13 +45,13 @@
       "type": "readme"
     },
     {
-      "name": "Εξαρτήσεις peer",
+      "name": "Αλληλοεξαρτήσεις",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Κατάσταση συντήρησης",
+      "name": "Κατάσταση Συντήρησης",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
-  "name": "ספריית אנגולר",
-  "pageHeader": "הוספת הערות לאפליקציית אנגולר שלך",
+  "name": "ספריית Angular",
+  "pageHeader": "הוסף תגובות לאפליקציית Angular שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלת העבודה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {

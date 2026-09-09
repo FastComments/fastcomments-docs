@@ -3,6 +3,12 @@
   "pageHeader": "Aggiungi commenti alla tua app iOS",
   "itemsOrdered": [
     {
+      "name": "Agenti di programmazione AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Funzionalità",
       "file": "features-readme-generated.md",
       "subCat": "Documentazione",
@@ -17,7 +23,7 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Iniziare",
       "type": "readme"
     },
     {
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Commenti annidati",
+      "name": "Commenti a thread",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Chat in tempo reale",
+      "name": "Chat dal vivo",
       "file": "live-chat-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Temi",
+      "name": "Tematizzazione",
       "file": "theming-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -99,19 +105,19 @@
       "type": "readme"
     },
     {
-      "name": "Caricamento immagini",
+      "name": "Caricamenti di immagini",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Menzioni utenti",
+      "name": "Menzioni degli utenti",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Modifica e eliminazione dei commenti",
+      "name": "Modifica ed eliminazione dei commenti",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

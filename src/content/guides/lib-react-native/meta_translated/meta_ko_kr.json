@@ -3,7 +3,13 @@
   "pageHeader": "React Native 앱에 댓글 위젯 추가",
   "itemsOrdered": [
     {
-      "name": "라이브 쇼케이스",
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "실시간 쇼케이스",
       "file": "live-showcase-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -21,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "사용법 - 라이브 댓글 위젯",
+      "name": "사용법 - 실시간 댓글 위젯",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"
     },
     {
-      "name": "사용법 - 라이브 채팅 위젯",
+      "name": "사용법 - 실시간 채팅 위젯",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"
     },
     {
-      "name": "사용법 - SSO(싱글 사인온)",
+      "name": "사용법 - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "사용법",
       "type": "readme"

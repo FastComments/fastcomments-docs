@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji Django",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Wymagania",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Wymagania wstępne dla automatycznego SSO",
+      "name": "Wymagania wstępne do automatycznego SSO",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Dostosowywanie znacznika osadzania",
+      "name": "Dostosowywanie kodu osadzania",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"

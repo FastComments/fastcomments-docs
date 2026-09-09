@@ -1,9 +1,15 @@
 {
   "name": "Libreria React Native",
-  "pageHeader": "Aggiungi widget per commenti alla tua app React Native",
+  "pageHeader": "Aggiungi widget di commenti alla tua app React Native",
   "itemsOrdered": [
     {
-      "name": "Dimostrazione in diretta",
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Demo dal vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -11,23 +17,23 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Per iniziare",
       "type": "readme"
     },
     {
-      "name": "Valuta l'SDK nativo",
+      "name": "Considera l'SDK nativo",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Utilizzo - Il widget dei commenti in tempo reale",
+      "name": "Utilizzo - Il widget di commenti live",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"
     },
     {
-      "name": "Utilizzo - Il widget di chat in tempo reale",
+      "name": "Utilizzo - Il widget di chat live",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"

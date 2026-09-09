@@ -1,7 +1,13 @@
 {
   "name": "Django-pakket",
-  "pageHeader": "Voeg reacties toe aan je Django-app",
+  "pageHeader": "Voeg reacties toe aan uw Django-app",
   "itemsOrdered": [
+    {
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Vereisten",
       "file": "requirements-readme-generated.md",

@@ -1,7 +1,13 @@
 {
   "name": "ספריית Jekyll",
-  "pageHeader": "הוספת תגובות לאתר ה-Jekyll שלך",
+  "pageHeader": "הוספת תגובות לאתר Jekyll שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "התקנה",
       "file": "install-readme-generated.md",
-      "subCat": "התחלת העבודה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {
@@ -33,9 +39,9 @@
       "type": "readme"
     },
     {
-      "name": "הגדרות",
+      "name": "תצורה",
       "file": "configuration-readme-generated.md",
-      "subCat": "הגדרות",
+      "subCat": "תצורה",
       "type": "readme"
     },
     {

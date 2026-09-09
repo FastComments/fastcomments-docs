@@ -3,6 +3,12 @@
   "pageHeader": "Добавьте комментарии на ваш сайт Eleventy (11ty)",
   "itemsOrdered": [
     {
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Онлайн‑демо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документация",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Опции плагина",
+      "name": "Параметры плагина",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Конфигурация",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Pacote Django",
-  "pageHeader": "Adicionar Comentários ao seu aplicativo Django",
+  "pageHeader": "Adicionar Comentários ao Seu Aplicativo Django",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
     {
       "name": "Requisitos",
       "file": "requirements-readme-generated.md",
@@ -11,11 +17,11 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Introdução",
+      "subCat": "Começando",
       "type": "readme"
     },
     {
-      "name": "Guia rápido",
+      "name": "Início rápido",
       "file": "quickstart-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On)",
+      "name": "SSO (Login Único)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -41,7 +47,7 @@
     {
       "name": "Acesso à API do lado do servidor",
       "file": "server-side-api-access-readme-generated.md",
-      "subCat": "Referência de API",
+      "subCat": "Referência da API",
       "type": "readme"
     },
     {
@@ -59,7 +65,7 @@
     {
       "name": "Referência de configurações",
       "file": "settings-reference-readme-generated.md",
-      "subCat": "Referência de API",
+      "subCat": "Referência da API",
       "type": "readme"
     },
     {

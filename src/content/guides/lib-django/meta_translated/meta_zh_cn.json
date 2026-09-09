@@ -3,7 +3,13 @@
   "pageHeader": "为您的 Django 应用添加评论",
   "itemsOrdered": [
     {
-      "name": "要求",
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "需求",
       "file": "requirements-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -11,17 +17,17 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "入门指南",
+      "subCat": "入门",
       "type": "readme"
     },
     {
-      "name": "快速入门",
+      "name": "快速开始",
       "file": "quickstart-readme-generated.md",
-      "subCat": "使用说明",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "自动单点登录的前提条件",
+      "name": "自动单点登录的先决条件",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -65,7 +71,7 @@
     {
       "name": "示例项目",
       "file": "example-project-readme-generated.md",
-      "subCat": "使用说明",
+      "subCat": "使用",
       "type": "readme"
     }
   ]

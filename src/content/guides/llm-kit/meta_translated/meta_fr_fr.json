@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Obtenir le kit LLM",
+      "name": "Obtenez le Kit LLM",
       "file": "llm-kit-snippet.md",
       "subCat": "Intégration LLM"
     },
@@ -11,6 +11,11 @@
       "name": "Serveur MCP",
       "file": "mcp-server.md",
       "subCat": "Serveur MCP"
+    },
+    {
+      "name": "Laissez un agent configurer votre compte",
+      "file": "agent-account-setup.md",
+      "subCat": "Configuration du compte par un agent"
     }
   ]
 }

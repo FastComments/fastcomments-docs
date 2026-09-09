@@ -1,7 +1,13 @@
 {
   "name": "Пакет Laravel",
-  "pageHeader": "Добавление комментариев в ваше приложение Laravel",
+  "pageHeader": "Добавьте комментарии в ваше приложение Laravel",
   "itemsOrdered": [
+    {
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Требования",
       "file": "requirements-readme-generated.md",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Компоненты Blade",
+      "name": "Blade‑компоненты",
       "file": "blade-components-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "SSO (Единый вход)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

@@ -1,29 +1,35 @@
 {
-  "name": "Библиотека за Vue 2",
-  "pageHeader": "Добавяне на коментари към вашето приложение на Vue 2",
+  "name": "Vue 2 библиотека",
+  "pageHeader": "Добавете коментари към вашето Vue 2 приложение",
   "itemsOrdered": [
     {
-      "name": "Демонстрация на живо",
+      "name": "AI кодиращи агенти",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Жив демонстрация",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Инсталиране",
+      "name": "Инсталация",
       "file": "installation-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
-      "name": "Използване",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Актуализиране на текущата страница (пример за SPA)",
+      "name": "Обновяване на текущата страница (пример за SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус на поддръжката",
+      "name": "Състояние на поддръжката",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

@@ -1,53 +1,59 @@
 {
-  "name": "Библиотека за React Native",
-  "pageHeader": "Додајте видгете за коментаре у вашу React Native апликацију",
+  "name": "React Native biblioteka",
+  "pageHeader": "Dodajte vidžete za komentare u vašu React Native aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Демонстрација уживо",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Živi prikaz",
       "file": "live-showcase-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
-      "name": "Размотрите нативни SDK",
+      "name": "Razmotrite Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Употреба - Видгет за коментаре уживо",
+      "name": "Upotreba – Živi vidžet za komentare",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Употреба - Видгет за ћаскање уживо",
+      "name": "Upotreba – Živi vidžet za čet",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Употреба - SSO",
+      "name": "Upotreba – SSO",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Peer зависности",
+      "name": "Zavisnosti vršnjaka",
       "file": "peer-dependencies-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Статус одржавања",
+      "name": "Status održavanja",
       "file": "maintenance-status-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

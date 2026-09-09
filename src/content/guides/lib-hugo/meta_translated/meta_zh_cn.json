@@ -1,7 +1,13 @@
 {
   "name": "Hugo 库",
-  "pageHeader": "向您的 Hugo 站点添加评论",
+  "pageHeader": "在您的 Hugo 网站添加评论",
   "itemsOrdered": [
+    {
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "实时演示",
       "file": "live-demo-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "安装",
       "file": "install-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "入门指南",
       "type": "readme"
     },
     {

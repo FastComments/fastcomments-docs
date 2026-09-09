@@ -1,7 +1,13 @@
 {
-  "name": "Библиотека за iOS",
-  "pageHeader": "Добавяне на коментари във вашето iOS приложение",
+  "name": "iOS библиотека",
+  "pageHeader": "Добавете коментари към вашето iOS приложение",
   "itemsOrdered": [
+    {
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Функции",
       "file": "features-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Инсталиране",
+      "name": "Инсталация",
       "file": "installation-readme-generated.md",
       "subCat": "Първи стъпки",
       "type": "readme"
@@ -27,31 +33,31 @@
       "type": "readme"
     },
     {
-      "name": "Аутентификация (SSO)",
+      "name": "Удостоверяване (SSO)",
       "file": "authentication-sso-readme-generated.md",
-      "subCat": "Аутентификация",
+      "subCat": "Удостоверяване",
       "type": "readme"
     },
     {
-      "name": "Коментари в нишки",
+      "name": "Нишкови коментари",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Чат на живо",
+      "name": "Жив чат",
       "file": "live-chat-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Социална емисия",
+      "name": "Социален поток",
       "file": "social-feed-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Персонализиране на тема",
+      "name": "Тематизиране",
       "file": "theming-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Модерация",
+      "name": "Модериране",
       "file": "moderation-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "Регион на ЕС",
+      "name": "Регион ЕС",
       "file": "eu-region-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -131,7 +137,7 @@
     {
       "name": "Примерно приложение",
       "file": "example-app-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     }
   ]

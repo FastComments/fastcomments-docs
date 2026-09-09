@@ -3,6 +3,12 @@
   "pageHeader": "Добавете коментари към вашия Eleventy (11ty) сайт",
   "itemsOrdered": [
     {
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
       "name": "Демонстрация на живо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документация",

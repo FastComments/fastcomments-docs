@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "LLMキットを入手する",
+      "name": "LLMキットを取得する",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM統合"
     },
@@ -11,6 +11,11 @@
       "name": "MCPサーバー",
       "file": "mcp-server.md",
       "subCat": "MCPサーバー"
+    },
+    {
+      "name": "エージェントにアカウント設定を依頼する",
+      "file": "agent-account-setup.md",
+      "subCat": "エージェントアカウント設定"
     }
   ]
 }

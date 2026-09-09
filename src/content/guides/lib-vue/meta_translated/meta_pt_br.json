@@ -1,9 +1,15 @@
 {
   "name": "Biblioteca Vue 2",
-  "pageHeader": "Adicione comentários ao seu aplicativo Vue 2",
+  "pageHeader": "Adicionar Comentários ao Seu Aplicativo Vue 2",
   "itemsOrdered": [
     {
-      "name": "Demonstração ao vivo",
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Demonstração ao Vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeiros passos",
+      "subCat": "Introdução",
       "type": "readme"
     },
     {
@@ -21,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "Atualizando a página atual (exemplo de SPA)",
+      "name": "Atualizando a Página Atual (Exemplo SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Em produção",
+      "name": "Em Produção",
       "file": "in-production-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Status de manutenção",
+      "name": "Status de Manutenção",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

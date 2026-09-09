@@ -1,9 +1,15 @@
 {
   "name": "Бібліотека Angular",
-  "pageHeader": "Додайте коментарі до вашого додатку Angular",
+  "pageHeader": "Додайте коментарі до вашого Angular-додатку",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий демонстраційний приклад",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Структура проекту",
+      "name": "Структура проєкту",
       "file": "project-structure-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Статус підтримки",
+      "name": "Статус обслуговування",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

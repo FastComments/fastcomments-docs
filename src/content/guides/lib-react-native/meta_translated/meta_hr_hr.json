@@ -1,9 +1,15 @@
 {
-  "name": "React Native knjižnica",
+  "name": "React Native biblioteka",
   "pageHeader": "Dodajte widgete za komentare u svoju React Native aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Prikaz uživo",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Živa prezentacija",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -21,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "Upotreba - widget za komentare uživo",
+      "name": "Upotreba – Živi widget za komentare",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Upotreba - widget za chat uživo",
+      "name": "Upotreba – Živi widget za chat",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Upotreba - SSO",
+      "name": "Upotreba – SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"

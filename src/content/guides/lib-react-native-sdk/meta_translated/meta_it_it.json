@@ -1,9 +1,15 @@
 {
-  "name": "SDK di React Native",
+  "name": "SDK React Native",
   "pageHeader": "Aggiungi commenti alla tua app React Native",
   "itemsOrdered": [
     {
-      "name": "Demo live",
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Demo dal vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Iniziare",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Schermate",
+      "name": "Screenshot",
       "file": "screenshots-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

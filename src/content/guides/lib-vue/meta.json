@@ -3,6 +3,12 @@
   "pageHeader": "Add Comments to Your Vue 2 App",
   "itemsOrdered": [
     {
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Live Showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",

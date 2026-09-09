@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Android-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "KI-Coding-Agenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Funktionen",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentation",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Grundlegende Verwendung",
+      "name": "Grundlegende Nutzung",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Umfassende Theme-Anpassung",
+      "name": "Umfassende Themenanpassung",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

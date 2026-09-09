@@ -1,9 +1,15 @@
 {
-  "name": "Библиотека за Angular",
+  "name": "Angular библиотека",
   "pageHeader": "Додајте коментаре у вашу Angular апликацију",
   "itemsOrdered": [
     {
-      "name": "Демонстрација уживо",
+      "name": "AI агенти за кодирање",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Живи демонстрација",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Започните",
       "type": "readme"
     },
     {

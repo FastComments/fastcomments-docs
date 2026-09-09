@@ -1,6 +1,11 @@
-FastComments podržava webhookove samo za resurs Comment.
+---
+FastComments podržava webhook‑ove samo za resurs **Comment**.
 
-Podržavamo webhookove za kreiranje komentara, uklanjanje i ažuriranje.
+Podržavamo webhook‑ove za kreiranje komentara, uklanjanje i ažuriranje.
 
-Svaki od ovih smatra se zasebnim događajem u našem sistemu i kao takav ima različitu semantiku
-i strukturu za webhook događaje.
+Svaki od ovih se smatra posebnim događajem u našem sistemu i kao takav ima različitu semantiku  
+i strukture za webhook događaje.
+
+Bilo koji broj krajnjih tačaka može da se pretplati na isti događaj: jedan webhook po domenu može da se konfiguriše u  
+kontrolnoj tabli, a dodatne pretplate mogu da se kreiraju putem API‑ja (vidi **Managing Webhooks via the API**).
+---

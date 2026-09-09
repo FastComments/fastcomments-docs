@@ -1,21 +1,27 @@
 {
   "name": "Java SDK",
-  "pageHeader": "Java SDK для FastComments",
+  "pageHeader": "FastComments Java SDK",
   "itemsOrdered": [
     {
-      "name": "Встановлення",
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Початок роботи",
       "type": "readme"
     },
     {
-      "name": "Швидкий старт",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Примітки",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -23,7 +29,7 @@
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегація",
+      "subCat": "Агрегат",
       "type": "api"
     },
     {
@@ -41,13 +47,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Блокування через коментар",
+      "subCat": "Блокування з коментаря",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Блокування через коментар",
+      "subCat": "Блокування з коментаря",
       "type": "api"
     },
     {
@@ -191,7 +197,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Коментарі користувача",
+      "subCat": "Коментарі для користувача",
       "type": "api"
     },
     {
@@ -233,55 +239,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Шаблони електронних листів",
+      "subCat": "Шаблони електронної пошти",
       "type": "api"
     },
     {
@@ -299,67 +305,67 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Позначення коментаря",
+      "subCat": "Позначити коментар",
       "type": "api"
     },
     {
@@ -737,43 +743,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
@@ -851,79 +857,79 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Налаштування запитань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Результати запитань",
+      "subCat": "Результати питань",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Агрегація результатів запитань",
+      "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Агрегація результатів запитань",
+      "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Агрегація результатів запитань",
+      "subCat": "Агрегація результатів питань",
       "type": "api"
     },
     {
@@ -1139,103 +1145,103 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Завантажити зображення",
+      "subCat": "Завантаження зображення",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Прогрес значків користувача",
+      "subCat": "Прогрес бейджу користувача",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Прогрес значків користувача",
+      "subCat": "Прогрес бейджу користувача",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Прогрес значків користувача",
+      "subCat": "Прогрес бейджу користувача",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувачів",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувачів",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувачів",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувачів",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Значки користувача",
+      "subCat": "Бейджі користувачів",
       "type": "api"
     },
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Сповіщення користувача",
+      "subCat": "Сповіщення користувачів",
       "type": "api"
     },
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статуси присутності користувача",
+      "subCat": "Статус присутності користувача",
       "type": "api"
     },
     {

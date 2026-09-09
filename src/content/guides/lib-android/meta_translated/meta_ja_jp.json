@@ -1,7 +1,13 @@
 {
   "name": "Android ライブラリ",
-  "pageHeader": "Androidアプリにコメント機能を追加する",
+  "pageHeader": "Android アプリにコメントを追加する",
   "itemsOrdered": [
+    {
+      "name": "AI コーディングエージェント",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
     {
       "name": "機能",
       "file": "features-readme-generated.md",
@@ -21,25 +27,25 @@
       "type": "readme"
     },
     {
-      "name": "基本的な使い方",
+      "name": "基本的な使用方法",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "使用法",
+      "subCat": "使用方法",
       "type": "readme"
     },
     {
-      "name": "セキュアなSSO認証",
+      "name": "安全な SSO 認証",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "認証",
       "type": "readme"
     },
     {
-      "name": "フィード連携",
+      "name": "フィード統合",
       "file": "feed-integration-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "ライブチャット連携",
+      "name": "ライブチャット統合",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -47,7 +53,7 @@
     {
       "name": "サンプルプロジェクト",
       "file": "example-projects-readme-generated.md",
-      "subCat": "使用法",
+      "subCat": "使用方法",
       "type": "readme"
     },
     {
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "包括的なテーマのカスタマイズ",
+      "name": "包括的なテーマカスタマイズ",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

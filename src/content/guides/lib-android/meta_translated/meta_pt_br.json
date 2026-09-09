@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca Android",
-  "pageHeader": "Adicione Comentários ao Seu App Android",
+  "pageHeader": "Adicione Comentários ao Seu Aplicativo Android",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
     {
       "name": "Recursos",
       "file": "features-readme-generated.md",
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Personalização Abrangente do Tema",
+      "name": "Personalização Abrangente de Tema",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

@@ -1,11 +1,15 @@
 ---
-パブリック `demo` テナントに対してローカルで実行されているすべてのウィジェットとフローを見るには、リポジトリをクローンして実行してください：
+パブリック `demo` テナントに対してローカルで全てのウィジェットとフローを実行するには、リポジトリをクローンして以下を実行してください:
 
 ```bash
+npm install
+npm run build
 cd examples/example-showcase
 npm install
 npm run dev
 ```
 
-`examples/example-showcase/src/views/` の下に各ウィジェット/フローのビューがあり、それをそのまま自分の React アプリにコピーできます。
+例は `file:../..` を介してライブラリにリンクしているため、`dist/` を生成するためにルートで `npm run build` を一度実行する必要があります。
+
+`examples/example-showcase/src/views/` 以下に各ウィジェット/フローのビューがあり、それらをそのまま自分の React アプリにコピーできます。
 ---

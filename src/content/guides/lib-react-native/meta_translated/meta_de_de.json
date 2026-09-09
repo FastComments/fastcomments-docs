@@ -1,9 +1,15 @@
 {
-  "name": "React Native-Bibliothek",
-  "pageHeader": "Kommentar-Widgets zu Ihrer React Native-App hinzufügen",
+  "name": "React Native Bibliothek",
+  "pageHeader": "Fügen Sie Kommentar-Widgets zu Ihrer React Native App hinzu",
   "itemsOrdered": [
     {
-      "name": "Live-Demo",
+      "name": "KI-Programmieragenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-Demonstration",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -15,25 +21,25 @@
       "type": "readme"
     },
     {
-      "name": "Das native SDK in Betracht ziehen",
+      "name": "Berücksichtigen Sie das Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Verwendung - Das Live-Kommentar-Widget",
+      "name": "Verwendung – Das Live-Kommentar-Widget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
     },
     {
-      "name": "Verwendung - Das Live-Chat-Widget",
+      "name": "Verwendung – Das Live-Chat-Widget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
     },
     {
-      "name": "Verwendung - SSO",
+      "name": "Verwendung – SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"

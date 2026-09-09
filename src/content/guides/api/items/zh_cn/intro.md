@@ -1,16 +1,16 @@
 ### FastComments API
 
-FastComments 提供一个用于与许多资源交互的 API。您可以构建与我们平台的集成，甚至自己构建客户端！
+FastComments 提供了一个用于与众多资源交互的 API。您可以在我们的平台上构建集成，甚至自行构建客户端！
 
-在本文件中，您将找到 API 支持的所有资源及其请求和响应类型的文档。
+在本文件中，您将找到 API 支持的所有资源及其请求和响应类型的文档说明。
 
-对于企业客户，所有 API 访问都会被记录在审计日志中。
+对于企业客户，所有 API 访问都会记录在审计日志中。
 
-### 生成的 SDKs
+### 生成的 SDK
 
-FastComments 现在从我们的代码生成一个 [API Spec](https://fastcomments.com/js/swagger.json)（尚未完全完成，但已包含许多 API）。
+FastComments 现在可以从我们的代码生成 [API 规范](https://fastcomments.com/js/swagger.json)（尚未完整，但已包含许多 API）。
 
-我们现在也为常用语言提供 SDK：
+我们还提供了流行语言的 SDK：
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -24,27 +24,33 @@ FastComments 现在从我们的代码生成一个 [API Spec](https://fastcomment
 - [fastcomments-rust](./guide-sdk-rust.html)
 - [fastcomments-swift](./guide-sdk-swift.html)
 
-### 认证
+### 身份验证
 
-API 通过在请求中传递您的 [api key](https://fastcomments.com/auth/my-account/api-secret) 来进行认证，您可以将其放在 `X-API-KEY` 请求头或 `API_KEY` 查询参数中。您在调用 API 时还需要 `tenantId`。可以在与 api key 相同的页面上找到它。
+API 通过在 `X-API-KEY` 请求头或 `API_KEY` 查询参数中传递您的 [api key](https://fastcomments.com/auth/my-account/api-secret) 进行身份验证。您还需要 `tenantId` 来调用 API。该信息可在与 api key 相同的页面获取。
 
-### 安全注意事项
+### 安全说明
 
-这些路由应当从 **服务器** 调用。__请勿__ 从浏览器调用它们。否则会泄露您的 API key —— 任何能够查看页面源代码的人都将获得对您帐户的完全访问权限！
+这些路由应从 **服务器** 调用。__请勿__ 在浏览器中调用。这样会泄露您的 API 密钥——任何能够查看页面源代码的人都将获得对您账户的完整访问权限！
 
-#### 认证选项一 - 请求头
+#### 身份验证选项一 - 请求头
 
-- 请求头: `X-API-KEY`
-- 请求头: `X-TENANT-ID`
+- Header: `X-API-KEY`
+- Header: `X-TENANT-ID`
 
-#### 认证选项二 - 查询参数
+#### 身份验证选项二 - 查询参数
 
-- 查询参数: `API_KEY`
-- 查询参数: `tenantId`
+- Query Param: `API_KEY`
+- Query Param: `tenantId`
+
+#### 身份验证选项三 - OAuth Bearer Token
+
+- Header: `Authorization: Bearer fcat_...`
+
+通过 [MCP 服务器](https://docs.fastcomments.com/guide-llm-kit.html) 连接的应用程序会通过 OAuth 获取令牌，而不是使用 API 密钥。该令牌可用于此处的所有端点。租户信息由令牌隐含，因此 `tenantId` 为可选项，但若提供必须与令牌匹配。`GET` 请求需要 `read` 范围，其他方法需要 `write` 范围。发现过程从 `https://fastcomments.com/.well-known/oauth-authorization-server` 开始。
 
 ### 读取您自己的写入
 
-FastComments 提供双活（Active-Active）可用性。来自您数据中心的请求会被路由到离您最近的 [接入点](https://sophon.fastcomments.com/)。这是自动完成的，通常您可以观察到读写一致（read-your-write）语义。如果您想确保能读取到自己刚刚写入的数据，可以将请求固定到某个区域，通过使用该区域作为 API 主机来实现（不过对于大多数集成通常不需要）：
+FastComments 提供主动-主动可用性。来自您数据中心的请求会路由到离您最近的 [接入点](https://sophon.fastcomments.com/)。这一步是自动完成的，通常您可以观察到读写一致性。如果您想确保读取到自己的写入，可以通过将请求固定到特定区域的 API 主机来实现（但对大多数集成来说通常不需要这样做）：
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -55,4 +61,4 @@ FastComments 提供双活（Active-Active）可用性。来自您数据中心的
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-请注意，如果您这样做，可能需要定义一个回退方案，因为我们在过去曾弃用入口节点并为切换使用了新的名称。
+请注意，如果您这样做，可能需要定义回退方案，因为我们过去已弃用某些入口节点，并在切换时使用了新的名称。

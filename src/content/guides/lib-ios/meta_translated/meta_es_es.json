@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteca para iOS",
-  "pageHeader": "Añadir comentarios a tu aplicación iOS",
+  "name": "Biblioteca iOS",
+  "pageHeader": "Agregar comentarios a tu aplicación iOS",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Características",
       "file": "features-readme-generated.md",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Comentarios anidados",
+      "name": "Comentarios en hilos",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -51,13 +57,13 @@
       "type": "readme"
     },
     {
-      "name": "Personalización de temas",
+      "name": "Temas",
       "file": "theming-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Botones personalizados de la barra de herramientas",
+      "name": "Botones de barra de herramientas personalizados",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "Región de la UE",
+      "name": "Región UE",
       "file": "eu-region-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -99,7 +105,7 @@
       "type": "readme"
     },
     {
-      "name": "Subida de imágenes",
+      "name": "Cargas de imágenes",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -111,13 +117,13 @@
       "type": "readme"
     },
     {
-      "name": "Edición y eliminación de comentarios",
+      "name": "Editar y eliminar comentarios",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Gestión de errores",
+      "name": "Manejo de errores",
       "file": "error-handling-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

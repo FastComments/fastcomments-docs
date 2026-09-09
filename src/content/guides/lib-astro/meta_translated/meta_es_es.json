@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteca de Astro",
-  "pageHeader": "Añade comentarios a tu sitio Astro",
+  "name": "Biblioteca Astro",
+  "pageHeader": "Agregar comentarios a tu sitio Astro",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Demostración en vivo",
       "file": "live-demo-readme-generated.md",
@@ -9,15 +15,15 @@
       "type": "readme"
     },
     {
-      "name": "Presentación en vivo",
+      "name": "Exhibición en vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Instalación",
+      "name": "Instalar",
       "file": "install-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {

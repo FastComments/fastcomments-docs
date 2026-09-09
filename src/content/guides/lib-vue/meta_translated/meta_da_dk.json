@@ -1,9 +1,15 @@
 {
-  "name": "Vue 2-bibliotek",
+  "name": "Vue 2 Bibliotek",
   "pageHeader": "Tilføj kommentarer til din Vue 2-app",
   "itemsOrdered": [
     {
-      "name": "Live-demo",
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-udstilling",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
       "type": "readme"
     },
     {

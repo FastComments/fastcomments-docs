@@ -1,9 +1,15 @@
 {
   "name": "React Native 库",
-  "pageHeader": "向您的 React Native 应用添加评论小部件",
+  "pageHeader": "在您的 React Native 应用中添加评论小部件",
   "itemsOrdered": [
     {
-      "name": "实时演示",
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "实时展示",
       "file": "live-showcase-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -11,11 +17,11 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "入门指南",
       "type": "readme"
     },
     {
-      "name": "考虑使用原生 SDK",
+      "name": "考虑原生 SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -23,19 +29,19 @@
     {
       "name": "使用 - 实时评论小部件",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
       "name": "使用 - 实时聊天小部件",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "使用 - 单点登录 (SSO)",
+      "name": "使用 - 单点登录",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {

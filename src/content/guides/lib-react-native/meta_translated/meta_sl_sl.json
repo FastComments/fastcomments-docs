@@ -1,9 +1,15 @@
 {
-  "name": "Knjižnica za React Native",
-  "pageHeader": "Dodajte pripomočke za komentarje v svojo aplikacijo React Native",
+  "name": "React Native knjižnica",
+  "pageHeader": "Dodajte pripomočke za komentarje v vašo React Native aplikacijo",
   "itemsOrdered": [
     {
-      "name": "Predstavitev v živo",
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Živi prikaz",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -11,35 +17,35 @@
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Začetek",
+      "subCat": "Uvod",
       "type": "readme"
     },
     {
-      "name": "Razmislite o uporabi izvornega SDK-ja",
+      "name": "Razmislite o izvirnem SDK-ju",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Uporaba - pripomoček za komentarje v živo",
+      "name": "Uporaba – Živi pripomoček za komentarje",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
     },
     {
-      "name": "Uporaba - pripomoček za klepet v živo",
+      "name": "Uporaba – Živi pripomoček za klepet",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
     },
     {
-      "name": "Uporaba - SSO (enotna prijava)",
+      "name": "Uporaba – SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
     },
     {
-      "name": "Peer odvisnosti",
+      "name": "Sosedske odvisnosti",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -8,12 +8,12 @@
       "subCat": "Επισκόπηση"
     },
     {
-      "name": "Υποστηριζόμενα Γεγονότα και Πόροι",
+      "name": "Υποστηριζόμενα Γεγονότα & Πόροι",
       "file": "webhooks-supported-events-resources.md",
       "subCat": "Επισκόπηση"
     },
     {
-      "name": "Ρύθμιση τοπικής ανάπτυξης",
+      "name": "Ρύθμιση Τοπικής Ανάπτυξης",
       "file": "webhooks-local-dev.md",
       "subCat": "Υλοποίηση"
     },
@@ -23,24 +23,29 @@
       "subCat": "Υλοποίηση"
     },
     {
-      "name": "Δοκιμές",
+      "name": "Δοκιμή",
       "file": "webhooks-testing.md",
       "subCat": "Υλοποίηση"
     },
     {
-      "name": "Δομές δεδομένων",
+      "name": "Δομές Δεδομένων",
       "file": "webhooks-structures.md",
       "subCat": "Υλοποίηση"
     },
     {
-      "name": "Ασφάλεια και Διακριτικά API",
+      "name": "Ασφάλεια & Διακριτικά API",
       "file": "webhooks-api-tokens.md",
       "subCat": "Υλοποίηση"
     },
     {
-      "name": "Πώς λειτουργεί και χειρισμός επαναπροσπαθειών",
+      "name": "Διαχείριση Webhooks μέσω του API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Υλοποίηση"
+    },
+    {
+      "name": "Πώς Λειτουργεί & Διαχείριση Επανάληψης",
       "file": "webhooks-how-it-works.md",
-      "subCat": "Πίσω από τα Παρασκήνια"
+      "subCat": "Πίσω από τη Σκηνή"
     }
   ]
 }

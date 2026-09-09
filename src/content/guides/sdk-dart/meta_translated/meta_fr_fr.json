@@ -1,9 +1,15 @@
 {
-  "name": "SDK Dart",
+  "name": "Guide Dart SDK",
   "pageHeader": "FastComments SDK Dart",
   "itemsOrdered": [
     {
-      "name": "Mise en page",
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Disposition",
       "file": "layout-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -41,19 +47,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blocage de commentaire",
+      "subCat": "Blocage depuis le commentaire",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blocage de commentaire",
+      "subCat": "Blocage depuis le commentaire",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Vérification des commentaires bloqués",
+      "subCat": "Vérifier les commentaires bloqués",
       "type": "api"
     },
     {
@@ -851,79 +857,79 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Configurations de questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Configurations de questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Configurations de questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Configurations de questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Configurations de questions",
+      "subCat": "Configurations de question",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Résultats de questions",
+      "subCat": "Résultats de question",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Résultats de questions",
+      "subCat": "Résultats de question",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Résultats de questions",
+      "subCat": "Résultats de question",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Résultats de questions",
+      "subCat": "Résultats de question",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Résultats de questions",
+      "subCat": "Résultats de question",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Agrégation des résultats de questions",
+      "subCat": "Agrégation des résultats de question",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Agrégation des résultats de questions",
+      "subCat": "Agrégation des résultats de question",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Agrégation des résultats de questions",
+      "subCat": "Agrégation des résultats de question",
       "type": "api"
     },
     {
@@ -1139,7 +1145,7 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Téléverser une image",
+      "subCat": "Télécharger une image",
       "type": "api"
     },
     {

@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteca de Hugo",
+  "name": "Biblioteca Hugo",
   "pageHeader": "Agregar comentarios a tu sitio Hugo",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Demostración en vivo",
       "file": "live-demo-readme-generated.md",
@@ -9,13 +15,13 @@
       "type": "readme"
     },
     {
-      "name": "Presentación en vivo",
+      "name": "Exhibición en vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Instalación",
+      "name": "Instalar",
       "file": "install-readme-generated.md",
       "subCat": "Primeros pasos",
       "type": "readme"
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "Shortcodes",
+      "name": "Códigos cortos",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Integración con temas",
+      "name": "Integración de tema",
       "file": "theme-integration-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -53,7 +59,7 @@
     {
       "name": "Referencia de configuración del widget",
       "file": "widget-configuration-reference-readme-generated.md",
-      "subCat": "Referencia de la API",
+      "subCat": "Referencia de API",
       "type": "readme"
     },
     {

@@ -1,9 +1,15 @@
 {
   "name": "Knjižnica SolidJS",
-  "pageHeader": "Dodajte komentarje v svojo SolidJS aplikacijo",
+  "pageHeader": "Dodajte komentarje v vašo aplikacijo SolidJS",
   "itemsOrdered": [
     {
-      "name": "Predstavitev v živo",
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Živa predstavitev",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Reagiranje na spremembe konfiguracije (imperativni vmesnik)",
+      "name": "Reagiranje na spremembe konfiguracije (imperativni ročaj)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Konfiguracija",
       "type": "readme"

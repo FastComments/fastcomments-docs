@@ -3,6 +3,12 @@
   "pageHeader": "Django 앱에 댓글 추가",
   "itemsOrdered": [
     {
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "요구 사항",
       "file": "requirements-readme-generated.md",
       "subCat": "문서",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "자동 SSO를 위한 사전 요구 사항",
+      "name": "자동 SSO 전제 조건",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "임베드 마크업 맞춤 설정",
+      "name": "임베드 마크업 커스터마이징",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

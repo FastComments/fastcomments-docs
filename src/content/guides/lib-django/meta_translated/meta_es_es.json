@@ -1,7 +1,13 @@
 {
   "name": "Paquete Django",
-  "pageHeader": "Agregar comentarios a tu aplicación Django",
+  "pageHeader": "Añadir comentarios a tu aplicación Django",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Requisitos",
       "file": "requirements-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Guía rápida",
+      "name": "Inicio rápido",
       "file": "quickstart-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"

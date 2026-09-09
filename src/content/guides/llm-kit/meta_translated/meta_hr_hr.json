@@ -1,16 +1,21 @@
 {
-  "name": "LLM komplet",
+  "name": "LLM Kit",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Nabavite LLM komplet",
+      "name": "Preuzmi LLM Kit",
       "file": "llm-kit-snippet.md",
-      "subCat": "Integracija LLM-a"
+      "subCat": "LLM integracija"
     },
     {
-      "name": "MCP poslužitelj",
+      "name": "MCP Server",
       "file": "mcp-server.md",
-      "subCat": "MCP poslužitelj"
+      "subCat": "MCP Server"
+    },
+    {
+      "name": "Neka agent postavi vaš račun",
+      "file": "agent-account-setup.md",
+      "subCat": "Postavljanje računa agenta"
     }
   ]
 }

@@ -3,6 +3,12 @@
   "pageHeader": "Ajouter des commentaires à votre application Django",
   "itemsOrdered": [
     {
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Exigences",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Pré-requis pour le SSO automatique",
+      "name": "Prérequis pour le SSO automatique",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Authentification unique)",
+      "name": "SSO (authentification unique)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Personnaliser le balisage d'intégration",
+      "name": "Personnalisation du balisage d'intégration",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

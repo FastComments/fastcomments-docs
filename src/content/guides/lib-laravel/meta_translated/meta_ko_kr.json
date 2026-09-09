@@ -1,7 +1,13 @@
 {
   "name": "Laravel 패키지",
-  "pageHeader": "Laravel 앱에 댓글 추가",
+  "pageHeader": "Laravel 앱에 주석 추가",
   "itemsOrdered": [
+    {
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
     {
       "name": "요구 사항",
       "file": "requirements-readme-generated.md",
@@ -21,25 +27,25 @@
       "type": "readme"
     },
     {
-      "name": "SSO (싱글 사인온)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "API 액세스",
+      "name": "API 접근",
       "file": "api-access-readme-generated.md",
-      "subCat": "API 참조",
+      "subCat": "API 레퍼런스",
       "type": "readme"
     },
     {
-      "name": "설정 참조",
+      "name": "구성 레퍼런스",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "API 참조",
+      "subCat": "API 레퍼런스",
       "type": "readme"
     },
     {
-      "name": "뷰 사용자화",
+      "name": "뷰 맞춤 설정",
       "file": "customizing-views-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

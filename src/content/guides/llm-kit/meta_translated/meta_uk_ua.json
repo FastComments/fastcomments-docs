@@ -3,14 +3,19 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Отримати набір LLM",
+      "name": "Отримати LLM Kit",
       "file": "llm-kit-snippet.md",
       "subCat": "Інтеграція LLM"
     },
     {
-      "name": "Сервер MCP",
+      "name": "MCP Server",
       "file": "mcp-server.md",
-      "subCat": "Сервер MCP"
+      "subCat": "MCP Server"
+    },
+    {
+      "name": "Нехай агент налаштує ваш обліковий запис",
+      "file": "agent-account-setup.md",
+      "subCat": "Налаштування облікового запису агентом"
     }
   ]
 }

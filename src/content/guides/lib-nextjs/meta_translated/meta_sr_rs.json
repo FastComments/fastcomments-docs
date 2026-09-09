@@ -3,13 +3,19 @@
   "pageHeader": "Додајте коментаре у вашу Next.js апликацију",
   "itemsOrdered": [
     {
-      "name": "Демонстрација уживо",
+      "name": "AI агенти за кодирање",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Живи демо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Приказ уживо",
+      "name": "Живи приказ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "Инсталација",
       "file": "install-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Увод",
       "type": "readme"
     },
     {
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Постављање на Vercel",
+      "name": "Vercel распоређивања",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -47,7 +53,7 @@
     {
       "name": "Пример пројекта",
       "file": "example-project-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {

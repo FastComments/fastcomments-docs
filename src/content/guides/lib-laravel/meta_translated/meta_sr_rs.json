@@ -1,47 +1,53 @@
 {
-  "name": "Laravel пакет",
-  "pageHeader": "Додајте коментаре у вашу Laravel апликацију",
+  "name": "Laravel paket",
+  "pageHeader": "Dodajte komentare u vašu Laravel aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Захтеви",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Zahtevi",
       "file": "requirements-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
-      "name": "Blade компоненте",
+      "name": "Blade komponente",
       "file": "blade-components-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "SSO (Једнократно пријављивање)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Приступ API-ју",
+      "name": "Pristup API-ju",
       "file": "api-access-readme-generated.md",
-      "subCat": "API референца",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {
-      "name": "Референца конфигурације",
+      "name": "Referenca konfiguracije",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "API референца",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {
-      "name": "Прилагођавање приказа",
+      "name": "Prilagođavanje prikaza",
       "file": "customizing-views-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

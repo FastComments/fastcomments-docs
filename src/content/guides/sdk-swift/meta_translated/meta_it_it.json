@@ -1,59 +1,65 @@
 {
   "name": "SDK Swift",
-  "pageHeader": "SDK Swift di FastComments",
+  "pageHeader": "FastComments SDK Swift",
   "itemsOrdered": [
     {
-      "name": "Installazione",
-      "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Library Contents",
+      "name": "Installazione",
+      "file": "installation-readme-generated.md",
+      "subCat": "Iniziare",
+      "type": "readme"
+    },
+    {
+      "name": "Contenuto della libreria",
       "file": "library-contents-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Quick Start",
+      "name": "Avvio rapido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "API Clients",
+      "name": "Client API",
       "file": "api-clients-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Making API Calls",
+      "name": "Eseguire chiamate API",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Common Issues",
+      "name": "Problemi comuni",
       "file": "common-issues-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Notes",
+      "name": "Note",
       "file": "notes-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "aggregare",
       "file": "aggregate-api-generated.md",
-      "subCat": "Aggregazione",
+      "subCat": "Aggregato",
       "type": "api"
     },
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Log di audit",
+      "subCat": "Registri di audit",
       "type": "api"
     },
     {
@@ -77,7 +83,7 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Verifica commenti bloccati",
+      "subCat": "Controlla commenti bloccati",
       "type": "api"
     },
     {
@@ -389,19 +395,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "Gif",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "Gif",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "Gif",
+      "subCat": "GIF",
       "type": "api"
     },
     {
@@ -905,31 +911,31 @@
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Risultati delle domande",
+      "subCat": "Risultati domande",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Risultati delle domande",
+      "subCat": "Risultati domande",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Risultati delle domande",
+      "subCat": "Risultati domande",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Risultati delle domande",
+      "subCat": "Risultati domande",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Risultati delle domande",
+      "subCat": "Risultati domande",
       "type": "api"
     },
     {

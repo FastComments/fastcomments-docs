@@ -1,9 +1,15 @@
 {
   "name": "Библиотека iOS",
-  "pageHeader": "Добавление комментариев в ваше iOS-приложение",
+  "pageHeader": "Добавьте комментарии в ваше iOS‑приложение",
   "itemsOrdered": [
     {
-      "name": "Возможности",
+      "name": "AI‑агенты кодирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Функции",
       "file": "features-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Чат в реальном времени",
+      "name": "Онлайн‑чат",
       "file": "live-chat-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Настройка темы",
+      "name": "Темизация",
       "file": "theming-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

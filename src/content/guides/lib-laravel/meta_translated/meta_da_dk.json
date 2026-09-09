@@ -3,6 +3,12 @@
   "pageHeader": "Tilføj kommentarer til din Laravel-app",
   "itemsOrdered": [
     {
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Krav",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentation",
@@ -11,7 +17,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
       "type": "readme"
     },
     {
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Tilpas visninger",
+      "name": "Tilpasning af visninger",
       "file": "customizing-views-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

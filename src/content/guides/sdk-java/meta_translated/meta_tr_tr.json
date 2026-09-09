@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Java SDK",
   "itemsOrdered": [
     {
+      "name": "AI kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
       "subCat": "Başlarken",
@@ -11,17 +17,17 @@
     {
       "name": "Hızlı Başlangıç",
       "file": "quick-start-readme-generated.md",
-      "subCat": "Belgelendirme",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
       "name": "Notlar",
       "file": "notes-readme-generated.md",
-      "subCat": "Belgelendirme",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "topla",
       "file": "aggregate-api-generated.md",
       "subCat": "Toplama",
       "type": "api"
@@ -41,19 +47,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Yorumdan Engelleme",
+      "subCat": "Yorumdan Engelle",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Yorumdan Engelleme",
+      "subCat": "Yorumdan Engelle",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Engellenmiş Yorumları Kontrol Etme",
+      "subCat": "Engellenen Yorumları Kontrol Et",
       "type": "api"
     },
     {
@@ -191,7 +197,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Kullanıcı Yorumları",
+      "subCat": "Kullanıcı İçin Yorumlar",
       "type": "api"
     },
     {
@@ -359,7 +365,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Yorumu İşaretleme",
+      "subCat": "Yorumu İşaretle",
       "type": "api"
     },
     {
@@ -383,31 +389,31 @@
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Etiketler",
       "type": "api"
     },
     {
@@ -911,19 +917,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Soru Sonuçlarının Toplanması",
+      "subCat": "Soru Sonuçları Toplaması",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Soru Sonuçlarının Toplanması",
+      "subCat": "Soru Sonuçları Toplaması",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Soru Sonuçlarının Toplanması",
+      "subCat": "Soru Sonuçları Toplaması",
       "type": "api"
     },
     {
@@ -1109,25 +1115,25 @@
     {
       "name": "changeTicketState",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "Destek Talepleri",
+      "subCat": "Biletler",
       "type": "api"
     },
     {
       "name": "createTicket",
       "file": "createticket-api-generated.md",
-      "subCat": "Destek Talepleri",
+      "subCat": "Biletler",
       "type": "api"
     },
     {
       "name": "getTicket",
       "file": "getticket-api-generated.md",
-      "subCat": "Destek Talepleri",
+      "subCat": "Biletler",
       "type": "api"
     },
     {
       "name": "getTickets",
       "file": "gettickets-api-generated.md",
-      "subCat": "Destek Talepleri",
+      "subCat": "Biletler",
       "type": "api"
     },
     {
@@ -1145,19 +1151,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Kullanıcı Rozet İlerlemesi",
+      "subCat": "Kullanıcı Rozeti İlerlemesi",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Kullanıcı Rozet İlerlemesi",
+      "subCat": "Kullanıcı Rozeti İlerlemesi",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Kullanıcı Rozet İlerlemesi",
+      "subCat": "Kullanıcı Rozeti İlerlemesi",
       "type": "api"
     },
     {
@@ -1235,7 +1241,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Kullanıcı Varlık Durumu",
+      "subCat": "Kullanıcı Durumları",
       "type": "api"
     },
     {

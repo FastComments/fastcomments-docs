@@ -1,7 +1,13 @@
 {
   "name": "Vue 2 库",
-  "pageHeader": "向你的 Vue 2 应用添加评论",
+  "pageHeader": "为您的 Vue 2 应用添加评论",
   "itemsOrdered": [
+    {
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "实时展示",
       "file": "live-showcase-readme-generated.md",
@@ -15,15 +21,15 @@
       "type": "readme"
     },
     {
-      "name": "用法",
+      "name": "使用",
       "file": "usage-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {
       "name": "更新当前页面（SPA 示例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用",
       "type": "readme"
     },
     {

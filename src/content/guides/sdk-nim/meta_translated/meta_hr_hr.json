@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Nim SDK",
   "itemsOrdered": [
     {
+      "name": "AI programerski agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Zahtjevi",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -11,7 +17,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -23,7 +29,7 @@
     {
       "name": "Izvođenje API poziva",
       "file": "making-api-calls-readme-generated.md",
-      "subCat": "Referenca API-ja",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Korištenje SSO-a",
+      "name": "Upotreba SSO",
       "file": "sso-usage-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "agregacija",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregacija",
       "type": "api"
@@ -53,7 +59,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Revizijski zapisi",
+      "subCat": "Dnevnici revizije",
       "type": "api"
     },
     {
@@ -65,13 +71,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokiranje komentara",
+      "subCat": "Blokiranje iz komentara",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokiranje komentara",
+      "subCat": "Blokiranje iz komentara",
       "type": "api"
     },
     {
@@ -383,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Označavanje komentara",
+      "subCat": "Označi komentar",
       "type": "api"
     },
     {
@@ -755,43 +761,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Reakcije stranice",
+      "subCat": "Reakcije na stranicu",
       "type": "api"
     },
     {
@@ -851,49 +857,49 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Webhook događaji na čekanju",
+      "subCat": "Nedovršeni webhook događaji",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Webhook događaji na čekanju",
+      "subCat": "Nedovršeni webhook događaji",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Webhook događaji na čekanju",
+      "subCat": "Nedovršeni webhook događaji",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Konfiguracije pitanja",
+      "subCat": "Postavke pitanja",
       "type": "api"
     },
     {
@@ -1013,139 +1019,139 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dnevna uporaba najmoprimca",
+      "subCat": "Dnevna upotreba najmodavca",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paketi najmoprimca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Korisnici najmoprimca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Najmoprimci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "changeTicketState",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "Ulaznice",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
       "name": "createTicket",
       "file": "createticket-api-generated.md",
-      "subCat": "Ulaznice",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
       "name": "getTicket",
       "file": "getticket-api-generated.md",
-      "subCat": "Ulaznice",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
       "name": "getTickets",
       "file": "gettickets-api-generated.md",
-      "subCat": "Ulaznice",
+      "subCat": "Tiketi",
       "type": "api"
     },
     {
@@ -1181,73 +1187,73 @@
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Korisničke značke",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Korisničke značke",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Korisničke značke",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Korisničke značke",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Značke korisnika",
+      "subCat": "Korisničke značke",
       "type": "api"
     },
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Korisničke obavijesti",
+      "subCat": "Obavijesti korisnika",
       "type": "api"
     },
     {

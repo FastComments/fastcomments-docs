@@ -1,7 +1,13 @@
 {
   "name": "Django paket",
-  "pageHeader": "Dodajte komentare u svoju Django aplikaciju",
+  "pageHeader": "Dodajte komentare u vašu Django aplikaciju",
   "itemsOrdered": [
+    {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Zahtevi",
       "file": "requirements-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Tagovi widgeta",
+      "name": "Oznake vidžeta",
       "file": "widget-tags-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -39,9 +45,9 @@
       "type": "readme"
     },
     {
-      "name": "Pristup API-ju na serverskoj strani",
+      "name": "Pristup API-ju na serveru",
       "file": "server-side-api-access-readme-generated.md",
-      "subCat": "Referenca API-ja",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Prilagođavanje embed markup-a",
+      "name": "Prilagođavanje markup-a za ugradnju",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -59,7 +65,7 @@
     {
       "name": "Referenca podešavanja",
       "file": "settings-reference-readme-generated.md",
-      "subCat": "Referenca API-ja",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {

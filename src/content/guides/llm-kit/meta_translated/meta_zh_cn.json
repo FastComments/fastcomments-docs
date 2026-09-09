@@ -1,9 +1,9 @@
 {
-  "name": "LLM 工具包",
+  "name": "LLM 套件",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "获取 LLM 工具包",
+      "name": "获取 LLM 套件",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM 集成"
     },
@@ -11,6 +11,11 @@
       "name": "MCP 服务器",
       "file": "mcp-server.md",
       "subCat": "MCP 服务器"
+    },
+    {
+      "name": "让代理为您设置账户",
+      "file": "agent-account-setup.md",
+      "subCat": "代理账户设置"
     }
   ]
 }

@@ -1,7 +1,13 @@
 {
   "name": "iOS ライブラリ",
-  "pageHeader": "iOSアプリにコメントを追加する",
+  "pageHeader": "iOS アプリにコメントを追加する",
   "itemsOrdered": [
+    {
+      "name": "AI コーディングエージェント",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
     {
       "name": "機能",
       "file": "features-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "認証（SSO）",
+      "name": "認証 (SSO)",
       "file": "authentication-sso-readme-generated.md",
       "subCat": "認証",
       "type": "readme"
@@ -51,13 +57,13 @@
       "type": "readme"
     },
     {
-      "name": "テーマ",
+      "name": "テーマ設定",
       "file": "theming-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "カスタムツールバーのボタン",
+      "name": "カスタムツールバーボタン",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -81,13 +87,13 @@
       "type": "readme"
     },
     {
-      "name": "状態と可観測性",
+      "name": "状態と観測性",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "EUリージョン",
+      "name": "EU リージョン",
       "file": "eu-region-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -105,7 +111,7 @@
       "type": "readme"
     },
     {
-      "name": "ユーザーメンション",
+      "name": "ユーザー言及",
       "file": "user-mentions-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -117,7 +123,7 @@
       "type": "readme"
     },
     {
-      "name": "エラー処理",
+      "name": "エラーハンドリング",
       "file": "error-handling-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

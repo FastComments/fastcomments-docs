@@ -1,16 +1,16 @@
-### FastComments の API
+### FastComments API
 
-FastComments は多くのリソースとやり取りするための API を提供します。プラットフォームとの統合を構築したり、独自のクライアントを構築したりできます。
+FastComments は多くのリソースとやり取りするための API を提供します。プラットフォームとの統合を構築したり、独自のクライアントを作成したりできます！
 
-このドキュメントでは、API がサポートするすべてのリソースを、リクエストおよびレスポンスタイプとともに記載しています。
+このドキュメントでは、API がサポートするすべてのリソースと、そのリクエストおよびレスポンスタイプが記載されています。
 
-エンタープライズのお客様向けに、すべての API アクセスは監査ログに記録されます。
+エンタープライズ顧客向けには、すべての API アクセスが監査ログに記録されます。
 
-### Generated SDKs
+### 生成された SDK
 
-FastComments は現在、コードから [API 仕様](https://fastcomments.com/js/swagger.json) を生成しています（まだ完全ではありませんが、多くの API を含んでいます）。
+FastComments は現在、コードから [API Spec](https://fastcomments.com/js/swagger.json) を生成しています（まだ完全ではありませんが、多くの API が含まれています）。
 
-また、人気のある言語向けの SDK も用意しています:
+また、人気のある言語向けに SDK も提供しています：
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -26,25 +26,31 @@ FastComments は現在、コードから [API 仕様](https://fastcomments.com/j
 
 ### 認証
 
-API は、[API キー](https://fastcomments.com/auth/my-account/api-secret) を `X-API-KEY` ヘッダーまたは `API_KEY` クエリパラメータとして渡すことで認証されます。API コールを行うには `tenantId` も必要です。これは API キーと同じページから取得できます。
+API は、[API キー](https://fastcomments.com/auth/my-account/api-secret) を `X-API-KEY` ヘッダーまたは `API_KEY` クエリパラメータのいずれかで渡すことで認証されます。API 呼び出しを行うには `tenantId` も必要です。`tenantId` は API キーと同じページから取得できます。
 
 ### セキュリティに関する注意
 
-これらのルートは **サーバー** から呼び出すことを想定しています。__ブラウザから絶対に呼び出さないでください__。ブラウザから呼び出すと API キーが露出し、ページのソースコードを表示できる人にアカウントへの完全なアクセス権が与えられてしまいます。
+これらのルートは **サーバー** から呼び出すことを想定しています。__絶対に__ ブラウザーから呼び出さないでください。そうすると API キーが露出し、ページのソースコードを閲覧できるすべての人があなたのアカウントにフルアクセスできるようになります！
 
 #### 認証オプション 1 - ヘッダー
 
-- Header: `X-API-KEY`
-- Header: `X-TENANT-ID`
+- ヘッダー: `X-API-KEY`
+- ヘッダー: `X-TENANT-ID`
 
 #### 認証オプション 2 - クエリパラメータ
 
-- Query Param: `API_KEY`
-- Query Param: `tenantId`
+- クエリパラメータ: `API_KEY`
+- クエリパラメータ: `tenantId`
+
+#### 認証オプション 3 - OAuth ベアラートークン
+
+- ヘッダー: `Authorization: Bearer fcat_...`
+
+[MCP サーバー](https://docs.fastcomments.com/guide-llm-kit.html) を介して接続するアプリケーションは、API キーの代わりに OAuth でトークンを取得します。そのトークンはここにあるすべてのエンドポイントで機能します。テナントはトークンに含まれるため、`tenantId` はオプションですが、指定する場合はトークンと一致である必要があります。`GET` リクエストには `read` スコープが必要で、その他のメソッドには `write` スコープが必要です。ディスカバリは `https://fastcomments.com/.well-known/oauth-authorization-server` から開始されます。
 
 ### 自分の書き込みの読み取り
 
-FastComments はアクティブ・アクティブ構成による可用性を提供します。お客様のデータセンターからのリクエストは、お客様に最も近い [最寄りのプレゼンス・ポイント](https://sophon.fastcomments.com/) にルーティングされます。これは自動で行われ、通常は書き込み後に自分の書き込みを読み取れる整合性（read-your-write）が観察できます。自分の書き込みを確実に読みたい場合は、そのリージョンを API ホストとして使用してリクエストを特定のリージョンにピン留めできます（ただし、ほとんどの統合では通常必要ありません）:
+FastComments はアクティブ-アクティブの可用性を提供します。データセンターからのリクエストは、[最も近いプレゼンスポイント](https://sophon.fastcomments.com/) にルーティングされます。これは自動的に行われ、通常は「書いたものをすぐに読む」セマンティクスが観測できます。自分の書き込みを確実に読む必要がある場合は、特定のリージョンを API ホストとして使用してリクエストを固定できます（ただし、ほとんどの統合では通常必要ありません）：
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -55,6 +61,6 @@ FastComments はアクティブ・アクティブ構成による可用性を提�
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-これを行う場合、過去にエントリポイントノードを非推奨にして切り替え時に新しい名前を使用したことがあるため、フォールバックを定義しておくことをお勧めします。
+このように設定する場合、過去にエントリーポイントノードが廃止され、スイッチオーバー用に新しい名前が使用されているため、フォールバックを定義した方がよいことに注意してください。
 
 ---

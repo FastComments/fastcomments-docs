@@ -1,7 +1,13 @@
 {
   "name": "Πακέτο Laravel",
-  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Laravel σας",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Laravel σας",
   "itemsOrdered": [
+    {
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Απαιτήσεις",
       "file": "requirements-readme-generated.md",
@@ -21,25 +27,25 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Ενιαία Σύνδεση)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Πρόσβαση API",
+      "name": "Πρόσβαση στο API",
       "file": "api-access-readme-generated.md",
       "subCat": "Αναφορά API",
       "type": "readme"
     },
     {
-      "name": "Αναφορά Διαμόρφωσης",
+      "name": "Αναφορά διαμόρφωσης",
       "file": "configuration-reference-readme-generated.md",
       "subCat": "Αναφορά API",
       "type": "readme"
     },
     {
-      "name": "Προσαρμογή Προβολών",
+      "name": "Προσαρμογή προβολών",
       "file": "customizing-views-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

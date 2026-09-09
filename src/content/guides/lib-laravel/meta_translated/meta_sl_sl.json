@@ -1,7 +1,13 @@
 {
-  "name": "Paket za Laravel",
+  "name": "Laravel paket",
   "pageHeader": "Dodajte komentarje v vašo Laravel aplikacijo",
   "itemsOrdered": [
+    {
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Zahteve",
       "file": "requirements-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Prvi koraki",
+      "subCat": "Začetek",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Enkratna prijava (SSO)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

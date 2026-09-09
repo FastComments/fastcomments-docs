@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej witryny Eleventy (11ty)",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Demo na żywo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Przykładowy projekt",
+      "name": "Projekt przykładowy",
       "file": "example-project-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"

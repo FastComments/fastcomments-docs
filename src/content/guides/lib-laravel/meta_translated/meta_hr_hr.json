@@ -1,7 +1,13 @@
 {
-  "name": "Paket za Laravel",
-  "pageHeader": "Dodajte komentare u vašu Laravel aplikaciju",
+  "name": "Laravel paket",
+  "pageHeader": "Dodajte komentare u svoju Laravel aplikaciju",
   "itemsOrdered": [
+    {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Zahtjevi",
       "file": "requirements-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "API pristup",
+      "name": "Pristup API-ju",
       "file": "api-access-readme-generated.md",
       "subCat": "API referenca",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Prilagođavanje prikaza",
+      "name": "Prilagodba prikaza",
       "file": "customizing-views-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Android Kütüphanesi",
-  "pageHeader": "Android Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "Android Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Yapay Zeka kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Özellikler",
       "file": "features-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
-      "subCat": "Başlarken",
+      "subCat": "Başlangıç",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Güvenli SSO Kimlik Doğrulaması",
+      "name": "Güvenli SSO Kimlik Doğrulama",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Kimlik Doğrulama",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Kapsamlı Tema Özelleştirmesi",
+      "name": "Kapsamlı Tema Özelleştirme",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

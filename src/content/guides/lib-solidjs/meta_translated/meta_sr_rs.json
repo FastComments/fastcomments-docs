@@ -1,47 +1,53 @@
 {
-  "name": "Библиотека SolidJS",
-  "pageHeader": "Додавање коментара у вашу SolidJS апликацију",
+  "name": "SolidJS Biblioteka",
+  "pageHeader": "Dodajte komentare u vašu SolidJS aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Презентација уживо",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Demo uživo",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "install-readme-generated.md",
-      "subCat": "Почетак рада",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Upotreba",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Реаговање на промене конфигурације (императивни хендл)",
+      "name": "Reagovanje na promene konfiguracije (imperativni rukovatelj)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
-      "subCat": "Конфигурација",
+      "subCat": "Konfiguracija",
       "type": "readme"
     },
     {
-      "name": "Компоненте",
+      "name": "Komponente",
       "file": "components-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Примери",
+      "name": "Galerija",
       "file": "showcase-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Изградња",
+      "name": "Izgradnja",
       "file": "build-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

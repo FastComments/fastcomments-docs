@@ -1,9 +1,15 @@
 {
   "name": "Библиотека Android",
-  "pageHeader": "Добавление комментариев в ваше Android-приложение",
+  "pageHeader": "Добавьте комментарии в ваше Android приложение",
   "itemsOrdered": [
     {
-      "name": "Возможности",
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Функции",
       "file": "features-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Безопасная SSO-аутентификация",
+      "name": "Безопасная SSO‑аутентификация",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Аутентификация",
       "type": "readme"
@@ -39,13 +45,13 @@
       "type": "readme"
     },
     {
-      "name": "Интеграция чата в реальном времени",
+      "name": "Интеграция живого чата",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Примеры проектов",
+      "name": "Примерные проекты",
       "file": "example-projects-readme-generated.md",
       "subCat": "Использование",
       "type": "readme"

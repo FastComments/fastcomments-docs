@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Hent LLM-sættet",
+      "name": "Få LLM-sættet",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM-integration"
     },
@@ -11,6 +11,11 @@
       "name": "MCP-server",
       "file": "mcp-server.md",
       "subCat": "MCP-server"
+    },
+    {
+      "name": "Lad en agent opsætte din konto",
+      "file": "agent-account-setup.md",
+      "subCat": "Opsætning af agentkonto"
     }
   ]
 }

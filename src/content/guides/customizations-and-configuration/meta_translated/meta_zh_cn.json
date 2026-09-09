@@ -8,7 +8,7 @@
       "subCat": "基础"
     },
     {
-      "name": "评论如何与页面和文章关联",
+      "name": "评论如何关联到页面和文章",
       "file": "url-id.md",
       "subCat": "基础"
     },
@@ -20,217 +20,217 @@
     {
       "name": "自定义样式",
       "file": "custom-css.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "自定义字体",
       "file": "custom-fonts.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "移除品牌标识",
       "file": "remove-branding.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "支持深色背景（暗色模式）",
+      "name": "支持暗色背景（暗模式）",
       "file": "has-dark-background.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "切换暗色模式",
+      "name": "切换暗模式",
       "file": "has-dark-background-toggle.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "覆盖文本",
       "file": "translations.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "更改默认头像",
       "file": "default-avatar-src.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用头像",
       "file": "hide-avatars.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用所有默认样式",
       "file": "no-styles.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "从评论链接到页面",
       "file": "url.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "默认折叠回复",
       "file": "collapse-replies.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "启用所见即所得 (WYSIWYG)",
+      "name": "启用所见即所得编辑器",
       "file": "enable-wysiwyg.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用工具栏",
       "file": "disable-toolbar.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用屏蔽",
       "file": "disable-blocking.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "确定要渲染的页面",
+      "name": "确定渲染哪个页面",
       "file": "starting-page.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "在不重新加载页面的情况下切换评论线程",
       "file": "switching-comment-threads.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "绝对日期（禁用人性化时间戳）",
       "file": "absolute-dates.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "同时显示绝对与相对日期",
+      "name": "同时显示绝对和相对日期",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "添加页眉文本",
+      "name": "添加页眉文字",
       "file": "header-html.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "将链接渲染为文本",
       "file": "render-links-as-text.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "使用按钮切换评论",
+      "name": "使用按钮切换评论显示",
       "file": "use-show-comments-toggle.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "自定义评论计数文本",
+      "name": "自定义评论计数文字",
       "file": "comment-count-format.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用图片重定向",
       "file": "disable-image-redirect.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "禁用自动创建话题标签",
+      "name": "禁用自动标签创建",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "禁用通知铃铛",
+      "name": "禁用通知铃",
       "file": "disable-notification-bell.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用个人资料",
       "file": "disable-profiles.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用个人资料评论",
       "file": "disable-profile-comments.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用个人资料私信",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "禁用成功消息",
+      "name": "禁用成功信息",
       "file": "disable-success-message.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "更改 GIF 的内容评级",
+      "name": "更改 GIF 内容评级",
       "file": "gif-rating.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "图片内容审核",
       "file": "image-content-moderation.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "更改投票样式",
       "file": "vote-style.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用删除",
       "file": "disable-deleting.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用编辑",
       "file": "disable-editing.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "突出显示新评论",
+      "name": "高亮新评论",
       "file": "highlighting-new-comments.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "页面大小",
       "file": "page-size.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "电子邮件模板",
       "file": "email-templates.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "用户名格式",
       "file": "user-name-formats.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "禁用图片上传",
       "file": "no-image-uploads.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "允许媒体嵌入",
       "file": "allow-media-embeds.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "启用搜索框",
       "file": "enable-search.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "启用剧透",
       "file": "enable-spoilers.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
-      "name": "启用评论查看计数",
+      "name": "启用评论浏览次数",
       "file": "enable-comment-view-counts.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "立即显示实时评论",
@@ -243,7 +243,7 @@
       "subCat": "实时评论"
     },
     {
-      "name": "将新实时评论置于底部",
+      "name": "新实时评论显示在底部",
       "file": "new-comments-to-bottom.md",
       "subCat": "实时评论"
     },
@@ -258,7 +258,7 @@
       "subCat": "分页与排序"
     },
     {
-      "name": "一次渲染所有评论 - 禁用分页",
+      "name": "一次性渲染所有评论 - 禁用分页",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分页与排序"
     },
@@ -278,7 +278,7 @@
       "subCat": "回复框"
     },
     {
-      "name": "限制每位用户的评论数量",
+      "name": "限制每用户的评论数量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回复框"
     },
@@ -298,34 +298,39 @@
       "subCat": "回复框"
     },
     {
-      "name": "单点登录 (SSO) 概述",
+      "name": "离开前警告未发送的评论",
+      "file": "warn-on-unsaved-comment.md",
+      "subCat": "回复框"
+    },
+    {
+      "name": "单点登录（SSO）概述",
       "file": "sso.md",
-      "subCat": "单点登录 (SSO)"
+      "subCat": "单点登录"
     },
     {
-      "name": "自定义集成 - 安全单点登录 (SSO)",
+      "name": "自定义集成 - 安全单点登录（SSO）",
       "file": "sso-secure.md",
-      "subCat": "单点登录 (SSO)"
+      "subCat": "单点登录"
     },
     {
-      "name": "自定义集成 - 简易单点登录 (SSO)",
+      "name": "自定义集成 - 简单单点登录（SSO）",
       "file": "sso-simple.md",
-      "subCat": "单点登录 (SSO)"
+      "subCat": "单点登录"
     },
     {
       "name": "自定义集成 - 从 Disqus SSO 迁移",
       "file": "sso-disqus.md",
-      "subCat": "单点登录 (SSO)"
+      "subCat": "单点登录"
     },
     {
       "name": "自定义集成 - 从 Commento SSO 迁移",
       "file": "sso-commento.md",
-      "subCat": "单点登录 (SSO)"
+      "subCat": "单点登录"
     },
     {
       "name": "使用单点登录保护评论线程",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "单点登录 (SSO)"
+      "subCat": "单点登录"
     },
     {
       "name": "允许匿名评论",
@@ -363,7 +368,7 @@
       "subCat": "其他"
     },
     {
-      "name": "手动定义用户的语言环境",
+      "name": "手动定义用户地区设置",
       "file": "locale.md",
       "subCat": "其他"
     },
@@ -388,7 +393,7 @@
       "subCat": "其他"
     },
     {
-      "name": "评论计数与统计所有嵌套回复",
+      "name": "评论计数及所有嵌套回复计数",
       "file": "count-all.md",
       "subCat": "其他"
     },
@@ -403,7 +408,7 @@
       "subCat": "其他"
     },
     {
-      "name": "提及群组 ID",
+      "name": "提及组 ID",
       "file": "mention-group-ids.md",
       "subCat": "其他"
     },
@@ -420,12 +425,12 @@
     {
       "name": "在顶部栏显示徽章",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     },
     {
       "name": "显示在线用户列表",
       "file": "users-list.md",
-      "subCat": "外观与体验"
+      "subCat": "外观与感觉"
     }
   ]
 }

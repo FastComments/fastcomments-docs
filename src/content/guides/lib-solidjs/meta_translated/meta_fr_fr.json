@@ -3,13 +3,19 @@
   "pageHeader": "Ajouter des commentaires à votre application SolidJS",
   "itemsOrdered": [
     {
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Démo en direct",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Installation",
+      "name": "Installer",
       "file": "install-readme-generated.md",
       "subCat": "Premiers pas",
       "type": "readme"
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Exemples",
+      "name": "Vitrine",
       "file": "showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Compilation",
+      "name": "Construire",
       "file": "build-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

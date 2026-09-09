@@ -3,6 +3,12 @@
   "pageHeader": "Laravel アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "AI コーディングエージェント",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "要件",
       "file": "requirements-readme-generated.md",
       "subCat": "ドキュメント",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO（シングルサインオン）",
+      "name": "シングルサインオン",
       "file": "sso-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

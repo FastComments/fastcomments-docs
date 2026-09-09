@@ -3,6 +3,12 @@
   "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
     {
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "설치",
       "file": "installation-readme-generated.md",
       "subCat": "시작하기",

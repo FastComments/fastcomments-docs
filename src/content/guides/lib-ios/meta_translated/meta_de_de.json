@@ -3,13 +3,19 @@
   "pageHeader": "Kommentare zu Ihrer iOS-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "KI-Programmieragenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Funktionen",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Voraussetzungen",
+      "name": "Anforderungen",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -45,19 +51,19 @@
       "type": "readme"
     },
     {
-      "name": "Social-Feed",
+      "name": "Sozialer Feed",
       "file": "social-feed-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Designanpassung",
+      "name": "Themenanpassung",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Benutzerdefinierte Symbolleistenschaltflächen",
+      "name": "Benutzerdefinierte Symbolleisten-Schaltflächen",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -93,7 +99,7 @@
       "type": "readme"
     },
     {
-      "name": "Bereinigung",
+      "name": "Aufräumen",
       "file": "cleanup-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "Kommentare bearbeiten und löschen",
+      "name": "Bearbeiten und Löschen von Kommentaren",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

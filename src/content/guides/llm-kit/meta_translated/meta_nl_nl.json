@@ -3,14 +3,19 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Haal de LLM Kit",
+      "name": "Verkrijg de LLM Kit",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM-integratie"
     },
     {
-      "name": "MCP-server",
+      "name": "MCP Server",
       "file": "mcp-server.md",
-      "subCat": "MCP-server"
+      "subCat": "MCP Server"
+    },
+    {
+      "name": "Laat een agent uw account instellen",
+      "file": "agent-account-setup.md",
+      "subCat": "Instelling van agentaccount"
     }
   ]
 }

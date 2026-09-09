@@ -1,53 +1,59 @@
 {
   "name": "Jekyll библиотека",
-  "pageHeader": "Додајте коментаре на ваш Jekyll сајт",
+  "pageHeader": "Dodajte komentare na vaš Jekyll sajt",
   "itemsOrdered": [
     {
-      "name": "Демо уживо",
+      "name": "AI агенти za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Živi demo",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Презентација уживо",
+      "name": "Živi prikaz",
       "file": "live-showcase-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "install-readme-generated.md",
-      "subCat": "Почетак",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
-      "name": "Брзи почетак",
+      "name": "Brzi početak",
       "file": "quick-start-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Ознаке",
+      "name": "Tagovi",
       "file": "tags-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Конфигурација",
+      "name": "Konfiguracija",
       "file": "configuration-readme-generated.md",
-      "subCat": "Конфигурација",
+      "subCat": "Konfiguracija",
       "type": "readme"
     },
     {
-      "name": "Везе",
+      "name": "Linkovi",
       "file": "links-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Статус одржавања",
+      "name": "Status održavanja",
       "file": "maintenance-status-readme-generated.md",
-      "subCat": "Документација",
+      "subCat": "Dokumentacija",
       "type": "readme"
     }
   ]

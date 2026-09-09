@@ -3,7 +3,13 @@
   "pageHeader": "Dodajte komentare u vašu Android aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Funkcije",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Karakteristike",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -33,19 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "Integracija feeda",
+      "name": "Integracija feed-a",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Integracija live chata",
+      "name": "Integracija live chat-a",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Primeri projekata",
+      "name": "Primer projekata",
       "file": "example-projects-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Sveobuhvatna prilagodba teme",
+      "name": "Sveobuhvatno prilagođavanje teme",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

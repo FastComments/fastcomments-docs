@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Dart SDK",
   "itemsOrdered": [
     {
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
       "name": "Layout",
       "file": "layout-readme-generated.md",
       "subCat": "Документација",
@@ -29,7 +35,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Логови ревизије",
+      "subCat": "Записници ревизије",
       "type": "api"
     },
     {
@@ -233,55 +239,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Шаблони е‑поште",
+      "subCat": "Шаблони е-поште",
       "type": "api"
     },
     {
@@ -359,25 +365,25 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Пријави коментар",
+      "subCat": "Означи коментар",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "ГИФови",
+      "subCat": "Гифови",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "ГИФови",
+      "subCat": "Гифови",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "ГИФови",
+      "subCat": "Гифови",
       "type": "api"
     },
     {
@@ -737,43 +743,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Реакције странице",
+      "subCat": "Реакције на страницу",
       "type": "api"
     },
     {
@@ -851,31 +857,31 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Подешавања питања",
+      "subCat": "Конфигурације питања",
       "type": "api"
     },
     {
@@ -953,7 +959,7 @@
     {
       "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
-      "subCat": "SSO корисnici",
+      "subCat": "SSO корисници",
       "type": "api"
     },
     {
@@ -965,7 +971,7 @@
     {
       "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
-      "subCat": "SSO корисnici",
+      "subCat": "SSO корисници",
       "type": "api"
     },
     {
@@ -995,7 +1001,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Дневна потрошња станара",
+      "subCat": "Дневна употреба станара",
       "type": "api"
     },
     {
@@ -1253,25 +1259,25 @@
     {
       "name": "createVote",
       "file": "createvote-api-generated.md",
-      "subCat": "Гласови",
+      "subCat": "Гласање",
       "type": "api"
     },
     {
       "name": "deleteVote",
       "file": "deletevote-api-generated.md",
-      "subCat": "Гласови",
+      "subCat": "Гласање",
       "type": "api"
     },
     {
       "name": "getVotes",
       "file": "getvotes-api-generated.md",
-      "subCat": "Гласови",
+      "subCat": "Гласање",
       "type": "api"
     },
     {
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
-      "subCat": "Гласови",
+      "subCat": "Гласање",
       "type": "api"
     }
   ]

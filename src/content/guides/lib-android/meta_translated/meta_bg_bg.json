@@ -1,7 +1,13 @@
 {
   "name": "Android библиотека",
-  "pageHeader": "Добавяне на коментари към вашето Android приложение",
+  "pageHeader": "Добавете коментари към вашето Android приложение",
   "itemsOrdered": [
+    {
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Функции",
       "file": "features-readme-generated.md",
@@ -17,13 +23,13 @@
     {
       "name": "Инсталация",
       "file": "installation-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
-      "name": "Основна употреба",
+      "name": "Основно използване",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Използване",
       "type": "readme"
     },
     {
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Интеграция на емисии",
+      "name": "Интеграция на лентата",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Интеграция на чат на живо",
+      "name": "Интеграция на жив чат",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -47,7 +53,7 @@
     {
       "name": "Примерни проекти",
       "file": "example-projects-readme-generated.md",
-      "subCat": "Употреба",
+      "subCat": "Използване",
       "type": "readme"
     },
     {
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Пълна персонализация на темата",
+      "name": "Всеобхватно персонализиране на темата",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

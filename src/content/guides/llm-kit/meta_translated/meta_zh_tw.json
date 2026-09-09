@@ -11,6 +11,11 @@
       "name": "MCP 伺服器",
       "file": "mcp-server.md",
       "subCat": "MCP 伺服器"
+    },
+    {
+      "name": "讓代理人為您設定帳戶",
+      "file": "agent-account-setup.md",
+      "subCat": "代理人帳戶設定"
     }
   ]
 }

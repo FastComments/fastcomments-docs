@@ -3,25 +3,31 @@
   "pageHeader": "Ajouter des commentaires à votre application Next.js",
   "itemsOrdered": [
     {
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Démo en direct",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Présentation en direct",
+      "name": "Vitrine en direct",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Installation",
+      "name": "Installer",
       "file": "install-readme-generated.md",
-      "subCat": "Premiers pas",
+      "subCat": "Démarrage",
       "type": "readme"
     },
     {
-      "name": "Prérequis",
+      "name": "Exigences",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Exemple de projet",
+      "name": "Projet d'exemple",
       "file": "example-project-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Statut de maintenance",
+      "name": "État de maintenance",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

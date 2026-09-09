@@ -1,7 +1,13 @@
 {
   "name": "Βιβλιοθήκη Hugo",
-  "pageHeader": "Προσθέστε σχόλια στον ιστότοπό σας Hugo",
+  "pageHeader": "Προσθήκη σχολίων στον ιστότοπο Hugo",
   "itemsOrdered": [
+    {
+      "name": "Πράκτορες κωδικοποίησης AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Ζωντανή επίδειξη",
       "file": "live-demo-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Συντομεύσεις κώδικα",
+      "name": "Σύντομοι κώδικες",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Μαζικοί μετρητές σχολίων",
+      "name": "Μαζική καταμέτρηση σχολίων",
       "file": "bulk-comment-counts-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

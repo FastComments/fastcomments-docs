@@ -3,42 +3,47 @@
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "Qu'est-ce qu'un webhook ?",
+      "name": "Qu'est-ce que les webhooks",
       "file": "what-are-webhooks.md",
-      "subCat": "Aperçu"
+      "subCat": "Vue d'ensemble"
     },
     {
       "name": "Événements et ressources pris en charge",
       "file": "webhooks-supported-events-resources.md",
-      "subCat": "Aperçu"
+      "subCat": "Vue d'ensemble"
     },
     {
-      "name": "Configuration pour le développement local",
+      "name": "Configuration du développement local",
       "file": "webhooks-local-dev.md",
-      "subCat": "Implémentation"
+      "subCat": "Mise en œuvre"
     },
     {
       "name": "Configuration",
       "file": "webhooks-setup.md",
-      "subCat": "Implémentation"
+      "subCat": "Mise en œuvre"
     },
     {
       "name": "Tests",
       "file": "webhooks-testing.md",
-      "subCat": "Implémentation"
+      "subCat": "Mise en œuvre"
     },
     {
       "name": "Structures de données",
       "file": "webhooks-structures.md",
-      "subCat": "Implémentation"
+      "subCat": "Mise en œuvre"
     },
     {
       "name": "Sécurité et jetons d'API",
       "file": "webhooks-api-tokens.md",
-      "subCat": "Implémentation"
+      "subCat": "Mise en œuvre"
     },
     {
-      "name": "Fonctionnement et gestion des réessais",
+      "name": "Gestion des webhooks via l'API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Mise en œuvre"
+    },
+    {
+      "name": "Fonctionnement et gestion des nouvelles tentatives",
       "file": "webhooks-how-it-works.md",
       "subCat": "Dans les coulisses"
     }

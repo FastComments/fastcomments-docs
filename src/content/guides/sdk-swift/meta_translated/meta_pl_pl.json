@@ -1,11 +1,17 @@
 {
-  "name": "SDK dla Swift",
-  "pageHeader": "FastComments — SDK dla Swift",
+  "name": "Swift SDK",
+  "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
+    {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Częste problemy",
+      "name": "Typowe problemy",
       "file": "common-issues-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Uwagi",
+      "name": "Notatki",
       "file": "notes-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -53,7 +59,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Dzienniki audytu",
+      "subCat": "Logi audytu",
       "type": "api"
     },
     {
@@ -65,13 +71,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokowanie w komentarzu",
+      "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokowanie w komentarzu",
+      "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
@@ -215,43 +221,43 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Komentarze użytkownika",
+      "subCat": "Komentarze dla użytkownika",
       "type": "api"
     },
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domeny",
+      "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domeny",
+      "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domeny",
+      "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Konfiguracje domeny",
+      "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domeny",
+      "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Konfiguracje domeny",
+      "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
@@ -311,79 +317,79 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Dziennik zdarzeń",
+      "subCat": "Log zdarzeń",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Dziennik zdarzeń",
+      "subCat": "Log zdarzeń",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Zgłaszanie komentarza",
+      "subCat": "Zgłoś komentarz",
       "type": "api"
     },
     {
@@ -761,43 +767,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronę",
       "type": "api"
     },
     {
@@ -1019,7 +1025,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dzienne użycie najemcy",
+      "subCat": "Użycie dzienne najemcy",
       "type": "api"
     },
     {
@@ -1169,19 +1175,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Postępy odznaki użytkownika",
+      "subCat": "Postęp odznak użytkownika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Postępy odznaki użytkownika",
+      "subCat": "Postęp odznak użytkownika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Postępy odznaki użytkownika",
+      "subCat": "Postęp odznak użytkownika",
       "type": "api"
     },
     {
@@ -1259,7 +1265,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Statusy obecności użytkownika",
+      "subCat": "Status obecności użytkownika",
       "type": "api"
     },
     {

@@ -1,15 +1,21 @@
 {
-  "name": "SDK Rust",
-  "pageHeader": "FastComments SDK per Rust",
+  "name": "Rust SDK",
+  "pageHeader": "FastComments Rust SDK",
   "itemsOrdered": [
     {
-      "name": "Installazione",
-      "file": "installation-readme-generated.md",
-      "subCat": "Introduzione",
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Contenuto della libreria",
+      "name": "Installazione",
+      "file": "installation-readme-generated.md",
+      "subCat": "Iniziare",
+      "type": "readme"
+    },
+    {
+      "name": "Contenuti della libreria",
       "file": "library-contents-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -35,7 +41,7 @@
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Aggregazione",
+      "subCat": "Aggregato",
       "type": "api"
     },
     {
@@ -65,25 +71,25 @@
     {
       "name": "get_audit_logs",
       "file": "get-audit-logs-api-generated.md",
-      "subCat": "Log di audit",
+      "subCat": "Registri di audit",
       "type": "api"
     },
     {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Blocca dal commento",
+      "subCat": "Blocco dal commento",
       "type": "api"
     },
     {
       "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Blocca dal commento",
+      "subCat": "Blocco dal commento",
       "type": "api"
     },
     {
       "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
-      "subCat": "Verifica commenti bloccati",
+      "subCat": "Controlla commenti bloccati",
       "type": "api"
     },
     {
@@ -743,43 +749,43 @@
     {
       "name": "create_v1_page_react",
       "file": "create-v1-page-react-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
       "name": "create_v2_page_react",
       "file": "create-v2-page-react-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
       "name": "delete_v1_page_react",
       "file": "delete-v1-page-react-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
       "name": "delete_v2_page_react",
       "file": "delete-v2-page-react-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
       "name": "get_v1_page_likes",
       "file": "get-v1-page-likes-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
       "name": "get_v2_page_react_users",
       "file": "get-v2-page-react-users-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
       "name": "get_v2_page_reacts",
       "file": "get-v2-page-reacts-api-generated.md",
-      "subCat": "Reazioni alle pagine",
+      "subCat": "Reazioni pagina",
       "type": "api"
     },
     {
@@ -825,9 +831,9 @@
       "type": "api"
     },
     {
-      "name": "get_users_info",
+      "name": "get_user_badge_progress_by_id",
       "file": "get-users-info-api-generated.md",
-      "subCat": "Pagine",
+      "subCat": "Progresso badge utente",
       "type": "api"
     },
     {
@@ -977,25 +983,25 @@
     {
       "name": "create_subscription",
       "file": "create-subscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "delete_subscription",
       "file": "delete-subscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "get_subscriptions",
       "file": "get-subscriptions-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "update_subscription",
       "file": "update-subscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {

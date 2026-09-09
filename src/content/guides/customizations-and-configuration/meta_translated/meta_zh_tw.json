@@ -5,232 +5,232 @@
     {
       "name": "識別您的帳戶",
       "file": "tenant-id.md",
-      "subCat": "基礎"
+      "subCat": "基礎知識"
     },
     {
-      "name": "評論如何與網頁與文章關聯",
+      "name": "評論如何與頁面和文章關聯",
       "file": "url-id.md",
-      "subCat": "基礎"
+      "subCat": "基礎知識"
     },
     {
-      "name": "在不同頁面呈現相同評論",
+      "name": "在不同頁面上呈現相同的評論",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "基礎"
+      "subCat": "基礎知識"
     },
     {
       "name": "自訂樣式",
       "file": "custom-css.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "自訂字型",
+      "name": "自訂字體",
       "file": "custom-fonts.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "移除品牌標示",
       "file": "remove-branding.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "支援深色背景（深色模式）",
+      "name": "支援深色背景（暗色模式）",
       "file": "has-dark-background.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "切換深色模式",
+      "name": "切換暗色模式",
       "file": "has-dark-background-toggle.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "覆寫文字",
       "file": "translations.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "更改預設大頭貼",
+      "name": "更改預設頭像",
       "file": "default-avatar-src.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用頭像",
       "file": "hide-avatars.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用所有預設樣式",
       "file": "no-styles.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "從評論連結到頁面",
+      "name": "從評論連結至頁面",
       "file": "url.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "預設收合回覆",
+      "name": "預設折疊回覆",
       "file": "collapse-replies.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "啟用所見即所得編輯器",
       "file": "enable-wysiwyg.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用工具列",
       "file": "disable-toolbar.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用封鎖功能",
       "file": "disable-blocking.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "決定要呈現的頁面",
       "file": "starting-page.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "切換評論串而不重新載入頁面",
+      "name": "在不重新載入頁面的情況下切換評論串",
       "file": "switching-comment-threads.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "使用絕對日期（停用人性化時間顯示）",
+      "name": "絕對日期（停用人性化時間戳記）",
       "file": "absolute-dates.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "同時顯示絕對與相對時間",
+      "name": "同時顯示絕對與相對日期",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "新增標題文字",
       "file": "header-html.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "將連結呈現為文字",
       "file": "render-links-as-text.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "以按鈕切換評論",
+      "name": "使用按鈕切換評論顯示",
       "file": "use-show-comments-toggle.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "自訂評論計數文字",
       "file": "comment-count-format.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "停用圖片轉址",
+      "name": "停用圖片重新導向",
       "file": "disable-image-redirect.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "停用自動建立主題標籤",
+      "name": "停用自動標籤建立",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "停用通知鈴鐺",
+      "name": "停用通知鈴聲",
       "file": "disable-notification-bell.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用個人檔案",
       "file": "disable-profiles.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用個人檔案評論",
       "file": "disable-profile-comments.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用個人檔案直接訊息",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用成功訊息",
       "file": "disable-success-message.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "更改 GIF 的內容分級",
       "file": "gif-rating.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "圖片內容審核",
       "file": "image-content-moderation.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "更改投票樣式",
       "file": "vote-style.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用刪除功能",
       "file": "disable-deleting.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用編輯功能",
       "file": "disable-editing.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "突顯新評論",
       "file": "highlighting-new-comments.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "分頁大小",
+      "name": "頁面大小",
       "file": "page-size.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "電子郵件範本",
       "file": "email-templates.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "使用者名稱格式",
       "file": "user-name-formats.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "停用圖片上傳",
       "file": "no-image-uploads.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "允許嵌入媒體",
+      "name": "允許媒體嵌入",
       "file": "allow-media-embeds.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "啟用搜尋框",
       "file": "enable-search.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "啟用隱藏內容（Spoiler）",
+      "name": "啟用劇透隱藏",
       "file": "enable-spoilers.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
-      "name": "啟用評論查看計數",
+      "name": "啟用評論檢視次數",
       "file": "enable-comment-view-counts.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "立即顯示即時評論",
@@ -243,7 +243,7 @@
       "subCat": "即時評論"
     },
     {
-      "name": "新即時評論置於底部",
+      "name": "新即時評論顯示於底部",
       "file": "new-comments-to-bottom.md",
       "subCat": "即時評論"
     },
@@ -253,17 +253,17 @@
       "subCat": "分頁與排序"
     },
     {
-      "name": "變更預設排序方向",
+      "name": "更改預設排序方向",
       "file": "default-sort-direction.md",
       "subCat": "分頁與排序"
     },
     {
-      "name": "一次顯示所有評論 - 停用分頁",
+      "name": "一次呈現所有評論 - 停用分頁",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分頁與排序"
     },
     {
-      "name": "將回覆輸入框移至評論之後",
+      "name": "將回覆框移至評論之後",
       "file": "input-after-comments.md",
       "subCat": "回覆框"
     },
@@ -278,7 +278,7 @@
       "subCat": "回覆框"
     },
     {
-      "name": "限制每位使用者的評論數量",
+      "name": "限制每位使用者的評論量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回覆框"
     },
@@ -293,39 +293,44 @@
       "subCat": "回覆框"
     },
     {
-      "name": "要求接受使用條款",
+      "name": "要求接受服務條款",
       "file": "terms-of-service.md",
       "subCat": "回覆框"
     },
     {
-      "name": "單一登入 (SSO) 概覽",
+      "name": "離開前若有未送出的評論則警告",
+      "file": "warn-on-unsaved-comment.md",
+      "subCat": "回覆框"
+    },
+    {
+      "name": "單一登入（SSO）概覽",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
-      "name": "自訂整合 - 安全單一登入 (SSO)",
+      "name": "自訂整合 - 安全單一登入（SSO）",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
-      "name": "自訂整合 - 簡易單一登入 (SSO)",
+      "name": "自訂整合 - 簡易單一登入（SSO）",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "自訂整合 - 從 Disqus SSO 遷移",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "自訂整合 - 從 Commento SSO 遷移",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "使用單一登入保護評論串",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "允許匿名評論",
@@ -358,12 +363,12 @@
       "subCat": "匿名評論"
     },
     {
-      "name": "回呼",
+      "name": "回呼函式",
       "file": "callbacks.md",
       "subCat": "其他"
     },
     {
-      "name": "手動定義使用者的語系",
+      "name": "手動定義使用者語系",
       "file": "locale.md",
       "subCat": "其他"
     },
@@ -378,17 +383,17 @@
       "subCat": "其他"
     },
     {
-      "name": "阻止新增回覆並停用投票",
+      "name": "阻止新回覆並停用投票",
       "file": "readonly.md",
       "subCat": "其他"
     },
     {
-      "name": "限制連結網域",
+      "name": "限制連結域名",
       "file": "restricting-link-domains.md",
       "subCat": "其他"
     },
     {
-      "name": "評論數量與計算所有巢狀回覆",
+      "name": "評論計數與計算所有巢狀回覆",
       "file": "count-all.md",
       "subCat": "其他"
     },
@@ -403,12 +408,12 @@
       "subCat": "其他"
     },
     {
-      "name": "標註群組 ID",
+      "name": "提及群組 ID",
       "file": "mention-group-ids.md",
       "subCat": "其他"
     },
     {
-      "name": "繞過第三方 Cookie",
+      "name": "第三方 Cookie 繞過",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "其他"
     },
@@ -418,14 +423,14 @@
       "subCat": "其他"
     },
     {
-      "name": "在頂部列顯示徽章",
+      "name": "在頂部欄顯示徽章",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     },
     {
       "name": "顯示線上使用者清單",
       "file": "users-list.md",
-      "subCat": "外觀與風格"
+      "subCat": "外觀與感受"
     }
   ]
 }

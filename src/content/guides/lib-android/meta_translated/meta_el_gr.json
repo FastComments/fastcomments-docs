@@ -1,7 +1,13 @@
 {
   "name": "Βιβλιοθήκη Android",
-  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Android σας",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Android σας",
   "itemsOrdered": [
+    {
+      "name": "Πράκτορες κωδικοποίησης AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Χαρακτηριστικά",
       "file": "features-readme-generated.md",
@@ -21,49 +27,49 @@
       "type": "readme"
     },
     {
-      "name": "Βασική Χρήση",
+      "name": "Βασική χρήση",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Ασφαλής Πιστοποίηση SSO",
+      "name": "Ασφαλής αυθεντικοποίηση SSO",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Αυθεντικοποίηση",
       "type": "readme"
     },
     {
-      "name": "Ενσωμάτωση Ροής",
+      "name": "Ενσωμάτωση ροής",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Ενσωμάτωση Ζωντανής Συνομιλίας",
+      "name": "Ενσωμάτωση ζωντανής συνομιλίας",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Παραδείγματα Έργων",
+      "name": "Παραδείγματα έργων",
       "file": "example-projects-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Επιλογές Διαμόρφωσης",
+      "name": "Επιλογές διαμόρφωσης",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Διαμόρφωση",
       "type": "readme"
     },
     {
-      "name": "Πλήρης Προσαρμογή Θεμάτων",
+      "name": "Πλήρης προσαρμογή θέματος",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Διαχείριση Μνήμης",
+      "name": "Διαχείριση μνήμης",
       "file": "memory-management-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

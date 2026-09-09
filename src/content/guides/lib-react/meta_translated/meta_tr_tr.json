@@ -3,9 +3,15 @@
   "pageHeader": "React Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
     {
+      "name": "AI kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Canlı Demo",
       "file": "live-demo-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
@@ -17,7 +23,7 @@
     {
       "name": "Canlı Gösterim",
       "file": "live-showcase-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
@@ -35,7 +41,7 @@
     {
       "name": "Bakım Durumu",
       "file": "maintenance-status-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     }
   ]

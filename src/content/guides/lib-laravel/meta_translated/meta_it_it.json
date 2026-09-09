@@ -1,7 +1,13 @@
 {
   "name": "Pacchetto Laravel",
-  "pageHeader": "Aggiungi commenti alla tua applicazione Laravel",
+  "pageHeader": "Aggiungi commenti alla tua app Laravel",
   "itemsOrdered": [
+    {
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
     {
       "name": "Requisiti",
       "file": "requirements-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Iniziare",
       "type": "readme"
     },
     {
@@ -27,19 +33,19 @@
       "type": "readme"
     },
     {
-      "name": "Accesso alle API",
+      "name": "Accesso API",
       "file": "api-access-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Riferimento alla configurazione",
+      "name": "Riferimento di configurazione",
       "file": "configuration-reference-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Personalizzare le viste",
+      "name": "Personalizzazione delle viste",
       "file": "customizing-views-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

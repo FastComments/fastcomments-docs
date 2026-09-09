@@ -1,15 +1,21 @@
 {
   "name": "Next.js 库",
-  "pageHeader": "向你的 Next.js 应用添加评论",
+  "pageHeader": "在您的 Next.js 应用中添加评论",
   "itemsOrdered": [
     {
-      "name": "在线演示",
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "实时演示",
       "file": "live-demo-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "在线展示",
+      "name": "现场展示",
       "file": "live-showcase-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "安装",
       "file": "install-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "入门指南",
       "type": "readme"
     },
     {
@@ -47,7 +53,7 @@
     {
       "name": "示例项目",
       "file": "example-project-readme-generated.md",
-      "subCat": "用法",
+      "subCat": "使用方法",
       "type": "readme"
     },
     {

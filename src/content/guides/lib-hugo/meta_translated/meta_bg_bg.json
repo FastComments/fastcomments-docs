@@ -1,15 +1,21 @@
 {
-  "name": "Hugo библиотека",
-  "pageHeader": "Добавете коментари към вашия сайт на Hugo",
+  "name": "Библиотека Hugo",
+  "pageHeader": "Добавете коментари към вашия Hugo сайт",
   "itemsOrdered": [
     {
-      "name": "Живо демо",
-      "file": "live-demo-readme-generated.md",
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
       "name": "Демонстрация на живо",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живо представяне",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "Инсталиране",
       "file": "install-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
@@ -27,19 +33,19 @@
       "type": "readme"
     },
     {
-      "name": "Шорткодове",
+      "name": "Кратки кодове",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Интеграция с тема",
+      "name": "Интеграция на тема",
       "file": "theme-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Масово преброяване на коментари",
+      "name": "Групови броячи на коментари",
       "file": "bulk-comment-counts-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -51,9 +57,9 @@
       "type": "readme"
     },
     {
-      "name": "Референция за конфигурация на джаджа",
+      "name": "Референция за конфигурация на уиджет",
       "file": "widget-configuration-reference-readme-generated.md",
-      "subCat": "Документация на API",
+      "subCat": "Референция за API",
       "type": "readme"
     },
     {
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус на поддръжката",
+      "name": "Статус на поддръжка",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

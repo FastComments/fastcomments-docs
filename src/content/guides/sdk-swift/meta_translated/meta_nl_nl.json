@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
     {
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
       "name": "Installatie",
       "file": "installation-readme-generated.md",
       "subCat": "Aan de slag",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Snel aan de slag",
+      "name": "Snelle start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "API-aanroepen doen",
+      "name": "API-aanroepen maken",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "API-referentie",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "aggregatie",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregatie",
       "type": "api"
@@ -53,7 +59,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Auditlogs",
+      "subCat": "Auditlogboeken",
       "type": "api"
     },
     {
@@ -65,13 +71,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokkeren bij reactie",
+      "subCat": "Blokkeren vanuit reactie",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokkeren bij reactie",
+      "subCat": "Blokkeren vanuit reactie",
       "type": "api"
     },
     {
@@ -257,55 +263,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "E-mailsjablonen",
+      "subCat": "E-mailtemplates",
       "type": "api"
     },
     {
@@ -383,25 +389,25 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Reactie markeren",
+      "subCat": "Markeer reactie",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "Gifs",
+      "subCat": "GIF's",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "Gifs",
+      "subCat": "GIF's",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "Gifs",
+      "subCat": "GIF's",
       "type": "api"
     },
     {
@@ -731,13 +737,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Aantal meldingen",
+      "subCat": "Meldingsaantal",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Aantal meldingen",
+      "subCat": "Meldingsaantal",
       "type": "api"
     },
     {
@@ -857,19 +863,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Wachtende webhookgebeurtenissen",
+      "subCat": "In afwachting zijnde webhookgebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Wachtende webhookgebeurtenissen",
+      "subCat": "In afwachting zijnde webhookgebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Wachtende webhookgebeurtenissen",
+      "subCat": "In afwachting zijnde webhookgebeurtenissen",
       "type": "api"
     },
     {
@@ -1061,73 +1067,73 @@
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Tenantgebruikers",
+      "subCat": "Tenant-gebruikers",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Huurders",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Huurders",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Huurders",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Huurders",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Tenants",
+      "subCat": "Huurders",
       "type": "api"
     },
     {
@@ -1259,13 +1265,13 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Aanwezigheidsstatus gebruiker",
+      "subCat": "Gebruikersaanwezigheidsstatus",
       "type": "api"
     },
     {
       "name": "searchUsers",
       "file": "searchusers-api-generated.md",
-      "subCat": "Gebruiker zoeken",
+      "subCat": "Gebruikers zoeken",
       "type": "api"
     },
     {

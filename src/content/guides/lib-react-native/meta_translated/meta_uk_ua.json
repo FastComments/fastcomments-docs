@@ -1,9 +1,15 @@
 {
   "name": "Бібліотека React Native",
-  "pageHeader": "Додайте віджети коментарів до вашого додатка React Native",
+  "pageHeader": "Додайте віджети коментарів у ваш React Native додаток",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -21,25 +27,25 @@
       "type": "readme"
     },
     {
-      "name": "Використання - віджет живих коментарів",
+      "name": "Використання — Живий віджет коментарів",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
     },
     {
-      "name": "Використання - віджет живого чату",
+      "name": "Використання — Живий віджет чату",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
     },
     {
-      "name": "Використання - SSO (єдиний вхід)",
+      "name": "Використання — SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
     },
     {
-      "name": "Peer-залежності",
+      "name": "Залежності-піри",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

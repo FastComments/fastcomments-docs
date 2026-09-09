@@ -1,9 +1,9 @@
 {
-  "name": "Webhooks（網路回呼）",
+  "name": "Webhook",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "什麼是 Webhooks（網路回呼）",
+      "name": "什麼是 Webhook",
       "file": "what-are-webhooks.md",
       "subCat": "概覽"
     },
@@ -13,7 +13,7 @@
       "subCat": "概覽"
     },
     {
-      "name": "本地開發設定",
+      "name": "本機開發設定",
       "file": "webhooks-local-dev.md",
       "subCat": "實作"
     },
@@ -38,7 +38,12 @@
       "subCat": "實作"
     },
     {
-      "name": "運作原理與重試處理",
+      "name": "透過 API 管理 Webhook",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "實作"
+    },
+    {
+      "name": "運作方式與重試處理",
       "file": "webhooks-how-it-works.md",
       "subCat": "幕後運作"
     }

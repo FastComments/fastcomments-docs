@@ -1,21 +1,27 @@
 {
   "name": "Бібліотека Hugo",
-  "pageHeader": "Додайте коментарі на ваш сайт Hugo",
+  "pageHeader": "Додайте коментарі до вашого сайту Hugo",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Онлайн-демо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Жива презентація",
+      "name": "Онлайн-демонстрація",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Встановлення",
+      "name": "Встановити",
       "file": "install-readme-generated.md",
       "subCat": "Початок роботи",
       "type": "readme"
@@ -39,19 +45,19 @@
       "type": "readme"
     },
     {
-      "name": "Масові підрахунки коментарів",
+      "name": "Пакетний підрахунок коментарів",
       "file": "bulk-comment-counts-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Налаштування",
+      "name": "Конфігурація",
       "file": "configuration-readme-generated.md",
-      "subCat": "Налаштування",
+      "subCat": "Конфігурація",
       "type": "readme"
     },
     {
-      "name": "Довідник з налаштувань віджета",
+      "name": "Довідник конфігурації віджету",
       "file": "widget-configuration-reference-readme-generated.md",
       "subCat": "Довідник API",
       "type": "readme"

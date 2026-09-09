@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u vašu Laravel aplikaciju",
   "itemsOrdered": [
     {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Zahtevi",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -11,7 +17,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
@@ -27,15 +33,15 @@
       "type": "readme"
     },
     {
-      "name": "Pristup API-ju",
+      "name": "API pristup",
       "file": "api-access-readme-generated.md",
-      "subCat": "Referenca API-ja",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {
       "name": "Referenca konfiguracije",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "Referenca API-ja",
+      "subCat": "API referenca",
       "type": "readme"
     },
     {

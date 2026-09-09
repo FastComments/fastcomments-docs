@@ -3,6 +3,12 @@
   "pageHeader": "FastComments PHP SDK",
   "itemsOrdered": [
     {
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Installation & Usage",
       "file": "installation-usage-readme-generated.md",
       "subCat": "Getting Started",

@@ -1,14 +1,14 @@
 {
-  "name": "Webhooks（网络回调）",
+  "name": "网络钩子",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "什么是 Webhook（网络回调）",
+      "name": "什么是网络钩子",
       "file": "what-are-webhooks.md",
       "subCat": "概述"
     },
     {
-      "name": "支持的事件与资源",
+      "name": "支持的事件和资源",
       "file": "webhooks-supported-events-resources.md",
       "subCat": "概述"
     },
@@ -38,9 +38,14 @@
       "subCat": "实现"
     },
     {
+      "name": "通过 API 管理网络钩子",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "实现"
+    },
+    {
       "name": "工作原理与重试处理",
       "file": "webhooks-how-it-works.md",
-      "subCat": "幕后原理"
+      "subCat": "幕后"
     }
   ]
 }

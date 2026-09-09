@@ -1,9 +1,9 @@
 {
-  "name": "Webhook'lar",
+  "name": "Webhooks",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "Webhook'lar Nedir?",
+      "name": "Webhooks Nedir",
       "file": "what-are-webhooks.md",
       "subCat": "Genel Bakış"
     },
@@ -23,7 +23,7 @@
       "subCat": "Uygulama"
     },
     {
-      "name": "Test Etme",
+      "name": "Test",
       "file": "webhooks-testing.md",
       "subCat": "Uygulama"
     },
@@ -33,14 +33,19 @@
       "subCat": "Uygulama"
     },
     {
-      "name": "Güvenlik ve API Jetonları",
+      "name": "Güvenlik ve API Token'ları",
       "file": "webhooks-api-tokens.md",
       "subCat": "Uygulama"
     },
     {
-      "name": "Nasıl Çalışır ve Yeniden Denemelerin İşlenmesi",
+      "name": "API üzerinden Webhook'ları Yönetme",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Uygulama"
+    },
+    {
+      "name": "Nasıl Çalışır ve Tekrar Denemeleri Yönetme",
       "file": "webhooks-how-it-works.md",
-      "subCat": "Perde Arkası"
+      "subCat": "Sahne Arkası"
     }
   ]
 }

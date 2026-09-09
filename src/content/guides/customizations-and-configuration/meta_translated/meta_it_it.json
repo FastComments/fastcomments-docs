@@ -1,251 +1,251 @@
 {
-  "name": "Personalizzazioni e configurazione",
+  "name": "Personalizzazioni e Configurazione",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "Identificare il tuo account",
       "file": "tenant-id.md",
-      "subCat": "Nozioni di base"
+      "subCat": "Le basi"
     },
     {
       "name": "Come i commenti sono collegati a pagine e articoli",
       "file": "url-id.md",
-      "subCat": "Nozioni di base"
+      "subCat": "Le basi"
     },
     {
       "name": "Visualizzare gli stessi commenti su pagine diverse",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "Nozioni di base"
+      "subCat": "Le basi"
     },
     {
       "name": "Stile personalizzato",
       "file": "custom-css.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Font personalizzati",
       "file": "custom-fonts.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Rimozione del branding",
+      "name": "Rimuovere il branding",
       "file": "remove-branding.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Supportare sfondi scuri (modalità scura)",
+      "name": "Supportare sfondi scuri (Modalità scura)",
       "file": "has-dark-background.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Attivare/disattivare la modalità scura",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Sostituzione del testo",
+      "name": "Sovrascrivere il testo",
       "file": "translations.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Modificare l'avatar predefinito",
+      "name": "Cambiare l'avatar predefinito",
       "file": "default-avatar-src.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Disabilitare gli avatar",
       "file": "hide-avatars.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Disabilitare tutti gli stili predefiniti",
       "file": "no-styles.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Creare link dai commenti alle pagine",
+      "name": "Collegare i commenti alle pagine",
       "file": "url.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Comprimi le risposte per impostazione predefinita",
       "file": "collapse-replies.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare WYSIWYG",
+      "name": "Abilita WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Disabilitare la barra degli strumenti",
       "file": "disable-toolbar.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Disabilitare il blocco",
       "file": "disable-blocking.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Determinare quale pagina visualizzare",
       "file": "starting-page.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Passare tra thread di commenti senza ricaricare la pagina",
+      "name": "Cambiare i thread dei commenti senza ricaricare la pagina",
       "file": "switching-comment-threads.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Date assolute (disabilita i timestamp in formato 'umano')",
+      "name": "Date assolute (Disabilita timestamp leggibili)",
       "file": "absolute-dates.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostrare date assolute e relative",
+      "name": "Mostrare sia date assolute che relative",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Aggiungere testo nell'intestazione",
+      "name": "Aggiungere testo all'intestazione",
       "file": "header-html.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Visualizzare i link come testo",
       "file": "render-links-as-text.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostrare o nascondere i commenti con un pulsante",
+      "name": "Attivare/disattivare i commenti con un pulsante",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Personalizzare il testo del conteggio commenti",
+      "name": "Personalizzare il testo del conteggio dei commenti",
       "file": "comment-count-format.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare il reindirizzamento delle immagini",
+      "name": "Disabilita reindirizzamento immagine",
       "file": "disable-image-redirect.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare la creazione automatica degli hashtag",
+      "name": "Disabilita creazione automatica di hashtag",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare la campanella delle notifiche",
+      "name": "Disabilita la campanella delle notifiche",
       "file": "disable-notification-bell.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare i profili",
+      "name": "Disabilita i profili",
       "file": "disable-profiles.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare i commenti del profilo",
+      "name": "Disabilita i commenti del profilo",
       "file": "disable-profile-comments.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare i messaggi diretti del profilo",
+      "name": "Disabilita i messaggi diretti del profilo",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare il messaggio di successo",
+      "name": "Disabilita il messaggio di successo",
       "file": "disable-success-message.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Modificare la classificazione dei contenuti delle GIF",
+      "name": "Cambia la classificazione dei contenuti dei GIF",
       "file": "gif-rating.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Moderazione dei contenuti delle immagini",
       "file": "image-content-moderation.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Cambiare lo stile di voto",
+      "name": "Cambia lo stile di voto",
       "file": "vote-style.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare l'eliminazione",
+      "name": "Disabilita l'eliminazione",
       "file": "disable-deleting.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare la modifica",
+      "name": "Disabilita la modifica",
       "file": "disable-editing.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Evidenziare i nuovi commenti",
       "file": "highlighting-new-comments.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Dimensioni della pagina",
       "file": "page-size.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Modelli email",
       "file": "email-templates.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Formati del nome utente",
       "file": "user-name-formats.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare il caricamento delle immagini",
+      "name": "Disabilita caricamenti di immagini",
       "file": "no-image-uploads.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Consentire l'inserimento di media",
+      "name": "Consenti incorporamenti multimediali",
       "file": "allow-media-embeds.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare la casella di ricerca",
+      "name": "Abilita la casella di ricerca",
       "file": "enable-search.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare gli spoiler",
+      "name": "Abilita spoiler",
       "file": "enable-spoilers.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare il conteggio delle visualizzazioni dei commenti",
+      "name": "Abilita conteggio visualizzazioni commenti",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostrare immediatamente i commenti in tempo reale",
+      "name": "Mostra i commenti live immediatamente",
       "file": "show-live-right-away.md",
-      "subCat": "Commenti in tempo reale"
+      "subCat": "Commenti live"
     },
     {
-      "name": "Disabilitare i commenti in tempo reale",
+      "name": "Disabilita i commenti live",
       "file": "disable-live-commenting.md",
-      "subCat": "Commenti in tempo reale"
+      "subCat": "Commenti live"
     },
     {
-      "name": "Posizionare i nuovi commenti live in fondo",
+      "name": "Nuovi commenti live in fondo",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Commenti in tempo reale"
+      "subCat": "Commenti live"
     },
     {
       "name": "Abilitare lo scorrimento infinito",
@@ -258,57 +258,62 @@
       "subCat": "Paginazione e ordinamento"
     },
     {
-      "name": "Visualizzare tutti i commenti contemporaneamente - disabilitare la paginazione",
+      "name": "Renderizzare tutti i commenti in una volta - Disabilita paginazione",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginazione e ordinamento"
     },
     {
       "name": "Spostare la casella di risposta dopo i commenti",
       "file": "input-after-comments.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
       "name": "Limitare la lunghezza del commento",
       "file": "max-comment-character-length.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
-      "name": "Disabilitare i commenti multilinea",
+      "name": "Disabilita commenti multilinea",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
-      "name": "Limitare il numero di commenti per utente",
+      "name": "Limita il volume dei commenti per utente",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
-      "name": "Impedire nuovi commenti di primo livello",
+      "name": "Impedire nuovi commenti di livello superiore",
       "file": "no-new-root-comments.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
       "name": "Profondità massima delle risposte",
       "file": "max-reply-depth.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
-      "name": "Richiedere l'accettazione dei Termini di servizio",
+      "name": "Richiedi accettazione dei termini di servizio",
       "file": "terms-of-service.md",
-      "subCat": "Area di risposta"
+      "subCat": "La casella di risposta"
     },
     {
-      "name": "Panoramica sul Single Sign-On (SSO)",
+      "name": "Avvisa prima di uscire con un commento non inviato",
+      "file": "warn-on-unsaved-comment.md",
+      "subCat": "La casella di risposta"
+    },
+    {
+      "name": "Panoramica Single Sign On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrazioni personalizzate - Single Sign-On sicuro (SSO)",
+      "name": "Integrazioni personalizzate - SSO sicuro",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Integrazioni personalizzate - Single Sign-On semplice (SSO)",
+      "name": "Integrazioni personalizzate - SSO semplice",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -323,12 +328,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "Proteggere i thread di commenti con Single Sign-On (SSO)",
+      "name": "Proteggere i thread dei commenti con Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
-      "name": "Consentire commenti anonimi",
+      "name": "Consenti commenti anonimi",
       "file": "allow-anon.md",
       "subCat": "Commenti anonimi"
     },
@@ -338,17 +343,17 @@
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilitare i campi email",
+      "name": "Disabilita input email",
       "file": "disable-email-inputs.md",
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilitare l'etichetta 'Non verificato'",
+      "name": "Disabilita l'etichetta non verificata",
       "file": "disable-unverified-label.md",
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Consentire voti anonimi",
+      "name": "Consenti voti anonimi",
       "file": "allow-anon-votes.md",
       "subCat": "Commenti anonimi"
     },
@@ -363,7 +368,7 @@
       "subCat": "Varie"
     },
     {
-      "name": "Definire manualmente la locale dell'utente",
+      "name": "Definire manualmente la lingua dell'utente",
       "file": "locale.md",
       "subCat": "Varie"
     },
@@ -388,7 +393,7 @@
       "subCat": "Varie"
     },
     {
-      "name": "Conteggio commenti e conteggio di tutte le risposte annidate",
+      "name": "Il conteggio dei commenti e il conteggio di tutte le risposte nidificate",
       "file": "count-all.md",
       "subCat": "Varie"
     },
@@ -403,29 +408,29 @@
       "subCat": "Varie"
     },
     {
-      "name": "ID dei gruppi per le menzioni",
+      "name": "Menziona ID di gruppo",
       "file": "mention-group-ids.md",
       "subCat": "Varie"
     },
     {
-      "name": "Bypass dei cookie di terze parti",
+      "name": "Bypass cookie di terze parti",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Varie"
     },
     {
-      "name": "Eliminare commenti con risposte",
+      "name": "Eliminare i commenti con risposte",
       "file": "deleting-comments-with-replies.md",
       "subCat": "Varie"
     },
     {
-      "name": "Mostrare i badge nella barra superiore",
+      "name": "Mostra badge nella barra superiore",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostrare l'elenco degli utenti online",
+      "name": "Mostra lista utenti online",
       "file": "users-list.md",
-      "subCat": "Aspetto"
+      "subCat": "Aspetto e sensazione"
     }
   ]
 }

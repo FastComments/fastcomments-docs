@@ -3,13 +3,19 @@
   "pageHeader": "Ajouter des commentaires à votre application iOS",
   "itemsOrdered": [
     {
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Fonctionnalités",
       "file": "features-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Prérequis",
+      "name": "Exigences",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Commentaires en fil de discussion",
+      "name": "Commentaires en fil",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Personnalisation du thème",
+      "name": "Thématisation",
       "file": "theming-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -99,7 +105,7 @@
       "type": "readme"
     },
     {
-      "name": "Téléversement d'images",
+      "name": "Téléversements d'images",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

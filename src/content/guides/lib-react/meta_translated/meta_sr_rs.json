@@ -3,7 +3,13 @@
   "pageHeader": "Додајте коментаре у вашу React апликацију",
   "itemsOrdered": [
     {
-      "name": "Уживо демо",
+      "name": "AI агенти за кодирање",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Живи демонстрација",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -11,11 +17,11 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Како почети",
+      "subCat": "Започните",
       "type": "readme"
     },
     {
-      "name": "Уживо приказ",
+      "name": "Живи приказ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -23,13 +29,13 @@
     {
       "name": "Примери",
       "file": "examples-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Коришћење",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Коришћење",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {

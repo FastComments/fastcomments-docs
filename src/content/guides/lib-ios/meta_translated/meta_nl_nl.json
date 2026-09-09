@@ -3,6 +3,12 @@
   "pageHeader": "Voeg reacties toe aan uw iOS-app",
   "itemsOrdered": [
     {
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
       "name": "Functies",
       "file": "features-readme-generated.md",
       "subCat": "Documentatie",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Geneste reacties",
+      "name": "Threaded reacties",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -81,7 +87,7 @@
       "type": "readme"
     },
     {
-      "name": "Status en observeerbaarheid",
+      "name": "Toestand en observeerbaarheid",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -93,13 +99,13 @@
       "type": "readme"
     },
     {
-      "name": "Opschoning",
+      "name": "Opschonen",
       "file": "cleanup-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Afbeeldingen uploaden",
+      "name": "Afbeeldingsuploads",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "Reacties bewerken en verwijderen",
+      "name": "Bewerken en verwijderen van reacties",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
