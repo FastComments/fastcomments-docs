@@ -1,7 +1,13 @@
 {
   "name": "React Native 函式庫",
-  "pageHeader": "將評論小工具加入至你的 React Native 應用程式",
+  "pageHeader": "在您的 React Native 應用程式中加入評論小工具",
   "itemsOrdered": [
+    {
+      "name": "AI 程式碼代理人",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "即時展示",
       "file": "live-showcase-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "快速入門",
       "type": "readme"
     },
     {
@@ -21,25 +27,25 @@
       "type": "readme"
     },
     {
-      "name": "使用 - 即時評論小工具",
+      "name": "使用方式 - 即時評論小工具",
       "file": "usage-the-live-comment-widget-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "使用 - 即時聊天小工具",
+      "name": "使用方式 - 即時聊天小工具",
       "file": "usage-the-live-chat-widget-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "使用 - 單一登入 (SSO)",
+      "name": "使用方式 - 單點登入 (SSO)",
       "file": "usage-sso-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "相依套件 (peer dependencies)",
+      "name": "相依套件",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

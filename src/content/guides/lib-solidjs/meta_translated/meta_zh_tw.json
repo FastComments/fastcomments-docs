@@ -1,7 +1,13 @@
 {
   "name": "SolidJS 函式庫",
-  "pageHeader": "在你的 SolidJS 應用中新增評論",
+  "pageHeader": "在您的 SolidJS 應用程式中添加註解",
   "itemsOrdered": [
+    {
+      "name": "AI 程式編寫代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "即時示範",
       "file": "live-demo-readme-generated.md",
@@ -11,17 +17,17 @@
     {
       "name": "安裝",
       "file": "install-readme-generated.md",
-      "subCat": "快速開始",
+      "subCat": "入門指南",
       "type": "readme"
     },
     {
-      "name": "使用",
+      "name": "使用方式",
       "file": "usage-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "回應設定變更（命令式處理）",
+      "name": "回應設定變更（指令式處理）",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "設定",
       "type": "readme"

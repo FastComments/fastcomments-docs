@@ -1,7 +1,13 @@
 {
   "name": "חבילת Laravel",
-  "pageHeader": "הוספת תגובות ליישום Laravel שלך",
+  "pageHeader": "הוסף תגובות לאפליקציית Laravel שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "דרישות",
       "file": "requirements-readme-generated.md",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "כניסה אחודה (SSO)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -29,13 +35,13 @@
     {
       "name": "גישה ל-API",
       "file": "api-access-readme-generated.md",
-      "subCat": "מדריך ה-API",
+      "subCat": "תיעוד API",
       "type": "readme"
     },
     {
-      "name": "מדריך תצורה",
+      "name": "תיעוד תצורה",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "מדריך ה-API",
+      "subCat": "תיעוד API",
       "type": "readme"
     },
     {

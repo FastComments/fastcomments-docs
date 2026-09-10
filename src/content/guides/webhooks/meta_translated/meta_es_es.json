@@ -3,14 +3,14 @@
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "Qué son los webhooks",
+      "name": "Qué son los Webhooks",
       "file": "what-are-webhooks.md",
-      "subCat": "Descripción general"
+      "subCat": "Visión general"
     },
     {
       "name": "Eventos y recursos compatibles",
       "file": "webhooks-supported-events-resources.md",
-      "subCat": "Descripción general"
+      "subCat": "Visión general"
     },
     {
       "name": "Configuración de desarrollo local",
@@ -38,9 +38,14 @@
       "subCat": "Implementación"
     },
     {
-      "name": "Funcionamiento y gestión de reintentos",
+      "name": "Gestión de Webhooks a través de la API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementación"
+    },
+    {
+      "name": "Cómo funciona y manejo de reintentos",
       "file": "webhooks-how-it-works.md",
-      "subCat": "Detrás de escena"
+      "subCat": "Detrás de cámaras"
     }
   ]
 }

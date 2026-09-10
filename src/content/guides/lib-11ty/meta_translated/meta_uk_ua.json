@@ -3,6 +3,12 @@
   "pageHeader": "Додайте коментарі до вашого сайту Eleventy (11ty)",
   "itemsOrdered": [
     {
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
       "name": "Онлайн демо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документація",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Шорткоди",
+      "name": "Короткі коди",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

@@ -1,19 +1,19 @@
 {
-  "name": "Уебхукове",
+  "name": "Уебкуки",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "Какво представляват уебхуковете",
+      "name": "Какво са уебкуките",
       "file": "what-are-webhooks.md",
-      "subCat": "Преглед"
+      "subCat": "Общ преглед"
     },
     {
       "name": "Поддържани събития и ресурси",
       "file": "webhooks-supported-events-resources.md",
-      "subCat": "Преглед"
+      "subCat": "Общ преглед"
     },
     {
-      "name": "Настройка за локална разработка",
+      "name": "Настройка за локално разработване",
       "file": "webhooks-local-dev.md",
       "subCat": "Имплементация"
     },
@@ -38,7 +38,12 @@
       "subCat": "Имплементация"
     },
     {
-      "name": "Как работи и обработка на повторни опити",
+      "name": "Управление на уебкуки чрез API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Имплементация"
+    },
+    {
+      "name": "Как работи и обработка на повторения",
       "file": "webhooks-how-it-works.md",
       "subCat": "Зад кулисите"
     }

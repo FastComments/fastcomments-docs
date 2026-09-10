@@ -1,16 +1,16 @@
 ### Die FastComments API
 
-FastComments stellt eine API zur Interaktion mit vielen Ressourcen bereit. Erstellen Sie Integrationen mit unserer Plattform oder bauen Sie sogar eigene Clients!
+FastComments stellt eine API zur Interaktion mit vielen Ressourcen bereit. Erstellen Sie Integrationen mit unserer Plattform oder sogar Ihre eigenen Clients!
 
-In dieser Dokumentation finden Sie alle vom API unterstützten Ressourcen, dokumentiert mit ihren Anfrage- und Antworttypen.
+In dieser Dokumentation finden Sie alle von der API unterstützten Ressourcen, dokumentiert mit ihren Anforderungs- und Antworttypen.
 
-Für Enterprise-Kunden wird sämtlicher API-Zugriff im Audit-Log erfasst.
+Für Enterprise‑Kunden wird jeder API‑Zugriff im Audit‑Log erfasst.
 
 ### Generierte SDKs
 
-FastComments erstellt jetzt eine [API-Spezifikation](https://fastcomments.com/js/swagger.json) aus unserem Code (dies ist noch nicht vollständig, enthält aber bereits viele APIs).
+FastComments generiert jetzt ein [API Spec](https://fastcomments.com/js/swagger.json) aus unserem Code (dies ist noch nicht vollständig, enthält aber viele APIs).
 
-Wir bieten jetzt auch SDKs für beliebte Sprachen an:
+Wir haben jetzt auch SDKs für gängige Programmiersprachen:
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -26,25 +26,31 @@ Wir bieten jetzt auch SDKs für beliebte Sprachen an:
 
 ### Authentifizierung
 
-Die API wird authentifiziert, indem Sie Ihren [API-Schlüssel](https://fastcomments.com/auth/my-account/api-secret) entweder als `X-API-KEY`-Header oder als `API_KEY`-Query-Parameter übergeben. Sie benötigen außerdem Ihre `tenantId`, um API-Aufrufe zu tätigen. Diese kann von derselben Seite wie Ihr API-Schlüssel abgerufen werden.
+Die API wird authentifiziert, indem Sie Ihren [api key](https://fastcomments.com/auth/my-account/api-secret) entweder als `X-API-KEY`‑Header oder als `API_KEY`‑Abfrageparameter übergeben. Sie benötigen außerdem Ihre `tenantId` für API‑Aufrufe. Diese kann von derselben Seite wie Ihr API‑Schlüssel abgerufen werden.
 
-### Sicherheitshinweis
+### Sicherheits‑Hinweis
 
-Diese Routen sind dafür vorgesehen, von einem **Server** aufgerufen zu werden. __RUFEN SIE SIE NICHT__ von einem Browser auf. Andernfalls würden Sie Ihren API-Schlüssel offenlegen – damit hätte jede Person, die den Quellcode einer Seite einsehen kann, vollen Zugriff auf Ihr Konto!
+Diese Routen sind dafür gedacht, von einem **Server** aus aufgerufen zu werden. __NICHT__ von einem Browser aus aufrufen. Dadurch wird Ihr API‑Schlüssel offengelegt – dies gewährt jedem, der den Quellcode einer Seite einsehen kann, vollen Zugriff auf Ihr Konto!
 
-#### Authentifizierungsoption Eins - Header
+#### Authentifizierungsoption Eins – Header
 
 - Header: `X-API-KEY`
 - Header: `X-TENANT-ID`
 
-#### Authentifizierungsoption Zwei - Query-Parameter
+#### Authentifizierungsoption Zwei – Abfrageparameter
 
-- Query Param: `API_KEY`
-- Query Param: `tenantId`
+- Abfrageparameter: `API_KEY`
+- Abfrageparameter: `tenantId`
 
-### Eigene Schreibvorgänge lesen
+#### Authentifizierungsoption Drei – OAuth‑Bearer‑Token
 
-FastComments bietet Active-Active-Verfügbarkeit. Anfragen von Ihrem Rechenzentrum werden an [den nächstgelegenen Point of Presence](https://sophon.fastcomments.com/) zu Ihrem weitergeleitet. Dies geschieht automatisch, und normalerweise können Sie read-your-write semantics beobachten. Wenn Sie sicherstellen möchten, dass Sie Ihre eigenen Schreibvorgänge lesen, können Sie Ihre Anfragen an eine bestimmte Region binden, indem Sie diese Region als API-Host verwenden (dies ist für die meisten Integrationen jedoch in der Regel nicht notwendig):
+- Header: `Authorization: Bearer fcat_...`
+
+Anwendungen, die über den [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) verbunden werden, erhalten ein Token über OAuth anstelle eines API‑Schlüssels. Dieses Token funktioniert bei allen Endpunkten hier. Der Mandant ist im Token impliziert, sodass `tenantId` optional ist, aber bei Angabe mit dem Token übereinstimmen muss. `GET`‑Anfragen benötigen den `read`‑Scope und alle anderen Methoden den `write`‑Scope. Die Entdeckung beginnt bei `https://fastcomments.com/.well-known/oauth-authorization-server`.
+
+### Lesen Ihrer eigenen Schreibvorgänge
+
+FastComments bietet Active‑Active‑Verfügbarkeit. Anfragen aus Ihrem Rechenzentrum werden zu dem [nächsten Point of Presence](https://sophon.fastcomments.com/) zu Ihnen geleitet. Dies geschieht automatisch, und normalerweise können Sie die Lese‑nach‑Schreiben‑Semantik beobachten. Wenn Sie sicherstellen möchten, dass Sie Ihre eigenen Schreibvorgänge lesen, können Sie Ihre Anfragen an eine bestimmte Region binden, indem Sie diese Region als API‑Host verwenden (dies ist jedoch für die meisten Integrationen normalerweise nicht erforderlich):
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -55,4 +61,4 @@ FastComments bietet Active-Active-Verfügbarkeit. Anfragen von Ihrem Rechenzentr
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-Beachten Sie, dass Sie in diesem Fall möglicherweise einen Fallback definieren sollten, da wir in der Vergangenheit Entrypoint-Knoten veraltet haben und für den Switchover neue Namen verwenden.
+Beachten Sie, dass Sie in diesem Fall möglicherweise ein Fallback definieren möchten, da wir in der Vergangenheit Einstiegspunkte eingestellt haben und neue Namen für den Umschaltvorgang verwenden.

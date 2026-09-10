@@ -1,7 +1,13 @@
 {
-  "name": "Android 라이브러리",
-  "pageHeader": "Android 앱에 댓글 추가하기",
+  "name": "안드로이드 라이브러리",
+  "pageHeader": "안드로이드 앱에 댓글 추가",
   "itemsOrdered": [
+    {
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
     {
       "name": "기능",
       "file": "features-readme-generated.md",
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "피드 연동",
+      "name": "피드 통합",
       "file": "feed-integration-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "라이브 채팅 연동",
+      "name": "실시간 채팅 통합",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

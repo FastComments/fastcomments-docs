@@ -1,9 +1,9 @@
 {
-  "name": "Σετ εργαλείων LLM",
+  "name": "LLM Κιτ",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Αποκτήστε το Σετ εργαλείων LLM",
+      "name": "Αποκτήστε το LLM Κιτ",
       "file": "llm-kit-snippet.md",
       "subCat": "Ενσωμάτωση LLM"
     },
@@ -11,6 +11,11 @@
       "name": "Διακομιστής MCP",
       "file": "mcp-server.md",
       "subCat": "Διακομιστής MCP"
+    },
+    {
+      "name": "Αφήστε έναν πράκτορα να ρυθμίσει τον λογαριασμό σας",
+      "file": "agent-account-setup.md",
+      "subCat": "Ρύθμιση Λογαριασμού Πράκτορα"
     }
   ]
 }

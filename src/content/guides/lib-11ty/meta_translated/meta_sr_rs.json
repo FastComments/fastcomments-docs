@@ -3,6 +3,12 @@
   "pageHeader": "Додајте коментаре на ваш Eleventy (11ty) сајт",
   "itemsOrdered": [
     {
+      "name": "AI агенти за кодирање",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
       "name": "Живи демонстрација",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документација",
@@ -11,7 +17,7 @@
     {
       "name": "Инсталација",
       "file": "install-readme-generated.md",
-      "subCat": "Започните",
+      "subCat": "Увод",
       "type": "readme"
     },
     {
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "Опције додатка",
+      "name": "Опције плугина",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Конфигурација",
       "type": "readme"
     },
     {
-      "name": "Ручно коришћење (без додатка)",
+      "name": "Ручно коришћење (без плугина)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Линкови",
+      "name": "Везе",
       "file": "links-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

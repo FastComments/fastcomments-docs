@@ -1,7 +1,13 @@
 {
   "name": "Android 函式庫",
-  "pageHeader": "在您的 Android 應用程式中新增評論",
+  "pageHeader": "為您的 Android 應用程式添加評論",
   "itemsOrdered": [
+    {
+      "name": "AI 程式編寫代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
     {
       "name": "功能",
       "file": "features-readme-generated.md",
@@ -21,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "基本用法",
+      "name": "基本使用",
       "file": "basic-usage-readme-generated.md",
       "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "安全單一登入 (SSO) 驗證",
+      "name": "安全單點登入驗證",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "認證",
+      "subCat": "驗證",
       "type": "readme"
     },
     {
-      "name": "資訊串流整合",
+      "name": "資訊流整合",
       "file": "feed-integration-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "完整的主題客製化",
+      "name": "完整主題自訂",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

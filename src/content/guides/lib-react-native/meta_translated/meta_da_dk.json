@@ -3,7 +3,13 @@
   "pageHeader": "Tilføj kommentar-widgets til din React Native-app",
   "itemsOrdered": [
     {
-      "name": "Live-demo",
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Live-udstilling",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -11,23 +17,23 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
       "type": "readme"
     },
     {
-      "name": "Overvej det native SDK",
+      "name": "Overvej den native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Brug - Live-kommentar-widget",
+      "name": "Brug - Den live kommentar-widget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"
     },
     {
-      "name": "Brug - Live-chat-widget",
+      "name": "Brug - Den live chat-widget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Brug",
       "type": "readme"

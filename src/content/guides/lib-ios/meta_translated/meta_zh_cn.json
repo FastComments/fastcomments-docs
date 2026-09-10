@@ -3,6 +3,12 @@
   "pageHeader": "在您的 iOS 应用中添加评论",
   "itemsOrdered": [
     {
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
       "name": "功能",
       "file": "features-readme-generated.md",
       "subCat": "文档",
@@ -17,7 +23,7 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "入门指南",
       "type": "readme"
     },
     {
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "身份验证（SSO）",
+      "name": "身份验证（单点登录）",
       "file": "authentication-sso-readme-generated.md",
       "subCat": "身份验证",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "主题",
+      "name": "主题定制",
       "file": "theming-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "审核",
+      "name": "内容审核",
       "file": "moderation-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -81,13 +87,13 @@
       "type": "readme"
     },
     {
-      "name": "状态与可观测性",
+      "name": "状态与可观察性",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "欧盟区域",
+      "name": "欧盟地区",
       "file": "eu-region-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "编辑与删除评论",
+      "name": "编辑和删除评论",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "文档",
       "type": "readme"

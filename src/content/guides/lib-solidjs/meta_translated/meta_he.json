@@ -3,6 +3,12 @@
   "pageHeader": "הוסף תגובות לאפליקציית SolidJS שלך",
   "itemsOrdered": [
     {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",
       "subCat": "תיעוד",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "תגובה לשינויים בתצורה (טיפול אימפרטיבי)",
+      "name": "תגובה לשינויים בתצורה (מנגנון אימפרטיבי)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "תצורה",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "הצגה",
+      "name": "תצוגה",
       "file": "showcase-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

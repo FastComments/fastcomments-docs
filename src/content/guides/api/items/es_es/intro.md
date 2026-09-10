@@ -1,14 +1,14 @@
-### The FastComments API
+### La API de FastComments
 
-FastComments proporciona una API para interactuar con muchos recursos. Cree integraciones con nuestra plataforma, o incluso cree sus propios clientes!
+FastComments ofrece una API para interactuar con muchos recursos. ¡Crea integraciones con nuestra plataforma, o incluso crea tus propios clientes!
 
-En esta documentación, encontrará todos los recursos compatibles por la API documentados con sus tipos de solicitud y respuesta.
+En esta documentación, encontrarás todos los recursos compatibles con la API documentados con sus tipos de solicitud y respuesta.
 
 Para clientes Enterprise, todo el acceso a la API se registra en el Registro de Auditoría.
 
-### Generated SDKs
+### SDKs Generados
 
-FastComments ahora genera una [Especificación de la API](https://fastcomments.com/js/swagger.json) a partir de nuestro código (aún no está completa, pero incluye muchas API).
+FastComments ahora genera una [API Spec](https://fastcomments.com/js/swagger.json) a partir de nuestro código (esto aún no está completo, pero incluye muchas APIs).
 
 También ahora disponemos de SDKs para lenguajes populares:
 
@@ -24,27 +24,33 @@ También ahora disponemos de SDKs para lenguajes populares:
 - [fastcomments-rust](./guide-sdk-rust.html)
 - [fastcomments-swift](./guide-sdk-swift.html)
 
-### Authentication
+### Autenticación
 
-La API se autentica pasando su [clave de la API](https://fastcomments.com/auth/my-account/api-secret) ya sea como un encabezado `X-API-KEY` o como un parámetro de consulta `API_KEY`. También necesitará su `tenantId` para realizar llamadas a la API. Esto se puede obtener en la misma página que su clave de la API.
+La API se autentica pasando su [api key](https://fastcomments.com/auth/my-account/api-secret) ya sea como encabezado `X-API-KEY` o como parámetro de consulta `API_KEY`. También necesitará su `tenantId` para realizar llamadas a la API. Esto se puede obtener en la misma página que su clave API.
 
-### Security Note
+### Nota de Seguridad
 
-Estas rutas están pensadas para ser llamadas desde un **servidor**. __DO NOT__ llamarlas desde un navegador. Hacer esto expondrá su clave de la API: ¡esto proporcionará acceso completo a su cuenta a cualquiera que pueda ver el código fuente de una página!
+Estas rutas están diseñadas para ser llamadas desde un **servidor**. __NO__ las llame desde un navegador. Hacerlo expondrá su clave API, lo que otorgará acceso completo a su cuenta a cualquiera que pueda ver el código fuente de una página!
 
-#### Authentication Option One - Headers
+#### Opción de Autenticación Uno - Encabezados
 
-- Header: `X-API-KEY`
-- Header: `X-TENANT-ID`
+- Encabezado: `X-API-KEY`
+- Encabezado: `X-TENANT-ID`
 
-#### Authentication Option Two - Query Parameters
+#### Opción de Autenticación Dos - Parámetros de Consulta
 
-- Query Param: `API_KEY`
-- Query Param: `tenantId`
+- Parámetro de Consulta: `API_KEY`
+- Parámetro de Consulta: `tenantId`
 
-### Reading Your Own Writes
+#### Opción de Autenticación Tres - Token Portador OAuth
 
-FastComments ofrece disponibilidad activa-activa. Las solicitudes desde su centro de datos se enrutan al [punto de presencia más cercano](https://sophon.fastcomments.com/) al suyo. Esto es automático, y normalmente podrá observar la semántica de leer tras escribir. Si desea asegurarse de leer sus propias escrituras, puede fijar sus solicitudes a una región determinada usando esa región como host de la API (sin embargo, esto normalmente no es necesario para la mayoría de las integraciones):
+- Encabezado: `Authorization: Bearer fcat_...`
+
+Las aplicaciones que se conectan a través del [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) obtienen un token mediante OAuth en lugar de una clave API. Ese token funciona en todos los puntos finales aquí. El inquilino está implícito en el token, por lo que `tenantId` es opcional, pero debe coincidir con el token cuando se proporciona. Las solicitudes `GET` necesitan el alcance `read` y cualquier otro método necesita el alcance `write`. El descubrimiento comienza en `https://fastcomments.com/.well-known/oauth-authorization-server`.
+
+### Lectura de sus propias escrituras
+
+FastComments ofrece disponibilidad Active-Active. Las solicitudes desde su centro de datos se enrutan al [punto de presencia más cercano](https://sophon.fastcomments.com/) al suyo. Esto es automático, y normalmente puede observar la semántica de lectura después de escritura. Si desea asegurarse de leer sus propias escrituras, puede fijar sus solicitudes a una región específica usando esa región como host de la API (aunque normalmente no es necesario para la mayoría de las integraciones):
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -55,6 +61,4 @@ FastComments ofrece disponibilidad activa-activa. Las solicitudes desde su centr
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-Tenga en cuenta que si hace esto quizá desee definir una alternativa, ya que en el pasado hemos dejado obsoletos los nodos de entrada y hemos utilizado nuevos nombres para el cambio.
-
----
+Tenga en cuenta que si hace esto, es posible que desee definir una alternativa, ya que hemos desaprobado nodos de punto de entrada en el pasado y usamos nuevos nombres para el cambio.

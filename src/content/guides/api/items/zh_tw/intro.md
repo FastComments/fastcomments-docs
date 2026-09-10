@@ -1,16 +1,16 @@
-### The FastComments API
+### FastComments API
 
-FastComments 提供一個用於互動多種資源的 API。可用它來建立與我們平台的整合，或甚至自行建立客戶端！
+FastComments 提供一套 API 以與多種資源互動。您可以與我們的平台整合，甚至自行開發客戶端！
 
-在本文件中，您會找到 API 支援的所有資源，以及它們的請求與回應型別的文件。
+在本文件中，您將找到 API 所支援的所有資源，並附有其請求與回應類型的說明。
 
-對於企業客戶，所有的 API 存取都會被記錄在稽核日誌 (Audit Log) 中。
+對於企業客戶，所有 API 存取皆會記錄於稽核日誌。
 
-### Generated SDKs
+### 產生的 SDK
 
-FastComments 現在會從我們的程式碼產生一份 [API Spec](https://fastcomments.com/js/swagger.json)（尚未完全，但包含許多 API）。
+FastComments 現在會從我們的程式碼產生 [API Spec](https://fastcomments.com/js/swagger.json)（此規格尚未完整，但已包含許多 API）。
 
-我們也為熱門語言提供了 SDK：
+我們也提供了多種流行語言的 SDK：
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -24,27 +24,33 @@ FastComments 現在會從我們的程式碼產生一份 [API Spec](https://fastc
 - [fastcomments-rust](./guide-sdk-rust.html)
 - [fastcomments-swift](./guide-sdk-swift.html)
 
-### Authentication
+### 認證
 
-API 的驗證方式是將您的 [API 金鑰](https://fastcomments.com/auth/my-account/api-secret) 作為 `X-API-KEY` 標頭或 `API_KEY` 查詢參數傳遞。您也需要您的 `tenantId` 來進行 API 呼叫。這可以從與您的 API 金鑰相同的頁面取得。
+API 透過傳遞您的 [api key](https://fastcomments.com/auth/my-account/api-secret) 作為 `X-API-KEY` 標頭或 `API_KEY` 查詢參數來驗證。您還需要 `tenantId` 以進行 API 呼叫。此資訊可在與 api key 同一頁面取得。
 
-### Security Note
+### 安全說明
 
-這些路由預期由一個 **伺服器** 呼叫。__DO NOT__ 從瀏覽器呼叫它們。這樣做會暴露您的 API 金鑰——任何能查看頁面原始碼的人都能取得完整的帳戶存取權！
+這些路由應該從 **伺服器** 端呼叫。__請勿__ 從瀏覽器呼叫。這樣會暴露您的 API 金鑰，讓任何能看到頁面原始碼的人取得您帳號的完整存取權限！
 
-#### Authentication Option One - Headers
+#### 認證選項一 - 標頭
 
-- Header: `X-API-KEY`
-- Header: `X-TENANT-ID`
+- 標頭: `X-API-KEY`
+- 標頭: `X-TENANT-ID`
 
-#### Authentication Option Two - Query Parameters
+#### 選項二 - 查詢參數
 
-- Query Param: `API_KEY`
-- Query Param: `tenantId`
+- 查詢參數: `API_KEY`
+- 查詢參數: `tenantId`
 
-### Reading Your Own Writes
+#### 選項三 - OAuth Bearer Token
 
-FastComments 提供 Active-Active 可用性。來自您資料中心的請求會被導向距離您最近的 [point of presence](https://sophon.fastcomments.com/)。這是自動的，通常您可以觀察到「讀到自己的寫入」語意。如果您想確保能讀到自己的寫入，您可以透過使用該區域作為 API 主機來將請求鎖定至某個區域（不過對於大多數整合來說通常不需要）：
+- 標頭: `Authorization: Bearer fcat_...`
+
+透過 [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) 連線的應用程式會以 OAuth 取得 token，而非使用 API 金鑰。此 token 可用於此處的所有端點。租戶資訊由 token 隱含，因此 `tenantId` 為可選項，但若提供必須與 token 相符。`GET` 請求需要 `read` 範圍，其他方法則需要 `write` 範圍。發現流程起始於 `https://fastcomments.com/.well-known/oauth-authorization-server`。
+
+### 讀取自己的寫入
+
+FastComments 提供 Active-Active 可用性。來自您資料中心的請求會被導向至離您最近的 [點位](https://sophon.fastcomments.com/)。此過程自動完成，通常您即可觀察到「寫入後即讀」的語意。若您想確保讀取自己的寫入，可透過將請求固定到特定區域的 API 主機來實現（但對大多數整合而言通常不需要）：
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -55,4 +61,4 @@ FastComments 提供 Active-Active 可用性。來自您資料中心的請求會�
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-請注意，如果您這樣做，您可能需要定義一個回退機制，因為我們過去曾棄用入口節點並在切換時使用新的名稱。
+請注意，若採用此方式，您可能需要設定備援，因為我們過去已棄用某些入口節點，且在切換時會使用新名稱。

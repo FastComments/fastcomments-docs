@@ -8,12 +8,12 @@
       "subCat": "Oversigt"
     },
     {
-      "name": "Understøttede hændelser og ressourcer",
+      "name": "Understøttede begivenheder og ressourcer",
       "file": "webhooks-supported-events-resources.md",
       "subCat": "Oversigt"
     },
     {
-      "name": "Opsætning til lokal udvikling",
+      "name": "Lokal udviklingsopsætning",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementering"
     },
@@ -33,12 +33,17 @@
       "subCat": "Implementering"
     },
     {
-      "name": "Sikkerhed og API-tokens",
+      "name": "Sikkerhed og API‑tokens",
       "file": "webhooks-api-tokens.md",
       "subCat": "Implementering"
     },
     {
-      "name": "Hvordan det virker og håndtering af genforsøg",
+      "name": "Håndtering af Webhooks via API'en",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementering"
+    },
+    {
+      "name": "Hvordan det fungerer og håndtering af genforsøg",
       "file": "webhooks-how-it-works.md",
       "subCat": "Bag kulisserne"
     }

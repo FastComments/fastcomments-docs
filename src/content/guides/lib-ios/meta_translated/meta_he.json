@@ -1,7 +1,13 @@
 {
   "name": "ספריית iOS",
-  "pageHeader": "הוסף תגובות לאפליקציית iOS שלך",
+  "pageHeader": "הוספת תגובות לאפליקציית iOS שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "תכונות",
       "file": "features-readme-generated.md",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "תגובות מקוננות",
+      "name": "תגובות משורשרות",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "ערכות נושא",
+      "name": "תמות",
       "file": "theming-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "פיקוח",
+      "name": "מודרציה",
       "file": "moderation-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -75,13 +81,13 @@
       "type": "readme"
     },
     {
-      "name": "עימוד",
+      "name": "דפדוף",
       "file": "pagination-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "מצב ותצפית",
+      "name": "מצב ונצירות",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -105,13 +111,13 @@
       "type": "readme"
     },
     {
-      "name": "אזכורים למשתמשים",
+      "name": "אזכורי משתמש",
       "file": "user-mentions-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "עריכה ומחיקה של תגובות",
+      "name": "עריכה ומחיקת תגובות",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

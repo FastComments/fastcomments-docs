@@ -1,15 +1,21 @@
 {
   "name": "Бібліотека Svelte",
-  "pageHeader": "Додайте коментарі до вашого додатка Svelte",
+  "pageHeader": "Додайте коментарі до вашого застосунку Svelte",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий демонстраційний приклад",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Встановлення",
+      "name": "Встановити",
       "file": "install-readme-generated.md",
       "subCat": "Початок роботи",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Стан підтримки",
+      "name": "Статус обслуговування",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

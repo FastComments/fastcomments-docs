@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji Laravel",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Wymagania",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -11,7 +17,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
@@ -29,13 +35,13 @@
     {
       "name": "Dostęp do API",
       "file": "api-access-readme-generated.md",
-      "subCat": "Dokumentacja API",
+      "subCat": "Referencja API",
       "type": "readme"
     },
     {
       "name": "Referencja konfiguracji",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "Dokumentacja API",
+      "subCat": "Referencja API",
       "type": "readme"
     },
     {

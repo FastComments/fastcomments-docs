@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Svelte-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "KI-Programmieragenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Live-Demo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentation",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Erstellen",
+      "name": "Erstellung",
       "file": "building-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

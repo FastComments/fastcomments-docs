@@ -1,7 +1,13 @@
 {
   "name": "Laravel-pakket",
-  "pageHeader": "Voeg opmerkingen toe aan uw Laravel-app",
+  "pageHeader": "Voeg opmerkingen toe aan je Laravel-app",
   "itemsOrdered": [
+    {
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Vereisten",
       "file": "requirements-readme-generated.md",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Configuratie-referentie",
+      "name": "Configuratiereferentie",
       "file": "configuration-reference-readme-generated.md",
       "subCat": "API-referentie",
       "type": "readme"

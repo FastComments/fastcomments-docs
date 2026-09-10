@@ -1,46 +1,51 @@
 {
-  "name": "Вебхукови",
+  "name": "Webhooks",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "Шта су вебхукови",
+      "name": "Šta su webhook-ovi",
       "file": "what-are-webhooks.md",
-      "subCat": "Преглед"
+      "subCat": "Pregled"
     },
     {
-      "name": "Подржани догађаји и ресурси",
+      "name": "Podržani događaji i resursi",
       "file": "webhooks-supported-events-resources.md",
-      "subCat": "Преглед"
+      "subCat": "Pregled"
     },
     {
-      "name": "Постављање локалног окружења за развој",
+      "name": "Podešavanje lokalnog razvoja",
       "file": "webhooks-local-dev.md",
-      "subCat": "Имплементација"
+      "subCat": "Implementacija"
     },
     {
-      "name": "Постављање",
+      "name": "Podešavanje",
       "file": "webhooks-setup.md",
-      "subCat": "Имплементација"
+      "subCat": "Implementacija"
     },
     {
-      "name": "Тестирање",
+      "name": "Testiranje",
       "file": "webhooks-testing.md",
-      "subCat": "Имплементација"
+      "subCat": "Implementacija"
     },
     {
-      "name": "Структуре података",
+      "name": "Strukture podataka",
       "file": "webhooks-structures.md",
-      "subCat": "Имплементација"
+      "subCat": "Implementacija"
     },
     {
-      "name": "Безбедност и API токени",
+      "name": "Bezbednost i API tokeni",
       "file": "webhooks-api-tokens.md",
-      "subCat": "Имплементација"
+      "subCat": "Implementacija"
     },
     {
-      "name": "Како функционише и руковање поновним покушајима",
+      "name": "Upravljanje webhook-ovima putem API-ja",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Kako funkcioniše i rukovanje ponovnim pokušajima",
       "file": "webhooks-how-it-works.md",
-      "subCat": "Иза кулиса"
+      "subCat": "Iza kulisa"
     }
   ]
 }

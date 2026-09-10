@@ -3,13 +3,19 @@
   "pageHeader": "Ajouter des commentaires à votre application Android",
   "itemsOrdered": [
     {
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Fonctionnalités",
       "file": "features-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Prérequis",
+      "name": "Exigences",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Intégration de flux",
+      "name": "Intégration du flux",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Exemples de projets",
+      "name": "Projets d'exemple",
       "file": "example-projects-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"

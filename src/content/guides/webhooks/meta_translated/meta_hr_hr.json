@@ -1,9 +1,9 @@
 {
-  "name": "Webhookovi",
+  "name": "Webhooks",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "Što su webhookovi",
+      "name": "Što su Webhookovi",
       "file": "what-are-webhooks.md",
       "subCat": "Pregled"
     },
@@ -13,7 +13,7 @@
       "subCat": "Pregled"
     },
     {
-      "name": "Postavljanje lokalnog razvojnog okruženja",
+      "name": "Postavljanje lokalnog razvoja",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementacija"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Sigurnost i API tokeni",
       "file": "webhooks-api-tokens.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Upravljanje webhookovima putem API-ja",
+      "file": "webhooks-api-subscriptions.md",
       "subCat": "Implementacija"
     },
     {

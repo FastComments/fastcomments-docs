@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca SolidJS",
-  "pageHeader": "Añadir comentarios a tu aplicación SolidJS",
+  "pageHeader": "Agregar comentarios a tu aplicación SolidJS",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Demostración en vivo",
       "file": "live-demo-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Instalar",
       "file": "install-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Reaccionar a cambios de configuración (manejador imperativo)",
+      "name": "Reaccionar a cambios de configuración (manejo imperativo)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Configuración",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Ejemplos",
+      "name": "Muestra",
       "file": "showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

@@ -1,9 +1,15 @@
 {
   "name": "Biblioteca React Native",
-  "pageHeader": "Adicione widgets de comentários ao seu aplicativo React Native",
+  "pageHeader": "Adicionar Widgets de Comentário ao Seu Aplicativo React Native",
   "itemsOrdered": [
     {
-      "name": "Demonstração ao vivo",
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Demonstração ao Vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -11,23 +17,23 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeiros passos",
+      "subCat": "Começando",
       "type": "readme"
     },
     {
-      "name": "Considere o SDK nativo",
+      "name": "Considere o SDK Nativo",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Uso - Widget de comentários ao vivo",
+      "name": "Uso - O Widget de Comentário ao Vivo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Uso - Widget de bate-papo ao vivo",
+      "name": "Uso - O Widget de Chat ao Vivo",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -39,13 +45,13 @@
       "type": "readme"
     },
     {
-      "name": "Dependências peer",
+      "name": "Dependências de pares",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Status de manutenção",
+      "name": "Status de Manutenção",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

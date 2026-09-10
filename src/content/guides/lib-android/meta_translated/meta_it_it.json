@@ -3,7 +3,13 @@
   "pageHeader": "Aggiungi commenti alla tua app Android",
   "itemsOrdered": [
     {
-      "name": "Funzionalità",
+      "name": "Agenti di codifica AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Caratteristiche",
       "file": "features-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -17,11 +23,11 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Iniziare",
       "type": "readme"
     },
     {
-      "name": "Utilizzo di base",
+      "name": "Uso di base",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Integrazione chat dal vivo",
+      "name": "Integrazione della chat in tempo reale",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

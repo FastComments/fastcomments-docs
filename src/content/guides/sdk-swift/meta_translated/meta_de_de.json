@@ -1,7 +1,13 @@
 {
-  "name": "Swift-SDK",
-  "pageHeader": "FastComments Swift-SDK",
+  "name": "Swift SDK",
+  "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
+    {
+      "name": "KI-Coding-Agenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Bibliotheksinhalte",
+      "name": "Bibliotheksinhalt",
       "file": "library-contents-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "API-Aufrufe durchführen",
+      "name": "API-Aufrufe tätigen",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "API-Referenz",
       "type": "readme"
@@ -45,9 +51,9 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "aggregieren",
       "file": "aggregate-api-generated.md",
-      "subCat": "Aggregation",
+      "subCat": "Aggregieren",
       "type": "api"
     },
     {
@@ -65,19 +71,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Vom Kommentar sperren",
+      "subCat": "Blockieren vom Kommentar",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Vom Kommentar sperren",
+      "subCat": "Blockieren vom Kommentar",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Gesperrte Kommentare prüfen",
+      "subCat": "Blockierte Kommentare prüfen",
       "type": "api"
     },
     {
@@ -935,19 +941,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageergebnissen",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageergebnissen",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageergebnissen",
       "type": "api"
     },
     {
@@ -1019,7 +1025,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Tägliche Mandantennutzung",
+      "subCat": "Tägliche Nutzung des Mandanten",
       "type": "api"
     },
     {
@@ -1055,7 +1061,7 @@
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Mandantenpakete",
+      "subCat": "Mandatenpakete",
       "type": "api"
     },
     {
@@ -1169,19 +1175,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Fortschritt von Benutzerabzeichen",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Fortschritt von Benutzerabzeichen",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Fortschritt von Benutzerabzeichen",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
@@ -1259,7 +1265,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Benutzeranwesenheitsstatus",
+      "subCat": "Benutzerpräsenzstatus",
       "type": "api"
     },
     {

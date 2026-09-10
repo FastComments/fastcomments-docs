@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji Vue 3",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Demo na żywo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -17,7 +23,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "Aktualizowanie bieżącej strony (przykład SPA)",
+      "name": "Aktualizacja bieżącej strony (przykład SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"
     },
     {
-      "name": "W środowisku produkcyjnym",
+      "name": "W produkcji",
       "file": "in-production-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"

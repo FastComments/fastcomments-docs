@@ -1,7 +1,13 @@
 {
   "name": "Django Paketi",
-  "pageHeader": "Django Uygulamanıza Yorumlar Ekleyin",
+  "pageHeader": "Django Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Yapay Zeka kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Gereksinimler",
       "file": "requirements-readme-generated.md",
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Gömülü işaretlemenin özelleştirilmesi",
+      "name": "Gömülü işaretlemesini özelleştirme",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

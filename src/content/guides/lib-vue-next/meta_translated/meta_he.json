@@ -1,7 +1,13 @@
 {
   "name": "ספריית Vue 3",
-  "pageHeader": "הוסף תגובות לאפליקציית Vue 3 שלך",
+  "pageHeader": "הוספת תגובות לאפליקציית Vue 3 שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",

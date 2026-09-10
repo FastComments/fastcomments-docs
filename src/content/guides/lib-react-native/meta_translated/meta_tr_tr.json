@@ -3,6 +3,12 @@
   "pageHeader": "React Native Uygulamanıza Yorum Widget'ları Ekleyin",
   "itemsOrdered": [
     {
+      "name": "Yapay Zeka kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Canlı Gösterim",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokümantasyon",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Yerel SDK'yı Kullanmayı Düşünün",
+      "name": "Native SDK'yı Düşünün",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

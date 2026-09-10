@@ -1,16 +1,21 @@
 {
-  "name": "Комплект LLM",
+  "name": "LLM комплект",
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Вземете комплекта LLM",
+      "name": "Получете LLM комплекта",
       "file": "llm-kit-snippet.md",
-      "subCat": "Интеграция на LLM"
+      "subCat": "LLM интеграция"
     },
     {
       "name": "MCP сървър",
       "file": "mcp-server.md",
       "subCat": "MCP сървър"
+    },
+    {
+      "name": "Нека агент настрои вашия акаунт",
+      "file": "agent-account-setup.md",
+      "subCat": "Настройка на акаунт от агент"
     }
   ]
 }

@@ -1,9 +1,15 @@
 {
-  "name": "Svelte-bibliotheek",
-  "pageHeader": "Voeg opmerkingen toe aan je Svelte-app",
+  "name": "Svelte Bibliotheek",
+  "pageHeader": "Voeg opmerkingen toe aan uw Svelte-app",
   "itemsOrdered": [
     {
-      "name": "Live demo",
+      "name": "AI-codeeragents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live-demo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Snelstart",
+      "name": "Snelle start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"

@@ -1,9 +1,15 @@
 {
   "name": "Бібліотека Vue 2",
-  "pageHeader": "Додайте коментарі до вашого додатка на Vue 2",
+  "pageHeader": "Додайте коментарі до вашого додатку Vue 2",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "Агенти кодування ШІ",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "У виробничому середовищі",
+      "name": "У продакшн",
       "file": "in-production-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Стан підтримки",
+      "name": "Статус обслуговування",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

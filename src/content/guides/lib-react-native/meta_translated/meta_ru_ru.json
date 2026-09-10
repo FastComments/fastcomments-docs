@@ -1,9 +1,15 @@
 {
-  "name": "Библиотека для React Native",
+  "name": "Библиотека React Native",
   "pageHeader": "Добавьте виджеты комментариев в ваше приложение React Native",
   "itemsOrdered": [
     {
-      "name": "Демонстрация в реальном времени",
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живой демонстрационный пример",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -15,19 +21,19 @@
       "type": "readme"
     },
     {
-      "name": "Рассмотрите возможность использования нативного SDK",
+      "name": "Рассмотрите нативный SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Использование — виджет комментариев в реальном времени",
+      "name": "Использование — живой виджет комментариев",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Использование",
       "type": "readme"
     },
     {
-      "name": "Использование — виджет чата в реальном времени",
+      "name": "Использование — живой виджет чата",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Использование",
       "type": "readme"
@@ -39,13 +45,13 @@
       "type": "readme"
     },
     {
-      "name": "Peer-зависимости",
+      "name": "Зависимости‑пиры",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Статус поддержки",
+      "name": "Статус обслуживания",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

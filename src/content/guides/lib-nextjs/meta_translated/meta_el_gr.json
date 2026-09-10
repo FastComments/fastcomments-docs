@@ -1,7 +1,13 @@
 {
   "name": "Βιβλιοθήκη Next.js",
-  "pageHeader": "Προσθέστε Σχόλια στην Εφαρμογή Next.js σας",
+  "pageHeader": "Προσθήκη Σχολίων στην Εφαρμογή Next.js σας",
   "itemsOrdered": [
+    {
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Ζωντανή Επίδειξη",
       "file": "live-demo-readme-generated.md",

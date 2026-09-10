@@ -3,6 +3,12 @@
   "pageHeader": "Laravel Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
     {
+      "name": "Yapay Zeka kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Gereksinimler",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokümantasyon",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Tek Oturum Açma (SSO)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

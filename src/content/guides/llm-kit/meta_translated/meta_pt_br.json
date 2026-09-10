@@ -5,12 +5,17 @@
     {
       "name": "Obtenha o Kit LLM",
       "file": "llm-kit-snippet.md",
-      "subCat": "Integração de LLM"
+      "subCat": "Integração LLM"
     },
     {
       "name": "Servidor MCP",
       "file": "mcp-server.md",
       "subCat": "Servidor MCP"
+    },
+    {
+      "name": "Deixe um Agente Configurar Sua Conta",
+      "file": "agent-account-setup.md",
+      "subCat": "Configuração de Conta por Agente"
     }
   ]
 }

@@ -11,6 +11,11 @@
       "name": "Serwer MCP",
       "file": "mcp-server.md",
       "subCat": "Serwer MCP"
+    },
+    {
+      "name": "Pozwól agentowi skonfigurować Twoje konto",
+      "file": "agent-account-setup.md",
+      "subCat": "Konfiguracja konta agenta"
     }
   ]
 }

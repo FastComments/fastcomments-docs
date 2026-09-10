@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteca de React",
+  "name": "Biblioteca React",
   "pageHeader": "Agregar comentarios a tu aplicación React",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Demostración en vivo",
       "file": "live-demo-readme-generated.md",
@@ -11,11 +17,11 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {
-      "name": "Presentación en vivo",
+      "name": "Muestra en vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

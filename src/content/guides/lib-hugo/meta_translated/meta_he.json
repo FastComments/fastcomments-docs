@@ -1,7 +1,13 @@
 {
   "name": "ספריית Hugo",
-  "pageHeader": "הוספת תגובות לאתר Hugo שלך",
+  "pageHeader": "הוספת תגובות לאתר הוגו שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "הדגמה חיה",
       "file": "live-demo-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "התקנה",
       "file": "install-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {
@@ -27,33 +33,33 @@
       "type": "readme"
     },
     {
-      "name": "שורטקודים",
+      "name": "קיצורי קוד",
       "file": "shortcodes-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "שילוב ערכת נושא",
+      "name": "שילוב תבנית",
       "file": "theme-integration-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "ספירה המונית של תגובות",
+      "name": "ספירת תגובות מרובה",
       "file": "bulk-comment-counts-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "הגדרות",
+      "name": "תצורה",
       "file": "configuration-readme-generated.md",
-      "subCat": "הגדרות",
+      "subCat": "תצורה",
       "type": "readme"
     },
     {
-      "name": "מדריך תצורת הווידג'ט",
+      "name": "הפניה לתצורת וידג'ט",
       "file": "widget-configuration-reference-readme-generated.md",
-      "subCat": "מדריך ה-API",
+      "subCat": "הפניה ל-API",
       "type": "readme"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "name": "Webhooks",
+  "name": "Webhook",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
@@ -13,7 +13,7 @@
       "subCat": "Panoramica"
     },
     {
-      "name": "Configurazione per sviluppo locale",
+      "name": "Configurazione per lo sviluppo locale",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementazione"
     },
@@ -38,7 +38,12 @@
       "subCat": "Implementazione"
     },
     {
-      "name": "Come funziona e gestione dei tentativi di ritrasmissione",
+      "name": "Gestione dei webhook tramite API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementazione"
+    },
+    {
+      "name": "Come funziona e gestione dei tentativi",
       "file": "webhooks-how-it-works.md",
       "subCat": "Dietro le quinte"
     }

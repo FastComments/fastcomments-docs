@@ -3,6 +3,12 @@
   "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
     {
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
       "subCat": "Ξεκινώντας",

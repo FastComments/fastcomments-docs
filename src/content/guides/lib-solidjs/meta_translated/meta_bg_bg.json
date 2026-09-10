@@ -1,7 +1,13 @@
 {
-  "name": "Библиотека SolidJS",
+  "name": "SolidJS библиотека",
   "pageHeader": "Добавете коментари към вашето SolidJS приложение",
   "itemsOrdered": [
+    {
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Демонстрация на живо",
       "file": "live-demo-readme-generated.md",
@@ -11,17 +17,17 @@
     {
       "name": "Инсталиране",
       "file": "install-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
-      "name": "Използване",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Реагиране на промени в конфигурацията (императивен хендъл)",
+      "name": "Реагиране на промени в конфигурацията (императивен контрол)",
       "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
       "subCat": "Конфигурация",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Примери",
+      "name": "Витрина",
       "file": "showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

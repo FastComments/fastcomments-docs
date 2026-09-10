@@ -1,9 +1,15 @@
 {
   "name": "Vue 2 函式庫",
-  "pageHeader": "在你的 Vue 2 應用中新增留言功能",
+  "pageHeader": "在您的 Vue 2 應用程式中加入註解",
   "itemsOrdered": [
     {
-      "name": "即時示範",
+      "name": "AI 程式編寫代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "即時展示",
       "file": "live-showcase-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -11,23 +17,23 @@
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "快速入門",
+      "subCat": "入門指南",
       "type": "readme"
     },
     {
-      "name": "使用",
+      "name": "使用方式",
       "file": "usage-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "更新當前頁面（SPA 範例）",
+      "name": "更新當前頁面（單頁應用範例）",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "在生產環境中",
+      "name": "生產環境",
       "file": "in-production-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

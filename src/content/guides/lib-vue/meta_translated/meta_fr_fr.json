@@ -1,9 +1,15 @@
 {
   "name": "Bibliothèque Vue 2",
-  "pageHeader": "Ajouter des commentaires à votre application Vue 2",
+  "pageHeader": "Ajoutez des commentaires à votre application Vue 2",
   "itemsOrdered": [
     {
-      "name": "Démonstration en direct",
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Démo en direct",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -11,7 +17,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Statut de maintenance",
+      "name": "État de maintenance",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"

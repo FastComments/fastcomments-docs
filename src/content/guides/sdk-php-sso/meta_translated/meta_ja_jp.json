@@ -1,7 +1,13 @@
 {
   "name": "PHP SSO SDK",
-  "pageHeader": "FastComments の PHP SSO SDK",
+  "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
+    {
+      "name": "AI コーディングエージェント",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
     {
       "name": "インストール",
       "file": "installation-readme-generated.md",

@@ -1,15 +1,21 @@
 {
-  "name": "Biblioteca de Vue 3",
-  "pageHeader": "Añadir comentarios a tu aplicación Vue 3",
+  "name": "Biblioteca Vue 3",
+  "pageHeader": "Añade comentarios a tu aplicación Vue 3",
   "itemsOrdered": [
     {
-      "name": "Demostración en vivo",
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Demo en vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Presentación en vivo",
+      "name": "Muestra en vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -17,7 +23,7 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Todos los widgets y la documentación",
+      "name": "Todos los widgets y documentación",
       "file": "all-widgets-and-documentation-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

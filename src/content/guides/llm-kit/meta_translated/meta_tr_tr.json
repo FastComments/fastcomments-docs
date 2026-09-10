@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "LLM Kitini Edinin",
+      "name": "LLM Kitini Al",
       "file": "llm-kit-snippet.md",
       "subCat": "LLM Entegrasyonu"
     },
@@ -11,6 +11,11 @@
       "name": "MCP Sunucusu",
       "file": "mcp-server.md",
       "subCat": "MCP Sunucusu"
+    },
+    {
+      "name": "Bir Ajana Hesabınızı Kurmasını İzin Verin",
+      "file": "agent-account-setup.md",
+      "subCat": "Ajan Hesap Kurulumu"
     }
   ]
 }

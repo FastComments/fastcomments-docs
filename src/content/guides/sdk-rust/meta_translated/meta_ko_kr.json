@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Rust SDK",
   "itemsOrdered": [
     {
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "설치",
       "file": "installation-readme-generated.md",
       "subCat": "시작하기",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "참고 사항",
+      "name": "노트",
       "file": "notes-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -39,1243 +45,1243 @@
       "type": "api"
     },
     {
-      "name": "API 댓글 가져오기",
+      "name": "get_api_comments",
       "file": "get-api-comments-api-generated.md",
       "subCat": "API",
       "type": "api"
     },
     {
-      "name": "API 내보내기 상태 가져오기",
+      "name": "get_api_export_status",
       "file": "get-api-export-status-api-generated.md",
       "subCat": "API",
       "type": "api"
     },
     {
-      "name": "API ID 가져오기",
+      "name": "get_api_ids",
       "file": "get-api-ids-api-generated.md",
       "subCat": "API",
       "type": "api"
     },
     {
-      "name": "API 내보내기(POST)",
+      "name": "post_api_export",
       "file": "post-api-export-api-generated.md",
       "subCat": "API",
       "type": "api"
     },
     {
-      "name": "감사 로그 가져오기",
+      "name": "get_audit_logs",
       "file": "get-audit-logs-api-generated.md",
       "subCat": "감사 로그",
       "type": "api"
     },
     {
-      "name": "댓글 공개 차단",
+      "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
       "subCat": "댓글 차단",
       "type": "api"
     },
     {
-      "name": "댓글 공개 차단 해제",
+      "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
       "subCat": "댓글 차단",
       "type": "api"
     },
     {
-      "name": "차단된 댓글 확인",
+      "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
       "subCat": "차단된 댓글 확인",
       "type": "api"
     },
     {
-      "name": "댓글로부터 사용자 차단",
+      "name": "block_user_from_comment",
       "file": "block-user-from-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "공개 댓글 생성",
+      "name": "create_comment_public",
       "file": "create-comment-public-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 삭제",
+      "name": "delete_comment",
       "file": "delete-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "공개 댓글 삭제",
+      "name": "delete_comment_public",
       "file": "delete-comment-public-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 투표 삭제",
+      "name": "delete_comment_vote",
       "file": "delete-comment-vote-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 신고",
+      "name": "flag_comment",
       "file": "flag-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 가져오기",
+      "name": "get_comment",
       "file": "get-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 텍스트 가져오기",
+      "name": "get_comment_text",
       "file": "get-comment-text-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 투표 사용자 이름 가져오기",
+      "name": "get_comment_vote_user_names",
       "file": "get-comment-vote-user-names-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 목록 가져오기",
+      "name": "get_comments",
       "file": "get-comments-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "공개 댓글 가져오기",
+      "name": "get_comments_public",
       "file": "get-comments-public-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 잠금",
+      "name": "lock_comment",
       "file": "lock-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 고정",
+      "name": "pin_comment",
       "file": "pin-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 저장",
+      "name": "save_comment",
       "file": "save-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 일괄 저장",
+      "name": "save_comments_bulk",
       "file": "save-comments-bulk-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 텍스트 설정",
+      "name": "set_comment_text",
       "file": "set-comment-text-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글에서 사용자 차단 해제",
+      "name": "un_block_user_from_comment",
       "file": "un-block-user-from-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 신고 취소",
+      "name": "un_flag_comment",
       "file": "un-flag-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 잠금 해제",
+      "name": "un_lock_comment",
       "file": "un-lock-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 고정 해제",
+      "name": "un_pin_comment",
       "file": "un-pin-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글 수정",
+      "name": "update_comment",
       "file": "update-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "댓글에 투표",
+      "name": "vote_comment",
       "file": "vote-comment-api-generated.md",
       "subCat": "댓글",
       "type": "api"
     },
     {
-      "name": "사용자 댓글 가져오기",
+      "name": "get_comments_for_user",
       "file": "get-comments-for-user-api-generated.md",
-      "subCat": "사용자용 댓글",
+      "subCat": "댓글 사용자",
       "type": "api"
     },
     {
-      "name": "도메인 설정 추가",
+      "name": "add_domain_config",
       "file": "add-domain-config-api-generated.md",
       "subCat": "도메인 설정",
       "type": "api"
     },
     {
-      "name": "도메인 설정 삭제",
+      "name": "delete_domain_config",
       "file": "delete-domain-config-api-generated.md",
       "subCat": "도메인 설정",
       "type": "api"
     },
     {
-      "name": "도메인 설정 가져오기",
+      "name": "get_domain_config",
       "file": "get-domain-config-api-generated.md",
       "subCat": "도메인 설정",
       "type": "api"
     },
     {
-      "name": "도메인 설정 목록 가져오기",
+      "name": "get_domain_configs",
       "file": "get-domain-configs-api-generated.md",
       "subCat": "도메인 설정",
       "type": "api"
     },
     {
-      "name": "도메인 설정 부분 수정",
+      "name": "patch_domain_config",
       "file": "patch-domain-config-api-generated.md",
       "subCat": "도메인 설정",
       "type": "api"
     },
     {
-      "name": "도메인 설정 교체",
+      "name": "put_domain_config",
       "file": "put-domain-config-api-generated.md",
       "subCat": "도메인 설정",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 생성",
+      "name": "create_email_template",
       "file": "create-email-template-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 삭제",
+      "name": "delete_email_template",
       "file": "delete-email-template-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 렌더 오류 삭제",
+      "name": "delete_email_template_render_error",
       "file": "delete-email-template-render-error-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 가져오기",
+      "name": "get_email_template",
       "file": "get-email-template-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 정의 가져오기",
+      "name": "get_email_template_definitions",
       "file": "get-email-template-definitions-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 렌더 오류 가져오기",
+      "name": "get_email_template_render_errors",
       "file": "get-email-template-render-errors-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 목록 가져오기",
+      "name": "get_email_templates",
       "file": "get-email-templates-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 렌더링",
+      "name": "render_email_template",
       "file": "render-email-template-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이메일 템플릿 업데이트",
+      "name": "update_email_template",
       "file": "update-email-template-api-generated.md",
       "subCat": "이메일 템플릿",
       "type": "api"
     },
     {
-      "name": "이벤트 로그 가져오기",
+      "name": "get_event_log",
       "file": "get-event-log-api-generated.md",
       "subCat": "이벤트 로그",
       "type": "api"
     },
     {
-      "name": "전역 이벤트 로그 가져오기",
+      "name": "get_global_event_log",
       "file": "get-global-event-log-api-generated.md",
       "subCat": "이벤트 로그",
       "type": "api"
     },
     {
-      "name": "피드 게시물 생성",
+      "name": "create_feed_post",
       "file": "create-feed-post-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 피드 게시물 생성",
+      "name": "create_feed_post_public",
       "file": "create-feed-post-public-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 피드 게시물 삭제",
+      "name": "delete_feed_post_public",
       "file": "delete-feed-post-public-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "피드 게시물 가져오기",
+      "name": "get_feed_posts",
       "file": "get-feed-posts-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 피드 게시물 가져오기",
+      "name": "get_feed_posts_public",
       "file": "get-feed-posts-public-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "피드 게시물 통계 가져오기",
+      "name": "get_feed_posts_stats",
       "file": "get-feed-posts-stats-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 사용자 반응 가져오기",
+      "name": "get_user_reacts_public",
       "file": "get-user-reacts-public-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 피드 게시물에 리액트",
+      "name": "react_feed_post_public",
       "file": "react-feed-post-public-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "피드 게시물 업데이트",
+      "name": "update_feed_post",
       "file": "update-feed-post-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 피드 게시물 업데이트",
+      "name": "update_feed_post_public",
       "file": "update-feed-post-public-api-generated.md",
       "subCat": "피드 게시물",
       "type": "api"
     },
     {
-      "name": "공개 댓글 신고",
+      "name": "flag_comment_public",
       "file": "flag-comment-public-api-generated.md",
       "subCat": "댓글 신고",
       "type": "api"
     },
     {
-      "name": "큰 GIF 가져오기",
+      "name": "get_gif_large",
       "file": "get-gif-large-api-generated.md",
       "subCat": "GIF",
       "type": "api"
     },
     {
-      "name": "GIF 검색",
+      "name": "get_gifs_search",
       "file": "get-gifs-search-api-generated.md",
       "subCat": "GIF",
       "type": "api"
     },
     {
-      "name": "인기 GIF 가져오기",
+      "name": "get_gifs_trending",
       "file": "get-gifs-trending-api-generated.md",
       "subCat": "GIF",
       "type": "api"
     },
     {
-      "name": "해시태그 추가",
+      "name": "add_hash_tag",
       "file": "add-hash-tag-api-generated.md",
       "subCat": "해시태그",
       "type": "api"
     },
     {
-      "name": "해시태그 일괄 추가",
+      "name": "add_hash_tags_bulk",
       "file": "add-hash-tags-bulk-api-generated.md",
       "subCat": "해시태그",
       "type": "api"
     },
     {
-      "name": "해시태그 삭제",
+      "name": "delete_hash_tag",
       "file": "delete-hash-tag-api-generated.md",
       "subCat": "해시태그",
       "type": "api"
     },
     {
-      "name": "해시태그 가져오기",
+      "name": "get_hash_tags",
       "file": "get-hash-tags-api-generated.md",
       "subCat": "해시태그",
       "type": "api"
     },
     {
-      "name": "해시태그 부분 수정",
+      "name": "patch_hash_tag",
       "file": "patch-hash-tag-api-generated.md",
       "subCat": "해시태그",
       "type": "api"
     },
     {
-      "name": "중재 투표 삭제",
+      "name": "delete_moderation_vote",
       "file": "delete-moderation-vote-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글에서 차단된 사용자 가져오기",
+      "name": "get_ban_users_from_comment",
       "file": "get-ban-users-from-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 차단 상태 가져오기",
+      "name": "get_comment_ban_status",
       "file": "get-comment-ban-status-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 답글 가져오기",
+      "name": "get_comment_children",
       "file": "get-comment-children-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "개수 가져오기",
+      "name": "get_count",
       "file": "get-count-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "카운트들 가져오기",
+      "name": "get_counts",
       "file": "get-counts-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "로그 가져오기",
+      "name": "get_logs",
       "file": "get-logs-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "수동 배지 가져오기",
+      "name": "get_manual_badges",
       "file": "get-manual-badges-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "사용자용 수동 배지 가져오기",
+      "name": "get_manual_badges_for_user",
       "file": "get-manual-badges-for-user-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "중재용 댓글 가져오기",
+      "name": "get_moderation_comment",
       "file": "get-moderation-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "중재용 댓글 텍스트 가져오기",
+      "name": "get_moderation_comment_text",
       "file": "get-moderation-comment-text-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "사전 차단 요약 가져오기",
+      "name": "get_pre_ban_summary",
       "file": "get-pre-ban-summary-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "검색 댓글 요약 가져오기",
+      "name": "get_search_comments_summary",
       "file": "get-search-comments-summary-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "검색 페이지 가져오기",
+      "name": "get_search_pages",
       "file": "get-search-pages-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "검색 사이트 가져오기",
+      "name": "get_search_sites",
       "file": "get-search-sites-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "검색 제안 가져오기",
+      "name": "get_search_suggest",
       "file": "get-search-suggest-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "검색 사용자 가져오기",
+      "name": "get_search_users",
       "file": "get-search-users-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "신뢰 지수 가져오기",
+      "name": "get_trust_factor",
       "file": "get-trust-factor-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "사용자 차단 선호도 가져오기",
+      "name": "get_user_ban_preference",
       "file": "get-user-ban-preference-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "사용자 내부 프로필 가져오기",
+      "name": "get_user_internal_profile",
       "file": "get-user-internal-profile-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 투표 조정(POST)",
+      "name": "post_adjust_comment_votes",
       "file": "post-adjust-comment-votes-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글에서 사용자 차단(POST)",
+      "name": "post_ban_user_from_comment",
       "file": "post-ban-user-from-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "사용자 차단 취소(POST)",
+      "name": "post_ban_user_undo",
       "file": "post-ban-user-undo-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "사전 차단 요약 일괄(POST)",
+      "name": "post_bulk_pre_ban_summary",
       "file": "post-bulk-pre-ban-summary-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "ID로 댓글 조회(POST)",
+      "name": "post_comments_by_ids",
       "file": "post-comments-by-ids-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 신고(POST)",
+      "name": "post_flag_comment",
       "file": "post-flag-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 제거(POST)",
+      "name": "post_remove_comment",
       "file": "post-remove-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "삭제된 댓글 복원(POST)",
+      "name": "post_restore_deleted_comment",
       "file": "post-restore-deleted-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 승인 상태 설정(POST)",
+      "name": "post_set_comment_approval_status",
       "file": "post-set-comment-approval-status-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 검토 상태 설정(POST)",
+      "name": "post_set_comment_review_status",
       "file": "post-set-comment-review-status-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 스팸 상태 설정(POST)",
+      "name": "post_set_comment_spam_status",
       "file": "post-set-comment-spam-status-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 텍스트 설정(POST)",
+      "name": "post_set_comment_text",
       "file": "post-set-comment-text-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "댓글 신고 취소(POST)",
+      "name": "post_un_flag_comment",
       "file": "post-un-flag-comment-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "투표 제출(POST)",
+      "name": "post_vote",
       "file": "post-vote-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "배지 수여(PUT)",
+      "name": "put_award_badge",
       "file": "put-award-badge-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "스레드 닫기(PUT)",
+      "name": "put_close_thread",
       "file": "put-close-thread-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "배지 제거(PUT)",
+      "name": "put_remove_badge",
       "file": "put-remove-badge-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "스레드 재개방(PUT)",
+      "name": "put_reopen_thread",
       "file": "put-reopen-thread-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "신뢰 지수 설정",
+      "name": "set_trust_factor",
       "file": "set-trust-factor-api-generated.md",
       "subCat": "중재",
       "type": "api"
     },
     {
-      "name": "모더레이터 생성",
+      "name": "create_moderator",
       "file": "create-moderator-api-generated.md",
-      "subCat": "모더레이터",
+      "subCat": "중재자",
       "type": "api"
     },
     {
-      "name": "모더레이터 삭제",
+      "name": "delete_moderator",
       "file": "delete-moderator-api-generated.md",
-      "subCat": "모더레이터",
+      "subCat": "중재자",
       "type": "api"
     },
     {
-      "name": "모더레이터 가져오기",
+      "name": "get_moderator",
       "file": "get-moderator-api-generated.md",
-      "subCat": "모더레이터",
+      "subCat": "중재자",
       "type": "api"
     },
     {
-      "name": "모더레이터 목록 가져오기",
+      "name": "get_moderators",
       "file": "get-moderators-api-generated.md",
-      "subCat": "모더레이터",
+      "subCat": "중재자",
       "type": "api"
     },
     {
-      "name": "초대 전송",
+      "name": "send_invite",
       "file": "send-invite-api-generated.md",
-      "subCat": "모더레이터",
+      "subCat": "중재자",
       "type": "api"
     },
     {
-      "name": "모더레이터 업데이트",
+      "name": "update_moderator",
       "file": "update-moderator-api-generated.md",
-      "subCat": "모더레이터",
+      "subCat": "중재자",
       "type": "api"
     },
     {
-      "name": "알림 수 삭제",
+      "name": "delete_notification_count",
       "file": "delete-notification-count-api-generated.md",
       "subCat": "알림 수",
       "type": "api"
     },
     {
-      "name": "캐시된 알림 수 가져오기",
+      "name": "get_cached_notification_count",
       "file": "get-cached-notification-count-api-generated.md",
       "subCat": "알림 수",
       "type": "api"
     },
     {
-      "name": "알림 수 가져오기",
+      "name": "get_notification_count",
       "file": "get-notification-count-api-generated.md",
       "subCat": "알림",
       "type": "api"
     },
     {
-      "name": "알림 가져오기",
+      "name": "get_notifications",
       "file": "get-notifications-api-generated.md",
       "subCat": "알림",
       "type": "api"
     },
     {
-      "name": "알림 업데이트",
+      "name": "update_notification",
       "file": "update-notification-api-generated.md",
       "subCat": "알림",
       "type": "api"
     },
     {
-      "name": "v1 페이지 리액트 생성",
+      "name": "create_v1_page_react",
       "file": "create-v1-page-react-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "v2 페이지 리액트 생성",
+      "name": "create_v2_page_react",
       "file": "create-v2-page-react-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "v1 페이지 리액트 삭제",
+      "name": "delete_v1_page_react",
       "file": "delete-v1-page-react-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "v2 페이지 리액트 삭제",
+      "name": "delete_v2_page_react",
       "file": "delete-v2-page-react-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "v1 페이지 좋아요 가져오기",
+      "name": "get_v1_page_likes",
       "file": "get-v1-page-likes-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "v2 페이지 리액트 사용자 가져오기",
+      "name": "get_v2_page_react_users",
       "file": "get-v2-page-react-users-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "v2 페이지 리액트 가져오기",
+      "name": "get_v2_page_reacts",
       "file": "get-v2-page-reacts-api-generated.md",
       "subCat": "페이지 반응",
       "type": "api"
     },
     {
-      "name": "페이지 추가",
+      "name": "add_page",
       "file": "add-page-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "페이지 삭제",
+      "name": "delete_page",
       "file": "delete-page-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "오프라인 사용자 가져오기",
+      "name": "get_offline_users",
       "file": "get-offline-users-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "온라인 사용자 가져오기",
+      "name": "get_online_users",
       "file": "get-online-users-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "URL ID로 페이지 가져오기",
+      "name": "get_page_by_urlid",
       "file": "get-page-by-urlid-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "페이지 목록 가져오기",
+      "name": "get_pages",
       "file": "get-pages-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "공개 페이지 가져오기",
+      "name": "get_pages_public",
       "file": "get-pages-public-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "사용자 정보 가져오기",
+      "name": "get_users_info",
       "file": "get-users-info-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "페이지 부분 수정",
+      "name": "patch_page",
       "file": "patch-page-api-generated.md",
       "subCat": "페이지",
       "type": "api"
     },
     {
-      "name": "대기 중인 웹훅 이벤트 삭제",
+      "name": "delete_pending_webhook_event",
       "file": "delete-pending-webhook-event-api-generated.md",
-      "subCat": "대기 중인 웹훅 이벤트",
+      "subCat": "보류 중인 웹훅 이벤트",
       "type": "api"
     },
     {
-      "name": "대기 중인 웹훅 이벤트 수 가져오기",
+      "name": "get_pending_webhook_event_count",
       "file": "get-pending-webhook-event-count-api-generated.md",
-      "subCat": "대기 중인 웹훅 이벤트",
+      "subCat": "보류 중인 웹훅 이벤트",
       "type": "api"
     },
     {
-      "name": "대기 중인 웹훅 이벤트 가져오기",
+      "name": "get_pending_webhook_events",
       "file": "get-pending-webhook-events-api-generated.md",
-      "subCat": "대기 중인 웹훅 이벤트",
+      "subCat": "보류 중인 웹훅 이벤트",
       "type": "api"
     },
     {
-      "name": "질문 설정 생성",
+      "name": "create_question_config",
       "file": "create-question-config-api-generated.md",
       "subCat": "질문 설정",
       "type": "api"
     },
     {
-      "name": "질문 설정 삭제",
+      "name": "delete_question_config",
       "file": "delete-question-config-api-generated.md",
       "subCat": "질문 설정",
       "type": "api"
     },
     {
-      "name": "질문 설정 가져오기",
+      "name": "get_question_config",
       "file": "get-question-config-api-generated.md",
       "subCat": "질문 설정",
       "type": "api"
     },
     {
-      "name": "질문 설정 목록 가져오기",
+      "name": "get_question_configs",
       "file": "get-question-configs-api-generated.md",
       "subCat": "질문 설정",
       "type": "api"
     },
     {
-      "name": "질문 설정 업데이트",
+      "name": "update_question_config",
       "file": "update-question-config-api-generated.md",
       "subCat": "질문 설정",
       "type": "api"
     },
     {
-      "name": "질문 결과 생성",
+      "name": "create_question_result",
       "file": "create-question-result-api-generated.md",
       "subCat": "질문 결과",
       "type": "api"
     },
     {
-      "name": "질문 결과 삭제",
+      "name": "delete_question_result",
       "file": "delete-question-result-api-generated.md",
       "subCat": "질문 결과",
       "type": "api"
     },
     {
-      "name": "질문 결과 가져오기",
+      "name": "get_question_result",
       "file": "get-question-result-api-generated.md",
       "subCat": "질문 결과",
       "type": "api"
     },
     {
-      "name": "질문 결과 목록 가져오기",
+      "name": "get_question_results",
       "file": "get-question-results-api-generated.md",
       "subCat": "질문 결과",
       "type": "api"
     },
     {
-      "name": "질문 결과 업데이트",
+      "name": "update_question_result",
       "file": "update-question-result-api-generated.md",
       "subCat": "질문 결과",
       "type": "api"
     },
     {
-      "name": "질문 결과 집계",
+      "name": "aggregate_question_results",
       "file": "aggregate-question-results-api-generated.md",
       "subCat": "질문 결과 집계",
       "type": "api"
     },
     {
-      "name": "질문 결과 일괄 집계",
+      "name": "bulk_aggregate_question_results",
       "file": "bulk-aggregate-question-results-api-generated.md",
       "subCat": "질문 결과 집계",
       "type": "api"
     },
     {
-      "name": "댓글을 질문 결과와 결합",
+      "name": "combine_comments_with_question_results",
       "file": "combine-comments-with-question-results-api-generated.md",
       "subCat": "질문 결과 집계",
       "type": "api"
     },
     {
-      "name": "SSO 사용자 추가",
+      "name": "add_sso_user",
       "file": "add-sso-user-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "SSO 사용자 삭제",
+      "name": "delete_sso_user",
       "file": "delete-sso-user-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "이메일로 SSO 사용자 가져오기",
+      "name": "get_sso_user_by_email",
       "file": "get-sso-user-by-email-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "ID로 SSO 사용자 가져오기",
+      "name": "get_sso_user_by_id",
       "file": "get-sso-user-by-id-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "SSO 사용자 목록 가져오기",
+      "name": "get_sso_users",
       "file": "get-sso-users-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "SSO 사용자 부분 수정",
+      "name": "patch_sso_user",
       "file": "patch-sso-user-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "SSO 사용자 교체",
+      "name": "put_sso_user",
       "file": "put-sso-user-api-generated.md",
       "subCat": "SSO 사용자",
       "type": "api"
     },
     {
-      "name": "구독 생성",
+      "name": "create_subscription",
       "file": "create-subscription-api-generated.md",
       "subCat": "구독",
       "type": "api"
     },
     {
-      "name": "구독 삭제",
+      "name": "delete_subscription",
       "file": "delete-subscription-api-generated.md",
       "subCat": "구독",
       "type": "api"
     },
     {
-      "name": "구독 목록 가져오기",
+      "name": "get_subscriptions",
       "file": "get-subscriptions-api-generated.md",
       "subCat": "구독",
       "type": "api"
     },
     {
-      "name": "구독 업데이트",
+      "name": "update_subscription",
       "file": "update-subscription-api-generated.md",
       "subCat": "구독",
       "type": "api"
     },
     {
-      "name": "테넌트 일일 사용량 가져오기",
+      "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
       "subCat": "테넌트 일일 사용량",
       "type": "api"
     },
     {
-      "name": "테넌트 패키지 생성",
+      "name": "create_tenant_package",
       "file": "create-tenant-package-api-generated.md",
       "subCat": "테넌트 패키지",
       "type": "api"
     },
     {
-      "name": "테넌트 패키지 삭제",
+      "name": "delete_tenant_package",
       "file": "delete-tenant-package-api-generated.md",
       "subCat": "테넌트 패키지",
       "type": "api"
     },
     {
-      "name": "테넌트 패키지 가져오기",
+      "name": "get_tenant_package",
       "file": "get-tenant-package-api-generated.md",
       "subCat": "테넌트 패키지",
       "type": "api"
     },
     {
-      "name": "테넌트 패키지 목록 가져오기",
+      "name": "get_tenant_packages",
       "file": "get-tenant-packages-api-generated.md",
       "subCat": "테넌트 패키지",
       "type": "api"
     },
     {
-      "name": "테넌트 패키지 교체",
+      "name": "replace_tenant_package",
       "file": "replace-tenant-package-api-generated.md",
       "subCat": "테넌트 패키지",
       "type": "api"
     },
     {
-      "name": "테넌트 패키지 업데이트",
+      "name": "update_tenant_package",
       "file": "update-tenant-package-api-generated.md",
       "subCat": "테넌트 패키지",
       "type": "api"
     },
     {
-      "name": "테넌트 사용자 생성",
+      "name": "create_tenant_user",
       "file": "create-tenant-user-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "테넌트 사용자 삭제",
+      "name": "delete_tenant_user",
       "file": "delete-tenant-user-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "테넌트 사용자 가져오기",
+      "name": "get_tenant_user",
       "file": "get-tenant-user-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "테넌트 사용자 목록 가져오기",
+      "name": "get_tenant_users",
       "file": "get-tenant-users-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "테넌트 사용자 교체",
+      "name": "replace_tenant_user",
       "file": "replace-tenant-user-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "로그인 링크 전송",
+      "name": "send_login_link",
       "file": "send-login-link-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "테넌트 사용자 업데이트",
+      "name": "update_tenant_user",
       "file": "update-tenant-user-api-generated.md",
       "subCat": "테넌트 사용자",
       "type": "api"
     },
     {
-      "name": "테넌트 생성",
+      "name": "create_tenant",
       "file": "create-tenant-api-generated.md",
       "subCat": "테넌트",
       "type": "api"
     },
     {
-      "name": "테넌트 삭제",
+      "name": "delete_tenant",
       "file": "delete-tenant-api-generated.md",
       "subCat": "테넌트",
       "type": "api"
     },
     {
-      "name": "테넌트 가져오기",
+      "name": "get_tenant",
       "file": "get-tenant-api-generated.md",
       "subCat": "테넌트",
       "type": "api"
     },
     {
-      "name": "테넌트 목록 가져오기",
+      "name": "get_tenants",
       "file": "get-tenants-api-generated.md",
       "subCat": "테넌트",
       "type": "api"
     },
     {
-      "name": "테넌트 업데이트",
+      "name": "update_tenant",
       "file": "update-tenant-api-generated.md",
       "subCat": "테넌트",
       "type": "api"
     },
     {
-      "name": "티켓 상태 변경",
+      "name": "change_ticket_state",
       "file": "change-ticket-state-api-generated.md",
       "subCat": "티켓",
       "type": "api"
     },
     {
-      "name": "티켓 생성",
+      "name": "create_ticket",
       "file": "create-ticket-api-generated.md",
       "subCat": "티켓",
       "type": "api"
     },
     {
-      "name": "티켓 가져오기",
+      "name": "get_ticket",
       "file": "get-ticket-api-generated.md",
       "subCat": "티켓",
       "type": "api"
     },
     {
-      "name": "티켓 목록 가져오기",
+      "name": "get_tickets",
       "file": "get-tickets-api-generated.md",
       "subCat": "티켓",
       "type": "api"
     },
     {
-      "name": "번역 가져오기",
+      "name": "get_translations",
       "file": "get-translations-api-generated.md",
       "subCat": "번역",
       "type": "api"
     },
     {
-      "name": "이미지 업로드",
+      "name": "upload_image",
       "file": "upload-image-api-generated.md",
       "subCat": "이미지 업로드",
       "type": "api"
     },
     {
-      "name": "ID로 사용자 배지 진행상황 가져오기",
+      "name": "get_user_badge_progress_by_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
       "subCat": "사용자 배지 진행",
       "type": "api"
     },
     {
-      "name": "사용자 ID로 사용자 배지 진행상황 가져오기",
+      "name": "get_user_badge_progress_by_user_id",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
       "subCat": "사용자 배지 진행",
       "type": "api"
     },
     {
-      "name": "사용자 배지 진행 목록 가져오기",
+      "name": "get_user_badge_progress_list",
       "file": "get-user-badge-progress-list-api-generated.md",
       "subCat": "사용자 배지 진행",
       "type": "api"
     },
     {
-      "name": "사용자 배지 생성",
+      "name": "create_user_badge",
       "file": "create-user-badge-api-generated.md",
       "subCat": "사용자 배지",
       "type": "api"
     },
     {
-      "name": "사용자 배지 삭제",
+      "name": "delete_user_badge",
       "file": "delete-user-badge-api-generated.md",
       "subCat": "사용자 배지",
       "type": "api"
     },
     {
-      "name": "사용자 배지 가져오기",
+      "name": "get_user_badge",
       "file": "get-user-badge-api-generated.md",
       "subCat": "사용자 배지",
       "type": "api"
     },
     {
-      "name": "사용자 배지 목록 가져오기",
+      "name": "get_user_badges",
       "file": "get-user-badges-api-generated.md",
       "subCat": "사용자 배지",
       "type": "api"
     },
     {
-      "name": "사용자 배지 업데이트",
+      "name": "update_user_badge",
       "file": "update-user-badge-api-generated.md",
       "subCat": "사용자 배지",
       "type": "api"
     },
     {
-      "name": "사용자 알림 수 가져오기",
+      "name": "get_user_notification_count",
       "file": "get-user-notification-count-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 알림 가져오기",
+      "name": "get_user_notifications",
       "file": "get-user-notifications-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 알림 수 리셋",
+      "name": "reset_user_notification_count",
       "file": "reset-user-notification-count-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 알림 리셋",
+      "name": "reset_user_notifications",
       "file": "reset-user-notifications-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 댓글 구독 상태 업데이트",
+      "name": "update_user_notification_comment_subscription_status",
       "file": "update-user-notification-comment-subscription-status-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 페이지 구독 상태 업데이트",
+      "name": "update_user_notification_page_subscription_status",
       "file": "update-user-notification-page-subscription-status-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 알림 상태 업데이트",
+      "name": "update_user_notification_status",
       "file": "update-user-notification-status-api-generated.md",
       "subCat": "사용자 알림",
       "type": "api"
     },
     {
-      "name": "사용자 접속 상태들 가져오기",
+      "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "사용자 접속 상태",
+      "subCat": "사용자 상태",
       "type": "api"
     },
     {
-      "name": "사용자 검색",
+      "name": "search_users",
       "file": "search-users-api-generated.md",
       "subCat": "사용자 검색",
       "type": "api"
     },
     {
-      "name": "사용자 가져오기",
+      "name": "get_user",
       "file": "get-user-api-generated.md",
       "subCat": "사용자",
       "type": "api"
     },
     {
-      "name": "투표 생성",
+      "name": "create_vote",
       "file": "create-vote-api-generated.md",
       "subCat": "투표",
       "type": "api"
     },
     {
-      "name": "투표 삭제",
+      "name": "delete_vote",
       "file": "delete-vote-api-generated.md",
       "subCat": "투표",
       "type": "api"
     },
     {
-      "name": "투표 가져오기",
+      "name": "get_votes",
       "file": "get-votes-api-generated.md",
       "subCat": "투표",
       "type": "api"
     },
     {
-      "name": "사용자용 투표 가져오기",
+      "name": "get_votes_for_user",
       "file": "get-votes-for-user-api-generated.md",
       "subCat": "투표",
       "type": "api"

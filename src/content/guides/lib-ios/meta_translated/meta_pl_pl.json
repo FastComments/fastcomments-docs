@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej aplikacji iOS",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Funkcje",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -17,7 +23,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Komentarze w wątkach",
+      "name": "Wątkowane komentarze",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Dostosowywanie wyglądu",
+      "name": "Tematyzacja",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -75,7 +81,7 @@
       "type": "readme"
     },
     {
-      "name": "Stronicowanie",
+      "name": "Paginacja",
       "file": "pagination-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -105,7 +111,7 @@
       "type": "readme"
     },
     {
-      "name": "Wzmianki użytkowników",
+      "name": "Wzmianki o użytkownikach",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -129,7 +135,7 @@
       "type": "readme"
     },
     {
-      "name": "Przykładowa aplikacja",
+      "name": "Aplikacja przykładowa",
       "file": "example-app-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"

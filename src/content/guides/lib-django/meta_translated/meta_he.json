@@ -3,6 +3,12 @@
   "pageHeader": "הוספת תגובות לאפליקציית Django שלך",
   "itemsOrdered": [
     {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
       "name": "דרישות",
       "file": "requirements-readme-generated.md",
       "subCat": "תיעוד",
@@ -21,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "דרישות קדם ל-SSO אוטומטי",
+      "name": "דרישות מוקדמות ל-SSO אוטומטי",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "תגי וידג'ט",
+      "name": "תגיות וידג'ט",
       "file": "widget-tags-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -41,7 +47,7 @@
     {
       "name": "גישה ל-API בצד השרת",
       "file": "server-side-api-access-readme-generated.md",
-      "subCat": "מדריך API",
+      "subCat": "תיעוד API",
       "type": "readme"
     },
     {
@@ -57,9 +63,9 @@
       "type": "readme"
     },
     {
-      "name": "מדריך ההגדרות",
+      "name": "תיעוד הגדרות",
       "file": "settings-reference-readme-generated.md",
-      "subCat": "מדריך API",
+      "subCat": "תיעוד API",
       "type": "readme"
     },
     {

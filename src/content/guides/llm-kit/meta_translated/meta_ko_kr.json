@@ -11,6 +11,11 @@
       "name": "MCP 서버",
       "file": "mcp-server.md",
       "subCat": "MCP 서버"
+    },
+    {
+      "name": "에이전트가 계정을 설정하도록 하세요",
+      "file": "agent-account-setup.md",
+      "subCat": "에이전트 계정 설정"
     }
   ]
 }

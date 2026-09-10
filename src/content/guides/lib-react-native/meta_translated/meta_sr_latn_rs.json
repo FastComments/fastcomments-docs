@@ -1,9 +1,15 @@
 {
-  "name": "Biblioteka za React Native",
-  "pageHeader": "Dodajte vidžete za komentare u vašu React Native aplikaciju",
+  "name": "React Native biblioteka",
+  "pageHeader": "Dodajte widgete za komentare u vašu React Native aplikaciju",
   "itemsOrdered": [
     {
-      "name": "Prikaz uživo",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Uživo prikaz",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -15,19 +21,19 @@
       "type": "readme"
     },
     {
-      "name": "Razmotrite nativni SDK",
+      "name": "Razmotrite Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Upotreba - Vidžet za komentare uživo",
+      "name": "Upotreba - Živi widget za komentare",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Upotreba - Vidžet za ćaskanje uživo",
+      "name": "Upotreba - Živi widget za čet",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Peer zavisnosti",
+      "name": "Zavisnosti vršnjaka",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

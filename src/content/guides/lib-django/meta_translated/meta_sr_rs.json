@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u vašu Django aplikaciju",
   "itemsOrdered": [
     {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Zahtevi",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "SSO (jedinstvena prijava)",
+      "name": "SSO (Jedinstvena prijava)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Pristup API-ju na strani servera",
+      "name": "Pristup API-ju na serveru",
       "file": "server-side-api-access-readme-generated.md",
       "subCat": "API referenca",
       "type": "readme"

@@ -1,16 +1,16 @@
 ### De FastComments API
 
-FastComments biedt een API voor het werken met veel resources. Bouw integraties met ons platform, of zelfs je eigen clients!
+FastComments biedt een API voor interactie met vele resources. Bouw integraties met ons platform, of zelfs je eigen clients!
 
-In deze documentatie vind je alle door de API ondersteunde resources gedocumenteerd met hun request- en response-typen.
+In deze documentatie vind je alle ondersteunde resources van de API, gedocumenteerd met hun aanvraag- en responstypen.
 
 Voor Enterprise-klanten wordt alle API-toegang vastgelegd in het Audit Log.
 
-### Generated SDKs
+### Gegenereerde SDK's
 
-FastComments genereert nu een [API Spec](https://fastcomments.com/js/swagger.json) uit onze code (dit is nog niet compleet, maar bevat al veel APIs).
+FastComments genereert nu een [API Spec](https://fastcomments.com/js/swagger.json) vanuit onze code (dit is nog niet volledig, maar bevat veel API's).
 
-We hebben nu ook SDKs voor populaire talen:
+We hebben nu ook SDK's voor populaire talen:
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -26,25 +26,31 @@ We hebben nu ook SDKs voor populaire talen:
 
 ### Authenticatie
 
-De API wordt geauthenticeerd door je [API-sleutel](https://fastcomments.com/auth/my-account/api-secret) mee te geven als ofwel een `X-API-KEY` header of als `API_KEY` query parameter. Je hebt ook je `tenantId` nodig om API-aanroepen te doen. Deze is op dezelfde pagina als je API-sleutel terug te vinden.
+De API wordt geauthenticeerd door je [api key](https://fastcomments.com/auth/my-account/api-secret) mee te geven als een `X-API-KEY` header of `API_KEY` query‑parameter. Je hebt ook je `tenantId` nodig voor het doen van API‑aanroepen. Deze kan worden opgehaald vanaf dezelfde pagina als je api‑key.
 
-### Beveiligingsnotitie
+### Beveiligingsopmerking
 
-Deze routes zijn bedoeld om vanaf een **server** aangeroepen te worden. __DO NOT__ roep ze niet vanaf een browser aan. Dat zal je API-sleutel blootstellen — hiermee krijgt iedereen die de broncode van een pagina kan bekijken volledige toegang tot je account!
+Deze routes zijn bedoeld om vanaf een **server** te worden aangeroepen. __ROEP ZE NIET__ aan vanuit een browser. Dit zou je API‑key blootleggen – dit geeft volledige toegang tot je account aan iedereen die de broncode van een pagina kan bekijken!
 
-#### Authenticatie-optie één - Headers
+#### Authenticatieoptie één - Headers
 
 - Header: `X-API-KEY`
 - Header: `X-TENANT-ID`
 
-#### Authenticatie-optie twee - Query-parameters
+#### Authenticatieoptie twee - Queryparameters
 
 - Query Param: `API_KEY`
 - Query Param: `tenantId`
 
+#### Authenticatieoptie drie - OAuth Bearer Token
+
+- Header: `Authorization: Bearer fcat_...`
+
+Applicaties die via de [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) verbinden, verkrijgen een token via OAuth in plaats van een API‑key. Dat token werkt op elk endpoint hier. De tenant wordt geïmpliceerd door het token, dus `tenantId` is optioneel, maar moet overeenkomen met het token wanneer het wordt opgegeven. `GET`‑verzoeken hebben de `read`‑scope nodig en elke andere methode heeft de `write`‑scope nodig. Ontdekking start op `https://fastcomments.com/.well-known/oauth-authorization-server`.
+
 ### Je eigen schrijfbewerkingen lezen
 
-FastComments biedt Active-Active beschikbaarheid. Verzoeken van je datacenter worden gerouteerd naar [het dichtstbijzijnde point of presence](https://sophon.fastcomments.com/) bij jou. Dit is automatisch, en normaal gesproken kun je de read-your-write-semantiek waarnemen. Als je er zeker van wilt zijn dat je je eigen schrijfbewerkingen leest, kun je je verzoeken vastzetten op een bepaald gebied door dat gebied als API-host te gebruiken (dit is echter meestal niet nodig voor de meeste integraties):
+FastComments biedt Active‑Active beschikbaarheid. Verzoeken vanuit je datacenter worden gerouteerd naar [het dichtstbijzijnde point of presence](https://sophon.fastcomments.com/) van jou. Dit gebeurt automatisch, en normaal kun je de read‑your‑write‑semantiek observeren. Als je er zeker van wilt zijn dat je je eigen schrijfbewerkingen leest, kun je je verzoeken vastzetten op een bepaalde regio door die regio als API‑host te gebruiken (hoewel dit meestal niet nodig is voor de meeste integraties):
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -55,4 +61,4 @@ FastComments biedt Active-Active beschikbaarheid. Verzoeken van je datacenter wo
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-Houd er rekening mee dat als je dit doet je mogelijk een terugvaloptie wilt definiëren, omdat we in het verleden entrypoint-nodes hebben afgeschaft en nieuwe namen gebruiken voor de overschakeling.
+Let op dat je, als je dit doet, mogelijk een fallback wilt definiëren, aangezien we in het verleden entrypoint‑nodes hebben uitgefaseerd en nieuwe namen gebruiken voor de overschakeling.

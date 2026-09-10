@@ -1,7 +1,13 @@
 {
-  "name": "Пакет за Laravel",
+  "name": "Laravel пакет",
   "pageHeader": "Добавете коментари към вашето Laravel приложение",
   "itemsOrdered": [
+    {
+      "name": "AI агенти за кодиране",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Изисквания",
       "file": "requirements-readme-generated.md",
@@ -11,17 +17,17 @@
     {
       "name": "Инсталация",
       "file": "installation-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
-      "name": "Компоненти Blade",
+      "name": "Blade компоненти",
       "file": "blade-components-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Еднократно влизане (SSO)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -29,17 +35,17 @@
     {
       "name": "Достъп до API",
       "file": "api-access-readme-generated.md",
-      "subCat": "API справочник",
+      "subCat": "API справка",
       "type": "readme"
     },
     {
-      "name": "Справочник за конфигурация",
+      "name": "Справка за конфигурация",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "API справочник",
+      "subCat": "API справка",
       "type": "readme"
     },
     {
-      "name": "Персонализиране на изгледите",
+      "name": "Персонализиране на изгледи",
       "file": "customizing-views-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

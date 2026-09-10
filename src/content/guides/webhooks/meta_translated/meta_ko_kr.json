@@ -1,9 +1,9 @@
 {
-  "name": "웹후크",
+  "name": "웹훅",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "웹후크란 무엇인가",
+      "name": "웹훅이란 무엇인가",
       "file": "what-are-webhooks.md",
       "subCat": "개요"
     },
@@ -38,9 +38,14 @@
       "subCat": "구현"
     },
     {
-      "name": "동작 방식 및 재시도 처리",
+      "name": "API를 통한 웹훅 관리",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "구현"
+    },
+    {
+      "name": "작동 방식 및 재시도 처리",
       "file": "webhooks-how-it-works.md",
-      "subCat": "내부 동작"
+      "subCat": "비하인드 스토리"
     }
   ]
 }

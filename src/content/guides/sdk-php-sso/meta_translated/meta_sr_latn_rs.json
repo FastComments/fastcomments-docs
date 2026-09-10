@@ -3,15 +3,21 @@
   "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
     {
-      "name": "Instalacija",
-      "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Korišćenje",
+      "name": "Instalacija",
+      "file": "installation-readme-generated.md",
+      "subCat": "Početak",
+      "type": "readme"
+    },
+    {
+      "name": "Upotreba",
       "file": "usage-readme-generated.md",
-      "subCat": "Korišćenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {

@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare na vaš Eleventy (11ty) sajt",
   "itemsOrdered": [
     {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Demo uživo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "Opcije plug-ina",
+      "name": "Opcije plug‑ina",
       "file": "plugin-options-readme-generated.md",
       "subCat": "Konfiguracija",
       "type": "readme"
     },
     {
-      "name": "Ručna upotreba (bez plug-ina)",
+      "name": "Ručna upotreba (bez plug‑ina)",
       "file": "manual-usage-without-the-plugin-readme-generated.md",
       "subCat": "Upotreba",
       "type": "readme"

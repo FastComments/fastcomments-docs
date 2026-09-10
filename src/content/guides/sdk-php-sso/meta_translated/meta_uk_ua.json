@@ -3,6 +3,12 @@
   "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
     {
+      "name": "AI агенти кодування",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
       "name": "Встановлення",
       "file": "installation-readme-generated.md",
       "subCat": "Початок роботи",

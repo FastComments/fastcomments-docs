@@ -1,7 +1,13 @@
 {
   "name": "Vue 2 Kütüphanesi",
-  "pageHeader": "Vue 2 Uygulamanıza Yorum Ekleyin",
+  "pageHeader": "Vue 2 Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Yapay Zeka kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Canlı Gösterim",
       "file": "live-showcase-readme-generated.md",
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Canlı Ortamda",
+      "name": "Üretimde",
       "file": "in-production-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

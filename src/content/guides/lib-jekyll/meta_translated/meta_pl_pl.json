@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj komentarze do swojej witryny Jekyll",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Demo na żywo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -17,7 +23,7 @@
     {
       "name": "Instalacja",
       "file": "install-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {

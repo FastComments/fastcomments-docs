@@ -1,27 +1,33 @@
 {
   "name": "Python SDK",
-  "pageHeader": "FastComments の Python SDK",
+  "pageHeader": "FastComments Python SDK",
   "itemsOrdered": [
     {
-      "name": "インストール",
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "はじめに",
       "type": "readme"
     },
     {
-      "name": "クイックスタート",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "注意事項",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
     {
-      "name": "要件",
+      "name": "Requirements",
       "file": "requirements-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -47,13 +53,13 @@
     {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "コメントでブロック",
+      "subCat": "コメントからのブロック",
       "type": "api"
     },
     {
       "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "コメントでブロック",
+      "subCat": "コメントからのブロック",
       "type": "api"
     },
     {
@@ -95,7 +101,7 @@
     {
       "name": "flag_comment",
       "file": "flag-comment-api-generated.md",
-      "subCat": "コメント",
+      "subCat": "コメントのフラグ",
       "type": "api"
     },
     {
@@ -197,7 +203,7 @@
     {
       "name": "get_comments_for_user",
       "file": "get-comments-for-user-api-generated.md",
-      "subCat": "ユーザーのコメント",
+      "subCat": "ユーザー向けコメント",
       "type": "api"
     },
     {
@@ -1241,7 +1247,7 @@
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "在席状況",
+      "subCat": "ユーザー在席状態",
       "type": "api"
     },
     {

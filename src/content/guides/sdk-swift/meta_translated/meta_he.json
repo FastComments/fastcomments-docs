@@ -1,15 +1,21 @@
 {
-  "name": "SDK של Swift",
-  "pageHeader": "FastComments SDK ל‑Swift",
+  "name": "ערכת פיתוח Swift",
+  "pageHeader": "FastComments ערכת פיתוח Swift",
   "itemsOrdered": [
     {
-      "name": "התקנה",
-      "file": "installation-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "תכולת הספרייה",
+      "name": "התקנה",
+      "file": "installation-readme-generated.md",
+      "subCat": "התחלה",
+      "type": "readme"
+    },
+    {
+      "name": "תוכן הספרייה",
       "file": "library-contents-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -23,13 +29,13 @@
     {
       "name": "לקוחות API",
       "file": "api-clients-readme-generated.md",
-      "subCat": "מדריך API",
+      "subCat": "התייחסות API",
       "type": "readme"
     },
     {
       "name": "ביצוע קריאות API",
       "file": "making-api-calls-readme-generated.md",
-      "subCat": "מדריך API",
+      "subCat": "התייחסות API",
       "type": "readme"
     },
     {
@@ -45,9 +51,9 @@
       "type": "readme"
     },
     {
-      "name": "אגרגציה",
+      "name": "צבר",
       "file": "aggregate-api-generated.md",
-      "subCat": "אגגרגציה",
+      "subCat": "צבר",
       "type": "api"
     },
     {
@@ -57,37 +63,37 @@
       "type": "api"
     },
     {
-      "name": "התנתקות (ציבורי)",
+      "name": "התנתק ציבורי",
       "file": "logoutpublic-api-generated.md",
       "subCat": "אימות",
       "type": "api"
     },
     {
-      "name": "חסום מתוך תגובה (ציבורי)",
+      "name": "חסום מהתגובה ציבורית",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "חסימה מתגובה",
+      "subCat": "חסימה מהתגובה",
       "type": "api"
     },
     {
-      "name": "בטל חסימת תגובה (ציבורי)",
+      "name": "בטל חסימה של תגובה ציבורית",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "חסימה מתגובה",
+      "subCat": "חסימה מהתגובה",
       "type": "api"
     },
     {
-      "name": "בדוק תגובות לחסימה",
+      "name": "תגובות נבדקות לחסימה",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "בדיקת תגובות חסומות",
       "type": "api"
     },
     {
-      "name": "חסום משתמש מתגובה",
+      "name": "חסום משתמש מהתגובה",
       "file": "blockuserfromcomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
     },
     {
-      "name": "צור תגובה (ציבורי)",
+      "name": "צור תגובה ציבורית",
       "file": "createcommentpublic-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -99,7 +105,7 @@
       "type": "api"
     },
     {
-      "name": "מחק תגובה (ציבורי)",
+      "name": "מחק תגובה ציבורית",
       "file": "deletecommentpublic-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -111,7 +117,7 @@
       "type": "api"
     },
     {
-      "name": "דווח על תגובה",
+      "name": "דגל תגובה",
       "file": "flagcomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -129,7 +135,7 @@
       "type": "api"
     },
     {
-      "name": "קבל תגובות (ציבורי)",
+      "name": "קבל תגובות ציבוריות",
       "file": "getcommentspublic-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -153,7 +159,7 @@
       "type": "api"
     },
     {
-      "name": "נעץ תגובה",
+      "name": "הצמד תגובה",
       "file": "pincomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -165,7 +171,7 @@
       "type": "api"
     },
     {
-      "name": "שמור תגובות בכמות",
+      "name": "שמור תגובות במקבץ",
       "file": "savecommentsbulk-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -177,13 +183,13 @@
       "type": "api"
     },
     {
-      "name": "בטל חסימת משתמש מתגובה",
+      "name": "בטל חסימה של משתמש מהתגובה",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
     },
     {
-      "name": "בטל דיווח על תגובה",
+      "name": "בטל דגל תגובה",
       "file": "unflagcomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -195,7 +201,7 @@
       "type": "api"
     },
     {
-      "name": "בטל נעיצת תגובה",
+      "name": "בטל הצמדת תגובה",
       "file": "unpincomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
@@ -207,51 +213,51 @@
       "type": "api"
     },
     {
-      "name": "הצביע עבור תגובה",
+      "name": "הצביע על תגובה",
       "file": "votecomment-api-generated.md",
       "subCat": "תגובות",
       "type": "api"
     },
     {
-      "name": "קבל תגובות עבור משתמש",
+      "name": "קבל תגובות למשתמש",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "תגובות עבור משתמש",
+      "subCat": "תגובות למשתמש",
       "type": "api"
     },
     {
-      "name": "הוסף תצורת דומיין",
+      "name": "הוסף תצורת תחום",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "תצורות דומיין",
+      "subCat": "תצורות תחום",
       "type": "api"
     },
     {
-      "name": "מחק תצורת דומיין",
+      "name": "מחק תצורת תחום",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "תצורות דומיין",
+      "subCat": "תצורות תחום",
       "type": "api"
     },
     {
-      "name": "קבל תצורת דומיין",
+      "name": "קבל תצורת תחום",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "תצורות דומיין",
+      "subCat": "תצורות תחום",
       "type": "api"
     },
     {
-      "name": "קבל תצורות דומיין",
+      "name": "קבל תצורות תחום",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "תצורות דומיין",
+      "subCat": "תצורות תחום",
       "type": "api"
     },
     {
-      "name": "עדכן חלקית תצורת דומיין",
+      "name": "עדכן חלקית תצורת תחום",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "תצורות דומיין",
+      "subCat": "תצורות תחום",
       "type": "api"
     },
     {
-      "name": "החלף תצורת דומיין",
+      "name": "הציב תצורת תחום",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "תצורות דומיין",
+      "subCat": "תצורות תחום",
       "type": "api"
     },
     {
@@ -267,7 +273,7 @@
       "type": "api"
     },
     {
-      "name": "מחק שגיאת הרצת תבנית אימייל",
+      "name": "מחק שגיאת רינדור תבנית אימייל",
       "file": "deleteemailtemplaterendererror-api-generated.md",
       "subCat": "תבניות אימייל",
       "type": "api"
@@ -279,13 +285,13 @@
       "type": "api"
     },
     {
-      "name": "קבל הגדרות תבניות אימייל",
+      "name": "קבל הגדרות תבנית אימייל",
       "file": "getemailtemplatedefinitions-api-generated.md",
       "subCat": "תבניות אימייל",
       "type": "api"
     },
     {
-      "name": "קבל שגיאות הרצת תבנית אימייל",
+      "name": "קבל שגיאות רינדור תבנית אימייל",
       "file": "getemailtemplaterendererrors-api-generated.md",
       "subCat": "תבניות אימייל",
       "type": "api"
@@ -297,7 +303,7 @@
       "type": "api"
     },
     {
-      "name": "הרץ תבנית אימייל",
+      "name": "רנדר תבנית אימייל",
       "file": "renderemailtemplate-api-generated.md",
       "subCat": "תבניות אימייל",
       "type": "api"
@@ -309,81 +315,81 @@
       "type": "api"
     },
     {
-      "name": "קבל יומן אירוע",
+      "name": "קבל יומן אירועים",
       "file": "geteventlog-api-generated.md",
-      "subCat": "יומן אירוע",
+      "subCat": "יומן אירועים",
       "type": "api"
     },
     {
       "name": "קבל יומן אירועים גלובלי",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "יומן אירוע",
+      "subCat": "יומן אירועים",
       "type": "api"
     },
     {
       "name": "צור פוסט פיד",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "צור פוסט פיד (ציבורי)",
+      "name": "צור פוסט פיד ציבורי",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "מחק פוסט פיד (ציבורי)",
+      "name": "מחק פוסט פיד ציבורי",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "קבל פוסטים",
+      "name": "קבל פוסטים בפיד",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "קבל פוסטים (ציבורי)",
+      "name": "קבל פוסטים בפיד ציבוריים",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "קבל סטטיסטיקות פוסטים",
+      "name": "קבל סטטיסטיקות פוסטים בפיד",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "קבל תגובות משתמשים ציבוריות",
+      "name": "קבל תגובות משתמש ציבוריות",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "הגב לפוסט (ציבורי)",
+      "name": "הגיב לפוסט פיד ציבורי",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "עדכן פוסט",
+      "name": "עדכן פוסט פיד",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "עדכון פוסט (ציבורי)",
+      "name": "עדכן פוסט פיד ציבורי",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "פוסטים",
+      "subCat": "פוסטים בפיד",
       "type": "api"
     },
     {
-      "name": "דווח על תגובה (ציבורי)",
+      "name": "דגל תגובה ציבורית",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "דיווח על תגובה",
+      "subCat": "דגל תגובה",
       "type": "api"
     },
     {
@@ -393,13 +399,13 @@
       "type": "api"
     },
     {
-      "name": "חפש GIFים",
+      "name": "חיפוש GIFים",
       "file": "getgifssearch-api-generated.md",
       "subCat": "GIFים",
       "type": "api"
     },
     {
-      "name": "קבל GIFים פופולריים",
+      "name": "GIFים פופולריים",
       "file": "getgifstrending-api-generated.md",
       "subCat": "GIFים",
       "type": "api"
@@ -407,31 +413,31 @@
     {
       "name": "הוסף האשטאג",
       "file": "addhashtag-api-generated.md",
-      "subCat": "האשטגים",
+      "subCat": "האשטאגים",
       "type": "api"
     },
     {
-      "name": "הוסף האשטגים בכמות",
+      "name": "הוסף האשטאגים במקבץ",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "האשטגים",
+      "subCat": "האשטאגים",
       "type": "api"
     },
     {
       "name": "מחק האשטאג",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "האשטגים",
+      "subCat": "האשטאגים",
       "type": "api"
     },
     {
-      "name": "קבל האשטגים",
+      "name": "קבל האשטאגים",
       "file": "gethashtags-api-generated.md",
-      "subCat": "האשטגים",
+      "subCat": "האשטאגים",
       "type": "api"
     },
     {
-      "name": "עדכן האשטאג חלקית",
+      "name": "עדכן חלקית האשטאג",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "האשטגים",
+      "subCat": "האשטאגים",
       "type": "api"
     },
     {
@@ -441,13 +447,13 @@
       "type": "api"
     },
     {
-      "name": "קבל תגובות דרך API",
+      "name": "קבל תגובות API",
       "file": "getapicomments-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל סטטוס יצוא API",
+      "name": "קבל סטטוס ייצוא API",
       "file": "getapiexportstatus-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -459,7 +465,7 @@
       "type": "api"
     },
     {
-      "name": "קבל משתמשים שאובנו מתגובה",
+      "name": "קבל משתמשים חסומים מהתגובה",
       "file": "getbanusersfromcomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -471,7 +477,7 @@
       "type": "api"
     },
     {
-      "name": "קבל ילדים של תגובה",
+      "name": "קבל תגובות ילדים",
       "file": "getcommentchildren-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -489,31 +495,31 @@
       "type": "api"
     },
     {
-      "name": "קבל לוגים",
+      "name": "קבל יומנים",
       "file": "getlogs-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל תגי ידניים",
+      "name": "קבל תגיות ידניות",
       "file": "getmanualbadges-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל תגי ידניים עבור משתמש",
+      "name": "קבל תגיות ידניות למשתמש",
       "file": "getmanualbadgesforuser-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל תגובת מודרציה",
+      "name": "קבל תגובה למודרציה",
       "file": "getmoderationcomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל טקסט תגובת מודרציה",
+      "name": "קבל טקסט תגובה למודרציה",
       "file": "getmoderationcommenttext-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -531,13 +537,13 @@
       "type": "api"
     },
     {
-      "name": "קבל דפי חיפוש",
+      "name": "קבל דפים לחיפוש",
       "file": "getsearchpages-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל אתרי חיפוש",
+      "name": "קבל אתרים לחיפוש",
       "file": "getsearchsites-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -549,7 +555,7 @@
       "type": "api"
     },
     {
-      "name": "קבל משתמשים בחיפוש",
+      "name": "קבל משתמשים לחיפוש",
       "file": "getsearchusers-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -573,97 +579,97 @@
       "type": "api"
     },
     {
-      "name": "התאם הצבעות תגובות",
+      "name": "הגבר הצבעות תגובה",
       "file": "postadjustcommentvotes-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "בצע יצוא API",
+      "name": "ייצא API",
       "file": "postapiexport-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "חסום משתמש מתגובה (POST)",
+      "name": "חסום משתמש מהתגובה",
       "file": "postbanuserfromcomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "בטל חסימת משתמש (POST)",
+      "name": "בטל חסימת משתמש",
       "file": "postbanuserundo-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "בצע אגרגציה מרוכזת לפני חסימה",
+      "name": "סיכום מקבץ לפני חסימה",
       "file": "postbulkprebansummary-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "קבל תגובות לפי מזהים",
+      "name": "פרסם תגובות לפי מזהים",
       "file": "postcommentsbyids-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "דווח על תגובה (POST)",
+      "name": "דגל תגובה",
       "file": "postflagcomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "הסר תגובה (POST)",
+      "name": "הסר תגובה",
       "file": "postremovecomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "שחזר תגובה שנמחקה (POST)",
+      "name": "שחזר תגובה שנמחקה",
       "file": "postrestoredeletedcomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "הגדר מצב אישור תגובה (POST)",
+      "name": "קבע סטטוס אישור תגובה",
       "file": "postsetcommentapprovalstatus-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "הגדר מצב סקירת תגובה (POST)",
+      "name": "קבע סטטוס ביקורת תגובה",
       "file": "postsetcommentreviewstatus-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "הגדר סטטוס ספאם לתגובה (POST)",
+      "name": "קבע סטטוס ספאם לתגובה",
       "file": "postsetcommentspamstatus-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "הגדר טקסט תגובה (POST)",
+      "name": "קבע טקסט תגובה",
       "file": "postsetcommenttext-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "בטל דיווח על תגובה (POST)",
+      "name": "בטל דגל תגובה",
       "file": "postunflagcomment-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "שלח הצבעה (POST)",
+      "name": "הצביע",
       "file": "postvote-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
     },
     {
-      "name": "הענק תג פרס",
+      "name": "הענק תג",
       "file": "putawardbadge-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -675,7 +681,7 @@
       "type": "api"
     },
     {
-      "name": "הסר תג פרס",
+      "name": "הסר תג",
       "file": "putremovebadge-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -687,7 +693,7 @@
       "type": "api"
     },
     {
-      "name": "הגדר גורם אמון",
+      "name": "קבע גורם אמון",
       "file": "settrustfactor-api-generated.md",
       "subCat": "מודרציה",
       "type": "api"
@@ -735,7 +741,7 @@
       "type": "api"
     },
     {
-      "name": "קבל ספירת התראות מטמון",
+      "name": "קבל ספירת התראות במטמון",
       "file": "getcachednotificationcount-api-generated.md",
       "subCat": "ספירת התראות",
       "type": "api"
@@ -759,25 +765,25 @@
       "type": "api"
     },
     {
-      "name": "צור תגובת דף V1",
+      "name": "צור תגובה לדף V1",
       "file": "createv1pagereact-api-generated.md",
       "subCat": "תגובות לדף",
       "type": "api"
     },
     {
-      "name": "צור תגובת דף V2",
+      "name": "צור תגובה לדף V2",
       "file": "createv2pagereact-api-generated.md",
       "subCat": "תגובות לדף",
       "type": "api"
     },
     {
-      "name": "מחק תגובת דף V1",
+      "name": "מחק תגובה לדף V1",
       "file": "deletev1pagereact-api-generated.md",
       "subCat": "תגובות לדף",
       "type": "api"
     },
     {
-      "name": "מחק תגובת דף V2",
+      "name": "מחק תגובה לדף V2",
       "file": "deletev2pagereact-api-generated.md",
       "subCat": "תגובות לדף",
       "type": "api"
@@ -837,117 +843,117 @@
       "type": "api"
     },
     {
-      "name": "קבל דפים (ציבורי)",
+      "name": "קבל דפים ציבוריים",
       "file": "getpagespublic-api-generated.md",
       "subCat": "דפים",
       "type": "api"
     },
     {
-      "name": "קבל מידע על משתמשים",
+      "name": "קבל מידע משתמשים",
       "file": "getusersinfo-api-generated.md",
       "subCat": "דפים",
       "type": "api"
     },
     {
-      "name": "עדכן דף חלקית",
+      "name": "עדכן חלקית דף",
       "file": "patchpage-api-generated.md",
       "subCat": "דפים",
       "type": "api"
     },
     {
-      "name": "מחק אירוע webhook ממתין",
+      "name": "מחק אירוע ווב-הוק ממתין",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "אירועי webhook ממתינים",
+      "subCat": "אירועי ווב-הוק ממתינים",
       "type": "api"
     },
     {
-      "name": "קבל ספירת אירועי webhook ממתינים",
+      "name": "קבל ספירת אירועי ווב-הוק ממתינים",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "אירועי webhook ממתינים",
+      "subCat": "אירועי ווב-הוק ממתינים",
       "type": "api"
     },
     {
-      "name": "קבל אירועי webhook ממתינים",
+      "name": "קבל אירועי ווב-הוק ממתינים",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "אירועי webhook ממתינים",
+      "subCat": "אירועי ווב-הוק ממתינים",
       "type": "api"
     },
     {
-      "name": "צור תצורת שאלון",
+      "name": "צור תצורת שאלה",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "הגדרות שאלון",
+      "subCat": "תצורות שאלה",
       "type": "api"
     },
     {
-      "name": "מחק תצורת שאלון",
+      "name": "מחק תצורת שאלה",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "הגדרות שאלון",
+      "subCat": "תצורות שאלה",
       "type": "api"
     },
     {
-      "name": "קבל תצורת שאלון",
+      "name": "קבל תצורת שאלה",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "הגדרות שאלון",
+      "subCat": "תצורות שאלה",
       "type": "api"
     },
     {
-      "name": "קבל תצורות שאלון",
+      "name": "קבל תצורות שאלה",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "הגדרות שאלון",
+      "subCat": "תצורות שאלה",
       "type": "api"
     },
     {
-      "name": "עדכן תצורת שאלון",
+      "name": "עדכן תצורת שאלה",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "הגדרות שאלון",
+      "subCat": "תצורות שאלה",
       "type": "api"
     },
     {
-      "name": "צור תוצאת שאלון",
+      "name": "צור תוצאה של שאלה",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "תוצאות שאלון",
+      "subCat": "תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "מחק תוצאת שאלון",
+      "name": "מחק תוצאה של שאלה",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "תוצאות שאלון",
+      "subCat": "תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "קבל תוצאת שאלון",
+      "name": "קבל תוצאה של שאלה",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "תוצאות שאלון",
+      "subCat": "תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "קבל תוצאות שאלון",
+      "name": "קבל תוצאות של שאלה",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "תוצאות שאלון",
+      "subCat": "תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "עדכן תוצאת שאלון",
+      "name": "עדכן תוצאה של שאלה",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "תוצאות שאלון",
+      "subCat": "תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "אגגרציית תוצאות שאלון",
+      "name": "צבר תוצאות שאלה",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "אגרגציית תוצאות שאלון",
+      "subCat": "צבירת תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "אגגרציית תוצאות שאלון בכמות",
+      "name": "צבר תוצאות שאלה במקבץ",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "אגרגציית תוצאות שאלון",
+      "subCat": "צבירת תוצאות שאלה",
       "type": "api"
     },
     {
-      "name": "שילוב תגובות עם תוצאות שאלון",
+      "name": "שלב תגובות עם תוצאות שאלה",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "אגרגציית תוצאות שאלון",
+      "subCat": "צבירת תוצאות שאלה",
       "type": "api"
     },
     {
@@ -981,13 +987,13 @@
       "type": "api"
     },
     {
-      "name": "עדכן משתמש SSO חלקית",
+      "name": "עדכן חלקית משתמש SSO",
       "file": "patchssouser-api-generated.md",
       "subCat": "משתמשי SSO",
       "type": "api"
     },
     {
-      "name": "החלף משתמש SSO",
+      "name": "הציב משתמש SSO",
       "file": "putssouser-api-generated.md",
       "subCat": "משתמשי SSO",
       "type": "api"
@@ -1017,141 +1023,141 @@
       "type": "api"
     },
     {
-      "name": "קבל שימוש יומי של טננט",
+      "name": "קבל שימוש יומי של שוכר",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "שימוש יומי של טננט",
+      "subCat": "שימוש יומי של שוכר",
       "type": "api"
     },
     {
-      "name": "צור חבילת טננט",
+      "name": "צור חבילת שוכר",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "חבילות טננט",
+      "subCat": "חבילות שוכר",
       "type": "api"
     },
     {
-      "name": "מחק חבילת טננט",
+      "name": "מחק חבילת שוכר",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "חבילות טננט",
+      "subCat": "חבילות שוכר",
       "type": "api"
     },
     {
-      "name": "קבל חבילת טננט",
+      "name": "קבל חבילת שוכר",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "חבילות טננט",
+      "subCat": "חבילות שוכר",
       "type": "api"
     },
     {
-      "name": "קבל חבילות טננט",
+      "name": "קבל חבילות שוכר",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "חבילות טננט",
+      "subCat": "חבילות שוכר",
       "type": "api"
     },
     {
-      "name": "החלף חבילת טננט",
+      "name": "החלף חבילת שוכר",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "חבילות טננט",
+      "subCat": "חבילות שוכר",
       "type": "api"
     },
     {
-      "name": "עדכן חבילת טננט",
+      "name": "עדכן חבילת שוכר",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "חבילות טננט",
+      "subCat": "חבילות שוכר",
       "type": "api"
     },
     {
-      "name": "צור משתמש טננט",
+      "name": "צור משתמש שוכר",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
-      "name": "מחק משתמש טננט",
+      "name": "מחק משתמש שוכר",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
-      "name": "קבל משתמש טננט",
+      "name": "קבל משתמש שוכר",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
-      "name": "קבל משתמשי טננט",
+      "name": "קבל משתמשי שוכר",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
-      "name": "החלף משתמש טננט",
+      "name": "החלף משתמש שוכר",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
       "name": "שלח קישור התחברות",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
-      "name": "עדכן משתמש טננט",
+      "name": "עדכן משתמש שוכר",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "משתמשי טננט",
+      "subCat": "משתמשי שוכר",
       "type": "api"
     },
     {
-      "name": "צור טננט",
+      "name": "צור שוכר",
       "file": "createtenant-api-generated.md",
-      "subCat": "טננטים",
+      "subCat": "שוכרים",
       "type": "api"
     },
     {
-      "name": "מחק טננט",
+      "name": "מחק שוכר",
       "file": "deletetenant-api-generated.md",
-      "subCat": "טננטים",
+      "subCat": "שוכרים",
       "type": "api"
     },
     {
-      "name": "קבל טננט",
+      "name": "קבל שוכר",
       "file": "gettenant-api-generated.md",
-      "subCat": "טננטים",
+      "subCat": "שוכרים",
       "type": "api"
     },
     {
-      "name": "קבל טננטים",
+      "name": "קבל שוכרים",
       "file": "gettenants-api-generated.md",
-      "subCat": "טננטים",
+      "subCat": "שוכרים",
       "type": "api"
     },
     {
-      "name": "עדכן טננט",
+      "name": "עדכן שוכר",
       "file": "updatetenant-api-generated.md",
-      "subCat": "טננטים",
+      "subCat": "שוכרים",
       "type": "api"
     },
     {
       "name": "שנה מצב כרטיס",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "טיקטים",
+      "subCat": "כרטיסים",
       "type": "api"
     },
     {
       "name": "צור כרטיס",
       "file": "createticket-api-generated.md",
-      "subCat": "טיקטים",
+      "subCat": "כרטיסים",
       "type": "api"
     },
     {
       "name": "קבל כרטיס",
       "file": "getticket-api-generated.md",
-      "subCat": "טיקטים",
+      "subCat": "כרטיסים",
       "type": "api"
     },
     {
       "name": "קבל כרטיסים",
       "file": "gettickets-api-generated.md",
-      "subCat": "טיקטים",
+      "subCat": "כרטיסים",
       "type": "api"
     },
     {
@@ -1179,7 +1185,7 @@
       "type": "api"
     },
     {
-      "name": "קבל רשימת התקדמות תג משתמש",
+      "name": "קבל רשימת התקדמות תגי משתמש",
       "file": "getuserbadgeprogresslist-api-generated.md",
       "subCat": "התקדמות תג משתמש",
       "type": "api"
@@ -1239,27 +1245,27 @@
       "type": "api"
     },
     {
-      "name": "עדכן סטטוס מנוי תגובה להתראות משתמש",
+      "name": "עדכן סטטוס מנוי התראות תגובה",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "התראות משתמש",
       "type": "api"
     },
     {
-      "name": "עדכן סטטוס מנוי דף להתראות משתמש",
+      "name": "עדכן סטטוס מנוי התראות דף",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "התראות משתמש",
       "type": "api"
     },
     {
-      "name": "עדכן סטטוס התראה משתמש",
+      "name": "עדכן סטטוס התראות משתמש",
       "file": "updateusernotificationstatus-api-generated.md",
       "subCat": "התראות משתמש",
       "type": "api"
     },
     {
-      "name": "קבל מצבי נוכחות משתמש",
+      "name": "קבל סטטוס נוכחות משתמש",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "מצבי נוכחות משתמש",
+      "subCat": "סטטוס נוכחות משתמש",
       "type": "api"
     },
     {
@@ -1293,7 +1299,7 @@
       "type": "api"
     },
     {
-      "name": "קבל הצבעות עבור משתמש",
+      "name": "קבל הצבעות למשתמש",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "הצבעות",
       "type": "api"

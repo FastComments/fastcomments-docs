@@ -1,21 +1,27 @@
 {
-  "name": "Next.js-bibliotheek",
+  "name": "Next.js Bibliotheek",
   "pageHeader": "Voeg opmerkingen toe aan je Next.js-app",
   "itemsOrdered": [
     {
-      "name": "Live demo",
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live-demo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Live demonstratie",
+      "name": "Live-showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Installatie",
+      "name": "Installeren",
       "file": "install-readme-generated.md",
       "subCat": "Aan de slag",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Snelle start",
+      "name": "Snelstart",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Links",
+      "name": "Koppelingen",
       "file": "links-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"

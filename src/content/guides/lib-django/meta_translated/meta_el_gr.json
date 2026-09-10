@@ -1,7 +1,13 @@
 {
   "name": "Πακέτο Django",
-  "pageHeader": "Προσθήκη Σχολίων στην Εφαρμογή Django σας",
+  "pageHeader": "Προσθήκη σχολίων στην εφαρμογή Django",
   "itemsOrdered": [
+    {
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
     {
       "name": "Απαιτήσεις",
       "file": "requirements-readme-generated.md",
@@ -11,35 +17,35 @@
     {
       "name": "Εγκατάσταση",
       "file": "installation-readme-generated.md",
-      "subCat": "Ξεκίνημα",
+      "subCat": "Ξεκινώντας",
       "type": "readme"
     },
     {
-      "name": "Γρήγορη Εκκίνηση",
+      "name": "Γρήγορη εκκίνηση",
       "file": "quickstart-readme-generated.md",
       "subCat": "Χρήση",
       "type": "readme"
     },
     {
-      "name": "Προαπαιτούμενα για αυτόματη Ενιαία Σύνδεση (SSO)",
+      "name": "Προαπαιτούμενα για αυτόματο SSO",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Ετικέτες Widget",
+      "name": "Ετικέτες widget",
       "file": "widget-tags-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "SSO (Ενιαία Σύνδεση)",
+      "name": "SSO (Μονοσυνεδρία)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Πρόσβαση API από τον διακομιστή",
+      "name": "Πρόσβαση API από την πλευρά του διακομιστή",
       "file": "server-side-api-access-readme-generated.md",
       "subCat": "Αναφορά API",
       "type": "readme"
@@ -51,13 +57,13 @@
       "type": "readme"
     },
     {
-      "name": "Προσαρμογή του κώδικα ενσωμάτωσης",
+      "name": "Προσαρμογή του ενσωματωμένου markup",
       "file": "customizing-the-embed-markup-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Αναφορά Ρυθμίσεων",
+      "name": "Αναφορά ρυθμίσεων",
       "file": "settings-reference-readme-generated.md",
       "subCat": "Αναφορά API",
       "type": "readme"

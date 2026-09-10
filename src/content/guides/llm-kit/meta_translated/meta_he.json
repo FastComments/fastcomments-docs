@@ -3,14 +3,19 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "השג את ערכת ה-LLM",
+      "name": "קבל את ערכת LLM",
       "file": "llm-kit-snippet.md",
-      "subCat": "אינטגרציה של LLM"
+      "subCat": "שילוב LLM"
     },
     {
       "name": "שרת MCP",
       "file": "mcp-server.md",
       "subCat": "שרת MCP"
+    },
+    {
+      "name": "תן לסוכן להקים את החשבון שלך",
+      "file": "agent-account-setup.md",
+      "subCat": "הקמת חשבון סוכן"
     }
   ]
 }

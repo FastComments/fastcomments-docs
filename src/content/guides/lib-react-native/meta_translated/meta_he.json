@@ -1,7 +1,13 @@
 {
   "name": "ספריית React Native",
-  "pageHeader": "הוסף ווידג'טים של תגובות לאפליקציית React Native שלך",
+  "pageHeader": "הוסף וידג'טים של תגובות לאפליקציית React Native שלך",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "הדגמה חיה",
       "file": "live-showcase-readme-generated.md",
@@ -15,37 +21,37 @@
       "type": "readme"
     },
     {
-      "name": "שקול את ה-SDK הנייטיב",
+      "name": "שקול את ה‑SDK הטבעי",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "שימוש - ווידג'ט תגובות בזמן אמת",
+      "name": "שימוש - וידג'ט תגובה חיה",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"
     },
     {
-      "name": "שימוש - ווידג'ט צ'אט בזמן אמת",
+      "name": "שימוש - וידג'ט צ'אט חי",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"
     },
     {
-      "name": "שימוש - SSO (כניסה יחידה)",
+      "name": "שימוש - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "שימוש",
       "type": "readme"
     },
     {
-      "name": "תלויות עמיתים",
+      "name": "תלויות שוות",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "מצב תחזוקה",
+      "name": "סטטוס תחזוקה",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

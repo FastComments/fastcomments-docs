@@ -1,11 +1,17 @@
 {
-  "name": "SDK SSO ל-PHP",
-  "pageHeader": "SDK SSO של FastComments ל-PHP",
+  "name": "PHP SSO SDK",
+  "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
+    {
+      "name": "סוכני קידוד AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה מהירה",
+      "subCat": "התחלה",
       "type": "readme"
     },
     {

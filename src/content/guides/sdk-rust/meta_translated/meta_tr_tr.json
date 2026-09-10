@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Rust SDK",
   "itemsOrdered": [
     {
+      "name": "AI kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
       "name": "Kurulum",
       "file": "installation-readme-generated.md",
       "subCat": "Başlarken",
@@ -11,29 +17,29 @@
     {
       "name": "Kütüphane İçeriği",
       "file": "library-contents-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
       "name": "Hızlı Başlangıç",
       "file": "quick-start-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
       "name": "Yaygın Sorunlar",
       "file": "common-issues-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
       "name": "Notlar",
       "file": "notes-readme-generated.md",
-      "subCat": "Belgeler",
+      "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "Topla",
       "file": "aggregate-api-generated.md",
       "subCat": "Toplama",
       "type": "api"
@@ -71,19 +77,19 @@
     {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Yorumdan Engelleme",
+      "subCat": "Yorumlardan Engelle",
       "type": "api"
     },
     {
       "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Yorumdan Engelleme",
+      "subCat": "Yorumlardan Engelle",
       "type": "api"
     },
     {
       "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
-      "subCat": "Engellenmiş Yorumları Kontrol Et",
+      "subCat": "Engellenen Yorumları Kontrol Et",
       "type": "api"
     },
     {
@@ -227,37 +233,37 @@
     {
       "name": "add_domain_config",
       "file": "add-domain-config-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Alan Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "delete_domain_config",
       "file": "delete-domain-config-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Alan Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "get_domain_config",
       "file": "get-domain-config-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Alan Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "get_domain_configs",
       "file": "get-domain-configs-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Alan Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "patch_domain_config",
       "file": "patch-domain-config-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Alan Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "put_domain_config",
       "file": "put-domain-config-api-generated.md",
-      "subCat": "Alan Adı Yapılandırmaları",
+      "subCat": "Alan Yapılandırmaları",
       "type": "api"
     },
     {
@@ -395,49 +401,49 @@
     {
       "name": "get_gif_large",
       "file": "get-gif-large-api-generated.md",
-      "subCat": "GIF'ler",
+      "subCat": "Gif'ler",
       "type": "api"
     },
     {
       "name": "get_gifs_search",
       "file": "get-gifs-search-api-generated.md",
-      "subCat": "GIF'ler",
+      "subCat": "Gif'ler",
       "type": "api"
     },
     {
       "name": "get_gifs_trending",
       "file": "get-gifs-trending-api-generated.md",
-      "subCat": "GIF'ler",
+      "subCat": "Gif'ler",
       "type": "api"
     },
     {
       "name": "add_hash_tag",
       "file": "add-hash-tag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Konu Etiketleri",
       "type": "api"
     },
     {
       "name": "add_hash_tags_bulk",
       "file": "add-hash-tags-bulk-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Konu Etiketleri",
       "type": "api"
     },
     {
       "name": "delete_hash_tag",
       "file": "delete-hash-tag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Konu Etiketleri",
       "type": "api"
     },
     {
       "name": "get_hash_tags",
       "file": "get-hash-tags-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Konu Etiketleri",
       "type": "api"
     },
     {
       "name": "patch_hash_tag",
       "file": "patch-hash-tag-api-generated.md",
-      "subCat": "Hashtag'ler",
+      "subCat": "Konu Etiketleri",
       "type": "api"
     },
     {
@@ -917,19 +923,19 @@
     {
       "name": "aggregate_question_results",
       "file": "aggregate-question-results-api-generated.md",
-      "subCat": "Soru Sonuçları Toplama",
+      "subCat": "Soru Sonuçları Toplamı",
       "type": "api"
     },
     {
       "name": "bulk_aggregate_question_results",
       "file": "bulk-aggregate-question-results-api-generated.md",
-      "subCat": "Soru Sonuçları Toplama",
+      "subCat": "Soru Sonuçları Toplamı",
       "type": "api"
     },
     {
       "name": "combine_comments_with_question_results",
       "file": "combine-comments-with-question-results-api-generated.md",
-      "subCat": "Soru Sonuçları Toplama",
+      "subCat": "Soru Sonuçları Toplamı",
       "type": "api"
     },
     {
@@ -1241,13 +1247,13 @@
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Kullanıcı Varlık Durumları",
+      "subCat": "Kullanıcı Durumları",
       "type": "api"
     },
     {
       "name": "search_users",
       "file": "search-users-api-generated.md",
-      "subCat": "Kullanıcı Arama",
+      "subCat": "Kullanıcı Ara",
       "type": "api"
     },
     {

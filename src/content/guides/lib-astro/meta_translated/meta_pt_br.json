@@ -1,27 +1,33 @@
 {
   "name": "Biblioteca Astro",
-  "pageHeader": "Adicione comentários ao seu site Astro",
+  "pageHeader": "Adicionar Comentários ao Seu Site Astro",
   "itemsOrdered": [
     {
-      "name": "Demonstração ao vivo",
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Demo ao Vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Apresentação ao vivo",
+      "name": "Apresentação ao Vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Instalação",
+      "name": "Instalar",
       "file": "install-readme-generated.md",
-      "subCat": "Primeiros passos",
+      "subCat": "Começando",
       "type": "readme"
     },
     {
-      "name": "Início rápido",
+      "name": "Início Rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Projeto de exemplo",
+      "name": "Projeto de Exemplo",
       "file": "example-project-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Status de manutenção",
+      "name": "Status de Manutenção",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

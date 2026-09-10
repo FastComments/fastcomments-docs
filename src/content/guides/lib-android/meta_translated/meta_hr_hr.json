@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentare u svoju Android aplikaciju",
   "itemsOrdered": [
     {
+      "name": "AI agenti za kodiranje",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Značajke",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -17,19 +23,19 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak rada",
+      "subCat": "Početak",
       "type": "readme"
     },
     {
-      "name": "Osnovno korištenje",
+      "name": "Osnovna upotreba",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "Korištenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {
-      "name": "Sigurna SSO autentikacija",
+      "name": "Sigurna SSO autentifikacija",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "Autentikacija",
+      "subCat": "Autentifikacija",
       "type": "readme"
     },
     {
@@ -47,7 +53,7 @@
     {
       "name": "Primjeri projekata",
       "file": "example-projects-readme-generated.md",
-      "subCat": "Korištenje",
+      "subCat": "Upotreba",
       "type": "readme"
     },
     {

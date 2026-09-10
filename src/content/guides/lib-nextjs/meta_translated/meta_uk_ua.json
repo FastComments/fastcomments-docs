@@ -1,21 +1,27 @@
 {
   "name": "Бібліотека Next.js",
-  "pageHeader": "Додайте коментарі до вашого застосунку Next.js",
+  "pageHeader": "Додайте коментарі до вашого додатку Next.js",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "AI агенти кодування",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий демонстраційний приклад",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Жива презентація",
+      "name": "Живий показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Встановлення",
+      "name": "Встановити",
       "file": "install-readme-generated.md",
       "subCat": "Початок роботи",
       "type": "readme"
@@ -39,13 +45,13 @@
       "type": "readme"
     },
     {
-      "name": "Розгортання на Vercel",
+      "name": "Розгортання Vercel",
       "file": "vercel-deployments-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Приклад проєкту",
+      "name": "Приклад проекту",
       "file": "example-project-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус підтримки",
+      "name": "Статус обслуговування",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

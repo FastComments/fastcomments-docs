@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteca de Android",
-  "pageHeader": "Añadir comentarios a tu aplicación Android",
+  "name": "Biblioteca Android",
+  "pageHeader": "Agregar comentarios a tu aplicación Android",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Características",
       "file": "features-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Integración del feed",
+      "name": "Integración de feed",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Personalización integral del tema",
+      "name": "Personalización completa de temas",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

@@ -3,9 +3,15 @@
   "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
     {
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Za začetek",
+      "subCat": "Začetek",
       "type": "readme"
     },
     {

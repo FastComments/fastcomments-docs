@@ -1,7 +1,13 @@
 {
   "name": "iOS Kütüphanesi",
-  "pageHeader": "iOS Uygulamanıza Yorum Ekleme",
+  "pageHeader": "iOS Uygulamanıza Yorum Ekleyin",
   "itemsOrdered": [
+    {
+      "name": "Yapay Zeka kodlama ajanları",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
     {
       "name": "Özellikler",
       "file": "features-readme-generated.md",
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Dallanmış Yorumlar",
+      "name": "Zincirleme Yorumlar",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -51,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "Tema Özelleştirme",
+      "name": "Tema",
       "file": "theming-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Moderasyon",
+      "name": "Denetleme",
       "file": "moderation-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -75,7 +81,7 @@
       "type": "readme"
     },
     {
-      "name": "Sayfalandırma",
+      "name": "Sayfalama",
       "file": "pagination-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -93,13 +99,13 @@
       "type": "readme"
     },
     {
-      "name": "Temizlik",
+      "name": "Temizleme",
       "file": "cleanup-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     },
     {
-      "name": "Resim Yüklemeleri",
+      "name": "Görsel Yüklemeleri",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

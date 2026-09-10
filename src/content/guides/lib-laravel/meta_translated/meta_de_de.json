@@ -3,6 +3,12 @@
   "pageHeader": "Kommentare zu Ihrer Laravel-App hinzufügen",
   "itemsOrdered": [
     {
+      "name": "KI-Coding-Agenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Anforderungen",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentation",

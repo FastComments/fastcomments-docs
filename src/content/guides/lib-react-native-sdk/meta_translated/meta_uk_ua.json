@@ -1,9 +1,15 @@
 {
-  "name": "SDK для React Native",
-  "pageHeader": "Додайте коментарі до вашого додатка React Native",
+  "name": "React Native SDK",
+  "pageHeader": "Додайте коментарі до вашого React Native додатку",
   "itemsOrdered": [
     {
-      "name": "Жива демонстрація",
+      "name": "AI агенти кодування",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Живий демонстраційний приклад",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Знімки екрана",
+      "name": "Скріншоти",
       "file": "screenshots-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

@@ -1,7 +1,13 @@
 {
   "name": "Пакет Django",
-  "pageHeader": "Добавьте комментарии в ваше Django‑приложение",
+  "pageHeader": "Добавьте комментарии в ваше приложение Django",
   "itemsOrdered": [
+    {
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
     {
       "name": "Требования",
       "file": "requirements-readme-generated.md",
@@ -21,19 +27,19 @@
       "type": "readme"
     },
     {
-      "name": "Требования для автоматического SSO",
+      "name": "Предварительные условия для автоматического SSO",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Теги виджета",
+      "name": "Теги виджетов",
       "file": "widget-tags-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "SSO (Единый вход)",
+      "name": "SSO (единого входа)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

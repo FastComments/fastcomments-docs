@@ -13,7 +13,7 @@
       "subCat": "Pregled"
     },
     {
-      "name": "Nastavitev za lokalni razvoj",
+      "name": "Nastavitev lokalnega razvoja",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementacija"
     },
@@ -28,7 +28,7 @@
       "subCat": "Implementacija"
     },
     {
-      "name": "Strukture podatkov",
+      "name": "Podatkovne strukture",
       "file": "webhooks-structures.md",
       "subCat": "Implementacija"
     },
@@ -38,7 +38,12 @@
       "subCat": "Implementacija"
     },
     {
-      "name": "Kako deluje in obravnavanje ponovnih poizkusov",
+      "name": "Upravljanje webhookov prek API-ja",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementacija"
+    },
+    {
+      "name": "Kako deluje in obravnava ponovnih poskusov",
       "file": "webhooks-how-it-works.md",
       "subCat": "V ozadju"
     }

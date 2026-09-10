@@ -1,7 +1,13 @@
 {
-  "name": "JavaScript/TypeScript-SDK",
-  "pageHeader": "FastComments JavaScript/TypeScript-SDK",
+  "name": "JavaScript/TypeScript SDK",
+  "pageHeader": "FastComments JavaScript/TypeScript SDK",
   "itemsOrdered": [
+    {
+      "name": "KI-Codierungsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
@@ -15,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Browser- vs. Server-Kompatibilität",
+      "name": "Browser- vs Server-Kompatibilität",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "Öffentliche vs. Gesicherte APIs",
+      "name": "Öffentliche vs gesicherte APIs",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API-Referenz",
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On)-Integration",
+      "name": "SSO (Single Sign-On) Integration",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Live-Events (Echtzeit-Aktualisierungen)",
+      "name": "Live-Events (Echtzeit-Updates)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "Aggregieren",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregation",
       "type": "api"
@@ -77,19 +83,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Vom Kommentar sperren",
+      "subCat": "Kommentar blockieren",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Vom Kommentar sperren",
+      "subCat": "Kommentar blockieren",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Gesperrte Kommentare prüfen",
+      "subCat": "Blockierte Kommentare prüfen",
       "type": "api"
     },
     {
@@ -743,13 +749,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Benachrichtigungsanzahl",
+      "subCat": "Benachrichtigungszähler",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Benachrichtigungsanzahl",
+      "subCat": "Benachrichtigungszähler",
       "type": "api"
     },
     {
@@ -887,79 +893,79 @@
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "createQuestionResult",
       "file": "createquestionresult-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "deleteQuestionResult",
       "file": "deletequestionresult-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "getQuestionResult",
       "file": "getquestionresult-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "getQuestionResults",
       "file": "getquestionresults-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "updateQuestionResult",
       "file": "updatequestionresult-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageresultaten",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageresultaten",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregation der Frageergebnisse",
+      "subCat": "Aggregation von Frageresultaten",
       "type": "api"
     },
     {
@@ -1037,79 +1043,79 @@
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Mandanten-Pakete",
+      "subCat": "Mandantenpakete",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Mandanten-Pakete",
+      "subCat": "Mandantenpakete",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Mandanten-Pakete",
+      "subCat": "Mandantenpakete",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Mandanten-Pakete",
+      "subCat": "Mandantenpakete",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Mandanten-Pakete",
+      "subCat": "Mandantenpakete",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Mandanten-Pakete",
+      "subCat": "Mandantenpakete",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Mandanten-Benutzer",
+      "subCat": "Mandantenbenutzer",
       "type": "api"
     },
     {
@@ -1271,7 +1277,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Anwesenheitsstatus der Benutzer",
+      "subCat": "Benutzerpräsenzstatus",
       "type": "api"
     },
     {

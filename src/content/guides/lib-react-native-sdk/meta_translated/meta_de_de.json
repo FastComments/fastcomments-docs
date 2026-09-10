@@ -1,7 +1,13 @@
 {
   "name": "React Native SDK",
-  "pageHeader": "Kommentare zu Ihrer React Native-App hinzufügen",
+  "pageHeader": "Kommentare zu Ihrer React Native App hinzufügen",
   "itemsOrdered": [
+    {
+      "name": "KI-Programmieragenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Live-Demo",
       "file": "live-demo-readme-generated.md",
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Bildschirmfotos",
+      "name": "Screenshots",
       "file": "screenshots-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

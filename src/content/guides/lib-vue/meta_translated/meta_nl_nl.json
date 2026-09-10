@@ -1,7 +1,13 @@
 {
-  "name": "Vue 2-bibliotheek",
+  "name": "Vue 2 Bibliotheek",
   "pageHeader": "Voeg opmerkingen toe aan je Vue 2-app",
   "itemsOrdered": [
+    {
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
     {
       "name": "Live demonstratie",
       "file": "live-showcase-readme-generated.md",

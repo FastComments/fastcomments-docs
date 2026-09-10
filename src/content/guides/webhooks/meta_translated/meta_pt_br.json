@@ -8,12 +8,12 @@
       "subCat": "Visão geral"
     },
     {
-      "name": "Eventos e recursos suportados",
+      "name": "Eventos e Recursos Suportados",
       "file": "webhooks-supported-events-resources.md",
       "subCat": "Visão geral"
     },
     {
-      "name": "Configuração de desenvolvimento local",
+      "name": "Configuração de Desenvolvimento Local",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementação"
     },
@@ -23,24 +23,29 @@
       "subCat": "Implementação"
     },
     {
-      "name": "Testes",
+      "name": "Teste",
       "file": "webhooks-testing.md",
       "subCat": "Implementação"
     },
     {
-      "name": "Estruturas de dados",
+      "name": "Estruturas de Dados",
       "file": "webhooks-structures.md",
       "subCat": "Implementação"
     },
     {
-      "name": "Segurança e tokens de API",
+      "name": "Segurança e Tokens de API",
       "file": "webhooks-api-tokens.md",
       "subCat": "Implementação"
     },
     {
-      "name": "Como funciona e como lidar com tentativas de reenvio",
+      "name": "Gerenciando Webhooks pela API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementação"
+    },
+    {
+      "name": "Como funciona e tratamento de tentativas",
       "file": "webhooks-how-it-works.md",
-      "subCat": "Bastidores"
+      "subCat": "Nos bastidores"
     }
   ]
 }

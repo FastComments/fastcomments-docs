@@ -1,7 +1,13 @@
 {
-  "name": "Paquete de Laravel",
-  "pageHeader": "Añadir comentarios a tu aplicación Laravel",
+  "name": "Paquete Laravel",
+  "pageHeader": "Agregar comentarios a tu aplicación Laravel",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Requisitos",
       "file": "requirements-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Inicio de sesión único)",
+      "name": "SSO",
       "file": "sso-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -29,13 +35,13 @@
     {
       "name": "Acceso a la API",
       "file": "api-access-readme-generated.md",
-      "subCat": "Referencia de la API",
+      "subCat": "Referencia de API",
       "type": "readme"
     },
     {
       "name": "Referencia de configuración",
       "file": "configuration-reference-readme-generated.md",
-      "subCat": "Referencia de la API",
+      "subCat": "Referencia de API",
       "type": "readme"
     },
     {

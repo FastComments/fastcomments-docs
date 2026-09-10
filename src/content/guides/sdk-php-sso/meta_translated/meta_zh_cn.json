@@ -1,11 +1,17 @@
 {
-  "name": "PHP 单点登录 SDK",
-  "pageHeader": "FastComments PHP 单点登录 SDK",
+  "name": "PHP SSO SDK",
+  "pageHeader": "FastComments PHP SSO SDK",
   "itemsOrdered": [
+    {
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "快速开始",
+      "subCat": "入门",
       "type": "readme"
     },
     {

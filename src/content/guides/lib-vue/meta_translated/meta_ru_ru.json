@@ -1,9 +1,15 @@
 {
   "name": "Библиотека Vue 2",
-  "pageHeader": "Добавьте комментарии в ваше приложение на Vue 2",
+  "pageHeader": "Добавьте комментарии в ваше приложение Vue 2",
   "itemsOrdered": [
     {
-      "name": "Живая демонстрация",
+      "name": "AI‑агенты программирования",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Живой демонстрационный пример",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -27,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "В продакшене",
+      "name": "В продакшн",
       "file": "in-production-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

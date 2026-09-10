@@ -1,7 +1,13 @@
 {
-  "name": "Knjižnica za Angular",
+  "name": "Knjižnica Angular",
   "pageHeader": "Dodajte komentarje v vašo Angular aplikacijo",
   "itemsOrdered": [
+    {
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
     {
       "name": "Živa predstavitev",
       "file": "live-demo-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Začetek",
+      "subCat": "Uvod",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Status vzdrževanja",
+      "name": "Stanje vzdrževanja",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

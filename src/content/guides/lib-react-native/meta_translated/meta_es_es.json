@@ -1,7 +1,13 @@
 {
-  "name": "Biblioteca de React Native",
-  "pageHeader": "Añadir widgets de comentarios a tu aplicación de React Native",
+  "name": "Biblioteca React Native",
+  "pageHeader": "Agregar widgets de comentarios a tu aplicación React Native",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificación IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
     {
       "name": "Demostración en vivo",
       "file": "live-showcase-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Comenzando",
       "type": "readme"
     },
     {
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "Uso - SSO (inicio de sesión único)",
+      "name": "Uso - SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"
     },
     {
-      "name": "Dependencias peer",
+      "name": "Dependencias de pares",
       "file": "peer-dependencies-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"

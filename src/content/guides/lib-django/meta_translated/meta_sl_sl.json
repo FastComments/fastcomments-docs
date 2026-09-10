@@ -3,6 +3,12 @@
   "pageHeader": "Dodajte komentarje v svojo Django aplikacijo",
   "itemsOrdered": [
     {
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
       "name": "Zahteve",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentacija",
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Hitri začetek",
+      "name": "Hiter začetek",
       "file": "quickstart-readme-generated.md",
       "subCat": "Uporaba",
       "type": "readme"
     },
     {
-      "name": "Predpogoji za samodejno SSO",
+      "name": "Predpogoji za samodejni SSO",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -33,13 +39,13 @@
       "type": "readme"
     },
     {
-      "name": "SSO (Enotna prijava)",
+      "name": "SSO (Enkratna prijava)",
       "file": "sso-single-sign-on-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Dostop do strežniškega API-ja",
+      "name": "Dostop do API-ja na strežniku",
       "file": "server-side-api-access-readme-generated.md",
       "subCat": "Referenca API",
       "type": "readme"

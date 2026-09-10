@@ -1,19 +1,19 @@
 {
-  "name": "ווב־הוקים",
+  "name": "ווב-הוקים",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "מה הם ווב־הוקים",
+      "name": "מהם ווב-הוקים",
       "file": "what-are-webhooks.md",
-      "subCat": "סקירה כללית"
+      "subCat": "סקירה"
     },
     {
       "name": "אירועים ומשאבים נתמכים",
       "file": "webhooks-supported-events-resources.md",
-      "subCat": "סקירה כללית"
+      "subCat": "סקירה"
     },
     {
-      "name": "הגדרות פיתוח מקומי",
+      "name": "הגדרת פיתוח מקומי",
       "file": "webhooks-local-dev.md",
       "subCat": "יישום"
     },
@@ -23,7 +23,7 @@
       "subCat": "יישום"
     },
     {
-      "name": "בדיקות",
+      "name": "בדיקה",
       "file": "webhooks-testing.md",
       "subCat": "יישום"
     },
@@ -33,12 +33,17 @@
       "subCat": "יישום"
     },
     {
-      "name": "אבטחה ואסימוני API",
+      "name": "אבטחה וטוקני API",
       "file": "webhooks-api-tokens.md",
       "subCat": "יישום"
     },
     {
-      "name": "כיצד זה עובד וטיפול בניסיונות חוזרים",
+      "name": "ניהול ווב-הוקים דרך ה-API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "יישום"
+    },
+    {
+      "name": "איך זה עובד וטיפול בניסיונות חוזרים",
       "file": "webhooks-how-it-works.md",
       "subCat": "מאחורי הקלעים"
     }

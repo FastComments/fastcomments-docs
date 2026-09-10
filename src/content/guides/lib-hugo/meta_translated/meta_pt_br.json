@@ -1,45 +1,51 @@
 {
   "name": "Biblioteca Hugo",
-  "pageHeader": "Adicionar comentários ao seu site Hugo",
+  "pageHeader": "Adicionar Comentários ao Seu Site Hugo",
   "itemsOrdered": [
     {
-      "name": "Demonstração ao vivo",
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Demo ao Vivo",
       "file": "live-demo-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Apresentação ao vivo",
+      "name": "Apresentação ao Vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Instalação",
+      "name": "Instalar",
       "file": "install-readme-generated.md",
-      "subCat": "Primeiros passos",
+      "subCat": "Começando",
       "type": "readme"
     },
     {
-      "name": "Início rápido",
+      "name": "Início Rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Shortcodes",
+      "name": "Códigos curtos",
       "file": "shortcodes-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Integração com tema",
+      "name": "Integração de Tema",
       "file": "theme-integration-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Contagem em massa de comentários",
+      "name": "Contagem de comentários em massa",
       "file": "bulk-comment-counts-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -51,9 +57,9 @@
       "type": "readme"
     },
     {
-      "name": "Referência de configuração do widget",
+      "name": "Referência de configuração de widget",
       "file": "widget-configuration-reference-readme-generated.md",
-      "subCat": "Referência da API",
+      "subCat": "Referência de API",
       "type": "readme"
     },
     {
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Status de manutenção",
+      "name": "Status de Manutenção",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

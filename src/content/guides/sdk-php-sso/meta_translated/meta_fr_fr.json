@@ -1,11 +1,17 @@
 {
   "name": "SDK SSO PHP",
-  "pageHeader": "SDK SSO PHP de FastComments",
+  "pageHeader": "FastComments SDK SSO PHP",
   "itemsOrdered": [
+    {
+      "name": "Agents de codage IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Prise en main",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {

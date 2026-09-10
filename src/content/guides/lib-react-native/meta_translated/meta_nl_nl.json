@@ -1,9 +1,15 @@
 {
-  "name": "React Native-bibliotheek",
-  "pageHeader": "Voeg reactie-widgets toe aan uw React Native-app",
+  "name": "React Native Bibliotheek",
+  "pageHeader": "Voeg commentaarwidgets toe aan uw React Native-app",
   "itemsOrdered": [
     {
-      "name": "Live demonstratie",
+      "name": "AI-coderingsagenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live Demo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -15,19 +21,19 @@
       "type": "readme"
     },
     {
-      "name": "Overweeg de native SDK",
+      "name": "Overweeg de Native SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Gebruik - De live reactie-widget",
+      "name": "Gebruik - De Live Commentaarwidget",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"
     },
     {
-      "name": "Gebruik - De live chat-widget",
+      "name": "Gebruik - De Live Chatwidget",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"

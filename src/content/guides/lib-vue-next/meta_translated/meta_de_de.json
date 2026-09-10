@@ -1,7 +1,13 @@
 {
-  "name": "Vue-3-Bibliothek",
-  "pageHeader": "Kommentare zu Ihrer Vue-3-App hinzufügen",
+  "name": "Vue 3 Bibliothek",
+  "pageHeader": "Kommentare zu Ihrer Vue 3 App hinzufügen",
   "itemsOrdered": [
+    {
+      "name": "KI-Coding-Agenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Live-Demo",
       "file": "live-demo-readme-generated.md",
@@ -9,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Live-Präsentation",
+      "name": "Live-Showcase",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

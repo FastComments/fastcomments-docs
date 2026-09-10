@@ -13,7 +13,7 @@
       "subCat": "Przegląd"
     },
     {
-      "name": "Konfiguracja środowiska lokalnego",
+      "name": "Konfiguracja lokalnego środowiska deweloperskiego",
       "file": "webhooks-local-dev.md",
       "subCat": "Implementacja"
     },
@@ -38,9 +38,14 @@
       "subCat": "Implementacja"
     },
     {
+      "name": "Zarządzanie webhookami za pomocą API",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "Implementacja"
+    },
+    {
       "name": "Jak to działa i obsługa ponownych prób",
       "file": "webhooks-how-it-works.md",
-      "subCat": "Kulisy"
+      "subCat": "Za kulisami"
     }
   ]
 }

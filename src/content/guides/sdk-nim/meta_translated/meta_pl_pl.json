@@ -1,7 +1,13 @@
 {
-  "name": "SDK dla Nim",
-  "pageHeader": "FastComments SDK dla Nim",
+  "name": "Nim SDK",
+  "pageHeader": "FastComments Nim SDK",
   "itemsOrdered": [
+    {
+      "name": "Agenci programowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
     {
       "name": "Wymagania",
       "file": "requirements-readme-generated.md",
@@ -11,7 +17,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
@@ -21,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Making API Calls",
+      "name": "Wywoływanie API",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Referencja API",
       "type": "readme"
@@ -39,13 +45,13 @@
       "type": "readme"
     },
     {
-      "name": "Dokumentacja FastComments",
+      "name": "Dokumentacja dla fastcomments",
       "file": "documentation-for-fastcomments-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "Agreguj",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregacja",
       "type": "api"
@@ -53,7 +59,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Dzienniki audytu",
+      "subCat": "Logi audytu",
       "type": "api"
     },
     {
@@ -77,7 +83,7 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Sprawdź zablokowane komentarze",
+      "subCat": "Sprawdzanie zablokowanych komentarzy",
       "type": "api"
     },
     {
@@ -215,7 +221,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Komentarze użytkownika",
+      "subCat": "Komentarze dla użytkownika",
       "type": "api"
     },
     {
@@ -311,97 +317,97 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Dziennik zdarzeń",
+      "subCat": "Log zdarzeń",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Dziennik zdarzeń",
+      "subCat": "Log zdarzeń",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Posty",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Zgłaszanie komentarza",
+      "subCat": "Zgłoszenie komentarza",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIFy",
+      "subCat": "Gify",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIFy",
+      "subCat": "Gify",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIFy",
+      "subCat": "Gify",
       "type": "api"
     },
     {
@@ -755,43 +761,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Reakcje strony",
+      "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
@@ -1013,7 +1019,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dzienne użycie najemcy",
+      "subCat": "Użycie dzienne najemcy",
       "type": "api"
     },
     {
@@ -1157,7 +1163,7 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Przesyłanie obrazu",
+      "subCat": "Prześlij obraz",
       "type": "api"
     },
     {

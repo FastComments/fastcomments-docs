@@ -1,7 +1,13 @@
 {
   "name": "Biblioteca iOS",
-  "pageHeader": "Adicione comentários ao seu aplicativo iOS",
+  "pageHeader": "Adicionar Comentários ao Seu App iOS",
   "itemsOrdered": [
+    {
+      "name": "Agentes de codificação de IA",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
     {
       "name": "Recursos",
       "file": "features-readme-generated.md",
@@ -17,7 +23,7 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeiros passos",
+      "subCat": "Começando",
       "type": "readme"
     },
     {
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Comentários encadeados",
+      "name": "Comentários em Thread",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Botões personalizados da barra de ferramentas",
+      "name": "Botões Personalizados da Barra de Ferramentas",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "Região da UE",
+      "name": "Região UE",
       "file": "eu-region-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -99,25 +105,25 @@
       "type": "readme"
     },
     {
-      "name": "Envio de imagens",
+      "name": "Envio de Imagens",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Menções a usuários",
+      "name": "Menções de Usuário",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Edição e exclusão de comentários",
+      "name": "Editar e Excluir Comentários",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Tratamento de erros",
+      "name": "Tratamento de Erros",
       "file": "error-handling-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -129,7 +135,7 @@
       "type": "readme"
     },
     {
-      "name": "Aplicativo de exemplo",
+      "name": "App de Exemplo",
       "file": "example-app-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"

@@ -1,53 +1,59 @@
 {
-  "name": "SDK для PHP",
-  "pageHeader": "FastComments SDK для PHP",
+  "name": "PHP SDK",
+  "pageHeader": "FastComments PHP SDK",
   "itemsOrdered": [
     {
-      "name": "Installation & Usage",
+      "name": "AI агенти кодування",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Встановлення та використання",
       "file": "installation-usage-readme-generated.md",
       "subCat": "Початок роботи",
       "type": "readme"
     },
     {
-      "name": "Getting Started",
+      "name": "Початок роботи",
       "file": "getting-started-readme-generated.md",
       "subCat": "Початок роботи",
       "type": "readme"
     },
     {
-      "name": "API Clients",
+      "name": "API клієнти",
       "file": "api-clients-readme-generated.md",
-      "subCat": "Довідник API",
+      "subCat": "Посилання API",
       "type": "readme"
     },
     {
-      "name": "API Methods",
+      "name": "API методи",
       "file": "api-methods-readme-generated.md",
-      "subCat": "Довідник API",
+      "subCat": "Посилання API",
       "type": "readme"
     },
     {
-      "name": "Models",
+      "name": "Моделі",
       "file": "models-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Authorization",
+      "name": "Авторизація",
       "file": "authorization-readme-generated.md",
       "subCat": "Аутентифікація",
       "type": "readme"
     },
     {
-      "name": "Author",
+      "name": "Автор",
       "file": "author-readme-generated.md",
       "subCat": "Аутентифікація",
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "агрегат",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегування",
+      "subCat": "Агрегат",
       "type": "api"
     },
     {
@@ -59,19 +65,19 @@
     {
       "name": "logoutPublic",
       "file": "logoutpublic-api-generated.md",
-      "subCat": "Аутентифікація",
+      "subCat": "Авторизація",
       "type": "api"
     },
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Блокування через коментар",
+      "subCat": "Блокування з коментаря",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Блокування через коментар",
+      "subCat": "Блокування з коментаря",
       "type": "api"
     },
     {
@@ -215,7 +221,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Коментарі користувача",
+      "subCat": "Коментарі для користувача",
       "type": "api"
     },
     {
@@ -383,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Поскаржитися на коментар",
+      "subCat": "Позначити коментар",
       "type": "api"
     },
     {
@@ -761,43 +767,43 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "Реакції сторінки",
+      "subCat": "Реакції на сторінці",
       "type": "api"
     },
     {
@@ -857,49 +863,49 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікуючі події вебхука",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікуючі події вебхука",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікуючі події вебхука",
       "type": "api"
     },
     {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Налаштування питань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Налаштування питань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Налаштування питань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Налаштування питань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Налаштування питань",
+      "subCat": "Конфігурації питань",
       "type": "api"
     },
     {
@@ -1259,7 +1265,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статуси присутності користувача",
+      "subCat": "Статус присутності користувача",
       "type": "api"
     },
     {
@@ -1277,25 +1283,25 @@
     {
       "name": "createVote",
       "file": "createvote-api-generated.md",
-      "subCat": "Голосування",
+      "subCat": "Голоси",
       "type": "api"
     },
     {
       "name": "deleteVote",
       "file": "deletevote-api-generated.md",
-      "subCat": "Голосування",
+      "subCat": "Голоси",
       "type": "api"
     },
     {
       "name": "getVotes",
       "file": "getvotes-api-generated.md",
-      "subCat": "Голосування",
+      "subCat": "Голоси",
       "type": "api"
     },
     {
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
-      "subCat": "Голосування",
+      "subCat": "Голоси",
       "type": "api"
     }
   ]

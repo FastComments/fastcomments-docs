@@ -3,7 +3,7 @@
   "icon": "ai.png",
   "itemsOrdered": [
     {
-      "name": "Pridobite LLM komplet",
+      "name": "Prenesite LLM komplet",
       "file": "llm-kit-snippet.md",
       "subCat": "Integracija LLM"
     },
@@ -11,6 +11,11 @@
       "name": "MCP strežnik",
       "file": "mcp-server.md",
       "subCat": "MCP strežnik"
+    },
+    {
+      "name": "Naj agent nastavi vaš račun",
+      "file": "agent-account-setup.md",
+      "subCat": "Nastavitev računa agenta"
     }
   ]
 }

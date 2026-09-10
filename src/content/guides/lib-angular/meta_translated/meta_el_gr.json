@@ -1,9 +1,15 @@
 {
   "name": "Βιβλιοθήκη Angular",
-  "pageHeader": "Προσθέστε σχόλια στην εφαρμογή Angular σας",
+  "pageHeader": "Προσθήκη Σχολίων στην Εφαρμογή Angular σας",
   "itemsOrdered": [
     {
-      "name": "Ζωντανή επίδειξη",
+      "name": "Πράκτορες κώδικα AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Τεκμηρίωση",
+      "type": "readme"
+    },
+    {
+      "name": "Ζωντανή Επίδειξη",
       "file": "live-demo-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
@@ -15,13 +21,13 @@
       "type": "readme"
     },
     {
-      "name": "Δομή έργου",
+      "name": "Δομή Έργου",
       "file": "project-structure-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"
     },
     {
-      "name": "Κατάσταση συντήρησης",
+      "name": "Κατάσταση Συντήρησης",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Τεκμηρίωση",
       "type": "readme"

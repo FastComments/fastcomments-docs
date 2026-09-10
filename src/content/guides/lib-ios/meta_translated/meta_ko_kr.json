@@ -3,13 +3,19 @@
   "pageHeader": "iOS 앱에 댓글 추가하기",
   "itemsOrdered": [
     {
+      "name": "AI 코딩 에이전트",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
       "name": "기능",
       "file": "features-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "요구사항",
+      "name": "요구 사항",
       "file": "requirements-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -27,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "인증(SSO)",
+      "name": "인증 (SSO)",
       "file": "authentication-sso-readme-generated.md",
       "subCat": "인증",
       "type": "readme"
     },
     {
-      "name": "스레드 댓글",
+      "name": "스레드형 댓글",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -51,19 +57,19 @@
       "type": "readme"
     },
     {
-      "name": "테마 설정",
+      "name": "테마 적용",
       "file": "theming-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "사용자 정의 툴바 버튼",
+      "name": "맞춤 툴바 버튼",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "모더레이션",
+      "name": "중재",
       "file": "moderation-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -75,19 +81,19 @@
       "type": "readme"
     },
     {
-      "name": "페이지네이션",
+      "name": "페이지 매김",
       "file": "pagination-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "상태 및 관찰성",
+      "name": "상태 및 관찰 가능성",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "EU 리전",
+      "name": "EU 지역",
       "file": "eu-region-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -105,7 +111,7 @@
       "type": "readme"
     },
     {
-      "name": "사용자 언급",
+      "name": "사용자 멘션",
       "file": "user-mentions-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

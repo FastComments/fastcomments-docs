@@ -3,6 +3,12 @@
   "pageHeader": "FastComments Nim SDK",
   "itemsOrdered": [
     {
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Krav",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentation",
@@ -11,7 +17,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
       "type": "readme"
     },
     {
@@ -21,9 +27,9 @@
       "type": "readme"
     },
     {
-      "name": "Foretage API-opkald",
+      "name": "Foretag API-kald",
       "file": "making-api-calls-readme-generated.md",
-      "subCat": "API-reference",
+      "subCat": "API-referencer",
       "type": "readme"
     },
     {
@@ -45,9 +51,9 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "aggregere",
       "file": "aggregate-api-generated.md",
-      "subCat": "Aggregering",
+      "subCat": "Aggregere",
       "type": "api"
     },
     {
@@ -65,13 +71,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Bloker fra kommentar",
+      "subCat": "Blokér fra kommentar",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Bloker fra kommentar",
+      "subCat": "Blokér fra kommentar",
       "type": "api"
     },
     {
@@ -383,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Marker kommentar",
+      "subCat": "Flag kommentar",
       "type": "api"
     },
     {
@@ -437,259 +443,259 @@
     {
       "name": "deleteModerationVote",
       "file": "deletemoderationvote-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getApiComments",
       "file": "getapicomments-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getApiExportStatus",
       "file": "getapiexportstatus-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getApiIds",
       "file": "getapiids-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getBanUsersFromComment",
       "file": "getbanusersfromcomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getCommentBanStatus",
       "file": "getcommentbanstatus-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getCommentChildren",
       "file": "getcommentchildren-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getCount",
       "file": "getcount-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getCounts",
       "file": "getcounts-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getLogs",
       "file": "getlogs-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getManualBadges",
       "file": "getmanualbadges-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getManualBadgesForUser",
       "file": "getmanualbadgesforuser-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getModerationComment",
       "file": "getmoderationcomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getModerationCommentText",
       "file": "getmoderationcommenttext-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getPreBanSummary",
       "file": "getprebansummary-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getSearchCommentsSummary",
       "file": "getsearchcommentssummary-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getSearchPages",
       "file": "getsearchpages-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getSearchSites",
       "file": "getsearchsites-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getSearchSuggest",
       "file": "getsearchsuggest-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getSearchUsers",
       "file": "getsearchusers-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getTrustFactor",
       "file": "gettrustfactor-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getUserBanPreference",
       "file": "getuserbanpreference-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "getUserInternalProfile",
       "file": "getuserinternalprofile-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postAdjustCommentVotes",
       "file": "postadjustcommentvotes-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postApiExport",
       "file": "postapiexport-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postBanUserFromComment",
       "file": "postbanuserfromcomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postBanUserUndo",
       "file": "postbanuserundo-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postBulkPreBanSummary",
       "file": "postbulkprebansummary-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postCommentsByIds",
       "file": "postcommentsbyids-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postFlagComment",
       "file": "postflagcomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postRemoveComment",
       "file": "postremovecomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postRestoreDeletedComment",
       "file": "postrestoredeletedcomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postSetCommentApprovalStatus",
       "file": "postsetcommentapprovalstatus-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postSetCommentReviewStatus",
       "file": "postsetcommentreviewstatus-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postSetCommentSpamStatus",
       "file": "postsetcommentspamstatus-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postSetCommentText",
       "file": "postsetcommenttext-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postUnFlagComment",
       "file": "postunflagcomment-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "postVote",
       "file": "postvote-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "putAwardBadge",
       "file": "putawardbadge-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "putCloseThread",
       "file": "putclosethread-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "putRemoveBadge",
       "file": "putremovebadge-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "putReopenThread",
       "file": "putreopenthread-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
       "name": "setTrustFactor",
       "file": "settrustfactor-api-generated.md",
-      "subCat": "Moderering",
+      "subCat": "Moderation",
       "type": "api"
     },
     {
@@ -725,13 +731,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Antal notifikationer",
+      "subCat": "Notifikationsantal",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Antal notifikationer",
+      "subCat": "Notifikationsantal",
       "type": "api"
     },
     {
@@ -837,7 +843,7 @@
       "type": "api"
     },
     {
-      "name": "getUsersInfo",
+      "name": "getUserInfo",
       "file": "getusersinfo-api-generated.md",
       "subCat": "Sider",
       "type": "api"
@@ -851,19 +857,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Ventende webhook-hændelser",
+      "subCat": "Afventende webhook-begivenheder",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Ventende webhook-hændelser",
+      "subCat": "Afventende webhook-begivenheder",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Ventende webhook-hændelser",
+      "subCat": "Afventende webhook-begivenheder",
       "type": "api"
     },
     {
@@ -929,19 +935,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgeresultater",
+      "subCat": "Spørgsmålsresultat-aggregat",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgeresultater",
+      "subCat": "Spørgsmålsresultat-aggregat",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Aggregering af spørgeresultater",
+      "subCat": "Spørgsmålsresultat-aggregat",
       "type": "api"
     },
     {
@@ -1013,85 +1019,85 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Lejerens daglige brug",
+      "subCat": "Lejer daglig brug",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Lejers pakker",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Lejers pakker",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Lejers pakker",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Lejers pakker",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Lejers pakker",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Lejerpakker",
+      "subCat": "Lejers pakker",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Lejerbrugere",
+      "subCat": "Lejers brugere",
       "type": "api"
     },
     {
@@ -1163,19 +1169,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge fremskridt",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge fremskridt",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Brugerbadge-fremgang",
+      "subCat": "Brugerbadge fremskridt",
       "type": "api"
     },
     {
@@ -1211,49 +1217,49 @@
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Brugernotifikationer",
+      "subCat": "Bruger-notifikationer",
       "type": "api"
     },
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Brugertilstedeværelsesstatus",
+      "subCat": "Bruger tilstedeværelsesstatus",
       "type": "api"
     },
     {

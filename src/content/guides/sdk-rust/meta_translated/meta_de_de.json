@@ -1,7 +1,13 @@
 {
-  "name": "Rust-SDK",
-  "pageHeader": "FastComments Rust-SDK",
+  "name": "Rust SDK",
+  "pageHeader": "FastComments Rust SDK",
   "itemsOrdered": [
+    {
+      "name": "KI-Coding-Agenten",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
@@ -33,9 +39,9 @@
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "aggregieren",
       "file": "aggregate-api-generated.md",
-      "subCat": "Aggregation",
+      "subCat": "Aggregieren",
       "type": "api"
     },
     {
@@ -71,19 +77,19 @@
     {
       "name": "block_from_comment_public",
       "file": "block-from-comment-public-api-generated.md",
-      "subCat": "Vom Kommentar sperren",
+      "subCat": "Blockieren vom Kommentar",
       "type": "api"
     },
     {
       "name": "un_block_comment_public",
       "file": "un-block-comment-public-api-generated.md",
-      "subCat": "Vom Kommentar sperren",
+      "subCat": "Blockieren vom Kommentar",
       "type": "api"
     },
     {
       "name": "checked_comments_for_blocked",
       "file": "checked-comments-for-blocked-api-generated.md",
-      "subCat": "Gesperrte Kommentare prüfen",
+      "subCat": "Blockierte Kommentare prüfen",
       "type": "api"
     },
     {
@@ -713,13 +719,13 @@
     {
       "name": "delete_notification_count",
       "file": "delete-notification-count-api-generated.md",
-      "subCat": "Benachrichtigungsanzahl",
+      "subCat": "Benachrichtigungszähler",
       "type": "api"
     },
     {
       "name": "get_cached_notification_count",
       "file": "get-cached-notification-count-api-generated.md",
-      "subCat": "Benachrichtigungsanzahl",
+      "subCat": "Benachrichtigungszähler",
       "type": "api"
     },
     {
@@ -857,79 +863,79 @@
     {
       "name": "create_question_config",
       "file": "create-question-config-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "delete_question_config",
       "file": "delete-question-config-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "get_question_config",
       "file": "get-question-config-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "get_question_configs",
       "file": "get-question-configs-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "update_question_config",
       "file": "update-question-config-api-generated.md",
-      "subCat": "Fragekonfigurationen",
+      "subCat": "Fragenkonfigurationen",
       "type": "api"
     },
     {
       "name": "create_question_result",
       "file": "create-question-result-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "delete_question_result",
       "file": "delete-question-result-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "get_question_result",
       "file": "get-question-result-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "get_question_results",
       "file": "get-question-results-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "update_question_result",
       "file": "update-question-result-api-generated.md",
-      "subCat": "Frageergebnisse",
+      "subCat": "Frageresultate",
       "type": "api"
     },
     {
       "name": "aggregate_question_results",
       "file": "aggregate-question-results-api-generated.md",
-      "subCat": "Aggregation von Frageergebnissen",
+      "subCat": "Aggregation von Frageresultaten",
       "type": "api"
     },
     {
       "name": "bulk_aggregate_question_results",
       "file": "bulk-aggregate-question-results-api-generated.md",
-      "subCat": "Aggregation von Frageergebnissen",
+      "subCat": "Aggregation von Frageresultaten",
       "type": "api"
     },
     {
       "name": "combine_comments_with_question_results",
       "file": "combine-comments-with-question-results-api-generated.md",
-      "subCat": "Aggregation von Frageergebnissen",
+      "subCat": "Aggregation von Frageresultaten",
       "type": "api"
     },
     {
@@ -1001,7 +1007,7 @@
     {
       "name": "get_tenant_daily_usages",
       "file": "get-tenant-daily-usages-api-generated.md",
-      "subCat": "Tägliche Mandantennutzung",
+      "subCat": "Tägliche Nutzung des Mandanten",
       "type": "api"
     },
     {
@@ -1151,19 +1157,19 @@
     {
       "name": "get_user_badge_progress_by_id",
       "file": "get-user-badge-progress-by-id-api-generated.md",
-      "subCat": "Benutzer-Abzeichen-Fortschritt",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_by_user_id",
       "file": "get-user-badge-progress-by-user-id-api-generated.md",
-      "subCat": "Benutzer-Abzeichen-Fortschritt",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
       "name": "get_user_badge_progress_list",
       "file": "get-user-badge-progress-list-api-generated.md",
-      "subCat": "Benutzer-Abzeichen-Fortschritt",
+      "subCat": "Fortschritt der Benutzerabzeichen",
       "type": "api"
     },
     {
@@ -1241,7 +1247,7 @@
     {
       "name": "get_user_presence_statuses",
       "file": "get-user-presence-statuses-api-generated.md",
-      "subCat": "Benutzer-Anwesenheitsstatus",
+      "subCat": "Benutzerpräsenzstatus",
       "type": "api"
     },
     {

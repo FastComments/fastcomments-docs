@@ -1,7 +1,13 @@
 {
-  "name": "Astro-bibliotek",
-  "pageHeader": "Tilføj kommentarer til dit Astro-websted",
+  "name": "Astro Bibliotek",
+  "pageHeader": "Tilføj kommentarer til dit Astro-site",
   "itemsOrdered": [
+    {
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
     {
       "name": "Live-demo",
       "file": "live-demo-readme-generated.md",
@@ -9,15 +15,15 @@
       "type": "readme"
     },
     {
-      "name": "Live-præsentation",
+      "name": "Live-udstilling",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Installation",
+      "name": "Installer",
       "file": "install-readme-generated.md",
-      "subCat": "Kom godt i gang",
+      "subCat": "Kom i gang",
       "type": "readme"
     },
     {

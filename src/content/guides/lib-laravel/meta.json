@@ -3,6 +3,12 @@
   "pageHeader": "Add Comments to Your Laravel App",
   "itemsOrdered": [
     {
+      "name": "AI coding agents",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Requirements",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",

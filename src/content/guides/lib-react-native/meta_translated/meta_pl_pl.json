@@ -3,6 +3,12 @@
   "pageHeader": "Dodaj widżety komentarzy do swojej aplikacji React Native",
   "itemsOrdered": [
     {
+      "name": "Agenci kodowania AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
       "name": "Prezentacja na żywo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacja",
@@ -11,29 +17,29 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Pierwsze kroki",
+      "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
-      "name": "Rozważ użycie natywnego SDK",
+      "name": "Rozważ natywny SDK",
       "file": "consider-the-native-sdk-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Użycie - widżet komentarzy na żywo",
+      "name": "Użycie – Widżet komentarzy na żywo",
       "file": "usage-the-live-comment-widget-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"
     },
     {
-      "name": "Użycie - widżet czatu na żywo",
+      "name": "Użycie – Widżet czatu na żywo",
       "file": "usage-the-live-chat-widget-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"
     },
     {
-      "name": "Użycie - SSO",
+      "name": "Użycie – SSO",
       "file": "usage-sso-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"

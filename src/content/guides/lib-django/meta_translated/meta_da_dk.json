@@ -3,6 +3,12 @@
   "pageHeader": "Tilføj kommentarer til din Django-app",
   "itemsOrdered": [
     {
+      "name": "AI-kodningsagenter",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
       "name": "Krav",
       "file": "requirements-readme-generated.md",
       "subCat": "Dokumentation",

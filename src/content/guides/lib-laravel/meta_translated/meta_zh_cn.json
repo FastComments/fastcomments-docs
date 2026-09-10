@@ -1,7 +1,13 @@
 {
   "name": "Laravel 包",
-  "pageHeader": "向你的 Laravel 应用添加评论",
+  "pageHeader": "为您的 Laravel 应用添加评论",
   "itemsOrdered": [
+    {
+      "name": "AI 编码代理",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
     {
       "name": "要求",
       "file": "requirements-readme-generated.md",

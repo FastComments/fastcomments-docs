@@ -1,9 +1,15 @@
 {
-  "name": "Knjižnica Vue 2",
-  "pageHeader": "Dodajte komentarje v svojo aplikacijo Vue 2",
+  "name": "Vue 2 knjižnica",
+  "pageHeader": "Dodajte komentarje v vašo aplikacijo Vue 2",
   "itemsOrdered": [
     {
-      "name": "Predstavitev v živo",
+      "name": "AI kodirni agenti",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Živi prikaz",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -33,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Status vzdrževanja",
+      "name": "Stanje vzdrževanja",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

@@ -3,6 +3,12 @@
   "pageHeader": "Django アプリにコメントを追加する",
   "itemsOrdered": [
     {
+      "name": "AI コーディングエージェント",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
       "name": "要件",
       "file": "requirements-readme-generated.md",
       "subCat": "ドキュメント",
@@ -17,11 +23,11 @@
     {
       "name": "クイックスタート",
       "file": "quickstart-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方法",
       "type": "readme"
     },
     {
-      "name": "自動シングルサインオンの前提条件",
+      "name": "自動 SSO の前提条件",
       "file": "prerequisites-for-automatic-sso-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -39,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "サーバーサイド API アクセス",
+      "name": "サーバー側 API アクセス",
       "file": "server-side-api-access-readme-generated.md",
       "subCat": "API リファレンス",
       "type": "readme"
@@ -65,7 +71,7 @@
     {
       "name": "サンプルプロジェクト",
       "file": "example-project-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方法",
       "type": "readme"
     }
   ]

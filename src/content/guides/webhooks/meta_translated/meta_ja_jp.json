@@ -1,14 +1,14 @@
 {
-  "name": "ウェブフック",
+  "name": "Webhook",
   "icon": "pipe.png",
   "itemsOrdered": [
     {
-      "name": "ウェブフックとは",
+      "name": "Webhookとは何か",
       "file": "what-are-webhooks.md",
       "subCat": "概要"
     },
     {
-      "name": "対応イベントとリソース",
+      "name": "サポートされているイベントとリソース",
       "file": "webhooks-supported-events-resources.md",
       "subCat": "概要"
     },
@@ -38,9 +38,14 @@
       "subCat": "実装"
     },
     {
-      "name": "仕組みと再試行の処理",
+      "name": "APIを使用したWebhookの管理",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "実装"
+    },
+    {
+      "name": "仕組みとリトライの処理",
       "file": "webhooks-how-it-works.md",
-      "subCat": "内部の仕組み"
+      "subCat": "舞台裏"
     }
   ]
 }

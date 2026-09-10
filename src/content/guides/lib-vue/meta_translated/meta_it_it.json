@@ -3,6 +3,12 @@
   "pageHeader": "Aggiungi commenti alla tua app Vue 2",
   "itemsOrdered": [
     {
+      "name": "Agenti di programmazione AI",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
       "name": "Dimostrazione dal vivo",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Documentazione",
@@ -11,7 +17,7 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Primi passi",
+      "subCat": "Per iniziare",
       "type": "readme"
     },
     {

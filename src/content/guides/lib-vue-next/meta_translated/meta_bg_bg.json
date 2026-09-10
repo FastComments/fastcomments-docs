@@ -1,15 +1,21 @@
 {
-  "name": "Библиотека за Vue 3",
-  "pageHeader": "Добавете коментари към вашето приложение Vue 3",
+  "name": "Vue 3 библиотека",
+  "pageHeader": "Добавете коментари към вашето Vue 3 приложение",
   "itemsOrdered": [
     {
-      "name": "Демо на живо",
+      "name": "AI кодиращи агенти",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Демонстрация на живо",
       "file": "live-demo-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Живо представяне",
+      "name": "Жив показ",
       "file": "live-showcase-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -17,19 +23,19 @@
     {
       "name": "Инсталация",
       "file": "installation-readme-generated.md",
-      "subCat": "Първи стъпки",
+      "subCat": "Започване",
       "type": "readme"
     },
     {
-      "name": "Използване",
+      "name": "Употреба",
       "file": "usage-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
       "name": "Актуализиране на текущата страница (пример за SPA)",
       "file": "updating-the-current-page-spa-example-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
@@ -45,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Статус на поддръжката",
+      "name": "Състояние на поддръжката",
       "file": "maintenance-status-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
