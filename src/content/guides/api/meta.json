@@ -160,6 +160,12 @@
       "subCat": "HashTags"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Me"
+    },
+    {
       "name": "Moderator Structure",
       "file": "moderator-structure.md",
       "subCat": "Moderators"

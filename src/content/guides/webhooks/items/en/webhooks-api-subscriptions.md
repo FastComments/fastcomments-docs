@@ -3,8 +3,7 @@ to comment events without touching the dashboard, and it follows the REST Hooks 
 receive events, unsubscribe.
 
 API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to the dashboard webhook for its domain and to every API subscription that matches, each as its own
-delivery. There is no limit of one subscriber per event.
+to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
 
 ## Authentication
 
@@ -76,6 +75,32 @@ Deliveries use the same payload as dashboard webhooks (see Data Structures) and 
 HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
 verify the `X-FastComments-Signature` header instead.
 
+## Sample payloads
+
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
+
+Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
+show real sample data before the first event arrives. `event` is optional and only validated, since every
+event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
+
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
+
 ## Responding with 410 Gone
 
 If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
@@ -86,5 +111,5 @@ in How it Works & Handling Retries.
 
 ## Dashboard
 
-API subscriptions are listed on the Webhooks page under the domain they were created for, where an
-administrator can disable, re-enable or delete them.
+API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
+disable, re-enable or delete them.
