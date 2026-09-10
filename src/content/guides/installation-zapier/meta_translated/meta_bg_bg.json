@@ -1,0 +1,33 @@
+{
+  "name": "Интеграция с Zapier",
+  "pageHeader": "Свържете FastComments с Zapier",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "Свържете вашия акаунт",
+      "file": "zapier-connect.md",
+      "subCat": "Интеграция с Zapier"
+    },
+    {
+      "name": "Тригери",
+      "file": "zapier-triggers.md",
+      "subCat": "Интеграция с Zapier"
+    },
+    {
+      "name": "Действия и търсения",
+      "file": "zapier-actions.md",
+      "subCat": "Интеграция с Zapier"
+    },
+    {
+      "name": "Примерни Zaps",
+      "file": "zapier-examples.md",
+      "subCat": "Интеграция с Zapier"
+    },
+    {
+      "name": "Отстраняване на проблеми",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Интеграция с Zapier"
+    }
+  ]
+}

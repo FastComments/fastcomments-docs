@@ -1,0 +1,3 @@
+---
+Forbind FastComments til Zapier: udløs Zaps fra nye, opdaterede eller slettede kommentarer og opret kommentarer, sider og brugere fra enhver app. Ingen kode påkrævet.
+---

@@ -1,23 +1,24 @@
-В адмінці Webhooks є кнопки `Send Test Payload` для кожного типу подій (Create, Update, Delete). Події Create та Update відправляють демонстраційний об'єкт WebhookComment, тоді як при тестуванні Delete буде надіслано тестове тіло запиту, що містить лише ID.
+The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
 
-## Перевірка вхідних даних
+## Verifying Payloads
 
-Під час тестування інтеграції вебхуків переконайтеся, що вхідні запити містять наступні заголовки:
+When testing your webhook integration, verify the incoming requests include the following headers:
 
-1. **`token`** - Ваш секрет API
-2. **`X-FastComments-Timestamp`** - Unix-мітка часу (у секундах)
-3. **`X-FastComments-Signature`** - підпис HMAC-SHA256
+1. **`X-FastComments-Timestamp`** - Unix timestamp (seconds)
+2. **`X-FastComments-Signature`** - HMAC-SHA256 signature
 
-Використовуйте перевірку підпису HMAC, щоб переконатися в автентичності вхідних даних.
+Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
 
-## Інструменти для тестування
+Use the HMAC signature verification to ensure payloads are authentic.
 
-Ви можете використовувати інструменти, такі як [webhook.site](https://webhook.site) або [ngrok](https://ngrok.com), щоб переглядати вхідні дані вебхуків під час розробки.
+## Testing Tools
 
-## Типи подій
+You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
 
-- **Create Event**: Викликається, коли створюється новий коментар. Метод за замовчуванням: PUT
-- **Update Event**: Викликається, коли коментар редагується. Метод за замовчуванням: PUT
-- **Delete Event**: Викликається, коли коментар видаляється. Метод за замовчуванням: DELETE
+## Event Types
 
-Кожна подія містить повні дані коментаря в тілі запиту (див. [Структури даних](/guide-webhooks.html#webhooks-structures) для формату даних).
+- **Create Event**: Triggered when a new comment is created.
+- **Update Event**: Triggered when a comment is edited.
+- **Delete Event**: Triggered when a comment is deleted.
+
+Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).

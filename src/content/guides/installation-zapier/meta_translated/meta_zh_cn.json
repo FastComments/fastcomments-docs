@@ -1,0 +1,33 @@
+{
+  "name": "Zapier 集成",
+  "pageHeader": "将 FastComments 连接到 Zapier",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "连接您的账户",
+      "file": "zapier-connect.md",
+      "subCat": "Zapier 集成"
+    },
+    {
+      "name": "触发器",
+      "file": "zapier-triggers.md",
+      "subCat": "Zapier 集成"
+    },
+    {
+      "name": "操作和搜索",
+      "file": "zapier-actions.md",
+      "subCat": "Zapier 集成"
+    },
+    {
+      "name": "示例 Zaps",
+      "file": "zapier-examples.md",
+      "subCat": "Zapier 集成"
+    },
+    {
+      "name": "故障排除",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Zapier 集成"
+    }
+  ]
+}

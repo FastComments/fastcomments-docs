@@ -14,15 +14,15 @@
       "subCat": "Toplamalar"
     },
     {
-      "name": "AuditLog Yapısı",
+      "name": "Denetim Günlüğü Yapısı",
       "file": "audit-log-structure.md",
-      "subCat": "Denetim Kayıtları"
+      "subCat": "Denetim Günlükleri"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Denetim Kayıtları"
+      "subCat": "Denetim Günlükleri"
     },
     {
       "name": "Yorum Yapısı",
@@ -160,6 +160,12 @@
       "subCat": "HashTag'ler"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ben"
+    },
+    {
       "name": "Moderatör Yapısı",
       "file": "moderator-structure.md",
       "subCat": "Moderatörler"
@@ -271,7 +277,7 @@
       "subCat": "Sayfalar"
     },
     {
-      "name": "Bekleyen Webhook Olayı Yapısı",
+      "name": "PendingWebhookEvent Yapısı",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Bekleyen Webhook Olayları"
     },
@@ -294,7 +300,7 @@
       "subCat": "Bekleyen Webhook Olayları"
     },
     {
-      "name": "SSO Kullanıcı Yapısı",
+      "name": "SSOUser Yapısı",
       "file": "sso-user-structure.md",
       "subCat": "SSO Kullanıcıları"
     },
@@ -361,7 +367,7 @@
       "subCat": "Abonelikler"
     },
     {
-      "name": "Kiracı Günlük Kullanım Yapısı",
+      "name": "TenantDailyUsage Yapısı",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Kiracı Günlük Kullanımı"
     },
@@ -526,82 +532,82 @@
       "name": "DomainConfig Yapısı",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Yapılandırmaları"
     },
     {
-      "name": "SoruConfig Yapısı",
+      "name": "QuestionConfig Yapısı",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
-      "name": "SoruSonucu Yapısı",
+      "name": "QuestionResult Yapısı",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Soru Sonuçları"
@@ -649,7 +655,7 @@
       "subCat": "Soru Sonuçları Toplaması"
     },
     {
-      "name": "Kullanıcı Rozeti Yapısı",
+      "name": "UserBadge Yapısı",
       "file": "user-badge-structure.md",
       "subCat": "Kullanıcı Rozetleri"
     },
@@ -684,7 +690,7 @@
       "subCat": "Kullanıcı Rozetleri"
     },
     {
-      "name": "Kullanıcı Rozet İlerlemesi Yapısı",
+      "name": "UserBadgeProgress Yapısı",
       "file": "user-badge-progress-structure.md",
       "subCat": "Kullanıcı Rozet İlerlemesi"
     },

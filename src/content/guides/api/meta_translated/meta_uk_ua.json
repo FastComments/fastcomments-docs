@@ -133,31 +133,37 @@
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "ештеги"
+      "subCat": "Хештеги"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "ештеги"
+      "subCat": "Хештеги"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "ештеги"
+      "subCat": "Хештеги"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "ештеги"
+      "subCat": "Хештеги"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "ештеги"
+      "subCat": "Хештеги"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Мене"
     },
     {
       "name": "Структура модератора",
@@ -201,7 +207,7 @@
       "subCat": "Модератори"
     },
     {
-      "name": "Структура кількості сповіщень",
+      "name": "Структура лічильника сповіщень",
       "file": "notification-count-structure.md",
       "subCat": "Кількість сповіщень"
     },
@@ -271,7 +277,7 @@
       "subCat": "Сторінки"
     },
     {
-      "name": "Структура події очікуючого вебхука",
+      "name": "Структура очікуючої події вебхука",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Очікуючі події вебхука"
     },

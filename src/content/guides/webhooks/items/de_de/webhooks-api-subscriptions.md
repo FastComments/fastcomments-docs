@@ -1,10 +1,10 @@
-Webhooks können auch über die REST-API verwaltet werden. So abonnieren Integrationen wie Zapier Kommentarereignisse, ohne das Dashboard zu berühren, und es folgt dem REST Hooks‑Muster: abonnieren, Ereignisse empfangen, abbestellen.
+Webhooks können auch über die REST-API verwaltet werden. So abonnieren Integrationen wie Zapier Kommentarereignisse, ohne das Dashboard zu berühren, und es folgt dem REST-Hooks-Muster: abonnieren, Ereignisse empfangen, abbestellen.
 
-API‑Abonnements existieren neben den im Dashboard konfigurierten Webhooks. Ein Kommentarereignis wird an den Dashboard‑Webhook für seine Domain und an jedes passende API‑Abonnement gesendet, jeweils als eigene Zustellung. Es gibt keine Beschränkung auf einen Abonnenten pro Ereignis.
+API-Abonnements existieren neben den im Dashboard konfigurierten Webhooks. Ein Kommentarereignis wird an jeden Webhook geliefert, der zu seiner Domain passt, jeweils als eigene Zustellung, unabhängig davon, wie der Webhook erstellt wurde.
 
 ## Authentifizierung
 
-Jede Anfrage benötigt Ihren API‑Schlüssel im Header `x-api-key` (oder als Abfrageparameter `API_KEY`) und Ihre Mandanten‑ID im Abfrageparameter `tenantId`. Beide werden auf der Seite API‑Geheimnis im Dashboard angezeigt.
+Jede Anfrage benötigt Ihren API-Schlüssel im Header `x-api-key` (oder als Abfrageparameter `API_KEY`) und Ihre Mandanten-ID im Abfrageparameter `tenantId`. Beide werden auf der Seite API-Geheimnis im Dashboard angezeigt.
 
 ## Abonnieren
 
@@ -44,7 +44,7 @@ Die Antwort enthält das Abonnement:
 }
 ```
 
-Das Abonnieren derselben URL für dasselbe Ereignis und dieselbe Domain gibt das bestehende Abonnement zurück, anstatt ein Duplikat zu erstellen, sodass ein Client sicher erneut versuchen kann. Jeder Mandant kann bis zu 50 API‑Abonnements haben.
+Das Abonnieren derselben URL für dasselbe Ereignis und dieselbe Domain gibt das bestehende Abonnement zurück, anstatt ein Duplikat zu erstellen, sodass ein Client sicher erneut versuchen kann. Jeder Mandant kann bis zu 50 API-Abonnements haben.
 
 ## Auflisten
 
@@ -60,18 +60,40 @@ Gibt jeden Webhook für den Mandanten zurück, einschließlich der im Dashboard 
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Das Löschen eines Abonnements verwirft auch alle noch für es in der Warteschlange befindlichen Ereignisse. Nur über die API erstellte Abonnements können auf diese Weise gelöscht werden. Dashboard‑Webhooks werden auf der Seite Webhooks bearbeitet.
+Das Löschen eines Abonnements verwirft auch alle noch für es in der Warteschlange befindlichen Ereignisse. Nur über die API erstellte Abonnements können auf diese Weise gelöscht werden. Dashboard-Webhooks werden auf der Seite Webhooks bearbeitet.
 
-## Nutzdaten und Signatur
+## Payloads und Signierung
 
-Zustellungen verwenden dieselben Nutzdaten wie Dashboard‑Webhooks (siehe Datenstrukturen) und sind mit demselben HMAC‑Verfahren signiert (siehe Sicherheit & API‑Tokens). API‑Abonnements erhalten niemals den veralteten `token`‑Header, daher prüfen Sie stattdessen den Header `X-FastComments-Signature`.
+Zustellungen verwenden dieselbe Payload wie Dashboard-Webhooks (siehe Datenstrukturen) und werden mit demselben HMAC-Schema signiert (siehe Sicherheit & API-Token). API-Abonnements erhalten niemals den veralteten `token`-Header, daher prüfen Sie stattdessen den Header `X-FastComments-Signature`.
+
+## Beispiel-Payloads
+
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
+
+Gibt die neuesten Kommentare des Kontos exakt in der Form zurück, die eine Zustellung trägt, sodass eine Integration reale Beispieldaten anzeigen kann, bevor das erste Ereignis eintrifft. `event` ist optional und wird nur validiert, da jedes Ereignis dasselbe Kommentarobjekt liefert. `limit` ist standardmäßig 3 und akzeptiert Werte von 1 bis 10. Kostet 2 API-Credits.
+
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
 
 ## Antwort mit 410 Gone
 
-Wenn der Endpunkt eines API‑Abonnements mit HTTP `410 Gone` antwortet, behandelt FastComments dies als Abbestellung: Das Abonnement wird zusammen mit seinen wartenden Ereignissen gelöscht und es werden keine weiteren Zustellungen versucht. In dem Dashboard konfigurierten Webhooks werden niemals automatisch gelöscht; für sie bedeutet ein 410 einen normalen Fehler. Jeder andere Fehlstatus wird erneut versucht und deaktiviert schließlich den Webhook, wie in Funktionsweise & Umgang mit Wiederholungen beschrieben.
+Wenn der Endpunkt eines API-Abonnements mit HTTP `410 Gone` antwortet, behandelt FastComments dies als Abbestellung: Das Abonnement wird zusammen mit seinen wartenden Ereignissen gelöscht, und es werden keine weiteren Zustellungen versucht. Webhooks, die im Dashboard konfiguriert sind, werden niemals automatisch gelöscht; für sie ist ein 410 ein gewöhnlicher Fehler. Jeder andere Fehlstatus wird erneut versucht und deaktiviert schließlich den Webhook, wie in Funktionsweise & Umgang mit Wiederholungen beschrieben.
 
 ## Dashboard
 
-API‑Abonnements werden auf der Seite Webhooks unter der Domain, für die sie erstellt wurden, aufgelistet, wo ein Administrator sie deaktivieren, wieder aktivieren oder löschen kann.
-
----
+API-Abonnements erscheinen in der Webhooks-Liste mit der Quelle **API**, wo ein Administrator sie bearbeiten, deaktivieren, wieder aktivieren oder löschen kann.

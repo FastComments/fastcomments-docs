@@ -14,18 +14,18 @@
       "subCat": "Aggregationen"
     },
     {
-      "name": "AuditLog-Struktur",
+      "name": "Auditprotokoll-Struktur",
       "file": "audit-log-structure.md",
-      "subCat": "Audit-Logs"
+      "subCat": "Auditprotokolle"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Audit-Logs"
+      "subCat": "Auditprotokolle"
     },
     {
-      "name": "Kommentar-Struktur",
+      "name": "Kommentarstruktur",
       "file": "comment-structure.md",
       "subCat": "Kommentare"
     },
@@ -84,7 +84,7 @@
       "subCat": "Kommentare"
     },
     {
-      "name": "E-Mail-Vorlagen-Struktur",
+      "name": "E-Mail-Vorlagenstruktur",
       "file": "email-template-structure.md",
       "subCat": "E-Mail-Vorlagen"
     },
@@ -160,7 +160,13 @@
       "subCat": "Hashtags"
     },
     {
-      "name": "Moderator-Struktur",
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ich"
+    },
+    {
+      "name": "Moderatorstruktur",
       "file": "moderator-structure.md",
       "subCat": "Moderatoren"
     },
@@ -216,7 +222,7 @@
       "subCat": "Benachrichtigungszähler"
     },
     {
-      "name": "Benachrichtigungs-Struktur",
+      "name": "Benachrichtigungsstruktur",
       "file": "notification-structure.md",
       "subCat": "Benachrichtigungen"
     },
@@ -236,7 +242,7 @@
       "subCat": "Benachrichtigungen"
     },
     {
-      "name": "Seiten-Struktur",
+      "name": "Seitenstruktur",
       "file": "page-structure.md",
       "subCat": "Seiten"
     },
@@ -271,30 +277,30 @@
       "subCat": "Seiten"
     },
     {
-      "name": "PendingWebhookEvent-Struktur",
+      "name": "AusstehendeWebhook-Ereignis-Struktur",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "PendingWebhookEvents"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "PendingWebhookEvents"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "PendingWebhookEvents"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "PendingWebhookEvents"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
-      "name": "SSOUser-Struktur",
+      "name": "SSO-Benutzerstruktur",
       "file": "sso-user-structure.md",
       "subCat": "SSO-Benutzer"
     },
@@ -341,7 +347,7 @@
       "subCat": "SSO-Benutzer"
     },
     {
-      "name": "Abonnement-Struktur",
+      "name": "Abonnementstruktur",
       "file": "subscription-structure.md",
       "subCat": "Abonnements"
     },
@@ -361,18 +367,18 @@
       "subCat": "Abonnements"
     },
     {
-      "name": "TenantDailyUsage-Struktur",
+      "name": "Mandanten-Tagesnutzungsstruktur",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Tenant Daily Usage"
+      "subCat": "Mandanten-Tagesnutzung"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Daily Usage"
+      "subCat": "Mandanten-Tagesnutzung"
     },
     {
-      "name": "Mandant-Struktur",
+      "name": "Mandantenstruktur",
       "file": "tenant-structure.md",
       "subCat": "Mandanten"
     },
@@ -407,7 +413,7 @@
       "subCat": "Mandanten"
     },
     {
-      "name": "Mandanten-Paket-Struktur",
+      "name": "Mandanten-Paketstruktur",
       "file": "tenant-package-structure.md",
       "subCat": "Mandanten-Pakete"
     },
@@ -442,48 +448,48 @@
       "subCat": "Mandanten-Pakete"
     },
     {
-      "name": "Mandanten-Benutzer-Struktur",
+      "name": "Mandantenbenutzerstruktur",
       "file": "tenant-user-structure.md",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mandanten-Benutzer"
+      "subCat": "Mandantenbenutzer"
     },
     {
-      "name": "Benutzer-Struktur",
+      "name": "Benutzerstruktur",
       "file": "user-structure.md",
       "subCat": "Benutzer"
     },
@@ -494,36 +500,36 @@
       "subCat": "Benutzer"
     },
     {
-      "name": "Stimmungs-Struktur",
+      "name": "Abstimmungsstruktur",
       "file": "vote-structure.md",
-      "subCat": "Stimmen"
+      "subCat": "Abstimmungen"
     },
     {
       "name": "GET /api/v1/votes",
       "file": "votes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Stimmen"
+      "subCat": "Abstimmungen"
     },
     {
       "name": "GET /api/v1/votes/for-user",
       "file": "votes-get-for-user.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Stimmen"
+      "subCat": "Abstimmungen"
     },
     {
       "name": "POST /api/v1/votes",
       "file": "vote-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Stimmen"
+      "subCat": "Abstimmungen"
     },
     {
       "name": "DELETE /api/v1/votes/:id",
       "file": "vote-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Stimmen"
+      "subCat": "Abstimmungen"
     },
     {
-      "name": "DomainConfig-Struktur",
+      "name": "Domain-Konfigurationsstruktur",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Domain-Konfigurationen"
@@ -565,91 +571,91 @@
       "subCat": "Domain-Konfigurationen"
     },
     {
-      "name": "QuestionConfig-Struktur",
+      "name": "Fragekonfigurationsstruktur",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Konfigurationen"
+      "subCat": "Fragekonfigurationen"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Konfigurationen"
+      "subCat": "Fragekonfigurationen"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Konfigurationen"
+      "subCat": "Fragekonfigurationen"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Konfigurationen"
+      "subCat": "Fragekonfigurationen"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Konfigurationen"
+      "subCat": "Fragekonfigurationen"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Konfigurationen"
+      "subCat": "Fragekonfigurationen"
     },
     {
-      "name": "QuestionResult-Struktur",
+      "name": "Frageergebnisstruktur",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse"
+      "subCat": "Frageergebnisse"
     },
     {
       "name": "GET /api/v1/question-results",
       "file": "question-results-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse"
+      "subCat": "Frageergebnisse"
     },
     {
       "name": "GET /api/v1/question-results/:id",
       "file": "question-result-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse"
+      "subCat": "Frageergebnisse"
     },
     {
       "name": "POST /api/v1/question-results",
       "file": "question-result-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse"
+      "subCat": "Frageergebnisse"
     },
     {
       "name": "PATCH /api/v1/question-results/:id",
       "file": "question-result-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse"
+      "subCat": "Frageergebnisse"
     },
     {
       "name": "DELETE /api/v1/question-results/:id",
       "file": "question-result-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse"
+      "subCat": "Frageergebnisse"
     },
     {
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse Aggregation"
+      "subCat": "Aggregation von Frageergebnissen"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Frage-Ergebnisse Aggregation"
+      "subCat": "Aggregation von Frageergebnissen"
     },
     {
-      "name": "UserBadge-Struktur",
+      "name": "Benutzerabzeichenstruktur",
       "file": "user-badge-structure.md",
       "subCat": "Benutzerabzeichen"
     },
@@ -684,27 +690,27 @@
       "subCat": "Benutzerabzeichen"
     },
     {
-      "name": "UserBadgeProgress-Struktur",
+      "name": "Benutzerabzeichenfortschrittsstruktur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     }
   ]
 }

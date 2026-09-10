@@ -1,0 +1,33 @@
+{
+  "name": "Zapier 통합",
+  "pageHeader": "FastComments를 Zapier에 연결",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "계정 연결",
+      "file": "zapier-connect.md",
+      "subCat": "Zapier 통합"
+    },
+    {
+      "name": "트리거",
+      "file": "zapier-triggers.md",
+      "subCat": "Zapier 통합"
+    },
+    {
+      "name": "작업 및 검색",
+      "file": "zapier-actions.md",
+      "subCat": "Zapier 통합"
+    },
+    {
+      "name": "예시 Zaps",
+      "file": "zapier-examples.md",
+      "subCat": "Zapier 통합"
+    },
+    {
+      "name": "문제 해결",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Zapier 통합"
+    }
+  ]
+}

@@ -1,23 +1,24 @@
-V skrbniškem vmesniku Webhooks so gumbi `Send Test Payload` za vsako vrsto dogodka (Create, Update, Delete). Dogodki Create in Update pošljejo testni objekt WebhookComment, medtem ko bo pri testiranju Delete poslan testni telo zahteve, ki vsebuje le ID.
+The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy `WebhookComment` object, while testing Delete will send a dummy request body with just an ID.
 
-## Preverjanje obremenitev
+## Verifying Payloads
 
-Pri testiranju vaše webhook integracije preverite, ali dohodni zahtevki vsebujejo naslednje glave:
+When testing your webhook integration, verify the incoming requests include the following headers:
 
-1. **`token`** - Vaša API skrivnost
-2. **`X-FastComments-Timestamp`** - Unix časovni žig (v sekundah)
-3. **`X-FastComments-Signature`** - HMAC-SHA256 podpis
+1. **`X-FastComments-Timestamp`** - Unix timestamp (seconds)
+2. **`X-FastComments-Signature`** - HMAC-SHA256 signature
 
-Uporabite preverjanje HMAC podpisa, da zagotovite pristnost podatkov.
+Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
 
-## Orodja za testiranje
+Use the HMAC signature verification to ensure payloads are authentic.
 
-Med razvojem lahko za pregled vsebine dohodnih webhook zahtevkov uporabite orodja, kot so [webhook.site](https://webhook.site) ali [ngrok](https://ngrok.com).
+## Testing Tools
 
-## Vrste dogodkov
+You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
 
-- **Create Event**: Sproži se, ko je ustvarjen nov komentar. Privzeta metoda: PUT
-- **Update Event**: Sproži se, ko je komentar urejen. Privzeta metoda: PUT
-- **Delete Event**: Sproži se, ko je komentar izbrisan. Privzeta metoda: DELETE
+## Event Types
 
-Vsak dogodek vključuje polne podatke komentarja v telesu zahtevka (glejte [Strukture podatkov](/guide-webhooks.html#webhooks-structures) za format podatkov).
+- **Create Event**: Triggered when a new comment is created.
+- **Update Event**: Triggered when a comment is edited.
+- **Delete Event**: Triggered when a comment is deleted.
+
+Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).

@@ -1,23 +1,24 @@
-W panelu administracyjnym Webhooks znajdują się przyciski `Send Test Payload` dla każdego typu zdarzenia (Create, Update, Delete). Zdarzenia Create i Update wysyłają przykładowy obiekt WebhookComment, natomiast testowanie Delete wyśle przykładowe ciało żądania zawierające tylko identyfikator.
+Nowe i edytowane strony webhooków mają przycisk `Send Test Payload`, który wysyła żądanie do adresu URL aktualnie znajdującego się w formularzu, niezależnie od tego, czy został on zapisany. Zdarzenia Create i Update wysyłają przykładowy obiekt **WebhookComment**, natomiast testowanie Delete wyśle przykładowe ciało żądania zawierające jedynie identyfikator.
 
 ## Weryfikacja ładunków
 
-Podczas testowania integracji webhook sprawdź, czy przychodzące żądania zawierają następujące nagłówki:
+Podczas testowania integracji webhooka, sprawdź, czy przychodzące żądania zawierają następujące nagłówki:
 
-1. **`token`** - Twój sekret API
-2. **`X-FastComments-Timestamp`** - znacznik czasu Unix (sekundy)
-3. **`X-FastComments-Signature`** - podpis HMAC-SHA256
+1. **`X-FastComments-Timestamp`** – znacznik czasu Unix (sekundy)  
+2. **`X-FastComments-Signature`** – podpis HMAC‑SHA256  
 
-Użyj weryfikacji podpisu HMAC, aby upewnić się, że ładunki są autentyczne.
+Webhooki utworzone przed wprowadzeniem schematu podpisu otrzymują również nagłówek **`token`** zawierający Twój sekret API. Nowe webhooki go nie mają.
 
-## Narzędzia do testowania
+Użyj weryfikacji podpisu HMAC, aby zapewnić autentyczność ładunków.
 
-Możesz użyć narzędzi takich jak [webhook.site](https://webhook.site) lub [ngrok](https://ngrok.com), aby sprawdzać przychodzące ładunki webhooków podczas tworzenia.
+## Narzędzia testowe
+
+Możesz używać narzędzi takich jak [webhook.site](https://webhook.site) lub [ngrok](https://ngrok.com), aby przeglądać przychodzące ładunki webhooków podczas programowania.
 
 ## Typy zdarzeń
 
-- **Create Event**: Wywoływane, gdy zostanie utworzony nowy komentarz. Domyślna metoda: PUT
-- **Update Event**: Wywoływane, gdy komentarz zostanie edytowany. Domyślna metoda: PUT
-- **Delete Event**: Wywoływane, gdy komentarz zostanie usunięty. Domyślna metoda: DELETE
+- **Zdarzenie Create**: wywoływane, gdy zostaje utworzony nowy komentarz.  
+- **Zdarzenie Update**: wywoływane, gdy komentarz zostaje edytowany.  
+- **Zdarzenie Delete**: wywoływane, gdy komentarz zostaje usunięty.  
 
-Każde zdarzenie zawiera pełne dane komentarza w ciele żądania (zobacz [Struktury danych](/guide-webhooks.html#webhooks-structures) dla formatu ładunku).
+Każdy webhook jest powiązany z jednym zdarzeniem i jedną metodą HTTP (POST, PUT lub DELETE). Każde zdarzenie zawiera pełne dane komentarza w ciele żądania (zobacz [Data Structures](/guide-webhooks.html#webhooks-structures) po format ładunku).

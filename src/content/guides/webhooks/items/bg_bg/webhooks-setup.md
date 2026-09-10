@@ -1,14 +1,22 @@
 ---
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+Следвайте същите стъпки за `localhost`, както за продукция. Уверете се, че имате настроени продукционни домейни и API тайни.
 
-First, navigate to the [Администратор на уебкуки](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Управление на данни -> Уебкуки.
+Първо, отидете на [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Това е достъпно чрез Управление на данни -> Уебкукове.
 
-The configuration page appears as follows:
+Страницата изброява всеки уебкук във вашия акаунт:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Страница за администриране на уебкуки с избирач на домейн и поле за URL на крайна точка за всяко събитие на коментар, плюс бутон „Изпрати тестово натоварване“'; title='Конфигурация на уебкуки'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Страница за администриране на уебкукове, показваща всеки уебкук с неговия URL, събитие, домейн, метод, статус и брой изчакващи събития'; title='Списък на уебкуковете'; cacheBuster = 'v4' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+Кликнете **New Webhook**, за да добавите такъв. Всеки уебкук има URL, едно събитие за коментар (създаден, актуализиран или изтрит), домейн и HTTP метод:
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Формуляр за нов уебкук с полета за URL, събитие, домейн и HTTP метод, плюс бутон „Изпрати тестово натоварване“'; title='Нов уебкук'; cacheBuster = 'v4' app-screenshot-end]
+
+Всеки уебкук се доставя независимо. Можете да изпратите едно и също събитие към няколко крайни точки, а уебкук, обхващащ **All Domains**, получава коментари от всеки домейн, дори ако съществува уебкук за конкретен домейн за същото събитие. Същият URL, събитие и домейн не могат да бъдат добавени два пъти.
+
+Преди да запазите, кликнете **Send Test Payload**, за да проверите дали крайната точка приема подписана заявка. Вижте следващия раздел „Testing“ за подробности.
+
+От списъка можете да редактирате, деактивирате, активирате отново или изтриете уебкук. Деактивирането запазва изчакващите събития, докато уебкукът бъде активиран отново; изтриването ги премахва.
+
+Уебкуковете могат да се създадат и чрез API, например чрез Zapier. Те се появяват в същия списък с източник **API**. Вижте Управление на уебкуковете чрез API.
 
 ---

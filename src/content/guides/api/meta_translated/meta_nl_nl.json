@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "Live Reactie API's",
+  "pageHeader": "Live commentaar-API's",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -86,43 +86,43 @@
     {
       "name": "E-mail sjabloonstructuur",
       "file": "email-template-structure.md",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mail sjablonen"
+      "subCat": "E-mailsjablonen"
     },
     {
       "name": "Hashtag-structuur",
@@ -160,48 +160,54 @@
       "subCat": "Hashtags"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ik"
+    },
+    {
       "name": "Moderatorstructuur",
       "file": "moderator-structure.md",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "GET /api/v1/moderators/:id",
       "file": "moderator-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "GET /api/v1/moderators",
       "file": "moderators-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "POST /api/v1/moderators",
       "file": "moderator-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "POST /api/v1/moderators/:id/send-invite",
       "file": "moderator-send-invite.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "DELETE /api/v1/moderators/:id",
       "file": "moderator-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
-      "name": "Structuur van meldingsaantal",
+      "name": "Meldingsaantalstructuur",
       "file": "notification-count-structure.md",
       "subCat": "Meldingsaantal"
     },
@@ -271,74 +277,74 @@
       "subCat": "Pagina's"
     },
     {
-      "name": "Structuur van pending webhook‑event",
+      "name": "PendingWebhookEvent-structuur",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "In afwachting webhook‑events"
+      "subCat": "In afwachting webhookgebeurtenissen"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "In afwachting webhook‑events"
+      "subCat": "In afwachting webhookgebeurtenissen"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "In afwachting webhook‑events"
+      "subCat": "In afwachting webhookgebeurtenissen"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "In afwachting webhook‑events"
+      "subCat": "In afwachting webhookgebeurtenissen"
     },
     {
-      "name": "SSO‑gebruikerstructuur",
+      "name": "SSO-gebruikersstructuur",
       "file": "sso-user-structure.md",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO‑gebruikers"
+      "subCat": "SSO-gebruikers"
     },
     {
       "name": "Abonnementsstructuur",
@@ -361,7 +367,7 @@
       "subCat": "Abonnementen"
     },
     {
-      "name": "Structuur van tenant‑dagelijks‑gebruik",
+      "name": "TenantDagelijksGebruik-structuur",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Tenant dagelijks gebruik"
     },
@@ -372,115 +378,115 @@
       "subCat": "Tenant dagelijks gebruik"
     },
     {
-      "name": "Tenant‑structuur",
+      "name": "Tenant-structuur",
       "file": "tenant-structure.md",
-      "subCat": "Huurders"
+      "subCat": "Tenants"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Huurders"
+      "subCat": "Tenants"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Huurders"
+      "subCat": "Tenants"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Huurders"
+      "subCat": "Tenants"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Huurders"
+      "subCat": "Tenants"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Huurders"
+      "subCat": "Tenants"
     },
     {
-      "name": "Structuur van tenant‑pakket",
+      "name": "Tenant-pakketstructuur",
       "file": "tenant-package-structure.md",
-      "subCat": "Tenant‑pakketten"
+      "subCat": "Tenant-pakketten"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑pakketten"
+      "subCat": "Tenant-pakketten"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑pakketten"
+      "subCat": "Tenant-pakketten"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑pakketten"
+      "subCat": "Tenant-pakketten"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑pakketten"
+      "subCat": "Tenant-pakketten"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑pakketten"
+      "subCat": "Tenant-pakketten"
     },
     {
-      "name": "Structuur van tenant‑gebruiker",
+      "name": "Tenant-gebruikersstructuur",
       "file": "tenant-user-structure.md",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant‑gebruikers"
+      "subCat": "Tenant-gebruikers"
     },
     {
       "name": "Gebruikersstructuur",
@@ -523,7 +529,7 @@
       "subCat": "Stemmen"
     },
     {
-      "name": "Domainconfiguratie‑structuur",
+      "name": "Domeinconfiguratie-structuur",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Domeinconfiguraties"
@@ -565,7 +571,7 @@
       "subCat": "Domeinconfiguraties"
     },
     {
-      "name": "Vraagconfiguratie‑structuur",
+      "name": "Vraagconfiguratie-structuur",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Vraagconfiguraties"
@@ -601,7 +607,7 @@
       "subCat": "Vraagconfiguraties"
     },
     {
-      "name": "Vraagresultaat‑structuur",
+      "name": "Vraagresultaatstructuur",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Vraagresultaten"
@@ -649,7 +655,7 @@
       "subCat": "Aggregatie van vraagresultaten"
     },
     {
-      "name": "Gebruikersbadge‑structuur",
+      "name": "Gebruikersbadge-structuur",
       "file": "user-badge-structure.md",
       "subCat": "Gebruikersbadges"
     },
@@ -684,7 +690,7 @@
       "subCat": "Gebruikersbadges"
     },
     {
-      "name": "Voortgang gebruikersbadge‑structuur",
+      "name": "Gebruikersbadgevoortgang-structuur",
       "file": "user-badge-progress-structure.md",
       "subCat": "Voortgang gebruikersbadge"
     },

@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API-ји за живо коментарисање",
+  "pageHeader": "API-ји за коментарисање уживо",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -14,15 +14,15 @@
       "subCat": "Агрегације"
     },
     {
-      "name": "Структура аудит логова",
+      "name": "Структура дневника ревизије",
       "file": "audit-log-structure.md",
-      "subCat": "Аудит логови"
+      "subCat": "Дневници ревизије"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Аудит логови"
+      "subCat": "Дневници ревизије"
     },
     {
       "name": "Структура коментара",
@@ -158,6 +158,12 @@
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Хеш ознаке"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ме"
     },
     {
       "name": "Структура модератора",
@@ -374,113 +380,113 @@
     {
       "name": "Структура станара",
       "file": "tenant-structure.md",
-      "subCat": "Станари"
+      "subCat": "Тенанти"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Станари"
+      "subCat": "Тенанти"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Станари"
+      "subCat": "Тенанти"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Станари"
+      "subCat": "Тенанти"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Станари"
+      "subCat": "Тенанти"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Станари"
+      "subCat": "Тенанти"
     },
     {
       "name": "Структура пакета станара",
       "file": "tenant-package-structure.md",
-      "subCat": "Пакети станара"
+      "subCat": "Тенант пакети"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети станара"
+      "subCat": "Тенант пакети"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети станара"
+      "subCat": "Тенант пакети"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети станара"
+      "subCat": "Тенант пакети"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети станара"
+      "subCat": "Тенант пакети"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакети станара"
+      "subCat": "Тенант пакети"
     },
     {
       "name": "Структура корисника станара",
       "file": "tenant-user-structure.md",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Корисници станара"
+      "subCat": "Тенант корисници"
     },
     {
       "name": "Структура корисника",
@@ -684,27 +690,27 @@
       "subCat": "Корисничке значке"
     },
     {
-      "name": "Структура напретка корисничке значке",
+      "name": "Структура напретка корисничких значки",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Напредак корисничке значке"
+      "subCat": "Напредак корисничких значки"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Напредак корисничке значке"
+      "subCat": "Напредак корисничких значки"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Напредак корисничке значке"
+      "subCat": "Напредак корисничких значки"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Напредак корисничке значке"
+      "subCat": "Напредак корисничких значки"
     }
   ]
 }

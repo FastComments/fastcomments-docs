@@ -1,25 +1,26 @@
-In the Webhooks admin there are `Send Test Payload` buttons for each event type (Create, Update, Delete). The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
 
-## ペイロードの検証
+## Verifying Payloads
 
-Webhook 統合をテストする際、受信リクエストに次のヘッダーが含まれていることを確認してください:
+When testing your webhook integration, verify the incoming requests include the following headers:
 
-1. **`token`** - あなたの API シークレット
-2. **`X-FastComments-Timestamp`** - Unix タイムスタンプ（秒）
-3. **`X-FastComments-Signature`** - HMAC-SHA256 署名
+1. **`X-FastComments-Timestamp`** - Unix timestamp (seconds)
+2. **`X-FastComments-Signature`** - HMAC-SHA256 signature
 
-HMAC 署名の検証を使用して、ペイロードが正当であることを確認してください。
+Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
 
-## テストツール
+Use the HMAC signature verification to ensure payloads are authentic.
 
-開発中に受信する webhook ペイロードを検査するために、[webhook.site](https://webhook.site) や [ngrok](https://ngrok.com) などのツールを使用できます。
+## Testing Tools
+
+You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
 
 ## Event Types
 
-- **Create Event**: Triggered when a new comment is created. Default method: PUT
-- **Update Event**: Triggered when a comment is edited. Default method: PUT
-- **Delete Event**: Triggered when a comment is deleted. Default method: DELETE
+- **Create Event**: Triggered when a new comment is created.
+- **Update Event**: Triggered when a comment is edited.
+- **Delete Event**: Triggered when a comment is deleted.
 
-各イベントはリクエストボディに完全なコメントデータを含みます（ペイロード形式については [データ構造](/guide-webhooks.html#webhooks-structures) を参照してください）。
+Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
 
 ---

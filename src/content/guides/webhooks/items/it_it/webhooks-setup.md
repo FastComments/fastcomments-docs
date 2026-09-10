@@ -1,11 +1,22 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+---
+Segui gli stessi passaggi per `localhost` come faresti in produzione. Assicurati di aver configurato i domini di produzione e i Segreti API.
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+Prima, vai alla [Amministrazione Webhook](https://fastcomments.com/auth/my-account/manage-data/webhooks). È accessibile tramite Manage Data -> Webhooks.
 
-The configuration page appears as follows:
+La pagina elenca tutti i webhook del tuo account:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Pagina di amministrazione dei Webhook con un selettore di dominio e un campo URL endpoint per ogni evento di commento, più Invia Payload di Test'; title='Configurazione dei Webhook'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Pagina di amministrazione dei Webhook che elenca ogni webhook con il suo URL, evento, dominio, metodo, stato e conteggio degli eventi in coda'; title='Elenco Webhook'; cacheBuster = 'v4' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+Fai clic su **New Webhook** per aggiungerne uno. Ogni webhook ha un URL, un evento di commento (creato, aggiornato o eliminato), un dominio e un metodo HTTP:
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Modulo per nuovo webhook con campi URL, evento, dominio e metodo HTTP più Invia Payload di Test'; title='Nuovo Webhook'; cacheBuster = 'v4' app-screenshot-end]
+
+Ogni webhook viene consegnato in modo indipendente. Puoi inviare lo stesso evento a più endpoint, e un webhook con ambito **All Domains** riceve commenti da tutti i domini anche quando esiste un webhook specifico per dominio per lo stesso evento. Lo stesso URL, evento e dominio non possono essere aggiunti due volte.
+
+Prima di salvare, fai clic su **Send Test Payload** per verificare che l'endpoint accetti una richiesta firmata. Consulta la sezione successiva, "Testing", per i dettagli.
+
+Dall'elenco puoi modificare, disabilitare, riabilitare o eliminare un webhook. La disabilitazione mantiene gli eventi in coda fino a quando il webhook non viene riabilitato; l'eliminazione li scarta.
+
+I webhook possono anche essere creati tramite l'API, ad esempio con Zapier. Questi appaiono nello stesso elenco con la fonte **API**. Consulta Managing Webhooks via the API.
+
+---

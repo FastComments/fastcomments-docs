@@ -1,25 +1,26 @@
-Nella sezione di amministrazione Webhooks ci sono pulsanti `Send Test Payload` per ogni tipo di evento (Create, Update, Delete). Gli eventi Create e Update inviano un oggetto di prova WebhookComment, mentre il test dell'evento Delete invierà un corpo della richiesta di prova contenente solo un ID.
+Le nuove pagine di webhook e quelle di modifica hanno un pulsante `Send Test Payload` che invia una richiesta all'URL attualmente presente nel modulo, sia che sia stato salvato o meno. Gli eventi Create e Update inviano un oggetto WebhookComment fittizio, mentre il test Delete invierà un corpo di richiesta fittizio contenente solo un ID.
 
 ## Verifica dei payload
 
-Durante il test dell'integrazione webhook, verifica che le richieste in arrivo includano le seguenti intestazioni:
+Durante il test della tua integrazione webhook, verifica che le richieste in arrivo includano le seguenti intestazioni:
 
-1. **`token`** - Il tuo segreto API
-2. **`X-FastComments-Timestamp`** - timestamp Unix (secondi)
-3. **`X-FastComments-Signature`** - firma HMAC-SHA256
+1. **`X-FastComments-Timestamp`** - timestamp Unix (secondi)  
+2. **`X-FastComments-Signature`** - firma HMAC-SHA256  
 
-Utilizza la verifica della firma HMAC per assicurarti che i payload siano autentici.
+I webhook creati prima dell'introduzione dello schema di firma ricevono anche un'intestazione **`token`** contenente il tuo segreto API. I nuovi webhook no.
+
+Utilizza la verifica della firma HMAC per garantire che i payload siano autentici.
 
 ## Strumenti di test
 
-Puoi usare strumenti come [webhook.site](https://webhook.site) o [ngrok](https://ngrok.com) per ispezionare i payload webhook in arrivo durante lo sviluppo.
+Puoi utilizzare strumenti come [webhook.site](https://webhook.site) o [ngrok](https://ngrok.com) per ispezionare i payload webhook in arrivo durante lo sviluppo.
 
-## Tipi di eventi
+## Tipi di evento
 
-- **Create Event**: Scatenato quando viene creato un nuovo commento. Metodo predefinito: PUT
-- **Update Event**: Scatenato quando un commento viene modificato. Metodo predefinito: PUT
-- **Delete Event**: Scatenato quando un commento viene eliminato. Metodo predefinito: DELETE
+- **Create Event**: Attivato quando viene creato un nuovo commento.  
+- **Update Event**: Attivato quando un commento viene modificato.  
+- **Delete Event**: Attivato quando un commento viene eliminato.  
 
-Ogni evento include l'intero set di dati del commento nel corpo della richiesta (vedi [Strutture dei dati](/guide-webhooks.html#webhooks-structures) per il formato del payload).
+Ogni webhook è associato a un singolo evento e a un metodo HTTP (POST, PUT o DELETE). Ogni evento include i dati completi del commento nel corpo della richiesta (vedi [Data Structures](/guide-webhooks.html#webhooks-structures) per il formato del payload).
 
 ---

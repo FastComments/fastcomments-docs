@@ -160,6 +160,12 @@
       "subCat": "Хаштагове"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Аз"
+    },
+    {
       "name": "Структура на модератор",
       "file": "moderator-structure.md",
       "subCat": "Модератори"
@@ -361,7 +367,7 @@
       "subCat": "Абонаменти"
     },
     {
-      "name": "Структура на дневна употреба на наемател",
+      "name": "Структура на дневната употреба на наемател",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Дневна употреба на наемател"
     },

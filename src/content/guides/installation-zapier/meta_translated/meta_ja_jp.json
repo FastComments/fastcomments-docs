@@ -1,0 +1,33 @@
+{
+  "name": "Zapier 統合",
+  "pageHeader": "FastComments を Zapier に接続",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "アカウントを接続",
+      "file": "zapier-connect.md",
+      "subCat": "Zapier 統合"
+    },
+    {
+      "name": "トリガー",
+      "file": "zapier-triggers.md",
+      "subCat": "Zapier 統合"
+    },
+    {
+      "name": "アクションと検索",
+      "file": "zapier-actions.md",
+      "subCat": "Zapier 統合"
+    },
+    {
+      "name": "例の Zap",
+      "file": "zapier-examples.md",
+      "subCat": "Zapier 統合"
+    },
+    {
+      "name": "トラブルシューティング",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Zapier 統合"
+    }
+  ]
+}

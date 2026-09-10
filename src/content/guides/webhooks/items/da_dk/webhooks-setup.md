@@ -1,11 +1,22 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+---
+Følg de samme trin for `localhost`, som du ville gøre for produktion. Sørg for, at du har produktionsdomæner og API-hemmeligheder konfigureret.
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+Først, naviger til [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Dette er tilgængeligt via Manage Data -> Webhooks.
 
-The configuration page appears as follows:
+Siden viser alle webhooks på din konto:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Webhooks-adminside med en domænevælger og et endpoint-URL-felt pr. kommentarhændelse, plus Send Test Payload'; title='Webhooks-konfiguration'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Webhooks-adminside, der viser hver webhook med dens URL, hændelse, domæne, metode, status og antallet af køede hændelser'; title='Webhooks List'; cacheBuster = 'v4' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+Klik på **New Webhook** for at tilføje en. Hver webhook har en URL, én kommentarhændelse (oprettet, opdateret eller slettet), et domæne og en HTTP-metode:
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Ny webhook-formular med felterne URL, hændelse, domæne og HTTP-metode samt Send Test Payload'; title='New Webhook'; cacheBuster = 'v4' app-screenshot-end]
+
+Hver webhook leveres uafhængigt. Du kan sende den samme hændelse til flere endpoints, og en webhook med omfang **All Domains** modtager kommentarer fra alle domæner, selv når der findes en domænespecifik webhook for den samme hændelse. Den samme URL, hændelse og domæne kan ikke tilføjes to gange.
+
+Før du gemmer, klik på **Send Test Payload** for at kontrollere, at endpointet accepterer en signeret anmodning. Se næste afsnit, "Testing", for detaljer.
+
+Fra listen kan du redigere, deaktivere, genaktivere eller slette en webhook. Deaktivering bevarer køede hændelser, indtil webhooken genaktiveres; sletning kasserer dem.
+
+Webhooks kan også oprettes via API'en, for eksempel af Zapier. Disse vises i den samme liste med kilden **API**. Se Managing Webhooks via the API.
+
+---

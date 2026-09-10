@@ -1,0 +1,3 @@
+---
+Povežite FastComments z Zapierjem: sprožite Zape iz novih, posodobljenih ali izbrisanih komentarjev ter ustvarite komentarje, strani in uporabnike iz katerekoli aplikacije. Koda ni potrebna.
+---

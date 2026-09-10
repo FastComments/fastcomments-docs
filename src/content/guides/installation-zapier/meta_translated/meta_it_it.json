@@ -1,0 +1,33 @@
+{
+  "name": "Integrazione Zapier",
+  "pageHeader": "Collega FastComments a Zapier",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "Collega il tuo account",
+      "file": "zapier-connect.md",
+      "subCat": "Integrazione Zapier"
+    },
+    {
+      "name": "Trigger",
+      "file": "zapier-triggers.md",
+      "subCat": "Integrazione Zapier"
+    },
+    {
+      "name": "Azioni e ricerche",
+      "file": "zapier-actions.md",
+      "subCat": "Integrazione Zapier"
+    },
+    {
+      "name": "Esempi di Zap",
+      "file": "zapier-examples.md",
+      "subCat": "Integrazione Zapier"
+    },
+    {
+      "name": "Risoluzione dei problemi",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Integrazione Zapier"
+    }
+  ]
+}

@@ -1,11 +1,22 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+---
+Postępuj zgodnie z tymi samymi krokami dla `localhost`, tak jak w środowisku produkcyjnym. Upewnij się, że masz skonfigurowane domeny produkcyjne i sekrety API.
 
-First, navigate to the [panelu administracyjnego webhooków](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooki.
+Najpierw przejdź do [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Jest to dostępne poprzez Zarządzanie danymi -> Webhooks.
 
-The configuration page appears as follows:
+Strona wyświetla wszystkie webhooki w Twoim koncie:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Strona administracyjna webhooków z selektorem domeny i polem adresu URL punktu końcowego dla każdego zdarzenia komentarza, plus przycisk Wyślij testowy ładunek'; title='Konfiguracja webhooków'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Strona administracji webhookami wyświetlająca każdy webhook wraz z jego URL, zdarzeniem, domeną, metodą, statusem i liczbą oczekujących zdarzeń'; title='Lista webhooków'; cacheBuster = 'v4' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+Kliknij **Nowy webhook**, aby dodać go. Każdy webhook ma URL, jedno zdarzenie komentarza (utworzone, zaktualizowane lub usunięte), domenę oraz metodę HTTP:
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, „Testowanie”, for details.
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Formularz nowego webhooka z polami URL, zdarzenie, domena i metoda HTTP oraz przyciskiem Wyślij testowy ładunek'; title='Nowy webhook'; cacheBuster = 'v4' app-screenshot-end]
+
+Każdy webhook jest dostarczany niezależnie. Możesz wysłać to samo zdarzenie do kilku punktów końcowych, a webhook o zakresie **Wszystkie domeny** otrzymuje komentarze ze wszystkich domen, nawet gdy istnieje webhook specyficzny dla domeny dla tego samego zdarzenia. Ten sam URL, zdarzenie i domena nie mogą być dodane dwukrotnie.
+
+Przed zapisaniem kliknij **Wyślij testowy ładunek**, aby sprawdzić, czy punkt końcowy akceptuje podpisane żądanie. Zobacz następną sekcję, „Testowanie”, aby uzyskać szczegóły.
+
+Z listy możesz edytować, wyłączyć, ponownie włączyć lub usunąć webhook. Wyłączenie zachowuje oczekujące zdarzenia, aż webhook zostanie ponownie włączony; usunięcie powoduje ich odrzucenie.
+
+Webhooki mogą być również tworzone za pośrednictwem API, na przykład przez Zapier. Pojawiają się na tej samej liście ze źródłem **API**. Zobacz Zarządzanie webhookami za pomocą API.
+
+---

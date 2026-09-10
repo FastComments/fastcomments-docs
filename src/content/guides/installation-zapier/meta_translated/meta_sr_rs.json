@@ -1,0 +1,33 @@
+{
+  "name": "Zapier integracija",
+  "pageHeader": "Povežite FastComments sa Zapier-om",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "Povežite svoj nalog",
+      "file": "zapier-connect.md",
+      "subCat": "Zapier integracija"
+    },
+    {
+      "name": "Okidači",
+      "file": "zapier-triggers.md",
+      "subCat": "Zapier integracija"
+    },
+    {
+      "name": "Akcije i pretrage",
+      "file": "zapier-actions.md",
+      "subCat": "Zapier integracija"
+    },
+    {
+      "name": "Primeri Zapova",
+      "file": "zapier-examples.md",
+      "subCat": "Zapier integracija"
+    },
+    {
+      "name": "Rešavanje problema",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Zapier integracija"
+    }
+  ]
+}

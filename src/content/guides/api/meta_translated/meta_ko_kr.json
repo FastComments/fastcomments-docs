@@ -160,6 +160,12 @@
       "subCat": "해시태그"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "내 정보"
+    },
+    {
       "name": "모더레이터 구조",
       "file": "moderator-structure.md",
       "subCat": "모더레이터"
@@ -523,82 +529,82 @@
       "subCat": "투표"
     },
     {
-      "name": "도메인 구성 구조",
+      "name": "도메인 설정 구조",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "도메인 구성"
+      "subCat": "도메인 설정"
     },
     {
-      "name": "질문 구성 구조",
+      "name": "질문 설정 구조",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "질문 구성"
+      "subCat": "질문 설정"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "질문 구성"
+      "subCat": "질문 설정"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "질문 구성"
+      "subCat": "질문 설정"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "질문 구성"
+      "subCat": "질문 설정"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "질문 구성"
+      "subCat": "질문 설정"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "질문 구성"
+      "subCat": "질문 설정"
     },
     {
       "name": "질문 결과 구조",

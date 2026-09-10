@@ -1,0 +1,33 @@
+{
+  "name": "Ενσωμάτωση Zapier",
+  "pageHeader": "Συνδέστε το FastComments με το Zapier",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "Συνδέστε το λογαριασμό σας",
+      "file": "zapier-connect.md",
+      "subCat": "Ενσωμάτωση Zapier"
+    },
+    {
+      "name": "Ενεργοποιητές",
+      "file": "zapier-triggers.md",
+      "subCat": "Ενσωμάτωση Zapier"
+    },
+    {
+      "name": "Δράσεις και Αναζητήσεις",
+      "file": "zapier-actions.md",
+      "subCat": "Ενσωμάτωση Zapier"
+    },
+    {
+      "name": "Παραδείγματα Zaps",
+      "file": "zapier-examples.md",
+      "subCat": "Ενσωμάτωση Zapier"
+    },
+    {
+      "name": "Αντιμετώπιση προβλημάτων",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Ενσωμάτωση Zapier"
+    }
+  ]
+}

@@ -1,26 +1,26 @@
----
-En la administración de Webhooks hay botones `Send Test Payload` para cada tipo de evento (Create, Update, Delete). Los eventos Create y Update envían un objeto `WebhookComment` de prueba, mientras que al probar Delete se enviará un cuerpo de solicitud de prueba con solo un ID.
+Las nuevas páginas de webhook y de edición tienen un botón `Send Test Payload` que envía una solicitud a la URL que está actualmente en el formulario, haya sido guardada o no. Los eventos **Create** y **Update** envían un objeto **WebhookComment** de prueba, mientras que al probar **Delete** se enviará un cuerpo de solicitud de prueba con solo un ID.
 
-## Verificar cargas útiles
+## Verificando Cargas Útiles
 
-Al probar la integración de tu webhook, verifica que las solicitudes entrantes incluyan los siguientes encabezados:
+Al probar su integración de webhook, verifique que las solicitudes entrantes incluyan los siguientes encabezados:
 
-1. **`token`** - Tu secreto de API
-2. **`X-FastComments-Timestamp`** - Marca de tiempo Unix (segundos)
-3. **`X-FastComments-Signature`** - Firma HMAC-SHA256
+1. **`X-FastComments-Timestamp`** - Marca de tiempo Unix (segundos)  
+2. **`X-FastComments-Signature`** - Firma HMAC‑SHA256  
 
-Utiliza la verificación de la firma HMAC para garantizar que las cargas útiles sean auténticas.
+Los webhooks creados antes de que se introdujera el esquema de firma también reciben un encabezado **`token`** que contiene su **API Secret**. Los webhooks nuevos no lo hacen.
 
-## Herramientas de prueba
+Utilice la verificación de firma HMAC para garantizar que las cargas sean auténticas.
 
-Puedes usar herramientas como [webhook.site](https://webhook.site) o [ngrok](https://ngrok.com) para inspeccionar las cargas útiles entrantes de los webhooks durante el desarrollo.
+## Herramientas de Prueba
 
-## Tipos de eventos
+Puede usar herramientas como [webhook.site](https://webhook.site) o [ngrok](https://ngrok.com) para inspeccionar las cargas de webhook entrantes durante el desarrollo.
 
-- **Create Event**: Se desencadena cuando se crea un nuevo comentario. Método predeterminado: PUT
-- **Update Event**: Se desencadena cuando se edita un comentario. Método predeterminado: PUT
-- **Delete Event**: Se desencadena cuando se elimina un comentario. Método predeterminado: DELETE
+## Tipos de Eventos
 
-Cada evento incluye los datos completos del comentario en el cuerpo de la solicitud (consulta [Estructuras de datos](/guide-webhooks.html#webhooks-structures) para el formato de la carga útil).
+- **Create Event**: Se dispara cuando se crea un nuevo comentario.  
+- **Update Event**: Se dispara cuando se edita un comentario.  
+- **Delete Event**: Se dispara cuando se elimina un comentario.  
+
+Cada webhook está asociado a un evento y a un método HTTP (POST, PUT o DELETE). Cada evento incluye los datos completos del comentario en el cuerpo de la solicitud (vea [Data Structures](/guide-webhooks.html#webhooks-structures) para el formato de la carga).
 
 ---

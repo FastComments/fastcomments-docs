@@ -4,9 +4,9 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Viri API",
+      "name": "Viri API-ja",
       "file": "api-resources.md",
-      "subCat": "Viri API"
+      "subCat": "Viri API-ja"
     },
     {
       "name": "Združite svoje podatke",
@@ -158,6 +158,12 @@
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Hashtagi"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Jaz"
     },
     {
       "name": "Struktura moderatorja",
@@ -649,7 +655,7 @@
       "subCat": "Agregacija rezultatov vprašanj"
     },
     {
-      "name": "Struktura uporabniškega značke",
+      "name": "Struktura uporabniškega značka",
       "file": "user-badge-structure.md",
       "subCat": "Uporabniški znački"
     },

@@ -1,10 +1,14 @@
-Webhooks također mogu biti upravljani putem REST API-ja. Tako integracije poput Zapiera pretplaćuju se na događaje komentara bez korištenja nadzorne ploče, a slijede uzorak REST Hooks: pretplata, primanje događaja, odjava.
+Webhooks također mogu biti upravljani putem REST API‑ja. Tako integracije poput Zapiera pretplaćuju
+na događaje komentara bez korištenja nadzorne ploče, a slijede uzorak REST Hooks: pretplata,
+primanje događaja, otkazivanje pretplate.
 
-API pretplate koegzistiraju uz webhookove konfigurirane u nadzornoj ploči. Događaj komentara se isporučuje webhooku nadzorne ploče za njegovu domenu i svakoj API pretplati koja se podudara, svaka kao zasebna isporuka. Ne postoji ograničenje na jednog pretplatnika po događaju.
+API pretplate koegzistiraju uz webhooks konfigurirane u nadzornoj ploči. Događaj komentara se isporučuje
+svakom webhooku koji odgovara njegovoj domeni, svaki kao zasebna isporuka, neovisno o načinu na koji je webhook kreiran.
 
-## Autentikacija
+## Autentifikacija
 
-Svaki zahtjev treba vaš API ključ u zaglavlju `x-api-key` (ili u parametru upita `API_KEY`) i vaš ID najemnika u parametru upita `tenantId`. Oba su prikazana na stranici API tajne u nadzornoj ploči.
+Svaki zahtjev treba vaš API ključ u zaglavlju `x-api-key` (ili u parametru upita `API_KEY`) i
+vaš ID najmodavca u parametru upita `tenantId`. Oba su prikazana na stranici API tajne u nadzornoj ploči.
 
 ## Pretplata
 
@@ -23,7 +27,7 @@ Content-Type: application/json
 |-------|----------|------|
 | `url` | Da | Apsolutni http ili https URL. |
 | `event` | Da | `comment-created`, `comment-updated` ili `comment-deleted`. |
-| `domain` | Ne | Domenu iz konfiguracije vašeg računa. Zadano je `*`, što prima događaje za svaku domenu. |
+| `domain` | Ne | Domena iz konfiguracije vašeg računa. Zadano je `*`, što prima događaje za svaku domenu. |
 | `method` | Ne | `POST` (zadano), `PUT` ili `DELETE`. |
 
 Odgovor sadrži pretplatu:
@@ -44,7 +48,8 @@ Odgovor sadrži pretplatu:
 }
 ```
 
-Ponovna pretplata na isti URL za isti događaj i domenu vraća postojeću pretplatu umjesto stvaranja duplikata, pa klijent može sigurno ponoviti zahtjev. Svaki najemnik može imati najviše 50 API pretplata.
+Ponovno pretplaćivanje iste URL adrese na isti događaj i domenu vraća postojeću pretplatu umjesto
+stvaranja duplikata, pa klijent može sigurno ponoviti pokušaj. Svaki najmodavac može imati najviše 50 API pretplata.
 
 ## Popis
 
@@ -52,24 +57,59 @@ Ponovna pretplata na isti URL za isti događaj i domenu vraća postojeću pretpl
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Vraća sve webhookove za najemnika, uključujući one upravljane u nadzornoj ploči (`"source": "dashboard"`). Filtrirajte pomoću `event`, `domain` ili `source`.
+Vraća svaki webhook za najmodavca, uključujući one upravljane u nadzornoj ploči (`"source": "dashboard"`).
+Filtrirajte pomoću `event`, `domain` ili `source`.
 
-## Odjava
+## Otkaži pretplatu
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Brisanje pretplate također odbacuje sve događaje koji su još u redu za nju. Samo pretplate kreirane putem API-ja mogu se izbrisati na ovaj način. Webhookovi nadzorne ploče se uređuju na stranici Webhooks.
+Brisanje pretplate također odbacuje sve događaje koji su još u redu za nju. Samo pretplate kreirane
+preko API‑ja mogu se izbrisati na ovaj način. Webhookovi iz nadzorne ploče uređuju se na stranici Webhooks.
 
-## Tjelesni podaci i potpisivanje
+## Tijela zahtjeva i potpisivanje
 
-Isporuke koriste isti tijelo podataka kao webhookovi nadzorne ploče (pogledajte Strukture podataka) i potpisane su istim HMAC shemom (pogledajte Sigurnost i API tokeni). API pretplate nikada ne primaju zastarjelo zaglavlje `token`, pa umjesto toga provjerite zaglavlje `X-FastComments-Signature`.
+Isporuke koriste isto tijelo kao webhookovi iz nadzorne ploče (pogledajte Strukture podataka) i potpisane su istim
+HMAC shemom (pogledajte Sigurnost i API tokeni). API pretplate nikada ne primaju zastarjelo zaglavlje `token`, pa
+umjesto toga provjerite zaglavlje `X-FastComments-Signature`.
+
+## Primjeri tijela
+
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
+
+Vraća najnovije komentare računa u točno onom obliku koji isporuka nosi, tako da integracija može
+prikazati stvarne primjere podataka prije nego što prvi događaj stigne. `event` je opcionalan i samo se provjerava, budući da svaki
+događaj isporučuje isti objekt komentara. `limit` je zadano 3 i prihvaća vrijednosti od 1 do 10. Troši 2 API kredita.
+
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
 
 ## Odgovor s 410 Gone
 
-Ako krajnja točka API pretplate odgovori HTTP `410 Gone`, FastComments to tretira kao odjavu: pretplata se briše zajedno s događajima u redu, i ne poduzimaju se daljnje isporuke. Webhookovi konfigurirani u nadzornoj ploči se nikada ne brišu automatski; za njih je 410 obična greška. Svaki drugi status greške se ponavlja i na kraju onemogućuje webhook, kako je opisano u Kako funkcionira i Rukovanje ponovnim pokušajima.
+Ako krajnja točka API pretplate odgovori HTTP‑om `410 Gone`, FastComments to tretira kao
+otkazivanje pretplate: pretplata se briše zajedno s događajima u redu, a daljnje isporuke se
+nepokušavaju. Webhookovi konfigurirani u nadzornoj ploči nikada se ne brišu automatski; za njih je 410
+obična greška. Svaki drugi status greške se ponavlja i na kraju onemogućuje webhook, kako je opisano
+u Kako funkcionira i Obrada ponavljanja.
 
 ## Nadzorna ploča
 
-API pretplate su navedene na stranici Webhooks pod domenom za koju su kreirane, gdje administrator može onemogućiti, ponovo omogućiti ili ih izbrisati.
+API pretplate pojavljuju se u popisu Webhooks s izvorom **API**, gdje administrator može uređivati,
+onemogućiti, ponovo omogućiti ili izbrisati ih.

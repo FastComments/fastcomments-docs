@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API Ζωντανών Σχολίων",
+  "pageHeader": "API Ζωντανής Σχολιασμού",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -160,6 +160,12 @@
       "subCat": "Ετικέτες"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Εγώ"
+    },
+    {
       "name": "Δομή Συντονιστή",
       "file": "moderator-structure.md",
       "subCat": "Συντονιστές"
@@ -296,49 +302,49 @@
     {
       "name": "Δομή SSOUser",
       "file": "sso-user-structure.md",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO Χρήστες"
+      "subCat": "Χρήστες SSO"
     },
     {
       "name": "Δομή Συνδρομής",
@@ -649,7 +655,7 @@
       "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήσεων"
     },
     {
-      "name": "Δομή UserBadge",
+      "name": "Δομή Σήματος Χρήστη",
       "file": "user-badge-structure.md",
       "subCat": "Σήματα Χρήστη"
     },
@@ -684,7 +690,7 @@
       "subCat": "Σήματα Χρήστη"
     },
     {
-      "name": "Δομή UserBadgeProgress",
+      "name": "Δομή Προόδου Σήματος Χρήστη",
       "file": "user-badge-progress-structure.md",
       "subCat": "Πρόοδος Σήματος Χρήστη"
     },

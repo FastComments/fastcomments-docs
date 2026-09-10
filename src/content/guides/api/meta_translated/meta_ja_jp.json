@@ -4,9 +4,9 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "API リソース",
+      "name": "APIリソース",
       "file": "api-resources.md",
-      "subCat": "API リソース"
+      "subCat": "APIリソース"
     },
     {
       "name": "データを集計する",
@@ -160,6 +160,12 @@
       "subCat": "ハッシュタグ"
     },
     {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "自分"
+    },
+    {
       "name": "モデレーター構造",
       "file": "moderator-structure.md",
       "subCat": "モデレーター"
@@ -201,19 +207,19 @@
       "subCat": "モデレーター"
     },
     {
-      "name": "通知カウント構造",
+      "name": "通知数構造",
       "file": "notification-count-structure.md",
-      "subCat": "通知カウント"
+      "subCat": "通知数"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "通知カウント"
+      "subCat": "通知数"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "通知カウント"
+      "subCat": "通知数"
     },
     {
       "name": "通知構造",

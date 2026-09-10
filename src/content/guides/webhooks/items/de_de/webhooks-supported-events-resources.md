@@ -1,9 +1,12 @@
-FastComments unterstützt Webhooks nur für die Kommentar‑Ressource.
+---
+FastComments unterstützt Webhooks nur für die Comment‑Ressource.
 
 Wir unterstützen Webhooks für das Erstellen, Entfernen und Aktualisieren von Kommentaren.
 
-Jeder dieser Vorgänge wird in unserem System als separates Ereignis betrachtet und hat daher unterschiedliche Semantiken
-und Strukturen für die Webhook‑Ereignisse.
+Jedes dieser Ereignisse wird in unserem System als separates Event betrachtet und hat daher unterschiedliche Semantiken
+und Strukturen für die Webhook‑Events.
 
-Eine beliebige Anzahl von Endpunkten kann dasselbe Ereignis abonnieren: ein Webhook pro Domain kann im
-Dashboard konfiguriert werden, und weitere Abonnements können über die API erstellt werden (siehe Verwalten von Webhooks über die API).
+Eine beliebige Anzahl von Endpunkten kann dasselbe Event abonnieren, über das Dashboard oder über die API
+(siehe Verwalten von Webhooks über die API). Jeder Webhook wird unabhängig zugestellt.
+
+---

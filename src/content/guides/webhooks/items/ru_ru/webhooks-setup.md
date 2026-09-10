@@ -1,11 +1,22 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+---
+Следуйте тем же шагам для `localhost`, как и для продакшн. Убедитесь, что у вас настроены домены продакшн и секреты API.
 
-First, navigate to the [администрирование вебхуков](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Управление данными -> Вебхуки.
+Сначала перейдите в [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Это доступно через Manage Data -> Webhooks.
 
-The configuration page appears as follows:
+На странице перечислены все вебхуки в вашей учетной записи:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Страница администрирования вебхуков с селектором домена и полем URL конечной точки для каждого события комментария, плюс Send Test Payload'; title='Конфигурация вебхуков'; cacheBuster = 'v3' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Страница администрирования вебхуков, показывающая каждый вебхук с его URL, событием, доменом, методом, статусом и количеством ожидающих событий'; title='Список вебхуков'; cacheBuster = 'v4' app-screenshot-end]
 
-In this page you can specify endpoints for each type of comment event.
+Нажмите **New Webhook**, чтобы добавить его. Каждый вебхук имеет URL, одно событие комментария (создан, обновлен или удалён), домен и HTTP‑метод:
 
-For each type of event, be sure to click Send Test Payload to ensure you've set up your integration correctly. See the next section, "Testing", for details.
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Форма создания нового вебхука с полями URL, событие, домен и HTTP‑метод, а также кнопкой Send Test Payload'; title='Новый вебхук'; cacheBuster = 'v4' app-screenshot-end]
+
+Каждый вебхук доставляется независимо. Вы можете отправлять одно и то же событие на несколько конечных точек, и вебхук, ограниченный **All Domains**, получает комментарии со всех доменов, даже если для того же события существует вебхук, привязанный к конкретному домену. Один и тот же URL, событие и домен нельзя добавить дважды.
+
+Перед сохранением нажмите **Send Test Payload**, чтобы проверить, принимает ли конечная точка подписанный запрос. См. следующий раздел, "Testing", для подробностей.
+
+В списке вы можете редактировать, отключать, повторно включать или удалять вебхук. Отключение сохраняет ожидающие события до повторного включения вебхука; удаление их удаляет.
+
+Вебхуки также могут быть созданы через API, например с помощью Zapier. Они появляются в том же списке с источником **API**. См. Managing Webhooks via the API.
+
+---

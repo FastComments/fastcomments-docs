@@ -1,17 +1,13 @@
-Webhooks può anche essere gestito tramite l'API REST. Questo è il modo in cui integrazioni come Zapier si iscrivono
-agli eventi dei commenti senza toccare la dashboard, e segue il modello REST Hooks: subscribe,
-receive events, unsubscribe.
+---
+I webhook possono anche essere gestiti tramite l'API REST. È così che integrazioni come Zapier si iscrivono agli eventi dei commenti senza toccare la dashboard, e segue il modello REST Hooks: iscrizione, ricezione degli eventi, cancellazione dell'iscrizione.
 
-Le iscrizioni API convivono con i webhook configurati nella dashboard. Un evento di commento viene consegnato
-al webhook della dashboard per il suo dominio e a ogni iscrizione API che corrisponde, ciascuna come sua
-propria consegna. Non c'è limite a un solo subscriber per evento.
+Le sottoscrizioni API convivono con i webhook configurati nella dashboard. Un evento di commento viene consegnato a ogni webhook che corrisponde al suo dominio, ciascuno come una consegna separata, indipendentemente dal modo in cui il webhook è stato creato.
 
 ## Autenticazione
 
-Ogni richiesta necessita della tua API Key nell'header `x-api-key` (o del parametro di query `API_KEY`) e
-del tuo tenant ID nel parametro di query `tenantId`. Entrambi sono mostrati nella pagina API Secret nella dashboard.
+Ogni richiesta richiede la tua API Key nell'intestazione `x-api-key` (o nel parametro di query `API_KEY`) e il tuo ID tenant nel parametro di query `tenantId`. Entrambi sono mostrati nella pagina API Secret nella dashboard.
 
-## Iscrizione
+## Sottoscrizione
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -31,7 +27,7 @@ Content-Type: application/json
 | `domain` | No | Un dominio dalla configurazione del tuo account. Il valore predefinito è `*`, che riceve eventi per tutti i domini. |
 | `method` | No | `POST` (predefinito), `PUT` o `DELETE`. |
 
-La risposta contiene l'iscrizione:
+La risposta contiene la sottoscrizione:
 
 ```json
 {
@@ -49,8 +45,7 @@ La risposta contiene l'iscrizione:
 }
 ```
 
-Iscrivere nuovamente la stessa URL allo stesso evento e dominio restituisce l'iscrizione esistente invece
-di crearne una duplicata, così il client può ritentare in sicurezza. Ogni tenant può avere fino a 50 iscrizioni API.
+Sottoscrivere nuovamente lo stesso URL allo stesso evento e dominio restituisce la sottoscrizione esistente invece di crearne una duplicata, così un client può riprovare in sicurezza. Ogni tenant può avere fino a 50 sottoscrizioni API.
 
 ## Elenco
 
@@ -58,31 +53,50 @@ di crearne una duplicata, così il client può ritentare in sicurezza. Ogni tena
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Restituisce tutti i webhook per il tenant, inclusi quelli gestiti nella dashboard (`"source": "dashboard"`).
-Filtra con `event`, `domain` o `source`.
+Restituisce tutti i webhook per il tenant, inclusi quelli gestiti nella dashboard (`"source": "dashboard"`). Filtra con `event`, `domain` o `source`.
 
-## Annullamento iscrizione
+## Annulla sottoscrizione
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Eliminare un'iscrizione scarta anche eventuali eventi ancora in coda per essa. Solo le iscrizioni create
-tramite l'API possono essere eliminate in questo modo. I webhook della dashboard sono modificati nella pagina Webhooks.
+Eliminare una sottoscrizione elimina anche tutti gli eventi ancora in coda per essa. Solo le sottoscrizioni create tramite l'API possono essere eliminate in questo modo. I webhook della dashboard vengono modificati nella pagina Webhooks.
 
 ## Payload e firma
 
-Le consegne usano lo stesso payload dei webhook della dashboard (vedi Strutture Dati) e sono firmate con lo stesso
-schema HMAC (vedi Sicurezza & Token API). Le iscrizioni API non ricevono mai l'header legacy `token`, quindi
-verifica l'header `X-FastComments-Signature` invece.
+Le consegne utilizzano lo stesso payload dei webhook della dashboard (vedi Strutture dei Dati) e sono firmate con lo stesso schema HMAC (vedi Sicurezza & Token API). Le sottoscrizioni API non ricevono mai l'intestazione legacy `token`, quindi verifica invece l'intestazione `X-FastComments-Signature`.
 
-## Risposta con 410 Gone
+## Esempi di payload
 
-Se l'endpoint di un'iscrizione API risponde con HTTP `410 Gone`, FastComments lo interpreta come
-un annullamento iscrizione: l'iscrizione viene eliminata insieme ai suoi eventi in coda, e non vengono
-tentate ulteriori consegne. I webhook configurati nella dashboard non vengono mai eliminati automaticamente; per loro un 410 è un fallimento ordinario. Qualsiasi altro stato di errore viene ritentato e alla fine disabilita il webhook, come descritto in Come funziona & Gestione dei retry.
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
+
+Restituisce i commenti più recenti dell'account esattamente nella forma che una consegna trasporta, così un'integrazione può mostrare dati di esempio reali prima che arrivi il primo evento. `event` è opzionale e solo convalidato, poiché ogni evento consegna lo stesso oggetto commento. `limit` ha valore predefinito 3 e accetta da 1 a 10. Costa 2 crediti API.
+
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
+
+## Rispondere con 410 Gone
+
+Se l'endpoint di una sottoscrizione API risponde con HTTP `410 Gone`, FastComments lo interpreta come una cancellazione dell'iscrizione: la sottoscrizione viene eliminata insieme ai suoi eventi in coda e non vengono tentate ulteriori consegne. I webhook configurati nella dashboard non vengono mai eliminati automaticamente; per loro un 410 è un errore ordinario. Qualsiasi altro stato di errore viene ritentato e alla fine disabilita il webhook, come descritto in Come funziona & Gestione dei ritardi.
 
 ## Dashboard
 
-Le iscrizioni API sono elencate nella pagina Webhooks sotto il dominio per cui sono state create, dove un
-amministratore può disabilitarle, riabilitarle o eliminarle.
+Le sottoscrizioni API appaiono nell'elenco Webhooks con la fonte **API**, dove un amministratore può modificarle, disabilitarle, riabilitarle o eliminarle.
+
+---

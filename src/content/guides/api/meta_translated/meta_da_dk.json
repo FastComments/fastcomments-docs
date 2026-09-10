@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "Live-kommentar-API'er",
+  "pageHeader": "Live Kommentar-API'er",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -16,13 +16,13 @@
     {
       "name": "AuditLog-struktur",
       "file": "audit-log-structure.md",
-      "subCat": "AuditLogs"
+      "subCat": "Audit-logs"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AuditLogs"
+      "subCat": "Audit-logs"
     },
     {
       "name": "Kommentarstruktur",
@@ -158,6 +158,12 @@
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Hashtags"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Mig"
     },
     {
       "name": "Moderatorstruktur",
@@ -361,15 +367,15 @@
       "subCat": "Abonnementer"
     },
     {
-      "name": "Lejers daglige forbrugstruktur",
+      "name": "Lejer-daglig-brugsstruktur",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Lejers daglige forbrug"
+      "subCat": "Lejers daglige brug"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejers daglige forbrug"
+      "subCat": "Lejers daglige brug"
     },
     {
       "name": "Lejerstruktur",
@@ -494,7 +500,7 @@
       "subCat": "Brugere"
     },
     {
-      "name": "Stemmestruktur",
+      "name": "Stemme-struktur",
       "file": "vote-structure.md",
       "subCat": "Stemmer"
     },

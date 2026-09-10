@@ -9,20 +9,20 @@
       "subCat": "Recursos da API"
     },
     {
-      "name": "Agregue Seus Dados",
+      "name": "Agregue seus dados",
       "file": "aggregate-post.md",
       "subCat": "Agregações"
     },
     {
-      "name": "Estrutura de Registro de Auditoria",
+      "name": "Estrutura de Log de Auditoria",
       "file": "audit-log-structure.md",
-      "subCat": "Registros de Auditoria"
+      "subCat": "Logs de Auditoria"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Registros de Auditoria"
+      "subCat": "Logs de Auditoria"
     },
     {
       "name": "Estrutura de Comentário",
@@ -158,6 +158,12 @@
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Hashtags"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Eu"
     },
     {
       "name": "Estrutura de Moderador",

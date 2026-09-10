@@ -1,0 +1,33 @@
+{
+  "name": "Zapier Entegrasyonu",
+  "pageHeader": "FastComments'u Zapier'a Bağlayın",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "Hesabınızı Bağlayın",
+      "file": "zapier-connect.md",
+      "subCat": "Zapier Entegrasyonu"
+    },
+    {
+      "name": "Tetikleyiciler",
+      "file": "zapier-triggers.md",
+      "subCat": "Zapier Entegrasyonu"
+    },
+    {
+      "name": "Eylemler ve Aramalar",
+      "file": "zapier-actions.md",
+      "subCat": "Zapier Entegrasyonu"
+    },
+    {
+      "name": "Örnek Zap'lar",
+      "file": "zapier-examples.md",
+      "subCat": "Zapier Entegrasyonu"
+    },
+    {
+      "name": "Sorun Giderme",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Zapier Entegrasyonu"
+    }
+  ]
+}

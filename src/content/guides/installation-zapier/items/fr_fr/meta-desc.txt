@@ -1,0 +1,3 @@
+---
+Connectez FastComments à Zapier : déclenchez des Zaps à partir de commentaires nouveaux, mis à jour ou supprimés et créez des commentaires, des pages et des utilisateurs depuis n’importe quelle application. Aucun code requis.
+---

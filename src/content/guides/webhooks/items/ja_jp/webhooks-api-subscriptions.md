@@ -1,10 +1,10 @@
-Webhooks は REST API でも管理できます。これは Zapier などの統合がダッシュボードに触れずにコメントイベントを購読する方法で、REST Hooks パターンに従います: 購読、イベント受信、購読解除。
+Webhooks は REST API を通じても管理できます。これは Zapier などの統合がダッシュボードに触れずにコメントイベントを購読する方法で、REST Hooks パターン（購読、イベント受信、購読解除）に従います。
 
-API サブスクリプションはダッシュボードで設定された Webhooks と並行して存在します。コメントイベントはそのドメインのダッシュボード Webhook と、条件に合致するすべての API サブスクリプションにそれぞれ別々に配信されます。イベントあたりの購読者数に制限はありません。
+API サブスクリプションはダッシュボードで設定された Webhooks と共存します。コメントイベントは、ドメインが一致するすべての Webhook に個別の配信として送信され、Webhook の作成方法に関係なく配信されます。
 
 ## 認証
 
-すべてのリクエストには `x-api-key` ヘッダー（または `API_KEY` クエリパラメータ）に API キーを、`tenantId` クエリパラメータにテナント ID を含める必要があります。両方ともダッシュボードの API シークレットページに表示されています。
+すべてのリクエストは `x-api-key` ヘッダー（または `API_KEY` クエリパラメータ）に API キーを、`tenantId` クエリパラメータにテナント ID を含める必要があります。これらはダッシュボードの API シークレットページに表示されています。
 
 ## 購読
 
@@ -19,14 +19,14 @@ Content-Type: application/json
 }
 ```
 
-| フィールド | 必須 | 説明 |
+| Field | Required | Description |
 |-------|----------|-------------|
 | `url` | Yes | 絶対的な http または https の URL。 |
-| `event` | Yes | `comment-created`、`comment-updated`、または `comment-deleted`。 |
+| `event` | Yes | `comment-created`, `comment-updated` or `comment-deleted`. |
 | `domain` | No | アカウント設定からのドメイン。デフォルトは `*` で、すべてのドメインのイベントを受信します。 |
-| `method` | No | `POST`（デフォルト）、`PUT`、または `DELETE`。 |
+| `method` | No | `POST` (default), `PUT` or `DELETE`. |
 
-レスポンスにはサブスクリプションが含まれます:
+レスポンスにはサブスクリプションが含まれます。
 
 ```json
 {
@@ -44,15 +44,15 @@ Content-Type: application/json
 }
 ```
 
-同じ URL を同じイベントとドメインで再度購読すると、重複作成されず既存のサブスクリプションが返されるため、クライアントは安全に再試行できます。各テナントは最大 50 件の API サブスクリプションを持つことができます。
+同じ URL を同じイベントとドメインで再度購読すると、重複を作成せずに既存のサブスクリプションが返されるため、クライアントは安全に再試行できます。各テナントは最大 50 件の API サブスクリプションを持つことができます。
 
-## 一覧取得
+## 一覧
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-テナントのすべての Webhook が返されます。ダッシュボードで管理されているもの（`"source": "dashboard"`）も含まれます。`event`、`domain`、または `source` でフィルタリングできます。
+テナントのすべての Webhook を返します。ダッシュボードで管理されているもの（`"source": "dashboard"`）も含まれます。`event`、`domain`、または `source` でフィルタできます。
 
 ## 購読解除
 
@@ -64,12 +64,36 @@ DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TE
 
 ## ペイロードと署名
 
-配信はダッシュボード Webhook と同じペイロードを使用し（Data Structures 参照）、同じ HMAC スキームで署名されます（Security & API Tokens 参照）。API サブスクリプションはレガシーな `token` ヘッダーを受け取らないため、代わりに `X-FastComments-Signature` ヘッダーを検証してください。
+配信はダッシュボードの Webhook と同じペイロードを使用し（Data Structures を参照）、同じ HMAC 方式で署名されます（Security & API Tokens を参照）。API サブスクリプションはレガシーな `token` ヘッダーを受け取らないため、代わりに `X-FastComments-Signature` ヘッダーを検証してください。
 
-## 410 Gone での応答
+## サンプルペイロード
 
-API サブスクリプションのエンドポイントが HTTP `410 Gone` を返すと、FastComments はそれを購読解除とみなし、サブスクリプションとキューに残っているイベントを削除し、以降の配信は行いません。ダッシュボードで設定された Webhook は自動的に削除されず、410 は単なる失敗として扱われます。他の失敗ステータスは再試行され、最終的に Webhook が無効化されます（How it Works & Handling Retries 参照）。
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
+
+配信が保持する形そのままで、アカウントの最新コメントを返すため、統合は最初のイベントが到着する前に実際のサンプルデータを表示できます。`event` はオプションで、すべてのイベントが同じコメントオブジェクトを配信するため検証のみ行われます。`limit` のデフォルトは 3 で、1 から 10 の範囲で指定可能です。2 API クレジットが消費されます。
+
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
+
+## 410 Gone に応答する
+
+API サブスクリプションのエンドポイントが HTTP `410 Gone` を返した場合、FastComments はそれを購読解除とみなし、サブスクリプションとキューに残っているイベントを削除し、以降の配信は行いません。ダッシュボードで設定された Webhook は自動的に削除されることはなく、410 は通常の失敗として扱われます。その他の失敗ステータスは再試行され、最終的に Webhook が無効化されます（How it Works & Handling Retries を参照）。
 
 ## ダッシュボード
 
-API サブスクリプションは作成されたドメインごとに Webhooks ページに一覧表示され、管理者はそれらを無効化、再有効化、または削除できます。
+API サブスクリプションは Webhooks リストに **API** ソースとして表示され、管理者はそれらを編集、無効化、再有効化、または削除できます。

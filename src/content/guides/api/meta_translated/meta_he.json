@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API לתגובות חיות",
+  "pageHeader": "ממשקי API לתגובות בזמן אמת",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "משאבי API"
     },
     {
-      "name": "צבר את הנתונים שלך",
+      "name": "אגרגציה של הנתונים שלך",
       "file": "aggregate-post.md",
       "subCat": "אגרגציות"
     },
@@ -125,80 +125,86 @@
       "subCat": "תבניות אימייל"
     },
     {
-      "name": "מבנה האשטאג",
+      "name": "מבנה תגית",
       "file": "hash-tag-structure.md",
-      "subCat": "האשטאגים"
+      "subCat": "תגיות"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "האשטאגים"
+      "subCat": "תגיות"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "האשטאגים"
+      "subCat": "תגיות"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "האשטאגים"
+      "subCat": "תגיות"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "האשטאגים"
+      "subCat": "תגיות"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "האשטאגים"
+      "subCat": "תגיות"
     },
     {
-      "name": "מבנה מודרטור",
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "אני"
+    },
+    {
+      "name": "מבנה מנחה",
       "file": "moderator-structure.md",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "GET /api/v1/moderators/:id",
       "file": "moderator-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "GET /api/v1/moderators",
       "file": "moderators-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "POST /api/v1/moderators",
       "file": "moderator-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "POST /api/v1/moderators/:id/send-invite",
       "file": "moderator-send-invite.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "DELETE /api/v1/moderators/:id",
       "file": "moderator-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מודרטורים"
+      "subCat": "מנחים"
     },
     {
       "name": "מבנה ספירת התראות",

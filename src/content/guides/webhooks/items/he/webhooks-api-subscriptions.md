@@ -1,18 +1,12 @@
----
-Webhooks can also be managed through the REST API. This is how integrations such as Zapier subscribe
-to comment events without touching the dashboard, and it follows the REST Hooks pattern: subscribe,
-receive events, unsubscribe.
+Webhooks יכולים גם להיות מנוהלים דרך ה‑REST API. כך אינטגרציות כגון Zapier נרשמות לאירועי תגובות מבלי לגעת בלוח הבקרה, והיא פועלת לפי תבנית REST Hooks: הרשמה, קבלת אירועים, ביטול הרשמה.
 
-API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to the dashboard webhook for its domain and to every API subscription that matches, each as its own
-delivery. There is no limit of one subscriber per event.
+מנויים דרך ה‑API חיים לצד ה‑webhooks המוגדרים בלוח הבקרה. אירוע תגובה נשלח לכל webhook שתואם לדומיין שלו, כל אחד כהעברה נפרדת, ללא קשר לאופן שבו נוצר ה‑webhook.
 
-## אימות
+## Authentication
 
-Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
-your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
+כל בקשה דורשת את מפתח ה‑API שלך בכותרת `x-api-key` (או בפרמטר השאילתה `API_KEY`) ואת מזהה השוכר שלך בפרמטר השאילתה `tenantId`. שני הערכים מוצגים בעמוד API Secret בלוח הבקרה.
 
-## הרשמה
+## Subscribe
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -27,12 +21,12 @@ Content-Type: application/json
 
 | שדה | נדרש | תיאור |
 |-------|----------|-------------|
-| `url` | Yes | כתובת URL מוחלטת http או https. |
-| `event` | Yes | `comment-created`, `comment-updated` או `comment-deleted`. |
-| `domain` | No | דומיין מהגדרות החשבון שלך. ברירת המחדל היא `*`, שמקבל אירועים מכל דומיין. |
-| `method` | No | `POST` (default), `PUT` or `DELETE`. |
+| `url` | כן | כתובת URL מוחלטת של http או https. |
+| `event` | כן | `comment-created`, `comment-updated` או `comment-deleted`. |
+| `domain` | לא | דומיין מהגדרות החשבון שלך. ברירת המחדל היא `*`, שמקבל אירועים מכל דומיין. |
+| `method` | לא | `POST` (ברירת מחדל), `PUT` או `DELETE`. |
 
-The response contains the subscription:
+התשובה מכילה את המנוי:
 
 ```json
 {
@@ -50,42 +44,58 @@ The response contains the subscription:
 }
 ```
 
-Subscribing the same URL to the same event and domain again returns the existing subscription rather
-than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
+רישום של אותה כתובת URL לאותו אירוע ולדומיין שוב מחזיר את המנוי הקיים במקום ליצור כפילות, ולכן לקוח יכול לנסות שוב בבטחה. לכל שוכר ניתן להחזיק עד 50 מנויים דרך ה‑API.
 
-## רשימה
+## List
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
-Filter with `event`, `domain` or `source`.
+מחזיר את כל ה‑webhook של השוכר, כולל אלו המנוהלים בלוח הבקרה (`"source": "dashboard"`). ניתן לסנן באמצעות `event`, `domain` או `source`.
 
-## ביטול מנוי
+## Unsubscribe
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way. Dashboard webhooks are edited on the Webhooks page.
+מחיקת מנוי גם מסירה כל אירוע שעדיין בתור עבורו. רק מנויים שנוצרו דרך ה‑API ניתנים למחיקה באופן זה. Webhooks בלוח הבקרה נערכים בעמוד Webhooks.
 
-## מטענים וחתימה
+## Payloads and signing
 
-Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
-HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
-verify the `X-FastComments-Signature` header instead.
+ההעברות משתמשות באותו payload כמו webhooks בלוח הבקרה (ראו מבני נתונים) ונחתמות באותו סכמת HMAC (ראו אבטחה & אסימוני API). מנויים דרך ה‑API לעולם אינם מקבלים את הכותרת הישנה `token`, ולכן יש לאמת את הכותרת `X-FastComments-Signature` במקום זאת.
 
-## תגובה עם 410 Gone
+## Sample payloads
 
-If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
-unsubscribe: the subscription is deleted along with its queued events, and no further deliveries are
-attempted. Webhooks configured in the dashboard are never deleted automatically; for them a 410 is an
-ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
-in How it Works & Handling Retries.
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
 
-## לוח הבקרה
+מחזיר את ההערות האחרונות של החשבון בדיוק במבנה שההעברה נושאת, כך שאינטגרציה יכולה להציג נתוני דוגמה אמיתיים לפני שהאירוע הראשון מגיע. `event` הוא אופציונלי ונבדק בלבד, מכיוון שכל אירוע מעביר את אותו אובייקט תגובה. `limit` ברירת המחדל היא 3 ומקבל ערכים מ‑1 עד 10. עלות של 2 קרדיטים של API.
 
-API subscriptions are listed on the Webhooks page under the domain they were created for, where an
-administrator can disable, re-enable or delete them.
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
+
+## Responding with 410 Gone
+
+אם קצה של מנוי API מגיב עם HTTP `410 Gone`, FastComments מתייחסת לכך כביטול מנוי: המנוי נמחק יחד עם האירועים בתור שלו, ולא מתבצעות עוד העברות. Webhooks המוגדרים בלוח הבקרה לעולם אינם נמחקים אוטומטית; עבורם 410 הוא כשל רגיל. כל סטטוס כשל אחר מנסה מחדש ובסופו של דבר משבית את ה‑webhook, כפי שמתואר ב‑How it Works & Handling Retries.
+
+## Dashboard
+
+מנויים דרך ה‑API מופיעים ברשימת ה‑Webhooks עם המקור **API**, שם מנהל יכול לערוך, להשבית, להפעיל מחדש או למחוק אותם.
+
+---

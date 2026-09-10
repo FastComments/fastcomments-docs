@@ -3,15 +3,14 @@ to comment events without touching the dashboard, and it follows the REST Hooks 
 receive events, unsubscribe.
 
 API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to the dashboard webhook for its domain and to every API subscription that matches, each as its own
-delivery. There is no limit of one subscriber per event.
+to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
 
-## Автентифікація
+## Authentication
 
 Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
 your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
 
-## Підписка
+## Subscribe
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -24,12 +23,12 @@ Content-Type: application/json
 }
 ```
 
-| Поле | Так | Опис |
+| Field | Required | Description |
 |-------|----------|-------------|
-| `url` | Так | Абсолютний URL http або https. |
-| `event` | Так | `comment-created`, `comment-updated` або `comment-deleted`. |
-| `domain` | Ні | Домен з конфігурації вашого облікового запису. За замовчуванням `*`, який отримує події для всіх доменів. |
-| `method` | Ні | `POST` (за замовчуванням), `PUT` або `DELETE`. |
+| `url` | Yes | An absolute http or https URL. |
+| `event` | Yes | `comment-created`, `comment-updated` or `comment-deleted`. |
+| `domain` | No | A domain from your account configuration. Defaults to `*`, which receives events for every domain. |
+| `method` | No | `POST` (default), `PUT` or `DELETE`. |
 
 The response contains the subscription:
 
@@ -52,7 +51,7 @@ The response contains the subscription:
 Subscribing the same URL to the same event and domain again returns the existing subscription rather
 than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
 
-## Список
+## List
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -61,7 +60,7 @@ GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
 Filter with `event`, `domain` or `source`.
 
-## Відписка
+## Unsubscribe
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
@@ -70,11 +69,37 @@ DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TE
 Deleting a subscription also discards any events still queued for it. Only subscriptions created
 through the API can be deleted this way. Dashboard webhooks are edited on the Webhooks page.
 
-## Навантаження та підписування
+## Payloads and signing
 
 Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
 HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
 verify the `X-FastComments-Signature` header instead.
+
+## Sample payloads
+
+```
+GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
+```
+
+Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
+show real sample data before the first event arrives. `event` is optional and only validated, since every
+event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
+
+```json
+{
+    "status": "success",
+    "payloads": [
+        {
+            "id": "66f1c4c1e7a2b3d4f5a6b7c8",
+            "urlId": "https://example.com/blog/hello-world",
+            "commenterName": "Jane Reader",
+            "comment": "Great article!",
+            "date": "2026-09-08T12:00:00.000Z",
+            "approved": true
+        }
+    ]
+}
+```
 
 ## Responding with 410 Gone
 
@@ -84,7 +109,7 @@ attempted. Webhooks configured in the dashboard are never deleted automatically;
 ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
 in How it Works & Handling Retries.
 
-## Панель управління
+## Dashboard
 
-API subscriptions are listed on the Webhooks page under the domain they were created for, where an
-administrator can disable, re-enable or delete them.
+API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
+disable, re-enable or delete them.

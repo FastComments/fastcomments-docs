@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API живых комментариев",
+  "pageHeader": "API живого комментирования",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -158,6 +158,12 @@
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Хештеги"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Я"
     },
     {
       "name": "Структура модератора",

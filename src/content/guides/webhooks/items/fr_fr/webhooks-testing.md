@@ -1,23 +1,26 @@
-Dans l'interface d'administration des Webhooks, il existe des boutons `Send Test Payload` pour chaque type d'événement (Create, Update, Delete). Les événements Create et Update envoient un objet WebhookComment factice, tandis que le test de Delete enverra un corps de requête factice contenant uniquement un ID.
+Les nouvelles pages de webhook et les pages d'édition disposent d'un bouton `Send Test Payload` qui envoie une requête à l'URL actuellement dans le formulaire, qu'elle ait été enregistrée ou non. Les événements Create et Update envoient un objet WebhookComment factice, tandis que le test de Delete enverra un corps de requête factice contenant uniquement un ID.
 
-## Vérification des payloads
+## Vérification des charges utiles
 
-Lors des tests de votre intégration de webhook, vérifiez que les requêtes entrantes incluent les en-têtes suivants :
+Lors du test de votre intégration webhook, vérifiez que les requêtes entrantes incluent les en‑têtes suivants :
 
-1. **`token`** - Votre API Secret
-2. **`X-FastComments-Timestamp`** - Horodatage Unix (secondes)
-3. **`X-FastComments-Signature`** - Signature HMAC-SHA256
+1. **`X-FastComments-Timestamp`** – horodatage Unix (secondes)  
+2. **`X-FastComments-Signature`** – signature HMAC‑SHA256  
 
-Utilisez la vérification de la signature HMAC pour garantir l'authenticité des payloads.
+Les webhooks créés avant l’introduction du schéma de signature reçoivent également un en‑tête **`token`** contenant votre secret d’API. Les nouveaux webhooks ne le font pas.
+
+Utilisez la vérification de signature HMAC pour garantir l’authenticité des charges utiles.
 
 ## Outils de test
 
-Vous pouvez utiliser des outils comme [webhook.site](https://webhook.site) ou [ngrok](https://ngrok.com) pour inspecter les payloads de webhook entrants pendant le développement.
+Vous pouvez utiliser des outils comme [webhook.site](https://webhook.site) ou [ngrok](https://ngrok.com) pour inspecter les charges utiles webhook entrantes pendant le développement.
 
 ## Types d'événements
 
-- **Create Event**: Déclenché lorsqu'un nouveau commentaire est créé. Méthode par défaut : PUT
-- **Update Event**: Déclenché lorsqu'un commentaire est modifié. Méthode par défaut : PUT
-- **Delete Event**: Déclenché lorsqu'un commentaire est supprimé. Méthode par défaut : DELETE
+- **Create Event** : déclenché lorsqu’un nouveau commentaire est créé.  
+- **Update Event** : déclenché lorsqu’un commentaire est modifié.  
+- **Delete Event** : déclenché lorsqu’un commentaire est supprimé.  
 
-Chaque événement inclut l'ensemble des données du commentaire dans le corps de la requête (voir [Structures de données](/guide-webhooks.html#webhooks-structures) pour le format du payload).
+Chaque webhook est associé à un seul événement et à une méthode HTTP (POST, PUT ou DELETE). Chaque événement inclut les données complètes du commentaire dans le corps de la requête (voir [Data Structures](/guide-webhooks.html#webhooks-structures) pour le format de la charge utile).
+
+---
