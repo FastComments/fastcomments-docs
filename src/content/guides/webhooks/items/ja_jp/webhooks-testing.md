@@ -22,5 +22,3 @@ You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://n
 - **Delete Event**: Triggered when a comment is deleted.
 
 Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
-
----
