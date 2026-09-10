@@ -1,24 +1,17 @@
-## Troubleshooting
+## Rješavanje problema
 
-**"You do not have permission" when connecting.** The signed-in user is not an API admin on the account.  
-Ask the account owner to grant the API permission on the Users page, or connect as the owner.
+**"Nemate dozvolu" prilikom povezivanja.** Prijavljeni korisnik nije API administrator na računu.  
+Zatražite od vlasnika računa da odobri API dozvolu na stranici Korisnici, ili se povežite kao vlasnik.
 
-**The connection is labelled with the wrong site.** The consent page connects the account you were signed  
-in to at the time. Disconnect in Zapier, switch accounts in the FastComments dashboard, and connect again.
+**Veza je označena s pogrešnom stranicom.** Stranica za odobrenje povezuje račun na koji ste bili prijavljeni  
+u tom trenutku. Prekinite vezu u Zapieru, promijenite račun u FastComments nadzornoj ploči i ponovno se povežite.
 
-**Events stopped arriving.** Check the Webhooks page in the dashboard. A subscription whose endpoint kept  
-failing for six days is disabled automatically and shows why. Re-enable it there, or turn the Zap off and on  
-again. If the subscription is missing entirely, someone deleted it; turning the Zap off and on recreates it.
+**Događaji su prestali dolaziti.** Provjerite stranicu Webhookova u nadzornoj ploči. Pretplata čiji je krajnji punkt neuspješno radila šest dana automatski se onemogućuje i prikazuje razlog. Ponovno je omogućite tamo, ili isključite i ponovno uključite Zap. Ako pretplata uopće nedostaje, netko ju je izbrisao; isključivanje i ponovno uključivanje Zapa će je ponovno stvoriti.
 
-**Zapier says the account needs to be reconnected.** The connection was revoked from the Connected Apps  
-page, the user who approved it lost the API permission, or the account was deleted. Reconnect from Zapier.
+**Zapier kaže da je račun potrebno ponovno povezati.** Veza je povučena s stranice Povezane aplikacije, korisnik koji ju je odobrio izgubio je API dozvolu, ili je račun izbrisan. Ponovno se povežite iz Zapia.
 
-**An action fails with "does not have write access".** The connection was approved with read-only  
-permission. Reconnect and approve both permissions.
+**Radnja ne uspijeva s porukom "nema pristup za pisanje".** Veza je odobrena s dozvolom samo za čitanje. Ponovno se povežite i odobrite obje dozvole.
 
-**Rate limits and credits.** Actions and searches spend API credits from your plan and are subject to the  
-same rate limits as the REST API. Triggers spend none. A Zap that runs into a limit is retried by Zapier  
-after the delay FastComments reports.
+**Ograničenja brzine i krediti.** Radnje i pretrage troše API kredite iz vašeg plana i podliježu istim ograničenjima brzine kao REST API. Okidači ne troše ništa. Zap koji dosegne ograničenje ponovno se pokušava od strane Zapia nakon kašnjenja koje FastComments prijavljuje.
 
-**The Domain dropdown is empty.** Domains appear once they are configured on the Domains page in the  
-FastComments dashboard. Leave the field blank to receive events for every domain.
+**Padajući izbornik Domene je prazan.** Domene se pojavljuju nakon što su konfigurirane na stranici Domene u FastComments nadzornoj ploči. Ostavite polje prazno da primate događaje za svaku domenu.

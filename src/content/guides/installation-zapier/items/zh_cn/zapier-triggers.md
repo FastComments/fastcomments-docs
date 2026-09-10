@@ -1,35 +1,23 @@
-## Triggers
+## 触发器
 
-Triggers start a Zap when something happens in FastComments. All three are instant: FastComments delivers the
-event to Zapier through a webhook the moment it happens. Nothing polls your account and no API credits are
-spent waiting.
+触发器在 FastComments 中发生某些事件时启动 Zap。所有三种触发器都是即时的：FastComments 会在事件发生的瞬间通过 webhook 将其发送给 Zapier。不会轮询您的账户，也不会消耗 API 积分等待。
 
-| Trigger | Fires when |
+| 触发器 | 触发条件 |
 |---------|-----------|
-| New Comment | A comment is posted. By default only approved, non-spam comments trigger. |
-| Updated Comment | A comment is edited, approved, voted on, pinned, locked, or otherwise changed. |
-| Deleted Comment | A comment is deleted. |
+| 新评论 | 当发布评论时。默认情况下，仅已批准且非垃圾评论会触发。 |
+| 更新的评论 | 当评论被编辑、批准、投票、置顶、锁定或以其他方式更改时。 |
+| 删除的评论 | 当评论被删除时。 |
 
-Each trigger returns the full comment: id, page URL and URL ID, commenter name and email, the comment text
-as markdown and as HTML, vote counts, approval and spam flags, the locale, the domain, and any mentions. The
-fields match the webhook payload documented under Webhooks, Data Structures.
+每个触发器返回完整的评论信息：id、页面 URL 和 URL ID、评论者姓名和电子邮件、评论文本（Markdown 和 HTML 格式）、投票计数、批准和垃圾标记、语言区域、域名以及任何提及。字段与 Webhooks、Data Structures 中记录的 webhook 负载相匹配。
 
-## Options
+## 选项
 
-**Domain.** Every trigger has an optional domain filter, listing the domains configured on your account.
-Leave it blank to receive events from every domain.
+**域名。** 每个触发器都有一个可选的域名过滤器，列出您账户中配置的域名。留空则接收所有域名的事件。
 
-**Include Unapproved and Spam Comments.** On the New Comment trigger only. Comments that are held for
-moderation or marked as spam are skipped by default. When such a comment is approved later, the Updated
-Comment trigger fires for it, so a Zap that should react to every comment that becomes visible uses
-Updated Comment with a filter on the approved field.
+**包含未批准和垃圾评论。** 仅适用于“新评论”触发器。默认情况下，已被置于审核或标记为垃圾的评论会被跳过。当此类评论随后被批准时，“更新的评论”触发器会为其触发，因此需要对每条可见评论作出响应的 Zap 应使用“更新的评论”并在已批准字段上添加过滤器。
 
-## How delivery works
+## 交付工作原理
 
-Turning a Zap on creates a webhook subscription on your account, visible on the Webhooks page with the
-source **API**. Turning the Zap off removes it. Zapier's own limits apply to how many events it accepts per
-minute; FastComments retries a delivery that fails, with a growing delay, and disables a subscription that
-keeps failing for six days. A disabled subscription can be re-enabled from the Webhooks page, or simply turn
-the Zap off and on again to create a fresh one.
+打开 Zap 会在您的账户上创建一个 webhook 订阅，可在 Webhooks 页面中看到，来源为 **API**。关闭 Zap 会删除该订阅。Zapier 自身的限制适用于每分钟接受的事件数量；FastComments 会重试失败的交付，且延迟逐渐增加，并在订阅连续失败六天后将其禁用。可以在 Webhooks 页面重新启用被禁用的订阅，或简单地关闭再打开 Zap 以创建一个新的订阅。
 
-An account can hold up to 50 API subscriptions. Each Zap using a FastComments trigger uses one.
+一个账户最多可拥有 50 个 API 订阅。每个使用 FastComments 触发器的 Zap 占用一个订阅。

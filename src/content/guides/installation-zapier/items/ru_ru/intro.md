@@ -1,8 +1,8 @@
-The FastComments app for Zapier connects your comments to thousands of other apps without writing code.
+---
+Приложение FastComments для Zapier соединяет ваши комментарии с тысячами других приложений без написания кода.
 
-Use it to post a Slack message when someone comments, log every comment to a spreadsheet, create a
-comment from a form submission, or add commenters to your CRM. Triggers fire the moment something happens,
-because they are backed by webhooks rather than polling, and actions call the FastComments API on your
-behalf.
+Используйте его, чтобы отправлять сообщение в Slack, когда кто‑то оставляет комментарий, фиксировать каждый комментарий в таблице, создавать
+комментарий из отправки формы или добавлять комментаторов в вашу CRM. Триггеры срабатывают в момент, когда что‑то происходит, потому что они работают на основе вебхуков, а не опроса, а действия вызывают API FastComments от вашего имени.
 
-This guide assumes you have a FastComments account. [You can create one here.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+Это руководство предполагает, что у вас есть аккаунт FastComments. [Вы можете создать его здесь.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+---
