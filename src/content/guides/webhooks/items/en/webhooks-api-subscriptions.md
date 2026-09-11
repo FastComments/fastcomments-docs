@@ -67,7 +67,8 @@ DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TE
 ```
 
 Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way. Dashboard webhooks are edited on the Webhooks page.
+through the API can be deleted this way; a dashboard webhook, or an id that does not exist on your
+account, answers `404` with code `not-found`. Dashboard webhooks are edited on the Webhooks page.
 
 ## Payloads and signing
 

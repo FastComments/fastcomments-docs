@@ -36,17 +36,18 @@ be granted from Zapier.
 
 ## Create Feed Post
 
-Creates a post in a FastComments feed from HTML content, with an optional title, author, tags, and one link
-preview.
+Creates a post in a FastComments feed from HTML content. The author user id is required (a FastComments or
+SSO user id); title, tags, and one link preview are optional.
 
 ## Create Hash Tag
 
-Creates a hash tag that commenters can use, with an optional URL it links to.
+Creates a hash tag that commenters can use, with an optional URL it links to. Tags are unique per account, so
+a Zap that creates one on every run needs something unique in the tag.
 
 ## Flag Comment
 
-Flags a comment for moderator review. Provide the id of the user doing the flagging, or leave it blank to
-flag as the Zapier integration.
+Flags a comment for moderator review. The id of the user doing the flagging is required; the author id
+returned by Create Comment works.
 
 ## Searches
 
