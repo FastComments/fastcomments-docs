@@ -1,120 +1,122 @@
-Den eneste struktur, der sendes via webhooks, er WebhookComment-objektet, beskrevet i TypeScript nedenfor.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
 #### WebhookComment-objektets struktur
 
-##### Struktur for "Create"-hændelsen
-Request-body'en for "create"-hændelsen er et WebhookComment-objekt.
+##### The "Create" Event Structure
+The "create" event request body is a WebhookComment object.
 
-##### Struktur for "Update"-hændelsen
-Request-body'en for "update"-hændelsen er et WebhookComment-objekt.
+##### The "Update" Event Structure
+The "update" event request body is a WebhookComment object.
 
-##### Struktur for "Delete"-hændelsen
-Request-body'en for "delete"-hændelsen er et WebhookComment-objekt.
+##### The "Delete" Event Structure
+The "delete" event request body is a WebhookComment object.
 
-    Ændring pr. 14. nov. 2023
-    Tidligere indeholdt request-body'en for "delete"-hændelsen kun kommentarens id. Den indeholder nu den fulde kommentar på tidspunktet for sletningen.
+    Change as of Nov 14th 2023
+    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
 [inline-code-attrs-start title = 'WebhookComment-objektet'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** Kommentarens id. **/
+    /** The id of the comment. **/
     id: string
-    /** Id'et eller URL'en, der identificerer kommentartræet. Normaliseret. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** URL'en, der peger på hvor kommentaren blev efterladt. **/
-    url?: string
-    /** Bruger-id'et for den, der skrev kommentaren. Hvis SSO, er det præfikset med tenant-id. **/
-    userId?: string
-    /** E-mailen på brugeren, der skrev kommentaren. **/
-    commenterEmail?: string
-    /** Navnet på brugeren, som vises i kommentærwidget'en. Ved SSO kan det være displayName. **/
+    /** The URL that points to where the comment was left. **/
+    url: string | null
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    userId: string | null
+    /** The email of the user left the comment. **/
+    commenterEmail: string | null
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Rå kommentartekst. **/
+    /** Raw comment text. **/
     comment: string
-    /** Kommentartekst efter parsing. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Eksternt id for kommentaren. **/
-    externalId?: string
-    /** Id'et på forælderkommentaren. **/
-    parentId?: string | null
-    /** UTC-datoen hvor kommentaren blev skrevet. **/
+    /** Comment external id. **/
+    externalId: string | null
+    /** The id of the parent comment. **/
+    parentId: string | null
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Kombineret karma (op - ned) af stemmer. **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Sandt hvis brugeren var logget ind, da de kommenterede, eller hvis deres kommentar var verificeret, eller hvis de verificerede deres session, da kommentaren blev skrevet. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Datoen hvor kommentaren blev verificeret. **/
-    verifiedDate?: number
-    /** Hvis en moderator markerede kommentaren som gennemgået. **/
+    /** The UTC date when the comment was verified. **/
+    verifiedDate: UTC_ISO_DateString | null
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** Placeringen eller base64-encodningen af avataren. Vil kun være base64 hvis det var den værdi, der blev sendt med SSO. **/
-    avatarSrc?: string
-    /** Blev kommentaren markeret som spam manuelt eller automatisk? **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    avatarSrc: string | null
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Blev kommentaren automatisk markeret som spam? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Er der billeder i kommentaren? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** Sidetallet kommentaren er på for sorteringsretningen "Most Relevant". **/
-    pageNumber: number
-    /** Sidetallet kommentaren er på for sorteringsretningen "Oldest First". **/
-    pageNumberOF: number
-    /** Sidetallet kommentaren er på for sorteringsretningen "Newest First". **/
-    pageNumberNF: number
-    /** Blev kommentaren godkendt automatisk eller manuelt? **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    pageNumber: number | null
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    pageNumberOF: number | null
+    /** The page number the comment is on for the "Newest First" sort direction. **/
+    pageNumberNF: number | null
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** Sprogkode (format: en_us) for brugeren da kommentaren blev skrevet. **/
-    locale: string
-    /** De @mentions skrevet i kommentaren, der blev korrekt analyseret. **/
-    mentions?: CommentUserMention[]
-    /** Domænet kommentaren kommer fra. **/
-    domain?: string
-    /** Den valgfrie liste af moderation group ids associeret med denne kommentar. **/
-    moderationGroupIds?: string[]|null
+    /** The locale code (format: en_us) of the user when the comment was written. **/
+    locale: string | null
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    mentions: CommentUserMention[]
+    /** The domain the comment is from. **/
+    domain: string | null
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    moderationGroupIds: string[]
 }
 [inline-code-end]
 
-Når brugere tagges i en kommentar, gemmes informationen i en liste kaldet `mentions`. Hvert objekt i den liste
-har følgende struktur.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
-[inline-code-attrs-start title = 'Webhook Mentions-objektet'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhook-mentions-objektet'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Bruger-id'et. For SSO-brugere vil dette være præfikset med dit tenant-id. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** Den endelige @mention-tagtekst, inklusive @-symbolet. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** Den originale @mention-tagtekst, inklusive @-symbolet. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Hvilken type bruger der blev tagget. user = FastComments.com-konto. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Hvis brugeren fravælger notifikationer, vil dette stadig være sat til true. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
 #### HTTP-metoder
 
-Du kan konfigurere HTTP-metoden for hver webhook-hændelsestype i adminpanelet:
+Du kan konfigurere HTTP-metoden for hver webhook-begivenhedstype i administrationspanelet:
 
-- **Create Event**: POST eller PUT (standard: PUT)
-- **Update Event**: POST eller PUT (standard: PUT)
-- **Delete Event**: DELETE, POST eller PUT (standard: DELETE)
+- **Create-begivenhed**: POST eller PUT (standard: PUT)
+- **Update-begivenhed**: POST eller PUT (standard: PUT)
+- **Delete-begivenhed**: DELETE, POST eller PUT (standard: DELETE)
 
-Da alle requests indeholder et ID, er Create- og Update-operationer idempotente som standard (PUT). Gentagelse af samme Create- eller Update-request bør ikke skabe duplikerede objekter hos dig.
+Da alle anmodninger indeholder et ID, er Create- og Update-operationer idempotente som standard (PUT). Gentagelse af den samme Create- eller Update-anmodning bør ikke oprette duplikerede objekter på din side.
 
-#### Request-headere
+#### Anmodnings‑headers
 
-Hver webhook-request indeholder følgende headere:
+Hver webhook-anmodning inkluderer følgende headers:
 
-| Header | Beskrivelse |
+| Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Din API Secret |
-| `X-FastComments-Timestamp` | Unix-timestamp (sekunder) hvor requesten blev signeret |
+| `token` | Din API-hemmelighed |
+| `X-FastComments-Timestamp` | Unix-tidsstempel (sekunder) da anmodningen blev signeret |
 | `X-FastComments-Signature` | HMAC-SHA256-signatur (`sha256=<hex>`) |
 
-Se [Sikkerhed & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information om verifikation af HMAC-signaturen.
+Se [Sikkerhed & API‑tokens](/guide-webhooks.html#webhooks-api-tokens) for information om verifikation af HMAC-signaturen.

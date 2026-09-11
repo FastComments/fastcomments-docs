@@ -1,120 +1,122 @@
-De enige structuur die via webhooks wordt verzonden is het WebhookComment-object, hieronder in TypeScript uiteengezet.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
-#### De structuur van het WebhookComment-object
+#### The WebhookComment Object Structure
 
-##### De structuur van het "Create"-event
-Het request body van het "create" event is een WebhookComment-object.
+##### The "Create" Event Structure  
+The "create" event request body is a WebhookComment object.
 
-##### De structuur van het "Update"-event
-Het request body van het "update" event is een WebhookComment-object.
+##### The "Update" Event Structure  
+The "update" event request body is a WebhookComment object.
 
-##### De structuur van het "Delete"-event
-Het request body van het "delete" event is een WebhookComment-object.
+##### The "Delete" Event Structure  
+The "delete" event request body is a WebhookComment object.
 
-    Wijziging per 14 nov 2023
-    Voorheen bevatte het request body van het "delete" event alleen de comment id. Het bevat nu de volledige opmerking op het moment van verwijdering.
+Change as of Nov 14th 2023  
+Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
+Every key is always present in the body. When the comment has no value for a field the body carries `null`  
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
 [inline-code-attrs-start title = 'Het WebhookComment-object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** De id van de opmerking. **/
+    /** The id of the comment. **/
     id: string
-    /** De id of URL die de commentdraad identificeert. Genormaliseerd. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** De URL die wijst naar waar de opmerking is achtergelaten. **/
-    url?: string
-    /** De gebruikers-id die de opmerking heeft geplaatst. Bij SSO voorafgegaan door de tenant-id. **/
-    userId?: string
-    /** Het e-mailadres van de gebruiker die de opmerking plaatste. **/
-    commenterEmail?: string
-    /** De naam van de gebruiker die in de comment-widget wordt weergegeven. Bij SSO kan dit displayName zijn. **/
+    /** The URL that points to where the comment was left. **/
+    url: string | null
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    userId: string | null
+    /** The email of the user left the comment. **/
+    commenterEmail: string | null
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Ruwe tekst van de opmerking. **/
+    /** Raw comment text. **/
     comment: string
-    /** Tekst van de opmerking na verwerking. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Externe id van de opmerking. **/
-    externalId?: string
-    /** De id van de bovenliggende opmerking. **/
-    parentId?: string | null
-    /** De UTC-datum waarop de opmerking is geplaatst. **/
+    /** Comment external id. **/
+    externalId: string | null
+    /** The id of the parent comment. **/
+    parentId: string | null
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Gecombineerde karma (up - down) van stemmen. **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Waar als de gebruiker was ingelogd toen hij reageerde, of als hij de opmerking heeft geverifieerd, of als hij zijn sessie had geverifieerd toen de opmerking werd geplaatst. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Datum waarop de opmerking is geverifieerd. **/
-    verifiedDate?: number
-    /** Of een moderator de opmerking als beoordeeld heeft gemarkeerd. **/
+    /** The UTC date when the comment was verified. **/
+    verifiedDate: UTC_ISO_DateString | null
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** De locatie, of base64-codering, van de avatar. Zal alleen base64 zijn als dat de waarde was die bij SSO werd meegegeven. **/
-    avatarSrc?: string
-    /** Is de opmerking handmatig of automatisch als spam gemarkeerd? **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    avatarSrc: string | null
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Is de opmerking automatisch als spam gemarkeerd? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Bevat de opmerking afbeeldingen? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** Het paginanummer waarop de opmerking staat voor de sorteerrichting "Most Relevant". **/
-    pageNumber: number
-    /** Het paginanummer waarop de opmerking staat voor de sorteerrichting "Oldest First". **/
-    pageNumberOF: number
-    /** Het paginanummer waarop de opmerking staat voor de sorteerrichting "Newest First". **/
-    pageNumberNF: number
-    /** Is de opmerking automatisch of handmatig goedgekeurd? **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    pageNumber: number | null
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    pageNumberOF: number | null
+    /** The page number the comment is on for the "Newest First" sort direction. **/
+    pageNumberNF: number | null
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** De lococode (formaat: en_us) van de gebruiker toen de opmerking werd geschreven. **/
-    locale: string
-    /** De @mentions in de opmerking die succesvol zijn geparsed. **/
-    mentions?: CommentUserMention[]
-    /** Het domein waar de opmerking vandaan komt. **/
-    domain?: string
-    /** De optionele lijst met moderatiegroep-ids die aan deze opmerking zijn gekoppeld. **/
-    moderationGroupIds?: string[]|null
+    /** The locale code (format: en_us) of the user when the comment was written. **/
+    locale: string | null
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    mentions: CommentUserMention[]
+    /** The domain the comment is from. **/
+    domain: string | null
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    moderationGroupIds: string[]
 }
 [inline-code-end]
 
-Wanneer gebruikers worden getagd in een opmerking, wordt die informatie opgeslagen in een lijst genaamd `mentions`. Elk object in die lijst
-heeft de volgende structuur.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
 [inline-code-attrs-start title = 'Het Webhook Mentions-object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** De gebruikers-id. Voor SSO-gebruikers wordt hier uw tenant-id aan voorafgegaan. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** De uiteindelijke @mention-tagtekst, inclusief het @-symbool. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** De oorspronkelijke @mention-tagtekst, inclusief het @-symbool. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Welk type gebruiker werd genoemd. user = FastComments.com-account. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Als de gebruiker zich afmeldt voor meldingen, blijft dit toch op true staan. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### HTTP-methoden
+#### HTTP Methods
 
-U kunt de HTTP-methode voor elk webhook-eventtype configureren in het beheerpaneel:
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-- **Create Event**: POST of PUT (standaard: PUT)
-- **Update Event**: POST of PUT (standaard: PUT)
-- **Delete Event**: DELETE, POST of PUT (standaard: DELETE)
+- **Create Event**: POST or PUT (default: PUT)
+- **Update Event**: POST or PUT (default: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
-Aangezien alle verzoeken een ID bevatten, zijn Create- en Update-bewerkingen standaard idempotent (PUT). Het herhalen van hetzelfde Create- of Update-verzoek zou geen dubbele objecten aan uw kant moeten aanmaken.
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
 #### Request Headers
 
-Elk webhook-verzoek bevat de volgende headers:
+Each webhook request includes the following headers:
 
-| Header | Beschrijving |
+| Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
 | `token` | Your API Secret |
 | `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256-handtekening (`sha256=<hex>`) |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
 
-Zie [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) voor informatie over het verifiëren van de HMAC-handtekening.
+See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

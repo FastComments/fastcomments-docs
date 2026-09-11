@@ -1,121 +1,122 @@
-Edina struktura, poslana prek webhookov, je objekt WebhookComment, predstavljen v TypeScriptu spodaj.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
 #### Struktura objekta WebhookComment
 
 ##### Struktura dogodka "Create"
-Request body dogodka "create" je objekt WebhookComment.
+The "create" event request body is a WebhookComment object.
 
 ##### Struktura dogodka "Update"
-Request body dogodka "update" je objekt WebhookComment.
+The "update" event request body is a WebhookComment object.
 
 ##### Struktura dogodka "Delete"
-Request body dogodka "delete" je objekt WebhookComment.
+The "delete" event request body is a WebhookComment object.
 
-    Sprememba z dne 14. novembra 2023
-    Pred tem je request body dogodka "delete" vseboval samo id komentarja. Zdaj vsebuje celoten komentar v času brisanja.
+    Sprememba od 14. novembra 2023
+    Prej je telo zahteve za dogodek "delete" vsebovalo le ID komentarja. Zdaj vsebuje celoten komentar v času brisanja.
 
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
 [inline-code-attrs-start title = 'Objekt WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** ID komentarja. **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** ID ali URL, ki identificira nit komentarjev. Normalizirano. **/
     urlId: string
-    /** URL, ki kaže, kjer je bil komentar objavljen. **/
-    url?: string
-    /** ID uporabnika, ki je pustil komentar. Če je SSO, je predponan z tenant id. **/
-    userId?: string
-    /** E-pošta uporabnika, ki je pustil komentar. **/
-    commenterEmail?: string
-    /** Ime uporabnika, ki se prikaže v komentar-vidžetu. Pri SSO je lahko displayName. **/
+    /** URL, ki kaže na mesto, kjer je bil komentar objavljen. **/
+    url: string | null
+    /** ID uporabnika, ki je napisal komentar. Če je SSO, je predponjen z ID najemnika. **/
+    userId: string | null
+    /** E‑mail uporabnika, ki je napisal komentar. **/
+    commenterEmail: string | null
+    /** Ime uporabnika, ki se prikaže v pripomočku za komentarje. Pri SSO je lahko displayName. **/
     commenterName: string
     /** Surovo besedilo komentarja. **/
     comment: string
-    /** Besedilo komentarja po parsiranju. **/
+    /** Besedilo komentarja po razčlenitvi. **/
     commentHTML: string
     /** Zunanji ID komentarja. **/
-    externalId?: string
+    externalId: string | null
     /** ID nadrejenega komentarja. **/
-    parentId?: string | null
-    /** UTC datum, ko je bil komentar oddan. **/
+    parentId: string | null
+    /** Datum v UTC, ko je bil komentar objavljen. **/
     date: UTC_ISO_DateString
-    /** Kombinirana karma glasov (up - down). **/
+    /** Skupna karma (glasovi + - -). **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True, če je bil uporabnik prijavljen, ko je komentiral, ali če je bil komentar overjen, ali če je ob oddaji komentarja preveril svojo sejo. **/
+    /** Resnično, če je bil uporabnik prijavljen, ko je komentiral, ali je potrdil komentar, ali je potrdil sejo, ko je bil komentar objavljen. **/
     verified: boolean
-    /** Datum, ko je bil komentar overjen. **/
-    verifiedDate?: number
+    /** Datum v UTC, ko je bil komentar potrjen. **/
+    verifiedDate: UTC_ISO_DateString | null
     /** Če je moderator označil komentar kot pregledan. **/
     reviewed: boolean
-    /** Lokacija ali base64 kodiranje avatarja. Bo base64 le, če je bila ta vrednost poslana z SSO. **/
-    avatarSrc?: string
-    /** Ali je bil komentar ročno ali samodejno označen kot spam? **/
+    /** Lokacija ali base64 kodiranje avatarja. Base64 bo le, če je bila to vrednost posredovana z SSO. **/
+    avatarSrc: string | null
+    /** Ali je bil komentar ročno ali samodejno označen kot neželen? **/
     isSpam: boolean
-    /** Ali je bil komentar samodejno označen kot spam? **/
+    /** Ali je bil komentar samodejno označen kot neželen? **/
     aiDeterminedSpam: boolean
-    /** Ali so v komentarju slike? **/
+    /** Ali komentar vsebuje slike? **/
     hasImages: boolean
-    /** Številka strani, na kateri je komentar za vrstni red "Most Relevant". **/
-    pageNumber: number
-    /** Številka strani, na kateri je komentar za vrstni red "Oldest First". **/
-    pageNumberOF: number
-    /** Številka strani, na kateri je komentar za vrstni red "Newest First". **/
-    pageNumberNF: number
+    /** Številka strani, na kateri je komentar pri razvrščanju po "Najbolj relevantnih". **/
+    pageNumber: number | null
+    /** Številka strani, na kateri je komentar pri razvrščanju po "Najstarejših najprej". **/
+    pageNumberOF: number | null
+    /** Številka strani, na kateri je komentar pri razvrščanju po "Najnovejših najprej". **/
+    pageNumberNF: number | null
     /** Ali je bil komentar odobren samodejno ali ročno? **/
     approved: boolean
-    /** Koda lokalizacije (format: en_us) uporabnika, ko je bil komentar napisan. **/
-    locale: string
-    /** @omenitve, zapisane v komentarju, ki so bile uspešno parsirane. **/
-    mentions?: CommentUserMention[]
-    /** Domena, iz katere izvira komentar. **/
-    domain?: string
-    /** Neobvezen seznam ID-jev skupin moderacije, povezanih s tem komentarjem. **/
-    moderationGroupIds?: string[]|null
+    /** Koda jezika (format: en_us) uporabnika, ko je bil komentar napisan. **/
+    locale: string | null
+    /** Oznake @, zapisane v komentarju, ki so bile uspešno razčlenjene. Prazno, ko jih ni. **/
+    mentions: CommentUserMention[]
+    /** Domena, iz katere je komentar. **/
+    domain: string | null
+    /** ID-ji moderacijskih skupin, povezani s tem komentarjem. Prazno, ko jih ni. **/
+    moderationGroupIds: string[]
 }
 [inline-code-end]
 
-Ko so uporabniki omenjeni v komentarju, se informacije shranijo v seznamu z imenom `mentions`. Vsak objekt v tem seznamu ima naslednjo strukturo.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
-[inline-code-attrs-start title = 'Objekt Webhook omemb'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Objekt Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** ID uporabnika. Pri SSO uporabnikih bo predpona vaš tenant id. **/
+    /** ID uporabnika. Za SSO uporabnike bo predponjen z ID najemnika. **/
     id: string
-    /** Končno besedilo @mention oznake, vključno s simbolom @. **/
+    /** Končni besedilni niz @omenjanja, vključno s simbolom @. **/
     tag: string
-    /** Izvirno besedilo @mention oznake, vključno s simbolom @. **/
+    /** Izvirni besedilni niz @omenjanja, vključno s simbolom @. **/
     rawTag: string
-    /** Kakšne vrste uporabnik je bil omenjen. user = FastComments.com account. sso = SSOUser. **/
+    /** Kakšna vrsta uporabnika je bila označena. user = račun FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Če se uporabnik odklopi od obvestil, bo to kljub temu nastavljeno na true. **/
+    /** Če se uporabnik odkloni od obvestil, bo to še vedno nastavljeno na true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### HTTP Methods
+#### HTTP metode
 
-Na administratorskem vmesniku lahko konfigurirate HTTP metodo za vsako vrsto webhook dogodka:
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-- **Create Event**: POST ali PUT (privzeto: PUT)
-- **Update Event**: POST ali PUT (privzeto: PUT)
-- **Delete Event**: DELETE, POST ali PUT (privzeto: DELETE)
+- **Create Event**: POST or PUT (default: PUT) -> **Create Event**: POST ali PUT (privzeto: PUT)
+- **Update Event**: POST or PUT (default: PUT) -> **Update Event**: POST ali PUT (privzeto: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE) -> **Delete Event**: DELETE, POST ali PUT (privzeto: DELETE)
 
-Ker vse zahteve vsebujejo ID, sta operaciji Create in Update po privzetku idempotentni (PUT). Ponovitev iste zahteve Create ali Update ne bi smela ustvariti podvojenih objektov na vaši strani.
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
-#### Request Headers
+#### Glave zahteve
 
-Vsaka webhook zahteva vključuje naslednje glave:
+Each webhook request includes the following headers:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Vaš API skrivni ključ |
+| `token` | Vaše API skrivnost |
 | `X-FastComments-Timestamp` | Unix časovni žig (sekunde), ko je bila zahteva podpisana |
 | `X-FastComments-Signature` | HMAC-SHA256 podpis (`sha256=<hex>`) |
 
-Za informacije o preverjanju HMAC podpisa glejte [Varnost in API žetoni](/guide-webhooks.html#webhooks-api-tokens).
-
----
+See [Varnost in API žetoni](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

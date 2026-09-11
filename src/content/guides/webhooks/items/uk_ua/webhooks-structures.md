@@ -1,120 +1,122 @@
-Єдина структура, яку надсилають через вебхуки — це об'єкт WebhookComment, описаний нижче на TypeScript.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
-#### Структура об'єкта WebhookComment
+#### The WebhookComment Object Structure
 
 ##### The "Create" Event Structure
-Тіло запиту події "create" є об'єктом WebhookComment.
+The "create" event request body is a WebhookComment object.
 
 ##### The "Update" Event Structure
-Тіло запиту події "update" є об'єктом WebhookComment.
+The "update" event request body is a WebhookComment object.
 
 ##### The "Delete" Event Structure
-Тіло запиту події "delete" є об'єктом WebhookComment.
+The "delete" event request body is a WebhookComment object.
 
     Change as of Nov 14th 2023
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
-[inline-code-attrs-start title = 'Об\'єкт WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Об’єкт WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** Ідентифікатор коментаря. **/
+    /** The id of the comment. **/
     id: string
-    /** Id або URL, що ідентифікує тред коментарів. Нормалізований. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** URL, який вказує, де залишено коментар. **/
-    url?: string
-    /** Id користувача, який залишив коментар. Якщо SSO, з префіксом id орендаря. **/
-    userId?: string
-    /** Email користувача, який залишив коментар. **/
-    commenterEmail?: string
-    /** Ім'я користувача, що відображається у віджеті коментарів. Для SSO може бути displayName. **/
+    /** The URL that points to where the comment was left. **/
+    url: string | null
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    userId: string | null
+    /** The email of the user left the comment. **/
+    commenterEmail: string | null
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Сирий текст коментаря. **/
+    /** Raw comment text. **/
     comment: string
-    /** Текст коментаря після парсингу. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Зовнішній id коментаря. **/
-    externalId?: string
-    /** Id батьківського коментаря. **/
-    parentId?: string | null
-    /** Дата в UTC, коли було залишено коментар. **/
+    /** Comment external id. **/
+    externalId: string | null
+    /** The id of the parent comment. **/
+    parentId: string | null
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Комбінована карма голосів (up - down). **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True, якщо користувач був увійшов у систему під час коментування, або якщо коментар підтверджено, або якщо вони верифікували свою сесію в момент залишення коментаря. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Дата, коли коментар було підтверджено. **/
-    verifiedDate?: number
-    /** Чи позначив модератор коментар як переглянутий. **/
+    /** The UTC date when the comment was verified. **/
+    verifiedDate: UTC_ISO_DateString | null
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** Розташування або base64-код аватару. Буде в base64 лише якщо таке значення було передано з SSO. **/
-    avatarSrc?: string
-    /** Чи було коментар позначено як спам вручну або автоматично? **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    avatarSrc: string | null
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Чи було коментар автоматично позначено як спам? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Чи містить коментар зображення? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** Номер сторінки, на якій знаходиться коментар для сортування «Найбільш релевантні». **/
-    pageNumber: number
-    /** Номер сторінки, на якій знаходиться коментар для сортування «Спочатку найстаріші». **/
-    pageNumberOF: number
-    /** Номер сторінки, на якій знаходиться коментар для сортування «Спочатку найновіші». **/
-    pageNumberNF: number
-    /** Чи було коментар схвалено автоматично чи вручну? **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    pageNumber: number | null
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    pageNumberOF: number | null
+    /** The page number the comment is on for the "Newest First" sort direction. **/
+    pageNumberNF: number | null
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** Код локалі (формат: en_us) користувача під час написання коментаря. **/
-    locale: string
-    /** @mention'и, написані в коментарі, які було успішно розпарсено. **/
-    mentions?: CommentUserMention[]
-    /** Домен, звідки походить коментар. **/
-    domain?: string
-    /** Опційний список id груп модерації, пов'язаних з цим коментарем. **/
-    moderationGroupIds?: string[]|null
+    /** The locale code (format: en_us) of the user when the comment was written. **/
+    locale: string | null
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    mentions: CommentUserMention[]
+    /** The domain the comment is from. **/
+    domain: string | null
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    moderationGroupIds: string[]
 }
 [inline-code-end]
 
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
-[inline-code-attrs-start title = 'Об\'єкт згадок вебхука'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Об’єкт Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Id користувача. Для SSO-користувачів тут буде префікс з id орендаря. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** Остаточний текст @mention тегу, включаючи символ @. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** Початковий текст @mention тегу, включаючи символ @. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Який тип користувача було зазначено. user = FastComments.com account. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Якщо користувач відмовився від сповіщень, це все одно буде встановлено в true. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
 #### HTTP Methods
 
-Ви можете налаштувати HTTP-метод для кожного типу подій вебхука в адмін-панелі:
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-- **Create Event**: POST або PUT (за замовчуванням: PUT)
-- **Update Event**: POST або PUT (за замовчуванням: PUT)
-- **Delete Event**: DELETE, POST, або PUT (за замовчуванням: DELETE)
+- **Create Event**: POST or PUT (default: PUT)
+- **Update Event**: POST or PUT (default: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
-Оскільки всі запити містять ID, операції Create та Update за замовчуванням ідемпотентні (PUT). Повторне надсилання того ж запиту Create або Update не має створювати дублікати об'єктів у вас.
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
 #### Request Headers
 
-Кожний запит вебхука містить такі заголовки:
+Each webhook request includes the following headers:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Ваш API Secret |
-| `X-FastComments-Timestamp` | Unix-мітка часу (секунди), коли запит було підписано |
-| `X-FastComments-Signature` | Підпис HMAC-SHA256 (`sha256=<hex>`) |
+| `token` | Your API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
 
-See [Безпека та API токени](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

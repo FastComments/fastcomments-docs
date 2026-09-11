@@ -1,119 +1,120 @@
-L'unica struttura inviata tramite webhook è l'oggetto WebhookComment, illustrato in TypeScript qui sotto.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
 #### La struttura dell'oggetto WebhookComment
 
-##### Struttura dell'evento "create"
-Il corpo della richiesta per l'evento "create" è un oggetto WebhookComment.
+##### Struttura dell'evento "Create"
+Il corpo della richiesta dell'evento "create" è un oggetto WebhookComment.
 
-##### Struttura dell'evento "update"
-Il corpo della richiesta per l'evento "update" è un oggetto WebhookComment.
+##### Struttura dell'evento "Update"
+Il corpo della richiesta dell'evento "update" è un oggetto WebhookComment.
 
-##### Struttura dell'evento "delete"
-Il corpo della richiesta per l'evento "delete" è un oggetto WebhookComment.
+##### Struttura dell'evento "Delete"
+Il corpo della richiesta dell'evento "delete" è un oggetto WebhookComment.
 
-    Modifica del 14 novembre 2023
-    Precedentemente il corpo della richiesta dell'evento "delete" conteneva solo l'id del commento. Ora contiene il commento completo al momento della cancellazione.
+    Modifica a partire dal 14 novembre 2023
+    In precedenza il corpo della richiesta dell'evento "delete" conteneva solo l'ID del commento. Ora contiene il commento completo al momento dell'eliminazione.
 
+Ogni chiave è sempre presente nel corpo. Quando il commento non ha valore per un campo, il corpo contiene `null` (o `false` per i booleani e `[]` per le liste), quindi la forma di una consegna non varia mai da un commento all'altro.
 
-[inline-code-attrs-start title = 'Oggetto WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L\'oggetto WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** L'id del commento. **/
+    /** The id of the comment. **/
     id: string
-    /** L'id o l'URL che identifica il thread di commento. Normalizzato. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** L'URL che punta al luogo in cui è stato lasciato il commento. **/
-    url?: string
-    /** L'id utente che ha lasciato il commento. Se SSO, viene prefissato con l'id del tenant. **/
-    userId?: string
-    /** L'email dell'utente che ha lasciato il commento. **/
-    commenterEmail?: string
-    /** Il nome dell'utente mostrato nel widget dei commenti. In caso di SSO, può essere displayName. **/
+    /** The URL that points to where the comment was left. **/
+    url: string | null
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    userId: string | null
+    /** The email of the user left the comment. **/
+    commenterEmail: string | null
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Testo grezzo del commento. **/
+    /** Raw comment text. **/
     comment: string
-    /** Testo del commento dopo il parsing. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Id esterno del commento. **/
-    externalId?: string
-    /** L'id del commento padre. **/
-    parentId?: string | null
-    /** La data UTC in cui è stato lasciato il commento. **/
+    /** Comment external id. **/
+    externalId: string | null
+    /** The id of the parent comment. **/
+    parentId: string | null
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Karma combinato (up - down) dei voti. **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True se l'utente era autenticato quando ha commentato, o se ha verificato il commento, o se ha verificato la sessione quando è stato lasciato il commento. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Data in cui il commento è stato verificato. **/
-    verifiedDate?: number
-    /** Se un moderatore ha contrassegnato il commento come revisionato. **/
+    /** The UTC date when the comment was verified. **/
+    verifiedDate: UTC_ISO_DateString | null
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** La posizione, o la codifica base64, dell'avatar. Sarà base64 solo se questo valore è stato passato con SSO. **/
-    avatarSrc?: string
-    /** Il commento è stato contrassegnato come spam manualmente o automaticamente? **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    avatarSrc: string | null
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Il commento è stato contrassegnato automaticamente come spam? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Ci sono immagini nel commento? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** Il numero di pagina in cui si trova il commento per l'ordinamento "Most Relevant". **/
-    pageNumber: number
-    /** Il numero di pagina in cui si trova il commento per l'ordinamento "Oldest First". **/
-    pageNumberOF: number
-    /** Il numero di pagina in cui si trova il commento per l'ordinamento "Newest First". **/
-    pageNumberNF: number
-    /** Il commento è stato approvato automaticamente o manualmente? **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    pageNumber: number | null
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    pageNumberOF: number | null
+    /** The page number the comment is on for the "Newest First" sort direction. **/
+    pageNumberNF: number | null
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** Il codice locale (formato: en_us) dell'utente quando il commento è stato scritto. **/
-    locale: string
-    /** Le @mentions presenti nel commento che sono state analizzate con successo. **/
-    mentions?: CommentUserMention[]
-    /** Il dominio da cui proviene il commento. **/
-    domain?: string
-    /** L'elenco opzionale di id dei gruppi di moderazione associati a questo commento. **/
-    moderationGroupIds?: string[]|null
+    /** The locale code (format: en_us) of the user when the comment was written. **/
+    locale: string | null
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    mentions: CommentUserMention[]
+    /** The domain the comment is from. **/
+    domain: string | null
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    moderationGroupIds: string[]
 }
 [inline-code-end]
 
-Quando gli utenti vengono taggati in un commento, le informazioni sono memorizzate in una lista chiamata `mentions`. Ogni oggetto in quella lista ha la seguente struttura.
+Quando gli utenti sono taggati in un commento, le informazioni sono memorizzate in un elenco chiamato `mentions`. Ogni oggetto in quell'elenco ha la seguente struttura.
 
-[inline-code-attrs-start title = 'Oggetto Mentions del Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'L\'oggetto Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** L'id utente. Per gli utenti SSO, avrà il prefisso dell'id del tenant. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** Il testo finale del tag @mention, inclusivo del simbolo @. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** Il testo originale del tag @mention, inclusivo del simbolo @. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Tipo di utente taggato. user = account FastComments.com. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Se l'utente rinuncia alle notifiche, questo sarà comunque impostato su true. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
 #### Metodi HTTP
 
-Puoi configurare il metodo HTTP per ciascun tipo di evento webhook nel pannello di amministrazione:
+Puoi configurare il metodo HTTP per ogni tipo di evento webhook nel pannello di amministrazione:
 
-- **Evento "create"**: POST o PUT (predefinito: PUT)
-- **Evento "update"**: POST o PUT (predefinito: PUT)
-- **Evento "delete"**: DELETE, POST o PUT (predefinito: DELETE)
+- **Evento Create**: POST o PUT (predefinito: PUT)
+- **Evento Update**: POST o PUT (predefinito: PUT)
+- **Evento Delete**: DELETE, POST o PUT (predefinito: DELETE)
 
-Poiché tutte le richieste contengono un ID, le operazioni di Create e Update sono idempotenti per impostazione predefinita (PUT). Ripetere la stessa richiesta di Create o Update non dovrebbe creare oggetti duplicati sul vostro sistema.
+Poiché tutte le richieste contengono un ID, le operazioni Create e Update sono idempotenti per impostazione predefinita (PUT). Ripetere la stessa richiesta Create o Update non dovrebbe creare oggetti duplicati sul tuo lato.
 
 #### Intestazioni della richiesta
 
 Ogni richiesta webhook include le seguenti intestazioni:
 
-| Header | Descrizione |
-|--------|-------------|
+| Intestazione | Descrizione |
+|--------------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Il tuo API Secret |
-| `X-FastComments-Timestamp` | Timestamp Unix (secondi) al momento in cui la richiesta è stata firmata |
+| `token` | Il tuo segreto API |
+| `X-FastComments-Timestamp` | Timestamp Unix (secondi) quando la richiesta è stata firmata |
 | `X-FastComments-Signature` | Firma HMAC-SHA256 (`sha256=<hex>`) |
 
-Vedi [Sicurezza e Token API](/guide-webhooks.html#webhooks-api-tokens) per informazioni sulla verifica della firma HMAC.
+Vedi [Sicurezza e token API](/guide-webhooks.html#webhooks-api-tokens) per informazioni su come verificare la firma HMAC.
