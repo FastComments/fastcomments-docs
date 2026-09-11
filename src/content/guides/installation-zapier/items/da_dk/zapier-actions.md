@@ -1,6 +1,6 @@
 ## Handlinger og Søgninger
 
-Handlinger opretter data i FastComments; søgninger slår data op, så et senere trin kan bruge dem. Hver handling kalder FastComments REST API og bruger de samme API‑credits, som kaldet ville koste fra din egen kode: én credit pr. kald medmindre andet er angivet.
+Handlinger opretter data i FastComments; søgninger slår data op, så et senere trin kan bruge dem. Hver handling kalder FastComments REST API og bruger de samme API‑kreditter, som kaldet ville koste fra din egen kode: én kredit per kald, medmindre andet er angivet.
 
 ## Opret Kommentar
 
@@ -8,38 +8,38 @@ Sender en kommentar på en side.
 
 | Felt | Påkrævet | Bemærkninger |
 |------|----------|--------------|
-| Side‑URL‑ID | Ja | URL‑ID'en som kommentarfunktionen bruger på siden. Kommentarer grupperes efter den. |
+| Side‑URL‑ID | Ja | Den URL‑ID, som kommentarfunktionen bruger på siden. Kommentarer grupperes efter den. |
 | Side‑URL | Ja | Den fulde side‑URL, der bruges i notifikations‑e‑mails. |
 | Kommentar | Ja | Kommentarens indhold i FastComments markdown. |
 | Kommentators Navn | Ja | Navne er unikke pr. e‑mail, så genbrug af et navn med en anden e‑mail mislykkes. |
 | Kommentators E‑mail | Nej | En bruger oprettes for e‑mailen, hvis den endnu ikke findes. |
 | Bruger‑ID | Nej | Et eksisterende SSO‑bruger‑ID. Har forrang over navn og e‑mail. |
-| Forælder‑Kommentar‑ID | Nej | Angives for at poste et svar. |
+| Overordnet Kommentar‑ID | Nej | Angives for at poste et svar. |
 | Godkendt, Verificeret | Nej | Begge er som standard true. Ikke‑godkendte kommentarer forbliver skjulte indtil de modereres. |
-| Udgivet På | Nej | Standard er nu. |
+| Postet På | Nej | Standard er nu. |
 | Avatar‑URL, Side‑Titel, Locale | Nej | Locale er som standard `en_us`. |
-| Vis Live I Widget | Nej | Skubber kommentaren til seere i realtid. Koster 2 credits i stedet for 1. |
+| Vis Live I Widget | Nej | Skubber kommentaren til seere i realtid. Koster 2 kreditter i stedet for 1. |
 | Kør Spam‑Check, Send E‑mails | Nej | Deaktiveret som standard. |
 
-## Opret Side
+## Opret eller Opdater Side
 
-Opretter en sidepost, før der findes nogen kommentarer på den, så den kan listes og begrænses. Tager URL‑ID, titel, URL og valgfrit de SSO‑gruppe‑ID'er, der må se den.
+Opretter en sidepost, før der findes nogen kommentarer på den, så den kan listes og begrænses. Tager URL‑ID, titel, URL og valgfrit de SSO‑gruppe‑ID'er, der må se den. Hvis en side med den URL‑ID allerede findes, opdateres den med de angivne felter, så en Zap kan køre for den samme side gentagne gange.
 
-## Opret SSO‑Bruger
+## Opret eller Opdater SSO‑Bruger
 
-Opretter en single sign‑on‑bruger. Tager dit eget bruger‑ID, brugernavn og e‑mail, plus valgfrit visningsnavn, visningsetiket, avatar, hjemmeside, gruppe‑ID'er samt notifikations‑ og privatlivs‑flag. Administrative roller kan ikke tildeles fra Zapier.
+Opretter en single sign‑on‑bruger. Tager dit eget bruger‑ID, brugernavn og e‑mail, samt valgfrit visningsnavn, visningsetiket, avatar, hjemmeside, gruppe‑ID'er og notifikations‑ og privatlivs‑flag. Hvis en bruger med det ID allerede findes, opdateres den i stedet. Administrative roller kan ikke tildeles fra Zapier.
 
 ## Opret Feed‑Indlæg
 
 Opretter et indlæg i et FastComments‑feed fra HTML‑indhold. Forfatterens bruger‑ID er påkrævet (et FastComments‑ eller SSO‑bruger‑ID); titel, tags og én link‑forhåndsvisning er valgfrie.
 
-## Opret Hashtag
+## Opret eller Opdater Hashtag
 
-Opretter et hashtag, som kommentatorer kan bruge, med en valgfri URL, den linker til. Tags er unikke pr. konto, så en Zap, der opretter et på hver kørsel, har brug for noget unikt i tagget.
+Opretter et hashtag, som kommentatorer kan bruge, med en valgfri URL, den linker til. Hvis hashtagget allerede findes, opdateres det i stedet.
 
-## Flag Kommentar
+## Marker Kommentar
 
-Flagger en kommentar til moderatorgennemgang. ID'et på den bruger, der udfører flaggingen, er påkrævet; forfatter‑ID'et returneret af Opret Kommentar fungerer.
+Markerer en kommentar til moderatorgennemgang. ID'et på den bruger, der markerer, er påkrævet; forfatter‑ID'et returneret af Opret Kommentar fungerer.
 
 ## Søgninger
 
@@ -49,4 +49,4 @@ Flagger en kommentar til moderatorgennemgang. ID'et på den bruger, der udfører
 | Find SSO‑Bruger | E‑mail | SSO‑brugeren, eller intet. |
 | Find Side | URL‑ID | Siden, eller intet. |
 
-En søgning, der ikke finder noget, fejler ikke Zap’en. Kombinér en søgning med en oprettelse i Zapier’s “find or create”-tilstand for at oprette siden eller brugeren, når den mangler.
+En søgning, der ikke finder noget, fejler ikke Zap’en. Find SSO‑Bruger og Find Side tilbyder Zapier‑funktionen “opret hvis den ikke findes”, som kører den tilsvarende oprettelse, når intet findes.
