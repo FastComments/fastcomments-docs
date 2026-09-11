@@ -1,12 +1,13 @@
-Webhooks は REST API を通じても管理できます。これは Zapier などの統合がダッシュボードに触れずにコメントイベントを購読する方法で、REST Hooks パターン（購読、イベント受信、購読解除）に従います。
+---
+Webhooks は REST API を通じても管理できます。これは、Zapier のような統合がダッシュボードに触れずにコメントイベントを購読する方法で、REST Hooks パターン（購読、イベント受信、購読解除）に従います。
 
-API サブスクリプションはダッシュボードで設定された Webhooks と共存します。コメントイベントは、ドメインが一致するすべての Webhook に個別の配信として送信され、Webhook の作成方法に関係なく配信されます。
+API サブスクリプションは、ダッシュボードで設定された Webhooks と共存します。コメントイベントは、ドメインが一致するすべての Webhook に対して個別に配信され、Webhook の作成方法に関係なく配信されます。
 
-## 認証
+## Authentication
 
-すべてのリクエストは `x-api-key` ヘッダー（または `API_KEY` クエリパラメータ）に API キーを、`tenantId` クエリパラメータにテナント ID を含める必要があります。これらはダッシュボードの API シークレットページに表示されています。
+すべてのリクエストは、`x-api-key` ヘッダー（または `API_KEY` クエリパラメータ）に API キーを、`tenantId` クエリパラメータにテナント ID を含める必要があります。これらはダッシュボードの API Secret ページに表示されています。
 
-## 購読
+## Subscribe
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -22,11 +23,11 @@ Content-Type: application/json
 | Field | Required | Description |
 |-------|----------|-------------|
 | `url` | Yes | 絶対的な http または https の URL。 |
-| `event` | Yes | `comment-created`, `comment-updated` or `comment-deleted`. |
+| `event` | Yes | `comment-created`、`comment-updated`、または `comment-deleted`。 |
 | `domain` | No | アカウント設定からのドメイン。デフォルトは `*` で、すべてのドメインのイベントを受信します。 |
-| `method` | No | `POST` (default), `PUT` or `DELETE`. |
+| `method` | No | `POST`（デフォルト）、`PUT`、または DELETE。 |
 
-レスポンスにはサブスクリプションが含まれます。
+レスポンスにはサブスクリプションが含まれます：
 
 ```json
 {
@@ -46,27 +47,27 @@ Content-Type: application/json
 
 同じ URL を同じイベントとドメインで再度購読すると、重複を作成せずに既存のサブスクリプションが返されるため、クライアントは安全に再試行できます。各テナントは最大 50 件の API サブスクリプションを持つことができます。
 
-## 一覧
+## List
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-テナントのすべての Webhook を返します。ダッシュボードで管理されているもの（`"source": "dashboard"`）も含まれます。`event`、`domain`、または `source` でフィルタできます。
+テナントのすべての Webhook を返します。ダッシュボードで管理されているもの（`"source": "dashboard"`）も含まれます。`event`、`domain`、または `source` でフィルタリングできます。
 
-## 購読解除
+## Unsubscribe
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-サブスクリプションを削除すると、キューに残っているイベントも破棄されます。この方法で削除できるのは API 経由で作成されたサブスクリプションのみです。ダッシュボードの Webhook は Webhooks ページで編集します。
+サブスクリプションを削除すると、キューに残っているイベントも破棄されます。この方法で削除できるのは API 経由で作成されたサブスクリプションのみです。ダッシュボードの Webhook や、アカウントに存在しない ID は `404` とコード `not-found` を返します。ダッシュボードの Webhook は Webhooks ページで編集します。
 
-## ペイロードと署名
+## Payloads and signing
 
-配信はダッシュボードの Webhook と同じペイロードを使用し（Data Structures を参照）、同じ HMAC 方式で署名されます（Security & API Tokens を参照）。API サブスクリプションはレガシーな `token` ヘッダーを受け取らないため、代わりに `X-FastComments-Signature` ヘッダーを検証してください。
+配信はダッシュボードの Webhook と同じペイロードを使用し（Data Structures 参照）、同じ HMAC 方式で署名されます（Security & API Tokens 参照）。API サブスクリプションはレガシーの `token` ヘッダーを受け取らないため、代わりに `X-FastComments-Signature` ヘッダーを検証してください。
 
-## サンプルペイロード
+## Sample payloads
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
@@ -90,10 +91,12 @@ GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENAN
 }
 ```
 
-## 410 Gone に応答する
+## Responding with 410 Gone
 
-API サブスクリプションのエンドポイントが HTTP `410 Gone` を返した場合、FastComments はそれを購読解除とみなし、サブスクリプションとキューに残っているイベントを削除し、以降の配信は行いません。ダッシュボードで設定された Webhook は自動的に削除されることはなく、410 は通常の失敗として扱われます。その他の失敗ステータスは再試行され、最終的に Webhook が無効化されます（How it Works & Handling Retries を参照）。
+API サブスクリプションのエンドポイントが HTTP `410 Gone` を返した場合、FastComments はそれを購読解除とみなし、サブスクリプションとキューに残っているイベントが削除され、以降の配信は行われません。ダッシュボードで設定された Webhook は自動的に削除されることはなく、410 は通常の失敗として扱われます。その他の失敗ステータスは再試行され、最終的に Webhook が無効化されます（How it Works & Handling Retries 参照）。
 
-## ダッシュボード
+## Dashboard
 
 API サブスクリプションは Webhooks リストに **API** ソースとして表示され、管理者はそれらを編集、無効化、再有効化、または削除できます。
+
+---

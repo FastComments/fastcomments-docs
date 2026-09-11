@@ -1,12 +1,16 @@
-Webhooks μπορούν επίσης να διαχειρίζονται μέσω του REST API. Έτσι οι ενσωματώσεις όπως το Zapier εγγράφονται σε συμβάντα σχολίων χωρίς να αγγίζουν τον πίνακα ελέγχου, και ακολουθεί το πρότυπο REST Hooks: εγγραφή, λήψη συμβάντων, διαγραφή εγγραφής.
+Webhooks can also be managed through the REST API. This is how integrations such as Zapier subscribe
+to comment events without touching the dashboard, and it follows the REST Hooks pattern: subscribe,
+receive events, unsubscribe.
 
-Οι συνδρομές API ζουν παράλληλα με τα webhooks που έχουν ρυθμιστεί στον πίνακα ελέγχου. Ένα συμβάν σχολίου παραδίδεται σε κάθε webhook που ταιριάζει με το domain του, το καθένα ως δική του παράδοση, ανεξάρτητα από το πώς δημιουργήθηκε το webhook.
+API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
+to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
 
-## Authentication
+## Αυθεντικοποίηση
 
-Κάθε αίτημα χρειάζεται το API Key σας στην κεφαλίδα `x-api-key` (ή ως παράμετρο ερωτήματος `API_KEY`) και το tenant ID σας στην παράμετρο ερωτήματος `tenantId`. Και τα δύο εμφανίζονται στη σελίδα API Secret στον πίνακα ελέγχου.
+Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
+your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
 
-## Subscribe
+## Εγγραφή
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -26,7 +30,7 @@ Content-Type: application/json
 | `domain` | Όχι | Ένα domain από τη ρύθμιση λογαριασμού σας. Προεπιλογή είναι `*`, που λαμβάνει συμβάντα για κάθε domain. |
 | `method` | Όχι | `POST` (προεπιλογή), `PUT` ή `DELETE`. |
 
-Η απάντηση περιέχει τη συνδρομή:
+The response contains the subscription:
 
 ```json
 {
@@ -44,35 +48,43 @@ Content-Type: application/json
 }
 ```
 
-Η εγγραφή του ίδιου URL στο ίδιο συμβάν και domain ξανά επιστρέφει την υπάρχουσα συνδρομή αντί να δημιουργήσει διπλότυπο, ώστε ο πελάτης να μπορεί να επαναπροσπαθήσει με ασφάλεια. Κάθε tenant μπορεί να έχει έως 50 συνδρομές API.
+Subscribing the same URL to the same event and domain again returns the existing subscription rather
+than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
 
-## List
+## Λίστα
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Επιστρέφει κάθε webhook για το tenant, συμπεριλαμβανομένων εκείνων που διαχειρίζονται στον πίνακα ελέγχου (`"source": "dashboard"`). Φιλτράρετε με `event`, `domain` ή `source`.
+Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
+Filter with `event`, `domain` or `source`.
 
-## Unsubscribe
+## Κατάργηση εγγραφής
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Η διαγραφή μιας συνδρομής επίσης απορρίπτει τυχόν συμβάντα που είναι ακόμη στην ουρά της. Μόνο οι συνδρομές που δημιουργήθηκαν μέσω του API μπορούν να διαγραφούν με αυτόν τον τρόπο. Τα webhooks του πίνακα ελέγχου επεξεργάζονται στη σελίδα Webhooks.
+Deleting a subscription also discards any events still queued for it. Only subscriptions created
+through the API can be deleted this way; a dashboard webhook, or an id that does not exist on your
+account, answers `404` with code `not-found`. Dashboard webhooks are edited on the Webhooks page.
 
-## Payloads and signing
+## Περιεχόμενα και υπογραφή
 
-Οι παραδόσεις χρησιμοποιούν το ίδιο payload με τα webhooks του πίνακα ελέγχου (δείτε Data Structures) και υπογράφονται με το ίδιο σχήμα HMAC (δείτε Security & API Tokens). Οι συνδρομές API δεν λαμβάνουν ποτέ την παλιά κεφαλίδα `token`, επομένως επαληθεύστε την κεφαλίδα `X-FastComments-Signature` αντ' αυτού.
+Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
+HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
+verify the `X-FastComments-Signature` header instead.
 
-## Sample payloads
+## Δείγμα περιεχομένων
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Επιστρέφει τα πιο πρόσφατα σχόλια του λογαριασμού ακριβώς στη μορφή που μεταφέρει μια παράδοση, ώστε μια ενσωμάτωση να μπορεί να εμφανίσει πραγματικά δείγματα δεδομένων πριν φτάσει το πρώτο συμβάν. Το `event` είναι προαιρετικό και μόνο επικυρώνεται, καθώς κάθε συμβάν παραδίδει το ίδιο αντικείμενο σχολίου. Το `limit` προεπιλογή είναι 3 και δέχεται τιμές από 1 έως 10. Κόστος 2 πιστώσεις API.
+Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
+show real sample data before the first event arrives. `event` is optional and only validated, since every
+event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
 
 ```json
 {
@@ -90,12 +102,17 @@ GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENAN
 }
 ```
 
-## Responding with 410 Gone
+## Απάντηση με 410 Gone
 
-Αν το endpoint μιας συνδρομής API απαντήσει με HTTP `410 Gone`, το FastComments το θεωρεί ως διαγραφή εγγραφής: η συνδρομή διαγράφεται μαζί με τα ουράσμένα συμβάντα της, και δεν γίνονται περαιτέρω προσπάθειες παράδοσης. Τα webhooks που έχουν ρυθμιστεί στον πίνακα ελέγχου δεν διαγράφονται ποτέ αυτόματα· για αυτά το 410 είναι απλώς μια αποτυχία. Οποιοδήποτε άλλο σφάλμα επαναπροσπαθείται και τελικά απενεργοποιεί το webhook, όπως περιγράφεται στο How it Works & Handling Retries.
+If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
+unsubscribe: the subscription is deleted along with its queued events, and no further deliveries are
+attempted. Webhooks configured in the dashboard are never deleted automatically; for them a 410 is an
+ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
+in How it Works & Handling Retries.
 
-## Dashboard
+## Πίνακας ελέγχου
 
-Οι συνδρομές API εμφανίζονται στη λίστα Webhooks με την πηγή **API**, όπου ένας διαχειριστής μπορεί να τις επεξεργαστεί, να τις απενεργοποιήσει, να τις ενεργοποιήσει ξανά ή να τις διαγράψει.
+API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
+disable, re-enable or delete them.
 
 ---

@@ -4,10 +4,9 @@ As inscrições de API convivem ao lado dos webhooks configurados no painel. Um 
 
 ## Autenticação
 
-Cada requisição precisa da sua API Key no cabeçalho `x-api-key` (ou no parâmetro de consulta `API_KEY`) e
-do seu ID de locatário no parâmetro de consulta `tenantId`. Ambos são exibidos na página API Secret no painel.
+Cada requisição precisa da sua API Key no cabeçalho `x-api-key` (ou no parâmetro de consulta `API_KEY`) e do seu ID de locatário no parâmetro de consulta `tenantId`. Ambos são exibidos na página API Secret no painel.
 
-## Inscrever
+## Inscrever-se
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -53,8 +52,7 @@ Inscrever a mesma URL no mesmo evento e domínio novamente retorna a inscrição
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Retorna todos os webhooks do locatário, incluindo os gerenciados no painel (`"source": "dashboard"`).  
-Filtre com `event`, `domain` ou `source`.
+Retorna todos os webhooks do locatário, incluindo os gerenciados no painel (`\"source\": \"dashboard\"`). Filtre com `event`, `domain` ou `source`.
 
 ## Cancelar inscrição
 
@@ -62,11 +60,11 @@ Filtre com `event`, `domain` ou `source`.
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Excluir uma inscrição também descarta quaisquer eventos ainda enfileirados para ela. Apenas inscrições criadas através da API podem ser excluídas dessa forma. Webhooks do painel são editados na página Webhooks.
+Excluir uma inscrição também descarta quaisquer eventos ainda enfileirados para ela. Apenas inscrições criadas através da API podem ser excluídas desta forma; um webhook do painel, ou um id que não exista na sua conta, responde `404` com o código `not-found`. Webhooks do painel são editados na página Webhooks.
 
 ## Payloads e assinatura
 
-Entregas usam o mesmo payload dos webhooks do painel (veja Estruturas de Dados) e são assinadas com o mesmo esquema HMAC (veja Segurança & Tokens de API). Inscrições de API nunca recebem o cabeçalho legado `token`, portanto verifique o cabeçalho `X-FastComments-Signature` em seu lugar.
+Entregas usam o mesmo payload dos webhooks do painel (veja Estruturas de Dados) e são assinadas com o mesmo esquema HMAC (veja Segurança & Tokens de API). Inscrições de API nunca recebem o cabeçalho legado `token`, portanto verifique o cabeçalho `X-FastComments-Signature`.
 
 ## Payloads de exemplo
 
@@ -74,7 +72,7 @@ Entregas usam o mesmo payload dos webhooks do painel (veja Estruturas de Dados) 
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Retorna os comentários mais recentes da conta exatamente no formato que uma entrega carrega, permitindo que uma integração mostre dados de exemplo reais antes que o primeiro evento chegue. `event` é opcional e apenas validado, já que todo evento entrega o mesmo objeto de comentário. `limit` tem padrão 3 e aceita de 1 a 10. Custa 2 créditos de API.
+Retorna os comentários mais recentes da conta exatamente no formato que uma entrega transporta, permitindo que uma integração mostre dados de exemplo reais antes que o primeiro evento chegue. `event` é opcional e apenas validado, já que todo evento entrega o mesmo objeto de comentário. `limit` tem padrão 3 e aceita de 1 a 10. Custa 2 créditos de API.
 
 ```json
 {
@@ -94,7 +92,7 @@ Retorna os comentários mais recentes da conta exatamente no formato que uma ent
 
 ## Respondendo com 410 Gone
 
-Se o endpoint de uma inscrição de API responder com HTTP `410 Gone`, o FastComments trata isso como um cancelamento de inscrição: a inscrição é excluída junto com seus eventos enfileirados, e nenhuma entrega adicional é tentada. Webhooks configurados no painel nunca são excluídos automaticamente; para eles um 410 é uma falha comum. Qualquer outro status de falha é reprocessado e eventualmente desabilita o webhook, conforme descrito em Como funciona & Tratamento de Repetições.
+Se o endpoint de uma inscrição de API responder com HTTP `410 Gone`, o FastComments trata isso como um cancelamento de inscrição: a inscrição é excluída junto com seus eventos enfileirados, e nenhuma entrega adicional é tentada. Webhooks configurados no painel nunca são excluídos automaticamente; para eles um 410 é uma falha comum. Qualquer outro status de falha é refeito e eventualmente desabilita o webhook, conforme descrito em Como funciona & Tratamento de Repetições.
 
 ## Painel
 

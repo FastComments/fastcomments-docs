@@ -1,14 +1,10 @@
-Webhooks można również zarządzać za pośrednictwem REST API. Tak integracje takie jak Zapier subskrybują
-zdarzenia komentarzy bez konieczności używania panelu i stosują wzorzec REST Hooks: subskrybuj,
-odbieraj zdarzenia, wypisz się.
+Webhooks można również zarządzać za pośrednictwem REST API. Tak integracje takie jak Zapier subskrybują zdarzenia komentarzy bez użycia panelu, i stosują wzorzec REST Hooks: subskrybuj, odbieraj zdarzenia, wypisz się.
 
-Subskrypcje API współistnieją z webhookami skonfigurowanymi w panelu. Zdarzenie komentarza jest dostarczane
-do każdego webhooka, którego domena pasuje, każdy jako osobna dostawa, niezależnie od tego, w jaki sposób webhook został utworzony.
+Subskrypcje API współistnieją z webhookami skonfigurowanymi w panelu. Zdarzenie komentarza jest dostarczane do każdego webhooka, który pasuje do jego domeny, każde jako osobna dostawa, niezależnie od tego, w jaki sposób webhook został utworzony.
 
 ## Uwierzytelnianie
 
-Każde żądanie wymaga Twojego klucza API w nagłówku `x-api-key` (lub parametru zapytania `API_KEY`) oraz
-identyfikatora najemcy w parametrze zapytania `tenantId`. Oba są wyświetlane na stronie API Secret w panelu.
+Każde żądanie wymaga Twojego klucza API w nagłówku `x-api-key` (lub parametrze zapytania `API_KEY`) oraz identyfikatora najemcy w parametrze zapytania `tenantId`. Oba są wyświetlane na stronie API Secret w panelu.
 
 ## Subskrypcja
 
@@ -25,9 +21,9 @@ Content-Type: application/json
 
 | Pole | Wymagane | Opis |
 |------|----------|------|
-| `url` | Tak | Absolutny adres http lub https. |
+| `url` | Tak | Bezwzględny adres URL http lub https. |
 | `event` | Tak | `comment-created`, `comment-updated` lub `comment-deleted`. |
-| `domain` | Nie | Domena z konfiguracji Twojego konta. Domyślnie `*`, co odbiera zdarzenia ze wszystkich domen. |
+| `domain` | Nie | Domena z konfiguracji Twojego konta. Domyślnie `*`, co oznacza odbieranie zdarzeń ze wszystkich domen. |
 | `method` | Nie | `POST` (domyślnie), `PUT` lub `DELETE`. |
 
 Odpowiedź zawiera subskrypcję:
@@ -48,8 +44,7 @@ Odpowiedź zawiera subskrypcję:
 }
 ```
 
-Subskrybowanie tego samego URL do tego samego zdarzenia i domeny ponownie zwraca istniejącą subskrypcję zamiast
-tworzyć duplikat, więc klient może bezpiecznie ponowić próbę. Każdy najemca może mieć maksymalnie 50 subskrypcji API.
+Subskrybowanie tego samego URL do tego samego zdarzenia i domeny ponownie zwraca istniejącą subskrypcję zamiast tworzyć duplikat, więc klient może bezpiecznie ponowić próbę. Każdy najemca może mieć maksymalnie 50 subskrypcji API.
 
 ## Lista
 
@@ -57,8 +52,7 @@ tworzyć duplikat, więc klient może bezpiecznie ponowić próbę. Każdy najem
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Zwraca wszystkie webhooki dla najemcy, w tym te zarządzane w panelu (`"source": "dashboard"`).
-Filtrowanie za pomocą `event`, `domain` lub `source`.
+Zwraca wszystkie webhooki dla najemcy, w tym te zarządzane w panelu (`"source": "dashboard"`). Filtruj za pomocą `event`, `domain` lub `source`.
 
 ## Anulowanie subskrypcji
 
@@ -66,14 +60,11 @@ Filtrowanie za pomocą `event`, `domain` lub `source`.
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Usunięcie subskrypcji usuwa także wszelkie zdarzenia, które nadal są w kolejce. Tylko subskrypcje utworzone
-przez API mogą być usunięte w ten sposób. Webhooki z panelu są edytowane na stronie Webhooks.
+Usunięcie subskrypcji usuwa również wszystkie zdarzenia, które nadal są w kolejce. Tylko subskrypcje utworzone przez API mogą być usunięte w ten sposób; webhook z panelu lub identyfikator nieistniejący na Twoim koncie zwraca `404` z kodem `not-found`. Webhooki z panelu są edytowane na stronie Webhooks.
 
 ## Ładunki i podpisy
 
-Dostawy używają tego samego ładunku co webhooki z panelu (zobacz Struktury Danych) i są podpisane tym samym
-schematem HMAC (zobacz Bezpieczeństwo i Tokeny API). Subskrypcje API nigdy nie otrzymują przestarzałego nagłówka `token`,
-dlatego należy weryfikować nagłówek `X-FastComments-Signature`.
+Dostawy używają takiego samego ładunku jak webhooki z panelu (zobacz Struktury Danych) i są podpisane tym samym schematem HMAC (zobacz Bezpieczeństwo & Tokeny API). Subskrypcje API nigdy nie otrzymują starszego nagłówka `token`, więc należy weryfikować nagłówek `X-FastComments-Signature`.
 
 ## Przykładowe ładunki
 
@@ -81,9 +72,7 @@ dlatego należy weryfikować nagłówek `X-FastComments-Signature`.
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Zwraca najnowsze komentarze konta w dokładnym kształcie, w jakim dostawa je przenosi, dzięki czemu integracja może
-pokazać rzeczywiste przykładowe dane przed przyjściem pierwszego zdarzenia. `event` jest opcjonalny i jedynie walidowany,
-ponieważ każde zdarzenie dostarcza ten sam obiekt komentarza. `limit` domyślnie wynosi 3 i przyjmuje wartości od 1 do 10. Kosztuje 2 kredyty API.
+Zwraca najnowsze komentarze konta w dokładnym formacie, jaki ma dostawa, dzięki czemu integracja może wyświetlić rzeczywiste przykładowe dane przed przyjściem pierwszego zdarzenia. `event` jest opcjonalny i jedynie walidowany, ponieważ każde zdarzenie dostarcza ten sam obiekt komentarza. `limit` domyślnie wynosi 3 i przyjmuje wartości od 1 do 10. Kosztuje 2 kredyty API.
 
 ```json
 {
@@ -103,10 +92,8 @@ ponieważ każde zdarzenie dostarcza ten sam obiekt komentarza. `limit` domyśln
 
 ## Odpowiadanie kodem 410 Gone
 
-Jeśli punkt końcowy subskrypcji API odpowie kodem HTTP `410 Gone`, FastComments traktuje to jako
-wypisanie się: subskrypcja jest usuwana wraz z jej oczekującymi zdarzeniami i nie są podejmowane dalsze próby dostawy. Webhooki skonfigurowane w panelu nigdy nie są usuwane automatycznie; dla nich 410 jest zwykłym niepowodzeniem. Każdy inny kod niepowodzenia jest ponawiany i ostatecznie wyłącza webhook, jak opisano w sekcji Jak to działa i Obsługa ponownych prób.
+Jeśli endpoint subskrypcji API odpowie kodem HTTP `410 Gone`, FastComments traktuje to jako wypisanie się: subskrypcja jest usuwana wraz z oczekującymi zdarzeniami i nie są podejmowane dalsze próby dostawy. Webhooki skonfigurowane w panelu nigdy nie są usuwane automatycznie; dla nich 410 oznacza zwykłą awarię. Każdy inny kod błędu jest ponawiany i ostatecznie wyłącza webhook, jak opisano w sekcji Jak to działa & Obsługa ponowień.
 
 ## Panel
 
-Subskrypcje API pojawiają się na liście Webhooks ze źródłem **API**, gdzie administrator może je edytować,
-wyłączyć, ponownie włączyć lub usunąć.
+Subskrypcje API pojawiają się na liście Webhooks ze źródłem **API**, gdzie administrator może je edytować, wyłączać, ponownie włączać lub usuwać.

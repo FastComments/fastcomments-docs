@@ -1,52 +1,52 @@
-## Actions and Searches
+## Radnje i pretrage
 
-Akcije stvaraju podatke u FastComments; pretrage traže podatke kako bi ih kasniji korak mogao koristiti. Svaka akcija poziva FastComments REST API i troši iste API kredite koliko bi poziv koštao iz vašeg vlastitog koda: jedan kredit po pozivu, osim ako nije navedeno.
+Radnje stvaraju podatke u FastComments; pretrage traže podatke kako bi ih kasniji korak mogao koristiti. Svaka radnja poziva FastComments REST API i troši iste API kredite koliko bi taj poziv koštao iz vašeg koda: jedan kredit po pozivu, osim ako nije drugačije navedeno.
 
-## Create Comment
+## Stvori komentar
 
-Posts a comment on a page.
+Objavljuje komentar na stranici.
 
 | Polje | Obavezno | Napomene |
 |-------|----------|----------|
-| Page URL ID | Da | URL ID koji widget za komentare koristi na stranici. Komentari su grupirani po njemu. |
-| Page URL | Da | Puni URL stranice, koristi se u obavijesnim e‑mailovima. |
-| Comment | Da | Tijelo komentara u FastComments markdownu. |
-| Commenter Name | Da | Imena su jedinstvena po e‑mailu, pa ponovno korištenje imena s drugačijim e‑mailom ne uspijeva. |
-| Commenter Email | Ne | Korisnik se kreira za e‑mail ako još ne postoji. |
-| User ID | Ne | Postojeći SSO korisnički ID. Ima prednost nad imenom i e‑mailom. |
-| Parent Comment ID | Ne | Postavite za objavu odgovora. |
-| Approved, Verified | Ne | Oba su po zadanom postavljena na true. Neodobreni komentari ostaju skriveni dok se ne moderiraju. |
-| Posted At | Ne | Zadano je trenutno vrijeme. |
-| Avatar URL, Page Title, Locale | Ne | Locale po zadanom je `en_us`. |
-| Show Live In Widget | Ne | Gura komentar gledateljima u stvarnom vremenu. Košta 2 kredita umjesto 1. |
-| Run Spam Check, Send Emails | Ne | Po zadanom isključeno. |
+| ID URL-a stranice | Da | ID URL-a koji widget za komentare koristi na stranici. Komentari su grupirani po njemu. |
+| URL stranice | Da | Puni URL stranice, koristi se u obavijesnim e‑mailovima. |
+| Komentar | Da | Tijelo komentara u FastComments markdownu. |
+| Ime komentatora | Da | Imena su jedinstvena po e‑mailu, pa ponovno korištenje imena s drugačijim e‑mailom ne uspije. |
+| E‑mail komentatora | Ne | Korisnik se stvara za taj e‑mail ako još ne postoji. |
+| ID korisnika | Ne | Postojeći SSO ID korisnika. Ima prednost nad imenom i e‑mailom. |
+| ID nadređenog komentara | Ne | Postavite za objavu odgovora. |
+| Odobreno, Potvrđeno | Ne | Oboje je zadano na true. Neodobreni komentari ostaju skriveni dok se ne moderiraju. |
+| Objavljeno u | Ne | Zadatno je sada. |
+| URL avatara, Naslov stranice, Lokalitet | Ne | Lokalitet je zadano `en_us`. |
+| Prikaži uživo u widgetu | Ne | Guranje komentara gledateljima u stvarnom vremenu. Košta 2 kredita umjesto 1. |
+| Pokreni provjeru spama, Pošalji e‑mailove | Ne | Zadatno isključeno. |
 
-## Create Page
+## Stvori stranicu
 
-Stvara zapis stranice prije nego što na njoj postoji bilo koji komentar, kako bi se mogla izlistati i ograničiti. Prima URL ID, naslov, URL i opcionalno SSO grupne ID‑ove kojima je dozvoljeno vidjeti je.
+Stvara zapis stranice prije nego što na njoj postoji bilo koji komentar, kako bi se mogla prikazati i ograničiti. Prima ID URL-a, naslov, URL i opcionalno SSO ID‑ove grupa kojima je dozvoljen pristup.
 
-## Create SSO User
+## Stvori SSO korisnika
 
-Stvara korisnika za jednokratnu prijavu (single sign-on). Prima vaš vlastiti korisnički ID, korisničko ime i e‑mail, plus opcionalno prikazno ime, prikaznu oznaku, avatar, web‑stranicu, grupne ID‑ove, te zastavice za obavijesti i privatnost. Administrativne uloge ne mogu se dodijeliti putem Zapiera.
+Stvara korisnika za jednokratnu prijavu (single sign‑on). Prima vaš vlastiti ID korisnika, korisničko ime i e‑mail, plus opcionalno prikazno ime, prikaznu oznaku, avatar, web‑stranicu, ID‑ove grupa te oznake za obavijesti i privatnost. Administrativne uloge ne mogu se dodijeliti putem Zapiera.
 
-## Create Feed Post
+## Stvori objavu u feedu
 
-Stvara objavu u FastComments feedu iz HTML sadržaja, s opcionalnim naslovom, autorom, oznakama i jednim pregledom poveznice.
+Stvara objavu u FastComments feedu iz HTML sadržaja. ID korisnika autora je obavezan (FastComments ili SSO ID korisnika); naslov, oznake i jedan pregled poveznice su opcionalni.
 
-## Create Hash Tag
+## Stvori hash oznaku
 
-Stvara hash oznaku koju komentatori mogu koristiti, s opcionalnim URL‑om na koji vodi.
+Stvara hash oznaku koju komentatori mogu koristiti, s opcionalnim URL‑om na koji vodi. Oznake su jedinstvene po računu, pa Zap koji stvara jednu pri svakom pokretanju treba nešto jedinstveno u oznaci.
 
-## Flag Comment
+## Označi komentar
 
-Označava komentar za pregled moderatora. Navedite ID korisnika koji označava, ili ostavite prazno da označite kao Zapier integracija.
+Označava komentar za pregled od strane moderatora. Potreban je ID korisnika koji vrši označavanje; ID autora vraćen iz Stvori komentar funkcionira.
 
-## Searches
+## Pretrage
 
 | Pretraga | Ulaz | Vraća |
 |----------|------|-------|
-| Find Comment | Comment ID | Komentar, ili ništa. |
-| Find SSO User | Email | SSO korisnik, ili ništa. |
-| Find Page | URL ID | Stranica, ili ništa. |
+| Pronađi komentar | ID komentara | Komentar, ili ništa. |
+| Pronađi SSO korisnika | E‑mail | SSO korisnika, ili ništa. |
+| Pronađi stranicu | ID URL-a | Stranicu, ili ništa. |
 
-Pretraga koja ne pronađe ništa ne uzrokuje neuspjeh Zapa. Kombinirajte pretragu s kreiranjem u Zapierovom načinu „find or create“ (pronađi ili kreiraj) kako biste stvorili stranicu ili korisnika kada nedostaje.
+Pretraga koja ne pronađe ništa ne uzrokuje neuspjeh Zapa. Kombinirajte pretragu s kreiranjem u Zapier‑ovom načinu „find or create“ kako biste stvorili stranicu ili korisnika kada nedostaje.

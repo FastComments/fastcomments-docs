@@ -1,14 +1,11 @@
-Webhooks također mogu biti upravljani putem REST API‑ja. Tako integracije poput Zapiera pretplaćuju
-na događaje komentara bez korištenja nadzorne ploče, a slijede uzorak REST Hooks: pretplata,
-primanje događaja, otkazivanje pretplate.
+Webhooks također mogu biti upravljani putem REST API‑ja. Tako integracije poput Zapiera pretplaćuju se na događaje komentara bez dodirivanja nadzorne ploče, a slijede uzorak REST Hooks: pretplata, primanje događaja, odjava.
 
-API pretplate koegzistiraju uz webhooks konfigurirane u nadzornoj ploči. Događaj komentara se isporučuje
-svakom webhooku koji odgovara njegovoj domeni, svaki kao zasebna isporuka, neovisno o načinu na koji je webhook kreiran.
+API pretplate koegzistiraju uz webhooks konfigurirane u nadzornoj ploči. Događaj komentara isporučuje se svakom webhooku koji odgovara njegovoj domeni, svaki kao zasebna isporuka, bez obzira kako je webhook kreiran.
 
 ## Autentifikacija
 
 Svaki zahtjev treba vaš API ključ u zaglavlju `x-api-key` (ili u parametru upita `API_KEY`) i
-vaš ID najmodavca u parametru upita `tenantId`. Oba su prikazana na stranici API tajne u nadzornoj ploči.
+vaš ID najamnika u parametru upita `tenantId`. Oba su prikazana na stranici API tajne u nadzornoj ploči.
 
 ## Pretplata
 
@@ -48,8 +45,7 @@ Odgovor sadrži pretplatu:
 }
 ```
 
-Ponovno pretplaćivanje iste URL adrese na isti događaj i domenu vraća postojeću pretplatu umjesto
-stvaranja duplikata, pa klijent može sigurno ponoviti pokušaj. Svaki najmodavac može imati najviše 50 API pretplata.
+Ponovna pretplata na isti URL za isti događaj i domenu vraća postojeću pretplatu umjesto stvaranja duplikata, pa klijent može sigurno ponoviti pokušaj. Svaki najamnik može imati najviše 50 API pretplata.
 
 ## Popis
 
@@ -57,32 +53,33 @@ stvaranja duplikata, pa klijent može sigurno ponoviti pokušaj. Svaki najmodava
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Vraća svaki webhook za najmodavca, uključujući one upravljane u nadzornoj ploči (`"source": "dashboard"`).
+Vraća svaki webhook za najamnika, uključujući one upravljane u nadzornoj ploči (`"source": "dashboard"`).
 Filtrirajte pomoću `event`, `domain` ili `source`.
 
-## Otkaži pretplatu
+## Odjava
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
 Brisanje pretplate također odbacuje sve događaje koji su još u redu za nju. Samo pretplate kreirane
-preko API‑ja mogu se izbrisati na ovaj način. Webhookovi iz nadzorne ploče uređuju se na stranici Webhooks.
+preko API‑ja mogu se izbrisati na ovaj način; webhook iz nadzorne ploče ili ID koji ne postoji u vašem
+računu odgovara s `404` i kodom `not-found`. Webhookovi iz nadzorne ploče uređuju se na stranici Webhooks.
 
-## Tijela zahtjeva i potpisivanje
+## Učitci i potpisivanje
 
-Isporuke koriste isto tijelo kao webhookovi iz nadzorne ploče (pogledajte Strukture podataka) i potpisane su istim
+Isporuke koriste isti učitak kao webhookovi iz nadzorne ploče (pogledajte Strukture podataka) i potpisane su istim
 HMAC shemom (pogledajte Sigurnost i API tokeni). API pretplate nikada ne primaju zastarjelo zaglavlje `token`, pa
-umjesto toga provjerite zaglavlje `X-FastComments-Signature`.
+provjerite zaglavlje `X-FastComments-Signature` umjesto toga.
 
-## Primjeri tijela
+## Primjeri učitaka
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Vraća najnovije komentare računa u točno onom obliku koji isporuka nosi, tako da integracija može
-prikazati stvarne primjere podataka prije nego što prvi događaj stigne. `event` je opcionalan i samo se provjerava, budući da svaki
+Vraća najnovije komentare računa u točnom obliku koji isporuka nosi, tako da integracija može
+prikazati stvarne primjere podataka prije nego prvi događaj stigne. `event` je opcionalan i samo se provjerava, budući da svaki
 događaj isporučuje isti objekt komentara. `limit` je zadano 3 i prihvaća vrijednosti od 1 do 10. Troši 2 API kredita.
 
 ```json
@@ -103,11 +100,8 @@ događaj isporučuje isti objekt komentara. `limit` je zadano 3 i prihvaća vrij
 
 ## Odgovor s 410 Gone
 
-Ako krajnja točka API pretplate odgovori HTTP‑om `410 Gone`, FastComments to tretira kao
-otkazivanje pretplate: pretplata se briše zajedno s događajima u redu, a daljnje isporuke se
-nepokušavaju. Webhookovi konfigurirani u nadzornoj ploči nikada se ne brišu automatski; za njih je 410
-obična greška. Svaki drugi status greške se ponavlja i na kraju onemogućuje webhook, kako je opisano
-u Kako funkcionira i Obrada ponavljanja.
+Ako krajnja točka API pretplate odgovori s HTTP `410 Gone`, FastComments to tretira kao
+odjavu: pretplata se briše zajedno s događajima u redu, a daljnje isporuke se ne pokušavaju. Webhookovi konfigurirani u nadzornoj ploči nikada se ne brišu automatski; za njih je 410 obična greška. Svaki drugi status greške se ponavlja i na kraju onemogućuje webhook, kako je opisano u Kako funkcionira i rukovanje ponovnim pokušajima.
 
 ## Nadzorna ploča
 

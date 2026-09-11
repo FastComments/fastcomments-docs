@@ -1,16 +1,16 @@
-Webhooks can also be managed through the REST API. This is how integrations such as Zapier subscribe
-to comment events without touching the dashboard, and it follows the REST Hooks pattern: subscribe,
-receive events, unsubscribe.
+Webhooks также могут управляться через REST API. Так интеграции, такие как Zapier, подписываются
+на события комментариев, не открывая панель управления, и следуют шаблону REST Hooks: подписка,
+получение событий, отписка.
 
-API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
+Подписки API находятся рядом с вебхуками, настроенными в панели управления. Событие комментария доставляется
+каждому вебхуку, который соответствует его домену, каждое как отдельная доставка, независимо от того, как вебхук был создан.
 
-## Authentication
+## Аутентификация
 
-Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
-your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
+Каждый запрос требует ваш API‑ключ в заголовке `x-api-key` (или параметр запроса `API_KEY`) и
+идентификатор арендатора в параметреестре `tenantId`. Оба отображаются на странице API Secret в панели управления.
 
-## Subscribe
+## Подписка
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -24,13 +24,13 @@ Content-Type: application/json
 ```
 
 | Поле | Обязательно | Описание |
-|-------|----------|-------------|
+|------|-------------|----------|
 | `url` | Да | Абсолютный URL http или https. |
-| `event` | Да | `comment-created`, `comment-updated` или `comment-deleted`. |
-| `domain` | Нет | Домен из конфигурации вашего аккаунта. По умолчанию `*`, который получает события для всех доменов. |
-| `method` | Нет | `POST` (по умолчанию), `PUT` или `DELETE`. |
+| `event`| Да | `comment-created`, `comment-updated` или `comment-deleted`. |
+|`domain`| Нет | Домен из конфигурации вашей учётной записи. По умолчанию `*`, который получает события для всех доменов. |
+|`method`| Нет | `POST` (по умолчанию), `PUT` или `DELETE`. |
 
-The response contains the subscription:
+Ответ содержит подписку:
 
 ```json
 {
@@ -48,42 +48,45 @@ The response contains the subscription:
 }
 ```
 
-Subscribing the same URL to the same event and domain again returns the existing subscription rather
-than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
+Подписка той же URL на то же событие и домен снова возвращает существующую подписку,
+а не создаёт дубликат, поэтому клиент может безопасно повторять запрос. Каждый арендатор может иметь до 50 подписок API.
 
-## List
+## Список
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
-Filter with `event`, `domain` or `source`.
+Возвращает каждый вебхук арендатора, включая управляемые в панели (`"source": "dashboard"`).
+Фильтруйте по `event`, `domain` или `source`.
 
-## Unsubscribe
+## Отписка
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way. Dashboard webhooks are edited on the Webhooks page.
+Удаление подписки также отбрасывает любые события, ещё находящиеся в очереди. Только подписки,
+созданные через API, могут быть удалены таким способом; вебхук из панели управления или идентификатор,
+который не существует в вашей учётной записи, возвращает `404` с кодом `not-found`. Вебхуки из панели
+управления редактируются на странице Webhooks.
 
-## Payloads and signing
+## Полезные нагрузки и подпись
 
-Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
-HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
-verify the `X-FastComments-Signature` header instead.
+Доставки используют тот же полезный payload, что и вебхуки из панели (см. Data Structures) и подписываются тем же
+схемой HMAC (см. Security & API Tokens). Подписки API никогда не получают устаревший заголовок `token`,
+поэтому проверяйте заголовок `X-FastComments-Signature` вместо него.
 
-## Sample payloads
+## Пример полезных нагрузок
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
-show real sample data before the first event arrives. `event` is optional and only validated, since every
-event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
+Возвращает самые последние комментарии учётной записи точно в том виде, в котором их передаёт доставка,
+поэтому интеграция может показать реальные примерные данные до поступления первого события. `event` необязателен
+и только проверяется, поскольку каждое событие передаёт один и тот же объект комментария. `limit` по умолчанию 3
+и принимает значения от 1 до 10. Стоимость — 2 кредита API.
 
 ```json
 {
@@ -93,6 +96,7 @@ event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 1
             "id": "66f1c4c1e7a2b3d4f5a6b7c8",
             "urlId": "https://example.com/blog/hello-world",
             "commenterName": "Jane Reader",
+            ",
             "comment": "Great article!",
             "date": "2026-09-08T12:00:00.000Z",
             "approved": true
@@ -101,15 +105,15 @@ event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 1
 }
 ```
 
-## Responding with 410 Gone
+## Ответ с 410 Gone
 
-If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
-unsubscribe: the subscription is deleted along with its queued events, and no further deliveries are
-attempted. Webhooks configured in the dashboard are never deleted automatically; for them a 410 is an
-ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
-in How it Works & Handling Retries.
+Если конечная точка подписки API отвечает HTTP `410 Gone`, FastComments рассматривает это как
+отписку: подписка удаляется вместе с её ожидающими событиями, и дальнейшие доставки не
+производятся. Вебхуки, настроенные в панели, никогда не удаляются автоматически; для них 410 —
+обычная ошибка. Любой другой статус ошибки повторяется и в конечном итоге отключает вебхук, как описано
+в разделе How it Works & Handling Retries.
 
-## Dashboard
+## Панель управления
 
-API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
-disable, re-enable or delete them.
+Подписки API отображаются в списке Webhooks с источником **API**, где администратор может редактировать,
+отключать, повторно включать или удалять их.

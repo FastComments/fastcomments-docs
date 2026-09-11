@@ -26,9 +26,9 @@ Content-Type: application/json
 | Поле | Задължително | Описание |
 |-------|----------|-------------|
 | `url` | Да | Абсолютен http или https URL. |
-| `event` | Да | `comment-created`, `comment-updated` или `comment-deleted`. |
+| `event` | Да | `comment-created`, `comment-updated` or `comment-deleted`. |
 | `domain` | Не | Домейн от конфигурацията на вашия акаунт. По подразбиране е `*`, което получава събития за всеки домейн. |
-| `method` | Не | `POST` (по подразбиране), `PUT` или `DELETE`. |
+| `method` | Не | `POST` (по подразбиране), `PUT` or `DELETE`. |
 
 The response contains the subscription:
 
@@ -48,8 +48,7 @@ The response contains the subscription:
 }
 ```
 
-Subscribing the same URL to the same event and domain again returns the existing subscription rather
-than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
+Абонирането на същия URL за същото събитие и домейн отново връ връща съществуващия абонамент, вместо да създава дубликат, така че клиентът може безопасно да опита отново. Всеки наемател може да има до 50 API абонамента.
 
 ## Списък
 
@@ -57,8 +56,7 @@ than creating a duplicate, so a client can safely retry. Each tenant can have up
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
-Filter with `event`, `domain` or `source`.
+Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`). Filter with `event`, `domain` or `source`.
 
 ## Отписване
 
@@ -67,13 +65,13 @@ DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TE
 ```
 
 Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way. Dashboard webhooks are edited on the Webhooks page.
+through the API can be deleted this way; a dashboard webhook, or an id that does not exist on your
+account, answers `404` with code `not-found`. Dashboard webhooks are edited on the Webhooks page.
 
 ## Полезни данни и подписване
 
 Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
-HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
-verify the `X-FastComments-Signature` header instead.
+HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so verify the `X-FastComments-Signature` header instead.
 
 ## Примерни полезни данни
 

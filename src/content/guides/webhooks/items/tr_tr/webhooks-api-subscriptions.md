@@ -1,6 +1,6 @@
 Webhooks ayrıca REST API üzerinden yönetilebilir. Bu, Zapier gibi entegrasyonların kontrol paneline dokunmadan yorum olaylarına abone olmasını sağlar ve REST Hooks desenini izler: abone ol, olayları al, aboneliği iptal et.
 
-API abonelikleri, kontrol panelinde yapılandırılmış webhooks'ların yanında bulunur. Bir yorum olayı, alanına uyan her webhook'a, webhook'un nasıl oluşturulduğundan bağımsız olarak, kendi teslimatı olarak gönderilir.
+API abonelikleri, kontrol panelinde yapılandırılmış webhooks'ların yanında bulunur. Bir yorum olayı, alanına uyan her webhook'a, webhook'un nasıl oluşturulduğuna bakılmaksızın, ayrı bir teslimat olarak gönderilir.
 
 ## Kimlik Doğrulama
 
@@ -20,11 +20,11 @@ Content-Type: application/json
 ```
 
 | Alan | Gerekli | Açıklama |
-|-------|----------|-------------|
+|------|---------|----------|
 | `url` | Evet | Mutlak bir http veya https URL'si. |
-| `event` | Evet | `comment-created`, `comment-updated` veya `comment-deleted`. |
-| `domain` | Hayır | Hesap yapılandırmanızdaki bir domain. Varsayılan `*`, tüm domain'ler için olay alır. |
-| `method` | Hayır | `POST` (varsayılan), `PUT` veya `DELETE`. |
+| `event` | Evet | `comment-created`, `comment-updated` or `comment-deleted`. |
+| `domain` | Hayır | Hesap yapılandırmanızdaki bir alan adı. Varsayılan `*` olup, her alan adı için olayları alır. |
+| `method` | Hayır | `POST` (default), `PUT` or `DELETE`. |
 
 Yanıt, aboneliği içerir:
 
@@ -44,7 +44,7 @@ Yanıt, aboneliği içerir:
 }
 ```
 
-Aynı URL'yi aynı olay ve domain'e tekrar abone etmek, bir kopya oluşturmak yerine mevcut aboneliği döndürür, böylece istemci güvenle yeniden deneyebilir. Her kiracı en fazla 50 API aboneliğine sahip olabilir.
+Aynı URL'yi aynı olay ve alan adına tekrar abone etmek, bir kopya oluşturmak yerine mevcut aboneliği döndürür, böylece bir istemci güvenle yeniden deneyebilir. Her kiracı en fazla 50 API aboneliğine sahip olabilir.
 
 ## Liste
 
@@ -52,7 +52,7 @@ Aynı URL'yi aynı olay ve domain'e tekrar abone etmek, bir kopya oluşturmak ye
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Kiracı için tüm webhook'ları döndürür, kontrol panelinde yönetilenler dahil (`"source": "dashboard"`). `event`, `domain` veya `source` ile filtreleyin.
+Kiracı için kontrol panelinde yönetilenler dahil olmak üzere tüm webhook'ları döndürür (`"source": "dashboard"`). `event`, `domain` veya `source` ile filtreleyin.
 
 ## Aboneliği İptal Et
 
@@ -60,19 +60,19 @@ Kiracı için tüm webhook'ları döndürür, kontrol panelinde yönetilenler da
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Bir aboneliği silmek, ona hâlâ kuyruğa alınmış olan tüm olayları da iptal eder. Yalnızca API üzerinden oluşturulan abonelikler bu şekilde silinebilir. Kontrol paneli webhooks'ları Webhooks sayfasında düzenlenir.
+Bir aboneliği silmek, ona hâlâ kuyrukta bekleyen olayları da iptal eder. Bu şekilde yalnızca API üzerinden oluşturulan abonelikler silinebilir; kontrol paneli webhook'u veya hesabınızda bulunmayan bir kimlik, `404` yanıtını `not-found` koduyla verir. Kontrol paneli webhook'ları Webhooks sayfasında düzenlenir.
 
-## Yükler ve imzalama
+## Yükler ve İmzalama
 
-Teslimatlar, kontrol paneli webhooks'larıyla aynı yükü kullanır (Data Structures bölümüne bakın) ve aynı HMAC şemasıyla imzalanır (Security & API Tokens bölümüne bakın). API abonelikleri asla eski `token` başlığını almaz, bu yüzden `X-FastComments-Signature` başlığını doğrulayın.
+Teslimatlar, kontrol paneli webhook'larıyla aynı yükü kullanır (Data Structures bölümüne bakın) ve aynı HMAC şemasıyla imzalanır (Security & API Tokens bölümüne bakın). API abonelikleri asla eski `token` başlığını almaz, bu yüzden `X-FastComments-Signature` başlığını doğrulayın.
 
-## Örnek yükler
+## Örnek Yükler
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Hesabın en son yorumlarını, teslimatın taşıdığı tam biçimde döndürür, böylece bir entegrasyon ilk olay gelmeden gerçek örnek verileri gösterebilir. `event` isteğe bağlıdır ve yalnızca doğrulanır, çünkü her olay aynı yorum nesnesini taşır. `limit` varsayılan olarak 3'tür ve 1 ile 10 arasında kabul eder. 2 API kredisi maliyetlidir.
+Hesabın en son yorumlarını, teslimatın taşıdığı tam biçimde döndürür, böylece bir entegrasyon ilk olay gelmeden gerçek örnek verileri gösterebilir. `event` isteğe bağlıdır ve sadece doğrulanır, çünkü her olay aynı yorum nesnesini taşır. `limit` varsayılan olarak 3'tür ve 1 ile 10 arasında kabul eder. 2 API kredisi maliyetlidir.
 
 ```json
 {
@@ -90,12 +90,10 @@ Hesabın en son yorumlarını, teslimatın taşıdığı tam biçimde döndürü
 }
 ```
 
-## 410 Gone ile Yanıt Verme
+## 410 Gone Yanıtı
 
-Bir API aboneliğinin uç noktası HTTP `410 Gone` yanıtı verirse, FastComments bunu bir aboneliği iptal etme olarak değerlendirir: abonelik, kuyruğa alınmış olaylarıyla birlikte silinir ve başka teslimat denenmez. Kontrol panelinde yapılandırılmış webhooks'lar otomatik olarak silinmez; onlar için 410 sıradan bir hatadır. Başka herhangi bir hata durumu yeniden denenir ve sonunda webhook devre dışı bırakılır, How it Works & Handling Retries bölümünde açıklandığı gibi.
+Bir API aboneliğinin uç noktası HTTP `410 Gone` yanıtı verirse, FastComments bunu bir abonelik iptali olarak değerlendirir: abonelik, kuyrukta bekleyen olaylarıyla birlikte silinir ve başka teslimat denenmez. Kontrol panelinde yapılandırılmış webhook'lar otomatik olarak silinmez; onlar için 410 sıradan bir hatadır. Diğer tüm hata durumları yeniden denenir ve sonunda webhook devre dışı bırakılır, How it Works & Handling Retries bölümünde açıklandığı gibi.
 
 ## Kontrol Paneli
 
-API abonelikleri, kaynak **API** olarak Webhooks listesinde görünür; burada bir yönetici onları düzenleyebilir, devre dışı bırakabilir, yeniden etkinleştirebilir veya silebilir.
-
----
+API abonelikleri, Webhooks listesinde **API** kaynağıyla görünür; burada bir yönetici onları düzenleyebilir, devre dışı bırakabilir, yeniden etkinleştirebilir veya silebilir.
