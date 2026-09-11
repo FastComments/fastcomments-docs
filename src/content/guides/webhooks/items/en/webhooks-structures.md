@@ -15,6 +15,9 @@ The "delete" event request body is a WebhookComment object.
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
 
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+
 [inline-code-attrs-start title = 'The WebhookComment Object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
@@ -23,11 +26,11 @@ interface WebhookComment {
     /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
     /** The URL that points to where the comment was left. **/
-    url?: string
+    url: string | null
     /** The user id that left the comment. If SSO, prefixed with tenant id. **/
-    userId?: string
+    userId: string | null
     /** The email of the user left the comment. **/
-    commenterEmail?: string
+    commenterEmail: string | null
     /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
     /** Raw comment text. **/
@@ -35,9 +38,9 @@ interface WebhookComment {
     /** Comment text after parsing. **/
     commentHTML: string
     /** Comment external id. **/
-    externalId?: string
+    externalId: string | null
     /** The id of the parent comment. **/
-    parentId?: string | null
+    parentId: string | null
     /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
     /** Combined karma (up - down) of votes. **/
@@ -46,12 +49,12 @@ interface WebhookComment {
     votesDown: number
     /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Date when the comment was verified. **/
-    verifiedDate?: number
+    /** The UTC date when the comment was verified. **/
+    verifiedDate: UTC_ISO_DateString | null
     /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
     /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
-    avatarSrc?: string
+    avatarSrc: string | null
     /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
     /** Was the comment automatically marked as spam? **/
@@ -59,21 +62,21 @@ interface WebhookComment {
     /** Are there images in the comment? **/
     hasImages: boolean
     /** The page number the comment is on for the "Most Relevant" sort direction. **/
-    pageNumber: number
+    pageNumber: number | null
     /** The page number the comment is on for the "Oldest First" sort direction. **/
-    pageNumberOF: number
+    pageNumberOF: number | null
     /** The page number the comment is on for the "Newest First" sort direction. **/
-    pageNumberNF: number
+    pageNumberNF: number | null
     /** Was the comment approved automatically or manually? **/
     approved: boolean
     /** The locale code (format: en_us) of the user when the comment was written. **/
-    locale: string
-    /** The @mentions written in the comment that were successfully parsed. **/
-    mentions?: CommentUserMention[]
+    locale: string | null
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    mentions: CommentUserMention[]
     /** The domain the comment is from. **/
-    domain?: string
-    /** The optional list of moderation group ids associated with this comment. **/
-    moderationGroupIds?: string[]|null
+    domain: string | null
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    moderationGroupIds: string[]
 }
 [inline-code-end]
 
