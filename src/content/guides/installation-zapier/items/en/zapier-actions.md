@@ -23,26 +23,27 @@ Posts a comment on a page.
 | Show Live In Widget | No | Pushes the comment to viewers in real time. Costs 2 credits instead of 1. |
 | Run Spam Check, Send Emails | No | Off by default. |
 
-## Create Page
+## Create or Update Page
 
 Creates a page record before any comment exists on it, so it can be listed and restricted. Takes the URL ID,
-title, URL, and optionally the SSO group ids allowed to see it.
+title, URL, and optionally the SSO group ids allowed to see it. If a page with that URL ID already exists it is
+updated with the fields given, so a Zap can run for the same page repeatedly.
 
-## Create SSO User
+## Create or Update SSO User
 
 Creates a single sign-on user. Takes your own user id, username and email, plus optional display name,
-display label, avatar, website, group ids, and notification and privacy flags. Administrative roles cannot
-be granted from Zapier.
+display label, avatar, website, group ids, and notification and privacy flags. If a user with that id already
+exists it is updated instead. Administrative roles cannot be granted from Zapier.
 
 ## Create Feed Post
 
 Creates a post in a FastComments feed from HTML content. The author user id is required (a FastComments or
 SSO user id); title, tags, and one link preview are optional.
 
-## Create Hash Tag
+## Create or Update Hash Tag
 
-Creates a hash tag that commenters can use, with an optional URL it links to. Tags are unique per account, so
-a Zap that creates one on every run needs something unique in the tag.
+Creates a hash tag that commenters can use, with an optional URL it links to. If the tag already exists it is
+updated instead.
 
 ## Flag Comment
 
@@ -57,5 +58,5 @@ returned by Create Comment works.
 | Find SSO User | Email | The SSO user, or nothing. |
 | Find Page | URL ID | The page, or nothing. |
 
-A search that finds nothing does not fail the Zap. Combine a search with a create in Zapier's
-"find or create" mode to create the page or user when it is missing.
+A search that finds nothing does not fail the Zap. Find SSO User and Find Page offer Zapier's "create if it
+doesn't exist" option, which runs the matching create when nothing is found.
