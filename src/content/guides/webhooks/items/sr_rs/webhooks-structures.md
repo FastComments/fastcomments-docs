@@ -1,14 +1,14 @@
 The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
-#### The WebhookComment Object Structure
+#### Структура WebhookComment објекта
 
-##### The "Create" Event Structure
+##### Структура догађаја „Create“
 The "create" event request body is a WebhookComment object.
 
-##### The "Update" Event Structure
+##### Структура догађаја „Update“
 The "update" event request body is a WebhookComment object.
 
-##### The "Delete" Event Structure
+##### Структура догађаја „Delete“
 The "delete" event request body is a WebhookComment object.
 
     Change as of Nov 14th 2023
@@ -17,7 +17,7 @@ The "delete" event request body is a WebhookComment object.
 Every key is always present in the body. When the comment has no value for a field the body carries `null`
 (or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
-[inline-code-attrs-start title = 'Објекат WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'WebHookComment објекат'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** The id of the comment. **/
@@ -82,7 +82,7 @@ interface WebhookComment {
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
-[inline-code-attrs-start title = 'Објекат Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'WebHook Mentions објекат'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -98,25 +98,25 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-#### HTTP Methods
+#### HTTP методи
 
 You can configure the HTTP method for each webhook event type in the admin panel:
 
 - **Create Event**: POST or PUT (default: PUT)
 - **Update Event**: POST or PUT (default: PUT)
-- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
+- **Delete Event**: DELETE, POST or PUT (default: DELETE)
 
 Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
-#### Request Headers
+#### Заглавља захтева
 
 Each webhook request includes the following headers:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Your API Secret |
-| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
+| `token` | Ваш API тајн |
+| `X-FastComments-Timestamp` | Unix временски печат (секунде) када је захтев потписан |
+| `X-FastComments-Signature` | HMAC-SHA256 потпис (`sha256=<hex>`) |
 
 See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

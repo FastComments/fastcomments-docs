@@ -1,21 +1,26 @@
 The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
-#### The WebhookComment Object Structure
+#### Структура об’єкта WebhookComment
 
-##### The "Create" Event Structure
+##### Структура події "Create"
 The "create" event request body is a WebhookComment object.
 
-##### The "Update" Event Structure
+##### Структура події "Update"
 The "update" event request body is a WebhookComment object.
 
-##### The "Delete" Event Structure
+##### Структура події "Delete"
 The "delete" event request body is a WebhookComment object.
 
     Change as of Nov 14th 2023
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
+Зміна станом на 14 листопада 2023 року  
+Раніше тіло запиту події "delete" містило лише ідентифікатор коментаря. Тепер воно містить повний коментар на момент видалення.
+
 Every key is always present in the body. When the comment has no value for a field the body carries `null`
 (or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+
+Кожен ключ завжди присутній у тілі. Якщо у коментаря немає значення для поля, тіло містить `null` (або `false` для булевих значень і `[]` для списків), тому структура доставки ніколи не змінюється від коментаря до коментаря.
 
 [inline-code-attrs-start title = 'Об’єкт WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -82,6 +87,8 @@ interface WebhookComment {
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
+Коли користувачі згадуються в коментарі, інформація зберігається у списку під назвою `mentions`. Кожен об’єкт у цьому списку має таку структуру.
+
 [inline-code-attrs-start title = 'Об’єкт Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
@@ -98,25 +105,27 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-#### HTTP Methods
+#### HTTP-методи
 
 You can configure the HTTP method for each webhook event type in the admin panel:
 
-- **Create Event**: POST or PUT (default: PUT)
-- **Update Event**: POST or PUT (default: PUT)
-- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
+- **Create Event**: POST або PUT (за замовчуванням: PUT)
+- **Update Event**: POST або PUT (за замовчуванням: PUT)
+- **Delete Event**: DELETE, POST або PUT (за замовчуванням: DELETE)
 
 Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
-#### Request Headers
+Оскільки всі запити містять ID, операції Create та Update за замовчуванням є ідемпотентними (PUT). Повторення одного і того ж запиту Create або Update не повинно створювати дублікати об’єктів у вас.
+
+#### Заголовки запиту
 
 Each webhook request includes the following headers:
 
-| Header | Description |
-|--------|-------------|
+| Заголовок | Опис |
+|-----------|------|
 | `Content-Type` | `application/json` |
-| `token` | Your API Secret |
-| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
+| `token` | Ваш секрет API |
+| `X-FastComments-Timestamp` | Unix‑таймстамп (секунди) коли запит був підписаний |
+| `X-FastComments-Signature` | Підпис HMAC‑SHA256 (`sha256=<hex>`) |
 
-See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+See [Безпека та токени API](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

@@ -11,10 +11,10 @@ The "update" event request body is a WebhookComment object.
 ##### The "Delete" Event Structure  
 The "delete" event request body is a WebhookComment object.
 
-    Change as of Nov 14th 2023  
+    Change as of Nov 14th 2023
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null`  
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
 (or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
 [inline-code-attrs-start title = 'Объект WebhookComment'; type = 'typescript'; inline-code-attrs-end]
@@ -119,4 +119,4 @@ Each webhook request includes the following headers:
 | `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
 | `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
 
-See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+See [Безопасность и токены API](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
