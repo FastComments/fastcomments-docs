@@ -11,14 +11,14 @@ The API secret signs the payload and must never reach browser code. Install the 
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id must be stable for the same person, or they get a new comment identity on every login.
+  // id має бути стабільним для однієї особи, інакше вони отримають нову ідентичність коментаря при кожному вході.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email is required and must be unique.
+    // email є обов'язковим і має бути унікальним.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // username is required and cannot be an email.
+    // username є обов'язковим і не може бути email.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -30,7 +30,7 @@ export function buildSSOPayload(user) {
 
 ## Pass it to the widget
 
-[inline-code-attrs-start title = 'Конфігурація віджету з SSO'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Конфігурація віджета з SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -44,10 +44,9 @@ app.get("/", async (c) => {
     ...(user
       ? { sso: { ...buildSSOPayload(user), logoutURL: "/logout" } }
       : { sso: { loginURL: "/auth/login" } }),
-  ),
   };
 
-  // ...render the widget with this config
+  // ...вивести віджет з цією конфігурацією
 });
 
 export default oauthMiddleware(app.fetch);

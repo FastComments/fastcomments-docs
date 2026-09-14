@@ -1,8 +1,8 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+בעמוד אינדקס, אל תציג וידג'ט ספירת תגובות אחד לכל שורה. זהו בקשה אחת לכל פוסט. השתמש בספירה המרובה, אשר לוקחת בקשה אחת לכל העמוד.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+סמן כל שורה עם ה-`urlId` שהשרשור שלה משתמש, ואז טען את הווידג'ט המרובה פעם אחת:
 
-[inline-code-attrs-start title = 'ספירות תגובות גורפות באינדקס'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'ספירות תגובות מרובות בעמוד אינדקס'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+הסקריפט מוצא כל אלמנט `.fast-comments-count` בעמוד וממלא את ספירתו.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` חייב להתאים ל-`urlId` שהווידג'ט של הפוסט משתמש בו. אם הווידג'ט משתמש ב‑slug, הסמן משתמש ב‑slug. חוסר התאמה מציג אפס על שרשור שיש לו תגובות.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+הסקריפט בודק באופן מחזורי את `window.FastCommentsBulkCountConfig`, ולכן לא משנה אם אתה מגדיר את ההגדרה לפני או אחרי תג הסקריפט.
