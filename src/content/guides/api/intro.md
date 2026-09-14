@@ -48,7 +48,7 @@ to anyone who can view the source code of a page!
 
 - Header: `Authorization: Bearer fcat_...`
 
-Applications that connect through the [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) obtain a token through OAuth instead of an API key. That token works on every endpoint here. The tenant is implied by the token, so `tenantId` is optional, but it must match the token when given. `GET` requests need the `read` scope and every other method needs the `write` scope. Discovery starts at `https://fastcomments.com/.well-known/oauth-authorization-server`.
+Third-party applications such as Zapier and clients of the [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) obtain a token through OAuth instead of an API key. That token works on every endpoint here. The tenant is implied by the token, so `tenantId` is optional, but it must match the token when given. `GET` requests need the `read` scope and every other method needs the `write` scope. The full flow, including client registration, PKCE, refresh, and revocation, is documented under [OAuth Authorization](#oauth). Discovery starts at `https://fastcomments.com/.well-known/oauth-authorization-server`.
 
 ### Reading Your Own Writes
 

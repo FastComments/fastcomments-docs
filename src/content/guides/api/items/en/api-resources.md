@@ -12,3 +12,7 @@ API usage can be checked on the [Billing Analytics](https://fastcomments.com/aut
 #### Note!
 
 We suggest reading the Pages documentation first, to help limit confusion when determining what values to pass for `urlId` in the Comment API.
+
+### Webhooks
+
+Webhook subscriptions have their own guide. `POST`, `GET` and `DELETE /api/v1/webhooks`, and `GET /api/v1/webhooks/sample-payloads`, are documented under [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), and the event payloads under [Webhook Structures](/guide-webhooks.html#webhooks-structures).

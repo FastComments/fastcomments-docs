@@ -1,0 +1,41 @@
+{
+  "name": "Val Town Installation",
+  "pageHeader": "Add Live Commenting to Val Town Apps",
+  "itemsOrdered": [
+    {
+      "name": "Step 1: Add the Widget",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Step 2: Use Your Own Account",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Comment Counts on an Index Page",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Secure SSO with std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Receiving Webhooks",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Example Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Domain Errors",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town Installation"
+    }
+  ]
+}

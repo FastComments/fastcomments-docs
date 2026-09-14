@@ -9,6 +9,11 @@
       "subCat": "API Resources"
     },
     {
+      "name": "OAuth Authorization",
+      "file": "oauth.md",
+      "subCat": "Authentication"
+    },
+    {
       "name": "Aggregate Your Data",
       "file": "aggregate-post.md",
       "subCat": "Aggregations"
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "EmailTemplates"
+    },
+    {
+      "name": "FeedPost Structure",
+      "file": "feed-post-structure.md",
+      "subCat": "Feed Posts"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feed Posts"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feed Posts"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feed Posts"
     },
     {
       "name": "HashTag Structure",

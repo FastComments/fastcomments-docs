@@ -6,3 +6,6 @@ because they are backed by webhooks rather than polling, and actions call the Fa
 behalf.
 
 This guide assumes you have a FastComments account. [You can create one here.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+
+This guide covers using the Zapier app. The endpoints it calls, along with request and response formats and the OAuth
+flow behind the connection, are documented in the [API reference](./guide-api.html).
