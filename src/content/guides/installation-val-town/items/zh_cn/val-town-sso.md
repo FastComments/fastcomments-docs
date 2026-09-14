@@ -2,7 +2,7 @@ If your val already knows who the visitor is, Secure SSO hands that identity to 
 
 Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
 
-## Build the payload on the server
+## 在服务器端构建负载
 
 The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
 
@@ -11,14 +11,14 @@ The API secret signs the payload and must never reach browser code. Install the 
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id must be stable for the same person, or they get a new comment identity on every login.
+  // id 必须对同一个人保持稳定，否则每次登录都会获得新的评论身份。
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email is required and must be unique.
+    // email 为必填项且必须唯一。
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // username is required and cannot be an email.
+    // username 为必填项且不能是电子邮件。
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -28,7 +28,7 @@ export function buildSSOPayload(user) {
 
 `getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
 
-## Pass it to the widget
+## 将其传递给小部件
 
 [inline-code-attrs-start title = '带 SSO 的小部件配置'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -46,7 +46,7 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...render the widget with this config
+  // ...使用此配置渲染小部件
 });
 
 export default oauthMiddleware(app.fetch);
@@ -56,7 +56,7 @@ export default oauthMiddleware(app.fetch);
 
 When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
 
-## Things that go wrong
+## 常见问题
 
 `timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
 

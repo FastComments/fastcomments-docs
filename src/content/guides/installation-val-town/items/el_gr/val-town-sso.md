@@ -1,10 +1,10 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server‑side and pass them in the widget config.
 
 Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
 
 ## Build the payload on the server
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as‑is:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -62,4 +62,4 @@ When the visitor is logged out, pass `sso` with only a `loginURL`. The widget th
 
 Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
 
-See the [SSO guide](/guide-sso.html) for the full field list, group-gated threads, and badges.
+See the [SSO guide](/guide-sso.html) for the full field list, group‑gated threads, and badges.

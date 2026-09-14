@@ -1,11 +1,10 @@
-The FastComments app for Zapier connects your comments to thousands of other apps without writing code.
+---
+L'app FastComments per Zapier collega i tuoi commenti a migliaia di altre app senza scrivere codice.
 
-Use it to post a Slack message when someone comments, log every comment to a spreadsheet, create a  
-comment from a form submission, or add commenters to your CRM. Triggers fire the moment something happens,  
-because they are backed by webhooks rather than polling, and actions call the FastComments API on your  
-behalf.
+Usala per inviare un messaggio Slack quando qualcuno commenta, registrare ogni commento in un foglio di calcolo, creare un commento da una risposta a un modulo, o aggiungere i commentatori al tuo CRM. I trigger si attivano nel momento in cui accade qualcosa, perché sono supportati da webhook anziché da polling, e le azioni chiamano l'API FastComments per tuo conto.
 
-This guide assumes you have a FastComments account. [You can create one here.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+Questa guida presuppone che tu abbia un account FastComments. [Puoi crearne uno qui.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
 
-This guide covers using the Zapier app. The endpoints it calls, along with request and response formats and the OAuth  
-flow behind the connection, are documented in the [API reference](./guide-api.html).
+Questa guida copre l'uso dell'app Zapier. Gli endpoint che chiama, insieme ai formati di richiesta e risposta e al flusso OAuth alla base della connessione, sono documentati nella [riferimento API](./guide-api.html).
+
+---

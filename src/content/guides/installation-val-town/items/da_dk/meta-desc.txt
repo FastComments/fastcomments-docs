@@ -1,1 +1,3 @@
-Add live comments to a Val Town app: the widget in an HTTP val, bulk comment counts, Secure SSO from std/oauth, and verifying webhooks.
+---
+Tilføj live‑kommentarer til en Val Town‑app: widget’en i en HTTP‑val, bulk‑kommentarantal, sikker SSO fra std/oauth og verifikation af webhooks.
+---

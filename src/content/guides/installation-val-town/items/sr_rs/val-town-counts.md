@@ -1,6 +1,6 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+На индекс страници, немојте да рендерујете један widget за број коментара по реду. То је један захтев по посту. Користите групни број, који захтева један захтев за целу страницу.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Означите сваки ред `urlId`‑ом који користи његова тема, а затим учитајте групни widget једном:
 
 [inline-code-attrs-start title = 'Групни број коментара на индекс страници'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+Скрипта проналази сваки елемент `.fast-comments-count` на страници и попуњава његов број.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` мора да се поклапа са `urlId`‑ом који користи widget за коментаре поста. Ако widget користи slug, маркер користи slug. Неусаглашеност приказује нулу на теми која има коментаре.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+Скрипта проверава `window.FastCommentsBulkCountConfig`, па није битно да ли постављате конфигурацију пре или после script таг‑а.

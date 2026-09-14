@@ -1,6 +1,6 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+インデックスページでは、行ごとにコメントカウントウィジェットを1つずつレンダリングしないでください。これは投稿ごとに1リクエストになります。ページ全体で1回のリクエストで済む一括カウントを使用してください。
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+`urlId`（スレッドが使用する）で各行にマークし、まとめてウィジェットを1回だけロードします:
 
 [inline-code-attrs-start title = 'インデックスページの一括コメント数'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+このスクリプトはページ上のすべての `.fast-comments-count` 要素を検出し、そのカウントを埋め込みます。
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` は、投稿のコメントウィジェットが使用する `urlId` と一致する必要があります。ウィジェットがスラッグを使用する場合、マーカーもスラッグを使用します。不一致の場合、コメントがあるスレッドでも0が表示されます。
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+スクリプトは `window.FastCommentsBulkCountConfig` をポーリングするため、設定をスクリプトタグの前に置くか後に置くかは関係ありません。

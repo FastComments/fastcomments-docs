@@ -2,16 +2,16 @@ If your val already knows who the visitor is, Secure SSO hands that identity to 
 
 Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
 
-## Build the payload on the server
+## サーバー側でペイロードを構築する
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as‑is:
+The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id は同一人物に対して安定している必要があります。さもなければ、ログインのたびに新しいコメント ID が付与されます。
+  // id は同一人物に対して安定している必要があります。さもなければ、ログインのたびに新しいコメントIDが付与されます。
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
@@ -28,7 +28,7 @@ export function buildSSOPayload(user) {
 
 `getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
 
-## Pass it to the widget
+## ウィジェットに渡す
 
 [inline-code-attrs-start title = 'SSO を使用したウィジェット設定'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -56,7 +56,7 @@ export default oauthMiddleware(app.fetch);
 
 When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
 
-## Things that go wrong
+## 問題が起きたとき
 
 `timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
 
