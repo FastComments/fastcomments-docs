@@ -2,7 +2,7 @@ On an index page, don't render one comment-count widget per row. That is one req
 
 Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 
-[inline-code-attrs-start title = 'Μαζικές μετρήσεις σχολίων σε ευρετήριο'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Μαζικές μετρήσεις σχολίων σε ένα ευρετήριο'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (

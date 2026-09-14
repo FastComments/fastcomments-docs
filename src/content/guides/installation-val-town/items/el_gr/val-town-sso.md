@@ -1,24 +1,24 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server‑side and pass them in the widget config.
+If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
 
 Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
 
 ## Build the payload on the server
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as‑is:
+The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id must be stable for the same person, or they get a new comment identity on every login.
+  // Το id πρέπει να είναι σταθερό για το ίδιο άτομο, αλλιώς θα λαμβάνει νέα ταυτότητα σχολίου σε κάθε σύνδεση.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email is required and must be unique.
+    // Το email είναι υποχρεωτικό και πρέπει να είναι μοναδικό.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // username is required and cannot be an email.
+    // Το όνομα χρήστη είναι υποχρεωτικό και δεν μπορεί να είναι email.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -46,7 +46,7 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...render the widget with this config
+  // ...απόδοση του widget με αυτή τη διαμόρφωση
 });
 
 export default oauthMiddleware(app.fetch);
@@ -62,4 +62,4 @@ When the visitor is logged out, pass `sso` with only a `loginURL`. The widget th
 
 Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
 
-See the [SSO guide](/guide-sso.html) for the full field list, group‑gated threads, and badges.
+See the [οδηγός SSO](/guide-sso.html) for the full field list, group-gated threads, and badges.

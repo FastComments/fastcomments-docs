@@ -44,6 +44,7 @@ app.get("/", async (c) => {
     ...(user
       ? { sso: { ...buildSSOPayload(user), logoutURL: "/logout" } }
       : { sso: { loginURL: "/auth/login" } }),
+  ),
   };
 
   // ...render the widget with this config

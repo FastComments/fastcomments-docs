@@ -1,8 +1,8 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+На індексній сторінці не рендерьте один віджет підрахунку коментарів на рядок. Це означає один запит на пост. Використовуйте масовий підрахунок, який робить один запит для всієї сторінки.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Позначте кожен рядок `urlId`, який використовує його тема, потім завантажте масовий віджет один раз:
 
-[inline-code-attrs-start title = 'Пакетні підрахунки коментарів на індексній сторінці'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Масові підрахунки коментарів на індексній сторінці'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+Скрипт знаходить кожен елемент `.fast-comments-count` на сторінці та заповнює його підрахунок.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` має відповідати `urlId`, який використовує віджет коментарів поста. Якщо віджет використовує slug, маркер використовує slug. Невідповідність показує нуль у темі, яка має коментарі.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+Скрипт опитує `window.FastCommentsBulkCountConfig`, тому не має значення, чи ви встановлюєте конфігурацію до чи після тегу скрипта.

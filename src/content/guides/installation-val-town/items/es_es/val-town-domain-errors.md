@@ -1,12 +1,12 @@
-Once you switch off the `demo` tenant, the widget may refuse to load with an authorization error. This is because FastComments doesn't know it's supposed to allow your account to be used on that domain.
+Una vez que desactives el inquilino `demo`, el widget puede negarse a cargarse con un error de autorización. Esto se debe a que FastComments no sabe que debe permitir que tu cuenta se use en ese dominio.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[Ve aquí para agregar tu sitio a tu cuenta.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Val Town is worth a second look here, because a val can be reachable at more than one hostname:
+Val Town merece una segunda mirada aquí, porque un val puede ser accesible en más de un nombre de host:
 
-- Every HTTP val has a long default endpoint, `<org>--<id>.web.val.run`.
-- Claiming a custom subdomain adds `<name>.val.run`.
-- A [custom domain](https://docs.val.town/vals/http/custom-domains/) adds a third.
-- Branches get their own URLs.
+- Cada val HTTP tiene un endpoint predeterminado largo, `<org>--<id>.web.val.run`.
+- Reclamar un subdominio personalizado agrega `<name>.val.run`.
+- Un [dominio personalizado](https://docs.val.town/vals/http/custom-domains/) agrega un tercero.
+- Las ramas obtienen sus propias URLs.
 
-Add whichever hostnames you actually serve the widget from. If you claim a subdomain after setting things up, add that too, or the widget works on the old URL and fails on the new one.
+Agrega los nombres de host desde los que realmente sirvas el widget. Si reclamas un subdominio después de configurar todo, agrégalo también, de lo contrario el widget funcionará en la URL antigua y fallará en la nueva.
