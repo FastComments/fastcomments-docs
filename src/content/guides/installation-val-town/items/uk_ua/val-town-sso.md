@@ -1,24 +1,24 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+Якщо ваш val вже знає, хто є відвідувачем, Secure SSO передає цю ідентичність віджету, тому користувач ніколи не бачить другий вхід. Не потрібно створювати кінцеві точки і нічого викликати під час виконання: ви обчислюєте три значення на сервері та передаєте їх у конфігурацію віджета.
 
-Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Val Town постачається з входом без налаштувань за допомогою `std/oauth`, тому відвідувач може увійти за допомогою облікового запису Val Town, який у нього вже є. Замініть це на те, що використовує ваш додаток; частина FastComments не змінюється.
 
 ## Build the payload on the server
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+Секрет API підписує корисне навантаження і ніколи не повинен потрапляти в код браузера. Встановіть SDK з npm, який працює у середовищі Deno від Val Town без змін:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id має бути стабільним для однієї особи, інакше вони отримають нову ідентичність коментаря при кожному вході.
+  // id must be stable for the same person, or they get a new comment identity on every login.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email є обов'язковим і має бути унікальним.
+    // email is required and must be unique.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // username є обов'язковим і не може бути email.
+    // username is required and cannot be an email.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -26,7 +26,7 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+`getPayload()` повертає `{ userDataJSONBase64, verificationHash, timestamp }`. Ці три значення — це все, що потрапляє в браузер. Секрет підписує їх, а потім відкидається, тому нічого на сторінці не дозволяє читачу підробити інший користувач.
 
 ## Pass it to the widget
 
@@ -46,20 +46,20 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...вивести віджет з цією конфігурацією
+  // ...render the widget with this config
 });
 
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+`oauthMiddleware` додає `GET /auth/login`, `GET /auth/callback` та `POST /auth/logout` для вас. Зауважте, що вихід (logout) — це **POST**, тоді як віджет переходить за `logoutURL` за допомогою GET, тому вкажіть `logoutURL` на невеликий маршрут вашого додатку, який виконує POST.
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+Коли відвідувач виходить з системи, передайте `sso` лише з `loginURL`. Тоді віджет покаже запит на вхід замість анонімного поля коментаря.
 
 ## Things that go wrong
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+`timestamp` — це мілісекунди епохи, не повинен бути в майбутньому і не повинен бути старшим за два дні. Генеруйте його на сервері в тому ж запиті, де обчислюється хеш. Генерація в браузері — це класична помилка: значення відрізняється від того, що було захешовано, і кожен коментар відхиляється.
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+Ніколи не встановлюйте `isAdmin` або `isModerator` з провайдера ідентифікації. Вхід за допомогою облікового запису Val Town нічого не говорить про те, хто повинен модерувати ваш сайт.
 
-See the [SSO guide](/guide-sso.html) for the full field list, group-gated threads, and badges.
+Перегляньте [посібник SSO](/guide-sso.html) для повного списку полів, потоків з груповим доступом та значків.
