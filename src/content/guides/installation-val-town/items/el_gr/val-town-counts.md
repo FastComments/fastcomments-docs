@@ -1,6 +1,7 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+---
+Σε μια σελίδα ευρετηρίου, μην αποδίδετε ένα widget καταμέτρησης σχολίων ανά γραμμή. Αυτό σημαίνει ένα αίτημα ανά ανάρτηση. Χρησιμοποιήστε τη μαζική μέτρηση, η οποία απαιτεί ένα μόνο αίτημα για ολόκληρη τη σελίδα.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Σημειώστε κάθε γραμμή με το `urlId` που χρησιμοποιεί το νήμα της, και στη συνέχεια φορτώστε το μαζικό widget μία φορά:
 
 [inline-code-attrs-start title = 'Μαζικές μετρήσεις σχολίων σε ευρετήριο'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -23,8 +24,9 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+Το script εντοπίζει κάθε στοιχείο `.fast-comments-count` στη σελίδα και γεμίζει τη μέτρησή του.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` πρέπει να ταιριάζει με το `urlId` που χρησιμοποιεί το widget σχολίων της ανάρτησης. Εάν το widget χρησιμοποιεί το slug, ο δείκτης χρησιμοποιεί το slug. Μια ασυμφωνία εμφανίζει μηδέν σε ένα νήμα που έχει σχόλια.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+Το script ελέγχει περιοδικά το `window.FastCommentsBulkCountConfig`, επομένως δεν έχει σημασία αν ορίσετε τη διαμόρφωση πριν ή μετά το στοιχείο script.
+---
