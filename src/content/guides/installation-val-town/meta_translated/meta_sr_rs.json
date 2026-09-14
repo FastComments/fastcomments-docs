@@ -1,0 +1,41 @@
+{
+  "name": "Инсталација Val Town",
+  "pageHeader": "Додајте живо коментарисање у апликације Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Корак 1: Додајте виџет",
+      "file": "val-town-step-1.md",
+      "subCat": "Инсталација Val Town"
+    },
+    {
+      "name": "Корак 2: Користите свој налог",
+      "file": "val-town-step-2.md",
+      "subCat": "Инсталација Val Town"
+    },
+    {
+      "name": "Број коментара на индекс страници",
+      "file": "val-town-counts.md",
+      "subCat": "Инсталација Val Town"
+    },
+    {
+      "name": "Сигурни SSO са std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Инсталација Val Town"
+    },
+    {
+      "name": "Примање вебхукова",
+      "file": "val-town-webhooks.md",
+      "subCat": "Инсталација Val Town"
+    },
+    {
+      "name": "Пример вредности",
+      "file": "val-town-examples.md",
+      "subCat": "Инсталација Val Town"
+    },
+    {
+      "name": "Грешке домена",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Инсталација Val Town"
+    }
+  ]
+}

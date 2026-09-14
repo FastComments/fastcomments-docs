@@ -1,0 +1,41 @@
+{
+  "name": "Εγκατάσταση Val Town",
+  "pageHeader": "Προσθήκη ζωντανής σχολιασμού στις εφαρμογές Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Βήμα 1: Προσθήκη του Widget",
+      "file": "val-town-step-1.md",
+      "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Βήμα 2: Χρησιμοποιήστε το δικό σας λογαριασμό",
+      "file": "val-town-step-2.md",
+      "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Αριθμοί σχολίων σε σελίδα ευρετηρίου",
+      "file": "val-town-counts.md",
+      "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Ασφαλής SSO με std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Λήψη Webhooks",
+      "file": "val-town-webhooks.md",
+      "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Παραδείγματα Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Σφάλματα τομέα",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Εγκατάσταση Val Town"
+    }
+  ]
+}

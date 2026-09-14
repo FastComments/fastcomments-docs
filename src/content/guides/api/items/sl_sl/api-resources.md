@@ -1,16 +1,19 @@
 ### Uporaba virov
 
-Treba je opozoriti, da se pridobivanje podatkov iz API-ja šteje kot poraba na vašem računu.
+Upoštevati je treba, da se pridobivanje podatkov iz API-ja šteje kot uporaba na vašem računu.
 
-Vsak vir bo v svojem razdelku navedel, kakšna je ta poraba.
+Vsak vir bo v svojem odseku navedel, kakšna je ta uporaba.
 
-Nekateri viri zahtevajo več sredstev kot drugi. Vsaka končna točka ima določeno ceno v kreditih na klic API-ja. Pri nekaterih končnih točkah se število kreditov
-spreminja glede na možnosti in velikosti odgovorov.
+Nekateri viri stanejo več za strežbo kot drugi. Vsaka končna točka ima določeno ceno v kreditih na klic API-ja. Za nekatere končne točke se število kreditov razlikuje glede na možnosti in velikosti odgovorov.
 
-Uporabo API-ja lahko preverite na strani [Analitika obračunavanja](https://fastcomments.com/auth/my-account/analytics/billing) in se posodablja vsake nekaj minut.
+Uporabo API-ja lahko preverite na strani [Billing Analytics](https://fastcomments.com/auth/my-account/analytics/billing) in se posodablja vsake nekaj minut.
 
 #### Opomba!
 
-Priporočamo, da najprej preberete dokumentacijo Pages, da zmanjšate zmedo pri določanju, katere vrednosti posredovati za `urlId` v Comment API.
+Priporočamo, da najprej preberete dokumentacijo strani, da zmanjšate zmedo pri določanju, katere vrednosti posredovati za `urlId` v API-ju za komentarje.
+
+### Webhooki
+
+Naročnine na webhooke imajo svoj vodnik. `POST`, `GET` in `DELETE /api/v1/webhooks`, ter `GET /api/v1/webhooks/sample-payloads`, so dokumentirani pod [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), medtem ko so dogodkovni payloadi pod [Webhook Structures](/guide-webhooks.html#webhooks-structures).
 
 ---

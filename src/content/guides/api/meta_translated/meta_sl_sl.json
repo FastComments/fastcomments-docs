@@ -4,12 +4,17 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Viri API-ja",
+      "name": "Viri API-jev",
       "file": "api-resources.md",
-      "subCat": "Viri API-ja"
+      "subCat": "Viri API-jev"
     },
     {
-      "name": "Združite svoje podatke",
+      "name": "OAuth avtorizacija",
+      "file": "oauth.md",
+      "subCat": "Avtentikacija"
+    },
+    {
+      "name": "Agregirajte svoje podatke",
       "file": "aggregate-post.md",
       "subCat": "Agregacije"
     },
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "E-poštne predloge"
+    },
+    {
+      "name": "Struktura objave v viru",
+      "file": "feed-post-structure.md",
+      "subCat": "Objave v viru"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Objave v viru"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Objave v viru"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Objave v viru"
     },
     {
       "name": "Struktura hashtagov",
@@ -532,43 +560,43 @@
       "name": "Struktura konfiguracije domene",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domene"
+      "subCat": "Konfiguracije domen"
     },
     {
       "name": "Struktura konfiguracije vprašanja",

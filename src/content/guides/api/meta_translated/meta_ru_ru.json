@@ -9,6 +9,11 @@
       "subCat": "Ресурсы API"
     },
     {
+      "name": "Авторизация OAuth",
+      "file": "oauth.md",
+      "subCat": "Аутентификация"
+    },
+    {
       "name": "Агрегировать ваши данные",
       "file": "aggregate-post.md",
       "subCat": "Агрегации"
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Шаблоны email"
+    },
+    {
+      "name": "Структура публикации ленты",
+      "file": "feed-post-structure.md",
+      "subCat": "Публикации ленты"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публикации ленты"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публикации ленты"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публикации ленты"
     },
     {
       "name": "Структура хештега",
@@ -277,27 +305,27 @@
       "subCat": "Страницы"
     },
     {
-      "name": "Структура ожидающего вебхука",
+      "name": "Структура ожидающего webhook-события",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Ожидающие вебхуки"
+      "subCat": "Ожидающие webhook-события"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие вебхуки"
+      "subCat": "Ожидающие webhook-события"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие вебхуки"
+      "subCat": "Ожидающие webhook-события"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие вебхуки"
+      "subCat": "Ожидающие webhook-события"
     },
     {
       "name": "Структура SSO пользователя",

@@ -26,31 +26,31 @@ Mamy również SDK dla popularnych języków:
 
 ### Uwierzytelnianie
 
-API jest uwierzytelniane poprzez przekazanie Twojego [klucza API](https://fastcomments.com/auth/my-account/api-secret) jako nagłówka `X-API-KEY` lub parametru zapytania `API_KEY`. Będziesz także potrzebował swojego `tenantId` do wykonywania wywołań API. Można go pobrać z tej samej strony co klucz API.
+API jest uwierzytelniane poprzez przekazanie swojego [klucza API](https://fastcomments.com/auth/my-account/api-secret) jako nagłówka `X-API-KEY` lub parametru zapytania `API_KEY`. Będziesz także potrzebował swojego `tenantId` do wykonywania wywołań API. Można go uzyskać na tej samej stronie co klucz API.
 
 ### Uwaga dotycząca bezpieczeństwa
 
-Te trasy są przeznaczone do wywoływania z **serwera**. __NIE__ wywołuj ich z przeglądarki. Zrobienie tego ujawni Twój klucz API – da to pełny dostęp do Twojego konta każdemu, kto może zobaczyć kod źródłowy strony!
+Te trasy są przeznaczone do wywoływania z **serwera**. __NIE WYWOLUJ__ ich z przeglądarki. Zrobienie tego ujawni Twój klucz API – da to pełny dostęp do Twojego konta każdemu, kto może zobaczyć kod źródłowy strony!
 
-#### Opcja uwierzytelniania pierwsza – Nagłówki
+#### Opcja uwierzytelniania 1 – Nagłówki
 
-- Nagłówek: `X-API-KEY`
-- Nagłówek: `X-TENANT-ID`
+- Header: `X-API-KEY`
+- Header: `X-TENANT-ID`
 
-#### Opcja uwierzytelniania druga – Parametry zapytania
+#### Opcja uwierzytelniania 2 – Parametry zapytania
 
-- Parametr zapytania: `API_KEY`
-- Parametr zapytania: `tenantId`
+- Query Param: `API_KEY`
+- Query Param: `tenantId`
 
-#### Opcja uwierzytelniania trzecia – Token OAuth Bearer
+#### Opcja uwierzytelniania 3 – Token OAuth Bearer
 
-- Nagłówek: `Authorization: Bearer fcat_...`
+- Header: `Authorization: Bearer fcat_...`
 
-Aplikacje łączące się przez [serwer MCP](https://docs.fastcomments.com/guide-llm-kit.html) uzyskują token poprzez OAuth zamiast klucza API. Ten token działa na każdym endpointzie tutaj. Tenant jest domyślnie określony przez token, więc `tenantId` jest opcjonalny, ale musi pasować do tokenu, jeśli jest podany. Żądania `GET` wymagają zakresu `read`, a wszystkie inne metody wymagają zakresu `write`. Odkrywanie zaczyna się pod adresem `https://fastcomments.com/.well-known/oauth-authorization-server`.
+Aplikacje firm trzecich, takie jak Zapier oraz klienci [serwera MCP](https://docs.fastcomments.com/guide-llm-kit.html), uzyskują token poprzez OAuth zamiast klucza API. Ten token działa na każdym endpointzie tutaj. Tenant jest domyślnie określany przez token, więc `tenantId` jest opcjonalny, ale musi odpowiadać tokenowi, jeśli jest podany. Żądania `GET` wymagają zakresu `read`, a wszystkie inne metody wymagają zakresu `write`. Pełny przepływ, w tym rejestracja klienta, PKCE, odświeżanie i unieważnianie, jest udokumentowany w sekcji [OAuth Authorization](#oauth). Odkrywanie zaczyna się pod adresem `https://fastcomments.com/.well-known/oauth-authorization-server`.
 
 ### Odczytywanie własnych zapisów
 
-FastComments zapewnia dostępność Active-Active. Żądania z Twojego centrum danych są kierowane do [najbliższego punktu obecności](https://sophon.fastcomments.com/) względem Ciebie. Działa to automatycznie i zazwyczaj możesz obserwować semantykę „read‑your‑write”. Jeśli chcesz mieć pewność, że odczytasz własne zapisy, możesz przypiąć swoje żądania do określonego regionu, używając tego regionu jako hosta API (choć zazwyczaj nie jest to potrzebne w większości integracji):
+FastComments zapewnia dostępność Active-Active. Żądania z Twojego centrum danych są kierowane do [najbliższego punktu obecności](https://sophon.fastcomments.com/) względem Ciebie. Jest to automatyczne i zazwyczaj możesz obserwować semantykę odczytu po zapisie. Jeśli chcesz mieć pewność, że odczytasz własne zapisy, możesz przypiąć swoje żądania do określonego regionu, używając tego regionu jako hosta API (choć zazwyczaj nie jest to potrzebne w większości integracji):
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -61,6 +61,4 @@ FastComments zapewnia dostępność Active-Active. Żądania z Twojego centrum d
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-Zauważ, że jeśli to zrobisz, możesz chcieć zdefiniować mechanizm awaryjny, ponieważ w przeszłości wycofywaliśmy węzły wejściowe i używamy nowych nazw przy przełączaniu.
-
----
+Zauważ, że jeśli to zrobisz, możesz chcieć zdefiniować rozwiązanie awaryjne, ponieważ w przeszłości wycofywaliśmy węzły wejściowe i używamy nowych nazw przy przełączaniu.

@@ -1,0 +1,41 @@
+{
+  "name": "Val Town 安裝",
+  "pageHeader": "為 Val Town 應用程式新增即時評論功能",
+  "itemsOrdered": [
+    {
+      "name": "步驟 1：新增小工具",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "步驟 2：使用您自己的帳戶",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "索引頁面的評論計數",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "使用 std/oauth 進行安全單一登入",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "接收 Webhook",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "範例值",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "網域錯誤",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town 安裝"
+    }
+  ]
+}

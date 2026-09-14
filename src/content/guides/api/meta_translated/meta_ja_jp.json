@@ -4,17 +4,22 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "APIリソース",
+      "name": "API リソース",
       "file": "api-resources.md",
-      "subCat": "APIリソース"
+      "subCat": "API リソース"
     },
     {
-      "name": "データを集計する",
+      "name": "OAuth 認可",
+      "file": "oauth.md",
+      "subCat": "認証"
+    },
+    {
+      "name": "データの集計",
       "file": "aggregate-post.md",
       "subCat": "集計"
     },
     {
-      "name": "監査ログ構造",
+      "name": "AuditLog 構造",
       "file": "audit-log-structure.md",
       "subCat": "監査ログ"
     },
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "メールテンプレート"
+    },
+    {
+      "name": "フィード投稿構造",
+      "file": "feed-post-structure.md",
+      "subCat": "フィード投稿"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "フィード投稿"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "フィード投稿"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "フィード投稿"
     },
     {
       "name": "ハッシュタグ構造",

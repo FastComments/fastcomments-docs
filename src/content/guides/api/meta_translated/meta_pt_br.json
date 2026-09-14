@@ -9,20 +9,25 @@
       "subCat": "Recursos da API"
     },
     {
-      "name": "Agregue seus dados",
+      "name": "Autorização OAuth",
+      "file": "oauth.md",
+      "subCat": "Autenticação"
+    },
+    {
+      "name": "Agregue Seus Dados",
       "file": "aggregate-post.md",
       "subCat": "Agregações"
     },
     {
-      "name": "Estrutura de Log de Auditoria",
+      "name": "Estrutura de Registro de Auditoria",
       "file": "audit-log-structure.md",
-      "subCat": "Logs de Auditoria"
+      "subCat": "Registros de Auditoria"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Logs de Auditoria"
+      "subCat": "Registros de Auditoria"
     },
     {
       "name": "Estrutura de Comentário",
@@ -84,45 +89,68 @@
       "subCat": "Comentários"
     },
     {
-      "name": "Estrutura de Modelo de Email",
+      "name": "Estrutura de Modelo de E-mail",
       "file": "email-template-structure.md",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de Email"
+      "subCat": "Modelos de E-mail"
+    },
+    {
+      "name": "Estrutura de Postagem de Feed",
+      "file": "feed-post-structure.md",
+      "subCat": "Postagens de Feed"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Postagens de Feed"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Postagens de Feed"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Postagens de Feed"
     },
     {
       "name": "Estrutura de Hashtag",

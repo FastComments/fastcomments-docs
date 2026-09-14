@@ -1,0 +1,41 @@
+{
+  "name": "Val Town 安装",
+  "pageHeader": "为 Val Town 应用添加实时评论",
+  "itemsOrdered": [
+    {
+      "name": "步骤 1：添加小部件",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town 安装"
+    },
+    {
+      "name": "步骤 2：使用您自己的账户",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town 安装"
+    },
+    {
+      "name": "索引页上的评论计数",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town 安装"
+    },
+    {
+      "name": "使用 std/oauth 的安全单点登录",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town 安装"
+    },
+    {
+      "name": "接收 Webhook",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town 安装"
+    },
+    {
+      "name": "示例 Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town 安装"
+    },
+    {
+      "name": "域错误",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town 安装"
+    }
+  ]
+}

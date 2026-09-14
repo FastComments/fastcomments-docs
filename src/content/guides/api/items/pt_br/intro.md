@@ -1,6 +1,6 @@
-### A API FastComments
+### A API do FastComments
 
-FastComments fornece uma API para interagir com muitos recursos. Crie integrações com nossa plataforma ou até mesmo crie seus próprios clientes!
+FastComments fornece uma API para interagir com muitos recursos. Crie integrações com nossa plataforma ou até mesmo desenvolva seus próprios clientes!
 
 Nesta documentação, você encontrará todos os recursos suportados pela API documentados com seus tipos de requisição e resposta.
 
@@ -30,7 +30,7 @@ A API é autenticada passando sua [chave de API](https://fastcomments.com/auth/m
 
 ### Nota de Segurança
 
-Essas rotas devem ser chamadas a partir de um **servidor**. __NÃO__ as chame a partir de um navegador. Fazer isso exporá sua chave de API – isso dará acesso total à sua conta a qualquer pessoa que possa ver o código-fonte de uma página!
+Essas rotas devem ser chamadas a partir de um **servidor**. __NÃO__ as chame a partir de um navegador. Fazer isso exporá sua chave de API – isso concederá acesso total à sua conta a qualquer pessoa que possa visualizar o código-fonte de uma página!
 
 #### Opção de Autenticação Um - Cabeçalhos
 
@@ -42,15 +42,15 @@ Essas rotas devem ser chamadas a partir de um **servidor**. __NÃO__ as chame a 
 - Query Param: `API_KEY`
 - Query Param: `tenantId`
 
-#### Opção de Autenticação Três - Token OAuth Bearer
+#### Opção de Autenticação Três - Token Bearer OAuth
 
 - Header: `Authorization: Bearer fcat_...`
 
-Aplicações que se conectam através do [servidor MCP](https://docs.fastcomments.com/guide-llm-kit.html) obtêm um token via OAuth em vez de uma chave de API. Esse token funciona em todos os endpoints aqui. O tenant é implícito pelo token, portanto `tenantId` é opcional, mas deve corresponder ao token quando fornecido. Requisições `GET` precisam do escopo `read` e todo outro método precisa do escopo `write`. A descoberta começa em `https://fastcomments.com/.well-known/oauth-authorization-server`.
+Aplicações de terceiros, como Zapier, e clientes do [servidor MCP](https://docs.fastcomments.com/guide-llm-kit.html) obtêm um token via OAuth em vez de uma chave de API. Esse token funciona em todos os endpoints aqui. O tenant é implícito pelo token, portanto `tenantId` é opcional, mas deve corresponder ao token quando fornecido. Requisições `GET` precisam do escopo `read` e todos os outros métodos precisam do escopo `write`. O fluxo completo, incluindo registro de cliente, PKCE, atualização e revogação, está documentado em [Autorização OAuth](#oauth). A descoberta começa em `https://fastcomments.com/.well-known/oauth-authorization-server`.
 
 ### Lendo Suas Próprias Escritas
 
-FastComments oferece disponibilidade Active-Active. Requisições do seu data center são roteadas para [o ponto de presença mais próximo](https://sophon.fastcomments.com/) do seu. Isso é automático e normalmente você pode observar a semântica de leitura após escrita. Se quiser garantir a leitura de suas próprias escritas, pode fixar suas requisições a uma região específica usando essa região como host da API (embora isso geralmente não seja necessário para a maioria das integrações):
+FastComments oferece disponibilidade Active-Active. As solicitações do seu datacenter são roteadas para [o ponto de presença mais próximo](https://sophon.fastcomments.com/) do seu. Isso é automático e, normalmente, você pode observar a semântica de leitura após escrita. Se quiser garantir a leitura de suas próprias escritas, pode fixar suas solicitações a uma região específica usando essa região como host da API (embora isso geralmente não seja necessário na maioria das integrações):
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -61,4 +61,4 @@ FastComments oferece disponibilidade Active-Active. Requisições do seu data ce
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-Observe que, se fizer isso, pode querer definir um fallback, pois já depreciamos nós de ponto de entrada no passado e usamos novos nomes para a troca.
+Observe que, se fizer isso, pode ser necessário definir um fallback, pois nós descontinuamos nós de ponto de entrada no passado e usamos novos nomes para a troca.

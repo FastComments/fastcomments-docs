@@ -1,0 +1,41 @@
+{
+  "name": "Val Town Installatie",
+  "pageHeader": "Live commentaar toevoegen aan Val Town-apps",
+  "itemsOrdered": [
+    {
+      "name": "Stap 1: Voeg de widget toe",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Stap 2: Gebruik je eigen account",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Reactietellingen op een indexpagina",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Beveiligde SSO met std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Webhooks ontvangen",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Voorbeeld Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Domeinfouten",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town Installatie"
+    }
+  ]
+}

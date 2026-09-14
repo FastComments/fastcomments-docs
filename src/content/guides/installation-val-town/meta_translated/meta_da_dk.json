@@ -1,0 +1,41 @@
+{
+  "name": "Val Town Installation",
+  "pageHeader": "Tilføj live-kommentarer til Val Town-apps",
+  "itemsOrdered": [
+    {
+      "name": "Trin 1: Tilføj widgeten",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Trin 2: Brug din egen konto",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Kommentarantal på en indeks-side",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Sikre SSO med std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Modtagelse af webhooks",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Eksempel Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Domænefejl",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town Installation"
+    }
+  ]
+}

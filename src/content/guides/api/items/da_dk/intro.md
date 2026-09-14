@@ -10,7 +10,7 @@ For Enterprise-kunder registreres al API-adgang i revisionsloggen.
 
 FastComments genererer nu et [API Spec](https://fastcomments.com/js/swagger.json) fra vores kode (dette er endnu ikke komplet, men inkluderer mange API'er).
 
-Vi har også nu SDK'er til populære sprog:
+Vi har også nu SDK'er for populære sprog:
 
 - [fastcomments-cpp](./guide-sdk-cpp.html)
 - [fastcomments-go](./guide-sdk-go.html)
@@ -26,18 +26,18 @@ Vi har også nu SDK'er til populære sprog:
 
 ### Godkendelse
 
-API'et autentificeres ved at sende din [api-nøgle](https://fastcomments.com/auth/my-account/api-secret) som enten en `X-API-KEY` header eller `API_KEY` forespørgselsparameter. Du har også brug for din `tenantId` for at foretage API-kald. Denne kan hentes fra samme side som din api-nøgle.
+API'et autentificeres ved at sende din [api-nøgle](https://fastcomments.com/auth/my-account/api-secret) som enten en `X-API-KEY` header eller `API_KEY` query-parameter. Du har også brug for din `tenantId` for at foretage API-kald. Denne kan hentes fra den samme side som din api-nøgle.
 
 ### Sikkerhedsnote
 
-Disse ruter er beregnet til at blive kaldt fra en **server**. __KAL IKKE__ dem fra en browser. At gøre det vil afsløre din API-nøgle – dette vil give fuld adgang til din konto til enhver, der kan se kildekoden på en side!
+Disse ruter er beregnet til at blive kaldt fra en **server**. __KALL IKKE__ dem fra en browser. At gøre det vil afsløre din API-nøgle - dette vil give fuld adgang til din konto til enhver, der kan se kildekoden på en side!
 
 #### Godkendelsesmulighed En - Headers
 
 - Header: `X-API-KEY`
 - Header: `X-TENANT-ID`
 
-#### Godkendelsesmulighed To - Forespørgselsparametre
+#### Godkendelsesmulighed To - Query Parametre
 
 - Query Param: `API_KEY`
 - Query Param: `tenantId`
@@ -46,11 +46,11 @@ Disse ruter er beregnet til at blive kaldt fra en **server**. __KAL IKKE__ dem f
 
 - Header: `Authorization: Bearer fcat_...`
 
-Applikationer, der opretter forbindelse via [MCP server](https://docs.fastcomments.com/guide-llm-kit.html), får en token gennem OAuth i stedet for en API-nøgle. Den token fungerer på alle endpoints her. Lejeren er implikeret af tokenet, så `tenantId` er valgfri, men den skal matche tokenet, når den er angivet. `GET`-anmodninger kræver `read`-scopet, og alle andre metoder kræver `write`-scopet. Opdagelse starter på `https://fastcomments.com/.well-known/oauth-authorization-server`.
+Tredjepartsapplikationer såsom Zapier og klienter af [MCP server](https://docs.fastcomments.com/guide-llm-kit.html) får en token via OAuth i stedet for en API-nøgle. Den token fungerer på alle endpoints her. Lejeren er underforstået af tokenen, så `tenantId` er valgfri, men den skal matche tokenen, hvis den angives. `GET`-anmodninger kræver `read`-scopet og alle andre metoder kræver `write`-scopet. Den fulde flow, inklusive klientregistrering, PKCE, opdatering og tilbagekaldelse, er dokumenteret under [OAuth Authorization](#oauth). Opdagelse starter på `https://fastcomments.com/.well-known/oauth-authorization-server`.
 
 ### Læsning af Dine Egne Skrivninger
 
-FastComments leverer Active-Active tilgængelighed. Anmodninger fra dit datacenter dirigeres til [det nærmeste tilstedeværelsespunkt](https://sophon.fastcomments.com/) i forhold til dig. Dette er automatisk, og normalt kan du observere læs-din-skrivning-semantik. Hvis du vil være sikker på at læse dine egne skrivninger, kan du fastgøre dine anmodninger til en bestemt region ved at bruge den region som API-vært (dog er dette normalt ikke nødvendigt for de fleste integrationer):
+FastComments leverer Active-Active tilgængelighed. Anmodninger fra dit datacenter dirigeres til [det nærmeste tilstedeværelsespunkt](https://sophon.fastcomments.com/) i forhold til dit. Dette er automatisk, og normalt kan du observere læs-dine-skriv-semantik. Hvis du vil være sikker på at læse dine egne skrivninger, kan du fastgøre dine anmodninger til en bestemt region ved at bruge den region som API-vært (men dette er normalt ikke nødvendigt for de fleste integrationer):
 
 - gdc-oregon.fastcomments.com
 - gdc-virginia.fastcomments.com
@@ -61,4 +61,4 @@ FastComments leverer Active-Active tilgængelighed. Anmodninger fra dit datacent
 - eudc-limburg.fastcomments.com
 - eudc-france.fastcomments.com
 
-Bemærk, at hvis du gør dette, vil du måske definere en fallback, da vi har afskaffet indgangspunkt-noder tidligere og bruger nye navne til overgangen.
+Bemærk, at hvis du gør dette, vil du måske definere en fallback, da vi har afviklet indgangspunkt-noder tidligere og bruger nye navne til overgangen.

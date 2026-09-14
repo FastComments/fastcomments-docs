@@ -1,5 +1,11 @@
-FastComments aplikacija za Zapier poveže vaše komentarje s tisoči drugih aplikacij brez pisanja kode.
+The FastComments app for Zapier connects your comments to thousands of other apps without writing code.
 
-Uporabite jo za objavo sporočila v Slack, ko nekdo komentira, beleženje vsakega komentarja v preglednico, ustvarjanje komentarja iz oddaje obrazca ali dodajanje komentatorjev v vaš CRM. Sprožilci se aktivirajo takoj, ko se nekaj zgodi, ker temeljijo na webhookih namesto na povpraševanju, in dejanja kličejo FastComments API v vašem imenu.
+Use it to post a Slack message when someone comments, log every comment to a spreadsheet, create a
+comment from a form submission, or add commenters to your CRM. Triggers fire the moment something happens,
+because they are backed by webhooks rather than polling, and actions call the FastComments API on your
+behalf.
 
-Ta vodnik predpostavlja, da imate račun FastComments. [Lahko ga ustvarite tukaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+This guide assumes you have a FastComments account. [Lahko ga ustvarite tukaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
+
+This guide covers using the Zapier app. The endpoints it calls, along with request and response formats and the OAuth
+flow behind the connection, are documented in the [API reference](./guide-api.html).

@@ -1,0 +1,41 @@
+{
+  "name": "התקנת Val Town",
+  "pageHeader": "הוספת תגובות חיות לאפליקציות Val Town",
+  "itemsOrdered": [
+    {
+      "name": "שלב 1: הוסף את הווידג'ט",
+      "file": "val-town-step-1.md",
+      "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "שלב 2: השתמש בחשבון שלך",
+      "file": "val-town-step-2.md",
+      "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "ספירת תגובות בדף אינדקס",
+      "file": "val-town-counts.md",
+      "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "SSO מאובטח עם std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "קבלת Webhooks",
+      "file": "val-town-webhooks.md",
+      "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "דוגמאות Vals",
+      "file": "val-town-examples.md",
+      "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "שגיאות דומיין",
+      "file": "val-town-domain-errors.md",
+      "subCat": "התקנת Val Town"
+    }
+  ]
+}

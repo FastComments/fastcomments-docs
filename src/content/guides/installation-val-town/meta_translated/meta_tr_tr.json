@@ -1,0 +1,41 @@
+{
+  "name": "Val Town Kurulumu",
+  "pageHeader": "Val Town Uygulamalarına Canlı Yorum Ekleme",
+  "itemsOrdered": [
+    {
+      "name": "Adım 1: Widget'ı Ekle",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "Adım 2: Kendi Hesabınızı Kullanın",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "İndeks Sayfasındaki Yorum Sayıları",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "std/oauth ile Güvenli SSO",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "Webhook'ları Alma",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "Örnek Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "Alan Adı Hataları",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town Kurulumu"
+    }
+  ]
+}

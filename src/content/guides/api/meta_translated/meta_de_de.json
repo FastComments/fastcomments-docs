@@ -9,20 +9,25 @@
       "subCat": "API-Ressourcen"
     },
     {
-      "name": "Aggregieren Sie Ihre Daten",
+      "name": "OAuth-Autorisierung",
+      "file": "oauth.md",
+      "subCat": "Authentifizierung"
+    },
+    {
+      "name": "Daten aggregieren",
       "file": "aggregate-post.md",
       "subCat": "Aggregationen"
     },
     {
-      "name": "Auditprotokoll-Struktur",
+      "name": "AuditLog-Struktur",
       "file": "audit-log-structure.md",
-      "subCat": "Auditprotokolle"
+      "subCat": "Audit-Logs"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Auditprotokolle"
+      "subCat": "Audit-Logs"
     },
     {
       "name": "Kommentarstruktur",
@@ -125,6 +130,29 @@
       "subCat": "E-Mail-Vorlagen"
     },
     {
+      "name": "FeedPost-Struktur",
+      "file": "feed-post-structure.md",
+      "subCat": "Feed-Posts"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feed-Posts"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feed-Posts"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feed-Posts"
+    },
+    {
       "name": "Hashtag-Struktur",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtags"
@@ -207,7 +235,7 @@
       "subCat": "Moderatoren"
     },
     {
-      "name": "Benachrichtigungszähler-Struktur",
+      "name": "Benachrichtigungszählerstruktur",
       "file": "notification-count-structure.md",
       "subCat": "Benachrichtigungszähler"
     },
@@ -277,7 +305,7 @@
       "subCat": "Seiten"
     },
     {
-      "name": "AusstehendeWebhook-Ereignis-Struktur",
+      "name": "AusstehendeWebhook-Ereignisstruktur",
       "file": "pending-webhook-event-structure.md",
       "subCat": "AusstehendeWebhook-Ereignisse"
     },
@@ -692,25 +720,25 @@
     {
       "name": "Benutzerabzeichenfortschrittsstruktur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Benutzerabzeichenfortschritt"
+      "subCat": "Benutzerabzeichen-Fortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichenfortschritt"
+      "subCat": "Benutzerabzeichen-Fortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichenfortschritt"
+      "subCat": "Benutzerabzeichen-Fortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichenfortschritt"
+      "subCat": "Benutzerabzeichen-Fortschritt"
     }
   ]
 }

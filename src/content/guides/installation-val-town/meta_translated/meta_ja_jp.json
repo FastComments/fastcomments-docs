@@ -1,0 +1,41 @@
+{
+  "name": "Val Town インストール",
+  "pageHeader": "Val Town アプリにライブコメントを追加",
+  "itemsOrdered": [
+    {
+      "name": "ステップ 1: ウィジェットを追加",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town インストール"
+    },
+    {
+      "name": "ステップ 2: 自分のアカウントを使用",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town インストール"
+    },
+    {
+      "name": "インデックスページのコメント数",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town インストール"
+    },
+    {
+      "name": "std/oauth による安全な SSO",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town インストール"
+    },
+    {
+      "name": "Webhook の受信",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town インストール"
+    },
+    {
+      "name": "例 Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town インストール"
+    },
+    {
+      "name": "ドメインエラー",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town インストール"
+    }
+  ]
+}

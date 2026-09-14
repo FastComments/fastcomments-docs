@@ -1,0 +1,3 @@
+---
+Dodaj komentarze na żywo do aplikacji Val Town: widżet w HTTP val, zbiorcze liczenie komentarzy, bezpieczne SSO z std/oauth oraz weryfikacja webhooków.
+---

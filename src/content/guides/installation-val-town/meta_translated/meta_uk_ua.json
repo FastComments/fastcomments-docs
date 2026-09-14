@@ -1,0 +1,41 @@
+{
+  "name": "Встановлення Val Town",
+  "pageHeader": "Додати живе коментування до додатків Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Крок 1: Додати віджет",
+      "file": "val-town-step-1.md",
+      "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Крок 2: Використовувати свій власний обліковий запис",
+      "file": "val-town-step-2.md",
+      "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Кількість коментарів на індексній сторінці",
+      "file": "val-town-counts.md",
+      "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Захищений SSO за допомогою std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Отримання вебхукiв",
+      "file": "val-town-webhooks.md",
+      "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Приклад Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Помилки домену",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Встановлення Val Town"
+    }
+  ]
+}

@@ -9,6 +9,11 @@
       "subCat": "API ресурси"
     },
     {
+      "name": "OAuth упълномощаване",
+      "file": "oauth.md",
+      "subCat": "Удостоверяване"
+    },
+    {
       "name": "Агрегирайте вашите данни",
       "file": "aggregate-post.md",
       "subCat": "Агрегации"
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Имейл шаблони"
+    },
+    {
+      "name": "Структура на публикация",
+      "file": "feed-post-structure.md",
+      "subCat": "Публикации"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публикации"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публикации"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публикации"
     },
     {
       "name": "Структура на хаштаг",
@@ -277,27 +305,27 @@
       "subCat": "Страници"
     },
     {
-      "name": "Структура на чакащо уебхук събитие",
+      "name": "Структура на чакащо уебкук събитие",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Чакащи уебхук събития"
+      "subCat": "Чакащи уебкук събития"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чакащи уебхук събития"
+      "subCat": "Чакащи уебкук събития"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чакащи уебхук събития"
+      "subCat": "Чакащи уебкук събития"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чакащи уебхук събития"
+      "subCat": "Чакащи уебкук събития"
     },
     {
       "name": "Структура на SSO потребител",
@@ -500,7 +528,7 @@
       "subCat": "Потребители"
     },
     {
-      "name": "Структура на гласуване",
+      "name": "Структура на глас",
       "file": "vote-structure.md",
       "subCat": "Гласове"
     },

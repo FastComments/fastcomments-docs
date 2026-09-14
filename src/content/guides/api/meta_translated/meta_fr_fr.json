@@ -9,6 +9,11 @@
       "subCat": "Ressources API"
     },
     {
+      "name": "Autorisation OAuth",
+      "file": "oauth.md",
+      "subCat": "Authentification"
+    },
+    {
       "name": "Agrégerez vos données",
       "file": "aggregate-post.md",
       "subCat": "Agrégations"
@@ -125,6 +130,29 @@
       "subCat": "Modèles d'email"
     },
     {
+      "name": "Structure du post de fil d'actualité",
+      "file": "feed-post-structure.md",
+      "subCat": "Posts du fil d'actualité"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Posts du fil d'actualité"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Posts du fil d'actualité"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Posts du fil d'actualité"
+    },
+    {
       "name": "Structure du hashtag",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtags"
@@ -222,7 +250,7 @@
       "subCat": "Compteur de notifications"
     },
     {
-      "name": "Structure de notification",
+      "name": "Structure de la notification",
       "file": "notification-structure.md",
       "subCat": "Notifications"
     },
@@ -242,7 +270,7 @@
       "subCat": "Notifications"
     },
     {
-      "name": "Structure de page",
+      "name": "Structure de la page",
       "file": "page-structure.md",
       "subCat": "Pages"
     },
@@ -277,7 +305,7 @@
       "subCat": "Pages"
     },
     {
-      "name": "Structure d'événement webhook en attente",
+      "name": "Structure de l'événement webhook en attente",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Événements webhook en attente"
     },
@@ -300,7 +328,7 @@
       "subCat": "Événements webhook en attente"
     },
     {
-      "name": "Structure d'utilisateur SSO",
+      "name": "Structure de l'utilisateur SSO",
       "file": "sso-user-structure.md",
       "subCat": "Utilisateurs SSO"
     },
@@ -347,7 +375,7 @@
       "subCat": "Utilisateurs SSO"
     },
     {
-      "name": "Structure d'abonnement",
+      "name": "Structure de l'abonnement",
       "file": "subscription-structure.md",
       "subCat": "Abonnements"
     },
@@ -367,7 +395,7 @@
       "subCat": "Abonnements"
     },
     {
-      "name": "Structure d'utilisation quotidienne du locataire",
+      "name": "Structure de l'utilisation quotidienne du locataire",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Utilisation quotidienne du locataire"
     },
@@ -489,7 +517,7 @@
       "subCat": "Utilisateurs locataire"
     },
     {
-      "name": "Structure d'utilisateur",
+      "name": "Structure de l'utilisateur",
       "file": "user-structure.md",
       "subCat": "Utilisateurs"
     },
@@ -529,7 +557,7 @@
       "subCat": "Votes"
     },
     {
-      "name": "Structure de configuration de domaine",
+      "name": "Structure de la configuration de domaine",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configurations de domaine"
@@ -571,7 +599,7 @@
       "subCat": "Configurations de domaine"
     },
     {
-      "name": "Structure de configuration de question",
+      "name": "Structure de la configuration de question",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configurations de question"
@@ -690,7 +718,7 @@
       "subCat": "Badges utilisateur"
     },
     {
-      "name": "Structure de progression du badge utilisateur",
+      "name": "Structure de la progression du badge utilisateur",
       "file": "user-badge-progress-structure.md",
       "subCat": "Progression du badge utilisateur"
     },

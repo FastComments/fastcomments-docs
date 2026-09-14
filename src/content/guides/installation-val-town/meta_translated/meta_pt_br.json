@@ -1,0 +1,41 @@
+{
+  "name": "Instalação Val Town",
+  "pageHeader": "Adicionar Comentários ao Vivo aos Aplicativos Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Passo 1: Adicionar o Widget",
+      "file": "val-town-step-1.md",
+      "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "Passo 2: Use sua própria conta",
+      "file": "val-town-step-2.md",
+      "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "Contagem de Comentários em uma Página de Índice",
+      "file": "val-town-counts.md",
+      "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "SSO Seguro com std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "Recebendo Webhooks",
+      "file": "val-town-webhooks.md",
+      "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "Exemplos de Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "Erros de Domínio",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Instalação Val Town"
+    }
+  ]
+}

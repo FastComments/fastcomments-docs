@@ -1,0 +1,41 @@
+{
+  "name": "Val Town 설치",
+  "pageHeader": "Val Town 앱에 실시간 댓글 추가",
+  "itemsOrdered": [
+    {
+      "name": "1단계: 위젯 추가",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town 설치"
+    },
+    {
+      "name": "2단계: 내 계정 사용",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town 설치"
+    },
+    {
+      "name": "인덱스 페이지의 댓글 수",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town 설치"
+    },
+    {
+      "name": "std/oauth를 사용한 보안 SSO",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town 설치"
+    },
+    {
+      "name": "웹훅 수신",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town 설치"
+    },
+    {
+      "name": "예시 Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town 설치"
+    },
+    {
+      "name": "도메인 오류",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town 설치"
+    }
+  ]
+}

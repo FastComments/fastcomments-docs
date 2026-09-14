@@ -9,12 +9,17 @@
       "subCat": "Recursos API"
     },
     {
+      "name": "Autorización OAuth",
+      "file": "oauth.md",
+      "subCat": "Autenticación"
+    },
+    {
       "name": "Agrega tus datos",
       "file": "aggregate-post.md",
       "subCat": "Agregaciones"
     },
     {
-      "name": "Estructura de Registro de Auditoría",
+      "name": "Estructura de registro de auditoría",
       "file": "audit-log-structure.md",
       "subCat": "Registros de auditoría"
     },
@@ -25,7 +30,7 @@
       "subCat": "Registros de auditoría"
     },
     {
-      "name": "Estructura de Comentario",
+      "name": "Estructura de comentario",
       "file": "comment-structure.md",
       "subCat": "Comentarios"
     },
@@ -84,48 +89,71 @@
       "subCat": "Comentarios"
     },
     {
-      "name": "Estructura de Plantilla de Correo Electrónico",
+      "name": "Estructura de plantilla de correo",
       "file": "email-template-structure.md",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Plantillas de correo electrónico"
+      "subCat": "Plantillas de correo"
     },
     {
-      "name": "Estructura de Etiqueta",
+      "name": "Estructura de publicación de feed",
+      "file": "feed-post-structure.md",
+      "subCat": "Publicaciones de feed"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Publicaciones de feed"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Publicaciones de feed"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Publicaciones de feed"
+    },
+    {
+      "name": "Estructura de etiqueta",
       "file": "hash-tag-structure.md",
       "subCat": "Etiquetas"
     },
@@ -166,7 +194,7 @@
       "subCat": "Yo"
     },
     {
-      "name": "Estructura de Moderador",
+      "name": "Estructura de moderador",
       "file": "moderator-structure.md",
       "subCat": "Moderadores"
     },
@@ -207,22 +235,22 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Estructura de Conteo de Notificaciones",
+      "name": "Estructura de recuento de notificaciones",
       "file": "notification-count-structure.md",
-      "subCat": "Conteo de notificaciones"
+      "subCat": "Recuento de notificaciones"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "Conteo de notificaciones"
+      "subCat": "Recuento de notificaciones"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "Conteo de notificaciones"
+      "subCat": "Recuento de notificaciones"
     },
     {
-      "name": "Estructura de Notificación",
+      "name": "Estructura de notificación",
       "file": "notification-structure.md",
       "subCat": "Notificaciones"
     },
@@ -242,7 +270,7 @@
       "subCat": "Notificaciones"
     },
     {
-      "name": "Estructura de Página",
+      "name": "Estructura de página",
       "file": "page-structure.md",
       "subCat": "Páginas"
     },
@@ -277,7 +305,7 @@
       "subCat": "Páginas"
     },
     {
-      "name": "Estructura de Evento Webhook Pendiente",
+      "name": "Estructura de evento webhook pendiente",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Eventos webhook pendientes"
     },
@@ -300,7 +328,7 @@
       "subCat": "Eventos webhook pendientes"
     },
     {
-      "name": "Estructura de Usuario SSO",
+      "name": "Estructura de usuario SSO",
       "file": "sso-user-structure.md",
       "subCat": "Usuarios SSO"
     },
@@ -347,7 +375,7 @@
       "subCat": "Usuarios SSO"
     },
     {
-      "name": "Estructura de Suscripción",
+      "name": "Estructura de suscripción",
       "file": "subscription-structure.md",
       "subCat": "Suscripciones"
     },
@@ -367,7 +395,7 @@
       "subCat": "Suscripciones"
     },
     {
-      "name": "Estructura de Uso Diario del Inquilino",
+      "name": "Estructura de uso diario del inquilino",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Uso diario del inquilino"
     },
@@ -378,7 +406,7 @@
       "subCat": "Uso diario del inquilino"
     },
     {
-      "name": "Estructura de Inquilino",
+      "name": "Estructura de inquilino",
       "file": "tenant-structure.md",
       "subCat": "Inquilinos"
     },
@@ -413,7 +441,7 @@
       "subCat": "Inquilinos"
     },
     {
-      "name": "Estructura de Paquete de Inquilino",
+      "name": "Estructura de paquete de inquilino",
       "file": "tenant-package-structure.md",
       "subCat": "Paquetes de inquilino"
     },
@@ -448,7 +476,7 @@
       "subCat": "Paquetes de inquilino"
     },
     {
-      "name": "Estructura de Usuario de Inquilino",
+      "name": "Estructura de usuario de inquilino",
       "file": "tenant-user-structure.md",
       "subCat": "Usuarios de inquilino"
     },
@@ -489,7 +517,7 @@
       "subCat": "Usuarios de inquilino"
     },
     {
-      "name": "Estructura de Usuario",
+      "name": "Estructura de usuario",
       "file": "user-structure.md",
       "subCat": "Usuarios"
     },
@@ -500,7 +528,7 @@
       "subCat": "Usuarios"
     },
     {
-      "name": "Estructura de Voto",
+      "name": "Estructura de voto",
       "file": "vote-structure.md",
       "subCat": "Votos"
     },
@@ -529,7 +557,7 @@
       "subCat": "Votos"
     },
     {
-      "name": "Estructura de Configuración de Dominio",
+      "name": "Estructura de configuración de dominio",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configuraciones de dominio"
@@ -571,7 +599,7 @@
       "subCat": "Configuraciones de dominio"
     },
     {
-      "name": "Estructura de Configuración de Pregunta",
+      "name": "Estructura de configuración de pregunta",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configuraciones de pregunta"
@@ -607,7 +635,7 @@
       "subCat": "Configuraciones de pregunta"
     },
     {
-      "name": "Estructura de Resultado de Pregunta",
+      "name": "Estructura de resultado de pregunta",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Resultados de pregunta"
@@ -655,7 +683,7 @@
       "subCat": "Agregación de resultados de pregunta"
     },
     {
-      "name": "Estructura de Insignia de Usuario",
+      "name": "Estructura de insignia de usuario",
       "file": "user-badge-structure.md",
       "subCat": "Insignias de usuario"
     },
@@ -690,7 +718,7 @@
       "subCat": "Insignias de usuario"
     },
     {
-      "name": "Estructura de Progreso de Insignia de Usuario",
+      "name": "Estructura de progreso de insignia de usuario",
       "file": "user-badge-progress-structure.md",
       "subCat": "Progreso de insignia de usuario"
     },

@@ -1,0 +1,41 @@
+{
+  "name": "Namestitev Val Town",
+  "pageHeader": "Dodajanje živih komentarjev v aplikacije Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Korak 1: Dodaj pripomoček",
+      "file": "val-town-step-1.md",
+      "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Korak 2: Uporabi svoj račun",
+      "file": "val-town-step-2.md",
+      "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Število komentarjev na indeksni strani",
+      "file": "val-town-counts.md",
+      "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Zavaruj SSO z std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Prejemanje webhookov",
+      "file": "val-town-webhooks.md",
+      "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Primer Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Napake domene",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Namestitev Val Town"
+    }
+  ]
+}

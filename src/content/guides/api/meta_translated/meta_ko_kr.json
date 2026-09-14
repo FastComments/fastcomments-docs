@@ -9,6 +9,11 @@
       "subCat": "API 리소스"
     },
     {
+      "name": "OAuth 인증",
+      "file": "oauth.md",
+      "subCat": "인증"
+    },
+    {
       "name": "데이터 집계",
       "file": "aggregate-post.md",
       "subCat": "집계"
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "이메일 템플릿"
+    },
+    {
+      "name": "피드 포스트 구조",
+      "file": "feed-post-structure.md",
+      "subCat": "피드 포스트"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "피드 포스트"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "피드 포스트"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "피드 포스트"
     },
     {
       "name": "해시태그 구조",

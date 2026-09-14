@@ -1,0 +1,41 @@
+{
+  "name": "Установка Val Town",
+  "pageHeader": "Добавьте живой комментарий в приложения Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Шаг 1: Добавить виджет",
+      "file": "val-town-step-1.md",
+      "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Шаг 2: Использовать свой аккаунт",
+      "file": "val-town-step-2.md",
+      "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Количество комментариев на странице индекса",
+      "file": "val-town-counts.md",
+      "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Защищенный SSO с std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Получение вебхуков",
+      "file": "val-town-webhooks.md",
+      "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Примеры Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Ошибки домена",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Установка Val Town"
+    }
+  ]
+}

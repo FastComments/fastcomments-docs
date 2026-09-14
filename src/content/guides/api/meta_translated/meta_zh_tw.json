@@ -9,6 +9,11 @@
       "subCat": "API 資源"
     },
     {
+      "name": "OAuth 授權",
+      "file": "oauth.md",
+      "subCat": "驗證"
+    },
+    {
       "name": "彙總您的資料",
       "file": "aggregate-post.md",
       "subCat": "彙總"
@@ -125,6 +130,29 @@
       "subCat": "電子郵件範本"
     },
     {
+      "name": "動態貼文結構",
+      "file": "feed-post-structure.md",
+      "subCat": "動態貼文"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "動態貼文"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "動態貼文"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "動態貼文"
+    },
+    {
       "name": "標籤結構",
       "file": "hash-tag-structure.md",
       "subCat": "標籤"
@@ -163,48 +191,48 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "我的"
+      "subCat": "我的資訊"
     },
     {
-      "name": "版主結構",
+      "name": "審核者結構",
       "file": "moderator-structure.md",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "GET /api/v1/moderators/:id",
       "file": "moderator-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "GET /api/v1/moderators",
       "file": "moderators-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "POST /api/v1/moderators",
       "file": "moderator-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "POST /api/v1/moderators/:id/send-invite",
       "file": "moderator-send-invite.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "DELETE /api/v1/moderators/:id",
       "file": "moderator-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "審核者"
     },
     {
       "name": "通知計數結構",
@@ -300,51 +328,51 @@
       "subCat": "待處理 Webhook 事件"
     },
     {
-      "name": "SSO 使用者結構",
+      "name": "單點登入使用者結構",
       "file": "sso-user-structure.md",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "訂閱結構",
@@ -529,46 +557,46 @@
       "subCat": "投票"
     },
     {
-      "name": "Domain 設定結構",
+      "name": "網域設定結構",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain 設定"
+      "subCat": "網域設定"
     },
     {
       "name": "問題設定結構",

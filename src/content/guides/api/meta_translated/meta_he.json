@@ -1,12 +1,17 @@
 {
   "name": "API",
-  "pageHeader": "ממשקי API לתגובות בזמן אמת",
+  "pageHeader": "API לתגובות בזמן אמת",
   "icon": "api.png",
   "itemsOrdered": [
     {
       "name": "משאבי API",
       "file": "api-resources.md",
       "subCat": "משאבי API"
+    },
+    {
+      "name": "אימות OAuth",
+      "file": "oauth.md",
+      "subCat": "אימות"
     },
     {
       "name": "אגרגציה של הנתונים שלך",
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "תבניות אימייל"
+    },
+    {
+      "name": "מבנה פוסט בפיד",
+      "file": "feed-post-structure.md",
+      "subCat": "פוסטים בפיד"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "פוסטים בפיד"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "פוסטים בפיד"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "פוסטים בפיד"
     },
     {
       "name": "מבנה תגית",

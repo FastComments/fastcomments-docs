@@ -9,6 +9,11 @@
       "subCat": "API-ressourcer"
     },
     {
+      "name": "OAuth-autorisation",
+      "file": "oauth.md",
+      "subCat": "Godkendelse"
+    },
+    {
       "name": "Aggregér dine data",
       "file": "aggregate-post.md",
       "subCat": "Aggregationer"
@@ -16,13 +21,13 @@
     {
       "name": "AuditLog-struktur",
       "file": "audit-log-structure.md",
-      "subCat": "Audit-logs"
+      "subCat": "Auditlog"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Audit-logs"
+      "subCat": "Auditlog"
     },
     {
       "name": "Kommentarstruktur",
@@ -123,6 +128,29 @@
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "E-mail-skabeloner"
+    },
+    {
+      "name": "Feedindlæg-struktur",
+      "file": "feed-post-structure.md",
+      "subCat": "Feedindlæg"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feedindlæg"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feedindlæg"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Feedindlæg"
     },
     {
       "name": "Hashtag-struktur",
@@ -277,27 +305,27 @@
       "subCat": "Sider"
     },
     {
-      "name": "Afventende webhook-begivenhedsstruktur",
+      "name": "Afventende webhook-hændelsesstruktur",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Afventende webhook-begivenheder"
+      "subCat": "Afventende webhook-hændelser"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Afventende webhook-begivenheder"
+      "subCat": "Afventende webhook-hændelser"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Afventende webhook-begivenheder"
+      "subCat": "Afventende webhook-hændelser"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Afventende webhook-begivenheder"
+      "subCat": "Afventende webhook-hændelser"
     },
     {
       "name": "SSO-brugerstruktur",
@@ -367,15 +395,15 @@
       "subCat": "Abonnementer"
     },
     {
-      "name": "Lejer-daglig-brugsstruktur",
+      "name": "Lejers daglige forbrug",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Lejers daglige brug"
+      "subCat": "Lejers daglige forbrug"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejers daglige brug"
+      "subCat": "Lejers daglige forbrug"
     },
     {
       "name": "Lejerstruktur",
@@ -413,7 +441,7 @@
       "subCat": "Lejere"
     },
     {
-      "name": "Lejers pakke-struktur",
+      "name": "Lejers pakke struktur",
       "file": "tenant-package-structure.md",
       "subCat": "Lejers pakker"
     },
@@ -690,27 +718,27 @@
       "subCat": "Brugerbadges"
     },
     {
-      "name": "Brugerbadge-fremdriftsstruktur",
+      "name": "Brugerbadgefremskridtsstruktur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Brugerbadge-fremdrift"
+      "subCat": "Brugerbadgefremskridt"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadge-fremdrift"
+      "subCat": "Brugerbadgefremskridt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadge-fremdrift"
+      "subCat": "Brugerbadgefremskridt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadge-fremdrift"
+      "subCat": "Brugerbadgefremskridt"
     }
   ]
 }

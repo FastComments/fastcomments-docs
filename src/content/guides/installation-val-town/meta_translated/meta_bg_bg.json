@@ -1,0 +1,41 @@
+{
+  "name": "Инсталиране на Val Town",
+  "pageHeader": "Добавете живо коментиране към приложенията на Val Town",
+  "itemsOrdered": [
+    {
+      "name": "Стъпка 1: Добавете уиджета",
+      "file": "val-town-step-1.md",
+      "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Стъпка 2: Използвайте вашия собствен акаунт",
+      "file": "val-town-step-2.md",
+      "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Брой коментари на индексната страница",
+      "file": "val-town-counts.md",
+      "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Сигурен SSO с std/oauth",
+      "file": "val-town-sso.md",
+      "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Получаване на уебкуки",
+      "file": "val-town-webhooks.md",
+      "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Примерни стойности",
+      "file": "val-town-examples.md",
+      "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Грешки в домейна",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Инсталиране на Val Town"
+    }
+  ]
+}

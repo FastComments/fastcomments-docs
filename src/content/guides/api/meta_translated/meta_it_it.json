@@ -1,12 +1,17 @@
 {
   "name": "API",
-  "pageHeader": "API di commenti in tempo reale",
+  "pageHeader": "API per i commenti in tempo reale",
   "icon": "api.png",
   "itemsOrdered": [
     {
       "name": "Risorse API",
       "file": "api-resources.md",
       "subCat": "Risorse API"
+    },
+    {
+      "name": "Autorizzazione OAuth",
+      "file": "oauth.md",
+      "subCat": "Autenticazione"
     },
     {
       "name": "Aggrega i tuoi dati",
@@ -125,7 +130,30 @@
       "subCat": "Modelli email"
     },
     {
-      "name": "Struttura hashtag",
+      "name": "Struttura FeedPost",
+      "file": "feed-post-structure.md",
+      "subCat": "Post del feed"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Post del feed"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Post del feed"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Post del feed"
+    },
+    {
+      "name": "Struttura HashTag",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtag"
     },
@@ -166,7 +194,7 @@
       "subCat": "Io"
     },
     {
-      "name": "Struttura moderatore",
+      "name": "Struttura Moderatore",
       "file": "moderator-structure.md",
       "subCat": "Moderatori"
     },
@@ -277,7 +305,7 @@
       "subCat": "Pagine"
     },
     {
-      "name": "Struttura evento webhook in sospeso",
+      "name": "Struttura PendingWebhookEvent",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Eventi webhook in sospeso"
     },
@@ -347,27 +375,27 @@
       "subCat": "Utenti SSO"
     },
     {
-      "name": "Struttura abbonamento",
+      "name": "Struttura sottoscrizione",
       "file": "subscription-structure.md",
-      "subCat": "Abbonamenti"
+      "subCat": "Sottoscrizioni"
     },
     {
       "name": "GET /api/v1/subscriptions/:id",
       "file": "subscriptions-get.md",
-      "subCat": "Abbonamenti"
+      "subCat": "Sottoscrizioni"
     },
     {
       "name": "POST /api/v1/subscriptions",
       "file": "subscriptions-post.md",
-      "subCat": "Abbonamenti"
+      "subCat": "Sottoscrizioni"
     },
     {
       "name": "DELETE /api/v1/subscriptions/:id",
       "file": "subscriptions-delete.md",
-      "subCat": "Abbonamenti"
+      "subCat": "Sottoscrizioni"
     },
     {
-      "name": "Struttura utilizzo giornaliero tenant",
+      "name": "Struttura TenantDailyUsage",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Utilizzo giornaliero tenant"
     },
@@ -378,7 +406,7 @@
       "subCat": "Utilizzo giornaliero tenant"
     },
     {
-      "name": "Struttura tenant",
+      "name": "Struttura Tenant",
       "file": "tenant-structure.md",
       "subCat": "Tenant"
     },
@@ -413,7 +441,7 @@
       "subCat": "Tenant"
     },
     {
-      "name": "Struttura pacchetto tenant",
+      "name": "Struttura Tenant Package",
       "file": "tenant-package-structure.md",
       "subCat": "Pacchetti tenant"
     },
@@ -448,7 +476,7 @@
       "subCat": "Pacchetti tenant"
     },
     {
-      "name": "Struttura utente tenant",
+      "name": "Struttura Tenant User",
       "file": "tenant-user-structure.md",
       "subCat": "Utenti tenant"
     },

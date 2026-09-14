@@ -9,6 +9,11 @@
       "subCat": "Zasoby API"
     },
     {
+      "name": "Autoryzacja OAuth",
+      "file": "oauth.md",
+      "subCat": "Uwierzytelnianie"
+    },
+    {
       "name": "Agreguj swoje dane",
       "file": "aggregate-post.md",
       "subCat": "Agregacje"
@@ -125,45 +130,68 @@
       "subCat": "Szablony e-mail"
     },
     {
-      "name": "Struktura hasztagu",
+      "name": "Struktura wpisu w kanale",
+      "file": "feed-post-structure.md",
+      "subCat": "Wpisy w kanale"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Wpisy w kanale"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Wpisy w kanale"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Wpisy w kanale"
+    },
+    {
+      "name": "Struktura hashtagu",
       "file": "hash-tag-structure.md",
-      "subCat": "Hasztagi"
+      "subCat": "Hashtagi"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hasztagi"
+      "subCat": "Hashtagi"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hasztagi"
+      "subCat": "Hashtagi"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hasztagi"
+      "subCat": "Hashtagi"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hasztagi"
+      "subCat": "Hashtagi"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hasztagi"
+      "subCat": "Hashtagi"
     },
     {
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Mój"
+      "subCat": "Mnie"
     },
     {
       "name": "Struktura moderatora",
@@ -657,37 +685,37 @@
     {
       "name": "Struktura odznaki użytkownika",
       "file": "user-badge-structure.md",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkowników"
+      "subCat": "Odznaki użytkownika"
     },
     {
       "name": "Struktura postępu odznaki użytkownika",

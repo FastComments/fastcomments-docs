@@ -9,6 +9,11 @@
       "subCat": "Ресурси API"
     },
     {
+      "name": "Авторизація OAuth",
+      "file": "oauth.md",
+      "subCat": "Аутентифікація"
+    },
+    {
       "name": "Агрегуйте ваші дані",
       "file": "aggregate-post.md",
       "subCat": "Агрегації"
@@ -125,6 +130,29 @@
       "subCat": "Шаблони електронної пошти"
     },
     {
+      "name": "Структура публікації у стрічці",
+      "file": "feed-post-structure.md",
+      "subCat": "Публікації у стрічці"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публікації у стрічці"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публікації у стрічці"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Публікації у стрічці"
+    },
+    {
       "name": "Структура хештегу",
       "file": "hash-tag-structure.md",
       "subCat": "Хештеги"
@@ -163,7 +191,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Мене"
+      "subCat": "Мій"
     },
     {
       "name": "Структура модератора",
@@ -277,74 +305,74 @@
       "subCat": "Сторінки"
     },
     {
-      "name": "Структура очікуючої події вебхука",
+      "name": "Структура події відкладеного вебхука",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Очікуючі події вебхука"
+      "subCat": "Відкладені події вебхука"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Очікуючі події вебхука"
+      "subCat": "Відкладені події вебхука"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Очікуючі події вебхука"
+      "subCat": "Відкладені події вебхука"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Очікуючі події вебхука"
+      "subCat": "Відкладені події вебхука"
     },
     {
-      "name": "Структура SSO користувача",
+      "name": "Структура користувача SSO",
       "file": "sso-user-structure.md",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO користувачі"
+      "subCat": "Користувачі SSO"
     },
     {
       "name": "Структура підписки",
