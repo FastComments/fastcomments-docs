@@ -1,10 +1,10 @@
 [related-parameter-start name = 'enableViewCounts'; type = 'boolean'; related-parameter-end]
 
-Domyślnie FastComments nie śledzi, kto oglądał każdy komentarz ani nie dostarcza żadnych statystyk na ten temat.
+Domyślnie FastComments nie śledzi, kto obejrzał każdy komentarz ani nie dostarcza żadnych statystyk na ten temat.
 
-Jednak możemy włączyć tę funkcję, a system zacznie śledzić, gdy każdy użytkownik przewija do komentarza.
+Możemy jednak włączyć tę funkcję, a system zacznie śledzić, gdy każdy użytkownik przewija do komentarza.
 
-Gdy to nastąpi, licznik obok ikony oka wyświetlanej przy każdym komentarzu zostanie zwiększony. Licznik jest aktualizowany na żywo i skracany zgodnie z ustawieniami regionalnymi użytkownika.
+Gdy to nastąpi, licznik obok ikony oka wyświetlanej przy każdym komentarzu zostanie zwiększony. Licznik jest aktualizowany na żywo i skracany zgodnie z lokalizacją użytkownika.
 
 Możemy to włączyć, ustawiając flagę **enableViewCounts** na true:
 
@@ -12,8 +12,8 @@ Możemy to włączyć, ustawiając flagę **enableViewCounts** na true:
 
 Można to dostosować bez kodu, na stronie dostosowywania widgetu:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru liczby wyświetleń, tak aby każdy komentarz wyświetlał ikonę oka i licznik'; title='Włączanie liczby wyświetleń komentarzy' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-view-counts']; selector = '.enable-view-counts'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru liczby wyświetleń, tak aby każdy komentarz wyświetlał ikonę oka i liczbę'; title='Włączanie liczby wyświetleń komentarzy' app-screenshot-end]
 
-Śledzimy identyfikator użytkownika* który obejrzał komentarz, tak aby przy ponownym obejrzeniu komentarza licznik się nie zwiększał. Jeśli obejrzysz komentarz ponownie po dwóch latach, licznik zwiększy się bardziej.
+Śledzimy identyfikator użytkownika* który obejrzał komentarz przez tydzień, tak aby przy ponownym obejrzeniu komentarza w tym tygodniu licznik się nie zwiększał. Jeśli obejrzysz komentarz ponownie po upływie tygodnia, licznik zwiększy się ponownie.
 
-- *Uwaga: lub anonimowy identyfikator sesji, lub adres IP użytkownika jako wartość skrócona.*
+- *Uwaga: lub anonimowy identyfikator sesji, albo IP użytkownika jako wartość haszowaną.
