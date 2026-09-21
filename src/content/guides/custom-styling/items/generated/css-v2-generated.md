@@ -187,6 +187,7 @@ body { margin: 0; padding: 0; }
     .comment { position: relative; margin-top: 15px }
     @media(max-width: 500px) { .comment { margin-top: 5px; } }
     .comment .comment-text spoiler:not(:hover) { background: #eee; color: #eee; border: 1px dotted #a2a2a2; }
+    .comment .comment-text spoiler:has(div, p) { display: block; }
     .comment .comment-text .inline-image { display: block; max-width: 500px; margin: 3px 0 3px 0 } /* must not select inline-image in wysiwyg */
     .comment .comment-text .inline-image img { max-width: 100%; max-height: 400px } /* must not select inline-image in wysiwyg */
     .disable-image-redirect .comment .inline-image { cursor: default; }
