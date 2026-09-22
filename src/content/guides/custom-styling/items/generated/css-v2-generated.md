@@ -97,6 +97,8 @@ body { margin: 0; padding: 0; }
     input { padding: 9px 12px; border-radius: 0 6px 6px 6px; }
     /* Focus state must be applied to BOTH the textarea border and the sibling .horizontal-border-wrapper (faux border around .comment-input -- see below). Override both selectors when changing focus color. */
     input:focus, textarea:focus, textarea:focus + .horizontal-border-wrapper, .comment-input textarea:focus { border-color: #555 } /* .comment-reply textarea:focus for ssr */
+    /* Focus anywhere inside the box (the textarea or content an extension rendered below it) colours the whole frame. */
+    .comment-input:focus-within > textarea, .comment-input:focus-within > [contenteditable].comment-input, .comment-input:focus-within .horizontal-border-wrapper { border-color: #555 }
     .pagination { margin-top: 50px; line-height: 19px; text-align: center; user-select: none; }
     .pagination > * { display: inline-block; cursor: pointer; font-weight: 700; }
     .pagination > * > span { font-weight: normal; pointer-events: none; }
@@ -166,8 +168,9 @@ body { margin: 0; padding: 0; }
     .comment-input .horizontal-border-top-left, .comment-input .horizontal-border-top-right { display: none; position: absolute; top: 20px; border-bottom: 0; border-top: 1px solid; border-color: inherit; }
     .comment-input .horizontal-border-top-right { top: 0; right: 0; border-radius: 0 11px 0 0; width: 20px; }
     .comment-input .horizontal-border-top-left { top: 0; left: 0; }
-    .comment-input .horizontal-border-bottom-left { position: absolute; height: 30px; width: 15px; left: 0; bottom: 0; border-color: inherit; border-left-width: 1px; border-left-style: solid; border-radius: 0 0 0 11px; }
-    .comment-input .horizontal-border-bottom-right { position: absolute; height: 30px; width: 15px; right: 0; bottom: 0; border-color: inherit; border-right-width: 1px; border-right-style: solid; border-radius: 0 0 11px 0; }
+    /* Side pieces span the whole box (top to bottom), so anything an extension renders below the textarea sits inside the frame with no borders of its own. Over the textarea they overlap its own side border pixel for pixel; the right piece rounds its top corner to match the textarea's. */
+    .comment-input .horizontal-border-bottom-left { position: absolute; top: 0; bottom: 0; height: auto; width: 15px; left: 0; border-color: inherit; border-bottom: 0; border-left-width: 1px; border-left-style: solid; border-radius: 0 0 0 11px; }
+    .comment-input .horizontal-border-bottom-right { position: absolute; top: 0; bottom: 0; height: auto; width: 15px; right: 0; border-color: inherit; border-bottom: 0; border-right-width: 1px; border-right-style: solid; border-radius: 0 11px 11px 0; }
     /* Re-shows top border pieces for nested reply boxes (input rendered inside a .comment) so the input gets a full frame. */
     .comment .comment-input .horizontal-border-top-left, .comment .comment-input .horizontal-border-top-right { display: block }
     @media(max-width: 500px) { .comment-input textarea, .comment-input .fastcomments-message-wrapper { height: 130px;  } }
