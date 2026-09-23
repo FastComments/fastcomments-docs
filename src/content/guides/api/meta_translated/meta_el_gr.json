@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API Ζωντανής Σχολιασμού",
+  "pageHeader": "API Ζωντανών Σχολίων",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Αυθεντικοποίηση"
     },
     {
-      "name": "Συγκεντρώστε τα Δεδομένα σας",
+      "name": "Συγκέντρωση Δεδομένων",
       "file": "aggregate-post.md",
       "subCat": "Συγκεντρώσεις"
     },
@@ -132,25 +132,25 @@
     {
       "name": "Δομή FeedPost",
       "file": "feed-post-structure.md",
-      "subCat": "Δημοσιεύσεις Ροής"
+      "subCat": "Αναρτήσεις Feed"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Δημοσιεύσεις Ροής"
+      "subCat": "Αναρτήσεις Feed"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Δημοσιεύσεις Ροής"
+      "subCat": "Αναρτήσεις Feed"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Δημοσιεύσεις Ροής"
+      "subCat": "Αναρτήσεις Feed"
     },
     {
       "name": "Δομή HashTag",
@@ -270,6 +270,53 @@
       "subCat": "Ειδοποιήσεις"
     },
     {
+      "name": "Δημόσιο API Αντιδράσεων Σελίδας",
+      "file": "page-reacts-api.md",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Αντιδράσεις Σελίδας"
+    },
+    {
       "name": "Δομή Σελίδας",
       "file": "page-structure.md",
       "subCat": "Σελίδες"
@@ -305,74 +352,132 @@
       "subCat": "Σελίδες"
     },
     {
-      "name": "Δομή PendingWebhookEvent",
+      "name": "Δομή Ψηφοφορίας",
+      "file": "poll-structure.md",
+      "subCat": "Ψηφοφορίες"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψηφοφορίες"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψηφοφορίες"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψηφοφορίες"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψηφοφορίες"
+    },
+    {
+      "name": "Δομή Ψήφου Ψηφοφορίας",
+      "file": "poll-vote-structure.md",
+      "subCat": "Ψήφοι Ψηφοφορίας"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψήφοι Ψηφοφορίας"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψήφοι Ψηφοφορίας"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψήφοι Ψηφοφορίας"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ψήφοι Ψηφοφορίας"
+    },
+    {
+      "name": "Δομή Εκκρεμούς Webhook Συμβάντος",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Εκκρεμείς Συμβάντα Webhook"
+      "subCat": "Εκκρεμή Webhook Συμβάντα"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Εκκρεμείς Συμβάντα Webhook"
+      "subCat": "Εκκρεμή Webhook Συμβάντα"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Εκκρεμείς Συμβάντα Webhook"
+      "subCat": "Εκκρεμή Webhook Συμβάντα"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Εκκρεμείς Συμβάντα Webhook"
+      "subCat": "Εκκρεμή Webhook Συμβάντα"
     },
     {
-      "name": "Δομή SSOUser",
+      "name": "Δομή SSO Χρήστη",
       "file": "sso-user-structure.md",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Χρήστες SSO"
+      "subCat": "SSO Χρήστες"
     },
     {
       "name": "Δομή Συνδρομής",
@@ -602,85 +707,85 @@
       "name": "Δομή QuestionConfig",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ρυθμίσεις Ερωτήματος"
+      "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ρυθμίσεις Ερωτήματος"
+      "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ρυθμίσεις Ερωτήματος"
+      "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ρυθμίσεις Ερωτήματος"
+      "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ρυθμίσεις Ερωτήματος"
+      "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ρυθμίσεις Ερωτήματος"
+      "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
       "name": "Δομή QuestionResult",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αποτελέσματα Ερωτήματος"
+      "subCat": "Αποτελέσματα Ερωτήσεων"
     },
     {
       "name": "GET /api/v1/question-results",
       "file": "question-results-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αποτελέσματα Ερωτήματος"
+      "subCat": "Αποτελέσματα Ερωτήσεων"
     },
     {
       "name": "GET /api/v1/question-results/:id",
       "file": "question-result-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αποτελέσματα Ερωτήματος"
+      "subCat": "Αποτελέσματα Ερωτήσεων"
     },
     {
       "name": "POST /api/v1/question-results",
       "file": "question-result-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αποτελέσματα Ερωτήματος"
+      "subCat": "Αποτελέσματα Ερωτήσεων"
     },
     {
       "name": "PATCH /api/v1/question-results/:id",
       "file": "question-result-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αποτελέσματα Ερωτήματος"
+      "subCat": "Αποτελέσματα Ερωτήσεων"
     },
     {
       "name": "DELETE /api/v1/question-results/:id",
       "file": "question-result-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αποτελέσματα Ερωτήματος"
+      "subCat": "Αποτελέσματα Ερωτήσεων"
     },
     {
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήματος"
+      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήσεων"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήματος"
+      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήσεων"
     },
     {
       "name": "Δομή Σήματος Χρήστη",

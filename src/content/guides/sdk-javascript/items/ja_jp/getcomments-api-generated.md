@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | page | number | No |  |
@@ -20,31 +20,43 @@
 | fromDate | number | No |  |
 | toDate | number | No |  |
 
-## 返却
+## レスポンス
 
-Returns: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+返り値: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getComments の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const page: number = 2;
-const limit: number = 50;
-const asTree: boolean = true;
-const urlId: string = "article_5678";
-const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // 1 週間前
-const toDate: number = Date.now();
+async function loadComments(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const page: number = 1;
+  const limit: number = 50;
+  const asTree: boolean = false;
+  const direction: SortDirections = "asc";
+  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30日前
+  const toDate: number = Date.now();
 
-const commentsResponse: GetCommentsResponse = await getComments({
-  tenantId,
-  page,
-  limit,
-  asTree,
-  urlId,
-  direction,
-  fromDate,
-  toDate,
-});
+  const commentsResponse: APIGetCommentsResponse = await getComments(
+    tenantId,
+    page,
+    limit,
+    undefined,
+    asTree,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    direction,
+    fromDate,
+    toDate
+  );
+
+  console.log(commentsResponse);
+}
 [inline-code-end]

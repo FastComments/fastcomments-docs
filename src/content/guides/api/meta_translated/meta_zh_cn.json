@@ -191,7 +191,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "我的"
+      "subCat": "我的信息"
     },
     {
       "name": "版主结构",
@@ -270,6 +270,53 @@
       "subCat": "通知"
     },
     {
+      "name": "页面反应公共 API",
+      "file": "page-reacts-api.md",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面反应"
+    },
+    {
       "name": "页面结构",
       "file": "page-structure.md",
       "subCat": "页面"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "页面"
+    },
+    {
+      "name": "投票结构",
+      "file": "poll-structure.md",
+      "subCat": "投票"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "投票记录结构",
+      "file": "poll-vote-structure.md",
+      "subCat": "投票记录"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票记录"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票记录"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票记录"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票记录"
     },
     {
       "name": "待处理Webhook事件结构",
@@ -557,46 +662,46 @@
       "subCat": "投票"
     },
     {
-      "name": "域配置结构",
+      "name": "域名配置结构",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域配置"
+      "subCat": "域名配置"
     },
     {
       "name": "问题配置结构",

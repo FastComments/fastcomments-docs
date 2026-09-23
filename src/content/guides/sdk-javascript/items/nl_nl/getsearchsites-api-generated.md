@@ -1,27 +1,27 @@
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
-|------|------|------------|---------------|
-| value | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| value | string | Nee |  |
+| sso | string | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetSearchSitesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSitesResponse.ts)
+Retourneert: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationSiteSearchResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'getSearchSites Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getSearchSites'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchSites() {
-  const value: string = "customer support"
-  const tenantId: string = "tenant-9876"
-  const sso: string = "sso-abc123"
+async function runSearches(): Promise<void> {
+  const tenantId: string = "tenant-987654";
+  const query: string = "offensive content";
+  const ssoToken: string = "sso-token-xyz";
 
-  const sites: GetSearchSitesResponse = await getSearchSites(value, tenantId, sso)
-  const sitesOnlyTenant: GetSearchSitesResponse = await getSearchSites(undefined, tenantId)
+  const fullResult: ModerationSiteSearchResponse = await getSearchSites(tenantId, query, ssoToken);
+  const minimalResult: ModerationSiteSearchResponse = await getSearchSites(tenantId);
 }
-[inline-code-end]
 
----
+runSearches();
+[inline-code-end]

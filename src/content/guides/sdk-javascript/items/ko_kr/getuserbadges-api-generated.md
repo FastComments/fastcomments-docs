@@ -12,32 +12,36 @@
 
 ## 응답
 
-반환: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
+반환: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgesResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getUserBadges 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUserBadges 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = "tenant-01";
-  const userId: string = "user-42";
-  const badgeId: string = "badge-gold";
-  const type: number = 1;
-  const displayedOnComments: boolean = true;
-  const limit: number = 10;
-  const skip: number = 5;
+(async () => {
+  const tenantId: string = "acme-corp";
 
-  const fullResult: GetUserBadgesResponse = await getUserBadges(
+  // 모든 매개변수가 제공됨
+  const fullResponse: APIGetUserBadgesResponse = await getUserBadges(
     tenantId,
-    userId,
-    badgeId,
-    type,
-    displayedOnComments,
-    limit,
-    skip
+    "user-42",
+    "badge-premium",
+    1,
+    true,
+    10,
+    0
   );
 
-  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);
-}
-example();
+  // 필수 매개변수와 하나의 선택 매개변수(limit)만 제공됨
+  const limitedResponse: APIGetUserBadgesResponse = await getUserBadges(
+    tenantId,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    5
+  );
+
+  console.log(fullResponse, limitedResponse);
+})();
 [inline-code-end]

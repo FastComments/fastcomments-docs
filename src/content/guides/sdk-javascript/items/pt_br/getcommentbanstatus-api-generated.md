@@ -2,20 +2,24 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
-| tenantId | string | Não |  |
 | sso | string | Não |  |
 
 ## Resposta
 
-Retorna: [`GetCommentBanStatusResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentBanStatusResponse1.ts)
+Retorna: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentBanStatusResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo getCommentBanStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function checkCommentBanStatus() {
-  const banStatus: GetCommentBanStatusResponse1 = await getCommentBanStatus('cmt_987654321', 'tenant_42', 'sso_token_abc123');
-  const banStatusNoTenant: GetCommentBanStatusResponse1 = await getCommentBanStatus('cmt_987654322', undefined, 'sso_token_def456');
-}
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_987654";
+  const ssoToken: string = "sso_user_abc";
+
+  const statusWithSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId, ssoToken);
+  const statusWithoutSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId);
+})();
 [inline-code-end]

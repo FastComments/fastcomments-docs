@@ -7,22 +7,19 @@
 
 ## 응답
 
-반환: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Returns: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'createModerator 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createModerator 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9876";
-  const moderatorPayload: CreateModeratorBody = {
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-    // optional fields like description are omitted
-  };
-  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
-  console.log(result);
-}
+const tenantId: string = "tenant_12345";
 
-runExample();
+const moderatorPayload: CreateModeratorBody = {
+  userId: "user_9876",
+  // 선택적 필드; 필요하지 않으면 생략할 수 있습니다
+  notes: "Temporary moderator for event"
+};
+
+const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]

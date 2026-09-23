@@ -1,25 +1,23 @@
 ## Parametre
 
-| Navn | Type | Obligatorisk | Beskrivelse |
-|------|------|--------------|-------------|
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Navn | Type | Påkrævet | Beskrivelse |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| sso | string | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetUserBanPreferenceResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBanPreferenceResponse.ts)
+Returnerer: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIModerateGetUserBanPreferencesResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getUserBanPreference Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserBanPreference(): Promise<void> {
-  const tenantId: string = "acme-corp-tenant-2024";
-  const sso: string = "sso-token-9f8b7a6c";
+async function demoGetUserBanPreference() {
+  const tenantId: string = "tenant_987654321";
+  const ssoToken: string = "sso_user_abc123xyz";
 
-  const result: GetUserBanPreferenceResponse = await getUserBanPreference(tenantId, sso);
-  console.log(result);
+  const responseWithSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId, ssoToken);
+  const responseWithoutSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId);
 }
-
-demoGetUserBanPreference();
 [inline-code-end]

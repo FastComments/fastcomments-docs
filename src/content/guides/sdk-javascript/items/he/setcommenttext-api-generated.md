@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
@@ -11,31 +11,29 @@
 
 ## תגובה
 
-מחזיר: [`SetCommentTextResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentTextResponse1.ts)
+מחזיר: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicAPISetCommentTextResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת setCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'setCommentText דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = 'tenant_12345';
-  const commentId: string = 'cmt_98765';
-  const broadcastId: string = 'brd_112233';
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_54321";
   const commentTextUpdateRequest: CommentTextUpdateRequest = {
-    text: 'Updated comment with @john.doe and #important',
-    mentions: [{ userId: 'user_001', username: 'john.doe' }],
-    hashtags: [{ tag: 'important' }],
+    text: "Revised comment text with additional details."
   };
-  const editKey: string = 'edit_abc123';
-  const result: SetCommentTextResponse1 = await setCommentText(
+  const editKey: string = "edit_abc123";
+  const sso: string = "sso_token_456def";
+
+  const response: PublicAPISetCommentTextResponse = await setCommentText(
     tenantId,
     commentId,
     broadcastId,
     commentTextUpdateRequest,
     editKey,
+    sso
   );
-  console.log(result);
 })();
 [inline-code-end]
-
----

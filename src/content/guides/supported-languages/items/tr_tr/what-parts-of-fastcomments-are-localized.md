@@ -1,5 +1,9 @@
-**Uygulamanıza veya web sitenize gömülebilen** tüm FastComments ürünleri yerelleştirilmiştir.
+---
+All FastComments products that are **uygulamanıza veya web sitenize gömülebilen**, are localized.
 
-Tüm **e-postalar** tamamen yerelleştirilmiştir. Gönderdiğimiz e-postaları oluşturmak için kullanılan yerel ayar, kullanıcının en son oturum açtığında veya yorum widget'ı ile yorum yaptığında kullandığı son yerel ayara dayanır.
+All **e-postalar** are fully localized. The locale used to render the emails we send are based on the last
+locale the user used when they last logged in or commented with the commenting widget.
 
-**Yönetici ve kullanıcı paneli** şu anda yerelleştirilmemiştir, ancak yol haritasında yer almaktadır.
+The **yönetici ve kullanıcı kontrol paneli** is localized. Each user can pick their preferred language on their account details page.
+
+---

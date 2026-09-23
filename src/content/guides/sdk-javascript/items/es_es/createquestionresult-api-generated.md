@@ -2,30 +2,29 @@
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
+| tenantId | string | Sí |  |
+| createQuestionResultBody | CreateQuestionResultBody | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
+Devuelve: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
+const tenantId: string = "tenant_12345";
 
-const metaItem: MetaItem = {
-  key: "campaign",
-  value: "spring-launch"
+const createQuestionResultBody: CreateQuestionResultBody = {
+  questionId: "q_9876",
+  answer: "Yes",
+  score: 5,
+  meta: [
+    { key: "source", value: "survey" }
+  ]
 };
 
-const questionResultBody: CreateQuestionResultBody = {
-  questionId: "question-42",
-  answer: "Positive",
-  metadata: [metaItem]
-  // los campos opcionales como notas se omiten
-};
-
-const result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);
+const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
+
+---

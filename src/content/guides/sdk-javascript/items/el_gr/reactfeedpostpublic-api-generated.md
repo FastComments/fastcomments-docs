@@ -1,39 +1,38 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| reactBodyParams | ReactBodyParams | Yes |  |
-| isUndo | boolean | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ναι |  |
+| postId | string | Ναι |  |
+| reactBodyParams | ReactBodyParams | Ναι |  |
+| isUndo | boolean | Όχι |  |
+| broadcastId | string | Όχι |  |
+| sso | string | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`ReactFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublicResponse.ts)
+Επιστρέφει: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostResponse.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'reactFeedPostPublic Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_12345';
-  const postId: string = 'post_98765';
-  const reactBodyParams: ReactBodyParams = { reaction: 'thumbs_up' };
-  const isUndo: boolean = false;
-  const broadcastId: string = 'broadcast_abcde';
-  const sso: string = 'sso_token_xyz';
-
-  const response: ReactFeedPostPublicResponse = await reactFeedPostPublic(
+async function demoReact() {
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const reactBodyParams: ReactBodyParams = {
+    type: "like",
+    userId: "user_abcde"
+  };
+  const response: ReactFeedPostResponse = await reactFeedPostPublic(
     tenantId,
     postId,
     reactBodyParams,
-    isUndo,
-    broadcastId,
-    sso
+    true,
+    "broadcast_001",
+    "sso_token_xyz"
   );
-
-  console.log(response);
-})();
+}
 [inline-code-end]
+
+---

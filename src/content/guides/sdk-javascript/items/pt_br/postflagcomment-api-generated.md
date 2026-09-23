@@ -2,28 +2,32 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | broadcastId | string | Não |  |
-| tenantId | string | Não |  |
 | sso | string | Não |  |
 
 ## Resposta
 
-Retorna: [`PostFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostFlagCommentResponse.ts)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'postFlagComment Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo postFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_20230915_001";
-const broadcastId: string = "brd_20230915_live";
-const tenantId: string = "tenant_42";
-const sso: string = "sso_token_abc123";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
 
-const flaggedResponse: PostFlagCommentResponse = await postFlagComment(
-  commentId,
-  broadcastId,
-  tenantId,
-  sso
-);
+  // Apenas parâmetros obrigatórios
+  const result1: APIEmptyResponse = await postFlagComment(tenantId, commentId);
+
+  // Incluindo parâmetros opcionais
+  const broadcastId: string = "brd_54321";
+  const sso: string = "user@example.com";
+  const result2: APIEmptyResponse = await postFlagComment(tenantId, commentId, broadcastId, sso);
+
+  console.log(result1, result2);
+}
+runExample();
 [inline-code-end]

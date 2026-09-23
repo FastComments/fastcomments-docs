@@ -8,30 +8,22 @@
 
 ## Antwort
 
-Rückgabe: [`UpdateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionConfigResponse.ts)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'updateQuestionConfig Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const questionId: string = "qstn-2023-04";
+(async () => {
+  const tenantId: string = "acme-corp-tenant";
+  const questionId: string = "question-42";
 
-const updateBody: UpdateQuestionConfigBody = {
-  // optionale Felder demonstriert
-  customOptions: [
-    {
-      id: "opt-001",
-      label: "Extra Details",
-      required: true,
-    },
-  ],
-  renderingType: "markdown",
-};
+  const updateBody: UpdateQuestionConfigBody = {
+    title: "Revised FAQ Question"
+    // isActive, customOptions, etc. sind optional und wurden weggelassen
+  };
 
-const response: UpdateQuestionConfigResponse = await updateQuestionConfig(
-  tenantId,
-  questionId,
-  updateBody
-);
+  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
+  console.log(response);
+})();
 [inline-code-end]

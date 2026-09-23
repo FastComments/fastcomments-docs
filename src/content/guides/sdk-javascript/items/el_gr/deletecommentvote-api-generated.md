@@ -1,43 +1,49 @@
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| voteId | string | Yes |  |
-| urlId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| editKey | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ναι |  |
+| commentId | string | Ναι |  |
+| voteId | string | Ναι |  |
+| urlId | string | Ναι |  |
+| broadcastId | string | Ναι |  |
+| editKey | string | Όχι |  |
+| sso | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Επιστρέφει: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'deleteCommentVote Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso είναι προαιρετικό και παραλείπεται
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // προαιρετικό
+const ssoToken: string = "sso_token_xyz"; // προαιρετικό
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// Κλήση μόνο με τις απαιτούμενες παραμέτρους και μία προαιρετική
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// Κλήση με και τις δύο προαιρετικές παραμέτρους
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]

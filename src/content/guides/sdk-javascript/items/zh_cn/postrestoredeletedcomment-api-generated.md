@@ -1,38 +1,32 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| broadcastId | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 响应
 
-返回：[`PostRestoreDeletedCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRestoreDeletedCommentResponse.ts)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postRestoreDeletedComment 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function restoreCommentDemo(): Promise<void> {
-    const commentId: string = "cmt_5f2a9b7e1234567890abcd";
-    const broadcastId: string | undefined = "brd_2023_09";
-    const tenantId: string | undefined = "tenant_42";
-    const sso: string | undefined = "sso_token_abcdef123456";
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_98765";
 
-    const response: PostRestoreDeletedCommentResponse = await postRestoreDeletedComment(
-        commentId,
-        broadcastId,
-        tenantId,
-        sso
-    );
+const resultRequired: APIEmptyResponse = await postRestoreDeletedComment(tenantId, commentId);
 
-    console.log(response);
-}
+const broadcastId: string = "brd_001";
+const sso: string = "sso_token_abc123";
 
-restoreCommentDemo();
+const resultAll: APIEmptyResponse = await postRestoreDeletedComment(
+  tenantId,
+  commentId,
+  broadcastId,
+  sso
+);
 [inline-code-end]
-
----

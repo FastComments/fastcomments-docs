@@ -1,28 +1,25 @@
----
-## 매개변수
+## Parameters
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentIds | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| commentIds | string | 예 |  |
+| sso | string | 아니오 |  |
 
-## 응답
+## Response
 
-반환: [`CheckedCommentsForBlockedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CheckedCommentsForBlockedResponse.ts)
+반환: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CheckBlockedCommentsResponse.ts)
 
-## 예시
+## Example
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'checkedCommentsForBlocked 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp-123";
-  const commentIds: string = "cmt_001,cmt_002";
-  const ssoToken: string = "ssoTokenXYZ";
+    const tenantId: string = "tenant_12345";
+    const commentIds: string = "cmt_9876,cmt_5432";
+    const ssoToken: string = "sso_user_abc123";
 
-  const blockedCheck: CheckedCommentsForBlockedResponse = await checkedCommentsForBlocked(tenantId, commentIds);
-  const blockedCheckWithSso: CheckedCommentsForBlockedResponse = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);
+    const responseWithSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);
+    const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
-
----

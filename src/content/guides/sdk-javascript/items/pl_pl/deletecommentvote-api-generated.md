@@ -12,32 +12,38 @@
 
 ## Odpowiedź
 
-Zwraca: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Zwraca: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'deleteCommentVote Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso jest opcjonalne i pominięte
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // opcjonalny
+const ssoToken: string = "sso_token_xyz"; // opcjonalny
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// Wywołaj z tylko wymaganymi parametrami i jednym opcjonalnym
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// Wywołaj z oboma opcjonalnymi parametrami
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]

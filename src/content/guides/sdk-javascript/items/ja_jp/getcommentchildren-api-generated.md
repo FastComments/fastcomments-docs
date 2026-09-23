@@ -1,26 +1,27 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| commentId | string | はい |  |
+| sso | string | いいえ |  |
 
-## レスポンス
+## 応答
 
-返り値: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
+返却: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getCommentChildren の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const tenantId: string = "tenant_xyz";
-const sso: string = "sso_987654";
+async function fetchChildren() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_user_abc123";
 
-const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
-const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
+  const responseWithSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId, ssoToken);
+  const responseWithoutSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId);
+}
+
+fetchChildren();
 [inline-code-end]
-
----

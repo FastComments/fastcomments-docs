@@ -1,28 +1,30 @@
+---
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|--------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
-| tenantId | string | Nee |  |
 | sso | string | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`GetModerationCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentTextResponse.ts)
+Retourneert: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse.ts)
 
-## Example
+## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld van getModerationCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationCommentText Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function exampleUsage(): Promise<void> {
-  const commentId: string = "cmt_9f8e7d6c5b4a3b2c1d0e";
-  const tenantId: string = "tenant_67890";
-  const sso: string = "sso_token_abc123";
+async function fetchComment() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_abcde12345";
 
-  // Roep aan met alleen de verplichte parameter
-  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);
-
-  // Roep aan met optionele parameters
-  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);
+  const commentWithoutSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId);
+  const commentWithSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId, ssoToken);
 }
+
+fetchComment();
 [inline-code-end]
+
+---

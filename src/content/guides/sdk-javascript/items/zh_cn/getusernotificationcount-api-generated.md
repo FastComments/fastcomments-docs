@@ -1,32 +1,27 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | sso | string | No |  |
 
 ## 响应
 
-Returns: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
+返回: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getUserNotificationCount 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserNotificationCount() {
-    const tenantId: string = "acme-corp-01";
+async function demo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const ssoToken: string = "sso-token-xyz789";
 
-    // 使用可选的 SSO 令牌调用
-    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId,
-        "sso-token-abc123"
-    );
-
-    // 调用时不使用 SSO 令牌
-    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId
-    );
-
-    console.log(countWithSSO, countWithoutSSO);
+  const countWithoutSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
+  const countWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
 }
+
+demo();
 [inline-code-end]
+
+---

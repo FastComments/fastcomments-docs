@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -11,32 +11,29 @@
 
 ## Respuesta
 
-Devuelve: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const commentId: string = "cmt_98765";
-
-const updatableCommentParams: UpdatableCommentParams = {
-  // campos de ejemplo; la forma real depende de la definición de la API
-  // por ejemplo, body: "Edited comment content",
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+const commentId: string = "comment-9876543210";
+const updateParams: UpdatableCommentParams = {
+  content: "Edited comment content",
+  isApproved: true
 };
 
-const contextUserId: string = "user_abcde";
+const contextUserId: string = "user-11223344";
 const doSpamCheck: boolean = true;
 const isLive: boolean = false;
 
-const result: UpdateCommentResponse = await updateComment(
+const response: APIEmptyResponse = await updateComment(
   tenantId,
   commentId,
-  updatableCommentParams,
+  updateParams,
   contextUserId,
   doSpamCheck,
   isLive
 );
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
-Enable ou desative notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas para novos comentários raiz, e também
+Enable ou desabilite notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas para novos comentários raiz, e também
 
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Sim |  |
+| urlId | string | Sim |  |
+| url | string | Sim |  |
+| pageTitle | string | Sim |  |
+| subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Sim |  |
+| sso | string | Não |  |
 
 ## Resposta
 
@@ -17,18 +17,18 @@ Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -37,14 +37,10 @@ Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]
 
 ---

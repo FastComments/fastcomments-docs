@@ -2,38 +2,31 @@
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
+| tenantId | string | Sí |  |
+| id | string | Sí |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Sí |  |
 
 ## Respuesta
 
-Devuelve: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runUpdate() {
-    const tenantId: string = "acme-corp-01";
-    const id: string = "qr-20230915-001";
+const tenantId: string = "c1f5e8b2-9a4d-4f3a-8d2e-6b7c9d0e1f2a";
+const questionId: string = "qstn_1234567890";
 
-    const updateQuestionResultBody: UpdateQuestionResultBody = {
-        // campos requeridos
-        answer: "No",
-        // campos opcionales
-        comment: "User clarified their response",
-        // anotherOptionalField?: value,
-    };
+const updateBody: UpdateQuestionResultBody = {
+  score: 85,
+  comment: "Adjusted based on new criteria",
+  meta: [
+    { key: "reviewer", value: "john.doe@example.com" },
+    { key: "timestamp", value: new Date().toISOString() }
+  ]
+};
 
-    const result: UpdateQuestionResultResponse = await updateQuestionResult(
-        tenantId,
-        id,
-        updateQuestionResultBody
-    );
-
-    console.log(result);
-}
-
-runUpdate();
+const response: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);
 [inline-code-end]
+
+---

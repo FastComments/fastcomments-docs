@@ -1,22 +1,22 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| largeInternalURLSanitized | string | Yes |  |
+| tenantId | string | Ναι |  |
+| largeInternalURLSanitized | string | Ναι |  |
 
-## Απάντηση
+## Response
 
-Επιστρέφει: [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLargeResponse.ts)
+Επιστρέφει: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'getGifLarge Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getGifLarge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'c9f4a1b2-3d5e-4f6a-8b9c-0d1e2f3a4b5c';
-  const largeInternalURLSanitized: string = 'https://cdn.fastcomments.com/gifs/awesome-cat-large.gif';
-  const result: GetGifLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-  console.log(result);
-})();
+async function runExample() {
+    const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+    const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/large/abc123.gif";
+    const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+    console.log(response);
+}
 [inline-code-end]

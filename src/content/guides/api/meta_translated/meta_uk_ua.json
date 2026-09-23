@@ -235,7 +235,7 @@
       "subCat": "Модератори"
     },
     {
-      "name": "Структура лічильника сповіщень",
+      "name": "Структура кількості сповіщень",
       "file": "notification-count-structure.md",
       "subCat": "Кількість сповіщень"
     },
@@ -268,6 +268,53 @@
       "name": "PATCH /api/v1/notifications/:id",
       "file": "notifications-patch.md",
       "subCat": "Сповіщення"
+    },
+    {
+      "name": "Публічний API реакцій на сторінці",
+      "file": "page-reacts-api.md",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакції на сторінці"
     },
     {
       "name": "Структура сторінки",
@@ -305,74 +352,132 @@
       "subCat": "Сторінки"
     },
     {
-      "name": "Структура події відкладеного вебхука",
+      "name": "Структура опитування",
+      "file": "poll-structure.md",
+      "subCat": "Опитування"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опитування"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опитування"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опитування"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опитування"
+    },
+    {
+      "name": "Структура голосу в опитуванні",
+      "file": "poll-vote-structure.md",
+      "subCat": "Голоси в опитуваннях"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоси в опитуваннях"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоси в опитуваннях"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоси в опитуваннях"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоси в опитуваннях"
+    },
+    {
+      "name": "Структура події очікуючого вебхука",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Відкладені події вебхука"
+      "subCat": "Очікуючі події вебхука"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Відкладені події вебхука"
+      "subCat": "Очікуючі події вебхука"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Відкладені події вебхука"
+      "subCat": "Очікуючі події вебхука"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Відкладені події вебхука"
+      "subCat": "Очікуючі події вебхука"
     },
     {
-      "name": "Структура користувача SSO",
+      "name": "Структура SSO користувача",
       "file": "sso-user-structure.md",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Користувачі SSO"
+      "subCat": "SSO користувачі"
     },
     {
       "name": "Структура підписки",

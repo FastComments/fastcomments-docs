@@ -1,37 +1,45 @@
-## Parameters
+## Параметри
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| createCommentParams | CreateCommentParams | Да |  |
-| isLive | boolean | Не |  |
-| doSpamCheck | boolean | Не |  |
-| sendEmails | boolean | Не |  |
-| populateNotifications | boolean | Не |  |
+| tenantId | string | Yes |  |
+| createCommentParams | CreateCommentParams | Yes |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| sendEmails | boolean | No |  |
+| populateNotifications | boolean | No |  |
 
 ## Одговор
 
-Враћа: [`SaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SaveCommentResponse.ts)
+Враћа: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APISaveCommentResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'saveComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'saveComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function submitComment() {
-  const tenantId: string = "tenant_9f8e7d6c";
-  const commentParams: CreateCommentParams = {
-    text: "Great post, thanks for sharing!",
-    authorId: "user_123abc",
-    mentions: [] as CommentUserMentionInfo[],
-    hashtags: [] as CommentUserHashTagInfo[]
-  };
-  const response: SaveCommentResponse = await saveComment(
-    tenantId,
-    commentParams,
-    true,   // isLive
-    false   // doSpamCheck
-  );
-  console.log(response);
-}
-submitComment();
+const tenantId: string = "tenant_12345";
+
+const commentParams: CreateCommentParams = {
+  content: "This is a comment with a mention and a hashtag.",
+  userId: "user_987",
+  mentions: [
+    { userId: "user_123", start: 27, end: 34 }
+  ] as CommentUserMentionInfo[],
+  hashtags: [
+    { tag: "feedback", start: 45, end: 53 }
+  ] as CommentUserHashTagInfo[],
+  poll: {
+    question: "Do you like this feature?",
+    options: ["Yes", "No"]
+  } as CommentPollInput,
+};
+
+const response: APISaveCommentResponse = await saveComment(
+  tenantId,
+  commentParams,
+  true,   // isLive
+  true,   // doSpamCheck
+  false,  // sendEmails
+  true    // populateNotifications
+);
 [inline-code-end]

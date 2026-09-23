@@ -1,28 +1,23 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
 
 ## 响应
 
-返回: [`GetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeResponse.ts)
+返回: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getUserBadge 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample(): Promise<void> {
-  const tenantId: string = "acme-corp-tenant-001";
-  const badgeId: string = "badge-5f9d3a2b";
-
-  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);
-
-  // 安全访问可选字段
-  const badgeName: string | undefined = badgeResponse.userBadge?.name;
-  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? "Unnamed"}`);
+async function demoGetUserBadge() {
+    const tenantId: string = "tenant-9f8b7c6d";
+    const userId: string = "user-123456";
+    const badgeResponse: APIGetUserBadgeResponse = await getUserBadge(tenantId, userId);
 }
-
-runExample();
 [inline-code-end]
+
+---

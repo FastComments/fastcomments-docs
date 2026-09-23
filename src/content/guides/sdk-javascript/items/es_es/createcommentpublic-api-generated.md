@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
-|--------|------|-------------|-------------|
+| Nombre | Tipo | Requerido | Descripción |
+|------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | urlId | string | Sí |  |
 | broadcastId | string | Sí |  |
@@ -11,31 +11,20 @@
 
 ## Respuesta
 
-Devuelve: [`CreateCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateCommentPublicResponse.ts)
+Devuelve: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SaveCommentsResponseWithPresence.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'createCommentPublic Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo createCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-abc123";
-  const urlId: string = "post-987654";
-  const broadcastId: string = "bcast-001";
-  const commentData: CommentData = {
-    content: "I really enjoyed this article!"
-  };
-  const sessionId: string = "session-xyz789";
-  const sso: string = "sso-token-456def";
-
-  const response: CreateCommentPublicResponse = await createCommentPublic(
-    tenantId,
-    urlId,
-    broadcastId,
-    commentData,
-    sessionId,
-    sso
-  );
-
-  console.log(response);
-})();
+async function runExample() {
+  const tenantId: string = "tenant-456";
+  const urlId: string = "url-789";
+  const broadcastId: string = "broadcast-101112";
+  const commentData: CommentData = { text: "This is a comment", userId: "user-123" };
+  const sessionId: string = "session-131415";
+  const sso: string = "sso-token-xyz";
+  const result: SaveCommentsResponseWithPresence = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);
+  const resultNoOpt: SaveCommentsResponseWithPresence = await createCommentPublic(tenantId, urlId, broadcastId, commentData);
+}
 [inline-code-end]

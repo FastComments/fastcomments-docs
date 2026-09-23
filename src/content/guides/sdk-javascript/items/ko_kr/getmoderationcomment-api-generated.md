@@ -1,40 +1,38 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|------|------|
-| commentId | string | Yes |  |
-| includeEmail | boolean | No |  |
-| includeIP | boolean | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | 예 |  |
+| commentId | string | 예 |  |
+| includeEmail | boolean | 아니오 |  |
+| includeIP | boolean | 아니오 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+반환: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'getModerationComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // 전체 매개변수 집합
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // 필수 매개변수만 사용하여 호출
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // 선택 매개변수와 함께 호출
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // 필수 인수만 사용한 최소 호출
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // 결과를 필요에 따라 사용...
 }
 [inline-code-end]

@@ -1,8 +1,6 @@
----
-Активирайте или деактивирайте известия за страница. Когато потребителите са абонирани за страница, известия се създават
-за нови главни коментари, и също
+Enable or disable notifications for a page. When users are subscribed to a page, notifications are created for new root comments, and also
 
-## Parameters
+## Параметри
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
@@ -13,24 +11,24 @@
 | subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Yes |  |
 | sso | string | No |  |
 
-## Response
+## Отговор
 
 Връща: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationPageSubscriptionStatusResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -39,14 +37,10 @@
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]
 
 ---

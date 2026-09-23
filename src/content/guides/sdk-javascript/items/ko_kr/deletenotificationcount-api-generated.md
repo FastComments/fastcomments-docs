@@ -1,23 +1,23 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
 
 ## 응답
 
-반환: [`DeleteNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteNotificationCountResponse.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'deleteNotificationCount 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run() {
-  const tenantId: string = "tenant_12345";
-  const notificationId: string = "notif_98765";
-  const result: DeleteNotificationCountResponse = await deleteNotificationCount(tenantId, notificationId);
-  console.log(result);
-}
-run();
+let tenantId: string = "tenant-42f9b8c1";
+let notificationId: string = "notif-7e3a9d4f";
+
+const result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);
 [inline-code-end]
+
+---

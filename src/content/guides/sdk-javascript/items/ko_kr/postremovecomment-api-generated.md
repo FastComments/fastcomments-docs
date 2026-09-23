@@ -1,31 +1,34 @@
-## 매개변수
+## Parameters
 
 | 이름 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| commentId | string | 예 |  |
-| broadcastId | string | 아니요 |  |
-| tenantId | string | 아니요 |  |
-| sso | string | 아니요 |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
-## 응답
+## Response
 
-반환: [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRemoveCommentResponse.ts)
+Returns: [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRemoveCommentApiResponse.ts)
 
-## 예제
+## Example
 
 [inline-code-attrs-start title = 'postRemoveComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeCommentExample(): Promise<void> {
-  const commentId: string = "cmt_7f9a3e2b";
+async function removeCommentExample() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_555";
+  const sso: string = "sso_token_abc";
 
-  const result1: PostRemoveCommentResponse = await postRemoveComment(commentId);
-
-  const broadcastId: string = "brd_12ab34cd";
-  const tenantId: string = "tenant_5678efgh";
-  const sso: string = "sso_XYZ12345";
-
-  const result2: PostRemoveCommentResponse = await postRemoveComment(commentId, broadcastId, tenantId, sso);
-
-  console.log(result1, result2);
+  const response: PostRemoveCommentApiResponse = await postRemoveComment(
+    tenantId,
+    commentId,
+    broadcastId,
+    sso
+  );
+  console.log(response);
 }
+
+removeCommentExample();
 [inline-code-end]

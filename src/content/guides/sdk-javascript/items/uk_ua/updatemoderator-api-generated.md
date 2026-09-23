@@ -1,31 +1,26 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
-| updateModeratorBody | UpdateModeratorBody | Так |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateModeratorBody | UpdateModeratorBody | Yes |  |
 
 ## Відповідь
 
-Повертає: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateModerator Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoUpdateModerator(): Promise<void> {
-    const tenantId: string = "tenant_42abc";
-    const moderatorId: string = "moderator_8f9e";
-    const updateBody: UpdateModeratorBody = {
-        isActive: true,
-        role: "admin",
-        // необов'язкове поле
-        notes: "Promoted to senior moderator"
-    };
-    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
-    console.log(result);
-}
+const tenantId: string = "tenant_9f8b7c6d";
+const moderatorId: string = "mod_12345";
 
-demoUpdateModerator();
+const updateBody: UpdateModeratorBody = {
+  isActive: true,
+  // role?: string є необов’язковим і тут пропущено
+};
+
+const result: APIEmptyResponse = await updateModerator(tenantId, moderatorId, updateBody);
 [inline-code-end]

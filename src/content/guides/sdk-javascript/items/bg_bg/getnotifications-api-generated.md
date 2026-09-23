@@ -1,40 +1,42 @@
-## Parameters
+## Параметри
 
 | Име | Тип | Задължително | Описание |
-|------|------|--------------|----------|
-| tenantId | string | Да |  |
-| userId | string | Не |  |
-| urlId | string | Не |  |
-| fromCommentId | string | Не |  |
-| viewed | boolean | Не |  |
-| type | string | Не |  |
-| skip | number | Не |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| urlId | string | No |  |
+| fromCommentId | string | No |  |
+| viewed | boolean | No |  |
+| type | string | No |  |
+| skip | number | No |  |
 
-## Response
+## Отговор
 
-Връща: [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
+Връща: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "tenant_42";
+  const userId: string = "user_1001";
+  const urlId: string = "url_2023";
+  const viewed: boolean = true;
+  const skip: number = 0;
 
-  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
-  console.log(notifications);
-
-  const more: GetNotificationsResponse1 = await getNotifications(
+  const notifications: GetNotificationsResponse = await getNotifications(
     tenantId,
+    userId,
+    urlId,
     undefined,
-    "article-5678",
+    viewed,
     undefined,
-    true,
-    "reply",
-    10
+    skip
   );
-  console.log(more);
+
+  console.log(notifications);
 }
-demo();
 [inline-code-end]
+
+---

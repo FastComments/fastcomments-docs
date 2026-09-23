@@ -1,23 +1,24 @@
 ## パラメータ
 
-| 名前 | タイプ | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
 
 ## レスポンス
 
-返却: [`DeletePendingWebhookEventResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeletePendingWebhookEventResponse.ts)
+返り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deletePendingWebhookEvent の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runDemo() {
-  const tenantId: string = 'c3f5e9d2-1a2b-4c3d-9e7f-1234567890ab';
-  const eventId: string = 'event_987654321';
-  const response: DeletePendingWebhookEventResponse = await deletePendingWebhookEvent(tenantId, eventId);
-  console.log(response);
+async function runDeletion() {
+  const tenantId: string = "tenant-42f7b9c2";
+  const eventId: string = "webhook-event-8a7d6c5b";
+  const result: APIEmptyResponse = await deletePendingWebhookEvent(tenantId, eventId);
+  console.log(result);
 }
-runDemo();
 [inline-code-end]
+
+---

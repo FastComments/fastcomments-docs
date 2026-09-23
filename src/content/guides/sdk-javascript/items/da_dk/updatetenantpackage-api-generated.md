@@ -2,34 +2,26 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Ja |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
 
 ## Svar
 
-Returnerer: [`UpdateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantPackageResponse.ts)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'updateTenantPackage Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-9876";
-const packageId: string = "pkg-2023";
-
-const customConfig: CustomConfigParameters = {
-  enableSpamFilter: true,
-  spamRatingThreshold: 4,
-};
+const tenantId: string = "tenant_9f8b7c6d";
+const packageId: string = "pkg_3a2b1c";
 
 const updateBody: UpdateTenantPackageBody = {
-  displayName: "Enterprise Pro",
-  customConfig,
+  // valgfrie felter kan udelades eller inkluderes efter behov
+  // newPackageName?: string;
+  // renewalDate?: string;
 };
 
-const response: UpdateTenantPackageResponse = await updateTenantPackage(
-  tenantId,
-  packageId,
-  updateBody
-);
+const result: APIEmptyResponse = await updateTenantPackage(tenantId, packageId, updateBody);
 [inline-code-end]

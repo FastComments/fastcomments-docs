@@ -1,34 +1,37 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| id | string | Yes |  |
-| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
+| Ime | Tip | Obvezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| userId | string | Da |  |
+| id | string | Da |  |
+| changeTicketStateBody | ChangeTicketStateBody | Da |  |
 
 ## Odgovor
 
-Vrne: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
+Vrne: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer changeTicketState'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const userId: string = "user-97123";
-const ticketId: string = "ticket-45001";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const ticketId: string = "ticket-20230915-001";
 
-const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  // neobvezno polje v telesu
-  comment: "Issue resolved after code fix"
-};
+  const changeTicketStateBody: ChangeTicketStateBody = {
+    // primer neobveznega polja
+    note: "Resolved after investigation"
+  };
 
-const response: ChangeTicketStateResponse1 = await changeTicketState(
-  tenantId,
-  userId,
-  ticketId,
-  changeTicketStateBody
-);
+  const response: ChangeTicketStateResponse = await changeTicketState(
+    tenantId,
+    userId,
+    ticketId,
+    changeTicketStateBody
+  );
+
+  console.log(response);
+})();
 [inline-code-end]

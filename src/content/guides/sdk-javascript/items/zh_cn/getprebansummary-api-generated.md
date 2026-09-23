@@ -1,35 +1,41 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | includeByUserIdAndEmail | boolean | No |  |
 | includeByIP | boolean | No |  |
 | includeByEmailDomain | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## 响应
 
-返回：[`GetPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPreBanSummaryResponse.ts)
+返回: [`PreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PreBanSummary.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getPreBanSummary 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "5f8d0c2e4b1a2c3d4e5f6a7b";
-const includeByUserIdAndEmail: boolean = true;
-const includeByIP: boolean = true;
-const includeByEmailDomain: boolean = false;
-const tenantId: string = "tenant-001";
-const sso: string = "sso-xyz-123";
+async function fetchSummary(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const includeByUserIdAndEmail: boolean = true;
+  const includeByIP: boolean = false;
+  const includeByEmailDomain: boolean = true;
+  const sso: string = "sso_token_abc";
 
-const preBanSummary: GetPreBanSummaryResponse = await getPreBanSummary(
-  commentId,
-  includeByUserIdAndEmail,
-  includeByIP,
-  includeByEmailDomain,
-  tenantId,
-  sso
-);
+  const summary: PreBanSummary = await getPreBanSummary(
+    tenantId,
+    commentId,
+    includeByUserIdAndEmail,
+    includeByIP,
+    includeByEmailDomain,
+    sso
+  );
+
+  console.log(summary);
+}
+
+fetchSummary();
 [inline-code-end]

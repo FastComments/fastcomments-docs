@@ -2,22 +2,21 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| skip | number | Не |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Одговор
 
-Враћа: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
+Враћа: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Primer getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchModerators(): Promise<void> {
-  const tenantId: string = "tenant-9876";
-  const skip: number = 30; // opciono pomeraj paginacije
-  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
-  // Primer bez paginacije:
-  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
-}
+const tenantId: string = "tenant_987654321";
+
+const moderators: GetModeratorsResponse = await getModerators(tenantId);
+
+const skip: number = 20;
+const moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);
 [inline-code-end]

@@ -2,24 +2,30 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | כן |  |
+| id | string | כן |  |
 
 ## תגובה
 
-מחזיר: [`DeleteEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateResponse.ts)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'deleteEmailTemplate דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
+interface APIStatus {
+  code: number;
+  message: string;
+}
+
+interface APIEmptyResponse {
+  status?: APIStatus;
+}
+
+(async () => {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "template_abcde";
+  const templateId: string = "template_987";
 
-  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);
-
-  // דוגמה לגישה למאפיין אופציונלי בתגובה
-  const statusCode: number | undefined = response.status?.code;
-}();
+  const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
+})();
 [inline-code-end]

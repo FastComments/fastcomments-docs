@@ -1,6 +1,6 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | id | string | Sí |  |
@@ -9,22 +9,25 @@
 
 ## Respuesta
 
-Devuelve: [`UpdateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantUserResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de updateTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantUser Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId: string = "5f8f8c1a2e9b3c001c2a9b2d";
-let userId: string = "user_98765";
+async function runUpdate() {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_987";
+  const updateBody: UpdateTenantUserBody = {
+    email: "new.email@example.com",
+    role: "admin",
+    isActive: true
+  };
+  const comment: string = "Promoted to admin role";
 
-let updateBody: UpdateTenantUserBody = {
-  email: "jane.smith@example.com",
-  role: "moderator",
-  isActive: false,
-};
+  const result: APIEmptyResponse = await updateTenantUser(tenantId, userId, updateBody, comment);
+  console.log(result);
+}
 
-let updateComments: string = "Deactivated user due to policy violation.";
-
-let result: UpdateTenantUserResponse = await updateTenantUser(tenantId, userId, updateBody, updateComments);
+runUpdate();
 [inline-code-end]

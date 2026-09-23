@@ -1,30 +1,33 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|------------|-----------|
-| tenantId | string | Ναι |  |
-| id | string | Ναι |  |
-| updateTenantUserBody | UpdateTenantUserBody | Ναι |  |
-| updateComments | string | Όχι |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantUserBody | UpdateTenantUserBody | Yes |  |
+| updateComments | string | No |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`UpdateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantUserResponse.ts)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα updateTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId: string = "5f8f8c1a2e9b3c001c2a9b2d";
-let userId: string = "user_98765";
+async function runUpdate() {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_987";
+  const updateBody: UpdateTenantUserBody = {
+    email: "new.email@example.com",
+    role: "admin",
+    isActive: true
+  };
+  const comment: string = "Promoted to admin role";
 
-let updateBody: UpdateTenantUserBody = {
-  email: "jane.smith@example.com",
-  role: "moderator",
-  isActive: false,
-};
+  const result: APIEmptyResponse = await updateTenantUser(tenantId, userId, updateBody, comment);
+  console.log(result);
+}
 
-let updateComments: string = "Deactivated user due to policy violation.";
-
-let result: UpdateTenantUserResponse = await updateTenantUser(tenantId, userId, updateBody, updateComments);
+runUpdate();
 [inline-code-end]

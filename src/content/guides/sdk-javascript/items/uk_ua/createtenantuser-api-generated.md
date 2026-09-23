@@ -1,29 +1,33 @@
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| createTenantUserBody | CreateTenantUserBody | Так |  |
+| tenantId | string | Yes |  |
+| createTenantUserBody | CreateTenantUserBody | Yes |  |
 
 ## Відповідь
 
-Повертає: [`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
+Повертає: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantUser Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "a1b2c3d4-5678-90ab-cdef-1234567890ab";
-
-const newUser: CreateTenantUserBody = {
-  email: "jane.doe@example.com",
-  firstName: "Jane",
-  lastName: "Doe",
-  role: "admin",
-  // необов’язкові параметри
-  phoneNumber: "+15551234567",
-  isActive: true,
-};
-
-const result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);
+async function addTenantUser() {
+  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+  const digestFreq: DigestEmailFrequency = 'daily';
+  const body: CreateTenantUserBody = {
+    email: 'jane.doe@example.com',
+    firstName: 'Jane',
+    lastName: 'Doe',
+    role: 'admin',
+    digestEmailFrequency: digestFreq,
+    phoneNumber: '+15551234567' // необов'язковий
+  };
+  const response: CreateTenantUserResponse = await createTenantUser(tenantId, body);
+  console.log(response);
+}
+addTenantUser();
 [inline-code-end]
+
+---

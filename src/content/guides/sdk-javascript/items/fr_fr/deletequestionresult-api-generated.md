@@ -1,3 +1,4 @@
+---
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -7,18 +8,19 @@
 
 ## Réponse
 
-Renvoie : [`DeleteQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteQuestionResultResponse.ts)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'deleteQuestionResult Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de deleteQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runDeletion(): Promise<void> {
-    const tenantId: string = "tenant-001";
-    const resultId: string = "c9f2a5b3-7e6d-4c9a-8b1f-2d3e4f5a6b7c";
-    const result: DeleteQuestionResultResponse = await deleteQuestionResult(tenantId, resultId);
-    console.log(result);
-}
+async function runDelete() {
+  const tenantId: string = "tenant_12345";
+  const resultId: string = "qr_98765";
 
-runDeletion();
+  const response: APIEmptyResponse = await deleteQuestionResult(tenantId, resultId);
+  console.log(response);
+}
 [inline-code-end]
+
+---

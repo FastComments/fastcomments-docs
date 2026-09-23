@@ -1,50 +1,64 @@
 ## Parametreler
 
-| İsim | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| page | number | Hayır |  |
-| limit | number | Hayır |  |
-| skip | number | Hayır |  |
-| asTree | boolean | Hayır |  |
-| skipChildren | number | Hayır |  |
-| limitChildren | number | Hayır |  |
-| maxTreeDepth | number | Hayır |  |
-| urlId | string | Hayır |  |
-| userId | string | Hayır |  |
-| anonUserId | string | Hayır |  |
-| contextUserId | string | Hayır |  |
-| hashTag | string | Hayır |  |
-| parentId | string | Hayır |  |
-| direction | SortDirections | Hayır |  |
-| fromDate | number | Hayır |  |
-| toDate | number | Hayır |  |
+| tenantId | string | Yes |  |
+| page | number | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
+| asTree | boolean | No |  |
+| skipChildren | number | No |  |
+| limitChildren | number | No |  |
+| maxTreeDepth | number | No |  |
+| urlId | string | No |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
+| contextUserId | string | No |  |
+| hashTag | string | No |  |
+| parentId | string | No |  |
+| direction | SortDirections | No |  |
+| fromDate | number | No |  |
+| toDate | number | No |  |
 
 ## Yanıt
 
-Returns: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Döndürür: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getComments Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const page: number = 2;
-const limit: number = 50;
-const asTree: boolean = true;
-const urlId: string = "article_5678";
-const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // bir hafta önce
-const toDate: number = Date.now();
+async function loadComments(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const page: number = 1;
+  const limit: number = 50;
+  const asTree: boolean = false;
+  const direction: SortDirections = "asc";
+  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 gün önce
+  const toDate: number = Date.now();
 
-const commentsResponse: GetCommentsResponse = await getComments({
-  tenantId,
-  page,
-  limit,
-  asTree,
-  urlId,
-  direction,
-  fromDate,
-  toDate,
-});
+  const commentsResponse: APIGetCommentsResponse = await getComments(
+    tenantId,
+    page,
+    limit,
+    undefined,
+    asTree,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    direction,
+    fromDate,
+    toDate
+  );
+
+  console.log(commentsResponse);
+}
 [inline-code-end]
+
+---

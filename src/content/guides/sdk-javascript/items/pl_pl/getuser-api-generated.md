@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -8,17 +7,17 @@
 
 ## Odpowiedź
 
-Zwraca: [`GetUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse1.ts)
+Zwraca: [`GetUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function main(): Promise<void> {
   const tenantId: string = "tenant_12345";
-  const userId: string = "user_98765";
-  const result: GetUserResponse1 = await getUser(tenantId, userId);
-})();
+  const id: string = "user_98765";
+  const response: GetUserResponse = await getUser(tenantId, id);
+  const { user }: { user?: User } = response;
+}
+main();
 [inline-code-end]
-
----

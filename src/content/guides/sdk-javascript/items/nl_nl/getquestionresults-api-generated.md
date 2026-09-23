@@ -1,42 +1,38 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| startDate | string | No |  |
-| questionId | string | No |  |
-| questionIds | string | No |  |
-| skip | number | No |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
+| urlId | string | Nee |  |
+| userId | string | Nee |  |
+| startDate | string | Nee |  |
+| questionId | string | Nee |  |
+| questionIds | string | Nee |  |
+| skip | number | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse1.ts)
+Retourneert: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getQuestionResults Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-123";
-  const urlId: string = "post-456";
-  const userId: string = "user-789";
-  const startDate: string = "2023-09-01T00:00:00Z";
-  const questionId: string = "q-101";
-  const questionIds: string = "q-102,q-103";
-  const skip: number = 20;
-
-  const results: GetQuestionResultsResponse1 = await getQuestionResults(
+async function fetchResults() {
+  const tenantId: string = 'c1a2b3d4-5678-90ab-cdef-1234567890ab';
+  const urlId: string = 'blog-post-789';
+  const startDate: string = '2023-01-01T00:00:00Z';
+  const questionIds: string = 'q-abc123,q-def456';
+  const response: GetQuestionResultsResponse = await getQuestionResults(
     tenantId,
     urlId,
-    userId,
+    undefined,
     startDate,
-    questionId,
-    questionIds,
-    skip
+    undefined,
+    questionIds
   );
-
-  console.log(results);
-})();
+  console.log(response);
+}
 [inline-code-end]
+
+---

@@ -1,29 +1,42 @@
-FastComments podpira številne jezike v različnih krajevnih nastavitvah.
+FastComments podpira številne jezike, v različnih lokalnih nastavitvah.
 
-- `bg_bg`: Bolgarščina (Bolgarija)
-- `zh_cn`: Kitajščina (poenostavljena)
-- `zh_tw`: Kitajščina (tradicionalna)
-- `hr_hr`: Hrvaščina (Hrvaška)
-- `da_dk`: Danščina
-- `nl_nl`: Nizozemščina
-- `en_us`: Angleščina (Severna Amerika)
-- `fr_fr`: Francoščina (Francija)
-- `de_de`: Nemščina (Nemčija)
-- `el_cy`: Grščina (Ciper)
-- `el_gr`: Grščina (Grčija)
-- `he`: Hebrejščina
-- `it_it`: Italijanščina (Italija)
-- `ja_jp`: Japonščina (Japonska)
-- `ko_kr`: Korejščina (Koreja)
-- `pl_pl`: Poljščina (Poljska)
-- `pt_br`: Portugalščina (Brazilija)
-- `ru_ru`: Ruščina (Rusija)
-- `ru_ua`: Ruščina (Ukrajina)
-- `sr_ba`: Srbščina (Bosna in Hercegovina)
-- `sr_latn_rs`: Srbščina (latinica, Srbija)
-- `sr_me`: Srbščina (Črna gora)
-- `sr_rs`: Srbščina (Srbija)
-- `sl_sl`: Slovenščina (Slovenija)
-- `es_es`: Španščina (Španija)
-- `uk_ua`: Ukrajinščina (Ukrajina)
-- `tr_tr`: Turščina (Turčija)
+- `ar`: arabščina
+- `bg_bg`: bolgarščina (Bolgarija)
+- `zh_cn`: kitajščina (poenostavljena)
+- `zh_tw`: kitajščina (tradicionalna)
+- `hr_hr`: hrvaščina (Hrvaška)
+- `da_dk`: danščina
+- `nl_nl`: nizozemščina
+- `en_us`: angleščina (Severna Amerika)
+- `fr_fr`: francoščina (Francija)
+- `de_de`: nemščina (Nemčija)
+- `el_cy`: grščina (Ciper)
+- `el_gr`: grščina (Grčija)
+- `he`: hebrejščina
+- `it_it`: italijanščina (Italija)
+- `ja_jp`: japonščina (Japonska)
+- `ko_kr`: korejščina (Koreja)
+- `pl_pl`: poljščina (Poljska)
+- `pt_br`: portugalščina (Brazilska)
+- `ru_ru`: ruščina (Rusija)
+- `ru_ua`: ruščina (Ukrajina)
+- `sr_ba`: srbščina (Bosna in Hercegovina)
+- `sr_latn_rs`: srbščina (latinica, Srbija)
+- `sr_me`: srbščina (Črna gora)
+- `sr_rs`: srbščina (Srbija)
+- `sl_sl`: slovenščina (Slovenija)
+- `es_es`: španščina (Španija)
+- `uk_ua`: ukrajinščina (Ukrajina)
+- `tr_tr`: turščina (Turčija)
+
+### Jeziki z desno proti levo
+
+Arabščina (`ar`) in hebrejščina (`he`) sta jezika z desno proti levo. Ko se uporabi ena od teh lokalizacij, FastComments razporedi pripomoček za komentarje, e‑pošto in nadzorno ploščo z desne proti levi. Dodatna konfiguracija ni potrebna.
+
+Vsak komentar in uporabniško ime sledita smeri svojega besedila. Angleški komentar se bere od leve proti desni na arabskem strani, arabški komentar pa se bere od desne proti levi na angleški strani.
+
+Izrezki kode se vedno berejo od leve proti desni.
+
+### Množinske oblike
+
+Besedilo, ki vključuje število, kot je "3 komentarji", uporablja pravilno množinsko obliko za vsak jezik. Na primer, arabščina ima ločene oblike za eno, dve, nekaj in veliko, medtem ko ruščina in poljščina imata ločeni obliki za nekaj in veliko.

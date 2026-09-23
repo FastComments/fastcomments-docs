@@ -1,11 +1,11 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|---------------|
-| tenantId | string | Ja |  |
-| postId | string | Ja |  |
-| broadcastId | string | Nee |  |
-| sso | string | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| postId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## Respons
 
@@ -16,13 +16,21 @@ Retourneert: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fa
 [inline-code-attrs-start title = 'deleteFeedPostPublic Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp";
-  const postId: string = "post_987654321";
-  const broadcastId: string = "broadcast_2024Q1";
-  const sso: string = "sso_4fa3b9c2";
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const broadcastId: string = "broadcast_abcde";
+  const sso: string = "sso_token_xyz";
 
-  const response1: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId);
-  const response2: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId);
-  const response3: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
+  const responseWithOpts: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(
+    tenantId,
+    postId,
+    broadcastId,
+    sso
+  );
+
+  const responseWithoutOpts: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(
+    tenantId,
+    postId
+  );
 })();
 [inline-code-end]

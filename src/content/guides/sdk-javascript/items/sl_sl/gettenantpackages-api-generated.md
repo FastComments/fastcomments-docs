@@ -1,25 +1,25 @@
-## Parameters
+## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| skip | number | Ne |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Odgovor
 
-Vrne: [`GetTenantPackagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse1.ts)
+Vrne: [`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'getTenantPackages Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_67890';
-  const skip: number = 30;
+async function fetchPackages() {
+  const tenantId: string = "acme-corp-001";
+  const skip: number = 15;
 
-  const packagesWithSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId, skip);
-  const packagesWithoutSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId);
-
-  console.log(packagesWithSkip, packagesWithoutSkip);
-})();
+  const resultWithSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId, skip);
+  const resultWithoutSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId);
+}
 [inline-code-end]
+
+---

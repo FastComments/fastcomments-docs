@@ -8,24 +8,19 @@
 
 ## Respuesta
 
-Devuelve: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoUpdateModerator(): Promise<void> {
-    const tenantId: string = "tenant_42abc";
-    const moderatorId: string = "moderator_8f9e";
-    const updateBody: UpdateModeratorBody = {
-        isActive: true,
-        role: "admin",
-        // campo opcional
-        notes: "Promoted to senior moderator"
-    };
-    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
-    console.log(result);
-}
+const tenantId: string = "tenant_9f8b7c6d";
+const moderatorId: string = "mod_12345";
 
-demoUpdateModerator();
+const updateBody: UpdateModeratorBody = {
+  isActive: true,
+  // role?: string es opcional y se omite aquí
+};
+
+const result: APIEmptyResponse = await updateModerator(tenantId, moderatorId, updateBody);
 [inline-code-end]

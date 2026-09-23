@@ -1,39 +1,32 @@
-## Параметри
+## Parameters
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | commentId | string | Да |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Да |  |
 | broadcastId | string | Не |  |
-| tenantId | string | Не |  |
 | sso | string | Не |  |
 
-## Отговор
+## Response
 
-Връща: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
+Returns: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AdjustVotesResponse.ts)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'postAdjustCommentVotes Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за postAdjustCommentVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8b7a6d";
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_987654321";
+const adjustParams: AdjustCommentVotesParams = { voteDelta: 1 };
+const broadcastId: string = "brd_112233";
+const sso: string = "sso-token-xyz";
 
-const adjustParams: AdjustCommentVotesParams = {
-  voteDelta: 1,
-  // допълнителни полета, както е изисквано от AdjustCommentVotesParams
-};
-
-const broadcastId: string = "brd_20230915";
-const tenantId: string = "tenant_42";
-const sso: string = "sso-token-abc123";
-
-const result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(
+const result: AdjustVotesResponse = await postAdjustCommentVotes(
+  tenantId,
   commentId,
   adjustParams,
   broadcastId,
-  tenantId,
   sso
 );
 [inline-code-end]
-
----

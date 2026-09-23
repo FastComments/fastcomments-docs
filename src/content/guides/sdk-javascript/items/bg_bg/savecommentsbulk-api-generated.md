@@ -15,31 +15,53 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'saveCommentsBulk Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за saveCommentsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b7c6d";
+const tenantId: string = "tenant_12345";
 
-const bulkComments: CreateCommentParams[] = [
-  {
-    content: "Welcome to the new forum thread!",
-    authorId: "user_42",
-    mentions: [{ userId: "user_84", username: "alice" }],
-    hashtags: [{ tag: "intro" }]
-  },
-  {
-    content: "Please review the updated guidelines.",
-    authorId: "moderator_1",
-    mentions: [],
-    hashtags: [{ tag: "guidelines" }, { tag: "update" }]
-  }
-];
+const mention1: CommentUserMentionInfo = {
+  userId: "user_002",
+  start: 10,
+  end: 20,
+};
+
+const hashtag1: CommentUserHashTagInfo = {
+  tag: "news",
+  start: 30,
+  end: 35,
+};
+
+const poll1: CommentPollInput = {
+  question: "Did you find this helpful?",
+  options: ["Yes", "No"],
+};
+
+const commentA: CreateCommentParams = {
+  content: "This is a great article!",
+  userId: "user_001",
+  mentions: [mention1],
+  hashtags: [hashtag1],
+  poll: poll1,
+};
+
+const commentB: CreateCommentParams = {
+  content: "I have a question about the topic.",
+  userId: "user_003",
+};
+
+const createCommentParams: CreateCommentParams[] = [commentA, commentB];
+
+const isLive: boolean = true;
+const doSpamCheck: boolean = false;
+const sendEmails: boolean = true;
+const populateNotifications: boolean = false;
 
 const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
   tenantId,
-  bulkComments,
-  true,      // isLive
-  false,     // doSpamCheck
-  true,      // sendEmails
-  undefined  // populateNotifications (използвайки по подразбиране)
+  createCommentParams,
+  isLive,
+  doSpamCheck,
+  sendEmails,
+  populateNotifications
 );
 [inline-code-end]

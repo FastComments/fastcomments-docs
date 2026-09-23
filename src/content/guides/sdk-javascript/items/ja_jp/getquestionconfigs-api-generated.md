@@ -1,28 +1,22 @@
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| skip | number | いいえ |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
+戻り値: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getQuestionConfigs の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchQuestionConfigs() {
-    const tenantId: string = "tenant-9876";
+async function fetchConfigs() {
+  const tenantId: string = "tenant_12345";
 
-    // 任意の 'skip' パラメータなしで呼び出す
-    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
-
-    // 任意の 'skip' パラメータありで呼び出す
-    const skip: number = 10;
-    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
-
-    console.log(configsWithoutSkip, configsWithSkip);
+  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
 }
 [inline-code-end]

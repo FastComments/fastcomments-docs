@@ -2,27 +2,22 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
 ## Odgovor
 
-Vraća: [`GetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeResponse.ts)
+Vraća: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'Primjer getUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample(): Promise<void> {
-  const tenantId: string = "acme-corp-tenant-001";
-  const badgeId: string = "badge-5f9d3a2b";
-
-  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);
-
-  // Sigurno pristupajte opcionalnim poljima
-  const badgeName: string | undefined = badgeResponse.userBadge?.name;
-  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? "Unnamed"}`);
+async function demoGetUserBadge() {
+    const tenantId: string = "tenant-9f8b7c6d";
+    const userId: string = "user-123456";
+    const badgeResponse: APIGetUserBadgeResponse = await getUserBadge(tenantId, userId);
 }
-
-runExample();
 [inline-code-end]
+
+---

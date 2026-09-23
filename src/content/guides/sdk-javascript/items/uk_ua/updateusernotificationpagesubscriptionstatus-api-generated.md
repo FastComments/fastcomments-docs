@@ -1,16 +1,17 @@
-Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, створюються сповіщення
-для нових кореневих коментарів, а також
+---
+Увімкнути або вимкнути сповіщення для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються
+для нових кореневих коментарів, і також
 
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Так |  |
+| urlId | string | Так |  |
+| url | string | Так |  |
+| pageTitle | string | Так |  |
+| subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Так |  |
+| sso | string | Ні |  |
 
 ## Відповідь
 
@@ -20,16 +21,16 @@
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -38,12 +39,10 @@
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]
+
+---

@@ -5,7 +5,7 @@ afterId
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|-----------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | afterId | string | Όχι |  |
 | limit | number | Όχι |  |
@@ -14,33 +14,31 @@ afterId
 | isCrawler | boolean | Όχι |  |
 | includeUserInfo | boolean | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Returns: [`GetFeedPostsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsPublicResponse.ts)
+Επιστρέφει: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getFeedPostsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getFeedPostsPublic Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = "tenant_12345";
-  const afterId: string = "post_9876";
-  const limit: number = 20;
-  const tags: string[] = ["news", "tech"];
-  const sso: string = "userToken123";
-  const isCrawler: boolean = false;
-  const includeUserInfo: boolean = true;
-  const response: GetFeedPostsPublicResponse = await getFeedPostsPublic(
-    tenantId,
-    afterId,
-    limit,
-    tags,
-    sso,
-    isCrawler,
-    includeUserInfo
-  );
-}
-example();
+const tenantId: string = "acme-corp-tenant";
+const afterId: string = "post-20230915-abc123";
+const limit: number = 15;
+const tags: string[] = ["technology", "innovation"];
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSJ9.s3cr3tSignature";
+const isCrawler: boolean = false;
+const includeUserInfo: boolean = true;
+
+const feedResponse: PublicFeedPostsResponse = await getFeedPostsPublic(
+  tenantId,
+  afterId,
+  limit,
+  tags,
+  sso,
+  isCrawler,
+  includeUserInfo
+);
 [inline-code-end]
 
 ---

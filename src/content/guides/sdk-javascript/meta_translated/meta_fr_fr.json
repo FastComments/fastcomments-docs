@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Documentation API",
+      "name": "Documentation de l'API",
       "file": "api-documentation-readme-generated.md",
       "subCat": "Référence API",
       "type": "readme"
@@ -33,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "APIs publiques vs sécurisées",
+      "name": "APIs Publiques vs Sécurisées",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Référence API",
       "type": "readme"
     },
     {
-      "name": "Intégration SSO (authentification unique)",
+      "name": "Intégration SSO (Authentification Unique)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -51,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Événements en direct (mises à jour en temps réel)",
+      "name": "Événements en direct (Mises à jour en temps réel)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -69,7 +69,13 @@
       "type": "readme"
     },
     {
-      "name": "agréger",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Locataires d'agent",
+      "type": "api"
+    },
+    {
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Agrégation",
       "type": "api"
@@ -450,6 +456,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Moi",
       "type": "api"
     },
     {
@@ -891,6 +903,54 @@
       "type": "api"
     },
     {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Votes de sondage",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Votes de sondage",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Votes de sondage",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Votes de sondage",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Sondages",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Sondages",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Sondages",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Sondages",
+      "type": "api"
+    },
+    {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Configurations de question",
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Votes",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

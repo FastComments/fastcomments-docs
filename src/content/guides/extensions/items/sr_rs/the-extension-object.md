@@ -1,9 +1,11 @@
-Објекат проширења се састоји од следеће дефиниције:
+The extension object consists of the following definition:
 
-[inline-code-attrs-start title = 'Објекат проширења JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- ако желите да ажурирате ово, запамтите да ажурирате comment-ui-core -->
+[inline-code-attrs-start title = 'Објекат екстензије JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * FastCommentsUI објекат проширења. Користи се за лениво учитавање одређених компоненти. На пример, систем за рецензије није коришћен од свих купаца, па учитавамо то проширење само када нам је потребно.
+ * FastCommentsUI објекат екстензије. Користи се за лениво учитавање одређених компоненти. На пример,
+ * систем за рецензије није коришћен од свих корисника, па учитавамо ту екстензију само када нам је потребна.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -17,17 +19,21 @@
  * @property {Function} removeCommentAndReRender - Референца на функцију која се може позвати за уклањање коментара из меморије и поновно рендеровање одговарајућег дела DOM-а.
  * @property {Function} newBroadcastId - Референца на функцију која се може позвати за креирање новог broadcast ID-а и додавање у локални списак broadcast ID-ова за игнорисање.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Позива се са коментаром који ће бити објављен. Враћа false да би се отказао подношење (на пример када је прикачена анкета непотпуна).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Филтрира HTML за област коментара.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Филтрира HTML за цео виџет приликом рендеровања.
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Филтрира HTML за сваки коментар пре рендеровања.
  * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Филтрира HTML за сваки мени коментара пре рендеровања.
  * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Филтрира HTML за цео виџет приликом рендеровања.
- * @property {FastCommentsUIReplyAreaTop} [replyAreaTop] - (LEGACY) Враћа HTML који се додаје на врх области одговора.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Враћа HTML који се додаје на врх области одговора.
  * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Враћа HTML који се додаје на врх виџета.
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Враћа HTML који се додаје на врх елемента коментара.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Враћа HTML који се додаје на дно елемента коментара.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Враћа HTML који се додаје након текста коментара, унутар елемента садржаја коментара (користи се у анкетама).
+ * @property {Function} [replyAreaInputBottom] - Враћа HTML који се додаје у оквир уноса коментара, испод текстуалног уноса (користи се у анкетама за уређивач анкете на месту). Прихвата ID родитељског коментара, или null за коренски оквир одговора.
+ * @property {Function} [onPollUpdate] - Позива се са живим догађајем када се промене бројеви гласова у анкети на страници.
+ * @property {Function} isSiteAdmin - Враћа да ли је посматрач администратор или модератор тенанта. Познато након првог преузимања.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Враћа HTML који се додаје на дно мени елемента за сваки коментар.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
@@ -38,7 +44,7 @@
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Корени елемент.
- * @param {Object.<string, Function>} clickListeners - Хендлосери догађаја за кликове, по имену класе, који се могу модификовати по референци.
+ * @param {Object.<string, Function>} clickListeners - Хендлери догађаја за кликове, по имену класе, који се могу модификовати по референци.
  * @returns void
  */
 

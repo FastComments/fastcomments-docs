@@ -7,19 +7,16 @@
 
 ## 响应
 
-返回: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
+返回：[`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getEmailTemplates 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_12345";
-
-  // 调用时不包含可选的 'skip'
-  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
-
-  // 调用时包含可选的 'skip' 参数
-  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
-})();
+async function fetchEmailTemplates() {
+  const tenantId: string = "acme-corp-123";
+  const skip: number = 20;
+  const templatesWithSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, skip);
+  const templatesWithoutSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
+}
 [inline-code-end]

@@ -1,9 +1,9 @@
-Омогућите или онемогућите обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се генеришу за нове коренске коментаре, и такође
+Омогућава или онемогућава обавештења за страницу. Када су корисници претплаћени на страницу, обавештења се креирају за нове коренске коментаре, и такође
 
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
-|------|------|----------|------|
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | urlId | string | Yes |  |
 | url | string | Yes |  |
@@ -17,18 +17,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -37,12 +37,8 @@
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Задължителен | Описание |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -9,25 +9,21 @@
 
 ## Отговор
 
-Връща: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoDeleteTenantUser() {
-  const tenantId: string = "acme-corp-tenant";
-  const userId: string = "user-9876";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "u-112233";
 
-  // Изтрий потребителя и всичките му коментари, използвайки режим на твърдо изтриване
-  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
-    tenantId,
-    userId,
-    "true",
-    "hard"
-  );
+  const result1: APIEmptyResponse = await deleteTenantUser(tenantId, userId);
+  const result2: APIEmptyResponse = await deleteTenantUser(tenantId, userId, "true", "hard");
 
-  // Изтрий потребителя без премахване на коментари (поведение по подразбиране)
-  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
-}
+  console.log(result1, result2);
+})();
 [inline-code-end]
+
+---

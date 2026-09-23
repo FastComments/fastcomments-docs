@@ -1,47 +1,42 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
+| tenantId | string | Так |  |
 | bulkPreBanParams | BulkPreBanParams | Так |  |
 | includeByUserIdAndEmail | boolean | Ні |  |
 | includeByIP | boolean | Ні |  |
 | includeByEmailDomain | boolean | Ні |  |
-| tenantId | string | Ні |  |
 | sso | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`PostBulkPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBulkPreBanSummaryResponse.ts)
+Повертає: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkPreBanSummary.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'postBulkPreBanSummary Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад postBulkPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const bulkPreBanParams: BulkPreBanParams = {
-    userIds: [10234, 56789],
-    emails: ["spam_user@example.com", "abuse@badsite.org"],
-    ips: ["203.0.113.45", "198.51.100.22"],
-    emailDomains: ["maliciousdomain.com"]
-  };
+const tenantId: string = "c1f2e3d4-5678-90ab-cdef-1234567890ab";
 
-  const includeByUserIdAndEmail: boolean = true;
-  const includeByIP: boolean = false;
-  const includeByEmailDomain: boolean = true;
-  const tenantId: string = "tenant_8f4b2c1a";
-  const sso: string = "sso-3948abf0";
+const bulkPreBanParams: BulkPreBanParams = {
+  userIds: ["user123"],
+  emails: ["spam@example.com"],
+  ips: ["192.0.2.1"],
+  emailDomains: ["example.com"]
+};
 
-  const summary: PostBulkPreBanSummaryResponse = await postBulkPreBanSummary(
-    bulkPreBanParams,
-    includeByUserIdAndEmail,
-    includeByIP,
-    includeByEmailDomain,
-    tenantId,
-    sso
-  );
+const includeByUserIdAndEmail: boolean = true;
+const includeByIP: boolean = false;
+const includeByEmailDomain: boolean = true;
+const sso: string = "sso-token-abc123";
 
-  console.log(summary);
-}
-
-runExample();
+const summary: BulkPreBanSummary = await postBulkPreBanSummary(
+  tenantId,
+  bulkPreBanParams,
+  includeByUserIdAndEmail,
+  includeByIP,
+  includeByEmailDomain,
+  sso
+);
 [inline-code-end]

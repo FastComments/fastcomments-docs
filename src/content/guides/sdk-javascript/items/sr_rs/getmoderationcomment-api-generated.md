@@ -1,40 +1,41 @@
+---
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| commentId | string | Да |  |
-| includeEmail | boolean | Не |  |
-| includeIP | boolean | Не |  |
-| tenantId | string | Не |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| includeEmail | boolean | No |  |
+| includeIP | boolean | No |  |
+| sso | string | No |  |
 
 ## Одговор
 
-Враћа: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Враћа: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Primer getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Пун скуп параметара
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Позив са само обавезним параметрима
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Позив са опционама параметрима
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Минимални позив користећи само потребан аргумент
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Користите резултате по потреби...
 }
 [inline-code-end]
+
+---

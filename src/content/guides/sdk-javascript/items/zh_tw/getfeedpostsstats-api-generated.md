@@ -1,29 +1,23 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postIds | Array<string> | Yes |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| postIds | Array<string> | 是 |  |
+| sso | string | 否 |  |
 
 ## 回應
 
-返回：[`GetFeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsStatsResponse.ts)
+返回：[`FeedPostsStatsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FeedPostsStatsResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getFeedPostsStats 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample(): Promise<void> {
-    const tenantId: string = "tenant_12345";
-    const postIds: string[] = ["post_a1b2c3", "post_d4e5f6"];
-    const ssoToken: string = "sso_abcdef123456";
-
-    const statsWithoutSso: GetFeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds);
-    const statsWithSso: GetFeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds, ssoToken);
-}
-
-runExample();
+const tenantId: string = "tenant-9f8b7c6d";
+const postIds: string[] = ["post-1a2b3c", "post-4d5e6f", "post-7g8h9i"];
+const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+const feedStats: FeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds, ssoToken);
 [inline-code-end]
 
 ---

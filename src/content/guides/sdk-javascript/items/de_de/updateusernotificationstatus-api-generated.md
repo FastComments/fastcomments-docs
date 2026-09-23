@@ -1,7 +1,7 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|---------------|--------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | notificationId | string | Ja |  |
 | newStatus | UpdateUserNotificationStatusNewStatusEnum | Ja |  |
@@ -15,15 +15,21 @@ Rückgabe: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComme
 
 [inline-code-attrs-start title = 'updateUserNotificationStatus Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const notificationId: string = "notif-20231101-001";
-const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Dismissed;
-const ssoToken: string = "sso-9f8e7d6c5b4a";
+const tenantId: string = "tenant_12345";
+const notificationId: string = "notif_9876";
+const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.READ;
+const ssoToken: string = "sso_token_abc";
 
-const result: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(
+const responseWithSso: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(
   tenantId,
   notificationId,
   newStatus,
   ssoToken
+);
+
+const responseWithoutSso: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(
+  tenantId,
+  notificationId,
+  newStatus
 );
 [inline-code-end]

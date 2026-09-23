@@ -1,41 +1,39 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| usernameStartsWith | string | No |  |
-| mentionGroupIds | Array<string> | No |  |
-| sso | string | No |  |
-| searchSection | SearchUsersSearchSectionEnum | No |  |
+| tenantId | string | 是 |  |
+| urlId | string | 是 |  |
+| usernameStartsWith | string | 否 |  |
+| mentionGroupIds | Array<string> | 否 |  |
+| sso | string | 否 |  |
+| searchSection | SearchUsersSearchSectionEnum | 否 |  |
 
 ## 响应
 
-返回：[`SearchUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResponse1.ts)
+返回: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResult.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'searchUsers 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoSearch(): Promise<void> {
-    const tenantId: string = "tenant_12345";
-    const urlId: string = "article-9876";
-    const usernameStartsWith: string = "john";
-    const mentionGroupIds: string[] = ["groupA", "groupB"];
-    const sso: string = "sso_abc123";
-    const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Users;
+async function example() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "article-9876";
+  const usernameStartsWith: string = "john";
+  const mentionGroupIds: string[] = ["group1", "group2"];
+  const sso: string = "sso_token_abc";
+  const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.MENTIONS;
 
-    const response: SearchUsersResponse1 = await searchUsers(
-        tenantId,
-        urlId,
-        usernameStartsWith,
-        mentionGroupIds,
-        sso,
-        searchSection
-    );
+  const result: SearchUsersResult = await searchUsers(
+    tenantId,
+    urlId,
+    usernameStartsWith,
+    mentionGroupIds,
+    sso,
+    searchSection
+  );
 
-    console.log(response);
+  console.log(result);
 }
-
-demoSearch();
 [inline-code-end]

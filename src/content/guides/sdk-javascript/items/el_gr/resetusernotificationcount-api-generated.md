@@ -1,28 +1,27 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|------------|------------|
-| tenantId | string | Yes |  |
-| sso | string | No |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Ναι |  |
+| sso | string | Όχι |  |
 
-## Ανταπόκριση
+## Απάντηση
 
-Επιστρέφει: [`ResetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationCountResponse.ts)
+Επιστρέφει: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα resetUserNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'resetUserNotificationCount Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoResetCount() {
-  const tenantId: string = "acme-corp-tenant";
-  const sso: string = "sso-user-9876";
+async function demoReset() {
+  const tenantId: string = "tenant_12345";
+  const ssoToken: string = "sso_abcdef123456";
 
-  // Κλήση με προαιρετική παράμετρο sso
-  const resultWithSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId, sso);
-
-  // Κλήση χωρίς προαιρετική παράμετρο sso
-  const resultWithoutSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId);
-
-  console.log(resultWithSso, resultWithoutSso);
+  const resultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+  const resultWithoutSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
 }
+
+demoReset();
 [inline-code-end]
+
+---

@@ -8,30 +8,55 @@
 | order | SORTDIR | Нет |  |
 | after | number | Нет |  |
 | before | number | Нет |  |
+| username | string | Нет |  |
+| ip | string | Нет |  |
+| crudType | string | Нет |  |
+| resourceName | string | Нет |  |
+| targetId | string | Нет |  |
+| target | string | Нет |  |
+| includeManagedTenants | boolean | Нет |  |
 
 ## Ответ
 
-Возвращает: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
+Возвращает: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_42";
-  const limit: number = 100;
-  const skip: number = 10;
-  const order: SORTDIR = "desc";
-  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // 3 days ago
+async function fetchAuditLogs(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const limit: number = 50;
+  const skip: number = 0;
+  const order: SORTDIR = { direction: "DESC" };
+  const after: number = Date.now() - 86400000; // 1 день назад
+  const before: number = Date.now();
+  const username: string = "alice.smith";
+  const ip: string = "198.51.100.23";
+  const crudType: string = "CREATE";
+  const resourceName: string = "thread";
+  const targetId: string = "thread_45678";
+  const target: string = "forum_12";
+  const includeManagedTenants: boolean = false;
 
-  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
+  const logs: GetAuditLogsResponse = await getAuditLogs(
     tenantId,
     limit,
     skip,
     order,
-    after
+    after,
+    before,
+    username,
+    ip,
+    crudType,
+    resourceName,
+    targetId,
+    target,
+    includeManagedTenants
   );
 
-  console.log(auditResponse);
-})();
+  console.log(logs);
+}
+
+fetchAuditLogs();
 [inline-code-end]

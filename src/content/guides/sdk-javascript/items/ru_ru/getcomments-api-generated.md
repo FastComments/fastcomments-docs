@@ -22,29 +22,41 @@
 
 ## Ответ
 
-Возвращает: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Возвращает: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const page: number = 2;
-const limit: number = 50;
-const asTree: boolean = true;
-const urlId: string = "article_5678";
-const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // одну неделю назад
-const toDate: number = Date.now();
+async function loadComments(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const page: number = 1;
+  const limit: number = 50;
+  const asTree: boolean = false;
+  const direction: SortDirections = "asc";
+  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 дней назад
+  const toDate: number = Date.now();
 
-const commentsResponse: GetCommentsResponse = await getComments({
-  tenantId,
-  page,
-  limit,
-  asTree,
-  urlId,
-  direction,
-  fromDate,
-  toDate,
-});
+  const commentsResponse: APIGetCommentsResponse = await getComments(
+    tenantId,
+    page,
+    limit,
+    undefined,
+    asTree,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    direction,
+    fromDate,
+    toDate
+  );
+
+  console.log(commentsResponse);
+}
 [inline-code-end]

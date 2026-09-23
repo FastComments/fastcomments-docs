@@ -1,36 +1,29 @@
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
-|------|------|----------|-------------|
-| tenantId | string | Sí |  |
-| id | string | Sí |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Sí |  |
+|--------|------|-------------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | Yes |  |
 
 ## Respuesta
 
-Devuelve: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo replaceTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-    const tenantId: string = "acme-corp-tenant-01";
-    const packageId: string = "pkg-2024-annual";
-
-    const config: CustomConfigParameters = {
-        // campos de configuración personalizados aquí
-    };
-
-    const body: ReplaceTenantPackageBody = {
-        name: "Enterprise Package",
-        // configuración personalizada opcional
-        customConfig: config,
-    };
-
-    const response: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, packageId, body);
-    console.log(response);
-})();
+async function replacePackageDemo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const packageId: string = "basic-plan-2023";
+  const replaceBody: ReplaceTenantPackageBody = {
+    newPackageId: "enterprise-plan-2024"
+    // los campos opcionales pueden agregarse aquí si es necesario
+  };
+  const response: APIEmptyResponse = await replaceTenantPackage(tenantId, packageId, replaceBody);
+  console.log(response);
+}
 [inline-code-end]
 
 ---

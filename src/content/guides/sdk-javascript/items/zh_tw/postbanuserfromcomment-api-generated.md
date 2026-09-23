@@ -1,53 +1,44 @@
----
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| banEmail | boolean | 否 |  |
-| banEmailDomain | boolean | 否 |  |
-| banIP | boolean | 否 |  |
-| deleteAllUsersComments | boolean | 否 |  |
-| bannedUntil | string | 否 |  |
-| isShadowBan | boolean | 否 |  |
-| updateId | string | 否 |  |
-| banReason | string | 否 |  |
-| tenantId | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| banEmail | boolean | No |  |
+| banEmailDomain | boolean | No |  |
+| banIP | boolean | No |  |
+| deleteAllUsersComments | boolean | No |  |
+| bannedUntil | string | No |  |
+| isShadowBan | boolean | No |  |
+| updateId | string | No |  |
+| banReason | string | No |  |
+| sso | string | No |  |
 
 ## 回應
 
-返回：[`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
+返回：[`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'postBanUserFromComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runBan() {
-  const commentId: string = "cmt_5f8a2b3c";
-  const banEmail: boolean = true;
-  const banIP: boolean = false;
-  const deleteAllUsersComments: boolean = true;
-  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-  const isShadowBan: boolean = false;
-  const banReason: string = "Repeated spam posting";
-  const tenantId: string = "tenant_12345";
-
-  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
-    commentId,
-    banEmail,
-    undefined,
-    banIP,
-    deleteAllUsersComments,
-    bannedUntil,
-    isShadowBan,
-    undefined,
-    banReason,
-    tenantId
+async function banUserExample(): Promise<void> {
+  const result: BanUserFromCommentResult = await postBanUserFromComment(
+    "tenant_42",
+    "comment_1001",
+    true,                     // banEmail
+    undefined,                // banEmailDomain（省略）
+    true,                     // banIP
+    false,                    // deleteAllUsersComments
+    "2025-01-01T00:00:00Z",   // bannedUntil
+    true,                     // isShadowBan
+    undefined,                // updateId（省略）
+    "Harassment",             // banReason
+    undefined                 // sso（省略）
   );
-  console.log(response);
+
+  console.log(result);
 }
-runBan();
 [inline-code-end]
 
 ---

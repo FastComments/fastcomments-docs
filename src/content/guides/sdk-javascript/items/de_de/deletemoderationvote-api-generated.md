@@ -2,31 +2,35 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|--------------|--------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | voteId | string | Ja |  |
 | broadcastId | string | Nein |  |
-| tenantId | string | Nein |  |
 | sso | string | Nein |  |
 
 ## Antwort
 
-Returns: [`DeleteModerationVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModerationVoteResponse.ts)
+Rückgabe: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'deleteModerationVote Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const voteId: string = "vote_9876";
-const broadcastId: string = "brd_001";
-const tenantId: string = "tenant_42";
-const sso: string = "sso_token_abc";
+async function runDeleteModerationVote(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6a";
+  const commentId: string = "comment_4d3e2f1a";
+  const voteId: string = "vote_12345abcde";
+  const broadcastId: string | undefined = "broadcast_2023_09_15";
+  const sso: string | undefined = "sso_user_7890token";
 
-const result: DeleteModerationVoteResponse = await deleteModerationVote(
-  commentId,
-  voteId,
-  broadcastId,
-  tenantId,
-  sso
-);
+  const result: VoteDeleteResponse = await deleteModerationVote(
+    tenantId,
+    commentId,
+    voteId,
+    broadcastId,
+    sso
+  );
+
+  console.log(result);
+}
 [inline-code-end]

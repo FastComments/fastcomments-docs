@@ -1,38 +1,38 @@
-Şu anda çevrimiçi izleyiciler bir sayfada: websocket oturumu şu anda sayfaya abone olan kişiler.  
-anonCount + totalCount değerini döndürür (odadaki tüm aboneler, saymadığımız anonim izleyiciler dahil).
+Şu anda çevrimiçi izleyiciler bir sayfanın: şu anda sayfaya abone olan websocket oturumu olan kişiler.  
+anonCount + totalCount döndürür (odadaki tüm aboneler, saymadığımız anonim izleyiciler dahil).
 
-## Parametreler
+## Parameters
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| urlId | string | Evet |  |
-| afterName | string | Hayır |  |
-| afterUserId | string | Hayır |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Döndürür: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## Örnek
+## Example
 
-[inline-code-attrs-start title = 'getOnlineUsers Örnek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // İsteğe bağlı sayfalama parametreleriyle
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // İsteğe bağlı sayfalama parametreleri olmadan
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
-[inline-code-end]
 
----
+fetchOnlineUsers();
+[inline-code-end]

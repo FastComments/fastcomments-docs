@@ -270,6 +270,53 @@
       "subCat": "Powiadomienia"
     },
     {
+      "name": "Publiczne API reakcji na stronę",
+      "file": "page-reacts-api.md",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcje na stronę"
+    },
+    {
       "name": "Struktura strony",
       "file": "page-structure.md",
       "subCat": "Strony"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Strony"
+    },
+    {
+      "name": "Struktura ankiety",
+      "file": "poll-structure.md",
+      "subCat": "Ankiety"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankiety"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankiety"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankiety"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankiety"
+    },
+    {
+      "name": "Struktura głosu w ankiecie",
+      "file": "poll-vote-structure.md",
+      "subCat": "Głosy w ankietach"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Głosy w ankietach"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Głosy w ankietach"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Głosy w ankietach"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Głosy w ankietach"
     },
     {
       "name": "Struktura oczekującego zdarzenia webhook",
@@ -685,37 +790,37 @@
     {
       "name": "Struktura odznaki użytkownika",
       "file": "user-badge-structure.md",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "Struktura postępu odznaki użytkownika",

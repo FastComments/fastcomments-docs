@@ -12,30 +12,26 @@
 
 ## Response
 
-Returns: [`GetCommentsForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse1.ts)
+Returns: [`GetCommentsForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsForUserResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getCommentsForUser Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-    const userId: string = "user-12345";
-    const direction: SortDirections = "desc";
-    const page: number = 1;
-    const includei10n: boolean = true;
-    const locale: string = "en-US";
-    const isCrawler: boolean = false;
+const userId: string = '550e8400-e29b-41d4-a716-446655440000';
+const direction: SortDirections = SortDirections.Descending;
+const page: number = 3;
+const includei10n: boolean = true;
+const locale: string = 'fr-FR';
+const isCrawler: boolean = false;
 
-    const response: GetCommentsForUserResponse1 = await getCommentsForUser(
-        userId,
-        direction,
-        undefined,
-        page,
-        includei10n,
-        locale,
-        isCrawler
-    );
-
-    console.log(response);
-}
+const commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(
+  userId,
+  direction,
+  undefined,
+  page,
+  includei10n,
+  locale,
+  isCrawler
+);
 [inline-code-end]

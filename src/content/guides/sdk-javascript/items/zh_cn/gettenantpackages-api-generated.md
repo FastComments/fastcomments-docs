@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -8,21 +7,19 @@
 
 ## 响应
 
-返回：[`GetTenantPackagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse1.ts)
+返回：[`GetTenantPackagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackagesResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getTenantPackages 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_67890';
-  const skip: number = 30;
+async function fetchPackages() {
+  const tenantId: string = "acme-corp-001";
+  const skip: number = 15;
 
-  const packagesWithSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId, skip);
-  const packagesWithoutSkip: GetTenantPackagesResponse1 = await getTenantPackages(tenantId);
-
-  console.log(packagesWithSkip, packagesWithoutSkip);
-})();
+  const resultWithSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId, skip);
+  const resultWithoutSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId);
+}
 [inline-code-end]
 
 ---

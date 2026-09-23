@@ -2,24 +2,24 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| commentId | string | はい |  |
+| sso | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetLogsResponse.ts)
+返り値: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetLogsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getLogs の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchLogs() {
-    const commentId: string = "cmt_9a8b7c6d5e4f3a2b";
-    const tenantId: string = "tenant_9876";
-    const sso: string = "sso_abcdef123456";
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const commentId: string = "cmt_4567890";
+  const ssoToken: string = "sso_abcdef123456";
 
-    const fullResponse: GetLogsResponse = await getLogs(commentId, tenantId, sso);
-    const minimalResponse: GetLogsResponse = await getLogs(commentId);
-}
+  const logsWithSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId, ssoToken);
+  const logsWithoutSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId);
+})();
 [inline-code-end]

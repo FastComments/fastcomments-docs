@@ -2,36 +2,27 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| userId | string | Hayır |  |
-| limit | number | Hayır |  |
-| skip | number | Hayır |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressListResponse.ts)
+Döndürür: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchBadgeProgress() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe@example.com";
+(async () => {
+  const tenantId: string = "tenant-9f8b7c6d";
+  const userId: string = "user-123e4567-e89b-12d3-a456-426614174000";
   const limit: number = 10;
-  const skip: number = 5;
+  const skip: number = 0;
 
-  const fullList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(
-    tenantId,
-    userId,
-    limit,
-    skip
-  );
-
-  const simpleList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);
-}
-
-fetchBadgeProgress();
+  const response: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
+  const status: APIStatus = response.status;
+  const badges: UserBadgeProgress[] = response.badges;
+})();
 [inline-code-end]
-
----

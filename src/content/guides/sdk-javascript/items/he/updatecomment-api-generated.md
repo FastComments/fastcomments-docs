@@ -1,38 +1,37 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| id | string | כן |  |
-| updatableCommentParams | UpdatableCommentParams | כן |  |
-| contextUserId | string | לא |  |
-| doSpamCheck | boolean | לא |  |
-| isLive | boolean | לא |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updatableCommentParams | UpdatableCommentParams | Yes |  |
+| contextUserId | string | No |  |
+| doSpamCheck | boolean | No |  |
+| isLive | boolean | No |  |
 
 ## תגובה
 
-מחזיר: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const commentId: string = "cmt_98765";
-
-const updatableCommentParams: UpdatableCommentParams = {
-  // שדות לדוגמה; הצורה בפועל תלויה בהגדרת ה-API
-  // למשל, body: "Edited comment content",
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+const commentId: string = "comment-9876543210";
+const updateParams: UpdatableCommentParams = {
+  content: "Edited comment content",
+  isApproved: true
 };
 
-const contextUserId: string = "user_abcde";
+const contextUserId: string = "user-11223344";
 const doSpamCheck: boolean = true;
 const isLive: boolean = false;
 
-const result: UpdateCommentResponse = await updateComment(
+const response: APIEmptyResponse = await updateComment(
   tenantId,
   commentId,
-  updatableCommentParams,
+  updateParams,
   contextUserId,
   doSpamCheck,
   isLive

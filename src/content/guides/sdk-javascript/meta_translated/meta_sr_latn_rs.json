@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Javni vs Zaštićeni API‑ji",
+      "name": "Javni i zaštićeni API‑ji",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API Referenca",
       "type": "readme"
@@ -69,7 +69,13 @@
       "type": "readme"
     },
     {
-      "name": "agregacija",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Tenanti agenata",
+      "type": "api"
+    },
+    {
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregacija",
       "type": "api"
@@ -77,7 +83,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Dnevnici revizije",
+      "subCat": "Audit logovi",
       "type": "api"
     },
     {
@@ -275,55 +281,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Šabloni e‑mailova",
+      "subCat": "Email šabloni",
       "type": "api"
     },
     {
@@ -401,55 +407,61 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Označi komentar",
+      "subCat": "Označavanje komentara",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIF‑ovi",
+      "subCat": "Gif‑ovi",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIF‑ovi",
+      "subCat": "Gif‑ovi",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIF‑ovi",
+      "subCat": "Gif‑ovi",
       "type": "api"
     },
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Heš tagovi",
+      "subCat": "Hash tagovi",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Heš tagovi",
+      "subCat": "Hash tagovi",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Heš tagovi",
+      "subCat": "Hash tagovi",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Heš tagovi",
+      "subCat": "Hash tagovi",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Heš tagovi",
+      "subCat": "Hash tagovi",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Moj profil",
       "type": "api"
     },
     {
@@ -875,19 +887,67 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Nedovršeni webhook događaji",
+      "subCat": "Nadolazeći webhook događaji",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Nedovršeni webhook događaji",
+      "subCat": "Nadolazeći webhook događaji",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Nedovršeni webhook događaji",
+      "subCat": "Nadolazeći webhook događaji",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Glasovi u anketama",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Glasovi u anketama",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Glasovi u anketama",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Glasovi u anketama",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Ankete",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Ankete",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Ankete",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Ankete",
       "type": "api"
     },
     {
@@ -1037,115 +1097,115 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dnevna upotreba zakupca",
+      "subCat": "Dnevna upotreba najmodavca",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paketi zakupca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paketi zakupca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paketi zakupca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paketi zakupca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paketi zakupca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paketi zakupca",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Korisnici zakupca",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Zakupci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Zakupci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Zakupci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Zakupci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Zakupci",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
@@ -1181,25 +1241,25 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Otpremi sliku",
+      "subCat": "Upload slike",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak znački korisnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak znački korisnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredak značke korisnika",
+      "subCat": "Napredak znački korisnika",
       "type": "api"
     },
     {
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Glasovi",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhook‑ovi",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhook‑ovi",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhook‑ovi",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhook‑ovi",
       "type": "api"
     }
   ]

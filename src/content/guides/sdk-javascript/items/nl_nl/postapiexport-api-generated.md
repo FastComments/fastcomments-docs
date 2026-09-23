@@ -1,42 +1,47 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|---------------|
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| sorts | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| textSearch | string | Nee |  |
+| byIPFromComment | string | Nee |  |
+| filters | string | Nee |  |
+| searchFilters | string | Nee |  |
+| sorts | string | Nee |  |
+| sso | string | Nee |  |
 
 ## Respons
 
-Retourneert: [`PostApiExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostApiExportResponse.ts)
+Retourneert: [`ModerationExportResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'postApiExport Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const textSearch: string = "keyword:feedback"
-  const byIPFromComment: string = "203.0.113.45"
-  const filters: string = "status:pending,category:support"
-  const searchFilters: string = "createdAt>2023-01-01"
-  const sorts: string = "createdAt:desc"
-  const tenantId: string = "tenant_9876"
-  const sso: string = "sso_7e2a9b"
+async function runExport() {
+  const tenantId: string = "c9f1e2b4-8a6d-4f3a-9d2e-5b6c7d8e9f0a";
+  const textSearch: string = "spam";
+  const byIPFromComment: string = "203.0.113.45";
+  const filters: string = "status:pending";
+  const searchFilters: string = "createdAt>2023-01-01";
+  const sorts: string = "createdAt:desc";
+  const sso: string = "sso-token-abc123";
 
-  const exportResult: PostApiExportResponse = await postApiExport(
+  const fullExport: ModerationExportResponse = await postApiExport(
+    tenantId,
     textSearch,
     byIPFromComment,
     filters,
     searchFilters,
     sorts,
-    tenantId,
     sso
-  )
+  );
 
-  console.log(exportResult)
-})()
+  const minimalExport: ModerationExportResponse = await postApiExport(tenantId);
+
+  console.log(fullExport, minimalExport);
+}
+runExport();
 [inline-code-end]
+
+---

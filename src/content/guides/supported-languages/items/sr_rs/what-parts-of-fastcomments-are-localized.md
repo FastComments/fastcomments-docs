@@ -1,5 +1,7 @@
-Сви FastComments производи који се могу **уградити у вашу апликацију или веб страницу**, су локализовани.
+---
+Svi FastComments proizvodi koji su **ugradivi u vašu aplikaciju ili veb sajt**, su lokalizovani.
 
-Сви **е-маилови** су потпуно локализовани. Локална подешавања која се користе за приказивање е-маилова које шаљемо заснивају се на последњим локалним подешавањима која је корисник користио када се последњи пут пријавио или коментарисао помоћу виџета за коментаре.
+Sve **email‑poruke** su potpuno lokalizovane. Jezik koji se koristi za prikaz email‑poruka koje šaljemo zasniva se na poslednjem jeziku koji je korisnik koristio kada se poslednji put prijavio ili ostavio komentar putem vidžeta za komentarisanje.
 
-**Административна и корисничка контролна табла** тренутно није локализована, међутим то је у плану.
+**Admin i korisnički kontrolni panel** su lokalizovani. Svaki korisnik može da izabere željeni jezik na stranici sa detaljima svog naloga.
+---

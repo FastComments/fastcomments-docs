@@ -2,22 +2,21 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
 
-## 応答
+## レスポンス
 
-返却: [`DeleteNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteNotificationCountResponse.ts)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteNotificationCount の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run() {
-  const tenantId: string = "tenant_12345";
-  const notificationId: string = "notif_98765";
-  const result: DeleteNotificationCountResponse = await deleteNotificationCount(tenantId, notificationId);
-  console.log(result);
-}
-run();
+let tenantId: string = "tenant-42f9b8c1";
+let notificationId: string = "notif-7e3a9d4f";
+
+const result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);
 [inline-code-end]
+
+---

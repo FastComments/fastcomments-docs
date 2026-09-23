@@ -1,23 +1,27 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
+מחזיר: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה getCommentChildren'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentChildren דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const tenantId: string = "tenant_xyz";
-const sso: string = "sso_987654";
+async function fetchChildren() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_user_abc123";
 
-const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
-const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
+  const responseWithSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId, ssoToken);
+  const responseWithoutSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId);
+}
+
+fetchChildren();
 [inline-code-end]

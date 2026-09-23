@@ -16,23 +16,16 @@ Returns: [`GetGifsSearchResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'getGifsSearch Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "tenant_9f8b7c";
-  const search: string = "funny cats";
-  const locale: string = "en-US";
-  const rating: string = "pg";
+async function runExample() {
+  const tenantId: string = "tenant_9876";
+  const search: string = "celebration fireworks";
+  const locale: string = "fr-FR";
+  const rating: string = "g";
   const page: number = 1;
 
-  const result: GetGifsSearchResponse = await getGifsSearch(
-    tenantId,
-    search,
-    locale,
-    rating,
-    page
-  );
-
-  console.log(result);
+  const fullResult: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);
+  const minimalResult: GetGifsSearchResponse = await getGifsSearch(tenantId, "dog memes");
 }
 
-demo();
+runExample();
 [inline-code-end]

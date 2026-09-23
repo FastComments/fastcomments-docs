@@ -7,18 +7,22 @@
 
 ## レスポンス
 
-返却: [`GetTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse1.ts)
+返り値: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getTenant の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchTenant(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const id: string = "user_9876";
-  const tenantInfo: GetTenantResponse1 = await getTenant(tenantId, id);
-  console.log(tenantInfo);
-}
+    const tenantId: string = "tenant_12345";
+    const id: string = "tenant_12345";
 
-fetchTenant();
+    const tenantResponse: GetTenantResponse = await getTenant(tenantId, id);
+
+    // レスポンスのオプションフィールド
+    const billing: BillingInfo | undefined = tenantResponse.billingInfo;
+    const domainConfig: APIDomainConfiguration | undefined = tenantResponse.domainConfiguration;
+}
 [inline-code-end]
+
+---

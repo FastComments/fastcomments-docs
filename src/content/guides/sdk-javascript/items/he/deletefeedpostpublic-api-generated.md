@@ -2,10 +2,10 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | כן |  |
+| postId | string | כן |  |
+| broadcastId | string | לא |  |
+| sso | string | לא |  |
 
 ## תגובה
 
@@ -13,16 +13,24 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'deleteFeedPostPublic דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp";
-  const postId: string = "post_987654321";
-  const broadcastId: string = "broadcast_2024Q1";
-  const sso: string = "sso_4fa3b9c2";
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const broadcastId: string = "broadcast_abcde";
+  const sso: string = "sso_token_xyz";
 
-  const response1: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId);
-  const response2: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId);
-  const response3: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
+  const responseWithOpts: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(
+    tenantId,
+    postId,
+    broadcastId,
+    sso
+  );
+
+  const responseWithoutOpts: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(
+    tenantId,
+    postId
+  );
 })();
 [inline-code-end]

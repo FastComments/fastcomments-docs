@@ -1,36 +1,38 @@
-Trenutno povezani gledalci strani: ljudje, katerih seje WebSocket so trenutno naročene na stran.  
-Vrne anonCount + totalCount (število naročnikov v celotni sobi, vključno z anonimnimi gledalci, ki jih ne poimenujemo).
+Trenutno spletni gledalci strani: ljudje, katerih seja WebSocket je trenutno naročena na stran.
+Vrne anonCount + totalCount (naročniki po celotni sobi, vključno z anonimnimi gledalci, ki jih ne naštejemo).
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| afterName | string | Ne |  |
+| afterUserId | string | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Vrne: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOnlineUsers Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Z neobveznimi parametri za stránkovanje
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Brez neobveznih parametrov za stránkovanje
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]

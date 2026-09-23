@@ -1,33 +1,35 @@
 ## Parametri
 
-| Naziv | Tip | Obavezno | Opis |
+| Ime | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| userId | string | Ne |  |
-| state | number | Ne |  |
-| skip | number | Ne |  |
-| limit | number | Ne |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| state | number | No |  |
+| skip | number | No |  |
+| limit | number | No |  |
 
 ## Odgovor
 
-Vraća: [`GetTicketsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse1.ts)
+Vraća: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getTickets Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getTickets'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadTickets() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
-  const state: number = 2; // npr., zatvoreno
-  const skip: number = 10;
-  const limit: number = 5;
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const ticketsSimple: GetTicketsResponse = await getTickets(tenantId);
 
-  const ticketsFull: GetTicketsResponse1 = await getTickets(tenantId, userId, state, skip, limit);
-  const ticketsPartial: GetTicketsResponse1 = await getTickets(tenantId);
-}
-
-loadTickets();
+  const userId: string = "user_9876";
+  const state: number = 1; // npr., otvoren
+  const skip: number = 0;
+  const limit: number = 20;
+  const ticketsFull: GetTicketsResponse = await getTickets(
+    tenantId,
+    userId,
+    state,
+    skip,
+    limit
+  );
+})();
 [inline-code-end]
-
----

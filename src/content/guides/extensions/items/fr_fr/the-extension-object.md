@@ -1,36 +1,39 @@
-L'objet d'extension se compose de la définition suivante :
+L'objet d'extension se compose de la définition suivante :
 
 <!-- si vous voulez mettre à jour ceci, n'oubliez pas de mettre à jour comment-ui-core -->
-[inline-code-attrs-start title = "JSDoc de l'objet d'extension"; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Objet d\'extension JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * The FastCommentsUI extension object. Used for lazy-loading certain components. For example, the review system is not
- * used by all customers, so we only load that extension when we want it.
+ * L'objet d'extension FastCommentsUI. Utilisé pour le chargement différé de certains composants. Par exemple, le système d'évaluation n'est pas utilisé par tous les clients, nous ne chargeons donc cette extension que lorsque nous en avons besoin.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - The widget root dom node.
+ * @property {Element} root - Le nœud DOM racine du widget.
  * @property {string} [css]
- * @property {Object} config - The FastComments config object.
- * @property {Object} commentsById - A reference to an object with all comments by id, which is kept up to date.
- * @property {Object} translations - A reference to all translations.
- * @property {Function} reRenderComment - A reference to a function that can be invoked to re-render a comment.
- * @property {Function} removeCommentAndReRender - A reference to a function that can be invoked to remove a comment from memory and re-render the appropriate part of the DOM.
- * @property {Function} newBroadcastId - A reference to a function that can be invoked create a new broadcast id and add it to the local list of broadcast ids to ignore.
+ * @property {Object} config - L'objet de configuration FastComments.
+ * @property {Object} commentsById - Une référence à un objet contenant tous les commentaires par id, maintenu à jour.
+ * @property {Object} translations - Une référence à toutes les traductions.
+ * @property {Function} reRenderComment - Une référence à une fonction pouvant être invoquée pour re‑rendre un commentaire.
+ * @property {Function} removeCommentAndReRender - Une référence à une fonction pouvant être invoquée pour supprimer un commentaire de la mémoire et re‑rendre la partie appropriée du DOM.
+ * @property {Function} newBroadcastId - Une référence à une fonction pouvant être invoquée pour créer un nouvel ID de diffusion et l'ajouter à la liste locale des IDs de diffusion à ignorer.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Appelé avec le commentaire sur le point d'être publié. Retourne false pour annuler la soumission (par exemple lorsqu'un sondage joint est incomplet).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filter HTML for the comment area.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filter HTML for the whole widget on render.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filter HTML for each comment before render.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filter HTML for each comment menu before render.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filter HTML for the whole widget on render.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Return HTML to add to the top of the reply area.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Return HTML to add to the top of the widget.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Return HTML to add to the top of the comment element.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Return HTML to add to the bottom of the comment element.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Return HTML to add to the bottom of the menu element for each comment.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtrer le HTML pour la zone de commentaire.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtrer le HTML pour l'ensemble du widget lors du rendu.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtrer le HTML pour chaque commentaire avant le rendu.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtrer le HTML pour chaque menu de commentaire avant le rendu.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtrer le HTML pour l'ensemble du widget lors du rendu.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (HÉRITAGE) Retourner du HTML à ajouter en haut de la zone de réponse.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (HÉRITAGE) Retourner du HTML à ajouter en haut du widget.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (HÉRITAGE) Retourner du HTML à ajouter en haut de l'élément de commentaire.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (HÉRITAGE) Retourner du HTML à ajouter en bas de l'élément de commentaire.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Retourner du HTML à ajouter après le texte du commentaire, à l'intérieur de l'élément de contenu du commentaire (utilisé par les sondages).
+ * @property {Function} [replyAreaInputBottom] - Retourner du HTML à ajouter à l'intérieur du cadre de saisie du commentaire, sous le champ texte (utilisé par les sondages pour l'éditeur de sondage intégré). Reçoit l'ID du commentaire parent, ou null pour la boîte de réponse racine.
+ * @property {Function} [onPollUpdate] - Appelé avec l'événement en direct lorsque le nombre de votes d'un sondage sur la page change.
+ * @property {Function} isSiteAdmin - Renvoie si le visiteur est un administrateur ou modérateur du locataire. Connu après le premier fetch.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (HÉRITAGE) Retourner du HTML à ajouter en bas de l'élément de menu pour chaque commentaire.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -39,8 +42,8 @@ L'objet d'extension se compose de la définition suivante :
    
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
- * @param {Element} element - The root element.
- * @param {Object.<string, Function>} clickListeners - The event handlers for clicks, by class name, which can be modified by reference.
+ * @param {Element} element - L'élément racine.
+ * @param {Object.<string, Function>} clickListeners - Les gestionnaires d'événements pour les clics, par nom de classe, qui peuvent être modifiés par référence.
  * @returns void
  */
 

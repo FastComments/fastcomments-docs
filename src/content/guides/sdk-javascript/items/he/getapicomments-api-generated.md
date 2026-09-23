@@ -1,40 +1,51 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| page | number | לא |  |
-| count | number | לא |  |
-| textSearch | string | לא |  |
-| byIPFromComment | string | לא |  |
-| filters | string | לא |  |
-| searchFilters | string | לא |  |
-| sorts | string | לא |  |
-| demo | boolean | לא |  |
-| tenantId | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| sso | string | No |  |
 
-## Response
+## תגובה
 
-מחזיר: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
+מחזיר: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments() {
-  const fullResult: GetApiCommentsResponse = await getApiComments(
-    2,                     // עמוד
-    25,                    // כמות
-    "feedback",           // חיפוש טקסט
-    "192.168.1.100",      // כתובת IP מההערה
-    "approved",           // מסננים
-    "hasReplies",         // מסנני חיפוש
-    "dateDesc",           // מיון
-    false,                // הדגמה
-    "tenant-abc123",      // מזהה שוכר
-    "sso-token-xyz"       // SSO
-  );
+async function fetchComments(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const page: number = 2;
+  const count: number = 20;
+  const textSearch: string = "typescript";
+  const byIPFromComment: string = "192.168.1.100";
+  const filters: string = "spam,offensive";
+  const searchFilters: string = "user:john";
+  const sorts: string = "date_desc";
+  const demo: boolean = true;
+  const sso: string = "sso_token_abc";
 
-  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+  const response: ModerationAPIGetCommentsResponse = await getApiComments(
+    tenantId,
+    page,
+    count,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    demo,
+    sso
+  );
 }
+
+fetchComments();
 [inline-code-end]

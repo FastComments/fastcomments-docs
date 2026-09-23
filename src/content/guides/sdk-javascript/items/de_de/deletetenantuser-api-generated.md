@@ -1,3 +1,4 @@
+---
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -9,25 +10,21 @@
 
 ## Antwort
 
-Rückgabe: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'deleteTenantUser Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoDeleteTenantUser() {
-  const tenantId: string = "acme-corp-tenant";
-  const userId: string = "user-9876";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "u-112233";
 
-  // Löschen Sie den Benutzer und alle seine Kommentare, mit dem Hard-Delete-Modus
-  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
-    tenantId,
-    userId,
-    "true",
-    "hard"
-  );
+  const result1: APIEmptyResponse = await deleteTenantUser(tenantId, userId);
+  const result2: APIEmptyResponse = await deleteTenantUser(tenantId, userId, "true", "hard");
 
-  // Löschen Sie den Benutzer, ohne Kommentare zu entfernen (Standardverhalten)
-  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
-}
+  console.log(result1, result2);
+})();
 [inline-code-end]
+
+---

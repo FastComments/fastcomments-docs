@@ -2,24 +2,19 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
 ## Отговор
 
-Връща: [`DeleteNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteNotificationCountResponse.ts)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за deleteNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteNotificationCount Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function run() {
-  const tenantId: string = "tenant_12345";
-  const notificationId: string = "notif_98765";
-  const result: DeleteNotificationCountResponse = await deleteNotificationCount(tenantId, notificationId);
-  console.log(result);
-}
-run();
-[inline-code-end]
+let tenantId: string = "tenant-42f9b8c1";
+let notificationId: string = "notif-7e3a9d4f";
 
----
+const result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);
+[inline-code-end]

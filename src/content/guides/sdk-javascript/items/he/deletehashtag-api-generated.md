@@ -2,27 +2,27 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | tag | string | כן |  |
-| tenantId | string | לא |  |
 | deleteHashTagRequestBody | DeleteHashTagRequestBody | לא |  |
 
 ## תגובה
 
-מחזיר: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת deleteHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tag: string = "announcement";
-  const tenantId: string = "tenant_9876";
-  const requestBody: DeleteHashTagRequestBody = {
-    confirmDeletion: true
-  };
-  const response: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, requestBody);
-  console.log(response);
-})();
+const tenantId: string = "tenant_42";
+const tag: string = "high-priority";
+
+const requestBody: DeleteHashTagRequestBody = {
+  // למלא שדות לפי הצורך
+};
+
+const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
+const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]
 
 ---

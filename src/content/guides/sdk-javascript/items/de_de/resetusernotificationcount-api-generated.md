@@ -1,28 +1,28 @@
+---
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|---------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | sso | string | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`ResetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationCountResponse.ts)
+Rückgabe: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'resetUserNotificationCount Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoResetCount() {
-  const tenantId: string = "acme-corp-tenant";
-  const sso: string = "sso-user-9876";
+async function demoReset() {
+  const tenantId: string = "tenant_12345";
+  const ssoToken: string = "sso_abcdef123456";
 
-  // Aufruf mit optionalem sso-Parameter
-  const resultWithSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId, sso);
-
-  // Aufruf ohne optionalen sso-Parameter
-  const resultWithoutSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId);
-
-  console.log(resultWithSso, resultWithoutSso);
+  const resultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+  const resultWithoutSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
 }
+
+demoReset();
 [inline-code-end]
+
+---

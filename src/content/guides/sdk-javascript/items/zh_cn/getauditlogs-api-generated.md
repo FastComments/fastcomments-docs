@@ -1,37 +1,64 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | 是 |  |
+| limit | number | 否 |  |
+| skip | number | 否 |  |
+| order | SORTDIR | 否 |  |
+| after | number | 否 |  |
+| before | number | 否 |  |
+| username | string | 否 |  |
+| ip | string | 否 |  |
+| crudType | string | 否 |  |
+| resourceName | string | 否 |  |
+| targetId | string | 否 |  |
+| target | string | 否 |  |
+| includeManagedTenants | boolean | 否 |  |
 
 ## 响应
 
-返回：[`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
+返回：[`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getAuditLogs 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_42";
-  const limit: number = 100;
-  const skip: number = 10;
-  const order: SORTDIR = "desc";
-  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // 3 天前
+async function fetchAuditLogs(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const limit: number = 50;
+  const skip: number = 0;
+  const order: SORTDIR = { direction: "DESC" };
+  const after: number = Date.now() - 86400000; // 1 天前
+  const before: number = Date.now();
+  const username: string = "alice.smith";
+  const ip: string = "198.51.100.23";
+  const crudType: string = "CREATE";
+  const resourceName: string = "thread";
+  const targetId: string = "thread_45678";
+  const target: string = "forum_12";
+  const includeManagedTenants: boolean = false;
 
-  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
+  const logs: GetAuditLogsResponse = await getAuditLogs(
     tenantId,
     limit,
     skip,
     order,
-    after
+    after,
+    before,
+    username,
+    ip,
+    crudType,
+    resourceName,
+    targetId,
+    target,
+    includeManagedTenants
   );
 
-  console.log(auditResponse);
-})();
+  console.log(logs);
+}
+
+fetchAuditLogs();
 [inline-code-end]
+
+---

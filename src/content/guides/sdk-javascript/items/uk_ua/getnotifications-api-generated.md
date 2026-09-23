@@ -1,40 +1,42 @@
 ## Параметри
 
-| Назва | Тип | Обов’язковий | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| userId | string | Ні |  |
-| urlId | string | Ні |  |
-| fromCommentId | string | Ні |  |
-| viewed | boolean | Ні |  |
-| type | string | Ні |  |
-| skip | number | Ні |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| urlId | string | No |  |
+| fromCommentId | string | No |  |
+| viewed | boolean | No |  |
+| type | string | No |  |
+| skip | number | No |  |
 
 ## Відповідь
 
-Повертає: [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
+Повертає: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "tenant_42";
+  const userId: string = "user_1001";
+  const urlId: string = "url_2023";
+  const viewed: boolean = true;
+  const skip: number = 0;
 
-  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
-  console.log(notifications);
-
-  const more: GetNotificationsResponse1 = await getNotifications(
+  const notifications: GetNotificationsResponse = await getNotifications(
     tenantId,
+    userId,
+    urlId,
     undefined,
-    "article-5678",
+    viewed,
     undefined,
-    true,
-    "reply",
-    10
+    skip
   );
-  console.log(more);
+
+  console.log(notifications);
 }
-demo();
 [inline-code-end]
+
+---

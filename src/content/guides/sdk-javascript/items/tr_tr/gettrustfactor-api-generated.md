@@ -2,24 +2,25 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| userId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Evet |  |
+| userId | string | Hayır |  |
+| sso | string | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTrustFactorResponse.ts)
+Döndürür: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserTrustFactorResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getTrustFactor Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runDemo(): Promise<void> {
-    const trustFull: GetTrustFactorResponse = await getTrustFactor("user_12345", "tenant_abc", "sso_token_987");
-    const trustUserOnly: GetTrustFactorResponse = await getTrustFactor("user_12345");
-    console.log(trustFull, trustUserOnly);
-}
-runDemo();
-[inline-code-end]
+async function demo() {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_98765";
+  const sso: string = "sso_token_abcde";
 
----
+  const trustFactor: GetUserTrustFactorResponse = await getTrustFactor(tenantId);
+  const trustFactorWithUser: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId);
+  const trustFactorFull: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId, sso);
+}
+[inline-code-end]

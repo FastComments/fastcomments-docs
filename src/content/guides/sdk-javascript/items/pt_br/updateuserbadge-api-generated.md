@@ -1,32 +1,29 @@
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateUserBadgeParams | UpdateUserBadgeParams | Yes |  |
+|------|------|-------------|-----------|
+| tenantId | string | Sim |  |
+| id | string | Sim |  |
+| updateUserBadgeParams | UpdateUserBadgeParams | Sim |  |
 
 ## Resposta
 
-Retorna: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
+Retorna: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'updateUserBadge Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo updateUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function applyBadge() {
-    const tenantId: string = "acme-corp-tenant";
-    const userId: string = "user-98765";
+const tenantId: string = "tenant-9f8b7c6d";
+const id: string = "user-4a3b2c1d";
 
-    const params: UpdateUserBadgeParams = {
-        badgeId: "gold-contributor",
-        // optional field example
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-    };
+const updateParams: UpdateUserBadgeParams = {
+  badgeId: "badge-premium",
+  // campo opcional
+  expiresAt: new Date("2025-12-31T23:59:59Z")
+};
 
-    const result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, userId, params);
-    console.log(result);
-}
-
-applyBadge();
+const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateParams);
 [inline-code-end]
+
+---

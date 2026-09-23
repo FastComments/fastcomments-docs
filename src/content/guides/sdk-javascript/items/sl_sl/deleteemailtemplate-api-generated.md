@@ -7,19 +7,25 @@
 
 ## Odgovor
 
-Vrne: [`DeleteEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateResponse.ts)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'deleteEmailTemplate Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
+interface APIStatus {
+  code: number;
+  message: string;
+}
+
+interface APIEmptyResponse {
+  status?: APIStatus;
+}
+
+(async () => {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "template_abcde";
+  const templateId: string = "template_987";
 
-  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);
-
-  // Primer dostopanja do neobvezne lastnosti iz odgovora
-  const statusCode: number | undefined = response.status?.code;
-}();
+  const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
+})();
 [inline-code-end]

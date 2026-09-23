@@ -2,44 +2,46 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
-| tenantId | string | Sim |  |
-| userId | string | Não |  |
-| badgeId | string | Não |  |
-| type | number | Não |  |
-| displayedOnComments | boolean | Não |  |
-| limit | number | Não |  |
-| skip | number | Não |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| badgeId | string | No |  |
+| type | number | No |  |
+| displayedOnComments | boolean | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
 ## Resposta
 
-Retorna: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
+Retorna: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgesResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo getUserBadges'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = "tenant-01";
-  const userId: string = "user-42";
-  const badgeId: string = "badge-gold";
-  const type: number = 1;
-  const displayedOnComments: boolean = true;
-  const limit: number = 10;
-  const skip: number = 5;
+(async () => {
+  const tenantId: string = "acme-corp";
 
-  const fullResult: GetUserBadgesResponse = await getUserBadges(
+  // Todos os parâmetros fornecidos
+  const fullResponse: APIGetUserBadgesResponse = await getUserBadges(
     tenantId,
-    userId,
-    badgeId,
-    type,
-    displayedOnComments,
-    limit,
-    skip
+    "user-42",
+    "badge-premium",
+    1,
+    true,
+    10,
+    0
   );
 
-  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);
-}
-example();
-[inline-code-end]
+  // Apenas os parâmetros obrigatórios e um opcional (limit)
+  const limitedResponse: APIGetUserBadgesResponse = await getUserBadges(
+    tenantId,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    5
+  );
 
----
+  console.log(fullResponse, limitedResponse);
+})();
+[inline-code-end]

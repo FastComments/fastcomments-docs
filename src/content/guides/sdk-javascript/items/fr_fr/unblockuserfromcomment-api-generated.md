@@ -1,41 +1,39 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|------------|-------------|
-| tenantId | string | Oui |  |
-| id | string | Oui |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Oui |  |
-| userId | string | Non |  |
-| anonUserId | string | Non |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Réponse
 
-Retourne : [`UnBlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockUserFromCommentResponse.ts)
+Retourne : [`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple unBlockUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockUserFromComment Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoUnblock() {
-  const tenantId: string = "acme-corp-tenant";
-  const commentId: string = "cmt_9f8b7a6d";
-
+(async () => {
+  const tenantId: string = "tenant-9f8b7c6d";
+  const commentId: string = "comment-4a3b2c1d";
   const params: UnBlockFromCommentParams = {
-    reason: "User resolved the issue",
-    notifyUser: true
+    reason: "User appealed the block",
+    adminNote: "Reviewed and unblocked"
   };
-
-  const userId: string = "usr_12345";
-
-  const result: UnBlockUserFromCommentResponse = await unBlockUserFromComment(
+  const userId: string = "user-5e6f7g8h";
+  const anonUserId: string = "anon-1a2b3c4d";
+  const result: UnblockSuccess = await unBlockUserFromComment(
     tenantId,
     commentId,
     params,
-    userId
-    // anonUserId omis
+    userId,
+    anonUserId
   );
-
   console.log(result);
-}
-demoUnblock();
+})();
 [inline-code-end]
+
+---

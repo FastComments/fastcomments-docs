@@ -1,37 +1,33 @@
-## Parameters
+---
+## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
-|------|------|------|------|
-| tenantId | string | 예 |  |
-| id | string | 예 |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | 예 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | Yes |  |
 
-## Response
+## 응답
 
-반환: [`UpdateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateEmailTemplateResponse.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateEmailTemplate 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateEmailTemplate 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function runUpdate() {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "email_tpl_67890";
+  const templateId: string = "template_67890";
 
   const updateBody: UpdateEmailTemplateBody = {
-    subject: "Comment reply notification",
-    htmlContent: "<p>Someone replied to your comment.</p>",
-    plainTextContent: "Someone replied to your comment.",
-    // 선택적 필드 예시
-    isActive: true,
+    subject: "New Comment Notification",
+    // htmlContent는 선택 사항이며 생략되었습니다
+    status: { code: 200, message: "Active" } // APIStatus
   };
 
-  const result: UpdateEmailTemplateResponse = await updateEmailTemplate(
-    tenantId,
-    templateId,
-    updateBody
-  );
-
-  console.log(result);
-})();
+  const response: APIEmptyResponse = await updateEmailTemplate(tenantId, templateId, updateBody);
+  console.log(response);
+}
 [inline-code-end]
+
+---

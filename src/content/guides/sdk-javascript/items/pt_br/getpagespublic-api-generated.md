@@ -1,6 +1,4 @@
-Listar páginas para um tenant. Usado pelo cliente desktop FChat para preencher sua lista de salas.  
-Requer `enableFChat` ser true na configuração personalizada resolvida para cada página.  
-Páginas que requerem SSO são filtradas com base no acesso ao grupo do usuário solicitante.
+Lista páginas para um tenant. Usado pelo cliente desktop FChat para preencher sua lista de salas. Requer que `enableFChat` seja true na configuração personalizada resolvida para cada página. Páginas que requerem SSO são filtradas de acordo com o acesso ao grupo do usuário solicitante.
 
 ## Parâmetros
 
@@ -15,26 +13,25 @@ Páginas que requerem SSO são filtradas com base no acesso ao grupo do usuário
 
 ## Resposta
 
-Retorna: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+Retorna: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 

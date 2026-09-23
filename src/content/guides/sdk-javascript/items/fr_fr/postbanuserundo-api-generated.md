@@ -1,35 +1,31 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| banUserUndoParams | BanUserUndoParams | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Oui |  |
+| banUserUndoParams | BanUserUndoParams | Oui |  |
+| sso | string | Non |  |
 
 ## Réponse
 
-Renvoie : [`PostBanUserUndoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserUndoResponse.ts)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple postBanUserUndo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = "tenant_9876";
+
 const undoParams: BanUserUndoParams = {
-  userId: "user-8421",
-  commentId: "comment-6702",
-  reason: "Accidental ban"
+  userId: "user_12345",
+  // des champs requis supplémentaires peuvent être ajoutés ici
 };
 
-const tenantId: string = "tenant-7f9e";
-const ssoToken: string = "sso-4b2c1d";
+const resultWithoutSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams);
 
-async function runUndo() {
-  const resultAll: PostBanUserUndoResponse = await postBanUserUndo(undoParams, tenantId, ssoToken);
-  console.log(resultAll);
+const ssoToken: string = "sso_abcdef123456";
 
-  const resultMinimal: PostBanUserUndoResponse = await postBanUserUndo(undoParams);
-  console.log(resultMinimal);
-}
-
-runUndo();
+const resultWithSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams, ssoToken);
 [inline-code-end]
+
+---

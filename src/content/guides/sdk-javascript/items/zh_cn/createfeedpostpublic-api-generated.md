@@ -1,52 +1,55 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createFeedPostParams | CreateFeedPostParams | Yes |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| createFeedPostParams | CreateFeedPostParams | 是 |  |
+| broadcastId | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 响应
 
-返回：[`CreateFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostPublicResponse.ts)
+返回：[`CreateFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateFeedPostResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createFeedPostPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function submitPost() {
-  const tenantId: string = "tenant_12345";
+const tenantId: string = "tenant_12345";
 
-  const mediaItem: FeedPostMediaItem = {
-    asset: {
-      url: "https://cdn.example.com/image.jpg",
-      mimeType: "image/jpeg",
-      size: 104857,
-    },
-    type: "image",
-  };
+const mediaAsset: FeedPostMediaItemAsset = {
+  url: "https://cdn.example.com/image.jpg",
+  width: 800,
+  height: 600,
+  mimeType: "image/jpeg"
+};
 
-  const link: FeedPostLink = {
-    url: "https://example.com/blog/new-feature",
-    title: "New Feature Release",
-    description: "Details about our latest product update.",
-  };
+const mediaItem: FeedPostMediaItem = {
+  type: "image",
+  asset: mediaAsset,
+  caption: "Sunset over the hills"
+};
 
-  const createFeedPostParams: CreateFeedPostParams = {
-    content: "Check out our new feature!",
-    media: [mediaItem],
-    link: link,
-  };
+const link: FeedPostLink = {
+  url: "https://example.com/blog/post",
+  title: "Exciting New Features",
+  description: "Read about our latest updates."
+};
 
-  const broadcastId: string = "broadcast_9876";
-  const sso: string = "sso_token_abc123";
+const createFeedPostParams: CreateFeedPostParams = {
+  content: "Check out our latest blog post!",
+  media: [mediaItem],
+  link: link,
+  visibility: "public"
+};
 
-  const response: CreateFeedPostPublicResponse = await createFeedPostPublic(
-    tenantId,
-    createFeedPostParams,
-    broadcastId,
-    sso
-  );
-}
+const broadcastId: string = "broadcast_9876";
+const sso: string = "sso_token_abc123";
+
+const response: CreateFeedPostResponse = await createFeedPostPublic(
+  tenantId,
+  createFeedPostParams,
+  broadcastId,
+  sso
+);
 [inline-code-end]

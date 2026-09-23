@@ -2,22 +2,34 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Ответ
 
-Возвращает: [`GetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentResponse.ts)
+Возвращает: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function fetchComment(): Promise<void> {
   const tenantId: string = "acme-corp";
-  const commentId: string = "comment-987654";
-  const result: GetCommentResponse = await getComment(tenantId, commentId);
-  const badgeInfo: CommentUserBadgeInfo | undefined = result.comment?.user?.badgeInfo;
-  console.log(badgeInfo?.label);
-})();
+  const commentId: string = "cmt_1234567890";
+
+  const response: APIGetCommentResponse = await getComment(tenantId, commentId);
+  const comment: APIComment | undefined = response.comment;
+
+  // Демонстрация необязательных полей
+  const badgeInfo: CommentUserBadgeInfo | undefined = comment?.user?.badge;
+  const hashtags: CommentUserHashTagInfo[] | undefined = comment?.user?.hashtags;
+  const mentions: CommentUserMentionInfo[] | undefined = comment?.user?.mentions;
+  const meta: APICommentBaseMeta | undefined = comment?.meta;
+
+  console.log(comment?.id, badgeInfo?.type);
+}
+
+fetchComment();
 [inline-code-end]
+
+---

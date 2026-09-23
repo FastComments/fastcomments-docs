@@ -3,70 +3,76 @@
   "pageHeader": "FastComments JavaScript/TypeScript SDK",
   "itemsOrdered": [
     {
-      "name": "AI coding agents",
+      "name": "AI 程式碼代理",
       "file": "ai-coding-agents-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
-      "name": "Installation",
+      "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "入門",
+      "subCat": "入門指南",
       "type": "readme"
     },
     {
-      "name": "API Documentation",
+      "name": "API 文件說明",
       "file": "api-documentation-readme-generated.md",
       "subCat": "API 參考",
       "type": "readme"
     },
     {
-      "name": "Browser vs Server Compatibility",
+      "name": "瀏覽器與伺服器相容性",
       "file": "browser-vs-server-compatibility-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
-      "name": "Usage",
+      "name": "使用方式",
       "file": "usage-readme-generated.md",
       "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "Public vs Secured APIs",
+      "name": "公開與受保護的 API",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "API 參考",
       "type": "readme"
     },
     {
-      "name": "SSO (Single Sign-On) Integration",
+      "name": "SSO（單一登入）整合",
       "file": "sso-single-sign-on-integration-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
-      "name": "Common Use Cases",
+      "name": "常見使用案例",
       "file": "common-use-cases-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
-      "name": "Live Events (Real-time Updates)",
+      "name": "即時事件（即時更新）",
       "file": "live-events-real-time-updates-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
-      "name": "Broadcast IDs",
+      "name": "廣播 ID",
       "file": "broadcast-ids-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
     },
     {
-      "name": "Error Handling",
+      "name": "錯誤處理",
       "file": "error-handling-readme-generated.md",
-      "subCat": "文件",
+      "subCat": "文件說明",
       "type": "readme"
+    },
+    {
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "代理租戶",
+      "type": "api"
     },
     {
       "name": "aggregate",
@@ -83,13 +89,13 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "阻止評論",
+      "subCat": "從評論阻止",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "阻止評論",
+      "subCat": "從評論阻止",
       "type": "api"
     },
     {
@@ -453,6 +459,12 @@
       "type": "api"
     },
     {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "我的資訊",
+      "type": "api"
+    },
+    {
       "name": "deleteModerationVote",
       "file": "deletemoderationvote-api-generated.md",
       "subCat": "審核",
@@ -527,67 +539,67 @@
     {
       "name": "getModerationComment",
       "file": "getmoderationcomment-api-generated.md",
-      "subCat": "審核評論",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getModerationCommentText",
       "file": "getmoderationcommenttext-api-generated.md",
-      "subCat": "審核評論文字",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getPreBanSummary",
       "file": "getprebansummary-api-generated.md",
-      "subCat": "預先封鎖摘要",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getSearchCommentsSummary",
       "file": "getsearchcommentssummary-api-generated.md",
-      "subCat": "搜尋評論摘要",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getSearchPages",
       "file": "getsearchpages-api-generated.md",
-      "subCat": "搜尋頁面",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getSearchSites",
       "file": "getsearchsites-api-generated.md",
-      "subCat": "搜尋網站",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getSearchSuggest",
       "file": "getsearchsuggest-api-generated.md",
-      "subCat": "搜尋建議",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getSearchUsers",
       "file": "getsearchusers-api-generated.md",
-      "subCat": "搜尋使用者",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getTrustFactor",
       "file": "gettrustfactor-api-generated.md",
-      "subCat": "信任因素",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getUserBanPreference",
       "file": "getuserbanpreference-api-generated.md",
-      "subCat": "使用者封鎖偏好",
+      "subCat": "審核",
       "type": "api"
     },
     {
       "name": "getUserInternalProfile",
       "file": "getuserinternalprofile-api-generated.md",
-      "subCat": "使用者內部資料",
+      "subCat": "審核",
       "type": "api"
     },
     {
@@ -888,6 +900,54 @@
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "待處理 Webhook 事件",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "投票調查",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "投票調查",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "投票調查",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "投票調查",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "調查",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "調查",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "調查",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "調查",
       "type": "api"
     },
     {
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhook",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhook",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhook",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhook",
       "type": "api"
     }
   ]

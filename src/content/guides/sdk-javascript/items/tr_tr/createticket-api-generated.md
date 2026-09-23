@@ -8,21 +8,27 @@
 
 ## Yanıt
 
-Döndürür: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
+Döndürür: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'createTicket Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const userId: string = "user_98765";
+async function submitTicket() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "user-9876";
 
-const ticketBody: CreateTicketBody = {
-  subject: "Issue with payment processing"
-  // description?: string isteğe bağlıdır ve atlanmıştır
-};
+  const ticketBody: CreateTicketBody = {
+    subject: "Login issues after password reset",
+    description: "User reports being unable to log in despite using the new password.",
+    priority: "medium",
+    // CreateTicketBody içinde isteğe bağlı alan
+    tags: ["login", "password-reset"]
+  };
 
-const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
-// Yanıttan isteğe bağlı bir alanın kullanım örneği
-// console.log(response.ticket?.id);
+  const response: CreateTicketResponse = await createTicket(tenantId, userId, ticketBody);
+  console.log(response);
+}
+
+submitTicket();
 [inline-code-end]

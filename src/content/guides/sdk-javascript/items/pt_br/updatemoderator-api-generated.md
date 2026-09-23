@@ -1,33 +1,28 @@
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|--------------|-----------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | updateModeratorBody | UpdateModeratorBody | Yes |  |
 
 ## Resposta
 
-Retorna: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoUpdateModerator(): Promise<void> {
-    const tenantId: string = "tenant_42abc";
-    const moderatorId: string = "moderator_8f9e";
-    const updateBody: UpdateModeratorBody = {
-        isActive: true,
-        role: "admin",
-        // campo opcional
-        notes: "Promoted to senior moderator"
-    };
-    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
-    console.log(result);
-}
+const tenantId: string = "tenant_9f8b7c6d";
+const moderatorId: string = "mod_12345";
 
-demoUpdateModerator();
+const updateBody: UpdateModeratorBody = {
+  isActive: true,
+  // role?: string é opcional e omitido aqui
+};
+
+const result: APIEmptyResponse = await updateModerator(tenantId, moderatorId, updateBody);
 [inline-code-end]
 
 ---

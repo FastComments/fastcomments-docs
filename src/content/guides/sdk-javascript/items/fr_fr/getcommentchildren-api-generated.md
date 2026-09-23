@@ -1,23 +1,27 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|--------------|-------------|
-| commentId | string | Oui |  |
-| tenantId | string | Non |  |
-| sso | string | Non |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## Réponse
 
-Retourne : [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
+Renvoie : [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getCommentChildren'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const tenantId: string = "tenant_xyz";
-const sso: string = "sso_987654";
+async function fetchChildren() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_user_abc123";
 
-const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
-const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
+  const responseWithSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId, ssoToken);
+  const responseWithoutSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId);
+}
+
+fetchChildren();
 [inline-code-end]

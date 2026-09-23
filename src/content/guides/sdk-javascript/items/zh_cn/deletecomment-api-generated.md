@@ -1,6 +1,6 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
@@ -9,19 +9,20 @@
 
 ## 响应
 
-返回：[`DeleteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResponse.ts)
+返回: [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResult.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteComment 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_01';
-  const commentId: string = 'comment_abc123';
-  const contextUserId: string = 'user_42';
-  const isLive: boolean = false;
-
-  const deleteResult: DeleteCommentResponse = await deleteComment(tenantId, commentId, contextUserId, isLive);
-  const simpleResult: DeleteCommentResponse = await deleteComment(tenantId, commentId);
-})();
+async function removeComment(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const commentId: string = "comment_9876";
+    const contextUserId: string = "user_42";
+    const result: DeleteCommentResult = await deleteComment(tenantId, commentId, contextUserId, true);
+    console.log(result);
+}
+removeComment();
 [inline-code-end]
+
+---

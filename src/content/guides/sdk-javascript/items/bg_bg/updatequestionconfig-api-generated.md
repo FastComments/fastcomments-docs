@@ -2,36 +2,28 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | Да |  |
 
 ## Отговор
 
-Връща: [`UpdateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionConfigResponse.ts)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за updateQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionConfig Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const questionId: string = "qstn-2023-04";
+(async () => {
+  const tenantId: string = "acme-corp-tenant";
+  const questionId: string = "question-42";
 
-const updateBody: UpdateQuestionConfigBody = {
-  // демонстрирани незадължителни полета
-  customOptions: [
-    {
-      id: "opt-001",
-      label: "Extra Details",
-      required: true,
-    },
-  ],
-  renderingType: "markdown",
-};
+  const updateBody: UpdateQuestionConfigBody = {
+    title: "Revised FAQ Question"
+    // isActive, customOptions, и др. са незадължителни и са пропуснати
+  };
 
-const response: UpdateQuestionConfigResponse = await updateQuestionConfig(
-  tenantId,
-  questionId,
-  updateBody
-);
+  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
+  console.log(response);
+})();
 [inline-code-end]

@@ -69,9 +69,15 @@
       "type": "readme"
     },
     {
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Ενοικιαστές Πράκτορα",
+      "type": "api"
+    },
+    {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Συγκέντρωση",
+      "subCat": "Σύνολο",
       "type": "api"
     },
     {
@@ -233,43 +239,43 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Σχόλια για Χρήστη",
+      "subCat": "Σχόλια Για Χρήστη",
       "type": "api"
     },
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Τομέα",
+      "subCat": "Διαμορφώσεις Τομέα",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Τομέα",
+      "subCat": "Διαμορφώσεις Τομέα",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Τομέα",
+      "subCat": "Διαμορφώσεις Τομέα",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Ρυθμίσεις Τομέα",
+      "subCat": "Διαμορφώσεις Τομέα",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Τομέα",
+      "subCat": "Διαμορφώσεις Τομέα",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Τομέα",
+      "subCat": "Διαμορφώσεις Τομέα",
       "type": "api"
     },
     {
@@ -450,6 +456,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Ετικέτες",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Εγώ",
       "type": "api"
     },
     {
@@ -891,33 +903,81 @@
       "type": "api"
     },
     {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Ψήφοι Δημοσκόπησης",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Ψήφοι Δημοσκόπησης",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Ψήφοι Δημοσκόπησης",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Ψήφοι Δημοσκόπησης",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Δημοσκοπήσεις",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Δημοσκοπήσεις",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Δημοσκοπήσεις",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Δημοσκοπήσεις",
+      "type": "api"
+    },
+    {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Ερωτήσεων",
+      "subCat": "Διαμορφώσεις Ερωτήσεων",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Ερωτήσεων",
+      "subCat": "Διαμορφώσεις Ερωτήσεων",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Ερωτήσεων",
+      "subCat": "Διαμορφώσεις Ερωτήσεων",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Ρυθμίσεις Ερωτήσεων",
+      "subCat": "Διαμορφώσεις Ερωτήσεων",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Ρυθμίσεις Ερωτήσεων",
+      "subCat": "Διαμορφώσεις Ερωτήσεων",
       "type": "api"
     },
     {
@@ -953,19 +1013,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήσεων",
+      "subCat": "Σύνοψη Αποτελεσμάτων Ερωτήσεων",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήσεων",
+      "subCat": "Σύνοψη Αποτελεσμάτων Ερωτήσεων",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Συγκέντρωση Αποτελεσμάτων Ερωτήσεων",
+      "subCat": "Σύνοψη Αποτελεσμάτων Ερωτήσεων",
       "type": "api"
     },
     {
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Ψήφοι",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

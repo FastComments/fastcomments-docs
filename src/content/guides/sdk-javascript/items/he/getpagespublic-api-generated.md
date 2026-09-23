@@ -1,6 +1,7 @@
-רשימת דפים לשוכר. משמשת על ידי לקוח הדסקטופ של FChat למלא את רשימת החדרים שלו.  
-דורש `enableFChat` להיות true בתצורה המותאמת שנפתרה עבור כל דף.  
-דפים הדורשים SSO מסוננים לפי גישה לקבוצת המשתמש המבקש.
+---
+רשימת דפים עבור שוכר. משמש את לקוח השולחן העבודה FChat למלא את רשימת החדרים שלו.
+דורש `enableFChat` להיות true בתצורה המותאמת המותאמת לכל דף.
+דפים הדורשים SSO מסוננים בהתאם לגישת קבוצת המשתמש המבקש.
 
 ## פרמטרים
 
@@ -15,29 +16,30 @@
 
 ## תגובה
 
-מחזירה: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+מחזיר: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getPagesPublic דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 
   console.log(response);
 }
 [inline-code-end]
+
+---

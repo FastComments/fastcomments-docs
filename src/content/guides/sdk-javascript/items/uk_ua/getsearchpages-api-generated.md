@@ -1,25 +1,26 @@
 ## Параметри
 
-| Назва | Тип | Обовʼязково | Опис |
-|------|------|-------------|------|
-| value | string | Ні |  |
-| tenantId | string | Ні |  |
-| sso | string | Ні |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| value | string | No |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`GetSearchPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchPagesResponse.ts)
+Повертає: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationPageSearchResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getSearchPages Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getSearchPages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const query: string = "network outage";
-  const tenantId: string = "tenant-9876";
-  const ssoToken: string = "sso-abc123def456";
+const tenantId: string = "acme-corp-123";
+const searchValue: string = "spam";
+const ssoToken: string = "sso-abc123def456";
 
-  const searchResult: GetSearchPagesResponse = await getSearchPages(query, tenantId, ssoToken);
-  const searchResultNoSso: GetSearchPagesResponse = await getSearchPages(query, tenantId);
-})();
+const result1: ModerationPageSearchResponse = await getSearchPages(tenantId);
+const result2: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue);
+const result3: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue, ssoToken);
 [inline-code-end]
+
+---

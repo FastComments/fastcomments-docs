@@ -1,27 +1,27 @@
-Bulk user info per un tenant. Dati gli userIds, restituisce le informazioni visualizzabili da User / SSOUser.  
-Utilizzato dal widget dei commenti per arricchire gli utenti appena comparsi tramite un evento di presenza.  
-Nessun contesto di pagina: la privacy è applicata uniformemente (i profili privati sono mascherati).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Parameters
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Sì |  |
+| ids | string | Sì |  |
 
 ## Response
 
-Returns: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Esempio
+## Example
 
 [inline-code-attrs-start title = 'Esempio getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// I campi opzionali nella risposta possono essere indefiniti
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]

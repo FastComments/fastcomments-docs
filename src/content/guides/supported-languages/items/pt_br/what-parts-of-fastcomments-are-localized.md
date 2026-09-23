@@ -1,5 +1,6 @@
-Todos os produtos FastComments que são **incorporáveis em seu aplicativo ou site**, são localizados.
+All FastComments products that are **incorporáveis em sua aplicação ou site**, are localized.
 
-Todos os **e-mails** são totalmente localizados. A localidade usada para renderizar os e-mails que enviamos é baseada na última localidade que o usuário usou quando fez login pela última vez ou comentou com o widget de comentários.
+All **e‑mails** are fully localized. The locale used to render the emails we send are based on the last
+locale the user used when they last logged in or commented with the commenting widget.
 
-O **painel de administração e do usuário** não está atualmente localizado, porém está no roteiro de desenvolvimento.
+The **painel de administração e do usuário** is localized. Each user can pick their preferred language on their account details page.

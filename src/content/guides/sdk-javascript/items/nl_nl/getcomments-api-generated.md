@@ -1,50 +1,62 @@
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| page | number | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| asTree | boolean | No |  |
-| skipChildren | number | No |  |
-| limitChildren | number | No |  |
-| maxTreeDepth | number | No |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
-| contextUserId | string | No |  |
-| hashTag | string | No |  |
-| parentId | string | No |  |
-| direction | SortDirections | No |  |
-| fromDate | number | No |  |
-| toDate | number | No |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
+| page | number | Nee |  |
+| limit | number | Nee |  |
+| skip | number | Nee |  |
+| asTree | boolean | Nee |  |
+| skipChildren | number | Nee |  |
+| limitChildren | number | Nee |  |
+| maxTreeDepth | number | Nee |  |
+| urlId | string | Nee |  |
+| userId | string | Nee |  |
+| anonUserId | string | Nee |  |
+| contextUserId | string | Nee |  |
+| hashTag | string | Nee |  |
+| parentId | string | Nee |  |
+| direction | SortDirections | Nee |  |
+| fromDate | number | Nee |  |
+| toDate | number | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Retourneert: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getComments Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const page: number = 2;
-const limit: number = 50;
-const asTree: boolean = true;
-const urlId: string = "article_5678";
-const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // een week geleden
-const toDate: number = Date.now();
+async function loadComments(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const page: number = 1;
+  const limit: number = 50;
+  const asTree: boolean = false;
+  const direction: SortDirections = "asc";
+  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 days ago
+  const toDate: number = Date.now();
 
-const commentsResponse: GetCommentsResponse = await getComments({
-  tenantId,
-  page,
-  limit,
-  asTree,
-  urlId,
-  direction,
-  fromDate,
-  toDate,
-});
+  const commentsResponse: APIGetCommentsResponse = await getComments(
+    tenantId,
+    page,
+    limit,
+    undefined,
+    asTree,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    direction,
+    fromDate,
+    toDate
+  );
+
+  console.log(commentsResponse);
+}
 [inline-code-end]

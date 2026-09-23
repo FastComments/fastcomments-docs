@@ -1,36 +1,41 @@
-Atualmente, visualizadores online de uma página: pessoas cuja sessão websocket está inscrita na página neste exato momento.  
+---
+Visualizadores atualmente online de uma página: pessoas cuja sessão websocket está inscrita na página neste momento.  
 Retorna anonCount + totalCount (assinantes de toda a sala, incluindo visualizadores anônimos que não enumeramos).
 
-## Parâmetros
+## Parameters
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|-------------|-----------|
-| tenantId | string | Sim |  |
-| urlId | string | Sim |  |
-| afterName | string | Não |  |
-| afterUserId | string | Não |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Resposta
+## Response
 
-Retorna: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Retorna: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## Exemplo
+## Example
 
 [inline-code-attrs-start title = 'Exemplo getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Com parâmetros de paginação opcionais
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Sem parâmetros de paginação opcionais
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]
+
+---

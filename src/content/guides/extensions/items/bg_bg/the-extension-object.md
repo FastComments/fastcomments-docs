@@ -1,36 +1,39 @@
-Обектът на разширението се състои от следното определение:
+The extension object consists of the following definition:
 
-<!-- ако искате да актуализирате това, не забравяйте да актуализирате comment-ui-core -->
-[inline-code-attrs-start title = 'JSDoc на обекта Extension'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'JSDoc на обекта за разширение'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * The FastCommentsUI extension object. Used for lazy-loading certain components. For example, the review system is not
- * used by all customers, so we only load that extension when we want it.
+ * FastCommentsUI обект за разширение. Използва се за lazy‑loading (мързеливо зареждане) на определени компоненти. Например, системата за отзиви не се използва от всички клиенти, затова зареждаме това разширение само когато им е необходимо.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Коренният DOM възел на уиджета.
+ * @property {Element} root - Кореновият DOM елемент на уиджета.
  * @property {string} [css]
  * @property {Object} config - Конфигурационният обект на FastComments.
- * @property {Object} commentsById - Референция към обект с всички коментари по id, който се поддържа актуален.
- * @property {Object} translations - Референция към всички преводи.
- * @property {Function} reRenderComment - Референция към функция, която може да бъде извикана за повторно рендиране на коментар.
- * @property {Function} removeCommentAndReRender - Референция към функция, която може да бъде извикана, за да премахне коментар от паметта и да повторно рендира съответната част от DOM-а.
- * @property {Function} newBroadcastId - Референция към функция, която може да бъде извикана, за да създаде нов broadcast id и да го добави към локалния списък с broadcast id-та за игнориране.
+ * @property {Object} commentsById - Препратка към обект, съдържащ всички коментари по id, който се поддържа актуален.
+ * @property {Object} translations - Препратка към всички преводи.
+ * @property {Function} reRenderComment - Препратка към функция, която може да се извика за повторно рендериране на коментар.
+ * @property {Function} removeCommentAndReRender - Препратка към функция, която може да се извика за премахване на коментар от паметта и повторно рендериране на съответната част от DOM.
+ * @property {Function} newBroadcastId - Препратка към функция, която може да се извика за създаване на нов broadcast id и добавянето му към локалния списък с broadcast id‑та за игнориране.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Извиква се с коментара, който предстои да бъде публикуван. Върнете false, за да отмените изпращането (например когато прикаченото гласуване е непълно).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Филтър за HTML на областта за коментари.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Филтър за HTML на целия уиджет при рендиране.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Филтър за HTML за всеки коментар преди рендиране.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Филтър за HTML за всяко меню на коментар преди рендиране.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Филтър за HTML на целия уиджет при рендиране.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Връща HTML за добавяне в горната част на зоната за отговори.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Връща HTML за добавяне в горната част на уиджета.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Връща HTML за добавяне в горната част на елемента на коментара.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Връща HTML за добавяне в долната част на елемента на коментара.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Връща HTML за добавяне в долната част на елемента на менюто за всеки коментар.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Филтрира HTML за областта на коментара.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Филтрира HTML за целия уиджет при рендериране.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Филтрира HTML за всеки коментар преди рендериране.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Филтрира HTML за всяко меню на коментар преди рендериране.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Филтрира HTML за целия уиджет при рендериране.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Връща HTML, който се добавя в горната част на областта за отговор.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Връща HTML, който се добавя в горната част на уиджета.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Връща HTML, който се добавя в горната част на елемента на коментара.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Връща HTML, който се добавя в долната част на елемента на коментара.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Връща HTML, който се добавя след текста на коментара, вътре в елемента за съдържание на коментара (използва се от анкети).
+ * @property {Function} [replyAreaInputBottom] - Връща HTML, който се добавя вътре в полето за въвеждане на коментар, под текстовото поле (използва се от анкети за вграден редактор). Получава id‑то на родителския коментар или null за главната кутия за отговор.
+ * @property {Function} [onPollUpdate] - Извиква се с живото събитие, когато броят на гласовете в анкета на страницата се промени.
+ * @property {Function} isSiteAdmin - Връща дали зрителят е администратор или модератор на наемателя. Известно след първото извличане.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Връща HTML, който се добавя в долната част на елемента за меню за всеки коментар.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -39,8 +42,8 @@
    
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
- * @param {Element} element - Коренният елемент.
- * @param {Object.<string, Function>} clickListeners - Обработчиците на събития за кликове, индексирани по име на клас, които могат да бъдат модифицирани чрез референция.
+ * @param {Element} element - Кореновият елемент.
+ * @param {Object.<string, Function>} clickListeners - Обработчиците на събития за кликвания, по име на клас, които могат да се модифицират по референция.
  * @returns void
  */
 

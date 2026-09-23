@@ -1,26 +1,27 @@
-## Parameters
+## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | לא |  |
-| createHashTagBody | CreateHashTagBody | לא |  |
+| tenantId | string | Yes |  |
+| createHashTagBody | CreateHashTagBody | No |  |
 
-## Response
+## תגובה
 
-מחזיר: [`AddHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagResponse.ts)
+מחזיר: [`CreateHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateHashTagResponse.ts)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת addHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTag דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9876";
+const tenantId: string = "c3f5e8b2-9d4a-4f6a-8b2c-1a2b3c4d5e6f";
 
-const newHashTag: CreateHashTagBody = {
+const tagPayload: CreateHashTagBody = {
   tag: "typescript",
   description: "Discussions about TypeScript"
 };
 
-const responseWithTenant: AddHashTagResponse = await addHashTag(tenantId, newHashTag);
-
-const responseWithoutTenant: AddHashTagResponse = await addHashTag(undefined, newHashTag);
+const responseWithBody: CreateHashTagResponse = await addHashTag(tenantId, tagPayload);
+const responseWithoutBody: CreateHashTagResponse = await addHashTag(tenantId);
 [inline-code-end]
+
+---

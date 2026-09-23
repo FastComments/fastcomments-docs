@@ -1,8 +1,8 @@
-Massebrugerinfo for en lejer. Givet bruger-id'er returneres visningsinfo fra User / SSOUser.  
-Brugt af kommentarwidgeten til at berige brugere, der lige er dukket op via en tilstedeværelseshændelse.  
+Massebrugerinfo for en lejer. Givet userIds returneres visningsinfo fra User / SSOUser.  
+Bruges af kommentarfunktionen til at berige brugere, der netop er dukket op via en tilstedeværelseshændelse.  
 Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
 
-## Parameters
+## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
@@ -11,17 +11,19 @@ Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
 
 ## Svar
 
-Returnerer: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Returnerer: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getUsersInfo Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// Optional fields in the response may be undefined
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]
+
+---

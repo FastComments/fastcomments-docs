@@ -2,39 +2,37 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| commentId | string | Yes |  |
+| tenantId | string | Sì |  |
+| commentId | string | Sì |  |
 | includeEmail | boolean | No |  |
 | includeIP | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Risposta
 
-Restituisce: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Restituisce: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Set completo di parametri
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Chiamata con solo i parametri richiesti
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Chiamata con parametri opzionali
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Chiamata minima usando solo l'argomento obbligatorio
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Usa i risultati secondo necessità...
 }
 [inline-code-end]

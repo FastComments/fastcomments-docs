@@ -7,22 +7,21 @@
 
 ## Risposta
 
-Restituisce: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Restituisce: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9876";
-  const moderatorPayload: CreateModeratorBody = {
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-    // i campi opzionali come la descrizione sono omessi
-  };
-  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
-  console.log(result);
-}
+const tenantId: string = "tenant_12345";
 
-runExample();
+const moderatorPayload: CreateModeratorBody = {
+  userId: "user_9876",
+  // campo opzionale; può essere omesso se non necessario
+  notes: "Temporary moderator for event"
+};
+
+const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]
+
+---

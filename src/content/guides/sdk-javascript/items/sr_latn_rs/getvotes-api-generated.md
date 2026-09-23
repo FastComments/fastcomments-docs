@@ -2,26 +2,23 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
 
 ## Odgovor
 
-Vraća: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
+Vraća: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'getVotes Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchVotes(): Promise<void> {
-  const tenantId: string = "acme-corp-01";
-  const urlId: string = "article-2024-05-15";
+const tenantId: string = "tenant_12345";
+const urlId: string = "article-67890";
 
-  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
-
-  // Primer pristupa opcionom polju u odgovoru
-  const firstVoteId: string | undefined = response?.votes?.[0]?.id;
-}
+(async () => {
+  const votesResponse: GetVotesResponse = await getVotes(tenantId, urlId);
+  // Primer pristupa opcionalnoj svojstvu iz odgovora
+  const firstVote: PublicVote | undefined = votesResponse.votes?.[0];
+})();
 [inline-code-end]
-
----

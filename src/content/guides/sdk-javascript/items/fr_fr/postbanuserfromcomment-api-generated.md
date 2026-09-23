@@ -1,8 +1,8 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
+| tenantId | string | Oui |  |
 | commentId | string | Oui |  |
 | banEmail | boolean | Non |  |
 | banEmailDomain | boolean | Non |  |
@@ -12,42 +12,31 @@
 | isShadowBan | boolean | Non |  |
 | updateId | string | Non |  |
 | banReason | string | Non |  |
-| tenantId | string | Non |  |
 | sso | string | Non |  |
 
 ## Réponse
 
-Retourne : [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
+Renvoie : [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'postBanUserFromComment Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postBanUserFromComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runBan() {
-  const commentId: string = "cmt_5f8a2b3c";
-  const banEmail: boolean = true;
-  const banIP: boolean = false;
-  const deleteAllUsersComments: boolean = true;
-  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-  const isShadowBan: boolean = false;
-  const banReason: string = "Repeated spam posting";
-  const tenantId: string = "tenant_12345";
-
-  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
-    commentId,
-    banEmail,
-    undefined,
-    banIP,
-    deleteAllUsersComments,
-    bannedUntil,
-    isShadowBan,
-    undefined,
-    banReason,
-    tenantId
+async function banUserExample(): Promise<void> {
+  const result: BanUserFromCommentResult = await postBanUserFromComment(
+    "tenant_42",
+    "comment_1001",
+    true,                     // banEmail
+    undefined,                // banEmailDomain (omise)
+    true,                     // banIP
+    false,                    // deleteAllUsersComments
+    "2025-01-01T00:00:00Z",   // bannedUntil
+    true,                     // isShadowBan
+    undefined,                // updateId (omise)
+    "Harassment",             // banReason
+    undefined                 // sso (omise)
   );
-  console.log(response);
-}
-runBan();
-[inline-code-end]
 
----
+  console.log(result);
+}
+[inline-code-end]

@@ -7,22 +7,15 @@
 
 ## Odgovor
 
-Vraća: [`GetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeResponse.ts)
+Vraća: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample(): Promise<void> {
-  const tenantId: string = "acme-corp-tenant-001";
-  const badgeId: string = "badge-5f9d3a2b";
-
-  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);
-
-  // Pristupi opcionim poljima na siguran način
-  const badgeName: string | undefined = badgeResponse.userBadge?.name;
-  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? "Unnamed"}`);
+async function demoGetUserBadge() {
+    const tenantId: string = "tenant-9f8b7c6d";
+    const userId: string = "user-123456";
+    const badgeResponse: APIGetUserBadgeResponse = await getUserBadge(tenantId, userId);
 }
-
-runExample();
 [inline-code-end]

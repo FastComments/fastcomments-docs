@@ -2,33 +2,26 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| sso | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
+返却: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserNotificationCount の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserNotificationCount() {
-    const tenantId: string = "acme-corp-01";
+async function demo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const ssoToken: string = "sso-token-xyz789";
 
-    // オプションの SSO トークンで呼び出す
-    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId,
-        "sso-token-abc123"
-    );
-
-    // SSO トークンなしで呼び出す
-    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId
-    );
-
-    console.log(countWithSSO, countWithoutSSO);
+  const countWithoutSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
+  const countWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
 }
+
+demo();
 [inline-code-end]
 
 ---

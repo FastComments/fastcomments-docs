@@ -1,27 +1,25 @@
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| postIds | Array<string> | Ні |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| postIds | Array<string> | No |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`GetUserReactsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublicResponse.ts)
+Повертає: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UserReactsResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getUserReactsPublic Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getUserReactsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "tenant_12345";
-  const postIds: string[] = ["post_1a2b3c", "post_4d5e6f"];
-  const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+const tenantId: string = "tenant_12345";
+const postIds: string[] = ["post_abc", "post_def"];
+const ssoToken: string = "sso_token_987";
 
-  const fullResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
-  const minimalResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId);
-}
-
-demo();
+const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
+const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId);
 [inline-code-end]
+
+---

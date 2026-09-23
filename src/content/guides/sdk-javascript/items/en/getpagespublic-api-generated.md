@@ -15,26 +15,25 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## Response
 
-Returns: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'getPagesPublic Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 

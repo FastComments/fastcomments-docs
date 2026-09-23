@@ -132,25 +132,25 @@
     {
       "name": "FeedPost-Struktur",
       "file": "feed-post-structure.md",
-      "subCat": "Feed-Posts"
+      "subCat": "Feed-Beiträge"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed-Posts"
+      "subCat": "Feed-Beiträge"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed-Posts"
+      "subCat": "Feed-Beiträge"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed-Posts"
+      "subCat": "Feed-Beiträge"
     },
     {
       "name": "Hashtag-Struktur",
@@ -235,7 +235,7 @@
       "subCat": "Moderatoren"
     },
     {
-      "name": "Benachrichtigungszählerstruktur",
+      "name": "Benachrichtigungszähler-Struktur",
       "file": "notification-count-structure.md",
       "subCat": "Benachrichtigungszähler"
     },
@@ -268,6 +268,53 @@
       "name": "PATCH /api/v1/notifications/:id",
       "file": "notifications-patch.md",
       "subCat": "Benachrichtigungen"
+    },
+    {
+      "name": "Seitenreaktionen Öffentliche API",
+      "file": "page-reacts-api.md",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seitenreaktionen"
     },
     {
       "name": "Seitenstruktur",
@@ -305,27 +352,85 @@
       "subCat": "Seiten"
     },
     {
-      "name": "AusstehendeWebhook-Ereignisstruktur",
+      "name": "Umfrage-Struktur",
+      "file": "poll-structure.md",
+      "subCat": "Umfragen"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfragen"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfragen"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfragen"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfragen"
+    },
+    {
+      "name": "Umfrageabstimmung-Struktur",
+      "file": "poll-vote-structure.md",
+      "subCat": "Umfrageabstimmungen"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfrageabstimmungen"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfrageabstimmungen"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfrageabstimmungen"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Umfrageabstimmungen"
+    },
+    {
+      "name": "AusstehendesWebhook-Ereignis-Struktur",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "AusstehendeWebhook-Ereignisse"
+      "subCat": "Ausstehende Webhook-Ereignisse"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AusstehendeWebhook-Ereignisse"
+      "subCat": "Ausstehende Webhook-Ereignisse"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AusstehendeWebhook-Ereignisse"
+      "subCat": "Ausstehende Webhook-Ereignisse"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AusstehendeWebhook-Ereignisse"
+      "subCat": "Ausstehende Webhook-Ereignisse"
     },
     {
       "name": "SSO-Benutzerstruktur",
@@ -718,27 +823,27 @@
       "subCat": "Benutzerabzeichen"
     },
     {
-      "name": "Benutzerabzeichenfortschrittsstruktur",
+      "name": "Benutzerabzeichenfortschrittstruktur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Benutzerabzeichen-Fortschritt"
+      "subCat": "Benutzerabzeichenfortschritt"
     }
   ]
 }

@@ -2,28 +2,32 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | broadcastId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`PostFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostFlagCommentResponse.ts)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'postFlagComment דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת postFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_20230915_001";
-const broadcastId: string = "brd_20230915_live";
-const tenantId: string = "tenant_42";
-const sso: string = "sso_token_abc123";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
 
-const flaggedResponse: PostFlagCommentResponse = await postFlagComment(
-  commentId,
-  broadcastId,
-  tenantId,
-  sso
-);
+  // רק פרמטרים נדרשים
+  const result1: APIEmptyResponse = await postFlagComment(tenantId, commentId);
+
+  // כולל פרמטרים אופציונליים
+  const broadcastId: string = "brd_54321";
+  const sso: string = "user@example.com";
+  const result2: APIEmptyResponse = await postFlagComment(tenantId, commentId, broadcastId, sso);
+
+  console.log(result1, result2);
+}
+runExample();
 [inline-code-end]

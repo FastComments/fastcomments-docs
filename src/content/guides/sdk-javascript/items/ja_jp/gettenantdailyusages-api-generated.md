@@ -1,7 +1,7 @@
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
-|------|------|------|------|
+|------|------|----------|-------------|
 | tenantId | string | はい |  |
 | yearNumber | number | いいえ |  |
 | monthNumber | number | いいえ |  |
@@ -10,20 +10,20 @@
 
 ## レスポンス
 
-返却: [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
+戻り値: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getTenantDailyUsages の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchDailyUsage() {
-  const tenantId: string = "tenant-9876";
+async function demoGetTenantDailyUsages() {
+  const tenantId: string = "tenant_9876";
   const yearNumber: number = 2024;
-  const monthNumber: number = 5; // 5月
-  const dayNumber: number = 12;
-  const skip: number = 0;
+  const monthNumber: number = 2;
+  const dayNumber: number = 28;
+  const skip: number = 10;
 
-  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const fullResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber,
     monthNumber,
@@ -31,16 +31,9 @@ async function fetchDailyUsage() {
     skip
   );
 
-  // 必要なパラメータのみと1つのオプションパラメータを使用
-  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const partialResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber
   );
-
-  console.log(fullResult, partialResult);
 }
-
-fetchDailyUsage();
 [inline-code-end]
-
----

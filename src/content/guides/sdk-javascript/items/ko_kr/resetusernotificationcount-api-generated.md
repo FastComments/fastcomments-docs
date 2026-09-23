@@ -7,24 +7,19 @@
 
 ## 응답
 
-반환: [`ResetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationCountResponse.ts)
+반환: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
 
-## 예시
+## 예제
 
 [inline-code-attrs-start title = 'resetUserNotificationCount 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoResetCount() {
-  const tenantId: string = "acme-corp-tenant";
-  const sso: string = "sso-user-9876";
+async function demoReset() {
+  const tenantId: string = "tenant_12345";
+  const ssoToken: string = "sso_abcdef123456";
 
-  // 선택적 sso 매개변수를 사용하여 호출
-  const resultWithSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId, sso);
-
-  // 선택적 sso 매개변수 없이 호출
-  const resultWithoutSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId);
-
-  console.log(resultWithSso, resultWithoutSso);
+  const resultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+  const resultWithoutSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
 }
-[inline-code-end]
 
----
+demoReset();
+[inline-code-end]

@@ -1,30 +1,30 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|-----------|------------|
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | updateTenantBody | UpdateTenantBody | Yes |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`UpdateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantResponse.ts)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenant Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c8f9e3d2-4b6a-11ee-8c99-0242ac130003";
-const id: string = "tenant-config-01";
+async function runUpdateTenant() {
+  const tenantId: string = "tenant-abc123";
+  const id: string = "config-456def";
 
-const updateBody: UpdateTenantBody = {
-  domain: "mytenant.fastcomments.io",
-  branding: {
-    logoUrl: "https://cdn.mytenant.com/assets/logo.png"
-  },
-  description: "Branding update for Q3"
-};
+  const updateTenantBody: UpdateTenantBody = {
+    // απαιτούμενο πεδίο
+    name: "Acme International",
+    // προαιρετικά πεδία μπορούν να παραλειφθούν, π.χ., billingInfo, domainConfiguration
+  };
 
-const response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);
-console.log(response);
+  const response: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);
+  console.log(response);
+}
 [inline-code-end]

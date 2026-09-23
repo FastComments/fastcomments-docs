@@ -1,40 +1,51 @@
-## Parameters
+## Параметри
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| page | number | No |  |
-| count | number | No |  |
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| sorts | string | No |  |
-| demo | boolean | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Так |  |
+| page | number | Ні |  |
+| count | number | Ні |  |
+| textSearch | string | Ні |  |
+| byIPFromComment | string | Ні |  |
+| filters | string | Ні |  |
+| searchFilters | string | Ні |  |
+| sorts | string | Ні |  |
+| demo | boolean | Ні |  |
+| sso | string | Ні |  |
 
-## Response
+## Відповідь
 
-Повертає: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
+Повертає: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments() {
-  const fullResult: GetApiCommentsResponse = await getApiComments(
-    2,                     // сторінка
-    25,                    // кількість
-    "feedback",           // текстовий пошук
-    "192.168.1.100",      // за IP з коментаря
-    "approved",           // фільтри
-    "hasReplies",         // фільтри пошуку
-    "dateDesc",           // сортування
-    false,                // демо
-    "tenant-abc123",      // ідентифікатор орендаря
-    "sso-token-xyz"       // sso
-  );
+async function fetchComments(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const page: number = 2;
+  const count: number = 20;
+  const textSearch: string = "typescript";
+  const byIPFromComment: string = "192.168.1.100";
+  const filters: string = "spam,offensive";
+  const searchFilters: string = "user:john";
+  const sorts: string = "date_desc";
+  const demo: boolean = true;
+  const sso: string = "sso_token_abc";
 
-  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+  const response: ModerationAPIGetCommentsResponse = await getApiComments(
+    tenantId,
+    page,
+    count,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    demo,
+    sso
+  );
 }
+
+fetchComments();
 [inline-code-end]

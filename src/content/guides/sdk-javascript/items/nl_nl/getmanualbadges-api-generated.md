@@ -1,30 +1,26 @@
+---
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|--------------|
-| tenantId | string | Nee |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|------------|--------------|
+| tenantId | string | Ja |  |
 | sso | string | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesResponse.ts)
+Retourneert: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantManualBadgesResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getManualBadges Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchBadges() {
-  const tenantId: string = "tenant_987654321";
-  const ssoToken: string = "sso_ABCdef123456";
+  const tenantId: string = "tenant-987654321";
+  const ssoToken: string = "sso-token-abc123";
 
-  // Aanroep met beide optionele parameters
-  const responseFull: GetManualBadgesResponse = await getManualBadges(tenantId, ssoToken);
-  console.log(responseFull);
-
-  // Aanroep met alleen tenantId
-  const responseTenantOnly: GetManualBadgesResponse = await getManualBadges(tenantId);
-  console.log(responseTenantOnly);
+  const badgesWithSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId, ssoToken);
+  const badgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId);
 }
-
-fetchBadges();
 [inline-code-end]
+
+---

@@ -1,8 +1,8 @@
-특정 댓글에 대한 알림을 활성화하거나 비활성화합니다.
+Enable or disable notifications for a specific comment.
 
-## 매개변수
+## Parameters
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | notificationId | string | Yes |  |
@@ -10,23 +10,23 @@
 | commentId | string | Yes |  |
 | sso | string | No |  |
 
-## 응답
+## Response
 
 반환: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
 
-## 예시
+## Example
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const notificationId: string = "notif_9876";
-const commentId: string = "comment_abc123";
-const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
-  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
-const sso: string = "ssoTokenXYZ";
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const notificationId: string = "notif_9876";
+  const commentId: string = "comment_abc123";
+  const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
+    UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
+  const sso: string = "sso_token_456";
 
-const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(
+  const resultWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(
     tenantId,
     notificationId,
     optedInOrOut,
@@ -34,11 +34,11 @@ const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
     sso
   );
 
-const responseWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(
+  const resultWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(
     tenantId,
     notificationId,
     optedInOrOut,
     commentId
   );
+}
 [inline-code-end]

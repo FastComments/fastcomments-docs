@@ -1,28 +1,27 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## תגובה
 
-מחזיר: [`GetModerationCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentTextResponse.ts)
+מחזיר: [`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse.ts)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'getModerationCommentText דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getModerationCommentText'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function exampleUsage(): Promise<void> {
-  const commentId: string = "cmt_9f8e7d6c5b4a3b2c1d0e";
-  const tenantId: string = "tenant_67890";
-  const sso: string = "sso_token_abc123";
+async function fetchComment() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_abcde12345";
 
-  // קריאה עם רק הפרמטר הדרוש
-  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);
-
-  // קריאה עם פרמטרים אופציונליים
-  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);
+  const commentWithoutSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId);
+  const commentWithSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId, ssoToken);
 }
+
+fetchComment();
 [inline-code-end]

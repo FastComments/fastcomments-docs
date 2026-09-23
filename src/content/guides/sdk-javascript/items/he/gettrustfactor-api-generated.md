@@ -2,24 +2,27 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| userId | string | לא |  |
-| tenantId | string | לא |  |
-| sso | string | לא |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| sso | string | No |  |
 
 ## תגובה
 
-מחזיר: [`GetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTrustFactorResponse.ts)
+מחזיר: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserTrustFactorResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת getTrustFactor'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runDemo(): Promise<void> {
-    const trustFull: GetTrustFactorResponse = await getTrustFactor("user_12345", "tenant_abc", "sso_token_987");
-    const trustUserOnly: GetTrustFactorResponse = await getTrustFactor("user_12345");
-    console.log(trustFull, trustUserOnly);
+async function demo() {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_98765";
+  const sso: string = "sso_token_abcde";
+
+  const trustFactor: GetUserTrustFactorResponse = await getTrustFactor(tenantId);
+  const trustFactorWithUser: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId);
+  const trustFactorFull: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId, sso);
 }
-runDemo();
 [inline-code-end]
 
 ---

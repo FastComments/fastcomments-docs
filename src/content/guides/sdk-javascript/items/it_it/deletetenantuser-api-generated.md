@@ -2,32 +2,26 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Sì |  |
-| id | string | Sì |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 | deleteComments | string | No |  |
 | commentDeleteMode | string | No |  |
 
 ## Risposta
 
-Restituisce: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoDeleteTenantUser() {
-  const tenantId: string = "acme-corp-tenant";
-  const userId: string = "user-9876";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "u-112233";
 
-  // Elimina l'utente e tutti i suoi commenti, usando la modalità di cancellazione definitiva
-  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
-    tenantId,
-    userId,
-    "true",
-    "hard"
-  );
+  const result1: APIEmptyResponse = await deleteTenantUser(tenantId, userId);
+  const result2: APIEmptyResponse = await deleteTenantUser(tenantId, userId, "true", "hard");
 
-  // Elimina l'utente senza rimuovere i commenti (comportamento predefinito)
-  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
-}
+  console.log(result1, result2);
+})();
 [inline-code-end]

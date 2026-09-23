@@ -2,24 +2,24 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | value | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## レスポンス
 
-戻り値: [`GetSearchUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchUsersResponse.ts)
+返却: [`ModerationUserSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationUserSearchResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getSearchUsers の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoSearch() {
-    const query: string = "john.doe@example.com";
-    const tenantId: string = "tenant_12345";
-    const ssoToken: string = "sso_token_abc";
+async function runSearch() {
+  const tenantId: string = "tenant-9876";
+  const emailFragment: string = "jane";
+  const ssoToken: string = "sso-token-456";
 
-    const resultWithSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId, ssoToken);
-    const resultWithoutSso: GetSearchUsersResponse = await getSearchUsers(query, tenantId);
+  const resultWithAll: ModerationUserSearchResponse = await getSearchUsers(tenantId, emailFragment, ssoToken);
+  const resultWithTenantOnly: ModerationUserSearchResponse = await getSearchUsers(tenantId);
 }
 [inline-code-end]

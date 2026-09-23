@@ -1,29 +1,29 @@
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
-|------|------|------------|------|
-| tenantId | string | Так |  |
-| yearNumber | number | Ні |  |
-| monthNumber | number | Ні |  |
-| dayNumber | number | Ні |  |
-| skip | number | Ні |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Yes |  |
+| yearNumber | number | No |  |
+| monthNumber | number | No |  |
+| dayNumber | number | No |  |
+| skip | number | No |  |
 
 ## Відповідь
 
-Повертає: [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
+Повертає: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getTenantDailyUsages Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchDailyUsage() {
-  const tenantId: string = "tenant-9876";
+async function demoGetTenantDailyUsages() {
+  const tenantId: string = "tenant_9876";
   const yearNumber: number = 2024;
-  const monthNumber: number = 5; // Травень
-  const dayNumber: number = 12;
-  const skip: number = 0;
+  const monthNumber: number = 2;
+  const dayNumber: number = 28;
+  const skip: number = 10;
 
-  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const fullResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber,
     monthNumber,
@@ -31,16 +31,9 @@ async function fetchDailyUsage() {
     skip
   );
 
-  // Використовуючи лише обов'язковий та один необов'язковий параметр
-  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const partialResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber
   );
-
-  console.log(fullResult, partialResult);
 }
-
-fetchDailyUsage();
 [inline-code-end]
-
----

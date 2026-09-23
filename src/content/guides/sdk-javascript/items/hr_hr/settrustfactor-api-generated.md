@@ -2,26 +2,32 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| userId | string | Ne |  |
-| trustFactor | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| trustFactor | string | No |  |
+| sso | string | No |  |
 
 ## Odgovor
 
-Vraća: [`SetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetTrustFactorResponse.ts)
+Vraća: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetUserTrustFactorResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'setTrustFactor Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = "user_8421";
+async function demoSetTrustFactor() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "user-9876";
   const trustFactor: string = "high";
-  const tenantId: string = "tenant_33";
-  const ssoToken: string = "sso_7d9f";
+  const sso: string = "sso-token-xyz";
 
-  const fullResult: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor, tenantId, ssoToken);
-  const minimalResult: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor);
-})();
+  const fullResponse: SetUserTrustFactorResponse = await setTrustFactor(
+    tenantId,
+    userId,
+    trustFactor,
+    sso
+  );
+
+  const minimalResponse: SetUserTrustFactorResponse = await setTrustFactor(tenantId);
+}
 [inline-code-end]

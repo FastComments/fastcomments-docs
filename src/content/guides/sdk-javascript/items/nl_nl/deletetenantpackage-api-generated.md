@@ -5,21 +5,18 @@
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 
-## Reactie
+## Respons
 
-Retourneert: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteTenantPackage Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeTenantPackage(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const packageId: string = "pkg_67890";
+let tenantId: string = "tenant_12345";
+let packageId: string = "pkg_98765";
 
-  const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);
-  // gebruik het resultaat indien nodig
-}
-
-removeTenantPackage();
+const result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
+
+---

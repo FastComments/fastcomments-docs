@@ -2,6 +2,7 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenantId | string | 예 |  |
 | commentId | string | 예 |  |
 | banEmail | boolean | 아니오 |  |
 | banEmailDomain | boolean | 아니오 |  |
@@ -11,40 +12,31 @@
 | isShadowBan | boolean | 아니오 |  |
 | updateId | string | 아니오 |  |
 | banReason | string | 아니오 |  |
-| tenantId | string | 아니오 |  |
 | sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
+반환: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'postBanUserFromComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postBanUserFromComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runBan() {
-  const commentId: string = "cmt_5f8a2b3c";
-  const banEmail: boolean = true;
-  const banIP: boolean = false;
-  const deleteAllUsersComments: boolean = true;
-  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-  const isShadowBan: boolean = false;
-  const banReason: string = "Repeated spam posting";
-  const tenantId: string = "tenant_12345";
-
-  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
-    commentId,
-    banEmail,
-    undefined,
-    banIP,
-    deleteAllUsersComments,
-    bannedUntil,
-    isShadowBan,
-    undefined,
-    banReason,
-    tenantId
+async function banUserExample(): Promise<void> {
+  const result: BanUserFromCommentResult = await postBanUserFromComment(
+    "tenant_42",
+    "comment_1001",
+    true,                     // banEmail
+    undefined,                // banEmailDomain (생략됨)
+    true,                     // banIP
+    false,                    // deleteAllUsersComments
+    "2025-01-01T00:00:00Z",   // bannedUntil
+    true,                     // isShadowBan
+    undefined,                // updateId (생략됨)
+    "Harassment",             // banReason
+    undefined                 // sso (생략됨)
   );
-  console.log(response);
+
+  console.log(result);
 }
-runBan();
 [inline-code-end]

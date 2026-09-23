@@ -1,31 +1,37 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|------------|-----------|
-| tenantId | string | Ναι |  |
-| userId | string | Όχι |  |
-| state | number | Όχι |  |
-| skip | number | Όχι |  |
-| limit | number | Όχι |  |
+|------|------|-----------|------------|
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| state | number | No |  |
+| skip | number | No |  |
+| limit | number | No |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetTicketsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse1.ts)
+Επιστρέφει: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'getTickets Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadTickets() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
-  const state: number = 2; // e.g., closed
-  const skip: number = 10;
-  const limit: number = 5;
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const ticketsSimple: GetTicketsResponse = await getTickets(tenantId);
 
-  const ticketsFull: GetTicketsResponse1 = await getTickets(tenantId, userId, state, skip, limit);
-  const ticketsPartial: GetTicketsResponse1 = await getTickets(tenantId);
-}
-
-loadTickets();
+  const userId: string = "user_9876";
+  const state: number = 1; // π.χ., ανοιχτό
+  const skip: number = 0;
+  const limit: number = 20;
+  const ticketsFull: GetTicketsResponse = await getTickets(
+    tenantId,
+    userId,
+    state,
+    skip,
+    limit
+  );
+})();
 [inline-code-end]
+
+---

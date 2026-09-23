@@ -2,34 +2,28 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| commentId | string | 예 |  |
+| broadcastId | string | 예 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`UnLockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnLockCommentResponse.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 예제
 
 [inline-code-attrs-start title = 'unLockComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const commentId: string = "cmt_9876";
-const broadcastId: string = "brd_001";
-const ssoToken: string | undefined = "sso_token_abc";
+async function demoUnlock() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+  const broadcastId: string = "brd_987654321";
+  const ssoToken: string = "sso_abcdef123456";
 
-async function run() {
-  const unlocked: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId, ssoToken);
-  console.log(unlocked);
-
-  // 선택적 sso 매개변수 없이 호출
-  const unlockedWithoutSso: UnLockCommentResponse = await unLockComment(tenantId, commentId, broadcastId);
-  console.log(unlockedWithoutSso);
+  const resultWithoutSso: APIEmptyResponse = await unLockComment(tenantId, commentId, broadcastId);
+  const resultWithSso: APIEmptyResponse = await unLockComment(tenantId, commentId, broadcastId, ssoToken);
 }
-
-run();
 [inline-code-end]
 
 ---

@@ -1,24 +1,22 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | largeInternalURLSanitized | string | Da |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetGifLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGifLargeResponse.ts)
+Vrne: [`GifGetLargeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GifGetLargeResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'getGifLarge Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'c9f4a1b2-3d5e-4f6a-8b9c-0d1e2f3a4b5c';
-  const largeInternalURLSanitized: string = 'https://cdn.fastcomments.com/gifs/awesome-cat-large.gif';
-  const result: GetGifLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
-  console.log(result);
-})();
+async function runExample() {
+    const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+    const largeInternalURLSanitized: string = "https://cdn.fastcomments.com/gifs/large/abc123.gif";
+    const response: GifGetLargeResponse = await getGifLarge(tenantId, largeInternalURLSanitized);
+    console.log(response);
+}
 [inline-code-end]
-
----

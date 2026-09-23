@@ -2,24 +2,27 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| userId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| userId | string | 아니오 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`GetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTrustFactorResponse.ts)
+반환: [`GetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserTrustFactorResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'getTrustFactor 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTrustFactor 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runDemo(): Promise<void> {
-    const trustFull: GetTrustFactorResponse = await getTrustFactor("user_12345", "tenant_abc", "sso_token_987");
-    const trustUserOnly: GetTrustFactorResponse = await getTrustFactor("user_12345");
-    console.log(trustFull, trustUserOnly);
+async function demo() {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_98765";
+  const sso: string = "sso_token_abcde";
+
+  const trustFactor: GetUserTrustFactorResponse = await getTrustFactor(tenantId);
+  const trustFactorWithUser: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId);
+  const trustFactorFull: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId, sso);
 }
-runDemo();
 [inline-code-end]
 
 ---

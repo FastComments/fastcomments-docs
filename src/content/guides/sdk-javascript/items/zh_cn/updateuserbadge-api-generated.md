@@ -1,34 +1,29 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
-|------|------|------|------|
+| 名称 | 类型 | 必填 | 描述 |
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | id | string | 是 |  |
 | updateUserBadgeParams | UpdateUserBadgeParams | 是 |  |
 
 ## 响应
 
-返回: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
+返回: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateUserBadge 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function applyBadge() {
-    const tenantId: string = "acme-corp-tenant";
-    const userId: string = "user-98765";
+const tenantId: string = "tenant-9f8b7c6d";
+const id: string = "user-4a3b2c1d";
 
-    const params: UpdateUserBadgeParams = {
-        badgeId: "gold-contributor",
-        // 可选字段示例
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-    };
+const updateParams: UpdateUserBadgeParams = {
+  badgeId: "badge-premium",
+  // 可选字段
+  expiresAt: new Date("2025-12-31T23:59:59Z")
+};
 
-    const result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, userId, params);
-    console.log(result);
-}
-
-applyBadge();
+const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateParams);
 [inline-code-end]
 
 ---

@@ -1,46 +1,51 @@
----
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| voteId | string | Yes |  |
-| urlId | string | Yes |  |
-| broadcastId | string | Yes |  |
+| Nombre | Tipo | Obligatorio | Descripción |
+|--------|------|-------------|-------------|
+| tenantId | string | Sí |  |
+| commentId | string | Sí |  |
+| voteId | string | Sí |  |
+| urlId | string | Sí |  |
+| broadcastId | string | Sí |  |
 | editKey | string | No |  |
 | sso | string | No |  |
 
 ## Respuesta
 
-Devuelve: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Devuelve: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso es opcional y se omite
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // opcional
+const ssoToken: string = "sso_token_xyz"; // opcional
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// Llamada con solo los parámetros obligatorios y uno opcional
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// Llamada con ambos parámetros opcionales
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]
 
 ---

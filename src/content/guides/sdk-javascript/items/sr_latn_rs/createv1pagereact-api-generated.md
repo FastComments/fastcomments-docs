@@ -1,25 +1,28 @@
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|-------------|
 | tenantId | string | Da |  |
 | urlId | string | Da |  |
 | title | string | Ne |  |
+| sso | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`CreateV1PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReactResponse.ts)
+Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'createV1PageReact Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const urlId: string = "article-2024-06-improvements";
-const title: string = "FastComments API Integration Guide";
+const tenantId: string = "my-tenant-123";
+const urlId: string = "article-456";
 
-const responseWithTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId, title);
-const responseWithoutTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId);
+const pageTitle: string = "Understanding TypeScript Generics";
+const ssoToken: string = "user-789-token";
+
+const fullResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId, pageTitle, ssoToken);
+const minimalResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId);
 [inline-code-end]
 
 ---

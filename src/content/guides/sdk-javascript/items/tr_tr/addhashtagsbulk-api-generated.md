@@ -1,35 +1,28 @@
-## Parameters
+## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | No |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | No |  |
+| tenantId | string | Evet |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | Hayır |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`AddHashTagsBulkResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulkResponse.ts)
+Döndürür: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkCreateHashTagsResponse.ts)
 
-## Example
+## Örnek
 
-[inline-code-attrs-start title = 'addHashTagsBulk Örnek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'addHashTagsBulk Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
-    const tenantId: string | undefined = "tenant_9f8b7c6d";
-    const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-        tags: [
-            {
-                name: "typescript",
-                description: "Discussions about TypeScript",
-                color: "#3178c6"
-            },
-            {
-                name: "fastcomments",
-                description: "Tags for FastComments integration",
-                color: "#00aaff"
-            }
-        ]
-    };
-    const result: AddHashTagsBulkResponse = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-    console.log(result);
-}();
+const tenantId: string = "tenant_9f8b7c6d";
+
+const tags: BulkCreateHashTagsBodyTagsInner[] = [
+  { name: "typescript", color: "#3178c6" },
+  { name: "fastcomments", color: "#ff6600" }
+];
+
+const bulkBody: BulkCreateHashTagsBody = { tags };
+
+const resultWithBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId, bulkBody);
+
+const resultWithoutBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId);
 [inline-code-end]

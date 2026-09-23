@@ -1,6 +1,6 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Да |  |
@@ -12,32 +12,38 @@
 
 ## Отговор
 
-Връща: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Връща: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteCommentVote Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso е по избор и е пропуснат
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // по избор
+const ssoToken: string = "sso_token_xyz"; // по избор
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// Извикайте само с необходимите параметри и един по избор
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// Извикайте с двата по избор параметъра
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]

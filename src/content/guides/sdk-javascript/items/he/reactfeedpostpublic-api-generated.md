@@ -1,6 +1,6 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | postId | string | כן |  |
@@ -9,31 +9,28 @@
 | broadcastId | string | לא |  |
 | sso | string | לא |  |
 
-## Response
+## תגובה
 
-מחזיר: [`ReactFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublicResponse.ts)
+מחזיר: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostResponse.ts)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-reactFeedPostPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_12345';
-  const postId: string = 'post_98765';
-  const reactBodyParams: ReactBodyParams = { reaction: 'thumbs_up' };
-  const isUndo: boolean = false;
-  const broadcastId: string = 'broadcast_abcde';
-  const sso: string = 'sso_token_xyz';
-
-  const response: ReactFeedPostPublicResponse = await reactFeedPostPublic(
+async function demoReact() {
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const reactBodyParams: ReactBodyParams = {
+    type: "like",
+    userId: "user_abcde"
+  };
+  const response: ReactFeedPostResponse = await reactFeedPostPublic(
     tenantId,
     postId,
     reactBodyParams,
-    isUndo,
-    broadcastId,
-    sso
+    true,
+    "broadcast_001",
+    "sso_token_xyz"
   );
-
-  console.log(response);
-})();
+}
 [inline-code-end]

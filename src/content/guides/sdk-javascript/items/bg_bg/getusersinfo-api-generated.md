@@ -1,27 +1,29 @@
-Групова информация за потребител за наемател. При зададени userIds се връща информация за показване от User / SSOUser.  
-Използва се от уиджета за коментари за обогатяване на потребители, които току‑що се появиха чрез събитие за наличност.  
-Без контекст на страницата: поверителността се прилага еднообразно (частните профили се маскират).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## Параметри
+## Parameters
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | ids | string | Да |  |
 
-## Отговор
+## Response
 
-Връща: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Връща: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Пример
+## Example
 
-[inline-code-attrs-start title = 'Пример за getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// Optional fields in the response may be undefined
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]
+
+---

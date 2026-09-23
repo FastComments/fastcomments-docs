@@ -1,21 +1,27 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
+| tenantId | string | はい |  |
+| urlId | string | はい |  |
+| sso | string | いいえ |  |
 
-## 応答
+## レスポンス
 
-戻り値: [`DeleteV1PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV1PageReactResponse.ts)
+返却: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteV1PageReact の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const urlId: string = "article-2024-06-01";
+async function runExamples() {
+  const tenantId: string = "tenant_9f8b7c6d";
+  const urlId: string = "blog/post-2024-06-15";
+  const ssoToken: string = "sso_user_42";
 
-const response: DeleteV1PageReactResponse = await deleteV1PageReact(tenantId, urlId);
-console.log(response);
+  const resultWithSso: CreateV1PageReact = await deleteV1PageReact(tenantId, urlId, ssoToken);
+  const resultWithoutSso: CreateV1PageReact = await deleteV1PageReact(tenantId, urlId);
+}
 [inline-code-end]
+
+---

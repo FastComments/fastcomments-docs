@@ -1,38 +1,40 @@
-Trenutno online gledatelji stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.  
-Vraća anonCount + totalCount (pretplatnici na čitavu sobu, uključujući anonimne gledatelje koje ne nabrajamo).
+Trenutno online gledatelji stranice: ljudi čija je websocket sesija trenutno pretplaćena na stranicu.
+Vraća anonCount + totalCount (pretplatnici u cijeloj sobi, uključujući anonimne gledatelje koje ne nabrajamo).
 
-## Parametri
+## Parameters
 
-| Ime | Tip | Obavezno | Opis |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| afterName | string | Ne |  |
-| afterUserId | string | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Odgovor
+## Response
 
-Vraća: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Vraća: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Sa opcionim parametrima paginacije
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Bez opcionih parametara paginacije
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]
 
 ---

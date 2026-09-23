@@ -8,30 +8,24 @@
 
 ## Одговор
 
-Враћа: [`UpdateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionConfigResponse.ts)
+Враћа: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateQuestionConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionConfig Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const questionId: string = "qstn-2023-04";
+(async () => {
+  const tenantId: string = "acme-corp-tenant";
+  const questionId: string = "question-42";
 
-const updateBody: UpdateQuestionConfigBody = {
-  // демонстрирана опционална поља
-  customOptions: [
-    {
-      id: "opt-001",
-      label: "Extra Details",
-      required: true,
-    },
-  ],
-  renderingType: "markdown",
-};
+  const updateBody: UpdateQuestionConfigBody = {
+    title: "Revised FAQ Question"
+    // isActive, customOptions, etc. су опциона и изостављена
+  };
 
-const response: UpdateQuestionConfigResponse = await updateQuestionConfig(
-  tenantId,
-  questionId,
-  updateBody
-);
+  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
+  console.log(response);
+})();
 [inline-code-end]
+
+---

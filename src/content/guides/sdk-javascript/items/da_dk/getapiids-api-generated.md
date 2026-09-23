@@ -2,36 +2,44 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| textSearch | string | No |  |
-| byIPFromComment | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| afterId | string | No |  |
-| demo | boolean | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ja |  |
+| textSearch | string | Nej |  |
+| byIPFromComment | string | Nej |  |
+| filters | string | Nej |  |
+| searchFilters | string | Nej |  |
+| afterId | string | Nej |  |
+| demo | boolean | Nej |  |
+| sso | string | Nej |  |
 
-## Respons
+## Svar
 
-Returnerer: [`GetApiIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiIdsResponse.ts)
+Returnerer: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentIdsResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getApiIds Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const textSearch: string = "urgent feedback";
-const byIPFromComment: string = "203.0.113.42";
-const filters: string = "status:approved";
-const afterId: string = "comment-789";
-const demo: boolean = true;
-const tenantId: string = "tenant-001";
+async function run(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const textSearch: string = "offensive language";
+  const byIPFromComment: string = "203.0.113.45";
+  const filters: string = "status:unmoderated";
+  const searchFilters: string = "author:alice";
+  const afterId: string = "cmt_00123";
+  const demo: boolean = true;
+  const sso: string = "sso_9f8e7d6c";
 
-const apiIds: GetApiIdsResponse = await getApiIds({
-  textSearch,
-  byIPFromComment,
-  filters,
-  afterId,
-  demo,
-  tenantId,
-});
+  const fullResult: ModerationAPIGetCommentIdsResponse = await getApiIds(
+    tenantId,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    afterId,
+    demo,
+    sso
+  );
+
+  const minimalResult: ModerationAPIGetCommentIdsResponse = await getApiIds(tenantId);
+}
 [inline-code-end]

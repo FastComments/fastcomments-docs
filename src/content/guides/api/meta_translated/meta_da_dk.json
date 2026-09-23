@@ -21,13 +21,13 @@
     {
       "name": "AuditLog-struktur",
       "file": "audit-log-structure.md",
-      "subCat": "Auditlog"
+      "subCat": "AuditLogs"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Auditlog"
+      "subCat": "AuditLogs"
     },
     {
       "name": "Kommentarstruktur",
@@ -130,27 +130,27 @@
       "subCat": "E-mail-skabeloner"
     },
     {
-      "name": "Feedindlæg-struktur",
+      "name": "FeedPost-struktur",
       "file": "feed-post-structure.md",
-      "subCat": "Feedindlæg"
+      "subCat": "Feed-indlæg"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feedindlæg"
+      "subCat": "Feed-indlæg"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feedindlæg"
+      "subCat": "Feed-indlæg"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feedindlæg"
+      "subCat": "Feed-indlæg"
     },
     {
       "name": "Hashtag-struktur",
@@ -270,6 +270,53 @@
       "subCat": "Notifikationer"
     },
     {
+      "name": "Side Reaktioner Offentlig API",
+      "file": "page-reacts-api.md",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Side Reaktioner"
+    },
+    {
       "name": "Side-struktur",
       "file": "page-structure.md",
       "subCat": "Sider"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Sider"
+    },
+    {
+      "name": "Afstemningsstruktur",
+      "file": "poll-structure.md",
+      "subCat": "Afstemninger"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemninger"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemninger"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemninger"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemninger"
+    },
+    {
+      "name": "Afstemningsstemmestruktur",
+      "file": "poll-vote-structure.md",
+      "subCat": "Afstemningsstemmer"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemningsstemmer"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemningsstemmer"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemningsstemmer"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Afstemningsstemmer"
     },
     {
       "name": "Afventende webhook-hændelsesstruktur",
@@ -395,15 +500,15 @@
       "subCat": "Abonnementer"
     },
     {
-      "name": "Lejers daglige forbrug",
+      "name": "Lejers daglige brugstruktur",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Lejers daglige forbrug"
+      "subCat": "Lejers daglige brug"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejers daglige forbrug"
+      "subCat": "Lejers daglige brug"
     },
     {
       "name": "Lejerstruktur",
@@ -441,7 +546,7 @@
       "subCat": "Lejere"
     },
     {
-      "name": "Lejers pakke struktur",
+      "name": "Lejers pakke-struktur",
       "file": "tenant-package-structure.md",
       "subCat": "Lejers pakker"
     },
@@ -528,7 +633,7 @@
       "subCat": "Brugere"
     },
     {
-      "name": "Stemme-struktur",
+      "name": "Stemmestruktur",
       "file": "vote-structure.md",
       "subCat": "Stemmer"
     },
@@ -718,27 +823,27 @@
       "subCat": "Brugerbadges"
     },
     {
-      "name": "Brugerbadgefremskridtsstruktur",
+      "name": "Brugerbadge-fremskridtsstruktur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Brugerbadgefremskridt"
+      "subCat": "Brugerbadge fremskridt"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadgefremskridt"
+      "subCat": "Brugerbadge fremskridt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadgefremskridt"
+      "subCat": "Brugerbadge fremskridt"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Brugerbadgefremskridt"
+      "subCat": "Brugerbadge fremskridt"
     }
   ]
 }

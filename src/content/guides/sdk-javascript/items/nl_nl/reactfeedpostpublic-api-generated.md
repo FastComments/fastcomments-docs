@@ -1,39 +1,38 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| reactBodyParams | ReactBodyParams | Yes |  |
-| isUndo | boolean | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| Naam | Type | Vereist | Beschrijving |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| postId | string | Ja |  |
+| reactBodyParams | ReactBodyParams | Ja |  |
+| isUndo | boolean | Nee |  |
+| broadcastId | string | Nee |  |
+| sso | string | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`ReactFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublicResponse.ts)
+Retourneert: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostResponse.ts)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_12345';
-  const postId: string = 'post_98765';
-  const reactBodyParams: ReactBodyParams = { reaction: 'thumbs_up' };
-  const isUndo: boolean = false;
-  const broadcastId: string = 'broadcast_abcde';
-  const sso: string = 'sso_token_xyz';
-
-  const response: ReactFeedPostPublicResponse = await reactFeedPostPublic(
+async function demoReact() {
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const reactBodyParams: ReactBodyParams = {
+    type: "like",
+    userId: "user_abcde"
+  };
+  const response: ReactFeedPostResponse = await reactFeedPostPublic(
     tenantId,
     postId,
     reactBodyParams,
-    isUndo,
-    broadcastId,
-    sso
+    true,
+    "broadcast_001",
+    "sso_token_xyz"
   );
-
-  console.log(response);
-})();
+}
 [inline-code-end]
+
+---

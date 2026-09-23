@@ -1,46 +1,35 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | commentId | string | Да |  |
 | setCommentTextParams | SetCommentTextParams | Да |  |
 | broadcastId | string | Не |  |
-| tenantId | string | Не |  |
 | sso | string | Не |  |
 
 ## Одговор
 
-Враћа: [`PostSetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentTextResponse.ts)
+Returns: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentTextResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'postSetCommentText Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const commentId: string = "cmt_9f8b7a6d5e4c3b2a1";
-  const setParams: SetCommentTextParams = {
-    text: "Edited comment to correct a typo and add clarification."
-  };
-  const broadcastId: string = "brd_1a2b3c4d5e6f7g8h9";
-  const tenantId: string = "tenant_xyz123";
-  const sso: string = "sso_user_456def";
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const setCommentTextParams: SetCommentTextParams = {
+  text: "Revised comment after user edit.",
+  format: "plain"
+};
+const broadcastId: string = "broadcast_2023_09";
 
-  const fullResult: PostSetCommentTextResponse = await postSetCommentText(
-    commentId,
-    setParams,
-    broadcastId,
-    tenantId,
-    sso
-  );
+const response: SetCommentTextResponse = await postSetCommentText(
+  tenantId,
+  commentId,
+  setCommentTextParams,
+  broadcastId
+);
 
-  const minimalResult: PostSetCommentTextResponse = await postSetCommentText(
-    commentId,
-    setParams
-  );
-
-  console.log(fullResult, minimalResult);
-})();
+console.log(response);
 [inline-code-end]
-
----

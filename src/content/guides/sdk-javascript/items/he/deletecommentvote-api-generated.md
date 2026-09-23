@@ -12,32 +12,40 @@
 
 ## תגובה
 
-מחזיר: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+מחזיר: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה של deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteCommentVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso הוא אופציונלי ונדחה
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // אופציונלי
+const ssoToken: string = "sso_token_xyz"; // אופציונלי
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// קריאה רק עם הפרמטרים הדרושים ועם אחד מהאופציונליים
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// קריאה עם שני הפרמטרים האופציונליים
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]
+
+---

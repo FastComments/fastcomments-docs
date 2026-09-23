@@ -1,9 +1,9 @@
-Habilitar o deshabilitar notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones para nuevos comentarios raíz, y también
+Enable o deshabilitar notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones para nuevos comentarios raíz, y también
 
-## Parámetros
+## Parameters
 
 | Nombre | Tipo | Requerido | Descripción |
-|--------|------|-----------|--------------|
+|--------|------|-----------|-------------|
 | tenantId | string | Sí |  |
 | urlId | string | Sí |  |
 | url | string | Sí |  |
@@ -11,24 +11,24 @@ Habilitar o deshabilitar notificaciones para una página. Cuando los usuarios es
 | subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Sí |  |
 | sso | string | No |  |
 
-## Respuesta
+## Response
 
 Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationPageSubscriptionStatusResponse.ts)
 
-## Ejemplo
+## Example
 
 [inline-code-attrs-start title = 'Ejemplo de updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -37,12 +37,8 @@ Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://githu
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]

@@ -2,38 +2,61 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|--------------|--------------|
-| tenantId | string | Yes |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| order | SORTDIR | No |  |
-| after | number | No |  |
-| before | number | No |  |
+| tenantId | string | Ja |  |
+| limit | number | Nein |  |
+| skip | number | Nein |  |
+| order | SORTDIR | Nein |  |
+| after | number | Nein |  |
+| before | number | Nein |  |
+| username | string | Nein |  |
+| ip | string | Nein |  |
+| crudType | string | Nein |  |
+| resourceName | string | Nein |  |
+| targetId | string | Nein |  |
+| target | string | Nein |  |
+| includeManagedTenants | boolean | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
+Rückgabe: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getAuditLogs Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_42";
-  const limit: number = 100;
-  const skip: number = 10;
-  const order: SORTDIR = "desc";
-  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // 3 days ago
+async function fetchAuditLogs(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const limit: number = 50;
+  const skip: number = 0;
+  const order: SORTDIR = { direction: "DESC" };
+  const after: number = Date.now() - 86400000; // vor 1 Tag
+  const before: number = Date.now();
+  const username: string = "alice.smith";
+  const ip: string = "198.51.100.23";
+  const crudType: string = "CREATE";
+  const resourceName: string = "thread";
+  const targetId: string = "thread_45678";
+  const target: string = "forum_12";
+  const includeManagedTenants: boolean = false;
 
-  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
+  const logs: GetAuditLogsResponse = await getAuditLogs(
     tenantId,
     limit,
     skip,
     order,
-    after
+    after,
+    before,
+    username,
+    ip,
+    crudType,
+    resourceName,
+    targetId,
+    target,
+    includeManagedTenants
   );
 
-  console.log(auditResponse);
-})();
-[inline-code-end]
+  console.log(logs);
+}
 
----
+fetchAuditLogs();
+[inline-code-end]

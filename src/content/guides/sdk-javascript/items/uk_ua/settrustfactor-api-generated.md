@@ -1,29 +1,33 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| userId | string | No |  |
-| trustFactor | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Так |  |
+| userId | string | Ні |  |
+| trustFactor | string | Ні |  |
+| sso | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`SetTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetTrustFactorResponse.ts)
+Повертає: [`SetUserTrustFactorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetUserTrustFactorResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'setTrustFactor Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад setTrustFactor'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = "user_8421";
+async function demoSetTrustFactor() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "user-9876";
   const trustFactor: string = "high";
-  const tenantId: string = "tenant_33";
-  const ssoToken: string = "sso_7d9f";
+  const sso: string = "sso-token-xyz";
 
-  const fullResult: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor, tenantId, ssoToken);
-  const minimalResult: SetTrustFactorResponse = await setTrustFactor(userId, trustFactor);
-})();
+  const fullResponse: SetUserTrustFactorResponse = await setTrustFactor(
+    tenantId,
+    userId,
+    trustFactor,
+    sso
+  );
+
+  const minimalResponse: SetUserTrustFactorResponse = await setTrustFactor(tenantId);
+}
 [inline-code-end]
-
----

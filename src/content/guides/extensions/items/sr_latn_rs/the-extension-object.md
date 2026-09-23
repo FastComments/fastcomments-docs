@@ -1,36 +1,40 @@
 The extension object consists of the following definition:
 
-<!-- ako želite ovo da ažurirate, zapamtite da ažurirate comment-ui-core -->
-[inline-code-attrs-start title = 'JSDoc objekta ekstenzije'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'Objekat Ekstenzije JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * The FastCommentsUI extension object. Used for lazy-loading certain components. For example, the review system is not
- * used by all customers, so we only load that extension when we want it.
+ * FastCommentsUI ekstenzioni objekat. Koristi se za lenjo učitavanje određenih komponenti. Na primer, sistem za recenzije nije
+ * korišćen od svih kupaca, pa učitavamo tu ekstenziju samo kada nam je potrebna.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Korenski DOM čvor widgeta.
+ * @property {Element} root - DOM čvor korena vidžeta.
  * @property {string} [css]
  * @property {Object} config - FastComments konfiguracioni objekat.
- * @property {Object} commentsById - Referenca na objekat sa svim komentarima po id-ju, koja se održava ažurnom.
+ * @property {Object} commentsById - Referenca na objekat sa svim komentarima po ID‑u, koji se ažurira u realnom vremenu.
  * @property {Object} translations - Referenca na sve prevode.
- * @property {Function} reRenderComment - Referenca na funkciju koju je moguće pozvati da se ponovo renderuje komentar.
- * @property {Function} removeCommentAndReRender - Referenca na funkciju koju je moguće pozvati da ukloni komentar iz memorije i ponovo renderuje odgovarajući deo DOM-a.
- * @property {Function} newBroadcastId - Referenca na funkciju koju je moguće pozvati da kreira novi broadcast id i doda ga u lokalnu listu broadcast id-eva koje treba ignorisati.
+ * @property {Function} reRenderComment - Referenca na funkciju koja može da se pozove za ponovno renderovanje komentara.
+ * @property {Function} removeCommentAndReRender - Referenca na funkciju koja može da se pozove za uklanjanje komentara iz memorije i ponovno renderovanje odgovarajućeg dela DOM‑a.
+ * @property {Function} newBroadcastId - Referenca na funkciju koja može da se pozove za kreiranje novog broadcast ID‑a i dodavanje u lokalnu listu broadcast ID‑ova koje treba ignorisati.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Poziva se sa komentarom koji će biti objavljen. Vratite false da otkažete slanje (na primer kada je priložena anketa nekompletna).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filter HTML-a za oblast komentara.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filter HTML-a za ceo widget pri renderovanju.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filter HTML-a za svaki komentar pre renderovanja.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filter HTML-a za svaki meni komentara pre renderovanja.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filter HTML-a za ceo widget pri renderovanju.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (ZASTARELO) Vraća HTML koji će biti dodat na vrh polja za odgovor.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (ZASTARELO) Vraća HTML koji će biti dodat na vrh widgeta.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (ZASTARELO) Vraća HTML koji će biti dodat na vrh elementa komentara.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (ZASTARELO) Vraća HTML koji će biti dodat na dno elementa komentara.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (ZASTARELO) Vraća HTML koji će biti dodat na dno elementa menija za svaki komentar.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtrirajte HTML za oblast komentara.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtrirajte HTML za ceo vidžet prilikom renderovanja.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtrirajte HTML za svaki komentar pre renderovanja.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtrirajte HTML za svaki meni komentara pre renderovanja.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtrirajte HTML za ceo vidžet prilikom renderovanja.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Vraća HTML koji se dodaje na vrh oblasti za odgovor.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Vraća HTML koji se dodaje na vrh vidžeta.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Vraća HTML koji se dodaje na vrh elementa komentara.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Vraća HTML koji se dodaje na dno elementa komentara.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Vraća HTML koji se dodaje posle teksta komentara, unutar elementa sadržaja komentara (koristi se za ankete).
+ * @property {Function} [replyAreaInputBottom] - Vraća HTML koji se dodaje unutar okvira za unos komentara, ispod polja za tekst (koristi se za ankete u editoru ankete na mestu). Prima ID roditeljskog komentara, ili null za korenski okvir za odgovor.
+ * @property {Function} [onPollUpdate] - Poziva se sa live događajem kada se promeni broj glasova ankete na stranici.
+ * @property {Function} isSiteAdmin - Vraća da li je posmatrač administrator ili moderator tenant‑a. Poznato nakon prvog fetch‑a.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Vraća HTML koji se dodaje na dno menija za svaki komentar.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -40,7 +44,7 @@ The extension object consists of the following definition:
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Korenski element.
- * @param {Object.<string, Function>} clickListeners - Obradivači događaja za klikove, po nazivu klase, koje je moguće izmeniti putem reference.
+ * @param {Object.<string, Function>} clickListeners - Handleri za klikove, po nazivu klase, koji se mogu izmeniti po referenci.
  * @returns void
  */
 

@@ -7,19 +7,25 @@
 
 ## Response
 
-Returns: [`DeleteEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateResponse.ts)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'deleteEmailTemplate Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
+interface APIStatus {
+  code: number;
+  message: string;
+}
+
+interface APIEmptyResponse {
+  status?: APIStatus;
+}
+
+(async () => {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "template_abcde";
+  const templateId: string = "template_987";
 
-  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);
-
-  // Example of accessing an optional property from the response
-  const statusCode: number | undefined = response.status?.code;
-}();
+  const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
+})();
 [inline-code-end]

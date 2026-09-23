@@ -1,7 +1,7 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | voteId | string | Ja |  |
@@ -10,34 +10,40 @@
 | editKey | string | Nee |  |
 | sso | string | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Retourneert: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'deleteCommentVote Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso is optioneel en weggelaten
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // optioneel
+const ssoToken: string = "sso_token_xyz"; // optioneel
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// Aanroep met alleen de vereiste parameters en één optioneel
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// Aanroep met beide optionele parameters
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]

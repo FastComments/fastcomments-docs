@@ -1,33 +1,27 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| deleteComments | string | No |  |
-| commentDeleteMode | string | No |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
+| deleteComments | string | いいえ |  |
+| commentDeleteMode | string | いいえ |  |
 
 ## レスポンス
 
-戻り値: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteTenantUser の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoDeleteTenantUser() {
-  const tenantId: string = "acme-corp-tenant";
-  const userId: string = "user-9876";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "u-112233";
 
-  // ユーザーとそのすべてのコメントを、ハード削除モードで削除します
-  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
-    tenantId,
-    userId,
-    "true",
-    "hard"
-  );
+  const result1: APIEmptyResponse = await deleteTenantUser(tenantId, userId);
+  const result2: APIEmptyResponse = await deleteTenantUser(tenantId, userId, "true", "hard");
 
-  // コメントを削除せずにユーザーを削除します（デフォルトの動作）
-  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
-}
+  console.log(result1, result2);
+})();
 [inline-code-end]

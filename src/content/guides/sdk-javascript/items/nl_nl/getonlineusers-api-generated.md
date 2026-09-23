@@ -1,36 +1,41 @@
-Momenteel online kijkers van een pagina: personen wiens websocketsessie op dit moment op de pagina geabonneerd is.  
-Retourneert anonCount + totalCount (abonnees voor de hele ruimte, inclusief anonieme kijkers die we niet opsommen).
+---
+Momenteel online kijkers van een pagina: mensen waarvan de websocketsessie momenteel op de pagina is geabonneerd.  
+Retourneert anonCount + totalCount (abonnees in de hele ruimte, inclusief anonieme kijkers die we niet opsommen).
 
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
+| Naam | Type | Vereist | Beschrijving |
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | afterName | string | Nee |  |
 | afterUserId | string | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Retourneert: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'getOnlineUsers Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Met optionele paginatieparameters
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Zonder optionele paginatieparameters
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]
+
+---

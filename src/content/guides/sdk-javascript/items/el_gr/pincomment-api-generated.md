@@ -1,29 +1,29 @@
 ## Παράμετροι
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+|------|------|------------|-----------|
 | tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
 | broadcastId | string | Ναι |  |
 | sso | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`PinCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PinCommentResponse.ts)
+Επιστρέφει: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'pinComment Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant-001';
-  const commentId: string = 'comment-5678';
-  const broadcastId: string = 'broadcast-2023';
-  const ssoToken: string = 'sso-xyz-789';
+async function demoPinComment() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_54321";
 
-  const pinResult: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId);
-  const pinResultWithSso: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);
-})();
+  const resultWithoutSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId);
+  const ssoToken: string = "sso_abcde12345";
+  const resultWithSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);
+}
+
+demoPinComment();
 [inline-code-end]
-
----

@@ -1,24 +1,30 @@
-## Parámetros
+## Parameters
 
 | Nombre | Tipo | Requerido | Descripción |
 |--------|------|-----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Sí |  |
+| urlId | string | Sí |  |
+| id | string | Sí |  |
+| sso | string | No |  |
 
-## Respuesta
+## Response
 
-Devuelve: [`DeleteV2PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV2PageReactResponse.ts)
+Devuelve: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
-## Ejemplo
+## Example
 
-[inline-code-attrs-start title = 'deleteV2PageReact Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo deleteV2PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const urlId: string = "page_98765";
-const reactionId: string = "react_abcde";
+async function runDeleteExamples() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "page_98765";
+  const commentId: string = "comment_abcde";
 
-const deleteResult: DeleteV2PageReactResponse = await deleteV2PageReact(tenantId, urlId, reactionId);
+  // Llamada sin sso opcional
+  const resultWithoutSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId);
+
+  // Llamada con sso opcional
+  const ssoToken: string = "sso_token_xyz";
+  const resultWithSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId, ssoToken);
+}
 [inline-code-end]
-
----

@@ -1,25 +1,28 @@
+---
 ## Parameter
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
+| Name | Typ | Erforderlich | Beschreibung |
+|------|------|--------------|--------------|
+| tenantId | string | Ja |  |
+| createUserBadgeParams | CreateUserBadgeParams | Ja |  |
 
 ## Antwort
 
-Rückgabe: [`CreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadgeResponse.ts)
+Returns: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APICreateUserBadgeResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'createUserBadge Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "company-42";
-
-const badgeParams: CreateUserBadgeParams = {
-  name: "Community Champion",
-  iconUrl: "https://assets.example.com/badges/champion.png",
-  // description ist optional und hier weggelassen
-};
-
-const result: CreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+async function main(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c";
+  const badgeParams: CreateUserBadgeParams = {
+    name: "Community Helper",
+    iconUrl: "https://cdn.example.com/badges/helper.png"
+  };
+  const response: APICreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+}
+main();
 [inline-code-end]
+
+---

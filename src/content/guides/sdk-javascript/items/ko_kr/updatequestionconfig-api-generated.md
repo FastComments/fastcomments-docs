@@ -1,37 +1,31 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Yes |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | 예 |  |
 
 ## 응답
 
-반환: [`UpdateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionConfigResponse.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## 예제
+## 예시
 
-[inline-code-attrs-start title = 'updateQuestionConfig 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionConfig 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const questionId: string = "qstn-2023-04";
+(async () => {
+  const tenantId: string = "acme-corp-tenant";
+  const questionId: string = "question-42";
 
-const updateBody: UpdateQuestionConfigBody = {
-  // 선택적 필드 예시
-  customOptions: [
-    {
-      id: "opt-001",
-      label: "Extra Details",
-      required: true,
-    },
-  ],
-  renderingType: "markdown",
-};
+  const updateBody: UpdateQuestionConfigBody = {
+    title: "Revised FAQ Question"
+    // isActive, customOptions 등은 선택 사항이며 생략되었습니다
+  };
 
-const response: UpdateQuestionConfigResponse = await updateQuestionConfig(
-  tenantId,
-  questionId,
-  updateBody
-);
+  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
+  console.log(response);
+})();
 [inline-code-end]
+
+---

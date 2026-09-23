@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "SSO (једнострука пријава) интеграција",
+      "name": "SSO (једнократна пријава) интеграција",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -51,13 +51,13 @@
       "type": "readme"
     },
     {
-      "name": "Уживо догађаји (ажурирања у реалном времену)",
+      "name": "Ливе догађаји (ажурирања у реалном времену)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "ИД-ови емитовања",
+      "name": "ИД-еви емитовања",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -69,15 +69,21 @@
       "type": "readme"
     },
     {
-      "name": "агрегација",
-      "file": "aggregate-api-generated.md",
-      "subCat": "Агрегација",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Тенанти агената",
       "type": "api"
     },
     {
-      "name": "добавиАудитЛогове",
+      "name": "aggregate",
+      "file": "aggregate-api-generated.md",
+      "subCat": "Агрегат",
+      "type": "api"
+    },
+    {
+      "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Аудиторски записи",
+      "subCat": "Аудит логови",
       "type": "api"
     },
     {
@@ -401,7 +407,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Пријави коментар",
+      "subCat": "Блокирање из коментара",
       "type": "api"
     },
     {
@@ -450,6 +456,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Хеш ознаке",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Мој профил",
       "type": "api"
     },
     {
@@ -891,6 +903,54 @@
       "type": "api"
     },
     {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Гласови у анкетама",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Гласови у анкетама",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Гласови у анкетама",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Гласови у анкетама",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Анкете",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Анкете",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Анкете",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Анкете",
+      "type": "api"
+    },
+    {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Конфигурације питања",
@@ -1037,115 +1097,115 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Дневна употреба станара",
+      "subCat": "Дневна употреба тенанта",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Пакети станара",
+      "subCat": "Пакети тенанта",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Пакети станара",
+      "subCat": "Пакети тенанта",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Пакети станара",
+      "subCat": "Пакети тенанта",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Пакети станара",
+      "subCat": "Пакети тенанта",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Пакети станара",
+      "subCat": "Пакети тенанта",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Пакети станара",
+      "subCat": "Пакети тенанта",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Корисници станара",
+      "subCat": "Корисници тенанта",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Станари",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Станари",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Станари",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Станари",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Станари",
+      "subCat": "Тенанти",
       "type": "api"
     },
     {
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Гласови",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Вебхукови",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Вебхукови",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Вебхукови",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Вебхукови",
       "type": "api"
     }
   ]

@@ -1,28 +1,24 @@
-## Parameters
+## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | skip | number | 否 |  |
 
-## Response
+## 回應
 
-Returns: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
+返回：[`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
-## Example
+## 範例
 
-[inline-code-attrs-start title = 'getQuestionConfigs 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfigs 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchQuestionConfigs() {
-    const tenantId: string = "tenant-9876";
+async function fetchConfigs() {
+  const tenantId: string = "tenant_12345";
 
-    // 呼叫（不含可選的 'skip' 參數）
-    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
-
-    // 呼叫（含可選的 'skip' 參數）
-    const skip: number = 10;
-    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
-
-    console.log(configsWithoutSkip, configsWithSkip);
+  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
 }
 [inline-code-end]
+
+---

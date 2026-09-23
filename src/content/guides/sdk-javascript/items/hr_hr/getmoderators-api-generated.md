@@ -1,23 +1,24 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| skip | number | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Da |  |
+| skip | number | Ne |  |
 
 ## Odgovor
 
-Vraća: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
+Vraća: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getModerators Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchModerators(): Promise<void> {
-  const tenantId: string = "tenant-9876";
-  const skip: number = 30; // opcionalni offset paginacije
-  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
-  // Primjer bez paginacije:
-  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
-}
+const tenantId: string = "tenant_987654321";
+
+const moderators: GetModeratorsResponse = await getModerators(tenantId);
+
+const skip: number = 20;
+const moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);
 [inline-code-end]
+
+---

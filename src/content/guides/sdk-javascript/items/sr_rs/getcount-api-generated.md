@@ -2,34 +2,35 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | textSearch | string | No |  |
 | byIPFromComment | string | No |  |
 | filter | string | No |  |
 | searchFilters | string | No |  |
 | demo | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Одговор
 
-Враћа: [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
+Враћа: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICountCommentsResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getCount Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const count: GetCountResponse = await getCount({
-    textSearch: "order issue",
-    byIPFromComment: "198.51.100.23",
-    filter: "pending",
-    demo: true,
-    tenantId: "acme_corp",
-    sso: "sso_abcdef123456"
-  });
-  console.log(count);
-}
-main();
+const tenantId: string = "tenant_12345";
+
+const basicCount: ModerationAPICountCommentsResponse = await getCount(tenantId);
+
+const detailedCount: ModerationAPICountCommentsResponse = await getCount(
+  tenantId,
+  "spam",
+  "192.168.1.100",
+  "status:pending",
+  "user:john",
+  true,
+  "sso_token_abc"
+);
 [inline-code-end]
 
 ---

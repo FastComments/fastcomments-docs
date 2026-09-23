@@ -1,3 +1,4 @@
+---
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -8,27 +9,22 @@
 
 ## תגובה
 
-מחזיר: [`UpdateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserBadgeResponse.ts)
+מחזיר: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptySuccessResponse.ts)
 
-## דוגמא
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמא ל‑updateUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת updateUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function applyBadge() {
-    const tenantId: string = "acme-corp-tenant";
-    const userId: string = "user-98765";
+const tenantId: string = "tenant-9f8b7c6d";
+const id: string = "user-4a3b2c1d";
 
-    const params: UpdateUserBadgeParams = {
-        badgeId: "gold-contributor",
-        // דוגמה לשדה אופציונלי
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-    };
+const updateParams: UpdateUserBadgeParams = {
+  badgeId: "badge-premium",
+  // שדה אופציונלי
+  expiresAt: new Date("2025-12-31T23:59:59Z")
+};
 
-    const result: UpdateUserBadgeResponse = await updateUserBadge(tenantId, userId, params);
-    console.log(result);
-}
-
-applyBadge();
+const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateParams);
 [inline-code-end]
 
 ---

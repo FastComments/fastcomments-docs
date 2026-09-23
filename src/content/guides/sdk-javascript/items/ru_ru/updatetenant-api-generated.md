@@ -2,29 +2,29 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| id | string | Да |  |
-| updateTenantBody | UpdateTenantBody | Да |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantBody | UpdateTenantBody | Yes |  |
 
 ## Ответ
 
-Возвращает: [`UpdateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantResponse.ts)
+Возвращает: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateTenant Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c8f9e3d2-4b6a-11ee-8c99-0242ac130003";
-const id: string = "tenant-config-01";
+async function runUpdateTenant() {
+  const tenantId: string = "tenant-abc123";
+  const id: string = "config-456def";
 
-const updateBody: UpdateTenantBody = {
-  domain: "mytenant.fastcomments.io",
-  branding: {
-    logoUrl: "https://cdn.mytenant.com/assets/logo.png"
-  },
-  description: "Branding update for Q3"
-};
+  const updateTenantBody: UpdateTenantBody = {
+    // обязательное поле
+    name: "Acme International",
+    // необязательные поля могут быть опущены, например, billingInfo, domainConfiguration
+  };
 
-const response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);
-console.log(response);
+  const response: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);
+  console.log(response);
+}
 [inline-code-end]

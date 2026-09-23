@@ -1,43 +1,49 @@
-## Parametreler
+## Parameters
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| badgeId | string | No |  |
-| type | number | No |  |
-| displayedOnComments | boolean | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
+| tenantId | string | Evet |  |
+| userId | string | Hayır |  |
+| badgeId | string | Hayır |  |
+| type | number | Hayır |  |
+| displayedOnComments | boolean | Hayır |  |
+| limit | number | Hayır |  |
+| skip | number | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
+Döndürür: [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgesResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUserBadges Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = "tenant-01";
-  const userId: string = "user-42";
-  const badgeId: string = "badge-gold";
-  const type: number = 1;
-  const displayedOnComments: boolean = true;
-  const limit: number = 10;
-  const skip: number = 5;
+(async () => {
+  const tenantId: string = "acme-corp";
 
-  const fullResult: GetUserBadgesResponse = await getUserBadges(
+  // Tüm parametreler sağlandı
+  const fullResponse: APIGetUserBadgesResponse = await getUserBadges(
     tenantId,
-    userId,
-    badgeId,
-    type,
-    displayedOnComments,
-    limit,
-    skip
+    "user-42",
+    "badge-premium",
+    1,
+    true,
+    10,
+    0
   );
 
-  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);
-}
-example();
+  // Sadece gerekli ve bir isteğe bağlı parametre (limit)
+  const limitedResponse: APIGetUserBadgesResponse = await getUserBadges(
+    tenantId,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    5
+  );
+
+  console.log(fullResponse, limitedResponse);
+})();
 [inline-code-end]
+
+---

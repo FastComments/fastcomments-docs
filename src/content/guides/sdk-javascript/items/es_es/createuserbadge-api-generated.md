@@ -7,19 +7,19 @@
 
 ## Respuesta
 
-Devuelve: [`CreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadgeResponse.ts)
+Devuelve: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APICreateUserBadgeResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de createUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo createUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "company-42";
-
-const badgeParams: CreateUserBadgeParams = {
-  name: "Community Champion",
-  iconUrl: "https://assets.example.com/badges/champion.png",
-  // la descripción es opcional y se omite aquí
-};
-
-const result: CreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+async function main(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c";
+  const badgeParams: CreateUserBadgeParams = {
+    name: "Community Helper",
+    iconUrl: "https://cdn.example.com/badges/helper.png"
+  };
+  const response: APICreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+}
+main();
 [inline-code-end]

@@ -1,28 +1,25 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| createModeratorBody | CreateModeratorBody | Da |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| createModeratorBody | CreateModeratorBody | Yes |  |
 
-## Odgovor
+## Response
 
-Vraća: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Returns: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'createModerator Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9876";
-  const moderatorPayload: CreateModeratorBody = {
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-    // opcionalna polja poput opisa su izostavljena
-  };
-  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
-  console.log(result);
-}
+const tenantId: string = "tenant_12345";
 
-runExample();
+const moderatorPayload: CreateModeratorBody = {
+  userId: "user_9876",
+  // opcionalno polje; može se izostaviti ako nije potrebno
+  notes: "Temporary moderator for event"
+};
+
+const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]

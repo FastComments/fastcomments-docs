@@ -2,31 +2,24 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
-| tenantId | string | Sim |  |
-| urlIdWS | string | Sim |  |
-| userIds | string | Sim |  |
+| tenantId | string | Yes |  |
+| urlIdWS | string | Yes |  |
+| userIds | string | Yes |  |
 
 ## Resposta
 
-Retorna: [`GetUserPresenceStatusesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse1.ts)
+Retorna: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'getUserPresenceStatuses Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUserPresences() {
-  const tenantId: string = "tenant_9f8e2d";
-  const urlIdWS: string = "blog.mycompany.com/thread/12345";
+(async () => {
+  const tenantId: string = "my-tenant-42";
+  const urlIdWS: string = "post-9876";
   const userIds: string = "alice,bob,carol";
 
-  const result: GetUserPresenceStatusesResponse1 = await getUserPresenceStatuses(
-    tenantId,
-    urlIdWS,
-    userIds
-  );
-
-  console.log(result);
-}
+  const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+  console.log(presence);
+})();
 [inline-code-end]
-
----

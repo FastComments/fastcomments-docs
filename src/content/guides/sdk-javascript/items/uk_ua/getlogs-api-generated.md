@@ -1,25 +1,25 @@
 ## Параметри
 
-| Назва | Тип | Обов’язковий | Опис |
-|------|------|--------------|------|
-| commentId | string | Так |  |
-| tenantId | string | Ні |  |
-| sso | string | Ні |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`GetLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetLogsResponse.ts)
+Повертає: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetLogsResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchLogs() {
-    const commentId: string = "cmt_9a8b7c6d5e4f3a2b";
-    const tenantId: string = "tenant_9876";
-    const sso: string = "sso_abcdef123456";
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const commentId: string = "cmt_4567890";
+  const ssoToken: string = "sso_abcdef123456";
 
-    const fullResponse: GetLogsResponse = await getLogs(commentId, tenantId, sso);
-    const minimalResponse: GetLogsResponse = await getLogs(commentId);
-}
+  const logsWithSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId, ssoToken);
+  const logsWithoutSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId);
+})();
 [inline-code-end]

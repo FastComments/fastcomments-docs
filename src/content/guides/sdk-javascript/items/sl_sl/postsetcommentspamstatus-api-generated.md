@@ -1,38 +1,41 @@
-## Parametri
+## Parameters
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
+| tenantId | string | Da |  |
 | commentId | string | Da |  |
 | spam | boolean | Ne |  |
 | permNotSpam | boolean | Ne |  |
 | broadcastId | string | Ne |  |
-| tenantId | string | Ne |  |
 | sso | string | Ne |  |
 
-## Odgovor
+## Response
 
-Vrne: [`PostSetCommentSpamStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentSpamStatusResponse.ts)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoSpamStatus(): Promise<void> {
-  const commentId: string = "cmt_5f2a1b3c4d6e7f8g9h0i";
+const tenantId: string = "tenant_42";
+const commentId: string = "comment_1001";
 
-  // Samo obvezen parameter
-  const resultSimple: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(commentId, true);
+const spam: boolean = true;
+const permNotSpam: boolean = false;
+const broadcastId: string = "broadcast_2023";
+const sso: string = "sso_user_5678";
 
-  // Vsi neobvezni parametri podani
-  const resultFull: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(
-    commentId,
-    false,
-    true,
-    "brd_1234abcd",
-    "tenant_42",
-    "sso_9876xyz"
-  );
+const resultFull: APIEmptyResponse = await postSetCommentSpamStatus(
+  tenantId,
+  commentId,
+  spam,
+  permNotSpam,
+  broadcastId,
+  sso
+);
 
-  console.log(resultSimple, resultFull);
-}
+const resultMinimal: APIEmptyResponse = await postSetCommentSpamStatus(
+  tenantId,
+  commentId
+);
 [inline-code-end]

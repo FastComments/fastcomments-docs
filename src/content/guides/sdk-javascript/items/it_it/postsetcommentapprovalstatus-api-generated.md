@@ -2,38 +2,38 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | commentId | string | Sì |  |
 | approved | boolean | No |  |
 | broadcastId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Risposta
 
-Restituisce: [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
+Restituisce: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentApprovedResponse.ts)
 
 ## Esempio
 
-[inline-code-attrs-start title = 'postSetCommentApprovalStatus Esempio'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio postSetCommentApprovalStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main() {
-  const commentIdOnly: string = "cmt_1001";
-  const resultOnly: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(commentIdOnly);
+(async () => {
+  const tenantId: string = "tenant_001";
+  const commentId: string = "comment_123";
+  const approved: boolean = false;
+  const broadcastId: string = "broadcast_456";
+  const sso: string = "sso_789";
 
-  const commentIdFull: string = "cmt_2002";
-  const approvedFull: boolean = true;
-  const broadcastIdFull: string = "brd_3003";
-  const tenantIdFull: string = "tenant_abc";
-  const ssoFull: string = "sso_token_xyz";
-  const resultFull: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(
-    commentIdFull,
-    approvedFull,
-    broadcastIdFull,
-    tenantIdFull,
-    ssoFull
+  const result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(
+    tenantId,
+    commentId,
+    approved,
+    broadcastId,
+    sso
   );
 
-  console.log(resultOnly, resultFull);
-}
-main();
+  const minimalResult: SetCommentApprovedResponse = await postSetCommentApprovalStatus(
+    tenantId,
+    commentId
+  );
+})();
 [inline-code-end]

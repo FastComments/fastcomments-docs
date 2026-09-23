@@ -2,30 +2,38 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| badgeId | string | Da |  |
-| userId | string | Ne |  |
-| commentId | string | Ne |  |
-| broadcastId | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| badgeId | string | Yes |  |
+| userId | string | No |  |
+| commentId | string | No |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## Odgovor
 
-Vrne: [`PutRemoveBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutRemoveBadgeResponse.ts)
+Vrne: [`RemoveUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RemoveUserBadgeResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'putRemoveBadge Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const badgeId: string = "badge-12345";
-const userId: string = "user-9876";
-const commentId: string = "comment-5555";
-const broadcastId: string = "broadcast-001";
+async function demoRemoveBadge() {
+  const tenantId: string = "tenant_42";
+  const badgeId: string = "badge_gold";
+  const userId: string = "user_1001";
+  const commentId: string = "comment_20230915";
+  const broadcastId: string = "broadcast_live_01";
+  const sso: string = "sso_abcdef123456";
 
-const result: PutRemoveBadgeResponse = await putRemoveBadge(
-  badgeId,
-  userId,
-  commentId,
-  broadcastId
-);
+  const result: RemoveUserBadgeResponse = await putRemoveBadge(
+    tenantId,
+    badgeId,
+    userId,
+    commentId,
+    broadcastId,
+    sso
+  );
+
+  console.log(result);
+}
 [inline-code-end]

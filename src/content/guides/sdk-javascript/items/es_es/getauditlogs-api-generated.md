@@ -1,37 +1,64 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| tenantId | string | Sí |  |
 | limit | number | No |  |
 | skip | number | No |  |
 | order | SORTDIR | No |  |
 | after | number | No |  |
 | before | number | No |  |
+| username | string | No |  |
+| ip | string | No |  |
+| crudType | string | No |  |
+| resourceName | string | No |  |
+| targetId | string | No |  |
+| target | string | No |  |
+| includeManagedTenants | boolean | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
+Devuelve: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_42";
-  const limit: number = 100;
-  const skip: number = 10;
-  const order: SORTDIR = "desc";
-  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // hace 3 días
+async function fetchAuditLogs(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const limit: number = 50;
+  const skip: number = 0;
+  const order: SORTDIR = { direction: "DESC" };
+  const after: number = Date.now() - 86400000; // hace 1 día
+  const before: number = Date.now();
+  const username: string = "alice.smith";
+  const ip: string = "198.51.100.23";
+  const crudType: string = "CREATE";
+  const resourceName: string = "thread";
+  const targetId: string = "thread_45678";
+  const target: string = "forum_12";
+  const includeManagedTenants: boolean = false;
 
-  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
+  const logs: GetAuditLogsResponse = await getAuditLogs(
     tenantId,
     limit,
     skip,
     order,
-    after
+    after,
+    before,
+    username,
+    ip,
+    crudType,
+    resourceName,
+    targetId,
+    target,
+    includeManagedTenants
   );
 
-  console.log(auditResponse);
-})();
+  console.log(logs);
+}
+
+fetchAuditLogs();
 [inline-code-end]
+
+---

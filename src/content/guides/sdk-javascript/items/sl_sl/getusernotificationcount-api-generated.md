@@ -2,31 +2,26 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Da |  |
+| sso | string | Ne |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
+Vrne: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getUserNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserNotificationCount() {
-    const tenantId: string = "acme-corp-01";
+async function demo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const ssoToken: string = "sso-token-xyz789";
 
-    // Klic z neobveznim SSO žetonom
-    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId,
-        "sso-token-abc123"
-    );
-
-    // Klic brez SSO žetona
-    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId
-    );
-
-    console.log(countWithSSO, countWithoutSSO);
+  const countWithoutSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
+  const countWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
 }
+
+demo();
 [inline-code-end]
+
+---

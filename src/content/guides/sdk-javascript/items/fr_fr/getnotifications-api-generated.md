@@ -2,39 +2,39 @@
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| urlId | string | No |  |
-| fromCommentId | string | No |  |
-| viewed | boolean | No |  |
-| type | string | No |  |
-| skip | number | No |  |
+| tenantId | string | Oui |  |
+| userId | string | Non |  |
+| urlId | string | Non |  |
+| fromCommentId | string | Non |  |
+| viewed | boolean | Non |  |
+| type | string | Non |  |
+| skip | number | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
+Retourne : [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "tenant_42";
+  const userId: string = "user_1001";
+  const urlId: string = "url_2023";
+  const viewed: boolean = true;
+  const skip: number = 0;
 
-  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
-  console.log(notifications);
-
-  const more: GetNotificationsResponse1 = await getNotifications(
+  const notifications: GetNotificationsResponse = await getNotifications(
     tenantId,
+    userId,
+    urlId,
     undefined,
-    "article-5678",
+    viewed,
     undefined,
-    true,
-    "reply",
-    10
+    skip
   );
-  console.log(more);
+
+  console.log(notifications);
 }
-demo();
 [inline-code-end]

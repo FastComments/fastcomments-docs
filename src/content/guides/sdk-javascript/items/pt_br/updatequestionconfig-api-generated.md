@@ -1,40 +1,29 @@
----
 ## Parâmetros
 
-| Nome | Tipo | Obrigatório | Descrição |
-|------|------|-------------|-----------|
-| tenantId | string | Sim |  |
-| id | string | Sim |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Sim |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | Yes |  |
 
 ## Resposta
 
-Retorna: [`UpdateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionConfigResponse.ts)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'updateQuestionConfig Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo updateQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const questionId: string = "qstn-2023-04";
+(async () => {
+  const tenantId: string = "acme-corp-tenant";
+  const questionId: string = "question-42";
 
-const updateBody: UpdateQuestionConfigBody = {
-  // campos opcionais demonstrados
-  customOptions: [
-    {
-      id: "opt-001",
-      label: "Extra Details",
-      required: true,
-    },
-  ],
-  renderingType: "markdown",
-};
+  const updateBody: UpdateQuestionConfigBody = {
+    title: "Revised FAQ Question"
+    // isActive, customOptions, etc. são opcionais e omitidos
+  };
 
-const response: UpdateQuestionConfigResponse = await updateQuestionConfig(
-  tenantId,
-  questionId,
-  updateBody
-);
+  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
+  console.log(response);
+})();
 [inline-code-end]
-
----

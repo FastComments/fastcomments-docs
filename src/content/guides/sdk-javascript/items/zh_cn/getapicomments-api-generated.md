@@ -1,7 +1,8 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
+| tenantId | string | 是 |  |
 | page | number | 否 |  |
 | count | number | 否 |  |
 | textSearch | string | 否 |  |
@@ -10,31 +11,43 @@
 | searchFilters | string | 否 |  |
 | sorts | string | 否 |  |
 | demo | boolean | 否 |  |
-| tenantId | string | 否 |  |
 | sso | string | 否 |  |
 
 ## 响应
 
-返回: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
+返回：[`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getApiComments 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments() {
-  const fullResult: GetApiCommentsResponse = await getApiComments(
-    2,                     // 页码
-    25,                    // 条数
-    "feedback",           // 文本搜索
-    "192.168.1.100",      // 来自评论的IP
-    "approved",           // 过滤器
-    "hasReplies",         // 搜索过滤器
-    "dateDesc",           // 排序
-    false,                // 演示
-    "tenant-abc123",      // 租户ID
-    "sso-token-xyz"       // 单点登录
-  );
+async function fetchComments(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const page: number = 2;
+  const count: number = 20;
+  const textSearch: string = "typescript";
+  const byIPFromComment: string = "192.168.1.100";
+  const filters: string = "spam,offensive";
+  const searchFilters: string = "user:john";
+  const sorts: string = "date_desc";
+  const demo: boolean = true;
+  const sso: string = "sso_token_abc";
 
-  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+  const response: ModerationAPIGetCommentsResponse = await getApiComments(
+    tenantId,
+    page,
+    count,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    demo,
+    sso
+  );
 }
+
+fetchComments();
 [inline-code-end]
+
+---

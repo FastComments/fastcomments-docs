@@ -1,37 +1,45 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | textSearch | string | No |  |
 | byIPFromComment | string | No |  |
 | filters | string | No |  |
 | searchFilters | string | No |  |
 | afterId | string | No |  |
 | demo | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## 응답
 
-반환: [`GetApiIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiIdsResponse.ts)
+반환: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentIdsResponse.ts)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'getApiIds 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const textSearch: string = "urgent feedback";
-const byIPFromComment: string = "203.0.113.42";
-const filters: string = "status:approved";
-const afterId: string = "comment-789";
-const demo: boolean = true;
-const tenantId: string = "tenant-001";
+async function run(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const textSearch: string = "offensive language";
+  const byIPFromComment: string = "203.0.113.45";
+  const filters: string = "status:unmoderated";
+  const searchFilters: string = "author:alice";
+  const afterId: string = "cmt_00123";
+  const demo: boolean = true;
+  const sso: string = "sso_9f8e7d6c";
 
-const apiIds: GetApiIdsResponse = await getApiIds({
-  textSearch,
-  byIPFromComment,
-  filters,
-  afterId,
-  demo,
-  tenantId,
-});
+  const fullResult: ModerationAPIGetCommentIdsResponse = await getApiIds(
+    tenantId,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    afterId,
+    demo,
+    sso
+  );
+
+  const minimalResult: ModerationAPIGetCommentIdsResponse = await getApiIds(tenantId);
+}
 [inline-code-end]

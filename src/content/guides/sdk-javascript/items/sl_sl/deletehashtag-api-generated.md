@@ -2,25 +2,25 @@
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
+| tenantId | string | Da |  |
+| tag | string | Da |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | Ne |  |
 
 ## Odgovor
 
-Vrne: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'deleteHashTag Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tag: string = "announcement";
-  const tenantId: string = "tenant_9876";
-  const requestBody: DeleteHashTagRequestBody = {
-    confirmDeletion: true
-  };
-  const response: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, requestBody);
-  console.log(response);
-})();
+const tenantId: string = "tenant_42";
+const tag: string = "high-priority";
+
+const requestBody: DeleteHashTagRequestBody = {
+  // izpolnite polja po potrebi
+};
+
+const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
+const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]

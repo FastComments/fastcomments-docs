@@ -1,30 +1,33 @@
+---
 ## Paramètres
 
-| Nom | Type | Obligatoire | Description |
-|------|------|--------------|-------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | updateTenantBody | UpdateTenantBody | Yes |  |
 
 ## Réponse
 
-Retourne : [`UpdateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantResponse.ts)
+Renvoie : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'updateTenant Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c8f9e3d2-4b6a-11ee-8c99-0242ac130003";
-const id: string = "tenant-config-01";
+async function runUpdateTenant() {
+  const tenantId: string = "tenant-abc123";
+  const id: string = "config-456def";
 
-const updateBody: UpdateTenantBody = {
-  domain: "mytenant.fastcomments.io",
-  branding: {
-    logoUrl: "https://cdn.mytenant.com/assets/logo.png"
-  },
-  description: "Branding update for Q3"
-};
+  const updateTenantBody: UpdateTenantBody = {
+    // champ requis
+    name: "Acme International",
+    // les champs optionnels peuvent être omis, par ex., billingInfo, domainConfiguration
+  };
 
-const response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);
-console.log(response);
+  const response: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);
+  console.log(response);
+}
 [inline-code-end]
+
+---

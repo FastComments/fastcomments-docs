@@ -2,33 +2,38 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| id | string | Yes |  |
-| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
+| tenantId | string | はい |  |
+| userId | string | はい |  |
+| id | string | はい |  |
+| changeTicketStateBody | ChangeTicketStateBody | はい |  |
 
-## Response
+## 応答
 
-返り値: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
+返却: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'changeTicketState の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const userId: string = "user-97123";
-const ticketId: string = "ticket-45001";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const ticketId: string = "ticket-20230915-001";
 
-const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  // 本体の任意フィールド
-  comment: "Issue resolved after code fix"
-};
+  const changeTicketStateBody: ChangeTicketStateBody = {
+    // オプションフィールドの例
+    note: "Resolved after investigation"
+  };
 
-const response: ChangeTicketStateResponse1 = await changeTicketState(
-  tenantId,
-  userId,
-  ticketId,
-  changeTicketStateBody
-);
+  const response: ChangeTicketStateResponse = await changeTicketState(
+    tenantId,
+    userId,
+    ticketId,
+    changeTicketStateBody
+  );
+
+  console.log(response);
+})();
 [inline-code-end]
+
+---

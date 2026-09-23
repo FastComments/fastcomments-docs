@@ -1,37 +1,30 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateEmailTemplateBody | UpdateEmailTemplateBody | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateEmailTemplateBody | UpdateEmailTemplateBody | Da |  |
 
 ## Odgovor
 
-Vrne: [`UpdateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateEmailTemplateResponse.ts)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'updateEmailTemplate Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function runUpdate() {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "email_tpl_67890";
+  const templateId: string = "template_67890";
 
   const updateBody: UpdateEmailTemplateBody = {
-    subject: "Comment reply notification",
-    htmlContent: "<p>Someone replied to your comment.</p>",
-    plainTextContent: "Someone replied to your comment.",
-    // primer neobveznega polja
-    isActive: true,
+    subject: "New Comment Notification",
+    // htmlContent je neobvezen in izpuščen
+    status: { code: 200, message: "Active" } // APIStatus
   };
 
-  const result: UpdateEmailTemplateResponse = await updateEmailTemplate(
-    tenantId,
-    templateId,
-    updateBody
-  );
-
-  console.log(result);
-})();
+  const response: APIEmptyResponse = await updateEmailTemplate(tenantId, templateId, updateBody);
+  console.log(response);
+}
 [inline-code-end]

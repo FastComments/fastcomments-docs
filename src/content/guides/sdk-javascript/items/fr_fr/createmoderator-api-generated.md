@@ -1,28 +1,25 @@
 ## Paramètres
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createModeratorBody | CreateModeratorBody | Yes |  |
+| Nom | Type | Obligatoire | Description |
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
+| createModeratorBody | CreateModeratorBody | Oui |  |
 
 ## Réponse
 
-Renvoie : [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Renvoie : [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9876";
-  const moderatorPayload: CreateModeratorBody = {
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-    // les champs optionnels comme la description sont omis
-  };
-  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
-  console.log(result);
-}
+const tenantId: string = "tenant_12345";
 
-runExample();
+const moderatorPayload: CreateModeratorBody = {
+  userId: "user_9876",
+  // champ optionnel ; peut être omis si non nécessaire
+  notes: "Temporary moderator for event"
+};
+
+const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]

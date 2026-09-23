@@ -1,34 +1,42 @@
-## Parameters
+## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
 | tenantId | string | Tak |  |
 | createQuestionConfigBody | CreateQuestionConfigBody | Tak |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`CreateQuestionConfigResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse1.ts)
+Zwraca: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionConfigResponse.ts)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład createQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
+async function runExample() {
+  const tenantId: string = "acme-corp-123";
 
-const customOption: QuestionConfigCustomOptionsInner = {
-  label: "Option A",
-  value: "a",
-};
+  const customOption: QuestionConfigCustomOptionsInner = {
+    key: "maxLength",
+    value: 500,
+  };
 
-const createQuestionConfigBody: CreateQuestionConfigBody = {
-  questionText: "What is your favorite color?",
-  isActive: true,
-  // opcjonalne pola mogą być pominięte
-  customOptions: [customOption],
-};
+  const createQuestionConfigBody: CreateQuestionConfigBody = {
+    name: "User Feedback",
+    description: "Collect user feedback after purchase",
+    enabled: true,
+    customOptions: [customOption],
+    // opcjonalne pole
+    tags: ["feedback", "post-purchase"],
+  };
 
-const response: CreateQuestionConfigResponse1 = await createQuestionConfig(
-  tenantId,
-  createQuestionConfigBody
-);
+  const response: CreateQuestionConfigResponse = await createQuestionConfig(
+    tenantId,
+    createQuestionConfigBody
+  );
+
+  console.log(response);
+}
 [inline-code-end]
+
+---

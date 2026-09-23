@@ -1,36 +1,39 @@
-擴充套件物件由下列定義組成：
+The extension object consists of the following definition:
 
-<!-- 如果您想要更新這個，請記得更新 comment-ui-core -->
-[inline-code-attrs-start title = '擴充套件物件 JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- 如果您想更新此內容，請記得同時更新 comment-ui-core -->
+[inline-code-attrs-start title = '擴充物件 JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * The FastCommentsUI extension object. Used for lazy-loading certain components. For example, the review system is not
- * used by all customers, so we only load that extension when we want it.
+ * FastCommentsUI 擴充物件。用於延遲載入某些元件。例如，評論系統並非所有客戶都會使用，因此我們僅在需要時載入該擴充功能。
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - widget 的根 DOM 節點。
+ * @property {Element} root - 小工具根 DOM 節點。
  * @property {string} [css]
- * @property {Object} config - FastComments 的設定物件。
- * @property {Object} commentsById - 參考一個以 id 為鍵、包含所有評論的物件，並會持續保持更新。
- * @property {Object} translations - 參考所有翻譯資料。
- * @property {Function} reRenderComment - 參考一個可用來重新渲染評論的函式。
- * @property {Function} removeCommentAndReRender - 參考一個可用來從記憶體中移除評論並重新渲染對應 DOM 區段的函式。
- * @property {Function} newBroadcastId - 參考一個可用來建立新的廣播 id 並將其加入本地要忽略的廣播 id 清單的函式。
+ * @property {Object} config - FastComments 設定物件。
+ * @property {Object} commentsById - 指向一個以 ID 為鍵的所有評論物件的參考，會保持最新。
+ * @property {Object} translations - 指向所有翻譯的參考。
+ * @property {Function} reRenderComment - 可呼叫以重新渲染評論的函式參考。
+ * @property {Function} removeCommentAndReRender - 可呼叫以從記憶體中移除評論並重新渲染 DOM 中相應部分的函式參考。
+ * @property {Function} newBroadcastId - 可呼叫以建立新的廣播 ID 並將其加入本地要忽略的廣播 ID 清單的函式參考。
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - 在即將發佈的評論上被呼叫。返回 false 可取消提交（例如當附加的投票未完成時）。
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - 為評論區過濾 HTML。
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - 在渲染時為整個 widget 過濾 HTML。
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - 在渲染前為每個評論過濾 HTML。
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - 在渲染前為每則評論的選單過濾 HTML。
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - 在渲染時為整個 widget 過濾 HTML。
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - （遺留）回傳要新增至回覆區頂端的 HTML。
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - （遺留）回傳要新增至 widget 頂端的 HTML。
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - （遺留）回傳要新增至評論元素頂端的 HTML。
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - （遺留）回傳要新增至評論元素底部的 HTML。
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - （遺留）回傳要新增至每則評論的選單元素底部的 HTML。
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - 過濾評論區域的 HTML。
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - 在渲染時過濾整個小工具的 HTML。
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - 在渲染前過濾每則評論的 HTML。
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - 在渲染前過濾每則評論選單的 HTML。
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - 在渲染時過濾整個小工具的 HTML。
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) (舊版) 返回要加入回覆區域頂部的 HTML。
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) (舊版) 返回要加入小工具頂部的 HTML。
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) (舊版) 返回要加入評論元素頂部的 HTML。
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) (舊版) 返回要加入評論元素底部的 HTML。
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - 返回要在評論文字之後、評論內容元素內加入的 HTML（用於投票）。
+ * @property {Function} [replyAreaInputBottom] - 返回要加入評論輸入框內、文字輸入下方的 HTML（用於投票的即時投票編輯器）。接收父評論 ID，若為根回覆框則為 null。
+ * @property {Function} [onPollUpdate] - 在頁面上投票計數變更時，透過即時事件呼叫。
+ * @property {Function} isSiteAdmin - 返回檢視者是否為租戶的管理員或版主。於首次取得後得知。
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) (舊版) 返回要加入每則評論選單元素底部的 HTML。
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -40,7 +43,7 @@
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - 根元素。
- * @param {Object.<string, Function>} clickListeners - 以 class 名稱為鍵的點擊事件處理器，可透過參考來修改。
+ * @param {Object.<string, Function>} clickListeners - 依類別名稱的點擊事件處理函式，可透過參考進行修改。
  * @returns void
  */
 

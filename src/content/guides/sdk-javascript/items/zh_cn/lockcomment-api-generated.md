@@ -1,30 +1,29 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| broadcastId | string | 是 |  |
+| sso | string | 否 |  |
 
 ## 响应
 
-Returns: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockCommentResponse.ts)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'lockComment 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function demoLockComment() {
   const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const broadcastId: string = "brd_54321";
+  const commentId: string = "cmt_9876";
+  const broadcastId: string = "brd_5555";
+  const ssoToken: string = "sso_user_abc";
 
-  // 使用可选的 SSO 令牌
-  const ssoToken: string = "user-abc123";
-  const lockedWithSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);
+}
 
-  // 未使用 SSO 令牌
-  const lockedWithoutSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId);
-})();
+demoLockComment();
 [inline-code-end]

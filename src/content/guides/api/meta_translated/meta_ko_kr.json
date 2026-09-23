@@ -270,6 +270,53 @@
       "subCat": "알림"
     },
     {
+      "name": "페이지 반응 공개 API",
+      "file": "page-reacts-api.md",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지 반응"
+    },
+    {
       "name": "페이지 구조",
       "file": "page-structure.md",
       "subCat": "페이지"
@@ -305,27 +352,85 @@
       "subCat": "페이지"
     },
     {
-      "name": "보류 중인 웹훅 이벤트 구조",
+      "name": "투표 구조",
+      "file": "poll-structure.md",
+      "subCat": "투표"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표"
+    },
+    {
+      "name": "투표 결과 구조",
+      "file": "poll-vote-structure.md",
+      "subCat": "투표 결과"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표 결과"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표 결과"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표 결과"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "투표 결과"
+    },
+    {
+      "name": "대기 중인 웹훅 이벤트 구조",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "보류 중인 웹훅 이벤트"
+      "subCat": "대기 중인 웹훅 이벤트"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "보류 중인 웹훅 이벤트"
+      "subCat": "대기 중인 웹훅 이벤트"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "보류 중인 웹훅 이벤트"
+      "subCat": "대기 중인 웹훅 이벤트"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "보류 중인 웹훅 이벤트"
+      "subCat": "대기 중인 웹훅 이벤트"
     },
     {
       "name": "SSO 사용자 구조",

@@ -1,43 +1,47 @@
 ## 參數
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| badgeId | string | No |  |
-| type | number | No |  |
-| displayedOnComments | boolean | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|------|------|
+| tenantId | string | 是 |  |
+| userId | string | 否 |  |
+| badgeId | string | 否 |  |
+| type | number | 否 |  |
+| displayedOnComments | boolean | 否 |  |
+| limit | number | 否 |  |
+| skip | number | 否 |  |
 
 ## 回應
 
-回傳: [`GetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgesResponse.ts)
+回傳：[`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgesResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getUserBadges 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = "tenant-01";
-  const userId: string = "user-42";
-  const badgeId: string = "badge-gold";
-  const type: number = 1;
-  const displayedOnComments: boolean = true;
-  const limit: number = 10;
-  const skip: number = 5;
+(async () => {
+  const tenantId: string = "acme-corp";
 
-  const fullResult: GetUserBadgesResponse = await getUserBadges(
+  // 提供所有參數
+  const fullResponse: APIGetUserBadgesResponse = await getUserBadges(
     tenantId,
-    userId,
-    badgeId,
-    type,
-    displayedOnComments,
-    limit,
-    skip
+    "user-42",
+    "badge-premium",
+    1,
+    true,
+    10,
+    0
   );
 
-  const minimalResult: GetUserBadgesResponse = await getUserBadges(tenantId);
-}
-example();
+  // 只提供必填參數與一個可選參數 (limit)
+  const limitedResponse: APIGetUserBadgesResponse = await getUserBadges(
+    tenantId,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    5
+  );
+
+  console.log(fullResponse, limitedResponse);
+})();
 [inline-code-end]

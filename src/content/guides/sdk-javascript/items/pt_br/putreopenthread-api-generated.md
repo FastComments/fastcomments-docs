@@ -2,29 +2,26 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | urlId | string | Sim |  |
-| tenantId | string | Não |  |
 | sso | string | Não |  |
 
 ## Resposta
 
-Retorna: [`PutReopenThreadResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PutReopenThreadResponse.ts)
+Retorna: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo putReopenThread'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putReopenThread Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function exampleUsage() {
-  const urlId: string = "thread-9f8b7c6a";
-  const tenantId: string = "tenant-001";
-  const sso: string = "sso-3f9d2e1a";
+async function reopenThreadExample() {
+    const tenantId: string = "tenant_12345";
+    const urlId: string = "post-9876";
+    const sso: string = "user-abc123";
 
-  const resultAll: PutReopenThreadResponse = await putReopenThread(urlId, tenantId, sso);
-  console.log(resultAll);
-
-  const resultMinimal: PutReopenThreadResponse = await putReopenThread(urlId);
-  console.log(resultMinimal);
+    const responseWithoutSso: APIEmptyResponse = await putReopenThread(tenantId, urlId);
+    const responseWithSso: APIEmptyResponse = await putReopenThread(tenantId, urlId, sso);
 }
-[inline-code-end]
 
----
+reopenThreadExample();
+[inline-code-end]

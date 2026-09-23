@@ -1,42 +1,38 @@
-## パラメータ
+## Parameters
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | はい |  |
-| includeEmail | boolean | いいえ |  |
-| includeIP | boolean | いいえ |  |
-| tenantId | string | いいえ |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| includeEmail | boolean | No |  |
+| includeIP | boolean | No |  |
+| sso | string | No |  |
 
-## レスポンス
+## Response
 
-戻り値: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getModerationComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // 完全なパラメータセット
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // 必要なパラメータだけで呼び出す
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // オプションのパラメータで呼び出す
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // 必須引数のみを使用した最小呼び出し
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // 必要に応じて結果を使用してください...
 }
 [inline-code-end]
-
----

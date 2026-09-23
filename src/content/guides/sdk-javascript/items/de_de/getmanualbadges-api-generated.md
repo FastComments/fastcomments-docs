@@ -1,30 +1,25 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
-| tenantId | string | Nein |  |
+|------|------|--------------|---------------|
+| tenantId | string | Ja |  |
 | sso | string | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`GetManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesResponse.ts)
+Rückgabe: [`GetTenantManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantManualBadgesResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getManualBadges Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchBadges() {
-  const tenantId: string = "tenant_987654321";
-  const ssoToken: string = "sso_ABCdef123456";
+  const tenantId: string = "tenant-987654321";
+  const ssoToken: string = "sso-token-abc123";
 
-  // Aufruf mit beiden optionalen Parametern
-  const responseFull: GetManualBadgesResponse = await getManualBadges(tenantId, ssoToken);
-  console.log(responseFull);
-
-  // Aufruf nur mit tenantId
-  const responseTenantOnly: GetManualBadgesResponse = await getManualBadges(tenantId);
-  console.log(responseTenantOnly);
+  const badgesWithSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId, ssoToken);
+  const badgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId);
 }
-
-fetchBadges();
 [inline-code-end]
+
+---

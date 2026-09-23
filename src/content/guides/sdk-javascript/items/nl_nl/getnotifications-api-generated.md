@@ -1,40 +1,42 @@
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
-| tenantId | string | Yes |  |
-| userId | string | No |  |
-| urlId | string | No |  |
-| fromCommentId | string | No |  |
-| viewed | boolean | No |  |
-| type | string | No |  |
-| skip | number | No |  |
+| Naam | Type | Vereist | Beschrijving |
+|------|------|----------|--------------|
+| tenantId | string | Ja |  |
+| userId | string | Nee |  |
+| urlId | string | Nee |  |
+| fromCommentId | string | Nee |  |
+| viewed | boolean | Nee |  |
+| type | string | Nee |  |
+| skip | number | Nee |  |
 
 ## Respons
 
-Retourneert: [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
+Retourneert: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotifications Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "tenant_42";
+  const userId: string = "user_1001";
+  const urlId: string = "url_2023";
+  const viewed: boolean = true;
+  const skip: number = 0;
 
-  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
-  console.log(notifications);
-
-  const more: GetNotificationsResponse1 = await getNotifications(
+  const notifications: GetNotificationsResponse = await getNotifications(
     tenantId,
+    userId,
+    urlId,
     undefined,
-    "article-5678",
+    viewed,
     undefined,
-    true,
-    "reply",
-    10
+    skip
   );
-  console.log(more);
+
+  console.log(notifications);
 }
-demo();
 [inline-code-end]
+
+---

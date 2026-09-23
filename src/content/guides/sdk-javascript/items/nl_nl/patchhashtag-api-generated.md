@@ -1,34 +1,34 @@
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
-|------|------|----------|--------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
 | tag | string | Ja |  |
-| tenantId | string | Nee |  |
 | updateHashTagBody | UpdateHashTagBody | Nee |  |
 
-## Response
+## Respons
 
-Retourneert: [`PatchHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchHashTagResponse.ts)
+Retourneert: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateHashTagResponse.ts)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'patchHashTag Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const response1: PatchHashTagResponse = await patchHashTag("new-feature");
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const tag: string = "news";
 
-const response2: PatchHashTagResponse = await patchHashTag(
-  "beta-release",
-  "tenant-9f8b7c"
-);
+  // Aanroep zonder optionele body
+  const responseWithoutBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag);
 
-const updateBody: UpdateHashTagBody = {
-  description: "Mark comments related to the upcoming beta release",
-  color: "#1e90ff"
-};
+  // Voorbereiden body voor update
+  const updateBody: UpdateHashTagBody = {
+    name: "Latest News",
+    description: "Tag for the most recent news articles"
+  };
 
-const response3: PatchHashTagResponse = await patchHashTag(
-  "beta-release",
-  "tenant-9f8b7c",
-  updateBody
-);
+  const responseWithBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag, updateBody);
+})();
 [inline-code-end]
+
+---

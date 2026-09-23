@@ -2,41 +2,38 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| questionId | string | No |  |
-| questionIds | Array<string> | No |  |
-| urlId | string | No |  |
-| timeBucket | AggregateTimeBucket | No |  |
-| startDate | Date | No |  |
-| forceRecalculate | boolean | No |  |
+| tenantId | string | Ja |  |
+| questionId | string | Nej |  |
+| questionIds | Array<string> | Nej |  |
+| urlId | string | Nej |  |
+| timeBucket | AggregateTimeBucket | Nej |  |
+| startDate | Date | Nej |  |
+| forceRecalculate | boolean | Nej |  |
 
 ## Svar
 
-Returnerer: [`AggregateQuestionResultsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse1.ts)
+Returnerer: [`AggregateQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AggregateQuestionResultsResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'aggregateQuestionResults Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-123";
-  const questionId: string = "feedback-rating";
-  const questionIds: string[] = ["feedback-rating", "recommendation"];
-  const urlId: string = "https://myblog.com/articles/42";
-  const timeBucket: AggregateTimeBucket = "month";
-  const startDate: Date = new Date("2023-01-01T00:00:00Z");
+async function runAggregation() {
+  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+  const questionId: string = 'question-9f8e7d6c5b4a3';
+  const questionIds: string[] = ['question-1a2b3c', 'question-4d5e6f'];
+  const urlId: string = 'blog-post-2023-08-15';
+  const startDate: Date = new Date('2023-01-01T00:00:00Z');
   const forceRecalculate: boolean = true;
 
-  const result: AggregateQuestionResultsResponse1 = await aggregateQuestionResults(
+  const result: AggregateQuestionResultsResponse = await aggregateQuestionResults(
     tenantId,
     questionId,
     questionIds,
     urlId,
-    timeBucket,
+    undefined,
     startDate,
     forceRecalculate
   );
-
-  console.log(result);
-})();
+}
 [inline-code-end]

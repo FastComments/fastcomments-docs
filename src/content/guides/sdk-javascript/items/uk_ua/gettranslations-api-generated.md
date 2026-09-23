@@ -1,27 +1,22 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| namespace | string | Yes |  |
-| component | string | Yes |  |
-| locale | string | No |  |
-| useFullTranslationIds | boolean | No |  |
+| namespace | string | Так |  |
+| component | string | Так |  |
+| locale | string | Ні |  |
+| useFullTranslationIds | boolean | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetTranslationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse1.ts)
+Повертає: [`GetTranslationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTranslationsResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getTranslations'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const namespace: string = 'blog';
-  const component: string = 'comment-editor';
-  const locale: string = 'fr-FR';
-  const useFullTranslationIds: boolean = true;
-
-  const basicTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component);
-  const fullTranslations: GetTranslationsResponse1 = await getTranslations(namespace, component, locale, useFullTranslationIds);
-})();
+async function fetchTranslations() {
+  const adminDashboard: GetTranslationsResponse = await getTranslations('admin', 'dashboard');
+  const userProfileFr: GetTranslationsResponse = await getTranslations('user', 'profile', 'fr-FR', true);
+}
 [inline-code-end]

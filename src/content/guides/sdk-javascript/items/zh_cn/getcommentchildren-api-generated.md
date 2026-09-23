@@ -1,23 +1,27 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 是 |  |
+| sso | string | 否 |  |
 
 ## 响应
 
-返回: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
+返回：[`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getCommentChildren 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const tenantId: string = "tenant_xyz";
-const sso: string = "sso_987654";
+async function fetchChildren() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_user_abc123";
 
-const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
-const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
+  const responseWithSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId, ssoToken);
+  const responseWithoutSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId);
+}
+
+fetchChildren();
 [inline-code-end]

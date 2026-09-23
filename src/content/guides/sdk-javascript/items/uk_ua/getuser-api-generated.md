@@ -1,21 +1,25 @@
 ## Параметри
 
-| Ім'я | Тип | Обов'язковий | Опис |
-|------|------|--------------|------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## Відповідь
 
-Повертає: [`GetUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse1.ts)
+Returns: [`GetUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'getUser Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function main(): Promise<void> {
   const tenantId: string = "tenant_12345";
-  const userId: string = "user_98765";
-  const result: GetUserResponse1 = await getUser(tenantId, userId);
-})();
+  const id: string = "user_98765";
+  const response: GetUserResponse = await getUser(tenantId, id);
+  const { user }: { user?: User } = response;
+}
+main();
 [inline-code-end]
+
+---

@@ -2,49 +2,61 @@
 
 | Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|------|
-| tenantId | string | Tak |  |
-| page | number | Nie |  |
-| limit | number | Nie |  |
-| skip | number | Nie |  |
-| asTree | boolean | Nie |  |
-| skipChildren | number | Nie |  |
-| limitChildren | number | Nie |  |
-| maxTreeDepth | number | Nie |  |
-| urlId | string | Nie |  |
-| userId | string | Nie |  |
-| anonUserId | string | Nie |  |
-| contextUserId | string | Nie |  |
-| hashTag | string | Nie |  |
-| parentId | string | Nie |  |
-| direction | SortDirections | Nie |  |
-| fromDate | number | Nie |  |
-| toDate | number | Nie |  |
+| tenantId | string | Yes |  |
+| page | number | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
+| asTree | boolean | No |  |
+| skipChildren | number | No |  |
+| limitChildren | number | No |  |
+| maxTreeDepth | number | No |  |
+| urlId | string | No |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
+| contextUserId | string | No |  |
+| hashTag | string | No |  |
+| parentId | string | No |  |
+| direction | SortDirections | No |  |
+| fromDate | number | No |  |
+| toDate | number | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Zwraca: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const page: number = 2;
-const limit: number = 50;
-const asTree: boolean = true;
-const urlId: string = "article_5678";
-const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // tydzień temu
-const toDate: number = Date.now();
+async function loadComments(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const page: number = 1;
+  const limit: number = 50;
+  const asTree: boolean = false;
+  const direction: SortDirections = "asc";
+  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 dni temu
+  const toDate: number = Date.now();
 
-const commentsResponse: GetCommentsResponse = await getComments({
-  tenantId,
-  page,
-  limit,
-  asTree,
-  urlId,
-  direction,
-  fromDate,
-  toDate,
-});
+  const commentsResponse: APIGetCommentsResponse = await getComments(
+    tenantId,
+    page,
+    limit,
+    undefined,
+    asTree,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    direction,
+    fromDate,
+    toDate
+  );
+
+  console.log(commentsResponse);
+}
 [inline-code-end]

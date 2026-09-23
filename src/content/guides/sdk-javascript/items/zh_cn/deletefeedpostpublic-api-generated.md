@@ -1,11 +1,11 @@
 ## 参数
 
-| 名称 | 类型 | 必需 | 描述 |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| postId | string | 是 |  |
+| broadcastId | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 响应
 
@@ -16,13 +16,21 @@
 [inline-code-attrs-start title = 'deleteFeedPostPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp";
-  const postId: string = "post_987654321";
-  const broadcastId: string = "broadcast_2024Q1";
-  const sso: string = "sso_4fa3b9c2";
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const broadcastId: string = "broadcast_abcde";
+  const sso: string = "sso_token_xyz";
 
-  const response1: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId);
-  const response2: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId);
-  const response3: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(tenantId, postId, broadcastId, sso);
+  const responseWithOpts: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(
+    tenantId,
+    postId,
+    broadcastId,
+    sso
+  );
+
+  const responseWithoutOpts: DeleteFeedPostPublicResponse = await deleteFeedPostPublic(
+    tenantId,
+    postId
+  );
 })();
 [inline-code-end]

@@ -1,13 +1,13 @@
-## Parameters
+## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| notificationId | string | Yes |  |
-| newStatus | UpdateUserNotificationStatusNewStatusEnum | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Так |  |
+| notificationId | string | Так |  |
+| newStatus | UpdateUserNotificationStatusNewStatusEnum | Так |  |
+| sso | string | Ні |  |
 
-## Response
+## Відповідь
 
 Повертає: [`UpdateUserNotificationStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationStatusResponse.ts)
 
@@ -15,17 +15,21 @@
 
 [inline-code-attrs-start title = 'Приклад updateUserNotificationStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const notificationId: string = "notif-20231101-001";
-const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.Dismissed;
-const ssoToken: string = "sso-9f8e7d6c5b4a";
+const tenantId: string = "tenant_12345";
+const notificationId: string = "notif_9876";
+const newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.READ;
+const ssoToken: string = "sso_token_abc";
 
-const result: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(
+const responseWithSso: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(
   tenantId,
   notificationId,
   newStatus,
   ssoToken
 );
-[inline-code-end]
 
----
+const responseWithoutSso: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(
+  tenantId,
+  notificationId,
+  newStatus
+);
+[inline-code-end]

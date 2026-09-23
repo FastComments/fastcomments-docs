@@ -1,34 +1,27 @@
-## Parameters
+## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| replaceTenantPackageBody | ReplaceTenantPackageBody | Da |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| replaceTenantPackageBody | ReplaceTenantPackageBody | Yes |  |
 
-## Response
+## Odgovor
 
-Vraća: [`ReplaceTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantPackageResponse.ts)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'replaceTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-    const tenantId: string = "acme-corp-tenant-01";
-    const packageId: string = "pkg-2024-annual";
-
-    const config: CustomConfigParameters = {
-        // prilagođena polja konfiguracije ovde
-    };
-
-    const body: ReplaceTenantPackageBody = {
-        name: "Enterprise Package",
-        // opcionalna prilagođena konfiguracija
-        customConfig: config,
-    };
-
-    const response: ReplaceTenantPackageResponse = await replaceTenantPackage(tenantId, packageId, body);
-    console.log(response);
-})();
+async function replacePackageDemo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const packageId: string = "basic-plan-2023";
+  const replaceBody: ReplaceTenantPackageBody = {
+    newPackageId: "enterprise-plan-2024"
+    // opcionalna polja mogu biti dodata ovde po potrebi
+  };
+  const response: APIEmptyResponse = await replaceTenantPackage(tenantId, packageId, replaceBody);
+  console.log(response);
+}
 [inline-code-end]

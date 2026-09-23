@@ -1,25 +1,25 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|---------------|
-| commentId | string | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+|------|------|--------------|--------------|
+| tenantId | string | Ja |  |
+| commentId | string | Ja |  |
+| sso | string | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`GetLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetLogsResponse.ts)
+Rückgabe: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetLogsResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getLogs Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchLogs() {
-    const commentId: string = "cmt_9a8b7c6d5e4f3a2b";
-    const tenantId: string = "tenant_9876";
-    const sso: string = "sso_abcdef123456";
+(async () => {
+  const tenantId: string = "acme-corp-123";
+  const commentId: string = "cmt_4567890";
+  const ssoToken: string = "sso_abcdef123456";
 
-    const fullResponse: GetLogsResponse = await getLogs(commentId, tenantId, sso);
-    const minimalResponse: GetLogsResponse = await getLogs(commentId);
-}
+  const logsWithSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId, ssoToken);
+  const logsWithoutSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId);
+})();
 [inline-code-end]

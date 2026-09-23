@@ -7,27 +7,22 @@
 
 ## 응답
 
-Returns: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
+반환: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'createQuestionResult 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
+const tenantId: string = "tenant_12345";
 
-const metaItem: MetaItem = {
-  key: "campaign",
-  value: "spring-launch"
+const createQuestionResultBody: CreateQuestionResultBody = {
+  questionId: "q_9876",
+  answer: "Yes",
+  score: 5,
+  meta: [
+    { key: "source", value: "survey" }
+  ]
 };
 
-const questionResultBody: CreateQuestionResultBody = {
-  questionId: "question-42",
-  answer: "Positive",
-  metadata: [metaItem]
-  // notes와 같은 선택적 필드는 생략되었습니다
-};
-
-const result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);
+const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
-
----

@@ -1,4 +1,4 @@
-Omogući ili onemogući obavijesti za stranicu. Kada su korisnici pretplaćeni na stranicu, obavijesti se stvaraju za nove root komentare, i također
+Omogući ili onemogući obavijesti za stranicu. Kada su korisnici pretplaćeni na stranicu, obavijesti se stvaraju za nove korijenske komentare, i također
 
 ## Parametri
 
@@ -19,16 +19,16 @@ Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.
 
 [inline-code-attrs-start title = 'Primjer updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -37,12 +37,8 @@ Vraća: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]

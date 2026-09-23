@@ -1,6 +1,5 @@
----
-Aktualnie online oglądający stronę: osoby, których sesja websocket jest subskrybowana do tej strony w tym momencie.
-Zwraca anonCount + totalCount (subskrybenci na poziomie pokoju, w tym anonimowi oglądający, których nie wymieniamy).
+Obecnie online przeglądający stronę: osoby, których sesja websocket jest aktualnie subskrybowana do tej strony.  
+Zwraca anonCount + totalCount (subskrybenci w całym pokoju, w tym anonimowi przeglądający, których nie wymieniamy).
 
 ## Parameters
 
@@ -13,27 +12,27 @@ Zwraca anonCount + totalCount (subskrybenci na poziomie pokoju, w tym anonimowi 
 
 ## Response
 
-Zwraca: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Zwraca: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## Przykład
+## Example
 
 [inline-code-attrs-start title = 'Przykład getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Z opcjonalnymi parametrami paginacji
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Bez opcjonalnych parametrów paginacji
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
-[inline-code-end]
 
----
+fetchOnlineUsers();
+[inline-code-end]

@@ -2,38 +2,38 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
+| tenantId | string | Sim |  |
 | commentId | string | Sim |  |
 | approved | boolean | Não |  |
 | broadcastId | string | Não |  |
-| tenantId | string | Não |  |
 | sso | string | Não |  |
 
 ## Resposta
 
-Retorna: [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
+Retorna: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentApprovedResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo de postSetCommentApprovalStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main() {
-  const commentIdOnly: string = "cmt_1001";
-  const resultOnly: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(commentIdOnly);
+(async () => {
+  const tenantId: string = "tenant_001";
+  const commentId: string = "comment_123";
+  const approved: boolean = false;
+  const broadcastId: string = "broadcast_456";
+  const sso: string = "sso_789";
 
-  const commentIdFull: string = "cmt_2002";
-  const approvedFull: boolean = true;
-  const broadcastIdFull: string = "brd_3003";
-  const tenantIdFull: string = "tenant_abc";
-  const ssoFull: string = "sso_token_xyz";
-  const resultFull: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(
-    commentIdFull,
-    approvedFull,
-    broadcastIdFull,
-    tenantIdFull,
-    ssoFull
+  const result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(
+    tenantId,
+    commentId,
+    approved,
+    broadcastId,
+    sso
   );
 
-  console.log(resultOnly, resultFull);
-}
-main();
+  const minimalResult: SetCommentApprovedResponse = await postSetCommentApprovalStatus(
+    tenantId,
+    commentId
+  );
+})();
 [inline-code-end]

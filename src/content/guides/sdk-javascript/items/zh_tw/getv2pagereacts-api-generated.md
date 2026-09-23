@@ -4,25 +4,20 @@
 |------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
+| sso | string | 否 |  |
 
 ## 回應
 
-返回：[`GetV2PageReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReactsResponse.ts)
+Returns: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getV2PageReacts 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetPageReacts(): Promise<void> {
-    const tenantId: string = "acme-corp-tenant";
-    const urlId: string = "article-2024-06-01";
+const tenantId: string = "tenant-42";
+const urlId: string = "article-9876";
+const ssoToken: string = "sso-abc123";
 
-    const reacts: GetV2PageReactsResponse = await getV2PageReacts(tenantId, urlId);
-
-    // 可選屬性存取範例
-    const customConfig: CustomConfigParameters | undefined = reacts.customConfig;
-    console.log(reacts);
-}
-
-demoGetPageReacts();
+const reactsWithSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, ssoToken);
+const reactsWithoutSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
 [inline-code-end]

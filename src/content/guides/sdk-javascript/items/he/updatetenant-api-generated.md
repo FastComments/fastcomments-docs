@@ -1,30 +1,32 @@
 ## פרמטרים
 
-| שם | סוג | חובה | תיאור |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantBody | UpdateTenantBody | Yes |  |
+| tenantId | string | כן |  |
+| id | string | כן |  |
+| updateTenantBody | UpdateTenantBody | כן |  |
 
 ## תגובה
 
-Returns: [`UpdateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantResponse.ts)
+מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת updateTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c8f9e3d2-4b6a-11ee-8c99-0242ac130003";
-const id: string = "tenant-config-01";
+async function runUpdateTenant() {
+  const tenantId: string = "tenant-abc123";
+  const id: string = "config-456def";
 
-const updateBody: UpdateTenantBody = {
-  domain: "mytenant.fastcomments.io",
-  branding: {
-    logoUrl: "https://cdn.mytenant.com/assets/logo.png"
-  },
-  description: "Branding update for Q3"
-};
+  const updateTenantBody: UpdateTenantBody = {
+    // שדה נדרש
+    name: "Acme International",
+    // ניתן להשמיט שדות אופציונליים, למשל billingInfo, domainConfiguration
+  };
 
-const response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);
-console.log(response);
+  const response: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);
+  console.log(response);
+}
 [inline-code-end]
+
+---

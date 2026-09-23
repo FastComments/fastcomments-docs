@@ -1,41 +1,39 @@
-## Παράμετροι
+## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|------------|-----------|
+| tenantId | string | Ναι |  |
 | commentId | string | Ναι |  |
 | includeEmail | boolean | Όχι |  |
 | includeIP | boolean | Όχι |  |
-| tenantId | string | Όχι |  |
 | sso | string | Όχι |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Επιστρέφει: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getModerationComment Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Πλήρης σύνολο παραμέτρων
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Κλήση μόνο με απαιτούμενες παραμέτρους
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Κλήση με προαιρετικές παραμέτρους
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Ελάχιστη κλήση χρησιμοποιώντας μόνο το απαιτούμενο όρισμα
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Χρησιμοποιήστε τα αποτελέσματα όπως χρειάζεται...
 }
 [inline-code-end]
 

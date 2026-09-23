@@ -1,53 +1,42 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
-|------|------|----------|------|
-| commentId | string | Da |  |
-| banEmail | boolean | Ne |  |
-| banEmailDomain | boolean | Ne |  |
-| banIP | boolean | Ne |  |
-| deleteAllUsersComments | boolean | Ne |  |
-| bannedUntil | string | Ne |  |
-| isShadowBan | boolean | Ne |  |
-| updateId | string | Ne |  |
-| banReason | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| banEmail | boolean | No |  |
+| banEmailDomain | boolean | No |  |
+| banIP | boolean | No |  |
+| deleteAllUsersComments | boolean | No |  |
+| bannedUntil | string | No |  |
+| isShadowBan | boolean | No |  |
+| updateId | string | No |  |
+| banReason | string | No |  |
+| sso | string | No |  |
 
-## Odziv
+## Odgovor
 
-Vrne: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
+Vrne: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'postBanUserFromComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runBan() {
-  const commentId: string = "cmt_5f8a2b3c";
-  const banEmail: boolean = true;
-  const banIP: boolean = false;
-  const deleteAllUsersComments: boolean = true;
-  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-  const isShadowBan: boolean = false;
-  const banReason: string = "Repeated spam posting";
-  const tenantId: string = "tenant_12345";
-
-  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
-    commentId,
-    banEmail,
-    undefined,
-    banIP,
-    deleteAllUsersComments,
-    bannedUntil,
-    isShadowBan,
-    undefined,
-    banReason,
-    tenantId
+async function banUserExample(): Promise<void> {
+  const result: BanUserFromCommentResult = await postBanUserFromComment(
+    "tenant_42",
+    "comment_1001",
+    true,                     // banEmail
+    undefined,                // banEmailDomain (izpuščeno)
+    true,                     // banIP
+    false,                    // deleteAllUsersComments
+    "2025-01-01T00:00:00Z",   // bannedUntil
+    true,                     // isShadowBan
+    undefined,                // updateId (izpuščeno)
+    "Harassment",             // banReason
+    undefined                 // sso (izpuščeno)
   );
-  console.log(response);
-}
-runBan();
-[inline-code-end]
 
----
+  console.log(result);
+}
+[inline-code-end]

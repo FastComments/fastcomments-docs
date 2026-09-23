@@ -1,24 +1,26 @@
 ## Параметри
 
-| Назва | Тип | Обов’язковий | Опис |
-|------|------|--------------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| Назва | Тип | Обов’язково | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Так |  |
+| id | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`GetTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse1.ts)
+Повертає: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchTenant(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const id: string = "user_9876";
-  const tenantInfo: GetTenantResponse1 = await getTenant(tenantId, id);
-  console.log(tenantInfo);
-}
+    const tenantId: string = "tenant_12345";
+    const id: string = "tenant_12345";
 
-fetchTenant();
+    const tenantResponse: GetTenantResponse = await getTenant(tenantId, id);
+
+    // Необов’язкові поля у відповіді
+    const billing: BillingInfo | undefined = tenantResponse.billingInfo;
+    const domainConfig: APIDomainConfiguration | undefined = tenantResponse.domainConfiguration;
+}
 [inline-code-end]

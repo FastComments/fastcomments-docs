@@ -1,29 +1,28 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|----------|-------------|
+|------|------|------|------|
 | tenantId | string | Yes |  |
 | createTenantBody | CreateTenantBody | Yes |  |
 
 ## 응답
 
-반환: [`CreateTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantResponse1.ts)
+반환: [`CreateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'createTenant 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = 'tenant-2024-01';
+async function run() {
+  const tenantId: string = "acme-corp-2024";
   const createTenantBody: CreateTenantBody = {
-    // 필수 필드
-    name: 'Acme International',
-    // 필요에 따라 선택적 필드를 추가할 수 있습니다, 예:
-    // billingInfo: { address: '123 Main St', city: 'Metropolis' } as BillingInfo,
+    name: "Acme Corp",
+    domainConfiguration: { domain: "comments.acme.com", sslEnabled: true },
+    importedSite: { siteId: "site-123", source: "wordpress" },
+    billingInfo: { plan: "enterprise", renewalDate: "2025-01-01" },
+    description: "Tenant for Acme Corp's production environment", // 선택 사항
   };
-  const response: CreateTenantResponse1 = await createTenant(tenantId, createTenantBody);
-  console.log(response);
+  const response: CreateTenantResponse = await createTenant(tenantId, createTenantBody);
 }
+run();
 [inline-code-end]
-
----

@@ -1,9 +1,10 @@
----
-列出租户的页面。由 FChat 桌面客户端使用，以填充其房间列表。每个页面的解析自定义配置中 `enableFChat` 必须为 true。需要 SSO 的页面会根据请求用户的组访问权限进行过滤。
+List pages for a tenant. Used by the FChat desktop client to populate its room list.
+Requires `enableFChat` to be true on the resolved custom config for each page.
+Pages that require SSO are filtered against the requesting user's group access.
 
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | cursor | string | No |  |
@@ -14,31 +15,28 @@
 
 ## 响应
 
-返回：[`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+返回：[`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'getPagesPublic 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 
   console.log(response);
 }
 [inline-code-end]
-
----

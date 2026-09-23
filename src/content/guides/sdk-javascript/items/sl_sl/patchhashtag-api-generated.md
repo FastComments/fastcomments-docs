@@ -1,34 +1,32 @@
 ## Parametri
 
-| Ime | Vrsta | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | tag | string | Yes |  |
-| tenantId | string | No |  |
 | updateHashTagBody | UpdateHashTagBody | No |  |
 
 ## Odgovor
 
-Vrne: [`PatchHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchHashTagResponse.ts)
+Vrne: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateHashTagResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'patchHashTag Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const response1: PatchHashTagResponse = await patchHashTag("new-feature");
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const tag: string = "news";
 
-const response2: PatchHashTagResponse = await patchHashTag(
-  "beta-release",
-  "tenant-9f8b7c"
-);
+  // Klic brez izbirnega telesa
+  const responseWithoutBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag);
 
-const updateBody: UpdateHashTagBody = {
-  description: "Mark comments related to the upcoming beta release",
-  color: "#1e90ff"
-};
+  // Pripravi telo za posodobitev
+  const updateBody: UpdateHashTagBody = {
+    name: "Latest News",
+    description: "Tag for the most recent news articles"
+  };
 
-const response3: PatchHashTagResponse = await patchHashTag(
-  "beta-release",
-  "tenant-9f8b7c",
-  updateBody
-);
+  const responseWithBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag, updateBody);
+})();
 [inline-code-end]

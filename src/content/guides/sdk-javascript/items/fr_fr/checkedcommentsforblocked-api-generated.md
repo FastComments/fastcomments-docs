@@ -1,26 +1,26 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | commentIds | string | Oui |  |
 | sso | string | Non |  |
 
 ## Réponse
 
-Retourne : [`CheckedCommentsForBlockedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CheckedCommentsForBlockedResponse.ts)
+Renvoie : [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CheckBlockedCommentsResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'checkedCommentsForBlocked Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple checkedCommentsForBlocked'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "acme-corp-123";
-  const commentIds: string = "cmt_001,cmt_002";
-  const ssoToken: string = "ssoTokenXYZ";
+    const tenantId: string = "tenant_12345";
+    const commentIds: string = "cmt_9876,cmt_5432";
+    const ssoToken: string = "sso_user_abc123";
 
-  const blockedCheck: CheckedCommentsForBlockedResponse = await checkedCommentsForBlocked(tenantId, commentIds);
-  const blockedCheckWithSso: CheckedCommentsForBlockedResponse = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);
+    const responseWithSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);
+    const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
 

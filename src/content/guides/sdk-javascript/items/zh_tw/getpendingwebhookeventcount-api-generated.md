@@ -2,37 +2,39 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 否 |  |
+| externalId | string | 否 |  |
+| eventType | string | 否 |  |
+| type | string | 否 |  |
+| domain | string | 否 |  |
+| attemptCountGT | number | 否 |  |
 
 ## 回應
 
-返回：[`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
+返回：[`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_001";
+async function runExample() {
+  const tenantId: string = "tenant_42";
+  const commentId: string = "comment_1001";
+  const eventType: string = "comment.deleted";
+  const domain: string = "myblog.com";
 
-  const responseAll: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(
+  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
     tenantId,
-    "comment_456",
-    "ext_789",
-    "comment.updated",
-    "webhook",
-    "mydomain.com",
-    3
+    commentId,
+    undefined,
+    eventType,
+    undefined,
+    domain
   );
 
-  const responseMinimal: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(tenantId);
+  console.log(result);
+}
 
-  console.log(responseAll, responseMinimal);
-})();
+runExample();
 [inline-code-end]

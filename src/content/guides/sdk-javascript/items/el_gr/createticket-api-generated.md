@@ -1,28 +1,34 @@
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| userId | string | Ναι |  |
-| createTicketBody | CreateTicketBody | Ναι |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| createTicketBody | CreateTicketBody | Yes |  |
 
-## Response
+## Απόκριση
 
-Επιστρέφει: [`CreateTicketResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse1.ts)
+Returns: [`CreateTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTicketResponse.ts)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'createTicket Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const userId: string = "user_98765";
+async function submitTicket() {
+  const tenantId: string = "acme-corp";
+  const userId: string = "user-9876";
 
-const ticketBody: CreateTicketBody = {
-  subject: "Issue with payment processing"
-  // description?: string είναι προαιρετικό και παραλείπεται
-};
+  const ticketBody: CreateTicketBody = {
+    subject: "Login issues after password reset",
+    description: "User reports being unable to log in despite using the new password.",
+    priority: "medium",
+    // προαιρετικό πεδίο στο CreateTicketBody
+    tags: ["login", "password-reset"]
+  };
 
-const response: CreateTicketResponse1 = await createTicket(tenantId, userId, ticketBody);
-// Παράδειγμα χρήσης ενός προαιρετικού πεδίου από την απόκριση
-// console.log(response.ticket?.id);
+  const response: CreateTicketResponse = await createTicket(tenantId, userId, ticketBody);
+  console.log(response);
+}
+
+submitTicket();
 [inline-code-end]

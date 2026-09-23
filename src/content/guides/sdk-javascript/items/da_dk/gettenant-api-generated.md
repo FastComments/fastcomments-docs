@@ -7,20 +7,20 @@
 
 ## Svar
 
-Returnerer: [`GetTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse1.ts)
+Returnerer: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchTenant(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const id: string = "user_9876";
-  const tenantInfo: GetTenantResponse1 = await getTenant(tenantId, id);
-  console.log(tenantInfo);
+    const tenantId: string = "tenant_12345";
+    const id: string = "tenant_12345";
+
+    const tenantResponse: GetTenantResponse = await getTenant(tenantId, id);
+
+    // Valgfrie felter i svaret
+    const billing: BillingInfo | undefined = tenantResponse.billingInfo;
+    const domainConfig: APIDomainConfiguration | undefined = tenantResponse.domainConfiguration;
 }
-
-fetchTenant();
 [inline-code-end]
-
----

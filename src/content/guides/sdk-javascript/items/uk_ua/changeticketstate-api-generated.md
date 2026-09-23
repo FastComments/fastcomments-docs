@@ -1,36 +1,39 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| userId | string | Yes |  |
-| id | string | Yes |  |
-| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
+| tenantId | string | Так |  |
+| userId | string | Так |  |
+| id | string | Так |  |
+| changeTicketStateBody | ChangeTicketStateBody | Так |  |
 
 ## Відповідь
 
-Повертає: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
+Повертає: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'changeTicketState Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const userId: string = "user-97123";
-const ticketId: string = "ticket-45001";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const ticketId: string = "ticket-20230915-001";
 
-const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  // необов’язкове поле в тілі
-  comment: "Issue resolved after code fix"
-};
+  const changeTicketStateBody: ChangeTicketStateBody = {
+    // приклад необов'язкового поля
+    note: "Resolved after investigation"
+  };
 
-const response: ChangeTicketStateResponse1 = await changeTicketState(
-  tenantId,
-  userId,
-  ticketId,
-  changeTicketStateBody
-);
+  const response: ChangeTicketStateResponse = await changeTicketState(
+    tenantId,
+    userId,
+    ticketId,
+    changeTicketStateBody
+  );
+
+  console.log(response);
+})();
 [inline-code-end]
 
 ---

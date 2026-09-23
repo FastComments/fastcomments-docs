@@ -1,28 +1,22 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| skip | number | Hayır |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
+Döndürür: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getQuestionConfigs Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchQuestionConfigs() {
-    const tenantId: string = "tenant-9876";
+async function fetchConfigs() {
+  const tenantId: string = "tenant_12345";
 
-    // Opsiyonel 'skip' parametresi olmadan çağır
-    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
-
-    // Opsiyonel 'skip' parametresiyle çağır
-    const skip: number = 10;
-    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
-
-    console.log(configsWithoutSkip, configsWithSkip);
+  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
 }
 [inline-code-end]

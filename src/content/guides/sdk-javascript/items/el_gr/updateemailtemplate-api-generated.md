@@ -1,37 +1,30 @@
-## Παράμετροι
+## Parameters
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 | updateEmailTemplateBody | UpdateEmailTemplateBody | Yes |  |
 
-## Απόκριση
+## Response
 
-Επιστρέφει: [`UpdateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateEmailTemplateResponse.ts)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Παράδειγμα
+## Example
 
-[inline-code-attrs-start title = 'Παράδειγμα updateEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateEmailTemplate Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function runUpdate() {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "email_tpl_67890";
+  const templateId: string = "template_67890";
 
   const updateBody: UpdateEmailTemplateBody = {
-    subject: "Comment reply notification",
-    htmlContent: "<p>Someone replied to your comment.</p>",
-    plainTextContent: "Someone replied to your comment.",
-    // παράδειγμα προαιρετικού πεδίου
-    isActive: true,
+    subject: "New Comment Notification",
+    // το htmlContent είναι προαιρετικό και παραλείπεται
+    status: { code: 200, message: "Active" } // APIStatus
   };
 
-  const result: UpdateEmailTemplateResponse = await updateEmailTemplate(
-    tenantId,
-    templateId,
-    updateBody
-  );
-
-  console.log(result);
-})();
+  const response: APIEmptyResponse = await updateEmailTemplate(tenantId, templateId, updateBody);
+  console.log(response);
+}
 [inline-code-end]

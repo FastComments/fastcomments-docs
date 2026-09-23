@@ -10,20 +10,20 @@
 
 ## Respuesta
 
-Devuelve: [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
+Devuelve: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchDailyUsage() {
-  const tenantId: string = "tenant-9876";
+async function demoGetTenantDailyUsages() {
+  const tenantId: string = "tenant_9876";
   const yearNumber: number = 2024;
-  const monthNumber: number = 5; // Mayo
-  const dayNumber: number = 12;
-  const skip: number = 0;
+  const monthNumber: number = 2;
+  const dayNumber: number = 28;
+  const skip: number = 10;
 
-  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const fullResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber,
     monthNumber,
@@ -31,14 +31,11 @@ async function fetchDailyUsage() {
     skip
   );
 
-  // Usando solo el parámetro requerido y uno opcional
-  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const partialResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber
   );
-
-  console.log(fullResult, partialResult);
 }
-
-fetchDailyUsage();
 [inline-code-end]
+
+---

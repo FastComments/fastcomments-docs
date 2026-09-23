@@ -2,9 +2,9 @@ List pages for a tenant. Used by the FChat desktop client to populate its room l
 Requires `enableFChat` to be true on the resolved custom config for each page.
 Pages that require SSO are filtered against the requesting user's group access.
 
-## Parameters
+## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | cursor | string | No |  |
@@ -13,28 +13,27 @@ Pages that require SSO are filtered against the requesting user's group access.
 | sortBy | PagesSortBy | No |  |
 | hasComments | boolean | No |  |
 
-## Response
+## Odgovor
 
-Vrne: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+Vrne: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'getPagesPublic Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 

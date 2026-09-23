@@ -1,42 +1,51 @@
 ## Parametre
 
-| Navn | Type | Obligatory | Beskrivelse |
-|------|------|------------|-------------|
-| page | number | Nej |  |
-| count | number | Nej |  |
-| textSearch | string | Nej |  |
-| byIPFromComment | string | Nej |  |
-| filters | string | Nej |  |
-| searchFilters | string | Nej |  |
-| sorts | string | Nej |  |
-| demo | boolean | Nej |  |
-| tenantId | string | Nej |  |
-| sso | string | Nej |  |
+| Navn | Type | Påkrævet | Beskrivelse |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| page | number | No |  |
+| count | number | No |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filters | string | No |  |
+| searchFilters | string | No |  |
+| sorts | string | No |  |
+| demo | boolean | No |  |
+| sso | string | No |  |
 
 ## Svar
 
-Returns: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
+Returnerer: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getApiComments Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments() {
-  const fullResult: GetApiCommentsResponse = await getApiComments(
-    2,                     // side
-    25,                    // antal
-    "feedback",           // tekstSøgning
-    "192.168.1.100",      // efterIPFraKommentar
-    "approved",           // filtre
-    "hasReplies",         // søgeFiltre
-    "dateDesc",           // sorteringer
-    false,                // demo
-    "tenant-abc123",      // lejerId
-    "sso-token-xyz"       // sso
+async function fetchComments(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const page: number = 2;
+  const count: number = 20;
+  const textSearch: string = "typescript";
+  const byIPFromComment: string = "192.168.1.100";
+  const filters: string = "spam,offensive";
+  const searchFilters: string = "user:john";
+  const sorts: string = "date_desc";
+  const demo: boolean = true;
+  const sso: string = "sso_token_abc";
+
+  const response: ModerationAPIGetCommentsResponse = await getApiComments(
+    tenantId,
+    page,
+    count,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    demo,
+    sso
   );
-
-  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
 }
-[inline-code-end]
 
----
+fetchComments();
+[inline-code-end]

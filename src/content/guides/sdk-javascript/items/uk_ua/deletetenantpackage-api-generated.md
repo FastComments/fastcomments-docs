@@ -1,27 +1,22 @@
 ## Параметри
 
-| Назва | Тип | Обов’язковий | Опис |
-|------|------|--------------|------|
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantPackage Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeTenantPackage(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const packageId: string = "pkg_67890";
+let tenantId: string = "tenant_12345";
+let packageId: string = "pkg_98765";
 
-  const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);
-  // використовуйте результат за потребою
-}
-
-removeTenantPackage();
+const result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 
 ---

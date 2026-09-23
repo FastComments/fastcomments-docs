@@ -1,34 +1,34 @@
 ## パラメータ
 
-| 名前 | タイプ | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| replaceTenantUserBody | ReplaceTenantUserBody | Yes |  |
-| updateComments | string | No |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
+| replaceTenantUserBody | ReplaceTenantUserBody | はい |  |
+| updateComments | string | いいえ |  |
 
-## レスポンス
+## 応答
 
-返り値: [`ReplaceTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReplaceTenantUserResponse.ts)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'replaceTenantUser の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function updateUser() {
-  const tenantId: string = "c3d1f2e4-5b6a-4c7d-9f2e-1234567890ab";
-  const userId: string = "u-654321";
-  const replaceBody: ReplaceTenantUserBody = {
-    email: "newuser@example.com",
-    username: "newusername"
-  };
-  const response: ReplaceTenantUserResponse = await replaceTenantUser(
-    tenantId,
-    userId,
-    replaceBody,
-    "true"
-  );
-  console.log(response);
-}
-updateUser();
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+const userId: string = "user-987654321";
+const replaceBody: ReplaceTenantUserBody = {
+  email: "newuser@example.com",
+  name: "New User",
+  role: "admin"
+};
+
+const response: APIEmptyResponse = await replaceTenantUser(
+  tenantId,
+  userId,
+  replaceBody,
+  "Migrated user to new tenant"
+);
 [inline-code-end]
+
+---

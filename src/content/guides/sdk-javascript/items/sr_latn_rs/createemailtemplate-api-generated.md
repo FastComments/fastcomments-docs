@@ -2,30 +2,28 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| createEmailTemplateBody | CreateEmailTemplateBody | Yes |  |
+| tenantId | string | Da |  |
+| createEmailTemplateBody | CreateEmailTemplateBody | Da |  |
 
 ## Odgovor
 
-Vraća: [`CreateEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse1.ts)
+Vraća: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'createEmailTemplate Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8e7d6c";
+const tenantId: string = "tenant_9f8b7c6d";
 
-const emailTemplate: CreateEmailTemplateBody = {
-  name: "Account Activation",
-  subject: "Activate Your New Account",
-  htmlContent: "<p>Welcome! Please click <a href=\"\{{activationLink}}\">here</a> to activate.</p>",
-  // opciona polja kao što su textContent, isActive su izostavljena da bi se demonstrirali opcioni parametri
+const templateBody: CreateEmailTemplateBody = {
+  name: "Weekly Summary",
+  subject: "Your weekly activity report",
+  // opcionalno polje
+  replyTo: "no-reply@myapp.com",
+  htmlContent: "<p>Hello \{{userName}}, here is your summary...</p>"
 };
 
-const result: CreateEmailTemplateResponse1 = await createEmailTemplate(
-  tenantId,
-  emailTemplate
-);
+const response: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, templateBody);
 
-console.log(result);
+console.log(response.template.id);
 [inline-code-end]

@@ -1,32 +1,26 @@
-## Parameters
+## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| errorId | string | Yes |  |
+| Назва | Тип | Обов’язковий | Опис |
+|------|------|--------------|------|
+| tenantId | string | Так |  |
+| id | string | Так |  |
+| errorId | string | Так |  |
 
-## Response
+## Відповідь
 
-Повертає: [`DeleteEmailTemplateRenderErrorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateRenderErrorResponse.ts)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Приклад
 
-[inline-code-attrs-start title = 'Приклад deleteEmailTemplateRenderError'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteEmailTemplateRenderError Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function executeDelete() {
-  const tenantId: string = "tenant_12345";
-  const templateId: string = "email_tpl_001";
-  const errorId: string = "render_err_2023";
+async function removeRenderError() {
+  const tenantId: string = "acme-corp-tenant";
+  const templateId: string = "welcome-email-template";
+  const errorId: string = "render-err-20230915";
 
-  const result: DeleteEmailTemplateRenderErrorResponse = await deleteEmailTemplateRenderError(
-    tenantId,
-    templateId,
-    errorId
-  );
-
-  console.log(result);
+  const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 }
-
-executeDelete();
 [inline-code-end]
+
+---

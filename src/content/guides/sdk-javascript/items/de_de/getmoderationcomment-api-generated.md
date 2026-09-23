@@ -2,39 +2,37 @@
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|--------------|--------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | includeEmail | boolean | Nein |  |
 | includeIP | boolean | Nein |  |
-| tenantId | string | Nein |  |
 | sso | string | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'getModerationComment Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel für getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Vollständiger Parametersatz
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Aufruf nur mit erforderlichen Parametern
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Aufruf mit optionalen Parametern
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Minimaler Aufruf nur mit dem erforderlichen Argument
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Ergebnisse bei Bedarf verwenden...
 }
 [inline-code-end]

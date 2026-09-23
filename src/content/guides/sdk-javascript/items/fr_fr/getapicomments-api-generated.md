@@ -1,7 +1,8 @@
-## Parameters
+## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|--------------|-------------|
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | page | number | No |  |
 | count | number | No |  |
 | textSearch | string | No |  |
@@ -10,31 +11,41 @@
 | searchFilters | string | No |  |
 | sorts | string | No |  |
 | demo | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
-## Response
+## Réponse
 
-Renvoie : [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
+Retourne : [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
 
-## Example
+## Exemple
 
 [inline-code-attrs-start title = 'Exemple getApiComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments() {
-  const fullResult: GetApiCommentsResponse = await getApiComments(
-    2,                     // page
-    25,                    // nombre
-    "feedback",           // rechercheTexte
-    "192.168.1.100",      // parIPDepuisCommentaire
-    "approved",           // filtres
-    "hasReplies",         // filtresDeRecherche
-    "dateDesc",           // tri
-    false,                // démo
-    "tenant-abc123",      // identifiantLocataire
-    "sso-token-xyz"       // sso
-  );
+async function fetchComments(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const page: number = 2;
+  const count: number = 20;
+  const textSearch: string = "typescript";
+  const byIPFromComment: string = "192.168.1.100";
+  const filters: string = "spam,offensive";
+  const searchFilters: string = "user:john";
+  const sorts: string = "date_desc";
+  const demo: boolean = true;
+  const sso: string = "sso_token_abc";
 
-  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+  const response: ModerationAPIGetCommentsResponse = await getApiComments(
+    tenantId,
+    page,
+    count,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    demo,
+    sso
+  );
 }
+
+fetchComments();
 [inline-code-end]

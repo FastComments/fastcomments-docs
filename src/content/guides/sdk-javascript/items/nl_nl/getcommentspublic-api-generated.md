@@ -1,11 +1,11 @@
-req  
-tenantId  
-urlId  
+req
+tenantId
+urlId
 
-## Parameters  
+## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | page | number | Nee |  |
@@ -35,58 +35,57 @@ urlId
 | afterCommentId | string | Nee |  |
 | beforeCommentId | string | Nee |  |
 
-## Respons  
+## Response
 
-Retourneert: [`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
+Returns: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
 
-## Voorbeeld  
+## Example
 
-[inline-code-attrs-start title = 'getCommentsPublic Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]  
-[inline-code-start]  
-async function fetchComments() {  
-  const tenantId: string = 'acme-corp';  
-  const urlId: string = 'blog/post-789';  
-  const page: number = 1;  
-  const direction: SortDirections = SortDirections.Desc;  
-  const limit: number = 25;  
-  const includeConfig: boolean = true;  
-  const locale: string = 'en-GB';  
-  const modules: string = 'reactions,attachments';  
-  const isCrawler: boolean = false;  
-  const includeNotificationCount: boolean = true;  
-  const asTree: boolean = true;  
-  const maxTreeDepth: number = 4;  
-  const searchText: string = 'TypeScript';  
-  const hashTags: string[] = ['typescript', 'api'];  
-  const response: GetCommentsPublicResponse = await getCommentsPublic(  
-    tenantId,  
-    urlId,  
-    page,  
-    direction,  
-    undefined,  
-    undefined,  
-    undefined,  
-    limit,  
-    undefined,  
-    undefined,  
-    undefined,  
-    includeConfig,  
-    undefined,  
-    undefined,  
-    locale,  
-    modules,  
-    isCrawler,  
-    includeNotificationCount,  
-    asTree,  
-    maxTreeDepth,  
-    undefined,  
-    undefined,  
-    searchText,  
-    hashTags,  
-    undefined,  
-    undefined,  
-    undefined,  
-    undefined  
-  );  
-}  
+[inline-code-attrs-start title = 'getCommentsPublic Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function loadComments(): Promise<void> {
+  const tenantId: string = "tenant-42",
+        urlId: string = "post-2023-09-15",
+        page: number = 1,
+        direction: SortDirections = "desc",
+        limit: number = 30,
+        includeConfig: boolean = true,
+        locale: string = "en-US",
+        isCrawler: boolean = false,
+        asTree: boolean = true,
+        maxTreeDepth: number = 2,
+        searchText: string = "fastcomments",
+        hashTags: string[] = ["fastcomments","typescript"],
+        userId: string = "user-123";
+
+  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+    tenantId,
+    urlId,
+    page,
+    direction,
+    undefined,
+    undefined,
+    undefined,
+    limit,
+    undefined,
+    undefined,
+    undefined,
+    includeConfig,
+    undefined,
+    undefined,
+    locale,
+    undefined,
+    isCrawler,
+    undefined,
+    asTree,
+    maxTreeDepth,
+    undefined,
+    undefined,
+    searchText,
+    hashTags,
+    userId
+  );
+}
 [inline-code-end]
+
+---

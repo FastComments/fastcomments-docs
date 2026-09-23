@@ -1,33 +1,34 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|------------|-------------|
-| commentId | string | Oui |  |
-| broadcastId | string | Non |  |
-| tenantId | string | Non |  |
-| sso | string | Non |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## Réponse
 
-Retourne : [`PostRemoveCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRemoveCommentResponse.ts)
+Renvoie : [`PostRemoveCommentApiResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostRemoveCommentApiResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'postRemoveComment Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple postRemoveComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeCommentExample(): Promise<void> {
-  const commentId: string = "cmt_7f9a3e2b";
+async function removeCommentExample() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_555";
+  const sso: string = "sso_token_abc";
 
-  const result1: PostRemoveCommentResponse = await postRemoveComment(commentId);
-
-  const broadcastId: string = "brd_12ab34cd";
-  const tenantId: string = "tenant_5678efgh";
-  const sso: string = "sso_XYZ12345";
-
-  const result2: PostRemoveCommentResponse = await postRemoveComment(commentId, broadcastId, tenantId, sso);
-
-  console.log(result1, result2);
+  const response: PostRemoveCommentApiResponse = await postRemoveComment(
+    tenantId,
+    commentId,
+    broadcastId,
+    sso
+  );
+  console.log(response);
 }
-[inline-code-end]
 
----
+removeCommentExample();
+[inline-code-end]

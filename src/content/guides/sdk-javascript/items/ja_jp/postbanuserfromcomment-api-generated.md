@@ -1,7 +1,8 @@
 ## パラメータ
 
-| 名前 | タイプ | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | はい |  |
 | commentId | string | はい |  |
 | banEmail | boolean | いいえ |  |
 | banEmailDomain | boolean | いいえ |  |
@@ -11,40 +12,33 @@
 | isShadowBan | boolean | いいえ |  |
 | updateId | string | いいえ |  |
 | banReason | string | いいえ |  |
-| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
 ## レスポンス
 
-返却: [`PostBanUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserFromCommentResponse.ts)
+返却: [`BanUserFromCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BanUserFromCommentResult.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'postBanUserFromComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runBan() {
-  const commentId: string = "cmt_5f8a2b3c";
-  const banEmail: boolean = true;
-  const banIP: boolean = false;
-  const deleteAllUsersComments: boolean = true;
-  const bannedUntil: string = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
-  const isShadowBan: boolean = false;
-  const banReason: string = "Repeated spam posting";
-  const tenantId: string = "tenant_12345";
-
-  const response: PostBanUserFromCommentResponse = await postBanUserFromComment(
-    commentId,
-    banEmail,
-    undefined,
-    banIP,
-    deleteAllUsersComments,
-    bannedUntil,
-    isShadowBan,
-    undefined,
-    banReason,
-    tenantId
+async function banUserExample(): Promise<void> {
+  const result: BanUserFromCommentResult = await postBanUserFromComment(
+    "tenant_42",
+    "comment_1001",
+    true,                     // banEmail
+    undefined,                // banEmailDomain (省略)
+    true,                     // banIP
+    false,                    // deleteAllUsersComments
+    "2025-01-01T00:00:00Z",   // bannedUntil
+    true,                     // isShadowBan
+    undefined,                // updateId (省略)
+    "Harassment",             // banReason
+    undefined                 // sso (省略)
   );
-  console.log(response);
+
+  console.log(result);
 }
-runBan();
 [inline-code-end]
+
+---

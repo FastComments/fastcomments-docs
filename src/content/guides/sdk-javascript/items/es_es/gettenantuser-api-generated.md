@@ -1,22 +1,22 @@
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Obligatorio | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 
 ## Respuesta
 
-Devuelve: [`GetTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUserResponse1.ts)
+Devuelve: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUserResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo getTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUser Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUser(): Promise<void> {
-  const tenantId: string = "tenant-01a2b3c";
-  const userId: string = "user-7890";
-  const result: GetTenantUserResponse1 = await getTenantUser(tenantId, userId);
-  console.log(result);
-}
+(async () => {
+    const tenantId: string = "acme-tenant-001";
+    const userId: string = "user-12345";
+    const response: GetTenantUserResponse = await getTenantUser(tenantId, userId);
+    console.log(response);
+})();
 [inline-code-end]

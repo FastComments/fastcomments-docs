@@ -9,7 +9,7 @@
       "subCat": "API ресурси"
     },
     {
-      "name": "OAuth упълномощаване",
+      "name": "OAuth авторизация",
       "file": "oauth.md",
       "subCat": "Удостоверяване"
     },
@@ -130,27 +130,27 @@
       "subCat": "Имейл шаблони"
     },
     {
-      "name": "Структура на публикация",
+      "name": "Структура на публикация в емисия",
       "file": "feed-post-structure.md",
-      "subCat": "Публикации"
+      "subCat": "Публикации в емисия"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Публикации"
+      "subCat": "Публикации в емисия"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Публикации"
+      "subCat": "Публикации в емисия"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Публикации"
+      "subCat": "Публикации в емисия"
     },
     {
       "name": "Структура на хаштаг",
@@ -270,6 +270,53 @@
       "subCat": "Известия"
     },
     {
+      "name": "Публично API за реакциите на страници",
+      "file": "page-reacts-api.md",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страници"
+    },
+    {
       "name": "Структура на страница",
       "file": "page-structure.md",
       "subCat": "Страници"
@@ -305,27 +352,85 @@
       "subCat": "Страници"
     },
     {
-      "name": "Структура на чакащо уебкук събитие",
+      "name": "Структура на анкета",
+      "file": "poll-structure.md",
+      "subCat": "Анкети"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкети"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкети"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкети"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкети"
+    },
+    {
+      "name": "Структура на глас за анкета",
+      "file": "poll-vote-structure.md",
+      "subCat": "Гласове за анкета"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласове за анкета"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласове за анкета"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласове за анкета"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласове за анкета"
+    },
+    {
+      "name": "Структура на чакащо Webhook събитие",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Чакащи уебкук събития"
+      "subCat": "Чакащи Webhook събития"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чакащи уебкук събития"
+      "subCat": "Чакащи Webhook събития"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чакащи уебкук събития"
+      "subCat": "Чакащи Webhook събития"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Чакащи уебкук събития"
+      "subCat": "Чакащи Webhook събития"
     },
     {
       "name": "Структура на SSO потребител",
@@ -478,43 +583,43 @@
     {
       "name": "Структура на потребител на наемател",
       "file": "tenant-user-structure.md",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Потребители на наематели"
+      "subCat": "Потребители на наемател"
     },
     {
       "name": "Структура на потребител",
@@ -683,7 +788,7 @@
       "subCat": "Агрегация на резултати от въпроси"
     },
     {
-      "name": "Структура на потребителски значка",
+      "name": "Структура на потребителска значка",
       "file": "user-badge-structure.md",
       "subCat": "Потребителски значки"
     },

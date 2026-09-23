@@ -1,33 +1,29 @@
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| id | string | Так |  |
-| deleteComments | string | Ні |  |
-| commentDeleteMode | string | Ні |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| deleteComments | string | No |  |
+| commentDeleteMode | string | No |  |
 
-## Response
+## Відповідь
 
-Повертає: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Приклад
 
-[inline-code-attrs-start title = 'deleteTenantUser Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deleteTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoDeleteTenantUser() {
-  const tenantId: string = "acme-corp-tenant";
-  const userId: string = "user-9876";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "u-112233";
 
-  // Видалити користувача та всі його коментарі, використовуючи режим жорсткого видалення
-  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
-    tenantId,
-    userId,
-    "true",
-    "hard"
-  );
+  const result1: APIEmptyResponse = await deleteTenantUser(tenantId, userId);
+  const result2: APIEmptyResponse = await deleteTenantUser(tenantId, userId, "true", "hard");
 
-  // Видалити користувача без видалення коментарів (поведінка за замовчуванням)
-  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
-}
+  console.log(result1, result2);
+})();
 [inline-code-end]
+
+---

@@ -1,37 +1,38 @@
----
-当前在线的页面观看者：当前通过 WebSocket 会话订阅该页面的用户。  
-返回 anonCount + totalCount（整个房间的订阅者数量，包括我们未列出的匿名观看者）。
+当前在线查看页面的用户：指其 WebSocket 会话当前已订阅该页面的用户。  
+返回 anonCount + totalCount（整个房间的订阅者，包括我们不枚举的匿名查看者）。
 
 ## 参数
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| 名称 | 类型 | 必需 | 描述 |
+|------|------|------|------|
+| tenantId | string | 是 |  |
+| urlId | string | 是 |  |
+| afterName | string | 否 |  |
+| afterUserId | string | 否 |  |
 
 ## 响应
 
-返回：[`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+返回：[`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## 示例
 
-[inline-code-attrs-start title = 'getOnlineUsers 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '获取在线用户 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // 包含可选的分页参数
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // 不包含可选的分页参数
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]

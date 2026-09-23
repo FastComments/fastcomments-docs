@@ -19,7 +19,7 @@
       "subCat": "Toplamalar"
     },
     {
-      "name": "AuditLog Yapısı",
+      "name": "Denetim Kaydı Yapısı",
       "file": "audit-log-structure.md",
       "subCat": "Denetim Kayıtları"
     },
@@ -130,62 +130,62 @@
       "subCat": "E-posta Şablonları"
     },
     {
-      "name": "FeedPost Yapısı",
+      "name": "Akış Gönderisi Yapısı",
       "file": "feed-post-structure.md",
-      "subCat": "Feed Gönderileri"
+      "subCat": "Akış Gönderileri"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed Gönderileri"
+      "subCat": "Akış Gönderileri"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed Gönderileri"
+      "subCat": "Akış Gönderileri"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed Gönderileri"
+      "subCat": "Akış Gönderileri"
     },
     {
-      "name": "HashTag Yapısı",
+      "name": "Etiket Yapısı",
       "file": "hash-tag-structure.md",
-      "subCat": "HashTag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "HashTag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "HashTag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "HashTag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "HashTag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "HashTag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "GET /api/v1/me",
@@ -270,6 +270,53 @@
       "subCat": "Bildirimler"
     },
     {
+      "name": "Sayfa Tepkileri Genel API",
+      "file": "page-reacts-api.md",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfa Tepkileri"
+    },
+    {
       "name": "Sayfa Yapısı",
       "file": "page-structure.md",
       "subCat": "Sayfalar"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Sayfalar"
+    },
+    {
+      "name": "Anket Yapısı",
+      "file": "poll-structure.md",
+      "subCat": "Anketler"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anketler"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anketler"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anketler"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anketler"
+    },
+    {
+      "name": "Anket Oy Yapısı",
+      "file": "poll-vote-structure.md",
+      "subCat": "Anket Oyları"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anket Oyları"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anket Oyları"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anket Oyları"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Anket Oyları"
     },
     {
       "name": "Bekleyen Webhook Olayı Yapısı",
@@ -395,126 +500,126 @@
       "subCat": "Abonelikler"
     },
     {
-      "name": "Tenant Günlük Kullanım Yapısı",
+      "name": "Kiracı Günlük Kullanım Yapısı",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Tenant Günlük Kullanım"
+      "subCat": "Kiracı Günlük Kullanımı"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Günlük Kullanım"
+      "subCat": "Kiracı Günlük Kullanımı"
     },
     {
-      "name": "Tenant Yapısı",
+      "name": "Kiracı Yapısı",
       "file": "tenant-structure.md",
-      "subCat": "Tenant'lar"
+      "subCat": "Kiracılar"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant'lar"
+      "subCat": "Kiracılar"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant'lar"
+      "subCat": "Kiracılar"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant'lar"
+      "subCat": "Kiracılar"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant'lar"
+      "subCat": "Kiracılar"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant'lar"
+      "subCat": "Kiracılar"
     },
     {
-      "name": "Tenant Paketi Yapısı",
+      "name": "Kiracı Paketi Yapısı",
       "file": "tenant-package-structure.md",
-      "subCat": "Tenant Paketleri"
+      "subCat": "Kiracı Paketleri"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Paketleri"
+      "subCat": "Kiracı Paketleri"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Paketleri"
+      "subCat": "Kiracı Paketleri"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Paketleri"
+      "subCat": "Kiracı Paketleri"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Paketleri"
+      "subCat": "Kiracı Paketleri"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Paketleri"
+      "subCat": "Kiracı Paketleri"
     },
     {
-      "name": "Tenant Kullanıcı Yapısı",
+      "name": "Kiracı Kullanıcı Yapısı",
       "file": "tenant-user-structure.md",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenant Kullanıcıları"
+      "subCat": "Kiracı Kullanıcıları"
     },
     {
       "name": "Kullanıcı Yapısı",
@@ -557,85 +662,85 @@
       "subCat": "Oylar"
     },
     {
-      "name": "DomainConfig Yapısı",
+      "name": "Alan Adı Yapılandırma Yapısı",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Alan Adı Yapılandırmaları"
     },
     {
-      "name": "QuestionConfig Yapısı",
+      "name": "Soru Yapılandırma Yapısı",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Yapılandırmaları"
     },
     {
-      "name": "QuestionResult Yapısı",
+      "name": "Soru Sonucu Yapısı",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Soru Sonuçları"
@@ -683,7 +788,7 @@
       "subCat": "Soru Sonuçları Toplaması"
     },
     {
-      "name": "Kullanıcı Rozeti Yapısı",
+      "name": "Kullanıcı Rozet Yapısı",
       "file": "user-badge-structure.md",
       "subCat": "Kullanıcı Rozetleri"
     },
@@ -718,7 +823,7 @@
       "subCat": "Kullanıcı Rozetleri"
     },
     {
-      "name": "Kullanıcı Rozet İlerlemesi Yapısı",
+      "name": "Kullanıcı Rozet İlerleme Yapısı",
       "file": "user-badge-progress-structure.md",
       "subCat": "Kullanıcı Rozet İlerlemesi"
     },

@@ -1,30 +1,35 @@
 ## 参数
 
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantUserBody | UpdateTenantUserBody | Yes |  |
-| updateComments | string | No |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
+| updateTenantUserBody | UpdateTenantUserBody | 是 |  |
+| updateComments | string | 否 |  |
 
 ## 响应
 
-返回: [`UpdateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantUserResponse.ts)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'updateTenantUser 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let tenantId: string = "5f8f8c1a2e9b3c001c2a9b2d";
-let userId: string = "user_98765";
+async function runUpdate() {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_987";
+  const updateBody: UpdateTenantUserBody = {
+    email: "new.email@example.com",
+    role: "admin",
+    isActive: true
+  };
+  const comment: string = "Promoted to admin role";
 
-let updateBody: UpdateTenantUserBody = {
-  email: "jane.smith@example.com",
-  role: "moderator",
-  isActive: false,
-};
+  const result: APIEmptyResponse = await updateTenantUser(tenantId, userId, updateBody, comment);
+  console.log(result);
+}
 
-let updateComments: string = "Deactivated user due to policy violation.";
-
-let result: UpdateTenantUserResponse = await updateTenantUser(tenantId, userId, updateBody, updateComments);
+runUpdate();
 [inline-code-end]
+
+---

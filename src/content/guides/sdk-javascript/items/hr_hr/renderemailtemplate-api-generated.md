@@ -1,30 +1,37 @@
 ## Parametri
 
-| Naziv | Vrsta | Obavezno | Opis |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Da |  |
 | renderEmailTemplateBody | RenderEmailTemplateBody | Da |  |
 | locale | string | Ne |  |
 
 ## Odgovor
 
-Vraća: [`RenderEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplateResponse1.ts)
+Vraća: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplateResponse.ts)
 
 ## Primjer
 
 [inline-code-attrs-start title = 'renderEmailTemplate Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+
+const templateBody: RenderEmailTemplateBody = {
+  templateId: "welcome-email",
+  variables: {
+    userName: "Jane Doe",
+    signupDate: "2024-04-01"
+  }
+};
+
+const locale: string = "en-US";
+
 (async () => {
-  const tenantId: string = "acme-corp-01";
-  const templateBody: RenderEmailTemplateBody = {
-    templateId: "welcome-email",
-    placeholders: {
-      userName: "John Doe",
-      signupDate: "2024-04-01"
-    }
-  };
-  const locale: string = "en-US";
-  const result: RenderEmailTemplateResponse1 = await renderEmailTemplate(tenantId, templateBody, locale);
-  console.log(result);
+  const rendered: RenderEmailTemplateResponse = await renderEmailTemplate(
+    tenantId,
+    templateBody,
+    locale
+  );
+  console.log(rendered);
 })();
 [inline-code-end]

@@ -9,28 +9,29 @@
 
 ## 응답
 
-반환: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
+반환: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'changeTicketState 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'changeTicketState 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const userId: string = "user-97123";
-const ticketId: string = "ticket-45001";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const ticketId: string = "ticket-20230915-001";
 
-const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  // 본문에 선택적 필드
-  comment: "Issue resolved after code fix"
-};
+  const changeTicketStateBody: ChangeTicketStateBody = {
+    // 선택적 필드 예시
+    note: "Resolved after investigation"
+  };
 
-const response: ChangeTicketStateResponse1 = await changeTicketState(
-  tenantId,
-  userId,
-  ticketId,
-  changeTicketStateBody
-);
+  const response: ChangeTicketStateResponse = await changeTicketState(
+    tenantId,
+    userId,
+    ticketId,
+    changeTicketStateBody
+  );
+
+  console.log(response);
+})();
 [inline-code-end]
-
----

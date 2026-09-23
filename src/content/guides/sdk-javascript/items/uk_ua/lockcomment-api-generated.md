@@ -1,30 +1,31 @@
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| broadcastId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Так |  |
+| commentId | string | Так |  |
+| broadcastId | string | Так |  |
+| sso | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockCommentResponse.ts)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'lockComment Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function demoLockComment() {
   const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const broadcastId: string = "brd_54321";
+  const commentId: string = "cmt_9876";
+  const broadcastId: string = "brd_5555";
+  const ssoToken: string = "sso_user_abc";
 
-  // З необов’язковим токеном SSO
-  const ssoToken: string = "user-abc123";
-  const lockedWithSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);
+}
 
-  // Без токену SSO
-  const lockedWithoutSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId);
-})();
+demoLockComment();
 [inline-code-end]
+
+---

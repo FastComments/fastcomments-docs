@@ -1,36 +1,37 @@
-Тренутно онлајн прегледачи странице: људи чија веб‑сокет сесија је претплаћена на страницу тренутно.  
-Враћа anonCount + totalCount (претплатници у просторији, укључујући анонимне прегледаче које не наводимо).
+Trenutno online gledatelji stranice: људи чија је websocket сесија тренутно претплаћена на страницу. Враћа anonCount + totalCount (претплатници у целој соби, укључујући анонимне гледаоце које не набрајамо).
 
-## Параметри
+## Parametri
 
-| Име | Тип | Неопходно | Опис |
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
 | afterName | string | Не |  |
 | afterUserId | string | Не |  |
 
-## Одговор
+## Odgovor
 
-Враћа: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Враћа: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## Пример
+## Primer
 
 [inline-code-attrs-start title = 'Primer getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Са опционалним параметрима страничења
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Без опционалних параметара страничења
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]

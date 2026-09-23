@@ -1,37 +1,45 @@
-## Parameters
+## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | textSearch | string | לא |  |
 | byIPFromComment | string | לא |  |
 | filters | string | לא |  |
 | searchFilters | string | לא |  |
 | afterId | string | לא |  |
 | demo | boolean | לא |  |
-| tenantId | string | לא |  |
 | sso | string | לא |  |
 
-## Response
+## תגובה
 
-מחזירה: [`GetApiIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiIdsResponse.ts)
+Returns: [`ModerationAPIGetCommentIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentIdsResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת getApiIds'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const textSearch: string = "urgent feedback";
-const byIPFromComment: string = "203.0.113.42";
-const filters: string = "status:approved";
-const afterId: string = "comment-789";
-const demo: boolean = true;
-const tenantId: string = "tenant-001";
+async function run(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const textSearch: string = "offensive language";
+  const byIPFromComment: string = "203.0.113.45";
+  const filters: string = "status:unmoderated";
+  const searchFilters: string = "author:alice";
+  const afterId: string = "cmt_00123";
+  const demo: boolean = true;
+  const sso: string = "sso_9f8e7d6c";
 
-const apiIds: GetApiIdsResponse = await getApiIds({
-  textSearch,
-  byIPFromComment,
-  filters,
-  afterId,
-  demo,
-  tenantId,
-});
+  const fullResult: ModerationAPIGetCommentIdsResponse = await getApiIds(
+    tenantId,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    afterId,
+    demo,
+    sso
+  );
+
+  const minimalResult: ModerationAPIGetCommentIdsResponse = await getApiIds(tenantId);
+}
 [inline-code-end]

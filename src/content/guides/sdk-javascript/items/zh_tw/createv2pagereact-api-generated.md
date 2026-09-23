@@ -1,30 +1,31 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | Yes |  |
-| title | string | No |  |
+|------|------|------|------|
+| tenantId | string | 是 |  |
+| urlId | string | 是 |  |
+| id | string | 是 |  |
+| title | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 回應
 
-返回：[`CreateV2PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV2PageReactResponse.ts)
+返回：[`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createV2PageReact 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function run() {
   const tenantId: string = "acme-corp";
-  const urlId: string = "blog/posts/fastcomments-integration";
-  const pageId: string = "page-12345";
-  const title: string = "FastComments API Integration Guide";
+  const urlId: string = "product-page-123";
+  const pageId: string = "page-456";
+  const pageTitle: string = "Product Overview";
+  const ssoToken: string = "jwt-token-abc123";
 
-  const responseWithoutTitle: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, pageId);
-  const responseWithTitle: CreateV2PageReactResponse = await createV2PageReact(tenantId, urlId, pageId, title);
-
-  console.log(responseWithoutTitle, responseWithTitle);
-})();
+  const pageFull: CreateV1PageReact = await createV2PageReact(tenantId, urlId, pageId, pageTitle, ssoToken);
+  const pageTitleOnly: CreateV1PageReact = await createV2PageReact(tenantId, urlId, pageId, pageTitle);
+  const pageMinimal: CreateV1PageReact = await createV2PageReact(tenantId, urlId, pageId);
+}
+run();
 [inline-code-end]

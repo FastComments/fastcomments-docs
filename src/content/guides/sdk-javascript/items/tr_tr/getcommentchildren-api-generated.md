@@ -1,23 +1,30 @@
+---
 ## Parametreler
 
-| İsim | Tür | Gerekli | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| commentId | string | Evet |  |
-| tenantId | string | Hayır |  |
-| sso | string | Hayır |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetCommentChildrenResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentChildrenResponse.ts)
+Döndürür: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getCommentChildren Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const tenantId: string = "tenant_xyz";
-const sso: string = "sso_987654";
+async function fetchChildren() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_user_abc123";
 
-const fullResponse: GetCommentChildrenResponse = await getCommentChildren(commentId, tenantId, sso);
-const minimalResponse: GetCommentChildrenResponse = await getCommentChildren(commentId);
+  const responseWithSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId, ssoToken);
+  const responseWithoutSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId);
+}
+
+fetchChildren();
 [inline-code-end]
+
+---

@@ -270,6 +270,53 @@
       "subCat": "Обавештења"
     },
     {
+      "name": "Јавни API за реакције на страницу",
+      "file": "page-reacts-api.md",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакције на страницу"
+    },
+    {
       "name": "Структура странице",
       "file": "page-structure.md",
       "subCat": "Странице"
@@ -305,27 +352,85 @@
       "subCat": "Странице"
     },
     {
-      "name": "Структура догађаја веб‑кука у чекању",
+      "name": "Структура анкете",
+      "file": "poll-structure.md",
+      "subCat": "Анкете"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкете"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкете"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкете"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Анкете"
+    },
+    {
+      "name": "Структура гласа у анкети",
+      "file": "poll-vote-structure.md",
+      "subCat": "Гласови у анкети"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласови у анкети"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласови у анкети"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласови у анкети"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Гласови у анкети"
+    },
+    {
+      "name": "Структура непотврђеног веб‑хук догађаја",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Догађаји веб‑кука у чекању"
+      "subCat": "Непотврђени веб‑хук догађаји"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Догађаји веб‑кука у чекању"
+      "subCat": "Непотврђени веб‑хук догађаји"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Догађаји веб‑кука у чекању"
+      "subCat": "Непотврђени веб‑хук догађаји"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Догађаји веб‑кука у чекању"
+      "subCat": "Непотврђени веб‑хук догађаји"
     },
     {
       "name": "Структура SSO корисника",

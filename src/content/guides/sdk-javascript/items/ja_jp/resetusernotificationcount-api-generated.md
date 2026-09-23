@@ -1,28 +1,27 @@
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
-|------|------|------|------|
+|------|------|----------|-------------|
 | tenantId | string | はい |  |
 | sso | string | いいえ |  |
 
-## Response
+## レスポンス
 
-戻り値: [`ResetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationCountResponse.ts)
+返却: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ResetUserNotificationsResponse.ts)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'resetUserNotificationCount の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoResetCount() {
-  const tenantId: string = "acme-corp-tenant";
-  const sso: string = "sso-user-9876";
+async function demoReset() {
+  const tenantId: string = "tenant_12345";
+  const ssoToken: string = "sso_abcdef123456";
 
-  // オプションの sso パラメータで呼び出す
-  const resultWithSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId, sso);
-
-  // オプションの sso パラメータなしで呼び出す
-  const resultWithoutSso: ResetUserNotificationCountResponse = await resetUserNotificationCount(tenantId);
-
-  console.log(resultWithSso, resultWithoutSso);
+  const resultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);
+  const resultWithoutSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);
 }
+
+demoReset();
 [inline-code-end]
+
+---

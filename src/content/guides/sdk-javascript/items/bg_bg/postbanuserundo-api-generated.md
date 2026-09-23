@@ -1,37 +1,29 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
+| tenantId | string | Да |  |
 | banUserUndoParams | BanUserUndoParams | Да |  |
-| tenantId | string | Не |  |
 | sso | string | Не |  |
 
 ## Отговор
 
-Връща: [`PostBanUserUndoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserUndoResponse.ts)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'postBanUserUndo Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = "tenant_9876";
+
 const undoParams: BanUserUndoParams = {
-  userId: "user-8421",
-  commentId: "comment-6702",
-  reason: "Accidental ban"
+  userId: "user_12345",
+  // допълнителни задължителни полета могат да бъдат добавени тук
 };
 
-const tenantId: string = "tenant-7f9e";
-const ssoToken: string = "sso-4b2c1d";
+const resultWithoutSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams);
 
-async function runUndo() {
-  const resultAll: PostBanUserUndoResponse = await postBanUserUndo(undoParams, tenantId, ssoToken);
-  console.log(resultAll);
+const ssoToken: string = "sso_abcdef123456";
 
-  const resultMinimal: PostBanUserUndoResponse = await postBanUserUndo(undoParams);
-  console.log(resultMinimal);
-}
-
-runUndo();
+const resultWithSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams, ssoToken);
 [inline-code-end]
-
----

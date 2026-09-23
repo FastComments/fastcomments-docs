@@ -2,24 +2,26 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| value | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| value | string | No |  |
+| sso | string | No |  |
 
 ## Odgovor
 
-Vraća: [`GetSearchSitesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchSitesResponse.ts)
+Vraća: [`ModerationSiteSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationSiteSearchResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'getSearchSites Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer getSearchSites'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchSites() {
-  const value: string = "customer support"
-  const tenantId: string = "tenant-9876"
-  const sso: string = "sso-abc123"
+async function runSearches(): Promise<void> {
+  const tenantId: string = "tenant-987654";
+  const query: string = "offensive content";
+  const ssoToken: string = "sso-token-xyz";
 
-  const sites: GetSearchSitesResponse = await getSearchSites(value, tenantId, sso)
-  const sitesOnlyTenant: GetSearchSitesResponse = await getSearchSites(undefined, tenantId)
+  const fullResult: ModerationSiteSearchResponse = await getSearchSites(tenantId, query, ssoToken);
+  const minimalResult: ModerationSiteSearchResponse = await getSearchSites(tenantId);
 }
+
+runSearches();
 [inline-code-end]

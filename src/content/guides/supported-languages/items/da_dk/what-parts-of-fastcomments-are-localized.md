@@ -1,5 +1,5 @@
-Alle FastComments-produkter, der kan **integreres i din applikation eller hjemmeside**, er lokaliserede.
+All FastComments-produkter, der er **indlejrede i din applikation eller hjemmeside**, er lokaliserede.
 
-Alle **e-mails** er fuldt lokaliserede. Den lokalitet, der bruges til at gengive de e-mails, vi sender, er baseret på den sidste lokalitet, som brugeren brugte, da de sidst loggede ind eller kommenterede med kommentarwidgetten.
+Alle **e-mails** er fuldt lokaliserede. Det sprog, der bruges til at gengive de e-mails, vi sender, er baseret på det sidste sprog, brugeren brugte, da de sidst loggede ind eller kommenterede med kommentarswidgeten.
 
-**Admin- og brugerdashboardet** er i øjeblikket ikke lokaliseret, men det er på køreplanen.
+Det **admin- og bruger-dashboard** er lokaliseret. Hver bruger kan vælge deres foretrukne sprog på deres kontodetaljeside.

@@ -1,40 +1,38 @@
 ## Parámetros
 
-| Nombre | Tipo | Obligatorio | Descripción |
-|--------|------|-------------|-------------|
+| Nombre | Tipo | Requerido | Descripción |
+|------|------|----------|-------------|
+| tenantId | string | Sí |  |
 | commentId | string | Sí |  |
 | includeEmail | boolean | No |  |
 | includeIP | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Devuelve: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Conjunto completo de parámetros
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Llamada con solo los parámetros requeridos
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Llamada con parámetros opcionales
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Llamada mínima usando solo el argumento requerido
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Utilice los resultados según sea necesario...
 }
 [inline-code-end]

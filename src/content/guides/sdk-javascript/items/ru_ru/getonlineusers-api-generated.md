@@ -1,36 +1,38 @@
-Сейчас‑онлайн зрители страницы: люди, чья WebSocket‑сессия подписана на страницу прямо сейчас.  
-Возвращает anonCount + totalCount (подписчики на уровне комнаты, включая анонимных зрителей, которых мы не перечисляем).
+Текущие онлайн‑просмотрщики страницы: люди, чья сессия WebSocket подписана на страницу в данный момент.  
+Возвращает anonCount + totalCount (подписчики по всей комнате, включая анонимных зрителей, которых мы не перечисляем).
 
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| urlId | string | Да |  |
-| afterName | string | Нет |  |
-| afterUserId | string | Нет |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
 ## Ответ
 
-Возвращает: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Возвращает: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // С параметрами пагинации (необязательно)
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Без параметров пагинации (необязательно)
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]

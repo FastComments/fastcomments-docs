@@ -2,40 +2,26 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| dir | number | Да |  |
-| sso | string | Не |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| dir | number | Yes |  |
+| sso | string | No |  |
 
 ## Одговор
 
-Враћа: [`GetCommentVoteUserNamesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesResponse.ts)
+Враћа: [`GetCommentVoteUserNamesSuccessResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentVoteUserNamesSuccessResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getCommentVoteUserNames Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getCommentVoteUserNames'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetCommentVoteUserNames() {
-  const tenantId: string = "acme-corp";
-  const commentId: string = "cmt_5f2a1e3b";
-  const dir: number = 1; // растући
+async function example() {
+  const tenantId: string = 'tenant-9876';
+  const commentId: string = 'comment-abc123';
+  const dir: number = 1;
+  const ssoToken: string = 'sso-xyz789';
 
-  const votesWithoutSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(
-    tenantId,
-    commentId,
-    dir
-  );
-
-  const ssoToken: string = "sso_abcdef123456";
-  const votesWithSSO: GetCommentVoteUserNamesResponse = await getCommentVoteUserNames(
-    tenantId,
-    commentId,
-    dir,
-    ssoToken
-  );
-
-  console.log(votesWithoutSSO, votesWithSSO);
+  const resultWithSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);
+  const resultWithoutSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir);
 }
 [inline-code-end]
-
----

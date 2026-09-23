@@ -1,28 +1,33 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 响应
 
-返回：[`DeleteEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateResponse.ts)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteEmailTemplate 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
+interface APIStatus {
+  code: number;
+  message: string;
+}
+
+interface APIEmptyResponse {
+  status?: APIStatus;
+}
+
+(async () => {
   const tenantId: string = "tenant_12345";
-  const templateId: string = "template_abcde";
+  const templateId: string = "template_987";
 
-  const response: DeleteEmailTemplateResponse = await deleteEmailTemplate(tenantId, templateId);
-
-  // 示例：访问响应中的可选属性
-  const statusCode: number | undefined = response.status?.code;
-}();
+  const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
+})();
 [inline-code-end]
 
 ---

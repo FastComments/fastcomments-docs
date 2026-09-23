@@ -1,14 +1,14 @@
-Enable or disable notifications for a specific comment.
+Benachrichtigungen für einen bestimmten Kommentar aktivieren oder deaktivieren.
 
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|---------------|
-| tenantId | string | Yes |  |
-| notificationId | string | Yes |  |
-| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Yes |  |
-| commentId | string | Yes |  |
-| sso | string | No |  |
+|------|------|--------------|--------------|
+| tenantId | string | Ja |  |
+| notificationId | string | Ja |  |
+| optedInOrOut | UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum | Ja |  |
+| commentId | string | Ja |  |
+| sso | string | Nein |  |
 
 ## Antwort
 
@@ -18,15 +18,15 @@ Rückgabe: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://g
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const notificationId: string = "notif_9876";
-const commentId: string = "comment_abc123";
-const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
-  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
-const sso: string = "ssoTokenXYZ";
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const notificationId: string = "notif_9876";
+  const commentId: string = "comment_abc123";
+  const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
+    UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
+  const sso: string = "sso_token_456";
 
-const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(
+  const resultWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(
     tenantId,
     notificationId,
     optedInOrOut,
@@ -34,13 +34,11 @@ const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
     sso
   );
 
-const responseWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(
+  const resultWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(
     tenantId,
     notificationId,
     optedInOrOut,
     commentId
   );
+}
 [inline-code-end]
-
----

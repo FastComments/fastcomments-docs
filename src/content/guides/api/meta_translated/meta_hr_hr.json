@@ -4,14 +4,14 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Resursi API-ja",
+      "name": "API Resursi",
       "file": "api-resources.md",
-      "subCat": "Resursi API-ja"
+      "subCat": "API Resursi"
     },
     {
-      "name": "OAuth Autorizacija",
+      "name": "OAuth autorizacija",
       "file": "oauth.md",
-      "subCat": "Autentikacija"
+      "subCat": "Autentifikacija"
     },
     {
       "name": "Agregirajte svoje podatke",
@@ -19,15 +19,15 @@
       "subCat": "Agregacije"
     },
     {
-      "name": "Struktura revizijskog zapisa",
+      "name": "Struktura AuditLog-a",
       "file": "audit-log-structure.md",
-      "subCat": "Revizijski zapisi"
+      "subCat": "AuditLogovi"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Revizijski zapisi"
+      "subCat": "AuditLogovi"
     },
     {
       "name": "Struktura komentara",
@@ -89,7 +89,7 @@
       "subCat": "Komentari"
     },
     {
-      "name": "Struktura predloška e-pošte",
+      "name": "Struktura predložaka e-pošte",
       "file": "email-template-structure.md",
       "subCat": "Predlošci e-pošte"
     },
@@ -130,7 +130,7 @@
       "subCat": "Predlošci e-pošte"
     },
     {
-      "name": "Struktura objave u feedu",
+      "name": "Struktura FeedPost-a",
       "file": "feed-post-structure.md",
       "subCat": "Objave u feedu"
     },
@@ -191,7 +191,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Meni"
+      "subCat": "Ja"
     },
     {
       "name": "Struktura moderatora",
@@ -270,6 +270,53 @@
       "subCat": "Obavijesti"
     },
     {
+      "name": "Javni API reakcija na stranicu",
+      "file": "page-reacts-api.md",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na stranicu"
+    },
+    {
       "name": "Struktura stranice",
       "file": "page-structure.md",
       "subCat": "Stranice"
@@ -305,7 +352,65 @@
       "subCat": "Stranice"
     },
     {
-      "name": "Struktura čekajućeg webhook događaja",
+      "name": "Struktura ankete",
+      "file": "poll-structure.md",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "Struktura glasova za anketu",
+      "file": "poll-vote-structure.md",
+      "subCat": "Glasovi za anketu"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi za anketu"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi za anketu"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi za anketu"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi za anketu"
+    },
+    {
+      "name": "Struktura čekajućih webhook događaja",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Čekajući webhook događaji"
     },

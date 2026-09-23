@@ -1,43 +1,49 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentId | string | 是 |  |
-| voteId | string | 是 |  |
-| urlId | string | 是 |  |
-| broadcastId | string | 是 |  |
-| editKey | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| voteId | string | Yes |  |
+| urlId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| editKey | string | No |  |
+| sso | string | No |  |
 
 ## 回應
 
-返回：[`DeleteCommentVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentVoteResponse.ts)
+Returns: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteCommentVote 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeVote() {
-  const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const voteId: string = "vote_abcde";
-  const urlId: string = "url_56789";
-  const broadcastId: string = "brd_001";
-  const editKey: string = "edit_456";
-  // sso 為可選項，已省略
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_9876";
+const voteId: string = "vote_555";
+const urlId: string = "url_abcde";
+const broadcastId: string = "brd_2023";
+const editKey: string = "edit_abc123"; // 可選
+const ssoToken: string = "sso_token_xyz"; // 可選
 
-  const response: DeleteCommentVoteResponse = await deleteCommentVote(
-    tenantId,
-    commentId,
-    voteId,
-    urlId,
-    broadcastId,
-    editKey
-  );
+// 僅使用必要參數與一個可選參數 呼叫
+const deleteResult: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey
+);
 
-  console.log(response);
-}
-
-removeVote();
+// 同時使用兩個可選參數 呼叫
+const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
+  tenantId,
+  commentId,
+  voteId,
+  urlId,
+  broadcastId,
+  editKey,
+  ssoToken
+);
 [inline-code-end]

@@ -1,8 +1,7 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
-|------|------|----------|------|
+|------|------|----------|-------------|
 | tenantId | string | Da |  |
 | id | string | Da |  |
 | userId | string | Ne |  |
@@ -10,22 +9,20 @@
 
 ## Odgovor
 
-Vrne: [`UnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnFlagCommentResponse.ts)
+Vrne: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer unFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const commentId: string = "cmt_123456";
-const userId: string = "usr_98765";
+async function runExample() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt-20230915-001";
+  const userId: string = "user-42";
 
-const result: UnFlagCommentResponse = await unFlagComment(tenantId, commentId, userId);
+  const unflaggedByUser: FlagCommentResponse = await unFlagComment(tenantId, commentId, userId);
+  const unflaggedByAnon: FlagCommentResponse = await unFlagComment(tenantId, commentId, undefined, "anon-xyz");
 
-const anonCommentId: string = "cmt_123457";
-const anonUserId: string = "anon_abc123";
-
-const anonResult: UnFlagCommentResponse = await unFlagComment(tenantId, anonCommentId, undefined, anonUserId);
+  console.log(unflaggedByUser, unflaggedByAnon);
+}
 [inline-code-end]
-
----

@@ -1,35 +1,28 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | No |  |
-| bulkCreateHashTagsBody | BulkCreateHashTagsBody | No |  |
+| tenantId | string | はい |  |
+| bulkCreateHashTagsBody | BulkCreateHashTagsBody | いいえ |  |
 
-## 応答
+## レスポンス
 
-戻り値: [`AddHashTagsBulkResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AddHashTagsBulkResponse.ts)
+返り値: [`BulkCreateHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkCreateHashTagsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'addHashTagsBulk の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
-    const tenantId: string | undefined = "tenant_9f8b7c6d";
-    const bulkCreateHashTagsBody: BulkCreateHashTagsBody = {
-        tags: [
-            {
-                name: "typescript",
-                description: "Discussions about TypeScript",
-                color: "#3178c6"
-            },
-            {
-                name: "fastcomments",
-                description: "Tags for FastComments integration",
-                color: "#00aaff"
-            }
-        ]
-    };
-    const result: AddHashTagsBulkResponse = await addHashTagsBulk(tenantId, bulkCreateHashTagsBody);
-    console.log(result);
-}();
+const tenantId: string = "tenant_9f8b7c6d";
+
+const tags: BulkCreateHashTagsBodyTagsInner[] = [
+  { name: "typescript", color: "#3178c6" },
+  { name: "fastcomments", color: "#ff6600" }
+];
+
+const bulkBody: BulkCreateHashTagsBody = { tags };
+
+const resultWithBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId, bulkBody);
+
+const resultWithoutBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId);
 [inline-code-end]

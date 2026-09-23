@@ -1,38 +1,41 @@
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
-|------|------|--------------|----------|
-| commentId | string | Да |  |
-| spam | boolean | Не |  |
-| permNotSpam | boolean | Не |  |
-| broadcastId | string | Не |  |
-| tenantId | string | Не |  |
-| sso | string | Не |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| spam | boolean | No |  |
+| permNotSpam | boolean | No |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## Отговор
 
-Връща: [`PostSetCommentSpamStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentSpamStatusResponse.ts)
+Връща: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoSpamStatus(): Promise<void> {
-  const commentId: string = "cmt_5f2a1b3c4d6e7f8g9h0i";
+const tenantId: string = "tenant_42";
+const commentId: string = "comment_1001";
 
-  // Само задължителен параметър
-  const resultSimple: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(commentId, true);
+const spam: boolean = true;
+const permNotSpam: boolean = false;
+const broadcastId: string = "broadcast_2023";
+const sso: string = "sso_user_5678";
 
-  // Всички незадължителни параметри са предоставени
-  const resultFull: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(
-    commentId,
-    false,
-    true,
-    "brd_1234abcd",
-    "tenant_42",
-    "sso_9876xyz"
-  );
+const resultFull: APIEmptyResponse = await postSetCommentSpamStatus(
+  tenantId,
+  commentId,
+  spam,
+  permNotSpam,
+  broadcastId,
+  sso
+);
 
-  console.log(resultSimple, resultFull);
-}
+const resultMinimal: APIEmptyResponse = await postSetCommentSpamStatus(
+  tenantId,
+  commentId
+);
 [inline-code-end]

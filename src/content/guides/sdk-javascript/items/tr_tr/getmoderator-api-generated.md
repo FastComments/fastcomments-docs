@@ -1,25 +1,23 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
 
 ## Yanıt
 
-Döner: [`GetModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorResponse1.ts)
+Döndürür: [`GetModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getModerator Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-001";
-  const id: string = "mod-12345";
-
-  const result: GetModeratorResponse1 = await getModerator(tenantId, id);
-
-  const moderatorName: string | undefined = result.moderator?.name;
-  console.log(moderatorName);
-})();
+async function fetchModerator() {
+  const tenantId: string = "c9f1e2b3-4d5a-6f78-90ab-cdef12345678";
+  const moderatorId: string = "mod-987654";
+  const response: GetModeratorResponse = await getModerator(tenantId, moderatorId);
+  const isActive: boolean | undefined = response.moderator?.isActive;
+  const statusCode: number | undefined = response.status?.code;
+}
 [inline-code-end]

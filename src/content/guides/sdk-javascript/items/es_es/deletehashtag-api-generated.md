@@ -1,26 +1,26 @@
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
-|------|------|----------|-------------|
+|--------|------|-------------|-------------|
+| tenantId | string | Sí |  |
 | tag | string | Sí |  |
-| tenantId | string | No |  |
 | deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
 
 ## Respuesta
 
-Devuelve: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo deleteHashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tag: string = "announcement";
-  const tenantId: string = "tenant_9876";
-  const requestBody: DeleteHashTagRequestBody = {
-    confirmDeletion: true
-  };
-  const response: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, requestBody);
-  console.log(response);
-})();
+const tenantId: string = "tenant_42";
+const tag: string = "high-priority";
+
+const requestBody: DeleteHashTagRequestBody = {
+  // rellenar campos según sea necesario
+};
+
+const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
+const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]

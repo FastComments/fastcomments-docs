@@ -1,28 +1,23 @@
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | id | string | Так |  |
 
 ## Відповідь
 
-Повертає: [`GetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeResponse.ts)
+Повертає: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeResponse.ts)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'getUserBadge Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад getUserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample(): Promise<void> {
-  const tenantId: string = "acme-corp-tenant-001";
-  const badgeId: string = "badge-5f9d3a2b";
-
-  const badgeResponse: GetUserBadgeResponse = await getUserBadge(tenantId, badgeId);
-
-  // Безпечний доступ до необов’язкових полів
-  const badgeName: string | undefined = badgeResponse.userBadge?.name;
-  console.log(`Badge ID: ${badgeId}, Name: ${badgeName ?? "Unnamed"}`);
+async function demoGetUserBadge() {
+    const tenantId: string = "tenant-9f8b7c6d";
+    const userId: string = "user-123456";
+    const badgeResponse: APIGetUserBadgeResponse = await getUserBadge(tenantId, userId);
 }
-
-runExample();
 [inline-code-end]
+
+---

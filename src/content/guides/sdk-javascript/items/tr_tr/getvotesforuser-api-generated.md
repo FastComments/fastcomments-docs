@@ -1,29 +1,29 @@
-## Parameters
+## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | Evet |  |
+| urlId | string | Evet |  |
+| userId | string | Hayır |  |
+| anonUserId | string | Hayır |  |
 
-## Response
+## Yanıt
 
-Returns: [`GetVotesForUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesForUserResponse1.ts)
+Döndürür: [`GetVotesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesForUserResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getVotesForUser Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function demo() {
-  const tenantId: string = "acme-corp";
-  const urlId: string = "post-9f8b7c";
-  const userId: string = "user-42";
-  const anonUserId: string = "anon-123";
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "post_9876";
+  const userId: string = "user_abcde";
+  const anonUserId: string = "anon_5678";
 
-  const votesRequiredOnly: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId);
-  const votesWithUserId: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId, userId);
-  const votesWithAnonId: GetVotesForUserResponse1 = await getVotesForUser(tenantId, urlId, undefined, anonUserId);
+  const responseWithUser: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, userId);
+  const responseWithAnon: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, undefined, anonUserId);
 }
+
 demo();
 [inline-code-end]

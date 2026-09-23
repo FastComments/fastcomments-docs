@@ -1,23 +1,21 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|------------|-------------|
+|------|------|-------------|-------------|
 | tenantId | string | Oui |  |
 | skip | number | Non |  |
 
 ## Réponse
 
-Retourne : [`GetTenantUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse1.ts)
+Retourne : [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'getTenantUsers Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple getTenantUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_9f7a2c";
-  const skip: number = 25;
+const tenantId: string = "tenant_12345";
+const skip: number = 20;
 
-  const usersPage: GetTenantUsersResponse1 = await getTenantUsers(tenantId, skip);
-  const allUsers: GetTenantUsersResponse1 = await getTenantUsers(tenantId);
-})();
+const firstPage: GetTenantUsersResponse = await getTenantUsers(tenantId);
+const secondPage: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);
 [inline-code-end]

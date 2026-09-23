@@ -2,40 +2,40 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| usernameStartsWith | string | No |  |
-| mentionGroupIds | Array<string> | No |  |
-| sso | string | No |  |
-| searchSection | SearchUsersSearchSectionEnum | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| usernameStartsWith | string | Нет |  |
+| mentionGroupIds | Array<string> | Нет |  |
+| sso | string | Нет |  |
+| searchSection | SearchUsersSearchSectionEnum | Нет |  |
 
 ## Ответ
 
-Возвращает: [`SearchUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResponse1.ts)
+Возвращает: [`SearchUsersResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SearchUsersResult.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'searchUsers Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример searchUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoSearch(): Promise<void> {
-    const tenantId: string = "tenant_12345";
-    const urlId: string = "article-9876";
-    const usernameStartsWith: string = "john";
-    const mentionGroupIds: string[] = ["groupA", "groupB"];
-    const sso: string = "sso_abc123";
-    const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.Users;
+async function example() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "article-9876";
+  const usernameStartsWith: string = "john";
+  const mentionGroupIds: string[] = ["group1", "group2"];
+  const sso: string = "sso_token_abc";
+  const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.MENTIONS;
 
-    const response: SearchUsersResponse1 = await searchUsers(
-        tenantId,
-        urlId,
-        usernameStartsWith,
-        mentionGroupIds,
-        sso,
-        searchSection
-    );
+  const result: SearchUsersResult = await searchUsers(
+    tenantId,
+    urlId,
+    usernameStartsWith,
+    mentionGroupIds,
+    sso,
+    searchSection
+  );
 
-    console.log(response);
+  console.log(result);
 }
-
-demoSearch();
 [inline-code-end]
+
+---

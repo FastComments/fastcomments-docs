@@ -1,27 +1,29 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| broadcastId | string | 예 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`PinCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PinCommentResponse.ts)
+반환: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'pinComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'pinComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant-001';
-  const commentId: string = 'comment-5678';
-  const broadcastId: string = 'broadcast-2023';
-  const ssoToken: string = 'sso-xyz-789';
+async function demoPinComment() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_54321";
 
-  const pinResult: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId);
-  const pinResultWithSso: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);
-})();
+  const resultWithoutSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId);
+  const ssoToken: string = "sso_abcde12345";
+  const resultWithSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);
+}
+
+demoPinComment();
 [inline-code-end]

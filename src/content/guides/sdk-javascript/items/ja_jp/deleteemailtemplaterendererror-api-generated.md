@@ -1,6 +1,6 @@
 ## パラメータ
 
-| 名前 | タイプ | 必須 | 説明 |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
 | tenantId | string | はい |  |
 | id | string | はい |  |
@@ -8,27 +8,19 @@
 
 ## レスポンス
 
-返却: [`DeleteEmailTemplateRenderErrorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteEmailTemplateRenderErrorResponse.ts)
+返り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'deleteEmailTemplateRenderError の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function executeDelete() {
-  const tenantId: string = "tenant_12345";
-  const templateId: string = "email_tpl_001";
-  const errorId: string = "render_err_2023";
+async function removeRenderError() {
+  const tenantId: string = "acme-corp-tenant";
+  const templateId: string = "welcome-email-template";
+  const errorId: string = "render-err-20230915";
 
-  const result: DeleteEmailTemplateRenderErrorResponse = await deleteEmailTemplateRenderError(
-    tenantId,
-    templateId,
-    errorId
-  );
-
-  console.log(result);
+  const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 }
-
-executeDelete();
 [inline-code-end]
 
 ---

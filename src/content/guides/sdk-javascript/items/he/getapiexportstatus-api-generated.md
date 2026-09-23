@@ -2,25 +2,26 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
+| tenantId | string | כן |  |
 | batchJobId | string | לא |  |
-| tenantId | string | לא |  |
 | sso | string | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetApiExportStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiExportStatusResponse.ts)
+מחזיר: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportStatusResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'getApiExportStatus דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoExportStatus() {
-    const batchJobId: string = "exportBatch-20231101-001";
-    const tenantId: string = "tenant-abc123";
-    const ssoToken: string = "sso-xyz789";
+async function run() {
+  const tenantId: string = "tenant_12345";
+  const batchJobId: string = "job_98765";
+  const ssoToken: string = "sso_abcde12345";
 
-    const fullStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId, tenantId, ssoToken);
-    const simpleStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId);
-    console.log(fullStatus, simpleStatus);
+  const statusOnlyTenant: ModerationExportStatusResponse = await getApiExportStatus(tenantId);
+  const statusWithBatch: ModerationExportStatusResponse = await getApiExportStatus(tenantId, batchJobId);
+  const statusFull: ModerationExportStatusResponse = await getApiExportStatus(tenantId, batchJobId, ssoToken);
 }
+run();
 [inline-code-end]

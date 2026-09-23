@@ -1,37 +1,37 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
 |------|------|--------------|--------------|
-| tenantId | string | Ja |  |
-| userId | string | Ja |  |
-| id | string | Ja |  |
-| changeTicketStateBody | ChangeTicketStateBody | Ja |  |
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| id | string | Yes |  |
+| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
 
 ## Antwort
 
-Rückgabe: [`ChangeTicketStateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse1.ts)
+Rückgabe: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'changeTicketState Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp";
-const userId: string = "user-97123";
-const ticketId: string = "ticket-45001";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "john.doe";
+  const ticketId: string = "ticket-20230915-001";
 
-const changeTicketStateBody: ChangeTicketStateBody = {
-  state: "closed",
-  // optionales Feld im Body
-  comment: "Issue resolved after code fix"
-};
+  const changeTicketStateBody: ChangeTicketStateBody = {
+    // Beispiel für optionales Feld
+    note: "Resolved after investigation"
+  };
 
-const response: ChangeTicketStateResponse1 = await changeTicketState(
-  tenantId,
-  userId,
-  ticketId,
-  changeTicketStateBody
-);
+  const response: ChangeTicketStateResponse = await changeTicketState(
+    tenantId,
+    userId,
+    ticketId,
+    changeTicketStateBody
+  );
+
+  console.log(response);
+})();
 [inline-code-end]
-
----

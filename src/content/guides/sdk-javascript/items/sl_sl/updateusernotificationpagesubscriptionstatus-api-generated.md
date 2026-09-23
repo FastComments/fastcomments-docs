@@ -4,12 +4,12 @@ Omogočite ali onemogočite obvestila za stran. Ko so uporabniki naročeni na st
 
 | Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| url | string | Da |  |
-| pageTitle | string | Da |  |
-| subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Da |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| url | string | Yes |  |
+| pageTitle | string | Yes |  |
+| subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Yes |  |
+| sso | string | No |  |
 
 ## Odziv
 
@@ -17,18 +17,18 @@ Vrne: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.co
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer updateUserNotificationPageSubscriptionStatus'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-2024";
-  const urlId: string = "page-5678";
-  const url: string = "https://example.com/articles/typescript-tips";
-  const pageTitle: string = "Top TypeScript Tips";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const url: string = "https://example.com/articles/awesome-article";
+  const pageTitle: string = "Awesome Article";
   const subscribedOrUnsubscribed: UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum =
     UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum.Subscribed;
-  const sso: string = "sso-token-xyz";
+  const sso: string = "sso_token_abc";
 
-  const resultWithSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
+  const response: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
     tenantId,
     urlId,
     url,
@@ -37,14 +37,10 @@ Vrne: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.co
     sso
   );
 
-  const resultWithoutSso: UpdateUserNotificationPageSubscriptionStatusResponse = await updateUserNotificationPageSubscriptionStatus(
-    tenantId,
-    urlId,
-    url,
-    pageTitle,
-    subscribedOrUnsubscribed
-  );
-})();
+  console.log(response);
+}
+
+runExample();
 [inline-code-end]
 
 ---

@@ -1,23 +1,22 @@
 ## Parametreler
 
-| Ad | Tür | Zorunlu | Açıklama |
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| skip | number | Hayır |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
+Döndürür: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getModerators Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchModerators(): Promise<void> {
-  const tenantId: string = "tenant-9876";
-  const skip: number = 30; // isteğe bağlı sayfalama ofseti
-  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
-  // Sayfalama olmadan örnek:
-  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
-}
+const tenantId: string = "tenant_987654321";
+
+const moderators: GetModeratorsResponse = await getModerators(tenantId);
+
+const skip: number = 20;
+const moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);
 [inline-code-end]

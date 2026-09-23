@@ -2,26 +2,26 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| editKey | string | No |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
+| editKey | string | 否 |  |
 
 ## 响应
 
-返回: [`DeleteVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteVoteResponse.ts)
+返回：[`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteVote 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp";
-  const commentId: string = "comment-9876";
-  const editKey: string = "edit-key-123";
+async function run() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "comment_98765";
+  const editKey: string = "edit_abcde";
 
-  const resultWithEdit: DeleteVoteResponse = await deleteVote(tenantId, commentId, editKey);
-  const resultWithoutEdit: DeleteVoteResponse = await deleteVote(tenantId, commentId);
-})();
+  const responseWithKey: VoteDeleteResponse = await deleteVote(tenantId, commentId, editKey);
+  const responseWithoutKey: VoteDeleteResponse = await deleteVote(tenantId, commentId);
+}
+
+run();
 [inline-code-end]
-
----

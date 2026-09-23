@@ -2,36 +2,39 @@
 
 | Naam | Type | Verplicht | Beschrijving |
 |------|------|-----------|--------------|
-| value | string | No |  |
-| filters | string | No |  |
-| searchFilters | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Ja |  |
+| value | string | Nee |  |
+| filters | string | Nee |  |
+| searchFilters | string | Nee |  |
+| sso | string | Nee |  |
 
 ## Respons
 
-Returns: [`GetSearchCommentsSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchCommentsSummaryResponse.ts)
+Retourneert: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationCommentSearchResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getSearchCommentsSummary Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample(): Promise<void> {
-    const searchTerm: string = "fastcomments integration";
-    const filterString: string = "status:approved";
-    const searchFilterString: string = "author:jane";
-    const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
-    const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+async function runSearch() {
+  const tenantId: string = "tenant_12345";
+  const value: string = "spam";
+  const filters: string = "status:pending";
+  const searchFilters: string = "author:john";
+  const sso: string = "sso_token_abc";
 
-    const summary: GetSearchCommentsSummaryResponse = await getSearchCommentsSummary(
-        searchTerm,
-        filterString,
-        searchFilterString,
-        tenantId,
-        ssoToken
-    );
+  const result: ModerationCommentSearchResponse = await getSearchCommentsSummary(
+    tenantId,
+    value,
+    filters,
+    searchFilters,
+    sso
+  );
 
-    console.log(summary);
+  console.log(result);
 }
-runExample();
+
+runSearch();
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
@@ -11,32 +11,29 @@
 
 ## Відповідь
 
-Повертає: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
+Повертає: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад updateComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const commentId: string = "cmt_98765";
-
-const updatableCommentParams: UpdatableCommentParams = {
-  // приклад полів; фактична структура залежить від визначення API
-  // наприклад, body: "Edited comment content",
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+const commentId: string = "comment-9876543210";
+const updateParams: UpdatableCommentParams = {
+  content: "Edited comment content",
+  isApproved: true
 };
 
-const contextUserId: string = "user_abcde";
+const contextUserId: string = "user-11223344";
 const doSpamCheck: boolean = true;
 const isLive: boolean = false;
 
-const result: UpdateCommentResponse = await updateComment(
+const response: APIEmptyResponse = await updateComment(
   tenantId,
   commentId,
-  updatableCommentParams,
+  updateParams,
   contextUserId,
   doSpamCheck,
   isLive
 );
 [inline-code-end]
-
----

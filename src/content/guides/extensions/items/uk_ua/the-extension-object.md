@@ -1,36 +1,40 @@
-Об'єкт розширення складається з наступного визначення:
+The extension object consists of the following definition:
 
-<!-- якщо ви хочете оновити це, не забудьте також оновити comment-ui-core -->
-[inline-code-attrs-start title = "JSDoc об'єкта розширення"; type = 'javascript'; inline-code-attrs-end]
+<!-- якщо ви хочете оновити це, пам’ятайте оновити comment-ui-core -->
+[inline-code-attrs-start title = 'Об’єкт розширення JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Об'єкт розширення FastCommentsUI. Використовується для відкладеного (lazy) завантаження певних компонентів. Наприклад, система рецензій
- * не використовується всіма клієнтами, тому ми завантажуємо це розширення лише тоді, коли воно потрібно.
+ * Об’єкт розширення FastCommentsUI. Використовується для відкладеного завантаження певних компонентів. 
+ * Наприклад, система відгуків не використовується всіма клієнтами, тому ми завантажуємо це розширення лише коли це потрібно.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Кореневий DOM-вузол віджета.
+ * @property {Element} root - DOM‑вузол кореня віджета.
  * @property {string} [css]
- * @property {Object} config - Об'єкт конфігурації FastComments.
- * @property {Object} commentsById - Посилання на об'єкт з усіма коментарями за id, який підтримується в актуальному стані.
+ * @property {Object} config - Об’єкт конфігурації FastComments.
+ * @property {Object} commentsById - Посилання на об’єкт, що містить усі коментарі за їх ідентифікаторами, який постійно оновлюється.
  * @property {Object} translations - Посилання на всі переклади.
  * @property {Function} reRenderComment - Посилання на функцію, яку можна викликати для повторного рендерингу коментаря.
- * @property {Function} removeCommentAndReRender - Посилання на функцію, яку можна викликати для видалення коментаря з пам'яті та повторного рендерингу відповідної частини DOM.
- * @property {Function} newBroadcastId - Посилання на функцію, яку можна викликати для створення нового broadcast id та додавання його до локального списку broadcast id, які слід ігнорувати.
+ * @property {Function} removeCommentAndReRender - Посилання на функцію, яку можна викликати для видалення коментаря з пам’яті та повторного рендерингу відповідної частини DOM.
+ * @property {Function} newBroadcastId - Посилання на функцію, яку можна викликати для створення нового ідентифікатора трансляції та додавання його до локального списку ідентифікаторів трансляцій, які слід ігнорувати.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Викликається з коментарем, який збираються опублікувати. Повернення false скасовує відправку (наприклад, коли прикріплене опитування незавершене).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Фільтрує HTML для області відповіді на коментар.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Фільтрує HTML для області коментаря.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Фільтрує HTML для всього віджета під час рендерингу.
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Фільтрує HTML для кожного коментаря перед рендерингом.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Фільтрує HTML для меню кожного коментаря перед рендерингом.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Фільтрує HTML для кожного меню коментаря перед рендерингом.
  * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Фільтрує HTML для всього віджета під час рендерингу.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (ЗАСТАРІЛЕ) Повертає HTML, який додається до верхньої частини області відповіді.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (ЗАСТАРІЛЕ) Повертає HTML, який додається до верхньої частини віджета.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (ЗАСТАРІЛЕ) Повертає HTML, який додається до верхньої частини елемента коментаря.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (ЗАСТАРІЛЕ) Повертає HTML, який додається до нижньої частини елемента коментаря.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (ЗАСТАРІЛЕ) Повертає HTML, який додається до нижньої частини елемента меню для кожного коментаря.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Повертає HTML, який додається у верхню частину області відповіді.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Повертає HTML, який додається у верхню частину віджета.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Повертає HTML, який додається у верхню частину елементу коментаря.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Повертає HTML, який додається у нижню частину елементу коментаря.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Повертає HTML, який додається після тексту коментаря, всередині елементу вмісту коментаря (використовується в опитуваннях).
+ * @property {Function} [replyAreaInputBottom] - Повертає HTML, який додається всередині фрейму вводу коментаря, під текстовим полем (використовується в опитуваннях для вбудованого редактора опитувань). Отримує ідентифікатор батьківського коментаря або null для кореневого поля відповіді.
+ * @property {Function} [onPollUpdate] - Викликається під час живої події, коли змінюються підрахунки голосів в опитуванні на сторінці.
+ * @property {Function} isSiteAdmin - Повертає, чи є переглядач адміністратором або модератором орендаря. Відомо після першого запиту.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Повертає HTML, який додається у нижню частину елементу меню для кожного коментаря.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -40,7 +44,7 @@
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Кореневий елемент.
- * @param {Object.<string, Function>} clickListeners - Обробники подій для кліків, згруповані за іменем класу, які можна змінювати за посиланням.
+ * @param {Object.<string, Function>} clickListeners - Обробники подій кліків, за назвою класу, які можна змінювати за посиланням.
  * @returns void
  */
 

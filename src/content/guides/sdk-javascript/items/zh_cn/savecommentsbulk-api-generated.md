@@ -2,44 +2,66 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createCommentParams | Array<CreateCommentParams> | 是 |  |
-| isLive | boolean | 否 |  |
-| doSpamCheck | boolean | 否 |  |
-| sendEmails | boolean | 否 |  |
-| populateNotifications | boolean | 否 |  |
+| tenantId | string | Yes |  |
+| createCommentParams | Array<CreateCommentParams> | Yes |  |
+| isLive | boolean | No |  |
+| doSpamCheck | boolean | No |  |
+| sendEmails | boolean | No |  |
+| populateNotifications | boolean | No |  |
 
 ## 响应
 
-返回: `Array<SaveCommentsBulkResponse`
+Returns: `Array<SaveCommentsBulkResponse`
 
 ## 示例
 
 [inline-code-attrs-start title = 'saveCommentsBulk 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8b7c6d";
+const tenantId: string = "tenant_12345";
 
-const bulkComments: CreateCommentParams[] = [
-  {
-    content: "Welcome to the new forum thread!",
-    authorId: "user_42",
-    mentions: [{ userId: "user_84", username: "alice" }],
-    hashtags: [{ tag: "intro" }]
-  },
-  {
-    content: "Please review the updated guidelines.",
-    authorId: "moderator_1",
-    mentions: [],
-    hashtags: [{ tag: "guidelines" }, { tag: "update" }]
-  }
-];
+const mention1: CommentUserMentionInfo = {
+  userId: "user_002",
+  start: 10,
+  end: 20,
+};
+
+const hashtag1: CommentUserHashTagInfo = {
+  tag: "news",
+  start: 30,
+  end: 35,
+};
+
+const poll1: CommentPollInput = {
+  question: "Did you find this helpful?",
+  options: ["Yes", "No"],
+};
+
+const commentA: CreateCommentParams = {
+  content: "This is a great article!",
+  userId: "user_001",
+  mentions: [mention1],
+  hashtags: [hashtag1],
+  poll: poll1,
+};
+
+const commentB: CreateCommentParams = {
+  content: "I have a question about the topic.",
+  userId: "user_003",
+};
+
+const createCommentParams: CreateCommentParams[] = [commentA, commentB];
+
+const isLive: boolean = true;
+const doSpamCheck: boolean = false;
+const sendEmails: boolean = true;
+const populateNotifications: boolean = false;
 
 const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
   tenantId,
-  bulkComments,
-  true,      // 是否实时
-  false,     // 是否进行垃圾邮件检查
-  true,      // 发送电子邮件
-  undefined  // populateNotifications（使用默认值）
+  createCommentParams,
+  isLive,
+  doSpamCheck,
+  sendEmails,
+  populateNotifications
 );
 [inline-code-end]

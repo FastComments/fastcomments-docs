@@ -2,40 +2,37 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postId | string | Yes |  |
-| reactBodyParams | ReactBodyParams | Yes |  |
-| isUndo | boolean | No |  |
-| broadcastId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| postId | string | Да |  |
+| reactBodyParams | ReactBodyParams | Да |  |
+| isUndo | boolean | Не |  |
+| broadcastId | string | Не |  |
+| sso | string | Не |  |
 
 ## Одговор
 
-Враћа: [`ReactFeedPostPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostPublicResponse.ts)
+Враћа: [`ReactFeedPostResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ReactFeedPostResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'reactFeedPostPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_12345';
-  const postId: string = 'post_98765';
-  const reactBodyParams: ReactBodyParams = { reaction: 'thumbs_up' };
-  const isUndo: boolean = false;
-  const broadcastId: string = 'broadcast_abcde';
-  const sso: string = 'sso_token_xyz';
-
-  const response: ReactFeedPostPublicResponse = await reactFeedPostPublic(
+async function demoReact() {
+  const tenantId: string = "tenant_12345";
+  const postId: string = "post_98765";
+  const reactBodyParams: ReactBodyParams = {
+    type: "like",
+    userId: "user_abcde"
+  };
+  const response: ReactFeedPostResponse = await reactFeedPostPublic(
     tenantId,
     postId,
     reactBodyParams,
-    isUndo,
-    broadcastId,
-    sso
+    true,
+    "broadcast_001",
+    "sso_token_xyz"
   );
-
-  console.log(response);
-})();
+}
 [inline-code-end]
 
 ---

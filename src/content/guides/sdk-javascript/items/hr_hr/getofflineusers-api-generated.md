@@ -1,6 +1,6 @@
-Past komentatori na stranici koji NI SU trenutno online. Sortirano po displayName.  
+Past komentatori na stranici koji NISU trenutno online. Sortirano po displayName.  
 Koristite ovo nakon što iscrpite /users/online za prikaz odjeljka „Članovi”.  
-Kursor paginacija po commenterName: server prolazi kroz djelomični {tenantId, urlId, commenterName} indeks od afterName naprijed putem $gt, bez troška $skip.
+Kursor paginacija po commenterName: poslužitelj prolazi kroz djelomični {tenantId, urlId, commenterName} indeks od afterName naprijed putem $gt, bez troška $skip.
 
 ## Parameters
 
@@ -13,25 +13,27 @@ Kursor paginacija po commenterName: server prolazi kroz djelomični {tenantId, u
 
 ## Response
 
-Vraća: [`GetOfflineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOfflineUsersResponse.ts)
+Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
-## Primjer
+## Example
 
 [inline-code-attrs-start title = 'Primjer getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchOfflineUsers(): Promise<void> {
-    const tenantId: string = "tenant_12345";
-    const urlId: string = "thread_9876";
-    const afterName: string = "Jane Smith";
-    const afterUserId: string = "user_7f9b3c";
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "page_9876";
+  const afterName: string = "John Doe";
+  const afterUserId: string = "user_abc123";
 
-    const offlineUsers: GetOfflineUsersResponse = await getOfflineUsers(
-        tenantId,
-        urlId,
-        afterName,
-        afterUserId
-    );
+  const offlineResponse: PageUsersOfflineResponse = await getOfflineUsers(
+    tenantId,
+    urlId,
+    afterName,
+    afterUserId
+  );
 
-    console.log(offlineUsers);
+  console.log(offlineResponse);
 }
 [inline-code-end]
+
+---

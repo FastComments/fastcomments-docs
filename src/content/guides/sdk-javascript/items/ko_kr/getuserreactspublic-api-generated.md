@@ -1,29 +1,25 @@
-## Parameters
+## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postIds | Array<string> | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| postIds | Array<string> | 아니오 |  |
+| sso | string | 아니오 |  |
 
-## Response
+## 응답
 
-반환: [`GetUserReactsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublicResponse.ts)
+반환: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UserReactsResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'getUserReactsPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "tenant_12345";
-  const postIds: string[] = ["post_1a2b3c", "post_4d5e6f"];
-  const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+const tenantId: string = "tenant_12345";
+const postIds: string[] = ["post_abc", "post_def"];
+const ssoToken: string = "sso_token_987";
 
-  const fullResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
-  const minimalResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId);
-}
-
-demo();
+const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
+const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId);
 [inline-code-end]
 
 ---

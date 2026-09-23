@@ -1,23 +1,26 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτούμενο | Περιγραφή |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| title | string | No |  |
+| tenantId | string | Ναι |  |
+| urlId | string | Ναι |  |
+| title | string | Όχι |  |
+| sso | string | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
-Επιστρέφει: [`CreateV1PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReactResponse.ts)
+Επιστρέφει: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα createV1PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const urlId: string = "article-2024-06-improvements";
-const title: string = "FastComments API Integration Guide";
+const tenantId: string = "my-tenant-123";
+const urlId: string = "article-456";
 
-const responseWithTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId, title);
-const responseWithoutTitle: CreateV1PageReactResponse = await createV1PageReact(tenantId, urlId);
+const pageTitle: string = "Understanding TypeScript Generics";
+const ssoToken: string = "user-789-token";
+
+const fullResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId, pageTitle, ssoToken);
+const minimalResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId);
 [inline-code-end]

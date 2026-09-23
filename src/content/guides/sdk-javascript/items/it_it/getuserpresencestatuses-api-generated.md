@@ -8,23 +8,18 @@
 
 ## Risposta
 
-Restituisce: [`GetUserPresenceStatusesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse1.ts)
+Restituisce: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserPresenceStatusesResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio getUserPresenceStatuses'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUserPresences() {
-  const tenantId: string = "tenant_9f8e2d";
-  const urlIdWS: string = "blog.mycompany.com/thread/12345";
+(async () => {
+  const tenantId: string = "my-tenant-42";
+  const urlIdWS: string = "post-9876";
   const userIds: string = "alice,bob,carol";
 
-  const result: GetUserPresenceStatusesResponse1 = await getUserPresenceStatuses(
-    tenantId,
-    urlIdWS,
-    userIds
-  );
-
-  console.log(result);
-}
+  const presence: GetUserPresenceStatusesResponse = await getUserPresenceStatuses(tenantId, urlIdWS, userIds);
+  console.log(presence);
+})();
 [inline-code-end]

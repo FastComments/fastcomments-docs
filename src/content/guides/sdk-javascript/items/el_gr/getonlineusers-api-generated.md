@@ -1,39 +1,38 @@
----
-Τρέχοντες online θεατές μιας σελίδας: άτομα των οποίων η συνεδρία websocket είναι εγγεγραμμένη στη σελίδα αυτή τη στιγμή.  
-Επιστρέφει anonCount + totalCount (συνδρομητές σε ολόκληρο το δωμάτιο, συμπεριλαμβανομένων των ανώνυμων θεατών που δεν απαριθμούμε).
+Συνεχώς online θεατές μιας σελίδας: άτομα των οποίων η συνεδρία websocket είναι εγγεγραμμένη στη σελίδα αυτή τη στιγμή.  
+Επιστρέφει anonCount + totalCount (συνδρομητές σε όλο το δωμάτιο, συμπεριλαμβανομένων των ανώνυμων θεατών που δεν απαριθμούμε).
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Ναι |  |
-| urlId | string | Ναι |  |
-| afterName | string | Όχι |  |
-| afterUserId | string | Όχι |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| afterName | string | No |  |
+| afterUserId | string | No |  |
 
-## Response
+## Απόκριση
 
-Επιστρέφει: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Επιστρέφει: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // Με προαιρετικές παραμέτρους σελιδοποίησης
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // Χωρίς προαιρετικές παραμέτρους σελιδοποίησης
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
-[inline-code-end]
 
----
+fetchOnlineUsers();
+[inline-code-end]

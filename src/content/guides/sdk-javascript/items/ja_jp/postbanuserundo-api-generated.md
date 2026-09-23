@@ -2,34 +2,28 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | はい |  |
 | banUserUndoParams | BanUserUndoParams | はい |  |
-| tenantId | string | いいえ |  |
 | sso | string | いいえ |  |
 
 ## 応答
 
-戻り値: [`PostBanUserUndoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBanUserUndoResponse.ts)
+返り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'postBanUserUndo の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = "tenant_9876";
+
 const undoParams: BanUserUndoParams = {
-  userId: "user-8421",
-  commentId: "comment-6702",
-  reason: "Accidental ban"
+  userId: "user_12345",
+  // ここに追加の必須フィールドを追加できます
 };
 
-const tenantId: string = "tenant-7f9e";
-const ssoToken: string = "sso-4b2c1d";
+const resultWithoutSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams);
 
-async function runUndo() {
-  const resultAll: PostBanUserUndoResponse = await postBanUserUndo(undoParams, tenantId, ssoToken);
-  console.log(resultAll);
+const ssoToken: string = "sso_abcdef123456";
 
-  const resultMinimal: PostBanUserUndoResponse = await postBanUserUndo(undoParams);
-  console.log(resultMinimal);
-}
-
-runUndo();
+const resultWithSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams, ssoToken);
 [inline-code-end]

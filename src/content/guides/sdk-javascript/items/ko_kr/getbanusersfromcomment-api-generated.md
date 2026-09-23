@@ -1,32 +1,23 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| commentId | string | 예 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환값: [`GetBanUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBanUsersFromCommentResponse.ts)
+반환: [`GetBannedUsersFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBannedUsersFromCommentResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'getBanUsersFromComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getBanUsersFromComment 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetBanUsers() {
-  const commentId: string = "cmt_5f8e3a9b2d";
-  const tenantId: string = "tenant_42";
-  const sso: string = "sso_token_abc123";
+const tenantId: string = "tenant_9f8b7c";
+const commentId: string = "comment_a1b2c3";
+const ssoToken: string = "sso_abc123";
 
-  // 모든 매개변수로 호출
-  const fullResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId, tenantId, sso);
-  console.log(fullResult);
-
-  // 필수 매개변수만 사용하여 호출
-  const minimalResult: GetBanUsersFromCommentResponse = await getBanUsersFromComment(commentId);
-  console.log(minimalResult);
-}
-
-demoGetBanUsers();
+const bannedUsers: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(tenantId, commentId, ssoToken);
+const bannedUsersNoSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(tenantId, commentId);
 [inline-code-end]

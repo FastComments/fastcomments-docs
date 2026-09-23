@@ -2,46 +2,41 @@
 
 | Nazwa | Typ | Wymagane | Opis |
 |------|------|----------|------|
+| tenantId | string | Tak |  |
 | bulkPreBanParams | BulkPreBanParams | Tak |  |
 | includeByUserIdAndEmail | boolean | Nie |  |
 | includeByIP | boolean | Nie |  |
 | includeByEmailDomain | boolean | Nie |  |
-| tenantId | string | Nie |  |
 | sso | string | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`PostBulkPreBanSummaryResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostBulkPreBanSummaryResponse.ts)
+Zwraca: [`BulkPreBanSummary`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BulkPreBanSummary.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład postBulkPreBanSummary'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const bulkPreBanParams: BulkPreBanParams = {
-    userIds: [10234, 56789],
-    emails: ["spam_user@example.com", "abuse@badsite.org"],
-    ips: ["203.0.113.45", "198.51.100.22"],
-    emailDomains: ["maliciousdomain.com"]
-  };
+const tenantId: string = "c1f2e3d4-5678-90ab-cdef-1234567890ab";
 
-  const includeByUserIdAndEmail: boolean = true;
-  const includeByIP: boolean = false;
-  const includeByEmailDomain: boolean = true;
-  const tenantId: string = "tenant_8f4b2c1a";
-  const sso: string = "sso-3948abf0";
+const bulkPreBanParams: BulkPreBanParams = {
+  userIds: ["user123"],
+  emails: ["spam@example.com"],
+  ips: ["192.0.2.1"],
+  emailDomains: ["example.com"]
+};
 
-  const summary: PostBulkPreBanSummaryResponse = await postBulkPreBanSummary(
-    bulkPreBanParams,
-    includeByUserIdAndEmail,
-    includeByIP,
-    includeByEmailDomain,
-    tenantId,
-    sso
-  );
+const includeByUserIdAndEmail: boolean = true;
+const includeByIP: boolean = false;
+const includeByEmailDomain: boolean = true;
+const sso: string = "sso-token-abc123";
 
-  console.log(summary);
-}
-
-runExample();
+const summary: BulkPreBanSummary = await postBulkPreBanSummary(
+  tenantId,
+  bulkPreBanParams,
+  includeByUserIdAndEmail,
+  includeByIP,
+  includeByEmailDomain,
+  sso
+);
 [inline-code-end]

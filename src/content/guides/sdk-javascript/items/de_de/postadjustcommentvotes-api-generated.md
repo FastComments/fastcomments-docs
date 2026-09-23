@@ -1,39 +1,32 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|-----|--------------|--------------|
+|------|------|--------------|--------------|
+| tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | adjustCommentVotesParams | AdjustCommentVotesParams | Ja |  |
 | broadcastId | string | Nein |  |
-| tenantId | string | Nein |  |
 | sso | string | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
+Rückgabe: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AdjustVotesResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8b7a6d";
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_987654321";
+const adjustParams: AdjustCommentVotesParams = { voteDelta: 1 };
+const broadcastId: string = "brd_112233";
+const sso: string = "sso-token-xyz";
 
-const adjustParams: AdjustCommentVotesParams = {
-  voteDelta: 1,
-  // zusätzliche Felder, wie von AdjustCommentVotesParams verlangt
-};
-
-const broadcastId: string = "brd_20230915";
-const tenantId: string = "tenant_42";
-const sso: string = "sso-token-abc123";
-
-const result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(
+const result: AdjustVotesResponse = await postAdjustCommentVotes(
+  tenantId,
   commentId,
   adjustParams,
   broadcastId,
-  tenantId,
   sso
 );
 [inline-code-end]
-
----

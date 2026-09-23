@@ -1,4 +1,4 @@
-## Parameters
+## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
@@ -7,35 +7,25 @@
 | updateNotificationBody | UpdateNotificationBody | Da |  |
 | userId | string | Ne |  |
 
-## Response
+## Odgovor
 
-Vraća: [`UpdateNotificationResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateNotificationResponse.ts)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer updateNotification'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_5f4d2c";
-const notificationId: string = "notif_9b8a7c";
+async function main(): Promise<void> {
+  const tenantId: string = "tenant-abc123";
+  const notificationId: string = "notif-9876";
+  const updateBody: UpdateNotificationBody = {
+    title: "System Maintenance",
+    message: "Scheduled maintenance at 02:00 UTC.",
+    enabled: true
+  };
+  const userId: string = "user-42";
 
-const updateBody: UpdateNotificationBody = {
-  enabled: false,
-  sendEmail: true,
-  schedule: "2023-12-01T08:00:00Z"
-};
-
-const userId: string = "user_123e4567";
-
-const responseWithUser: UpdateNotificationResponse = await updateNotification(
-  tenantId,
-  notificationId,
-  updateBody,
-  userId
-);
-
-const responseWithoutUser: UpdateNotificationResponse = await updateNotification(
-  tenantId,
-  notificationId,
-  updateBody
-);
+  const resultWithoutUser: APIEmptyResponse = await updateNotification(tenantId, notificationId, updateBody);
+  const resultWithUser: APIEmptyResponse = await updateNotification(tenantId, notificationId, updateBody, userId);
+}
 [inline-code-end]

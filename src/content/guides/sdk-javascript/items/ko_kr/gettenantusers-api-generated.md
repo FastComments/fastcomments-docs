@@ -1,23 +1,21 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| skip | number | 아니오 |  |
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
-## 응답
+## Response
 
-반환: [`GetTenantUsersResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse1.ts)
+반환: [`GetTenantUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUsersResponse.ts)
 
-## 예시
+## Example
 
-[inline-code-attrs-start title = 'getTenantUsers 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenantUsers 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_9f7a2c";
-  const skip: number = 25;
+const tenantId: string = "tenant_12345";
+const skip: number = 20;
 
-  const usersPage: GetTenantUsersResponse1 = await getTenantUsers(tenantId, skip);
-  const allUsers: GetTenantUsersResponse1 = await getTenantUsers(tenantId);
-})();
+const firstPage: GetTenantUsersResponse = await getTenantUsers(tenantId);
+const secondPage: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);
 [inline-code-end]

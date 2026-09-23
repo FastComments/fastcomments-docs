@@ -1,27 +1,20 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
 
 ## 回應
 
-返回：[`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## 示例
+## 範例
 
-[inline-code-attrs-start title = 'deleteTenantPackage 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteTenantPackage 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeTenantPackage(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const packageId: string = "pkg_67890";
+let tenantId: string = "tenant_12345";
+let packageId: string = "pkg_98765";
 
-  const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);
-  // 按需使用結果
-}
-
-removeTenantPackage();
+const result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
-
----

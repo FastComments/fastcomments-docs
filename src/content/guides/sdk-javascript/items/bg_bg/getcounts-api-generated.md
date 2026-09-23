@@ -2,26 +2,26 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Не |  |
+| tenantId | string | Да |  |
 | sso | string | Не |  |
 
 ## Отговор
 
-Връща: [`GetCountsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountsResponse.ts)
+Връща: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBannedUsersCountResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за getCounts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCounts Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-    const tenantId: string = "acme-corp";
-    const ssoToken: string = "sso-token-2024";
+async function run() {
+  const tenantId: string = "tenant_9876";
+  const ssoToken: string = "sso_user_42";
 
-    const withBoth: GetCountsResponse = await getCounts(tenantId, ssoToken);
-    const withTenantOnly: GetCountsResponse = await getCounts(tenantId);
-    const withoutParams: GetCountsResponse = await getCounts();
-
-    console.log(withBoth, withTenantOnly, withoutParams);
+  const resultWithOnlyTenant: GetBannedUsersCountResponse = await getCounts(tenantId);
+  const resultWithBoth: GetBannedUsersCountResponse = await getCounts(tenantId, ssoToken);
 }
-runExample();
+
+run();
 [inline-code-end]
+
+---

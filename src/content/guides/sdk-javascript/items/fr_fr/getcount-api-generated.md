@@ -1,33 +1,36 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|----------|-------------|
+|------|------|-------------|-------------|
+| tenantId | string | Oui |  |
 | textSearch | string | Non |  |
 | byIPFromComment | string | Non |  |
 | filter | string | Non |  |
 | searchFilters | string | Non |  |
 | demo | boolean | Non |  |
-| tenantId | string | Non |  |
 | sso | string | Non |  |
 
 ## Réponse
 
-Renvoie : [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
+Renvoie : [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICountCommentsResponse.ts)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const count: GetCountResponse = await getCount({
-    textSearch: "order issue",
-    byIPFromComment: "198.51.100.23",
-    filter: "pending",
-    demo: true,
-    tenantId: "acme_corp",
-    sso: "sso_abcdef123456"
-  });
-  console.log(count);
-}
-main();
+const tenantId: string = "tenant_12345";
+
+const basicCount: ModerationAPICountCommentsResponse = await getCount(tenantId);
+
+const detailedCount: ModerationAPICountCommentsResponse = await getCount(
+  tenantId,
+  "spam",
+  "192.168.1.100",
+  "status:pending",
+  "user:john",
+  true,
+  "sso_token_abc"
+);
 [inline-code-end]
+
+---

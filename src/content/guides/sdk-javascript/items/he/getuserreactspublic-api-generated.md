@@ -2,26 +2,22 @@
 
 | שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| postIds | Array<string> | No |  |
-| sso | string | No |  |
+| tenantId | string | כן |  |
+| postIds | Array<string> | לא |  |
+| sso | string | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetUserReactsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublicResponse.ts)
+מחזיר: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UserReactsResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getUserReactsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑getUserReactsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "tenant_12345";
-  const postIds: string[] = ["post_1a2b3c", "post_4d5e6f"];
-  const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+const tenantId: string = "tenant_12345";
+const postIds: string[] = ["post_abc", "post_def"];
+const ssoToken: string = "sso_token_987";
 
-  const fullResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
-  const minimalResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId);
-}
-
-demo();
+const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
+const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId);
 [inline-code-end]

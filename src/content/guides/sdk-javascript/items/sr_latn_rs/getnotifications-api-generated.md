@@ -1,7 +1,7 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
 | tenantId | string | Yes |  |
 | userId | string | No |  |
 | urlId | string | No |  |
@@ -12,29 +12,31 @@
 
 ## Odgovor
 
-Vraća: [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
+Vraća: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'Primer getNotifications'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "tenant_42";
+  const userId: string = "user_1001";
+  const urlId: string = "url_2023";
+  const viewed: boolean = true;
+  const skip: number = 0;
 
-  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
-  console.log(notifications);
-
-  const more: GetNotificationsResponse1 = await getNotifications(
+  const notifications: GetNotificationsResponse = await getNotifications(
     tenantId,
+    userId,
+    urlId,
     undefined,
-    "article-5678",
+    viewed,
     undefined,
-    true,
-    "reply",
-    10
+    skip
   );
-  console.log(more);
+
+  console.log(notifications);
 }
-demo();
 [inline-code-end]
+
+---

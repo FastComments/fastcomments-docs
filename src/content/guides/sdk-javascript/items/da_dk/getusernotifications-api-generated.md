@@ -1,53 +1,47 @@
 ## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | No |  |
-| pageSize | number | No |  |
-| afterId | string | No |  |
-| includeContext | boolean | No |  |
-| afterCreatedAt | number | No |  |
-| unreadOnly | boolean | No |  |
-| dmOnly | boolean | No |  |
-| noDm | boolean | No |  |
-| includeTranslations | boolean | No |  |
-| includeTenantNotifications | boolean | No |  |
-| sso | string | No |  |
+| tenantId | string | Ja |  |
+| urlId | string | Nej |  |
+| pageSize | number | Nej |  |
+| afterId | string | Nej |  |
+| includeContext | boolean | Nej |  |
+| afterCreatedAt | number | Nej |  |
+| unreadOnly | boolean | Nej |  |
+| dmOnly | boolean | Nej |  |
+| noDm | boolean | Nej |  |
+| includeTranslations | boolean | Nej |  |
+| includeTenantNotifications | boolean | Nej |  |
+| sso | string | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationsResponse.ts)
+Returnerer: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetMyNotificationsResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getUserNotifications Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUserNotifications() {
-    const tenantId: string = "tenant_9f4b2c";
-    const urlId: string = "post_1234";
-    const pageSize: number = 25;
-    const afterId: string = "notif_5678";
-    const includeContext: boolean = true;
-    const unreadOnly: boolean = false;
-    const dmOnly: boolean = false;
-    const includeTranslations: boolean = true;
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const urlId: string = "article-42";
+  const pageSize: number = 20;
+  const includeContext: boolean = true;
+  const unreadOnly: boolean = true;
 
-    const notifications: GetUserNotificationsResponse = await getUserNotifications(
-        tenantId,
-        urlId,
-        pageSize,
-        afterId,
-        includeContext,
-        undefined,
-        unreadOnly,
-        dmOnly,
-        undefined,
-        includeTranslations,
-        undefined,
-        undefined
-    );
+  const notifications: GetMyNotificationsResponse = await getUserNotifications(
+    tenantId,
+    urlId,
+    pageSize,
+    undefined,
+    includeContext,
+    undefined,
+    unreadOnly
+  );
 
-    console.log(notifications);
+  console.log(notifications);
 }
 [inline-code-end]
+
+---

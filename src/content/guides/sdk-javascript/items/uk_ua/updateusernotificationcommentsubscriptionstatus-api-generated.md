@@ -1,8 +1,8 @@
-Enable or disable notifications for a specific comment.
+Увімкнути або вимкнути сповіщення для конкретного коментаря.
 
-## Parameters
+## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | notificationId | string | Yes |  |
@@ -10,23 +10,23 @@ Enable or disable notifications for a specific comment.
 | commentId | string | Yes |  |
 | sso | string | No |  |
 
-## Response
+## Відповідь
 
-Returns: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
+Повертає: [`UpdateUserNotificationCommentSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationCommentSubscriptionStatusResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'updateUserNotificationCommentSubscriptionStatus Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const notificationId: string = "notif_9876";
-const commentId: string = "comment_abc123";
-const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
-  UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
-const sso: string = "ssoTokenXYZ";
+async function runExample(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const notificationId: string = "notif_9876";
+  const commentId: string = "comment_abc123";
+  const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =
+    UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;
+  const sso: string = "sso_token_456";
 
-const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(
+  const resultWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(
     tenantId,
     notificationId,
     optedInOrOut,
@@ -34,13 +34,11 @@ const responseWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
     sso
   );
 
-const responseWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse =
-  await updateUserNotificationCommentSubscriptionStatus(
+  const resultWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(
     tenantId,
     notificationId,
     optedInOrOut,
     commentId
   );
+}
 [inline-code-end]
-
----

@@ -1,25 +1,29 @@
-## 매개변수
+## Parameters
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
 
-## 응답
+## Response
 
-반환: [`GetTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackageResponse1.ts)
+반환: [`GetTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantPackageResponse.ts)
 
-## 예시
+## Example
 
 [inline-code-attrs-start title = 'getTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchTenantPackage(): Promise<void> {
-    const tenantId: string = "acme-tenant-2024";
-    const packageId: string = "premium-package-01";
-    const response: GetTenantPackageResponse1 = await getTenantPackage(tenantId, packageId);
+function fetchPackage(tenantId?: string, id?: string): Promise<GetTenantPackageResponse> {
+    const tid: string = tenantId ?? "acme-corp-001";
+    const pid: string = id ?? "premium-plan-2024";
+    return getTenantPackage(tid, pid);
+}
 
-    // 응답의 선택적 필드
-    const tenantPackage: TenantPackage | undefined = response.tenantPackage;
-    const customConfig: CustomConfigParameters | undefined = response.customConfigParameters;
+async function runExample(): Promise<void> {
+    const response: GetTenantPackageResponse = await fetchPackage();
+    const status: APIStatus | undefined = response.status;
+    const pkg: TenantPackage | undefined = response.package;
 }
 [inline-code-end]
+
+---

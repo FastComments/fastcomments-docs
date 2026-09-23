@@ -1,31 +1,28 @@
 ## Parametri
 
-| Ime | Vrsta | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| createQuestionResultBody | CreateQuestionResultBody | Da |  |
+| tenantId | string | Yes |  |
+| createQuestionResultBody | CreateQuestionResultBody | Yes |  |
 
 ## Odgovor
 
-Vrne: [`CreateQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse1.ts)
+Vrne: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateQuestionResultResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'createQuestionResult Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
+const tenantId: string = "tenant_12345";
 
-const metaItem: MetaItem = {
-  key: "campaign",
-  value: "spring-launch"
+const createQuestionResultBody: CreateQuestionResultBody = {
+  questionId: "q_9876",
+  answer: "Yes",
+  score: 5,
+  meta: [
+    { key: "source", value: "survey" }
+  ]
 };
 
-const questionResultBody: CreateQuestionResultBody = {
-  questionId: "question-42",
-  answer: "Positive",
-  metadata: [metaItem]
-  // izbirna polja, kot so opombe, so izpuščena
-};
-
-const result: CreateQuestionResultResponse1 = await createQuestionResult(tenantId, questionResultBody);
+const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]

@@ -7,23 +7,25 @@
 
 ## Отговор
 
-Връща: [`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
+Връща: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'createTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за createTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "a1b2c3d4-5678-90ab-cdef-1234567890ab";
-
-const newUser: CreateTenantUserBody = {
-  email: "jane.doe@example.com",
-  firstName: "Jane",
-  lastName: "Doe",
-  role: "admin",
-  // optional parameters
-  phoneNumber: "+15551234567",
-  isActive: true,
-};
-
-const result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);
+async function addTenantUser() {
+  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+  const digestFreq: DigestEmailFrequency = 'daily';
+  const body: CreateTenantUserBody = {
+    email: 'jane.doe@example.com',
+    firstName: 'Jane',
+    lastName: 'Doe',
+    role: 'admin',
+    digestEmailFrequency: digestFreq,
+    phoneNumber: '+15551234567' // по избор
+  };
+  const response: CreateTenantUserResponse = await createTenantUser(tenantId, body);
+  console.log(response);
+}
+addTenantUser();
 [inline-code-end]

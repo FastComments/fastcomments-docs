@@ -2,7 +2,7 @@
 
 | Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|--------------|-------------|
-| tenantId | string | Sì |  |
+| tenantId | string | Yes |  |
 | yearNumber | number | No |  |
 | monthNumber | number | No |  |
 | dayNumber | number | No |  |
@@ -10,20 +10,20 @@
 
 ## Risposta
 
-Restituisce: [`GetTenantDailyUsagesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse1.ts)
+Restituisce: [`GetTenantDailyUsagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantDailyUsagesResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio getTenantDailyUsages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchDailyUsage() {
-  const tenantId: string = "tenant-9876";
+async function demoGetTenantDailyUsages() {
+  const tenantId: string = "tenant_9876";
   const yearNumber: number = 2024;
-  const monthNumber: number = 5; // Maggio
-  const dayNumber: number = 12;
-  const skip: number = 0;
+  const monthNumber: number = 2;
+  const dayNumber: number = 28;
+  const skip: number = 10;
 
-  const fullResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const fullResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber,
     monthNumber,
@@ -31,14 +31,9 @@ async function fetchDailyUsage() {
     skip
   );
 
-  // Utilizzando solo il parametro obbligatorio e un parametro opzionale
-  const partialResult: GetTenantDailyUsagesResponse1 = await getTenantDailyUsages(
+  const partialResult: GetTenantDailyUsagesResponse = await getTenantDailyUsages(
     tenantId,
     yearNumber
   );
-
-  console.log(fullResult, partialResult);
 }
-
-fetchDailyUsage();
 [inline-code-end]

@@ -1,24 +1,24 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
 ## Отговор
 
-Връща: [`GetTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUserResponse1.ts)
+Връща: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUserResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getTenantUser Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUser(): Promise<void> {
-  const tenantId: string = "tenant-01a2b3c";
-  const userId: string = "user-7890";
-  const result: GetTenantUserResponse1 = await getTenantUser(tenantId, userId);
-  console.log(result);
-}
+(async () => {
+    const tenantId: string = "acme-tenant-001";
+    const userId: string = "user-12345";
+    const response: GetTenantUserResponse = await getTenantUser(tenantId, userId);
+    console.log(response);
+})();
 [inline-code-end]
 
 ---

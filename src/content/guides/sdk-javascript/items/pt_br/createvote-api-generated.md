@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -11,23 +10,21 @@
 
 ## Resposta
 
-Retorna: [`CreateVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateVoteResponse.ts)
+Retorna: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createVote Exemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
-const commentId: string = "comment_987654";
-const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Upvote;
-const userId: string = "user_7f9a2b";
+const commentId: string = "comment_67890";
+const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;
+const userId: string = "user_abcde";
 
-const voteResult: CreateVoteResponse = await createVote(
-  tenantId,
-  commentId,
-  direction,
-  userId
-);
+const voteResult: VoteResponse = await createVote(tenantId, commentId, direction, userId);
+
+const anonUserId: string = "anon_zyxwv";
+const anonVoteResult: VoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);
 [inline-code-end]
 
 ---

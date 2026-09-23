@@ -5,30 +5,30 @@ userIdWS
 
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| urlId | string | 是 |  |
-| userIdWS | string | 是 |  |
-| startTime | number | 是 |  |
-| endTime | number | 否 |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| userIdWS | string | Yes |  |
+| startTime | number | Yes |  |
+| endTime | number | No |  |
 
 ## 回應
 
-回傳: [`GetEventLogResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse1.ts)
+Returns: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getEventLog 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-    const tenantId: string = "tenant_9876";
-    const urlId: string = "page_54321";
-    const userIdWS: string = "ws_user_1122";
-    const startTime: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // 一週前
-    const endTime: number = Date.now();
+const tenantId: string = "tenant_12345";
+const urlId: string = "url_9876";
+const userIdWS: string = "user_abcde";
+const startTime: number = Date.now() - 86_400_000; // 24 小時前
+const endTime: number = Date.now();
 
-    const log: GetEventLogResponse1 = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
-    const recentLog: GetEventLogResponse1 = await getEventLog(tenantId, urlId, userIdWS, startTime);
-})();
+const fullLog: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+const partialLog: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime);
 [inline-code-end]
+
+---

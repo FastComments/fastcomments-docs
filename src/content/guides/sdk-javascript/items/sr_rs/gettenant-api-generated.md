@@ -1,24 +1,28 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
 
 ## Одговор
 
-Враћа: [`GetTenantResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse1.ts)
+Враћа: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getTenant Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTenant Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchTenant(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const id: string = "user_9876";
-  const tenantInfo: GetTenantResponse1 = await getTenant(tenantId, id);
-  console.log(tenantInfo);
-}
+    const tenantId: string = "tenant_12345";
+    const id: string = "tenant_12345";
 
-fetchTenant();
+    const tenantResponse: GetTenantResponse = await getTenant(tenantId, id);
+
+    // Опционална поља у одговору
+    const billing: BillingInfo | undefined = tenantResponse.billingInfo;
+    const domainConfig: APIDomainConfiguration | undefined = tenantResponse.domainConfiguration;
+}
 [inline-code-end]
+
+---

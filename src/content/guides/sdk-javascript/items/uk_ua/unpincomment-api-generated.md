@@ -1,29 +1,29 @@
 ## Параметри
 
-| Назва | Тип | Обов’язковий | Опис |
+| Назва | Тип | Обов’язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Так |  |
-| commentId | string | Так |  |
-| broadcastId | string | Так |  |
-| sso | string | Ні |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
 ## Відповідь
 
-Повертає: [`UnPinCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnPinCommentResponse.ts)
+Повертає: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'unPinComment Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "tenant-001"
-  const commentId: string = "comment-123"
-  const broadcastId: string = "broadcast-456"
-  const sso: string = "sso-token-xyz"
+  const tenantId: string = "acme-corp";
+  const commentId: string = "comment-20230915-001";
+  const broadcastId: string = "broadcast-2023-09-15";
+  const ssoToken: string = "sso-abc123";
 
-  const resultWithSso: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId, sso)
-  const resultWithoutSso: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId)
-
-  console.log(resultWithSso, resultWithoutSso)
-})()
+  const result: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithoutSso: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId);
+})();
 [inline-code-end]
+
+---

@@ -1,22 +1,21 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
 
 ## 응답
 
-반환: [`GetCachedNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCountResponse1.ts)
+반환: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCachedNotificationCountResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'getCachedNotificationCount 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCachedNotificationCount 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "e3f1a9b2-4c5d-6e7f-8a9b-0c1d2e3f4a5b";
-const userId: string = "u-20231101-001";
-
-const notificationResult: GetCachedNotificationCountResponse1 = await getCachedNotificationCount(tenantId, userId);
-
-console.log(notificationResult);
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const id: string = "user_9876";
+  const response: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);
+})();
 [inline-code-end]

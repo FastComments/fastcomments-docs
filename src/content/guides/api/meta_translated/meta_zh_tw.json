@@ -194,45 +194,45 @@
       "subCat": "我的資訊"
     },
     {
-      "name": "審核者結構",
+      "name": "版主結構",
       "file": "moderator-structure.md",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "GET /api/v1/moderators/:id",
       "file": "moderator-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "GET /api/v1/moderators",
       "file": "moderators-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "POST /api/v1/moderators",
       "file": "moderator-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "POST /api/v1/moderators/:id/send-invite",
       "file": "moderator-send-invite.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "DELETE /api/v1/moderators/:id",
       "file": "moderator-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "審核者"
+      "subCat": "版主"
     },
     {
       "name": "通知計數結構",
@@ -270,6 +270,53 @@
       "subCat": "通知"
     },
     {
+      "name": "頁面回應公共 API",
+      "file": "page-reacts-api.md",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面回應"
+    },
+    {
       "name": "頁面結構",
       "file": "page-structure.md",
       "subCat": "頁面"
@@ -305,74 +352,132 @@
       "subCat": "頁面"
     },
     {
-      "name": "待處理 Webhook 事件結構",
+      "name": "投票結構",
+      "file": "poll-structure.md",
+      "subCat": "投票"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "投票結果結構",
+      "file": "poll-vote-structure.md",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "待處理Webhook事件結構",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "待處理 Webhook 事件"
+      "subCat": "待處理Webhook事件"
     },
     {
-      "name": "單點登入使用者結構",
+      "name": "SSO 使用者結構",
       "file": "sso-user-structure.md",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "單點登入使用者"
+      "subCat": "SSO 使用者"
     },
     {
       "name": "訂閱結構",

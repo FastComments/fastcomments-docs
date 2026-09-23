@@ -1,27 +1,29 @@
 Bulk gebruikersinformatie voor een tenant. Gegeven userIds, retourneer weergave‑informatie van User / SSOUser.  
-Gebruikt door de commentaarwidget om gebruikers die net verschenen via een aanwezigheids‑evenement te verrijken.  
-Geen paginacontext: privacy wordt uniform afgedwongen (private profielen worden gemaskeerd).
+Gebruikt door de commentaarwidget om gebruikers die net verschenen via een presence‑event te verrijken.  
+Geen paginacontext: privacy wordt uniform afgedwongen (privéprofielen worden gemaskeerd).
 
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
+| tenantId | string | Ja |  |
+| ids | string | Ja |  |
 
 ## Response
 
-Retourneert: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'getUsersInfo Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// Optional fields in the response may be undefined
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]
+
+---

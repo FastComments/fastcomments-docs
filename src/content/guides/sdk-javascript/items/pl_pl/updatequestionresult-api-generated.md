@@ -8,32 +8,23 @@
 
 ## Odpowiedź
 
-Zwraca: [`UpdateQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateQuestionResultResponse.ts)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runUpdate() {
-    const tenantId: string = "acme-corp-01";
-    const id: string = "qr-20230915-001";
+const tenantId: string = "c1f5e8b2-9a4d-4f3a-8d2e-6b7c9d0e1f2a";
+const questionId: string = "qstn_1234567890";
 
-    const updateQuestionResultBody: UpdateQuestionResultBody = {
-        // wymagane pola
-        answer: "No",
-        // pola opcjonalne
-        comment: "User clarified their response",
-        // anotherOptionalField?: value,
-    };
+const updateBody: UpdateQuestionResultBody = {
+  score: 85,
+  comment: "Adjusted based on new criteria",
+  meta: [
+    { key: "reviewer", value: "john.doe@example.com" },
+    { key: "timestamp", value: new Date().toISOString() }
+  ]
+};
 
-    const result: UpdateQuestionResultResponse = await updateQuestionResult(
-        tenantId,
-        id,
-        updateQuestionResultBody
-    );
-
-    console.log(result);
-}
-
-runUpdate();
+const response: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);
 [inline-code-end]

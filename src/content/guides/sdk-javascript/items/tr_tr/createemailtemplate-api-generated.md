@@ -1,31 +1,31 @@
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | createEmailTemplateBody | CreateEmailTemplateBody | Yes |  |
 
 ## Yanıt
 
-Döndürür: [`CreateEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse1.ts)
+Döndürür: [`CreateEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateEmailTemplateResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'createEmailTemplate Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_9f8e7d6c";
+const tenantId: string = "tenant_9f8b7c6d";
 
-const emailTemplate: CreateEmailTemplateBody = {
-  name: "Account Activation",
-  subject: "Activate Your New Account",
-  htmlContent: "<p>Welcome! Please click <a href=\"\{{activationLink}}\">here</a> to activate.</p>",
-  // textContent ve isActive gibi isteğe bağlı alanlar, opsiyonel parametreleri göstermek için atlanmıştır
+const templateBody: CreateEmailTemplateBody = {
+  name: "Weekly Summary",
+  subject: "Your weekly activity report",
+  // isteğe bağlı alan
+  replyTo: "no-reply@myapp.com",
+  htmlContent: "<p>Hello \{{userName}}, here is your summary...</p>"
 };
 
-const result: CreateEmailTemplateResponse1 = await createEmailTemplate(
-  tenantId,
-  emailTemplate
-);
+const response: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, templateBody);
 
-console.log(result);
+console.log(response.template.id);
 [inline-code-end]
+
+---

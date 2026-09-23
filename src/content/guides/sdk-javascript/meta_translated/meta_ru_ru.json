@@ -3,7 +3,7 @@
   "pageHeader": "FastComments SDK для JavaScript/TypeScript",
   "itemsOrdered": [
     {
-      "name": "AI‑агенты кодирования",
+      "name": "AI‑агенты программирования",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -51,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Live‑события (обновления в реальном времени)",
+      "name": "Онлайн‑события (обновления в реальном времени)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -69,9 +69,15 @@
       "type": "readme"
     },
     {
-      "name": "агрегировать",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Агенты‑арендаторы",
+      "type": "api"
+    },
+    {
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегировать",
+      "subCat": "Агрегация",
       "type": "api"
     },
     {
@@ -233,7 +239,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Комментарии пользователя",
+      "subCat": "Комментарии для пользователя",
       "type": "api"
     },
     {
@@ -407,19 +413,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIF‑изображения",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIF‑изображения",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIF‑изображения",
+      "subCat": "GIF",
       "type": "api"
     },
     {
@@ -450,6 +456,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Хэштеги",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Пользователь",
       "type": "api"
     },
     {
@@ -875,19 +887,67 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Ожидающие события веб‑хуков",
+      "subCat": "Ожидающие события вебхуков",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Ожидающие события веб‑хуков",
+      "subCat": "Ожидающие события вебхуков",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Ожидающие события веб‑хуков",
+      "subCat": "Ожидающие события вебхуков",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Голоса опросов",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Голоса опросов",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Голоса опросов",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Голоса опросов",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Опросы",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Опросы",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Опросы",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Опросы",
       "type": "api"
     },
     {
@@ -1277,7 +1337,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Статус присутствия пользователя",
+      "subCat": "Статусы присутствия пользователя",
       "type": "api"
     },
     {
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Голоса",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Вебхуки",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Вебхуки",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Вебхуки",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Вебхуки",
       "type": "api"
     }
   ]

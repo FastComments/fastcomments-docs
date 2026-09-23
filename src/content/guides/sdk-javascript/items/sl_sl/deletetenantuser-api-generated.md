@@ -1,33 +1,29 @@
-## Parameters
+## Parametri
 
 | Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| deleteComments | string | Ne |  |
-| commentDeleteMode | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| deleteComments | string | No |  |
+| commentDeleteMode | string | No |  |
 
-## Response
+## Odgovor
 
-Vrne: [`DeleteTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantUserResponse.ts)
+Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Primer
 
 [inline-code-attrs-start title = 'deleteTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoDeleteTenantUser() {
-  const tenantId: string = "acme-corp-tenant";
-  const userId: string = "user-9876";
+(async () => {
+  const tenantId: string = "acme-corp";
+  const userId: string = "u-112233";
 
-  // Izbriši uporabnika in vse njegove komentarje, z načinom trde brisanje
-  const resultWithOptions: DeleteTenantUserResponse = await deleteTenantUser(
-    tenantId,
-    userId,
-    "true",
-    "hard"
-  );
+  const result1: APIEmptyResponse = await deleteTenantUser(tenantId, userId);
+  const result2: APIEmptyResponse = await deleteTenantUser(tenantId, userId, "true", "hard");
 
-  // Izbriši uporabnika brez odstranjevanja komentarjev (privzeto vedenje)
-  const resultBasic: DeleteTenantUserResponse = await deleteTenantUser(tenantId, userId);
-}
+  console.log(result1, result2);
+})();
 [inline-code-end]
+
+---

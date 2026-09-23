@@ -1,32 +1,32 @@
-## 參數
+## Parameters
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| id | string | 是 |  |
-| updateTenantBody | UpdateTenantBody | 是 |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| updateTenantBody | UpdateTenantBody | Yes |  |
 
-## 回應
+## Response
 
-回傳：[`UpdateTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantResponse.ts)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'updateTenant 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c8f9e3d2-4b6a-11ee-8c99-0242ac130003";
-const id: string = "tenant-config-01";
+async function runUpdateTenant() {
+  const tenantId: string = "tenant-abc123";
+  const id: string = "config-456def";
 
-const updateBody: UpdateTenantBody = {
-  domain: "mytenant.fastcomments.io",
-  branding: {
-    logoUrl: "https://cdn.mytenant.com/assets/logo.png"
-  },
-  description: "Branding update for Q3"
-};
+  const updateTenantBody: UpdateTenantBody = {
+    // required field
+    // 必填欄位
+    name: "Acme International",
+    // optional fields can be omitted, e.g., billingInfo, domainConfiguration
+    // 可選欄位可省略，例如 billingInfo, domainConfiguration
+  };
 
-const response: UpdateTenantResponse = await updateTenant(tenantId, id, updateBody);
-console.log(response);
+  const response: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);
+  console.log(response);
+}
 [inline-code-end]
-
----

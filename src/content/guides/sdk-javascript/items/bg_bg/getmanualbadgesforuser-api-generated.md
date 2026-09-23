@@ -1,27 +1,34 @@
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
-|------|------|----------|-------------|
+|------|------|--------------|----------|
+| tenantId | string | Да |  |
 | badgesUserId | string | Не |  |
 | commentId | string | Не |  |
-| tenantId | string | Не |  |
 | sso | string | Не |  |
 
 ## Отговор
 
-Връща: [`GetManualBadgesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesForUserResponse.ts)
+Връща: [`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserManualBadgesResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за getManualBadgesForUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = "user_42";
-  const commentId: string = "comment_1001";
-  const tenantId: string = "tenant_acme";
-  const ssoToken: string = "sso_5f6g7h8i9j";
+async () => {
+  const tenantId: string = "tenant_12345";
+  const badgesUserId: string | undefined = "user_98765";
+  const commentId: string | undefined = "comment_abcde";
+  const sso: string | undefined = "sso_token_xyz";
 
-  const badges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId, commentId, tenantId, ssoToken);
-  const limitedBadges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId);
-})();
+  const basicResponse: GetUserManualBadgesResponse = await getManualBadgesForUser(tenantId);
+  const fullResponse: GetUserManualBadgesResponse = await getManualBadgesForUser(
+    tenantId,
+    badgesUserId,
+    commentId,
+    sso
+  );
+
+  console.log(basicResponse, fullResponse);
+}();
 [inline-code-end]

@@ -2,34 +2,26 @@
 
 | 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
+| tenantId | string | 是 |  |
+| id | string | 是 |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | 是 |  |
 
 ## 回應
 
-回傳: [`UpdateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantPackageResponse.ts)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'updateTenantPackage 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-9876";
-const packageId: string = "pkg-2023";
-
-const customConfig: CustomConfigParameters = {
-  enableSpamFilter: true,
-  spamRatingThreshold: 4,
-};
+const tenantId: string = "tenant_9f8b7c6d";
+const packageId: string = "pkg_3a2b1c";
 
 const updateBody: UpdateTenantPackageBody = {
-  displayName: "Enterprise Pro",
-  customConfig,
+  // 可選欄位可根據需要省略或包含
+  // newPackageName?: string;
+  // renewalDate?: string;
 };
 
-const response: UpdateTenantPackageResponse = await updateTenantPackage(
-  tenantId,
-  packageId,
-  updateBody
-);
+const result: APIEmptyResponse = await updateTenantPackage(tenantId, packageId, updateBody);
 [inline-code-end]

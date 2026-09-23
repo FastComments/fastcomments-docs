@@ -2,28 +2,27 @@
 
 | Nom | Type | Obligatoire | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| contextUserId | string | No |  |
-| isLive | boolean | No |  |
+| tenantId | string | Oui |  |
+| id | string | Oui |  |
+| contextUserId | string | Non |  |
+| isLive | boolean | Non |  |
 
 ## Réponse
 
-Retourne : [`DeleteCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResponse.ts)
+Renvoie : [`DeleteCommentResult`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteCommentResult.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple deleteComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_01';
-  const commentId: string = 'comment_abc123';
-  const contextUserId: string = 'user_42';
-  const isLive: boolean = false;
-
-  const deleteResult: DeleteCommentResponse = await deleteComment(tenantId, commentId, contextUserId, isLive);
-  const simpleResult: DeleteCommentResponse = await deleteComment(tenantId, commentId);
-})();
+async function removeComment(): Promise<void> {
+    const tenantId: string = "tenant_12345";
+    const commentId: string = "comment_9876";
+    const contextUserId: string = "user_42";
+    const result: DeleteCommentResult = await deleteComment(tenantId, commentId, contextUserId, true);
+    console.log(result);
+}
+removeComment();
 [inline-code-end]
 
 ---

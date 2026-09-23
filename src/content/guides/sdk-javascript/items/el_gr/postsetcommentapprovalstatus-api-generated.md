@@ -1,39 +1,42 @@
+---
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | Ναι |  |
-| approved | boolean | Όχι |  |
-| broadcastId | string | Όχι |  |
-| tenantId | string | Όχι |  |
-| sso | string | Όχι |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| approved | boolean | No |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
-## Απόκριση
+## Απάντηση
 
-Returns: [`PostSetCommentApprovalStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentApprovalStatusResponse.ts)
+Επιστρέφει: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SetCommentApprovedResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'postSetCommentApprovalStatus Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main() {
-  const commentIdOnly: string = "cmt_1001";
-  const resultOnly: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(commentIdOnly);
+(async () => {
+  const tenantId: string = "tenant_001";
+  const commentId: string = "comment_123";
+  const approved: boolean = false;
+  const broadcastId: string = "broadcast_456";
+  const sso: string = "sso_789";
 
-  const commentIdFull: string = "cmt_2002";
-  const approvedFull: boolean = true;
-  const broadcastIdFull: string = "brd_3003";
-  const tenantIdFull: string = "tenant_abc";
-  const ssoFull: string = "sso_token_xyz";
-  const resultFull: PostSetCommentApprovalStatusResponse = await postSetCommentApprovalStatus(
-    commentIdFull,
-    approvedFull,
-    broadcastIdFull,
-    tenantIdFull,
-    ssoFull
+  const result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(
+    tenantId,
+    commentId,
+    approved,
+    broadcastId,
+    sso
   );
 
-  console.log(resultOnly, resultFull);
-}
-main();
+  const minimalResult: SetCommentApprovedResponse = await postSetCommentApprovalStatus(
+    tenantId,
+    commentId
+  );
+})();
 [inline-code-end]
+
+---

@@ -1,30 +1,37 @@
-## Parameters
+## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| renderEmailTemplateBody | RenderEmailTemplateBody | Yes |  |
-| locale | string | No |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| renderEmailTemplateBody | RenderEmailTemplateBody | Tak |  |
+| locale | string | Nie |  |
 
-## Response
+## Odpowiedź
 
-Zwraca: [`RenderEmailTemplateResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplateResponse1.ts)
+Zwraca: [`RenderEmailTemplateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/RenderEmailTemplateResponse.ts)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład renderEmailTemplate'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+
+const templateBody: RenderEmailTemplateBody = {
+  templateId: "welcome-email",
+  variables: {
+    userName: "Jane Doe",
+    signupDate: "2024-04-01"
+  }
+};
+
+const locale: string = "en-US";
+
 (async () => {
-  const tenantId: string = "acme-corp-01";
-  const templateBody: RenderEmailTemplateBody = {
-    templateId: "welcome-email",
-    placeholders: {
-      userName: "John Doe",
-      signupDate: "2024-04-01"
-    }
-  };
-  const locale: string = "en-US";
-  const result: RenderEmailTemplateResponse1 = await renderEmailTemplate(tenantId, templateBody, locale);
-  console.log(result);
+  const rendered: RenderEmailTemplateResponse = await renderEmailTemplate(
+    tenantId,
+    templateBody,
+    locale
+  );
+  console.log(rendered);
 })();
 [inline-code-end]

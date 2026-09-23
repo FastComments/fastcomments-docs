@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
@@ -8,21 +7,16 @@
 
 ## Respuesta
 
-Devuelve: [`DeleteTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantPackageResponse.ts)
+Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'deleteTenantPackage Ejemplo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de deleteTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function removeTenantPackage(): Promise<void> {
-  const tenantId: string = "tenant_12345";
-  const packageId: string = "pkg_67890";
+let tenantId: string = "tenant_12345";
+let packageId: string = "pkg_98765";
 
-  const result: DeleteTenantPackageResponse = await deleteTenantPackage(tenantId, packageId);
-  // usar el resultado según sea necesario
-}
-
-removeTenantPackage();
+const result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
 
 ---

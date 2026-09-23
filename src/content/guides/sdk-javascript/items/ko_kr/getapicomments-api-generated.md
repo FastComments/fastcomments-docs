@@ -1,7 +1,8 @@
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
-|------|------|------|------|
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | page | number | No |  |
 | count | number | No |  |
 | textSearch | string | No |  |
@@ -10,33 +11,43 @@
 | searchFilters | string | No |  |
 | sorts | string | No |  |
 | demo | boolean | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## 응답
 
-Returns: [`GetApiCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiCommentsResponse.ts)
+반환: [`ModerationAPIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIGetCommentsResponse.ts)
 
-## 예시
+## 예제
 
-[inline-code-attrs-start title = 'getApiComments 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getApiComments 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments() {
-  const fullResult: GetApiCommentsResponse = await getApiComments(
-    2,                     // 페이지
-    25,                    // 카운트
-    "feedback",           // 텍스트 검색
-    "192.168.1.100",      // 댓글 IP
-    "approved",           // 필터
-    "hasReplies",         // 검색 필터
-    "dateDesc",           // 정렬
-    false,                // 데모
-    "tenant-abc123",      // 테넌트 ID
-    "sso-token-xyz"       // SSO
-  );
+async function fetchComments(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const page: number = 2;
+  const count: number = 20;
+  const textSearch: string = "typescript";
+  const byIPFromComment: string = "192.168.1.100";
+  const filters: string = "spam,offensive";
+  const searchFilters: string = "user:john";
+  const sorts: string = "date_desc";
+  const demo: boolean = true;
+  const sso: string = "sso_token_abc";
 
-  const minimalResult: GetApiCommentsResponse = await getApiComments(undefined, 5);
+  const response: ModerationAPIGetCommentsResponse = await getApiComments(
+    tenantId,
+    page,
+    count,
+    textSearch,
+    byIPFromComment,
+    filters,
+    searchFilters,
+    sorts,
+    demo,
+    sso
+  );
 }
+
+fetchComments();
 [inline-code-end]
 
 ---

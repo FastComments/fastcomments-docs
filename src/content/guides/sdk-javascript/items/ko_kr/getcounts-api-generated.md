@@ -1,29 +1,27 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 아니오 |  |
-| sso | string | 아니오 |  |
+| tenantId | string | Yes |  |
+| sso | string | No |  |
 
 ## 응답
 
-반환: [`GetCountsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountsResponse.ts)
+반환: [`GetBannedUsersCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetBannedUsersCountResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'getCounts 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-    const tenantId: string = "acme-corp";
-    const ssoToken: string = "sso-token-2024";
+async function run() {
+  const tenantId: string = "tenant_9876";
+  const ssoToken: string = "sso_user_42";
 
-    const withBoth: GetCountsResponse = await getCounts(tenantId, ssoToken);
-    const withTenantOnly: GetCountsResponse = await getCounts(tenantId);
-    const withoutParams: GetCountsResponse = await getCounts();
-
-    console.log(withBoth, withTenantOnly, withoutParams);
+  const resultWithOnlyTenant: GetBannedUsersCountResponse = await getCounts(tenantId);
+  const resultWithBoth: GetBannedUsersCountResponse = await getCounts(tenantId, ssoToken);
 }
-runExample();
+
+run();
 [inline-code-end]
 
 ---

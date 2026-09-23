@@ -1,5 +1,5 @@
-Vsi izdelki FastComments, ki jih je mogoče **vgraditi v vašo aplikacijo ali spletno stran**, so lokalizirani.
+Vsi izdelki FastComments, ki so **vdelani v vašo aplikacijo ali spletno stran**, so lokalizirani.
 
-Vsa **e-poštna sporočila** so popolnoma lokalizirana. Krajevne nastavitve, ki se uporabljajo za prikaz e-poštnih sporočil, ki jih pošiljamo, temeljijo na zadnjih krajevnih nastavitvah, ki jih je uporabnik uporabil ob zadnji prijavi ali komentiranju z gradnikom za komentarje.
+Vsa **e‑poštna sporočila** so popolnoma lokalizirana. Jezik, ki se uporablja za prikaz e‑poštnih sporočil, ki jih pošljemo, temelji na zadnjem jeziku, ki ga je uporabnik uporabil, ko se je nazadnje prijavil ali komentiral z vtičnikom za komentiranje.
 
-**Skrbniška in uporabniška nadzorna plošča** trenutno ni lokalizirana, vendar je na načrtu.
+**Upravljaška in uporabniška nadzorna plošča** sta lokalizirani. Vsak uporabnik lahko izbere svoj želeni jezik na strani s podrobnostmi računa.

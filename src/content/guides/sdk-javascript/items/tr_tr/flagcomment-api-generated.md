@@ -9,20 +9,20 @@
 
 ## Yanıt
 
-Döndürür: [`FlagCommentResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse1.ts)
+Döndürür: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'flagComment Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "tenant_2023";
-  const commentId: string = "comment_5678";
-  const userId: string = "user_1234";
-  const anonUserId: string = "anon_4321";
+  const tenantId: string = "acme-corp";
+  const commentId: string = "comment-20230915-001";
+  const userId: string = "user-42";
+  const anonUserId: string = "anon-abc123";
 
-  const result: FlagCommentResponse1 = await flagComment(tenantId, commentId, userId);
-  const anonResult: FlagCommentResponse1 = await flagComment(tenantId, commentId, undefined, anonUserId);
+  const response: FlagCommentResponse = await flagComment(tenantId, commentId, userId, anonUserId);
+  console.log(response);
 })();
 [inline-code-end]
 

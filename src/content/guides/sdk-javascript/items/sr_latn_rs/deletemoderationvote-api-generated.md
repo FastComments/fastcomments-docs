@@ -2,33 +2,35 @@
 
 | Ime | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| commentId | string | Da |  |
-| voteId | string | Da |  |
-| broadcastId | string | Ne |  |
-| tenantId | string | Ne |  |
-| sso | string | Ne |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| voteId | string | Yes |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## Odgovor
 
-Vraća: [`DeleteModerationVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModerationVoteResponse.ts)
+Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteModerationVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteModerationVote Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const voteId: string = "vote_9876";
-const broadcastId: string = "brd_001";
-const tenantId: string = "tenant_42";
-const sso: string = "sso_token_abc";
+async function runDeleteModerationVote(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6a";
+  const commentId: string = "comment_4d3e2f1a";
+  const voteId: string = "vote_12345abcde";
+  const broadcastId: string | undefined = "broadcast_2023_09_15";
+  const sso: string | undefined = "sso_user_7890token";
 
-const result: DeleteModerationVoteResponse = await deleteModerationVote(
-  commentId,
-  voteId,
-  broadcastId,
-  tenantId,
-  sso
-);
+  const result: VoteDeleteResponse = await deleteModerationVote(
+    tenantId,
+    commentId,
+    voteId,
+    broadcastId,
+    sso
+  );
+
+  console.log(result);
+}
 [inline-code-end]
-
----

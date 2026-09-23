@@ -1,11 +1,11 @@
-List pagina’s voor een tenant. Gebruikt door de FChat desktopclient om zijn kamerlijst te vullen.  
+List pagina's voor een tenant. Gebruikt door de FChat desktopclient om de kamerlijst te vullen.  
 Vereist dat `enableFChat` true is in de opgeloste aangepaste configuratie voor elke pagina.  
-Pagina’s die SSO vereisen, worden gefilterd op basis van de groepstoegang van de aanvragende gebruiker.
+Pagina's die SSO vereisen worden gefilterd op basis van de groepsrechten van de aanvragende gebruiker.
 
 ## Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Naam | Type | Verplicht | Beschrijving |
+|------|------|-----------|--------------|
 | tenantId | string | Yes |  |
 | cursor | string | No |  |
 | limit | number | No |  |
@@ -13,31 +13,32 @@ Pagina’s die SSO vereisen, worden gefilterd op basis van de groepstoegang van 
 | sortBy | PagesSortBy | No |  |
 | hasComments | boolean | No |  |
 
-## Response
+## Respons
 
-Retourneert: [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+Retourneert: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'getPagesPublic Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 
   console.log(response);
 }
 [inline-code-end]
+
+---

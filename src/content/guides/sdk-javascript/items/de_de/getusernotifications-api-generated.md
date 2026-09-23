@@ -17,39 +17,29 @@
 
 ## Antwort
 
-Rückgabe: [`GetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationsResponse.ts)
+Rückgabe: [`GetMyNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetMyNotificationsResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getUserNotifications Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUserNotifications() {
-    const tenantId: string = "tenant_9f4b2c";
-    const urlId: string = "post_1234";
-    const pageSize: number = 25;
-    const afterId: string = "notif_5678";
-    const includeContext: boolean = true;
-    const unreadOnly: boolean = false;
-    const dmOnly: boolean = false;
-    const includeTranslations: boolean = true;
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const urlId: string = "article-42";
+  const pageSize: number = 20;
+  const includeContext: boolean = true;
+  const unreadOnly: boolean = true;
 
-    const notifications: GetUserNotificationsResponse = await getUserNotifications(
-        tenantId,
-        urlId,
-        pageSize,
-        afterId,
-        includeContext,
-        undefined,
-        unreadOnly,
-        dmOnly,
-        undefined,
-        includeTranslations,
-        undefined,
-        undefined
-    );
+  const notifications: GetMyNotificationsResponse = await getUserNotifications(
+    tenantId,
+    urlId,
+    pageSize,
+    undefined,
+    includeContext,
+    undefined,
+    unreadOnly
+  );
 
-    console.log(notifications);
+  console.log(notifications);
 }
 [inline-code-end]
-
----

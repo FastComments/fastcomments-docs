@@ -1,22 +1,30 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| id | string | Yes |  |
+|------|------|------------|-----------|
+| tenantId | string | Ναι |  |
+| urlId | string | Ναι |  |
+| id | string | Ναι |  |
+| sso | string | Όχι |  |
 
 ## Απόκριση
 
-Επιστρέφει: [`DeleteV2PageReactResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteV2PageReactResponse.ts)
+Επιστρέφει: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateV1PageReact.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deleteV2PageReact'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV2PageReact Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const urlId: string = "page_98765";
-const reactionId: string = "react_abcde";
+async function runDeleteExamples() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "page_98765";
+  const commentId: string = "comment_abcde";
 
-const deleteResult: DeleteV2PageReactResponse = await deleteV2PageReact(tenantId, urlId, reactionId);
+  // Κλήση χωρίς προαιρετικό sso
+  const resultWithoutSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId);
+
+  // Κλήση με προαιρετικό sso
+  const ssoToken: string = "sso_token_xyz";
+  const resultWithSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId, ssoToken);
+}
 [inline-code-end]

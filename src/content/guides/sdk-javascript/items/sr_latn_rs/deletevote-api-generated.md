@@ -2,26 +2,26 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| id | string | Da |  |
-| editKey | string | Ne |  |
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| editKey | string | No |  |
 
 ## Odgovor
 
-Vraća: [`DeleteVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteVoteResponse.ts)
+Vraća: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteVote Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp";
-  const commentId: string = "comment-9876";
-  const editKey: string = "edit-key-123";
+async function run() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "comment_98765";
+  const editKey: string = "edit_abcde";
 
-  const resultWithEdit: DeleteVoteResponse = await deleteVote(tenantId, commentId, editKey);
-  const resultWithoutEdit: DeleteVoteResponse = await deleteVote(tenantId, commentId);
-})();
+  const responseWithKey: VoteDeleteResponse = await deleteVote(tenantId, commentId, editKey);
+  const responseWithoutKey: VoteDeleteResponse = await deleteVote(tenantId, commentId);
+}
+
+run();
 [inline-code-end]
-
----

@@ -7,19 +7,27 @@
 
 ## Одговор
 
-Враћа: [`GetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentResponse.ts)
+Враћа: [`APIGetCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Primer getComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getComment Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function fetchComment(): Promise<void> {
   const tenantId: string = "acme-corp";
-  const commentId: string = "comment-987654";
-  const result: GetCommentResponse = await getComment(tenantId, commentId);
-  const badgeInfo: CommentUserBadgeInfo | undefined = result.comment?.user?.badgeInfo;
-  console.log(badgeInfo?.label);
-})();
-[inline-code-end]
+  const commentId: string = "cmt_1234567890";
 
----
+  const response: APIGetCommentResponse = await getComment(tenantId, commentId);
+  const comment: APIComment | undefined = response.comment;
+
+  // Демонстрација опционох поља
+  const badgeInfo: CommentUserBadgeInfo | undefined = comment?.user?.badge;
+  const hashtags: CommentUserHashTagInfo[] | undefined = comment?.user?.hashtags;
+  const mentions: CommentUserMentionInfo[] | undefined = comment?.user?.mentions;
+  const meta: APICommentBaseMeta | undefined = comment?.meta;
+
+  console.log(comment?.id, badgeInfo?.type);
+}
+
+fetchComment();
+[inline-code-end]

@@ -1,25 +1,25 @@
 ## Параметри
 
-| Назва | Тип | Обов'язковий | Опис |
+| Назва | Тип | Обов’язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Так |  |
+| sso | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetUserBanPreferenceResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBanPreferenceResponse.ts)
+Повертає: [`APIModerateGetUserBanPreferencesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIModerateGetUserBanPreferencesResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getUserBanPreference'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserBanPreference(): Promise<void> {
-  const tenantId: string = "acme-corp-tenant-2024";
-  const sso: string = "sso-token-9f8b7a6c";
+async function demoGetUserBanPreference() {
+  const tenantId: string = "tenant_987654321";
+  const ssoToken: string = "sso_user_abc123xyz";
 
-  const result: GetUserBanPreferenceResponse = await getUserBanPreference(tenantId, sso);
-  console.log(result);
+  const responseWithSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId, ssoToken);
+  const responseWithoutSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId);
 }
-
-demoGetUserBanPreference();
 [inline-code-end]
+
+---

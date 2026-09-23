@@ -2,41 +2,37 @@
 
 | Nome | Tipo | Obrigatório | Descrição |
 |------|------|-------------|-----------|
-| commentId | string | Yes |  |
-| includeEmail | boolean | No |  |
-| includeIP | boolean | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Sim |  |
+| commentId | string | Sim |  |
+| includeEmail | boolean | Não |  |
+| includeIP | boolean | Não |  |
+| sso | string | Não |  |
 
 ## Resposta
 
-Retorna: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Retorna: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Conjunto completo de parâmetros
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Chamada com apenas os parâmetros obrigatórios
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Chamada com parâmetros opcionais
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Chamada mínima usando apenas o argumento obrigatório
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Use os resultados conforme necessário...
 }
 [inline-code-end]
-
----

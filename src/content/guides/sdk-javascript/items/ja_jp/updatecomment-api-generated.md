@@ -9,34 +9,31 @@
 | doSpamCheck | boolean | No |  |
 | isLive | boolean | No |  |
 
-## 返り値
+## レスポンス
 
-返り値: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'updateComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const commentId: string = "cmt_98765";
-
-const updatableCommentParams: UpdatableCommentParams = {
-  // 例のフィールド; 実際の形は API 定義に依存します
-  // 例: body: "Edited comment content",
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+const commentId: string = "comment-9876543210";
+const updateParams: UpdatableCommentParams = {
+  content: "Edited comment content",
+  isApproved: true
 };
 
-const contextUserId: string = "user_abcde";
+const contextUserId: string = "user-11223344";
 const doSpamCheck: boolean = true;
 const isLive: boolean = false;
 
-const result: UpdateCommentResponse = await updateComment(
+const response: APIEmptyResponse = await updateComment(
   tenantId,
   commentId,
-  updatableCommentParams,
+  updateParams,
   contextUserId,
   doSpamCheck,
   isLive
 );
 [inline-code-end]
-
----

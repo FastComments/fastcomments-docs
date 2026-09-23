@@ -1,7 +1,7 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | updatableCommentParams | UpdatableCommentParams | Ja |  |
@@ -9,30 +9,29 @@
 | doSpamCheck | boolean | Nee |  |
 | isLive | boolean | Nee |  |
 
-## Respons
+## Response
 
-Retourneert: [`UpdateCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateCommentResponse.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Voorbeeld
+## Example
 
 [inline-code-attrs-start title = 'updateComment Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const commentId: string = "cmt_98765";
-
-const updatableCommentParams: UpdatableCommentParams = {
-  // voorbeeldvelden; de werkelijke structuur is afhankelijk van de API-definitie
-  // b.v., body: "Bewerkt commentaarinhoud",
+const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+const commentId: string = "comment-9876543210";
+const updateParams: UpdatableCommentParams = {
+  content: "Edited comment content",
+  isApproved: true
 };
 
-const contextUserId: string = "user_abcde";
+const contextUserId: string = "user-11223344";
 const doSpamCheck: boolean = true;
 const isLive: boolean = false;
 
-const result: UpdateCommentResponse = await updateComment(
+const response: APIEmptyResponse = await updateComment(
   tenantId,
   commentId,
-  updatableCommentParams,
+  updateParams,
   contextUserId,
   doSpamCheck,
   isLive

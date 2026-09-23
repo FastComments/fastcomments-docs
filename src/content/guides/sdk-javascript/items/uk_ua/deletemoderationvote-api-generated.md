@@ -1,32 +1,39 @@
+---
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
-|------|------|-------------|------|
+| Назва | Тип | Обов'язковий | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Так |  |
 | commentId | string | Так |  |
 | voteId | string | Так |  |
 | broadcastId | string | Ні |  |
-| tenantId | string | Ні |  |
 | sso | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`DeleteModerationVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteModerationVoteResponse.ts)
+Повертає: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'deleteModerationVote Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_12345";
-const voteId: string = "vote_9876";
-const broadcastId: string = "brd_001";
-const tenantId: string = "tenant_42";
-const sso: string = "sso_token_abc";
+async function runDeleteModerationVote(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c6a";
+  const commentId: string = "comment_4d3e2f1a";
+  const voteId: string = "vote_12345abcde";
+  const broadcastId: string | undefined = "broadcast_2023_09_15";
+  const sso: string | undefined = "sso_user_7890token";
 
-const result: DeleteModerationVoteResponse = await deleteModerationVote(
-  commentId,
-  voteId,
-  broadcastId,
-  tenantId,
-  sso
-);
+  const result: VoteDeleteResponse = await deleteModerationVote(
+    tenantId,
+    commentId,
+    voteId,
+    broadcastId,
+    sso
+  );
+
+  console.log(result);
+}
 [inline-code-end]
+
+---

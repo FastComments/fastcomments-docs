@@ -2,38 +2,31 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| adjustCommentVotesParams | AdjustCommentVotesParams | Yes |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| commentId | string | 예 |  |
+| adjustCommentVotesParams | AdjustCommentVotesParams | 예 |  |
+| broadcastId | string | 아니오 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`PostAdjustCommentVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostAdjustCommentVotesResponse.ts)
+반환: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/AdjustVotesResponse.ts)
 
-## 예제
+## 예시
 
 [inline-code-attrs-start title = 'postAdjustCommentVotes 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_9f8b7a6d";
+const tenantId: string = "acme-corp";
+const commentId: string = "cmt_987654321";
+const adjustParams: AdjustCommentVotesParams = { voteDelta: 1 };
+const broadcastId: string = "brd_112233";
+const sso: string = "sso-token-xyz";
 
-const adjustParams: AdjustCommentVotesParams = {
-  voteDelta: 1,
-  // AdjustCommentVotesParams에 필요한 추가 필드
-};
-
-const broadcastId: string = "brd_20230915";
-const tenantId: string = "tenant_42";
-const sso: string = "sso-token-abc123";
-
-const result: PostAdjustCommentVotesResponse = await postAdjustCommentVotes(
+const result: AdjustVotesResponse = await postAdjustCommentVotes(
+  tenantId,
   commentId,
   adjustParams,
   broadcastId,
-  tenantId,
   sso
 );
 [inline-code-end]
-
----

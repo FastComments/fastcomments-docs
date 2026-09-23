@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API לתגובות בזמן אמת",
+  "pageHeader": "API לתגובות חיות",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "אימות"
     },
     {
-      "name": "אגרגציה של הנתונים שלך",
+      "name": "אגרגציית הנתונים שלך",
       "file": "aggregate-post.md",
       "subCat": "אגרגציות"
     },
@@ -130,62 +130,62 @@
       "subCat": "תבניות אימייל"
     },
     {
-      "name": "מבנה פוסט בפיד",
+      "name": "מבנה פוסט בתזרים",
       "file": "feed-post-structure.md",
-      "subCat": "פוסטים בפיד"
+      "subCat": "פוסטים בתזרים"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "פוסטים בפיד"
+      "subCat": "פוסטים בתזרים"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "פוסטים בפיד"
+      "subCat": "פוסטים בתזרים"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "פוסטים בפיד"
+      "subCat": "פוסטים בתזרים"
     },
     {
-      "name": "מבנה תגית",
+      "name": "מבנה האשטאג",
       "file": "hash-tag-structure.md",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "תגיות"
+      "subCat": "האשטאגים"
     },
     {
       "name": "GET /api/v1/me",
@@ -194,45 +194,45 @@
       "subCat": "אני"
     },
     {
-      "name": "מבנה מנחה",
+      "name": "מבנה מודרטור",
       "file": "moderator-structure.md",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "GET /api/v1/moderators/:id",
       "file": "moderator-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "GET /api/v1/moderators",
       "file": "moderators-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "POST /api/v1/moderators",
       "file": "moderator-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "POST /api/v1/moderators/:id/send-invite",
       "file": "moderator-send-invite.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "DELETE /api/v1/moderators/:id",
       "file": "moderator-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "מנחים"
+      "subCat": "מודרטורים"
     },
     {
       "name": "מבנה ספירת התראות",
@@ -270,39 +270,144 @@
       "subCat": "התראות"
     },
     {
-      "name": "מבנה דף",
+      "name": "API ציבורי לתגובות עמוד",
+      "file": "page-reacts-api.md",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "תגובות עמוד"
+    },
+    {
+      "name": "מבנה עמוד",
       "file": "page-structure.md",
-      "subCat": "דפים"
+      "subCat": "עמודים"
     },
     {
       "name": "GET /api/v1/pages",
       "file": "pages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "דפים"
+      "subCat": "עמודים"
     },
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "דפים"
+      "subCat": "עמודים"
     },
     {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "דפים"
+      "subCat": "עמודים"
     },
     {
       "name": "POST /api/v1/pages",
       "file": "page-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "דפים"
+      "subCat": "עמודים"
     },
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "דפים"
+      "subCat": "עמודים"
+    },
+    {
+      "name": "מבנה סקר",
+      "file": "poll-structure.md",
+      "subCat": "סקרים"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "סקרים"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "סקרים"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "סקרים"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "סקרים"
+    },
+    {
+      "name": "מבנה הצבעת סקר",
+      "file": "poll-vote-structure.md",
+      "subCat": "הצבעות סקר"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "הצבעות סקר"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "הצבעות סקר"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "הצבעות סקר"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "הצבעות סקר"
     },
     {
       "name": "מבנה אירוע ווב-הוק ממתין",

@@ -1,5 +1,8 @@
-Alle FastComments-producten die **in uw applicatie of website kunnen worden ingebed**, zijn gelokaliseerd.
+---
+Alle FastComments-producten die **inbedbaar zijn in uw applicatie of website**, zijn gelokaliseerd.
 
-Alle **e-mails** zijn volledig gelokaliseerd. De landinstelling die wordt gebruikt voor het weergeven van de e-mails die we verzenden, is gebaseerd op de laatste landinstelling die de gebruiker heeft gebruikt toen deze voor het laatst inlogde of reageerde met de reactiewidget.
+Alle **e-mails** zijn volledig gelokaliseerd. De locale die wordt gebruikt om de e-mails die we verzenden weer te geven, is gebaseerd op de laatste
+locale die de gebruiker gebruikte toen hij/zij voor het laatst inlogde of een reactie plaatste met de commentaarwidget.
 
-Het **beheerders- en gebruikersdashboard** is momenteel niet gelokaliseerd, maar staat wel op de roadmap.
+Het **admin- en gebruikersdashboard** is gelokaliseerd. Elke gebruiker kan zijn/haar voorkeurstaal kiezen op de pagina met accountgegevens.
+---

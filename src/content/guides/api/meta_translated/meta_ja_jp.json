@@ -4,12 +4,12 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "API リソース",
+      "name": "APIリソース",
       "file": "api-resources.md",
-      "subCat": "API リソース"
+      "subCat": "APIリソース"
     },
     {
-      "name": "OAuth 認可",
+      "name": "OAuth認証",
       "file": "oauth.md",
       "subCat": "認証"
     },
@@ -19,7 +19,7 @@
       "subCat": "集計"
     },
     {
-      "name": "AuditLog 構造",
+      "name": "監査ログ構造",
       "file": "audit-log-structure.md",
       "subCat": "監査ログ"
     },
@@ -270,6 +270,53 @@
       "subCat": "通知"
     },
     {
+      "name": "ページリアクション公開API",
+      "file": "page-reacts-api.md",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページリアクション"
+    },
+    {
       "name": "ページ構造",
       "file": "page-structure.md",
       "subCat": "ページ"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "ページ"
+    },
+    {
+      "name": "投票構造",
+      "file": "poll-structure.md",
+      "subCat": "投票"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票"
+    },
+    {
+      "name": "投票結果構造",
+      "file": "poll-vote-structure.md",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "投票結果"
     },
     {
       "name": "保留中Webhookイベント構造",

@@ -1,31 +1,25 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createModeratorBody | CreateModeratorBody | Yes |  |
+| tenantId | string | Да |  |
+| createModeratorBody | CreateModeratorBody | Да |  |
 
 ## Отговор
 
-Връща: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Връща: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример за createModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9876";
-  const moderatorPayload: CreateModeratorBody = {
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-    // опционални полета като описание са пропуснати
-  };
-  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
-  console.log(result);
-}
+const tenantId: string = "tenant_12345";
 
-runExample();
+const moderatorPayload: CreateModeratorBody = {
+  userId: "user_9876",
+  // по избор поле; може да се пропусне, ако не е необходимо
+  notes: "Temporary moderator for event"
+};
+
+const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]
-
----

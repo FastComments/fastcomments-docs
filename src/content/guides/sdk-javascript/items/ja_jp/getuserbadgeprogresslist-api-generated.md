@@ -1,37 +1,28 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | はい |  |
-| userId | string | いいえ |  |
-| limit | number | いいえ |  |
-| skip | number | いいえ |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| limit | number | No |  |
+| skip | number | No |  |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressListResponse.ts)
+Returns: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressListResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getUserBadgeProgressList の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchBadgeProgress() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe@example.com";
+(async () => {
+  const tenantId: string = "tenant-9f8b7c6d";
+  const userId: string = "user-123e4567-e89b-12d3-a456-426614174000";
   const limit: number = 10;
-  const skip: number = 5;
+  const skip: number = 0;
 
-  const fullList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(
-    tenantId,
-    userId,
-    limit,
-    skip
-  );
-
-  const simpleList: GetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId);
-}
-
-fetchBadgeProgress();
+  const response: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);
+  const status: APIStatus = response.status;
+  const badges: UserBadgeProgress[] = response.badges;
+})();
 [inline-code-end]
-
----

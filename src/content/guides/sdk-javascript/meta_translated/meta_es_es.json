@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Compatibilidad de navegador vs servidor",
+      "name": "Compatibilidad Navegador vs Servidor",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "APIs públicas vs seguras",
+      "name": "APIs Públicas vs Seguras",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Referencia de API",
       "type": "readme"
@@ -69,6 +69,12 @@
       "type": "readme"
     },
     {
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Inquilinos de agente",
+      "type": "api"
+    },
+    {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregado",
@@ -95,7 +101,7 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Comprobar comentarios bloqueados",
+      "subCat": "Verificar comentarios bloqueados",
       "type": "api"
     },
     {
@@ -275,55 +281,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
@@ -341,61 +347,61 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
-      "name": "updateFeedPost",
+      "name": "getTranslations",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Traducciones",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publicaciones de feed",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
@@ -450,6 +456,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Etiquetas",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Yo",
       "type": "api"
     },
     {
@@ -891,6 +903,54 @@
       "type": "api"
     },
     {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
       "subCat": "Configuraciones de preguntas",
@@ -1175,7 +1235,7 @@
     {
       "name": "getTranslations",
       "file": "gettranslations-api-generated.md",
-      "subCat": "Traducciones",
+      "subCat": "Translations",
       "type": "api"
     },
     {
@@ -1314,6 +1374,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Votos",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

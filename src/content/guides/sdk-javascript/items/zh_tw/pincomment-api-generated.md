@@ -1,27 +1,31 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| commentId | string | 是 |  |
-| broadcastId | string | 是 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| broadcastId | string | Yes |  |
+| sso | string | No |  |
 
 ## 回應
 
-返回: [`PinCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PinCommentResponse.ts)
+返回：[`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'pinComment 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant-001';
-  const commentId: string = 'comment-5678';
-  const broadcastId: string = 'broadcast-2023';
-  const ssoToken: string = 'sso-xyz-789';
+async function demoPinComment() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const broadcastId: string = "brd_54321";
 
-  const pinResult: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId);
-  const pinResultWithSso: PinCommentResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);
-})();
+  const resultWithoutSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId);
+  const ssoToken: string = "sso_abcde12345";
+  const resultWithSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);
+}
+
+demoPinComment();
 [inline-code-end]
+
+---

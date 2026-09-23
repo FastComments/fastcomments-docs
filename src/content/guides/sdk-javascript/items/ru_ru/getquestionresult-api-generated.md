@@ -1,26 +1,26 @@
 ## Параметры
 
-| Название | Тип | Обязательно | Описание |
-|------|------|----------|-------------|
+| Имя | Тип | Обязательно | Описание |
+|------|------|--------------|----------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
 
 ## Ответ
 
-Возвращает: [`GetQuestionResultResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultResponse1.ts)
+Возвращает: [`GetQuestionResultResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getQuestionResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchQuestionResult(): Promise<void> {
-    const tenantId: string = "acme-corp-001";
-    const questionId: string = "question-7a9b8c";
-    const result: GetQuestionResultResponse1 = await getQuestionResult(tenantId, questionId);
+const tenantId: string = "tenant_12345";
+const questionId: string = "question_98765";
 
-    const question: QuestionResult | undefined = result.questionResult;
-    const firstMeta: MetaItem | undefined = result.meta?.[0];
+const response: GetQuestionResultResponse = await getQuestionResult(tenantId, questionId);
 
-    console.log(question?.id, firstMeta?.key);
-}
+const status: APIStatus | undefined = response.status;
+const firstResult: QuestionResult | undefined = response.results?.[0];
+const firstMeta: MetaItem | undefined = response.meta?.[0];
+
+console.log(response);
 [inline-code-end]

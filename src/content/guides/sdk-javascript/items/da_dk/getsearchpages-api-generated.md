@@ -1,25 +1,26 @@
 ## Parametre
 
-| Navn | Type | Obligatorisk | Beskrivelse |
-|------|------|--------------|-------------|
-| value | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| Navn | Type | Påkrævet | Beskrivelse |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| value | string | Nej |  |
+| sso | string | Nej |  |
 
 ## Svar
 
-Returnerer: [`GetSearchPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchPagesResponse.ts)
+Returnerer: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationPageSearchResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'getSearchPages Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const query: string = "network outage";
-  const tenantId: string = "tenant-9876";
-  const ssoToken: string = "sso-abc123def456";
+const tenantId: string = "acme-corp-123";
+const searchValue: string = "spam";
+const ssoToken: string = "sso-abc123def456";
 
-  const searchResult: GetSearchPagesResponse = await getSearchPages(query, tenantId, ssoToken);
-  const searchResultNoSso: GetSearchPagesResponse = await getSearchPages(query, tenantId);
-})();
+const result1: ModerationPageSearchResponse = await getSearchPages(tenantId);
+const result2: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue);
+const result3: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue, ssoToken);
 [inline-code-end]
+
+---

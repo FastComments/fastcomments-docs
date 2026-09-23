@@ -2,30 +2,25 @@
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateModeratorBody | UpdateModeratorBody | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateModeratorBody | UpdateModeratorBody | Da |  |
 
 ## Odgovor
 
-Vraća: [`UpdateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateModeratorResponse.ts)
+Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Primjer
 
-[inline-code-attrs-start title = 'updateModerator Primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer updateModerator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoUpdateModerator(): Promise<void> {
-    const tenantId: string = "tenant_42abc";
-    const moderatorId: string = "moderator_8f9e";
-    const updateBody: UpdateModeratorBody = {
-        isActive: true,
-        role: "admin",
-        // opcionalno polje
-        notes: "Promoted to senior moderator"
-    };
-    const result: UpdateModeratorResponse = await updateModerator(tenantId, moderatorId, updateBody);
-    console.log(result);
-}
+const tenantId: string = "tenant_9f8b7c6d";
+const moderatorId: string = "mod_12345";
 
-demoUpdateModerator();
+const updateBody: UpdateModeratorBody = {
+  isActive: true,
+  // role?: string je opcionalan i ovdje je izostavljen
+};
+
+const result: APIEmptyResponse = await updateModerator(tenantId, moderatorId, updateBody);
 [inline-code-end]

@@ -1,5 +1,6 @@
-Currently-online viewers of a page: people whose websocket session is subscribed to the page right now.  
-Returns anonCount + totalCount (room-wide subscribers, including anon viewers we don't enumerate).
+---  
+צופים מקוונים כרגע של דף: אנשים שהחיבור WebSocket שלהם מנוי לדף ברגע זה.  
+מחזיר anonCount + totalCount (מנויים ברמת החדר, כולל צופים אנונימיים שאינם נספרים).
 
 ## פרמטרים
 
@@ -12,25 +13,29 @@ Returns anonCount + totalCount (room-wide subscribers, including anon viewers we
 
 ## תגובה
 
-מחזיר: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+מחזיר: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל‑getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-async function demoOnlineUsers() {
+[inline-code-attrs-start title = 'דוגמת getOnlineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]  
+[inline-code-start]  
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // עם פרמטרי דפדוף אופציונליים
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // ללא פרמטרי דפדוף אופציונליים
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]
+
+---

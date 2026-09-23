@@ -8,17 +8,18 @@
 
 ## Απάντηση
 
-Επιστρέφει: [`SendInviteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SendInviteResponse.ts)
+Επιστρέφει: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'sendInvite Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const inviteId: string = "invite-12345";
-const fromName: string = "John Doe";
+const tenantId: string = "tenant-987654321";
+const id: string = "user-123456789";
+const fromName: string = "Alice Johnson";
 
-const inviteResult: SendInviteResponse = await sendInvite(tenantId, inviteId, fromName);
+const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
+console.log(result);
 [inline-code-end]
 
 ---

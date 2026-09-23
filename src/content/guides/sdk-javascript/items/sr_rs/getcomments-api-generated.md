@@ -2,49 +2,63 @@
 
 | Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| page | number | No |  |
-| limit | number | No |  |
-| skip | number | No |  |
-| asTree | boolean | No |  |
-| skipChildren | number | No |  |
-| limitChildren | number | No |  |
-| maxTreeDepth | number | No |  |
-| urlId | string | No |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
-| contextUserId | string | No |  |
-| hashTag | string | No |  |
-| parentId | string | No |  |
-| direction | SortDirections | No |  |
-| fromDate | number | No |  |
-| toDate | number | No |  |
+| tenantId | string | Да |  |
+| page | number | Не |  |
+| limit | number | Не |  |
+| skip | number | Не |  |
+| asTree | boolean | Не |  |
+| skipChildren | number | Не |  |
+| limitChildren | number | Не |  |
+| maxTreeDepth | number | Не |  |
+| urlId | string | Не |  |
+| userId | string | Не |  |
+| anonUserId | string | Не |  |
+| contextUserId | string | Не |  |
+| hashTag | string | Не |  |
+| parentId | string | Не |  |
+| direction | SortDirections | Не |  |
+| fromDate | number | Не |  |
+| toDate | number | Не |  |
 
 ## Одговор
 
-Враћа: [`GetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponse.ts)
+Враћа: [`APIGetCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetCommentsResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getComments Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const page: number = 2;
-const limit: number = 50;
-const asTree: boolean = true;
-const urlId: string = "article_5678";
-const direction: SortDirections = "desc";
-const fromDate: number = Date.now() - 7 * 24 * 60 * 60 * 1000; // пре недељу дана
-const toDate: number = Date.now();
+async function loadComments(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const page: number = 1;
+  const limit: number = 50;
+  const asTree: boolean = false;
+  const direction: SortDirections = "asc";
+  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 days ago
+  const toDate: number = Date.now();
 
-const commentsResponse: GetCommentsResponse = await getComments({
-  tenantId,
-  page,
-  limit,
-  asTree,
-  urlId,
-  direction,
-  fromDate,
-  toDate,
-});
+  const commentsResponse: APIGetCommentsResponse = await getComments(
+    tenantId,
+    page,
+    limit,
+    undefined,
+    asTree,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    direction,
+    fromDate,
+    toDate
+  );
+
+  console.log(commentsResponse);
+}
 [inline-code-end]
+
+---

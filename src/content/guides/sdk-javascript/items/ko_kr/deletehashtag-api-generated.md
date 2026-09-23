@@ -1,26 +1,29 @@
+---
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|------|------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenantId | string | 예 |  |
+| tag | string | 예 |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | 아니오 |  |
 
 ## 응답
 
-반환: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
+반환: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'deleteHashTag 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tag: string = "announcement";
-  const tenantId: string = "tenant_9876";
-  const requestBody: DeleteHashTagRequestBody = {
-    confirmDeletion: true
-  };
-  const response: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, requestBody);
-  console.log(response);
-})();
+const tenantId: string = "tenant_42";
+const tag: string = "high-priority";
+
+const requestBody: DeleteHashTagRequestBody = {
+  // 필요한 필드를 채워 주세요
+};
+
+const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
+const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]
+
+---

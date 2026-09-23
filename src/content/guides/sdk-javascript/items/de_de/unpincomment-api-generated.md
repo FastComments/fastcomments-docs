@@ -1,7 +1,7 @@
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|---------------|
+|------|------|--------------|--------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | broadcastId | string | Ja |  |
@@ -9,21 +9,19 @@
 
 ## Antwort
 
-Rückgabe: [`UnPinCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnPinCommentResponse.ts)
+Rückgabe: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeCommentPinStatusResponse.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'unPinComment Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "tenant-001"
-  const commentId: string = "comment-123"
-  const broadcastId: string = "broadcast-456"
-  const sso: string = "sso-token-xyz"
+  const tenantId: string = "acme-corp";
+  const commentId: string = "comment-20230915-001";
+  const broadcastId: string = "broadcast-2023-09-15";
+  const ssoToken: string = "sso-abc123";
 
-  const resultWithSso: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId, sso)
-  const resultWithoutSso: UnPinCommentResponse = await unPinComment(tenantId, commentId, broadcastId)
-
-  console.log(resultWithSso, resultWithoutSso)
-})()
+  const result: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithoutSso: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId);
+})();
 [inline-code-end]

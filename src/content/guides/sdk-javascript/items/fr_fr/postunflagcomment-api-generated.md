@@ -1,26 +1,29 @@
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
-|------|------|--------------|-------------|
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | broadcastId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Réponse
 
-Retourne : [`PostUnFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostUnFlagCommentResponse.ts)
+Retourne : [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple postUnFlagComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'postUnFlagComment Exemple'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async () => {
-  const response: PostUnFlagCommentResponse = await postUnFlagComment(
-    "cmt_12345",          // commentId
-    "brd_67890",          // broadcastId (optionnel)
-    "tenant_abc",         // tenantId (optionnel)
-    "sso_user_token_789"  // sso (optionnel)
-  );
-};
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "comment_98765";
+  const broadcastId: string = "broadcast_55555";
+  const sso: string = "sso_token_abcde";
+
+  const result1: APIEmptyResponse = await postUnFlagComment(tenantId, commentId);
+  const result2: APIEmptyResponse = await postUnFlagComment(tenantId, commentId, broadcastId, sso);
+}
+
+runExample();
 [inline-code-end]

@@ -1,25 +1,27 @@
-Πληροφορίες πολλαπλών χρηστών για έναν ενοικιαστή. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από User / SSOUser. Χρησιμοποιείται από το widget σχολίων για να εμπλουτίσει χρήστες που εμφανίστηκαν μέσω ενός γεγονότος παρουσίας. Χωρίς συμφραζόμενο σελίδας: η ιδιωτικότητα επιβάλλεται ομοιόμορφα (τα ιδιωτικά προφίλ αποκρύπτονται).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser. Used by the comment widget to enrich users that just appeared via a presence event. No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|-----------|------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+|------|------|----------|-------------|
+| tenantId | string | Ναι |  |
+| ids | string | Ναι |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Επιστρέφει: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// Προαιρετικά πεδία στην απάντηση μπορεί να είναι undefined
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]
+
+---

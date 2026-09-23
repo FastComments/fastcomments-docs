@@ -2,39 +2,37 @@
 
 | Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| commentId | string | Yes |  |
-| includeEmail | boolean | No |  |
-| includeIP | boolean | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| includeEmail | boolean | Не |  |
+| includeIP | boolean | Не |  |
+| sso | string | Не |  |
 
 ## Отговор
 
-Връща: [`GetModerationCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentResponse.ts)
+Връща: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getModerationComment Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getModerationComment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchCommentDetails() {
-  // Пълен набор от параметри
-  const commentId: string = "cmt_12345abc";
+async function fetchComments() {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
+
+  // Извикване само с задължителните параметри
+  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
+
+  // Извикване с незадължителните параметри
   const includeEmail: boolean = true;
   const includeIP: boolean = false;
-  const tenantId: string = "tenant_9876";
-  const sso: string = "sso_token_xyz";
-
-  const fullResult: GetModerationCommentResponse = await getModerationComment(
+  const sso: string = "sso-token-abc123";
+  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(
+    tenantId,
     commentId,
     includeEmail,
     includeIP,
-    tenantId,
     sso
   );
-
-  // Минимално извикване, използвайки само задължителния аргумент
-  const minimalResult: GetModerationCommentResponse = await getModerationComment("cmt_67890def");
-
-  // Използвайте резултатите според нуждите...
 }
 [inline-code-end]

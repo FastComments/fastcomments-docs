@@ -1,34 +1,32 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tag | string | Yes |  |
-| tenantId | string | No |  |
-| updateHashTagBody | UpdateHashTagBody | No |  |
+| tenantId | string | 예 |  |
+| tag | string | 예 |  |
+| updateHashTagBody | UpdateHashTagBody | 아니오 |  |
 
 ## 응답
 
-반환: [`PatchHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PatchHashTagResponse.ts)
+반환: [`UpdateHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateHashTagResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'patchHashTag 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const response1: PatchHashTagResponse = await patchHashTag("new-feature");
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const tag: string = "news";
 
-const response2: PatchHashTagResponse = await patchHashTag(
-  "beta-release",
-  "tenant-9f8b7c"
-);
+  // 선택적 본문 없이 호출
+  const responseWithoutBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag);
 
-const updateBody: UpdateHashTagBody = {
-  description: "Mark comments related to the upcoming beta release",
-  color: "#1e90ff"
-};
+  // 업데이트를 위한 본문 준비
+  const updateBody: UpdateHashTagBody = {
+    name: "Latest News",
+    description: "Tag for the most recent news articles"
+  };
 
-const response3: PatchHashTagResponse = await patchHashTag(
-  "beta-release",
-  "tenant-9f8b7c",
-  updateBody
-);
+  const responseWithBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag, updateBody);
+})();
 [inline-code-end]

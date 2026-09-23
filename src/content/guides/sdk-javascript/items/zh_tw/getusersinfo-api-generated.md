@@ -1,27 +1,27 @@
-取得租戶的批次使用者資訊。根據 userIds，回傳 User / SSOUser 的顯示資訊。此功能由評論小工具使用，以在使用者透過 presence 事件剛出現時豐富其資訊。無頁面上下文：隱私權一致執行（私密個人檔案會被遮蔽）。
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Used by the comment widget to enrich users that just appeared via a presence event.  
+No page context: privacy is enforced uniformly (private profiles are masked).
 
-## 參數
+## Parameters
 
-| 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | ids | string | Yes |  |
 
-## 回應
+## Response
 
-返回: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## 範例
+## Example
 
 [inline-code-attrs-start title = 'getUsersInfo 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// 回應中的可選欄位可能為 undefined
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]
-
----

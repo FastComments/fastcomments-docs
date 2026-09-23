@@ -1,31 +1,35 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| userId | string | 아니오 |  |
-| state | number | 아니오 |  |
-| skip | number | 아니오 |  |
-| limit | number | 아니오 |  |
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| state | number | No |  |
+| skip | number | No |  |
+| limit | number | No |  |
 
 ## 응답
 
-반환: [`GetTicketsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse1.ts)
+반환: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'getTickets 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getTickets 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadTickets() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
-  const state: number = 2; // 예: 닫힌 상태
-  const skip: number = 10;
-  const limit: number = 5;
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const ticketsSimple: GetTicketsResponse = await getTickets(tenantId);
 
-  const ticketsFull: GetTicketsResponse1 = await getTickets(tenantId, userId, state, skip, limit);
-  const ticketsPartial: GetTicketsResponse1 = await getTickets(tenantId);
-}
-
-loadTickets();
+  const userId: string = "user_9876";
+  const state: number = 1; // 예: 열림
+  const skip: number = 0;
+  const limit: number = 20;
+  const ticketsFull: GetTicketsResponse = await getTickets(
+    tenantId,
+    userId,
+    state,
+    skip,
+    limit
+  );
+})();
 [inline-code-end]

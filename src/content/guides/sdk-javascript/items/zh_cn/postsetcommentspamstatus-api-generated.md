@@ -1,38 +1,41 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| commentId | string | 是 |  |
-| spam | boolean | 否 |  |
-| permNotSpam | boolean | 否 |  |
-| broadcastId | string | 否 |  |
-| tenantId | string | 否 |  |
-| sso | string | 否 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| spam | boolean | No |  |
+| permNotSpam | boolean | No |  |
+| broadcastId | string | No |  |
+| sso | string | No |  |
 
 ## 响应
 
-返回: [`PostSetCommentSpamStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentSpamStatusResponse.ts)
+返回: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'postSetCommentSpamStatus 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoSpamStatus(): Promise<void> {
-  const commentId: string = "cmt_5f2a1b3c4d6e7f8g9h0i";
+const tenantId: string = "tenant_42";
+const commentId: string = "comment_1001";
 
-  // 仅必需参数
-  const resultSimple: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(commentId, true);
+const spam: boolean = true;
+const permNotSpam: boolean = false;
+const broadcastId: string = "broadcast_2023";
+const sso: string = "sso_user_5678";
 
-  // 提供了全部可选参数
-  const resultFull: PostSetCommentSpamStatusResponse = await postSetCommentSpamStatus(
-    commentId,
-    false,
-    true,
-    "brd_1234abcd",
-    "tenant_42",
-    "sso_9876xyz"
-  );
+const resultFull: APIEmptyResponse = await postSetCommentSpamStatus(
+  tenantId,
+  commentId,
+  spam,
+  permNotSpam,
+  broadcastId,
+  sso
+);
 
-  console.log(resultSimple, resultFull);
-}
+const resultMinimal: APIEmptyResponse = await postSetCommentSpamStatus(
+  tenantId,
+  commentId
+);
 [inline-code-end]

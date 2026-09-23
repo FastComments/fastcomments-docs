@@ -1,6 +1,6 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | id | string | Yes |  |
@@ -8,25 +8,21 @@
 
 ## 回應
 
-Returns: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
+返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'deleteTenant 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-    const tenantId: string = "tenant_12345";
-    const id: string = "resource_98765";
-    const sure: string = "confirm";
+async function main(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_9876";
 
-    // 呼叫時包含可選的 'sure' 參數
-    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
-    console.log(responseWithSure);
-
-    // 呼叫時不包含可選的 'sure' 參數
-    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
-    console.log(responseWithoutSure);
+  const resultWithoutSure: APIEmptyResponse = await deleteTenant(tenantId, userId);
+  const resultWithSure: APIEmptyResponse = await deleteTenant(tenantId, userId, "confirm");
 }
 
-runExample();
+main();
 [inline-code-end]
+
+---

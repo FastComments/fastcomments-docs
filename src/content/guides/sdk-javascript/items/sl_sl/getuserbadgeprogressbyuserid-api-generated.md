@@ -1,25 +1,28 @@
 ## Parametri
 
-| Ime | Vrsta | Obvezno | Opis |
+| Ime | Tip | Obvezno | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Da |  |
 | userId | string | Da |  |
 
 ## Odgovor
 
-Vrne: [`GetUserBadgeProgressByUserIdResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserBadgeProgressByUserIdResponse.ts)
+Vrne: [`APIGetUserBadgeProgressResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIGetUserBadgeProgressResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getUserBadgeProgressByUserId Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getUserBadgeProgressByUserId'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp";
-  const userId: string = "user-12345";
+const tenantId: string = "acme-corp";
+const userId: string = "user-42";
 
-  const badgeProgress: GetUserBadgeProgressByUserIdResponse = await getUserBadgeProgressByUserId(tenantId, userId);
-  console.log(badgeProgress);
-})();
+const badgeProgress: APIGetUserBadgeProgressResponse = await getUserBadgeProgressByUserId(tenantId, userId);
+
+if (badgeProgress.status?.code !== undefined) {
+  const statusCode: number = badgeProgress.status.code;
+}
+
+if (badgeProgress.progress?.length) {
+  const firstProgress: UserBadgeProgress = badgeProgress.progress[0];
+}
 [inline-code-end]
-
----

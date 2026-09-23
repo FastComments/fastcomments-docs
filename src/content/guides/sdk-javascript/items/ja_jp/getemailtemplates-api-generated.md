@@ -1,27 +1,24 @@
 ## パラメータ
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| skip | number | No |  |
+| tenantId | string | はい |  |
+| skip | number | いいえ |  |
 
 ## レスポンス
 
-返り値: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
+返却: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getEmailTemplates の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_12345";
-
-  // オプションの 'skip' を省いて呼び出す
-  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
-
-  // オプションの 'skip' パラメータを指定して呼び出す
-  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
-})();
+async function fetchEmailTemplates() {
+  const tenantId: string = "acme-corp-123";
+  const skip: number = 20;
+  const templatesWithSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, skip);
+  const templatesWithoutSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
+}
 [inline-code-end]
 
 ---

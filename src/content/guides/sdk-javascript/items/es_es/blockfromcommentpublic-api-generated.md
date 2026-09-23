@@ -1,7 +1,7 @@
 ## Parámetros
 
-| Nombre | Tipo | Requerido | Descripción |
-|--------|------|-----------|-------------|
+| Nombre | Tipo | Obligatorio | Descripción |
+|------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | commentId | string | Sí |  |
 | publicBlockFromCommentParams | PublicBlockFromCommentParams | Sí |  |
@@ -9,35 +9,24 @@
 
 ## Respuesta
 
-Devuelve: [`BlockFromCommentPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockFromCommentPublicResponse.ts)
+Devuelve: [`BlockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/BlockSuccess.ts)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de blockFromCommentPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
+async function demoBlock() {
   const tenantId: string = "tenant_9f8b7c";
-  const commentId: string = "cmt_1234567890";
+  const commentId: string = "comment_3e2d1a";
   const blockParams: PublicBlockFromCommentParams = {
-    reason: "spam",
-    durationHours: 24,
+    reason: "harassment",
+    expiresInHours: 48
   };
-  const ssoToken: string = "sso_ABCDEF123456";
+  const ssoToken: string = "sso_5g6h7i";
 
-  const responseWithSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(
-    tenantId,
-    commentId,
-    blockParams,
-    ssoToken
-  );
-
-  const responseWithoutSso: BlockFromCommentPublicResponse = await blockFromCommentPublic(
-    tenantId,
-    commentId,
-    blockParams
-  );
-
-  console.log(responseWithSso, responseWithoutSso);
+  const resultWithSso: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, blockParams, ssoToken);
+  const resultWithoutSso: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, blockParams);
 }
-demo();
 [inline-code-end]
+
+---

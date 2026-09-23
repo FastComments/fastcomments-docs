@@ -1,43 +1,45 @@
-Lister les pages pour un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salons.  
-Nécessite `enableFChat` à true sur la configuration personnalisée résolue pour chaque page.  
-Les pages nécessitant le SSO sont filtrées en fonction de l'accès aux groupes de l'utilisateur demandeur.
+---
+Liste les pages d'un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salles.
+Nécessite que `enableFChat` soit vrai dans la configuration personnalisée résolue pour chaque page.
+Les pages qui nécessitent SSO sont filtrées en fonction de l'accès aux groupes de l'utilisateur demandeur.
 
 ## Parameters
 
 | Nom | Type | Obligatoire | Description |
 |------|------|-------------|-------------|
-| tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | number | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | boolean | No |  |
+| tenantId | string | Oui |  |
+| cursor | string | Non |  |
+| limit | number | Non |  |
+| q | string | Non |  |
+| sortBy | PagesSortBy | Non |  |
+| hasComments | boolean | Non |  |
 
-## Response
+## Réponse
 
-Retourne : [`GetPagesPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPagesPublicResponse.ts)
+Renvoie : [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
-## Example
+## Exemple
 
 [inline-code-attrs-start title = 'Exemple getPagesPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchPages() {
+async function fetchPublicPages() {
   const tenantId: string = "tenant_12345";
-  const cursor: string = "nextPageToken";
+  const cursor: string = "page_5";
   const limit: number = 20;
-  const q: string = "blog";
-  const sortBy: PagesSortBy = "createdAt";
+  const query: string = "support";
   const hasComments: boolean = true;
 
-  const response: GetPagesPublicResponse = await getPagesPublic(
+  const response: GetPublicPagesResponse = await getPagesPublic(
     tenantId,
     cursor,
     limit,
-    q,
-    sortBy,
+    query,
+    undefined,
     hasComments
   );
 
   console.log(response);
 }
 [inline-code-end]
+
+---

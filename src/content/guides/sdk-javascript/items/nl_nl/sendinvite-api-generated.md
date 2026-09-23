@@ -1,22 +1,23 @@
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
-|------|------|----------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | id | string | Ja |  |
 | fromName | string | Ja |  |
 
-## Response
+## Respons
 
-Retourneert: [`SendInviteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SendInviteResponse.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'sendInvite Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const inviteId: string = "invite-12345";
-const fromName: string = "John Doe";
+const tenantId: string = "tenant-987654321";
+const id: string = "user-123456789";
+const fromName: string = "Alice Johnson";
 
-const inviteResult: SendInviteResponse = await sendInvite(tenantId, inviteId, fromName);
+const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
+console.log(result);
 [inline-code-end]

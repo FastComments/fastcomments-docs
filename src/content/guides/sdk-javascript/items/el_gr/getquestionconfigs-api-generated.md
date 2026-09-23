@@ -1,30 +1,22 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|------------|------------|
-| tenantId | string | Ναι |  |
-| skip | number | Όχι |  |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| skip | number | No |  |
 
-## Απάντηση
+## Απόκριση
 
-Επιστρέφει: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
+Επιστρέφει: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionConfigs Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchQuestionConfigs() {
-    const tenantId: string = "tenant-9876";
+async function fetchConfigs() {
+  const tenantId: string = "tenant_12345";
 
-    // Κλήση χωρίς την προαιρετική παράμετρο 'skip'
-    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
-
-    // Κλήση με την προαιρετική παράμετρο 'skip'
-    const skip: number = 10;
-    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
-
-    console.log(configsWithoutSkip, configsWithSkip);
+  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
 }
 [inline-code-end]
-
----

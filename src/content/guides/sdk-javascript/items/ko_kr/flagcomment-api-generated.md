@@ -1,27 +1,27 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
+| userId | string | 아니오 |  |
+| anonUserId | string | 아니오 |  |
 
-## Response
+## 응답
 
-반환: [`FlagCommentResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse1.ts)
+반환: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/FlagCommentResponse.ts)
 
-## Example
+## 예시
 
 [inline-code-attrs-start title = 'flagComment 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
-  const tenantId: string = "tenant_2023";
-  const commentId: string = "comment_5678";
-  const userId: string = "user_1234";
-  const anonUserId: string = "anon_4321";
+  const tenantId: string = "acme-corp";
+  const commentId: string = "comment-20230915-001";
+  const userId: string = "user-42";
+  const anonUserId: string = "anon-abc123";
 
-  const result: FlagCommentResponse1 = await flagComment(tenantId, commentId, userId);
-  const anonResult: FlagCommentResponse1 = await flagComment(tenantId, commentId, undefined, anonUserId);
+  const response: FlagCommentResponse = await flagComment(tenantId, commentId, userId, anonUserId);
+  console.log(response);
 })();
 [inline-code-end]

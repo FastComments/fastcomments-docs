@@ -4,8 +4,8 @@ afterId
 
 ## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Da |  |
 | afterId | string | Ne |  |
 | limit | number | Ne |  |
@@ -13,20 +13,19 @@ afterId
 
 ## Odgovor
 
-Vraća: [`GetFeedPostsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse1.ts)
+Vraća: [`GetFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getFeedPosts Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getFeedPosts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = 'tenant_12345';
-  const afterId: string = 'post_9876';
-  const limit: number = 20;
-  const tags: string[] = ['news', 'sports'];
-
-  const feedResult: GetFeedPostsResponse1 = await getFeedPosts(tenantId, afterId, limit, tags);
-})();
+async function loadFeed() {
+  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+  const afterId: string = 'post_987654321';
+  const limit: number = 25;
+  const tags: string[] = ['technology', 'innovation'];
+  const response: GetFeedPostsResponse = await getFeedPosts(tenantId, afterId, limit, tags);
+  console.log(response);
+}
+loadFeed();
 [inline-code-end]
-
----

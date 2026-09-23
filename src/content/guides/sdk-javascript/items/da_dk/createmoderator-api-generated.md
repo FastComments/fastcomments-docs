@@ -2,29 +2,24 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createModeratorBody | CreateModeratorBody | Yes |  |
+| tenantId | string | Ja |  |
+| createModeratorBody | CreateModeratorBody | Ja |  |
 
 ## Svar
 
-Returns: [`CreateModeratorResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse1.ts)
+Returns: [`CreateModeratorResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateModeratorResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'createModerator Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9876";
-  const moderatorPayload: CreateModeratorBody = {
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-    // valgfri felter som beskrivelse udelades
-  };
-  const result: CreateModeratorResponse1 = await createModerator(tenantId, moderatorPayload);
-  console.log(result);
-}
+const tenantId: string = "tenant_12345";
 
-runExample();
+const moderatorPayload: CreateModeratorBody = {
+  userId: "user_9876",
+  // valgfrit felt; kan udelades hvis ikke nødvendigt
+  notes: "Temporary moderator for event"
+};
+
+const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]
-
----

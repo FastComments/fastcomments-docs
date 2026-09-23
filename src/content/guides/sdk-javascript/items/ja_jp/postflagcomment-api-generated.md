@@ -2,28 +2,32 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | broadcastId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## 応答
 
-戻り値: [`PostFlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostFlagCommentResponse.ts)
+返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'postFlagComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const commentId: string = "cmt_20230915_001";
-const broadcastId: string = "brd_20230915_live";
-const tenantId: string = "tenant_42";
-const sso: string = "sso_token_abc123";
+async function runExample() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
 
-const flaggedResponse: PostFlagCommentResponse = await postFlagComment(
-  commentId,
-  broadcastId,
-  tenantId,
-  sso
-);
+  // 必要なパラメータのみ
+  const result1: APIEmptyResponse = await postFlagComment(tenantId, commentId);
+
+  // オプションのパラメータを含む
+  const broadcastId: string = "brd_54321";
+  const sso: string = "user@example.com";
+  const result2: APIEmptyResponse = await postFlagComment(tenantId, commentId, broadcastId, sso);
+
+  console.log(result1, result2);
+}
+runExample();
 [inline-code-end]

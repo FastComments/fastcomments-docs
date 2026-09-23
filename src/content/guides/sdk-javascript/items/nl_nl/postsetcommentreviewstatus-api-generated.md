@@ -1,36 +1,32 @@
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
-| commentId | string | Yes |  |
-| reviewed | boolean | No |  |
-| broadcastId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| commentId | string | Ja |  |
+| reviewed | boolean | Nee |  |
+| broadcastId | string | Nee |  |
+| sso | string | Nee |  |
 
 ## Respons
 
-Retourneert: [`PostSetCommentReviewStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostSetCommentReviewStatusResponse.ts)
+Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'postSetCommentReviewStatus Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function updateCommentReviewStatus(): Promise<void> {
-  const commentId: string = "cmt_9f8a7b6c5d4e3f2a1b0c";
-  const reviewed: boolean = true;
-  const broadcastId: string = "broadcast_2024Q1";
-  const tenantId: string = "tenant_1001";
-  const sso: string = "alice@example.com";
+const tenantId: string = "tenant_12345";
+const commentId: string = "cmt_98765";
+const reviewed: boolean = true;
+const broadcastId: string = "brd_001";
+const sso: string = "sso_token_abc";
 
-  const response: PostSetCommentReviewStatusResponse = await postSetCommentReviewStatus(
-    commentId,
-    reviewed,
-    broadcastId,
-    tenantId,
-    sso
-  );
-
-  console.log(response);
-}
+const result: APIEmptyResponse = await postSetCommentReviewStatus(
+  tenantId,
+  commentId,
+  reviewed,
+  broadcastId,
+  sso
+);
 [inline-code-end]

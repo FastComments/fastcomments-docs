@@ -1,26 +1,28 @@
 ## 参数
 
-| 名称 | 类型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tag | string | 是 |  |
-| tenantId | string | 否 |  |
-| deleteHashTagRequestBody | DeleteHashTagRequestBody | 否 |  |
+| tenantId | string | Yes |  |
+| tag | string | Yes |  |
+| deleteHashTagRequestBody | DeleteHashTagRequestBody | No |  |
 
 ## 响应
 
-返回: [`DeleteHashTagResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteHashTagResponse.ts)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteHashTag 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tag: string = "announcement";
-  const tenantId: string = "tenant_9876";
-  const requestBody: DeleteHashTagRequestBody = {
-    confirmDeletion: true
-  };
-  const response: DeleteHashTagResponse = await deleteHashTag(tag, tenantId, requestBody);
-  console.log(response);
-})();
+const tenantId: string = "tenant_42";
+const tag: string = "high-priority";
+
+const requestBody: DeleteHashTagRequestBody = {
+  // 根据需要填充字段
+};
+
+const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
+const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]
+
+---

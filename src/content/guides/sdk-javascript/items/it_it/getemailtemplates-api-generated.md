@@ -1,25 +1,24 @@
 ## Parametri
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| Nome | Tipo | Obbligatorio | Descrizione |
+|------|------|--------------|-------------|
+| tenantId | string | Sì |  |
 | skip | number | No |  |
 
 ## Risposta
 
-Restituisce: [`GetEmailTemplatesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse1.ts)
+Restituisce: [`GetEmailTemplatesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEmailTemplatesResponse.ts)
 
 ## Esempio
 
 [inline-code-attrs-start title = 'Esempio getEmailTemplates'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_12345";
-
-  // Chiamata senza il parametro opzionale 'skip'
-  const templates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId);
-
-  // Chiamata con il parametro opzionale 'skip'
-  const pagedTemplates: GetEmailTemplatesResponse1 = await getEmailTemplates(tenantId, 20);
-})();
+async function fetchEmailTemplates() {
+  const tenantId: string = "acme-corp-123";
+  const skip: number = 20;
+  const templatesWithSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, skip);
+  const templatesWithoutSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
+}
 [inline-code-end]
+
+---

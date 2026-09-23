@@ -4,9 +4,9 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Viri API-jev",
+      "name": "Viri API",
       "file": "api-resources.md",
-      "subCat": "Viri API-jev"
+      "subCat": "Viri API"
     },
     {
       "name": "OAuth avtorizacija",
@@ -89,45 +89,45 @@
       "subCat": "Komentarji"
     },
     {
-      "name": "Struktura e-poštne predloge",
+      "name": "Struktura predloge e-pošte",
       "file": "email-template-structure.md",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-poštne predloge"
+      "subCat": "Predloge e-pošte"
     },
     {
       "name": "Struktura objave v viru",
@@ -191,7 +191,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Jaz"
+      "subCat": "Meni"
     },
     {
       "name": "Struktura moderatorja",
@@ -270,6 +270,53 @@
       "subCat": "Obvestila"
     },
     {
+      "name": "Javni API za reakcije na strani",
+      "file": "page-reacts-api.md",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reakcije na strani"
+    },
+    {
       "name": "Struktura strani",
       "file": "page-structure.md",
       "subCat": "Strani"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Strani"
+    },
+    {
+      "name": "Struktura ankete",
+      "file": "poll-structure.md",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Ankete"
+    },
+    {
+      "name": "Struktura glasovanja v anketi",
+      "file": "poll-vote-structure.md",
+      "subCat": "Glasovi v anketi"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi v anketi"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi v anketi"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi v anketi"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Glasovi v anketi"
     },
     {
       "name": "Struktura čakajočega webhook dogodka",
@@ -560,43 +665,43 @@
       "name": "Struktura konfiguracije domene",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Konfiguracije domen"
+      "subCat": "Konfiguracije domene"
     },
     {
       "name": "Struktura konfiguracije vprašanja",

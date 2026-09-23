@@ -1,29 +1,28 @@
-## Parametri
+## Parameters
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| createTenantPackageBody | CreateTenantPackageBody | Da |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| createTenantPackageBody | CreateTenantPackageBody | Yes |  |
 
-## Odgovor
+## Response
 
-Vraća: [`CreateTenantPackageResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse1.ts)
+Returns: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
 
-## Primer
+## Example
 
 [inline-code-attrs-start title = 'createTenantPackage Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant-9876";
-
-  const body: CreateTenantPackageBody = {
-    packageName: "Standard",
-    quota: 5000,
+async function runExample() {
+  const tenantId: string = "tenant_9f8b7c6d";
+  const createTenantPackageBody: CreateTenantPackageBody = {
+    name: "Enterprise Package",
+    priceCents: 49999,
     // opcionalno polje
-    description: "Standard package for medium traffic",
+    description: "Full suite of enterprise features"
   };
-
-  const result: CreateTenantPackageResponse1 = await createTenantPackage(tenantId, body);
+  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
   console.log(result);
-})();
+}
+runExample();
 [inline-code-end]

@@ -1,27 +1,34 @@
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|------|
-| badgesUserId | string | No |  |
-| commentId | string | No |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | 是 |  |
+| badgesUserId | string | 否 |  |
+| commentId | string | 否 |  |
+| sso | string | 否 |  |
 
 ## 回應
 
-返回: [`GetManualBadgesForUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetManualBadgesForUserResponse.ts)
+回傳：[`GetUserManualBadgesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserManualBadgesResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getManualBadgesForUser 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const userId: string = "user_42";
-  const commentId: string = "comment_1001";
-  const tenantId: string = "tenant_acme";
-  const ssoToken: string = "sso_5f6g7h8i9j";
+async () => {
+  const tenantId: string = "tenant_12345";
+  const badgesUserId: string | undefined = "user_98765";
+  const commentId: string | undefined = "comment_abcde";
+  const sso: string | undefined = "sso_token_xyz";
 
-  const badges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId, commentId, tenantId, ssoToken);
-  const limitedBadges: GetManualBadgesForUserResponse = await getManualBadgesForUser(userId);
-})();
+  const basicResponse: GetUserManualBadgesResponse = await getManualBadgesForUser(tenantId);
+  const fullResponse: GetUserManualBadgesResponse = await getManualBadgesForUser(
+    tenantId,
+    badgesUserId,
+    commentId,
+    sso
+  );
+
+  console.log(basicResponse, fullResponse);
+}();
 [inline-code-end]

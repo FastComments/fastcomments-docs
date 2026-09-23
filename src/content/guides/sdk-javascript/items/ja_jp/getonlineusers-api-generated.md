@@ -1,10 +1,10 @@
-現在オンラインのページ閲覧者: 現在ページにサブスクライブされている WebSocket セッションを持つユーザーです。  
-anonCount と totalCount（部屋全体の購読者数、匿名閲覧者は列挙しません）を合計して返します。
+現在オンラインのページ閲覧者: 現在ページにサブスクライブされているWebSocketセッションを持つ人々。  
+anonCount + totalCount を返します（部屋全体の購読者数、列挙しない匿名閲覧者を含む）。
 
 ## Parameters
 
 | 名前 | 型 | 必須 | 説明 |
-|------|------|------|------|
+|------|------|----------|-------------|
 | tenantId | string | はい |  |
 | urlId | string | はい |  |
 | afterName | string | いいえ |  |
@@ -12,27 +12,29 @@ anonCount と totalCount（部屋全体の購読者数、匿名閲覧者は列�
 
 ## Response
 
-返却: [`GetOnlineUsersResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetOnlineUsersResponse.ts)
+Returns: [`PageUsersOnlineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOnlineResponse.ts)
 
-## 例
+## Example
 
 [inline-code-attrs-start title = 'getOnlineUsers の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoOnlineUsers() {
+async function fetchOnlineUsers() {
   const tenantId: string = "tenant_12345";
-  const urlId: string = "url_98765";
+  const urlId: string = "article-9876";
+  const afterName: string | undefined = "john_doe";
+  const afterUserId: string | undefined = "user_456";
 
-  // オプションのページングパラメータあり
-  const pagedResult: GetOnlineUsersResponse = await getOnlineUsers(
+  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(
     tenantId,
     urlId,
-    "alice_smith",
-    "user_9"
+    afterName,
+    afterUserId
   );
 
-  // オプションのページングパラメータなし
-  const fullResult: GetOnlineUsersResponse = await getOnlineUsers(tenantId, urlId);
+  console.log(onlineUsers);
 }
+
+fetchOnlineUsers();
 [inline-code-end]
 
 ---

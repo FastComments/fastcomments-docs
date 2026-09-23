@@ -1,32 +1,27 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| commentsByIdsParams | CommentsByIdsParams | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | 예 |  |
+| commentsByIdsParams | CommentsByIdsParams | 예 |  |
+| sso | string | 아니오 |  |
 
 ## 응답
 
-반환: [`PostCommentsByIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostCommentsByIdsResponse.ts)
+반환: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'postCommentsByIds 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = 'tenant-9f8b7c6d-1234-5678-90ab-cdef12345678';
 const commentsByIdsParams: CommentsByIdsParams = {
-  commentIds: ['cmt001', 'cmt002'],
-  includeUserInfo: true,
-  includeThreadInfo: false,
-} as CommentsByIdsParams;
-
-const fullResponse: PostCommentsByIdsResponse = await postCommentsByIds(
-  commentsByIdsParams,
-  'tenant-12345',
-  'sso-token-xyz'
-);
-
-const minimalResponse: PostCommentsByIdsResponse = await postCommentsByIds(
-  commentsByIdsParams
-);
+  commentIds: ['comment-1', 'comment-2'],
+  includeUserBadges: true
+};
+const responseWithoutSso: ModerationAPIChildCommentsResponse = await postCommentsByIds(tenantId, commentsByIdsParams);
+const sso: string = 'sso-abc123def456';
+const responseWithSso: ModerationAPIChildCommentsResponse = await postCommentsByIds(tenantId, commentsByIdsParams, sso);
 [inline-code-end]
+
+---

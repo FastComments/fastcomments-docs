@@ -1,36 +1,34 @@
 ## 매개변수
 
-| 이름 | 타입 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | direction | string | No |  |
 | broadcastId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## 응답
 
-반환: [`PostVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostVoteResponse.ts)
+반환: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'postVote 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId: string = 'cmt_12345';
-let direction: string = 'up';
-let broadcastId: string = 'brd_67890';
-let tenantId: string = 'tenant_abc';
-let sso: string = 'sso_token_xyz';
+async function runVoteExamples(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
 
-const fullVote: PostVoteResponse = await postVote(
-  commentId,
-  direction,
-  broadcastId,
-  tenantId,
-  sso
-);
+  // 필수 매개변수만 사용하여 호출
+  const simpleVote: VoteResponse = await postVote(tenantId, commentId);
 
-const simpleVote: PostVoteResponse = await postVote('cmt_67890');
+  // 선택 매개변수와 함께 호출
+  const direction: string = "down";
+  const broadcastId: string = "brd_987654321";
+  const sso: string = "user-42";
+  const detailedVote: VoteResponse = await postVote(tenantId, commentId, direction, broadcastId, sso);
+
+  console.log(simpleVote, detailedVote);
+}
 [inline-code-end]
-
----

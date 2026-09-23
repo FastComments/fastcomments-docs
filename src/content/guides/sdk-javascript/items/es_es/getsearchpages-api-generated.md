@@ -1,28 +1,26 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
-|------|------|----------|-------------|
+|--------|------|-----------|-------------|
+| tenantId | string | Yes |  |
 | value | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Respuesta
 
-Devuelve: [`GetSearchPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetSearchPagesResponse.ts)
+Devuelve: [`ModerationPageSearchResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationPageSearchResponse.ts)
 
 ## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo getSearchPages'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const query: string = "network outage";
-  const tenantId: string = "tenant-9876";
-  const ssoToken: string = "sso-abc123def456";
+const tenantId: string = "acme-corp-123";
+const searchValue: string = "spam";
+const ssoToken: string = "sso-abc123def456";
 
-  const searchResult: GetSearchPagesResponse = await getSearchPages(query, tenantId, ssoToken);
-  const searchResultNoSso: GetSearchPagesResponse = await getSearchPages(query, tenantId);
-})();
+const result1: ModerationPageSearchResponse = await getSearchPages(tenantId);
+const result2: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue);
+const result3: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue, ssoToken);
 [inline-code-end]
 
 ---

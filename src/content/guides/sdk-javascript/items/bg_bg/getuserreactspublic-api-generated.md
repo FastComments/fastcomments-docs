@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | postIds | Array<string> | No |  |
@@ -8,22 +8,16 @@
 
 ## Отговор
 
-Връща: [`GetUserReactsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserReactsPublicResponse.ts)
+Returns: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UserReactsResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'getUserReactsPublic Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getUserReactsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "tenant_12345";
-  const postIds: string[] = ["post_1a2b3c", "post_4d5e6f"];
-  const ssoToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
+const tenantId: string = "tenant_12345";
+const postIds: string[] = ["post_abc", "post_def"];
+const ssoToken: string = "sso_token_987";
 
-  const fullResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
-  const minimalResponse: GetUserReactsPublicResponse = await getUserReactsPublic(tenantId);
-}
-
-demo();
+const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
+const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId);
 [inline-code-end]
-
----

@@ -1,39 +1,62 @@
 ## Parametry
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| tenantId | string | Tak |  |
-| limit | number | Nie |  |
-| skip | number | Nie |  |
-| order | SORTDIR | Nie |  |
-| after | number | Nie |  |
-| before | number | Nie |  |
+| Nazwa | Typ | Wymagane | Opis |
+|------|------|----------|------|
+| tenantId | string | Yes |  |
+| limit | number | No |  |
+| skip | number | No |  |
+| order | SORTDIR | No |  |
+| after | number | No |  |
+| before | number | No |  |
+| username | string | No |  |
+| ip | string | No |  |
+| crudType | string | No |  |
+| resourceName | string | No |  |
+| targetId | string | No |  |
+| target | string | No |  |
+| includeManagedTenants | boolean | No |  |
 
 ## Odpowiedź
 
-Zwraca: [`GetAuditLogsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse1.ts)
+Zwraca: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetAuditLogsResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getAuditLogs Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getAuditLogs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_42";
-  const limit: number = 100;
-  const skip: number = 10;
-  const order: SORTDIR = "desc";
-  const after: number = Date.now() - 3 * 24 * 60 * 60 * 1000; // 3 dni temu
+async function fetchAuditLogs(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const limit: number = 50;
+  const skip: number = 0;
+  const order: SORTDIR = { direction: "DESC" };
+  const after: number = Date.now() - 86400000; // 1 dzień temu
+  const before: number = Date.now();
+  const username: string = "alice.smith";
+  const ip: string = "198.51.100.23";
+  const crudType: string = "CREATE";
+  const resourceName: string = "thread";
+  const targetId: string = "thread_45678";
+  const target: string = "forum_12";
+  const includeManagedTenants: boolean = false;
 
-  const auditResponse: GetAuditLogsResponse1 = await getAuditLogs(
+  const logs: GetAuditLogsResponse = await getAuditLogs(
     tenantId,
     limit,
     skip,
     order,
-    after
+    after,
+    before,
+    username,
+    ip,
+    crudType,
+    resourceName,
+    targetId,
+    target,
+    includeManagedTenants
   );
 
-  console.log(auditResponse);
-})();
-[inline-code-end]
+  console.log(logs);
+}
 
----
+fetchAuditLogs();
+[inline-code-end]

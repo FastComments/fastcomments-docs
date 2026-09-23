@@ -1,32 +1,25 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Име | Тип | Задължително | Описание |
 |------|------|----------|-------------|
-| commentsByIdsParams | CommentsByIdsParams | Yes |  |
-| tenantId | string | No |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| commentsByIdsParams | CommentsByIdsParams | Да |  |
+| sso | string | Не |  |
 
 ## Отговор
 
-Връща: [`PostCommentsByIdsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostCommentsByIdsResponse.ts)
+Връща: [`ModerationAPIChildCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPIChildCommentsResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'postCommentsByIds Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+const tenantId: string = 'tenant-9f8b7c6d-1234-5678-90ab-cdef12345678';
 const commentsByIdsParams: CommentsByIdsParams = {
-  commentIds: ['cmt001', 'cmt002'],
-  includeUserInfo: true,
-  includeThreadInfo: false,
-} as CommentsByIdsParams;
-
-const fullResponse: PostCommentsByIdsResponse = await postCommentsByIds(
-  commentsByIdsParams,
-  'tenant-12345',
-  'sso-token-xyz'
-);
-
-const minimalResponse: PostCommentsByIdsResponse = await postCommentsByIds(
-  commentsByIdsParams
-);
+  commentIds: ['comment-1', 'comment-2'],
+  includeUserBadges: true
+};
+const responseWithoutSso: ModerationAPIChildCommentsResponse = await postCommentsByIds(tenantId, commentsByIdsParams);
+const sso: string = 'sso-abc123def456';
+const responseWithSso: ModerationAPIChildCommentsResponse = await postCommentsByIds(tenantId, commentsByIdsParams, sso);
 [inline-code-end]

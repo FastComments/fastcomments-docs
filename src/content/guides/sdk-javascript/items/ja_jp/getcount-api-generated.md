@@ -1,35 +1,34 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| textSearch | string | いいえ |  |
-| byIPFromComment | string | いいえ |  |
-| filter | string | いいえ |  |
-| searchFilters | string | いいえ |  |
-| demo | boolean | いいえ |  |
-| tenantId | string | いいえ |  |
-| sso | string | いいえ |  |
+| tenantId | string | Yes |  |
+| textSearch | string | No |  |
+| byIPFromComment | string | No |  |
+| filter | string | No |  |
+| searchFilters | string | No |  |
+| demo | boolean | No |  |
+| sso | string | No |  |
 
 ## レスポンス
 
-返却: [`GetCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCountResponse.ts)
+返却: [`ModerationAPICountCommentsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICountCommentsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getCount の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function main(): Promise<void> {
-  const count: GetCountResponse = await getCount({
-    textSearch: "order issue",
-    byIPFromComment: "198.51.100.23",
-    filter: "pending",
-    demo: true,
-    tenantId: "acme_corp",
-    sso: "sso_abcdef123456"
-  });
-  console.log(count);
-}
-main();
-[inline-code-end]
+const tenantId: string = "tenant_12345";
 
----
+const basicCount: ModerationAPICountCommentsResponse = await getCount(tenantId);
+
+const detailedCount: ModerationAPICountCommentsResponse = await getCount(
+  tenantId,
+  "spam",
+  "192.168.1.100",
+  "status:pending",
+  "user:john",
+  true,
+  "sso_token_abc"
+);
+[inline-code-end]

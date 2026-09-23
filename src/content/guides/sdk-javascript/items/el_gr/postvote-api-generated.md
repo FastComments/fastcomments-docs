@@ -1,34 +1,36 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|-----------|-----------|
+|------|------|------------|-----------|
+| tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | direction | string | No |  |
 | broadcastId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Απάντηση
 
-Επιστρέφει: [`PostVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostVoteResponse.ts)
+Επιστρέφει: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'postVote Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId: string = 'cmt_12345';
-let direction: string = 'up';
-let broadcastId: string = 'brd_67890';
-let tenantId: string = 'tenant_abc';
-let sso: string = 'sso_token_xyz';
+async function runVoteExamples(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
 
-const fullVote: PostVoteResponse = await postVote(
-  commentId,
-  direction,
-  broadcastId,
-  tenantId,
-  sso
-);
+  // Κλήση μόνο με τις απαιτούμενες παραμέτρους
+  const simpleVote: VoteResponse = await postVote(tenantId, commentId);
 
-const simpleVote: PostVoteResponse = await postVote('cmt_67890');
+  // Κλήση με προαιρετικές παραμέτρους
+  const direction: string = "down";
+  const broadcastId: string = "brd_987654321";
+  const sso: string = "user-42";
+  const detailedVote: VoteResponse = await postVote(tenantId, commentId, direction, broadcastId, sso);
+
+  console.log(simpleVote, detailedVote);
+}
 [inline-code-end]
+
+---

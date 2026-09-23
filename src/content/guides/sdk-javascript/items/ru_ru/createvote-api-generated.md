@@ -2,31 +2,27 @@
 
 | Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Да |  |
-| commentId | string | Да |  |
-| direction | CreateVoteDirectionEnum | Да |  |
-| userId | string | Нет |  |
-| anonUserId | string | Нет |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| direction | CreateVoteDirectionEnum | Yes |  |
+| userId | string | No |  |
+| anonUserId | string | No |  |
 
 ## Ответ
 
-Возвращает: [`CreateVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateVoteResponse.ts)
+Возвращает: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример createVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
-const commentId: string = "comment_987654";
-const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.Upvote;
-const userId: string = "user_7f9a2b";
+const commentId: string = "comment_67890";
+const direction: CreateVoteDirectionEnum = CreateVoteDirectionEnum.UP;
+const userId: string = "user_abcde";
 
-const voteResult: CreateVoteResponse = await createVote(
-  tenantId,
-  commentId,
-  direction,
-  userId
-);
+const voteResult: VoteResponse = await createVote(tenantId, commentId, direction, userId);
+
+const anonUserId: string = "anon_zyxwv";
+const anonVoteResult: VoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);
 [inline-code-end]
-
----

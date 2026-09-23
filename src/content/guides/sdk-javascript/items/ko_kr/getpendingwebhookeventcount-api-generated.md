@@ -2,37 +2,39 @@
 
 | 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
+| tenantId | string | 예 |  |
+| commentId | string | 아니오 |  |
+| externalId | string | 아니오 |  |
+| eventType | string | 아니오 |  |
+| type | string | 아니오 |  |
+| domain | string | 아니오 |  |
+| attemptCountGT | number | 아니오 |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
+반환: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'getPendingWebhookEventCount 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_001";
+async function runExample() {
+  const tenantId: string = "tenant_42";
+  const commentId: string = "comment_1001";
+  const eventType: string = "comment.deleted";
+  const domain: string = "myblog.com";
 
-  const responseAll: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(
+  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
     tenantId,
-    "comment_456",
-    "ext_789",
-    "comment.updated",
-    "webhook",
-    "mydomain.com",
-    3
+    commentId,
+    undefined,
+    eventType,
+    undefined,
+    domain
   );
 
-  const responseMinimal: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(tenantId);
+  console.log(result);
+}
 
-  console.log(responseAll, responseMinimal);
-})();
+runExample();
 [inline-code-end]

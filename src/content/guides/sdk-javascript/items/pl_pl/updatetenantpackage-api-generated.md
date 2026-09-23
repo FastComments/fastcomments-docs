@@ -1,35 +1,29 @@
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateTenantPackageBody | UpdateTenantPackageBody | Yes |  |
+|------|------|----------|------|
+| tenantId | string | Tak |  |
+| id | string | Tak |  |
+| updateTenantPackageBody | UpdateTenantPackageBody | Tak |  |
 
 ## Odpowiedź
 
-Zwraca: [`UpdateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateTenantPackageResponse.ts)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'Przykład updateTenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateTenantPackage Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-9876";
-const packageId: string = "pkg-2023";
-
-const customConfig: CustomConfigParameters = {
-  enableSpamFilter: true,
-  spamRatingThreshold: 4,
-};
+const tenantId: string = "tenant_9f8b7c6d";
+const packageId: string = "pkg_3a2b1c";
 
 const updateBody: UpdateTenantPackageBody = {
-  displayName: "Enterprise Pro",
-  customConfig,
+  // opcjonalne pola mogą być pominięte lub uwzględnione w razie potrzeby
+  // newPackageName?: string;
+  // renewalDate?: string;
 };
 
-const response: UpdateTenantPackageResponse = await updateTenantPackage(
-  tenantId,
-  packageId,
-  updateBody
-);
+const result: APIEmptyResponse = await updateTenantPackage(tenantId, packageId, updateBody);
 [inline-code-end]
+
+---

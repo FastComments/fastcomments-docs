@@ -1,36 +1,36 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Tak |  |
 | commentId | string | Tak |  |
 | direction | string | Nie |  |
 | broadcastId | string | Nie |  |
-| tenantId | string | Nie |  |
 | sso | string | Nie |  |
 
 ## Odpowiedź
 
-Zwraca: [`PostVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PostVoteResponse.ts)
+Zwraca: [`VoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteResponse.ts)
 
 ## Przykład
 
 [inline-code-attrs-start title = 'Przykład postVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-let commentId: string = 'cmt_12345';
-let direction: string = 'up';
-let broadcastId: string = 'brd_67890';
-let tenantId: string = 'tenant_abc';
-let sso: string = 'sso_token_xyz';
+async function runVoteExamples(): Promise<void> {
+  const tenantId: string = "acme-corp";
+  const commentId: string = "cmt_1234567890";
 
-const fullVote: PostVoteResponse = await postVote(
-  commentId,
-  direction,
-  broadcastId,
-  tenantId,
-  sso
-);
+  // Wywołaj tylko z wymaganymi parametrami
+  const simpleVote: VoteResponse = await postVote(tenantId, commentId);
 
-const simpleVote: PostVoteResponse = await postVote('cmt_67890');
+  // Wywołaj z opcjonalnymi parametrami
+  const direction: string = "down";
+  const broadcastId: string = "brd_987654321";
+  const sso: string = "user-42";
+  const detailedVote: VoteResponse = await postVote(tenantId, commentId, direction, broadcastId, sso);
+
+  console.log(simpleVote, detailedVote);
+}
 [inline-code-end]
 
 ---

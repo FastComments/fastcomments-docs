@@ -1,6 +1,6 @@
 {
-  "name": "SDK JavaScript/TypeScript",
-  "pageHeader": "FastComments SDK JavaScript/TypeScript",
+  "name": "Zestaw SDK JavaScript/TypeScript",
+  "pageHeader": "FastComments – zestaw SDK JavaScript/TypeScript",
   "itemsOrdered": [
     {
       "name": "Agenci kodowania AI",
@@ -69,7 +69,13 @@
       "type": "readme"
     },
     {
-      "name": "agregacja",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Najemcy agenta",
+      "type": "api"
+    },
+    {
+      "name": "agreguj",
       "file": "aggregate-api-generated.md",
       "subCat": "Agregacja",
       "type": "api"
@@ -81,19 +87,19 @@
       "type": "api"
     },
     {
-      "name": "zablokujKomentarzPublicznie",
+      "name": "zablokujZKomentarzaPublicznego",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
-      "name": "odblokujKomentarzPublicznie",
+      "name": "odblokujKomentarzPubliczny",
       "file": "unblockcommentpublic-api-generated.md",
       "subCat": "Blokowanie z komentarza",
       "type": "api"
     },
     {
-      "name": "sprawdzoneKomentarzeNaBlokady",
+      "name": "sprawdzoneKomentarzeDlaZablokowanych",
       "file": "checkedcommentsforblocked-api-generated.md",
       "subCat": "Sprawdź zablokowane komentarze",
       "type": "api"
@@ -123,7 +129,7 @@
       "type": "api"
     },
     {
-      "name": "usuńGłosKomentarz",
+      "name": "usuńGłosKomentarza",
       "file": "deletecommentvote-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
@@ -213,7 +219,7 @@
       "type": "api"
     },
     {
-      "name": "odpinKomentarz",
+      "name": "odprzypnijKomentarz",
       "file": "unpincomment-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
@@ -225,7 +231,7 @@
       "type": "api"
     },
     {
-      "name": "głosujKomentarz",
+      "name": "głosujZaKomentarzem",
       "file": "votecomment-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
@@ -267,145 +273,145 @@
       "type": "api"
     },
     {
-      "name": "ustawKonfiguracjęDomeny",
+      "name": "zastąpKonfiguracjęDomeny",
       "file": "putdomainconfig-api-generated.md",
       "subCat": "Konfiguracje domen",
       "type": "api"
     },
     {
-      "name": "utwórzSzablonE-mail",
+      "name": "utwórzSzablonE‑mail",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "usuńSzablonE-mail",
+      "name": "usuńSzablonE‑mail",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "usuńBłądRenderowaniaSzablonuE-mail",
+      "name": "usuńBłądRenderowaniaSzablonuE‑mail",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "pobierzSzablonE-mail",
+      "name": "pobierzSzablonE‑mail",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "pobierzDefinicjeSzablonuE-mail",
+      "name": "pobierzDefinicjeSzablonuE‑mail",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "pobierzBłędyRenderowaniaSzablonuE-mail",
+      "name": "pobierzBłędyRenderowaniaSzablonuE‑mail",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "pobierzSzablonyE-mail",
+      "name": "pobierzSzablonyE‑mail",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "renderujSzablonE-mail",
+      "name": "renderujSzablonE‑mail",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "zaktualizujSzablonE-mail",
+      "name": "zaktualizujSzablonE‑mail",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Szablony e-mail",
+      "subCat": "Szablony e‑mail",
       "type": "api"
     },
     {
-      "name": "pobierzLogWydarzeń",
+      "name": "pobierzLogZdarzeń",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Log wydarzeń",
+      "subCat": "Log zdarzeń",
       "type": "api"
     },
     {
-      "name": "pobierzGlobalnyLogWydarzeń",
+      "name": "pobierzGlobalnyLogZdarzeń",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Log wydarzeń",
+      "subCat": "Log zdarzeń",
       "type": "api"
     },
     {
       "name": "utwórzPostNaKanale",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "utwórzPostNaKanalePublicznie",
+      "name": "utwórzPublicznyPostNaKanale",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "usuńPostNaKanalePublicznie",
+      "name": "usuńPublicznyPostNaKanale",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "pobierzPostyNaKanale",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "pobierzPostyNaKanalePubliczne",
+      "name": "pobierzPublicznePostyNaKanale",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "pobierzStatystykiPostówNaKanale",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "pobierzReakcjeUżytkownikaPublicznie",
+      "name": "pobierzPubliczneReakcjeUżytkownika",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "zareagujNaPostNaKanalePublicznie",
+      "name": "zareagujPublicznieNaPostNaKanale",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
       "name": "zaktualizujPostNaKanale",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "zaktualizujPostNaKanalePublicznie",
+      "name": "zaktualizujPublicznyPostNaKanale",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Posty na kanale",
+      "subCat": "Posty w kanale",
       "type": "api"
     },
     {
-      "name": "oznaczKomentarzPublicznie",
+      "name": "oznaczKomentarzPubliczny",
       "file": "flagcommentpublic-api-generated.md",
       "subCat": "Oznacz komentarz",
       "type": "api"
     },
     {
-      "name": "pobierzGifDuży",
+      "name": "pobierzDużyGif",
       "file": "getgiflarge-api-generated.md",
       "subCat": "Gify",
       "type": "api"
@@ -417,7 +423,7 @@
       "type": "api"
     },
     {
-      "name": "gifyTrendy",
+      "name": "pobierzPopularneGify",
       "file": "getgifstrending-api-generated.md",
       "subCat": "Gify",
       "type": "api"
@@ -450,6 +456,12 @@
       "name": "modyfikujHashtag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtagi",
+      "type": "api"
+    },
+    {
+      "name": "pobierzMnie",
+      "file": "getme-api-generated.md",
+      "subCat": "Ja",
       "type": "api"
     },
     {
@@ -489,7 +501,7 @@
       "type": "api"
     },
     {
-      "name": "pobierzDzieciKomentarza",
+      "name": "pobierzPodkomentarze",
       "file": "getcommentchildren-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
@@ -513,7 +525,7 @@
       "type": "api"
     },
     {
-      "name": "pobierzOdznakiRęczne",
+      "name": "pobierzRęczneOdznaki",
       "file": "getmanualbadges-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
@@ -585,13 +597,13 @@
       "type": "api"
     },
     {
-      "name": "pobierzProfilWewnętrznyUżytkownika",
+      "name": "pobierzWewnętrznyProfilUżytkownika",
       "file": "getuserinternalprofile-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "zaktualizujGłosyKomentarza",
+      "name": "wyślijDostosowanieGłosówKomentarza",
       "file": "postadjustcommentvotes-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
@@ -603,19 +615,19 @@
       "type": "api"
     },
     {
-      "name": "zbanujUżytkownikaZKomentarza",
+      "name": "wyślijBanUżytkownikaZKomentarza",
       "file": "postbanuserfromcomment-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "cofnijBanUżytkownika",
+      "name": "wyślijCofnięcieBanaUżytkownika",
       "file": "postbanuserundo-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "zestawowePodsumowaniePrzedBanem",
+      "name": "wyślijMasowePodsumowaniePrzedBanem",
       "file": "postbulkprebansummary-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
@@ -627,55 +639,55 @@
       "type": "api"
     },
     {
-      "name": "oznaczKomentarz",
+      "name": "wyślijOznaczenieKomentarza",
       "file": "postflagcomment-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "usuńKomentarz",
+      "name": "wyślijUsunięcieKomentarza",
       "file": "postremovecomment-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "przywróćUsuniętyKomentarz",
+      "name": "wyślijPrzywrócenieUsuniętegoKomentarza",
       "file": "postrestoredeletedcomment-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "ustawStatusZatwierdzeniaKomentarza",
+      "name": "wyślijUstawStatusZatwierdzeniaKomentarza",
       "file": "postsetcommentapprovalstatus-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "ustawStatusRecenzjiKomentarza",
+      "name": "wyślijUstawStatusRecenzjiKomentarza",
       "file": "postsetcommentreviewstatus-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "ustawStatusSpamuKomentarza",
+      "name": "wyślijUstawStatusSpamuKomentarza",
       "file": "postsetcommentspamstatus-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "ustawTekstKomentarza",
+      "name": "wyślijUstawTekstKomentarza",
       "file": "postsetcommenttext-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "odznaczKomentarz",
+      "name": "wyślijCofnięcieOznaczeniaKomentarza",
       "file": "postunflagcomment-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
     },
     {
-      "name": "głosuj",
+      "name": "wyślijGłos",
       "file": "postvote-api-generated.md",
       "subCat": "Moderacja",
       "type": "api"
@@ -777,43 +789,43 @@
       "type": "api"
     },
     {
-      "name": "utwórzReakcjęStronyV1",
+      "name": "utwórzV1ReakcjęStrony",
       "file": "createv1pagereact-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
-      "name": "utwórzReakcjęStronyV2",
+      "name": "utwórzV2ReakcjęStrony",
       "file": "createv2pagereact-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
-      "name": "usuńReakcjęStronyV1",
+      "name": "usuńV1ReakcjęStrony",
       "file": "deletev1pagereact-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
-      "name": "usuńReakcjęStronyV2",
+      "name": "usuńV2ReakcjęStrony",
       "file": "deletev2pagereact-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
-      "name": "pobierzPolubieniaStronyV1",
+      "name": "pobierzV1PolubieniaStrony",
       "file": "getv1pagelikes-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
-      "name": "pobierzReakcjeStronyV2",
+      "name": "pobierzV2ReakcjeStrony",
       "file": "getv2pagereacts-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
     },
     {
-      "name": "pobierzUżytkownikówReakcjiStronyV2",
+      "name": "pobierzUżytkownikówV2ReakcjiStrony",
       "file": "getv2pagereactusers-api-generated.md",
       "subCat": "Reakcje na stronie",
       "type": "api"
@@ -843,7 +855,7 @@
       "type": "api"
     },
     {
-      "name": "pobierzStronęPoURLId",
+      "name": "pobierzStronęPoIdURL",
       "file": "getpagebyurlid-api-generated.md",
       "subCat": "Strony",
       "type": "api"
@@ -855,7 +867,7 @@
       "type": "api"
     },
     {
-      "name": "pobierzStronyPubliczne",
+      "name": "pobierzPubliczneStrony",
       "file": "getpagespublic-api-generated.md",
       "subCat": "Strony",
       "type": "api"
@@ -888,6 +900,54 @@
       "name": "pobierzOczekująceZdarzeniaWebhook",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "Oczekujące zdarzenia webhook",
+      "type": "api"
+    },
+    {
+      "name": "utwórzGłosAnkiety",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Głosy ankiet",
+      "type": "api"
+    },
+    {
+      "name": "usuńGłosAnkiety",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Głosy ankiet",
+      "type": "api"
+    },
+    {
+      "name": "pobierzGłosAnkiety",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Głosy ankiet",
+      "type": "api"
+    },
+    {
+      "name": "pobierzGłosyAnkiety",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Głosy ankiet",
+      "type": "api"
+    },
+    {
+      "name": "usuńAnkietę",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Ankiety",
+      "type": "api"
+    },
+    {
+      "name": "pobierzAnkietę",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Ankiety",
+      "type": "api"
+    },
+    {
+      "name": "modyfikujAnkietę",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Ankiety",
+      "type": "api"
+    },
+    {
+      "name": "zastąpAnkietę",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Ankiety",
       "type": "api"
     },
     {
@@ -957,7 +1017,7 @@
       "type": "api"
     },
     {
-      "name": "zbiorczaAgregacjaWynikówPytania",
+      "name": "masowaAgregacjaWynikówPytania",
       "file": "bulkaggregatequestionresults-api-generated.md",
       "subCat": "Agregacja wyników pytań",
       "type": "api"
@@ -1005,7 +1065,7 @@
       "type": "api"
     },
     {
-      "name": "ustawUżytkownikaSSO",
+      "name": "zastąpUżytkownikaSSO",
       "file": "putssouser-api-generated.md",
       "subCat": "Użytkownicy SSO",
       "type": "api"
@@ -1035,9 +1095,9 @@
       "type": "api"
     },
     {
-      "name": "pobierzDziennyUżytekNajemcy",
+      "name": "pobierzDziennąUżycieNajemcy",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dzienny użytek najemcy",
+      "subCat": "Dzienna użycie najemcy",
       "type": "api"
     },
     {
@@ -1181,7 +1241,7 @@
     {
       "name": "prześlijObraz",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Prześlij obraz",
+      "subCat": "Przesyłanie obrazu",
       "type": "api"
     },
     {
@@ -1257,13 +1317,13 @@
       "type": "api"
     },
     {
-      "name": "zaktualizujStatusSubskrypcjiKomentarzyPowiadomieńUżytkownika",
+      "name": "zaktualizujStatusSubskrypcjiPowiadomieńKomentarzyUżytkownika",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
       "subCat": "Powiadomienia użytkownika",
       "type": "api"
     },
     {
-      "name": "zaktualizujStatusSubskrypcjiStronPowiadomieńUżytkownika",
+      "name": "zaktualizujStatusSubskrypcjiPowiadomieńStronyUżytkownika",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
       "subCat": "Powiadomienia użytkownika",
       "type": "api"
@@ -1281,7 +1341,7 @@
       "type": "api"
     },
     {
-      "name": "szukajUżytkowników",
+      "name": "wyszukajUżytkowników",
       "file": "searchusers-api-generated.md",
       "subCat": "Wyszukiwanie użytkowników",
       "type": "api"
@@ -1314,6 +1374,30 @@
       "name": "pobierzGłosyDlaUżytkownika",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Głosy",
+      "type": "api"
+    },
+    {
+      "name": "utwórzWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooki",
+      "type": "api"
+    },
+    {
+      "name": "usuńWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooki",
+      "type": "api"
+    },
+    {
+      "name": "pobierzWebhooki",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooki",
+      "type": "api"
+    },
+    {
+      "name": "pobierzPrzykładoweŁadunkiWebhook",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooki",
       "type": "api"
     }
   ]

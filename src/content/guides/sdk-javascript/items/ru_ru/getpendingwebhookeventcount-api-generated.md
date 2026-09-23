@@ -1,7 +1,7 @@
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
-|------|------|-------------|----------|
+|------|------|----------|-------------|
 | tenantId | string | Да |  |
 | commentId | string | Нет |  |
 | externalId | string | Нет |  |
@@ -12,29 +12,29 @@
 
 ## Ответ
 
-Возвращает: [`GetPendingWebhookEventCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse1.ts)
+Возвращает: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventCountResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getPendingWebhookEventCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_001";
+async function runExample() {
+  const tenantId: string = "tenant_42";
+  const commentId: string = "comment_1001";
+  const eventType: string = "comment.deleted";
+  const domain: string = "myblog.com";
 
-  const responseAll: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(
+  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(
     tenantId,
-    "comment_456",
-    "ext_789",
-    "comment.updated",
-    "webhook",
-    "mydomain.com",
-    3
+    commentId,
+    undefined,
+    eventType,
+    undefined,
+    domain
   );
 
-  const responseMinimal: GetPendingWebhookEventCountResponse1 = await getPendingWebhookEventCount(tenantId);
+  console.log(result);
+}
 
-  console.log(responseAll, responseMinimal);
-})();
+runExample();
 [inline-code-end]
-
----

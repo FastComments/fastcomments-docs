@@ -2,30 +2,30 @@
 
 | 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createTenantUserBody | CreateTenantUserBody | Yes |  |
+| tenantId | string | 是 |  |
+| createTenantUserBody | CreateTenantUserBody | 是 |  |
 
 ## 响应
 
-返回：[`CreateTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse1.ts)
+返回: [`CreateTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantUserResponse.ts)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createTenantUser 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "a1b2c3d4-5678-90ab-cdef-1234567890ab";
-
-const newUser: CreateTenantUserBody = {
-  email: "jane.doe@example.com",
-  firstName: "Jane",
-  lastName: "Doe",
-  role: "admin",
-  // 可选参数
-  phoneNumber: "+15551234567",
-  isActive: true,
-};
-
-const result: CreateTenantUserResponse1 = await createTenantUser(tenantId, newUser);
+async function addTenantUser() {
+  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
+  const digestFreq: DigestEmailFrequency = 'daily';
+  const body: CreateTenantUserBody = {
+    email: 'jane.doe@example.com',
+    firstName: 'Jane',
+    lastName: 'Doe',
+    role: 'admin',
+    digestEmailFrequency: digestFreq,
+    phoneNumber: '+15551234567' // 可选
+  };
+  const response: CreateTenantUserResponse = await createTenantUser(tenantId, body);
+  console.log(response);
+}
+addTenantUser();
 [inline-code-end]
-
----

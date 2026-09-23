@@ -19,15 +19,15 @@
       "subCat": "Agregações"
     },
     {
-      "name": "Estrutura de Registro de Auditoria",
+      "name": "Estrutura de AuditLog",
       "file": "audit-log-structure.md",
-      "subCat": "Registros de Auditoria"
+      "subCat": "Logs de Auditoria"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Registros de Auditoria"
+      "subCat": "Logs de Auditoria"
     },
     {
       "name": "Estrutura de Comentário",
@@ -89,45 +89,45 @@
       "subCat": "Comentários"
     },
     {
-      "name": "Estrutura de Modelo de E-mail",
+      "name": "Estrutura de Modelo de Email",
       "file": "email-template-structure.md",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Modelos de E-mail"
+      "subCat": "Modelos de Email"
     },
     {
       "name": "Estrutura de Postagem de Feed",
@@ -270,6 +270,53 @@
       "subCat": "Notificações"
     },
     {
+      "name": "API Pública de Reações de Página",
+      "file": "page-reacts-api.md",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Reações de Página"
+    },
+    {
       "name": "Estrutura de Página",
       "file": "page-structure.md",
       "subCat": "Páginas"
@@ -303,6 +350,64 @@
       "file": "page-delete.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Páginas"
+    },
+    {
+      "name": "Estrutura de Enquete",
+      "file": "poll-structure.md",
+      "subCat": "Enquetes"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Enquetes"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Enquetes"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Enquetes"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Enquetes"
+    },
+    {
+      "name": "Estrutura de Voto de Enquete",
+      "file": "poll-vote-structure.md",
+      "subCat": "Votos de Enquete"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votos de Enquete"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votos de Enquete"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votos de Enquete"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Votos de Enquete"
     },
     {
       "name": "Estrutura de Evento de Webhook Pendente",

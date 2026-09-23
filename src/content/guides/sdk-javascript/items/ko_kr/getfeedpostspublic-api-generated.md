@@ -1,44 +1,44 @@
-req
+요청
 tenantId
 afterId
 
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| afterId | string | No |  |
-| limit | number | No |  |
-| tags | Array<string> | No |  |
-| sso | string | No |  |
-| isCrawler | boolean | No |  |
-| includeUserInfo | boolean | No |  |
+| tenantId | string | 예 |  |
+| afterId | string | 아니오 |  |
+| limit | number | 아니오 |  |
+| tags | Array<string> | 아니오 |  |
+| sso | string | 아니오 |  |
+| isCrawler | boolean | 아니오 |  |
+| includeUserInfo | boolean | 아니오 |  |
 
 ## 응답
 
-반환: [`GetFeedPostsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetFeedPostsPublicResponse.ts)
+반환: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
 
 ## 예시
 
 [inline-code-attrs-start title = 'getFeedPostsPublic 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function example() {
-  const tenantId: string = "tenant_12345";
-  const afterId: string = "post_9876";
-  const limit: number = 20;
-  const tags: string[] = ["news", "tech"];
-  const sso: string = "userToken123";
-  const isCrawler: boolean = false;
-  const includeUserInfo: boolean = true;
-  const response: GetFeedPostsPublicResponse = await getFeedPostsPublic(
-    tenantId,
-    afterId,
-    limit,
-    tags,
-    sso,
-    isCrawler,
-    includeUserInfo
-  );
-}
-example();
+const tenantId: string = "acme-corp-tenant";
+const afterId: string = "post-20230915-abc123";
+const limit: number = 15;
+const tags: string[] = ["technology", "innovation"];
+const sso: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSJ9.s3cr3tSignature";
+const isCrawler: boolean = false;
+const includeUserInfo: boolean = true;
+
+const feedResponse: PublicFeedPostsResponse = await getFeedPostsPublic(
+  tenantId,
+  afterId,
+  limit,
+  tags,
+  sso,
+  isCrawler,
+  includeUserInfo
+);
 [inline-code-end]
+
+---

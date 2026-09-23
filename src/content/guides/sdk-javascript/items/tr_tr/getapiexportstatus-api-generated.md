@@ -2,27 +2,26 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
+| tenantId | string | Yes |  |
 | batchJobId | string | No |  |
-| tenantId | string | No |  |
 | sso | string | No |  |
 
 ## Yanıt
 
-Döndürür: [`GetApiExportStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetApiExportStatusResponse.ts)
+Döndürür: [`ModerationExportStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationExportStatusResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getApiExportStatus Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoExportStatus() {
-    const batchJobId: string = "exportBatch-20231101-001";
-    const tenantId: string = "tenant-abc123";
-    const ssoToken: string = "sso-xyz789";
+async function run() {
+  const tenantId: string = "tenant_12345";
+  const batchJobId: string = "job_98765";
+  const ssoToken: string = "sso_abcde12345";
 
-    const fullStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId, tenantId, ssoToken);
-    const simpleStatus: GetApiExportStatusResponse = await getApiExportStatus(batchJobId);
-    console.log(fullStatus, simpleStatus);
+  const statusOnlyTenant: ModerationExportStatusResponse = await getApiExportStatus(tenantId);
+  const statusWithBatch: ModerationExportStatusResponse = await getApiExportStatus(tenantId, batchJobId);
+  const statusFull: ModerationExportStatusResponse = await getApiExportStatus(tenantId, batchJobId, ssoToken);
 }
+run();
 [inline-code-end]
-
----

@@ -1,25 +1,24 @@
 ## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| skip | number | No |  |
+| tenantId | string | כן |  |
+| skip | number | לא |  |
 
 ## תגובה
 
-מחזיר: [`GetModeratorsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse1.ts)
+מחזיר: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
 
 ## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת getModerators'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchModerators(): Promise<void> {
-  const tenantId: string = "tenant-9876";
-  const skip: number = 30; // אופציונלי קיזוז דפדוף
-  const moderators: GetModeratorsResponse1 = await getModerators(tenantId, skip);
-  // דוגמה ללא דפדוף:
-  // const allModerators: GetModeratorsResponse1 = await getModerators(tenantId);
-}
+const tenantId: string = "tenant_987654321";
+
+const moderators: GetModeratorsResponse = await getModerators(tenantId);
+
+const skip: number = 20;
+const moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);
 [inline-code-end]
 
 ---

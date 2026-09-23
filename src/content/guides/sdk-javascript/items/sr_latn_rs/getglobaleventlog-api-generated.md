@@ -1,4 +1,4 @@
-zahtev
+req
 tenantId
 urlId
 userIdWS
@@ -7,30 +7,28 @@ userIdWS
 
 | Naziv | Tip | Obavezno | Opis |
 |------|------|----------|------|
-| tenantId | string | Da |  |
-| urlId | string | Da |  |
-| userIdWS | string | Da |  |
-| startTime | number | Da |  |
-| endTime | number | Ne |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| userIdWS | string | Yes |  |
+| startTime | number | Yes |  |
+| endTime | number | No |  |
 
 ## Odgovor
 
-Vraća: [`GetGlobalEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetGlobalEventLogResponse.ts)
+Vraća: [`GetEventLogResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetEventLogResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getGlobalEventLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getGlobalEventLog Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';
-  const urlId: string = 'article-2023-09-15';
-  const userIdWS: string = 'ws_987654321';
-  const startTime: number = Date.now() - 86400000;
+async function fetchEventLogs() {
+  const tenantId: string = "tenant_12345";
+  const urlId: string = "url_9876";
+  const userIdWS: string = "user_ws_abcde";
+  const startTime: number = Date.now() - 24 * 60 * 60 * 1000; // pre 24 sata
   const endTime: number = Date.now();
 
-  const fullLog: GetGlobalEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
-  const recentLog: GetGlobalEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);
-
-  console.log(fullLog, recentLog);
-})();
+  const logWithEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);
+  const logWithoutEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);
+}
 [inline-code-end]

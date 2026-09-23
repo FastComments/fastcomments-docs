@@ -270,6 +270,53 @@
       "subCat": "Уведомления"
     },
     {
+      "name": "Публичный API реакций на страницу",
+      "file": "page-reacts-api.md",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Реакции на страницу"
+    },
+    {
       "name": "Структура страницы",
       "file": "page-structure.md",
       "subCat": "Страницы"
@@ -305,27 +352,85 @@
       "subCat": "Страницы"
     },
     {
-      "name": "Структура ожидающего webhook-события",
+      "name": "Структура опроса",
+      "file": "poll-structure.md",
+      "subCat": "Опросы"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опросы"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опросы"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опросы"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Опросы"
+    },
+    {
+      "name": "Структура голосования в опросе",
+      "file": "poll-vote-structure.md",
+      "subCat": "Голоса опросов"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса опросов"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса опросов"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса опросов"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Голоса опросов"
+    },
+    {
+      "name": "Структура ожидающего вебхука",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Ожидающие webhook-события"
+      "subCat": "Ожидающие вебхуки"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие webhook-события"
+      "subCat": "Ожидающие вебхуки"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие webhook-события"
+      "subCat": "Ожидающие вебхуки"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие webhook-события"
+      "subCat": "Ожидающие вебхуки"
     },
     {
       "name": "Структура SSO пользователя",
@@ -443,37 +548,37 @@
     {
       "name": "Структура пакета арендатора",
       "file": "tenant-package-structure.md",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "Структура пользователя арендатора",
@@ -720,25 +825,25 @@
     {
       "name": "Структура прогресса значка пользователя",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Прогресс значков пользователя"
+      "subCat": "Прогресс значка пользователя"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Прогресс значков пользователя"
+      "subCat": "Прогресс значка пользователя"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Прогресс значков пользователя"
+      "subCat": "Прогресс значка пользователя"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Прогресс значков пользователя"
+      "subCat": "Прогресс значка пользователя"
     }
   ]
 }

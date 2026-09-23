@@ -1,29 +1,34 @@
-Bir kiracı için toplu kullanıcı bilgisi. userId'ler verildiğinde, User / SSOUser'dan görüntüleme bilgisi döndürür.  
-Yorum widget'ı tarafından, bir varlık etkinliğiyle yeni ortaya çıkan kullanıcıları zenginleştirmek için kullanılır.  
-Sayfa bağlamı yok: gizlilik tutarlı bir şekilde uygulanır (özel profiller maskelelenir).
+Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
+Bir kiracı için toplu kullanıcı bilgisi. userIds verildiğinde, User / SSOUser'dan görüntüleme bilgilerini döndürür.
 
-## Parametreler
+Used by the comment widget to enrich users that just appeared via a presence event.  
+Yorum widget'ı tarafından, bir varlık olayıyla yeni ortaya çıkan kullanıcıları zenginleştirmek için kullanılır.
 
-| İsim | Tür | Zorunlu | Açıklama |
+No page context: privacy is enforced uniformly (private profiles are masked).  
+Sayfa bağlamı yok: gizlilik tutarlı bir şekilde uygulanır (özel profiller maskeleme yapılır).
+
+## Parameters
+
+| Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Evet |  |
-| ids | string | Evet |  |
+| tenantId | string | Yes |  |
+| ids | string | Yes |  |
 
-## Yanıt
+## Response
 
-Döndürür: [`GetUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUsersInfoResponse.ts)
+Döndürür: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'getUsersInfo Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const ids: string = "user-1001,user-1002";
-
-const usersInfo: GetUsersInfoResponse = await getUsersInfo(tenantId, ids);
-
-// Yanıt içindeki isteğe bağlı alanlar tanımsız olabilir
-const firstUser: PageUserEntry | undefined = usersInfo?.users?.[0];
+async function fetchUsersInfo(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const ids: string = "user_001,user_002";
+  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);
+  console.log(response);
+}
+fetchUsersInfo();
 [inline-code-end]
 
 ---

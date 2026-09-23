@@ -7,26 +7,19 @@
 
 ## Одговор
 
-Враћа: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
+Враћа: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Primer getUserNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getUserNotificationCount'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserNotificationCount() {
-    const tenantId: string = "acme-corp-01";
+async function demo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const ssoToken: string = "sso-token-xyz789";
 
-    // Позив са опционо SSO токеном
-    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId,
-        "sso-token-abc123"
-    );
-
-    // Позив без SSO токена
-    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserCount(
-        tenantId
-    );
-
-    console.log(countWithSSO, countWithoutSSO);
+  const countWithoutSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
+  const countWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
 }
+
+demo();
 [inline-code-end]

@@ -9,22 +9,21 @@
 
 ## Response
 
-Returns: [`LockCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/LockCommentResponse.ts)
+Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Example
 
 [inline-code-attrs-start title = 'lockComment Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
+async function demoLockComment() {
   const tenantId: string = "tenant_12345";
-  const commentId: string = "cmt_98765";
-  const broadcastId: string = "brd_54321";
+  const commentId: string = "cmt_9876";
+  const broadcastId: string = "brd_5555";
+  const ssoToken: string = "sso_user_abc";
 
-  // With optional SSO token
-  const ssoToken: string = "user-abc123";
-  const lockedWithSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);
+  const resultWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);
+}
 
-  // Without SSO token
-  const lockedWithoutSso: LockCommentResponse = await lockComment(tenantId, commentId, broadcastId);
-})();
+demoLockComment();
 [inline-code-end]

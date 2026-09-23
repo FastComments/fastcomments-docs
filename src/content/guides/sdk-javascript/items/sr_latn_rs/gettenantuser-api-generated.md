@@ -1,22 +1,24 @@
-## Parameters
+## Parametri
 
-| Ime | Tip | Obavezno | Opis |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| Naziv | Tip | Obavezno | Opis |
+|------|------|----------|------|
+| tenantId | string | Da |  |
+| id | string | Da |  |
 
-## Response
+## Odgovor
 
-Vraća: [`GetTenantUserResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUserResponse1.ts)
+Vraća: [`GetTenantUserResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantUserResponse.ts)
 
 ## Primer
 
-[inline-code-attrs-start title = 'getTenantUser Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getTenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchUser(): Promise<void> {
-  const tenantId: string = "tenant-01a2b3c";
-  const userId: string = "user-7890";
-  const result: GetTenantUserResponse1 = await getTenantUser(tenantId, userId);
-  console.log(result);
-}
+(async () => {
+    const tenantId: string = "acme-tenant-001";
+    const userId: string = "user-12345";
+    const response: GetTenantUserResponse = await getTenantUser(tenantId, userId);
+    console.log(response);
+})();
 [inline-code-end]
+
+---

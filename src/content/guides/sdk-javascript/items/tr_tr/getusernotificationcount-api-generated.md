@@ -2,31 +2,26 @@
 
 | Ad | Tür | Gerekli | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Evet |  |
+| sso | string | Hayır |  |
 
 ## Yanıt
 
-Döndürür: [`GetUserNotificationCountResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse1.ts)
+Döndürür: [`GetUserNotificationCountResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetUserNotificationCountResponse.ts)
 
 ## Örnek
 
 [inline-code-attrs-start title = 'getUserNotificationCount Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoGetUserNotificationCount() {
-    const tenantId: string = "acme-corp-01";
+async function demo(): Promise<void> {
+  const tenantId: string = "acme-corp-001";
+  const ssoToken: string = "sso-token-xyz789";
 
-    // İsteğe bağlı SSO belirteciyle çağır
-    const countWithSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId,
-        "sso-token-abc123"
-    );
-
-    // SSO belirteci olmadan çağır
-    const countWithoutSSO: GetUserNotificationCountResponse1 = await getUserNotificationCount(
-        tenantId
-    );
-
-    console.log(countWithSSO, countWithoutSSO);
+  const countWithoutSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);
+  const countWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);
 }
+
+demo();
 [inline-code-end]
+
+---

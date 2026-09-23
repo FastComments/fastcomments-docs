@@ -1,28 +1,24 @@
 ## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательно | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | skip | number | Нет |  |
 
 ## Ответ
 
-Returns: [`GetQuestionConfigsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse1.ts)
+Возвращает: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigsResponse.ts)
 
 ## Пример
 
 [inline-code-attrs-start title = 'Пример getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchQuestionConfigs() {
-    const tenantId: string = "tenant-9876";
+async function fetchConfigs() {
+  const tenantId: string = "tenant_12345";
 
-    // Вызов без необязательного параметра 'skip'
-    const configsWithoutSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId);
-
-    // Вызов с необязательным параметром 'skip'
-    const skip: number = 10;
-    const configsWithSkip: GetQuestionConfigsResponse1 = await getQuestionConfigs(tenantId, skip);
-
-    console.log(configsWithoutSkip, configsWithSkip);
+  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
+  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
 }
 [inline-code-end]
+
+---

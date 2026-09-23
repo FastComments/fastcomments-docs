@@ -1,32 +1,26 @@
 ## Parametre
 
-| Navn | Type | Obligatorisk | Beskrivelse |
-|------|------|--------------|-------------|
-| tenantId | string | Ja |  |
-| id | string | Ja |  |
-| sure | string | Nej |  |
+| Navn | Type | Påkrævet | Beskrivelse |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| id | string | Yes |  |
+| sure | string | No |  |
 
 ## Svar
 
-Returnerer: [`DeleteTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/DeleteTenantResponse.ts)
+Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Eksempel
 
 [inline-code-attrs-start title = 'deleteTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-    const tenantId: string = "tenant_12345";
-    const id: string = "resource_98765";
-    const sure: string = "confirm";
+async function main(): Promise<void> {
+  const tenantId: string = "tenant_12345";
+  const userId: string = "user_9876";
 
-    // Kald med valgfri 'sure' parameter
-    const responseWithSure: DeleteTenantResponse = await deleteTenant(tenantId, id, sure);
-    console.log(responseWithSure);
-
-    // Kald uden valgfri 'sure' parameter
-    const responseWithoutSure: DeleteTenantResponse = await deleteTenant(tenantId, id);
-    console.log(responseWithoutSure);
+  const resultWithoutSure: APIEmptyResponse = await deleteTenant(tenantId, userId);
+  const resultWithSure: APIEmptyResponse = await deleteTenant(tenantId, userId, "confirm");
 }
 
-runExample();
+main();
 [inline-code-end]

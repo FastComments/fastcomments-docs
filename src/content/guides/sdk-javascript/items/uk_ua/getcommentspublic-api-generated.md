@@ -4,61 +4,61 @@ urlId
 
 ## Параметри
 
-| Назва | Тип | Обов’язковий | Опис |
-|------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| page | number | No |  |
-| direction | SortDirections | No |  |
-| sso | string | No |  |
-| skip | number | No |  |
-| skipChildren | number | No |  |
-| limit | number | No |  |
-| limitChildren | number | No |  |
-| countChildren | boolean | No |  |
-| fetchPageForCommentId | string | No |  |
-| includeConfig | boolean | No |  |
-| countAll | boolean | No |  |
-| includei10n | boolean | No |  |
-| locale | string | No |  |
-| modules | string | No |  |
-| isCrawler | boolean | No |  |
-| includeNotificationCount | boolean | No |  |
-| asTree | boolean | No |  |
-| maxTreeDepth | number | No |  |
-| useFullTranslationIds | boolean | No |  |
-| parentId | string | No |  |
-| searchText | string | No |  |
-| hashTags | Array<string> | No |  |
-| userId | string | No |  |
-| customConfigStr | string | No |  |
-| afterCommentId | string | No |  |
-| beforeCommentId | string | No |  |
+| Назва | Тип | Обов'язково | Опис |
+|------|------|-------------|------|
+| tenantId | string | Так |  |
+| urlId | string | Так |  |
+| page | number | Ні |  |
+| direction | SortDirections | Ні |  |
+| sso | string | Ні |  |
+| skip | number | Ні |  |
+| skipChildren | number | Ні |  |
+| limit | number | Ні |  |
+| limitChildren | number | Ні |  |
+| countChildren | boolean | Ні |  |
+| fetchPageForCommentId | string | Ні |  |
+| includeConfig | boolean | Ні |  |
+| countAll | boolean | Ні |  |
+| includei10n | boolean | Ні |  |
+| locale | string | Ні |  |
+| modules | string | Ні |  |
+| isCrawler | boolean | Ні |  |
+| includeNotificationCount | boolean | Ні |  |
+| asTree | boolean | Ні |  |
+| maxTreeDepth | number | Ні |  |
+| useFullTranslationIds | boolean | Ні |  |
+| parentId | string | Ні |  |
+| searchText | string | Ні |  |
+| hashTags | Array<string> | Ні |  |
+| userId | string | Ні |  |
+| customConfigStr | string | Ні |  |
+| afterCommentId | string | Ні |  |
+| beforeCommentId | string | Ні |  |
 
 ## Відповідь
 
-Повертає: [`GetCommentsPublicResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsPublicResponse.ts)
+Повертає: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchComments() {
-  const tenantId: string = 'acme-corp';
-  const urlId: string = 'blog/post-789';
-  const page: number = 1;
-  const direction: SortDirections = SortDirections.Desc;
-  const limit: number = 25;
-  const includeConfig: boolean = true;
-  const locale: string = 'en-GB';
-  const modules: string = 'reactions,attachments';
-  const isCrawler: boolean = false;
-  const includeNotificationCount: boolean = true;
-  const asTree: boolean = true;
-  const maxTreeDepth: number = 4;
-  const searchText: string = 'TypeScript';
-  const hashTags: string[] = ['typescript', 'api'];
-  const response: GetCommentsPublicResponse = await getCommentsPublic(
+async function loadComments(): Promise<void> {
+  const tenantId: string = "tenant-42",
+        urlId: string = "post-2023-09-15",
+        page: number = 1,
+        direction: SortDirections = "desc",
+        limit: number = 30,
+        includeConfig: boolean = true,
+        locale: string = "en-US",
+        isCrawler: boolean = false,
+        asTree: boolean = true,
+        maxTreeDepth: number = 2,
+        searchText: string = "fastcomments",
+        hashTags: string[] = ["fastcomments","typescript"],
+        userId: string = "user-123";
+
+  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
     tenantId,
     urlId,
     page,
@@ -74,19 +74,16 @@ async function fetchComments() {
     undefined,
     undefined,
     locale,
-    modules,
+    undefined,
     isCrawler,
-    includeNotificationCount,
+    undefined,
     asTree,
     maxTreeDepth,
     undefined,
     undefined,
     searchText,
     hashTags,
-    undefined,
-    undefined,
-    undefined,
-    undefined
+    userId
   );
 }
 [inline-code-end]

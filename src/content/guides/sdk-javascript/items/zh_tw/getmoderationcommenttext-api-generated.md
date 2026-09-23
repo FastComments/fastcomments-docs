@@ -1,28 +1,29 @@
-## Parameters
+## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|------|
-| commentId | string | 是 |  |
-| tenantId | string | 否 |  |
-| sso | string | 否 |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| sso | string | No |  |
 
 ## 回應
 
-返回：[`GetModerationCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModerationCommentTextResponse.ts)
+返回：[`GetCommentTextResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentTextResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getModerationCommentText 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function exampleUsage(): Promise<void> {
-  const commentId: string = "cmt_9f8e7d6c5b4a3b2c1d0e";
-  const tenantId: string = "tenant_67890";
-  const sso: string = "sso_token_abc123";
+async function fetchComment() {
+  const tenantId: string = "tenant_12345";
+  const commentId: string = "cmt_98765";
+  const ssoToken: string = "sso_abcde12345";
 
-  // 只使用必填參數呼叫
-  const result1: GetModerationCommentTextResponse = await getModerationCommentText(commentId);
-
-  // 呼叫時使用可選參數
-  const result2: GetModerationCommentTextResponse = await getModerationCommentText(commentId, tenantId, sso);
+  const commentWithoutSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId);
+  const commentWithSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId, ssoToken);
 }
+
+fetchComment();
 [inline-code-end]
+
+---

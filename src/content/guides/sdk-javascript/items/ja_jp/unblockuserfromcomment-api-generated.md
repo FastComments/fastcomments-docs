@@ -1,41 +1,39 @@
 ## パラメータ
 
-| 名前 | 型 | 必須 | 説明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| unBlockFromCommentParams | UnBlockFromCommentParams | Yes |  |
-| userId | string | No |  |
-| anonUserId | string | No |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
+| unBlockFromCommentParams | UnBlockFromCommentParams | はい |  |
+| userId | string | いいえ |  |
+| anonUserId | string | いいえ |  |
 
-## 応答
+## レスポンス
 
-戻り値: [`UnBlockUserFromCommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnBlockUserFromCommentResponse.ts)
+戻り値: [`UnblockSuccess`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UnblockSuccess.ts)
 
 ## 例
 
-[inline-code-attrs-start title = 'unBlockUserFromComment 例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'unBlockUserFromComment の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demoUnblock() {
-  const tenantId: string = "acme-corp-tenant";
-  const commentId: string = "cmt_9f8b7a6d";
-
+(async () => {
+  const tenantId: string = "tenant-9f8b7c6d";
+  const commentId: string = "comment-4a3b2c1d";
   const params: UnBlockFromCommentParams = {
-    reason: "User resolved the issue",
-    notifyUser: true
+    reason: "User appealed the block",
+    adminNote: "Reviewed and unblocked"
   };
-
-  const userId: string = "usr_12345";
-
-  const result: UnBlockUserFromCommentResponse = await unBlockUserFromComment(
+  const userId: string = "user-5e6f7g8h";
+  const anonUserId: string = "anon-1a2b3c4d";
+  const result: UnblockSuccess = await unBlockUserFromComment(
     tenantId,
     commentId,
     params,
-    userId
-    // anonUserId は省略
+    userId,
+    anonUserId
   );
-
   console.log(result);
-}
-demoUnblock();
+})();
 [inline-code-end]
+
+---

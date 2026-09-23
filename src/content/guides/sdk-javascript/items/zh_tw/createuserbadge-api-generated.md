@@ -1,25 +1,25 @@
 ## 參數
 
-| 名稱 | 類型 | 必填 | 說明 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 是 |  |
-| createUserBadgeParams | CreateUserBadgeParams | 是 |  |
+| tenantId | string | Yes |  |
+| createUserBadgeParams | CreateUserBadgeParams | Yes |  |
 
 ## 回應
 
-返回：[`CreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateUserBadgeResponse.ts)
+Returns: [`APICreateUserBadgeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APICreateUserBadgeResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createUserBadge 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "company-42";
-
-const badgeParams: CreateUserBadgeParams = {
-  name: "Community Champion",
-  iconUrl: "https://assets.example.com/badges/champion.png",
-  // description 是可選的，這裡省略
-};
-
-const result: CreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+async function main(): Promise<void> {
+  const tenantId: string = "tenant_9f8b7c";
+  const badgeParams: CreateUserBadgeParams = {
+    name: "Community Helper",
+    iconUrl: "https://cdn.example.com/badges/helper.png"
+  };
+  const response: APICreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);
+}
+main();
 [inline-code-end]

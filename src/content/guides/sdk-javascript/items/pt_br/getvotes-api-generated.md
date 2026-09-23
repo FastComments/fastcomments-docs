@@ -7,21 +7,18 @@
 
 ## Resposta
 
-Retorna: [`GetVotesResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse1.ts)
+Retorna: [`GetVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetVotesResponse.ts)
 
 ## Exemplo
 
 [inline-code-attrs-start title = 'Exemplo getVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchVotes(): Promise<void> {
-  const tenantId: string = "acme-corp-01";
-  const urlId: string = "article-2024-05-15";
+const tenantId: string = "tenant_12345";
+const urlId: string = "article-67890";
 
-  const response: GetVotesResponse1 = await getVotes(tenantId, urlId);
-
-  // Exemplo de acesso a um campo opcional na resposta
-  const firstVoteId: string | undefined = response?.votes?.[0]?.id;
-}
+(async () => {
+  const votesResponse: GetVotesResponse = await getVotes(tenantId, urlId);
+  // Exemplo de acesso a uma propriedade opcional da resposta
+  const firstVote: PublicVote | undefined = votesResponse.votes?.[0];
+})();
 [inline-code-end]
-
----

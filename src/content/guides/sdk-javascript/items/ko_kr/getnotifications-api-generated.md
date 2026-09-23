@@ -1,40 +1,42 @@
 ## 매개변수
 
-| 이름 | 형식 | 필수 | 설명 |
-|------|------|------|------|
-| tenantId | string | 예 |  |
-| userId | string | 아니오 |  |
-| urlId | string | 아니오 |  |
-| fromCommentId | string | 아니오 |  |
-| viewed | boolean | 아니오 |  |
-| type | string | 아니오 |  |
-| skip | number | 아니오 |  |
+| 이름 | 유형 | 필수 | 설명 |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| userId | string | No |  |
+| urlId | string | No |  |
+| fromCommentId | string | No |  |
+| viewed | boolean | No |  |
+| type | string | No |  |
+| skip | number | No |  |
 
 ## 응답
 
-반환: [`GetNotificationsResponse1`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse1.ts)
+반환: [`GetNotificationsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetNotificationsResponse.ts)
 
 ## 예시
 
-[inline-code-attrs-start title = 'getNotifications 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getNotifications 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function demo() {
-  const tenantId: string = "acme-corp";
-  const userId: string = "john.doe";
+async function fetchNotifications(): Promise<void> {
+  const tenantId: string = "tenant_42";
+  const userId: string = "user_1001";
+  const urlId: string = "url_2023";
+  const viewed: boolean = true;
+  const skip: number = 0;
 
-  const notifications: GetNotificationsResponse1 = await getNotifications(tenantId, userId);
-  console.log(notifications);
-
-  const more: GetNotificationsResponse1 = await getNotifications(
+  const notifications: GetNotificationsResponse = await getNotifications(
     tenantId,
+    userId,
+    urlId,
     undefined,
-    "article-5678",
+    viewed,
     undefined,
-    true,
-    "reply",
-    10
+    skip
   );
-  console.log(more);
+
+  console.log(notifications);
 }
-demo();
 [inline-code-end]
+
+---
