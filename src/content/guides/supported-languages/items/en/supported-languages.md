@@ -1,5 +1,6 @@
 FastComments supports a number of languages, across different locales.
 
+- `ar`: Arabic
 - `bg_bg`: Bulgarian (Bulgaria)
 - `zh_cn`: Chinese (Simplified)
 - `zh_tw`: Chinese (Traditional)
@@ -27,3 +28,18 @@ FastComments supports a number of languages, across different locales.
 - `es_es`: Spanish (Spain)
 - `uk_ua`: Ukrainian (Ukraine)
 - `tr_tr`: Turkish (Turkey)
+
+### Right-to-Left Languages
+
+Arabic (`ar`) and Hebrew (`he`) are right-to-left languages. When one of these locales is used, FastComments lays out
+the comment widget, emails, and the dashboard from right to left. No extra configuration is needed.
+
+Each comment and username follows the direction of its own text. An English comment reads left-to-right on an Arabic
+page, and an Arabic comment reads right-to-left on an English page.
+
+Code snippets always read left-to-right.
+
+### Plural Forms
+
+Text that includes a count, like "3 comments", uses the correct plural form for each language. For example, Arabic
+has separate forms for one, two, a few, and many, and Russian and Polish have separate forms for a few and many.
