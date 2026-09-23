@@ -1,17 +1,17 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| userId | string | Da |  |
-| id | string | Da |  |
-| changeTicketStateBody | ChangeTicketStateBody | Da |  |
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| tenantId | string | Yes |  |
+| userId | string | Yes |  |
+| id | string | Yes |  |
+| changeTicketStateBody | ChangeTicketStateBody | Yes |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
+Враћа: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ChangeTicketStateResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'changeTicketState Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,7 +21,7 @@ Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcommen
   const ticketId: string = "ticket-20230915-001";
 
   const changeTicketStateBody: ChangeTicketStateBody = {
-    // primer opcionog polja
+    // пример опционог поља
     note: "Resolved after investigation"
   };
 
@@ -35,5 +35,3 @@ Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcommen
   console.log(response);
 })();
 [inline-code-end]
-
----

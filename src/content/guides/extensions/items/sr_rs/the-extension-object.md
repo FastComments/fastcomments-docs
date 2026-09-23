@@ -1,11 +1,8 @@
-The extension object consists of the following definition:
-
-<!-- ако желите да ажурирате ово, запамтите да ажурирате comment-ui-core -->
-[inline-code-attrs-start title = 'Објекат екстензије JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'Објекат проширења JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * FastCommentsUI објекат екстензије. Користи се за лениво учитавање одређених компоненти. На пример,
- * систем за рецензије није коришћен од свих корисника, па учитавамо ту екстензију само када нам је потребна.
+ * FastCommentsUI објекат проширења. Користи се за лениво учитавање одређених компоненти. На пример, систем за прегледе није коришћен од свих корисника, па учитавамо то проширење само када нам је потребно.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -26,15 +23,15 @@ The extension object consists of the following definition:
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Филтрира HTML за сваки коментар пре рендеровања.
  * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Филтрира HTML за сваки мени коментара пре рендеровања.
  * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Филтрира HTML за цео виџет приликом рендеровања.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Враћа HTML који се додаје на врх области одговора.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Враћа HTML који се додаје на врх виџета.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Враћа HTML који се додаје на врх елемента коментара.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Враћа HTML који се додаје на дно елемента коментара.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Враћа HTML који се додаје након текста коментара, унутар елемента садржаја коментара (користи се у анкетама).
- * @property {Function} [replyAreaInputBottom] - Враћа HTML који се додаје у оквир уноса коментара, испод текстуалног уноса (користи се у анкетама за уређивач анкете на месту). Прихвата ID родитељског коментара, или null за коренски оквир одговора.
- * @property {Function} [onPollUpdate] - Позива се са живим догађајем када се промене бројеви гласова у анкети на страници.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Враћа HTML за додавање на врх области одговора.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Враћа HTML за додавање на врх виџета.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Враћа HTML за додавање на врх елемента коментара.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Враћа HTML за додавање на дно елемента коментара.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Враћа HTML за додавање након текста коментара, унутар елемента садржаја коментара (користи се у анкетама).
+ * @property {Function} [replyAreaInputBottom] - Враћа HTML за додавање у оквир уноса коментара, испод текстуалног уноса (користи се у анкетама за уређивач анкете на месту). Прима ID родитељског коментара, или null за коренски оквир одговора.
+ * @property {Function} [onPollUpdate] - Позива се са живим догађајем када се промене броја гласања у анкети на страници.
  * @property {Function} isSiteAdmin - Враћа да ли је посматрач администратор или модератор тенанта. Познато након првог преузимања.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Враћа HTML који се додаје на дно мени елемента за сваки коментар.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Враћа HTML за додавање на дно мени елемента за сваки коментар.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -44,7 +41,7 @@ The extension object consists of the following definition:
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Корени елемент.
- * @param {Object.<string, Function>} clickListeners - Хендлери догађаја за кликове, по имену класе, који се могу модификовати по референци.
+ * @param {Object.<string, Function>} clickListeners - Руковаоци догађаја за кликове, по имену класе, који се могу модификовати по референци.
  * @returns void
  */
 

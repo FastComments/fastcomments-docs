@@ -2,23 +2,23 @@ req
 tenantId
 afterId
 
-## Parametri
+## Параметри
 
-| Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Da |  |
-| afterId | string | Ne |  |
-| limit | number | Ne |  |
-| tags | Array<string> | Ne |  |
-| sso | string | Ne |  |
-| isCrawler | boolean | Ne |  |
-| includeUserInfo | boolean | Ne |  |
+| Име | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| afterId | string | Не |  |
+| limit | number | Не |  |
+| tags | Array<string> | Не |  |
+| sso | string | Не |  |
+| isCrawler | boolean | Не |  |
+| includeUserInfo | boolean | Не |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
+Враћа: [`PublicFeedPostsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PublicFeedPostsResponse.ts)
 
-## Primer
+## Пример
 
 [inline-code-attrs-start title = 'getFeedPostsPublic Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

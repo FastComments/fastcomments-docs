@@ -1,18 +1,15 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-使用中の認証情報を識別します：それが属するテナント、および OAuth トークンの場合は、認可したユーザーです。
-
-Integrations use this to test a connection and label it.  
+---
+使用中の認証情報を識別します：それが属するテナント、および OAuth トークンの場合は、認可したユーザーです。  
 統合はこれを使用して接続をテストし、ラベル付けします。
 
 ## Parameters
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
+| tenantId | string | はい |  |
 
 ## Response
 
-Returns: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetMeResponse.ts)  
 返却: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetMeResponse.ts)
 
 ## Example
@@ -27,3 +24,5 @@ Returns: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-js/b
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
+
+---

@@ -1,16 +1,16 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 유형 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| editKey | string | No |  |
+| tenantId | string | 예 |  |
+| id | string | 예 |  |
+| editKey | string | 아니오 |  |
 
-## Response
+## 응답
 
-Returns: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
+반환: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/VoteDeleteResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'deleteVote 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

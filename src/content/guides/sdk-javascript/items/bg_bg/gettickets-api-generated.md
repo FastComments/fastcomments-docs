@@ -10,7 +10,7 @@
 
 ## Response
 
-Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
+Връща: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketsResponse.ts)
 
 ## Example
 
@@ -21,7 +21,7 @@ Returns: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sdk
   const ticketsSimple: GetTicketsResponse = await getTickets(tenantId);
 
   const userId: string = "user_9876";
-  const state: number = 1; // например, отворен
+  const state: number = 1; // напр., отворен
   const skip: number = 0;
   const limit: number = 20;
   const ticketsFull: GetTicketsResponse = await getTickets(

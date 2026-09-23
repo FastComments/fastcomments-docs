@@ -1,15 +1,15 @@
-## Parameters
+## פרמטרים
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | כן |  |
+| id | string | כן |  |
 
-## Response
+## תגובה
 
-Returns: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
+מחזיר: [`GetTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTenantResponse.ts)
 
-## Example
+## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת getTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,16 +1,16 @@
 ## Parameters
 
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| includeEmail | boolean | No |  |
-| includeIP | boolean | No |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| commentId | string | はい |  |
+| includeEmail | boolean | いいえ |  |
+| includeIP | boolean | いいえ |  |
+| sso | string | いいえ |  |
 
 ## Response
 
-Returns: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
+返却: [`ModerationAPICommentResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/ModerationAPICommentResponse.ts)
 
 ## Example
 
@@ -20,7 +20,7 @@ async function fetchComments() {
   const tenantId: string = "acme-corp";
   const commentId: string = "cmt_1234567890";
 
-  // 必要なパラメータだけで呼び出す
+  // 必要なパラメータのみで呼び出す
   const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);
 
   // オプションのパラメータで呼び出す
@@ -36,3 +36,5 @@ async function fetchComments() {
   );
 }
 [inline-code-end]
+
+---

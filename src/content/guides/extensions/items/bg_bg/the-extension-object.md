@@ -1,10 +1,11 @@
 The extension object consists of the following definition:
 
-<!-- if you want to update this, remember to update comment-ui-core -->
-[inline-code-attrs-start title = 'JSDoc на обекта за разширение'; type = 'javascript'; inline-code-attrs-end]
+<!-- ако искате да актуализирате това, не забравяйте да актуализирате comment-ui-core -->
+[inline-code-attrs-start title = 'Обект на разширението JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * FastCommentsUI обект за разширение. Използва се за lazy‑loading (мързеливо зареждане) на определени компоненти. Например, системата за отзиви не се използва от всички клиенти, затова зареждаме това разширение само когато им е необходимо.
+ * FastCommentsUI разширителният обект. Използва се за lazy-loading (мързеливо зареждане) на определени компоненти. Например, системата за отзиви не
+ * се използва от всички клиенти, затова зареждаме това разширение само когато ни е необходимо.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -12,11 +13,11 @@ The extension object consists of the following definition:
  * @property {Element} root - Кореновият DOM елемент на уиджета.
  * @property {string} [css]
  * @property {Object} config - Конфигурационният обект на FastComments.
- * @property {Object} commentsById - Препратка към обект, съдържащ всички коментари по id, който се поддържа актуален.
+ * @property {Object} commentsById - Препратка към обект, съдържащ всички коментари по ID, който се поддържа актуален.
  * @property {Object} translations - Препратка към всички преводи.
  * @property {Function} reRenderComment - Препратка към функция, която може да се извика за повторно рендериране на коментар.
  * @property {Function} removeCommentAndReRender - Препратка към функция, която може да се извика за премахване на коментар от паметта и повторно рендериране на съответната част от DOM.
- * @property {Function} newBroadcastId - Препратка към функция, която може да се извика за създаване на нов broadcast id и добавянето му към локалния списък с broadcast id‑та за игнориране.
+ * @property {Function} newBroadcastId - Препратка към функция, която може да се извика за създаване на нов broadcast ID и добавянето му към локалния списък с broadcast ID‑та за игнориране.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
  * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Извиква се с коментара, който предстои да бъде публикуван. Върнете false, за да отмените изпращането (например когато прикаченото гласуване е непълно).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
@@ -30,7 +31,7 @@ The extension object consists of the following definition:
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Връща HTML, който се добавя в горната част на елемента на коментара.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Връща HTML, който се добавя в долната част на елемента на коментара.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Връща HTML, който се добавя след текста на коментара, вътре в елемента за съдържание на коментара (използва се от анкети).
- * @property {Function} [replyAreaInputBottom] - Връща HTML, който се добавя вътре в полето за въвеждане на коментар, под текстовото поле (използва се от анкети за вграден редактор). Получава id‑то на родителския коментар или null за главната кутия за отговор.
+ * @property {Function} [replyAreaInputBottom] - Връща HTML, който се добавя вътре в рамката за въвеждане на коментар, под текстовото поле (използва се от анкети за вграден редактор на анкети). Приема ID на родителския коментар или null за кореновото поле за отговор.
  * @property {Function} [onPollUpdate] - Извиква се с живото събитие, когато броят на гласовете в анкета на страницата се промени.
  * @property {Function} isSiteAdmin - Връща дали зрителят е администратор или модератор на наемателя. Известно след първото извличане.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Връща HTML, който се добавя в долната част на елемента за меню за всеки коментар.
