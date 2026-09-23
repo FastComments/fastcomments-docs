@@ -22,8 +22,8 @@ Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomme
 const tenantBody: CreateAgentTenantBody = {
   name: "Acme Corp",
   domain: "acme.example.com",
-  contactEmail: "admin@acme.example.com", // optional
-  planId: 3 // optional
+  contactEmail: "admin@acme.example.com", // אופציונלי
+  planId: 3 // אופציונלי
 };
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);

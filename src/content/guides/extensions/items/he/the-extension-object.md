@@ -1,11 +1,9 @@
-The extension object consists of the following definition:
-
-<!-- if you want to update this, remember to update comment-ui-core -->
+<!-- אם ברצונך לעדכן זאת, זכור לעדכן את comment-ui-core -->
 [inline-code-attrs-start title = 'אובייקט הרחבה JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * אובייקט ההרחבה FastCommentsUI. משמש לטעינה עצלה של רכיבים מסוימים. לדוגמה, מערכת הביקורות אינה משמשת את כל הלקוחות,
- * ולכן אנו טוענים את ההרחבה רק כאשר אנו זקוקים לה.
+ * אובייקט ההרחבה FastCommentsUI. משמש לטעינה עצלנית של רכיבים מסוימים. לדוגמה, מערכת הסקירות אינה
+ * משומשת על ידי כל הלקוחות, ולכן אנו טוענים את ההרחבה רק כאשר אנו רוצים זאת.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -13,11 +11,11 @@ The extension object consists of the following definition:
  * @property {Element} root - צומת ה‑DOM השורש של הווידג'ט.
  * @property {string} [css]
  * @property {Object} config - אובייקט התצורה של FastComments.
- * @property {Object} commentsById - הפנייה לאובייקט המכיל את כל ההערות לפי מזהה, המתעדכן באופן שוטף.
+ * @property {Object} commentsById - הפנייה לאובייקט המכיל את כל ההערות לפי מזהה, המתעדכן באופן רציף.
  * @property {Object} translations - הפנייה לכל התרגומים.
  * @property {Function} reRenderComment - הפנייה לפונקציה שניתן לקרוא לה כדי לעדכן מחדש תגובה.
  * @property {Function} removeCommentAndReRender - הפנייה לפונקציה שניתן לקרוא לה כדי להסיר תגובה מהזיכרון ולעדכן מחדש את החלק המתאים ב‑DOM.
- * @property {Function} newBroadcastId - הפנייה לפונקציה שניתן לקרוא לה כדי ליצור מזהה שידור חדש ולהוסיף אותו לרשימת מזהי השידור המקומית שיש להתעלם מהם.
+ * @property {Function} newBroadcastId - הפנייה לפונקציה שניתן לקרוא לה כדי ליצור מזהה שידור חדש ולהוסיף אותו לרשימה המקומית של מזהי שידור שיש להתעלם מהם.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
  * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - נקראת עם התגובה שעומדת להישלח. מחזירה false כדי לבטל את השליחה (לדוגמה כאשר סקר מצורף אינו שלם).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
@@ -26,15 +24,15 @@ The extension object consists of the following definition:
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - מסנן HTML לכל תגובה לפני הרינדור.
  * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - מסנן HTML לכל תפריט תגובה לפני הרינדור.
  * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - מסנן HTML לכל הווידג'ט בעת הרינדור.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) מחזיר HTML להוספה לחלק העליון של אזור התגובה.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) מחזיר HTML להוספה לחלק העליון של הווידג'ט.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) מחזיר HTML להוספה לחלק העליון של אלמנט התגובה.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) מחזיר HTML להוספה לחלק התחתון של אלמנט התגובה.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - מחזיר HTML להוספה אחרי טקסט התגובה, בתוך אלמנט תוכן התגובה (משמש בסקרים).
- * @property {Function} [replyAreaInputBottom] - מחזיר HTML להוספה בתוך מסגרת קלט התגובה, מתחת לשדה הטקסט (משמש בסקרים לעורך הסקר במקום). מקבל את מזהה התגובה ההורה, או null לתיבת תגובה ראשית.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) מחזירה HTML להוספה לחלק העליון של אזור התגובה.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) מחזירה HTML להוספה לחלק העליון של הווידג'ט.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) מחזירה HTML להוספה לחלק העליון של אלמנט התגובה.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) מחזירה HTML להוספה לחלק התחתון של אלמנט התגובה.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - מחזירה HTML להוספה אחרי טקסט התגובה, בתוך אלמנט תוכן התגובה (משמש בסקרים).
+ * @property {Function} [replyAreaInputBottom] - מחזירה HTML להוספה בתוך מסגרת קלט התגובה, מתחת לשדה הטקסט (משמש בסקרים עבור עורך סקר במקום). מקבלת את מזהה ההורה של התגובה, או null עבור תיבת התגובה השורשית.
  * @property {Function} [onPollUpdate] - נקראת עם האירוע החי כאשר ספירות הקולות של סקר בעמוד משתנות.
- * @property {Function} isSiteAdmin - מחזירה האם הצופה הוא מנהל או מודרטור של השוכרת. ידוע לאחר הפנייה הראשונה.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) מחזיר HTML להוספה לחלק התחתון של אלמנט התפריט לכל תגובה.
+ * @property {Function} isSiteAdmin - מחזירה האם הצופה הוא מנהל או מודרטור של השוכר. ידוע לאחר ההבאה הראשונה.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) מחזירה HTML להוספה לחלק התחתון של אלמנט התפריט לכל תגובה.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -44,7 +42,7 @@ The extension object consists of the following definition:
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - אלמנט השורש.
- * @param {Object.<string, Function>} clickListeners - מאפשי אירועי לחיצה, לפי שם מחלקה, שניתן לשנותם באמצעות הפנייה.
+ * @param {Object.<string, Function>} clickListeners - מטפלי האירועים ללחיצות, לפי שם מחלקה, שניתן לשנותם באמצעות הפנייה.
  * @returns void
  */
 
