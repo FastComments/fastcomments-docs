@@ -19,7 +19,7 @@ The extension object consists of the following definition:
  * @property {Function} removeCommentAndReRender - A reference to a function that can be invoked to remove a comment from memory and re-render the appropriate part of the DOM.
  * @property {Function} newBroadcastId - A reference to a function that can be invoked create a new broadcast id and add it to the local list of broadcast ids to ignore.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving]
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Called with the comment about to be posted. Return false to cancel the submit (for example when an attached poll is incomplete).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filter HTML for the comment area.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filter HTML for the whole widget on render.
@@ -30,6 +30,10 @@ The extension object consists of the following definition:
  * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Return HTML to add to the top of the widget.
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Return HTML to add to the top of the comment element.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Return HTML to add to the bottom of the comment element.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Return HTML to add after the comment text, inside the comment content element (used by polls).
+ * @property {Function} [replyAreaInputBottom] - Return HTML to add inside the comment input frame, below the text input (used by polls for the in-place poll editor). Receives the parent comment id, or null for the root reply box.
+ * @property {Function} [onPollUpdate] - Called with the live event when the vote counts of a poll on the page change.
+ * @property {Function} isSiteAdmin - Returns whether the viewer is an admin or moderator of the tenant. Known after the first fetch.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Return HTML to add to the bottom of the menu element for each comment.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
