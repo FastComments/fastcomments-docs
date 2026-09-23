@@ -17,7 +17,7 @@ Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomme
 
 ## Example
 
-[inline-code-attrs-start title = 'דוגמת createAgentTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createAgentTenant דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantBody: CreateAgentTenantBody = {
   name: "Acme Corp",
@@ -28,5 +28,3 @@ const tenantBody: CreateAgentTenantBody = {
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);
 [inline-code-end]
-
----
