@@ -7,7 +7,7 @@ deleted 72 hours after creation. Until claimed, the account has the standard tri
 
 ## Parameters
 
-| Name | Type | Required | Description |
+| שם | סוג | נדרש | תיאור |
 |------|------|----------|-------------|
 | createAgentTenantBody | CreateAgentTenantBody | Yes |  |
 
@@ -22,9 +22,11 @@ Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomme
 const tenantBody: CreateAgentTenantBody = {
   name: "Acme Corp",
   domain: "acme.example.com",
-  contactEmail: "admin@acme.example.com", // אופציונלי
-  planId: 3 // אופציונלי
+  contactEmail: "admin@acme.example.com", // optional
+  planId: 3 // optional
 };
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);
 [inline-code-end]
+
+---
