@@ -1,0 +1,7 @@
+{
+  "method": "patchHashTag",
+  "signatureHash": "435c556e9542bcb9689291b44bc2482fe85c287e11d32cadab6b28ab9143decc",
+  "generatedAt": "2026-09-23T20:29:53.252Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const tag: string = \"news\";\n\n  // Call without optional body\n  const responseWithoutBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag);\n\n  // Prepare body for update\n  const updateBody: UpdateHashTagBody = {\n    name: \"Latest News\",\n    description: \"Tag for the most recent news articles\"\n  };\n\n  const responseWithBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag, updateBody);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

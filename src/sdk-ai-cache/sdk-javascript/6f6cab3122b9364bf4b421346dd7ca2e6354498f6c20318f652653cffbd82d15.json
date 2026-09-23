@@ -1,0 +1,7 @@
+{
+  "method": "getMe",
+  "signatureHash": "6f6cab3122b9364bf4b421346dd7ca2e6354498f6c20318f652653cffbd82d15",
+  "generatedAt": "2026-09-23T20:29:52.912Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-tenant\";\n  const me: GetMeResponse = await getMe(tenantId);\n  const authType: MeAuthType = me.auth.type;\n  const scopes: OAuthScope[] = me.auth.scopes ?? [];\n  const status: APIStatus = me.status;\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantPackage",
+  "signatureHash": "0e877d35af18bdda8502aa78d91d92b9102a9a50e0d4cb085d0c942edc711ab3",
+  "generatedAt": "2026-09-23T20:29:58.918Z",
+  "codeExample": "async function replacePackageDemo(): Promise<void> {\n  const tenantId: string = \"acme-corp-001\";\n  const packageId: string = \"basic-plan-2023\";\n  const replaceBody: ReplaceTenantPackageBody = {\n    newPackageId: \"enterprise-plan-2024\"\n    // optional fields can be added here if needed\n  };\n  const response: APIEmptyResponse = await replaceTenantPackage(tenantId, packageId, replaceBody);\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

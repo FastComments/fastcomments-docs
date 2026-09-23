@@ -1,0 +1,7 @@
+{
+  "method": "getCounts",
+  "signatureHash": "57240768737576d9ad0fdffd716407ffdc49be3240ea3ce8c760eb34174375ea",
+  "generatedAt": "2026-09-23T20:29:57.573Z",
+  "codeExample": "async function run() {\n  const tenantId: string = \"tenant_9876\";\n  const ssoToken: string = \"sso_user_42\";\n\n  const resultWithOnlyTenant: GetBannedUsersCountResponse = await getCounts(tenantId);\n  const resultWithBoth: GetBannedUsersCountResponse = await getCounts(tenantId, ssoToken);\n}\n\nrun();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

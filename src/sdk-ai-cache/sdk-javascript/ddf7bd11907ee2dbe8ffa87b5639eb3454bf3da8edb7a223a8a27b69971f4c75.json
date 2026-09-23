@@ -1,0 +1,7 @@
+{
+  "method": "postRemoveComment",
+  "signatureHash": "ddf7bd11907ee2dbe8ffa87b5639eb3454bf3da8edb7a223a8a27b69971f4c75",
+  "generatedAt": "2026-09-23T20:29:57.219Z",
+  "codeExample": "async function removeCommentExample() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const broadcastId: string = \"brd_555\";\n  const sso: string = \"sso_token_abc\";\n\n  const response: PostRemoveCommentApiResponse = await postRemoveComment(\n    tenantId,\n    commentId,\n    broadcastId,\n    sso\n  );\n  console.log(response);\n}\n\nremoveCommentExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

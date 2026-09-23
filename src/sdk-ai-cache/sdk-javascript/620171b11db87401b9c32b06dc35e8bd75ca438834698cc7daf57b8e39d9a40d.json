@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "620171b11db87401b9c32b06dc35e8bd75ca438834698cc7daf57b8e39d9a40d",
+  "generatedAt": "2026-09-23T20:29:59.541Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-tenant\";\n  const questionId: string = \"question-42\";\n\n  const updateBody: UpdateQuestionConfigBody = {\n    title: \"Revised FAQ Question\"\n    // isActive, customOptions, etc. are optional and omitted\n  };\n\n  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

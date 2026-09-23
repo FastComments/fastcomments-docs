@@ -1,0 +1,7 @@
+{
+  "method": "createAgentTenant",
+  "signatureHash": "e4ef5f1c248f0be54d4c9f19892d9547b841cc94f99b1964f7402927ae71d90f",
+  "generatedAt": "2026-09-23T20:29:49.470Z",
+  "codeExample": "const tenantBody: CreateAgentTenantBody = {\n  name: \"Acme Corp\",\n  domain: \"acme.example.com\",\n  contactEmail: \"admin@acme.example.com\", // optional\n  planId: 3 // optional\n};\n\nconst result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

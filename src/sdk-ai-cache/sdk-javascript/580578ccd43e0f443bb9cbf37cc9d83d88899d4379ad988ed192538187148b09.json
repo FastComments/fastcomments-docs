@@ -1,0 +1,7 @@
+{
+  "method": "getSearchUsers",
+  "signatureHash": "580578ccd43e0f443bb9cbf37cc9d83d88899d4379ad988ed192538187148b09",
+  "generatedAt": "2026-09-23T20:29:58.459Z",
+  "codeExample": "async function runSearch() {\n  const tenantId: string = \"tenant-9876\";\n  const emailFragment: string = \"jane\";\n  const ssoToken: string = \"sso-token-456\";\n\n  const resultWithAll: ModerationUserSearchResponse = await getSearchUsers(tenantId, emailFragment, ssoToken);\n  const resultWithTenantOnly: ModerationUserSearchResponse = await getSearchUsers(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

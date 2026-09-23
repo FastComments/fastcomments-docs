@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressList",
+  "signatureHash": "744d5894e0cda55252bce6dd8022c34f0b0b7311cc40c91c1849d54f5a174c0a",
+  "generatedAt": "2026-09-23T20:30:00.753Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant-9f8b7c6d\";\n  const userId: string = \"user-123e4567-e89b-12d3-a456-426614174000\";\n  const limit: number = 10;\n  const skip: number = 0;\n\n  const response: APIGetUserBadgeProgressListResponse = await getUserBadgeProgressList(tenantId, userId, limit, skip);\n  const status: APIStatus = response.status;\n  const badges: UserBadgeProgress[] = response.badges;\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

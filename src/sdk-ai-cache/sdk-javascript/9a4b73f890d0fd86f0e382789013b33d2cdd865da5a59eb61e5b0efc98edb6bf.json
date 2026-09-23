@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "9a4b73f890d0fd86f0e382789013b33d2cdd865da5a59eb61e5b0efc98edb6bf",
+  "generatedAt": "2026-09-23T20:29:58.157Z",
+  "codeExample": "const tenantId: string = \"acme-corp-123\";\nconst searchValue: string = \"spam\";\nconst ssoToken: string = \"sso-abc123def456\";\n\nconst result1: ModerationPageSearchResponse = await getSearchPages(tenantId);\nconst result2: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue);\nconst result3: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue, ssoToken);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

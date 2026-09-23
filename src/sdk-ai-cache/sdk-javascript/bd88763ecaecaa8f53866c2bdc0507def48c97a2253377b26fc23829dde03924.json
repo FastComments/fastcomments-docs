@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "bd88763ecaecaa8f53866c2bdc0507def48c97a2253377b26fc23829dde03924",
+  "generatedAt": "2026-09-23T20:29:56.012Z",
+  "codeExample": "async function runExample() {\n    const tenantId: string = \"c3f5e9b2-4d1a-4f2b-9a6e-1234567890ab\";\n    const meta: string = \"includeBilling\";\n    const skip: number = 10;\n\n    const result: GetTenantsResponse = await getTenants(tenantId, meta, skip);\n    console.log(result);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

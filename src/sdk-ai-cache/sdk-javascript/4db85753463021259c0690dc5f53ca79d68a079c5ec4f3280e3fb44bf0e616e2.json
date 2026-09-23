@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "4db85753463021259c0690dc5f53ca79d68a079c5ec4f3280e3fb44bf0e616e2",
+  "generatedAt": "2026-09-23T20:29:54.961Z",
+  "codeExample": "const userId: string = '550e8400-e29b-41d4-a716-446655440000';\nconst direction: SortDirections = SortDirections.Descending;\nconst page: number = 3;\nconst includei10n: boolean = true;\nconst locale: string = 'fr-FR';\nconst isCrawler: boolean = false;\n\nconst commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(\n  userId,\n  direction,\n  undefined,\n  page,\n  includei10n,\n  locale,\n  isCrawler\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "sendInvite",
+  "signatureHash": "cf3f8e843bf8e86efdfcbc27cf9378cdbe83dc18fe4f40ce2da76956e6da8383",
+  "generatedAt": "2026-09-23T20:29:58.823Z",
+  "codeExample": "const tenantId: string = \"tenant-987654321\";\nconst id: string = \"user-123456789\";\nconst fromName: string = \"Alice Johnson\";\n\nconst result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);\nconsole.log(result);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

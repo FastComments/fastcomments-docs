@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentSpamStatus",
+  "signatureHash": "4c7aaeaf66f13aae26ba43094fa932cd13371add39dac702715aa312a4ee5d42",
+  "generatedAt": "2026-09-23T20:29:58.671Z",
+  "codeExample": "const tenantId: string = \"tenant_42\";\nconst commentId: string = \"comment_1001\";\n\nconst spam: boolean = true;\nconst permNotSpam: boolean = false;\nconst broadcastId: string = \"broadcast_2023\";\nconst sso: string = \"sso_user_5678\";\n\nconst resultFull: APIEmptyResponse = await postSetCommentSpamStatus(\n  tenantId,\n  commentId,\n  spam,\n  permNotSpam,\n  broadcastId,\n  sso\n);\n\nconst resultMinimal: APIEmptyResponse = await postSetCommentSpamStatus(\n  tenantId,\n  commentId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "dea6ec50f4c6721a142405fdb9a23446ae90129d9d5cdf83b1f6bbd798068b13",
+  "generatedAt": "2026-09-23T20:29:47.803Z",
+  "codeExample": "async function fetchTranslations() {\n  const adminDashboard: GetTranslationsResponse = await getTranslations('admin', 'dashboard');\n  const userProfileFr: GetTranslationsResponse = await getTranslations('user', 'profile', 'fr-FR', true);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

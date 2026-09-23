@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "3482d229a181ad633f36b11e38e6b9c0ebc52d33c3ade9a2e7e8334de3289e44",
+  "generatedAt": "2026-09-23T20:29:48.384Z",
+  "codeExample": "let tenantId: string = \"tenant_12345\";\nlet packageId: string = \"pkg_98765\";\n\nconst result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

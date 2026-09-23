@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserUndo",
+  "signatureHash": "b475385734fe037ede2fc031d7e7e4e3b50412abba54c6fdf7898cf18e5ef9e0",
+  "generatedAt": "2026-09-23T20:29:58.631Z",
+  "codeExample": "const tenantId: string = \"tenant_9876\";\n\nconst undoParams: BanUserUndoParams = {\n  userId: \"user_12345\",\n  // additional required fields can be added here\n};\n\nconst resultWithoutSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams);\n\nconst ssoToken: string = \"sso_abcdef123456\";\n\nconst resultWithSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams, ssoToken);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

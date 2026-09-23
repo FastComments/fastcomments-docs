@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "3398e8faa9680256fdb18ae5f9ade2117d0590aebf0762ec96f86aa8a27aec46",
+  "generatedAt": "2026-09-23T20:29:59.488Z",
+  "codeExample": "async function example() {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"article-9876\";\n  const usernameStartsWith: string = \"john\";\n  const mentionGroupIds: string[] = [\"group1\", \"group2\"];\n  const sso: string = \"sso_token_abc\";\n  const searchSection: SearchUsersSearchSectionEnum = SearchUsersSearchSectionEnum.MENTIONS;\n\n  const result: SearchUsersResult = await searchUsers(\n    tenantId,\n    urlId,\n    usernameStartsWith,\n    mentionGroupIds,\n    sso,\n    searchSection\n  );\n\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

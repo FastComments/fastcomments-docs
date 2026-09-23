@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "1637641a3e83fa3adff852a4879151e5dfaaebcac474577e249bfe393cc1e89f",
+  "generatedAt": "2026-09-23T20:29:51.883Z",
+  "codeExample": "async function removeRenderError() {\n  const tenantId: string = \"acme-corp-tenant\";\n  const templateId: string = \"welcome-email-template\";\n  const errorId: string = \"render-err-20230915\";\n\n  const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

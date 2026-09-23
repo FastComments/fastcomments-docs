@@ -1,0 +1,7 @@
+{
+  "method": "createPollVote",
+  "signatureHash": "f1fe00996a75428d689bfc49885b060382c493afeb20eb8ef86669db8397acc6",
+  "generatedAt": "2026-09-23T20:29:53.675Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp-tenant\";\n\n  const vote: CreatePollVoteBody = {\n    pollId: \"poll-2024-09\",\n    optionId: \"option-A\"\n    // userId is optional and omitted here\n  };\n\n  const result: CreatePollVoteResponse = await createPollVote(tenantId, vote);\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

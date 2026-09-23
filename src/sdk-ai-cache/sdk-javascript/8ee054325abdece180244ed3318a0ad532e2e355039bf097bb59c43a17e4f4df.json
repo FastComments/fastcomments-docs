@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "8ee054325abdece180244ed3318a0ad532e2e355039bf097bb59c43a17e4f4df",
+  "generatedAt": "2026-09-23T20:29:55.412Z",
+  "codeExample": "async function awardBadgeExample(): Promise<void> {\n  const tenantId: string = \"tenant_42\";\n  const badgeId: string = \"badge_superstar\";\n  const userId: string = \"user_1001\";\n  const commentId: string = \"comment_2023\";\n\n  const result: AwardUserBadgeResponse = await putAwardBadge(\n    tenantId,\n    badgeId,\n    userId,\n    commentId\n  );\n\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

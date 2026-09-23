@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "620673b5d5c9763704bac06cfa2877ddb70ff52802d57e68d55339c72b3fe3fc",
+  "generatedAt": "2026-09-23T20:29:49.318Z",
+  "codeExample": "async function removeComment(): Promise<void> {\n    const tenantId: string = \"tenant_12345\";\n    const commentId: string = \"comment_9876\";\n    const contextUserId: string = \"user_42\";\n    const result: DeleteCommentResult = await deleteComment(tenantId, commentId, contextUserId, true);\n    console.log(result);\n}\nremoveComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

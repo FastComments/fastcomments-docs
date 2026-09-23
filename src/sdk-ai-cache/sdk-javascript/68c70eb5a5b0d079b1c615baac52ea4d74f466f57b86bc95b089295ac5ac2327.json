@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPosts",
+  "signatureHash": "68c70eb5a5b0d079b1c615baac52ea4d74f466f57b86bc95b089295ac5ac2327",
+  "generatedAt": "2026-09-23T20:29:52.806Z",
+  "codeExample": "async function loadFeed() {\n  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';\n  const afterId: string = 'post_987654321';\n  const limit: number = 25;\n  const tags: string[] = ['technology', 'innovation'];\n  const response: GetFeedPostsResponse = await getFeedPosts(tenantId, afterId, limit, tags);\n  console.log(response);\n}\nloadFeed();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

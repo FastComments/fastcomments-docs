@@ -1,0 +1,7 @@
+{
+  "method": "updateNotification",
+  "signatureHash": "7e6076241962c2badf5d220a6b6a5c7ca1c09de6145b9c23a7c17cfa191a162f",
+  "generatedAt": "2026-09-23T20:29:57.696Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = \"tenant-abc123\";\n  const notificationId: string = \"notif-9876\";\n  const updateBody: UpdateNotificationBody = {\n    title: \"System Maintenance\",\n    message: \"Scheduled maintenance at 02:00 UTC.\",\n    enabled: true\n  };\n  const userId: string = \"user-42\";\n\n  const resultWithoutUser: APIEmptyResponse = await updateNotification(tenantId, notificationId, updateBody);\n  const resultWithUser: APIEmptyResponse = await updateNotification(tenantId, notificationId, updateBody, userId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

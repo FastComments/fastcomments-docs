@@ -1,0 +1,7 @@
+{
+  "method": "getOnlineUsers",
+  "signatureHash": "f966b62dea623205957a66d9a9d5b1542b8c47ef4f245ee81c540af4f5ca793e",
+  "generatedAt": "2026-09-23T20:29:54.142Z",
+  "codeExample": "async function fetchOnlineUsers() {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"article-9876\";\n  const afterName: string | undefined = \"john_doe\";\n  const afterUserId: string | undefined = \"user_456\";\n\n  const onlineUsers: PageUsersOnlineResponse = await getOnlineUsers(\n    tenantId,\n    urlId,\n    afterName,\n    afterUserId\n  );\n\n  console.log(onlineUsers);\n}\n\nfetchOnlineUsers();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

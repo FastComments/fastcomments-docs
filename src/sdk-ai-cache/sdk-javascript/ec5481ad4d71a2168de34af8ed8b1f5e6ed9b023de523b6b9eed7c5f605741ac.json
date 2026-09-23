@@ -1,0 +1,7 @@
+{
+  "method": "setCommentText",
+  "signatureHash": "ec5481ad4d71a2168de34af8ed8b1f5e6ed9b023de523b6b9eed7c5f605741ac",
+  "generatedAt": "2026-09-23T20:30:02.919Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const broadcastId: string = \"brd_54321\";\n  const commentTextUpdateRequest: CommentTextUpdateRequest = {\n    text: \"Revised comment text with additional details.\"\n  };\n  const editKey: string = \"edit_abc123\";\n  const sso: string = \"sso_token_456def\";\n\n  const response: PublicAPISetCommentTextResponse = await setCommentText(\n    tenantId,\n    commentId,\n    broadcastId,\n    commentTextUpdateRequest,\n    editKey,\n    sso\n  );\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

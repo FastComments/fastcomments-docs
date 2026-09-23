@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotifications",
+  "signatureHash": "f031a621504dd610bc5125836ad0c3a44104e379f750bbf7222fbd22794636a6",
+  "generatedAt": "2026-09-23T20:29:58.161Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const afterId: string = \"notif-2023-09-01\";\n  const afterCreatedAt: number = 1693526400; // Unix timestamp\n  const unreadOnly: boolean = true;\n  const dmOnly: boolean = false;\n\n  const response: ResetUserNotificationsResponse = await resetUserNotifications(\n    tenantId,\n    afterId,\n    afterCreatedAt,\n    unreadOnly,\n    dmOnly\n  );\n\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

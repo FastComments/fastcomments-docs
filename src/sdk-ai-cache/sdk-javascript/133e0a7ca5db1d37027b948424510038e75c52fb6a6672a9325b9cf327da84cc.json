@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPost",
+  "signatureHash": "133e0a7ca5db1d37027b948424510038e75c52fb6a6672a9325b9cf327da84cc",
+  "generatedAt": "2026-09-23T20:29:55.133Z",
+  "codeExample": "async function runUpdate() {\n  const tenantId: string = \"tenant_12345\";\n  const postId: string = \"post_98765\";\n\n  const mediaAsset: FeedPostMediaItemAsset = {\n    url: \"https://cdn.example.com/image.jpg\",\n    width: 800,\n    height: 600,\n    mimeType: \"image/jpeg\"\n  };\n\n  const mediaItem: FeedPostMediaItem = {\n    type: \"image\",\n    asset: mediaAsset,\n    caption: \"Sunrise over the hills\"\n  };\n\n  const link: FeedPostLink = {\n    url: \"https://example.com/blog\",\n    title: \"Latest Blog Post\",\n    description: \"Insights on recent developments\"\n  };\n\n  const feedPost: FeedPost = {\n    title: \"Daily Highlights\",\n    content: \"Check out today’s top stories.\",\n    mediaItems: [mediaItem], // optional\n    links: [link] // optional\n  };\n\n  const response: APIEmptyResponse = await updateFeedPost(tenantId, postId, feedPost);\n  console.log(response);\n}\n\nrunUpdate();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

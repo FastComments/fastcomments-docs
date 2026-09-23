@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "7cbc06d9d5ebab10b2344b8b0bca48914da9af49704596df050adbfa23199a8a",
+  "generatedAt": "2026-09-23T20:29:58.329Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"c1a2b3d4-5678-90ab-cdef-1234567890ab\";\n  const broadcastId: string = \"b1c2d3e4-5678-90ab-cdef-1234567890cd\";\n  const isLive: boolean = true;\n  const doSpamCheck: boolean = false;\n  const skipDupCheck: boolean = true;\n\n  const mediaAsset: FeedPostMediaItemAsset = {\n    url: \"https://cdn.example.com/photos/sunrise.jpg\",\n    type: \"image/jpeg\"\n  };\n  const mediaItem: FeedPostMediaItem = {\n    asset: mediaAsset,\n    caption: \"Sunrise over the mountains\"\n  };\n  const linkItem: FeedPostLink = {\n    url: \"https://blog.example.com/tech-trends-2024\",\n    title: \"Top Tech Trends for 2024\"\n  };\n  const postParams: CreateFeedPostParams = {\n    text: \"Excited to share the latest tech trends!\",\n    media: [mediaItem],\n    link: linkItem\n  };\n\n  const response: CreateFeedPostsResponse = await createFeedPost(\n    tenantId,\n    postParams,\n    broadcastId,\n    isLive,\n    doSpamCheck,\n    skipDupCheck\n  );\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "lockComment",
+  "signatureHash": "dbe40c3092f88a45f286c8372acb53ae82cfcebe70ba771a305ac2e9fdf422bc",
+  "generatedAt": "2026-09-23T20:29:56.673Z",
+  "codeExample": "async function demoLockComment() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_9876\";\n  const broadcastId: string = \"brd_5555\";\n  const ssoToken: string = \"sso_user_abc\";\n\n  const resultWithSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId, ssoToken);\n  const resultWithoutSso: APIEmptyResponse = await lockComment(tenantId, commentId, broadcastId);\n}\n\ndemoLockComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

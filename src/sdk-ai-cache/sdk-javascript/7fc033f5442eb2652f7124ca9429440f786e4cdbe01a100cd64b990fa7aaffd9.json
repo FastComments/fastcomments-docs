@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "7fc033f5442eb2652f7124ca9429440f786e4cdbe01a100cd64b990fa7aaffd9",
+  "generatedAt": "2026-09-23T20:29:57.088Z",
+  "codeExample": "async function loadComments(): Promise<void> {\n  const tenantId: string = \"acme-corp\";\n  const page: number = 1;\n  const limit: number = 50;\n  const asTree: boolean = false;\n  const direction: SortDirections = \"asc\";\n  const fromDate: number = Date.now() - 30 * 24 * 60 * 60 * 1000; // 30 days ago\n  const toDate: number = Date.now();\n\n  const commentsResponse: APIGetCommentsResponse = await getComments(\n    tenantId,\n    page,\n    limit,\n    undefined,\n    asTree,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    direction,\n    fromDate,\n    toDate\n  );\n\n  console.log(commentsResponse);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

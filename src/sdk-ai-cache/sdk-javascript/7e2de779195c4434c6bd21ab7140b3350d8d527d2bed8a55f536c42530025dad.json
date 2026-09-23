@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentApprovalStatus",
+  "signatureHash": "7e2de779195c4434c6bd21ab7140b3350d8d527d2bed8a55f536c42530025dad",
+  "generatedAt": "2026-09-23T20:29:55.231Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_001\";\n  const commentId: string = \"comment_123\";\n  const approved: boolean = false;\n  const broadcastId: string = \"broadcast_456\";\n  const sso: string = \"sso_789\";\n\n  const result: SetCommentApprovedResponse = await postSetCommentApprovalStatus(\n    tenantId,\n    commentId,\n    approved,\n    broadcastId,\n    sso\n  );\n\n  const minimalResult: SetCommentApprovedResponse = await postSetCommentApprovalStatus(\n    tenantId,\n    commentId\n  );\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "putPoll",
+  "signatureHash": "051863f9006519e9bb397d46d1a292dc9175c51920ad5f37d81365dba4cccba1",
+  "generatedAt": "2026-09-23T20:29:58.160Z",
+  "codeExample": "const tenantId: string = \"c1a2b3d4-5678-90ab-cdef-1234567890ab\";\nconst commentId: string = \"9876543210\";\n\nconst optionA: CommentPollOptionInput = { text: \"Dark mode\" };\nconst optionB: CommentPollOptionInput = { text: \"Light mode\" };\n\nconst pollInput: CommentPollPutInput = {\n  question: \"Which UI theme do you prefer?\",\n  options: [optionA, optionB],\n};\n\nconst replaceVotes: boolean = true;\n\nconst result: SavePollResponse = await putPoll(tenantId, commentId, pollInput, replaceVotes);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

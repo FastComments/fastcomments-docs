@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "5d22b97619b605d604ef6389ce41a658c00c0e494d4a37b6737bc434eb78453d",
+  "generatedAt": "2026-09-23T20:29:54.223Z",
+  "codeExample": "async function fetchModerator() {\n  const tenantId: string = \"c9f1e2b3-4d5a-6f78-90ab-cdef12345678\";\n  const moderatorId: string = \"mod-987654\";\n  const response: GetModeratorResponse = await getModerator(tenantId, moderatorId);\n  const isActive: boolean | undefined = response.moderator?.isActive;\n  const statusCode: number | undefined = response.status?.code;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

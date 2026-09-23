@@ -1,0 +1,7 @@
+{
+  "method": "getWebhookSamplePayloads",
+  "signatureHash": "998ab34b14ce345a89959ad7933951eab240e2ef0fdd470e7a594f9f542b8429",
+  "generatedAt": "2026-09-23T20:30:00.024Z",
+  "codeExample": "const tenantId: string = \"c1a2b3d4-5678-90ab-cdef-1234567890ab\";\n\nconst responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(\n  tenantId,\n  \"comment.created\",\n  10\n);\n\nconst responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(\n  tenantId,\n  \"comment.created\"\n);\n\nconst responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(\n  tenantId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

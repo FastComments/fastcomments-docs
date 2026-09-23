@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "997d57ba4afcda6b86c52d6240a617036d6b696bf56b5769c68d84a5102ff2bc",
+  "generatedAt": "2026-09-23T20:29:58.765Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n\n  // Required parameters only\n  const result1: APIEmptyResponse = await postFlagComment(tenantId, commentId);\n\n  // Including optional parameters\n  const broadcastId: string = \"brd_54321\";\n  const sso: string = \"user@example.com\";\n  const result2: APIEmptyResponse = await postFlagComment(tenantId, commentId, broadcastId, sso);\n\n  console.log(result1, result2);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

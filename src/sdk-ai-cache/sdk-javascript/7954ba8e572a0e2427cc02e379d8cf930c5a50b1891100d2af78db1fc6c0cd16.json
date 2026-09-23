@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadges",
+  "signatureHash": "7954ba8e572a0e2427cc02e379d8cf930c5a50b1891100d2af78db1fc6c0cd16",
+  "generatedAt": "2026-09-23T20:29:55.371Z",
+  "codeExample": "async function fetchBadges() {\n  const tenantId: string = \"tenant-987654321\";\n  const ssoToken: string = \"sso-token-abc123\";\n\n  const badgesWithSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId, ssoToken);\n  const badgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

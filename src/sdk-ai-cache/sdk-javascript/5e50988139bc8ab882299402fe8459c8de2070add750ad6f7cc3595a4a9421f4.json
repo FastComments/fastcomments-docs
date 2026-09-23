@@ -1,0 +1,7 @@
+{
+  "method": "combineCommentsWithQuestionResults",
+  "signatureHash": "5e50988139bc8ab882299402fe8459c8de2070add750ad6f7cc3595a4a9421f4",
+  "generatedAt": "2026-09-23T20:29:52.287Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_12345\";\n  const questionId: string | undefined = \"q_987\";\n  const questionIds: string[] = [\"q_001\", \"q_002\"];\n  const urlId: string | undefined = \"url_abc\";\n  const startDate: Date = new Date(\"2023-01-01T00:00:00Z\");\n  const forceRecalculate: boolean = true;\n  const minValue: number = 0;\n  const maxValue: number = 100;\n  const limit: number = 50;\n\n  const result: CombineQuestionResultsWithCommentsResponse = await combineCommentsWithQuestionResults(\n    tenantId,\n    questionId,\n    questionIds,\n    urlId,\n    startDate,\n    forceRecalculate,\n    minValue,\n    maxValue,\n    limit\n  );\n\n  console.log(result);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

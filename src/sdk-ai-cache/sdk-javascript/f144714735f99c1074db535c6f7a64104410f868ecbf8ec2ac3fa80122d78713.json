@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "f144714735f99c1074db535c6f7a64104410f868ecbf8ec2ac3fa80122d78713",
+  "generatedAt": "2026-09-23T20:29:57.089Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"cmt_98765\";\n\nconst resultRequired: APIEmptyResponse = await postRestoreDeletedComment(tenantId, commentId);\n\nconst broadcastId: string = \"brd_001\";\nconst sso: string = \"sso_token_abc123\";\n\nconst resultAll: APIEmptyResponse = await postRestoreDeletedComment(\n  tenantId,\n  commentId,\n  broadcastId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

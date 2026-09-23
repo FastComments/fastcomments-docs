@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsPublic",
+  "signatureHash": "527dc4a7f11c6d45c82e52a5f8d834ad3b3d05860f76a40f4e0586b8dc1a21b7",
+  "generatedAt": "2026-09-23T20:29:55.692Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst afterId: string = \"post-20230915-abc123\";\nconst limit: number = 15;\nconst tags: string[] = [\"technology\", \"innovation\"];\nconst sso: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSJ9.s3cr3tSignature\";\nconst isCrawler: boolean = false;\nconst includeUserInfo: boolean = true;\n\nconst feedResponse: PublicFeedPostsResponse = await getFeedPostsPublic(\n  tenantId,\n  afterId,\n  limit,\n  tags,\n  sso,\n  isCrawler,\n  includeUserInfo\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

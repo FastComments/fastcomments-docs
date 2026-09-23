@@ -1,0 +1,7 @@
+{
+  "method": "getWebhooks",
+  "signatureHash": "e687d6b44261d8ae5e4eae01dd31f1d15e9842b89bf51020a4fedff0cec513bc",
+  "generatedAt": "2026-09-23T20:29:55.714Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_42';\n  const event: WebhookEventName = 'comment.created';\n  const domain: string = 'forum.example.org';\n  const source: WebhookSource = 'admin';\n  const skip: number = 0;\n\n  const fullResponse: GetWebhooksResponse = await getWebhooks(tenantId, event, domain, source, skip);\n  const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

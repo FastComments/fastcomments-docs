@@ -1,0 +1,7 @@
+{
+  "method": "getCommentVoteUserNames",
+  "signatureHash": "b439054093eb286448757c533c3783cc5c6f1901c112fe5dac1ac9a9ab34918b",
+  "generatedAt": "2026-09-23T20:29:50.716Z",
+  "codeExample": "async function example() {\n  const tenantId: string = 'tenant-9876';\n  const commentId: string = 'comment-abc123';\n  const dir: number = 1;\n  const ssoToken: string = 'sso-xyz789';\n\n  const resultWithSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir, ssoToken);\n  const resultWithoutSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

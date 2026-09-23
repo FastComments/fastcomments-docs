@@ -1,0 +1,7 @@
+{
+  "method": "getApiIds",
+  "signatureHash": "2ca1e80562c52e0d24ef55258d736850dc3e6675fc30d47c1d9d2a5a7ff623af",
+  "generatedAt": "2026-09-23T20:29:58.611Z",
+  "codeExample": "async function run(): Promise<void> {\n  const tenantId: string = \"acme-corp\";\n  const textSearch: string = \"offensive language\";\n  const byIPFromComment: string = \"203.0.113.45\";\n  const filters: string = \"status:unmoderated\";\n  const searchFilters: string = \"author:alice\";\n  const afterId: string = \"cmt_00123\";\n  const demo: boolean = true;\n  const sso: string = \"sso_9f8e7d6c\";\n\n  const fullResult: ModerationAPIGetCommentIdsResponse = await getApiIds(\n    tenantId,\n    textSearch,\n    byIPFromComment,\n    filters,\n    searchFilters,\n    afterId,\n    demo,\n    sso\n  );\n\n  const minimalResult: ModerationAPIGetCommentIdsResponse = await getApiIds(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "61f46fa2d9e26854a6cc786a9f7fd8c2fdefde58c4fe8d19028054aca25cc607",
+  "generatedAt": "2026-09-23T20:29:54.039Z",
+  "codeExample": "async function fetchComment(): Promise<void> {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"cmt_1234567890\";\n\n  const response: APIGetCommentResponse = await getComment(tenantId, commentId);\n  const comment: APIComment | undefined = response.comment;\n\n  // Optional fields demonstration\n  const badgeInfo: CommentUserBadgeInfo | undefined = comment?.user?.badge;\n  const hashtags: CommentUserHashTagInfo[] | undefined = comment?.user?.hashtags;\n  const mentions: CommentUserMentionInfo[] | undefined = comment?.user?.mentions;\n  const meta: APICommentBaseMeta | undefined = comment?.meta;\n\n  console.log(comment?.id, badgeInfo?.type);\n}\n\nfetchComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

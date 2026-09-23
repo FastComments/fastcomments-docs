@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "f7ab1e93b387c9a33227583346021fd132515ff57a5b619bf6bd51e576612970",
+  "generatedAt": "2026-09-23T20:29:49.175Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"comment_98765\";\n  const broadcastId: string = \"broadcast_55555\";\n  const sso: string = \"sso_token_abcde\";\n\n  const result1: APIEmptyResponse = await postUnFlagComment(tenantId, commentId);\n  const result2: APIEmptyResponse = await postUnFlagComment(tenantId, commentId, broadcastId, sso);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

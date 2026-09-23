@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "fc6c53bd9356b2020cd85adeef9471168fde019ecc069e3bb80772a850e4e10d",
+  "generatedAt": "2026-09-23T20:29:59.384Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst mention1: CommentUserMentionInfo = {\n  userId: \"user_002\",\n  start: 10,\n  end: 20,\n};\n\nconst hashtag1: CommentUserHashTagInfo = {\n  tag: \"news\",\n  start: 30,\n  end: 35,\n};\n\nconst poll1: CommentPollInput = {\n  question: \"Did you find this helpful?\",\n  options: [\"Yes\", \"No\"],\n};\n\nconst commentA: CreateCommentParams = {\n  content: \"This is a great article!\",\n  userId: \"user_001\",\n  mentions: [mention1],\n  hashtags: [hashtag1],\n  poll: poll1,\n};\n\nconst commentB: CreateCommentParams = {\n  content: \"I have a question about the topic.\",\n  userId: \"user_003\",\n};\n\nconst createCommentParams: CreateCommentParams[] = [commentA, commentB];\n\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = false;\nconst sendEmails: boolean = true;\nconst populateNotifications: boolean = false;\n\nconst results: SaveCommentsBulkResponse[] = await saveCommentsBulk(\n  tenantId,\n  createCommentParams,\n  isLive,\n  doSpamCheck,\n  sendEmails,\n  populateNotifications\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

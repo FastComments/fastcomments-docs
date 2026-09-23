@@ -1,0 +1,7 @@
+{
+  "method": "deleteVote",
+  "signatureHash": "b47a7803c69b1673abb364ad2b29d47f9a8473836cf1242e457e19ece337ce66",
+  "generatedAt": "2026-09-23T20:29:51.577Z",
+  "codeExample": "async function run() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"comment_98765\";\n  const editKey: string = \"edit_abcde\";\n\n  const responseWithKey: VoteDeleteResponse = await deleteVote(tenantId, commentId, editKey);\n  const responseWithoutKey: VoteDeleteResponse = await deleteVote(tenantId, commentId);\n}\n\nrun();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

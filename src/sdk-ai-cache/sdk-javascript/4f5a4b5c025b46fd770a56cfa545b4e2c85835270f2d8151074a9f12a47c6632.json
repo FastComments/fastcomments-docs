@@ -1,0 +1,7 @@
+{
+  "method": "aggregateQuestionResults",
+  "signatureHash": "4f5a4b5c025b46fd770a56cfa545b4e2c85835270f2d8151074a9f12a47c6632",
+  "generatedAt": "2026-09-23T20:29:58.007Z",
+  "codeExample": "async function runAggregation() {\n  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';\n  const questionId: string = 'question-9f8e7d6c5b4a3';\n  const questionIds: string[] = ['question-1a2b3c', 'question-4d5e6f'];\n  const urlId: string = 'blog-post-2023-08-15';\n  const startDate: Date = new Date('2023-01-01T00:00:00Z');\n  const forceRecalculate: boolean = true;\n\n  const result: AggregateQuestionResultsResponse = await aggregateQuestionResults(\n    tenantId,\n    questionId,\n    questionIds,\n    urlId,\n    undefined,\n    startDate,\n    forceRecalculate\n  );\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "d015c3191f3a62f899130f8f1ed040ea3024d726276c91b0df7dad3d0243069c",
+  "generatedAt": "2026-09-23T20:30:00.292Z",
+  "codeExample": "function fetchPackage(tenantId?: string, id?: string): Promise<GetTenantPackageResponse> {\n    const tid: string = tenantId ?? \"acme-corp-001\";\n    const pid: string = id ?? \"premium-plan-2024\";\n    return getTenantPackage(tid, pid);\n}\n\nasync function runExample(): Promise<void> {\n    const response: GetTenantPackageResponse = await fetchPackage();\n    const status: APIStatus | undefined = response.status;\n    const pkg: TenantPackage | undefined = response.package;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

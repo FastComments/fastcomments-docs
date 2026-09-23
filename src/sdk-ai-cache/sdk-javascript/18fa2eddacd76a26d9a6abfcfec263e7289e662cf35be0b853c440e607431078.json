@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "18fa2eddacd76a26d9a6abfcfec263e7289e662cf35be0b853c440e607431078",
+  "generatedAt": "2026-09-23T20:29:57.142Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\n\nconst tags: BulkCreateHashTagsBodyTagsInner[] = [\n  { name: \"typescript\", color: \"#3178c6\" },\n  { name: \"fastcomments\", color: \"#ff6600\" }\n];\n\nconst bulkBody: BulkCreateHashTagsBody = { tags };\n\nconst resultWithBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId, bulkBody);\n\nconst resultWithoutBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

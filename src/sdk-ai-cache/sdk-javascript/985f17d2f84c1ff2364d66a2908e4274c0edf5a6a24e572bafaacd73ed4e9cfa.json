@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "985f17d2f84c1ff2364d66a2908e4274c0edf5a6a24e572bafaacd73ed4e9cfa",
+  "generatedAt": "2026-09-23T20:29:55.223Z",
+  "codeExample": "const tenantId: string = \"c1f2e3d4-5678-90ab-cdef-1234567890ab\";\n\nconst bulkPreBanParams: BulkPreBanParams = {\n  userIds: [\"user123\"],\n  emails: [\"spam@example.com\"],\n  ips: [\"192.0.2.1\"],\n  emailDomains: [\"example.com\"]\n};\n\nconst includeByUserIdAndEmail: boolean = true;\nconst includeByIP: boolean = false;\nconst includeByEmailDomain: boolean = true;\nconst sso: string = \"sso-token-abc123\";\n\nconst summary: BulkPreBanSummary = await postBulkPreBanSummary(\n  tenantId,\n  bulkPreBanParams,\n  includeByUserIdAndEmail,\n  includeByIP,\n  includeByEmailDomain,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createV2PageReact",
+  "signatureHash": "20db081eb1b627b9a542983ac3be126dccec8404a60f91a143255ebadce58f7c",
+  "generatedAt": "2026-09-23T20:29:54.794Z",
+  "codeExample": "async function run() {\n  const tenantId: string = \"acme-corp\";\n  const urlId: string = \"product-page-123\";\n  const pageId: string = \"page-456\";\n  const pageTitle: string = \"Product Overview\";\n  const ssoToken: string = \"jwt-token-abc123\";\n\n  const pageFull: CreateV1PageReact = await createV2PageReact(tenantId, urlId, pageId, pageTitle, ssoToken);\n  const pageTitleOnly: CreateV1PageReact = await createV2PageReact(tenantId, urlId, pageId, pageTitle);\n  const pageMinimal: CreateV1PageReact = await createV2PageReact(tenantId, urlId, pageId);\n}\nrun();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

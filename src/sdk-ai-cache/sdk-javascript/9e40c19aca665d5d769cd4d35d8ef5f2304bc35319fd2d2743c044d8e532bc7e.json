@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "9e40c19aca665d5d769cd4d35d8ef5f2304bc35319fd2d2743c044d8e532bc7e",
+  "generatedAt": "2026-09-23T20:29:58.186Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"cmt_9876\";\nconst setCommentTextParams: SetCommentTextParams = {\n  text: \"Revised comment after user edit.\",\n  format: \"plain\"\n};\nconst broadcastId: string = \"broadcast_2023_09\";\n\nconst response: SetCommentTextResponse = await postSetCommentText(\n  tenantId,\n  commentId,\n  setCommentTextParams,\n  broadcastId\n);\n\nconsole.log(response);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "putCloseThread",
+  "signatureHash": "7f9680635ae9a686c7134138770d22c77adebce994f576a74606874b1730ed84",
+  "generatedAt": "2026-09-23T20:29:54.773Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"my-company\";\n  const urlId: string = \"post-2023-09-15\";\n  const ssoToken: string = \"sso-abc123def\";\n\n  const resultWithSso: APIEmptyResponse = await putCloseThread(tenantId, urlId, ssoToken);\n  const resultWithoutSso: APIEmptyResponse = await putCloseThread(tenantId, urlId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

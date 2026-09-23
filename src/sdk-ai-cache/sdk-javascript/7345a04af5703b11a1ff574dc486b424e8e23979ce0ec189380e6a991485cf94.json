@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "7345a04af5703b11a1ff574dc486b424e8e23979ce0ec189380e6a991485cf94",
+  "generatedAt": "2026-09-23T20:29:57.118Z",
+  "codeExample": "const tenantId: string = \"c1a2b3d4-5678-90ab-cdef-1234567890ab\";\nconst commentId: string = \"comment-9876543210\";\nconst updateParams: UpdatableCommentParams = {\n  content: \"Edited comment content\",\n  isApproved: true\n};\n\nconst contextUserId: string = \"user-11223344\";\nconst doSpamCheck: boolean = true;\nconst isLive: boolean = false;\n\nconst response: APIEmptyResponse = await updateComment(\n  tenantId,\n  commentId,\n  updateParams,\n  contextUserId,\n  doSpamCheck,\n  isLive\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

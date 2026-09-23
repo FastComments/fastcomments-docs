@@ -1,0 +1,7 @@
+{
+  "method": "unPinComment",
+  "signatureHash": "1331b9ddd945959970075fd374f3d0ffe26e8c40904ccb435b9c6ee9cfe17f1c",
+  "generatedAt": "2026-09-23T20:29:57.385Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"comment-20230915-001\";\n  const broadcastId: string = \"broadcast-2023-09-15\";\n  const ssoToken: string = \"sso-abc123\";\n\n  const result: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId, ssoToken);\n  const resultWithoutSso: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

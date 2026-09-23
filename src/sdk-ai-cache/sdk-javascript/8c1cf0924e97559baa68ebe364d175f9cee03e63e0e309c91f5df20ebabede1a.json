@@ -1,0 +1,7 @@
+{
+  "method": "createWebhook",
+  "signatureHash": "8c1cf0924e97559baa68ebe364d175f9cee03e63e0e309c91f5df20ebabede1a",
+  "generatedAt": "2026-09-23T20:29:52.132Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\n\nconst webhookParams: CreateWebhookParams = {\n  event: \"comment.created\" as WebhookEventName,\n  method: \"POST\" as WebhookHTTPMethod,\n  url: \"https://myapp.example.com/webhook\",\n  source: \"comment\" as WebhookSource,\n  // optional secret for payload verification\n  secret: \"s3cr3tK3y123\",\n};\n\nconst result: CreateWebhookResponse = await createWebhook(tenantId, webhookParams);\n\nconst webhookId: string = result.webhook.id;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

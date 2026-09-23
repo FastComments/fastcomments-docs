@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "86d1c476480667dd8bb230889206f7e878d8239837a941a2a130d66bc3716e90",
+  "generatedAt": "2026-09-23T20:29:49.888Z",
+  "codeExample": "async function runDelete() {\n  const tenantId: string = \"tenant_12345\";\n  const resultId: string = \"qr_98765\";\n\n  const response: APIEmptyResponse = await deleteQuestionResult(tenantId, resultId);\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

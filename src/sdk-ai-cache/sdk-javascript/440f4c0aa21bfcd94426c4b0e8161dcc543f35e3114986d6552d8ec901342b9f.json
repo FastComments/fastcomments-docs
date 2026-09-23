@@ -1,0 +1,7 @@
+{
+  "method": "getCommentChildren",
+  "signatureHash": "440f4c0aa21bfcd94426c4b0e8161dcc543f35e3114986d6552d8ec901342b9f",
+  "generatedAt": "2026-09-23T20:29:48.877Z",
+  "codeExample": "async function fetchChildren() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const ssoToken: string = \"sso_user_abc123\";\n\n  const responseWithSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId, ssoToken);\n  const responseWithoutSSO: ModerationAPIChildCommentsResponse = await getCommentChildren(tenantId, commentId);\n}\n\nfetchChildren();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

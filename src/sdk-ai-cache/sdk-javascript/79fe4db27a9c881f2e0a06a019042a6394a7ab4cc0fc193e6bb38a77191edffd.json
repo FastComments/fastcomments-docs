@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "79fe4db27a9c881f2e0a06a019042a6394a7ab4cc0fc193e6bb38a77191edffd",
+  "generatedAt": "2026-09-23T20:29:51.184Z",
+  "codeExample": "(async () => {\n    const tenantId: string = \"acme-tenant-001\";\n    const userId: string = \"user-12345\";\n    const response: GetTenantUserResponse = await getTenantUser(tenantId, userId);\n    console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplate",
+  "signatureHash": "b6fc0a26fef120c10e7f69ecf9fa760fe9e74b7215bb521054c419bb5a9749db",
+  "generatedAt": "2026-09-23T20:29:53.137Z",
+  "codeExample": "interface APIStatus {\n  code: number;\n  message: string;\n}\n\ninterface APIEmptyResponse {\n  status?: APIStatus;\n}\n\n(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const templateId: string = \"template_987\";\n\n  const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

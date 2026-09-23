@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotifications",
+  "signatureHash": "e2435ffa54b5b0ceb644e3f79e1719a1879f041a4a72efa29d3f25dee58ea018",
+  "generatedAt": "2026-09-23T20:30:03.063Z",
+  "codeExample": "async function fetchNotifications(): Promise<void> {\n  const tenantId: string = \"acme-corp\";\n  const urlId: string = \"article-42\";\n  const pageSize: number = 20;\n  const includeContext: boolean = true;\n  const unreadOnly: boolean = true;\n\n  const notifications: GetMyNotificationsResponse = await getUserNotifications(\n    tenantId,\n    urlId,\n    pageSize,\n    undefined,\n    includeContext,\n    undefined,\n    unreadOnly\n  );\n\n  console.log(notifications);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

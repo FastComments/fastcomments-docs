@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "45e7467cd269c197e84b32ca264c5b88b557b67511798541b35c945668b69173",
+  "generatedAt": "2026-09-23T20:29:54.041Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst createQuestionResultBody: CreateQuestionResultBody = {\n  questionId: \"q_9876\",\n  answer: \"Yes\",\n  score: 5,\n  meta: [\n    { key: \"source\", value: \"survey\" }\n  ]\n};\n\nconst result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

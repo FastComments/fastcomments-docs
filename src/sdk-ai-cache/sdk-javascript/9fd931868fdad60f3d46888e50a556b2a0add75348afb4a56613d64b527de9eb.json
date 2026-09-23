@@ -1,0 +1,7 @@
+{
+  "method": "bulkAggregateQuestionResults",
+  "signatureHash": "9fd931868fdad60f3d46888e50a556b2a0add75348afb4a56613d64b527de9eb",
+  "generatedAt": "2026-09-23T20:29:53.524Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst request: BulkAggregateQuestionResultsRequest = {\n  items: [\n    {\n      questionId: \"q_9876\",\n      startDate: \"2023-01-01T00:00:00Z\",\n      endDate: \"2023-01-31T23:59:59Z\",\n      timeBucket: \"day\"\n    }\n  ]\n};\n\nconst response: BulkAggregateQuestionResultsResponse = await bulkAggregateQuestionResults(tenantId, request, true);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

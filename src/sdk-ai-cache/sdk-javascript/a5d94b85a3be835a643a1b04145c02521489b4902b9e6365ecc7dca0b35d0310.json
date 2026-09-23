@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressById",
+  "signatureHash": "a5d94b85a3be835a643a1b04145c02521489b4902b9e6365ecc7dca0b35d0310",
+  "generatedAt": "2026-09-23T20:29:51.645Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst badgeId: string = \"badge-2024-07\";\n\nconst result: APIGetUserBadgeProgressResponse = await getUserBadgeProgressById(tenantId, badgeId);\n\nconst progress: UserBadgeProgress | undefined = result?.progress;\nconst status: APIStatus | undefined = result?.status;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

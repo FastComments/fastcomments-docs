@@ -1,0 +1,7 @@
+{
+  "method": "getOfflineUsers",
+  "signatureHash": "cd9d8ae7115b96fa9639516fb7787dc2f46021c021cd8473a8f72a7449085318",
+  "generatedAt": "2026-09-23T20:29:50.275Z",
+  "codeExample": "async function fetchOfflineUsers(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"page_9876\";\n  const afterName: string = \"John Doe\";\n  const afterUserId: string = \"user_abc123\";\n\n  const offlineResponse: PageUsersOfflineResponse = await getOfflineUsers(\n    tenantId,\n    urlId,\n    afterName,\n    afterUserId\n  );\n\n  console.log(offlineResponse);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

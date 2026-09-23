@@ -1,0 +1,7 @@
+{
+  "method": "createTicket",
+  "signatureHash": "54742c15ae347f21ec02e00ea5894011370f82c412d8ffecfc441a3b959ed3bb",
+  "generatedAt": "2026-09-23T20:29:51.183Z",
+  "codeExample": "async function submitTicket() {\n  const tenantId: string = \"acme-corp\";\n  const userId: string = \"user-9876\";\n\n  const ticketBody: CreateTicketBody = {\n    subject: \"Login issues after password reset\",\n    description: \"User reports being unable to log in despite using the new password.\",\n    priority: \"medium\",\n    // optional field in CreateTicketBody\n    tags: [\"login\", \"password-reset\"]\n  };\n\n  const response: CreateTicketResponse = await createTicket(tenantId, userId, ticketBody);\n  console.log(response);\n}\n\nsubmitTicket();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "f58761789734bae18744df381080f0a2518e135f1dcd146ba125bb9811de2bc6",
+  "generatedAt": "2026-09-23T20:29:51.958Z",
+  "codeExample": "async function runDeleteModerationVote(): Promise<void> {\n  const tenantId: string = \"tenant_9f8b7c6a\";\n  const commentId: string = \"comment_4d3e2f1a\";\n  const voteId: string = \"vote_12345abcde\";\n  const broadcastId: string | undefined = \"broadcast_2023_09_15\";\n  const sso: string | undefined = \"sso_user_7890token\";\n\n  const result: VoteDeleteResponse = await deleteModerationVote(\n    tenantId,\n    commentId,\n    voteId,\n    broadcastId,\n    sso\n  );\n\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

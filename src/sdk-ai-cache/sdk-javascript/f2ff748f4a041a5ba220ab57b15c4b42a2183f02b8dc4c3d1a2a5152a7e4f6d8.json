@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "f2ff748f4a041a5ba220ab57b15c4b42a2183f02b8dc4c3d1a2a5152a7e4f6d8",
+  "generatedAt": "2026-09-23T20:30:11.521Z",
+  "codeExample": "async function loadComments(): Promise<void> {\n  const tenantId: string = \"tenant-42\",\n        urlId: string = \"post-2023-09-15\",\n        page: number = 1,\n        direction: SortDirections = \"desc\",\n        limit: number = 30,\n        includeConfig: boolean = true,\n        locale: string = \"en-US\",\n        isCrawler: boolean = false,\n        asTree: boolean = true,\n        maxTreeDepth: number = 2,\n        searchText: string = \"fastcomments\",\n        hashTags: string[] = [\"fastcomments\",\"typescript\"],\n        userId: string = \"user-123\";\n\n  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(\n    tenantId,\n    urlId,\n    page,\n    direction,\n    undefined,\n    undefined,\n    undefined,\n    limit,\n    undefined,\n    undefined,\n    undefined,\n    includeConfig,\n    undefined,\n    undefined,\n    locale,\n    undefined,\n    isCrawler,\n    undefined,\n    asTree,\n    maxTreeDepth,\n    undefined,\n    undefined,\n    searchText,\n    hashTags,\n    userId\n  );\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

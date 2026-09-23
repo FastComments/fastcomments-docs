@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "a337172750247b360681908bbdb10eb480b42bddc5d497fec00d9bced438ef51",
+  "generatedAt": "2026-09-23T20:29:52.125Z",
+  "codeExample": "async function demo(): Promise<void> {\n  const tenantId: string = \"acme-corp-001\";\n  const ssoToken: string = \"sso-token-xyz789\";\n\n  const countWithoutSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId);\n  const countWithSso: GetUserNotificationCountResponse = await getUserNotificationCount(tenantId, ssoToken);\n}\n\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

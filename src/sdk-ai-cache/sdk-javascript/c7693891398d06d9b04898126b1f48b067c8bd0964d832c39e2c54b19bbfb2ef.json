@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "c7693891398d06d9b04898126b1f48b067c8bd0964d832c39e2c54b19bbfb2ef",
+  "generatedAt": "2026-09-23T20:29:54.312Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst questionId: string = \"q-987654321\";\n\nconst configResponse: GetQuestionConfigResponse = await getQuestionConfig(tenantId, questionId);\n\nconst status: APIStatus = configResponse.status;\nconst questionConfig?: QuestionConfig = configResponse.question;\nconst firstOption?: QuestionConfigCustomOptionsInner = questionConfig?.customOptions?.[0];",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

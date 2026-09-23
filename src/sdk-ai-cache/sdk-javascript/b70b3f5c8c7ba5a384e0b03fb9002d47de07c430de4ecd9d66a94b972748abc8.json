@@ -1,0 +1,7 @@
+{
+  "method": "getModerationCommentText",
+  "signatureHash": "b70b3f5c8c7ba5a384e0b03fb9002d47de07c430de4ecd9d66a94b972748abc8",
+  "generatedAt": "2026-09-23T20:29:49.664Z",
+  "codeExample": "async function fetchComment() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const ssoToken: string = \"sso_abcde12345\";\n\n  const commentWithoutSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId);\n  const commentWithSso: GetCommentTextResponse = await getModerationCommentText(tenantId, commentId, ssoToken);\n}\n\nfetchComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

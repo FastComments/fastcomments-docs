@@ -1,0 +1,7 @@
+{
+  "method": "deleteUserBadge",
+  "signatureHash": "a6559bced6d581393eeda46d7c8510232715a031714aba302d90a099d45352d3",
+  "generatedAt": "2026-09-23T20:29:51.733Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const badgeId: string = \"moderator-badge\";\n  const result: APIEmptySuccessResponse = await deleteUserBadge(tenantId, badgeId);\n  console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

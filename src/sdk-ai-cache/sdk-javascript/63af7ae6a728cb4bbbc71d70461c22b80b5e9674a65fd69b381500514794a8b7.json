@@ -1,0 +1,7 @@
+{
+  "method": "getAuditLogs",
+  "signatureHash": "63af7ae6a728cb4bbbc71d70461c22b80b5e9674a65fd69b381500514794a8b7",
+  "generatedAt": "2026-09-23T20:29:58.917Z",
+  "codeExample": "async function fetchAuditLogs(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const limit: number = 50;\n  const skip: number = 0;\n  const order: SORTDIR = { direction: \"DESC\" };\n  const after: number = Date.now() - 86400000; // 1 day ago\n  const before: number = Date.now();\n  const username: string = \"alice.smith\";\n  const ip: string = \"198.51.100.23\";\n  const crudType: string = \"CREATE\";\n  const resourceName: string = \"thread\";\n  const targetId: string = \"thread_45678\";\n  const target: string = \"forum_12\";\n  const includeManagedTenants: boolean = false;\n\n  const logs: GetAuditLogsResponse = await getAuditLogs(\n    tenantId,\n    limit,\n    skip,\n    order,\n    after,\n    before,\n    username,\n    ip,\n    crudType,\n    resourceName,\n    targetId,\n    target,\n    includeManagedTenants\n  );\n\n  console.log(logs);\n}\n\nfetchAuditLogs();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

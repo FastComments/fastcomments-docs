@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "445f5b1f128cf7a123f845c5b221f4a5e778c3e410cb878ac8a1f462c5aafdb1",
+  "generatedAt": "2026-09-23T20:29:49.467Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const moderatorId: string = \"mod_9876\";\n  const notifyEmail: string = \"admin@company.com\";\n\n  const resultWithEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId, notifyEmail);\n  const resultWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

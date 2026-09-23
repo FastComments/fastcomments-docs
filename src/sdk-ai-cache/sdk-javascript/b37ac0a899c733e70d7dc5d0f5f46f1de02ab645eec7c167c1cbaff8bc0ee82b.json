@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "b37ac0a899c733e70d7dc5d0f5f46f1de02ab645eec7c167c1cbaff8bc0ee82b",
+  "generatedAt": "2026-09-23T20:29:48.570Z",
+  "codeExample": "async function fetchUsersInfo(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const ids: string = \"user_001,user_002\";\n  const response: PageUsersInfoResponse = await getUsersInfo(tenantId, ids);\n  console.log(response);\n}\nfetchUsersInfo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postApiExport",
+  "signatureHash": "26444eea7ab848bd66c779bb74db69df81e8275df0c403b0e96cbb53d2336df1",
+  "generatedAt": "2026-09-23T20:29:58.307Z",
+  "codeExample": "async function runExport() {\n  const tenantId: string = \"c9f1e2b4-8a6d-4f3a-9d2e-5b6c7d8e9f0a\";\n  const textSearch: string = \"spam\";\n  const byIPFromComment: string = \"203.0.113.45\";\n  const filters: string = \"status:pending\";\n  const searchFilters: string = \"createdAt>2023-01-01\";\n  const sorts: string = \"createdAt:desc\";\n  const sso: string = \"sso-token-abc123\";\n\n  const fullExport: ModerationExportResponse = await postApiExport(\n    tenantId,\n    textSearch,\n    byIPFromComment,\n    filters,\n    searchFilters,\n    sorts,\n    sso\n  );\n\n  const minimalExport: ModerationExportResponse = await postApiExport(tenantId);\n\n  console.log(fullExport, minimalExport);\n}\nrunExport();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

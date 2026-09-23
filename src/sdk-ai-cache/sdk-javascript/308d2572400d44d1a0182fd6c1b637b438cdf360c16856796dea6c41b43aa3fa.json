@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "308d2572400d44d1a0182fd6c1b637b438cdf360c16856796dea6c41b43aa3fa",
+  "generatedAt": "2026-09-23T20:29:49.009Z",
+  "codeExample": "async function runDeletion() {\n  const tenantId: string = \"tenant-42f7b9c2\";\n  const eventId: string = \"webhook-event-8a7d6c5b\";\n  const result: APIEmptyResponse = await deletePendingWebhookEvent(tenantId, eventId);\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

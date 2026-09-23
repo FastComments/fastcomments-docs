@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "a6fd3615da095fe817d7806ac5f7ff78c921e7e26bf73448fa9057183eca1572",
+  "generatedAt": "2026-09-23T20:29:53.868Z",
+  "codeExample": "async function fetchComments() {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"cmt_1234567890\";\n\n  // Call with only required parameters\n  const basicResponse: ModerationAPICommentResponse = await getModerationComment(tenantId, commentId);\n\n  // Call with optional parameters\n  const includeEmail: boolean = true;\n  const includeIP: boolean = false;\n  const sso: string = \"sso-token-abc123\";\n  const detailedResponse: ModerationAPICommentResponse = await getModerationComment(\n    tenantId,\n    commentId,\n    includeEmail,\n    includeIP,\n    sso\n  );\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createUserBadge",
+  "signatureHash": "6c99ff7741fb97902a867b28f340b090f4dc4624225d859dfab216dd8d8dffdc",
+  "generatedAt": "2026-09-23T20:29:57.015Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = \"tenant_9f8b7c\";\n  const badgeParams: CreateUserBadgeParams = {\n    name: \"Community Helper\",\n    iconUrl: \"https://cdn.example.com/badges/helper.png\"\n  };\n  const response: APICreateUserBadgeResponse = await createUserBadge(tenantId, badgeParams);\n}\nmain();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

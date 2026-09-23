@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "6a35d575afb228a4e9919ceae08c658cd3dd0390496eeb1e1b7a8e1d31e4dcf1",
+  "generatedAt": "2026-09-23T20:29:59.533Z",
+  "codeExample": "const tenantId: string = \"c9f1e2a4-5b6d-4f8a-9c2e-123456789abc\";\nconst commentId: string = \"d3b2c1a9-8f7e-4d6b-9a0b-987654321def\";\n\nconst unblockParams: PublicBlockFromCommentParams = {\n    reason: \"User request resolved\",\n    moderatorId: \"mod-456\"\n};\n\nconst ssoToken: string = \"sso-token-789xyz\";\n\nconst unblockResult: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, unblockParams, ssoToken);\nconst unblockResultNoSso: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, unblockParams);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

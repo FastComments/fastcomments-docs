@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "5e33959880e840b8dd445a89b23c40a73557bfa1a840d77331ed1f4088e087d9",
+  "generatedAt": "2026-09-23T20:29:56.150Z",
+  "codeExample": "const tenantId: string = \"tenant_42\";\nconst commentId: string = \"comment_1001\";\nconst isFlagged: boolean = true;\nconst sso: string = \"sso_user_5678\";\n\nconst resultWithSso: APIEmptyResponse = await flagCommentPublic(tenantId, commentId, isFlagged, sso);\nconst resultWithoutSso: APIEmptyResponse = await flagCommentPublic(tenantId, commentId, false);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

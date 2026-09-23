@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "95243517308e700d881d560be0490de50868b5764ab555306b072eb0c9d873c3",
+  "generatedAt": "2026-09-23T20:29:55.100Z",
+  "codeExample": "async function runVoteExamples(): Promise<void> {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"cmt_1234567890\";\n\n  // Call with only required parameters\n  const simpleVote: VoteResponse = await postVote(tenantId, commentId);\n\n  // Call with optional parameters\n  const direction: string = \"down\";\n  const broadcastId: string = \"brd_987654321\";\n  const sso: string = \"user-42\";\n  const detailedVote: VoteResponse = await postVote(tenantId, commentId, direction, broadcastId, sso);\n\n  console.log(simpleVote, detailedVote);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

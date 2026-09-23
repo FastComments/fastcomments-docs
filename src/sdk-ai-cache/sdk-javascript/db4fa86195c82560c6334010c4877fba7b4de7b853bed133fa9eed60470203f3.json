@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "db4fa86195c82560c6334010c4877fba7b4de7b853bed133fa9eed60470203f3",
+  "generatedAt": "2026-09-23T20:29:55.840Z",
+  "codeExample": "async function fetchComments(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const page: number = 2;\n  const count: number = 20;\n  const textSearch: string = \"typescript\";\n  const byIPFromComment: string = \"192.168.1.100\";\n  const filters: string = \"spam,offensive\";\n  const searchFilters: string = \"user:john\";\n  const sorts: string = \"date_desc\";\n  const demo: boolean = true;\n  const sso: string = \"sso_token_abc\";\n\n  const response: ModerationAPIGetCommentsResponse = await getApiComments(\n    tenantId,\n    page,\n    count,\n    textSearch,\n    byIPFromComment,\n    filters,\n    searchFilters,\n    sorts,\n    demo,\n    sso\n  );\n}\n\nfetchComments();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "d6a98d29cbccf5929dd23f8e8a15016d6a1388c82df0e74ae853c176338138bb",
+  "generatedAt": "2026-09-23T20:29:58.609Z",
+  "codeExample": "interface APIStatus {\n  // status fields\n}\n\ninterface APIEmptyResponse {\n  status: APIStatus;\n}\n\n(async () => {\n  const tenantId: string = \"acme-corp\";\n  const userId: string = \"user-98765\";\n  const redirectURL: string = \"https://app.example.com/welcome\";\n\n  const responseWithRedirect: APIEmptyResponse = await sendLoginLink(tenantId, userId, redirectURL);\n  const responseWithoutRedirect: APIEmptyResponse = await sendLoginLink(tenantId, userId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "ce587034cdbf0ad53ec2ff45f5fe64d05dac7ef48b69a390e61eb382d374877a",
+  "generatedAt": "2026-09-23T20:29:56.922Z",
+  "codeExample": "const tenantId: string = \"tenant-42\";\nconst urlId: string = \"article-9876\";\nconst ssoToken: string = \"sso-abc123\";\n\nconst reactsWithSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, ssoToken);\nconst reactsWithoutSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

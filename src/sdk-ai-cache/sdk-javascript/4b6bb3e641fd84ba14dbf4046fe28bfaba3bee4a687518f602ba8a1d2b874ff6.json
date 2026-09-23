@@ -1,0 +1,7 @@
+{
+  "method": "deleteCommentPublic",
+  "signatureHash": "4b6bb3e641fd84ba14dbf4046fe28bfaba3bee4a687518f602ba8a1d2b874ff6",
+  "generatedAt": "2026-09-23T20:29:58.004Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_9876\";\n  const broadcastId: string = \"brd_5555\";\n  const editKey: string = \"edit_abc123\";\n  const sso: string = \"sso_token_xyz\";\n\n  const resultWithoutOptional: PublicAPIDeleteCommentResponse = await deleteCommentPublic(tenantId, commentId, broadcastId);\n  const resultWithOptional: PublicAPIDeleteCommentResponse = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

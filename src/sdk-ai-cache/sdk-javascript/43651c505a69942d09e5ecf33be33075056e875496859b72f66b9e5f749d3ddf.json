@@ -1,0 +1,7 @@
+{
+  "method": "patchPoll",
+  "signatureHash": "43651c505a69942d09e5ecf33be33075056e875496859b72f66b9e5f749d3ddf",
+  "generatedAt": "2026-09-23T20:29:59.991Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n  const commentId: string = \"cmt_9876543210\";\n\n  const pollPatch: CommentPollPatch = {\n    question: \"Which new feature would you like to see?\",\n    options: [\n      { id: \"opt-1\", label: \"Dark Mode\" },\n      { id: \"opt-2\", label: \"Multi-language Support\" }\n    ]\n  };\n\n  const response: SavePollResponse = await patchPoll(tenantId, commentId, pollPatch);\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

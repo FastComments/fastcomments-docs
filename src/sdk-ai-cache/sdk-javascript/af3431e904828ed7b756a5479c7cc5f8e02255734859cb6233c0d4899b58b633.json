@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "af3431e904828ed7b756a5479c7cc5f8e02255734859cb6233c0d4899b58b633",
+  "generatedAt": "2026-09-23T20:29:55.443Z",
+  "codeExample": "async function demoReset() {\n  const tenantId: string = \"tenant_12345\";\n  const ssoToken: string = \"sso_abcdef123456\";\n\n  const resultWithSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId, ssoToken);\n  const resultWithoutSso: ResetUserNotificationsResponse = await resetUserNotificationCount(tenantId);\n}\n\ndemoReset();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

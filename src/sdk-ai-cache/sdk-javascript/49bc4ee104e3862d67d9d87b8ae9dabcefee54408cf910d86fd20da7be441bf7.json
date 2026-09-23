@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "49bc4ee104e3862d67d9d87b8ae9dabcefee54408cf910d86fd20da7be441bf7",
+  "generatedAt": "2026-09-23T20:29:55.030Z",
+  "codeExample": "async function demoPinComment() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const broadcastId: string = \"brd_54321\";\n\n  const resultWithoutSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId);\n  const ssoToken: string = \"sso_abcde12345\";\n  const resultWithSso: ChangeCommentPinStatusResponse = await pinComment(tenantId, commentId, broadcastId, ssoToken);\n}\n\ndemoPinComment();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

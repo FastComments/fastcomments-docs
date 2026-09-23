@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "cf849214f714f7ddbf31407d986af51e8ea01167e6c55b651f394ca42ed99cfd",
+  "generatedAt": "2026-09-23T20:29:51.157Z",
+  "codeExample": "const tenantId: string = \"my-tenant-123\";\nconst urlId: string = \"article-456\";\n\nconst pageTitle: string = \"Understanding TypeScript Generics\";\nconst ssoToken: string = \"user-789-token\";\n\nconst fullResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId, pageTitle, ssoToken);\nconst minimalResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "111f278701b0673e70391b94a06b5fc57e873fcba65e9019abf67636368b1881",
+  "generatedAt": "2026-09-23T20:29:57.846Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_9876\";\n  const search: string = \"celebration fireworks\";\n  const locale: string = \"fr-FR\";\n  const rating: string = \"g\";\n  const page: number = 1;\n\n  const fullResult: GetGifsSearchResponse = await getGifsSearch(tenantId, search, locale, rating, page);\n  const minimalResult: GetGifsSearchResponse = await getGifsSearch(tenantId, \"dog memes\");\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

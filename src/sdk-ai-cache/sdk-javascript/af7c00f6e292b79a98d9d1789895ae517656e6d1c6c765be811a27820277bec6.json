@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadge",
+  "signatureHash": "af7c00f6e292b79a98d9d1789895ae517656e6d1c6c765be811a27820277bec6",
+  "generatedAt": "2026-09-23T20:29:57.533Z",
+  "codeExample": "async function demoGetUserBadge() {\n    const tenantId: string = \"tenant-9f8b7c6d\";\n    const userId: string = \"user-123456\";\n    const badgeResponse: APIGetUserBadgeResponse = await getUserBadge(tenantId, userId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "4f4a7b448cb86a2e0d61e1a2b8ac519b4f27c7df1382daab93d3ef875bb64528",
+  "generatedAt": "2026-09-23T20:29:53.776Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_9f8b7c6d\";\n  const createTenantPackageBody: CreateTenantPackageBody = {\n    name: \"Enterprise Package\",\n    priceCents: 49999,\n    // optional field\n    description: \"Full suite of enterprise features\"\n  };\n  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);\n  console.log(result);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

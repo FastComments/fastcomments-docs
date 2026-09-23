@@ -1,0 +1,7 @@
+{
+  "method": "getVotes",
+  "signatureHash": "806e59725cf3f793e0846a3468bef3129170c349994d400b516c2876e908faf8",
+  "generatedAt": "2026-09-23T20:29:59.224Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst urlId: string = \"article-67890\";\n\n(async () => {\n  const votesResponse: GetVotesResponse = await getVotes(tenantId, urlId);\n  // Example of accessing an optional property from the response\n  const firstVote: PublicVote | undefined = votesResponse.votes?.[0];\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUser",
+  "signatureHash": "d1d07e7c278f70210bfb5adf5f8c1d95faeaa9e50b4863ec7b482e9a80979090",
+  "generatedAt": "2026-09-23T20:29:58.760Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const id: string = \"user_98765\";\n  const response: GetUserResponse = await getUser(tenantId, id);\n  const { user }: { user?: User } = response;\n}\nmain();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

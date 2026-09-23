@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "9edaccfcdf3c4d09b8129b74d537172b40292078c4e816a9feef0f5f3bac8e65",
+  "generatedAt": "2026-09-23T20:29:54.499Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant_42\";\n  const commentId: string = \"comment_1001\";\n  const eventType: string = \"comment.deleted\";\n  const domain: string = \"myblog.com\";\n\n  const result: GetPendingWebhookEventCountResponse = await getPendingWebhookEventCount(\n    tenantId,\n    commentId,\n    undefined,\n    eventType,\n    undefined,\n    domain\n  );\n\n  console.log(result);\n}\n\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

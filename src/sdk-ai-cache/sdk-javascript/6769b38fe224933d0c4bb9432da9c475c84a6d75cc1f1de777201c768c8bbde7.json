@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "6769b38fe224933d0c4bb9432da9c475c84a6d75cc1f1de777201c768c8bbde7",
+  "generatedAt": "2026-09-23T20:29:53.102Z",
+  "codeExample": "const tenantId: string = \"c1f5e8b2-9a4d-4f3a-8d2e-6b7c9d0e1f2a\";\nconst questionId: string = \"qstn_1234567890\";\n\nconst updateBody: UpdateQuestionResultBody = {\n  score: 85,\n  comment: \"Adjusted based on new criteria\",\n  meta: [\n    { key: \"reviewer\", value: \"john.doe@example.com\" },\n    { key: \"timestamp\", value: new Date().toISOString() }\n  ]\n};\n\nconst response: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

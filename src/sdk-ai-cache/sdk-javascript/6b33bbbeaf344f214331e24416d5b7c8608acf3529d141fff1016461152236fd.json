@@ -1,0 +1,7 @@
+{
+  "method": "createTenant",
+  "signatureHash": "6b33bbbeaf344f214331e24416d5b7c8608acf3529d141fff1016461152236fd",
+  "generatedAt": "2026-09-23T20:29:58.775Z",
+  "codeExample": "async function run() {\n  const tenantId: string = \"acme-corp-2024\";\n  const createTenantBody: CreateTenantBody = {\n    name: \"Acme Corp\",\n    domainConfiguration: { domain: \"comments.acme.com\", sslEnabled: true },\n    importedSite: { siteId: \"site-123\", source: \"wordpress\" },\n    billingInfo: { plan: \"enterprise\", renewalDate: \"2025-01-01\" },\n    description: \"Tenant for Acme Corp's production environment\", // optional\n  };\n  const response: CreateTenantResponse = await createTenant(tenantId, createTenantBody);\n}\nrun();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

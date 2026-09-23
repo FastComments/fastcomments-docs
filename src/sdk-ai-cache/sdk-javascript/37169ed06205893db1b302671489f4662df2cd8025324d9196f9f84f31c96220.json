@@ -1,0 +1,7 @@
+{
+  "method": "updateEmailTemplate",
+  "signatureHash": "37169ed06205893db1b302671489f4662df2cd8025324d9196f9f84f31c96220",
+  "generatedAt": "2026-09-23T20:29:55.128Z",
+  "codeExample": "async function runUpdate() {\n  const tenantId: string = \"tenant_12345\";\n  const templateId: string = \"template_67890\";\n\n  const updateBody: UpdateEmailTemplateBody = {\n    subject: \"New Comment Notification\",\n    // htmlContent is optional and omitted\n    status: { code: 200, message: \"Active\" } // APIStatus\n  };\n\n  const response: APIEmptyResponse = await updateEmailTemplate(tenantId, templateId, updateBody);\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

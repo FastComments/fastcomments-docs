@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "3284565425f056e4906bd2057bd49f8c6a8b56179496d46903bd80d06a0b26cb",
+  "generatedAt": "2026-09-23T20:29:49.612Z",
+  "codeExample": "async function fetchConfigs() {\n  const tenantId: string = \"tenant_12345\";\n\n  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);\n  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

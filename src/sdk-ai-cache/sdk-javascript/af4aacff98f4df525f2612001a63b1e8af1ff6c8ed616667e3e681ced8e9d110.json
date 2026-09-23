@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "af4aacff98f4df525f2612001a63b1e8af1ff6c8ed616667e3e681ced8e9d110",
+  "generatedAt": "2026-09-23T20:29:52.187Z",
+  "codeExample": "async function demoGetUserBanPreference() {\n  const tenantId: string = \"tenant_987654321\";\n  const ssoToken: string = \"sso_user_abc123xyz\";\n\n  const responseWithSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId, ssoToken);\n  const responseWithoutSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "8425049be402105e0c067a76db91d55b5b2c104f0be6e3009386794dcedd3af6",
+  "generatedAt": "2026-09-23T20:29:51.369Z",
+  "codeExample": "async function demoBlock() {\n  const tenantId: string = \"tenant_9f8b7c\";\n  const commentId: string = \"comment_3e2d1a\";\n  const blockParams: PublicBlockFromCommentParams = {\n    reason: \"harassment\",\n    expiresInHours: 48\n  };\n  const ssoToken: string = \"sso_5g6h7i\";\n\n  const resultWithSso: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, blockParams, ssoToken);\n  const resultWithoutSso: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, blockParams);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

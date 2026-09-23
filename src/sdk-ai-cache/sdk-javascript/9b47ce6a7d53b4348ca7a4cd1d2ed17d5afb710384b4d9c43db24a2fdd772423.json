@@ -1,0 +1,7 @@
+{
+  "method": "getFeedPostsStats",
+  "signatureHash": "9b47ce6a7d53b4348ca7a4cd1d2ed17d5afb710384b4d9c43db24a2fdd772423",
+  "generatedAt": "2026-09-23T20:29:52.642Z",
+  "codeExample": "const tenantId: string = \"tenant-9f8b7c6d\";\nconst postIds: string[] = [\"post-1a2b3c\", \"post-4d5e6f\", \"post-7g8h9i\"];\nconst ssoToken: string = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\";\nconst feedStats: FeedPostsStatsResponse = await getFeedPostsStats(tenantId, postIds, ssoToken);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "362cb7060e227cf82af27640d2fc9125877d9eebd4a89627af79cd3531a9fc86",
+  "generatedAt": "2026-09-23T20:29:48.389Z",
+  "codeExample": "const tenantId: string = \"tenant_987654321\";\n\nconst moderators: GetModeratorsResponse = await getModerators(tenantId);\n\nconst skip: number = 20;\nconst moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

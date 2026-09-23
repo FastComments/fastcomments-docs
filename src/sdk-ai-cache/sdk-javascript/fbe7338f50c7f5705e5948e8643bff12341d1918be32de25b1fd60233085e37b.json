@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "fbe7338f50c7f5705e5948e8643bff12341d1918be32de25b1fd60233085e37b",
+  "generatedAt": "2026-09-23T20:29:55.861Z",
+  "codeExample": "async function runExample(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const notificationId: string = \"notif_9876\";\n  const commentId: string = \"comment_abc123\";\n  const optedInOrOut: UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum =\n    UpdateUserNotificationCommentSubscriptionStatusOptedInOrOutEnum.OptIn;\n  const sso: string = \"sso_token_456\";\n\n  const resultWithSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(\n    tenantId,\n    notificationId,\n    optedInOrOut,\n    commentId,\n    sso\n  );\n\n  const resultWithoutSso: UpdateUserNotificationCommentSubscriptionStatusResponse = await updateUserNotificationCommentSubscriptionStatus(\n    tenantId,\n    notificationId,\n    optedInOrOut,\n    commentId\n  );\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

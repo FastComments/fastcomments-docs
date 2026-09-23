@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "b5c8ffb9956bf298c748972144faa616a5a3e94d5038f615eeaf13d18bb2075b",
+  "generatedAt": "2026-09-23T20:29:51.650Z",
+  "codeExample": "const tenantId: string = \"123e4567-e89b-12d3-a456-426614174000\";\nconst commentId: string = \"cmt_987654321\";\nconst externalId: string = \"ext_abc123\";\nconst eventType: string = \"comment_created\";\nconst type: string = \"outbound\";\nconst domain: string = \"myblog.com\";\nconst attemptCountGT: number = 2;\nconst skip: number = 10;\n\nconst pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(\n  tenantId,\n  commentId,\n  externalId,\n  eventType,\n  type,\n  domain,\n  attemptCountGT,\n  skip\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

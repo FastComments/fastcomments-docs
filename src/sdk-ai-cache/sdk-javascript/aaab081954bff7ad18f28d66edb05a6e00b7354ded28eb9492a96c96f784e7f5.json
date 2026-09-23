@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "aaab081954bff7ad18f28d66edb05a6e00b7354ded28eb9492a96c96f784e7f5",
+  "generatedAt": "2026-09-23T20:29:53.362Z",
+  "codeExample": "async function addTenantUser() {\n  const tenantId: string = '123e4567-e89b-12d3-a456-426614174000';\n  const digestFreq: DigestEmailFrequency = 'daily';\n  const body: CreateTenantUserBody = {\n    email: 'jane.doe@example.com',\n    firstName: 'Jane',\n    lastName: 'Doe',\n    role: 'admin',\n    digestEmailFrequency: digestFreq,\n    phoneNumber: '+15551234567' // optional\n  };\n  const response: CreateTenantUserResponse = await createTenantUser(tenantId, body);\n  console.log(response);\n}\naddTenantUser();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

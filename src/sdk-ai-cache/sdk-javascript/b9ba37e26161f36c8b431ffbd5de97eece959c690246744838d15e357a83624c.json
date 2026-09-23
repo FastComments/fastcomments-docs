@@ -1,0 +1,7 @@
+{
+  "method": "getPollVote",
+  "signatureHash": "b9ba37e26161f36c8b431ffbd5de97eece959c690246744838d15e357a83624c",
+  "generatedAt": "2026-09-23T20:29:50.558Z",
+  "codeExample": "async function fetchPollVote(): Promise<void> {\n  const tenantId: string = \"acme-corp-tenant\";\n  const pollId: string = \"poll-2024-05\";\n  const result: GetPollVoteResponse = await getPollVote(tenantId, pollId);\n  const status: APIStatus = result.status;\n  const vote: PublicPollVote | undefined = result.vote;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "7100f5b7f2c8afc4b82888b0a022d3af257a3b34350e062312bfc1c07989befe",
+  "generatedAt": "2026-09-23T20:29:57.713Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"acme-corp\";\n\n  // All parameters supplied\n  const fullResponse: APIGetUserBadgesResponse = await getUserBadges(\n    tenantId,\n    \"user-42\",\n    \"badge-premium\",\n    1,\n    true,\n    10,\n    0\n  );\n\n  // Only required and one optional parameter (limit)\n  const limitedResponse: APIGetUserBadgesResponse = await getUserBadges(\n    tenantId,\n    undefined,\n    undefined,\n    undefined,\n    undefined,\n    5\n  );\n\n  console.log(fullResponse, limitedResponse);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

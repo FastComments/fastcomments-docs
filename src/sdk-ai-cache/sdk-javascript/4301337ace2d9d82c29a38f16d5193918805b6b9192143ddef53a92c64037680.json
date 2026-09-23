@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "4301337ace2d9d82c29a38f16d5193918805b6b9192143ddef53a92c64037680",
+  "generatedAt": "2026-09-23T20:29:53.564Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\nconst moderatorId: string = \"mod_12345\";\n\nconst updateBody: UpdateModeratorBody = {\n  isActive: true,\n  // role?: string is optional and omitted here\n};\n\nconst result: APIEmptyResponse = await updateModerator(tenantId, moderatorId, updateBody);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

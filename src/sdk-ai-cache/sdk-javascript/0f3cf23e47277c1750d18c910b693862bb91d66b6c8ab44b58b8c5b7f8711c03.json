@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "0f3cf23e47277c1750d18c910b693862bb91d66b6c8ab44b58b8c5b7f8711c03",
+  "generatedAt": "2026-09-23T20:29:56.934Z",
+  "codeExample": "async function runDeleteExamples() {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"page_98765\";\n  const commentId: string = \"comment_abcde\";\n\n  // Call without optional sso\n  const resultWithoutSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId);\n\n  // Call with optional sso\n  const ssoToken: string = \"sso_token_xyz\";\n  const resultWithSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId, ssoToken);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

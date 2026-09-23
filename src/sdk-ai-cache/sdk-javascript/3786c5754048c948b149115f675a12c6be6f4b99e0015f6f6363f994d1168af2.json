@@ -1,0 +1,7 @@
+{
+  "method": "getPreBanSummary",
+  "signatureHash": "3786c5754048c948b149115f675a12c6be6f4b99e0015f6f6363f994d1168af2",
+  "generatedAt": "2026-09-23T20:29:57.088Z",
+  "codeExample": "async function fetchSummary(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_98765\";\n  const includeByUserIdAndEmail: boolean = true;\n  const includeByIP: boolean = false;\n  const includeByEmailDomain: boolean = true;\n  const sso: string = \"sso_token_abc\";\n\n  const summary: PreBanSummary = await getPreBanSummary(\n    tenantId,\n    commentId,\n    includeByUserIdAndEmail,\n    includeByIP,\n    includeByEmailDomain,\n    sso\n  );\n\n  console.log(summary);\n}\n\nfetchSummary();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

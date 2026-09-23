@@ -1,0 +1,7 @@
+{
+  "method": "getUserInternalProfile",
+  "signatureHash": "7ed44aba0282a3e02b4a9a3cf18d776a70121f1067c314acc5a8c358772fe5a8",
+  "generatedAt": "2026-09-23T20:29:58.168Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_9876\";\n  const ssoToken: string = \"sso_abcde12345\";\n\n  const profileOnly: GetUserInternalProfileResponse = await getUserInternalProfile(tenantId);\n  const profileWithComment: GetUserInternalProfileResponse = await getUserInternalProfile(tenantId, commentId);\n  const fullProfile: GetUserInternalProfileResponse = await getUserInternalProfile(tenantId, commentId, ssoToken);\n}\n\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "bd82029f887ed91b6f555b16c62ce5ba528ce746f3611e2b9d0453318fe98417",
+  "generatedAt": "2026-09-23T20:29:52.953Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\nconst packageId: string = \"pkg_3a2b1c\";\n\nconst updateBody: UpdateTenantPackageBody = {\n  // optional fields can be omitted or included as needed\n  // newPackageName?: string;\n  // renewalDate?: string;\n};\n\nconst result: APIEmptyResponse = await updateTenantPackage(tenantId, packageId, updateBody);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

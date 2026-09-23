@@ -1,0 +1,7 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "6d002be5d184fbc2a10412c0b70a7cb0746061cf2a52cbf8b8f02d60ba698ecd",
+  "generatedAt": "2026-09-23T20:29:51.643Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant-123e4567-e89b-12d3-a456-426614174000\";\n  const commentId: string = \"cmt-9876543210\";\n  const blockParams: BlockFromCommentParams = {\n    reason: \"spam\",\n    durationHours: 24\n  };\n  const userId: string = \"user-abc123\";\n  const anonUserId: string = \"anon-xyz789\";\n  const result: BlockSuccess = await blockUserFromComment(tenantId, commentId, blockParams, userId, anonUserId);\n  console.log(result);\n}\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}
