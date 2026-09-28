@@ -6,7 +6,7 @@ email di verifica per sessione. Consulta la sezione Sessioni per maggiori dettag
 
 Per impostazione predefinita, le email di verifica dei commenti hanno l'aspetto seguente:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Corpo predefinito dell\'email di verifica che cita il commento di Alexander con un pulsante per confermare il post'; title='Email di verifica del commento' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&removedInDaysCount=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Corpo predefinito dell\'email di verifica che cita il commento di Alexander con un pulsante per confermare il post'; title='Email di verifica del commento' app-screenshot-end]
 
 Per impostazione predefinita, le email di verifica dei voti hanno l'aspetto seguente:
 

@@ -7,7 +7,7 @@
 
 По умолчанию письма с подтверждением комментариев выглядят следующим образом:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Тело письма с подтверждением по умолчанию, цитирующее комментарий Александра с кнопкой подтверждения публикации'; title='Письмо подтверждения комментария' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&removedInDaysCount=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Тело письма с подтверждением по умолчанию, цитирующее комментарий Александра с кнопкой подтверждения публикации'; title='Письмо подтверждения комментария' app-screenshot-end]
 
 По умолчанию письма с подтверждением голосов выглядят следующим образом:
 

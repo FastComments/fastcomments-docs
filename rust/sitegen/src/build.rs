@@ -786,6 +786,15 @@ async fn process_screenshots(
                 .await;
             match &cap_res {
                 Ok(()) => break,
+                // The page itself errored (e.g. a 500 from a broken
+                // template); another attempt gets the same response.
+                Err(e)
+                    if e
+                        .downcast_ref::<screenshot::PageHttpError>()
+                        .is_some_and(|h| !h.is_transient()) =>
+                {
+                    break
+                }
                 Err(e) if attempt < CAPTURE_ATTEMPTS => {
                     warn!(url = %url_for_log, attempt, error = %format!("{e:#}"), "screenshot failed; retrying");
                     tokio::time::sleep(std::time::Duration::from_secs(2 * attempt as u64)).await;

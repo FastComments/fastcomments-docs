@@ -240,6 +240,13 @@ pub async fn capture(
 ) -> Result<()> {
     let url = ensure_host(&args.url, &host_cfg.host);
     goto_with_retry(page, &url).await?;
+    // An error page never renders the marker's selector, so without this
+    // every attempt waits out the full selector timeout before failing.
+    if let Some(status) = main_document_status(page).await {
+        if status >= 400 {
+            return Err(PageHttpError { status, url }.into());
+        }
+    }
 
     if args.add_proxy_select {
         // Mirrors Node `addProxySelectToPage` (src/app-screenshot-generator.js:16-21):
@@ -354,6 +361,42 @@ fn png_byte_density(png_bytes: &[u8]) -> Option<f64> {
         return None;
     }
     Some(png_bytes.len() as f64 / area)
+}
+
+/// The screenshot target answered with an HTTP error status.
+#[derive(Debug, Clone)]
+pub struct PageHttpError {
+    pub status: u16,
+    pub url: String,
+}
+
+impl PageHttpError {
+    /// Gateway errors come from the app restarting mid-build and clear on
+    /// their own. Anything else (a 500 from a template error, a 404, an
+    /// auth failure) will fail the same way on every attempt.
+    pub fn is_transient(&self) -> bool {
+        matches!(self.status, 502..=504)
+    }
+}
+
+impl std::fmt::Display for PageHttpError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "HTTP {} from {}", self.status, self.url)
+    }
+}
+
+impl std::error::Error for PageHttpError {}
+
+/// HTTP status of the page's main document, or `None` when the browser
+/// does not report one (file:// pages, very old chromium).
+async fn main_document_status(page: &Page) -> Option<u16> {
+    let status = page
+        .evaluate("performance.getEntriesByType('navigation')[0]?.responseStatus ?? 0")
+        .await
+        .ok()?
+        .into_value::<u16>()
+        .ok()?;
+    (status > 0).then_some(status)
 }
 
 /// How many times to attempt the initial navigation before giving up.
