@@ -10,8 +10,8 @@ Si vous déplacez votre site hors de WordPress, vous pouvez importer un export X
 
 ### CloudFlare & Pare-feux
 
-Pour que la configuration automatisée de WordPress fonctionne, nous devons effectuer des appels à votre installation WordPress. Les pare-feux comme Cloudflare peuvent nous bloquer et entraîner l’échec de l’intégration. Dans ces cas, [nous pouvons vous fournir](https://fastcomments.com/auth/my-account/help) un ensemble d’IP à mettre en liste blanche pour l’intégration.
+Pour que la configuration automatisée de WordPress fonctionne, nous devons effectuer des appels à votre installation WordPress. Les pare-feux comme Cloudflare peuvent nous bloquer et entraîner l’échec de l’intégration. Dans ces cas, [nous pouvons vous fournir](https://fastcomments.com/auth/my-account/help) un ensemble d’IP à mettre en liste blanche pour l’instant.
 
 ### Propriété des données
 
-Dans le cas de notre migration WordPress, toute donnée de commentaire nouvelle ou mise à jour est automatiquement synchronisée avec votre installation WordPress en arrière‑plan. Cela signifie que, bien que les commentaires soient servis par FastComments lui‑même afin de réduire la charge de votre déploiement WordPress, nous **les enregistrons également** dans votre base de données comme sauvegarde. Cela signifie également que si vous souhaitez vous éloigner de FastComments, vos données sont déjà migrées et à jour.
+Dans le cas de notre migration WordPress, toute donnée de commentaire nouvelle ou mise à jour est automatiquement synchronisée de nouveau vers votre installation WordPress en arrière‑plan. Cela signifie que, bien que les commentaires soient servis par FastComments lui‑même afin de réduire la charge de votre déploiement WordPress, nous **les enregistrons également** dans votre base de données comme sauvegarde. Cela signifie également que si vous souhaitez vous éloigner de FastComments, vos données sont déjà migrées et à jour.
