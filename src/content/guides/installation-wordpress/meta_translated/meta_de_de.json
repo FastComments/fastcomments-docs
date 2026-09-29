@@ -1,12 +1,12 @@
 {
   "name": "WordPress-Installation",
-  "pageHeader": "Live-Kommentare zu WordPress-Websites hinzufügen",
+  "pageHeader": "Live-Kommentare zu WordPress-Seiten hinzufügen",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Schnellstart",
       "file": "wordpress-quick-start.md",
-      "subCat": "Kurzfassung"
+      "subCat": "TLDR"
     },
     {
       "name": "Installation",
@@ -29,7 +29,7 @@
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Nur-Mitgliederseiten (SSO)",
+      "name": "Nur-Mitgliedschaftsseiten (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress-Installation"
     },
@@ -39,17 +39,17 @@
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Eigene Themes",
+      "name": "Benutzerdefinierte Themes",
       "file": "wordpress-custom-themes.md",
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Zurück zu WordPress synchronisieren",
+      "name": "Synchronisierung zurück zu WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Anzahl der Kommentare",
+      "name": "Kommentarzahlen",
       "file": "wordpress-comment-counts.md",
       "subCat": "WordPress-Installation"
     },
@@ -64,7 +64,7 @@
       "subCat": "WordPress-Installation"
     },
     {
-      "name": "Widget für neueste Kommentare",
+      "name": "Widget für aktuelle Kommentare",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Andere Widgets"
     },
@@ -74,12 +74,17 @@
       "subCat": "Andere Widgets"
     },
     {
-      "name": "Top-Seiten-Widget",
+      "name": "Widget für Top-Seiten",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Andere Widgets"
     },
     {
-      "name": "Deaktivieren vs. Deinstallieren des Plugins",
+      "name": "Verschieben Ihrer Kommentare zu einer neuen Seite",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Umzug von WordPress"
+    },
+    {
+      "name": "Deaktivieren vs Deinstallieren des Plugins",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Plugin-Entfernung"
     }

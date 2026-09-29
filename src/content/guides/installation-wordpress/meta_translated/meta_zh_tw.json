@@ -1,12 +1,12 @@
 {
   "name": "WordPress 安裝",
-  "pageHeader": "在 WordPress 網站新增即時評論功能",
+  "pageHeader": "為 WordPress 網站新增即時評論",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "快速開始",
       "file": "wordpress-quick-start.md",
-      "subCat": "重點摘要"
+      "subCat": "TLDR"
     },
     {
       "name": "安裝",
@@ -24,12 +24,12 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "使用者、版主與管理員",
+      "name": "使用者、審核者與管理員",
       "file": "wordpress-users-moderators-admins.md",
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "僅限會員的網站（SSO）",
+      "name": "僅限會員網站（SSO）",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress 安裝"
     },
@@ -49,7 +49,7 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "評論數量",
+      "name": "評論計數",
       "file": "wordpress-comment-counts.md",
       "subCat": "WordPress 安裝"
     },
@@ -79,9 +79,14 @@
       "subCat": "其他小工具"
     },
     {
+      "name": "將您的評論搬移至新網站",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "從 WordPress 搬移"
+    },
+    {
       "name": "停用與解除安裝外掛",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "移除外掛"
+      "subCat": "外掛移除"
     }
   ]
 }

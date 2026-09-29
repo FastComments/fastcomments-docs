@@ -29,7 +29,7 @@
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "회원 전용 사이트(SSO)",
+      "name": "회원 전용 사이트 (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "워드프레스 설치"
     },
@@ -44,7 +44,7 @@
       "subCat": "워드프레스 설치"
     },
     {
-      "name": "워드프레스에 동기화",
+      "name": "워드프레스로 다시 동기화",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "워드프레스 설치"
     },
@@ -74,12 +74,17 @@
       "subCat": "기타 위젯"
     },
     {
-      "name": "인기 페이지 위젯",
+      "name": "상위 페이지 위젯",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "기타 위젯"
     },
     {
-      "name": "플러그인 비활성화 vs 삭제",
+      "name": "댓글을 새 사이트로 이동하기",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "워드프레스에서 이동"
+    },
+    {
+      "name": "플러그인 비활성화 vs 제거",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "플러그인 제거"
     }

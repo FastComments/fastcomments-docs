@@ -9,12 +9,12 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin)
+- WordPress (via the plugin, or an XML or CSV export)
 - AnyComment (Via WordPress Import/Export)
 
-By navigating [εδώ](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
+By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Σελίδα εισαγωγής FastComments με την επιλογή παρόχου και τα πεδία μεταφόρτωσης αρχείου για αρχείο εξαγωγής'; title='Η Φόρμα Σελίδας Εισαγωγής' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Σελίδα εισαγωγής FastComments με την επιλογή παρόχου και τα πεδία μεταφόρτωσης αρχείου για ένα αρχείο εξαγωγής'; title='Η Φόρμα Σελίδας Εισαγωγής' app-screenshot-end]
 
 ### Παρακολούθηση Εισαγωγών
 
@@ -26,7 +26,7 @@ Note that the status for Imports and Export are viewable by all administrators i
 
 If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
 
-### Επανεκτέλεση της Εισαγωγής
+### Επανάληψη της Εισαγωγής
 
 During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
 

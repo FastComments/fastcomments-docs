@@ -6,7 +6,7 @@
     {
       "name": "Avvio rapido",
       "file": "wordpress-quick-start.md",
-      "subCat": "In breve"
+      "subCat": "TLDR"
     },
     {
       "name": "Installazione",
@@ -29,7 +29,7 @@
       "subCat": "Installazione di WordPress"
     },
     {
-      "name": "Siti riservati ai membri (SSO)",
+      "name": "Siti solo per membri (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Installazione di WordPress"
     },
@@ -54,7 +54,7 @@
       "subCat": "Installazione di WordPress"
     },
     {
-      "name": "Comunicazione tra l'installazione WordPress e il server FastComment",
+      "name": "Comunicazione tra Installazione WordPress <> Server FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Installazione di WordPress"
     },
@@ -79,7 +79,12 @@
       "subCat": "Altri widget"
     },
     {
-      "name": "Disattivazione vs disinstallazione del plugin",
+      "name": "Spostare i tuoi commenti su un nuovo sito",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Spostamento da WordPress"
+    },
+    {
+      "name": "Disattivazione vs Disinstallazione del plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Rimozione del plugin"
     }

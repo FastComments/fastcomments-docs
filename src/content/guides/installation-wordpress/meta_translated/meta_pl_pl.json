@@ -1,12 +1,12 @@
 {
   "name": "Instalacja WordPressa",
-  "pageHeader": "Dodaj komentowanie na żywo do stron WordPress",
+  "pageHeader": "Dodaj komentarze na żywo do stron WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Szybki start",
       "file": "wordpress-quick-start.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacja",
@@ -14,7 +14,7 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "wordpress-customize.md",
       "subCat": "Instalacja WordPressa"
     },
@@ -39,7 +39,7 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Własne motywy",
+      "name": "Niestandardowe motywy",
       "file": "wordpress-custom-themes.md",
       "subCat": "Instalacja WordPressa"
     },
@@ -54,7 +54,7 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Komunikacja między WordPressem a serwerem FastComment",
+      "name": "Komunikacja między instalacją WordPress a serwerem FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacja WordPressa"
     },
@@ -64,12 +64,12 @@
       "subCat": "Instalacja WordPressa"
     },
     {
-      "name": "Widżet najnowszych komentarzy",
+      "name": "Widżet ostatnich komentarzy",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Inne widżety"
     },
     {
-      "name": "Widżet najnowszych dyskusji",
+      "name": "Widżet ostatnich dyskusji",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "Inne widżety"
     },
@@ -79,7 +79,12 @@
       "subCat": "Inne widżety"
     },
     {
-      "name": "Dezaktywacja a odinstalowanie wtyczki",
+      "name": "Przenoszenie komentarzy na nową stronę",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Przenoszenie poza WordPress"
+    },
+    {
+      "name": "Dezaktywacja vs odinstalowanie wtyczki",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Usuwanie wtyczki"
     }

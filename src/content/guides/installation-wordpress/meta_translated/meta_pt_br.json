@@ -1,6 +1,6 @@
 {
   "name": "Instalação do WordPress",
-  "pageHeader": "Adicionar comentários ao vivo em sites WordPress",
+  "pageHeader": "Adicionar Comentários ao Vivo em Sites WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -29,7 +29,7 @@
       "subCat": "Instalação do WordPress"
     },
     {
-      "name": "Sites Somente para Membros (SSO)",
+      "name": "Sites Apenas para Membros (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Instalação do WordPress"
     },
@@ -44,7 +44,7 @@
       "subCat": "Instalação do WordPress"
     },
     {
-      "name": "Sincronização com o WordPress",
+      "name": "Sincronizando de Volta ao WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Instalação do WordPress"
     },
@@ -54,7 +54,7 @@
       "subCat": "Instalação do WordPress"
     },
     {
-      "name": "Comunicação entre o WordPress e o servidor FastComment",
+      "name": "Comunicação entre Instalação do WordPress <> Servidor FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalação do WordPress"
     },
@@ -79,7 +79,12 @@
       "subCat": "Outros Widgets"
     },
     {
-      "name": "Desativar vs Desinstalar o Plugin",
+      "name": "Movendo Seus Comentários para um Novo Site",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Migrando do WordPress"
+    },
+    {
+      "name": "Desativando vs Desinstalando o Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Remoção do Plugin"
     }

@@ -1,7 +1,7 @@
 ---
 Bien que le support FastComments puisse aider lors des migrations, la plupart peuvent être effectuées et surveillées facilement sans aucune intervention du personnel de support.
 
-Nous prenons en charge nativement l'importation d'exports des fournisseurs suivants :
+Nous prenons en charge nativement l'importation d'exports provenant des fournisseurs suivants :
 
 - Commento
 - Disqus
@@ -10,18 +10,18 @@ Nous prenons en charge nativement l'importation d'exports des fournisseurs suiva
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin)
-- AnyComment (Via WordPress Import/Export)
+- WordPress (via le plugin, ou un export XML ou CSV)
+- AnyComment (Via l'import/export WordPress)
 
-En naviguant [ici](https://fastcomments.com/auth/my-account/manage-data/import) nous pouvons télécharger le fichier contenant les données à migrer.
+En naviguant [ici](https://fastcomments.com/auth/my-account/manage-data/import), nous pouvons télécharger le fichier contenant les données à migrer.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Page d\'importation FastComments avec la sélection du fournisseur et les champs de téléchargement de fichier pour un fichier d\'export'; title='Le formulaire de la page d\'importation' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Page d\'importation FastComments avec la sélection du fournisseur et les champs de téléchargement de fichier pour un fichier d\'exportation'; title='Le formulaire de la page d\'importation' app-screenshot-end]
 
 ### Surveillance des importations
 
-FastComments utilise un système de traitement des tâches pour gérer les importations et les exportations. Une fois que le système a récupéré votre tâche, il rapporte périodiquement l'état de la tâche dans l'interface d'importation ou d'exportation.
+FastComments utilise un système de traitement des tâches pour gérer les importations et les exportations. Une fois que le système a récupéré votre tâche, il rapporte périodiquement le statut de la tâche dans l'interface d'importation ou d'exportation.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Page d\'importation affichant une tâche d\'importation en cours et l\'état rapporté par le système de traitement des tâches'; title='État de la tâche d\'importation' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Page d\'importation affichant un travail d\'importation en cours et le statut rapporté par le système de traitement des travaux'; title='Statut du travail d\'importation' app-screenshot-end]
 
 Notez que le statut des importations et des exportations est visible par tous les administrateurs du compte.
 

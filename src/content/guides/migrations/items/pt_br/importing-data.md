@@ -1,6 +1,7 @@
-While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
+---
+Embora o suporte do FastComments possa ajudar nas migrações, a maioria pode ser realizada e monitorada facilmente sem qualquer intervenção da equipe de suporte.
 
-We natively support importing exports from the following providers:
+Nós suportamos nativamente a importação de exportações dos seguintes provedores:
 
 - Commento
 - Disqus
@@ -9,31 +10,31 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin)
+- WordPress (via o plugin, ou um export XML ou CSV)
 - AnyComment (Via WordPress Import/Export)
 
-By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
+Ao navegar [aqui](https://fastcomments.com/auth/my-account/manage-data/import) podemos fazer upload do arquivo contendo os dados a serem migrados.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Página de importação do FastComments com a seleção de provedor e campos de upload de arquivo para um arquivo de exportação'; title='Formulário da Página de Importação' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Página de importação do FastComments com a seleção de provedor e campos de upload de arquivo para um arquivo de exportação'; title='Formulário da página de importação' app-screenshot-end]
 
-### Monitoring Imports
+### Monitoramento de Importações
 
-FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
+O FastComments usa um sistema de processamento de tarefas para processar importações e exportações. Uma vez que o sistema tenha capturado sua tarefa, ele relatará periodicamente o status da tarefa na interface de importação ou exportação.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Página de importação mostrando um job de importação em execução e o status reportado pelo sistema de processamento de jobs'; title='Status do Job de Importação' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Página de importação mostrando um trabalho de importação em execução e o status relatado pelo sistema de processamento de trabalhos'; title='Status do trabalho de importação' app-screenshot-end]
 
-Note that the status for Imports and Export are viewable by all administrators in the account.
+Observe que o status das importações e exportações pode ser visualizado por todos os administradores da conta.
 
-If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
+Se sua tarefa falhar, ela não será reiniciada automaticamente. A importação terá que ser tentada novamente. Se alguma importação ou exportação falhar, nossos administradores de sistema são notificados automaticamente. Se identificarmos um problema, entraremos em contato para ver se podemos ajudar.
 
-### Re-Running The Import
+### Reexecutando a Importação
 
-During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
+Durante algumas migrações, é necessário executar a importação várias vezes. Por exemplo, é comum fazer uma primeira passagem de migração para testes e, em seguida, executar a importação novamente com os dados mais recentes antes de mudar o sistema.
 
-Re-importing the same content **will not create duplicates**.
+Reimportar o mesmo conteúdo **não criará duplicatas**.
 
-### Data Security and Expiration
+### Segurança de Dados e Expiração
 
-Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
+Os arquivos de importação não são acessíveis por solicitações externas de nenhuma forma, e os arquivos de importação são excluídos do nosso sistema assim que a importação é concluída.
 
 ---

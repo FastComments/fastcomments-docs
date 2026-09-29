@@ -1,12 +1,12 @@
 {
   "name": "WordPress 安装",
-  "pageHeader": "为 WordPress 网站添加实时评论",
+  "pageHeader": "为 WordPress 站点添加实时评论",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "快速开始",
+      "name": "快速入门",
       "file": "wordpress-quick-start.md",
-      "subCat": "快速概览"
+      "subCat": "TLDR"
     },
     {
       "name": "安装",
@@ -24,12 +24,12 @@
       "subCat": "WordPress 安装"
     },
     {
-      "name": "用户、版主和管理员",
+      "name": "用户、审核员和管理员",
       "file": "wordpress-users-moderators-admins.md",
       "subCat": "WordPress 安装"
     },
     {
-      "name": "会员专属站点（SSO）",
+      "name": "仅限会员站点（单点登录）",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress 安装"
     },
@@ -49,12 +49,12 @@
       "subCat": "WordPress 安装"
     },
     {
-      "name": "评论数",
+      "name": "评论计数",
       "file": "wordpress-comment-counts.md",
       "subCat": "WordPress 安装"
     },
     {
-      "name": "WordPress 安装与 FastComment 服务器通信",
+      "name": "WordPress 安装 <> FastComment 服务器通信",
       "file": "wordpress-server-communication.md",
       "subCat": "WordPress 安装"
     },
@@ -64,19 +64,24 @@
       "subCat": "WordPress 安装"
     },
     {
-      "name": "最新评论小工具",
+      "name": "最新评论小部件",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "其他小工具"
+      "subCat": "其他小部件"
     },
     {
-      "name": "最近讨论小工具",
+      "name": "最近讨论小部件",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "其他小工具"
+      "subCat": "其他小部件"
     },
     {
-      "name": "热门页面小工具",
+      "name": "热门页面小部件",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "其他小工具"
+      "subCat": "其他小部件"
+    },
+    {
+      "name": "将评论迁移到新站点",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "脱离 WordPress"
     },
     {
       "name": "停用与卸载插件的区别",

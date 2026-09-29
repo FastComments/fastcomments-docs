@@ -1,20 +1,17 @@
-当社の [WordPress プラグイン](https://wordpress.org/plugins/fastcomments/) には強力な UI ベースのインポート機能があります。プラグインをインストールすると、
-WordPress のインストールを FastComments とリンクし、既存のコメントデータをコピーする手順が案内されます。
+Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) は、強力な UI ベースのインポート機能を備えています。プラグインをインストールすると、WordPress インストールと FastComments をリンクし、既存のコメントデータをコピーする手順を案内します。
 
-**手動でファイルをコピーしたりダウンロードしたりする必要はありません。**
+**これは手動で何もコピーしたりダウンロードしたりすることなく行われます。**
 
-マイグレーションの進行はマイグレーション中に UI 上で示されます。ほとんどのマイグレーションは数分で完了します。
+移行中は UI にて移行プロセスが表示されます。ほとんどの移行は数分で完了します。
 
-この仕組みは、マイグレーション中に WordPress のインストールに過度な負荷をかけないように設計されています。
+この仕組みは、移行中に WordPress インストールに過度な負荷をかけないよう設計されています。
 
-### CloudFlare とファイアウォール
+WordPress からサイトを移行する場合は、プラグインを使用せずに WordPress の XML または CSV エクスポートをインポートできます。詳しくは [Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress) をご覧ください。
 
-自動 WordPress セットアップを機能させるためには、当社があなたの WordPress インストールに対して呼び出しを行う必要があります。
-Cloudflare のようなファイアウォールが当社からの接続をブロックし、統合が失敗する場合があります。そのような場合、[ご提供
-できます](https://fastcomments.com/auth/my-account/help) 統合のためにホワイトリスト登録する IP のセットを。
+### CloudFlare & FireWalls
 
-### データ所有権
+自動化された WordPress 設定が機能するためには、WordPress インストールに対して呼び出しを行う必要があります。Cloudflare などのファイアウォールがブロックし、統合が失敗することがあります。そのような場合、[ご提供できます](https://fastcomments.com/auth/my-account/help) で統合のためにホワイトリストに追加すべき IP のセットをご提供できます。
 
-当社の WordPress マイグレーションの場合、新規または更新されたコメントデータは自動的にバックグラウンドであなたの WordPress インストールに同期されます。
-つまり、コメントは WordPress の負荷を軽減するために FastComments から配信されますが、私たちは**また**それらをバックアップとしてあなたのデータベースにも保存します。これはまた、FastComments から移行したい場合でも、あなたのデータは
-既に移行済みで最新であることを意味します。
+### Data Ownership
+
+WordPress 移行の場合、新規または更新されたコメントデータは自動的に裏側で WordPress インストールに同期されます。つまり、コメントは FastComments が直接配信して WordPress の負荷を軽減しますが、**同時に** バックアップとしてデータベースにも保存します。また、FastComments から別のサービスへ切り替えたい場合でも、データはすでに移行済みで最新の状態です。

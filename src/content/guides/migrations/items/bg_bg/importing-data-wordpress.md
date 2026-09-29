@@ -7,15 +7,17 @@ The migration process will be indicated to you via the UI during the migration. 
 
 The mechanism is designed to not put excessive load on your WordPress installation during the migration.
 
-### CloudFlare & Защитни стени
+If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
+[Преместване на вашите коментари към нов сайт](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+
+### CloudFlare & FireWalls
 
 In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
-Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [можем да ви
-предоставим](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
+Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [можем да ви предоставим](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
 
-### Собственост на данните
+### Data Ownership
 
 In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
 behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
-we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
+we **също** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
 already migrated and up to date.
