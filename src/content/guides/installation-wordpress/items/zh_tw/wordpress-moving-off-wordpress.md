@@ -1,50 +1,39 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from
-WordPress, then upload the file on the [Import page](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+如果您正將網站從 WordPress 移走且想在新網站上使用 FastComments，則不需要 WordPress 外掛。從 WordPress 匯出您的評論，然後在 FastComments 儀表板的[匯入頁面](https://fastcomments.com/auth/my-account/manage-data/import)上傳檔案。
 
-We support two WordPress export formats.
+我們支援兩種 WordPress 匯出格式。
 
-### WordPress XML（Recommended）
+### WordPress XML（推薦）
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+這是 WordPress 內建匯出工具產生的檔案，無需額外外掛。
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. 在您的 WordPress 後台，前往 `Tools -> Export`。2. 選取 `All content` 並點擊 `Download Export File`。3. 在 FastComments 的[匯入頁面](https://fastcomments.com/auth/my-account/manage-data/import)，選取 `WordPress (.xml)` 並上傳檔案。
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+每則評論都與其所屬文章的 URL 相關聯，該資訊已包含在檔案中。
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are
-brought over from Gravatar. Votes are not part of this format.
+匯入時會保留作者名稱、電子郵件與網站、日期、內容、回覆串接，以及評論是否已核准。評論者的頭像會從 Gravatar 取得。投票不屬於此格式。
 
 ### WordPress CSV
 
-This is the file from [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+這是來自[WebToffee 的 WordPress Comments Import & Export 外掛](https://wordpress.org/plugins/comments-import-export-woocommerce/)的檔案。
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. 在您的 WordPress 後台安裝此外掛，並將評論匯出為 CSV。2. 將每個 `comment_post_ID` 值替換為文章的 URL。3. 在 FastComments 的[匯入頁面](https://fastcomments.com/auth/my-account/manage-data/import)，選取 `WordPress (.csv)` 並上傳檔案。
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs,
-so step 2 replaces it with the URL.
+每則評論都與 `comment_post_ID` 欄位相關聯。WordPress 會在此欄位填入文章 ID，而您的新網站沒有 WordPress 文章 ID，因此第 2 步會將其改為 URL。
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are
-brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+匯入時會保留作者名稱、電子郵件與網站、日期、內容、回覆串接，以及評論是否已核准。評論者的頭像會從 Gravatar 取得。它也會保留 WordPress 的垃圾訊息標記，以及 wpDiscuz 的讚與倒讚（若檔案中包含這些資訊）。
 
-### Matching Comments to Your New Pages
+### 將評論對應到新頁面
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+如果您的新網站保留與 WordPress 相同的 URL，評論會自動顯示在相對應的頁面，無需額外設定。
 
-If the domain changes, run the [Domain Migration tool](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can
-[migrate each page](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+如果網域變更，請在匯入後執行[域名遷移工具](/guide-migrations.html#migrating-domains)。若個別頁面的 URL 變更，您可以[遷移每個頁面](/guide-migrations.html#migrating-pages)從舊 URL 轉至新 URL。
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id)
-field, [open a support ticket](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+若需大量頁面遷移，例如從評論小工具的[urlId](/guide-customizations-and-configuration.html#url-id)欄位值中移除網域，請[開啟支援票證](https://fastcomments.com/auth/my-account/help)，我們會為您處理。
 
-### Before You Switch
+### 切換前
 
-You can run the import as many times as you like. Re-importing the same file [does not create duplicates](/guide-migrations.html#importing-data), so you can
-import once to test the new site, then import again with your latest comments right before switching over.
+您可以隨意多次執行匯入。重新匯入相同檔案[不會產生重複項](/guide-migrations.html#importing-data)，因此您可以先匯入一次測試新網站，然後在切換前再次匯入最新的評論。
 
-For export files larger than 1GB, [reach out to support](https://fastcomments.com/auth/my-account/help).
+若匯出檔案大於 1GB，請[聯絡支援](https://fastcomments.com/auth/my-account/help)。
 
-To add FastComments to your new site, see the [Installation guide](/guide-installation.html).
+若要將 FastComments 加入您的新網站，請參考[安裝指南](/guide-installation.html)。

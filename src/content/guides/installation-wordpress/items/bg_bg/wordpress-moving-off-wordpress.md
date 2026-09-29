@@ -1,50 +1,43 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from
-WordPress, then upload the file on the [Import page](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+Ако преминавате вашия сайт от WordPress и искате FastComments на новия сайт, не ви е необходим плъгинът за WordPress. Експортирайте вашите коментари от WordPress, след което качете файла на [Import page](https://fastcomments.com/auth/my-account/manage-data/import) в таблото на FastComments.
 
-We support two WordPress export formats.
+Поддържаме два формата за експортиране от WordPress.
 
 ### WordPress XML (Recommended)
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+Това е файлът от вградената в WordPress функция за експортиране, така че не е необходим допълнителен плъгин.
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. В админ панела на WordPress отидете на `Tools -> Export`.
+2. Изберете `All content` и кликнете върху `Download Export File`.
+3. На FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import) изберете `WordPress (.xml)` и качете файла.
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+Всеки коментар е свързан с URL адреса на публикацията, в която е оставен, което вече е включено във файла.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are
-brought over from Gravatar. Votes are not part of this format.
+Импортът запазва името на автора, имейла и уебсайта, датата, съдържанието, нишката от отговори и дали коментарът е одобрен. Аватарите на коментаторите се пренасят от Gravatar. Гласовете не са част от този формат.
 
 ### WordPress CSV
 
-This is the file from [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+Това е файлът от [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. Инсталирайте плъгина в админ панела на WordPress и експортирайте вашите коментари като CSV.
+2. Заменете всяка стойност `comment_post_ID` с URL адреса на публикацията.
+3. На FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import) изберете `WordPress (.csv)` и качете файла.
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs,
-so step 2 replaces it with the URL.
+Всеки коментар е свързан със колоната `comment_post_ID`. WordPress попълва тази колона с идентификатора на публикацията, а вашият нов сайт няма WordPress идентификатори за публикации, затова стъпка 2 я заменя с URL адреса.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are
-brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+Импортът запазва името на автора, имейла и уебсайта, датата, съдържанието, нишката от отговори и дали коментарът е одобрен. Аватарите на коментаторите се пренасят от Gravatar. Също така се запазва флагът за спам на WordPress и харесванията/нехаресванията от wpDiscuz, ако файлът ги съдържа.
 
 ### Matching Comments to Your New Pages
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+Ако вашият нов сайт запази същите URL адреси като вашия WordPress сайт, коментарите ще се появят на съответните страници без допълнителна настройка.
 
-If the domain changes, run the [Domain Migration tool](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can
-[migrate each page](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+Ако домейнът се промени, стартирайте [Domain Migration tool](/guide-migrations.html#migrating-domains) след импорта. Ако индивидуалните URL адреси на страниците се променят, можете да [migrate each page](/guide-migrations.html#migrating-pages) от стария URL към новия.
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id)
-field, [open a support ticket](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+За масови миграции на страници, като премахване на домейна от стойността, която подавате в полето за коментари [urlId](/guide-customizations-and-configuration.html#url-id), [open a support ticket](https://fastcomments.com/auth/my-account/help) и ние ще се погрижим за това.
 
 ### Before You Switch
 
-You can run the import as many times as you like. Re-importing the same file [does not create duplicates](/guide-migrations.html#importing-data), so you can
-import once to test the new site, then import again with your latest comments right before switching over.
+Можете да изпълнявате импорта колкото пъти желаете. Преимпортирането на същия файл [не създава дублирани записи](/guide-migrations.html#importing-data), така че можете да импортирате веднъж, за да тествате новия сайт, след което да импортирате отново с последните си коментари точно преди да преминете.
 
-For export files larger than 1GB, [reach out to support](https://fastcomments.com/auth/my-account/help).
+За файлове за експортиране, по-големи от 1 GB, [свържете се с поддръжката](https://fastcomments.com/auth/my-account/help).
 
-To add FastComments to your new site, see the [Installation guide](/guide-installation.html).
+За да добавите FastComments към вашия нов сайт, вижте [Ръководство за инсталиране](/guide-installation.html).
