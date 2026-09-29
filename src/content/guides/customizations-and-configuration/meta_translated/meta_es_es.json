@@ -18,219 +18,219 @@
       "subCat": "Lo básico"
     },
     {
-      "name": "Estilos personalizados",
+      "name": "Estilo personalizado",
       "file": "custom-css.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Fuentes personalizadas",
       "file": "custom-fonts.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Eliminando la marca",
       "file": "remove-branding.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Soporte para fondos oscuros (Modo oscuro)",
       "file": "has-dark-background.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Alternar modo oscuro",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Sobrescribir texto",
       "file": "translations.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Cambiar el avatar predeterminado",
       "file": "default-avatar-src.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar avatares",
       "file": "hide-avatars.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar todos los estilos predeterminados",
       "file": "no-styles.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
-      "name": "Enlazar desde los comentarios a las páginas",
+      "name": "Enlazar desde los comentarios a páginas",
       "file": "url.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Colapsar respuestas por defecto",
       "file": "collapse-replies.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Activar WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar la barra de herramientas",
       "file": "disable-toolbar.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
-      "name": "Desactivar el bloqueo",
+      "name": "Desactivar bloqueo",
       "file": "disable-blocking.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Determinar qué página renderizar",
       "file": "starting-page.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Cambiar hilos de comentarios sin recargar la página",
       "file": "switching-comment-threads.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Fechas absolutas (Desactivar marcas de tiempo legibles)",
       "file": "absolute-dates.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Mostrar fechas absolutas y relativas",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Agregar texto de encabezado",
       "file": "header-html.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Renderizar enlaces como texto",
       "file": "render-links-as-text.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Alternar comentarios con un botón",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Personalizar el texto del recuento de comentarios",
       "file": "comment-count-format.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar redirección de imágenes",
       "file": "disable-image-redirect.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar creación automática de hashtags",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar campana de notificaciones",
       "file": "disable-notification-bell.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar perfiles",
       "file": "disable-profiles.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar comentarios de perfil",
       "file": "disable-profile-comments.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar mensajes directos del perfil",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar mensaje de éxito",
       "file": "disable-success-message.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
-      "name": "Cambiar la clasificación de contenido de los GIFs",
+      "name": "Cambiar la clasificación de contenido de GIFs",
       "file": "gif-rating.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Moderación de contenido de imágenes",
       "file": "image-content-moderation.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Cambiar el estilo de votación",
       "file": "vote-style.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar eliminación",
       "file": "disable-deleting.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar edición",
       "file": "disable-editing.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Resaltar nuevos comentarios",
       "file": "highlighting-new-comments.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Tamaños de página",
       "file": "page-size.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Plantillas de correo electrónico",
       "file": "email-templates.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Formatos de nombre de usuario",
       "file": "user-name-formats.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Desactivar cargas de imágenes",
       "file": "no-image-uploads.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Permitir incrustaciones de medios",
       "file": "allow-media-embeds.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Activar cuadro de búsqueda",
       "file": "enable-search.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Activar spoilers",
       "file": "enable-spoilers.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Activar recuento de vistas de comentarios",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Mostrar comentarios en vivo de inmediato",
@@ -288,7 +288,7 @@
       "subCat": "El cuadro de respuesta"
     },
     {
-      "name": "Profundidad máxima de respuesta",
+      "name": "Profundidad máxima de respuestas",
       "file": "max-reply-depth.md",
       "subCat": "El cuadro de respuesta"
     },
@@ -343,7 +343,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Desactivar campos de correo electrónico",
+      "name": "Desactivar entradas de correo electrónico",
       "file": "disable-email-inputs.md",
       "subCat": "Comentarios anónimos"
     },
@@ -360,6 +360,11 @@
     {
       "name": "Establecer un nombre de usuario predeterminado",
       "file": "default-username.md",
+      "subCat": "Comentarios anónimos"
+    },
+    {
+      "name": "Generar nombres de usuario automáticamente",
+      "file": "auto-generate-username.md",
       "subCat": "Comentarios anónimos"
     },
     {
@@ -425,12 +430,12 @@
     {
       "name": "Mostrar insignias en la barra superior",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     },
     {
       "name": "Mostrar lista de usuarios en línea",
       "file": "users-list.md",
-      "subCat": "Apariencia y Sensación"
+      "subCat": "Aspecto y sensación"
     }
   ]
 }

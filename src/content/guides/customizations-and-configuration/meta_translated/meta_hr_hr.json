@@ -58,7 +58,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogućavanje svih zadanih stilova",
+      "name": "Onemogućavanje svih zadalih stilova",
       "file": "no-styles.md",
       "subCat": "Izgled i dojam"
     },
@@ -258,7 +258,7 @@
       "subCat": "Paginacija i sortiranje"
     },
     {
-      "name": "Prikaz svih komentara odjednom - Onemogući paginaciju",
+      "name": "Prikaz svih komentara odjednom – onemogući paginaciju",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginacija i sortiranje"
     },
@@ -298,7 +298,7 @@
       "subCat": "Okvir za odgovor"
     },
     {
-      "name": "Upozori prije napuštanja s neposlanim komentarom",
+      "name": "Upozori prije napuštanja s neslanim komentarom",
       "file": "warn-on-unsaved-comment.md",
       "subCat": "Okvir za odgovor"
     },
@@ -363,6 +363,11 @@
       "subCat": "Anonimno komentiranje"
     },
     {
+      "name": "Automatsko generiranje korisničkih imena",
+      "file": "auto-generate-username.md",
+      "subCat": "Anonimno komentiranje"
+    },
+    {
       "name": "Povratni pozivi",
       "file": "callbacks.md",
       "subCat": "Razno"
@@ -403,7 +408,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Grupe moderacije",
+      "name": "Grupe moderiranja",
       "file": "moderation-group-ids.md",
       "subCat": "Razno"
     },

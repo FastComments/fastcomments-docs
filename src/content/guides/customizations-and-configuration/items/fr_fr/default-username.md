@@ -1,8 +1,17 @@
----
-Lorsque les utilisateurs commentent ou votent, et qu'ils ne sont pas connectés, on leur demandera de fournir leur e‑mail et leur nom d'utilisateur.
+When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
 
-Dans le cas des commentaires anonymes, il est parfois souhaitable de définir un nom d'utilisateur par défaut afin de réduire la friction lors du commentaire. Cela peut être fait depuis l'interface de personnalisation. Le commentaire anonyme doit d'abord être activé.
+In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
+when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Champ du nom d\'utilisateur par défaut qui apparaît dans l\'interface de personnalisation une fois le commentaire anonyme activé'; title='Définir le nom d\'utilisateur par défaut' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Champ du nom d\'utilisateur par défaut qui apparaît dans l\'interface de personnalisation une fois les commentaires anonymes activés'; title='Définir le nom d\'utilisateur par défaut' app-screenshot-end]
 
----
+#### Sharing The Default Username
+
+The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
+gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
+so "Anonymous" is never reported as already taken.
+
+Usernames that a visitor types themselves still have to be unique.
+
+If you would rather each visitor get a distinct name without having to think of one, see
+[Generate Usernames Automatically](/guide-customizations-and-configuration.html#auto-generate-username).

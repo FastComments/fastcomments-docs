@@ -20,6 +20,8 @@ body { margin: 0; padding: 0; }
     /* unicode-bidi is not inherited, so blocks inside user text need it too; pre is left alone so code stays LTR */
     .comment-text :is(p, div, blockquote, li, h1, h2, h3, h4, h5, h6), [name="fastcomments-comment"] :is(p, div, blockquote, li) { unicode-bidi: plaintext; }
     .comment-text :is(pre, code), [name="fastcomments-comment"] :is(pre, code) { direction: ltr; unicode-bidi: isolate; }
+    /* isolates each tag with its own direction so a Latin tag keeps its leading "#" inside Arabic text */
+    .hash-tag { unicode-bidi: plaintext; }
     .invisible { visibility: hidden }
     .inline-block { display: inline-block }
     .icon { display: inline-block; width: 24px; height: 24px; vertical-align: middle; image-rendering: -webkit-optimize-contrast; }

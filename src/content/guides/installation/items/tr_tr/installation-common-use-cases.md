@@ -1,25 +1,28 @@
-### Canlı Yorumları Hemen Gösterme
+### Showing Live Comments Right Away
 
-Yorum widget'ı varsayılan olarak canlıdır, ancak canlı yorumlar sayfa içeriğinin hareket etmesini önlemek için "N Yeni Yorum Göster" düğmesinin altında görünür.
+The comment widget is live by default, however live comments appear under a "Show N New Comments" button to prevent the page content from moving around.
 
-Bazı durumlarda, bir düğmeye tıklamak zorunda kalmadan yeni yorumları hemen göstermek yine de istenir.
+In some cases, it's still desirable to show the new comments right away, without having to click a button.
 
-Bu durumda, `showLiveRightAway` bayrağını etkinleştirmek isteyeceksiniz, bunun dokümantasyonunu [burada](/guide-customizations-and-configuration.html#show-live-right-away) bulabilirsiniz.
+In this case, you want to enable the `showLiveRightAway` flag, which you can find documentation for [here](/guide-customizations-and-configuration.html#show-live-right-away).
 
-### Anonim Yorumlara İzin Verme (E-posta Gerektirmeme)
+### Allowing Anonymous Commenting (Not Requiring Email)
 
-Varsayılan olarak, FastComments kullanıcının yorum yaparken e-posta bırakmasını gerektirir.
+By default, FastComments requires the user to leave an email when they comment.
 
-Bu devre dışı bırakılabilir, [talimatlar burada](/guide-customizations-and-configuration.html#allow-anon).
+This can be disabled, [instructions are here](/guide-customizations-and-configuration.html#allow-anon).
 
-### Özel Stil
+To also spare visitors from choosing a username, FastComments can [generate one for each visitor](/guide-customizations-and-configuration.html#auto-generate-username).
 
-Müşterilerimizin çoğu yorum widget'ına kendi stillerini uygular. Dokümantasyonu [burada](/guide-customizations-and-configuration.html#custom-css) bulabilirsiniz.
+### Custom Styling
 
-### Birden Fazla Alan Adında Aynı Yorumları Gösterme
+Many of our customers apply their own styling to the comment widget. You can find the documentation [here](/guide-customizations-and-configuration.html#custom-css).
 
-Birden fazla sitede aynı yorumları göstermek, FastComments'ın kutudan çıkar çıkmaz desteklediği bir şeydir. Bu konu hakkında [dokümantasyonumuza bakın](/guide-multiple-sites.html#sharing-comments-across-domains).
+### Showing The Same Comments on Multiple Domains
 
-### Geçerli Sayfayı Değiştirme
+Showing the same comments on multiple sites is something FastComments supports out of the box. See our
+[documentation on this subject](/guide-multiple-sites.html#sharing-comments-across-domains).
 
-FastComments SPA'ları ve karmaşık uygulamaları destekler. Geçerli sayfayı değiştirmek kolaydır ve [burada](/guide-customizations-and-configuration.html#switching-comment-threads) ele alınmaktadır.
+### Changing The Current Page
+
+FastComments supports SPAs and complex applications. Changing the current page is easy, and covered [here](/guide-customizations-and-configuration.html#switching-comment-threads).

@@ -1,16 +1,18 @@
-### Afficher les commentaires en direct immédiatement
+### Affichage immédiat des commentaires en direct
 
-Le widget de commentaires est en direct par défaut, cependant les commentaires en direct apparaissent sous un bouton « Afficher N nouveaux commentaires » pour empêcher le contenu de la page de se déplacer.
+Le widget de commentaires est en direct par défaut, cependant les commentaires en direct apparaissent sous un bouton « Afficher N nouveaux commentaires » afin d'éviter que le contenu de la page ne se déplace.
 
-Dans certains cas, il est tout de même souhaitable d'afficher les nouveaux commentaires immédiatement, sans avoir à cliquer sur un bouton.
+Dans certains cas, il est encore souhaitable d'afficher les nouveaux commentaires immédiatement, sans avoir à cliquer sur un bouton.
 
-Dans ce cas, vous devez activer l'option `showLiveRightAway`, dont vous pouvez trouver la documentation [ici](/guide-customizations-and-configuration.html#show-live-right-away).
+Dans ce cas, vous devez activer le drapeau `showLiveRightAway`, dont vous pouvez trouver la documentation [ici](/guide-customizations-and-configuration.html#show-live-right-away).
 
-### Autoriser les commentaires anonymes (ne pas exiger de courriel)
+### Autoriser les commentaires anonymes (sans exigence d'email)
 
-Par défaut, FastComments exige que l'utilisateur laisse un courriel lorsqu'il commente.
+Par défaut, FastComments exige que l'utilisateur laisse un email lorsqu'il commente.
 
 Cela peut être désactivé, [les instructions sont ici](/guide-customizations-and-configuration.html#allow-anon).
+
+Pour également éviter aux visiteurs de choisir un nom d'utilisateur, FastComments peut [en générer un pour chaque visiteur](/guide-customizations-and-configuration.html#auto-generate-username).
 
 ### Style personnalisé
 
@@ -18,8 +20,8 @@ Beaucoup de nos clients appliquent leur propre style au widget de commentaires. 
 
 ### Afficher les mêmes commentaires sur plusieurs domaines
 
-Afficher les mêmes commentaires sur plusieurs sites est quelque chose que FastComments prend en charge nativement. Consultez notre [documentation sur ce sujet](/guide-multiple-sites.html#sharing-comments-across-domains).
+Afficher les mêmes commentaires sur plusieurs sites est une fonctionnalité prise en charge nativement par FastComments. Consultez notre [documentation à ce sujet](/guide-multiple-sites.html#sharing-comments-across-domains).
 
 ### Changer la page actuelle
 
-FastComments prend en charge les SPA et les applications complexes. Changer la page actuelle est facile et est couvert [ici](/guide-customizations-and-configuration.html#switching-comment-threads).
+FastComments prend en charge les SPA et les applications complexes. Changer la page actuelle est simple, et est couvert [ici](/guide-customizations-and-configuration.html#switching-comment-threads).

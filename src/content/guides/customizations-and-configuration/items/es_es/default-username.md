@@ -1,8 +1,17 @@
----
-Cuando los usuarios comentan o votan, y no han iniciado sesión, se les pedirá que proporcionen su correo electrónico y nombre de usuario.
+When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
 
-En el caso de comentarios anónimos, a veces es deseable definir un nombre de usuario predeterminado para reducir la fricción al comentar. Esto se puede hacer desde la interfaz de personalización. Los comentarios anónimos deben estar habilitados primero.
+In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
+when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Campo de nombre de usuario predeterminado que aparece en la interfaz de personalización una vez que los comentarios anónimos están habilitados'; title='Estableciendo el nombre de usuario predeterminado' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Campo de nombre de usuario predeterminado que aparece en la interfaz de personalización una vez que los comentarios anónimos están habilitados'; title='Configurando el nombre de usuario predeterminado' app-screenshot-end]
 
----
+#### Sharing The Default Username
+
+The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
+gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
+so "Anonymous" is never reported as already taken.
+
+Usernames that a visitor types themselves still have to be unique.
+
+If you would rather each visitor get a distinct name without having to think of one, see
+[Generar nombres de usuario automáticamente](/guide-customizations-and-configuration.html#auto-generate-username).

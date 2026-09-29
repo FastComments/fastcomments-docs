@@ -118,7 +118,7 @@
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Reacties in- of uitschakelen met een knop",
+      "name": "Reacties met een knop in- en uitschakelen",
       "file": "use-show-comments-toggle.md",
       "subCat": "Uiterlijk en gevoel"
     },
@@ -128,7 +128,7 @@
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Afbeeldings-redirect uitschakelen",
+      "name": "Afbeeldingsomleiding uitschakelen",
       "file": "disable-image-redirect.md",
       "subCat": "Uiterlijk en gevoel"
     },
@@ -328,7 +328,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Beschermen van reactie-threads met Single Sign-On",
+      "name": "Reactie-threads beschermen met Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -343,7 +343,7 @@
       "subCat": "Anonieme reacties"
     },
     {
-      "name": "E-mailinvoer uitschakelen",
+      "name": "E-mailvelden uitschakelen",
       "file": "disable-email-inputs.md",
       "subCat": "Anonieme reacties"
     },
@@ -360,6 +360,11 @@
     {
       "name": "Standaard gebruikersnaam instellen",
       "file": "default-username.md",
+      "subCat": "Anonieme reacties"
+    },
+    {
+      "name": "Gebruikersnamen automatisch genereren",
+      "file": "auto-generate-username.md",
       "subCat": "Anonieme reacties"
     },
     {
@@ -383,7 +388,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Voorkom nieuwe antwoorden & uitschakelen van stemmen",
+      "name": "Voorkom nieuwe antwoorden & stemmen uitschakelen",
       "file": "readonly.md",
       "subCat": "Divers"
     },
@@ -398,7 +403,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Reactie-auteurslinks inschakelen",
+      "name": "Reactiegeverlinks inschakelen",
       "file": "enable-commenter-links.md",
       "subCat": "Divers"
     },

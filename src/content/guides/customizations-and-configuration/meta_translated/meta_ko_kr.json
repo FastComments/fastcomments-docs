@@ -363,6 +363,11 @@
       "subCat": "익명 댓글"
     },
     {
+      "name": "사용자 이름 자동 생성",
+      "file": "auto-generate-username.md",
+      "subCat": "익명 댓글"
+    },
+    {
       "name": "콜백",
       "file": "callbacks.md",
       "subCat": "기타"

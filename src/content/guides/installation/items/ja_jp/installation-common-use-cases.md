@@ -1,25 +1,27 @@
-### ライブコメントをすぐに表示する
+### コメントをすぐに表示する
 
-コメントウィジェットはデフォルトでライブですが、ライブコメントは「N件の新しいコメントを表示」ボタンの下に表示され、ページコンテンツが移動するのを防ぎます。
+コメントウィジェットはデフォルトでライブですが、ページの内容が移動しないように、ライブコメントは「N 件の新しいコメントを表示」ボタンの下に表示されます。
 
-場合によっては、ボタンをクリックせずに新しいコメントをすぐに表示することが望ましいことがあります。
+場合によっては、ボタンをクリックせずに新しいコメントをすぐに表示したいことがあります。
 
-この場合、`showLiveRightAway`フラグを有効にする必要があります。ドキュメントは[こちら](/guide-customizations-and-configuration.html#show-live-right-away)で見つけることができます。
+この場合、`showLiveRightAway` フラグを有効にします。そのドキュメントは[こちら](/guide-customizations-and-configuration.html#show-live-right-away)にあります。
 
-### 匿名コメントを許可する（メールを必須としない）
+### 匿名コメントの許可（メール不要）
 
-デフォルトでは、FastCommentsはコメント時にユーザーがメールを残すことを要求します。
+デフォルトでは、FastComments はコメント時にメールアドレスの入力を必須としています。
 
-これは無効にできます。[手順はこちら](/guide-customizations-and-configuration.html#allow-anon)。
+これを無効にすることができ、手順は[こちら](/guide-customizations-and-configuration.html#allow-anon)です。
+
+訪問者がユーザー名を選択する手間を省くために、FastComments は[訪問者ごとにユーザー名を自動生成](/guide-customizations-and-configuration.html#auto-generate-username)できます。
 
 ### カスタムスタイリング
 
-多くのお客様がコメントウィジェットに独自のスタイリングを適用しています。ドキュメントは[こちら](/guide-customizations-and-configuration.html#custom-css)で見つけることができます。
+多くの顧客がコメントウィジェットに独自のスタイルを適用しています。ドキュメントは[こちら](/guide-customizations-and-configuration.html#custom-css)にあります。
 
-### 複数のドメインで同じコメントを表示する
+### 複数ドメインで同じコメントを表示する
 
-複数のサイトで同じコメントを表示することは、FastCommentsがすぐにサポートしている機能です。この件についての[ドキュメントをご覧ください](/guide-multiple-sites.html#sharing-comments-across-domains)。
+複数のサイトで同じコメントを表示することは、FastComments が標準でサポートしています。この件に関する[ドキュメント](/guide-multiple-sites.html#sharing-comments-across-domains)をご覧ください。
 
 ### 現在のページを変更する
 
-FastCommentsはSPAや複雑なアプリケーションをサポートしています。現在のページの変更は簡単で、[こちら](/guide-customizations-and-configuration.html#switching-comment-threads)で説明されています。
+FastComments は SPA や複雑なアプリケーションをサポートしています。現在のページの変更は簡単で、[こちら](/guide-customizations-and-configuration.html#switching-comment-threads)で説明しています。

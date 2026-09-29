@@ -1,7 +1,19 @@
----
-Όταν οι χρήστες σχολιάζουν ή ψηφίζουν και δεν είναι συνδεδεμένοι, θα τους ζητηθεί να παρέχουν το email και το όνομα χρήστη τους.
+When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
 
-Στην περίπτωση ανώνυμων σχολίων, μερικές φορές είναι επιθυμητό να οριστεί ένα προεπιλεγμένο όνομα χρήστη για να μειωθεί η τριβή κατά το σχολιασμό. Αυτό μπορεί να γίνει από το UI Προσαρμογής. Η ανώνυμη σχολιαστική λειτουργία πρέπει να ενεργοποιηθεί πρώτα.
+In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
+when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Πεδίο προεπιλεγμένου ονόματος χρήστη που εμφανίζεται στο UI προσαρμογής όταν ενεργοποιηθεί η ανώνυμη σχολιαστική λειτουργία'; title='Ορισμός του προεπιλεγμένου ονόματος χρήστη' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Πεδίο προεπιλεγμένου ονόματος χρήστη που εμφανίζεται στο UI προσαρμογής όταν ενεργοποιηθεί η ανώνυμη σχολίαση'; title='Ορισμός του προεπιλεγμένου ονόματος χρήστη' app-screenshot-end]
+
+#### Sharing The Default Username
+
+The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
+gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
+so "Anonymous" is never reported as already taken.
+
+Usernames that a visitor types themselves still have to be unique.
+
+If you would rather each visitor get a distinct name without having to think of one, see
+[Generate Usernames Automatically](/guide-customizations-and-configuration.html#auto-generate-username).
+
 ---

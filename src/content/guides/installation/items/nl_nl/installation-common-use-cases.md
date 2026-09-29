@@ -1,25 +1,28 @@
-### Live Reacties Direct Tonen
+### Live reacties meteen tonen
 
-De reactiewidget is standaard live, maar live reacties verschijnen onder een "Toon N Nieuwe Reacties" knop om te voorkomen dat de pagina-inhoud verschuift.
+De commentaarwidget is standaard live, maar live reacties verschijnen onder een "Toon N nieuwe reacties" knop om te voorkomen dat de paginainhoud verschuift.
 
-In sommige gevallen is het toch wenselijk om de nieuwe reacties direct te tonen, zonder op een knop te hoeven klikken.
+In sommige gevallen is het nog steeds wenselijk om de nieuwe reacties meteen te tonen, zonder op een knop te klikken.
 
-In dit geval wilt u de `showLiveRightAway` vlag inschakelen, waarvan u de documentatie [hier](/guide-customizations-and-configuration.html#show-live-right-away) kunt vinden.
+In dit geval wil je de `showLiveRightAway` vlag inschakelen, waarvan je de documentatie kunt vinden [hier](/guide-customizations-and-configuration.html#show-live-right-away).
 
-### Anonieme Reacties Toestaan (Geen E-mail Vereisen)
+### Anonieme reacties toestaan (e‑mail niet vereist)
 
-Standaard vereist FastComments dat de gebruiker een e-mail achterlaat wanneer hij reageert.
+Standaard vereist FastComments dat de gebruiker een e‑mail achterlaat bij het plaatsen van een reactie.
 
-Dit kan worden uitgeschakeld, [instructies zijn hier](/guide-customizations-and-configuration.html#allow-anon).
+Dit kan worden uitgeschakeld, [instructies staan hier](/guide-customizations-and-configuration.html#allow-anon).
 
-### Aangepaste Styling
+Om bezoekers ook te besparen van het kiezen van een gebruikersnaam, kan FastComments [een gebruikersnaam voor elke bezoeker genereren](/guide-customizations-and-configuration.html#auto-generate-username).
 
-Veel van onze klanten passen hun eigen styling toe op de reactiewidget. U kunt de documentatie [hier](/guide-customizations-and-configuration.html#custom-css) vinden.
+### Aangepaste styling
 
-### Dezelfde Reacties Tonen op Meerdere Domeinen
+Veel van onze klanten passen hun eigen styling toe op de commentaarwidget. Je kunt de documentatie vinden [hier](/guide-customizations-and-configuration.html#custom-css).
 
-Dezelfde reacties op meerdere sites tonen is iets dat FastComments standaard ondersteunt. Zie onze [documentatie over dit onderwerp](/guide-multiple-sites.html#sharing-comments-across-domains).
+### Dezelfde reacties op meerdere domeinen tonen
 
-### De Huidige Pagina Wijzigen
+Het tonen van dezelfde reacties op meerdere sites wordt standaard ondersteund door FastComments. Zie onze
+[documentatie over dit onderwerp](/guide-multiple-sites.html#sharing-comments-across-domains).
 
-FastComments ondersteunt SPA's en complexe applicaties. De huidige pagina wijzigen is eenvoudig en wordt [hier](/guide-customizations-and-configuration.html#switching-comment-threads) behandeld.
+### De huidige pagina wijzigen
+
+FastComments ondersteunt SPA's en complexe applicaties. Het wijzigen van de huidige pagina is eenvoudig en wordt behandeld [hier](/guide-customizations-and-configuration.html#switching-comment-threads).

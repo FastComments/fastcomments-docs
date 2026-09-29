@@ -63,12 +63,12 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Povezovanje komentarjev na strani",
+      "name": "Povezovanje iz komentarjev na strani",
       "file": "url.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Privzeto skrčenje odgovorov",
+      "name": "Privzeto skrivanje odgovorov",
       "file": "collapse-replies.md",
       "subCat": "Videz in občutek"
     },
@@ -118,7 +118,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Preklapljanje komentarjev s tipko",
+      "name": "Preklapljanje komentarjev z gumbom",
       "file": "use-show-comments-toggle.md",
       "subCat": "Videz in občutek"
     },
@@ -278,7 +278,7 @@
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Omeji število komentarjev na uporabnika",
+      "name": "Omejitev števila komentarjev na uporabnika",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Polje za odgovor"
     },
@@ -348,7 +348,7 @@
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Onemogoči oznako nepreverjeno",
+      "name": "Onemogoči oznako nepreverjenega",
       "file": "disable-unverified-label.md",
       "subCat": "Anonimno komentiranje"
     },
@@ -360,6 +360,11 @@
     {
       "name": "Nastavitev privzetega uporabniškega imena",
       "file": "default-username.md",
+      "subCat": "Anonimno komentiranje"
+    },
+    {
+      "name": "Samodejno ustvarjanje uporabniških imen",
+      "file": "auto-generate-username.md",
       "subCat": "Anonimno komentiranje"
     },
     {
@@ -428,7 +433,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prikaži seznam uporabnikov na spletu",
+      "name": "Prikaži seznam spletnih uporabnikov",
       "file": "users-list.md",
       "subCat": "Videz in občutek"
     }

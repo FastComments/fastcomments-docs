@@ -5,17 +5,17 @@
     {
       "name": "Identificando sua conta",
       "file": "tenant-id.md",
-      "subCat": "Noções básicas"
+      "subCat": "O básico"
     },
     {
       "name": "Como os comentários são vinculados a páginas e artigos",
       "file": "url-id.md",
-      "subCat": "Noções básicas"
+      "subCat": "O básico"
     },
     {
       "name": "Renderizando os mesmos comentários em diferentes páginas",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "Noções básicas"
+      "subCat": "O básico"
     },
     {
       "name": "Estilização personalizada",
@@ -33,7 +33,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Suporte a fundos escuros (Modo escuro)",
+      "name": "Suportando fundos escuros (Modo escuro)",
       "file": "has-dark-background.md",
       "subCat": "Aparência"
     },
@@ -43,7 +43,7 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Substituindo texto",
+      "name": "Sobrescrevendo texto",
       "file": "translations.md",
       "subCat": "Aparência"
     },
@@ -78,12 +78,12 @@
       "subCat": "Aparência"
     },
     {
-      "name": "Desativar a barra de ferramentas",
+      "name": "Desativando a barra de ferramentas",
       "file": "disable-toolbar.md",
       "subCat": "Aparência"
     },
     {
-      "name": "Desativar bloqueio",
+      "name": "Desativando bloqueio",
       "file": "disable-blocking.md",
       "subCat": "Aparência"
     },
@@ -265,42 +265,42 @@
     {
       "name": "Mover a caixa de resposta para depois dos comentários",
       "file": "input-after-comments.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Limitar o comprimento do comentário",
       "file": "max-comment-character-length.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Desativar comentários multilinha",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Limitar volume de comentários por usuário",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Impedir novos comentários de nível superior",
       "file": "no-new-root-comments.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Profundidade máxima de respostas",
       "file": "max-reply-depth.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Exigir aceitação dos Termos de Serviço",
       "file": "terms-of-service.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Avisar antes de sair com um comentário não enviado",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "Caixa de Resposta"
+      "subCat": "A caixa de resposta"
     },
     {
       "name": "Visão geral de Single Sign On (SSO)",
@@ -328,39 +328,44 @@
       "subCat": "SSO"
     },
     {
-      "name": "Protegindo threads de comentários com Single Sign On",
+      "name": "Protegindo threads de comentários com SSO",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
       "name": "Permitir comentários anônimos",
       "file": "allow-anon.md",
-      "subCat": "Comentário Anônimo"
+      "subCat": "Comentário anônimo"
     },
     {
       "name": "Impedir que comentários anônimos expirem",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "Comentário Anônimo"
+      "subCat": "Comentário anônimo"
     },
     {
       "name": "Desativar campos de e‑mail",
       "file": "disable-email-inputs.md",
-      "subCat": "Comentário Anônimo"
+      "subCat": "Comentário anônimo"
     },
     {
-      "name": "Desativar o rótulo não verificado",
+      "name": "Desativar rótulo não verificado",
       "file": "disable-unverified-label.md",
-      "subCat": "Comentário Anônimo"
+      "subCat": "Comentário anônimo"
     },
     {
       "name": "Permitir votação anônima",
       "file": "allow-anon-votes.md",
-      "subCat": "Comentário Anônimo"
+      "subCat": "Comentário anônimo"
     },
     {
       "name": "Definir um nome de usuário padrão",
       "file": "default-username.md",
-      "subCat": "Comentário Anônimo"
+      "subCat": "Comentário anônimo"
+    },
+    {
+      "name": "Gerar nomes de usuário automaticamente",
+      "file": "auto-generate-username.md",
+      "subCat": "Comentário anônimo"
     },
     {
       "name": "Callbacks",

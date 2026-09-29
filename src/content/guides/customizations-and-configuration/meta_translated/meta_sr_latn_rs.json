@@ -98,7 +98,7 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Apsolutni datumi (onemogući ljudski čitljive vremenske oznake)",
+      "name": "Apsolutni datumi (onemogući čitljive vremenske oznake)",
       "file": "absolute-dates.md",
       "subCat": "Izgled i osećaj"
     },
@@ -223,7 +223,7 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Omogući spoiler-e",
+      "name": "Omogući spoilere",
       "file": "enable-spoilers.md",
       "subCat": "Izgled i osećaj"
     },
@@ -258,7 +258,7 @@
       "subCat": "Pagiranje i sortiranje"
     },
     {
-      "name": "Prikazivanje svih komentara odjednom - onemogući pagiranje",
+      "name": "Prikazivanje svih komentara odjednom - onemogući paginaciju",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Pagiranje i sortiranje"
     },
@@ -298,7 +298,7 @@
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Upozori pre napuštanja stranice sa neslanim komentarom",
+      "name": "Upozori pre napuštanja sa neslanim komentarom",
       "file": "warn-on-unsaved-comment.md",
       "subCat": "Polje za odgovor"
     },
@@ -363,12 +363,17 @@
       "subCat": "Anonimno komentarisanje"
     },
     {
+      "name": "Automatsko generisanje korisničkih imena",
+      "file": "auto-generate-username.md",
+      "subCat": "Anonimno komentarisanje"
+    },
+    {
       "name": "Povratni pozivi",
       "file": "callbacks.md",
       "subCat": "Razno"
     },
     {
-      "name": "Ručno definisanje lokala korisnika",
+      "name": "Ručna definicija lokalizacije korisnika",
       "file": "locale.md",
       "subCat": "Razno"
     },

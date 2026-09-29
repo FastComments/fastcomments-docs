@@ -1,16 +1,18 @@
-### Visning af live kommentarer med det samme
+### Visning af live-kommentarer med det samme
 
-Kommentar-widgeten er live som standard, men live kommentarer vises under en "Vis N nye kommentarer"-knap for at forhindre, at sideindholdet flytter sig.
+Kommentar-widgeten er live som standard, men live-kommentarer vises under en "Vis N nye kommentarer"-knap for at forhindre, at sideindholdet flytter sig.
 
 I nogle tilfælde er det stadig ønskeligt at vise de nye kommentarer med det samme, uden at skulle klikke på en knap.
 
-I dette tilfælde vil du aktivere `showLiveRightAway`-flaget, som du kan finde dokumentation for [her](/guide-customizations-and-configuration.html#show-live-right-away).
+I dette tilfælde skal du aktivere flaget `showLiveRightAway`, som du kan finde dokumentation for [her](/guide-customizations-and-configuration.html#show-live-right-away).
 
-### Tillad anonyme kommentarer (kræver ikke e‑mail)
+### Tillad anonym kommentering (kræver ikke e‑mail)
 
 Som standard kræver FastComments, at brugeren angiver en e‑mail, når de kommenterer.
 
 Dette kan deaktiveres, [instruktionerne er her](/guide-customizations-and-configuration.html#allow-anon).
+
+For også for at spare besøgende for at skulle vælge et brugernavn, kan FastComments [generere et for hver besøgende](/guide-customizations-and-configuration.html#auto-generate-username).
 
 ### Tilpasset styling
 

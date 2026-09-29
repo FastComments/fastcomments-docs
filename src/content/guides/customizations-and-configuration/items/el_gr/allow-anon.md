@@ -1,11 +1,14 @@
 ---
-Από προεπιλογή, το FastComments απαιτεί ένα email για να σχολιάσει. Δεν χρειάζεται να είναι έγκυρο email, όμως μέχρι ο χρήστης να κάνει κλικ σε έναν σύνδεσμο που του αποστέλλεται,
+Από προεπιλογή, το FastComments θα απαιτεί ένα email για να σχολιάσει. Δεν χρειάζεται να είναι έγκυρο email, ωστόσο μέχρι ο χρήστης να κάνει κλικ σε έναν σύνδεσμο που του αποστέλλεται,
 το σχόλιό του θα εμφανίζει την ετικέτα «Μη επαληθευμένο σχόλιο».
 
-Ωστόσο, μπορούμε να αφαιρέσουμε την απαίτηση για email. Το πεδίο εισαγωγής email θα εμφανίζεται ακόμη, αλλά δεν θα είναι πλέον υποχρεωτικό.
+Ωστόσο, μπορούμε να αφαιρέσουμε την απαίτηση για email. Το πεδίο εισαγωγής email θα εξακολουθεί να εμφανίζεται, αλλά δεν θα είναι πλέον υποχρεωτικό.
 
 Αυτό μπορεί να ρυθμιστεί μέσω της διεπαφής προσαρμογής widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Επιλογή ανώνυμων σχολίων στη διεπαφή προσαρμογής widget, η οποία κάνει το πεδίο email προαιρετικό'; title='Enabling Anonymous Comments' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Επιλογή ανώνυμων σχολίων στη διεπαφή προσαρμογής widget, η οποία κάνει το πεδίο email προαιρετικό'; title='Ενεργοποίηση ανώνυμων σχολίων' app-screenshot-end]
 
+Απαιτείται ακόμη ένα όνομα χρήστη. Για να αφαιρέσετε και αυτό το βήμα, μπορείτε
+[ορίσετε ένα προεπιλεγμένο όνομα χρήστη](/guide-customizations-and-configuration.html#default-username) που όλοι μοιράζονται, ή να έχετε το FastComments
+[δημιουργήσετε ένα μοναδικό όνομα χρήστη](/guide-customizations-and-configuration.html#auto-generate-username) για κάθε επισκέπτη.
 ---

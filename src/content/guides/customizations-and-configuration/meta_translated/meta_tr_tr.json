@@ -38,7 +38,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Karanlık Modu Açıp Kapatma",
+      "name": "Karanlık Modu Açma/Kapama",
       "file": "has-dark-background-toggle.md",
       "subCat": "Görünüm ve His"
     },
@@ -63,7 +63,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Yorumlardan Sayfalara Bağlantı Verme",
+      "name": "Yorumlardan Sayfalara Bağlantı",
       "file": "url.md",
       "subCat": "Görünüm ve His"
     },
@@ -98,12 +98,12 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Kesin Tarihler (Kullanıcı Dostu Zaman Damgalarını Devre Dışı Bırak)",
+      "name": "Mutlak Tarihler (Kullanıcı Dostu Zaman Damgalarını Devre Dışı Bırak)",
       "file": "absolute-dates.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Kesin ve Göreceli Tarihleri Birlikte Gösterme",
+      "name": "Hem Mutlak Hem Göreceli Tarihleri Gösterme",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Görünüm ve His"
     },
@@ -118,7 +118,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Yorumları Bir Düğme ile Açıp Kapatma",
+      "name": "Bir Düğme ile Yorumları Açma/Kapama",
       "file": "use-show-comments-toggle.md",
       "subCat": "Görünüm ve His"
     },
@@ -248,7 +248,7 @@
       "subCat": "Canlı Yorumlama"
     },
     {
-      "name": "Sonsuz Kaydırmayı Etkinleştir",
+      "name": "Sonsuz Kaydırmayı Etkinleştirme",
       "file": "enable-infinite-scrolling.md",
       "subCat": "Sayfalama ve Sıralama"
     },
@@ -258,7 +258,7 @@
       "subCat": "Sayfalama ve Sıralama"
     },
     {
-      "name": "Tüm Yorumları Tek Seferde Görüntüleme - Sayfalamayı Devre Dışı Bırak",
+      "name": "Tüm Yorumları Bir Anda Görüntüleme - Sayfalamayı Devre Dışı Bırak",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Sayfalama ve Sıralama"
     },
@@ -363,6 +363,11 @@
       "subCat": "Anonim Yorumlama"
     },
     {
+      "name": "Kullanıcı Adlarını Otomatik Oluştur",
+      "file": "auto-generate-username.md",
+      "subCat": "Anonim Yorumlama"
+    },
+    {
       "name": "Geri Çağrılar",
       "file": "callbacks.md",
       "subCat": "Diğer"
@@ -398,7 +403,7 @@
       "subCat": "Diğer"
     },
     {
-      "name": "Yorum Yapan Bağlantılarını Etkinleştirme",
+      "name": "Yorumcu Bağlantılarını Etkinleştirme",
       "file": "enable-commenter-links.md",
       "subCat": "Diğer"
     },

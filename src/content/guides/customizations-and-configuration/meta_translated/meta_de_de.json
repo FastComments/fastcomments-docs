@@ -33,12 +33,12 @@
       "subCat": "Aussehen und Verhalten"
     },
     {
-      "name": "Unterstützung dunkler Hintergründe (Dunkelmodus)",
+      "name": "Unterstützung dunkler Hintergründe (Dark Mode)",
       "file": "has-dark-background.md",
       "subCat": "Aussehen und Verhalten"
     },
     {
-      "name": "Umschalten des Dunkelmodus",
+      "name": "Umschalten des Dark Mode",
       "file": "has-dark-background-toggle.md",
       "subCat": "Aussehen und Verhalten"
     },
@@ -98,7 +98,7 @@
       "subCat": "Aussehen und Verhalten"
     },
     {
-      "name": "Absolute Daten (Menschlich lesbare Zeitstempel deaktivieren)",
+      "name": "Absolute Daten (menschliche Zeitstempel deaktivieren)",
       "file": "absolute-dates.md",
       "subCat": "Aussehen und Verhalten"
     },
@@ -250,17 +250,17 @@
     {
       "name": "Unendliches Scrollen aktivieren",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Seitennummerierung & Sortierung"
+      "subCat": "Seitennavigation & Sortierung"
     },
     {
       "name": "Standard-Sortierreihenfolge ändern",
       "file": "default-sort-direction.md",
-      "subCat": "Seitennummerierung & Sortierung"
+      "subCat": "Seitennavigation & Sortierung"
     },
     {
-      "name": "Alle Kommentare auf einmal rendern – Seitennummerierung deaktivieren",
+      "name": "Alle Kommentare auf einmal rendern – Seitennavigation deaktivieren",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Seitennummerierung & Sortierung"
+      "subCat": "Seitennavigation & Sortierung"
     },
     {
       "name": "Antwortfeld nach den Kommentaren verschieben",
@@ -268,12 +268,12 @@
       "subCat": "Das Antwortfeld"
     },
     {
-      "name": "Begrenzung der Kommentar-Länge",
+      "name": "Kommentar-Länge begrenzen",
       "file": "max-comment-character-length.md",
       "subCat": "Das Antwortfeld"
     },
     {
-      "name": "Mehrzeiliges Kommentieren deaktivieren",
+      "name": "Mehrzeilige Kommentare deaktivieren",
       "file": "use-single-line-comment-input.md",
       "subCat": "Das Antwortfeld"
     },
@@ -348,7 +348,7 @@
       "subCat": "Anonymes Kommentieren"
     },
     {
-      "name": "Unbestätigtes-Label deaktivieren",
+      "name": "Unverifizierte Kennzeichnung deaktivieren",
       "file": "disable-unverified-label.md",
       "subCat": "Anonymes Kommentieren"
     },
@@ -363,6 +363,11 @@
       "subCat": "Anonymes Kommentieren"
     },
     {
+      "name": "Benutzernamen automatisch generieren",
+      "file": "auto-generate-username.md",
+      "subCat": "Anonymes Kommentieren"
+    },
+    {
       "name": "Rückrufe",
       "file": "callbacks.md",
       "subCat": "Verschiedenes"
@@ -373,7 +378,7 @@
       "subCat": "Verschiedenes"
     },
     {
-      "name": "Zulässige Sprachen begrenzen",
+      "name": "Erlaubte Sprachen begrenzen",
       "file": "allowed-languages.md",
       "subCat": "Verschiedenes"
     },
@@ -393,7 +398,7 @@
       "subCat": "Verschiedenes"
     },
     {
-      "name": "Der Kommentarzähler & Zählen aller verschachtelten Antworten",
+      "name": "Kommentarzähler & Zählen aller verschachtelten Antworten",
       "file": "count-all.md",
       "subCat": "Verschiedenes"
     },
@@ -428,7 +433,7 @@
       "subCat": "Aussehen und Verhalten"
     },
     {
-      "name": "Liste der Online-Benutzer anzeigen",
+      "name": "Liste der online Benutzer anzeigen",
       "file": "users-list.md",
       "subCat": "Aussehen und Verhalten"
     }

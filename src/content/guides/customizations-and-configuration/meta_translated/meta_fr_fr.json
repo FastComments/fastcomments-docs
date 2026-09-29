@@ -153,7 +153,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Désactiver les messages directs de profil",
+      "name": "Désactiver les messages directs du profil",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Aspect et apparence"
     },
@@ -163,7 +163,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Modifier la classification de contenu des GIFs",
+      "name": "Modifier la classification du contenu des GIFs",
       "file": "gif-rating.md",
       "subCat": "Aspect et apparence"
     },
@@ -233,7 +233,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Afficher les commentaires en direct immédiatement",
+      "name": "Afficher immédiatement les commentaires en direct",
       "file": "show-live-right-away.md",
       "subCat": "Commentaire en direct"
     },
@@ -250,17 +250,17 @@
     {
       "name": "Activer le défilement infini",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Pagination et tri"
+      "subCat": "Pagination & tri"
     },
     {
       "name": "Modifier la direction de tri par défaut",
       "file": "default-sort-direction.md",
-      "subCat": "Pagination et tri"
+      "subCat": "Pagination & tri"
     },
     {
       "name": "Afficher tous les commentaires d'un coup - Désactiver la pagination",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Pagination et tri"
+      "subCat": "Pagination & tri"
     },
     {
       "name": "Déplacer la zone de réponse après les commentaires",
@@ -303,7 +303,7 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Vue d'ensemble du Single Sign-On (SSO)",
+      "name": "Vue d'ensemble de l'authentification unique (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
@@ -328,7 +328,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Protéger les fils de commentaires avec le SSO",
+      "name": "Protéger les fils de commentaires avec l'authentification unique",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -360,6 +360,11 @@
     {
       "name": "Définir un nom d'utilisateur par défaut",
       "file": "default-username.md",
+      "subCat": "Commentaires anonymes"
+    },
+    {
+      "name": "Générer automatiquement des noms d'utilisateur",
+      "file": "auto-generate-username.md",
       "subCat": "Commentaires anonymes"
     },
     {

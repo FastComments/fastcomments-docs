@@ -28,12 +28,12 @@
       "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Usuwanie brandingu",
+      "name": "Usuwanie marki",
       "file": "remove-branding.md",
       "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Wsparcie ciemnych tła (tryb ciemny)",
+      "name": "Obsługa ciemnych tła (tryb ciemny)",
       "file": "has-dark-background.md",
       "subCat": "Wygląd i odczucia"
     },
@@ -328,7 +328,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Ochrona wątków komentarzy przy użyciu Single Sign-On",
+      "name": "Ochrona wątków komentarzy przy użyciu Single Sign On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -348,7 +348,7 @@
       "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Wyłącz etykietę niezweryfikowany",
+      "name": "Wyłącz etykietę niezweryfikowaną",
       "file": "disable-unverified-label.md",
       "subCat": "Anonimowe komentowanie"
     },
@@ -358,8 +358,13 @@
       "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Ustaw domyślną nazwę użytkownika",
+      "name": "Ustawianie domyślnej nazwy użytkownika",
       "file": "default-username.md",
+      "subCat": "Anonimowe komentowanie"
+    },
+    {
+      "name": "Automatyczne generowanie nazw użytkowników",
+      "file": "auto-generate-username.md",
       "subCat": "Anonimowe komentowanie"
     },
     {
@@ -398,7 +403,7 @@
       "subCat": "Różne"
     },
     {
-      "name": "Włącz linki komentujących",
+      "name": "Włączanie linków komentujących",
       "file": "enable-commenter-links.md",
       "subCat": "Różne"
     },

@@ -28,7 +28,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "移除品牌標示",
+      "name": "移除品牌標誌",
       "file": "remove-branding.md",
       "subCat": "外觀與感受"
     },
@@ -128,7 +128,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "停用圖片重新導向",
+      "name": "停用圖片重定向",
       "file": "disable-image-redirect.md",
       "subCat": "外觀與感受"
     },
@@ -138,7 +138,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "停用通知鈴聲",
+      "name": "停用通知鈴鐺",
       "file": "disable-notification-bell.md",
       "subCat": "外觀與感受"
     },
@@ -223,7 +223,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "啟用劇透隱藏",
+      "name": "啟用劇透",
       "file": "enable-spoilers.md",
       "subCat": "外觀與感受"
     },
@@ -283,7 +283,7 @@
       "subCat": "回覆框"
     },
     {
-      "name": "阻止新增頂層評論",
+      "name": "阻止新頂層評論",
       "file": "no-new-root-comments.md",
       "subCat": "回覆框"
     },
@@ -305,32 +305,32 @@
     {
       "name": "單一登入（SSO）概覽",
       "file": "sso.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "自訂整合 - 安全單一登入（SSO）",
       "file": "sso-secure.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "自訂整合 - 簡易單一登入（SSO）",
       "file": "sso-simple.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "自訂整合 - 從 Disqus SSO 遷移",
       "file": "sso-disqus.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "自訂整合 - 從 Commento SSO 遷移",
       "file": "sso-commento.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "使用單一登入保護評論串",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "允許匿名評論",
@@ -360,6 +360,11 @@
     {
       "name": "設定預設使用者名稱",
       "file": "default-username.md",
+      "subCat": "匿名評論"
+    },
+    {
+      "name": "自動產生使用者名稱",
+      "file": "auto-generate-username.md",
       "subCat": "匿名評論"
     },
     {

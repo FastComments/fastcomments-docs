@@ -3,12 +3,12 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "アカウントの特定",
+      "name": "アカウントの識別",
       "file": "tenant-id.md",
       "subCat": "基本"
     },
     {
-      "name": "コメントがページや記事に結び付く仕組み",
+      "name": "コメントがページや記事に結び付けられる方法",
       "file": "url-id.md",
       "subCat": "基本"
     },
@@ -28,12 +28,12 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "ブランディングの削除",
+      "name": "ブランドの削除",
       "file": "remove-branding.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "暗い背景への対応（ダークモード）",
+      "name": "ダーク背景（ダークモード）への対応",
       "file": "has-dark-background.md",
       "subCat": "外観と感覚"
     },
@@ -73,7 +73,7 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "WYSIWYGの有効化",
+      "name": "WYSIWYG を有効化",
       "file": "enable-wysiwyg.md",
       "subCat": "外観と感覚"
     },
@@ -163,12 +163,12 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "GIFのコンテンツレーティングの変更",
+      "name": "GIF のコンテンツレーティングを変更",
       "file": "gif-rating.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "画像コンテンツモデレーション",
+      "name": "画像コンテンツのモデレーション",
       "file": "image-content-moderation.md",
       "subCat": "外観と感覚"
     },
@@ -178,12 +178,12 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "削除機能の無効化",
+      "name": "削除の無効化",
       "file": "disable-deleting.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "編集機能の無効化",
+      "name": "編集の無効化",
       "file": "disable-editing.md",
       "subCat": "外観と感覚"
     },
@@ -203,7 +203,7 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "ユーザー名の形式",
+      "name": "ユーザー名形式",
       "file": "user-name-formats.md",
       "subCat": "外観と感覚"
     },
@@ -213,22 +213,22 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "メディア埋め込みの許可",
+      "name": "メディア埋め込みを許可",
       "file": "allow-media-embeds.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "検索ボックスの有効化",
+      "name": "検索ボックスを有効化",
       "file": "enable-search.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "スポイラーの有効化",
+      "name": "スポイラーを有効化",
       "file": "enable-spoilers.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "コメント閲覧数の有効化",
+      "name": "コメント閲覧数を有効化",
       "file": "enable-comment-view-counts.md",
       "subCat": "外観と感覚"
     },
@@ -278,12 +278,12 @@
       "subCat": "返信ボックス"
     },
     {
-      "name": "ユーザーごとのコメント数上限",
+      "name": "ユーザーごとのコメント量の制限",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "返信ボックス"
     },
     {
-      "name": "トップレベルコメントの新規投稿防止",
+      "name": "新しいトップレベルコメントの防止",
       "file": "no-new-root-comments.md",
       "subCat": "返信ボックス"
     },
@@ -298,7 +298,7 @@
       "subCat": "返信ボックス"
     },
     {
-      "name": "未送信コメントがある状態で離脱しようとしたときの警告",
+      "name": "未送信コメントがある状態で離脱しようとしたときに警告",
       "file": "warn-on-unsaved-comment.md",
       "subCat": "返信ボックス"
     },
@@ -318,12 +318,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "カスタム統合 - Disqus SSOからの移行",
+      "name": "カスタム統合 - Disqus SSO からの移行",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "カスタム統合 - Commento SSOからの移行",
+      "name": "カスタム統合 - Commento SSO からの移行",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
@@ -333,7 +333,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "匿名コメントの許可",
+      "name": "匿名コメントを許可",
       "file": "allow-anon.md",
       "subCat": "匿名コメント"
     },
@@ -353,13 +353,18 @@
       "subCat": "匿名コメント"
     },
     {
-      "name": "匿名投票の許可",
+      "name": "匿名投票を許可",
       "file": "allow-anon-votes.md",
       "subCat": "匿名コメント"
     },
     {
       "name": "デフォルトユーザー名の設定",
       "file": "default-username.md",
+      "subCat": "匿名コメント"
+    },
+    {
+      "name": "ユーザー名を自動生成",
+      "file": "auto-generate-username.md",
       "subCat": "匿名コメント"
     },
     {
@@ -383,7 +388,7 @@
       "subCat": "その他"
     },
     {
-      "name": "新規返信の防止と投票の無効化",
+      "name": "新しい返信の防止と投票の無効化",
       "file": "readonly.md",
       "subCat": "その他"
     },
@@ -393,7 +398,7 @@
       "subCat": "その他"
     },
     {
-      "name": "コメント数とすべてのネストされた返信のカウント",
+      "name": "コメント数とすべての入れ子返信のカウカウント",
       "file": "count-all.md",
       "subCat": "その他"
     },
@@ -428,7 +433,7 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "オンラインユーザーリストの表示",
+      "name": "オンラインユーザーリストを表示",
       "file": "users-list.md",
       "subCat": "外観と感覚"
     }

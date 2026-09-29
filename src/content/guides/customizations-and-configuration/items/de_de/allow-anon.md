@@ -1,9 +1,12 @@
----
-Standardmäßig verlangt FastComments eine E‑Mail-Adresse, um zu kommentieren. Sie muss nicht zwingend gültig sein, jedoch wird, bis der Benutzer auf einen an ihn gesendeten Link klickt,
-sein Kommentar mit dem Hinweis „Unverifizierter Kommentar“ versehen.
+By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,
+their comment will display an "Unverified Comment" label.
 
-Wir können jedoch die E‑Mail‑Anforderung entfernen. Das E‑Mail‑Eingabefeld wird weiterhin angezeigt, ist aber nicht mehr erforderlich.
+However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
 
-Dies kann über die Widget‑Anpassungs‑UI konfiguriert werden:
+This can be configured via the widget customization UI:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Option für anonyme Kommentare in der Widget-Anpassungsoberfläche, die das E-Mail-Feld optional macht'; title='Aktivieren anonymer Kommentare' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Option für anonyme Kommentare in der Widget‑Anpassungs‑UI, die das E‑Mail‑Feld optional macht'; title='Aktivieren anonymer Kommentare' app-screenshot-end]
+
+A username is still required. To remove that step as well, you can
+[einen Standard‑Benutzernamen festlegen](/guide-customizations-and-configuration.html#default-username) that everyone shares, or have FastComments
+[einen eindeutigen Benutzernamen generieren](/guide-customizations-and-configuration.html#auto-generate-username) for each visitor.
