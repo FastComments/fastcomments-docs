@@ -1,7 +1,7 @@
 Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
 it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
 
-**This is done without copying or downloading anything manually.**
+**Това се извършва без ръчно копиране или изтегляне на каквото и да е.**
 
 The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
 
@@ -10,15 +10,14 @@ The mechanism is designed to not put excessive load on your WordPress installati
 If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
 [Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & FireWalls
+### CloudFlare & Защитни стени
 
 In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
-Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
-you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
+Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
 
-### Data Ownership
+### Собственост на данните
 
 In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
 behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
-we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
+we **също** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
 already migrated and up to date.
