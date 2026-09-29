@@ -79,6 +79,11 @@
       "subCat": "Other Widgets"
     },
     {
+      "name": "Moving Your Comments to a New Site",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Moving Off WordPress"
+    },
+    {
       "name": "Deactivating vs Uninstalling The Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Plugin Removal"

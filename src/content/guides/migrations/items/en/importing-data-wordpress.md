@@ -7,6 +7,9 @@ The migration process will be indicated to you via the UI during the migration. 
 
 The mechanism is designed to not put excessive load on your WordPress installation during the migration.
 
+If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
+[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+
 ### CloudFlare & FireWalls
 
 In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
