@@ -9,7 +9,7 @@ This can be enabled from the Customization UI, under the setting called `Generat
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='ウィジェットカスタマイズ UI の「ユーザー名を自動生成」オプション'; title='ユーザー名を自動生成' app-screenshot-end]
 
-#### How It Behaves
+#### 動作の概要
 
 - Each generated name is unique. It is checked against existing accounts and reserved for that visitor's browser session, so two visitors are not offered the same name.
 - The name is only generated for visitors who do not have one yet. Logged in users, SSO users, and visitors who have already commented keep their existing name.

@@ -15,5 +15,3 @@ Usernames that a visitor types themselves still have to be unique.
 
 If you would rather each visitor get a distinct name without having to think of one, see
 [Generate Usernames Automatically](/guide-customizations-and-configuration.html#auto-generate-username).
-
----

@@ -20,8 +20,7 @@ Many of our customers apply their own styling to the comment widget. You can fin
 
 ### Showing The Same Comments on Multiple Domains
 
-Showing the same comments on multiple sites is something FastComments supports out of the box. See our
-[documentation on this subject](/guide-multiple-sites.html#sharing-comments-across-domains).
+Showing the same comments on multiple sites is something FastComments supports out of the box. See our [documentation on this subject](/guide-multiple-sites.html#sharing-comments-across-domains).
 
 ### Changing The Current Page
 
