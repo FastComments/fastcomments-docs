@@ -13,6 +13,8 @@ By default, FastComments requires the user to leave an email when they comment.
 
 This can be disabled, [instructions are here](/guide-customizations-and-configuration.html#allow-anon).
 
+To also spare visitors from choosing a username, FastComments can [generate one for each visitor](/guide-customizations-and-configuration.html#auto-generate-username).
+
 ### Custom Styling
 
 Many of our customers apply their own styling to the comment widget. You can find the documentation [here](/guide-customizations-and-configuration.html#custom-css).

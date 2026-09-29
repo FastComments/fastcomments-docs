@@ -6,3 +6,7 @@ However, we can remove the email requirement. The email input field will still s
 This can be configured via the widget customization UI:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Anonymous comments option in the widget customization UI, which makes the email field optional'; title='Enabling Anonymous Comments' app-screenshot-end]
+
+A username is still required. To remove that step as well, you can
+[set a default username](/guide-customizations-and-configuration.html#default-username) that everyone shares, or have FastComments
+[generate a unique username](/guide-customizations-and-configuration.html#auto-generate-username) for each visitor.
