@@ -10,8 +10,8 @@ WordPress를 떠나는 경우, 플러그인을 사용하지 않고 WordPress XML
 
 ### CloudFlare & FireWalls
 
-자동 WordPress 설정이 작동하려면 귀하의 WordPress 설치에 호출을 해야 합니다. Cloudflare와 같은 방화벽이 이를 차단하여 통합이 실패할 수 있습니다. 이러한 경우, [우리는 귀하에게](https://fastcomments.com/auth/my-account/help) 통합을 위해 화이트리스트에 추가할 IP 목록을 제공할 수 있습니다.
+자동 WordPress 설정이 작동하려면 귀하의 WordPress 설치에 호출을 해야 합니다. Cloudflare와 같은 방화벽이 이를 차단하고 통합이 실패할 수 있습니다. 이러한 경우, [우리는 귀하에게](https://fastcomments.com/auth/my-account/help) 통합을 위해 화이트리스트에 추가할 IP 목록을 제공할 수 있습니다.
 
 ### Data Ownership
 
-우리의 WordPress 마이그레이션의 경우, 새로운 또는 업데이트된 댓글 데이터는 자동으로 백그라운드에서 귀하의 WordPress 설치와 동기화됩니다. 이는 댓글이 FastComments 자체에서 제공되어 WordPress 배포의 부하를 줄이는 동시에, **또한** 백업으로 데이터베이스에 저장된다는 의미입니다. 또한 FastComments를 떠나고 싶을 경우, 데이터가 이미 마이그레이션되어 최신 상태임을 의미합니다.
+우리의 WordPress 마이그레이션의 경우, 새로운 또는 업데이트된 댓글 데이터는 자동으로 백그라운드에서 귀하의 WordPress 설치와 동기화됩니다. 이는 댓글이 FastComments에서 제공되어 WordPress 배포의 부하를 줄이는 동시에, **우리가** 백업으로 데이터베이스에 저장한다는 의미입니다. 또한 FastComments를 떠나고 싶을 경우, 데이터가 이미 마이그레이션되어 최신 상태임을 의미합니다.
