@@ -1,17 +1,28 @@
-Our [Плагин WordPress](https://wordpress.org/plugins/fastcomments/) имеет мощный UI‑ориентированный механизм импорта. После установки плагина он проведёт вас через процесс связывания вашей установки WordPress с FastComments и копирования ваших существующих данных комментариев.
+---
+Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
+it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
 
-**Это делается без копирования или загрузки чего‑либо вручную.**
+**Это делается без ручного копирования или загрузки чего-либо.**
 
-Процесс миграции будет отображён в UI во время миграции. Большинство миграций занимают всего несколько минут.
+The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
 
-Механизм спроектирован так, чтобы не создавать избыточную нагрузку на вашу установку WordPress во время миграции.
+The mechanism is designed to not put excessive load on your WordPress installation during the migration.
 
-Если вы переносите сайт с WordPress, вместо использования плагина вы можете импортировать экспорт WordPress XML или CSV. См. [Перенос ваших комментариев на новый сайт](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
+[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & Брандмауэры
+### CloudFlare и FireWalls
 
-Чтобы автоматическая настройка WordPress работала, нам необходимо выполнять запросы к вашей установке WordPress. Брандмауэры, такие как Cloudflare, могут блокировать нас и приводить к сбою интеграции. В таких случаях [мы можем предоставить вам](https://fastcomments.com/auth/my-account/help) набор IP‑адресов для добавления в белый список интеграции.
+In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
+Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
+you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
 
-### Владение данными
+### Data Ownership
 
-В случае нашей миграции WordPress любые новые или обновлённые данные комментариев автоматически синхронно возвращаются в вашу установку WordPress «за кулисами». Это означает, что пока комментарии обслуживаются FastComments, чтобы снять нагрузку с вашего развертывания WordPress, мы **также** сохраняем их в вашей базе данных в качестве резервной копии. Это также означает, что если вы захотите перейти от FastComments, ваши данные уже мигрированы и актуальны.
+In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
+behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
+we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
+already migrated and up to date.
+
+
+---

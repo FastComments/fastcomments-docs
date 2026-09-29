@@ -1,24 +1,20 @@
-Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
-it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
+---
+私たちの[WordPress プラグイン](https://wordpress.org/plugins/fastcomments/)は、強力な UI ベースのインポート機能を備えています。プラグインをインストールすると、WordPress インストールを FastComments とリンクし、既存のコメントデータをコピーする手順を案内します。
 
-**This is done without copying or downloading anything manually.**
+**これは手動で何もコピーしたりダウンロードしたりすることなく行われます。**
 
-The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
+移行プロセスは、移行中に UI を通じて表示されます。ほとんどの移行は数分で完了します。
 
-The mechanism is designed to not put excessive load on your WordPress installation during the migration.
+この仕組みは、移行中に WordPress インストールに過度な負荷をかけないよう設計されています。
 
-If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
-[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+WordPress からサイトを移行する場合、プラグインを使用せずに WordPress の XML または CSV エクスポートをインポートできます。詳しくは[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress)をご覧ください。
 
-### CloudFlare & FireWalls
+### CloudFlare とファイアウォール
 
-In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
-Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
-you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
+自動化された WordPress 設定が機能するためには、WordPress インストールに対して呼び出しを行う必要があります。Cloudflare のようなファイアウォールがブロックすると、統合が失敗することがあります。そのような場合、[私たちは IP のリストを提供し](https://fastcomments.com/auth/my-account/help)統合のためにホワイトリストに追加できます。
 
-### Data Ownership
+### データ所有権
 
-In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
-behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
-we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
-already migrated and up to date.
+私たちの WordPress 移行の場合、新規または更新されたコメントデータは自動的にバックグラウンドで WordPress インストールに同期されます。つまり、コメントは FastComments が直接配信して WordPress の負荷を軽減しますが、**同時に** データベースにバックアップとして保存します。これにより、FastComments から別のサービスに切り替えたい場合でも、データはすでに移行され、最新の状態になっています。
+
+---
