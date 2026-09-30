@@ -30,7 +30,7 @@ Display banners come in `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160
 
 To embed a banner, upload it to your site and wrap it in your affiliate link. When you use a @2x file, set the `width` and `height` of the displayed size:
 
-[inline-code-attrs-start title = 'Κώδικας Ενσωμάτωσης Διαφημίσεων'; type = 'html'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Κώδικας Ενσωμάτωσης Διαφημιστικού Πάνελ'; type = 'html'; inline-code-attrs-end]
 [inline-code-start]
 <a href="https://fastcomments.com/?via=YOUR_CODE" rel="sponsored">
     <img src="/images/fastcomments-live-comments-light-300x250@2x.png"
@@ -49,5 +49,3 @@ The brand guidelines in the kit have the full details.
 ### Custom Materials
 
 Contact us if you need custom sizes or other custom materials, and include your affiliate code.
-
----

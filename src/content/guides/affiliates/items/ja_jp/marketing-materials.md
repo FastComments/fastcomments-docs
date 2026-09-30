@@ -1,34 +1,34 @@
-The FastComments affiliate kit has everything you need to promote FastComments:
+FastComments のアフィリエイトキットには、FastComments を宣伝するために必要なすべてが揃っています：
 
-- Display banners in 8 standard ad sizes, plus social images for 1200x628 and 1080x1080 posts
-- The FastComments logo and mark as SVG and PNG, in black and white
-- Screenshots of the comment widget and the moderation queue
-- Brand guidelines (PDF) covering logo usage, colors, typography, and promotion rules
-- Swipe copy: descriptions, emails, social posts, review talking points, and approved product claims
+- 8 つの標準広告サイズのバナーと、1200x628 および 1080x1080 の投稿用ソーシャル画像を表示
+- FastComments のロゴとマーク（SVG と PNG 形式）、黒と白のバージョン
+- コメントウィジェットとモデレーションキューのスクリーンショット
+- ロゴ使用、カラー、タイポグラフィ、プロモーションルールを網羅したブランドガイドライン（PDF）
+- スワイプコピー：説明文、メール、ソーシャル投稿、レビューの話題ポイント、承認済みの製品主張
 
-**[Download the affiliate kit (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
+**[アフィリエイトキットをダウンロード (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
 
-### Linking
+### リンク設定
 
-Every link must go to the FastComments homepage with your affiliate code:
+すべてのリンクは、あなたのアフィリエイトコードを付けた FastComments のホームページへ向ける必要があります：
 
 [inline-code-attrs-start title = 'アフィリエイトリンク形式'; type = 'text'; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/?via=YOUR_CODE
 [inline-code-end]
 
-The code is read on the homepage only. A link to any other page, such as pricing or the demos, does not credit you, even with `?via=` added.
+コードはホームページでのみ読み取られます。価格ページやデモページなど、他のページへのリンクは、`?via=` を付加してもあなたにクレジットが付与されません。
 
-### Banners
+### バナー
 
-The kit includes two campaigns, each in a light and a dark theme:
+キットには、ライトテーマとダークテーマの 2 つのキャンペーンが含まれています：
 
-- **live-comments**: "Live comments for any website"
-- **moderation**: "Moderation that keeps up"
+- **live-comments**: 「あらゆるウェブサイト向けのライブコメント」
+- **moderation**: 「常に対応できるモデレーション」
 
-Display banners come in `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600`, and `970x250`, each in a 1x and a retina @2x version. The social images (1200x628 and 1080x1080) are for uploading to social platforms.
+表示バナーは `728x90`、`468x60`、`320x50`、`300x250`、`336x280`、`160x600`、`300x600`、`970x250` のサイズがあり、各サイズに 1x と Retina @2x バージョンがあります。ソーシャル画像（1200x628 と 1080x1080）はソーシャルプラットフォームへのアップロード用です。
 
-To embed a banner, upload it to your site and wrap it in your affiliate link. When you use a @2x file, set the `width` and `height` of the displayed size:
+バナーを埋め込むには、サイトにアップロードし、アフィリエイトリンクで囲みます。@2x ファイルを使用する場合は、表示サイズの `width` と `height` を設定してください：
 
 [inline-code-attrs-start title = 'バナー埋め込みコード'; type = 'html'; inline-code-attrs-end]
 [inline-code-start]
@@ -38,16 +38,16 @@ To embed a banner, upload it to your site and wrap it in your affiliate link. Wh
 </a>
 [inline-code-end]
 
-### Rules
+### ルール
 
-- Disclose that you earn a commission wherever you promote FastComments, and add `rel="sponsored"` to affiliate links on web pages.
-- Use only the approved claims listed in the kit's swipe copy. Don't promise a free plan, discounts, or coupon codes, and don't name or compare against competitors.
-- Don't present yourself as FastComments or as an official partner.
+- FastComments を宣伝するすべての場所で、コミッションが発生することを開示し、ウェブページのアフィリエイトリンクに `rel="sponsored"` を追加してください。
+- キットのスワイプコピーに記載された承認済みの主張のみを使用してください。無料プラン、割引、クーポンコードを約束したり、競合他社の名前を出したり比較したりしないでください。
+- 自分自身を FastComments または公式パートナーとして提示しないでください。
 
-The brand guidelines in the kit have the full details.
+キットに含まれるブランドガイドラインに詳細が記載されています。
 
-### Custom Materials
+### カスタム素材
 
-Contact us if you need custom sizes or other custom materials, and include your affiliate code.
+カスタムサイズやその他のカスタム素材が必要な場合はご連絡ください。その際、アフィリエイトコードを添えてください。
 
 ---
