@@ -1,36 +1,36 @@
-The FastComments affiliate kit has everything you need to promote FastComments:
+Το σετ συνεργατών FastComments περιλαμβάνει όλα όσα χρειάζεστε για να προωθήσετε το FastComments:
 
-- Display banners in 8 standard ad sizes, plus social images for 1200x628 and 1080x1080 posts
-- The FastComments logo and mark as SVG and PNG, in black and white
-- Screenshots of the comment widget and the moderation queue
-- Brand guidelines (PDF) covering logo usage, colors, typography, and promotion rules
-- Swipe copy: descriptions, emails, social posts, review talking points, and approved product claims
+- Προβολή banner σε 8 τυπικά μεγέθη διαφημίσεων, καθώς και κοινωνικές εικόνες για αναρτήσεις 1200x628 και 1080x1080
+- Το λογότυπο και το σήμα FastComments ως SVG και PNG, σε μαύρο και λευκό
+- Στιγμιότυπα του widget σχολίων και της ουράς διαχείρισης
+- Οδηγίες μάρκας (PDF) που καλύπτουν τη χρήση του λογότυπου, χρώματα, τυπογραφία και κανόνες προώθησης
+- Κείμενα swipe: περιγραφές, email, κοινωνικές αναρτήσεις, σημεία συζήτησης κριτικών και εγκεκριμένες δηλώσεις προϊόντος
 
-**[Download the affiliate kit (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
+**[Κατεβάστε το σετ συνεργατών (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
 
-### Linking
+### Σύνδεσμος
 
-Every link must go to the FastComments homepage with your affiliate code:
+Κάθε σύνδεσμος πρέπει να οδηγεί στην αρχική σελίδα του FastComments με τον κωδικό συνεργάτη σας:
 
 [inline-code-attrs-start title = 'Μορφή Συνδέσμου Συνεργάτη'; type = 'text'; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/?via=YOUR_CODE
 [inline-code-end]
 
-The code is read on the homepage only. A link to any other page, such as pricing or the demos, does not credit you, even with `?via=` added.
+Ο κωδικός διαβάζεται μόνο στην αρχική σελίδα. Ένας σύνδεσμος σε οποιαδήποτε άλλη σελίδα, όπως τιμές ή demos, δεν σας απονέμει πίστωση, ακόμη και αν προσθέσετε `?via=`.
 
 ### Banners
 
-The kit includes two campaigns, each in a light and a dark theme:
+Το σετ περιλαμβάνει δύο καμπάνιες, καθεμία σε φωτεινό και σκούρο θέμα:
 
-- **live-comments**: "Live comments for any website"
-- **moderation**: "Moderation that keeps up"
+- **live-comments**: "Ζωντανά σχόλια για οποιονδήποτε ιστότοπο"
+- **moderation**: "Διαχείριση που συμβαδίζει"
 
-Display banners come in `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600`, and `970x250`, each in a 1x and a retina @2x version. The social images (1200x628 and 1080x1080) are for uploading to social platforms.
+Τα banner εμφανίζονται σε `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600` και `970x250`, καθένα σε έκδοση 1x και retina @2x. Οι κοινωνικές εικόνες (1200x628 και 1080x1080) προορίζονται για ανέβασμα σε κοινωνικές πλατφόρμες.
 
-To embed a banner, upload it to your site and wrap it in your affiliate link. When you use a @2x file, set the `width` and `height` of the displayed size:
+Για να ενσωματώσετε ένα banner, ανεβάστε το στον ιστότοπό σας και τυλίξτε το με τον σύνδεσμο συνεργάτη σας. Όταν χρησιμοποιείτε αρχείο @2x, ορίστε το `width` και `height` του εμφανιζόμενου μεγέθους:
 
-[inline-code-attrs-start title = 'Κώδικας Ενσωμάτωσης Διαφημιστικού Πάνελ'; type = 'html'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Κώδικας Ενσωμάτωσης Διαφημιστικού Πίνακα'; type = 'html'; inline-code-attrs-end]
 [inline-code-start]
 <a href="https://fastcomments.com/?via=YOUR_CODE" rel="sponsored">
     <img src="/images/fastcomments-live-comments-light-300x250@2x.png"
@@ -38,14 +38,14 @@ To embed a banner, upload it to your site and wrap it in your affiliate link. Wh
 </a>
 [inline-code-end]
 
-### Rules
+### Κανόνες
 
-- Disclose that you earn a commission wherever you promote FastComments, and add `rel="sponsored"` to affiliate links on web pages.
-- Use only the approved claims listed in the kit's swipe copy. Don't promise a free plan, discounts, or coupon codes, and don't name or compare against competitors.
-- Don't present yourself as FastComments or as an official partner.
+- Αποκαλύψτε ότι κερδίζετε προμήθεια όπου και αν προωθείτε το FastComments και προσθέστε `rel="sponsored"` στους συνδέσμους συνεργατών στις ιστοσελίδες.
+- Χρησιμοποιήστε μόνο τις εγκεκριμένες δηλώσεις που αναφέρονται στο swipe copy του σετ. Μην υποσχεθείτε δωρεάν πρόγραμμα, εκπτώσεις ή κωδικούς κουπονιών, και μην αναφέρετε ή συγκρίνετε με ανταγωνιστές.
+- Μην παρουσιάζετε τον εαυτό σας ως FastComments ή ως επίσημο συνεργάτη.
 
-The brand guidelines in the kit have the full details.
+Οι οδηγίες μάρκας στο σετ περιέχουν όλες τις λεπτομέρειες.
 
-### Custom Materials
+### Προσαρμοσμένα Υλικά
 
-Contact us if you need custom sizes or other custom materials, and include your affiliate code.
+Επικοινωνήστε μαζί μας εάν χρειάζεστε προσαρμοσμένα μεγέθη ή άλλα προσαρμοσμένα υλικά, και συμπεριλάβετε τον κωδικό συνεργάτη σας.
