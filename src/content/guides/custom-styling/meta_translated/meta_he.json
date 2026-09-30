@@ -4,34 +4,39 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "כיצד להתאים סגנונות",
+      "name": "איך להתאים סגנונות",
       "file": "comment-widget-instructions.md",
       "subCat": "התחלה"
     },
     {
-      "name": "מדריך CSS מותאם לווידג'ט תגובות (v2, הגרסה האחרונה)",
+      "name": "התאמת גבול תיבת ההערה",
+      "file": "comment-input-border.md",
+      "subCat": "עיצוב וידג'ט"
+    },
+    {
+      "name": "הפניות CSS מותאמות לוידג'ט ההערות (גרסה 2, העדכנית ביותר)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "עיצוב ווידג'ט"
+      "subCat": "עיצוב וידג'ט"
     },
     {
-      "name": "עיצוב ווידג'ט תגובות אחרונות",
+      "name": "עיצוב וידג'ט ההערות האחרונות",
       "file": "recent-comments-widget.md",
-      "subCat": "עיצוב ווידג'ט"
+      "subCat": "עיצוב וידג'ט"
     },
     {
-      "name": "עיצוב ווידג'ט הדפים הנדונים ביותר",
+      "name": "עיצוב וידג'ט הדפים המדוברים ביותר",
       "file": "top-pages-widget.md",
-      "subCat": "עיצוב ווידג'ט"
+      "subCat": "עיצוב וידג'ט"
     },
     {
-      "name": "עיצוב ווידג'ט דיונים אחרונים",
+      "name": "עיצוב וידג'ט הדיונים האחרונים",
       "file": "recent-discussions-widget.md",
-      "subCat": "עיצוב ווידג'ט"
+      "subCat": "עיצוב וידג'ט"
     },
     {
-      "name": "ספריות צד-לקוח אחרות",
+      "name": "ספריות קצה קדמי אחרות",
       "file": "other-frontend-libraries.md",
-      "subCat": "ספריות צד-לקוח אחרות"
+      "subCat": "ספריות קצה קדמי אחרות"
     }
   ]
 }

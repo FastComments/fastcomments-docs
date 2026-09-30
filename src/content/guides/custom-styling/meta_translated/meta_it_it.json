@@ -1,37 +1,42 @@
 {
-  "name": "Stile personalizzato",
-  "pageHeader": "Guida allo stile personalizzato",
+  "name": "Stile Personalizzato",
+  "pageHeader": "Guida allo Stile Personalizzato",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Come personalizzare gli stili",
+      "name": "Come Personalizzare gli Stili",
       "file": "comment-widget-instructions.md",
-      "subCat": "Primi passi"
+      "subCat": "Iniziare"
     },
     {
-      "name": "Riferimento CSS personalizzato per il widget Commenti (v2, ultima versione)",
+      "name": "Personalizzare il Bordo della Casella dei Commenti",
+      "file": "comment-input-border.md",
+      "subCat": "Stilizzazione del Widget"
+    },
+    {
+      "name": "Riferimento CSS Personalizzato per il Widget dei Commenti (v2, ultima versione)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Stilizzazione del widget"
+      "subCat": "Stilizzazione del Widget"
     },
     {
-      "name": "Stilizzazione del widget Commenti recenti",
+      "name": "Stilizzazione del Widget dei Commenti Recenti",
       "file": "recent-comments-widget.md",
-      "subCat": "Stilizzazione del widget"
+      "subCat": "Stilizzazione del Widget"
     },
     {
-      "name": "Stilizzazione del widget Pagine più discusse",
+      "name": "Stilizzazione del Widget delle Pagine più Discusse",
       "file": "top-pages-widget.md",
-      "subCat": "Stilizzazione del widget"
+      "subCat": "Stilizzazione del Widget"
     },
     {
-      "name": "Stilizzazione del widget Discussioni recenti",
+      "name": "Stilizzazione del Widget delle Discussioni Recenti",
       "file": "recent-discussions-widget.md",
-      "subCat": "Stilizzazione del widget"
+      "subCat": "Stilizzazione del Widget"
     },
     {
-      "name": "Altre librerie frontend",
+      "name": "Altre Librerie Frontend",
       "file": "other-frontend-libraries.md",
-      "subCat": "Altre librerie frontend"
+      "subCat": "Altre Librerie Frontend"
     }
   ]
 }

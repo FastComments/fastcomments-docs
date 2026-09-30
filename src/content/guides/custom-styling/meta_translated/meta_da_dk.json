@@ -6,20 +6,25 @@
     {
       "name": "Sådan tilpasser du stilarter",
       "file": "comment-widget-instructions.md",
-      "subCat": "Kom godt i gang"
+      "subCat": "Kom i gang"
     },
     {
-      "name": "Reference for brugerdefineret CSS til kommentar-widget (v2, seneste)",
+      "name": "Tilpasning af kommentarboksens kant",
+      "file": "comment-input-border.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Kommentar-widget tilpasset CSS-reference (v2, seneste)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Widget-styling"
     },
     {
-      "name": "Styling af widget til seneste kommentarer",
+      "name": "Styling af seneste kommentarer-widget",
       "file": "recent-comments-widget.md",
       "subCat": "Widget-styling"
     },
     {
-      "name": "Styling af widget for mest diskuterede sider",
+      "name": "Styling af widget til mest diskuterede sider",
       "file": "top-pages-widget.md",
       "subCat": "Widget-styling"
     },

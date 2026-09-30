@@ -1,12 +1,17 @@
 {
-  "name": "Niestandardowe style",
-  "pageHeader": "Przewodnik po niestandardowych stylach",
+  "name": "Niestandardowe stylowanie",
+  "pageHeader": "Przewodnik po niestandardowym stylowaniu",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "Jak dostosować style",
       "file": "comment-widget-instructions.md",
-      "subCat": "Pierwsze kroki"
+      "subCat": "Rozpoczęcie"
+    },
+    {
+      "name": "Dostosowywanie obramowania pola komentarza",
+      "file": "comment-input-border.md",
+      "subCat": "Stylowanie widżetu"
     },
     {
       "name": "Referencja niestandardowego CSS widżetu komentarzy (v2, najnowsza)",
@@ -14,17 +19,17 @@
       "subCat": "Stylowanie widżetu"
     },
     {
-      "name": "Stylowanie widżetu Ostatnie komentarze",
+      "name": "Stylowanie widżetu ostatnich komentarzy",
       "file": "recent-comments-widget.md",
       "subCat": "Stylowanie widżetu"
     },
     {
-      "name": "Stylowanie widżetu Najczęściej dyskutowane strony",
+      "name": "Stylowanie widżetu najczęściej dyskutowanych stron",
       "file": "top-pages-widget.md",
       "subCat": "Stylowanie widżetu"
     },
     {
-      "name": "Stylowanie widżetu Ostatnie dyskusje",
+      "name": "Stylowanie widżetu ostatnich dyskusji",
       "file": "recent-discussions-widget.md",
       "subCat": "Stylowanie widżetu"
     },

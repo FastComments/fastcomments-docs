@@ -1,37 +1,42 @@
 {
-  "name": "Prilagođeni stilovi",
-  "pageHeader": "Vodič za prilagođene stilove",
+  "name": "Prilagođeno stilizovanje",
+  "pageHeader": "Vodič za prilagođeno stilizovanje",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "Kako prilagoditi stilove",
       "file": "comment-widget-instructions.md",
-      "subCat": "Početak rada"
+      "subCat": "Početak"
     },
     {
-      "name": "Referenca za prilagođeni CSS widgeta za komentare (v2, najnovije)",
+      "name": "Prilagođavanje ivice okvira za komentar",
+      "file": "comment-input-border.md",
+      "subCat": "Stilizovanje vidžeta"
+    },
+    {
+      "name": "Referenca prilagođenog CSS-a za vidžet komentara (v2, najnovije)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Stilizovanje widgeta"
+      "subCat": "Stilizovanje vidžeta"
     },
     {
-      "name": "Stilizovanje widgeta za najnovije komentare",
+      "name": "Stilizovanje vidžeta za poslednje komentare",
       "file": "recent-comments-widget.md",
-      "subCat": "Stilizovanje widgeta"
+      "subCat": "Stilizovanje vidžeta"
     },
     {
-      "name": "Stilizovanje widgeta za najdiskutovanije stranice",
+      "name": "Stilizovanje vidžeta za najraspravljanije stranice",
       "file": "top-pages-widget.md",
-      "subCat": "Stilizovanje widgeta"
+      "subCat": "Stilizovanje vidžeta"
     },
     {
-      "name": "Stilizovanje widgeta za najnovije diskusije",
+      "name": "Stilizovanje vidžeta za poslednje diskusije",
       "file": "recent-discussions-widget.md",
-      "subCat": "Stilizovanje widgeta"
+      "subCat": "Stilizovanje vidžeta"
     },
     {
-      "name": "Ostale frontend biblioteke",
+      "name": "Ostale front‑end biblioteke",
       "file": "other-frontend-libraries.md",
-      "subCat": "Ostale frontend biblioteke"
+      "subCat": "Ostale front‑end biblioteke"
     }
   ]
 }

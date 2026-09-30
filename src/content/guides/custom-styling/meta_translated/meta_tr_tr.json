@@ -1,5 +1,5 @@
 {
-  "name": "Özel Stiller",
+  "name": "Özel Stil",
   "pageHeader": "Özel Stil Rehberi",
   "icon": "feature.png",
   "itemsOrdered": [
@@ -9,29 +9,34 @@
       "subCat": "Başlarken"
     },
     {
-      "name": "Yorum Bileşeni Özel CSS Referansı (v2, en son)",
+      "name": "Yorum Kutusu Kenarlığını Özelleştirme",
+      "file": "comment-input-border.md",
+      "subCat": "Widget Stili"
+    },
+    {
+      "name": "Yorum Widget'ı Özel CSS Referansı (v2, en son)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Bileşen Stilleme"
+      "subCat": "Widget Stili"
     },
     {
-      "name": "Son Yorumlar Bileşeni Stilleme",
+      "name": "Son Yorumlar Widget'ı Stili",
       "file": "recent-comments-widget.md",
-      "subCat": "Bileşen Stilleme"
+      "subCat": "Widget Stili"
     },
     {
-      "name": "En Çok Tartışılan Sayfalar Bileşeni Stilleme",
+      "name": "En Çok Tartışılan Sayfalar Widget'ı Stili",
       "file": "top-pages-widget.md",
-      "subCat": "Bileşen Stilleme"
+      "subCat": "Widget Stili"
     },
     {
-      "name": "Son Tartışmalar Bileşeni Stilleme",
+      "name": "Son Tartışmalar Widget'ı Stili",
       "file": "recent-discussions-widget.md",
-      "subCat": "Bileşen Stilleme"
+      "subCat": "Widget Stili"
     },
     {
-      "name": "Diğer Önyüz Kütüphaneleri",
+      "name": "Diğer Frontend Kütüphaneleri",
       "file": "other-frontend-libraries.md",
-      "subCat": "Diğer Önyüz Kütüphaneleri"
+      "subCat": "Diğer Frontend Kütüphaneleri"
     }
   ]
 }

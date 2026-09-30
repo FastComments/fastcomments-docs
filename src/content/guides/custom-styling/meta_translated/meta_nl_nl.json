@@ -4,34 +4,39 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Hoe stijlen aan te passen",
+      "name": "Hoe stijlen aanpassen",
       "file": "comment-widget-instructions.md",
       "subCat": "Aan de slag"
     },
     {
-      "name": "Commentaarwidget: referentie voor aangepaste CSS (v2, laatste)",
+      "name": "Aanpassen van de rand van het reactie‑vak",
+      "file": "comment-input-border.md",
+      "subCat": "Widget-styling"
+    },
+    {
+      "name": "Aangepaste CSS-referentie voor commentaarwidget (v2, nieuwste)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Widgetstyling"
+      "subCat": "Widget-styling"
     },
     {
-      "name": "Widgetstyling voor recente reacties",
+      "name": "Styling van de widget voor recente reacties",
       "file": "recent-comments-widget.md",
-      "subCat": "Widgetstyling"
+      "subCat": "Widget-styling"
     },
     {
-      "name": "Widgetstyling voor meest besproken pagina's",
+      "name": "Styling van de widget voor meest besproken pagina's",
       "file": "top-pages-widget.md",
-      "subCat": "Widgetstyling"
+      "subCat": "Widget-styling"
     },
     {
-      "name": "Widgetstyling voor recente discussies",
+      "name": "Styling van de widget voor recente discussies",
       "file": "recent-discussions-widget.md",
-      "subCat": "Widgetstyling"
+      "subCat": "Widget-styling"
     },
     {
-      "name": "Andere frontend-bibliotheken",
+      "name": "Andere frontend‑bibliotheken",
       "file": "other-frontend-libraries.md",
-      "subCat": "Andere frontend-bibliotheken"
+      "subCat": "Andere frontend‑bibliotheken"
     }
   ]
 }

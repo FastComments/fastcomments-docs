@@ -1,30 +1,35 @@
 {
-  "name": "Prilagođeni stilovi",
-  "pageHeader": "Vodič za prilagođene stilove",
+  "name": "Prilagođeni stil",
+  "pageHeader": "Vodič za prilagođeni stil",
   "icon": "feature.png",
   "itemsOrdered": [
     {
       "name": "Kako prilagoditi stilove",
       "file": "comment-widget-instructions.md",
-      "subCat": "Početak rada"
+      "subCat": "Početak"
     },
     {
-      "name": "Referenca za prilagođeni CSS widgeta za komentare (v2, najnovija)",
+      "name": "Prilagođavanje rubova okvira za komentar",
+      "file": "comment-input-border.md",
+      "subCat": "Stiliziranje widgeta"
+    },
+    {
+      "name": "Referenca prilagođenog CSS-a za widget komentara (v2, najnoviji)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Stiliziranje widgeta"
     },
     {
-      "name": "Stiliziranje widgeta za najnovije komentare",
+      "name": "Stiliziranje widgeta nedavnih komentara",
       "file": "recent-comments-widget.md",
       "subCat": "Stiliziranje widgeta"
     },
     {
-      "name": "Stiliziranje widgeta za stranice s najviše rasprava",
+      "name": "Stiliziranje widgeta najraspravljanijih stranica",
       "file": "top-pages-widget.md",
       "subCat": "Stiliziranje widgeta"
     },
     {
-      "name": "Stiliziranje widgeta za najnovije rasprave",
+      "name": "Stiliziranje widgeta nedavnih rasprava",
       "file": "recent-discussions-widget.md",
       "subCat": "Stiliziranje widgeta"
     },

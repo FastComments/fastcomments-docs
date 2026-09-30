@@ -4,29 +4,34 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Styles anpassen",
+      "name": "Wie man Stile anpasst",
       "file": "comment-widget-instructions.md",
       "subCat": "Erste Schritte"
     },
     {
-      "name": "Kommentar-Widget: Referenz für benutzerdefiniertes CSS (v2, aktuell)",
+      "name": "Anpassen des Kommentarbox-Rahmens",
+      "file": "comment-input-border.md",
+      "subCat": "Widget-Gestaltung"
+    },
+    {
+      "name": "Kommentar-Widget benutzerdefinierte CSS-Referenz (v2, neueste)",
       "file": "generated/css-v2-generated.md",
-      "subCat": "Widget-Styling"
+      "subCat": "Widget-Gestaltung"
     },
     {
-      "name": "Widget-Styling: Neueste Kommentare",
+      "name": "Widget-Gestaltung für aktuelle Kommentare",
       "file": "recent-comments-widget.md",
-      "subCat": "Widget-Styling"
+      "subCat": "Widget-Gestaltung"
     },
     {
-      "name": "Widget-Styling: Meistdiskutierte Seiten",
+      "name": "Widget-Gestaltung für am meisten diskutierte Seiten",
       "file": "top-pages-widget.md",
-      "subCat": "Widget-Styling"
+      "subCat": "Widget-Gestaltung"
     },
     {
-      "name": "Widget-Styling: Neueste Diskussionen",
+      "name": "Widget-Gestaltung für aktuelle Diskussionen",
       "file": "recent-discussions-widget.md",
-      "subCat": "Widget-Styling"
+      "subCat": "Widget-Gestaltung"
     },
     {
       "name": "Andere Frontend-Bibliotheken",

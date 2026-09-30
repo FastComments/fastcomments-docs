@@ -6,15 +6,20 @@
     {
       "name": "如何自定义样式",
       "file": "comment-widget-instructions.md",
-      "subCat": "入门"
+      "subCat": "入门指南"
     },
     {
-      "name": "评论小部件自定义 CSS 参考（v2，最新版）",
+      "name": "自定义评论框边框",
+      "file": "comment-input-border.md",
+      "subCat": "小部件样式"
+    },
+    {
+      "name": "评论小部件自定义 CSS 参考（第2版，最新）",
       "file": "generated/css-v2-generated.md",
       "subCat": "小部件样式"
     },
     {
-      "name": "最新评论小部件样式",
+      "name": "最近评论小部件样式",
       "file": "recent-comments-widget.md",
       "subCat": "小部件样式"
     },

@@ -9,6 +9,11 @@
       "subCat": "はじめに"
     },
     {
+      "name": "コメントボックスの枠線をカスタマイズする",
+      "file": "comment-input-border.md",
+      "subCat": "ウィジェットのスタイリング"
+    },
+    {
       "name": "コメントウィジェット カスタムCSSリファレンス（v2、最新）",
       "file": "generated/css-v2-generated.md",
       "subCat": "ウィジェットのスタイリング"
