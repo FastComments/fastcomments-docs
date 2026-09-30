@@ -12,7 +12,7 @@ Se stai spostando il tuo sito fuori da WordPress, puoi importare un'esportazione
 
 ### CloudFlare & FireWalls
 
-Per far funzionare la configurazione automatica di WordPress, dobbiamo effettuare chiamate alla tua installazione WordPress.  
+Affinché la configurazione automatica di WordPress funzioni, dobbiamo effettuare chiamate alla tua installazione WordPress.  
 I firewall come Cloudflare possono bloccarci e causare il fallimento dell'integrazione. In tali casi, [possiamo fornirti](https://fastcomments.com/auth/my-account/help) un set di IP da inserire nella whitelist per l'integrazione.
 
 ### Data Ownership
