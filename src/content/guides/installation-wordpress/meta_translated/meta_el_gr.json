@@ -1,12 +1,12 @@
 {
   "name": "Εγκατάσταση WordPress",
-  "pageHeader": "Προσθήκη σχολίων σε πραγματικό χρόνο σε ιστότοπους WordPress",
+  "pageHeader": "Προσθήκη Ζωντανών Σχολίων σε Ιστοσελίδες WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Γρήγορη εκκίνηση",
+      "name": "Γρήγορη Έναρξη",
       "file": "wordpress-quick-start.md",
-      "subCat": "Συνοπτικά"
+      "subCat": "TLDR"
     },
     {
       "name": "Εγκατάσταση",
@@ -19,7 +19,7 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Επιμέλεια",
+      "name": "Συντονισμός",
       "file": "wordpress-moderation.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -29,7 +29,7 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Ιστότοποι μόνο για μέλη (SSO)",
+      "name": "Ιστοσελίδες Μόνο Μελών (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -44,44 +44,49 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Συγχρονισμός με το WordPress",
+      "name": "Συγχρονισμός Πίσω στο WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Αριθμός σχολίων",
+      "name": "Αριθμός Σχολίων",
       "file": "wordpress-comment-counts.md",
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Επικοινωνία μεταξύ Εγκατάστασης WordPress και Διακομιστή FastComment",
+      "name": "Επικοινωνία Εγκατάστασης WordPress <> FastComment Server",
       "file": "wordpress-server-communication.md",
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Σφάλματα τομέα",
+      "name": "Σφάλματα Τομέα",
       "file": "wordpress-domain-errors.md",
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Widget Πρόσφατων Σχολίων",
+      "name": "Γραφικό Στοιχείο Πρόσφατα Σχόλια",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Άλλα Widgets"
+      "subCat": "Άλλα Γραφικά Στοιχεία"
     },
     {
-      "name": "Widget Πρόσφατων Συζητήσεων",
+      "name": "Γραφικό Στοιχείο Πρόσφατες Συζητήσεις",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Άλλα Widgets"
+      "subCat": "Άλλα Γραφικά Στοιχεία"
     },
     {
-      "name": "Widget Κορυφαίων Σελίδων",
+      "name": "Γραφικό Στοιχείο Κορυφαίες Σελίδες",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Άλλα Widgets"
+      "subCat": "Άλλα Γραφικά Στοιχεία"
     },
     {
-      "name": "Απενεργοποίηση έναντι Απεγκατάστασης του πρόσθετου",
+      "name": "Μεταφορά Σχολίων σε Νέα Ιστοσελίδα",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Απομάκρυνση από το WordPress"
+    },
+    {
+      "name": "Απενεργοποίηση vs Απεγκατάσταση του Πρόσθετου",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Αφαίρεση πρόσθετου"
+      "subCat": "Αφαίρεση Πρόσθετου"
     }
   ]
 }

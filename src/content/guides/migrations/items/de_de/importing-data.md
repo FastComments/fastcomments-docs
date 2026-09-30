@@ -9,18 +9,18 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin)
-- AnyComment (Via WordPress Import/Export)
+- WordPress (via das Plugin, oder ein XML- oder CSV-Export)
+- AnyComment (über WordPress-Import/Export)
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments-Importseite mit der Anbieterauswahl und den Dateiupload-Feldern für eine Exportdatei'; title='Das Importseitenformular' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments-Importseite mit der Anbieterauswahl und den Feldern zum Hochladen einer Exportdatei'; title='Das Importseiten-Formular' app-screenshot-end]
 
 ### Monitoring Imports
 
 FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Importseite, die einen laufenden Importjob und den vom Job‑Verarbeitungssystem gemeldeten Status zeigt'; title='Import‑Job‑Status' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Importseite, die einen laufenden Import-Job und den vom Job‑Verarbeitungssystem gemeldeten Status zeigt'; title='Import-Job-Status' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 

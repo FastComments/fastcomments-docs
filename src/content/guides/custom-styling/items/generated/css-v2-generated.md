@@ -78,7 +78,7 @@ body { margin: 0; padding: 0; }
     .new-comments-message .new-comments-count { pointer-events: none; position: relative; top: 1px; display: inline-block; min-width: 12px; padding: 2px 5px 4px 5px; margin-inline-end: 3px; border: 1px solid #a2a2a2; border-radius: 4px; border-start-end-radius: 0; }
     .new-comments-message span { pointer-events: none; padding-bottom: 2px; border-bottom: 1px solid #a3a3a3; }
     .comment .new-comments-message { margin: 10px auto 0; }
-    .sso-login-wrapper, .fastcomments-message-wrapper { display: flex; height: fit-content; min-height: 130px; padding: 30px 0; box-sizing: border-box; align-items: center; justify-content: center; border: 1px solid #bfbfbf; border-radius: 11px; border-start-start-radius: 0; }
+    .sso-login-wrapper, .fastcomments-message-wrapper { display: flex; height: fit-content; min-height: 130px; padding: 30px 0; box-sizing: border-box; align-items: center; justify-content: center; border: 1px solid var(--fc-input-border-color, #bfbfbf); border-radius: var(--fc-input-border-radius, 11px); border-start-start-radius: var(--fc-input-border-start-start-radius, 0); }
     .sso-login-wrapper .message-text, .fastcomments-message-wrapper .message-text { display: inline; pointer-events: none; }
     .fastcomments-message-wrapper .message-text a { color: #fff; pointer-events: all; }
     .sso-login-wrapper .sso-login, .fastcomments-message-wrapper .fastcomments-message { display: inline-block; animation: pop-in 0.5s; animation-timing-function: ease; padding-block: 10px; padding-inline: 27px 17px; border-radius: 7px; border-start-start-radius: 0; background: #333; color: #fff; text-decoration: none; font-size: 17px; font-weight: 500; }
@@ -101,12 +101,20 @@ body { margin: 0; padding: 0; }
     .fc-red { display: inline-block; margin: 5px; color: #ff0000 }
     .comment-error { padding: 10px }
     /* Brand shape: square top-left, rounded other 3 corners (border-radius: 0 N N N). Match this when adding new buttons/inputs/cards to stay on-theme. */
-    input, textarea { padding: 12px 20px; border: 1px solid #bfbfbf; border-radius: 11px; border-start-start-radius: 0; box-sizing: border-box; outline: none; background: transparent; }
+    /*
+     * INPUT BORDER VARIABLES: the easiest way to restyle the comment box border. Set them in custom CSS, e.g. :root { --fc-input-border-color: #d1d5db; --fc-input-border-radius: 8px; }
+     * They keep the text area and the frame lines drawn around it (.horizontal-border-*) in sync; overriding border-color or border-radius on the textarea alone leaves the frame lines mismatched.
+     *   --fc-input-border-color               border color (default #bfbfbf)
+     *   --fc-input-border-color-focus         border color while the comment box has focus (default #555)
+     *   --fc-input-border-radius              radius of the rounded corners (default 11px)
+     *   --fc-input-border-start-start-radius  radius of the square top-left corner, top-right in RTL (default 0)
+     */
+    input, textarea { padding: 12px 20px; border: 1px solid var(--fc-input-border-color, #bfbfbf); border-radius: var(--fc-input-border-radius, 11px); border-start-start-radius: var(--fc-input-border-start-start-radius, 0); box-sizing: border-box; outline: none; background: transparent; }
     input { padding: 9px 12px; border-radius: 6px; border-start-start-radius: 0; }
-    /* Focus state must be applied to BOTH the textarea border and the sibling .horizontal-border-wrapper (faux border around .comment-input -- see below). Override both selectors when changing focus color. */
-    input:focus, textarea:focus, textarea:focus + .horizontal-border-wrapper, .comment-input textarea:focus { border-color: #555 } /* .comment-reply textarea:focus for ssr */
+    /* Focus state must be applied to BOTH the textarea border and the sibling .horizontal-border-wrapper (faux border around .comment-input -- see below). Set --fc-input-border-color-focus, or override both selectors, when changing focus color. */
+    input:focus, textarea:focus, textarea:focus + .horizontal-border-wrapper, .comment-input textarea:focus { border-color: var(--fc-input-border-color-focus, #555) } /* .comment-reply textarea:focus for ssr */
     /* Focus anywhere inside the box (the textarea or content an extension rendered below it) colours the whole frame. */
-    .comment-input:focus-within > textarea, .comment-input:focus-within > [contenteditable].comment-input, .comment-input:focus-within .horizontal-border-wrapper { border-color: #555 }
+    .comment-input:focus-within > textarea, .comment-input:focus-within > [contenteditable].comment-input, .comment-input:focus-within .horizontal-border-wrapper { border-color: var(--fc-input-border-color-focus, #555) }
     .pagination { margin-top: 50px; line-height: 19px; text-align: center; user-select: none; }
     .pagination > * { display: inline-block; cursor: pointer; font-weight: 700; }
     .pagination > * > span { font-weight: normal; pointer-events: none; }
@@ -150,7 +158,7 @@ body { margin: 0; padding: 0; }
     .toolbar .t-btn input[type=file] { position: absolute; padding: 40px; font-size: 100px; top: 0; inset-inline-start: 0; opacity: 0; cursor: pointer }
     .commenty-input:not(.show-default-hidden) .toolbar { width: 100%; margin-top: -50px; }
     @media(max-width: 500px) { .toolbar { display: flex; width: 100%; padding-bottom: 12px; justify-content: space-evenly; align-items: center; } }
-    @media(max-width: 500px) { .comment-input .toolbar { margin-top: 50px; border-bottom: 1px solid #bfbfbf; } }
+    @media(max-width: 500px) { .comment-input .toolbar { margin-top: 50px; border-bottom: 1px solid var(--fc-input-border-color, #bfbfbf); } }
     .comment-reply .auth-input, .comment-vote-auth.auth-input { margin: 10px 0; font-size: 13px }
     .comment-reply .auth-input .fc-login { margin: 10px 0 0; }
     .comment-reply .auth-input .reasoning, .comment-vote-auth.auth-input .reasoning { font-weight: 600; }
@@ -159,26 +167,26 @@ body { margin: 0; padding: 0; }
     .comment-reply .auth-input .solicitation-info, .comment-vote-auth.auth-input .solicitation-info { margin-top: 10px; }
     .comment-reply .auth-input .fast-comments-reply { margin-top: 10px; padding: 10px 45px; border-radius: 5px; border-start-end-radius: 0; background: #333; color: #fff; border: none; }
     /* padding-bottom reserves space for the absolute toolbar/submit button. Don't remove it without also repositioning those elements. */
-    .comment-input, .comment-edit { position: relative; padding-bottom: 30px; border-radius: 11px; border-start-start-radius: 0; }
+    .comment-input, .comment-edit { position: relative; padding-bottom: 30px; border-radius: var(--fc-input-border-radius, 11px); border-start-start-radius: var(--fc-input-border-start-start-radius, 0); }
     /* The textarea has no bottom border or bottom radius -- the bottom edge is drawn by .horizontal-border-bottom-* divs. To restyle the bottom of the input, target those, not the textarea. */
-    .comment-input textarea { display: block; width: 100%; height: 130px; padding-block: 15px; padding-inline: 15px 25px; resize: none; font-size: 16px; border-bottom: none; border-radius: 0; border-start-end-radius: 11px; }
+    .comment-input textarea { display: block; width: 100%; height: 130px; padding-block: 15px; padding-inline: 15px 25px; resize: none; font-size: 16px; border-bottom: none; border-radius: 0; border-start-start-radius: var(--fc-input-border-start-start-radius, 0); border-start-end-radius: var(--fc-input-border-radius, 11px); }
     .comment-input textarea::placeholder { font-size: 16px; font-weight: 400; }
     .comment-input input { display: block; width: 100%; font-size: 14px; }
-    .comment-input .fastcomments-message-wrapper { border: 1px solid #bfbfbf; border-bottom: none; border-radius: 0; border-start-end-radius: 11px; }
+    .comment-input .fastcomments-message-wrapper { border: 1px solid var(--fc-input-border-color, #bfbfbf); border-bottom: none; border-radius: 0; border-start-start-radius: var(--fc-input-border-start-start-radius, 0); border-start-end-radius: var(--fc-input-border-radius, 11px); }
     .comment-input input[name=fastcomments-link] { display: block; width: 100%; margin: 10px 0; }
     /*
-     * COMMENT INPUT BORDER: drawn by 6 absolutely-positioned divs inside .horizontal-border-wrapper (top-left, top-right, left, right, bottom-left, bottom-right), NOT by the textarea's border. To change the input's border color, width, or radius, target .horizontal-border-wrapper (sets border-color, inherited by all 6 pieces) and the individual .horizontal-border-* rules. The bottom-center is intentionally open so the submit button can overlap it. Top pieces are display:none on the root reply box and re-shown only for nested reply boxes (rule near end of block).
+     * COMMENT INPUT BORDER: drawn by 6 absolutely-positioned divs inside .horizontal-border-wrapper (top-left, top-right, left, right, bottom-left, bottom-right), NOT by the textarea's border. To change the input's border color or radius, prefer the --fc-input-border-* variables above, which restyle the textarea and all 6 pieces together. Otherwise target .horizontal-border-wrapper (sets border-color, inherited by all 6 pieces) and the individual .horizontal-border-* rules. The bottom-center is intentionally open so the submit button can overlap it. Top pieces are display:none on the root reply box and re-shown only for nested reply boxes (rule near end of block).
      */
-    .comment-input .horizontal-border-wrapper { pointer-events: none; border-color: #bfbfbf; }
+    .comment-input .horizontal-border-wrapper { pointer-events: none; border-color: var(--fc-input-border-color, #bfbfbf); }
     .comment-input .horizontal-border { position: absolute; height: 20px; border-bottom: 1px solid; border-color: inherit; }
-    .comment-input .horizontal-border-left { bottom: 0; inset-inline-start: 0; border-radius: 0; border-end-start-radius: 11px; }
-    .comment-input .horizontal-border-right { bottom: 0; inset-inline-end: 0; width: 20px; border-radius: 0; border-end-end-radius: 11px; }
+    .comment-input .horizontal-border-left { bottom: 0; inset-inline-start: 0; border-radius: 0; border-end-start-radius: var(--fc-input-border-radius, 11px); }
+    .comment-input .horizontal-border-right { bottom: 0; inset-inline-end: 0; width: 20px; border-radius: 0; border-end-end-radius: var(--fc-input-border-radius, 11px); }
     .comment-input .horizontal-border-top-left, .comment-input .horizontal-border-top-right { display: none; position: absolute; top: 20px; border-bottom: 0; border-top: 1px solid; border-color: inherit; }
-    .comment-input .horizontal-border-top-right { top: 0; inset-inline-end: 0; border-radius: 0; border-start-end-radius: 11px; width: 20px; }
-    .comment-input .horizontal-border-top-left { top: 0; inset-inline-start: 0; }
-    /* Side pieces span the whole box (top to bottom), so anything an extension renders below the textarea sits inside the frame with no borders of its own. Over the textarea they overlap its own side border pixel for pixel; the right piece rounds its top corner to match the textarea's. */
-    .comment-input .horizontal-border-bottom-left { position: absolute; top: 0; bottom: 0; height: auto; width: 15px; inset-inline-start: 0; border-color: inherit; border-bottom: 0; border-inline-start-width: 1px; border-inline-start-style: solid; border-radius: 0; border-end-start-radius: 11px; }
-    .comment-input .horizontal-border-bottom-right { position: absolute; top: 0; bottom: 0; height: auto; width: 15px; inset-inline-end: 0; border-color: inherit; border-bottom: 0; border-inline-end-width: 1px; border-inline-end-style: solid; border-radius: 0; border-start-end-radius: 11px; border-end-end-radius: 11px; }
+    .comment-input .horizontal-border-top-right { top: 0; inset-inline-end: 0; border-radius: 0; border-start-end-radius: var(--fc-input-border-radius, 11px); width: 20px; }
+    .comment-input .horizontal-border-top-left { top: 0; inset-inline-start: 0; border-start-start-radius: var(--fc-input-border-start-start-radius, 0); }
+    /* Side pieces span the whole box (top to bottom), so anything an extension renders below the textarea sits inside the frame with no borders of its own. Over the textarea they overlap its own side border pixel for pixel, so their top corners use the same radius variables as the textarea's. */
+    .comment-input .horizontal-border-bottom-left { position: absolute; top: 0; bottom: 0; height: auto; width: 15px; inset-inline-start: 0; border-color: inherit; border-bottom: 0; border-inline-start-width: 1px; border-inline-start-style: solid; border-radius: 0; border-start-start-radius: var(--fc-input-border-start-start-radius, 0); border-end-start-radius: var(--fc-input-border-radius, 11px); }
+    .comment-input .horizontal-border-bottom-right { position: absolute; top: 0; bottom: 0; height: auto; width: 15px; inset-inline-end: 0; border-color: inherit; border-bottom: 0; border-inline-end-width: 1px; border-inline-end-style: solid; border-radius: 0; border-start-end-radius: var(--fc-input-border-radius, 11px); border-end-end-radius: var(--fc-input-border-radius, 11px); }
     /* Re-shows top border pieces for nested reply boxes (input rendered inside a .comment) so the input gets a full frame. */
     .comment .comment-input .horizontal-border-top-left, .comment .comment-input .horizontal-border-top-right { display: block }
     @media(max-width: 500px) { .comment-input textarea, .comment-input .fastcomments-message-wrapper { height: 130px;  } }
@@ -335,8 +343,8 @@ body { margin: 0; padding: 0; }
     .footer .logo { margin-top: -2px; padding-inline-end: 2px; } 
     .comment.readonly .comment-vote-options { display: none }
     /* Autocomplete dropdown for @mentions and #hashtags inside the comment input. Anchored relative to .comment-input. */
-    .search-list { position: absolute; z-index: 4; width: 100%; margin-top: -9px; box-sizing: border-box; border-radius: 0 0 11px 11px; background: #fff; border: 1px solid #bfbfbf; }
-    .search-list .cross { position: absolute; top: -11px; inset-inline-end: 0; width: 20px; height: 20px; background-color: #fff; border: 1px solid #bfbfbf; border-inline-end: 0; border-radius: 16px; border-start-end-radius: 0; border-end-end-radius: 0; cursor: pointer; }
+    .search-list { position: absolute; z-index: 4; width: 100%; margin-top: -9px; box-sizing: border-box; border-radius: 0 0 11px 11px; background: #fff; border: 1px solid var(--fc-input-border-color, #bfbfbf); }
+    .search-list .cross { position: absolute; top: -11px; inset-inline-end: 0; width: 20px; height: 20px; background-color: #fff; border: 1px solid var(--fc-input-border-color, #bfbfbf); border-inline-end: 0; border-radius: 16px; border-start-end-radius: 0; border-end-end-radius: 0; cursor: pointer; }
     .search-list .search-entry { padding: 5px 10px; cursor: pointer; }
     .search-list .search-entry.last { border-radius: 0 0 11px 11px }
     .search-list .search-entry img { width: 20px; height: 20px; margin-inline-end: 3px; vertical-align: middle; border-radius: 20px; }

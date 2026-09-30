@@ -1,4 +1,4 @@
-Our [WordPress Eklentisi](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
+Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
 it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
 
 **Bu, hiçbir şeyi manuel olarak kopyalamadan veya indirmeden yapılır.**
@@ -6,6 +6,9 @@ it will guide you through linking your WordPress installation with FastComments 
 The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
 
 The mechanism is designed to not put excessive load on your WordPress installation during the migration.
+
+If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
+[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
 ### CloudFlare & FireWalls
 

@@ -1,6 +1,6 @@
 {
   "name": "Встановлення WordPress",
-  "pageHeader": "Додати живе коментування на сайти WordPress",
+  "pageHeader": "Додайте живі коментарі до сайтів WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -34,17 +34,17 @@
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Сповіщення",
+      "name": "Повідомлення",
       "file": "wordpress-notifications.md",
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Користувацькі теми",
+      "name": "Власні теми",
       "file": "wordpress-custom-themes.md",
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Синхронізація назад у WordPress",
+      "name": "Синхронізація з WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Встановлення WordPress"
     },
@@ -54,7 +54,7 @@
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Обмін даними між WordPress і сервером FastComment",
+      "name": "Встановлення WordPress <> Комунікація з сервером FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Встановлення WordPress"
     },
@@ -79,9 +79,14 @@
       "subCat": "Інші віджети"
     },
     {
-      "name": "Відключення проти видалення плагіна",
+      "name": "Перенесення ваших коментарів на новий сайт",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Перехід з WordPress"
+    },
+    {
+      "name": "Деактивація проти видалення плагіну",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Видалення плагіна"
+      "subCat": "Видалення плагіну"
     }
   ]
 }

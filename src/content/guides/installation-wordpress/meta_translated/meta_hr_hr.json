@@ -1,12 +1,12 @@
 {
   "name": "Instalacija WordPressa",
-  "pageHeader": "Dodajte komentiranje uživo na WordPress stranice",
+  "pageHeader": "Dodajte live komentiranje na WordPress stranice",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Brzi početak",
       "file": "wordpress-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacija",
@@ -14,12 +14,12 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Prilagođavanje",
+      "name": "Prilagodba",
       "file": "wordpress-customize.md",
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Moderiranje",
+      "name": "Moderacija",
       "file": "wordpress-moderation.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Stranice samo za članove (SSO)",
+      "name": "Samo za članove (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -44,7 +44,7 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Sinkronizacija natrag u WordPress",
+      "name": "Sinkronizacija natrag na WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -54,32 +54,37 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Komunikacija između instalacije WordPressa i FastComment servera",
+      "name": "Instalacija WordPressa <> Komunikacija s FastComment poslužiteljem",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Pogreške s domenom",
+      "name": "Greške domene",
       "file": "wordpress-domain-errors.md",
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Widget za nedavne komentare",
+      "name": "Widget za najnovije komentare",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Ostali widgeti"
     },
     {
-      "name": "Widget za nedavne rasprave",
+      "name": "Widget za najnovije rasprave",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "Ostali widgeti"
     },
     {
-      "name": "Widget najposjećenijih stranica",
+      "name": "Widget za najpopularnije stranice",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Ostali widgeti"
     },
     {
-      "name": "Deaktivacija nasuprot deinstalaciji dodatka",
+      "name": "Premještanje vaših komentara na novu stranicu",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Premještanje s WordPressa"
+    },
+    {
+      "name": "Deaktiviranje vs deinstalacija dodatka",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Uklanjanje dodatka"
     }

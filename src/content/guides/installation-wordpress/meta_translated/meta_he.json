@@ -1,67 +1,67 @@
 {
-  "name": "התקנת וורדפרס",
-  "pageHeader": "הוספת תגובות בזמן אמת לאתרי וורדפרס",
+  "name": "התקנת WordPress",
+  "pageHeader": "הוספת תגובות חיות לאתרי WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "התחלה מהירה",
       "file": "wordpress-quick-start.md",
-      "subCat": "בקצרה"
+      "subCat": "TLDR"
     },
     {
       "name": "התקנה",
       "file": "wordpress-installation.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
       "name": "התאמה אישית",
       "file": "wordpress-customize.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "ניהול תגובות",
+      "name": "ביקורת",
       "file": "wordpress-moderation.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "משתמשים, מודרטורים ומנהלים",
+      "name": "משתמשים, ממנים ומנהלים",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "אתרים לחברים בלבד (SSO)",
+      "name": "אתרים למנויים בלבד (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
       "name": "התראות",
       "file": "wordpress-notifications.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "ערכות נושא מותאמות",
+      "name": "תבניות מותאמות",
       "file": "wordpress-custom-themes.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "סנכרון חזרה לוורדפרס",
+      "name": "סנכרון חזרה ל-WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
       "name": "ספירת תגובות",
       "file": "wordpress-comment-counts.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "תקשורת בין התקנת וורדפרס לשרת FastComment",
+      "name": "התקנת WordPress <> תקשורת עם שרת FastComment",
       "file": "wordpress-server-communication.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "wordpress-domain-errors.md",
-      "subCat": "התקנת וורדפרס"
+      "subCat": "התקנת WordPress"
     },
     {
       "name": "ווידג'ט תגובות אחרונות",
@@ -74,12 +74,17 @@
       "subCat": "ווידג'טים אחרים"
     },
     {
-      "name": "ווידג'ט הדפים המובילים",
+      "name": "ווידג'ט דפים מובילים",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "ווידג'טים אחרים"
     },
     {
-      "name": "השבתה לעומת הסרה של התוסף",
+      "name": "העברת התגובות שלך לאתר חדש",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "העברה מחוץ ל-WordPress"
+    },
+    {
+      "name": "השבתה מול הסרת תוסף",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "הסרת תוסף"
     }

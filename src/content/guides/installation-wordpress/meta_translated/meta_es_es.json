@@ -1,12 +1,12 @@
 {
   "name": "Instalación de WordPress",
-  "pageHeader": "Agregar comentarios en vivo a sitios de WordPress",
+  "pageHeader": "Agregar comentarios en vivo a sitios WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Inicio rápido",
       "file": "wordpress-quick-start.md",
-      "subCat": "Resumen"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalación",
@@ -44,7 +44,7 @@
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Sincronización con WordPress",
+      "name": "Sincronizando de vuelta a WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Instalación de WordPress"
     },
@@ -54,7 +54,7 @@
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Comunicación entre la instalación de WordPress y el servidor de FastComment",
+      "name": "Comunicación entre Instalación de WordPress <> Servidor FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalación de WordPress"
     },
@@ -74,9 +74,14 @@
       "subCat": "Otros widgets"
     },
     {
-      "name": "Widget de páginas más populares",
+      "name": "Widget de páginas principales",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Otros widgets"
+    },
+    {
+      "name": "Mover tus comentarios a un nuevo sitio",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Migrar fuera de WordPress"
     },
     {
       "name": "Desactivar vs desinstalar el plugin",

@@ -1,87 +1,92 @@
 {
-  "name": "Инсталација WordPress-а",
-  "pageHeader": "Додајте коментарисање уживо на WordPress сајтове",
+  "name": "Instalacija WordPress-a",
+  "pageHeader": "Dodajte live komentarisanje na WordPress sajtove",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Брзи почетак",
+      "name": "Brzi početak",
       "file": "wordpress-quick-start.md",
-      "subCat": "Укратко"
+      "subCat": "Ukratko"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "wordpress-installation.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "wordpress-customize.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Модерација",
+      "name": "Moderacija",
       "file": "wordpress-moderation.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Корисници, модератори и администратори",
+      "name": "Korisnici, moderatori i administratori",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Сајтови само за чланове (SSO)",
+      "name": "Sajtovi samo za članove (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Обавештења",
+      "name": "Obaveštenja",
       "file": "wordpress-notifications.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Прилагођене теме",
+      "name": "Prilagođene teme",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Повратна синхронизација са WordPress-ом",
+      "name": "Sinhronizacija nazad na WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Број коментара",
+      "name": "Broj komentara",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Комуникација између WordPress инсталације и FastComment сервера",
+      "name": "Instalacija WordPress-a <> Komunikacija sa FastComment serverom",
       "file": "wordpress-server-communication.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Грешке домена",
+      "name": "Greške domena",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Инсталација WordPress-а"
+      "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Видгет за најновије коментаре",
+      "name": "Vidžet za poslednje komentare",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Остали видгети"
+      "subCat": "Ostali vidžeti"
     },
     {
-      "name": "Видгет за најновије дискусије",
+      "name": "Vidžet za poslednje diskusije",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Остали видгети"
+      "subCat": "Ostali vidžeti"
     },
     {
-      "name": "Видгет за најпопуларније странице",
+      "name": "Vidžet za najpopularnije stranice",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Остали видгети"
+      "subCat": "Ostali vidžeti"
     },
     {
-      "name": "Деактивација у поређењу са деинсталацијом додатка",
+      "name": "Premeštanje vaših komentara na novi sajt",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Prelazak sa WordPress-a"
+    },
+    {
+      "name": "Deaktiviranje vs deinstalacija plugina",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Уклањање додатка"
+      "subCat": "Uklanjanje plugina"
     }
   ]
 }

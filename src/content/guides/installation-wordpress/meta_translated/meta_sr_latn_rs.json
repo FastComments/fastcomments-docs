@@ -1,12 +1,12 @@
 {
   "name": "Instalacija WordPress-a",
-  "pageHeader": "Dodavanje komentara uživo na WordPress sajtove",
+  "pageHeader": "Dodajte komentarisanje u realnom vremenu na WordPress sajtove",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Brzi početak",
       "file": "wordpress-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacija",
@@ -44,7 +44,7 @@
       "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Sinhronizacija nazad u WordPress",
+      "name": "Sinhronizacija nazad na WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Instalacija WordPress-a"
     },
@@ -54,7 +54,7 @@
       "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Komunikacija između instalacije WordPress-a i FastComment servera",
+      "name": "Komunikacija instalacije WordPress-a i FastComment servera",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacija WordPress-a"
     },
@@ -64,24 +64,29 @@
       "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Widget za najnovije komentare",
+      "name": "Vidžet za poslednje komentare",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Ostali vidžeti"
     },
     {
-      "name": "Widget za najnovije diskusije",
+      "name": "Vidžet za poslednje diskusije",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "Ostali vidžeti"
     },
     {
-      "name": "Widget za najposećenije stranice",
+      "name": "Vidžet za najpopularnije stranice",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Ostali vidžeti"
     },
     {
-      "name": "Deaktiviranje naspram deinstalacije dodatka",
+      "name": "Premeštanje vaših komentara na novi sajt",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Premeštanje sa WordPress-a"
+    },
+    {
+      "name": "Deaktiviranje vs deinstaliranje plugina",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Uklanjanje dodatka"
+      "subCat": "Uklanjanje plugina"
     }
   ]
 }

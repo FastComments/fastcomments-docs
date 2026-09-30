@@ -11,57 +11,57 @@
     {
       "name": "Installation",
       "file": "wordpress-installation.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Personnalisation",
       "file": "wordpress-customize.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Modération",
       "file": "wordpress-moderation.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Utilisateurs, modérateurs et administrateurs",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Sites réservés aux membres (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Notifications",
       "file": "wordpress-notifications.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Thèmes personnalisés",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
-      "name": "Synchronisation avec WordPress",
+      "name": "Synchronisation vers WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Nombre de commentaires",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
-      "name": "Communication entre l'installation WordPress et le serveur FastComment",
+      "name": "Communication Installation WordPress <> Serveur FastComment",
       "file": "wordpress-server-communication.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Erreurs de domaine",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Installation de WordPress"
+      "subCat": "Installation WordPress"
     },
     {
       "name": "Widget des commentaires récents",
@@ -74,12 +74,17 @@
       "subCat": "Autres widgets"
     },
     {
-      "name": "Widget des pages les plus populaires",
+      "name": "Widget des pages les plus consultées",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Autres widgets"
     },
     {
-      "name": "Désactiver vs désinstaller le plugin",
+      "name": "Déplacer vos commentaires vers un nouveau site",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Migration hors WordPress"
+    },
+    {
+      "name": "Désactivation vs désinstallation du plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Suppression du plugin"
     }

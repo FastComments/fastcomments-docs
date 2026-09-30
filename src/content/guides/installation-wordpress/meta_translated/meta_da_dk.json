@@ -1,12 +1,12 @@
 {
   "name": "WordPress-installation",
-  "pageHeader": "Tilføj live-kommentering til WordPress-sider",
+  "pageHeader": "Tilføj live-kommentarer til WordPress-websteder",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Hurtig start",
       "file": "wordpress-quick-start.md",
-      "subCat": "Kort fortalt"
+      "subCat": "TLDR"
     },
     {
       "name": "Installation",
@@ -19,7 +19,7 @@
       "subCat": "WordPress-installation"
     },
     {
-      "name": "Moderering",
+      "name": "Moderation",
       "file": "wordpress-moderation.md",
       "subCat": "WordPress-installation"
     },
@@ -29,7 +29,7 @@
       "subCat": "WordPress-installation"
     },
     {
-      "name": "Sider kun for medlemmer (SSO)",
+      "name": "Kun medlemswebsteder (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress-installation"
     },
@@ -64,19 +64,24 @@
       "subCat": "WordPress-installation"
     },
     {
-      "name": "Seneste kommentarer-widget",
+      "name": "Widget til seneste kommentarer",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Andre widgets"
     },
     {
-      "name": "Seneste diskussioner-widget",
+      "name": "Widget til seneste diskussioner",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "Andre widgets"
     },
     {
-      "name": "Top-sider-widget",
+      "name": "Widget til top-sider",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Andre widgets"
+    },
+    {
+      "name": "Flytning af dine kommentarer til et nyt websted",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Flytning fra WordPress"
     },
     {
       "name": "Deaktivering vs afinstallation af plugin",

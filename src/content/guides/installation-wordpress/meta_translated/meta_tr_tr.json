@@ -6,7 +6,7 @@
     {
       "name": "Hızlı Başlangıç",
       "file": "wordpress-quick-start.md",
-      "subCat": "Özet"
+      "subCat": "Kısa Özet"
     },
     {
       "name": "Kurulum",
@@ -19,7 +19,7 @@
       "subCat": "WordPress Kurulumu"
     },
     {
-      "name": "Moderasyon",
+      "name": "Denetleme",
       "file": "wordpress-moderation.md",
       "subCat": "WordPress Kurulumu"
     },
@@ -29,7 +29,7 @@
       "subCat": "WordPress Kurulumu"
     },
     {
-      "name": "Üyeliğe Özel Siteler (SSO)",
+      "name": "Sadece Üyelik Siteleri (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress Kurulumu"
     },
@@ -44,7 +44,7 @@
       "subCat": "WordPress Kurulumu"
     },
     {
-      "name": "WordPress'e Geri Eşitleme",
+      "name": "WordPress'e Geri Senkronizasyon",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "WordPress Kurulumu"
     },
@@ -56,7 +56,7 @@
     {
       "name": "WordPress Kurulumu <> FastComment Sunucu İletişimi",
       "file": "wordpress-server-communication.md",
-      "subCat": "WordPress Kurulumu"
+      "subCat": "WordPress Installation"
     },
     {
       "name": "Alan Adı Hataları",
@@ -64,19 +64,24 @@
       "subCat": "WordPress Kurulumu"
     },
     {
-      "name": "Son Yorumlar Bileşeni",
+      "name": "Son Yorumlar Widget'ı",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Diğer Bileşenler"
+      "subCat": "Diğer Widget'lar"
     },
     {
-      "name": "Son Tartışmalar Bileşeni",
+      "name": "Son Tartışmalar Widget'ı",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Diğer Bileşenler"
+      "subCat": "Diğer Widget'lar"
     },
     {
-      "name": "En Popüler Sayfalar Bileşeni",
+      "name": "En İyi Sayfalar Widget'ı",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Diğer Bileşenler"
+      "subCat": "Diğer Widget'lar"
+    },
+    {
+      "name": "Yorumlarınızı Yeni Bir Siteye Taşıma",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "WordPress'ten Çıkma"
     },
     {
       "name": "Eklentiyi Devre Dışı Bırakma vs Kaldırma",

@@ -9,7 +9,7 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin)
+- WordPress (via the plugin, or an XML or CSV export)
 - AnyComment (Via WordPress Import/Export)
 
 By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
@@ -20,7 +20,7 @@ By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import
 
 FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Stranica uvoza koja prikazuje pokrenuti posao uvoza i status koji izvještava sustav za obradu poslova'; title='Status posla uvoza' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Stranica uvoza koja prikazuje pokrenuti posao uvoza i status koji izvještava sustav obrade poslova'; title='Status posla uvoza' app-screenshot-end]
 
 Note that the status for Imports and Export are viewable by all administrators in the account.
 

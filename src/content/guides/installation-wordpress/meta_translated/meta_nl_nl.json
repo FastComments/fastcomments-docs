@@ -6,7 +6,7 @@
     {
       "name": "Snelstart",
       "file": "wordpress-quick-start.md",
-      "subCat": "Kort samengevat"
+      "subCat": "TLDR"
     },
     {
       "name": "Installatie",
@@ -44,7 +44,7 @@
       "subCat": "WordPress-installatie"
     },
     {
-      "name": "Terug synchroniseren met WordPress",
+      "name": "Synchroniseren terug naar WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "WordPress-installatie"
     },
@@ -54,7 +54,7 @@
       "subCat": "WordPress-installatie"
     },
     {
-      "name": "Communicatie tussen WordPress-installatie en FastComment-server",
+      "name": "WordPress-installatie <> FastComment servercommunicatie",
       "file": "wordpress-server-communication.md",
       "subCat": "WordPress-installatie"
     },
@@ -64,24 +64,29 @@
       "subCat": "WordPress-installatie"
     },
     {
-      "name": "Widget voor recente reacties",
+      "name": "Widget recente reacties",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Andere widgets"
     },
     {
-      "name": "Widget voor recente discussies",
+      "name": "Widget recente discussies",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "Andere widgets"
     },
     {
-      "name": "Widget voor populairste pagina's",
+      "name": "Widget toppagina's",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Andere widgets"
     },
     {
-      "name": "Deactiveren versus verwijderen van de plugin",
+      "name": "Je reacties verplaatsen naar een nieuwe site",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Verplaatsen van WordPress"
+    },
+    {
+      "name": "Deactiveren vs de plugin verwijderen",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Plugin verwijderen"
+      "subCat": "Pluginverwijdering"
     }
   ]
 }

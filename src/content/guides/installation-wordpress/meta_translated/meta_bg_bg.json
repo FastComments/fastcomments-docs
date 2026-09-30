@@ -1,12 +1,12 @@
 {
-  "name": "Инсталация на WordPress",
-  "pageHeader": "Добавяне на живо коментиране към WordPress сайтове",
+  "name": "Инсталиране на WordPress",
+  "pageHeader": "Добавете живо коментиране към WordPress сайтове",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
       "name": "Бърз старт",
       "file": "wordpress-quick-start.md",
-      "subCat": "Накратко"
+      "subCat": "TLDR"
     },
     {
       "name": "Инсталация",
@@ -54,7 +54,7 @@
       "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Комуникация между инсталацията на WordPress и сървъра на FastComment",
+      "name": "Инсталация на WordPress <> Комуникация със сървъра FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Инсталация на WordPress"
     },
@@ -64,24 +64,29 @@
       "subCat": "Инсталация на WordPress"
     },
     {
-      "name": "Уиджет за последни коментари",
+      "name": "Джаджа за последни коментари",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Други уиджети"
+      "subCat": "Други джаджи"
     },
     {
-      "name": "Уиджет за последни дискусии",
+      "name": "Джаджа за последни дискусии",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Други уиджети"
+      "subCat": "Други джаджи"
     },
     {
-      "name": "Уиджет за най-посещавани страници",
+      "name": "Джаджа за топ страници",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Други уиджети"
+      "subCat": "Други джаджи"
     },
     {
-      "name": "Деактивиране срещу деинсталиране на приставката",
+      "name": "Преместване на вашите коментари към нов сайт",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Преместване от WordPress"
+    },
+    {
+      "name": "Деактивиране срещу деинсталиране на плъгина",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Премахване на приставката"
+      "subCat": "Премахване на плъгин"
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "name": "Namestitev WordPressa",
-  "pageHeader": "Dodajte komentiranje v živo na WordPress spletna mesta",
+  "pageHeader": "Dodajte živo komentiranje na WordPress spletna mesta",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Hitri začetek",
+      "name": "Hiter začetek",
       "file": "wordpress-quick-start.md",
-      "subCat": "Na kratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Namestitev",
@@ -19,7 +19,7 @@
       "subCat": "Namestitev WordPressa"
     },
     {
-      "name": "Moderacija",
+      "name": "Moderiranje",
       "file": "wordpress-moderation.md",
       "subCat": "Namestitev WordPressa"
     },
@@ -44,7 +44,7 @@
       "subCat": "Namestitev WordPressa"
     },
     {
-      "name": "Sinhronizacija z WordPressom",
+      "name": "Sinhronizacija nazaj v WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Namestitev WordPressa"
     },
@@ -54,7 +54,7 @@
       "subCat": "Namestitev WordPressa"
     },
     {
-      "name": "Komunikacija med WordPress namestitvijo in strežnikom FastComment",
+      "name": "Komunikacija med namestitvijo WordPress <> strežnikom FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Namestitev WordPressa"
     },
@@ -64,22 +64,27 @@
       "subCat": "Namestitev WordPressa"
     },
     {
-      "name": "Pripomoček: Nedavni komentarji",
+      "name": "Gradnik nedavnih komentarjev",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Drugi pripomočki"
+      "subCat": "Drugi gradniki"
     },
     {
-      "name": "Pripomoček: Nedavne razprave",
+      "name": "Gradnik nedavnih razprav",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Drugi pripomočki"
+      "subCat": "Drugi gradniki"
     },
     {
-      "name": "Pripomoček: Najbolj obiskane strani",
+      "name": "Gradnik najbolj priljubljenih strani",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Drugi pripomočki"
+      "subCat": "Drugi gradniki"
     },
     {
-      "name": "Deaktivacija v primerjavi z odstranitvijo vtičnika",
+      "name": "Premikanje vaših komentarjev na novo spletno mesto",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "Premikanje iz WordPressa"
+    },
+    {
+      "name": "Deaktiviranje nasprotno odstranjevanju vtičnika",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Odstranjevanje vtičnika"
     }
