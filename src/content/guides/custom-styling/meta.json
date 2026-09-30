@@ -9,6 +9,11 @@
       "subCat": "Getting Started"
     },
     {
+      "name": "Customizing the Comment Box Border",
+      "file": "comment-input-border.md",
+      "subCat": "Widget Styling"
+    },
+    {
       "name": "Comment Widget Custom CSS Reference (v2, latest)",
       "file": "generated/css-v2-generated.md",
       "subCat": "Widget Styling"
