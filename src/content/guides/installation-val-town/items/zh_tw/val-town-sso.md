@@ -63,6 +63,6 @@ export default oauthMiddleware(app.fetch);
 
 千萬不要從身分提供者設定 `isAdmin` 或 `isModerator`。使用 Val Town 帳號登入並不代表該使用者應該擔任站點的管理員或版主。
 
-請參閱 [SSO guide](/guide-sso.html) 以取得完整欄位清單、群組限制的討論串以及徽章資訊。
+請參閱 [SSO guide](/guide-customizations-and-configuration.html#sso-secure) 以取得完整欄位清單、群組限制的討論串以及徽章資訊。
 
 ---

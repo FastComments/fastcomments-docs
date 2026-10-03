@@ -62,4 +62,4 @@ When the visitor is logged out, pass `sso` with only a `loginURL`. The widget th
 
 Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
 
-See the [SSO 가이드](/guide-sso.html) for the full field list, group-gated threads, and badges.
+See the [SSO 가이드](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group-gated threads, and badges.

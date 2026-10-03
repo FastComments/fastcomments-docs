@@ -1306,7 +1306,8 @@ fn write_sitemap(
 /// `[text](./foo.md)` / `[text](/guide-X.html#foo)` link components.
 fn build_link_validator(guides: &[Guide]) -> fcdocs_shared::link_validator::LinkValidator {
     let mut v = fcdocs_shared::link_validator::LinkValidator::new();
-    for g in guides {
+    // A redirect stub never gets a page, so a link to it is a 404.
+    for g in guides.iter().filter(|g| !g.meta.is_redirect_stub()) {
         v.register_guide_items(&g.id, g.meta.items_ordered.iter().map(|it| it.file.as_str()));
     }
     v
@@ -2402,5 +2403,50 @@ mod meta_desc_tests {
         assert_eq!(read_meta_desc(&root, "demo", "en"), None);
         // No file at all.
         assert_eq!(read_meta_desc(&root, "other", "en"), None);
+    }
+}
+
+#[cfg(test)]
+mod link_validator_tests {
+    use super::*;
+
+    fn guide(id: &str, url: Option<&str>, files: &[&str]) -> Guide {
+        Guide {
+            id: id.to_string(),
+            meta: GuideMeta {
+                url: url.map(str::to_string),
+                items_ordered: files
+                    .iter()
+                    .map(|f| MetaItem {
+                        name: f.to_string(),
+                        file: f.to_string(),
+                        sub_cat: None,
+                        sidebar_item_classes: None,
+                        extra: Default::default(),
+                    })
+                    .collect(),
+                ..Default::default()
+            },
+            items_dir: PathBuf::new(),
+        }
+    }
+
+    /// The val-town SSO item linked `/guide-sso.html`, which 404'd in prod
+    /// because `sso` is a redirect stub and never gets a page.
+    #[test]
+    fn link_to_a_redirect_stub_fails() {
+        let v = build_link_validator(&[
+            guide("sso", Some("/guide-customizations-and-configuration.html#sso"), &[]),
+            guide("customizations-and-configuration", None, &["sso.md"]),
+        ]);
+        let errs = v.validate("see [SSO](/guide-sso.html)", "val-town-sso.md", "installation-val-town");
+        assert_eq!(errs.len(), 1, "got: {errs:?}");
+        assert!(errs[0].issue.contains("Guide 'sso'"));
+        let ok = v.validate(
+            "see [SSO](/guide-customizations-and-configuration.html#sso)",
+            "val-town-sso.md",
+            "installation-val-town",
+        );
+        assert!(ok.is_empty(), "got: {ok:?}");
     }
 }

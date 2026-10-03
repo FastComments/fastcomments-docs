@@ -62,4 +62,4 @@ Wenn der Besucher abgemeldet ist, übergeben Sie `sso` nur mit einer `loginURL`.
 
 Setzen Sie niemals `isAdmin` oder `isModerator` vom Identitätsanbieter. Die Anmeldung mit einem Val Town‑Konto sagt nichts darüber aus, wer Ihre Seite moderieren sollte.
 
-Siehe den [SSO guide](/guide-sso.html) für die vollständige Feldliste, gruppenbasierte Threads und Badges.
+Siehe den [SSO guide](/guide-customizations-and-configuration.html#sso-secure) für die vollständige Feldliste, gruppenbasierte Threads und Badges.

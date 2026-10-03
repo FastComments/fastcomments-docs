@@ -62,4 +62,4 @@ export default oauthMiddleware(app.fetch);
 
 לעולם אל תגדיר `isAdmin` או `isModerator` מספק הזהות. התחברות עם חשבון Val Town לא אומרת דבר על מי צריך למודרציה של האתר שלך.
 
-ראה את [מדריך SSO](/guide-sso.html) לקבלת רשימת השדות המלאה, נושאים עם גישה קבוצתית, ותגים.
+ראה את [מדריך SSO](/guide-customizations-and-configuration.html#sso-secure) לקבלת רשימת השדות המלאה, נושאים עם גישה קבוצתית, ותגים.
