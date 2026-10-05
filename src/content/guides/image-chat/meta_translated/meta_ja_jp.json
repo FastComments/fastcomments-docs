@@ -1,5 +1,5 @@
 {
-  "name": "画像チャット",
+  "name": "埋め込み可能な画像チャットウィジェット",
   "icon": "image-chat-icon.svg",
   "itemsOrdered": [
     {
