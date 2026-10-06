@@ -1,35 +1,34 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
-keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
+Bij FastComments weten we dat je al genoeg meldingen krijgt. Daarom nemen we maatregelen om het aantal meldingen dat gebruikers ontvangen te beperken, terwijl we ze toch in contact houden met hun gemeenschappen. We willen ook beheerders en moderators up‑to‑date houden en hen laten weten wanneer er actie ondernomen moet worden.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### We sturen meldingen voor de volgende gebeurtenissen voor beheerders en moderators:
 
-- Community Digest Summary (frequency configurable).
-- Community help requests and reminders.
-- New Comments.
+- Community Digest Samenvatting (frequentie configureerbaar).
+- Community hulpverzoeken en herinneringen.
+- Nieuwe reacties.
 
-#### For Commenters:
+#### Voor commentatoren:
 
-- When someone replies to your comment (via email).
-- When you are mentioned (in-app and email notification).
-- When someone replies in the same thread (in-app and email notification).
-- When someone replies to a child comment in the same thread (in-app and email notification).
-- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
-- When a user comments for the first time (But not with SSO).
-- When a user leaves a comment in a session that is not verified (But not with SSO).
-  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
+- Wanneer iemand op jouw reactie reageert (via e‑mail).
+- Wanneer je wordt genoemd (in‑app en e‑mailmelding).
+- Wanneer iemand reageert in dezelfde thread (in‑app en e‑mailmelding).
+- Wanneer iemand reageert op een onderliggende reactie in dezelfde thread (in‑app en e‑mailmelding).
+- Wanneer iemand reageert op een pagina waarop je geabonneerd bent (in‑app en e‑mailmelding, frequentie configureerbaar per abonnement: elke minuut, elk uur of dagelijks).
+- Wanneer een gebruiker voor de eerste keer reageert (maar niet met SSO).
+- Wanneer een gebruiker een reactie achterlaat in een sessie die niet geverifieerd is (maar niet met SSO).
+  - We sturen in dit geval geen meerdere verificatie‑e‑mails. Alleen de eerste, die alle activiteit in dezelfde sessie verifieert.
 
-#### For All Users:
+#### Voor alle gebruikers:
 
-- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+- Wanneer een login vanaf een nieuw IP‑adres wordt gedetecteerd, wordt er een beveiligingsalert‑e‑mail gestuurd met de geschatte locatie en het IP‑adres. Dit geldt niet voor de allereerste login van de gebruiker.
 
-#### ...and finally for administrators only:
+#### ...en tot slot alleen voor beheerders:
 
-- When integrations are complete.
-- When migrations are complete.
-- When imports or exports finish.
-- When there are billing issues.
-- Trial-end reminders.
+- Wanneer integraties voltooid zijn.
+- Wanneer migraties voltooid zijn.
+- Wanneer import‑ of exportprocessen zijn afgerond.
+- Wanneer er factureringsproblemen zijn.
+- Herinneringen voor het einde van de proefperiode.
 
-Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+Sommige meldingen worden gebundeld om massale verzending van meldingen naar gebruikers te voorkomen. Lees hier meer over in de volgende sectie `Notification Types`.
 
-Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+Antwoord‑ en vermeldings‑e‑mails worden alleen verzonden voor reacties die zijn goedgekeurd. Om te zien of er een antwoord‑ of vermeldings‑e‑mail is verzonden voor een specifieke reactie, of waarom dit niet is gebeurd, open je de [Comment Logs](/guide-moderation.html#comment-logs) van die reactie vanaf de pagina Reacties modereren.
