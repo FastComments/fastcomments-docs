@@ -1,34 +1,34 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
+At FastCommentsu znamo da već primate dovoljno obavijesti. Zbog toga poduzimamo neke mjere kako bismo ograničili obavijesti koje korisnici primaju, a da ih i dalje držimo u kontaktu s njihovim zajednicama. Također želimo da administratori i moderatori budu informirani i da znaju kada je potrebno poduzeti akciju.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### Poslat ćemo obavijesti za sljedeće događaje za administratore i moderatore:
 
-- Community Digest Summary (frequency configurable).
-- Community help requests and reminders.
-- New Comments.
+- Sažetak zajednice (frekvencija se može konfigurirati).
+- Zahtjevi za pomoć zajednice i podsjetnici.
+- Novi komentari.
 
-#### For Commenters:
+#### Za komentatore:
 
-- When someone replies to your comment (via email).
-- When you are mentioned (in-app and email notification).
-- When someone replies in the same thread (in-app and email notification).
-- When someone replies to a child comment in the same thread (in-app and email notification).
-- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
-- When a user comments for the first time (But not with SSO).
-- When a user leaves a comment in a session that is not verified (But not with SSO).
-  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
+- Kada netko odgovori na vaš komentar (putem e‑maila).
+- Kada ste spomenuti (obavijest u aplikaciji i e‑mail).
+- Kada netko odgovori u istom threadu (obavijest u aplikaciji i e‑mail).
+- Kada netko odgovori na podkomentar u istom threadu (obavijest u aplikaciji i e‑mail).
+- Kada netko odgovori na stranicu na koju ste pretplaćeni (obavijest u aplikaciji i e‑mail, frekvencija se može konfigurirati po pretplati: svaka minuta, svakih sat vremena ili dnevno).
+- Kada korisnik komentira po prvi put (ali ne putem SSO).
+- Kada korisnik ostavi komentar u sesiji koja nije verificirana (ali ne putem SSO).
+  - Ne šaljemo više verifikacijskih e‑mailova u ovom slučaju. Samo prvi, koji će verificirati svu aktivnost u istoj sesiji.
 
-#### For All Users:
+#### Za sve korisnike:
 
-- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+- Kada se otkrije prijava s nove IP adrese, šalje se sigurnosni upozoravajući e‑mail s približnom lokacijom i IP adresom. Ovo se ne primjenjuje na prvu prijavu korisnika.
 
-#### ...and finally for administrators only:
+#### ...i na kraju samo za administratore:
 
-- When integrations are complete.
-- When migrations are complete.
-- When imports or exports finish.
-- When there are billing issues.
-- Trial-end reminders.
+- Kada su integracije dovršene.
+- Kada su migracije dovršene.
+- Kada se uvozi ili izvozi završi.
+- Kada postoje problemi s naplatom.
+- Podsjetnici na kraj probnog razdoblja.
 
-Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+Neke se obavijesti grupiraju kako bi se spriječilo masovno slanje obavijesti korisnicima. Saznajte više o tome u sljedećem odjeljku `Notification Types`.
 
-Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+E‑mailovi za odgovore i spominjanja šalju se samo za odobrene komentare. Da biste vidjeli je li e‑mail za odgovor ili spominjanje poslan za određeni komentar, ili zašto nije, otvorite [Comment Logs](/guide-moderation.html#comment-logs) tog komentara s stranice Moderate Comments page.

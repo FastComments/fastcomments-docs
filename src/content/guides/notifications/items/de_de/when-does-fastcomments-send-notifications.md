@@ -1,35 +1,34 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
-keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
+Bei FastComments wissen wir, dass Sie bereits genug Benachrichtigungen erhalten. Deshalb ergreifen wir Maßnahmen, um die Benachrichtigungen, die Benutzer erhalten, zu begrenzen, während wir sie dennoch mit ihren Communities in Kontakt halten. Wir möchten außerdem Administratoren und Moderatoren auf dem Laufenden halten und sie wissen lassen, wann Maßnahmen erforderlich sind.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### Wir senden Benachrichtigungen für die folgenden Ereignisse für Administratoren und Moderatoren:
 
-- Community Digest Summary (frequency configurable).
-- Community help requests and reminders.
-- New Comments.
+- Community Digest Summary (Frequenz konfigurierbar).
+- Community-Hilfsanfragen und Erinnerungen.
+- Neue Kommentare.
 
-#### For Commenters:
+#### Für Kommentatoren:
 
-- When someone replies to your comment (via email).
-- When you are mentioned (in-app and email notification).
-- When someone replies in the same thread (in-app and email notification).
-- When someone replies to a child comment in the same thread (in-app and email notification).
-- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
-- When a user comments for the first time (But not with SSO).
-- When a user leaves a comment in a session that is not verified (But not with SSO).
-  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
+- Wenn jemand auf Ihren Kommentar antwortet (per E‑Mail).
+- Wenn Sie erwähnt werden (In‑App‑ und E‑Mail‑Benachrichtigung).
+- Wenn jemand im selben Thread antwortet (In‑App‑ und E‑Mail‑Benachrichtigung).
+- Wenn jemand auf einen untergeordneten Kommentar im selben Thread antwortet (In‑App‑ und E‑Mail‑Benachrichtigung).
+- Wenn jemand auf eine Seite antwortet, die Sie abonniert haben (In‑App‑ und E‑Mail‑Benachrichtigung, Frequenz pro Abonnement konfigurierbar: jede Minute, stündlich oder täglich).
+- Wenn ein Benutzer zum ersten Mal kommentiert (aber nicht mit SSO).
+- Wenn ein Benutzer einen Kommentar in einer nicht verifizierten Sitzung hinterlässt (aber nicht mit SSO).
+  - Wir senden in diesem Fall keine mehrfachen Verifizierungs‑E‑Mails. Nur die erste, die alle Aktivitäten in derselben Sitzung verifiziert.
 
-#### For All Users:
+#### Für alle Benutzer:
 
-- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+- Wenn ein Login von einer neuen IP‑Adresse erkannt wird, wird eine Sicherheits‑Alarm‑E‑Mail mit dem ungefähren Standort und der IP‑Adresse gesendet. Dies gilt nicht für den allerersten Login des Benutzers.
 
-#### ...and finally for administrators only:
+#### ...und schließlich nur für Administratoren:
 
-- When integrations are complete.
-- When migrations are complete.
-- When imports or exports finish.
-- When there are billing issues.
-- Trial-end reminders.
+- Wenn Integrationen abgeschlossen sind.
+- Wenn Migrationen abgeschlossen sind.
+- Wenn Importe oder Exporte abgeschlossen sind.
+- Bei Abrechnungsproblemen.
+- Erinnerungen zum Ende der Testphase.
 
-Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+Einige Benachrichtigungen werden gebündelt, um das massenhafte Versenden von Benachrichtigungen an Benutzer zu verhindern. Erfahren Sie mehr darüber im nächsten Abschnitt `Notification Types`.
 
-Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+Antwort‑ und Erwähnungs‑E‑Mails werden nur für genehmigte Kommentare gesendet. Um zu sehen, ob eine Antwort‑ oder Erwähnungs‑E‑Mail für einen bestimmten Kommentar verschickt wurde oder warum nicht, öffnen Sie die [Kommentarprotokolle](/guide-moderation.html#comment-logs) dieses Kommentars über die Seite „Kommentare moderieren“.
