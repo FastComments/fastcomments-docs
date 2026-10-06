@@ -1,32 +1,35 @@
-Chez FastComments, nous savons que vous recevez déjà suffisamment de notifications. Pour cette raison, nous prenons des mesures pour limiter les notifications reçues par les utilisateurs tout en les maintenant en contact avec leurs communautés. Nous voulons également tenir les administrateurs et les modérateurs informés et leur indiquer quand une action doit être entreprise.
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
+keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
 #### We'll send notifications for the following events for administrators and moderators:
 
-- Résumé du digest communautaire (fréquence configurable).
-- Demandes d'aide et rappels de la communauté.
-- Nouveaux commentaires.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
 #### For Commenters:
 
-- Lorsqu'une personne répond à votre commentaire (par e-mail).
-- Lorsque vous êtes mentionné (notification dans l'application et par e-mail).
-- Lorsqu'une personne répond dans le même fil (notification dans l'application et par e-mail).
-- Lorsqu'une personne répond à un commentaire enfant dans le même fil (notification dans l'application et par e-mail).
-- Lorsqu'une personne répond à une page à laquelle vous êtes abonné (notification dans l'application et par e-mail, fréquence configurable par abonnement : chaque minute, toutes les heures, ou quotidiennement).
-- Lorsqu'un utilisateur commente pour la première fois (mais pas avec SSO).
-- Lorsqu'un utilisateur laisse un commentaire dans une session non vérifiée (mais pas avec SSO).
-  - Nous n'envoyons pas plusieurs e-mails de vérification dans ce cas. Seulement le premier, qui validera toute l'activité de la même session.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
 #### For All Users:
 
-- Lorsqu'une connexion depuis une nouvelle adresse IP est détectée, un e-mail d'alerte de sécurité est envoyé avec la localisation approximative et l'adresse IP. Cela ne s'applique pas à la toute première connexion de l'utilisateur.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-#### ...et enfin uniquement pour les administrateurs :
+#### ...and finally for administrators only:
 
-- Lorsque les intégrations sont terminées.
-- Lorsque les migrations sont terminées.
-- Lorsque les importations ou exportations sont terminées.
-- En cas de problèmes de facturation.
-- Rappels de fin d'essai.
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
 
-Certaines notifications sont regroupées pour éviter l'envoi massif de notifications aux utilisateurs. Learn about this in the next section `Notification Types`.
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.

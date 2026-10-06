@@ -1,36 +1,38 @@
 ---
-W FastComments wiemy, że i tak dostajesz już wystarczająco dużo powiadomień. Dlatego podejmujemy środki, aby ograniczyć powiadomienia otrzymywane przez użytkowników, jednocześnie utrzymując ich w kontakcie ze społecznościami. Chcemy też informować administratorów i moderatorów i dawać im znać, kiedy należy podjąć działanie.
+W FastComments wiemy, że już otrzymujesz wystarczająco dużo powiadomień. Dlatego podejmujemy pewne środki, aby ograniczyć liczbę powiadomień, które otrzymują użytkownicy, jednocześnie utrzymując ich w kontakcie ze swoimi społecznościami. Chcemy również, aby administratorzy i moderatorzy byli na bieżąco i wiedzieli, kiedy należy podjąć działanie.
 
 #### Wyślemy powiadomienia o następujących zdarzeniach dla administratorów i moderatorów:
 
-- Podsumowanie aktywności społeczności (częstotliwość konfigurowalna).
-- Prośby o pomoc od społeczności i przypomnienia.
+- Podsumowanie społeczności (częstotliwość konfigurowalna).
+- Prośby o pomoc społeczności i przypomnienia.
 - Nowe komentarze.
 
 #### Dla komentujących:
 
-- Kiedy ktoś odpowie na Twój komentarz (przez e-mail).
-- Gdy zostaniesz oznaczony (powiadomienie w aplikacji i e-mail).
+- Gdy ktoś odpowie na Twój komentarz (przez e-mail).
+- Gdy zostaniesz wspomniany (powiadomienie w aplikacji i e-mail).
 - Gdy ktoś odpowie w tym samym wątku (powiadomienie w aplikacji i e-mail).
-- Gdy ktoś odpowie na komentarz potomny w tym samym wątku (powiadomienie w aplikacji i e-mail).
-- Gdy ktoś odpowie na stronę, do której jesteś zapisany (powiadomienie w aplikacji i e-mail, częstotliwość konfigurowalna dla subskrypcji: co minutę, co godzinę lub codziennie).
-- Kiedy użytkownik komentuje po raz pierwszy (ale nie w przypadku SSO).
-- Kiedy użytkownik zostawi komentarz w sesji, która nie jest zweryfikowana (ale nie w przypadku SSO).
-  - Nie wysyłamy w tym przypadku wielu e-maili weryfikacyjnych. Tylko pierwsza wiadomość, która zweryfikuje całą aktywność w tej samej sesji.
+- Gdy ktoś odpowie na komentarz podrzędny w tym samym wątku (powiadomienie w aplikacji i e-mail).
+- Gdy ktoś odpowie na stronę, którą subskrybujesz (powiadomienie w aplikacji i e-mail, częstotliwość konfigurowalna dla subskrypcji: co minutę, co godzinę lub codziennie).
+- Gdy użytkownik komentuje po raz pierwszy (ale nie przy użyciu SSO).
+- Gdy użytkownik zostawia komentarz w sesji, która nie jest niezweryfikowana (ale nie przy użyciu SSO).
+  - Nie wysyłamy wielu e-maili weryfikacyjnych w tym przypadku. Tylko pierwszy, który zweryfikuje całą aktywność w tej samej sesji.
 
 #### Dla wszystkich użytkowników:
 
-- Gdy wykryte zostanie logowanie z nowego adresu IP, wysyłany jest e-mail z alertem bezpieczeństwa zawierający przybliżoną lokalizację i adres IP. Nie ma to zastosowania przy pierwszym logowaniu użytkownika.
+- Gdy wykryto logowanie z nowego adresu IP, wysyłany jest e-mail z alertem bezpieczeństwa zawierający przybliżoną lokalizację i adres IP. Nie dotyczy to pierwszego logowania użytkownika.
 
-#### ...i wreszcie tylko dla administratorów:
+#### ...i w końcu tylko dla administratorów:
 
 - Gdy integracje zostaną zakończone.
 - Gdy migracje zostaną zakończone.
-- Gdy importy lub eksporty się zakończą.
-- Gdy wystąpią problemy z rozliczeniami.
-- Przypomnienia o końcu okresu próbnego.
+- Gdy importy lub eksporty zostaną zakończone.
+- Gdy wystąpią problemy z płatnościami.
+- Przypomnienia o zakończeniu okresu próbnego.
 
-Niektóre powiadomienia są grupowane, aby zapobiec masowemu wysyłaniu powiadomień do użytkowników. Dowiedz się o tym w następnej sekcji `Notification Types`.
+Niektóre powiadomienia są grupowane, aby zapobiec masowemu wysyłaniu ich do użytkowników. Dowiedz się o tym w następnym rozdziale `Notification Types`.
+
+E-maile z odpowiedziami i wzmiankami są wysyłane tylko dla zatwierdzonych komentarzy. Aby sprawdzić, czy e-mail z odpowiedzią lub wzmianką został wysłany dla konkretnego komentarza, lub dlaczego nie został wysłany, otwórz [Dzienniki komentarzy](/guide-moderation.html#comment-logs) tego komentarza na stronie Moderowanie komentarzy.
 
 
 

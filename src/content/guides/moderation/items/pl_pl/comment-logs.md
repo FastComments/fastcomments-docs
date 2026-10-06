@@ -1,123 +1,145 @@
-FastComments automatycznie śledzi szczegółowe zdarzenia dla każdego komentarza, aby zapewnić przejrzystość decyzji moderacyjnych i działań systemu. Te dzienniki pomagają zrozumieć, dlaczego komentarz został zatwierdzony, oznaczony jako spam lub zmieniono jego status.
+FastComments automatycznie śledzi szczegółowe zdarzenia dla każdego komentarza, aby zapewnić przejrzystość decyzji moderacyjnych i działań systemu. Te logi pomagają zrozumieć, dlaczego komentarz został zatwierdzony, oznaczony jako spam lub zmieniono jego status.
 
-## Accessing Comment Logs
+## Dostęp do logów komentarzy
 
-Aby wyświetlić dzienniki dla konkretnego komentarza:
+Aby wyświetlić logi dla konkretnego komentarza:
 
-1. Przejdź do strony **Moderuj komentarze** w panelu FastComments
-2. Znajdź komentarz, który chcesz sprawdzić
-3. Kliknij przycisk **Wyświetl dzienniki** (ikona zegara) na pasku akcji komentarza
+1. Przejdź do strony **Moderate Comments** w panelu FastComments
+2. Znajdź komentarz, który chcesz przejrzeć
+3. Kliknij przycisk **View Logs** (ikona zegara) w pasku akcji komentarza
 4. Pojawi się okno dialogowe pokazujące pełną historię zdarzeń dla tego komentarza
 
-Każdy wpis w dzienniku wyświetla:
-- **Kiedy** - Znacznik czasu zdarzenia
-- **Kto** - Użytkownik lub system, który wywołał zdarzenie (jeśli dotyczy)
-- **Co** - Rodzaj akcji lub zdarzenia
-- **Szczegóły** - Dodatkowy kontekst, taki jak wartości przed/po, nazwy silników lub powiązane dane
+Każdy wpis w logu wyświetla:
+- **When** – Znacznik czasu zdarzenia
+- **Who** – Użytkownik lub system, który wywołał zdarzenie (jeśli dotyczy)
+- **What** – Typ akcji lub zdarzenia
+- **Details** – Dodatkowy kontekst, taki jak wartości przed/po, nazwy silników lub powiązane dane
 
-## Comment Log Events
+## Zdarzenia w logu komentarzy
 
-Każdy komentarz prowadzi dziennik zdarzeń występujących w jego cyklu życia. Poniżej znajdują się typy zdarzeń, które są śledzone:
+Każdy komentarz utrzymuje log zdarzeń, które występują w jego cyklu życia. Poniżej znajdują się typy zdarzeń, które są śledzone:
 
-### Anonymization Events
-- **Anonymized** - Treść komentarza została wyczyszczona, a użytkownik oznaczony jako usunięty
-- **RestoredFromAnonymized** - Komentarz został przywrócony ze stanu zanonimizowanego
+### Zdarzenia anonimizacji
+- **Anonymized** – Zawartość komentarza została wyczyszczona, a użytkownik oznaczony jako usunięty
+- **RestoredFromAnonymized** – Komentarz został przywrócony ze stanu anonimowego
 
-### Approval Events
-- **ApprovedDueToPastComment** - Komentarz zatwierdzony, ponieważ użytkownik ma wcześniej zatwierdzone komentarze (zawiera odniesienie do poprzedniego komentarza)
-- **ApprovedIsAdmin** - Komentarz zatwierdzony, ponieważ użytkownik jest administratorem
-- **NotApprovedRequiresApproval** - Komentarz wymaga ręcznego zatwierdzenia
-- **NotApprovedLowTrustFactor** - Komentarz nie został zatwierdzony z powodu niskiego współczynnika zaufania użytkownika (zawiera wartość współczynnika zaufania)
+### Zdarzenia zatwierdzania
+- **ApprovedDueToPastComment** – Komentarz zatwierdzony, ponieważ użytkownik wcześniej zatwierdzał komentarze (zawiera odniesienie do poprzedniego komentarza)
+- **ApprovedIsAdmin** – Komentarz zatwierdzony, ponieważ użytkownik jest administratorem
+- **NotApprovedRequiresApproval** – Komentarz wymaga ręcznego zatwierdzenia
+- **NotApprovedLowTrustFactor** – Komentarz niezatwierdzony z powodu niskiego czynnika zaufania użytkownika (zawiera wartość czynnika zaufania)
 
-### Profile Comment Approval Events
-
+### Zdarzenia zatwierdzania komentarzy profilowych
 Te zdarzenia dotyczą konkretnie komentarzy na profilach użytkowników:
+- **ApprovedProfileAutoApproveAll** – Komentarz profilowy automatycznie zatwierdzony, ponieważ właściciel profilu włączył automatyczne zatwierdzanie wszystkich komentarzy
+- **ApprovedProfileTrusted** – Komentarz profilowy zatwierdzony, ponieważ komentujący jest zaufany (zawiera odniesienie do komentarza, który ustanowił zaufanie)
+- **NotApprovedProfileManualApproveAll** – Komentarz profilowy wymaga ręcznego zatwierdzenia, ponieważ właściciel profilu włączył ręczne zatwierdzanie
+- **NotApprovedProfileNotTrusted** – Komentarz profilowy niezatwierdzony, ponieważ komentujący nie jest zaufany
+- **NotApprovedProfileNewUser** – Komentarz profilowy niezatwierdzony, ponieważ komentujący jest nowym użytkownikiem
 
-- **ApprovedProfileAutoApproveAll** - Komentarz na profilu został automatycznie zatwierdzony, ponieważ właściciel profilu włączył automatyczne zatwierdzanie wszystkich komentarzy
-- **ApprovedProfileTrusted** - Komentarz na profilu zatwierdzony, ponieważ komentujący jest zaufany (zawiera odniesienie do komentarza, który ustanowił zaufanie)
-- **NotApprovedProfileManualApproveAll** - Komentarz na profilu wymaga ręcznego zatwierdzenia, ponieważ właściciel profilu włączył ręczne zatwierdzanie
-- **NotApprovedProfileNotTrusted** - Komentarz na profilu nie został zatwierdzony, ponieważ komentujący nie jest zaufany
-- **NotApprovedProfileNewUser** - Komentarz na profilu nie został zatwierdzony, ponieważ komentujący jest nowym użytkownikiem
+### Zdarzenia wykrywania spamu
+- **IsSpam** – Komentarz oznaczony jako spam przez silnik wykrywania (zawiera, który silnik podjął decyzję)
+- **IsSpamDueToBadWords** – Komentarz oznaczony jako spam z powodu filtru wulgaryzmów
+- **IsSpamFromLLM** – Komentarz oznaczony jako spam przez silnik AI/LLM (zawiera nazwę silnika, odpowiedź i liczbę tokenów)
+- **IsSpamRepeatComment** – Komentarz oznaczony jako spam za powtarzalność (zawiera, który silnik to wykrył)
+- **NotSpamIsOnlyImage** – Komentarz nieoznaczony jako spam, ponieważ zawiera tylko obrazy
+- **NotSpamIsOnlyReacts** – Komentarz nieoznaczony jako spam, ponieważ zawiera tylko reakcje
+- **NotSpamNoLinkOrMention** – Komentarz nieoznaczony jako spam, ponieważ nie zawiera podejrzanych linków ani wzmianek
+- **NotSpamPerfectTrustFactor** – Komentarz nieoznaczony jako spam, ze względu na wysokie zaufanie użytkownika
+- **NotSpamTooShort** – Komentarz nieoznaczony jako spam, ponieważ jest zbyt krótki do analizy
+- **NotSpamSkipped** – Sprawdzenie spamu zostało pominięte
+- **NotSpamFromEngine** – Komentarz uznany za nie-spam przez silnik wykrywania (zawiera nazwę silnika i czynnik zaufania)
 
-### Spam Detection Events
-- **IsSpam** - Komentarz oznaczony jako spam przez silnik wykrywający (zawiera informację, który silnik podjął decyzję)
-- **IsSpamDueToBadWords** - Komentarz oznaczony jako spam z powodu filtra wulgaryzmów
-- **IsSpamFromLLM** - Komentarz oznaczony jako spam przez silnik AI/LLM (zawiera nazwę silnika, odpowiedź i liczbę tokenów)
-- **IsSpamRepeatComment** - Komentarz oznaczony jako spam z powodu powtarzalności (zawiera informację, który silnik to wykrył)
-- **NotSpamIsOnlyImage** - Komentarz nie został oznaczony jako spam, ponieważ zawiera tylko obrazy
-- **NotSpamIsOnlyReacts** - Komentarz nie został oznaczony jako spam, ponieważ zawiera tylko reakcje
-- **NotSpamNoLinkOrMention** - Komentarz nie został oznaczony jako spam z powodu braku podejrzanych linków lub wzmianek
-- **NotSpamPerfectTrustFactor** - Komentarz nie został oznaczony jako spam z powodu wysokiego poziomu zaufania użytkownika
-- **NotSpamTooShort** - Komentarz nie został oznaczony jako spam, ponieważ jest zbyt krótki, by go przeanalizować
-- **NotSpamSkipped** - Sprawdzenie spamu zostało pominięte
-- **NotSpamFromEngine** - Komentarz uznany za nie-spam przez silnik wykrywający (zawiera nazwę silnika i współczynnik zaufania)
+### Zdarzenia wulgaryzmów/Profanacji
+- **BadWordsCheckFailed** – Sprawdzenie filtru wulgaryzmów napotkało błąd
+- **BadWordsFoundBadPhrase** – Filtr wulgaryzmów wykrył nieodpowiednie wyrażenie (zawiera wyrażenie)
+- **BadWordsFoundBadWord** – Filtr wulgaryzmów wykrył nieodpowiednie słowo (zawiera słowo)
+- **BadWordsNoDefinitionForLocale** – Brak definicji wulgaryzmów dostępnych dla języka komentarza (zawiera lokalizację)
 
-### Bad Words/Profanity Events
-- **BadWordsCheckFailed** - Sprawdzenie filtra wulgaryzmów zakończyło się błędem
-- **BadWordsFoundBadPhrase** - Filtr wulgaryzmów wykrył nieodpowiednie wyrażenie (zawiera to wyrażenie)
-- **BadWordsFoundBadWord** - Filtr wulgaryzmów wykrył nieodpowiednie słowo (zawiera to słowo)
-- **BadWordsNoDefinitionForLocale** - Brak definicji wulgaryzmów dla języka komentarza (zawiera lokalizację)
+### Zdarzenia weryfikacji użytkownika
+- **CommentMustBeVerifiedToApproveNotInVerifiedSession** – Komentarz wymaga weryfikacji, ale użytkownik nie jest w zweryfikowanej sesji
+- **CommentMustBeVerifiedToApproveNotVerifiedYet** – Komentarz wymaga weryfikacji, ale użytkownik nie został jeszcze zweryfikowany
+- **InVerifiedSession** – Użytkownik publikujący komentarz jest w zweryfikowanej sesji
+- **SentVerificationEmailNoSession** – Email weryfikacyjny wysłany do niezweryfikowanego użytkownika
+- **SentWelcomeEmail** – Email powitalny wysłany do nowego użytkownika
 
-### User Verification Events
-- **CommentMustBeVerifiedToApproveNotInVerifiedSession** - Komentarz wymaga weryfikacji, ale użytkownik nie jest w zweryfikowanej sesji
-- **CommentMustBeVerifiedToApproveNotVerifiedYet** - Komentarz wymaga weryfikacji, ale użytkownik nie został jeszcze zweryfikowany
-- **InVerifiedSession** - Użytkownik publikujący komentarz jest w zweryfikowanej sesji
-- **SentVerificationEmailNoSession** - Wysłano e-mail weryfikacyjny do niezwerifikowanego użytkownika
-- **SentWelcomeEmail** - Wysłano e-mail powitalny do nowego użytkownika
+### Zdarzenia zaufania i bezpieczeństwa
+- **TrustFactorChanged** – Czynnik zaufania użytkownika został zmodyfikowany (zawiera wartości przed i po)
+- **SpamFilterDisabledBecauseAdmin** – Filtrowanie spamu pominięte dla użytkownika admina
+- **TenantSpamFilterDisabled** – Filtrowanie spamu wyłączone dla całego najemcy
+- **RepeatCommentCheckIgnored** – Sprawdzenie powtarzających się komentarzy pominięte (zawiera powód)
+- **UserIsAdmin** – Użytkownik zidentyfikowany jako admin
+- **UserIsAdminParentTenant** – Użytkownik zidentyfikowany jako admin nadrzędnego najemcy
+- **UserIsAdminViaSSO** – Użytkownik zidentyfikowany jako admin poprzez SSO
+- **UserIsMod** – Użytkownik zidentyfikowany jako moderator
 
-### Trust and Security Events
-- **TrustFactorChanged** - Współczynnik zaufania użytkownika został zmieniony (zawiera wartości przed i po)
-- **SpamFilterDisabledBecauseAdmin** - Filtrowanie spamu zostało wyłączone dla użytkownika z uprawnieniami administratora
-- **TenantSpamFilterDisabled** - Filtrowanie spamu wyłączone dla całego tenant-a
-- **RepeatCommentCheckIgnored** - Sprawdzenie powtarzających się komentarzy zostało pominięte (zawiera powód)
-- **UserIsAdmin** - Użytkownik zidentyfikowany jako administrator
-- **UserIsAdminParentTenant** - Użytkownik zidentyfikowany jako administrator nadrzędnego tenant-a
-- **UserIsAdminViaSSO** - Użytkownik zidentyfikowany jako administrator przez SSO
-- **UserIsMod** - Użytkownik zidentyfikowany jako moderator
+### Zmiany statusu komentarza
+Zdarzenia zmiany statusu zawierają wartości przed i po, oraz użytkownika, który dokonał zmiany:
+- **ExpireStatusChanged** – Status wygaśnięcia komentarza został zmodyfikowany
+- **ReviewStatusChanged** – Status przeglądu komentarza został zmieniony
+- **SpamStatusChanged** – Status spamu komentarza został zaktualizowany
+- **ApproveStatusChanged** – Status zatwierdzenia komentarza został zmieniony
+- **TextChanged** – Zawartość tekstowa komentarza została edytowana (zawiera tekst przed i po)
+- **VotesChanged** – Liczba głosów komentarza została zaktualizowana (zawiera szczegółowy podział głosów)
+- **Flagged** – Komentarz został oznaczony przez użytkowników
+- **UnFlagged** – Oznaczenia komentarza zostały usunięte
 
-### Comment Status Changes
+### Działania moderacyjne
+- **Pinned** – Komentarz został przypięty przez moderatora (zawiera, kto go przypiął)
+- **UnPinned** – Komentarz został odpięty przez moderatora (zawiera, kto go odpiął)
 
-Zdarzenia zmiany statusu zawierają wartości przed i po, oraz użytkownika, który wprowadził zmianę:
+### Zdarzenia powiadomień
+- **CreatedNotifications** – Powiadomienia zostały utworzone dla komentarza (zawiera liczbę powiadomień)
+- **NotificationCreateFailure** – Nie udało się utworzyć powiadomień
+- **BadgeAwarded** – Odznaka użytkownika została przyznana za komentarz (zawiera nazwę odznaki)
 
-- **ExpireStatusChanged** - Zmieniono status wygaśnięcia komentarza
-- **ReviewStatusChanged** - Zmieniono status przeglądu komentarza
-- **SpamStatusChanged** - Zaktualizowano status spamu komentarza
-- **ApproveStatusChanged** - Zmieniono status zatwierdzenia komentarza
-- **TextChanged** - Treść komentarza została edytowana (zawiera tekst przed i po)
-- **VotesChanged** - Zaktualizowano liczniki głosów komentarza (zawiera szczegółowy podział głosów)
-- **Flagged** - Komentarz został oznaczony przez użytkowników
-- **UnFlagged** - Flagi komentarza zostały usunięte
+### Zdarzenia powiadomień o wzmiankach i odpowiedziach
+Te zdarzenia określają osobę, która otrzymałaby e‑mail lub powiadomienie. Gdy nic nie zostało wysłane, kolumna Szczegóły wyjaśnia przyczynę.
+- **MentionEmailSent** – Użytkownik wspomniany w komentarzu otrzymał e‑mail
+- **MentionEmailSkipped** – Wspomniany użytkownik nie otrzymał e‑maila (zawiera powód)
+- **MentionHeldForApproval** – E‑mail z wzmianką czeka, aż komentarz zostanie zatwierdzony
+- **MentionNotificationCreated** – Wspomniany użytkownik otrzymał powiadomienie w aplikacji
+- **MentionNotificationSkipped** – Wspomniany użytkownik nie otrzymał powiadomienia w aplikacji (zawiera powód)
+- **ReplyEmailSent** – Autor komentarza, na który odpowiadano, otrzymał e‑mail o tej odpowiedzi
+- **ReplyEmailSkipped** – Autor komentarza, na który odpowiadano, nie otrzymał e‑maila (zawiera powód)
+- **ReplyNotificationSkipped** – Autor komentarza, na który odpowiadano, nie otrzymał powiadomienia w aplikacji (zawiera powód)
 
-### Moderation Actions
-- **Pinned** - Komentarz został przypięty przez moderatora (zawiera informację, kto go przypiął)
-- **UnPinned** - Komentarz został odpięty przez moderatora (zawiera informację, kto go odpiął)
+Powody wyświetlane, gdy e‑mail lub powiadomienie nie zostało wysłane:
+- Użytkownik już nie istnieje lub nie ma adresu e‑mail
+- Użytkownik wyłączył powiadomienia e‑mail lub wyłączył powiadomienia dla tego wątku
+- Jeden z użytkowników zablokował drugiego
+- Użytkownicy nie należą do żadnej tej samej grupy SSO
+- Adres e‑mail użytkownika znajduje się na liście tłumionych po odbiciu lub skargi na spam (zobacz [Email Suppression Management](/guide-notifications.html#email-suppression-management))
+- Adres e‑mail użytkownika jest w domenie example.com, która nie może otrzymywać e‑maili
+- Komentarz został oznaczony jako spam, usunięty lub niezatwierdzony w ciągu 7 dni
+- Komentarz, na który odpowiadano, został pozostawiony anonimowo
+- Użytkownik odpowiedział na własny komentarz
+- Użytkownik został wspomniany w odpowiedzi, więc otrzymał e‑mail z wzmianką zamiast e‑maila z odpowiedzią
+- Użytkownik już miał powiadomienie o odpowiedzi na ten komentarz
+- Wysyłanie nie powiodło się 5 razy
 
-### Notification Events
-- **CreatedNotifications** - Dla komentarza utworzono powiadomienia (zawiera liczbę powiadomień)
-- **NotificationCreateFailure** - Niepowodzenie przy tworzeniu powiadomień
-- **BadgeAwarded** - Odznaka użytkownika została przyznana za komentarz (zawiera nazwę odznaki)
+Jeśli dostawa nie powiedzie się lub osiągnie limit wysyłki, e‑mail jest kolejkuowany do ponownej próby i wpis w logu to odnotowuje.
 
-### Publishing Events
-- **PublishedLive** - Komentarz został opublikowany dla subskrybentów na żywo (zawiera liczbę subskrybentów)
+### Zdarzenia publikacji
+- **PublishedLive** – Komentarz został opublikowany dla aktywnych subskrybentów (zawiera liczbę subskrybentów)
 
-### Integration Events
-- **WebhookSynced** - Komentarz został zsynchronizowany przez webhook
+### Zdarzenia integracji
+- **WebhookSynced** – Komentarz został zsynchronizowany za pośrednictwem webhooka
 
-### Spam Rule Events
-- **SpamRuleMatch** - Komentarz pasuje do niestandardowej reguły spamu (zawiera szczegóły reguły)
+### Zdarzenia reguł spamu
+- **SpamRuleMatch** – Komentarz dopasował się do niestandardowej reguły spamu (zawiera szczegóły reguły)
 
-### Localization Events
-- **LocaleDetectedFromText** - Język lokalizacji został automatycznie wykryty na podstawie tekstu komentarza (zawiera wykryty język i lokalizację)
+### Zdarzenia lokalizacji
+- **LocaleDetectedFromText** – Lokalizacja językowa została automatycznie wykryta z tekstu komentarza (zawiera wykryty język i lokalizację)
 
-## Use Cases for Comment Logs
+## Przypadki użycia logów komentarzy
 
-Dzienniki komentarzy są generowane automatycznie i przechowywane wraz z każdym komentarzem. Dostarczają cennych informacji do:
+Logi komentarzy są automatycznie generowane i przechowywane wraz z każdym komentarzem. Dostarczają cennych informacji dla:
+- **Understanding moderation decisions** – Zobacz dokładnie, dlaczego komentarz został zatwierdzony, wstrzymany do przeglądu lub oznaczony jako spam
+- **Debugging approval/spam issues** – Śledź logikę decyzji, gdy komentarze nie zachowują się zgodnie z oczekiwaniami
+- **Tracking user behavior patterns** – Monitoruj zmiany czynnika zaufania i status weryfikacji
+- **Auditing moderator actions** – Przeglądaj, jakie działania podjęli moderatorzy na konkretnych komentarzach
+- **Investigating spam filter effectiveness** – Zobacz, które silniki wykrywania łapią spam, a które nie
+- **Troubleshooting integrations** – Weryfikuj synchronizacje webhooków i dostarczanie powiadomień
 
-- **Zrozumienia decyzji moderacyjnych** - Zobacz dokładnie, dlaczego komentarz został zatwierdzony, przekazany do przeglądu lub oznaczony jako spam
-- **Debugowania problemów z zatwierdzaniem/spamem** - Prześledź logikę decyzyjną, gdy komentarze nie zachowują się zgodnie z oczekiwaniami
-- **Śledzenia wzorców zachowań użytkowników** - Monitoruj zmiany współczynnika zaufania i status weryfikacji
-- **Audytu działań moderatorów** - Przejrzyj działania moderatorów podjęte względem konkretnych komentarzy
-- **Badania skuteczności filtrów spamu** - Zobacz, które silniki wykrywają spam, a które nie
-- **Rozwiązywania problemów z integracjami** - Zweryfikuj synchronizacje webhooków i dostarczanie powiadomień
-
-Te dzienniki pomagają utrzymać przejrzystość w procesie moderacji i pomagają w dopracowywaniu zachowania systemu komentarzy.
+Te logi pomagają utrzymać przejrzystość procesu moderacji i wspierają dopasowywanie zachowania systemu komentarzy.

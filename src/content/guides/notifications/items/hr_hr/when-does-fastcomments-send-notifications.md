@@ -1,33 +1,34 @@
-U FastCommentsu znamo da već imate dovoljno obavijesti. Zbog toga poduzimamo mjere kako bismo ograničili obavijesti koje korisnici primaju dok ih
-držimo u kontaktu sa svojim zajednicama. Također želimo držati administratore i moderatore u toku i obavijestiti ih kada je potrebno poduzeti radnju.
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
-#### Poslat ćemo obavijesti za sljedeće događaje za administratore i moderatore:
+#### We'll send notifications for the following events for administrators and moderators:
 
-- Sažetak zajednice (frekvencija konfigurabilna).
-- Zahtjevi za pomoć zajednice i podsjetnici.
-- Novi komentari.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
-#### Za komentatore:
+#### For Commenters:
 
-- Kada netko odgovori na vaš komentar (putem e-pošte).
-- Kada budete spomenuti (obavijest u aplikaciji i putem e-pošte).
-- Kada netko odgovori u istom razgovoru (obavijest u aplikaciji i putem e-pošte).
-- Kada netko odgovori na podkomentar u istom razgovoru (obavijest u aplikaciji i putem e-pošte).
-- Kada netko odgovori na stranicu na koju ste pretplaćeni (obavijest u aplikaciji i putem e-pošte, frekvencija se može konfigurirati po pretplati: svake minute, svaki sat ili dnevno).
-- Kada korisnik komentira prvi put (Ali ne kod SSO).
-- Kada korisnik ostavi komentar u sesiji koja nije verificirana (Ali ne kod SSO).
-  - U ovom slučaju ne šaljemo više verifikacijskih e-poruka. Samo prva, koja će verificirati svu aktivnost u istoj sesiji.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
-#### Za sve korisnike:
+#### For All Users:
 
-- Kada se otkrije prijava s nove IP adrese, šalje se sigurnosna obavijest putem e-pošte s približnom lokacijom i IP adresom. Ovo se ne odnosi na prvu prijavu korisnika.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-#### ...i naposljetku samo za administratore:
+#### ...and finally for administrators only:
 
-- Kada su integracije dovršene.
-- Kada su migracije dovršene.
-- Kada uvozi ili izvozi završe.
-- Kada postoje problemi s naplatom.
-- Podsjetnici o kraju probnog razdoblja.
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
 
-Neke se obavijesti grupiraju kako bi se spriječilo masovno slanje obavijesti korisnicima. Saznajte više o tome u sljedećem odjeljku `Notification Types`.
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.

@@ -1,4 +1,5 @@
-Bij FastComments weten we dat je al genoeg meldingen krijgt. Daarom nemen we maatregelen om het aantal meldingen dat gebruikers ontvangen te beperken, terwijl we ze toch in contact houden met hun gemeenschappen. We willen ook beheerders en moderators op de hoogte houden en hen laten weten wanneer er actie nodig is.
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
+keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
 #### We'll send notifications for the following events for administrators and moderators:
 
@@ -30,3 +31,5 @@ Bij FastComments weten we dat je al genoeg meldingen krijgt. Daarom nemen we maa
 - Trial-end reminders.
 
 Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.

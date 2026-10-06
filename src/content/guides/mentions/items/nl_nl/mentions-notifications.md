@@ -1,5 +1,13 @@
-Gemarkeerde gebruikers ontvangen een e-mail waarin ze worden geïnformeerd dat ze zijn gemarkeerd of genoemd in een reactie.
+---
+Gemarkeerde gebruikers ontvangen een e‑mail waarin ze weten dat ze in een reactie zijn gemarkeerd of genoemd.
 
-[app-screenshot-start url='/test-e2e/email/comment-user-mention?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"Hey%20%40winrid%20I%20wanted%20you%20to%20see%20this."%2C"commentHTML"%3A"Hey%20<b>%40winrid<%2Fb>%20I%20wanted%20you%20to%20see%20this."%2C"date"%3A1633998787864%2C"pageTitle"%3A"Some%20Page%20Title"%7D&username=winrid&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&INTRO=Hey%20winrid%2C&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&unsubscribeLink=%7B"url"%3A"%2Fauth%2Fmy-account%2Fedit-notifications"%2C"textId"%3A"UNSUBSCRIBE_HERE"%7D&viewCommentUrl=https%3A%2F%2Fexample.com%23fast-comments-jt%3Dsome-db-id&locale=en_us&canReplyByEmail=true&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Meldings-e-mailinhoud die een reactie citeert met de @winrid vermelding in vet, plus view- en afmeldlinks'; title='Gebruiker Vermeld Notificatie' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/comment-user-mention?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"Hey%20%40winrid%20I%20wanted%20you%20to%20see%20this."%2C"commentHTML"%3A"Hey%20<b>%40winrid<%2Fb>%20I%20wanted%20you%20to%20see%20this."%2C"date"%3A1633998787864%2C"pageTitle"%3A"Some%20Page%20Title"%7D&username=winrid&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&INTRO=Hey%20winrid%2C&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&unsubscribeLink=%7B"url"%3A"%2Fauth%2Fmy-account%2Fedit-notifications"%2C"textId"%3A"UNSUBSCRIBE_HERE"%7D&viewCommentUrl=https%3A%2F%2Fexample.com%23fast-comments-jt%3Dsome-db-id&locale=en_us&canReplyByEmail=true&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Meldings-e-mailinhoud die een opmerking citeert met de @winrid vermelding in vet, plus view- en afmeldlinks'; title='Gebruiker Vermeld Notificatie' app-screenshot-end]
 
-Het uitschakelen van meldingen voorkomt deze e-mails, en er wordt in elke e-mail een header toegevoegd zodat e-mailclients de gebruiker naadloos kunnen afmelden.
+Het uitschakelen van meldingen voorkomt deze e‑mails, en er wordt in elke e‑mail een header toegevoegd zodat e‑mailclients de gebruiker naadloos kunnen afmelden.
+
+Gemarkeerde gebruikers krijgen ook een in‑app‑melding, zelfs wanneer ze geen e‑mailadres hebben opgegeven.
+
+Als de reactie wacht op goedkeuring door een moderator, wordt de vermeldingse‑mail vastgehouden en verzonden zodra de reactie is goedgekeurd. De e‑mail wordt niet verzonden als de reactie als spam is gemarkeerd, verwijderd, of niet binnen 7 dagen is goedgekeurd.
+
+Om te zien of een genoemde gebruiker een e‑mail heeft ontvangen, of waarom niet, open je de [Comment Logs](/guide-moderation.html#comment-logs) van de reactie via de pagina Reacties Modereren.
+---

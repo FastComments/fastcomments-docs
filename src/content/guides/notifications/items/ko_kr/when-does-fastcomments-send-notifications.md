@@ -1,32 +1,37 @@
-At FastComments, 우리는 이미 충분한 알림을 받고 있다는 것을 알고 있습니다. 그래서 사용자가 커뮤니티와 계속 연결된 상태를 유지하면서도 받는 알림을 제한하기 위한 몇 가지 조치를 취합니다. 또한 관리자와 중재자에게 최신 상태를 유지시키고 조치가 필요할 때 이를 알리고자 합니다.
+---
+FastComments에서는 이미 충분한 알림을 받고 있다는 것을 알고 있습니다. 그래서 사용자가 커뮤니티와 연결된 상태를 유지하면서도 받는 알림을 제한하기 위한 조치를 취하고 있습니다. 또한 관리자와 중재자가 최신 정보를 유지하고 조치가 필요할 때 알릴 수 있도록 하고 싶습니다.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### 관리자 및 중재자를 위한 다음 이벤트에 대해 알림을 보냅니다:
 
-- Community Digest Summary (frequency configurable).
-- Community help requests and reminders.
-- New Comments.
+- 커뮤니티 요약 다이제스트 (주기 설정 가능).
+- 커뮤니티 도움 요청 및 알림.
+- 새 댓글.
 
-#### For Commenters:
+#### 댓글 작성자를 위한:
 
-- When someone replies to your comment (via email).
-- When you are mentioned (in-app and email notification).
-- When someone replies in the same thread (in-app and email notification).
-- When someone replies to a child comment in the same thread (in-app and email notification).
-- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
-- When a user comments for the first time (But not with SSO).
-- When a user leaves a comment in a session that is not verified (But not with SSO).
-  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
+- 누군가 귀하의 댓글에 답글을 달았을 때 (이메일을 통해).
+- 귀하가 멘션될 때 (앱 내 및 이메일 알림).
+- 동일 스레드에서 누군가 답글을 달았을 때 (앱 내 및 이메일 알림).
+- 동일 스레드에서 하위 댓글에 누군가 답글을 달았을 때 (앱 내 및 이메일 알림).
+- 구독한 페이지에 누군가 답글을 달았을 때 (앱 내 및 이메일 알림, 구독당 주기 설정 가능: 매분, 매시간, 매일).
+- 사용자가 처음으로 댓글을 달았을 때 (단, SSO 사용 시 제외).
+- 인증되지 않은 세션에서 사용자가 댓글을 남겼을 때 (단, SSO 사용 시 제외).
+  - 이 경우 여러 인증 이메일을 보내지 않습니다. 첫 번째 이메일만 보내며, 이는 동일 세션의 모든 활동을 인증합니다.
 
-#### For All Users:
+#### 모든 사용자에게:
 
-- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+- 새 IP 주소에서 로그인 감지 시, 대략적인 위치와 IP 주소가 포함된 보안 경고 이메일이 전송됩니다. 이는 사용자의 첫 로그인에는 적용되지 않습니다.
 
-#### ...and finally for administrators only:
+#### ...그리고 마지막으로 관리자 전용:
 
-- When integrations are complete.
-- When migrations are complete.
-- When imports or exports finish.
-- When there are billing issues.
-- Trial-end reminders.
+- 통합이 완료될 때.
+- 마이그레이션이 완료될 때.
+- 가져오기 또는 내보내기가 완료될 때.
+- 청구 문제가 발생할 때.
+- 체험 종료 알림.
 
-Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+일부 알림은 사용자에게 대량 전송을 방지하기 위해 배치됩니다. 다음 섹션 `Notification Types`에서 자세히 알아보세요.
+
+답글 및 멘션 이메일은 승인된 댓글에 대해서만 전송됩니다. 특정 댓글에 대해 답글 또는 멘션 이메일이 전송되었는지, 혹은 전송되지 않은 이유를 확인하려면, Moderate Comments 페이지에서 해당 댓글의 [Comment Logs](/guide-moderation.html#comment-logs)를 엽니다.
+
+---
