@@ -32,4 +32,6 @@ keeping them in touch with their communities. We also want to keep administrator
 
 Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
 
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+
 

@@ -97,6 +97,36 @@ Status change events include before and after values, plus the user who made the
 - **NotificationCreateFailure** - Failed to create notifications
 - **BadgeAwarded** - User badge was awarded for comment (includes badge name)
 
+### Mention and Reply Notification Events
+
+These events name the person who would receive the email or notification. When nothing was sent, the Details column says why.
+
+- **MentionEmailSent** - A user mentioned in the comment was emailed
+- **MentionEmailSkipped** - A mentioned user was not emailed (includes the reason)
+- **MentionHeldForApproval** - The mention email is waiting until the comment is approved
+- **MentionNotificationCreated** - A mentioned user got an in-app notification
+- **MentionNotificationSkipped** - A mentioned user did not get an in-app notification (includes the reason)
+- **ReplyEmailSent** - The author of the comment being replied to was emailed about this reply
+- **ReplyEmailSkipped** - The author of the comment being replied to was not emailed (includes the reason)
+- **ReplyNotificationSkipped** - The author of the comment being replied to did not get an in-app notification (includes the reason)
+
+Reasons shown when an email or notification was not sent:
+
+- The user no longer exists, or has no email address
+- The user turned off email notifications, or turned off notifications for that thread
+- One of the two users has blocked the other
+- The users are not in any of the same SSO groups
+- The user's email address is on the suppression list after a bounce or spam complaint (see [Email Suppression Management](/guide-notifications.html#email-suppression-management))
+- The user's email address is at example.com, which cannot receive email
+- The comment was marked as spam, deleted, or not approved within 7 days
+- The comment being replied to was left anonymously
+- The user replied to their own comment
+- The user was mentioned in the reply, so they got the mention email instead of a reply email
+- The user already had a reply notification for the comment
+- Sending failed 5 times
+
+If delivery fails or hits a sending limit, the email is queued to retry and the log entry says so.
+
 ### Publishing Events
 - **PublishedLive** - Comment was published to live subscribers (includes subscriber count)
 
