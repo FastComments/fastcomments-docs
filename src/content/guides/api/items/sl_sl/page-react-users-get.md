@@ -1,10 +1,10 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Vrne imena uporabnikov, ki so na strani dodali reakcijo, urejena po abecedi. Pregleda se do 100 reakcij, anonimni uporabniki niso vključeni. Na straneh, ki zahtevajo SSO, uporabniki, ki strani ne morejo ogledati, prejmejo `403` s kodo `sso-required` ali `page-forbidden`.
+Vrne imena uporabnikov, ki so na strani dodali reakcijo, razvrščena po abecedi. Pregleda se do 100 reakcij, anonimni uporabniki in uporabniki z zasebnimi aktivnostmi profila niso vključeni. Na straneh, ki zahtevajo SSO, uporabniki, ki strani ne morejo ogledati, prejmejo `403` s kodo `sso-required` ali `page-forbidden`.
 
 Za pridobitev avatarjev in ID-jev uporabnikov uporabite [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) z `includeUserInfo=public`.
 
-[inline-code-attrs-start title = 'Page React Users cURL primer'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer cURL za Page React Users'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/page-reacts/v2/demo/list?urlId=example-id-or-url&id=heart'
@@ -32,3 +32,5 @@ interface PageReactUsersResponse {
     userNames: string[]
 }
 [inline-code-end]
+
+---
