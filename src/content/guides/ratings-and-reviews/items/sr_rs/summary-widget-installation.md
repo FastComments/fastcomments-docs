@@ -1,6 +1,6 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Испод је Vanilla JS код за инсталирање Сажетог Виџета. React библиотека такође има овај виџет.
 
-[inline-code-attrs-start title = 'Инсталација Summary Widget-а'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталација Сажетог Виџета'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
@@ -11,12 +11,12 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Виџет ће аутоматски пронаћи питања за приказ у сажетку на основу одговарајуће конфигурације виџета за ту страницу/сајт.
 
-### Filtering Comments by Rating
+### Филтрирање коментара према оцени
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Када је коментари виџет за исту страницу такође присутан на страници, и он је конфигурисан да прикаже одговор сваког коментатора на њиховом коментару, редови расподеле постају кликљиви. Клик на ред, на пример „5“, филтрира коментари виџет на коментаре који су дали тај одговор. Поновни клик на ред, или X на чипу „Приказано само“ у коментари виџету, приказује све коментаре поново. Ово не захтева конфигурацију: Сажети Виџет проналази коментари виџет са истим `tenantId` и `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Ово функционише за питања са звездицама, палцем, емотиконима, скалом и једноструким избором. Расподела коју коментари виџет приказује изнад поља за коментар може се кликнути на исти начин.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Ако вам је потребан виџет у некој од наших других библиотека која га не садржи, отворите тикет за подршку како бисмо знали да га додамо.

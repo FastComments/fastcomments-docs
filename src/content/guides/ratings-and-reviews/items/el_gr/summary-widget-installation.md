@@ -13,7 +13,7 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 
 The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
 
-### Filtering Comments by Rating
+### Φιλτράρισμα Σχολίων ανά Βαθμολογία
 
 When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
 
