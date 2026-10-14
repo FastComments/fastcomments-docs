@@ -1,9 +1,9 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+По-долу е Vanilla JS кодът за инсталиране на Summary Widget. React библиотеката също разполага с този widget.
 
 [inline-code-attrs-start title = 'Инсталиране на Summary Widget'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
-<div id="summary-widget"></div></div>
+<div id="summary-widget"></div>
 <script>
     window.FastCommentsReviewsSummaryWidget(document.getElementById('summary-widget'), {
         tenantId: 'demo'
@@ -11,12 +11,12 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Widget‑ът автоматично ще намери въпросите, които да се покажат в обобщението, въз основа на съответната конфигурация на widget‑а за тази страница/сайт.
 
-### Filtering Comments by Rating
+### Филтриране на коментари по рейтинг
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Когато comment widget‑ът за същата страница също се намира на страницата и е конфигуриран да показва отговора на всеки коментатор в неговия коментар, редовете на разбивката стават кликваеми. Кликването върху ред, например „5“, филтрира comment widget‑а до коментарите, които са дали този отговор. Кликването отново върху реда или върху X на чипа „Showing only“ в comment widget‑а показва отново всички коментари. Това не изисква конфигурация: Summary Widget‑ът намира comment widget‑а със същия `tenantId` и `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Това работи за въпроси със звезди, палци, емоджи, скала и единичен избор. Разбивката, която comment widget‑ът показва над полето за коментари, може да се кликва по същия начин.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Ако се нуждаете от widget в една от нашите други библиотеки, която не го съдържа, подайте заявка за поддръжка, за да знаем да го добавим.
