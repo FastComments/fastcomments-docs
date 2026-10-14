@@ -9,6 +9,16 @@ There are two sets of endpoints:
 
 Both are also available in our SDKs as part of the `PublicApi`, for example `getV1PageLikes`, `createV1PageReact`, and `deleteV1PageReact` in the [JavaScript SDK](/guide-sdk-javascript.html).
 
+### Showing Who Reacted
+
+Pass `includeUserInfo=public` to the `GET` endpoints to also get the users who liked or reacted, with their usernames and avatars, most recent first. Users who have made their profile activity private are left out, as are anonymous users. Up to 100 reacts are returned.
+
+SSO users are created with private profile activity unless your SSO payload sets `isProfileActivityPrivate` to `false`, so set it for the users you want to appear in these lists.
+
+On pages that require SSO, only SSO users who can view the page can list who reacted. Others get a `403` with the code `sso-required` or `page-forbidden`.
+
+From your server, [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) and [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) return the same lists with an API key, and also accept `includeUserInfo=include-private` to include users with private profiles.
+
 ### Identifying the User
 
 Reacts are tied to the user making the request:
