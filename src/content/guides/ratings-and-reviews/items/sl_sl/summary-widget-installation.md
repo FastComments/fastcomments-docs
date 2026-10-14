@@ -1,5 +1,4 @@
----
-Spodaj je koda Vanilla JS za namestitev pripomočka povzetka. Knjižnica React ima tudi ta pripomoček.
+Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
 
 [inline-code-attrs-start title = 'Namestitev pripomočka povzetka'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
@@ -12,8 +11,12 @@ Spodaj je koda Vanilla JS za namestitev pripomočka povzetka. Knjižnica React i
 </script>
 [inline-code-end]
 
-Pripomoček bo samodejno našel vprašanja, ki jih je treba prikazati v povzetku, na podlagi ustrezne konfiguracije pripomočka za to stran/spletno mesto.
+The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
 
-Če potrebujete pripomoček v eni izmed naših drugih knjižnic, ki ga nima, odprite podporno vozovnico, da bomo vedeli, da ga moramo dodati.
+### Filtering Comments by Rating
 
----
+When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+
+This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+
+If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
