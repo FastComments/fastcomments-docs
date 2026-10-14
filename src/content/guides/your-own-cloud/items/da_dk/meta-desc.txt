@@ -1,3 +1,0 @@
----
-Kør en isoleret FastComments-implementering i din egen cloud-konto, administreret af os, med fuld admin-adgang og muligheden for at hoste white-labeled lejere.
----

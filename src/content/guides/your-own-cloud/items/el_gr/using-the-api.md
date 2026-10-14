@@ -1,2 +1,0 @@
-Το FastComments Isolated Cloud σημαίνει ότι αποκτάτε επίσης αποκλειστική πρόσβαση στο API. Θα είναι διαθέσιμο
-μέσω ενός URI όπως `https://fastcomments.example.com/api`. Για περισσότερες λεπτομέρειες, δείτε την [Τεκμηρίωση API](guide-api.html).
