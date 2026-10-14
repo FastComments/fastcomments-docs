@@ -20,5 +20,3 @@ When the comment widget for the same page is also on the page, and it is configu
 This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
 
 If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
-
----
