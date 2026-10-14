@@ -13,11 +13,11 @@ FastComments unterstützt drei Möglichkeiten zur Spam-Erkennung:
 
 1. Ein traditioneller Naïve-Bayes-Klassifikator, der kontinuierlich trainiert wird und der über alle FastComments.com tenants hinweg gemeinsam genutzt wird.
 2. Ein traditioneller Naïve-Bayes-Klassifikator, der kontinuierlich trainiert wird und für Ihren tenant **isoliert** ist.
-3. Verwendung von ChatGPT 4.
+3. Verwendung eines LLM (großes Sprachmodell).
 
 Jeder hat Zugriff auf die gemeinsam genutzten und isolierten Naïve-Bayes-Klassifikatoren.
 
-Die ChatGPT 4-Option kann auf der Seite mit den Einstellungen zur Kommentar-Moderation ausgewählt werden, wenn Sie auf Flex billing sind, da sie nach verwendeten Tokens abgerechnet wird.
+Die LLM-Option kann auf der Seite mit den Einstellungen zur Kommentar-Moderation ausgewählt werden, wenn Sie auf Flex billing sind, da sie nach verwendeten Tokens abgerechnet wird.
 
 ### Vertrauensfaktor
 

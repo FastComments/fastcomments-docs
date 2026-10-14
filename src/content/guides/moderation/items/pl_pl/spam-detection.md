@@ -6,19 +6,19 @@ Komentarze oznaczone jako **Spam** nie będą automatycznie zatwierdzane, więc 
 
 Wykrywanie spamu można wyłączyć na stronie Ustawień moderacji komentarzy.
 
-### Different Spam Detectors
+### Różne detektory spamu
 
 FastComments obsługuje trzy sposoby wykrywania spamu:
 
 1. Tradycyjny klasyfikator Naïve-Bayes, który jest ciągle trenowany i który jest współdzielony między wszystkimi tenantami FastComments.com.
 2. Tradycyjny klasyfikator Naïve-Bayes, który jest ciągle trenowany i który jest **isolated** do Twojego tenanta.
-3. Korzystanie z ChatGPT 4.
+3. Korzystanie z LLM (dużego modelu językowego).
 
 Wszyscy mają dostęp do współdzielonych i izolowanych klasyfikatorów Naïve-Bayes.
 
-Opcja ChatGPT 4 jest dostępna do wyboru na stronie Ustawień moderacji komentarzy, jeśli korzystasz z rozliczeń Flex, ponieważ rozliczana jest na podstawie użytych tokenów.
+Opcja LLM jest dostępna do wyboru na stronie Ustawień moderacji komentarzy, jeśli korzystasz z rozliczeń Flex, ponieważ rozliczana jest na podstawie użytych tokenów.
 
-### Trust Factor
+### Wskaźnik zaufania
 
 FastComments dostosowuje filtr spamu dla użytkownika na podstawie poziomu jego zaufania dla danej witryny.
 
@@ -34,6 +34,6 @@ Komentarze publikowane przez użytkowników SSO mogą być uznawane za spam i b�
 
 Użytkownicy SSO z tymi uprawnieniami nie będą mieli swoich komentarzy sprawdzanych pod kątem spamu.
 
-### Repeated Messages
+### Powtarzające się wiadomości
 
 FastComments wykryje i zapobiegnie powtarzającym się wiadomościom. Wykryje również powtarzające się wiadomości bardzo do siebie podobne, aby zapobiegać spamowi. Tego nie da się wyłączyć, ponieważ zapobiega to wykorzystywaniu naszej platformy do nadużyć. Jeśli masz wysoki wskaźnik zaufania, jest to brane pod uwagę przy zapobieganiu powtarzającym się wiadomościom.

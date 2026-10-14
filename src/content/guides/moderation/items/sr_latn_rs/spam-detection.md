@@ -12,11 +12,11 @@ FastComments podržava tri načina otkrivanja neželjene pošte:
 
 1. Tradicionalni Naivni-Bayes klasifikator koji se kontinuirano trenira, a koji je deljen između svih FastComments.com tenant-a.
 2. Tradicionalni Naivni-Bayes klasifikator koji se kontinuirano trenira, koji je **izolovan** na vaš tenant.
-3. Korišćenje ChatGPT 4.
+3. Korišćenje LLM-a (velikog jezičkog modela).
 
 Svi imaju pristup deljenim i izolovanim Naivni-Bayes klasifikatorima.
 
-Opcija ChatGPT 4 je izabriva na stranici Podešavanja moderacije komentara ako ste na Flex naplati, pošto se naplaćuje na osnovu iskorišćenih tokena.
+Opcija LLM može se izabrati na stranici Podešavanja moderacije komentara ako ste na Flex naplati, pošto se naplaćuje na osnovu iskorišćenih tokena.
 
 ### Faktor poverenja
 

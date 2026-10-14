@@ -13,11 +13,11 @@ FastComments supports three ways of detecting spam:
 
 1. A traditional Naïve-Bayes classifier that is continuously trained, which is shared across all FastComments.com tenants.
 2. A traditional Naïve-Bayes classifier that is continuously trained, which is **isolated** to your tenant.
-3. Using ChatGPT 4.
+3. Using an LLM (large language model).
 
 Everyone has access to the shared and isolated Naïve-Bayes classifiers.
 
-The ChatGPT 4 option is selectable in the Comment Moderation Settings page if you are on Flex billing, since it bills based
+The LLM option is selectable in the Comment Moderation Settings page if you are on Flex billing, since it bills based
 on tokens used.
 
 ### Trust Factor

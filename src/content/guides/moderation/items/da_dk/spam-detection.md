@@ -12,17 +12,17 @@ FastComments understøtter tre måder at detektere spam på:
 
 1. En traditionel Naïve-Bayes-klassifikator, der løbende trænes, og som deles på tværs af alle FastComments.com tenants.
 2. En traditionel Naïve-Bayes-klassifikator, der løbende trænes, og som er **isolated** til din tenant.
-3. Brug af ChatGPT 4.
+3. Brug af en LLM (stor sprogmodel).
 
 Alle har adgang til de delte og isolerede Naïve-Bayes-klassifikatorer.
 
-ChatGPT 4-muligheden kan vælges i Comment Moderation Settings page, hvis du er på Flex billing, da den faktureres baseret på anvendte tokens.
+LLM-muligheden kan vælges i Comment Moderation Settings page, hvis du er på Flex billing, da den faktureres baseret på anvendte tokens.
 
-### Trust Factor
+### Tillidsfaktor
 
 FastComments justerer spamfilteret for en bruger baseret på, hvor meget vedkommende er betroet for det pågældende site.
 
-For eksempel, hvis administratorer har fastgjort mange af deres kommentarer, så er de sandsynligvis en meget pålidelig bruger. Eller hvis de har været medlem af sitet i lang tid og har mange kommentarer, kan deres trust factor også være høj.
+For eksempel, hvis administratorer har fastgjort mange af deres kommentarer, så er de sandsynligvis en meget pålidelig bruger. Eller hvis de har været medlem af sitet i lang tid og har mange kommentarer, kan deres tillidsfaktor også være høj.
 
 ### SSO
 
@@ -36,4 +36,4 @@ SSO-brugere med disse tilladelser vil ikke få deres kommentarer tjekket for spa
 
 ### Gentagne beskeder
 
-FastComments vil opdage og forhindre gentagne beskeder. Det vil også opdage gentagne beskeder, der er meget ens, for at hjælpe med at forhindre spam. Dette kan ikke deaktiveres, da det forhindrer vores platform i at blive misbrugt. Hvis du har en høj trust factor, tages dette i betragtning ved forebyggelse af gentagne beskeder.
+FastComments vil opdage og forhindre gentagne beskeder. Det vil også opdage gentagne beskeder, der er meget ens, for at hjælpe med at forhindre spam. Dette kan ikke deaktiveres, da det forhindrer vores platform i at blive misbrugt. Hvis du har en høj tillidsfaktor, tages dette i betragtning ved forebyggelse af gentagne beskeder.

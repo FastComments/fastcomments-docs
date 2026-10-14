@@ -1,22 +1,22 @@
 Po zadanim postavkama, FastComments dolazi s trenirajućim sustavom za otkrivanje neželjene pošte.
 
-Kako moderirate komentare i označavate ih kao **Spam**, ili označavate komentare koje je sustav automatski pronašao kao **Spam** kao **Not Spam**, sustav za otkrivanje neželjene pošte uči iz tih radnji kako bi točnije odredio što želite smatrati spamanjem.
+Kako moderirate komentare i označavate ih kao **Spam**, ili označavate komentare koje je sustav automatski pronašao kao **Spam** kao **Nije spam**, sustav za otkrivanje neželjene pošte uči iz tih radnji kako bi točnije odredio što želite smatrati spamom.
 
-Komentari označeni kao **Spam** neće biti automatski odobreni, pa se neće prikazivati dok ih eksplicitno ne označite kao **Not Spam**.
+Komentari označeni kao **Spam** neće biti automatski odobreni, pa se neće prikazivati dok ih eksplicitno ne označite kao **Nije spam**.
 
 Otkrivanje spama može se onemogućiti putem stranice Postavke moderiranja komentara.
 
-### Different Spam Detectors
+### Različiti detektori spama
 
 FastComments podržava tri načina otkrivanja spama:
 
-1. A traditional Naïve-Bayes classifier that is continuously trained, which is shared across all FastComments.com tenants.
-2. A traditional Naïve-Bayes classifier that is continuously trained, which is **isolated** to your tenant.
-3. Using ChatGPT 4.
+1. Tradicionalni Naïve-Bayes klasifikator koji se neprekidno trenira i dijeli među svim FastComments.com tenantima.
+2. Tradicionalni Naïve-Bayes klasifikator koji se neprekidno trenira i **izoliran** je na vaš tenant.
+3. Korištenje LLM-a (velikog jezičnog modela).
 
-Svi imaju pristup shared i isolated Naïve-Bayes klasifikatorima.
+Svi imaju pristup dijeljenim i izoliranim Naïve-Bayes klasifikatorima.
 
-Opcija ChatGPT 4 može se odabrati na stranici Postavke moderiranja komentara ako ste na Flex billing planu, budući da se naplaćuje na temelju iskorištenih tokena.
+Opcija LLM može se odabrati na stranici Postavke moderiranja komentara ako koristite Flex naplatu, budući da se naplaćuje na temelju iskorištenih tokena.
 
 ### Faktor povjerenja
 
@@ -26,11 +26,11 @@ Na primjer, ako su administratori puno puta prikvačili njihove komentare, vjero
 
 ### SSO
 
-Komentari koje objavljuju SSO korisnici mogu se smatrati spamom i bit će provjereni kao takvi. Izuzetak je ako SSO korisnik ima isti email kao tenant korisnik koji ima jednu ili više sljedećih dozvola:
+Komentari koje objavljuju SSO korisnici mogu se smatrati spamom i bit će provjereni kao takvi. Izuzetak je ako SSO korisnik ima istu adresu e-pošte kao korisnik tenanta koji ima jednu ili više sljedećih dozvola:
 
-- Account Owner
-- Super Admin
-- Comment Moderator Admin
+- Vlasnik računa
+- Super administrator
+- Administrator moderiranja komentara
 
 SSO korisnici s tim dozvolama neće imati svoje komentare provjeravane na spam.
 
