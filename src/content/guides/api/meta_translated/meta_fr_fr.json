@@ -334,6 +334,18 @@
       "subCat": "Pages"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -622,7 +634,7 @@
       "subCat": "Utilisateurs locataire"
     },
     {
-      "name": "Structure de l'utilisateur",
+      "name": "Structure d'utilisateur",
       "file": "user-structure.md",
       "subCat": "Utilisateurs"
     },
@@ -740,7 +752,7 @@
       "subCat": "Configurations de question"
     },
     {
-      "name": "Structure de résultat de question",
+      "name": "Structure du résultat de question",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Résultats de question"

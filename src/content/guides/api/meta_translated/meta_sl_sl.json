@@ -19,15 +19,15 @@
       "subCat": "Agregacije"
     },
     {
-      "name": "Struktura revizijskega dnevnika",
+      "name": "Struktura dnevnika revizij",
       "file": "audit-log-structure.md",
-      "subCat": "Revizijski dnevniki"
+      "subCat": "Dnevniki revizij"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Revizijski dnevniki"
+      "subCat": "Dnevniki revizij"
     },
     {
       "name": "Struktura komentarja",
@@ -153,7 +153,7 @@
       "subCat": "Objave v viru"
     },
     {
-      "name": "Struktura hashtagov",
+      "name": "Struktura hashtag",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtagi"
     },
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Strani"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Strani"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Strani"
     },
@@ -788,62 +800,62 @@
       "subCat": "Agregacija rezultatov vprašanj"
     },
     {
-      "name": "Struktura uporabniškega značka",
+      "name": "Struktura značke uporabnika",
       "file": "user-badge-structure.md",
-      "subCat": "Uporabniški znački"
+      "subCat": "Značke uporabnika"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Uporabniški znački"
+      "subCat": "Značke uporabnika"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Uporabniški znački"
+      "subCat": "Značke uporabnika"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Uporabniški znački"
+      "subCat": "Značke uporabnika"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Uporabniški znački"
+      "subCat": "Značke uporabnika"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Uporabniški znački"
+      "subCat": "Značke uporabnika"
     },
     {
-      "name": "Struktura napredka uporabniškega značka",
+      "name": "Struktura napredka značke uporabnika",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Napredek uporabniškega značka"
+      "subCat": "Napredek značke uporabnika"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Napredek uporabniškega značka"
+      "subCat": "Napredek značke uporabnika"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Napredek uporabniškega značka"
+      "subCat": "Napredek značke uporabnika"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Napredek uporabniškega značka"
+      "subCat": "Napredek značke uporabnika"
     }
   ]
 }

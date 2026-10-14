@@ -2,37 +2,48 @@
 
 Gibt die Anzahl der Likes auf einer Seite zurück und ob der aktuelle Benutzer sie geliked hat. Seiten, die noch nicht existieren, geben einen `likeCount` von `0` zurück.
 
-[inline-code-attrs-start title = 'Beispiel für Page Likes cURL'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+Verwenden Sie `includeUserInfo=public`, um ebenfalls die Benutzer zu erhalten, die die Seite geliked haben, wobei die neuesten zuerst angezeigt werden. Benutzer mit privater Profilaktivität und anonyme Benutzer werden ausgeschlossen, und es werden bis zu 100 Likes abgefragt. Hier wird nur `public` akzeptiert; `include-private` liefert einen `422` und ist über [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) mit einem API‑Schlüssel verfügbar. Auf Seiten, die SSO erfordern, gibt `includeUserInfo` einen `403` zurück für Benutzer, die die Seite nicht anzeigen können.
+
+[inline-code-attrs-start title = 'Page Likes cURL Beispiel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/page-reacts/v1/likes/demo?urlId=example-id-or-url'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktur der Page Likes-Anfrage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page Likes Anforderungsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageLikesRequestQueryParams {
     urlId: string
-    /** URI-codiertes JSON Ihres SSO-Objekts. Für anonyme Benutzer weglassen. **/
+    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
+    /** Set to 'public' to include the users who liked the page. **/
+    includeUserInfo?: 'public'
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktur der Page Likes-Antwort'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page Likes Antwortstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageLikesResponse {
     status: 'success' | 'failed'
-    /** Bei einem Fehler enthalten. **/
-    code?: string
-    /** Bei einem Fehler enthalten. **/
+    /** Included on failure. **/
+    code?: 'include-private-not-allowed' | 'sso-required' | 'page-forbidden' | string
+    /** Included on failure. **/
     reason?: string
     likeCount: number
-    /** Ob der Benutzer, der die Anfrage stellt, die Seite geliked hat. **/
+    /** Whether the user making the request has liked the page. **/
     didLike: boolean
-    /** Die Anzahl der obersten Kommentare auf der Seite. **/
+    /** The number of top level comments on the page. **/
     commentCount: number
-    /** Die ID, die verwendet wird, um Live-Updates für diese Seite zu abonnieren. **/
+    /** The id used to subscribe to live updates for this page. **/
     urlIdWS: string
+    /** Most recent first. Only set when includeUserInfo is passed. **/
+    users?: PageReactUser[]
+}
+
+interface PageReactUser {
+    userId: string
+    username: string
+    displayName?: string
+    avatarSrc?: string
 }
 [inline-code-end]
-
----

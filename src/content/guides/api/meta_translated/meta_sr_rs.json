@@ -235,7 +235,7 @@
       "subCat": "Модератори"
     },
     {
-      "name": "Структура броја обавештења",
+      "name": "Структура бројања обавештења",
       "file": "notification-count-structure.md",
       "subCat": "Број обавештења"
     },
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Странице"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Странице"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Странице"
     },

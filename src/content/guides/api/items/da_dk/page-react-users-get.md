@@ -1,6 +1,8 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Returnerer navnene på de brugere, der har tilføjet en reaktion til en side, sorteret alfabetisk. Op til 100 reaktioner slås op, og anonyme brugere er ikke inkluderet.
+Returnerer navnene på de brugere, der har tilføjet en reaktion til en side, sorteret alfabetisk. Op til 100 reaktioner slås op, og anonyme brugere er ikke inkluderet. På sider, der kræver SSO, får brugere, der ikke kan se siden, en `403` med koden `sso-required` eller `page-forbidden`.
+
+For også at få avatarer og bruger-id'er, brug [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) med `includeUserInfo=public`.
 
 [inline-code-attrs-start title = 'Page React Users cURL Eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +21,7 @@ interface PageReactUsersRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Page React Users Responsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page React Users Svarestruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageReactUsersResponse {
     status: 'success' | 'failed'

@@ -1,14 +1,16 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Επιστρέφει τα ονόματα των χρηστών που πρόσθεσαν μια αντίδραση σε μια σελίδα, ταξινομημένα αλφαβητικά. Αναζητούνται έως 100 αντιδράσεις, και οι ανώνυμοι χρήστες δεν περιλαμβάνονται.
+Επιστρέφει τα ονόματα των χρηστών που πρόσθεσαν μια αντίδραση σε μια σελίδα, ταξινομημένα αλφαβητικά. Αναζητούνται έως 100 αντιδράσεις, και οι ανώνυμοι χρήστες δεν περιλαμβάνονται. Σε σελίδες που απαιτούν SSO, οι χρήστες που δεν μπορούν να δουν τη σελίδα λαμβάνουν ένα `403` με τον κωδικό `sso-required` ή `page-forbidden`.
 
-[inline-code-attrs-start title = 'Παράδειγμα cURL για Χρήστες Σελίδας React'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+Για να λάβετε επίσης avatars και IDs χρηστών, χρησιμοποιήστε [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) με `includeUserInfo=public`.
+
+[inline-code-attrs-start title = 'Παράδειγμα cURL για Χρήστες Αντιδράσεων Σε Σελίδα'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/page-reacts/v2/demo/list?urlId=example-id-or-url&id=heart'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Δομή Αιτήματος Χρηστών Σελίδας React'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή Αιτήματος Χρηστών Αντιδράσεων Σε Σελίδα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageReactUsersRequestQueryParams {
     urlId: string
@@ -19,7 +21,7 @@ interface PageReactUsersRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Δομή Απόκρισης Χρηστών Σελίδας React'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή Απόκρισης Χρηστών Αντιδράσεων Σε Σελίδα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageReactUsersResponse {
     status: 'success' | 'failed'

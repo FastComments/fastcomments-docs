@@ -2,6 +2,8 @@
 
 Враћа број лајкова на страници и да ли је тренутни корисник лајковао страницу. Странице које још не постоје враћају `likeCount` од `0`.
 
+Проследите `includeUserInfo=public` да бисте такође добили кориснике који су лајковали страницу, прво најновије. Корисници са приватном активностим профила и анонимни корисници се изостављају, а прегледа се до 100 лајкова. Овде се прихвата само `public`; `include-private` враћа `422` и доступно је из [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) уз API кључ. На страницама које захтевају SSO, `includeUserInfo` враћа `403` за кориснике који не могу да виде страницу.
+
 [inline-code-attrs-start title = 'Пример cURL захтева за лајкове странице'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
@@ -12,8 +14,10 @@ curl --request GET \
 [inline-code-start]
 interface PageLikesRequestQueryParams {
     urlId: string
-    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
+    /** URI‑кодиран JSON вашег SSO објекта. Изоставите за анонимне кориснике. **/
     sso?: string
+    /** Поставите на 'public' да укључите кориснике који су лајковали страницу. **/
+    includeUserInfo?: 'public'
 }
 [inline-code-end]
 
@@ -21,16 +25,25 @@ interface PageLikesRequestQueryParams {
 [inline-code-start]
 interface PageLikesResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
-    code?: string
-    /** Included on failure. **/
+    /** Укључено у случају грешке. **/
+    code?: 'include-private-not-allowed' | 'sso-required' | 'page-forbidden' | string
+    /** Укључено у случају грешке. **/
     reason?: string
     likeCount: number
-    /** Whether the user making the request has liked the page. **/
+    /** Да ли је корисник који шаље захтев лајковао страницу. **/
     didLike: boolean
-    /** The number of top level comments on the page. **/
+    /** Број коментара највишег нивоа на страници. **/
     commentCount: number
-    /** The id used to subscribe to live updates for this page. **/
+    /** ИД који се користи за претплату на ажурирања уживо за ову страницу. **/
     urlIdWS: string
+    /** Прво најновије. Поставља се само када је прослеђено includeUserInfo. **/
+    users?: PageReactUser[]
+}
+
+interface PageReactUser {
+    userId: string
+    username: string
+    displayName?: string
+    avatarSrc?: string
 }
 [inline-code-end]

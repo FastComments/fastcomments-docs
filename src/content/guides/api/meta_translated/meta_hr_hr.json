@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API-ji za komentiranje uživo",
+  "pageHeader": "API-ji za live komentiranje",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "API Resursi"
     },
     {
-      "name": "OAuth autorizacija",
+      "name": "OAuth Autorizacija",
       "file": "oauth.md",
       "subCat": "Autentifikacija"
     },
@@ -19,15 +19,15 @@
       "subCat": "Agregacije"
     },
     {
-      "name": "Struktura AuditLog-a",
+      "name": "Struktura revizijskog zapisa",
       "file": "audit-log-structure.md",
-      "subCat": "AuditLogovi"
+      "subCat": "Revizijski zapisi"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AuditLogovi"
+      "subCat": "Revizijski zapisi"
     },
     {
       "name": "Struktura komentara",
@@ -89,7 +89,7 @@
       "subCat": "Komentari"
     },
     {
-      "name": "Struktura predložaka e-pošte",
+      "name": "Struktura predloška e-pošte",
       "file": "email-template-structure.md",
       "subCat": "Predlošci e-pošte"
     },
@@ -130,27 +130,27 @@
       "subCat": "Predlošci e-pošte"
     },
     {
-      "name": "Struktura FeedPost-a",
+      "name": "Struktura Feed posta",
       "file": "feed-post-structure.md",
-      "subCat": "Objave u feedu"
+      "subCat": "Feed objave"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Objave u feedu"
+      "subCat": "Feed objave"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Objave u feedu"
+      "subCat": "Feed objave"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Objave u feedu"
+      "subCat": "Feed objave"
     },
     {
       "name": "Struktura hashtagova",
@@ -191,7 +191,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ja"
+      "subCat": "Moj"
     },
     {
       "name": "Struktura moderatora",
@@ -270,7 +270,7 @@
       "subCat": "Obavijesti"
     },
     {
-      "name": "Javni API reakcija na stranicu",
+      "name": "Javni API za reakcije na stranicu",
       "file": "page-reacts-api.md",
       "subCat": "Reakcije na stranicu"
     },
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Stranice"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Stranice"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Stranice"
     },
@@ -500,126 +512,126 @@
       "subCat": "Pretplate"
     },
     {
-      "name": "Struktura dnevne upotrebe najemnika",
+      "name": "Struktura dnevne upotrebe najmodavca",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Dnevna upotreba najemnika"
+      "subCat": "Dnevna upotreba najmodavca"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Dnevna upotreba najemnika"
+      "subCat": "Dnevna upotreba najmodavca"
     },
     {
-      "name": "Struktura najemnika",
+      "name": "Struktura najmodavca",
       "file": "tenant-structure.md",
-      "subCat": "Najemnici"
+      "subCat": "Najmodavci"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Najemnici"
+      "subCat": "Najmodavci"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Najemnici"
+      "subCat": "Najmodavci"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Najemnici"
+      "subCat": "Najmodavci"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Najemnici"
+      "subCat": "Najmodavci"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Najemnici"
+      "subCat": "Najmodavci"
     },
     {
-      "name": "Struktura paketa najemnika",
+      "name": "Struktura paketa najmodavca",
       "file": "tenant-package-structure.md",
-      "subCat": "Paketi najemnika"
+      "subCat": "Paketi najmodavca"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi najemnika"
+      "subCat": "Paketi najmodavca"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi najemnika"
+      "subCat": "Paketi najmodavca"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi najemnika"
+      "subCat": "Paketi najmodavca"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi najemnika"
+      "subCat": "Paketi najmodavca"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Paketi najemnika"
+      "subCat": "Paketi najmodavca"
     },
     {
-      "name": "Struktura korisnika najemnika",
+      "name": "Struktura korisnika najmodavca",
       "file": "tenant-user-structure.md",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Korisnici najemnika"
+      "subCat": "Korisnici najmodavca"
     },
     {
       "name": "Struktura korisnika",
@@ -633,7 +645,7 @@
       "subCat": "Korisnici"
     },
     {
-      "name": "Struktura glasova",
+      "name": "Struktura glasovanja",
       "file": "vote-structure.md",
       "subCat": "Glasovi"
     },

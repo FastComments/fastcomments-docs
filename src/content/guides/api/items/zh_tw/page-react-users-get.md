@@ -1,6 +1,8 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-返回對頁面添加回應的使用者名稱，按字母順序排序。最多查詢 100 個回應，且不包括匿名使用者。
+返回對頁面添加了回應的使用者名稱，按字母順序排序。最多查詢 100 個回應，匿名使用者不會被包含。在需要 SSO 的頁面上，無法查看頁面的使用者會收到代碼為 `sso-required` 或 `page-forbidden` 的 `403`。
+
+若也想取得頭像與使用者 ID，請使用 [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) 並加上 `includeUserInfo=public`。
 
 [inline-code-attrs-start title = '頁面回應使用者 cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -12,9 +14,9 @@ curl --request GET \
 [inline-code-start]
 interface PageReactUsersRequestQueryParams {
     urlId: string
-    /** 回應 ID。 **/
+    /** The reaction id. **/
     id: string
-    /** URI 編碼的您的 SSO 物件 JSON。匿名使用者請省略。 **/
+    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
 }
 [inline-code-end]
@@ -23,9 +25,9 @@ interface PageReactUsersRequestQueryParams {
 [inline-code-start]
 interface PageReactUsersResponse {
     status: 'success' | 'failed'
-    /** 失敗時包含。 **/
+    /** Included on failure. **/
     code?: string
-    /** 失敗時包含。 **/
+    /** Included on failure. **/
     reason?: string
     userNames: string[]
 }

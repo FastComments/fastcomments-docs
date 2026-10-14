@@ -1,6 +1,8 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Zwraca nazwy użytkowników, którzy dodali reakcję do strony, posortowane alfabetycznie. Przeszukiwanych jest do 100 reakcji, a anonimowi użytkownicy nie są uwzględniani.
+Zwraca nazwy użytkowników, którzy dodali reakcję do strony, posortowane alfabetycznie. Wyszukiwane jest maksymalnie 100 reakcji, a anonimowi użytkownicy nie są uwzględniani. Na stronach wymagających SSO, użytkownicy, którzy nie mogą wyświetlić strony, otrzymują `403` z kodem `sso-required` lub `page-forbidden`.
+
+Aby również uzyskać awatary i identyfikatory użytkowników, użyj [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) z parametrem `includeUserInfo=public`.
 
 [inline-code-attrs-start title = 'Przykład cURL dla Page React Users'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -12,9 +14,9 @@ curl --request GET \
 [inline-code-start]
 interface PageReactUsersRequestQueryParams {
     urlId: string
-    /** The reaction id. **/
+    /** Identyfikator reakcji. **/
     id: string
-    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
+    /** Zakodowany w URI JSON twojego obiektu SSO. Pomiń dla anonimowych użytkowników. **/
     sso?: string
 }
 [inline-code-end]
@@ -23,9 +25,9 @@ interface PageReactUsersRequestQueryParams {
 [inline-code-start]
 interface PageReactUsersResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Zawarte w przypadku niepowodzenia. **/
     code?: string
-    /** Included on failure. **/
+    /** Zawarte w przypadku niepowodzenia. **/
     reason?: string
     userNames: string[]
 }

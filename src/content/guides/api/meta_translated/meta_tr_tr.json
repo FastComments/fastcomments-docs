@@ -19,15 +19,15 @@
       "subCat": "Toplamalar"
     },
     {
-      "name": "Denetim Kaydı Yapısı",
+      "name": "Denetim Günlüğü Yapısı",
       "file": "audit-log-structure.md",
-      "subCat": "Denetim Kayıtları"
+      "subCat": "Denetim Günlükleri"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Denetim Kayıtları"
+      "subCat": "Denetim Günlükleri"
     },
     {
       "name": "Yorum Yapısı",
@@ -153,39 +153,39 @@
       "subCat": "Akış Gönderileri"
     },
     {
-      "name": "Etiket Yapısı",
+      "name": "Hashtag Yapısı",
       "file": "hash-tag-structure.md",
-      "subCat": "Etiketler"
+      "subCat": "Hashtag'ler"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Etiketler"
+      "subCat": "Hashtag'ler"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Etiketler"
+      "subCat": "Hashtag'ler"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Etiketler"
+      "subCat": "Hashtag'ler"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Etiketler"
+      "subCat": "Hashtag'ler"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Etiketler"
+      "subCat": "Hashtag'ler"
     },
     {
       "name": "GET /api/v1/me",
@@ -270,7 +270,7 @@
       "subCat": "Bildirimler"
     },
     {
-      "name": "Sayfa Tepkileri Genel API",
+      "name": "Sayfa Tepkileri Genel API'si",
       "file": "page-reacts-api.md",
       "subCat": "Sayfa Tepkileri"
     },
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Sayfalar"
     },
@@ -662,82 +674,82 @@
       "subCat": "Oylar"
     },
     {
-      "name": "Alan Adı Yapılandırma Yapısı",
+      "name": "Domain Config Yapısı",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Alan Adı Yapılandırmaları"
+      "subCat": "Domain Config'ları"
     },
     {
-      "name": "Soru Yapılandırma Yapısı",
+      "name": "Soru Config Yapısı",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Yapılandırmaları"
+      "subCat": "Soru Config'ları"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Yapılandırmaları"
+      "subCat": "Soru Config'ları"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Yapılandırmaları"
+      "subCat": "Soru Config'ları"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Yapılandırmaları"
+      "subCat": "Soru Config'ları"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Yapılandırmaları"
+      "subCat": "Soru Config'ları"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Yapılandırmaları"
+      "subCat": "Soru Config'ları"
     },
     {
       "name": "Soru Sonucu Yapısı",
@@ -788,7 +800,7 @@
       "subCat": "Soru Sonuçları Toplaması"
     },
     {
-      "name": "Kullanıcı Rozet Yapısı",
+      "name": "Kullanıcı Rozeti Yapısı",
       "file": "user-badge-structure.md",
       "subCat": "Kullanıcı Rozetleri"
     },
@@ -823,7 +835,7 @@
       "subCat": "Kullanıcı Rozetleri"
     },
     {
-      "name": "Kullanıcı Rozet İlerleme Yapısı",
+      "name": "Kullanıcı Rozet İlerlemesi Yapısı",
       "file": "user-badge-progress-structure.md",
       "subCat": "Kullanıcı Rozet İlerlemesi"
     },

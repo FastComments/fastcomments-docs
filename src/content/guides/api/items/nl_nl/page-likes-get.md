@@ -2,35 +2,48 @@
 
 Retourneert het aantal likes op een pagina, en of de huidige gebruiker deze heeft geliket. Pagina's die nog niet bestaan, geven een `likeCount` van `0` terug.
 
-[inline-code-attrs-start title = 'Page Likes cURL voorbeeld'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+Geef `includeUserInfo=public` mee om ook de gebruikers te krijgen die de pagina hebben geliket, meest recent eerst. Gebruikers met privéprofielactiviteit en anonieme gebruikers worden weggelaten, en er worden maximaal 100 likes opgezocht. Alleen `public` wordt hier geaccepteerd; `include-private` geeft een `422` terug en is beschikbaar via [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) met een API-sleutel. Op pagina's die SSO vereisen, geeft `includeUserInfo` een `403` terug voor gebruikers die de pagina niet kunnen bekijken.
+
+[inline-code-attrs-start title = 'Voorbeeld cURL voor Pagina Likes'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/page-reacts/v1/likes/demo?urlId=example-id-or-url'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Page Likes aanvraagstructuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structuur van Pagina Likes-verzoek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageLikesRequestQueryParams {
     urlId: string
-    /** URI-gecodeerde JSON van uw SSO-object. Laat weg voor anonieme gebruikers. **/
+    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
+    /** Set to 'public' to include the users who liked the page. **/
+    includeUserInfo?: 'public'
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Page Likes responsstructuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structuur van Pagina Likes-respons'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageLikesResponse {
     status: 'success' | 'failed'
-    /** Inbegrepen bij een fout. **/
-    code?: string
-    /** Inbegrepen bij een fout. **/
+    /** Included on failure. **/
+    code?: 'include-private-not-allowed' | 'sso-required' | 'page-forbidden' | string
+    /** Included on failure. **/
     reason?: string
     likeCount: number
-    /** Of de gebruiker die het verzoek doet de pagina heeft geliket. **/
+    /** Whether the user making the request has liked the page. **/
     didLike: boolean
-    /** Het aantal top-level reacties op de pagina. **/
+    /** The number of top level comments on the page. **/
     commentCount: number
-    /** De id die wordt gebruikt om je te abonneren op live-updates voor deze pagina. **/
+    /** The id used to subscribe to live updates for this page. **/
     urlIdWS: string
+    /** Most recent first. Only set when includeUserInfo is passed. **/
+    users?: PageReactUser[]
+}
+
+interface PageReactUser {
+    userId: string
+    username: string
+    displayName?: string
+    avatarSrc?: string
 }
 [inline-code-end]

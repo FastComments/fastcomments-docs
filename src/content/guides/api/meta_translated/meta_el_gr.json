@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API Ζωντανών Σχολίων",
+  "pageHeader": "API Ζωντανής Σχολιασμού",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -14,20 +14,20 @@
       "subCat": "Αυθεντικοποίηση"
     },
     {
-      "name": "Συγκέντρωση Δεδομένων",
+      "name": "Συγκεντρώστε τα δεδομένα σας",
       "file": "aggregate-post.md",
       "subCat": "Συγκεντρώσεις"
     },
     {
       "name": "Δομή AuditLog",
       "file": "audit-log-structure.md",
-      "subCat": "Αρχεία Ελέγχου"
+      "subCat": "Αρχεία ελέγχου"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αρχεία Ελέγχου"
+      "subCat": "Αρχεία ελέγχου"
     },
     {
       "name": "Δομή Σχολίου",
@@ -89,7 +89,7 @@
       "subCat": "Σχόλια"
     },
     {
-      "name": "Δομή Προτύπου Email",
+      "name": "Δομή προτύπου email",
       "file": "email-template-structure.md",
       "subCat": "Πρότυπα Email"
     },
@@ -132,25 +132,25 @@
     {
       "name": "Δομή FeedPost",
       "file": "feed-post-structure.md",
-      "subCat": "Αναρτήσεις Feed"
+      "subCat": "Δημοσιεύσεις Feed"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αναρτήσεις Feed"
+      "subCat": "Δημοσιεύσεις Feed"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αναρτήσεις Feed"
+      "subCat": "Δημοσιεύσεις Feed"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Αναρτήσεις Feed"
+      "subCat": "Δημοσιεύσεις Feed"
     },
     {
       "name": "Δομή HashTag",
@@ -334,6 +334,18 @@
       "subCat": "Σελίδες"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Σελίδες"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Σελίδες"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -410,7 +422,7 @@
       "subCat": "Ψήφοι Ψηφοφορίας"
     },
     {
-      "name": "Δομή Εκκρεμούς Webhook Συμβάντος",
+      "name": "Δομή Εκκρεμούς Webhook Συμβάν",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Εκκρεμή Webhook Συμβάντα"
     },
@@ -740,7 +752,7 @@
       "subCat": "Ρυθμίσεις Ερωτήσεων"
     },
     {
-      "name": "Δομή QuestionResult",
+      "name": "Δομή Αποτελέσματος Ερώτησης",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Αποτελέσματα Ερωτήσεων"

@@ -235,7 +235,7 @@
       "subCat": "Moderatoren"
     },
     {
-      "name": "Benachrichtigungszähler-Struktur",
+      "name": "Benachrichtigungszählerstruktur",
       "file": "notification-count-structure.md",
       "subCat": "Benachrichtigungszähler"
     },
@@ -334,6 +334,18 @@
       "subCat": "Seiten"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seiten"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Seiten"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -412,25 +424,25 @@
     {
       "name": "AusstehendesWebhook-Ereignis-Struktur",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Ausstehende Webhook-Ereignisse"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ausstehende Webhook-Ereignisse"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ausstehende Webhook-Ereignisse"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ausstehende Webhook-Ereignisse"
+      "subCat": "AusstehendeWebhook-Ereignisse"
     },
     {
       "name": "SSO-Benutzerstruktur",
@@ -823,7 +835,7 @@
       "subCat": "Benutzerabzeichen"
     },
     {
-      "name": "Benutzerabzeichenfortschrittstruktur",
+      "name": "Benutzerabzeichenfortschrittsstruktur",
       "file": "user-badge-progress-structure.md",
       "subCat": "Benutzerabzeichenfortschritt"
     },

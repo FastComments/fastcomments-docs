@@ -2,6 +2,8 @@
 
 Retorna a contagem para cada reação em uma página e quais reações o usuário atual adicionou.
 
+Passe `includeUserInfo=public` para também obter os usuários que reagiram, como uma entrada por reação com seu ID de reação, mais recentes primeiro. Usuários com atividade de perfil privado e usuários anônimos são excluídos, e até 100 reações são pesquisadas. Apenas `public` é aceito aqui; `include-private` retorna um `422` e está disponível em [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) com uma chave de API. Em páginas que exigem SSO, `includeUserInfo` retorna um `403` para usuários que não podem visualizar a página.
+
 [inline-code-attrs-start title = 'Exemplo cURL de Reações de Página'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
@@ -12,8 +14,10 @@ curl --request GET \
 [inline-code-start]
 interface PageReactsRequestQueryParams {
     urlId: string
-    /** JSON codificado em URI do seu objeto SSO. Omitir para usuários anônimos. **/
+    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
+    /** Set to 'public' to include the users who reacted. **/
+    includeUserInfo?: 'public'
 }
 [inline-code-end]
 
@@ -21,15 +25,24 @@ interface PageReactsRequestQueryParams {
 [inline-code-start]
 interface PageReactsResponse {
     status: 'success' | 'failed'
-    /** Incluído em caso de falha. **/
-    code?: string
-    /** Incluído em caso de falha. **/
+    /** Included on failure. **/
+    code?: 'include-private-not-allowed' | 'sso-required' | 'page-forbidden' | string
+    /** Included on failure. **/
     reason?: string
-    /** Contagem por id de reação, por exemplo {"heart": 12, "laugh": 3}. Não definido quando a página não tem reações. **/
+    /** Count per reaction id, for example {"heart": 12, "laugh": 3}. Not set when the page has no reactions. **/
     counts?: Record<string, number>
-    /** Os ids de reação que o usuário que fez a requisição adicionou. Não definido quando ele não adicionou nenhum. **/
+    /** The reaction ids the user making the request has added. Not set when they have added none. **/
     reactedIds?: string[]
+    /** One entry per react, most recent first. Only set when includeUserInfo is passed. **/
+    users?: PageCustomReactUser[]
+}
+
+interface PageCustomReactUser {
+    /** The reaction id, for example "heart". **/
+    reactId: string
+    userId: string
+    username: string
+    displayName?: string
+    avatarSrc?: string
 }
 [inline-code-end]
-
----

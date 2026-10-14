@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "Live commentaar API's",
+  "pageHeader": "Live Commentaar API's",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -30,7 +30,7 @@
       "subCat": "Auditlogs"
     },
     {
-      "name": "Reactie-structuur",
+      "name": "Commentaarstructuur",
       "file": "comment-structure.md",
       "subCat": "Reacties"
     },
@@ -91,43 +91,43 @@
     {
       "name": "E-mail sjabloonstructuur",
       "file": "email-template-structure.md",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "E-mailsjablonen"
+      "subCat": "E-mail sjablonen"
     },
     {
       "name": "Feedpost-structuur",
@@ -334,6 +334,18 @@
       "subCat": "Pagina's"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pagina's"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pagina's"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -381,7 +393,7 @@
       "subCat": "Polls"
     },
     {
-      "name": "Pollstem-structuur",
+      "name": "PollStem-structuur",
       "file": "poll-vote-structure.md",
       "subCat": "Pollstemmen"
     },
@@ -500,7 +512,7 @@
       "subCat": "Abonnementen"
     },
     {
-      "name": "Tenant‑dagelijkse‑gebruik-structuur",
+      "name": "Tenant‑dagelijkse‑gebruik‑structuur",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Tenant‑dagelijks‑gebruik"
     },
@@ -511,42 +523,42 @@
       "subCat": "Tenant‑dagelijks‑gebruik"
     },
     {
-      "name": "Tenant-structuur",
+      "name": "Tenant‑structuur",
       "file": "tenant-structure.md",
-      "subCat": "Tenants"
+      "subCat": "Huurders"
     },
     {
       "name": "GET /api/v1/tenants/:id",
       "file": "tenant-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Huurders"
     },
     {
       "name": "GET /api/v1/tenants",
       "file": "tenants-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Huurders"
     },
     {
       "name": "POST /api/v1/tenants",
       "file": "tenant-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Huurders"
     },
     {
       "name": "PATCH /api/v1/tenants/:id",
       "file": "tenant-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Huurders"
     },
     {
       "name": "DELETE /api/v1/tenants/:id",
       "file": "tenant-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Tenants"
+      "subCat": "Huurders"
     },
     {
-      "name": "Tenant‑pakket-structuur",
+      "name": "Tenant‑pakket‑structuur",
       "file": "tenant-package-structure.md",
       "subCat": "Tenant‑pakketten"
     },
@@ -581,7 +593,7 @@
       "subCat": "Tenant‑pakketten"
     },
     {
-      "name": "Tenant‑gebruiker-structuur",
+      "name": "Tenant‑gebruiker‑structuur",
       "file": "tenant-user-structure.md",
       "subCat": "Tenant‑gebruikers"
     },
@@ -622,7 +634,7 @@
       "subCat": "Tenant‑gebruikers"
     },
     {
-      "name": "Gebruiker-structuur",
+      "name": "Gebruikersstructuur",
       "file": "user-structure.md",
       "subCat": "Gebruikers"
     },
@@ -633,7 +645,7 @@
       "subCat": "Gebruikers"
     },
     {
-      "name": "Stem-structuur",
+      "name": "Stemstructuur",
       "file": "vote-structure.md",
       "subCat": "Stemmen"
     },
@@ -662,7 +674,7 @@
       "subCat": "Stemmen"
     },
     {
-      "name": "Domeinconfiguratie-structuur",
+      "name": "Domeinconfiguratie‑structuur",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Domeinconfiguraties"
@@ -704,7 +716,7 @@
       "subCat": "Domeinconfiguraties"
     },
     {
-      "name": "Vraagconfiguratie-structuur",
+      "name": "Vraagconfiguratie‑structuur",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Vraagconfiguraties"
@@ -740,7 +752,7 @@
       "subCat": "Vraagconfiguraties"
     },
     {
-      "name": "Vraagresultaat-structuur",
+      "name": "Vraagresultaat‑structuur",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Vraagresultaten"
@@ -788,7 +800,7 @@
       "subCat": "Aggregatie van vraagresultaten"
     },
     {
-      "name": "Gebruikersbadge-structuur",
+      "name": "Gebruikersbadge‑structuur",
       "file": "user-badge-structure.md",
       "subCat": "Gebruikersbadges"
     },
@@ -823,27 +835,27 @@
       "subCat": "Gebruikersbadges"
     },
     {
-      "name": "Gebruikersbadgevoortgang-structuur",
+      "name": "Gebruikersbadge‑voortgang‑structuur",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Gebruikersbadgevoortgang"
+      "subCat": "Gebruikersbadge‑voortgang"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Gebruikersbadgevoortgang"
+      "subCat": "Gebruikersbadge‑voortgang"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Gebruikersbadgevoortgang"
+      "subCat": "Gebruikersbadge‑voortgang"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Gebruikersbadgevoortgang"
+      "subCat": "Gebruikersbadge‑voortgang"
     }
   ]
 }

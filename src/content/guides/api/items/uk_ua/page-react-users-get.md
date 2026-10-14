@@ -1,6 +1,8 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Повертає імена користувачів, які додали реакцію до сторінки, відсортовані в алфавітному порядку. Перевіряється до 100 реакцій, а анонімні користувачі не включаються.
+Повертає імена користувачів, які додали реакцію до сторінки, відсортовані в алфавітному порядку. Перевіряються до 100 реакцій, а анонімні користувачі не включаються. На сторінках, які вимагають SSO, користувачі, які не можуть переглянути сторінку, отримують `403` з кодом `sso-required` або `page-forbidden`.
+
+Щоб також отримати аватари та ідентифікатори користувачів, використайте [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) з `includeUserInfo=public`.
 
 [inline-code-attrs-start title = 'Приклад cURL запиту Page React Users'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,3 +32,5 @@ interface PageReactUsersResponse {
     userNames: string[]
 }
 [inline-code-end]
+
+---

@@ -9,12 +9,12 @@
       "subCat": "משאבי API"
     },
     {
-      "name": "אימות OAuth",
+      "name": "אישור OAuth",
       "file": "oauth.md",
       "subCat": "אימות"
     },
     {
-      "name": "אגרגציית הנתונים שלך",
+      "name": "אגרגציה של הנתונים שלך",
       "file": "aggregate-post.md",
       "subCat": "אגרגציות"
     },
@@ -130,27 +130,27 @@
       "subCat": "תבניות אימייל"
     },
     {
-      "name": "מבנה פוסט בתזרים",
+      "name": "מבנה פוסט בפיד",
       "file": "feed-post-structure.md",
-      "subCat": "פוסטים בתזרים"
+      "subCat": "פוסטים בפיד"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "פוסטים בתזרים"
+      "subCat": "פוסטים בפיד"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "פוסטים בתזרים"
+      "subCat": "פוסטים בפיד"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "פוסטים בתזרים"
+      "subCat": "פוסטים בפיד"
     },
     {
       "name": "מבנה האשטאג",
@@ -191,7 +191,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אני"
+      "subCat": "אישי"
     },
     {
       "name": "מבנה מודרטור",
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "עמודים"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "עמודים"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "עמודים"
     },

@@ -1,6 +1,8 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Sayfaya bir reaksiyon ekleyen kullanıcıların adlarını alfabetik olarak sıralar. En fazla 100 reaksiyon aranır ve anonim kullanıcılar dahil edilmez.
+Sayfaya bir reaksiyon ekleyen kullanıcıların adlarını alfabetik olarak döndürür. En fazla 100 reaksiyon aranır ve anonim kullanıcılar dahil edilmez. SSO gerektiren sayfalarda, sayfayı görüntüleyemeyen kullanıcılar `sso-required` veya `page-forbidden` kodlu `403` alır.
+
+Avatarları ve kullanıcı kimliklerini de almak için `includeUserInfo=public` ile [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) kullanın.
 
 [inline-code-attrs-start title = 'Sayfa Reaksiyon Kullanıcıları cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -12,9 +14,9 @@ curl --request GET \
 [inline-code-start]
 interface PageReactUsersRequestQueryParams {
     urlId: string
-    /** Reaksiyon kimliği. **/
+    /** The reaction id. **/
     id: string
-    /** SSO nesnenizin URI kodlu JSON'u. Anonim kullanıcılar için atlayın. **/
+    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
 }
 [inline-code-end]
@@ -23,9 +25,9 @@ interface PageReactUsersRequestQueryParams {
 [inline-code-start]
 interface PageReactUsersResponse {
     status: 'success' | 'failed'
-    /** Başarısızlıkta dahil edilir. **/
+    /** Included on failure. **/
     code?: string
-    /** Başarısızlıkta dahil edilir. **/
+    /** Included on failure. **/
     reason?: string
     userNames: string[]
 }

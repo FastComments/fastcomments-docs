@@ -334,6 +334,18 @@
       "subCat": "頁面"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "頁面"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -433,51 +445,51 @@
       "subCat": "待處理Webhook事件"
     },
     {
-      "name": "SSO 使用者結構",
+      "name": "單點登入使用者結構",
       "file": "sso-user-structure.md",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO 使用者"
+      "subCat": "單點登入使用者"
     },
     {
       "name": "訂閱結構",

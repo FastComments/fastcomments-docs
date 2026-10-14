@@ -2,6 +2,8 @@
 
 Devuelve el número de likes en una página y si el usuario actual le ha dado like. Las páginas que aún no existen devuelven un `likeCount` de `0`.
 
+Pase `includeUserInfo=public` para obtener también los usuarios que le dieron like a la página, los más recientes primero. Los usuarios con actividad de perfil privado y los usuarios anónimos se excluyen, y se buscan hasta 100 likes. Sólo se acepta `public` aquí; `include-private` devuelve un `422` y está disponible desde [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) con una clave API. En páginas que requieren SSO, `includeUserInfo` devuelve un `403` para los usuarios que no pueden ver la página.
+
 [inline-code-attrs-start title = 'Ejemplo cURL de Page Likes'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
@@ -14,6 +16,8 @@ interface PageLikesRequestQueryParams {
     urlId: string
     /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
+    /** Set to 'public' to include the users who liked the page. **/
+    includeUserInfo?: 'public'
 }
 [inline-code-end]
 
@@ -22,7 +26,7 @@ interface PageLikesRequestQueryParams {
 interface PageLikesResponse {
     status: 'success' | 'failed'
     /** Included on failure. **/
-    code?: string
+    code?: 'include-private-not-allowed' | 'sso-required' | 'page-forbidden' | string
     /** Included on failure. **/
     reason?: string
     likeCount: number
@@ -32,5 +36,16 @@ interface PageLikesResponse {
     commentCount: number
     /** The id used to subscribe to live updates for this page. **/
     urlIdWS: string
+    /** Most recent first. Only set when includeUserInfo is passed. **/
+    users?: PageReactUser[]
+}
+
+interface PageReactUser {
+    userId: string
+    username: string
+    displayName?: string
+    avatarSrc?: string
 }
 [inline-code-end]
+
+---

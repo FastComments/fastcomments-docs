@@ -2,6 +2,8 @@
 
 페이지의 각 반응에 대한 카운트를 반환하고, 현재 사용자가 추가한 반응을 반환합니다.
 
+`includeUserInfo=public`을 전달하면 반응한 사용자도 가져올 수 있으며, 반응당 하나의 항목으로 반응 ID와 함께 가장 최신 순으로 반환됩니다. 개인 프로필 활동을 가진 사용자와 익명 사용자는 제외되며, 최대 100개의 반응이 조회됩니다. 여기서는 `public`만 허용됩니다; `include-private`는 `422`를 반환하며 API 키와 함께 [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get)에서 사용할 수 있습니다. SSO가 필요한 페이지에서는 `includeUserInfo`가 페이지를 볼 수 없는 사용자에게 `403`을 반환합니다.
+
 [inline-code-attrs-start title = '페이지 반응 cURL 예시'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
@@ -12,8 +14,10 @@ curl --request GET \
 [inline-code-start]
 interface PageReactsRequestQueryParams {
     urlId: string
-    /** SSO 객체의 URI 인코딩된 JSON입니다. 익명 사용자는 생략하세요. **/
+    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
     sso?: string
+    /** Set to 'public' to include the users who reacted. **/
+    includeUserInfo?: 'public'
 }
 [inline-code-end]
 
@@ -21,13 +25,24 @@ interface PageReactsRequestQueryParams {
 [inline-code-start]
 interface PageReactsResponse {
     status: 'success' | 'failed'
-    /** 실패 시 포함됩니다. **/
-    code?: string
-    /** 실패 시 포함됩니다. **/
+    /** Included on failure. **/
+    code?: 'include-private-not-allowed' | 'sso-required' | 'page-forbidden' | string
+    /** Included on failure. **/
     reason?: string
-    /** 반응 ID별 카운트, 예시: {"heart": 12, "laugh": 3}. 페이지에 반응이 없을 경우 설정되지 않습니다. **/
+    /** Count per reaction id, for example {"heart": 12, "laugh": 3}. Not set when the page has no reactions. **/
     counts?: Record<string, number>
-    /** 요청을 보낸 사용자가 추가한 반응 ID들. 사용자가 아무것도 추가하지 않은 경우 설정되지 않습니다. **/
+    /** The reaction ids the user making the request has added. Not set when they have added none. **/
     reactedIds?: string[]
+    /** One entry per react, most recent first. Only set when includeUserInfo is passed. **/
+    users?: PageCustomReactUser[]
+}
+
+interface PageCustomReactUser {
+    /** The reaction id, for example "heart". **/
+    reactId: string
+    userId: string
+    username: string
+    displayName?: string
+    avatarSrc?: string
 }
 [inline-code-end]

@@ -14,12 +14,12 @@
       "subCat": "Autenticação"
     },
     {
-      "name": "Agregue Seus Dados",
+      "name": "Agregue seus Dados",
       "file": "aggregate-post.md",
       "subCat": "Agregações"
     },
     {
-      "name": "Estrutura de AuditLog",
+      "name": "Estrutura de Log de Auditoria",
       "file": "audit-log-structure.md",
       "subCat": "Logs de Auditoria"
     },
@@ -130,27 +130,27 @@
       "subCat": "Modelos de Email"
     },
     {
-      "name": "Estrutura de Postagem de Feed",
+      "name": "Estrutura de Publicação de Feed",
       "file": "feed-post-structure.md",
-      "subCat": "Postagens de Feed"
+      "subCat": "Publicações de Feed"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Postagens de Feed"
+      "subCat": "Publicações de Feed"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Postagens de Feed"
+      "subCat": "Publicações de Feed"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Postagens de Feed"
+      "subCat": "Publicações de Feed"
     },
     {
       "name": "Estrutura de Hashtag",
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Páginas"
     },

@@ -14,7 +14,7 @@
       "subCat": "Autenticación"
     },
     {
-      "name": "Agregue sus datos",
+      "name": "Agrega tus datos",
       "file": "aggregate-post.md",
       "subCat": "Agregaciones"
     },
@@ -334,6 +334,18 @@
       "subCat": "Páginas"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -581,45 +593,45 @@
       "subCat": "Paquetes de Inquilino"
     },
     {
-      "name": "Estructura de Usuario de Inquilino",
+      "name": "Estructura de Usuario del Inquilino",
       "file": "tenant-user-structure.md",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios de Inquilino"
+      "subCat": "Usuarios del Inquilino"
     },
     {
       "name": "Estructura de Usuario",

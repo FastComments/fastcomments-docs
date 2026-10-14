@@ -270,51 +270,51 @@
       "subCat": "通知"
     },
     {
-      "name": "页面反应公共 API",
+      "name": "页面互动公开 API",
       "file": "page-reacts-api.md",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "GET /page-reacts/v1/likes/:tenantId",
       "file": "page-likes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "POST /page-reacts/v1/likes/:tenantId",
       "file": "page-like-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "DELETE /page-reacts/v1/likes/:tenantId",
       "file": "page-like-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "GET /page-reacts/v2/:tenantId",
       "file": "page-reacts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "GET /page-reacts/v2/:tenantId/list",
       "file": "page-react-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "POST /page-reacts/v2/:tenantId",
       "file": "page-react-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "DELETE /page-reacts/v2/:tenantId",
       "file": "page-react-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "页面反应"
+      "subCat": "页面互动"
     },
     {
       "name": "页面结构",
@@ -330,6 +330,18 @@
     {
       "name": "GET /api/v1/pages/by-url-id",
       "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "页面"
     },

@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API di commenti in tempo reale",
+  "pageHeader": "API per commenti in tempo reale",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -334,6 +334,18 @@
       "subCat": "Pagine"
     },
     {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pagine"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pagine"
+    },
+    {
       "name": "PATCH /api/v1/pages/:id",
       "file": "page-patch.md",
       "sidebarItemClasses": "retain-case",
@@ -433,7 +445,7 @@
       "subCat": "Eventi webhook in sospeso"
     },
     {
-      "name": "Struttura utente SSO",
+      "name": "Struttura SSOUser",
       "file": "sso-user-structure.md",
       "subCat": "Utenti SSO"
     },
@@ -788,62 +800,62 @@
       "subCat": "Aggregazione risultati domanda"
     },
     {
-      "name": "Struttura distintivo utente",
+      "name": "Struttura UserBadge",
       "file": "user-badge-structure.md",
-      "subCat": "Distintivi utente"
+      "subCat": "Badge utente"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Distintivi utente"
+      "subCat": "Badge utente"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Distintivi utente"
+      "subCat": "Badge utente"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Distintivi utente"
+      "subCat": "Badge utente"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Distintivi utente"
+      "subCat": "Badge utente"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Distintivi utente"
+      "subCat": "Badge utente"
     },
     {
-      "name": "Struttura progresso distintivo utente",
+      "name": "Struttura UserBadgeProgress",
       "file": "user-badge-progress-structure.md",
-      "subCat": "Progresso distintivo utente"
+      "subCat": "Progresso badge utente"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Progresso distintivo utente"
+      "subCat": "Progresso badge utente"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Progresso distintivo utente"
+      "subCat": "Progresso badge utente"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Progresso distintivo utente"
+      "subCat": "Progresso badge utente"
     }
   ]
 }
