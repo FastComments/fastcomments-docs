@@ -1,11 +1,14 @@
-While its name is the Domain Migration tool, it can also be used to migrate comments across individual pages.
+---
+Aunque su nombre es la herramienta de Migración de Dominio, también puede usarse para migrar comentarios entre páginas individuales.
 
-Simply enter the old and new [urlId](/guide-customizations-and-configuration.html#url-id) values in the `from` and `to` input fields.
+Simplemente ingrese los valores antiguos y nuevos de [urlId](/guide-customizations-and-configuration.html#url-id) en los campos de entrada `from` y `to`.
 
-### Migrating Pages via API
+### Migrando páginas vía API
 
-To migrate many pages at once, use [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). It takes up to 100 `from` and `to` pairs per request and runs them as a batch job.
+Para migrar muchas páginas a la vez, use [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). Acepta hasta 100 `from` y `to` pares por solicitud y los ejecuta como un trabajo por lotes.
 
-With `type` set to `urlId`, only the page whose `urlId` is exactly `from` is moved, so `post-1` does not match `post-10`. The dashboard tool does not have this option.
+Con `type` establecido en `urlIdUrl`, solo se mueve la página cuyo `urlId` es exactamente `from`, por lo que `post-1` no coincide con `post-10`. La herramienta del panel no tiene esta opción.
 
-Each API migration can be undone for 90 days with [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
+Cada migración de API puede deshacerse durante 90 días con [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
+
+---
