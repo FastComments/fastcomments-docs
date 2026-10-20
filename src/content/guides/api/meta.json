@@ -30,6 +30,23 @@
       "subCat": "AuditLogs"
     },
     {
+      "name": "BatchJob Structure",
+      "file": "batch-job-structure.md",
+      "subCat": "Batch Jobs"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batch Jobs"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batch Jobs"
+    },
+    {
       "name": "Comment Structure",
       "file": "comment-structure.md",
       "subCat": "Comments"
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Pages"
     },

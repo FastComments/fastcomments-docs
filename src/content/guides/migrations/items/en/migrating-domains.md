@@ -16,3 +16,7 @@ The Domain Migration tool uses the same FastComments job processing system as th
 There may be a delay before your migration starts. This is normal, as it the system checks for new jobs to process periodically.
 
 As the job runs, it will display the number of comments found to migrate, and the number migrated thus far.
+
+### Migrating Domains via API
+
+Domains can also be migrated with [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), using `type` set to `domain`. Progress is available from [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), and the migration can be undone for 90 days.
