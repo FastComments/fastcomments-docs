@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Возвращает имена пользователей, которые добавили реакцию к странице, отсортированные в алфавитном порядке. Просматривается до 100 реакций, а анонимные пользователи не включаются. На страницах, требующих SSO, пользователи, которые не могут просмотреть страницу, получают `403` с кодом `sso-required` или `page-forbidden`.
+Возвращает имена пользователей, которые добавили реакцию к странице, отсортированные в алфавитном порядке. Просматривается до 100 реакций, а анонимные пользователи и пользователи с приватной активностью профиля не включаются. На страницах, требующих SSO, пользователи, которые не могут просмотреть страницу, получают `403` с кодом `sso-required` или `page-forbidden`.
 
-Чтобы также получить аватары и идентификаторы пользователей, используйте [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) с параметром `includeUserInfo=public`.
+Чтобы также получить аватары и идентификаторы пользователей, используйте [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) с `includeUserInfo=public`.
 
 [inline-code-attrs-start title = 'Пример cURL запроса Page React Users'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -14,9 +14,9 @@ curl --request GET \
 [inline-code-start]
 interface PageReactUsersRequestQueryParams {
     urlId: string
-    /** The reaction id. **/
+    /** Идентификатор реакции. **/
     id: string
-    /** URI encoded JSON of your SSO object. Omit for anonymous users. **/
+    /** URI‑закодированный JSON вашего SSO‑объекта. Оставьте пустым для анонимных пользователей. **/
     sso?: string
 }
 [inline-code-end]
@@ -25,10 +25,12 @@ interface PageReactUsersRequestQueryParams {
 [inline-code-start]
 interface PageReactUsersResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Включается при ошибке. **/
     code?: string
-    /** Included on failure. **/
+    /** Включается при ошибке. **/
     reason?: string
     userNames: string[]
 }
 [inline-code-end]
+
+---

@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
-Devuelve los nombres de los usuarios que añadieron una reacción a una página, ordenados alfabéticamente. Se buscan hasta 100 reacciones, y los usuarios anónimos no se incluyen. En páginas que requieren SSO, los usuarios que no pueden ver la página reciben un `403` con el código `sso-required` o `page-forbidden`.
+Devuelve los nombres de los usuarios que añadieron una reacción a una página, ordenados alfabéticamente. Se buscan hasta 100 reacciones, y no se incluyen usuarios anónimos ni usuarios con actividad de perfil privado. En páginas que requieren SSO, los usuarios que no pueden ver la página reciben un `403` con el código `sso-required` o `page-forbidden`.
 
 Para obtener también avatares e IDs de usuario, use [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get) con `includeUserInfo=public`.
 
@@ -14,7 +14,7 @@ curl --request GET \
 [inline-code-start]
 interface PageReactUsersRequestQueryParams {
     urlId: string
-    /** El ID de la reacción. **/
+    /** El id de la reacción. **/
     id: string
     /** JSON codificado en URI de su objeto SSO. Omitir para usuarios anónimos. **/
     sso?: string
