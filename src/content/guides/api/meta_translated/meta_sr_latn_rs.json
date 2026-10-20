@@ -19,15 +19,32 @@
       "subCat": "Agregacije"
     },
     {
-      "name": "Struktura AuditLog-a",
+      "name": "Struktura audit loga",
       "file": "audit-log-structure.md",
-      "subCat": "AuditLog-ovi"
+      "subCat": "Audit logovi"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AuditLog-ovi"
+      "subCat": "Audit logovi"
+    },
+    {
+      "name": "Struktura batch job-a",
+      "file": "batch-job-structure.md",
+      "subCat": "Batch poslovi"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batch poslovi"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batch poslovi"
     },
     {
       "name": "Struktura komentara",
@@ -130,27 +147,27 @@
       "subCat": "Email šabloni"
     },
     {
-      "name": "Struktura FeedPost-a",
+      "name": "Struktura Feed posta",
       "file": "feed-post-structure.md",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "Struktura hashtag-a",
@@ -364,6 +381,18 @@
       "subCat": "Stranice"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Stranice"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Stranice"
+    },
+    {
       "name": "Struktura ankete",
       "file": "poll-structure.md",
       "subCat": "Ankete"
@@ -395,54 +424,54 @@
     {
       "name": "Struktura glasanja u anketi",
       "file": "poll-vote-structure.md",
-      "subCat": "Glasovi ankete"
+      "subCat": "Glasovi u anketi"
     },
     {
       "name": "GET /api/v1/poll-votes",
       "file": "poll-votes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Glasovi ankete"
+      "subCat": "Glasovi u anketi"
     },
     {
       "name": "GET /api/v1/poll-votes/:id",
       "file": "poll-vote-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Glasovi ankete"
+      "subCat": "Glasovi u anketi"
     },
     {
       "name": "POST /api/v1/poll-votes",
       "file": "poll-vote-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Glasovi ankete"
+      "subCat": "Glasovi u anketi"
     },
     {
       "name": "DELETE /api/v1/poll-votes/:id",
       "file": "poll-vote-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Glasovi ankete"
+      "subCat": "Glasovi u anketi"
     },
     {
-      "name": "Struktura čekajućeg webhook događaja",
+      "name": "Struktura pending webhook događaja",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Čekajući webhook događaji"
+      "subCat": "Pending webhook događaji"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Čekajući webhook događaji"
+      "subCat": "Pending webhook događaji"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Čekajući webhook događaji"
+      "subCat": "Pending webhook događaji"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Čekajući webhook događaji"
+      "subCat": "Pending webhook događaji"
     },
     {
       "name": "Struktura SSO korisnika",

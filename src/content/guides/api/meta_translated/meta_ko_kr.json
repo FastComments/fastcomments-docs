@@ -19,15 +19,32 @@
       "subCat": "집계"
     },
     {
-      "name": "감사 로그 구조",
+      "name": "AuditLog 구조",
       "file": "audit-log-structure.md",
-      "subCat": "감사 로그"
+      "subCat": "AuditLog"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "감사 로그"
+      "subCat": "AuditLog"
+    },
+    {
+      "name": "BatchJob 구조",
+      "file": "batch-job-structure.md",
+      "subCat": "배치 작업"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "배치 작업"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "배치 작업"
     },
     {
       "name": "댓글 구조",
@@ -130,7 +147,7 @@
       "subCat": "이메일 템플릿"
     },
     {
-      "name": "피드 게시물 구조",
+      "name": "FeedPost 구조",
       "file": "feed-post-structure.md",
       "subCat": "피드 게시물"
     },
@@ -153,7 +170,7 @@
       "subCat": "피드 게시물"
     },
     {
-      "name": "해시태그 구조",
+      "name": "HashTag 구조",
       "file": "hash-tag-structure.md",
       "subCat": "해시태그"
     },
@@ -194,7 +211,7 @@
       "subCat": "내 정보"
     },
     {
-      "name": "모더레이터 구조",
+      "name": "Moderator 구조",
       "file": "moderator-structure.md",
       "subCat": "모더레이터"
     },
@@ -235,19 +252,19 @@
       "subCat": "모더레이터"
     },
     {
-      "name": "알림 수 구조",
+      "name": "알림 카운트 구조",
       "file": "notification-count-structure.md",
-      "subCat": "알림 수"
+      "subCat": "알림 카운트"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "알림 수"
+      "subCat": "알림 카운트"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "알림 수"
+      "subCat": "알림 카운트"
     },
     {
       "name": "알림 구조",
@@ -364,7 +381,19 @@
       "subCat": "페이지"
     },
     {
-      "name": "투표 구조",
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "페이지"
+    },
+    {
+      "name": "Poll 구조",
       "file": "poll-structure.md",
       "subCat": "투표"
     },
@@ -393,7 +422,7 @@
       "subCat": "투표"
     },
     {
-      "name": "투표 결과 구조",
+      "name": "PollVote 구조",
       "file": "poll-vote-structure.md",
       "subCat": "투표 결과"
     },
@@ -422,7 +451,7 @@
       "subCat": "투표 결과"
     },
     {
-      "name": "보류 중인 웹훅 이벤트 구조",
+      "name": "PendingWebhookEvent 구조",
       "file": "pending-webhook-event-structure.md",
       "subCat": "보류 중인 웹훅 이벤트"
     },
@@ -445,7 +474,7 @@
       "subCat": "보류 중인 웹훅 이벤트"
     },
     {
-      "name": "SSO 사용자 구조",
+      "name": "SSOUser 구조",
       "file": "sso-user-structure.md",
       "subCat": "SSO 사용자"
     },
@@ -492,7 +521,7 @@
       "subCat": "SSO 사용자"
     },
     {
-      "name": "구독 구조",
+      "name": "Subscription 구조",
       "file": "subscription-structure.md",
       "subCat": "구독"
     },
@@ -512,7 +541,7 @@
       "subCat": "구독"
     },
     {
-      "name": "테넌트 일일 사용량 구조",
+      "name": "TenantDailyUsage 구조",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "테넌트 일일 사용량"
     },
@@ -523,7 +552,7 @@
       "subCat": "테넌트 일일 사용량"
     },
     {
-      "name": "테넌트 구조",
+      "name": "Tenant 구조",
       "file": "tenant-structure.md",
       "subCat": "테넌트"
     },
@@ -558,7 +587,7 @@
       "subCat": "테넌트"
     },
     {
-      "name": "테넌트 패키지 구조",
+      "name": "Tenant Package 구조",
       "file": "tenant-package-structure.md",
       "subCat": "테넌트 패키지"
     },
@@ -593,7 +622,7 @@
       "subCat": "테넌트 패키지"
     },
     {
-      "name": "테넌트 사용자 구조",
+      "name": "Tenant User 구조",
       "file": "tenant-user-structure.md",
       "subCat": "테넌트 사용자"
     },
@@ -634,7 +663,7 @@
       "subCat": "테넌트 사용자"
     },
     {
-      "name": "사용자 구조",
+      "name": "User 구조",
       "file": "user-structure.md",
       "subCat": "사용자"
     },
@@ -645,7 +674,7 @@
       "subCat": "사용자"
     },
     {
-      "name": "투표 구조",
+      "name": "Vote 구조",
       "file": "vote-structure.md",
       "subCat": "투표"
     },
@@ -674,7 +703,7 @@
       "subCat": "투표"
     },
     {
-      "name": "도메인 설정 구조",
+      "name": "DomainConfig 구조",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "도메인 설정"
@@ -716,7 +745,7 @@
       "subCat": "도메인 설정"
     },
     {
-      "name": "질문 설정 구조",
+      "name": "QuestionConfig 구조",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "질문 설정"
@@ -752,7 +781,7 @@
       "subCat": "질문 설정"
     },
     {
-      "name": "질문 결과 구조",
+      "name": "QuestionResult 구조",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "질문 결과"
@@ -800,7 +829,7 @@
       "subCat": "질문 결과 집계"
     },
     {
-      "name": "사용자 배지 구조",
+      "name": "UserBadge 구조",
       "file": "user-badge-structure.md",
       "subCat": "사용자 배지"
     },
@@ -835,27 +864,27 @@
       "subCat": "사용자 배지"
     },
     {
-      "name": "사용자 배지 진행 상황 구조",
+      "name": "UserBadgeProgress 구조",
       "file": "user-badge-progress-structure.md",
-      "subCat": "사용자 배지 진행 상황"
+      "subCat": "사용자 배지 진행"
     },
     {
       "name": "GET /api/v1/user-badge-progress",
       "file": "user-badge-progress-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "사용자 배지 진행 상황"
+      "subCat": "사용자 배지 진행"
     },
     {
       "name": "GET /api/v1/user-badge-progress/:id",
       "file": "user-badge-progress-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "사용자 배지 진행 상황"
+      "subCat": "사용자 배지 진행"
     },
     {
       "name": "GET /api/v1/user-badge-progress/user/:userId",
       "file": "user-badge-progress-get-by-user-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "사용자 배지 진행 상황"
+      "subCat": "사용자 배지 진행"
     }
   ]
 }

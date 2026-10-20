@@ -4,9 +4,9 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Recursos API",
+      "name": "Recursos de API",
       "file": "api-resources.md",
-      "subCat": "Recursos API"
+      "subCat": "Recursos de API"
     },
     {
       "name": "Autorización OAuth",
@@ -28,6 +28,23 @@
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Registros de Auditoría"
+    },
+    {
+      "name": "Estructura de Trabajo por Lotes",
+      "file": "batch-job-structure.md",
+      "subCat": "Trabajos por Lotes"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Trabajos por Lotes"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Trabajos por Lotes"
     },
     {
       "name": "Estructura de Comentario",
@@ -364,6 +381,18 @@
       "subCat": "Páginas"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
       "name": "Estructura de Encuesta",
       "file": "poll-structure.md",
       "subCat": "Encuestas"
@@ -593,45 +622,45 @@
       "subCat": "Paquetes de Inquilino"
     },
     {
-      "name": "Estructura de Usuario del Inquilino",
+      "name": "Estructura de Usuario de Inquilino",
       "file": "tenant-user-structure.md",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "GET /api/v1/tenant-users/:id",
       "file": "tenant-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "GET /api/v1/tenant-users",
       "file": "tenant-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "POST /api/v1/tenant-users",
       "file": "tenant-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "POST /api/v1/tenant-users/:id/send-login-link",
       "file": "tenant-user-send-login-link.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "PATCH /api/v1/tenant-users/:id",
       "file": "tenant-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "DELETE /api/v1/tenant-users/:id",
       "file": "tenant-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Usuarios del Inquilino"
+      "subCat": "Usuarios de Inquilino"
     },
     {
       "name": "Estructura de Usuario",

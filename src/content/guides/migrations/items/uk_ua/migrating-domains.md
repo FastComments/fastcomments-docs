@@ -1,19 +1,24 @@
 FastComments надає автоматизований спосіб перенесення ваших коментарів між доменами.
 
-Міграція домену просто вимагає `from` та `to` домену.
+The domain migration simply requires a `from` and a `to` domain.
 
-Це **переміщує** коментарі, а не копіює їх. Якщо ви хочете копіювати коментарі, зв'яжіться з нами.
+This **moves** comments, it does not copy them. If you wish to copy comments, reach out to us.
 
-[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; alt='Інструмент міграції домену з полями from і to та кількістю перенесених коментарів'; title='Міграція доменів' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; alt='Інструмент міграції доменів з полями from і to та кількістю перенесених коментарів'; title='Міграція доменів' app-screenshot-end]
 
-Це також корисно, наприклад, якщо частина вашої міграції до FastComments включає перенесення з іншого провайдера, тому дані імпорту коментарів можуть містити дані, які потрібно мігрувати. У цьому випадку ви можете спочатку виконати імпорт, а потім міграцію домену.
+This is also useful for example if part of your migration to FastComments involves migrating from a different provider, so your comment import
+data may contain data that needs to be migrated. In this case, you can run the import, and then the domain migration.
 
 ### Моніторинг прогресу
 
-Інструмент міграції домену використовує ту ж систему обробки завдань FastComments, що й інші інструменти управління даними.
+The Domain Migration tool uses the same FastComments job processing system as the other data management tools.
 
-Може бути затримка перед початком вашої міграції. Це нормально, оскільки система періодично перевіряє нові завдання для обробки.
+There may be a delay before your migration starts. This is normal, as it the system checks for new jobs to process periodically.
 
-Під час виконання завдання воно відображатиме кількість знайдених для міграції коментарів та кількість вже перенесених.
+As the job runs, it will display the number of comments found to migrate, and the number migrated thus far.
+
+### Міграція доменів через API
+
+Domains can also be migrated with [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), using `type` set to `domain`. Progress is available from [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), and the migration can be undone for 90 days.
 
 ---

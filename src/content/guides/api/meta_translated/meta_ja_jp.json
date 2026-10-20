@@ -4,17 +4,17 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "APIリソース",
+      "name": "API リソース",
       "file": "api-resources.md",
-      "subCat": "APIリソース"
+      "subCat": "API リソース"
     },
     {
-      "name": "OAuth認可",
+      "name": "OAuth 認可",
       "file": "oauth.md",
       "subCat": "認証"
     },
     {
-      "name": "データを集約する",
+      "name": "データを集計する",
       "file": "aggregate-post.md",
       "subCat": "集計"
     },
@@ -28,6 +28,23 @@
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "監査ログ"
+    },
+    {
+      "name": "バッチジョブ構造",
+      "file": "batch-job-structure.md",
+      "subCat": "バッチジョブ"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "バッチジョブ"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "バッチジョブ"
     },
     {
       "name": "コメント構造",
@@ -270,7 +287,7 @@
       "subCat": "通知"
     },
     {
-      "name": "ページリアクション公開API",
+      "name": "ページリアクション公開 API",
       "file": "page-reacts-api.md",
       "subCat": "ページリアクション"
     },
@@ -364,6 +381,18 @@
       "subCat": "ページ"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページ"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "ページ"
+    },
+    {
       "name": "投票構造",
       "file": "poll-structure.md",
       "subCat": "投票"
@@ -393,33 +422,33 @@
       "subCat": "投票"
     },
     {
-      "name": "投票構造",
+      "name": "投票結果構造",
       "file": "poll-vote-structure.md",
-      "subCat": "投票"
+      "subCat": "投票結果"
     },
     {
       "name": "GET /api/v1/poll-votes",
       "file": "poll-votes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "投票"
+      "subCat": "投票結果"
     },
     {
       "name": "GET /api/v1/poll-votes/:id",
       "file": "poll-vote-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "投票"
+      "subCat": "投票結果"
     },
     {
       "name": "POST /api/v1/poll-votes",
       "file": "poll-vote-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "投票"
+      "subCat": "投票結果"
     },
     {
       "name": "DELETE /api/v1/poll-votes/:id",
       "file": "poll-vote-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "投票"
+      "subCat": "投票結果"
     },
     {
       "name": "保留中Webhookイベント構造",

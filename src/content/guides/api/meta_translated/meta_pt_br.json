@@ -4,9 +4,9 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Recursos da API",
+      "name": "Recursos de API",
       "file": "api-resources.md",
-      "subCat": "Recursos da API"
+      "subCat": "Recursos de API"
     },
     {
       "name": "Autorização OAuth",
@@ -14,20 +14,37 @@
       "subCat": "Autenticação"
     },
     {
-      "name": "Agregue seus Dados",
+      "name": "Agregue Seus Dados",
       "file": "aggregate-post.md",
       "subCat": "Agregações"
     },
     {
-      "name": "Estrutura de Log de Auditoria",
+      "name": "Estrutura de Registro de Auditoria",
       "file": "audit-log-structure.md",
-      "subCat": "Logs de Auditoria"
+      "subCat": "Registros de Auditoria"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Logs de Auditoria"
+      "subCat": "Registros de Auditoria"
+    },
+    {
+      "name": "Estrutura de Trabalho em Lote",
+      "file": "batch-job-structure.md",
+      "subCat": "Trabalhos em Lote"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Trabalhos em Lote"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Trabalhos em Lote"
     },
     {
       "name": "Estrutura de Comentário",
@@ -130,27 +147,27 @@
       "subCat": "Modelos de Email"
     },
     {
-      "name": "Estrutura de Publicação de Feed",
+      "name": "Estrutura de Postagem de Feed",
       "file": "feed-post-structure.md",
-      "subCat": "Publicações de Feed"
+      "subCat": "Postagens de Feed"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Publicações de Feed"
+      "subCat": "Postagens de Feed"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Publicações de Feed"
+      "subCat": "Postagens de Feed"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Publicações de Feed"
+      "subCat": "Postagens de Feed"
     },
     {
       "name": "Estrutura de Hashtag",
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Páginas"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Páginas"
     },

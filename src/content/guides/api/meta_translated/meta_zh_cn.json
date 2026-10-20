@@ -30,6 +30,23 @@
       "subCat": "审计日志"
     },
     {
+      "name": "批处理作业结构",
+      "file": "batch-job-structure.md",
+      "subCat": "批处理作业"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "批处理作业"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "批处理作业"
+    },
+    {
       "name": "评论结构",
       "file": "comment-structure.md",
       "subCat": "评论"
@@ -214,7 +231,7 @@
       "name": "PATCH /api/v1/moderators/:id",
       "file": "moderator-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "版主"
+      "subCat": "版"
     },
     {
       "name": "POST /api/v1/moderators",
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "页面"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "页面"
     },
@@ -707,13 +736,13 @@
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域名配置"
+      "subCat": "域名"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "域名配置"
+      "subCat": "域名"
     },
     {
       "name": "问题配置结构",

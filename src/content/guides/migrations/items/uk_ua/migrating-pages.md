@@ -1,3 +1,14 @@
+---
 Хоча його назва — інструмент міграції домену, його також можна використовувати для перенесення коментарів між окремими сторінками.
 
-Просто введіть значення старого та нового [urlId](/guide-customizations-and-configuration.html#url-id) у поля вводу `from` та `to`.
+Просто введіть старі та нові значення [urlId](/guide-customizations-and-configuration.html#url-id) у поля вводу `from` і `to`.
+
+### Міграція сторінок через API
+
+Щоб перенести багато сторінок одночасно, використайте [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). Запит може містити до 100 пар `from` і `to` і виконує їх як пакетну задачу.
+
+Якщо `type` встановлено в `urlId`, переміщується лише сторінка, у якої `urlId` точно відповідає `from`, тому `post-1` не збігається з `post-10`. Інструмент у панелі керування не має цієї опції.
+
+Кожну міграцію API можна скасувати протягом 90 днів за допомогою [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
+
+---

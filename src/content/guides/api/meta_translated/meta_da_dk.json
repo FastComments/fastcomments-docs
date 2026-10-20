@@ -9,25 +9,42 @@
       "subCat": "API-ressourcer"
     },
     {
-      "name": "OAuth-godkendelse",
+      "name": "OAuth-autorisation",
       "file": "oauth.md",
       "subCat": "Godkendelse"
     },
     {
-      "name": "Aggregér dine data",
+      "name": "Aggreger dine data",
       "file": "aggregate-post.md",
       "subCat": "Aggregationer"
     },
     {
-      "name": "AuditLog-struktur",
+      "name": "Auditlogstruktur",
       "file": "audit-log-structure.md",
-      "subCat": "Audit-logs"
+      "subCat": "Auditlogfiler"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Audit-logs"
+      "subCat": "Auditlogfiler"
+    },
+    {
+      "name": "Batchjobstruktur",
+      "file": "batch-job-structure.md",
+      "subCat": "Batchjob"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batchjob"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batchjob"
     },
     {
       "name": "Kommentarstruktur",
@@ -130,30 +147,30 @@
       "subCat": "E-mail-skabeloner"
     },
     {
-      "name": "FeedPost-struktur",
+      "name": "Feedpoststruktur",
       "file": "feed-post-structure.md",
-      "subCat": "Feed-indlæg"
+      "subCat": "Feedindlæg"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed-indlæg"
+      "subCat": "Feedindlæg"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed-indlæg"
+      "subCat": "Feedindlæg"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed-indlæg"
+      "subCat": "Feedindlæg"
     },
     {
-      "name": "Hashtag-struktur",
+      "name": "Hashtagstruktur",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtags"
     },
@@ -270,51 +287,51 @@
       "subCat": "Notifikationer"
     },
     {
-      "name": "Side Reaktioner Offentlig API",
+      "name": "Side Reagerer Offentlig API",
       "file": "page-reacts-api.md",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "GET /page-reacts/v1/likes/:tenantId",
       "file": "page-likes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "POST /page-reacts/v1/likes/:tenantId",
       "file": "page-like-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "DELETE /page-reacts/v1/likes/:tenantId",
       "file": "page-like-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "GET /page-reacts/v2/:tenantId",
       "file": "page-reacts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "GET /page-reacts/v2/:tenantId/list",
       "file": "page-react-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "POST /page-reacts/v2/:tenantId",
       "file": "page-react-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "DELETE /page-reacts/v2/:tenantId",
       "file": "page-react-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Side Reaktioner"
+      "subCat": "Side Reagerer"
     },
     {
       "name": "Side struktur",
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sider"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sider"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Sider"
     },
@@ -512,15 +541,15 @@
       "subCat": "Abonnementer"
     },
     {
-      "name": "Lejers daglige forbrug struktur",
+      "name": "Lejer Daglig Brug Struktur",
       "file": "tenant-daily-usage-structure.md",
-      "subCat": "Lejers daglige forbrug"
+      "subCat": "Lejers Daglige Brug"
     },
     {
       "name": "GET /api/v1/tenant-daily-usage",
       "file": "tenant-daily-usages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Lejers daglige forbrug"
+      "subCat": "Lejers Daglige Brug"
     },
     {
       "name": "Lejerstruktur",
@@ -645,7 +674,7 @@
       "subCat": "Brugere"
     },
     {
-      "name": "Stemme struktur",
+      "name": "Stemme Struktur",
       "file": "vote-structure.md",
       "subCat": "Stemmer"
     },
@@ -791,13 +820,13 @@
       "name": "GET /api/v1/question-results-aggregate",
       "file": "question-results-aggregate.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålsresultater Aggregation"
+      "subCat": "Spørgsmålsresultataggregation"
     },
     {
       "name": "GET /api/v1/question-results-aggregate/combine/comments",
       "file": "question-results-combine-comments.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Spørgsmålsresultater Aggregation"
+      "subCat": "Spørgsmålsresultataggregation"
     },
     {
       "name": "Brugerbadge struktur",

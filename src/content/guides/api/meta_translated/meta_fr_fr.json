@@ -30,6 +30,23 @@
       "subCat": "Journaux d'audit"
     },
     {
+      "name": "Structure du job batch",
+      "file": "batch-job-structure.md",
+      "subCat": "Jobs batch"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Jobs batch"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Jobs batch"
+    },
+    {
       "name": "Structure du commentaire",
       "file": "comment-structure.md",
       "subCat": "Commentaires"
@@ -364,6 +381,18 @@
       "subCat": "Pages"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pages"
+    },
+    {
       "name": "Structure du sondage",
       "file": "poll-structure.md",
       "subCat": "Sondages"
@@ -634,7 +663,7 @@
       "subCat": "Utilisateurs locataire"
     },
     {
-      "name": "Structure d'utilisateur",
+      "name": "Structure de l'utilisateur",
       "file": "user-structure.md",
       "subCat": "Utilisateurs"
     },

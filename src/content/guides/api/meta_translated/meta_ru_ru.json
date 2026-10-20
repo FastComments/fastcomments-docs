@@ -4,22 +4,22 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Ресурсы API",
+      "name": "API Resources",
       "file": "api-resources.md",
       "subCat": "Ресурсы API"
     },
     {
-      "name": "Авторизация OAuth",
+      "name": "OAuth Authorization",
       "file": "oauth.md",
       "subCat": "Аутентификация"
     },
     {
-      "name": "Агрегировать ваши данные",
+      "name": "Aggregate Your Data",
       "file": "aggregate-post.md",
       "subCat": "Агрегации"
     },
     {
-      "name": "Структура журнала аудита",
+      "name": "AuditLog Structure",
       "file": "audit-log-structure.md",
       "subCat": "Журналы аудита"
     },
@@ -30,7 +30,24 @@
       "subCat": "Журналы аудита"
     },
     {
-      "name": "Структура комментария",
+      "name": "BatchJob Structure",
+      "file": "batch-job-structure.md",
+      "subCat": "Пакетные задания"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакетные задания"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Пакетные задания"
+    },
+    {
+      "name": "Comment Structure",
       "file": "comment-structure.md",
       "subCat": "Комментарии"
     },
@@ -89,112 +106,112 @@
       "subCat": "Комментарии"
     },
     {
-      "name": "Структура шаблона email",
+      "name": "Email Template Structure",
       "file": "email-template-structure.md",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Шаблоны email"
+      "subCat": "Шаблоны электронной почты"
     },
     {
-      "name": "Структура публикации ленты",
+      "name": "FeedPost Structure",
       "file": "feed-post-structure.md",
-      "subCat": "Публикации ленты"
+      "subCat": "Посты ленты"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Публикации ленты"
+      "subCat": "Посты ленты"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Публикации ленты"
+      "subCat": "Посты ленты"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Публикации ленты"
+      "subCat": "Посты ленты"
     },
     {
-      "name": "Структура хештега",
+      "name": "HashTag Structure",
       "file": "hash-tag-structure.md",
-      "subCat": "Хештеги"
+      "subCat": "Хэштеги"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "Хэштеги"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "Хэштеги"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "Хэштеги"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "Хэштеги"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Хештеги"
+      "subCat": "Хэштеги"
     },
     {
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Мой профиль"
+      "subCat": "Пользователь"
     },
     {
-      "name": "Структура модератора",
+      "name": "Moderator Structure",
       "file": "moderator-structure.md",
       "subCat": "Модераторы"
     },
@@ -235,22 +252,22 @@
       "subCat": "Модераторы"
     },
     {
-      "name": "Структура количества уведомлений",
+      "name": "Notification Count Structure",
       "file": "notification-count-structure.md",
-      "subCat": "Количество уведомлений"
+      "subCat": "Счетчик уведомлений"
     },
     {
       "name": "GET /api/v1/notification-count/:user_id",
       "file": "notification-count-get.md",
-      "subCat": "Количество уведомлений"
+      "subCat": "Счетчик уведомлений"
     },
     {
       "name": "DELETE /api/v1/notification-count/:user_id",
       "file": "notification-count-delete.md",
-      "subCat": "Количество уведомлений"
+      "subCat": "Счетчик уведомлений"
     },
     {
-      "name": "Структура уведомления",
+      "name": "Notification Structure",
       "file": "notification-structure.md",
       "subCat": "Уведомления"
     },
@@ -270,7 +287,7 @@
       "subCat": "Уведомления"
     },
     {
-      "name": "Публичный API реакций на страницу",
+      "name": "Page Reacts Public API",
       "file": "page-reacts-api.md",
       "subCat": "Реакции на страницу"
     },
@@ -317,7 +334,7 @@
       "subCat": "Реакции на страницу"
     },
     {
-      "name": "Структура страницы",
+      "name": "Page Structure",
       "file": "page-structure.md",
       "subCat": "Страницы"
     },
@@ -364,7 +381,19 @@
       "subCat": "Страницы"
     },
     {
-      "name": "Структура опроса",
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Страницы"
+    },
+    {
+      "name": "Poll Structure",
       "file": "poll-structure.md",
       "subCat": "Опросы"
     },
@@ -393,106 +422,106 @@
       "subCat": "Опросы"
     },
     {
-      "name": "Структура голосования в опросе",
+      "name": "PollVote Structure",
       "file": "poll-vote-structure.md",
-      "subCat": "Голоса в опросе"
+      "subCat": "Голоса в опросах"
     },
     {
       "name": "GET /api/v1/poll-votes",
       "file": "poll-votes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Голоса в опросе"
+      "subCat": "Голоса в опросах"
     },
     {
       "name": "GET /api/v1/poll-votes/:id",
       "file": "poll-vote-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Голоса в опросе"
+      "subCat": "Голоса в опросах"
     },
     {
       "name": "POST /api/v1/poll-votes",
       "file": "poll-vote-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Голоса в опросе"
+      "subCat": "Голоса в опросах"
     },
     {
       "name": "DELETE /api/v1/poll-votes/:id",
       "file": "poll-vote-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Голоса в опросе"
+      "subCat": "Голоса в опросах"
     },
     {
-      "name": "Структура ожидающего вебхук события",
+      "name": "PendingWebhookEvent Structure",
       "file": "pending-webhook-event-structure.md",
-      "subCat": "Ожидающие вебхук события"
+      "subCat": "Ожидающие события вебхуков"
     },
     {
       "name": "GET /api/v1/pending-webhook-events",
       "file": "pending-webhook-events-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие вебхук события"
+      "subCat": "Ожидающие события вебхуков"
     },
     {
       "name": "GET /api/v1/pending-webhook-events/count",
       "file": "pending-webhook-events-count.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие вебхук события"
+      "subCat": "Ожидающие события вебхуков"
     },
     {
       "name": "DELETE /api/v1/pending-webhook-events/:id",
       "file": "pending-webhook-event-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Ожидающие вебхук события"
+      "subCat": "Ожидающие события вебхуков"
     },
     {
-      "name": "Структура SSO пользователя",
+      "name": "SSOUser Structure",
       "file": "sso-user-structure.md",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "GET /api/v1/sso-users",
       "file": "sso-users-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "GET /api/v1/sso-users/by-id/:id",
       "file": "sso-user-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "GET /api/v1/sso-users/by-email/:email",
       "file": "sso-user-get-by-email.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "PATCH /api/v1/sso-users/:id",
       "file": "sso-user-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "POST /api/v1/sso-users",
       "file": "sso-user-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "PUT /api/v1/sso-users/:id",
       "file": "sso-user-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
       "name": "DELETE /api/v1/sso-users/:id",
       "file": "sso-user-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "SSO пользователи"
+      "subCat": "Пользователи SSO"
     },
     {
-      "name": "Структура подписки",
+      "name": "Subscription Structure",
       "file": "subscription-structure.md",
       "subCat": "Подписки"
     },
@@ -512,7 +541,7 @@
       "subCat": "Подписки"
     },
     {
-      "name": "Структура ежедневного использования арендатора",
+      "name": "TenantDailyUsage Structure",
       "file": "tenant-daily-usage-structure.md",
       "subCat": "Ежедневное использование арендатора"
     },
@@ -523,7 +552,7 @@
       "subCat": "Ежедневное использование арендатора"
     },
     {
-      "name": "Структура арендатора",
+      "name": "Tenant Structure",
       "file": "tenant-structure.md",
       "subCat": "Арендаторы"
     },
@@ -558,42 +587,42 @@
       "subCat": "Арендаторы"
     },
     {
-      "name": "Структура пакета арендатора",
+      "name": "Tenant Package Structure",
       "file": "tenant-package-structure.md",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "GET /api/v1/tenant-packages/:id",
       "file": "tenant-package-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "GET /api/v1/tenant-packages",
       "file": "tenant-packages-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "POST /api/v1/tenant-packages",
       "file": "tenant-package-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "PATCH /api/v1/tenant-packages/:id",
       "file": "tenant-package-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
       "name": "DELETE /api/v1/tenant-packages/:id",
       "file": "tenant-package-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Пакеты арендатора"
+      "subCat": "Пакеты арендаторов"
     },
     {
-      "name": "Структура пользователя арендатора",
+      "name": "Tenant User Structure",
       "file": "tenant-user-structure.md",
       "subCat": "Пользователи арендатора"
     },
@@ -634,7 +663,7 @@
       "subCat": "Пользователи арендатора"
     },
     {
-      "name": "Структура пользователя",
+      "name": "User Structure",
       "file": "user-structure.md",
       "subCat": "Пользователи"
     },
@@ -645,7 +674,7 @@
       "subCat": "Пользователи"
     },
     {
-      "name": "Структура голоса",
+      "name": "Vote Structure",
       "file": "vote-structure.md",
       "subCat": "Голоса"
     },
@@ -674,49 +703,49 @@
       "subCat": "Голоса"
     },
     {
-      "name": "Структура конфигурации домена",
+      "name": "DomainConfig Structure",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Конфигурации доменов"
+      "subCat": "Конфигурации домена"
     },
     {
-      "name": "Структура конфигурации вопроса",
+      "name": "QuestionConfig Structure",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Конфигурации вопросов"
@@ -752,7 +781,7 @@
       "subCat": "Конфигурации вопросов"
     },
     {
-      "name": "Структура результата вопроса",
+      "name": "QuestionResult Structure",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Результаты вопросов"
@@ -800,7 +829,7 @@
       "subCat": "Агрегация результатов вопросов"
     },
     {
-      "name": "Структура значка пользователя",
+      "name": "UserBadge Structure",
       "file": "user-badge-structure.md",
       "subCat": "Значки пользователей"
     },
@@ -835,7 +864,7 @@
       "subCat": "Значки пользователей"
     },
     {
-      "name": "Структура прогресса значка пользователя",
+      "name": "UserBadgeProgress Structure",
       "file": "user-badge-progress-structure.md",
       "subCat": "Прогресс значков пользователя"
     },
