@@ -383,6 +383,11 @@
       "subCat": "Misc"
     },
     {
+      "name": "Comment Translation",
+      "file": "comment-translation.md",
+      "subCat": "Misc"
+    },
+    {
       "name": "Page Titles",
       "file": "page-title.md",
       "subCat": "Misc"
