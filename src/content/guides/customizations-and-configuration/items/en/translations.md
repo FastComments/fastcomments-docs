@@ -17,3 +17,5 @@ a replacement.
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; alt='Custom text panel with a widget string selected from the dropdown and a replacement text field'; title='Custom Text' app-screenshot-end]
 
 All translations overrides currently affect all locales.
+
+This covers the widget's own text. To translate the comments your visitors write, see [Comment Translation](#comment-translation).
