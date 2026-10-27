@@ -1,5 +1,5 @@
 {
-  "name": "Moderacija",
+  "name": "Moderiranje",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -18,7 +18,7 @@
       "subCat": "Moderatorji"
     },
     {
-      "name": "Statistike moderatorjev",
+      "name": "Statistika moderatorjev",
       "file": "moderator-stats.md",
       "subCat": "Moderatorji"
     },
@@ -33,7 +33,7 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Moderiranje prek e-pošte",
+      "name": "Moderiranje preko e-pošte",
       "file": "moderation-via-email.md",
       "subCat": "Potek moderiranja"
     },
@@ -68,12 +68,12 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Dejanja moderiranja v gradniku za komentarje",
+      "name": "Dejanja moderiranja iz gradnika komentarjev",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Moderiranje v živo",
+      "name": "Živo moderiranje",
       "file": "comment-actions-live.md",
       "subCat": "Potek moderiranja"
     },
@@ -93,14 +93,14 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Masovni ukrepi",
+      "name": "Masovna dejanja",
       "file": "bulk-actions.md",
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Skupine moderacije",
+      "name": "Skupine moderiranja",
       "file": "moderation-groups.md",
-      "subCat": "Skupine moderacije"
+      "subCat": "Skupine moderiranja"
     },
     {
       "name": "Nastavitve moderiranja",
@@ -108,14 +108,14 @@
       "subCat": "Konfiguracija"
     },
     {
-      "name": "Zaznavanje spama",
+      "name": "Zaznavanje neželene pošte",
       "file": "spam-detection.md",
-      "subCat": "Spam in vulgarizmi"
+      "subCat": "Neželena pošta in vulgarne besede"
     },
     {
-      "name": "Skrivanje žaljivih besed",
+      "name": "Maskiranje vulgarnih besed",
       "file": "profanity-mask.md",
-      "subCat": "Spam in vulgarizmi"
+      "subCat": "Neželena pošta in vulgarne besede"
     },
     {
       "name": "Dnevniki komentarjev",
@@ -128,8 +128,13 @@
       "subCat": "Potek moderiranja"
     },
     {
-      "name": "Agenti z umetno inteligenco",
+      "name": "AI agenti",
       "file": "ai-agents-pointer.md",
+      "subCat": "Potek moderiranja"
+    },
+    {
+      "name": "Storitve človeškega moderiranja",
+      "file": "human-moderation-services.md",
       "subCat": "Potek moderiranja"
     }
   ]

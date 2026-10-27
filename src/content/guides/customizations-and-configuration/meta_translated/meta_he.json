@@ -13,7 +13,7 @@
       "subCat": "הבסיס"
     },
     {
-      "name": "הצגת אותן תגובות בעמודים שונים",
+      "name": "הצגת אותן תגובות בדפים שונים",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "הבסיס"
     },
@@ -23,7 +23,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "גופנים מותאמים אישית",
+      "name": "גופנים מותאמים",
       "file": "custom-fonts.md",
       "subCat": "מראה ותחושה"
     },
@@ -63,7 +63,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "קישור מהתגובות לדפים",
+      "name": "קישור מתגובות לדפים",
       "file": "url.md",
       "subCat": "מראה ותחושה"
     },
@@ -88,7 +88,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "קביעת איזו דף להציג",
+      "name": "קביעת הדף להצגה",
       "file": "starting-page.md",
       "subCat": "מראה ותחושה"
     },
@@ -118,7 +118,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "החלפת מצבי תגובות עם כפתור",
+      "name": "החלפת תגובות באמצעות כפתור",
       "file": "use-show-comments-toggle.md",
       "subCat": "מראה ותחושה"
     },
@@ -128,7 +128,7 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "השבתת הפנייה מחדש של תמונות",
+      "name": "השבתת הפנייה של תמונות",
       "file": "disable-image-redirect.md",
       "subCat": "מראה ותחושה"
     },
@@ -163,12 +163,12 @@
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "שינוי דירוג התוכן של GIFs",
+      "name": "שינוי דירוג התוכן של GIFים",
       "file": "gif-rating.md",
       "subCat": "מראה ותחושה"
     },
     {
-      "name": "בקרת תוכן תמונות",
+      "name": "ביקורת תוכן של תמונות",
       "file": "image-content-moderation.md",
       "subCat": "מראה ותחושה"
     },
@@ -210,7 +210,7 @@
     {
       "name": "השבתת העלאת תמונות",
       "file": "no-image-uploads.md",
-      "subCat": "Look and Feel"
+      "subCat": "מראה ותחושה"
     },
     {
       "name": "אפשר הטמעת מדיה",
@@ -263,7 +263,7 @@
       "subCat": "דפדוף ומיון"
     },
     {
-      "name": "הזזת תיבת תגובה אחרי התגובות",
+      "name": "הזזת תיבת התגובה לאחר התגובות",
       "file": "input-after-comments.md",
       "subCat": "תיבת תגובה"
     },
@@ -278,7 +278,7 @@
       "subCat": "תיבת תגובה"
     },
     {
-      "name": "הגבלת כמות תגובות למשתמש",
+      "name": "הגבלת נפח תגובות לכל משתמש",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "תיבת תגובה"
     },
@@ -288,12 +288,12 @@
       "subCat": "תיבת תגובה"
     },
     {
-      "name": "עומקסימום עומק תגובה",
+      "name": "עומק תגובה מקסימלי",
       "file": "max-reply-depth.md",
       "subCat": "תיבת תגובה"
     },
     {
-      "name": "דרישה לאישור תנאי השימוש",
+      "name": "דרישה לקבלת תנאי השימוש",
       "file": "terms-of-service.md",
       "subCat": "תיבת תגובה"
     },
@@ -383,6 +383,11 @@
       "subCat": "שונות"
     },
     {
+      "name": "תרגום תגובות",
+      "file": "comment-translation.md",
+      "subCat": "שונות"
+    },
+    {
       "name": "כותרות דף",
       "file": "page-title.md",
       "subCat": "שונות"
@@ -418,7 +423,7 @@
       "subCat": "שונות"
     },
     {
-      "name": "עקיפת קובצי Cookie של צד שלישי",
+      "name": "עקיפת קבצי Cookie של צד שלישי",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "שונות"
     },

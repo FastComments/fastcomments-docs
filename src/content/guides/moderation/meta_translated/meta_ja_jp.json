@@ -3,9 +3,9 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "コメント管理ページ",
+      "name": "コメントモデレーションページ",
       "file": "moderate-comments-page.md",
-      "subCat": "概要"
+      "subCat": "はじめに"
     },
     {
       "name": "モデレーター",
@@ -18,7 +18,7 @@
       "subCat": "モデレーター"
     },
     {
-      "name": "モデレーターの統計",
+      "name": "モデレーター統計",
       "file": "moderator-stats.md",
       "subCat": "モデレーター"
     },
@@ -30,72 +30,72 @@
     {
       "name": "承認の仕組み",
       "file": "moderation-approvals.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
-      "name": "メールでのモデレーション",
+      "name": "メールによるモデレーション",
       "file": "moderation-via-email.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "フィルタリング",
       "file": "filters.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "検索",
       "file": "search.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "モデレーションリンクの共有",
       "file": "sharing-moderation-links.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "コメントスレッドビューア",
       "file": "comment-thread-viewer.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
-      "name": "モデレーション操作",
+      "name": "モデレーションアクション",
       "file": "comment-actions.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "コメントの削除",
       "file": "deleting-comments.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
-      "name": "コメントウィジェットからのモデレーション操作",
+      "name": "コメントウィジェットからのモデレーションアクション",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "ライブモデレーション",
       "file": "comment-actions-live.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "ユーザーの禁止",
       "file": "banning-users.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
-      "name": "ワイルドカードによるユーザーの禁止",
+      "name": "ワイルドカードでユーザーを禁止",
       "file": "banning-users-wildcards.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
-      "name": "通報",
+      "name": "フラグ付け",
       "file": "flagging.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
-      "name": "一括操作",
+      "name": "一括アクション",
       "file": "bulk-actions.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "モデレーショングループ",
@@ -113,24 +113,29 @@
       "subCat": "スパムと不適切表現"
     },
     {
-      "name": "不適切表現のマスキング",
+      "name": "不適切表現のマスク",
       "file": "profanity-mask.md",
       "subCat": "スパムと不適切表現"
     },
     {
       "name": "コメントログ",
       "file": "comment-logs.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "キーボードショートカット",
       "file": "keyboard-shortcuts.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
     },
     {
       "name": "AIエージェント",
       "file": "ai-agents-pointer.md",
-      "subCat": "モデレーションの流れ"
+      "subCat": "モデレーションワークフロー"
+    },
+    {
+      "name": "人間によるモデレーションサービス",
+      "file": "human-moderation-services.md",
+      "subCat": "モデレーションワークフロー"
     }
   ]
 }

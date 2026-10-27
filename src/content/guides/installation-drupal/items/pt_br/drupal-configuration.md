@@ -1,31 +1,41 @@
-Todas as configurações ficam em `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
+All settings live under `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
 
 ## Obrigatório
 
-- **Tenant ID** - Seu Tenant ID do FastComments. Encontre isto em [Configurações > API/SSO](https://fastcomments.com/auth/my-account/api) ([UE](https://eu.fastcomments.com/auth/my-account/api)).
-- **API Secret** - Necessário para SSO Seguro, verificação de webhooks e sincronização de páginas. Encontrado em [Configurações > API/SSO](https://fastcomments.com/auth/my-account/api) ([UE](https://eu.fastcomments.com/auth/my-account/api)).
+- **Tenant ID** - Your FastComments Tenant ID. Find this under [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+- **API Secret** - Required for Secure SSO, webhook verification, and page sync. Found under [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
 
-## Estilo de Comentários
+## Armazenando o API Secret
 
-Escolha o widget que corresponde à forma como você quer que as pessoas conversem em seu site.
+The module reads the API Secret from the first of these sources that has a value:
 
-- **Live Comments** - Comentários encadeados em tempo real.
-- **Streaming Chat** - Interface de chat ao vivo, ideal para eventos e transmissões ao vivo.
-- **Collab Chat** - Anotação por seleção de texto na área principal do conteúdo. Os visitantes destacam texto e iniciam uma discussão no contexto.
-- **Collab Chat + Comments** - Tanto collab chat quanto comentários padrão na mesma página.
+1. **Key module** - Install [Key](https://www.drupal.org/project/key), create an *Authentication* key, and pick it under **API Secret key** on the settings form. The key can be backed by an environment variable or a file outside the web root.
+2. **settings.php** - Add `$config['fastcomments.settings']['api_secret'] = 'your-secret';` to `settings.php` or `settings.local.php`. The secret never enters exported configuration.
+3. **The settings form** - Enter it in the **API Secret** field. This stores the value in `fastcomments.settings`, so it ends up in configuration exports. The Drupal status report warns when this is the active source.
+
+The form shows which source is active. Leaving the field blank keeps the stored secret. Tick **Remove the API Secret stored in configuration** to delete it after moving the secret to the Key module or `settings.php`.
+
+## Estilo de Comentário
+
+Pick the widget that matches how you want people to talk on your site.
+
+- **Live Comments** - Real-time threaded comments.
+- **Streaming Chat** - Live chat interface, good for events and livestreams.
+- **Collab Chat** - Text-selection annotation on the main content area. Visitors highlight text and start a discussion in context.
+- **Collab Chat + Comments** - Both collab chat and standard comments on the same page.
 
 ## Modo SSO
 
-- **Nenhum** - Sem SSO. Usuários comentam como convidados ou criam uma conta FastComments.
-- **Simples** - Transmite informações do usuário Drupal (name, email, avatar) para FastComments sem verificação do lado do servidor.
-- **Seguro** - Usa HMAC-SHA256 para verificar usuários do Drupal com FastComments. Recomendado quando você tem um API Secret configurado.
+- **None** - No SSO. Users comment as guests or create a FastComments account.
+- **Simple** - Passes Drupal user info (name, email, avatar) to FastComments without server-side verification.
+- **Secure** - Uses HMAC-SHA256 to verify Drupal users with FastComments. Recommended when you have an API Secret configured.
 
-Consulte a seção `Single Sign-On (SSO)` para detalhes.
+See the `Single Sign-On (SSO)` section for details.
 
 ## Outras Configurações
 
-- **CDN URL** - Padrão: `https://cdn.fastcomments.com`.
-- **Site URL** - Padrão: `https://fastcomments.com`.
-- **Notificações por e-mail** - Envia um e-mail ao autor do conteúdo quando um novo comentário é postado em seu conteúdo.
+- **CDN URL** - Defaults to `https://cdn.fastcomments.com`.
+- **Site URL** - Defaults to `https://fastcomments.com`.
+- **Email notifications** - Send an email to a content author when a new comment is posted on their content.
 
-Para residência de dados na UE, consulte a seção `EU Data Residency`.
+For EU data residency, see the `EU Data Residency` section.

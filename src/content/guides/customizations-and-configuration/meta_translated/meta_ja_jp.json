@@ -8,7 +8,7 @@
       "subCat": "基本"
     },
     {
-      "name": "コメントがページや記事に結び付けられる方法",
+      "name": "コメントがページや記事に結びつく方法",
       "file": "url-id.md",
       "subCat": "基本"
     },
@@ -73,7 +73,7 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "WYSIWYG を有効化",
+      "name": "WYSIWYGを有効化",
       "file": "enable-wysiwyg.md",
       "subCat": "外観と感覚"
     },
@@ -163,7 +163,7 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "GIF のコンテンツレーティングを変更",
+      "name": "GIFのコンテンツ評価を変更",
       "file": "gif-rating.md",
       "subCat": "外観と感覚"
     },
@@ -203,7 +203,7 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "ユーザー名形式",
+      "name": "ユーザー名の形式",
       "file": "user-name-formats.md",
       "subCat": "外観と感覚"
     },
@@ -223,12 +223,12 @@
       "subCat": "外観と感覚"
     },
     {
-      "name": "スポイラーを有効化",
+      "name": "スポイラーの有効化",
       "file": "enable-spoilers.md",
       "subCat": "外観と感覚"
     },
     {
-      "name": "コメント閲覧数を有効化",
+      "name": "コメント閲覧数の有効化",
       "file": "enable-comment-view-counts.md",
       "subCat": "外観と感覚"
     },
@@ -318,12 +318,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "カスタム統合 - Disqus SSO からの移行",
+      "name": "カスタム統合 - Disqus SSOからの移行",
       "file": "sso-disqus.md",
       "subCat": "SSO"
     },
     {
-      "name": "カスタム統合 - Commento SSO からの移行",
+      "name": "カスタム統合 - Commento SSOからの移行",
       "file": "sso-commento.md",
       "subCat": "SSO"
     },
@@ -383,6 +383,11 @@
       "subCat": "その他"
     },
     {
+      "name": "コメント翻訳",
+      "file": "comment-translation.md",
+      "subCat": "その他"
+    },
+    {
       "name": "ページタイトル",
       "file": "page-title.md",
       "subCat": "その他"
@@ -398,7 +403,7 @@
       "subCat": "その他"
     },
     {
-      "name": "コメント数とすべての入れ子返信のカウカウント",
+      "name": "コメント数とすべてのネストされた返信のカウント",
       "file": "count-all.md",
       "subCat": "その他"
     },

@@ -3,19 +3,19 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Je account identificeren",
+      "name": "Uw account identificeren",
       "file": "tenant-id.md",
-      "subCat": "De basis"
+      "subCat": "Basis"
     },
     {
       "name": "Hoe reacties gekoppeld zijn aan pagina's en artikelen",
       "file": "url-id.md",
-      "subCat": "De basis"
+      "subCat": "Basis"
     },
     {
       "name": "Dezelfde reacties weergeven op verschillende pagina's",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "De basis"
+      "subCat": "Basis"
     },
     {
       "name": "Aangepaste styling",
@@ -33,12 +33,12 @@
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Donkere achtergronden ondersteunen (Donkere modus)",
+      "name": "Ondersteuning voor donkere achtergronden (donkere modus)",
       "file": "has-dark-background.md",
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Donkere modus schakelen",
+      "name": "Donkere modus in- en uitschakelen",
       "file": "has-dark-background-toggle.md",
       "subCat": "Uiterlijk en gevoel"
     },
@@ -118,7 +118,7 @@
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Reacties met een knop in- en uitschakelen",
+      "name": "Reacties in- en uitschakelen met een knop",
       "file": "use-show-comments-toggle.md",
       "subCat": "Uiterlijk en gevoel"
     },
@@ -128,12 +128,12 @@
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Afbeeldingsomleiding uitschakelen",
+      "name": "Afbeeldings-redirect uitschakelen",
       "file": "disable-image-redirect.md",
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Automatisch hashtag aanmaken uitschakelen",
+      "name": "Automatisch aanmaken van hashtags uitschakelen",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Uiterlijk en gevoel"
     },
@@ -235,85 +235,85 @@
     {
       "name": "Live reacties direct tonen",
       "file": "show-live-right-away.md",
-      "subCat": "Live reageren"
+      "subCat": "Live reacties"
     },
     {
-      "name": "Live reageren uitschakelen",
+      "name": "Live reacties uitschakelen",
       "file": "disable-live-commenting.md",
-      "subCat": "Live reageren"
+      "subCat": "Live reacties"
     },
     {
-      "name": "Nieuwe live reacties onderaan",
+      "name": "Nieuwe live reacties onderaan plaatsen",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Live reageren"
+      "subCat": "Live reacties"
     },
     {
-      "name": "Oneindig scrollen",
+      "name": "Oneindig scrollen inschakelen",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Paginering & sortering"
+      "subCat": "Paginering & Sortering"
     },
     {
       "name": "Standaard sorteerrichting wijzigen",
       "file": "default-sort-direction.md",
-      "subCat": "Paginering & sortering"
+      "subCat": "Paginering & Sortering"
     },
     {
       "name": "Alle reacties in één keer weergeven - paginering uitschakelen",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Paginering & sortering"
+      "subCat": "Paginering & Sortering"
     },
     {
-      "name": "Het antwoordvak verplaatsen naar na de reacties",
+      "name": "Reactievak verplaatsen naar na de reacties",
       "file": "input-after-comments.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
-      "name": "Beperk de lengte van reacties",
+      "name": "Lengte van reacties beperken",
       "file": "max-comment-character-length.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
       "name": "Meerdere regels in reacties uitschakelen",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
-      "name": "Beperk het aantal reacties per gebruiker",
+      "name": "Aantal reacties per gebruiker beperken",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
-      "name": "Voorkom nieuwe top-level reacties",
+      "name": "Nieuwe top-level reacties voorkomen",
       "file": "no-new-root-comments.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
       "name": "Maximale diepte van antwoorden",
       "file": "max-reply-depth.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
-      "name": "Acceptatie van servicevoorwaarden vereisen",
+      "name": "Acceptatie van servicevoorwaarden verplichten",
       "file": "terms-of-service.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
       "name": "Waarschuwen bij verlaten met een niet-verzonden reactie",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "Het antwoordvak"
+      "subCat": "Het reactievak"
     },
     {
-      "name": "Overzicht van Single Sign On (SSO)",
+      "name": "Overzicht Single Sign-On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Aangepaste integraties - Veilige Single Sign On (SSO)",
+      "name": "Aangepaste integraties - Veilige Single Sign-On (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Aangepaste integraties - Eenvoudige Single Sign On (SSO)",
+      "name": "Aangepaste integraties - Eenvoudige Single Sign-On (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -353,7 +353,7 @@
       "subCat": "Anonieme reacties"
     },
     {
-      "name": "Anoniem stemmen toestaan",
+      "name": "Anonieme stemmen toestaan",
       "file": "allow-anon-votes.md",
       "subCat": "Anonieme reacties"
     },
@@ -368,64 +368,69 @@
       "subCat": "Anonieme reacties"
     },
     {
-      "name": "Terugkoppelingen",
+      "name": "Terugroepfuncties",
       "file": "callbacks.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Handmatig de locale van de gebruiker definiëren",
       "file": "locale.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Toegestane talen beperken",
       "file": "allowed-languages.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
+    },
+    {
+      "name": "Vertaling van reacties",
+      "file": "comment-translation.md",
+      "subCat": "Diversen"
     },
     {
       "name": "Paginatitels",
       "file": "page-title.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
-      "name": "Voorkom nieuwe antwoorden & stemmen uitschakelen",
+      "name": "Nieuwe antwoorden voorkomen & stemmen uitschakelen",
       "file": "readonly.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Linkdomeinen beperken",
       "file": "restricting-link-domains.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
-      "name": "Het aantal reacties & alle geneste antwoorden tellen",
+      "name": "Aantal reacties & alle geneste antwoorden tellen",
       "file": "count-all.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
-      "name": "Reactiegeverlinks inschakelen",
+      "name": "Links naar reageerders inschakelen",
       "file": "enable-commenter-links.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Moderatiegroepen",
       "file": "moderation-group-ids.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
-      "name": "Vermeld groeps-ID's",
+      "name": "Groep-ID's vermelden",
       "file": "mention-group-ids.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Omzeilen van third-party cookies",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Reacties met antwoorden verwijderen",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "Divers"
+      "subCat": "Diversen"
     },
     {
       "name": "Badges tonen in bovenbalk",

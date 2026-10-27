@@ -63,7 +63,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Povezovanje iz komentarjev na strani",
+      "name": "Povezovanje komentarjev s stranmi",
       "file": "url.md",
       "subCat": "Videz in občutek"
     },
@@ -88,7 +88,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Določanje, katera stran naj se prikaže",
+      "name": "Določanje, katera stran se prikaže",
       "file": "starting-page.md",
       "subCat": "Videz in občutek"
     },
@@ -138,7 +138,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Onemogoči zvonec obvestil",
+      "name": "Onemogoči obvestilno zvonček",
       "file": "disable-notification-bell.md",
       "subCat": "Videz in občutek"
     },
@@ -373,13 +373,18 @@
       "subCat": "Razno"
     },
     {
-      "name": "Ročno določanje jezikovne nastavitve uporabnika",
+      "name": "Ročno določanje uporabnikovega jezika",
       "file": "locale.md",
       "subCat": "Razno"
     },
     {
       "name": "Omejitev dovoljenih jezikov",
       "file": "allowed-languages.md",
+      "subCat": "Razno"
+    },
+    {
+      "name": "Prevod komentarjev",
+      "file": "comment-translation.md",
       "subCat": "Razno"
     },
     {
@@ -398,17 +403,17 @@
       "subCat": "Razno"
     },
     {
-      "name": "Število komentarjev in štetje vseh vgnanih odgovorov",
+      "name": "Število komentarjev in štetje vseh vdelanih odgovorov",
       "file": "count-all.md",
       "subCat": "Razno"
     },
     {
-      "name": "Omogoči povezave komentatorjev",
+      "name": "Omogočanje povezav komentatorjev",
       "file": "enable-commenter-links.md",
       "subCat": "Razno"
     },
     {
-      "name": "Skupine moderacije",
+      "name": "Skupine za moderiranje",
       "file": "moderation-group-ids.md",
       "subCat": "Razno"
     },
@@ -428,12 +433,12 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prikaži značke v zgornji vrstici",
+      "name": "Prikaz značk v zgornji vrstici",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prikaži seznam spletnih uporabnikov",
+      "name": "Prikaz seznama uporabnikov na spletu",
       "file": "users-list.md",
       "subCat": "Videz in občutek"
     }

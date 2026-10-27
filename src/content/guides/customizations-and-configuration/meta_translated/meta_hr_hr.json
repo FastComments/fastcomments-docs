@@ -33,17 +33,17 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Podrška za tamne pozadine (tamni način)",
+      "name": "Podrška za tamne pozadine (tamni način rada)",
       "file": "has-dark-background.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Uključivanje/isključivanje tamnog načina",
+      "name": "Prebacivanje tamnog načina rada",
       "file": "has-dark-background-toggle.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prepisivanje teksta",
+      "name": "Zamjena teksta",
       "file": "translations.md",
       "subCat": "Izgled i dojam"
     },
@@ -63,7 +63,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Povezivanje iz komentara na stranice",
+      "name": "Povezivanje komentara s stranicama",
       "file": "url.md",
       "subCat": "Izgled i dojam"
     },
@@ -103,7 +103,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikazivanje i apsolutnih i relativnih datuma",
+      "name": "Prikaz oba, apsolutna i relativna datuma",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Izgled i dojam"
     },
@@ -128,7 +128,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući preusmjeravanje slike",
+      "name": "Onemogući preusmjeravanje slika",
       "file": "disable-image-redirect.md",
       "subCat": "Izgled i dojam"
     },
@@ -193,7 +193,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Veličine stranica",
+      "name": "Veličine stranice",
       "file": "page-size.md",
       "subCat": "Izgled i dojam"
     },
@@ -258,49 +258,49 @@
       "subCat": "Paginacija i sortiranje"
     },
     {
-      "name": "Prikaz svih komentara odjednom – onemogući paginaciju",
+      "name": "Prikaz svih komentara odjednom - onemogući paginaciju",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginacija i sortiranje"
     },
     {
-      "name": "Premještanje okvira za odgovor nakon komentara",
+      "name": "Premještanje polja za odgovor ispod komentara",
       "file": "input-after-comments.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Ograničavanje duljine komentara",
       "file": "max-comment-character-length.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Onemogući višeredno komentiranje",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Ograniči broj komentara po korisniku",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Spriječi nove komentare na najvišoj razini",
       "file": "no-new-root-comments.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Maksimalna dubina odgovora",
       "file": "max-reply-depth.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Zahtijevaj prihvaćanje uvjeta korištenja",
       "file": "terms-of-service.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Upozori prije napuštanja s neslanim komentarom",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "Okvir za odgovor"
+      "subCat": "Polje za odgovor"
     },
     {
       "name": "Pregled jednokratne prijave (SSO)",
@@ -383,6 +383,11 @@
       "subCat": "Razno"
     },
     {
+      "name": "Prevođenje komentara",
+      "file": "comment-translation.md",
+      "subCat": "Razno"
+    },
+    {
       "name": "Naslovi stranica",
       "file": "page-title.md",
       "subCat": "Razno"
@@ -398,7 +403,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Broj komentara i brojanje svih ugniježdenih odgovora",
+      "name": "Broj komentara i brojanje svih ugniježđenih odgovora",
       "file": "count-all.md",
       "subCat": "Razno"
     },
@@ -408,7 +413,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Grupe moderiranja",
+      "name": "Grupe moderacije",
       "file": "moderation-group-ids.md",
       "subCat": "Razno"
     },
@@ -428,12 +433,12 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prikaži značke u gornjoj traci",
+      "name": "Prikaz znački u gornjoj traci",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikaži popis online korisnika",
+      "name": "Prikaz popisa online korisnika",
       "file": "users-list.md",
       "subCat": "Izgled i dojam"
     }

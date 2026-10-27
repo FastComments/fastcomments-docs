@@ -1,5 +1,5 @@
 {
-  "name": "Personnalisations & Configuration",
+  "name": "Personnalisations et configuration",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -38,12 +38,12 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Basculer le mode sombre",
+      "name": "Activer/désactiver le mode sombre",
       "file": "has-dark-background-toggle.md",
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Remplacer le texte",
+      "name": "Remplacement du texte",
       "file": "translations.md",
       "subCat": "Aspect et apparence"
     },
@@ -98,7 +98,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Dates absolues (désactiver les horodatages lisibles)",
+      "name": "Dates absolues (désactiver les horodatages conviviaux)",
       "file": "absolute-dates.md",
       "subCat": "Aspect et apparence"
     },
@@ -118,7 +118,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Basculer les commentaires avec un bouton",
+      "name": "Activer/désactiver les commentaires avec un bouton",
       "file": "use-show-comments-toggle.md",
       "subCat": "Aspect et apparence"
     },
@@ -153,7 +153,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Désactiver les messages directs du profil",
+      "name": "Désactiver les messages directs de profil",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Aspect et apparence"
     },
@@ -163,7 +163,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Modifier la classification du contenu des GIFs",
+      "name": "Modifier la classification de contenu des GIFs",
       "file": "gif-rating.md",
       "subCat": "Aspect et apparence"
     },
@@ -213,7 +213,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Autoriser l'intégration de médias",
+      "name": "Autoriser les intégrations de médias",
       "file": "allow-media-embeds.md",
       "subCat": "Aspect et apparence"
     },
@@ -250,17 +250,17 @@
     {
       "name": "Activer le défilement infini",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Pagination & tri"
+      "subCat": "Pagination et tri"
     },
     {
       "name": "Modifier la direction de tri par défaut",
       "file": "default-sort-direction.md",
-      "subCat": "Pagination & tri"
+      "subCat": "Pagination et tri"
     },
     {
       "name": "Afficher tous les commentaires d'un coup - Désactiver la pagination",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Pagination & tri"
+      "subCat": "Pagination et tri"
     },
     {
       "name": "Déplacer la zone de réponse après les commentaires",
@@ -268,7 +268,7 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Limiter la longueur des commentaires",
+      "name": "Limiter la longueur du commentaire",
       "file": "max-comment-character-length.md",
       "subCat": "Zone de réponse"
     },
@@ -308,12 +308,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - SSO sécurisé",
+      "name": "Intégrations personnalisées - Authentification unique sécurisée (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - SSO simple",
+      "name": "Intégrations personnalisées - Authentification unique simple (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -380,6 +380,11 @@
     {
       "name": "Limiter les langues autorisées",
       "file": "allowed-languages.md",
+      "subCat": "Divers"
+    },
+    {
+      "name": "Traduction des commentaires",
+      "file": "comment-translation.md",
       "subCat": "Divers"
     },
     {

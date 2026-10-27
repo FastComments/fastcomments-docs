@@ -13,7 +13,7 @@
       "subCat": "Temel Bilgiler"
     },
     {
-      "name": "Aynı Yorumları Farklı Sayfalarda Görüntüleme",
+      "name": "Aynı Yorumların Farklı Sayfalarda Görüntülenmesi",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "Temel Bilgiler"
     },
@@ -38,7 +38,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Karanlık Modu Açma/Kapama",
+      "name": "Karanlık Modu Açıp Kapatma",
       "file": "has-dark-background-toggle.md",
       "subCat": "Görünüm ve His"
     },
@@ -63,7 +63,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Yorumlardan Sayfalara Bağlantı",
+      "name": "Yorumlardan Sayfalara Bağlantı Verme",
       "file": "url.md",
       "subCat": "Görünüm ve His"
     },
@@ -98,12 +98,12 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Mutlak Tarihler (Kullanıcı Dostu Zaman Damgalarını Devre Dışı Bırak)",
+      "name": "Kesin Tarihler (Kullanıcı Dostu Zaman Damgalarını Devre Dışı Bırak)",
       "file": "absolute-dates.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Hem Mutlak Hem Göreceli Tarihleri Gösterme",
+      "name": "Hem Kesin Hem Göreceli Tarihleri Gösterme",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Görünüm ve His"
     },
@@ -118,7 +118,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Bir Düğme ile Yorumları Açma/Kapama",
+      "name": "Yorumları Bir Düğme ile Açıp Kapatma",
       "file": "use-show-comments-toggle.md",
       "subCat": "Görünüm ve His"
     },
@@ -128,37 +128,37 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Görsel Yönlendirmesini Devre Dışı Bırak",
+      "name": "Görsel Yönlendirmesini Devre Dışı Bırakma",
       "file": "disable-image-redirect.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Otomatik Etiket Oluşturmayı Devre Dışı Bırak",
+      "name": "Otomatik Etiket Oluşturmayı Devre Dışı Bırakma",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Bildirim Zilini Devre Dışı Bırak",
+      "name": "Bildirim Zilini Devre Dışı Bırakma",
       "file": "disable-notification-bell.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Profilleri Devre Dışı Bırak",
+      "name": "Profilleri Devre Dışı Bırakma",
       "file": "disable-profiles.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Profil Yorumlarını Devre Dışı Bırak",
+      "name": "Profil Yorumlarını Devre Dışı Bırakma",
       "file": "disable-profile-comments.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Profil Direkt Mesajlarını Devre Dışı Bırak",
+      "name": "Profil Direkt Mesajlarını Devre Dışı Bırakma",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Başarı Mesajını Devre Dışı Bırak",
+      "name": "Başarı Mesajını Devre Dışı Bırakma",
       "file": "disable-success-message.md",
       "subCat": "Görünüm ve His"
     },
@@ -173,17 +173,17 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Oylama Stili Değiştirme",
+      "name": "Oylama Stilini Değiştirme",
       "file": "vote-style.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Silme İşlemini Devre Dışı Bırak",
+      "name": "Silme İşlemini Devre Dışı Bırakma",
       "file": "disable-deleting.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Düzenlemeyi Devre Dışı Bırak",
+      "name": "Düzenlemeyi Devre Dışı Bırakma",
       "file": "disable-editing.md",
       "subCat": "Görünüm ve His"
     },
@@ -208,27 +208,27 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Görsel Yüklemelerini Devre Dışı Bırakma",
+      "name": "Görsel Yüklemeyi Devre Dışı Bırakma",
       "file": "no-image-uploads.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Medya Gömmelerine İzin Ver",
+      "name": "Medya Gömmelerine İzin Verme",
       "file": "allow-media-embeds.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Arama Kutusunu Etkinleştir",
+      "name": "Arama Kutusunu Etkinleştirme",
       "file": "enable-search.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Spoiler'ları Etkinleştir",
+      "name": "Spoiler'ları Etkinleştirme",
       "file": "enable-spoilers.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Yorum Görüntülenme Sayısını Etkinleştir",
+      "name": "Yorum Görüntülenme Sayısını Etkinleştirme",
       "file": "enable-comment-view-counts.md",
       "subCat": "Görünüm ve His"
     },
@@ -243,7 +243,7 @@
       "subCat": "Canlı Yorumlama"
     },
     {
-      "name": "Yeni Canlı Yorumları Alta Yerleştir",
+      "name": "Yeni Canlı Yorumları Alta Taşıma",
       "file": "new-comments-to-bottom.md",
       "subCat": "Canlı Yorumlama"
     },
@@ -258,7 +258,7 @@
       "subCat": "Sayfalama ve Sıralama"
     },
     {
-      "name": "Tüm Yorumları Bir Anda Görüntüleme - Sayfalamayı Devre Dışı Bırak",
+      "name": "Tüm Yorumları Tek Seferde Görüntüleme - Sayfalamayı Devre Dışı Bırakma",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Sayfalama ve Sıralama"
     },
@@ -273,12 +273,12 @@
       "subCat": "Yanıt Kutusu"
     },
     {
-      "name": "Çok Satırlı Yorumlamayı Devre Dışı Bırak",
+      "name": "Çok Satırlı Yorumlamayı Devre Dışı Bırakma",
       "file": "use-single-line-comment-input.md",
       "subCat": "Yanıt Kutusu"
     },
     {
-      "name": "Kullanıcı Başına Yorum Hacmini Sınırla",
+      "name": "Kullanıcı Başına Yorum Hacmini Sınırlandırma",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Yanıt Kutusu"
     },
@@ -293,7 +293,7 @@
       "subCat": "Yanıt Kutusu"
     },
     {
-      "name": "Hizmet Şartları Kabulünü Zorunlu Kıl",
+      "name": "Hizmet Şartları Kabulünü Zorunlu Kılma",
       "file": "terms-of-service.md",
       "subCat": "Yanıt Kutusu"
     },
@@ -333,7 +333,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Anonim Yorumlamaya İzin Ver",
+      "name": "Anonim Yorumlamaya İzin Verme",
       "file": "allow-anon.md",
       "subCat": "Anonim Yorumlama"
     },
@@ -343,17 +343,17 @@
       "subCat": "Anonim Yorumlama"
     },
     {
-      "name": "E-posta Girişlerini Devre Dışı Bırak",
+      "name": "E-posta Girişlerini Devre Dışı Bırakma",
       "file": "disable-email-inputs.md",
       "subCat": "Anonim Yorumlama"
     },
     {
-      "name": "Doğrulanmamış Etiketini Devre Dışı Bırak",
+      "name": "Doğrulanmamış Etiketini Devre Dışı Bırakma",
       "file": "disable-unverified-label.md",
       "subCat": "Anonim Yorumlama"
     },
     {
-      "name": "Anonim Oylamaya İzin Ver",
+      "name": "Anonim Oylamaya İzin Verme",
       "file": "allow-anon-votes.md",
       "subCat": "Anonim Yorumlama"
     },
@@ -363,69 +363,74 @@
       "subCat": "Anonim Yorumlama"
     },
     {
-      "name": "Kullanıcı Adlarını Otomatik Oluştur",
+      "name": "Kullanıcı Adlarını Otomatik Oluşturma",
       "file": "auto-generate-username.md",
       "subCat": "Anonim Yorumlama"
     },
     {
       "name": "Geri Çağrılar",
       "file": "callbacks.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Kullanıcının Yerel Ayarını Manuel Tanımlama",
       "file": "locale.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
-      "name": "İzin Verilen Dilleri Sınırlama",
+      "name": "İzin Verilen Dilleri Sınırlandırma",
       "file": "allowed-languages.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
+    },
+    {
+      "name": "Yorum Çevirisi",
+      "file": "comment-translation.md",
+      "subCat": "Çeşitli"
     },
     {
       "name": "Sayfa Başlıkları",
       "file": "page-title.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
-      "name": "Yeni Yanıtları Önleme ve Oylamayı Devre Dışı Bırakma",
+      "name": "Yeni Yanıtları Önleme ve Oyları Devre Dışı Bırakma",
       "file": "readonly.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Bağlantı Alanlarını Kısıtlama",
       "file": "restricting-link-domains.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Yorum Sayısı ve Tüm İç İçe Yanıtları Sayma",
       "file": "count-all.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
-      "name": "Yorumcu Bağlantılarını Etkinleştirme",
+      "name": "Yorum Yapan Bağlantılarını Etkinleştirme",
       "file": "enable-commenter-links.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Denetleme Grupları",
       "file": "moderation-group-ids.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Grup Kimliklerini Etiketleme",
       "file": "mention-group-ids.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Üçüncü Taraf Çerez Atlatma",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Yanıtları Olan Yorumları Silme",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "Diğer"
+      "subCat": "Çeşitli"
     },
     {
       "name": "Üst Çubukta Rozetleri Göster",

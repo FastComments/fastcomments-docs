@@ -88,12 +88,12 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Određivanje koje stranice prikazati",
+      "name": "Određivanje koju stranicu prikazati",
       "file": "starting-page.md",
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Promena niti komentara bez ponovnog učitavanja stranice",
+      "name": "Prebacivanje tema komentara bez ponovnog učitavanja stranice",
       "file": "switching-comment-threads.md",
       "subCat": "Izgled i osećaj"
     },
@@ -138,7 +138,7 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Onemogući zvono za obaveštenja",
+      "name": "Onemogući zvono obaveštenja",
       "file": "disable-notification-bell.md",
       "subCat": "Izgled i osećaj"
     },
@@ -193,7 +193,7 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Veličine stranica",
+      "name": "Veličine stranice",
       "file": "page-size.md",
       "subCat": "Izgled i osećaj"
     },
@@ -213,7 +213,7 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Dozvoli ugradnju medija",
+      "name": "Dozvoli ugrađivanje medija",
       "file": "allow-media-embeds.md",
       "subCat": "Izgled i osećaj"
     },
@@ -223,7 +223,7 @@
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Omogući spoilere",
+      "name": "Omogući spoiler-e",
       "file": "enable-spoilers.md",
       "subCat": "Izgled i osećaj"
     },
@@ -250,17 +250,17 @@
     {
       "name": "Omogući beskonačno skrolovanje",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Pagiranje i sortiranje"
+      "subCat": "Paginacija i sortiranje"
     },
     {
-      "name": "Promena podrazumevanog pravca sortiranja",
+      "name": "Promena podrazumevanog smera sortiranja",
       "file": "default-sort-direction.md",
-      "subCat": "Pagiranje i sortiranje"
+      "subCat": "Paginacija i sortiranje"
     },
     {
-      "name": "Prikazivanje svih komentara odjednom - onemogući paginaciju",
+      "name": "Prikaz svih komentara odjednom - onemogući paginaciju",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Pagiranje i sortiranje"
+      "subCat": "Paginacija i sortiranje"
     },
     {
       "name": "Premesti polje za odgovor ispod komentara",
@@ -328,7 +328,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Zaštita niti komentara pomoću Single Sign On",
+      "name": "Zaštita tema komentara pomoću Single Sign On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -373,13 +373,18 @@
       "subCat": "Razno"
     },
     {
-      "name": "Ručna definicija lokalizacije korisnika",
+      "name": "Ručna definicija lokala korisnika",
       "file": "locale.md",
       "subCat": "Razno"
     },
     {
       "name": "Ograničavanje dozvoljenih jezika",
       "file": "allowed-languages.md",
+      "subCat": "Razno"
+    },
+    {
+      "name": "Prevod komentara",
+      "file": "comment-translation.md",
       "subCat": "Razno"
     },
     {
@@ -428,12 +433,12 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prikaži značke u gornjoj traci",
+      "name": "Prikazivanje bedževa u gornjoj traci",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Izgled i osećaj"
     },
     {
-      "name": "Prikaži listu online korisnika",
+      "name": "Prikaz liste online korisnika",
       "file": "users-list.md",
       "subCat": "Izgled i osećaj"
     }

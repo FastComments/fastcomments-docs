@@ -1,33 +1,41 @@
-Sva podešavanja nalaze se pod `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
+All settings live under `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
 
 ## Obavezno
 
 - **Tenant ID** - Vaš FastComments Tenant ID. Pronađite ga pod [Postavke > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
-- **API Secret** - Potrebno za Secure SSO, provjeru webhookova i sinkronizaciju stranica. Nalazi se pod [Postavke > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+- **API Secret** - Potrebno za Secure SSO, provjeru webhooka i sinkronizaciju stranice. Pronađite ga pod [Postavke > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+
+## Pohranjivanje API tajne
+
+Modul čita API Secret iz prvog od ovih izvora koji ima vrijednost:
+
+1. **Key module** - Instalirajte [Key](https://www.drupal.org/project/key), kreirajte *Authentication* ključ i odaberite ga pod **API Secret key** u obrascu za postavke. Ključ može biti podržan varijablom okruženja ili datotekom izvan web korijena.
+2. **settings.php** - Dodajte `$config['fastcomments.settings']['api_secret'] = 'your-secret';` u `settings.php` ili `settings.local.php`. Tajna nikada ne ulazi u izvezenu konfiguraciju.
+3. **Obrazac za postavke** - Unesite je u polje **API Secret**. Ovo pohranjuje vrijednost u `fastcomments.settings`, pa se ona nalazi u izvozima konfiguracije. Drupal izvještaj o statusu upozorava kada je ovo aktivni izvor.
+
+Obrazac prikazuje koji je izvor aktivan. Ostavite polje prazno da zadržite pohranjenu tajnu. Tick **Remove the API Secret stored in configuration** to delete it after moving the secret to the Key module or `settings.php`.
 
 ## Stil komentiranja
 
-Pick the widget that matches how you want people to talk on your site.
+Odaberite widget koji odgovara načinu na koji želite da ljudi razgovaraju na vašoj stranici.
 
-- **Live Comments** - Komentari u niti u stvarnom vremenu.
-- **Streaming Chat** - Sučelje za chat uživo, pogodno za događaje i prijenose uživo.
-- **Collab Chat** - Označavanje teksta na glavnom sadržaju. Posjetitelji označe tekst i započnu diskusiju u kontekstu.
-- **Collab Chat + Comments** - I Collab Chat i standardni komentari na istoj stranici.
+- **Live Comments** - Komentari u stvarnom vremenu s grananjem.
+- **Streaming Chat** - Sučelje za live chat, pogodno za događaje i prijenose uživo.
+- **Collab Chat** - Anotacija odabira teksta u glavnom području sadržaja. Posjetitelji ističu tekst i započinju raspravu u kontekstu.
+- **Collab Chat + Comments** - I collab chat i standardni komentari na istoj stranici.
 
-## Način SSO
+## SSO način
 
 - **None** - Nema SSO. Korisnici komentiraju kao gosti ili kreiraju FastComments račun.
-- **Simple** - Prosljeđuje Drupal korisničke podatke (name, email, avatar) FastComments bez verifikacije na poslužitelju.
-- **Secure** - Koristi HMAC-SHA256 za verifikaciju Drupal korisnika s FastComments. Preporučeno kada imate konfiguriran API Secret.
+- **Simple** - Prosljeđuje informacije o Drupal korisniku (ime, email, avatar) FastCommentsu bez provjere na poslužitelju.
+- **Secure** - Koristi HMAC‑SHA256 za provjeru Drupal korisnika s FastCommentsom. Preporučeno kada imate konfiguriranu API Secret.
 
-See the `Single Sign-On (SSO)` section for details.
+Pogledajte odjeljak `Single Sign-On (SSO)` za detalje.
 
-## Ostala podešavanja
+## Ostale postavke
 
-- **CDN URL** - Zadano na `https://cdn.fastcomments.com`.
-- **Site URL** - Zadano na `https://fastcomments.com`.
-- **Email notifications** - Šalje e-poštu autoru sadržaja kada je na njihov sadržaj objavljen novi komentar.
+- **CDN URL** - Zadano je `https://cdn.fastcomments.com`.
+- **Site URL** - Zadano je `https://fastcomments.com`.
+- **Email notifications** - Pošaljite email autoru sadržaja kada se na njegovom sadržaju objavi novi komentar.
 
-Za rezidenciju podataka u EU, pogledajte odjeljak `EU Data Residency`.
-
----
+Za EU rezidenciju podataka, pogledajte odjeljak `EU Data Residency`.

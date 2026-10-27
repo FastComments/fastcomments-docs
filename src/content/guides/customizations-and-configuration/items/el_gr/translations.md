@@ -10,10 +10,10 @@
 
 Όλες οι προσαρμόσιμες μεταφράσεις μπορούν να βρεθούν <a href="https://fastcomments.com/auth/my-account/get-acct-code#translations" target="_blank">εδώ</a> under the "advanced options" tab.
 
-Ωστόσο, υπάρχει ένας πιο εύκολος τρόπος, μέσω του widget customization UI. Εκεί, μπορούμε απλώς να βρούμε το κείμενο που εμφανίζεται στο commenting widget στην τοπική ρύθμιση EN_US και να ορίσουμε μια αντικατάσταση.
+Ωστόσο, υπάρχει ένας πιο εύκολος τρόπος, μέσω του widget customization UI. Εκεί, μπορούμε απλώς να βρούμε το κείμενο που εμφανίζεται στο widget σχολίων στην τοπική ρύθμιση EN_US και να καθορίσουμε μια αντικατάσταση.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; alt='Πίνακας προσαρμοσμένου κειμένου με μια συμβολοσειρά widget επιλεγμένη από το αναπτυσσόμενο μενού και ένα πεδίο κειμένου αντικατάστασης'; title='Προσαρμοσμένο Κείμενο' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; alt='Πίνακας προσαρμοσμένου κειμένου με μια συμβολοσειρά widget επιλεγμένη από το αναπτυσσόμενο μενού και ένα πεδίο αντικατάστασης κειμένου'; title='Προσαρμοσμένο Κείμενο' app-screenshot-end]
 
-Όλες οι παρακάμψεις μεταφράσεων επηρεάζουν επί του παρόντος όλες τις τοπικές ρυθμίσεις.
+Όλες οι αντικαταστάσεις μεταφράσεων επηρεάζουν επί του παρόντος όλες τις τοπικές ρυθμίσεις.
 
----
+Αυτό καλύπτει το δικό του κείμενο του widget. Για να μεταφράσετε τα σχόλια που γράφουν οι επισκέπτες σας, δείτε [Comment Translation](#comment-translation).

@@ -1,5 +1,5 @@
 {
-  "name": "Tilpasninger og konfiguration",
+  "name": "Tilpasninger & Konfiguration",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -33,12 +33,12 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Understøttelse af mørke baggrunde (mørk tilstand)",
+      "name": "Understøttelse af mørke baggrunde (Mørk tilstand)",
       "file": "has-dark-background.md",
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Skift af mørk tilstand",
+      "name": "Skift til mørk tilstand",
       "file": "has-dark-background-toggle.md",
       "subCat": "Udseende og følelse"
     },
@@ -93,22 +93,22 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Skift af kommentartråde uden at genindlæse siden",
+      "name": "Skift kommentartråde uden at genindlæse siden",
       "file": "switching-comment-threads.md",
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Absolutte datoer (deaktiver menneskevenlige tidsstempler)",
+      "name": "Absolutte datoer (Deaktiver menneskevenlige tidsstempler)",
       "file": "absolute-dates.md",
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Visning af både absolutte og relative datoer",
+      "name": "Vis både absolutte og relative datoer",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Tilføjelse af overskriftstekst",
+      "name": "Tilføj overskriftstekst",
       "file": "header-html.md",
       "subCat": "Udseende og følelse"
     },
@@ -118,12 +118,12 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Skift af kommentarer med en knap",
+      "name": "Skift kommentarer med en knap",
       "file": "use-show-comments-toggle.md",
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Tilpasning af kommentarantal-tekst",
+      "name": "Tilpasning af kommentarantal-teksten",
       "file": "comment-count-format.md",
       "subCat": "Udseende og følelse"
     },
@@ -133,7 +133,7 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Deaktiver automatisk hashtag-oprettelse",
+      "name": "Deaktiver automatisk oprettelse af hashtags",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Udseende og følelse"
     },
@@ -193,7 +193,7 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Sidestørrelser",
+      "name": "Side størrelser",
       "file": "page-size.md",
       "subCat": "Udseende og følelse"
     },
@@ -208,7 +208,7 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Deaktivering af billeduploads",
+      "name": "Deaktiver billeduploads",
       "file": "no-image-uploads.md",
       "subCat": "Udseende og følelse"
     },
@@ -218,7 +218,7 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Aktiver søgeboks",
+      "name": "Aktiver søgefelt",
       "file": "enable-search.md",
       "subCat": "Udseende og følelse"
     },
@@ -228,39 +228,39 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Aktiver visningstælling for kommentarer",
+      "name": "Aktiver visning af kommentarantal",
       "file": "enable-comment-view-counts.md",
       "subCat": "Udseende og følelse"
     },
     {
       "name": "Vis live-kommentarer med det samme",
       "file": "show-live-right-away.md",
-      "subCat": "Live-kommentarer"
+      "subCat": "Live-kommentering"
     },
     {
-      "name": "Deaktivering af live-kommentarer",
+      "name": "Deaktivering af live-kommentering",
       "file": "disable-live-commenting.md",
-      "subCat": "Live-kommentarer"
+      "subCat": "Live-kommentering"
     },
     {
       "name": "Nye live-kommentarer nederst",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Live-kommentarer"
+      "subCat": "Live-kommentering"
     },
     {
       "name": "Aktiver uendelig rulning",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Paginering og sortering"
+      "subCat": "Paginering & sortering"
     },
     {
       "name": "Ændring af standard sorteringsretning",
       "file": "default-sort-direction.md",
-      "subCat": "Paginering og sortering"
+      "subCat": "Paginering & sortering"
     },
     {
-      "name": "Visning af alle kommentarer på én gang - Deaktiver paginering",
+      "name": "Vis alle kommentarer på én gang - Deaktiver paginering",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Paginering og sortering"
+      "subCat": "Paginering & sortering"
     },
     {
       "name": "Flyt svarboksen til efter kommentarerne",
@@ -268,12 +268,12 @@
       "subCat": "Svarboksen"
     },
     {
-      "name": "Begrænsning af kommentarens længde",
+      "name": "Begræns kommentarens længde",
       "file": "max-comment-character-length.md",
       "subCat": "Svarboksen"
     },
     {
-      "name": "Deaktiver multiline-kommentering",
+      "name": "Deaktiver flerlinjekommentering",
       "file": "use-single-line-comment-input.md",
       "subCat": "Svarboksen"
     },
@@ -303,7 +303,7 @@
       "subCat": "Svarboksen"
     },
     {
-      "name": "Oversigt over Single Sign On (SSO)",
+      "name": "Single Sign On (SSO) Oversigt",
       "file": "sso.md",
       "subCat": "SSO"
     },
@@ -328,7 +328,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Beskytte kommentartråde med Single Sign On",
+      "name": "Beskyt kommentartråde med Single Sign On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -343,12 +343,12 @@
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Deaktiver e-mail-indtastning",
+      "name": "Deaktiver e-mail input",
       "file": "disable-email-inputs.md",
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Deaktiver den ubekræftede etiket",
+      "name": "Deaktiver den ubekræftede label",
       "file": "disable-unverified-label.md",
       "subCat": "Anonym kommentering"
     },
@@ -358,7 +358,7 @@
       "subCat": "Anonym kommentering"
     },
     {
-      "name": "Indstilling af standardbrugernavn",
+      "name": "Indstil et standard brugernavn",
       "file": "default-username.md",
       "subCat": "Anonym kommentering"
     },
@@ -373,13 +373,18 @@
       "subCat": "Diverse"
     },
     {
-      "name": "Manuel definition af brugerens lokalitet",
+      "name": "Manuel definition af brugerens locale",
       "file": "locale.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Begrænsning af tilladte sprog",
+      "name": "Begræns tilladte sprog",
       "file": "allowed-languages.md",
+      "subCat": "Diverse"
+    },
+    {
+      "name": "Kommentaroversættelse",
+      "file": "comment-translation.md",
       "subCat": "Diverse"
     },
     {
@@ -393,12 +398,12 @@
       "subCat": "Diverse"
     },
     {
-      "name": "Begrænsning af linkdomæner",
+      "name": "Begræns linkdomæner",
       "file": "restricting-link-domains.md",
       "subCat": "Diverse"
     },
     {
-      "name": "Kommentarantal og tælling af alle indlejrede svar",
+      "name": "Kommentarantal & tælling af alle indlejrede svar",
       "file": "count-all.md",
       "subCat": "Diverse"
     },
@@ -433,7 +438,7 @@
       "subCat": "Udseende og følelse"
     },
     {
-      "name": "Vis liste over online brugere",
+      "name": "Vis online brugerliste",
       "file": "users-list.md",
       "subCat": "Udseende og følelse"
     }

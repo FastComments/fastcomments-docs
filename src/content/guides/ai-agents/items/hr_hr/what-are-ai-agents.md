@@ -1,35 +1,37 @@
-An **AI Agent** je autonomni radnik, ograničen na vaš FastComments tenant, koji nadzire događaje u vašoj zajednici i poduzima radnje u vaše ime.
+An **AI Agent** je autonomni radnik, ograničen na vaš FastComments najam, koji prati događaje u vašoj zajednici i poduzima radnje u vaše ime.
 
-Svaki agent ima tri stvari kojima upravljate:
+Svaki agent ima tri stvari koje kontrolirate:
 
-1. **Osobnost.** Početni prompt u slobodnom tekstu koji definira ton, ulogu i stil donošenja odluka ("Vi ste srdačni pozdravljač zajednice", "Provodite pravila zajednice, ali imate sklonost upozoravanju prije zabrane" i slično).
-2. **Jedan ili više okidača.** Popis događaja koji bude agenta - novi komentar, komentar koji prelazi prag glasova ili prijava, moderatorska akcija, prvi komentar korisnika na stranici i drugi. Cjelovit popis nalazi se u [Pregled okidača](#triggers-overview).
-3. **Popis dopuštenih alata.** Što je agentu dopušteno raditi - objaviti komentar, glasati, prikvačiti, zaključati, označiti kao spam, zabraniti korisnika, upozoriti putem DM-a, dodijeliti značku, poslati email, spremiti i pretražiti zajedničku memoriju. Cjelovit popis nalazi se u [Pregled dopuštenih poziva alata](#tools-overview).
+1. **Osobnost.** Besplatni tekstualni početni upit koji definira ton, ulogu i stil donošenja odluka (“Vi ste toplogobodni dočekivač zajednice”, “Vi provodite pravila zajednice, ali skloniji ste upozorenju nego zabrani”, i tako dalje).
+2. **Jedan ili više okidača.** Popis događaja koji probude agenta – novi komentar, komentar koji prelazi prag glasova ili zastavica, radnja moderatora, prvi komentar korisnika na stranici i drugi. Cjeloviti popis je u [Trigger Events Overview](#triggers-overview).
+3. **Popis dopuštenih alata.** Što agent smije raditi – objaviti komentar, glasati, zakačiti, zaključati, označiti kao spam, zabraniti korisnika, upozoriti putem DM-a, dodijeliti značku, poslati e‑mail, spremiti i pretražiti zajedničku memoriju. Cjeloviti popis je u [Allowed Tool Calls Overview](#tools-overview).
 
-Kada se okidač aktivira, agent prima poruku konteksta koja opisuje što se dogodilo (komentar, stranica, opcionalni kontekst niti/korisnika/stranice) i dobiva svoj početni prompt i smjernice vaše zajednice. Zatim poziva alate za djelovanje, bilježeći opravdanje i ocjenu povjerenja uz svaki poziv.
+Kada se okidač aktivira, agent prima poruku konteksta koja opisuje što se dogodilo (komentar, stranica, opcionalni kontekst teme/korisnika/stranice) i dobiva svoj početni upit zajedno s vašim smjernicama zajednice. Zatim poziva alate za djelovanje, bilježeći opravdanje i ocjenu pouzdanosti uz svaki poziv.
 
-### Agenti rade asinhrono
+### Agenti rade asinkrono
 
-Agenti **nikada ne blokiraju korisničku radnju koja ih je aktivirala**. Čitatelj pošalje komentar, komentar se sprema i prikazuje u niti, odgovor se vraća, i tek *nakon toga* agent radi na njemu — odmah ili nakon konfigurirane odgode (vidi [Odgođeni okidači](#trigger-deferred-delay)). Ništa što agent učini ne dodaje kašnjenje korisničkom iskustvu.
+Agenti **nikada ne blokiraju radnju korisnika koja ih je pokrenula**. Čitatelj objavi komentar, komentar se spremi i prikaže u temi, odgovor se vrati, i tek *tada* agent radi na njemu – odmah ili nakon konfiguriranog odgode (pogledajte [Deferred Triggers](#trigger-deferred-delay)). Ništa što agent učini ne dodaje latenciju korisničkom iskustvu.
 
 ### Zašto ih koristiti
 
-- **Moderirajte na velikoj skali.** Označite očiti spam i zabranite ponovljene prekršitelje bez stalnog nadzora reda.
-- **Pozdravite nove komentatore.** Odgovorite prvim komentarima u vašem tonu.
-- **Istaknite najbolji sadržaj.** Prikvačite sadržajne komentare na vrhu kada prijeđu prag glasova.
-- **Dosljedno provodite svoje smjernice.** Primijenite isti tekst politike na svaki problematični komentar.
-- **Sažmite duge rasprave.** Objavite neutralne sažetke višestranih debata.
+- **Moderirajte u velikom opsegu.** Označite očigledni spam i zabranite ponavljajuće prekršitelje bez stalnog praćenja reda.
+- **Dočekajte nove komentatore.** Odgovorite na komentare prvih korisnika vašim glasom.
+- **Istaknite najbolji sadržaj.** Zakačite značajne komentare na najvišoj razini kada prijeđu prag glasova.
+- **Dosljedno provodite svoje smjernice.** Primijenite isti tekst politike na svaki komentar na granici.
+- **Sažmite duge teme.** Objavite neutralne sažetke višestraničnih rasprava.
 
-### Što vam omogućuje kontrolu
+### Što vas drži pod kontrolom
 
-- **Način suhog pokretanja.** Svaki novi agent dolazi u načinu **Dry Run**: obrađuje okidače, pokreće model i bilježi što bi *učinio*, ali ne poduzima stvarne akcije. Pogledajte [Način suhog pokretanja](#dry-run-mode).
-- **Odobrenja.** Bilo koji podskup akcija može biti ograničen ljudskim odobrenjem. Pogledajte [Tijek odobravanja](#approval-workflow).
-- **Budžeti po agentu i računu.** Strogi dnevni i mjesečni limiti. Pogledajte [Pregled budžeta](#budgets-overview).
-- **Popis dopuštenih alata.** Alati koji nisu dopušteni uklanjaju se iz modelove palete — agent ih doslovno ne može zatražiti. Pogledajte [Pregled dopuštenih poziva alata](#tools-overview).
-- **Polja za reviziju na svakoj akciji.** Model mora uključiti opravdanje i ocjenu povjerenja. Oba se pojavljuju u vremenskoj liniji izvođenja i pri svakom odobravanju. Pogledajte [Pregled detalja izvođenja](#run-detail-view).
-- **EU DSA Članak 17.** U regiji EU-a, potpuno automatizirane zabrane su blokirane. Pogledajte [Usklađenost s EU DSA Članak 17](#eu-dsa-compliance).
-- **Bez treniranja na vašim podacima.** FastComments koristi pružatelje koji ne treniraju na vašim promptovima ili komentarima.
+- **Način suhog izvođenja.** Svaki novi agent isporučuje se u **Dry Run** načinu: obrađuje okidače, pokreće model i bilježi što bi *uradio*, ali ne poduzima stvarne radnje. Pogledajte [Dry-Run Mode](#dry-run-mode).
+- **Odobrenja.** Bilo koji podskup radnji može biti podložan odobrenju od strane čovjeka. Pogledajte [Approval Workflow](#approval-workflow).
+- **Budžeti po agentu i po računu.** Strogi dnevni i mjesečni limiti. Pogledajte [Budgets Overview](#budgets-overview).
+- **Popis dopuštenih alata.** Nedopušteni alati se uklanjaju iz palete modela – agent doslovno ne može zatražiti ih. Pogledajte [Allowed Tool Calls Overview](#tools-overview).
+- **Polja revizije na svakoj radnji.** Model mora sadržavati opravdanje i ocjenu pouzdanosti. Oba se pojavljuju u vremenskoj liniji izvođenja i na svakom odobrenju. Pogledajte [Run Detail View](#run-detail-view).
+- **EU DSA Članak 17.** U EU regiji, potpuno automatizirane zabrane su blokirane. Pogledajte [EU DSA Article 17 Compliance](#eu-dsa-compliance).
+- **Nema treniranja na vašim podacima.** FastComments koristi pružatelje koji ne treniraju na vašim upitima ili komentarima.
 
-### Gdje se uklapaju uz ljudsko moderiranje
+### Gdje se uklapaju uz ljudsku moderaciju
 
-Agenti i ljudski moderatori dijele istu platformu za komentare: agenti poduzimaju radnje kroz iste kanale (approve, spam, ban, badge, pin, lock, write) i te se radnje pojavljuju u istim [Zapisnicima komentara](/guide-moderation.html#comment-logs), na istoj [Stranici za moderiranje](/guide-moderation.html#moderate-comments-page) i u istim tokovima obavijesti. Agenti i ljudi vide rad jedni drugih i mogu reagirati jedni na druge — moderatorske akcije same po sebi su valjani okidači za agente (vidi [Okidač: Moderator je pregledao komentar](#trigger-moderator-reviewed) i povezane).
+Agent i ljudski moderatori dijele istu platformu za komentare: agenti poduzimaju radnje kroz iste kanale (odobri, spam, zabrana, značka, zakači, zaključaj, piši) i te radnje se pojavljuju u istim [Comment Logs](/guide-moderation.html#comment-logs), istoj [Moderation Page](/guide-moderation.html#moderate-comments-page) i istim tokovima obavijesti. Agenti i ljudi vide rad jedni drugih i mogu reagirati jedni na druge – radnje moderatora same po sebi su valjani okidači za agente (pogledajte [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) i slične).
+
+Ako vam također trebaju ljudi u redu, FastComments nudi [Human Moderation Services](/guide-moderation.html#human-moderation-services): naši moderatori rade uz vaše agente, u vašoj nadzornoj ploči, prema vašim smjernicama.

@@ -138,7 +138,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "停用通知鈴鐺",
+      "name": "停用通知鈴",
       "file": "disable-notification-bell.md",
       "subCat": "外觀與感受"
     },
@@ -163,7 +163,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "更改 GIF 的內容分級",
+      "name": "變更 GIF 的內容分級",
       "file": "gif-rating.md",
       "subCat": "外觀與感受"
     },
@@ -173,7 +173,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "更改投票樣式",
+      "name": "變更投票樣式",
       "file": "vote-style.md",
       "subCat": "外觀與感受"
     },
@@ -248,12 +248,12 @@
       "subCat": "即時評論"
     },
     {
-      "name": "啟用無限滾動",
+      "name": "啟用無限捲動",
       "file": "enable-infinite-scrolling.md",
       "subCat": "分頁與排序"
     },
     {
-      "name": "更改預設排序方向",
+      "name": "變更預設排序方向",
       "file": "default-sort-direction.md",
       "subCat": "分頁與排序"
     },
@@ -278,12 +278,12 @@
       "subCat": "回覆框"
     },
     {
-      "name": "限制每位使用者的評論量",
+      "name": "限制每位使用者的評論數量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回覆框"
     },
     {
-      "name": "阻止新頂層評論",
+      "name": "阻止新增頂層評論",
       "file": "no-new-root-comments.md",
       "subCat": "回覆框"
     },
@@ -303,34 +303,34 @@
       "subCat": "回覆框"
     },
     {
-      "name": "單一登入（SSO）概覽",
+      "name": "單一登入 (SSO) 概述",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
-      "name": "自訂整合 - 安全單一登入（SSO）",
+      "name": "自訂整合 - 安全單一登入 (SSO)",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
-      "name": "自訂整合 - 簡易單一登入（SSO）",
+      "name": "自訂整合 - 簡易單一登入 (SSO)",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "自訂整合 - 從 Disqus SSO 遷移",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "自訂整合 - 從 Commento SSO 遷移",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "使用單一登入保護評論串",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "單一登入"
     },
     {
       "name": "允許匿名評論",
@@ -383,17 +383,22 @@
       "subCat": "其他"
     },
     {
+      "name": "評論翻譯",
+      "file": "comment-translation.md",
+      "subCat": "其他"
+    },
+    {
       "name": "頁面標題",
       "file": "page-title.md",
       "subCat": "其他"
     },
     {
-      "name": "阻止新回覆並停用投票",
+      "name": "阻止新增回覆並停用投票",
       "file": "readonly.md",
       "subCat": "其他"
     },
     {
-      "name": "限制連結域名",
+      "name": "限制連結網域",
       "file": "restricting-link-domains.md",
       "subCat": "其他"
     },

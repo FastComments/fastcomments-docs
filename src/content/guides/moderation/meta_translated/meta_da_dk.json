@@ -1,9 +1,9 @@
 {
-  "name": "Moderering",
+  "name": "Moderation",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Siden til moderering af kommentarer",
+      "name": "Siden for moderering af kommentarer",
       "file": "moderate-comments-page.md",
       "subCat": "Introduktion"
     },
@@ -28,12 +28,12 @@
       "subCat": "Moderatorer"
     },
     {
-      "name": "Hvordan godkendelser fungerer",
+      "name": "Sådan fungerer godkendelser",
       "file": "moderation-approvals.md",
       "subCat": "Moderationsarbejdsgang"
     },
     {
-      "name": "Moderering via e-mail",
+      "name": "Moderation via e-mail",
       "file": "moderation-via-email.md",
       "subCat": "Moderationsarbejdsgang"
     },
@@ -53,7 +53,7 @@
       "subCat": "Moderationsarbejdsgang"
     },
     {
-      "name": "Kommentartrådvisning",
+      "name": "Visning af kommentartråde",
       "file": "comment-thread-viewer.md",
       "subCat": "Moderationsarbejdsgang"
     },
@@ -78,17 +78,17 @@
       "subCat": "Moderationsarbejdsgang"
     },
     {
-      "name": "Blokering af brugere",
+      "name": "Udelukkelse af brugere",
       "file": "banning-users.md",
       "subCat": "Moderationsarbejdsgang"
     },
     {
-      "name": "Blokering af brugere med jokertegn",
+      "name": "Udelukkelse af brugere med jokertegn",
       "file": "banning-users-wildcards.md",
       "subCat": "Moderationsarbejdsgang"
     },
     {
-      "name": "Rapportering",
+      "name": "Markering",
       "file": "flagging.md",
       "subCat": "Moderationsarbejdsgang"
     },
@@ -108,17 +108,17 @@
       "subCat": "Konfiguration"
     },
     {
-      "name": "Opdagelse af spam",
+      "name": "Spam-detektion",
       "file": "spam-detection.md",
-      "subCat": "Spam og bandeord"
+      "subCat": "Spam & bandeord"
     },
     {
       "name": "Maskering af bandeord",
       "file": "profanity-mask.md",
-      "subCat": "Spam og bandeord"
+      "subCat": "Spam & bandeord"
     },
     {
-      "name": "Kommentarlogs",
+      "name": "Kommentarlog",
       "file": "comment-logs.md",
       "subCat": "Moderationsarbejdsgang"
     },
@@ -130,6 +130,11 @@
     {
       "name": "AI-agenter",
       "file": "ai-agents-pointer.md",
+      "subCat": "Moderationsarbejdsgang"
+    },
+    {
+      "name": "Menneskelige moderationsservices",
+      "file": "human-moderation-services.md",
       "subCat": "Moderationsarbejdsgang"
     }
   ]
