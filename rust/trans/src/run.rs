@@ -231,13 +231,16 @@ pub async fn run_with(opts: Options) -> Result<()> {
     }
 
     let model = Arc::new(std::env::var("LLM_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string()));
-    // 120s per request is generous for chat/completions (Node default
-    // was 600s, but that just hides hung connections). Connect timeout
-    // is shorter so we fail fast on routing problems.
+    // 600s per request: a full meta.json (88 items for
+    // customizations-and-configuration) takes gpt-oss-120b about six
+    // minutes to emit, and the 120s cap that replaced the Node default
+    // cut off 21 of 22 locales as "POST LLM" failures and failed the
+    // build (deploy JCACWTO0q, 2026-10-27). Connect timeout stays short
+    // so routing problems still fail fast.
     let client = Arc::new(
         reqwest::Client::builder()
             .connect_timeout(Duration::from_secs(10))
-            .timeout(Duration::from_secs(120))
+            .timeout(Duration::from_secs(600))
             .build()?,
     );
     // Empty string is fine for dry-run — the markdown path's
