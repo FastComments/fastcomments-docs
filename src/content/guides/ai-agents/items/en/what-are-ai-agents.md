@@ -33,3 +33,5 @@ Agents **never block the user action that triggered them**. A reader posts a com
 ### Where they fit alongside human moderation
 
 Agents and human moderators share the same comment platform: agents take actions through the same channels (approve, spam, ban, badge, pin, lock, write) and those actions appear in the same [Comment Logs](/guide-moderation.html#comment-logs), the same [Moderation Page](/guide-moderation.html#moderate-comments-page), and the same notification streams. Agents and humans see each other's work and can each react to the other - moderator actions are themselves valid agent triggers (see [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) and friends).
+
+If you need people on the queue as well, FastComments offers [Human Moderation Services](/guide-moderation.html#human-moderation-services): our moderators work alongside your agents, in your dashboard, under your guidelines.

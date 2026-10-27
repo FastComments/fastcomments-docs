@@ -131,6 +131,11 @@
       "name": "AI Agents",
       "file": "ai-agents-pointer.md",
       "subCat": "Moderation Workflow"
+    },
+    {
+      "name": "Human Moderation Services",
+      "file": "human-moderation-services.md",
+      "subCat": "Moderation Workflow"
     }
   ]
 }
