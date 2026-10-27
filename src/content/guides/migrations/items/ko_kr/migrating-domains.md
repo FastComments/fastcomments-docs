@@ -1,13 +1,12 @@
----
 FastComments는 도메인 간에 댓글을 마이그레이션할 수 있는 자동화된 방법을 제공합니다.
 
-도메인 마이그레이션은 `from` 도메인과 `to` 도메인만 있으면 됩니다.
+도메인 마이그레이션은 단순히 `from` 및 `to` 도메인만 필요합니다.
 
-이 작업은 댓글을 **이동**하며, 복사하지 않습니다. 댓글을 복사하고 싶다면, 저희에게 연락하십시오.
+이 작업은 댓글을 **이동**시키며, 복사하지 않습니다. 댓글을 복사하고 싶다면, 저희에게 연락하십시오.
 
-[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; alt='도메인 마이그레이션 도구로, from 및 to 도메인 필드와 마이그레이션된 댓글 수를 표시합니다'; title='도메인 마이그레이션' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/migrate-domains?demo=true'; linkUrl='/auth/my-account/manage-data/migrate-domains'; selector = '.content'; alt='from 및 to 도메인 필드와 마이그레이션된 댓글 수를 표시하는 도메인 마이그레이션 도구'; title='도메인 마이그레이션' app-screenshot-end]
 
-예를 들어 FastComments로의 마이그레이션 중에 다른 제공업체에서 마이그레이션하는 경우에도 유용합니다. 이 경우 댓글 가져오기 데이터에 마이그레이션이 필요한 데이터가 포함될 수 있습니다. 이런 경우 먼저 가져오기를 실행하고, 그 다음 도메인 마이그레이션을 수행할 수 있습니다.
+예를 들어 FastComments로의 마이그레이션 중에 다른 제공업체에서 마이그레이션하는 부분이 포함된 경우에도 유용합니다. 이 경우 댓글 가져오기 데이터에 마이그레이션이 필요한 데이터가 포함될 수 있습니다. 이런 경우 먼저 가져오기를 실행하고, 그 다음 도메인 마이그레이션을 수행할 수 있습니다.
 
 ### 진행 상황 모니터링
 
@@ -16,5 +15,9 @@ FastComments는 도메인 간에 댓글을 마이그레이션할 수 있는 자�
 마이그레이션이 시작되기 전에 지연이 발생할 수 있습니다. 이는 시스템이 주기적으로 처리할 새로운 작업을 확인하기 때문에 정상적인 현상입니다.
 
 작업이 진행되는 동안 마이그레이션할 댓글 수와 현재까지 마이그레이션된 댓글 수를 표시합니다.
+
+### API를 통한 도메인 마이그레이션
+
+도메인은 `type`을 `domain`으로 설정하여 [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) 로도 마이그레이션할 수 있습니다. 진행 상황은 [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) 에서 확인할 수 있으며, 마이그레이션은 90일 동안 취소할 수 있습니다.
 
 ---

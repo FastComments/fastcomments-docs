@@ -4,9 +4,9 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "Viri API",
+      "name": "Viri API-jev",
       "file": "api-resources.md",
-      "subCat": "Viri API"
+      "subCat": "Viri API-jev"
     },
     {
       "name": "OAuth avtorizacija",
@@ -19,15 +19,32 @@
       "subCat": "Agregacije"
     },
     {
-      "name": "Struktura dnevnika revizij",
+      "name": "Struktura revizijskega dnevnika",
       "file": "audit-log-structure.md",
-      "subCat": "Dnevniki revizij"
+      "subCat": "Revizijski dnevniki"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Dnevniki revizij"
+      "subCat": "Revizijski dnevniki"
+    },
+    {
+      "name": "Struktura paketnih opravil",
+      "file": "batch-job-structure.md",
+      "subCat": "Paketna opravila"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Paketna opravila"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Paketna opravila"
     },
     {
       "name": "Struktura komentarja",
@@ -89,45 +106,45 @@
       "subCat": "Komentarji"
     },
     {
-      "name": "Struktura predloge e-pošte",
+      "name": "Struktura e-poštne predloge",
       "file": "email-template-structure.md",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Predloge e-pošte"
+      "subCat": "E-poštne predloge"
     },
     {
       "name": "Struktura objave v viru",
@@ -153,7 +170,7 @@
       "subCat": "Objave v viru"
     },
     {
-      "name": "Struktura hashtag",
+      "name": "Struktura hashtagov",
       "file": "hash-tag-structure.md",
       "subCat": "Hashtagi"
     },
@@ -364,6 +381,18 @@
       "subCat": "Strani"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Strani"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Strani"
+    },
+    {
       "name": "Struktura ankete",
       "file": "poll-structure.md",
       "subCat": "Ankete"
@@ -422,7 +451,7 @@
       "subCat": "Glasovi v anketi"
     },
     {
-      "name": "Struktura čakajočega webhook dogodka",
+      "name": "Struktura čakajočih webhook dogodkov",
       "file": "pending-webhook-event-structure.md",
       "subCat": "Čakajoči webhook dogodki"
     },
@@ -802,37 +831,37 @@
     {
       "name": "Struktura značke uporabnika",
       "file": "user-badge-structure.md",
-      "subCat": "Značke uporabnika"
+      "subCat": "Značke uporabnikov"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Značke uporabnika"
+      "subCat": "Značke uporabnikov"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Značke uporabnika"
+      "subCat": "Značke uporabnikov"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Značke uporabnika"
+      "subCat": "Značke uporabnikov"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Značke uporabnika"
+      "subCat": "Značke uporabnikov"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Značke uporabnika"
+      "subCat": "Značke uporabnikov"
     },
     {
       "name": "Struktura napredka značke uporabnika",

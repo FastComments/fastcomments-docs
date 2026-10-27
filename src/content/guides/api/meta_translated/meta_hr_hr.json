@@ -4,12 +4,12 @@
   "icon": "api.png",
   "itemsOrdered": [
     {
-      "name": "API Resursi",
+      "name": "Resursi API-ja",
       "file": "api-resources.md",
-      "subCat": "API Resursi"
+      "subCat": "Resursi API-ja"
     },
     {
-      "name": "OAuth Autorizacija",
+      "name": "OAuth autorizacija",
       "file": "oauth.md",
       "subCat": "Autentifikacija"
     },
@@ -19,15 +19,32 @@
       "subCat": "Agregacije"
     },
     {
-      "name": "Struktura revizijskog zapisa",
+      "name": "Struktura AuditLog-a",
       "file": "audit-log-structure.md",
-      "subCat": "Revizijski zapisi"
+      "subCat": "AuditLogovi"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Revizijski zapisi"
+      "subCat": "AuditLogovi"
+    },
+    {
+      "name": "Struktura BatchJob-a",
+      "file": "batch-job-structure.md",
+      "subCat": "Batch poslovi"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batch poslovi"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Batch poslovi"
     },
     {
       "name": "Struktura komentara",
@@ -89,7 +106,7 @@
       "subCat": "Komentari"
     },
     {
-      "name": "Struktura predloška e-pošte",
+      "name": "Struktura predložaka e-pošte",
       "file": "email-template-structure.md",
       "subCat": "Predlošci e-pošte"
     },
@@ -132,25 +149,25 @@
     {
       "name": "Struktura Feed posta",
       "file": "feed-post-structure.md",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "GET /api/v1/feed-posts",
       "file": "feed-posts-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "POST /api/v1/feed-posts",
       "file": "feed-post-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "PATCH /api/v1/feed-posts/:id",
       "file": "feed-post-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Feed objave"
+      "subCat": "Feed postovi"
     },
     {
       "name": "Struktura hashtagova",
@@ -191,7 +208,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Moj"
+      "subCat": "Meni"
     },
     {
       "name": "Struktura moderatora",
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Stranice"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Stranice"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Stranice"
     },
@@ -645,7 +674,7 @@
       "subCat": "Korisnici"
     },
     {
-      "name": "Struktura glasovanja",
+      "name": "Struktura glasova",
       "file": "vote-structure.md",
       "subCat": "Glasovi"
     },

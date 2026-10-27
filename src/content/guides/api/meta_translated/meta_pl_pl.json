@@ -30,6 +30,23 @@
       "subCat": "Dzienniki audytu"
     },
     {
+      "name": "Struktura zadań wsadowych",
+      "file": "batch-job-structure.md",
+      "subCat": "Zadania wsadowe"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Zadania wsadowe"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Zadania wsadowe"
+    },
+    {
       "name": "Struktura komentarza",
       "file": "comment-structure.md",
       "subCat": "Komentarze"
@@ -89,45 +106,45 @@
       "subCat": "Komentarze"
     },
     {
-      "name": "Struktura szablonu e‑mail",
+      "name": "Struktura szablonu e-mail",
       "file": "email-template-structure.md",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "GET /api/v1/email-templates/:id",
       "file": "email-template-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "GET /api/v1/email-templates",
       "file": "email-templates-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "PATCH /api/v1/email-templates/:id",
       "file": "email-template-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "POST /api/v1/email-templates",
       "file": "email-template-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "POST /api/v1/email-templates/render",
       "file": "email-template-render.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "DELETE /api/v1/email-templates/:id",
       "file": "email-template-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Szablony e‑mail"
+      "subCat": "Szablony e-mail"
     },
     {
       "name": "Struktura wpisu w kanale",
@@ -364,6 +381,18 @@
       "subCat": "Strony"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Strony"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Strony"
+    },
+    {
       "name": "Struktura ankiety",
       "file": "poll-structure.md",
       "subCat": "Ankiety"
@@ -395,31 +424,31 @@
     {
       "name": "Struktura głosu w ankiecie",
       "file": "poll-vote-structure.md",
-      "subCat": "Głosy w ankiecie"
+      "subCat": "Głosy w ankietach"
     },
     {
       "name": "GET /api/v1/poll-votes",
       "file": "poll-votes-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Głosy w ankiecie"
+      "subCat": "Głosy w ankietach"
     },
     {
       "name": "GET /api/v1/poll-votes/:id",
       "file": "poll-vote-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Głosy w ankiecie"
+      "subCat": "Głosy w ankietach"
     },
     {
       "name": "POST /api/v1/poll-votes",
       "file": "poll-vote-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Głosy w ankiecie"
+      "subCat": "Głosy w ankietach"
     },
     {
       "name": "DELETE /api/v1/poll-votes/:id",
       "file": "poll-vote-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Głosy w ankiecie"
+      "subCat": "Głosy w ankietach"
     },
     {
       "name": "Struktura oczekującego zdarzenia webhook",
@@ -802,37 +831,37 @@
     {
       "name": "Struktura odznaki użytkownika",
       "file": "user-badge-structure.md",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "GET /api/v1/user-badges",
       "file": "user-badges-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "GET /api/v1/user-badges/:id",
       "file": "user-badge-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "POST /api/v1/user-badges",
       "file": "user-badge-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "PUT /api/v1/user-badges/:id",
       "file": "user-badge-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "DELETE /api/v1/user-badges/:id",
       "file": "user-badge-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Odznaki użytkownika"
+      "subCat": "Odznaki użytkowników"
     },
     {
       "name": "Struktura postępu odznaki użytkownika",

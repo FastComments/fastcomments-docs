@@ -1,6 +1,6 @@
 {
   "name": "API",
-  "pageHeader": "API per commenti in tempo reale",
+  "pageHeader": "API di commenti in tempo reale",
   "icon": "api.png",
   "itemsOrdered": [
     {
@@ -21,16 +21,33 @@
     {
       "name": "Struttura AuditLog",
       "file": "audit-log-structure.md",
-      "subCat": "AuditLogs"
+      "subCat": "Log di audit"
     },
     {
       "name": "GET /api/v1/audit-logs",
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "AuditLogs"
+      "subCat": "Log di audit"
     },
     {
-      "name": "Struttura del commento",
+      "name": "Struttura BatchJob",
+      "file": "batch-job-structure.md",
+      "subCat": "Job batch"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Job batch"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Job batch"
+    },
+    {
+      "name": "Struttura commento",
       "file": "comment-structure.md",
       "subCat": "Commenti"
     },
@@ -194,7 +211,7 @@
       "subCat": "Io"
     },
     {
-      "name": "Struttura Moderatore",
+      "name": "Struttura moderatore",
       "file": "moderator-structure.md",
       "subCat": "Moderatori"
     },
@@ -364,6 +381,18 @@
       "subCat": "Pagine"
     },
     {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pagine"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Pagine"
+    },
+    {
       "name": "Struttura sondaggio",
       "file": "poll-structure.md",
       "subCat": "Sondaggi"
@@ -445,7 +474,7 @@
       "subCat": "Eventi webhook in sospeso"
     },
     {
-      "name": "Struttura SSOUser",
+      "name": "Struttura utente SSO",
       "file": "sso-user-structure.md",
       "subCat": "Utenti SSO"
     },
@@ -674,7 +703,7 @@
       "subCat": "Voti"
     },
     {
-      "name": "Struttura DomainConfig",
+      "name": "Struttura configurazione dominio",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configurazioni dominio"
@@ -716,7 +745,7 @@
       "subCat": "Configurazioni dominio"
     },
     {
-      "name": "Struttura QuestionConfig",
+      "name": "Struttura configurazione domanda",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Configurazioni domanda"
@@ -752,7 +781,7 @@
       "subCat": "Configurazioni domanda"
     },
     {
-      "name": "Struttura QuestionResult",
+      "name": "Struttura risultato domanda",
       "file": "question-result-structure.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Risultati domanda"
@@ -800,7 +829,7 @@
       "subCat": "Aggregazione risultati domanda"
     },
     {
-      "name": "Struttura UserBadge",
+      "name": "Struttura badge utente",
       "file": "user-badge-structure.md",
       "subCat": "Badge utente"
     },
@@ -835,7 +864,7 @@
       "subCat": "Badge utente"
     },
     {
-      "name": "Struttura UserBadgeProgress",
+      "name": "Struttura progresso badge utente",
       "file": "user-badge-progress-structure.md",
       "subCat": "Progresso badge utente"
     },

@@ -30,6 +30,23 @@
       "subCat": "Denetim Günlükleri"
     },
     {
+      "name": "Toplu İş Yapısı",
+      "file": "batch-job-structure.md",
+      "subCat": "Toplu İşler"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Toplu İşler"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Toplu İşler"
+    },
+    {
       "name": "Yorum Yapısı",
       "file": "comment-structure.md",
       "subCat": "Yorumlar"
@@ -153,39 +170,39 @@
       "subCat": "Akış Gönderileri"
     },
     {
-      "name": "Hashtag Yapısı",
+      "name": "Etiket Yapısı",
       "file": "hash-tag-structure.md",
-      "subCat": "Hashtag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "GET /api/v1/hash-tags",
       "file": "hash-tags-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hashtag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "PATCH /api/v1/hash-tags/:tag",
       "file": "hash-tag-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hashtag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "POST /api/v1/hash-tags",
       "file": "hash-tag-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hashtag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "POST /api/v1/hash-tags/bulk",
       "file": "hash-tag-bulk-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hashtag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "DELETE /api/v1/hash-tags/:tag",
       "file": "hash-tag-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Hashtag'ler"
+      "subCat": "Etiketler"
     },
     {
       "name": "GET /api/v1/me",
@@ -270,7 +287,7 @@
       "subCat": "Bildirimler"
     },
     {
-      "name": "Sayfa Tepkileri Genel API'si",
+      "name": "Sayfa Tepkileri Genel API",
       "file": "page-reacts-api.md",
       "subCat": "Sayfa Tepkileri"
     },
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "Sayfalar"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "Sayfalar"
     },
@@ -677,79 +706,79 @@
       "name": "Domain Config Yapısı",
       "file": "domain-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "GET /api/v1/domain-configs",
       "file": "domain-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "GET /api/v1/domain-configs/:domain",
       "file": "domain-config-get-by-domain.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "POST /api/v1/domain-configs",
       "file": "domain-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "PATCH /api/v1/domain-configs/:domain",
       "file": "domain-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "PUT /api/v1/domain-configs/:domain",
       "file": "domain-config-put.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "DELETE /api/v1/domain-configs/:domain",
       "file": "domain-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Domain Config'ları"
+      "subCat": "Domain Configları"
     },
     {
       "name": "Soru Config Yapısı",
       "file": "question-config-structure.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Configları"
     },
     {
       "name": "GET /api/v1/question-configs",
       "file": "question-configs-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Configları"
     },
     {
       "name": "GET /api/v1/question-configs/:id",
       "file": "question-config-get-by-id.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Configları"
     },
     {
       "name": "POST /api/v1/question-configs",
       "file": "question-config-post.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Configları"
     },
     {
       "name": "PATCH /api/v1/question-configs/:id",
       "file": "question-config-patch.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Configları"
     },
     {
       "name": "DELETE /api/v1/question-configs/:id",
       "file": "question-config-delete.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "Soru Config'ları"
+      "subCat": "Soru Configları"
     },
     {
       "name": "Soru Sonucu Yapısı",

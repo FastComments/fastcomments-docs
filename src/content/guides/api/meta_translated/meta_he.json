@@ -9,12 +9,12 @@
       "subCat": "משאבי API"
     },
     {
-      "name": "אישור OAuth",
+      "name": "אימות OAuth",
       "file": "oauth.md",
       "subCat": "אימות"
     },
     {
-      "name": "אגרגציה של הנתונים שלך",
+      "name": "אגרגציית הנתונים שלך",
       "file": "aggregate-post.md",
       "subCat": "אגרגציות"
     },
@@ -28,6 +28,23 @@
       "file": "audit-logs-get.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "יומני ביקורת"
+    },
+    {
+      "name": "מבנה משימת אצווה",
+      "file": "batch-job-structure.md",
+      "subCat": "משימות אצווה"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "משימות אצווה"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "משימות אצווה"
     },
     {
       "name": "מבנה תגובה",
@@ -191,7 +208,7 @@
       "name": "GET /api/v1/me",
       "file": "me-get.md",
       "sidebarItemClasses": "retain-case",
-      "subCat": "אישי"
+      "subCat": "המשתמש שלי"
     },
     {
       "name": "מבנה מודרטור",
@@ -360,6 +377,18 @@
     {
       "name": "DELETE /api/v1/pages/:id",
       "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "עמודים"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "עמודים"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
       "sidebarItemClasses": "retain-case",
       "subCat": "עמודים"
     },
