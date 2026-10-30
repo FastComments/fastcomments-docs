@@ -1,11 +1,12 @@
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| id | string | query | Да |  |
-| title | string | query | Не |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Одговор
 
@@ -13,17 +14,18 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createV2PageReact'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још у бета фази. За било који проблем, пријавите га via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
-let title = "title_example" // String |  (опционо)
+let title = "title_example" // String |  (опционално)
+let sso = "sso_example" // String |  (опционално)
 
-PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: title) { (response, error) in
+PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, options: PublicAPI.CreateV2PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,5 +36,3 @@ PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: tit
     }
 }
 [inline-code-end]
-
----

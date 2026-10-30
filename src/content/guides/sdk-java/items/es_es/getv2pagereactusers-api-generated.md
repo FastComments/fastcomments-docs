@@ -1,10 +1,11 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
 | id | string | query | Sí |  |
+| sso | string | query | No |  |
 
 ## Respuesta
 
@@ -30,15 +31,17 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetV2PageReactUsersResponse result = apiInstance.getV2PageReactUsers(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReactUsers");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Excepción al llamar a PublicApi#getV2PageReactUsers");
+      System.err.println("Código de estado: " + e.getCode());
+      System.err.println("Razón: " + e.getResponseBody());
+      System.err.println("Encabezados de respuesta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

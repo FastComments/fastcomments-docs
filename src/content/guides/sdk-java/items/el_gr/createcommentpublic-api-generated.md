@@ -1,14 +1,15 @@
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
-| broadcastId | string | query | Ναι |  |
-| sessionId | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
+|------|------|----------|-----------|------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
+| locale | string | query | No |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

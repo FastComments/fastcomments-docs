@@ -1,6 +1,6 @@
-req
-tenantId
-urlId
+請求  
+tenantId  
+urlId  
 
 ## 參數
 
@@ -34,16 +34,18 @@ urlId
 | customConfigStr | string | query | 否 |  |
 | afterCommentId | string | query | 否 |  |
 | beforeCommentId | string | query | 否 |  |
+| questionId | string | query | 否 |  |
+| questionValue | integer | query | 否 |  |
 
 ## 回應
 
-回傳: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
+返回：[`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getCommentsPublic 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

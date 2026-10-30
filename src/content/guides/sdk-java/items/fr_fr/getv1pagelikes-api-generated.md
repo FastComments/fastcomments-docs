@@ -1,19 +1,21 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
+| sso | string | query | Non |  |
+| includeUserInfo | string | query | Non | Lorsqu'il est défini, renvoie les utilisateurs qui ont aimé la page (avatars et noms d'utilisateur). Seul "public" est accepté, ce qui omet les profils privés. |
 
 ## Réponse
 
-Renvoie : [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
+Retourne : [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Lorsqu'il est défini, renvoie les utilisateurs qui ont aimé la page (avatars et noms d'utilisateur). Seul \"public\" est accepté, ce qui omet les profils privés.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

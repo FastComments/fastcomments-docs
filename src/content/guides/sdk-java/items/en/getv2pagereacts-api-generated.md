@@ -4,6 +4,8 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | When set, returns the users for each react id (avatars and usernames). Only "public" is accepted, which omits private profiles. |
 
 ## Response
 
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | When set, returns the users for each react id (avatars and usernames). Only \"public\" is accepted, which omits private profiles.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

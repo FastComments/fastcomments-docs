@@ -4,6 +4,8 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
+| sso | string | query | Нет |  |
+| includeUserInfo | string | query | Нет | При установке возвращает пользователей, которым понравилась страница (аватары и имена пользователей). Принимается только "public", что исключает приватные профили. |
 
 ## Ответ
 
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | При установке возвращает пользователей, которым понравилась страница (аватары и имена пользователей). Принимается только \"public\", что исключает приватные профили.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

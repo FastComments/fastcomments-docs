@@ -1,24 +1,24 @@
 ## Parameter
 
-| Name | Type | Location | Erforderlich | Beschreibung |
-|------|------|----------|-------------|-------------|
-| tenantId | string | query | Ja |  |
-| id | string | path | Ja |  |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Antwort
 
-Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
+Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'updateQuestionConfig Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch Beta. Bei Problemen melden Sie diese bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in der Beta-Phase. Bei Problemen melden Sie bitte über http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let updateQuestionConfigBody = UpdateQuestionConfigBody(name: "name_example", question: "question_example", helpText: "helpText_example", type: "type_example", numStars: 123, min: 123, max: 123, defaultValue: 123, labelNegative: "labelNegative_example", labelPositive: "labelPositive_example", customOptions: [QuestionConfig_customOptions_inner(imageSrc: "imageSrc_example", name: "name_example")], subQuestionIds: ["subQuestionIds_example"], alwaysShowSubQuestions: false, reportingOrder: 123) // UpdateQuestionConfigBody | 
+let updateQuestionConfigBody = UpdateQuestionConfigBody(name: "name_example", question: "question_example", helpText: "helpText_example", type: "type_example", numStars: 123, min: 123, max: 123, defaultValue: 123, labelNegative: "labelNegative_example", labelPositive: "labelPositive_example", customOptions: [QuestionConfig_customOptions_inner(imageSrc: "imageSrc_example", name: "name_example")], subQuestionIds: ["subQuestionIds_example"], alwaysShowSubQuestions: false, subQuestionConditions: [SubQuestionCondition(_operator: QuestionConditionOperator(), value: 123, subQuestionId: "subQuestionId_example")], commentBoxCondition: QuestionCondition(_operator: nil, value: 123), commentBoxPrompt: "commentBoxPrompt_example", reportingOrder: 123) // UpdateQuestionConfigBody | 
 
 DefaultAPI.updateQuestionConfig(tenantId: tenantId, id: id, updateQuestionConfigBody: updateQuestionConfigBody) { (response, error) in
     guard error == nil else {
@@ -31,5 +31,3 @@ DefaultAPI.updateQuestionConfig(tenantId: tenantId, id: id, updateQuestionConfig
     }
 }
 [inline-code-end]
-
----

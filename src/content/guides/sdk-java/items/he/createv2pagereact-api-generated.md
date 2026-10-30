@@ -1,11 +1,12 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| id | string | query | Yes |  |
-| title | string | query | No |  |
+| tenantId | string | נתיב | כן |  |
+| urlId | string | שאילתה | כן |  |
+| id | string | שאילתה | כן |  |
+| title | string | שאילתה | לא |  |
+| sso | string | שאילתה | לא |  |
 
 ## תגובה
 
@@ -13,9 +14,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,9 +33,11 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

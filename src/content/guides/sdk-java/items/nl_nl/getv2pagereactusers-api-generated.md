@@ -2,19 +2,20 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| id | string | query | Yes |  |
+| tenantId | string | pad | Ja |  |
+| urlId | string | query | Ja |  |
+| id | string | query | Ja |  |
+| sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReactUsersResponse.java)
+Retourneert: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReactUsersResponse.java)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'getV2PageReactUsers Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importeer klassen:
+// Klassen importeren:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,17 +31,21 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetV2PageReactUsersResponse result = apiInstance.getV2PageReactUsers(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReactUsers");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exceptie bij het aanroepen van PublicApi#getV2PageReactUsers");
+      System.err.println("Statuscode: " + e.getCode());
+      System.err.println("Reden: " + e.getResponseBody());
+      System.err.println("Responsheaders: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

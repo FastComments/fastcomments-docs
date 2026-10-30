@@ -1,19 +1,20 @@
 ## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
+| sso | string | query | Non |  |
 
 ## Réponse
 
-Renvoie : [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+Retourne : [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple de deleteV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV1PageReact Exemple'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

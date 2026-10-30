@@ -1,10 +1,11 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Tak |  |
-| urlId | string | query | Tak |  |
+|------|------|----------|----------|------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Gdy ustawione, zwraca użytkowników dla każdego identyfikatora reakcji (awatarów i nazw użytkowników). Tylko "public" jest akceptowane, co pomija prywatne profile. |
 
 ## Odpowiedź
 
@@ -14,7 +15,7 @@ Zwraca: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/bl
 
 [inline-code-attrs-start title = 'Przykład getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import klas:
+// Importuj klasy:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Gdy ustawione, zwraca użytkowników dla każdego identyfikatora reakcji (awatarów i nazw użytkowników). Tylko \"public\" jest akceptowane, co pomija prywatne profile.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,22 +1,23 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| broadcastId | string | query | 是 |  |
-| sessionId | string | query | 否 |  |
-| sso | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| broadcastId | string | query | Yes |  |
+| sessionId | string | query | No |  |
+| sso | string | query | No |  |
+| locale | string | query | No |  |
 
 ## 响应
 
-返回: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
+返回：[`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'createCommentPublic 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,17 +36,19 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
-            .sso(sso)
+            .sso(soup)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#createCommentPublic");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("调用 PublicApi#createCommentPublic 时出现异常");
+      System.err.println("状态码: " + e.getCode());
+      System.err.println("原因: " + e.getResponseBody());
+      System.err.println("响应头: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

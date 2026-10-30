@@ -1,14 +1,15 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| id | string | query | Ja |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+Rückgabe: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## Beispiel
 
@@ -30,12 +31,14 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#deleteV2PageReact");
+      System.err.println("Ausnahme beim Aufruf von PublicApi#deleteV2PageReact");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

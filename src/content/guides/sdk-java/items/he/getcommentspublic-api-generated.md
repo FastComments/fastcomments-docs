@@ -4,36 +4,38 @@ urlId
 
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| page | integer | query | לא |  |
-| direction | string | query | לא |  |
-| sso | string | query | לא |  |
-| skip | integer | query | לא |  |
-| skipChildren | integer | query | לא |  |
-| limit | integer | query | לא |  |
-| limitChildren | integer | query | לא |  |
-| countChildren | boolean | query | לא |  |
-| fetchPageForCommentId | string | query | לא |  |
-| includeConfig | boolean | query | לא |  |
-| countAll | boolean | query | לא |  |
-| includei10n | boolean | query | לא |  |
-| locale | string | query | לא |  |
-| modules | string | query | לא |  |
-| isCrawler | boolean | query | לא |  |
-| includeNotificationCount | boolean | query | לא |  |
-| asTree | boolean | query | לא |  |
-| maxTreeDepth | integer | query | לא |  |
-| useFullTranslationIds | boolean | query | לא |  |
-| parentId | string | query | לא |  |
-| searchText | string | query | לא |  |
-| hashTags | array | query | לא |  |
-| userId | string | query | לא |  |
-| customConfigStr | string | query | לא |  |
-| afterCommentId | string | query | לא |  |
-| beforeCommentId | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## תגובה
 
@@ -41,9 +43,9 @@ urlId
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getCommentsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getCommentsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

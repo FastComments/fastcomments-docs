@@ -1,9 +1,9 @@
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| id | string | path | 是 |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## 响应
 
@@ -18,7 +18,7 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let updateQuestionResultBody = UpdateQuestionResultBody(urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example", value: 123, commentId: "commentId_example", questionId: "questionId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // UpdateQuestionResultBody | 
+let updateQuestionResultBody = UpdateQuestionResultBody(urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example", value: 123, values: [123], commentId: "commentId_example", questionId: "questionId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // UpdateQuestionResultBody | 
 
 DefaultAPI.updateQuestionResult(tenantId: tenantId, id: id, updateQuestionResultBody: updateQuestionResultBody) { (response, error) in
     guard error == nil else {
@@ -31,5 +31,3 @@ DefaultAPI.updateQuestionResult(tenantId: tenantId, id: id, updateQuestionResult
     }
 }
 [inline-code-end]
-
----

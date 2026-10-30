@@ -2,12 +2,13 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | Pfad | Ja |  |
-| urlId | string | Abfrage | Ja |  |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+Rückgabe: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## Beispiel
 
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

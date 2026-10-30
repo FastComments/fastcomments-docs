@@ -1,10 +1,10 @@
-req
+요청
 tenantId
 urlId
 
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
@@ -34,16 +34,18 @@ urlId
 | customConfigStr | string | query | No |  |
 | afterCommentId | string | query | No |  |
 | beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## 응답
 
-Returns: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
+반환: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetCommentsResponseWithPresencePublicComment.swift)
 
 ## 예시
 
-[inline-code-attrs-start title = 'getCommentsPublic 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getCommentsPublic 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고하십시오
+// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요.
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -74,8 +76,10 @@ let userId = "userId_example" // String |  (optional)
 let customConfigStr = "customConfigStr_example" // String |  (optional)
 let afterCommentId = "afterCommentId_example" // String |  (optional)
 let beforeCommentId = "beforeCommentId_example" // String |  (optional)
+let questionId = "questionId_example" // String |  (optional)
+let questionValue = 987 // Int |  (optional)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId, questionId: questionId, questionValue: questionValue)) { (response, error) in
     guard error == nil else {
         print(error)
         return

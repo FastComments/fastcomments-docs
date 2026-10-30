@@ -1,17 +1,19 @@
-## Parameters
+## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Cuando se establece, devuelve los usuarios para cada id de reacción (avatares y nombres de usuario). Sólo "public" es aceptado, lo que omite los perfiles privados. |
 
-## Response
+## Respuesta
 
 Devuelve: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -28,12 +30,16 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Cuando se establece, devuelve los usuarios para cada id de reacción (avatares y nombres de usuario). Sólo "public" es aceptado, lo que omite los perfiles privados.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReacts");
+      System.err.println("Excepción al llamar a PublicApi#getV2PageReacts");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -42,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

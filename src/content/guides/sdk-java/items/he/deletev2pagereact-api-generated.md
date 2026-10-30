@@ -1,10 +1,11 @@
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| id | string | query | כן |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
@@ -12,9 +13,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-deleteV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת deleteV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,8 +31,10 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

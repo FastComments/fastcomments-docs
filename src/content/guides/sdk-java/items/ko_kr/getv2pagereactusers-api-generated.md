@@ -1,10 +1,11 @@
 ## 매개변수
 
-| 이름 | 타입 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 응답
 
@@ -14,7 +15,7 @@
 
 [inline-code-attrs-start title = 'getV2PageReactUsers 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 임포트:
+// 클래스 가져오기:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 문자열 | 
-    String urlId = "urlId_example"; // 문자열 | 
-    String id = "id_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetV2PageReactUsersResponse result = apiInstance.getV2PageReactUsers(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

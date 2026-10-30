@@ -1,12 +1,13 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
 | broadcastId | string | query | 예 |  |
 | sessionId | string | query | 아니오 |  |
 | sso | string | query | 아니오 |  |
+| locale | string | query | 아니오 |  |
 
 ## 응답
 
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -51,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

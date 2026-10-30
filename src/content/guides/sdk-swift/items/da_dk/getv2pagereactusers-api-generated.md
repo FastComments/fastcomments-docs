@@ -1,13 +1,13 @@
----
 ## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | id | string | query | Ja |  |
+| sso | string | query | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetV2PageReactUsersResponse.swift)
 
@@ -15,14 +15,15 @@ Returnerer: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getV2PageReactUsers Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis der opstår et problem, bedes du rapportere det via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
+let sso = "sso_example" // String |  (valgfri)
 
-PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (response, error) in
+PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -33,5 +34,3 @@ PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (respo
     }
 }
 [inline-code-end]
-
----

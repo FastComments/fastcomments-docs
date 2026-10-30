@@ -1,10 +1,12 @@
+---
 ## 参数
 
-| 名称 | Type | Location | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 是 |  |
-| urlId | string | query | 是 |  |
-| title | string | query | 否 |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## 响应
 
@@ -14,7 +16,7 @@
 
 [inline-code-attrs-start title = 'createV1PageReact 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,12 +29,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 字符串 | 
-    String urlId = "urlId_example"; // 字符串 | 
-    String title = "title_example"; // 字符串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV1PageReact(tenantId, urlId)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -45,3 +49,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

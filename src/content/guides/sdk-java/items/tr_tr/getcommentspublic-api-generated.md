@@ -6,34 +6,36 @@ urlId
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Evet |  |
-| urlId | string | query | Evet |  |
-| page | integer | query | Hayır |  |
-| direction | string | query | Hayır |  |
-| sso | string | query | Hayır |  |
-| skip | integer | query | Hayır |  |
-| skipChildren | integer | query | Hayır |  |
-| limit | integer | query | Hayır |  |
-| limitChildren | integer | query | Hayır |  |
-| countChildren | boolean | query | Hayır |  |
-| fetchPageForCommentId | string | query | Hayır |  |
-| includeConfig | boolean | query | Hayır |  |
-| countAll | boolean | query | Hayır |  |
-| includei10n | boolean | query | Hayır |  |
-| locale | string | query | Hayır |  |
-| modules | string | query | Hayır |  |
-| isCrawler | boolean | query | Hayır |  |
-| includeNotificationCount | boolean | query | Hayır |  |
-| asTree | boolean | query | Hayır |  |
-| maxTreeDepth | integer | query | Hayır |  |
-| useFullTranslationIds | boolean | query | Hayır |  |
-| parentId | string | query | Hayır |  |
-| searchText | string | query | Hayır |  |
-| hashTags | array | query | Hayır |  |
-| userId | string | query | Hayır |  |
-| customConfigStr | string | query | Hayır |  |
-| afterCommentId | string | query | Hayır |  |
-| beforeCommentId | string | query | Hayır |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## Yanıt
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,9 +116,12 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // PublicApi#getCommentsPublic çağrılırken istisna
       System.err.println("Exception when calling PublicApi#getCommentsPublic");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

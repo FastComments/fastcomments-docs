@@ -6,6 +6,7 @@
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
 | title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -32,9 +33,11 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

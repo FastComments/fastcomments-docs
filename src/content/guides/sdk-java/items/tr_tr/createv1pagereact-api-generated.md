@@ -1,10 +1,11 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
 | title | string | query | Hayır |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -30,9 +31,11 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV1PageReact(tenantId, urlId)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -45,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

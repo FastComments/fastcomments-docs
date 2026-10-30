@@ -1,11 +1,12 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
 | id | string | query | Так |  |
 | title | string | query | Ні |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -13,17 +14,18 @@
 
 ## Приклад
 
-[inline-code-attrs-start title = 'Приклад createV2PageReact'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV2PageReact Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наведені приклади коду все ще перебувають у бета-версії. Про будь-які проблеми повідомляйте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду ще в бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
-let title = "title_example" // String |  (необов'язково)
+let title = "title_example" // String |  (необов’язковий)
+let sso = "sso_example" // String |  (необов’язковий)
 
-PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: title) { (response, error) in
+PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, options: PublicAPI.CreateV2PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,3 +36,5 @@ PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: tit
     }
 }
 [inline-code-end]
+
+---

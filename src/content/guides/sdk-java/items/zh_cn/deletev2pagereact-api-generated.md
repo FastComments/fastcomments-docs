@@ -5,16 +5,17 @@
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 响应
 
-返回: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+返回：[`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## 示例
 
 [inline-code-attrs-start title = 'deleteV2PageReact 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,11 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 字符串 | 
-    String urlId = "urlId_example"; // 字符串 | 
-    String id = "id_example"; // 字符串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,11 +1,12 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
 | title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -15,7 +16,7 @@ Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/
 
 [inline-code-attrs-start title = 'Primer createV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,9 +33,11 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -7,6 +7,7 @@
 | broadcastId | string | query | Да |  |
 | sessionId | string | query | Не |  |
 | sso | string | query | Не |  |
+| locale | string | query | Не |  |
 
 ## Отговор
 
@@ -14,9 +15,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример за createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createCommentPublic Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортиране на класове:
+// Импорт на класове:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,17 +36,19 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#createCommentPublic");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Изключение при извикване на PublicApi#createCommentPublic");
+      System.err.println("Код на състоянието: " + e.getCode());
+      System.err.println("Причина: " + e.getResponseBody());
+      System.err.println("Заглавки на отговора: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

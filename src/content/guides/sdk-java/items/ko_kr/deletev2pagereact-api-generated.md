@@ -1,10 +1,11 @@
 ## 매개변수
 
-| 이름 | 형식 | 위치 | 필수 | 설명 |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| urlId | string | query | 예 |  |
-| id | string | query | 예 |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## 응답
 
@@ -27,11 +28,13 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 문자열 | 
-    String urlId = "urlId_example"; // 문자열 | 
-    String id = "id_example"; // 문자열 | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

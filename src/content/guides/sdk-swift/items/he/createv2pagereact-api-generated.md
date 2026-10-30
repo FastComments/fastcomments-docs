@@ -1,12 +1,12 @@
----
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
 | id | string | query | כן |  |
 | title | string | query | לא |  |
+| sso | string | query | לא |  |
 
 ## תגובה
 
@@ -14,17 +14,18 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createV2PageReact'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createV2PageReact'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בבטא. לכל בעיה, דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
 let title = "title_example" // String |  (אופציונלי)
+let sso = "sso_example" // String |  (אופציונלי)
 
-PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: title) { (response, error) in
+PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, options: PublicAPI.CreateV2PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -35,5 +36,3 @@ PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: tit
     }
 }
 [inline-code-end]
-
----

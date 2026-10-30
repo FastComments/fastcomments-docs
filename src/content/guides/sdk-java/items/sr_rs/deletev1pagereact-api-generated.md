@@ -1,9 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Одговор
 
@@ -11,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример deleteV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV1PageReact Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Увези класе:
 import com.fastcomments.invoker.ApiClient;
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

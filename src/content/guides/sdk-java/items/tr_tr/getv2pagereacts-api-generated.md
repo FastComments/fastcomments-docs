@@ -1,9 +1,11 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tip | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
+| sso | string | query | Hayır |  |
+| includeUserInfo | string | query | Hayır | Ayarlanırsa, her reaksiyon kimliği için kullanıcıları (avatarlar ve kullanıcı adları) döndürür. Yalnızca "public" kabul edilir ve bu, özel profilleri dışlar. |
 
 ## Yanıt
 
@@ -26,10 +28,14 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // Dize | 
-    String urlId = "urlId_example"; // Dize | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Ayarlanırsa, her reaksiyon kimliği için kullanıcıları (avatarlar ve kullanıcı adları) döndürür. Yalnızca \"public\" kabul edilir ve bu, özel profilleri dışlar.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

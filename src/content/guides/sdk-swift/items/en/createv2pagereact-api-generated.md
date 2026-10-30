@@ -6,6 +6,7 @@
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
 | title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -22,8 +23,9 @@ let tenantId = "tenantId_example" // String |
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
 let title = "title_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: title) { (response, error) in
+PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, options: PublicAPI.CreateV2PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

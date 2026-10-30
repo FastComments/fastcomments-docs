@@ -34,6 +34,8 @@ urlId
 | customConfigStr | string | query | Non |  |
 | afterCommentId | string | query | Non |  |
 | beforeCommentId | string | query | Non |  |
+| questionId | string | query | Non |  |
+| questionValue | integer | query | Non |  |
 
 ## Réponse
 
@@ -43,7 +45,7 @@ Renvoie : [`GetCommentsResponseWithPresencePublicComment`](https://github.com/Fa
 
 [inline-code-attrs-start title = 'Exemple getCommentsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

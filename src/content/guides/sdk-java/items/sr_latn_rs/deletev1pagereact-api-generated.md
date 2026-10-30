@@ -1,9 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

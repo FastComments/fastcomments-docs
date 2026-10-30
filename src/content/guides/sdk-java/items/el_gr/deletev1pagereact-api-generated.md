@@ -4,8 +4,9 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
 | urlId | string | query | Ναι |  |
+| sso | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +45,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

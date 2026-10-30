@@ -1,21 +1,21 @@
----
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|-------------|
 | tenantId | string | path | Sì |  |
 | urlId | string | query | Sì |  |
 | broadcastId | string | query | Sì |  |
 | sessionId | string | query | No |  |
 | sso | string | query | No |  |
+| locale | string | query | No |  |
 
-## Risposta
+## Response
 
 Restituisce: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
-## Esempio
+## Example
 
-[inline-code-attrs-start title = 'Esempio di createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa classi:
 import com.fastcomments.invoker.ApiClient;
@@ -36,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -52,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

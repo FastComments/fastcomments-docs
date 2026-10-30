@@ -1,11 +1,12 @@
-## Parametri
+## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | percorso | Sì |  |
+| tenantId | string | path | Sì |  |
 | urlId | string | query | Sì |  |
 | id | string | query | Sì |  |
 | title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -13,7 +14,7 @@ Restituisce: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di createV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio createV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa classi:
 import com.fastcomments.invoker.ApiClient;
@@ -28,13 +29,15 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // Stringa | 
-    String urlId = "urlId_example"; // Stringa | 
-    String id = "id_example"; // Stringa | 
-    String title = "title_example"; // Stringa | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String id = "id_example"; // String | 
+    String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -47,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

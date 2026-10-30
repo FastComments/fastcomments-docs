@@ -34,6 +34,8 @@ urlId
 | customConfigStr | string | query | No |  |
 | afterCommentId | string | query | No |  |
 | beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## Відповідь
 
@@ -43,39 +45,41 @@ urlId
 
 [inline-code-attrs-start title = 'Приклад getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще у бета-версії. У разі виникнення проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще у бета-версії. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let page = 987 // Int |  (optional)
-let direction = SortDirections() // SortDirections |  (optional)
-let sso = "sso_example" // String |  (optional)
-let skip = 987 // Int |  (optional)
-let skipChildren = 987 // Int |  (optional)
-let limit = 987 // Int |  (optional)
-let limitChildren = 987 // Int |  (optional)
-let countChildren = true // Bool |  (optional)
-let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (optional)
-let includeConfig = true // Bool |  (optional)
-let countAll = true // Bool |  (optional)
-let includei10n = true // Bool |  (optional)
-let locale = "locale_example" // String |  (optional)
-let modules = "modules_example" // String |  (optional)
-let isCrawler = true // Bool |  (optional)
-let includeNotificationCount = true // Bool |  (optional)
-let asTree = true // Bool |  (optional)
-let maxTreeDepth = 987 // Int |  (optional)
-let useFullTranslationIds = true // Bool |  (optional)
-let parentId = "parentId_example" // String |  (optional)
-let searchText = "searchText_example" // String |  (optional)
-let hashTags = ["inner_example"] // [String] |  (optional)
-let userId = "userId_example" // String |  (optional)
-let customConfigStr = "customConfigStr_example" // String |  (optional)
-let afterCommentId = "afterCommentId_example" // String |  (optional)
-let beforeCommentId = "beforeCommentId_example" // String |  (optional)
+let page = 987 // Int |  (необов'язково)
+let direction = SortDirections() // SortDirections |  (необов'язково)
+let sso = "sso_example" // String |  (необов'язково)
+let skip = 987 // Int |  (необов'язково)
+let skipChildren = 987 // Int |  (необов'язково)
+let limit = 987 // Int |  (необов'язково)
+let limitChildren = 987 // Int |  (необов'язково)
+let countChildren = true // Bool |  (необов'язково)
+let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (необов'язково)
+let includeConfig = true // Bool |  (необов'язково)
+let countAll = true // Bool |  (необов'язково)
+let includei10n = true // Bool |  (необов'язково)
+let locale = "locale_example" // String |  (необов'язково)
+let modules = "modules_example" // String |  (необов'язково)
+let isCrawler = true // Bool |  (необов'язково)
+let includeNotificationCount = true // Bool |  (необов'язково)
+let asTree = true // Bool |  (необов'язково)
+let maxTreeDepth = 987 // Int |  (необов'язково)
+let useFullTranslationIds = true // Bool |  (необов'язково)
+let parentId = "parentId_example" // String |  (необов'язково)
+let searchText = "searchText_example" // String |  (необов'язково)
+let hashTags = ["inner_example"] // [String] |  (необов'язково)
+let userId = "userId_example" // String |  (необов'язково)
+let customConfigStr = "customConfigStr_example" // String |  (необов'язково)
+let afterCommentId = "afterCommentId_example" // String |  (необов'язково)
+let beforeCommentId = "beforeCommentId_example" // String |  (необов'язково)
+let questionId = "questionId_example" // String |  (необов'язково)
+let questionValue = 987 // Int |  (необов'язково)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId, questionId: questionId, questionValue: questionValue)) { (response, error) in
     guard error == nil else {
         print(error)
         return

@@ -2,18 +2,20 @@
 
 | Nom | Type | Emplacement | Obligatoire | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Oui |  |
-| urlId | string | query | Oui |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Lorsqu'il est défini, renvoie les utilisateurs pour chaque identifiant de réaction (avatars et noms d'utilisateur). Seul "public" est accepté, ce qui omet les profils privés. |
 
 ## Réponse
 
-Retourne : [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
+Renvoie : [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Lorsqu'il est défini, renvoie les utilisateurs pour chaque identifiant de réaction (avatars et noms d'utilisateur). Seul \"public\" est accepté, ce qui omet les profils privés.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

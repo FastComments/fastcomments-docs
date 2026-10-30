@@ -1,9 +1,11 @@
 ## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Sí |  |
-| urlId | string | query | Sí |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Cuando se establece, devuelve los usuarios que le dieron "me gusta" a la página (avatares y nombres de usuario). Sólo se acepta "public", lo que omite los perfiles privados. |
 
 ## Respuesta
 
@@ -11,7 +13,7 @@ Devuelve: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/b
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV1PageLikes Ejemplo'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Cuando se establece, devuelve los usuarios que le dieron "me gusta" a la página (avatares y nombres de usuario). Sólo se acepta "public", lo que omite los perfiles privados.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

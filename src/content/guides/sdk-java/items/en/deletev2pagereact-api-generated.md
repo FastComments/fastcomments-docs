@@ -5,6 +5,7 @@
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | id | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -30,8 +31,10 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

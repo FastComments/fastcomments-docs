@@ -29,13 +29,13 @@
     {
       "name": "API‑klienter",
       "file": "api-clients-readme-generated.md",
-      "subCat": "API Reference",
+      "subCat": "API‑reference",
       "type": "readme"
     },
     {
       "name": "Udførelse af API‑kald",
       "file": "making-api-calls-readme-generated.md",
-      "subCat": "API Reference",
+      "subCat": "API‑reference",
       "type": "readme"
     },
     {
@@ -51,9 +51,15 @@
       "type": "readme"
     },
     {
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Agent‑lejere",
+      "type": "api"
+    },
+    {
       "name": "aggregere",
       "file": "aggregate-api-generated.md",
-      "subCat": "Aggregat",
+      "subCat": "Aggregere",
       "type": "api"
     },
     {
@@ -66,6 +72,18 @@
       "name": "logoutPublic",
       "file": "logoutpublic-api-generated.md",
       "subCat": "Godkendelse",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "Batch‑job",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "Batch‑job",
       "type": "api"
     },
     {
@@ -179,6 +197,12 @@
     {
       "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
+      "subCat": "Kommentarer",
+      "type": "api"
+    },
+    {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
       "subCat": "Kommentarer",
       "type": "api"
     },
@@ -438,6 +462,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Mig",
       "type": "api"
     },
     {
@@ -837,6 +867,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Sider",
@@ -855,27 +897,87 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Sider",
       "type": "api"
     },
     {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
+      "subCat": "Sider",
+      "type": "api"
+    },
+    {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Afventende webhook‑begivenheder",
+      "subCat": "Afventende webhook‑hændelser",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Afventende webhook‑begivenheder",
+      "subCat": "Afventende webhook‑hændelser",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Afventende webhook‑begivenheder",
+      "subCat": "Afventende webhook‑hændelser",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Afstemningsstemmer",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Afstemningsstemmer",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Afstemningsstemmer",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Afstemningsstemmer",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Afstemninger",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Afstemninger",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Afstemninger",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Afstemninger",
       "type": "api"
     },
     {
@@ -941,19 +1043,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "Spørgsmålsresultat‑aggregat",
+      "subCat": "Spørgsmålsresultater aggregation",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "Spørgsmålsresultat‑aggregat",
+      "subCat": "Spørgsmålsresultater aggregation",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "Spørgsmålsresultat‑aggregat",
+      "subCat": "Spørgsmålsresultater aggregation",
       "type": "api"
     },
     {
@@ -1223,43 +1325,43 @@
     {
       "name": "getUserNotificationCount",
       "file": "getusernotificationcount-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
       "name": "getUserNotifications",
       "file": "getusernotifications-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
       "name": "resetUserNotificationCount",
       "file": "resetusernotificationcount-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
       "name": "resetUserNotifications",
       "file": "resetusernotifications-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
       "name": "updateUserNotificationCommentSubscriptionStatus",
       "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
       "name": "updateUserNotificationPageSubscriptionStatus",
       "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
       "name": "updateUserNotificationStatus",
       "file": "updateusernotificationstatus-api-generated.md",
-      "subCat": "Bruger‑notifikationer",
+      "subCat": "Bruger notifikationer",
       "type": "api"
     },
     {
@@ -1302,6 +1404,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Stemmer",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

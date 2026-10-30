@@ -1,22 +1,23 @@
-## Paramètres
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nom | Type | Emplacement | Obligatoire | Description |
+|------|------|--------------|-------------|-------------|
 | tenantId | string | path | Oui |  |
 | urlId | string | query | Oui |  |
 | broadcastId | string | query | Oui |  |
 | sessionId | string | query | Non |  |
 | sso | string | query | Non |  |
+| locale | string | query | Non |  |
 
-## Réponse
+## Response
 
-Renvoie : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
+Retourne : [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
-## Exemple
+## Example
 
-[inline-code-attrs-start title = 'Exemple de createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Importer les classes :
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,20 +30,21 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String urlId = "urlId_example"; // String | 
-    String broadcastId = "broadcastId_example"; // String | 
-    CommentData commentData = new CommentData(); // CommentData | 
-    String sessionId = "sessionId_example"; // String | 
-    String sso = "sso_example"; // String | 
+    String tenantId = "tenantId_example"; // Chaîne |
+    String urlId = "urlId_example"; // Chaîne |
+    String broadcastId = "broadcastId_example"; // Chaîne |
+    CommentData commentData = new CommentData(); // CommentData |
+    String sessionId = "sessionId_example"; // Chaîne |
+    String sso = "sso_example"; // Chaîne |
+    String locale = "locale_example"; // Chaîne |
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Exception lors de l'appel de PublicApi#createCommentPublic
       System.err.println("Exception when calling PublicApi#createCommentPublic");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

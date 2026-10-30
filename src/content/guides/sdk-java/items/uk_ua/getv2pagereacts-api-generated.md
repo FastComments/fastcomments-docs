@@ -1,9 +1,11 @@
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
-|------|------|----------|----------|-------------|
-| tenantId | string | шлях | Так |  |
-| urlId | string | параметр запиту | Так |  |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|--------------|--------------|------|
+| tenantId | string | path | Так |  |
+| urlId | string | query | Так |  |
+| sso | string | query | Ні |  |
+| includeUserInfo | string | query | Ні | Коли встановлено, повертає користувачів для кожного react id (аватари та імена користувачів). Тільки "public" приймається, що виключає приватні профілі. |
 
 ## Відповідь
 
@@ -13,7 +15,7 @@
 
 [inline-code-attrs-start title = 'Приклад getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпортувати класи:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Коли встановлено, повертає користувачів для кожного react id (аватари та імена користувачів). Тільки \"public\" приймається, що виключає приватні профілі.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

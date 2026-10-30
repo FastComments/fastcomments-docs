@@ -4,36 +4,38 @@ urlId
 
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| page | integer | query | No |  |
-| direction | string | query | No |  |
-| sso | string | query | No |  |
-| skip | integer | query | No |  |
-| skipChildren | integer | query | No |  |
-| limit | integer | query | No |  |
-| limitChildren | integer | query | No |  |
-| countChildren | boolean | query | No |  |
-| fetchPageForCommentId | string | query | No |  |
-| includeConfig | boolean | query | No |  |
-| countAll | boolean | query | No |  |
-| includei10n | boolean | query | No |  |
-| locale | string | query | No |  |
-| modules | string | query | No |  |
-| isCrawler | boolean | query | No |  |
-| includeNotificationCount | boolean | query | No |  |
-| asTree | boolean | query | No |  |
-| maxTreeDepth | integer | query | No |  |
-| useFullTranslationIds | boolean | query | No |  |
-| parentId | string | query | No |  |
-| searchText | string | query | No |  |
-| hashTags | array | query | No |  |
-| userId | string | query | No |  |
-| customConfigStr | string | query | No |  |
-| afterCommentId | string | query | No |  |
-| beforeCommentId | string | query | No |  |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да |  |
+| page | integer | query | Нет |  |
+| direction | string | query | Нет |  |
+| sso | string | query | Нет |  |
+| skip | integer | query | Нет |  |
+| skipChildren | integer | query | Нет |  |
+| limit | integer | query | Нет |  |
+| limitChildren | integer | query | Нет |  |
+| countChildren | boolean | query | Нет |  |
+| fetchPageForCommentId | string | query | Нет |  |
+| includeConfig | boolean | query | Нет |  |
+| countAll | boolean | query | Нет |  |
+| includei10n | boolean | query | Нет |  |
+| locale | string | query | Нет |  |
+| modules | string | query | Нет |  |
+| isCrawler | boolean | query | Нет |  |
+| includeNotificationCount | boolean | query | Нет |  |
+| asTree | boolean | query | Нет |  |
+| maxTreeDepth | integer | query | Нет |  |
+| useFullTranslationIds | boolean | query | Нет |  |
+| parentId | string | query | Нет |  |
+| searchText | string | query | Нет |  |
+| hashTags | array | query | Нет |  |
+| userId | string | query | Нет |  |
+| customConfigStr | string | query | Нет |  |
+| afterCommentId | string | query | Нет |  |
+| beforeCommentId | string | query | Нет |  |
+| questionId | string | query | Нет |  |
+| questionValue | integer | query | Нет |  |
 
 ## Ответ
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -124,5 +130,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

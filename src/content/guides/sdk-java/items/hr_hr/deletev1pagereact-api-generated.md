@@ -1,9 +1,10 @@
 ## Parametri
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Odgovor
 
@@ -11,9 +12,9 @@ Vraća: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer deleteV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV1PageReact primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

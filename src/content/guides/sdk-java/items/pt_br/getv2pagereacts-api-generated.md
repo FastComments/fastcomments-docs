@@ -1,9 +1,11 @@
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sim |  |
-| urlId | string | query | Sim |  |
+|------|------|-------------|-------------|-----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Quando definido, retorna os usuários para cada id de reação (avatares e nomes de usuário). Apenas "public" é aceito, o que omite perfis privados. |
 
 ## Resposta
 
@@ -28,19 +30,21 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Quando definido, retorna os usuários para cada id de reação (avatares e nomes de usuário). Apenas "public" é aceito, o que omite perfis privados.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sho)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReacts");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exceção ao chamar PublicApi#getV2PageReacts");
+      System.err.println("Código de status: " + e.getCode());
+      System.err.println("Motivo: " + e.getResponseBody());
+      System.err.println("Cabeçalhos da resposta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

@@ -6,6 +6,7 @@
 | urlId | string | query | Ja |  |
 | id | string | query | Ja |  |
 | title | string | query | Nee |  |
+| sso | string | query | Nee |  |
 
 ## Response
 
@@ -15,15 +16,16 @@ Retourneert: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'createV2PageReact Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor problemen, meld dit via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De volgende codevoorbeelden zijn nog in bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
 let title = "title_example" // String |  (optioneel)
+let sso = "sso_example" // String |  (optioneel)
 
-PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: title) { (response, error) in
+PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, options: PublicAPI.CreateV2PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -34,3 +36,5 @@ PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, title: tit
     }
 }
 [inline-code-end]
+
+---

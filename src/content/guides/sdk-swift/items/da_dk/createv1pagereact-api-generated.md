@@ -1,10 +1,11 @@
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| title | string | query | Nej |  |
+|------|------|-----------|----------|-------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Svar
 
@@ -12,16 +13,17 @@ Returnerer: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-s
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'Eksempel på createV1PageReact'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Ved problemer, rapportér venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let title = "title_example" // String |  (valgfri)
+let title = "title_example" // String | (valgfri)
+let sso = "sso_example" // String | (valgfri)
 
-PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, title: title) { (response, error) in
+PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, options: PublicAPI.CreateV1PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

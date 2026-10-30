@@ -1,22 +1,22 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Ime | Tip | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | query | Da |  |
 
-## Odziv
+## Response
 
-Vrne: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateQuestionResultResponse.swift)
+Returns: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateQuestionResultResponse.swift)
 
-## Primer
+## Example
 
-[inline-code-attrs-start title = 'Primer createQuestionResult'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createQuestionResult Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta. Če opazite težavo, jo prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji primeri kode so še v beta fazi. Za morebitne težave prosimo, da jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let createQuestionResultBody = CreateQuestionResultBody(urlId: "urlId_example", value: 123, questionId: "questionId_example", anonUserId: "anonUserId_example", userId: "userId_example", commentId: "commentId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // CreateQuestionResultBody | 
+let createQuestionResultBody = CreateQuestionResultBody(urlId: "urlId_example", value: 123, values: [123], questionId: "questionId_example", anonUserId: "anonUserId_example", userId: "userId_example", commentId: "commentId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // CreateQuestionResultBody | 
 
 DefaultAPI.createQuestionResult(tenantId: tenantId, createQuestionResultBody: createQuestionResultBody) { (response, error) in
     guard error == nil else {
@@ -29,3 +29,5 @@ DefaultAPI.createQuestionResult(tenantId: tenantId, createQuestionResultBody: cr
     }
 }
 [inline-code-end]
+
+---

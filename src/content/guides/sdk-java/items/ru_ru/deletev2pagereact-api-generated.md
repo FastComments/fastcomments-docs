@@ -1,10 +1,11 @@
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
 | urlId | string | query | Да |  |
 | id | string | query | Да |  |
+| sso | string | query | Нет |  |
 
 ## Ответ
 
@@ -12,9 +13,9 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример использования deleteV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV2PageReact Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,8 +31,10 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,3 +47,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

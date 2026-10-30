@@ -1,27 +1,29 @@
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
-| title | string | query | Ne |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Odgovor
 
 Vrne: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateV1PageReact.swift)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer createV1PageReact'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za morebitne težave poročajte na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta različici. Za morebitne težave prosimo, da jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let title = "title_example" // String |  (neobvezno)
+let sso = "sso_example" // String |  (neobvezno)
 
-PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, title: title) { (response, error) in
+PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, options: PublicAPI.CreateV1PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

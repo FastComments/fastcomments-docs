@@ -1,16 +1,17 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|----------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | broadcastId | string | query | Ja |  |
 | sessionId | string | query | Nein |  |
 | sso | string | query | Nein |  |
+| locale | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
+Rückgabe: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SaveCommentsResponseWithPresence.java)
 
 ## Beispiel
 
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

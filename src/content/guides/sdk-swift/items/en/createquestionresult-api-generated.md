@@ -16,7 +16,7 @@ Returns: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastco
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let createQuestionResultBody = CreateQuestionResultBody(urlId: "urlId_example", value: 123, questionId: "questionId_example", anonUserId: "anonUserId_example", userId: "userId_example", commentId: "commentId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // CreateQuestionResultBody | 
+let createQuestionResultBody = CreateQuestionResultBody(urlId: "urlId_example", value: 123, values: [123], questionId: "questionId_example", anonUserId: "anonUserId_example", userId: "userId_example", commentId: "commentId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // CreateQuestionResultBody | 
 
 DefaultAPI.createQuestionResult(tenantId: tenantId, createQuestionResultBody: createQuestionResultBody) { (response, error) in
     guard error == nil else {

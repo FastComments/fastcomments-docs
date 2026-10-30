@@ -1,13 +1,14 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい |  |
-| id | string | query | はい |  |
-| title | string | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
-## レスポンス
+## 応答
 
 戻り値: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
@@ -15,7 +16,7 @@
 
 [inline-code-attrs-start title = 'createV2PageReact の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスのインポート:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,9 +33,11 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -5,6 +5,7 @@
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | id | string | query | Ja |  |
+| sso | string | query | Nej |  |
 
 ## Svar
 
@@ -14,14 +15,15 @@ Returnerer: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'deleteV2PageReact Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. Hvis du oplever et problem, så rapporter det venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
+let sso = "sso_example" // String |  (valgfri)
 
-PublicAPI.deleteV2PageReact(tenantId: tenantId, urlId: urlId, id: id) { (response, error) in
+PublicAPI.deleteV2PageReact(tenantId: tenantId, urlId: urlId, id: id, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ PublicAPI.deleteV2PageReact(tenantId: tenantId, urlId: urlId, id: id) { (respons
     }
 }
 [inline-code-end]
-
----

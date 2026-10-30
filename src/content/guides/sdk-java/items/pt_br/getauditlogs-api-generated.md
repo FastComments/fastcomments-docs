@@ -1,13 +1,20 @@
 ## Parâmetros
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Sim |  |
-| limit | number | query | Não |  |
-| skip | number | query | Não |  |
-| order | string | query | Não |  |
-| after | number | query | Não |  |
-| before | number | query | Não |  |
+| Nome | Tipo | Localização | Obrigatório | Descrição |
+|------|------|------------|--------------|-----------|
+| tenantId | string | query | Yes | O tenant para ler os logs de auditoria. |
+| limit | integer | query | No | Quantos logs retornar. Máximo 10000, padrão 1000. |
+| skip | integer | query | No | Quantos logs pular, para paginação. |
+| order | string | query | No | Direção de ordenação no horário do evento. Padrão DESC (mais recentes primeiro). |
+| after | integer | query | No |  |
+| before | integer | query | No |  |
+| username | string | query | No | Retornar apenas eventos realizados por este nome de usuário. |
+| ip | string | query | No | Retornar apenas eventos deste endereço IP. |
+| crudType | string | query | No | Retornar apenas eventos deste tipo: c, r, u, d ou login. |
+| resourceName | string | query | No | Retornar apenas eventos para este recurso, por exemplo Usuário ou Moderador. |
+| targetId | string | query | No | Retornar apenas eventos cujo objeto afetado tem este ID. |
+| target | string | query | No | Correspondência de substring sem distinção entre maiúsculas e minúsculas no rótulo do objeto afetado, por exemplo um nome de usuário ou e‑mail. |
+| includeManagedTenants | boolean | query | No | Também retornar eventos de tenants que este tenant gerencia. |
 
 ## Resposta
 
@@ -15,7 +22,7 @@ Retorna: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo de getAuditLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo getAuditLogs'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar classes:
 import com.fastcomments.invoker.ApiClient;
@@ -30,19 +37,26 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Configurar autorização da chave API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Descomente a linha a seguir para definir um prefixo para a chave API, por exemplo "Token" (padrão null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    Double limit = 3.4D; // Double | 
-    Double skip = 3.4D; // Double | 
-    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | 
-    Double after = 3.4D; // Double | 
-    Double before = 3.4D; // Double | 
+    String tenantId = "tenantId_example"; // String | O tenant para ler os logs de auditoria.
+    Integer limit = 56; // Integer | Quantos logs retornar. Máximo 10000, padrão 1000.
+    Integer skip = 56; // Integer | Quantos logs pular, para paginação.
+    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | Direção de ordenação no horário do evento. Padrão DESC (mais recentes primeiro).
+    Long after = 56L; // Long | 
+    Long before = 56L; // Long | 
+    String username = "username_example"; // String | Retornar apenas eventos realizados por este nome de usuário.
+    String ip = "ip_example"; // String | Retornar apenas eventos deste endereço IP.
+    String crudType = "crudType_example"; // String | Retornar apenas eventos deste tipo: c, r, u, d ou login.
+    String resourceName = "resourceName_example"; // String | Retornar apenas eventos para este recurso, por exemplo Usuário ou Moderador.
+    String targetId = "targetId_example"; // String | Retornar apenas eventos cujo objeto afetado tem este ID.
+    String target = "target_example"; // String | Correspondência de substring sem distinção entre maiúsculas e minúsculas no rótulo do objeto afetado, por exemplo um nome de usuário ou e‑mail.
+    Boolean includeManagedTenants = true; // Boolean | Também retornar eventos de tenants que este tenant gerencia.
     try {
       GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
@@ -50,6 +64,13 @@ public class Example {
             .order(order)
             .after(after)
             .before(before)
+            .username(username)
+            .ip(ip)
+            .crudType(crudType)
+            .resourceName(resourceName)
+            .targetId(targetId)
+            .target(target)
+            .includeManagedTenants(includeManagedTenants)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

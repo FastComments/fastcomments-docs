@@ -3,7 +3,7 @@
   "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
     {
-      "name": "AI-coderingsagenten",
+      "name": "AI-coderingsagents",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -51,7 +51,13 @@
       "type": "readme"
     },
     {
-      "name": "aggregatie",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Agent-tenant",
+      "type": "api"
+    },
+    {
+      "name": "aggregate",
       "file": "aggregate-api-generated.md",
       "subCat": "Aggregatie",
       "type": "api"
@@ -69,159 +75,177 @@
       "type": "api"
     },
     {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "Batchtaken",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "Batchtaken",
+      "type": "api"
+    },
+    {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blokkeren vanuit reactie",
+      "subCat": "Blokkeren vanuit commentaar",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blokkeren vanuit reactie",
+      "subCat": "Blokkeren vanuit commentaar",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Controleer geblokkeerde reacties",
+      "subCat": "Controle geblokkeerde commentaren",
       "type": "api"
     },
     {
       "name": "blockUserFromComment",
       "file": "blockuserfromcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "createCommentPublic",
       "file": "createcommentpublic-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "deleteComment",
       "file": "deletecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "deleteCommentPublic",
       "file": "deletecommentpublic-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "deleteCommentVote",
       "file": "deletecommentvote-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "flagComment",
       "file": "flagcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getComment",
       "file": "getcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getComments",
       "file": "getcomments-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentsPublic",
       "file": "getcommentspublic-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentText",
       "file": "getcommenttext-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentVoteUserNames",
       "file": "getcommentvoteusernames-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "lockComment",
       "file": "lockcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "pinComment",
       "file": "pincomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "saveComment",
       "file": "savecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "saveCommentsBulk",
       "file": "savecommentsbulk-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
+      "type": "api"
+    },
+    {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unFlagComment",
       "file": "unflagcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unLockComment",
       "file": "unlockcomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "unPinComment",
       "file": "unpincomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "updateComment",
       "file": "updatecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "voteComment",
       "file": "votecomment-api-generated.md",
-      "subCat": "Reacties",
+      "subCat": "Commentaren",
       "type": "api"
     },
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Reacties voor gebruiker",
+      "subCat": "Commentaren voor gebruiker",
       "type": "api"
     },
     {
@@ -323,7 +347,7 @@
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Gebeurtenislogboek",
+      "subCat": "Globaal gebeurtenislogboek",
       "type": "api"
     },
     {
@@ -389,7 +413,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Markeer reactie",
+      "subCat": "Commentaar markeren",
       "type": "api"
     },
     {
@@ -438,6 +462,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtags",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Mijn profiel",
       "type": "api"
     },
     {
@@ -701,37 +731,37 @@
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "Moderatoren",
+      "subCat": "Moderators",
       "type": "api"
     },
     {
@@ -837,6 +867,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Pagina's",
@@ -855,27 +897,87 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Pagina's",
       "type": "api"
     },
     {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
+      "subCat": "Pagina's",
+      "type": "api"
+    },
+    {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "In afwachting zijnde webhookgebeurtenissen",
+      "subCat": "In afwachting van webhookgebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "In afwachting zijnde webhookgebeurtenissen",
+      "subCat": "In afwachting van webhookgebeurtenissen",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "In afwachting zijnde webhookgebeurtenissen",
+      "subCat": "In afwachting van webhookgebeurtenissen",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Pollstemmen",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Pollstemmen",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Pollstemmen",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Pollstemmen",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Polls",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Polls",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Polls",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Polls",
       "type": "api"
     },
     {
@@ -1109,31 +1211,31 @@
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Huurders",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Huurders",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Huurders",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Huurders",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Huurders",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
@@ -1175,19 +1277,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Gebruikersbadgevoortgang",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Gebruikersbadgevoortgang",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Voortgang gebruikersbadge",
+      "subCat": "Gebruikersbadgevoortgang",
       "type": "api"
     },
     {
@@ -1302,6 +1404,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Stemmen",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

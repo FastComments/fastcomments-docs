@@ -4,36 +4,38 @@ urlId
 
 ## Parametre
 
-| Name | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| page | integer | query | Nej |  |
-| direction | string | query | Nej |  |
-| sso | string | query | Nej |  |
-| skip | integer | query | Nej |  |
-| skipChildren | integer | query | Nej |  |
-| limit | integer | query | Nej |  |
-| limitChildren | integer | query | Nej |  |
-| countChildren | boolean | query | Nej |  |
-| fetchPageForCommentId | string | query | Nej |  |
-| includeConfig | boolean | query | Nej |  |
-| countAll | boolean | query | Nej |  |
-| includei10n | boolean | query | Nej |  |
-| locale | string | query | Nej |  |
-| modules | string | query | Nej |  |
-| isCrawler | boolean | query | Nej |  |
-| includeNotificationCount | boolean | query | Nej |  |
-| asTree | boolean | query | Nej |  |
-| maxTreeDepth | integer | query | Nej |  |
-| useFullTranslationIds | boolean | query | Nej |  |
-| parentId | string | query | Nej |  |
-| searchText | string | query | Nej |  |
-| hashTags | array | query | Nej |  |
-| userId | string | query | Nej |  |
-| customConfigStr | string | query | Nej |  |
-| afterCommentId | string | query | Nej |  |
-| beforeCommentId | string | query | Nej |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## Svar
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,9 +116,12 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Undtagelse ved kald af PublicApi#getCommentsPublic
       System.err.println("Exception when calling PublicApi#getCommentsPublic");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

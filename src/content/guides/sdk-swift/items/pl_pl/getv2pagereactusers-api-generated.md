@@ -1,10 +1,11 @@
 ## Parametry
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+|------|------|--------------|----------|------|
 | tenantId | string | path | Tak |  |
 | urlId | string | query | Tak |  |
 | id | string | query | Tak |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
@@ -14,14 +15,15 @@ Zwraca: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomm
 
 [inline-code-attrs-start title = 'Przykład getV2PageReactUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku problemu zgłoś go przez http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W razie problemów, proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
+let sso = "sso_example" // String |  (opcjonalnie)
 
-PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (response, error) in
+PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (respo
     }
 }
 [inline-code-end]
-
----

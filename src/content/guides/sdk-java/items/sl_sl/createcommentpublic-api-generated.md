@@ -1,12 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | broadcastId | string | query | Da |  |
 | sessionId | string | query | Ne |  |
 | sso | string | query | Ne |  |
+| locale | string | query | Ne |  |
 
 ## Odgovor
 
@@ -14,7 +15,7 @@ Vrne: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastc
 
 ## Primer
 
-[inline-code-attrs-start title = 'createCommentPublic Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

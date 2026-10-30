@@ -1,10 +1,11 @@
----
 ## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
 | urlId | string | query | כן |  |
+| sso | string | query | לא |  |
+| includeUserInfo | string | query | לא | כאשר מוגדר, מחזיר את המשתמשים שאהבו את העמוד (תמונות פרופיל ושמות משתמש). רק \"public\" מתקבל, מה שמסיר פרופילים פרטיים. |
 
 ## תגובה
 
@@ -12,9 +13,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל‑getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | כאשר מוגדר, מחזיר את המשתמשים שאהבו את העמוד (תמונות פרופיל ושמות משתמש). רק \"public\" מתקבל, מה שמסיר פרופילים פרטיים.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -43,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

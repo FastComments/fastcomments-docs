@@ -2,8 +2,8 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Evet |  |
-| id | string | path | Evet |  |
+| tenantId | string | query | Yes |  |
+| id | string | path | Yes |  |
 
 ## Yanıt
 
@@ -13,12 +13,12 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'updateQuestionResult Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let id = "id_example" // String | 
-let updateQuestionResultBody = UpdateQuestionResultBody(urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example", value: 123, commentId: "commentId_example", questionId: "questionId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // UpdateQuestionResultBody | 
+let updateQuestionResultBody = UpdateQuestionResultBody(urlId: "urlId_example", anonUserId: "anonUserId_example", userId: "userId_example", value: 123, values: [123], commentId: "commentId_example", questionId: "questionId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // UpdateQuestionResultBody | 
 
 DefaultAPI.updateQuestionResult(tenantId: tenantId, id: id, updateQuestionResultBody: updateQuestionResultBody) { (response, error) in
     guard error == nil else {

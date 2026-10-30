@@ -1,10 +1,11 @@
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Requerido | Descripción |
+| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Sí |  |
 | urlId | string | query | Sí |  |
 | title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Respuesta
 
@@ -12,7 +13,7 @@ Devuelve: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-jav
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo de createV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo createV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -30,9 +31,11 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV1PageReact(tenantId, urlId)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -45,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

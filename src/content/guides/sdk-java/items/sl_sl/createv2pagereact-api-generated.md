@@ -1,11 +1,12 @@
-## Parametri
+## Parameters
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | id | string | query | Da |  |
 | title | string | query | Ne |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -32,12 +33,15 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Izjema pri klicu PublicApi#createV2PageReact
       System.err.println("Exception when calling PublicApi#createV2PageReact");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -47,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

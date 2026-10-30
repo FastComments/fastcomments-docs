@@ -2,11 +2,11 @@
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | 是 |  |
-| isLive | boolean | query | 否 |  |
-| doSpamCheck | boolean | query | 否 |  |
-| sendEmails | boolean | query | 否 |  |
-| populateNotifications | boolean | query | 否 |  |
+| tenantId | string | query | Yes |  |
+| isLive | boolean | query | No |  |
+| doSpamCheck | boolean | query | No |  |
+| sendEmails | boolean | query | No |  |
+| populateNotifications | boolean | query | No |  |
 
 ## 响应
 
@@ -16,15 +16,15 @@
 
 [inline-code-attrs-start title = 'saveCommentsBulk 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于 beta 阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告。
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let createCommentParams = [CreateCommentParams(date: 123, localDateString: "localDateString_example", localDateHours: 123, commenterName: "commenterName_example", commenterEmail: "commenterEmail_example", commenterLink: "commenterLink_example", comment: "comment_example", productId: 123, userId: "userId_example", avatarSrc: "avatarSrc_example", parentId: "parentId_example", mentions: [CommentUserMentionInfo(id: "id_example", tag: "tag_example", rawTag: "rawTag_example", type: "type_example", sent: false)], hashTags: [CommentUserHashTagInfo(id: "id_example", tag: "tag_example", url: "url_example", retain: false)], pageTitle: "pageTitle_example", isFromMyAccountPage: false, url: "url_example", urlId: "urlId_example", meta: 123, moderationGroupIds: ["moderationGroupIds_example"], rating: 123, fromOfflineRestore: false, autoplayDelayMS: 123, feedbackIds: ["feedbackIds_example"], questionValues: "TODO", tos: false, botId: "botId_example", approved: false, domain: "domain_example", ip: "ip_example", isPinned: false, locale: "locale_example", reviewed: false, verified: false, votes: 123, votesDown: 123, votesUp: 123)] // [CreateCommentParams] | 
-let isLive = true // Bool |  (optional)
-let doSpamCheck = true // Bool |  (optional)
-let sendEmails = true // Bool |  (optional)
-let populateNotifications = true // Bool |  (optional)
+let tenantId = "tenantId_example" // 字符串 | 
+let createCommentParams = [CreateCommentParams(date: 123, localDateString: "localDateString_example", localDateHours: 123, commenterName: "commenterName_example", commenterEmail: "commenterEmail_example", commenterLink: "commenterLink_example", comment: "comment_example", productId: 123, userId: "userId_example", avatarSrc: "avatarSrc_example", parentId: "parentId_example", mentions: [CommentUserMentionInfo(id: "id_example", tag: "tag_example", rawTag: "rawTag_example", type: "type_example", sent: false)], hashTags: [CommentUserHashTagInfo(id: "id_example", tag: "tag_example", url: "url_example", retain: false)], pageTitle: "pageTitle_example", isFromMyAccountPage: false, url: "url_example", urlId: "urlId_example", meta: 123, moderationGroupIds: ["moderationGroupIds_example"], rating: 123, fromOfflineRestore: false, autoplayDelayMS: 123, feedbackIds: ["feedbackIds_example"], questionValues: "TODO", poll: CommentPollInput(question: "question_example", options: ["options_example"], closesAt: "closesAt_example", privacy: 123, requireVoteToSeeResults: false), tos: false, botId: "botId_example", approved: false, domain: "domain_example", ip: "ip_example", isPinned: false, locale: "locale_example", reviewed: false, verified: false, votes: 123, votesDown: 123, votesUp: 123)] // [CreateCommentParams] | 
+let isLive = true // 布尔 |  (optional)
+let doSpamCheck = true // 布尔 |  (optional)
+let sendEmails = true // 布尔 |  (optional)
+let populateNotifications = true // 布尔 |  (optional)
 
 DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentsBulkOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
     guard error == nil else {
@@ -37,3 +37,5 @@ DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createComme
     }
 }
 [inline-code-end]
+
+---

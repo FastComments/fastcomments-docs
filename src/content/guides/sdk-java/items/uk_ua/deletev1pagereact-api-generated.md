@@ -1,9 +1,10 @@
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
+| sso | string | query | Ні |  |
 
 ## Відповідь
 
@@ -13,7 +14,7 @@
 
 [inline-code-attrs-start title = 'Приклад deleteV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

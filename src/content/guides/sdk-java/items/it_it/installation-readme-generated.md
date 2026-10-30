@@ -16,25 +16,25 @@ Quindi aggiungi le dipendenze di cui hai bisogno:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- Client API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Libreria Core (include SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- Libreria PubSub (per eventi live) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:3.0.1"
+    // Client API
+    implementation "com.fastcomments:client:3.1.1"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    // Libreria Core (include SSO)
+    implementation "com.fastcomments:core:3.1.1"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    // Libreria PubSub (per eventi live)
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### Contenuto della Libreria
+### Library Contents
 
-Questa libreria contiene tre moduli. Il client API generato, la libreria core Java che contiene utility scritte a mano per semplificare l'uso dell'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di cambiamento.
+Questa libreria contiene tre moduli. Il client API generato, la libreria Java core che contiene utility scritte a mano per semplificare l'uso dell'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di cambiamento.
 
 - [Documentazione della Libreria Client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Documentazione della Libreria Core, Inclusi Esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Documentazione della Libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### API Pubbliche vs API Sicure
+### Public vs Secured APIs
 
-Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi` e `ModerationApi`. La `DefaultApi` contiene metodi che richiedono la tua chiave API, e la `PublicApi` contiene metodi che possono essere chiamati direttamente da un browser/dispositivo mobile/etc senza autenticazione.
+Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi` e `ModerationApi`. Il `DefaultApi` contiene metodi che richiedono la tua chiave API, e il `PublicApi` contiene metodi che possono essere chiamati direttamente da un browser/dispositivo mobile/etc senza autenticazione.
 
-La `ModerationApi` fornisce una suite completa di API di moderazione in tempo reale e veloci. Ogni metodo della `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione FastComments.com.
+Il `ModerationApi` fornisce una suite completa di API di moderazione live e rapide. Ogni metodo del `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione FastComments.com.

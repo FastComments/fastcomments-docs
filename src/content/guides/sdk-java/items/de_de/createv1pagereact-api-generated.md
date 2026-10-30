@@ -1,14 +1,15 @@
 ## Parameter
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Name | Typ | Ort | Erforderlich | Beschreibung |
+|------|-----|-----|---------------|--------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | title | string | query | Nein |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+Rückgabe: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## Beispiel
 
@@ -30,12 +31,15 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV1PageReact(tenantId, urlId)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Ausnahme beim Aufruf von PublicApi#createV1PageReact
       System.err.println("Exception when calling PublicApi#createV1PageReact");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

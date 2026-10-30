@@ -5,10 +5,11 @@
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | id | string | query | Ja |  |
+| sso | string | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReactUsersResponse.java)
+Rückgabe: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReactUsersResponse.java)
 
 ## Beispiel
 
@@ -30,15 +31,17 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetV2PageReactUsersResponse result = apiInstance.getV2PageReactUsers(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReactUsers");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Ausnahme beim Aufruf von PublicApi#getV2PageReactUsers");
+      System.err.println("Statuscode: " + e.getCode());
+      System.err.println("Grund: " + e.getResponseBody());
+      System.err.println("Antwort-Header: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

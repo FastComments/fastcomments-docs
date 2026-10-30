@@ -1,19 +1,19 @@
-### מנהל חבילות Swift
+### Swift Package Manager
 
-הוסף את הבא לקובץ `Package.swift` שלך:
+Add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
 ]
 ```
 
-או ב‑Xcode:
-1. קובץ > הוסף חבילות...
-2. הזן את כתובת ה‑URL של המאגרים: `https://github.com/fastcomments/fastcomments-swift.git`
-3. בחר את הגרסה שברצונך להשתמש
+Or in Xcode:
+1. File > Add Packages...
+2. Enter the repository URL: `https://github.com/fastcomments/fastcomments-swift.git`
+3. Select the version you want to use
 
-### דרישות
+### Requirements
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+

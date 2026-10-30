@@ -1,13 +1,15 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | 設定すると、ページに「いいね」したユーザー（アバターとユーザー名）を返します。Only "public" is accepted, which omits private profiles. |
 
-## レスポンス
+## 応答
 
-戻り値: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
+返却: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
 
 ## 例
 
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | 設定すると、ページに「いいね」したユーザー（アバターとユーザー名）を返します。Only \"public\" is accepted, which omits private profiles.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +48,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

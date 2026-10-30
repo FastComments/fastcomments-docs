@@ -4,10 +4,10 @@ urlId
 
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Sì |  |
-| urlId | string | query | Sì |  |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
+|------|------|-----------|--------------|------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
 | page | integer | query | No |  |
 | direction | string | query | No |  |
 | sso | string | query | No |  |
@@ -34,6 +34,8 @@ urlId
 | customConfigStr | string | query | No |  |
 | afterCommentId | string | query | No |  |
 | beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## Risposta
 
@@ -41,7 +43,7 @@ Restituisce: [`GetCommentsResponseWithPresencePublicComment`](https://github.com
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio di getCommentsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio getCommentsPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importa classi:
 import com.fastcomments.invoker.ApiClient;
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,9 +116,12 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Eccezione durante la chiamata a PublicApi#getCommentsPublic
       System.err.println("Exception when calling PublicApi#getCommentsPublic");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

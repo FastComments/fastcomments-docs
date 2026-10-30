@@ -1,9 +1,11 @@
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|-------------|
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
+| sso | string | query | Ne |  |
+| includeUserInfo | string | query | Ne | Kada je postavljeno, vraća korisnike koji su lajkovali stranicu (avatari i korisnička imena). Samo "public" je prihvaćeno, što izostavlja privatne profile. |
 
 ## Odgovor
 
@@ -11,9 +13,9 @@ Vraća: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blo
 
 ## Primer
 
-[inline-code-attrs-start title = 'getV1PageLikes Example'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Kada je postavljeno, vraća korisnike koji su lajkovali stranicu (avatari i korisnička imena). Samo \"public\" je prihvaćeno, što izostavlja privatne profile.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

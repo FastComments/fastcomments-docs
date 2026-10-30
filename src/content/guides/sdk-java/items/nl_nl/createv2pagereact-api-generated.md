@@ -1,15 +1,16 @@
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
-| id | string | query | Ja |  |
-| title | string | query | Nee |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| id | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
-## Response
+## Respons
 
-Geeft terug: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+Retourneert: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## Voorbeeld
 
@@ -32,9 +33,11 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,17 +1,19 @@
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Όταν οριστεί, επιστρέφει τους χρήστες για κάθε react id (εικονίδια και ονόματα χρηστών). Μόνο το \"public\" γίνεται αποδεκτό, το οποίο παραλείπει τα ιδιωτικά προφίλ. |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV2PageReacts Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Όταν οριστεί, επιστρέφει τους χρήστες για κάθε react id (εικονίδια και ονόματα χρηστών). Μόνο το \"public\" γίνεται αποδεκτό, το οποίο παραλείπει τα ιδιωτικά προφίλ.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

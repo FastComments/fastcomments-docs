@@ -1,9 +1,11 @@
 ## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
+| sso | string | query | 아니오 |  |
+| includeUserInfo | string | query | 아니오 | 설정하면 각 react id에 대한 사용자(아바타와 사용자 이름)를 반환합니다. "public"만 허용되며, 이는 비공개 프로필을 제외합니다. |
 
 ## 응답
 
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | 설정하면 각 react id에 대한 사용자(아바타와 사용자 이름)를 반환합니다. "public"만 허용되며, 이는 비공개 프로필을 제외합니다.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

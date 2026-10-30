@@ -1,20 +1,21 @@
 ## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
-| title | string | query | לא |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## תגובה
 
-מחזיר: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
+Returns: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,9 +31,11 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV1PageReact(tenantId, urlId)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

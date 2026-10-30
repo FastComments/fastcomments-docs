@@ -4,6 +4,8 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | При установке возвращает пользователей для каждого react id (аватары и имена пользователей). Только \"public\" принимается, что исключает приватные профили. |
 
 ## Ответ
 
@@ -13,7 +15,7 @@
 
 [inline-code-attrs-start title = 'Пример getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Импортировать классы:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | При установке возвращает пользователей для каждого react id (аватары и имена пользователей). Только \"public\" принимается, что исключает приватные профили.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

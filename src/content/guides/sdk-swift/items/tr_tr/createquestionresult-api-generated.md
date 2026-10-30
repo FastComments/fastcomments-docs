@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
@@ -12,11 +12,11 @@ Döndürür: [`CreateQuestionResultResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'createQuestionResult Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let createQuestionResultBody = CreateQuestionResultBody(urlId: "urlId_example", value: 123, questionId: "questionId_example", anonUserId: "anonUserId_example", userId: "userId_example", commentId: "commentId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // CreateQuestionResultBody | 
+let createQuestionResultBody = CreateQuestionResultBody(urlId: "urlId_example", value: 123, values: [123], questionId: "questionId_example", anonUserId: "anonUserId_example", userId: "userId_example", commentId: "commentId_example", meta: [MetaItem(name: "name_example", values: ["values_example"])]) // CreateQuestionResultBody | 
 
 DefaultAPI.createQuestionResult(tenantId: tenantId, createQuestionResultBody: createQuestionResultBody) { (response, error) in
     guard error == nil else {

@@ -1,12 +1,13 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | broadcastId | string | query | Ja |  |
 | sessionId | string | query | Nej |  |
 | sso | string | query | Nej |  |
+| locale | string | query | Nej |  |
 
 ## Svar
 
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

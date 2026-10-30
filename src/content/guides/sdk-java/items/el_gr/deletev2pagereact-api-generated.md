@@ -2,9 +2,10 @@
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| id | string | query | Yes |  |
+| tenantId | string | path | Ναι |  |
+| urlId | string | query | Ναι |  |
+| id | string | query | Ναι |  |
+| sso | string | query | Όχι |  |
 
 ## Απόκριση
 
@@ -12,7 +13,7 @@
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα deleteV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV2PageReact Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -30,8 +31,10 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,3 +47,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

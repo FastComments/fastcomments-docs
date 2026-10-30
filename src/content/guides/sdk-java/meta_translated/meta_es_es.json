@@ -1,6 +1,6 @@
 {
   "name": "Java SDK",
-  "pageHeader": "FastComments Java SDK",
+  "pageHeader": "FastComments SDK de Java",
   "itemsOrdered": [
     {
       "name": "Agentes de codificación IA",
@@ -9,27 +9,33 @@
       "type": "readme"
     },
     {
-      "name": "Installation",
+      "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Comenzando",
+      "subCat": "Primeros pasos",
       "type": "readme"
     },
     {
-      "name": "Quick Start",
+      "name": "Inicio rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Notes",
+      "name": "Notas",
       "file": "notes-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "aggregate",
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Inquilinos de agente",
+      "type": "api"
+    },
+    {
+      "name": "agregar",
       "file": "aggregate-api-generated.md",
-      "subCat": "Agregación",
+      "subCat": "Agregado",
       "type": "api"
     },
     {
@@ -42,6 +48,18 @@
       "name": "logoutPublic",
       "file": "logoutpublic-api-generated.md",
       "subCat": "Autenticación",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "Trabajos por lotes",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "Trabajos por lotes",
       "type": "api"
     },
     {
@@ -159,6 +177,12 @@
       "type": "api"
     },
     {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Comentarios",
@@ -239,55 +263,55 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Plantillas de correo",
+      "subCat": "Plantillas de correo electrónico",
       "type": "api"
     },
     {
@@ -365,7 +389,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Denunciar comentario",
+      "subCat": "Marcar comentario",
       "type": "api"
     },
     {
@@ -389,31 +413,37 @@
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Etiquetas hash",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Etiquetas hash",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Etiquetas hash",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Etiquetas hash",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Etiquetas hash",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Yo",
       "type": "api"
     },
     {
@@ -713,13 +743,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Conteo de notificaciones",
+      "subCat": "Recuento de notificaciones",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Conteo de notificaciones",
+      "subCat": "Recuento de notificaciones",
       "type": "api"
     },
     {
@@ -813,6 +843,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Páginas",
@@ -831,8 +873,20 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
     },
@@ -852,6 +906,66 @@
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "Eventos de webhook pendientes",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Votos de encuesta",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
+      "subCat": "Encuestas",
       "type": "api"
     },
     {
@@ -1043,43 +1157,43 @@
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
@@ -1278,6 +1392,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Votos",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooks",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

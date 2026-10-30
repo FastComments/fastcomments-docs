@@ -5,7 +5,7 @@ urlId
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
+|------|------|-----|--------------|--------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | page | integer | query | Nein |  |
@@ -34,10 +34,12 @@ urlId
 | customConfigStr | string | query | Nein |  |
 | afterCommentId | string | query | Nein |  |
 | beforeCommentId | string | query | Nein |  |
+| questionId | string | query | Nein |  |
+| questionValue | integer | query | Nein |  |
 
 ## Antwort
 
-Gibt zurück: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
+Rückgabe: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetCommentsResponseWithPresencePublicComment.java)
 
 ## Beispiel
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,13 +116,16 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
+      // Ausnahme beim Aufruf von PublicApi#getCommentsPublic
       System.err.println("Exception when calling PublicApi#getCommentsPublic");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Statuscode: " + e.getCode());
+      System.err.println("Grund: " + e.getResponseBody());
+      System.err.println("Antwort-Header: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

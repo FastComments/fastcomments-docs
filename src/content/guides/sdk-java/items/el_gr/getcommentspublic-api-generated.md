@@ -5,35 +5,37 @@ urlId
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
-| page | integer | query | Όχι |  |
-| direction | string | query | Όχι |  |
-| sso | string | query | Όχι |  |
-| skip | integer | query | Όχι |  |
-| skipChildren | integer | query | Όχι |  |
-| limit | integer | query | Όχι |  |
-| limitChildren | integer | query | Όχι |  |
-| countChildren | boolean | query | Όχι |  |
-| fetchPageForCommentId | string | query | Όχι |  |
-| includeConfig | boolean | query | Όχι |  |
-| countAll | boolean | query | Όχι |  |
-| includei10n | boolean | query | Όχι |  |
-| locale | string | query | Όχι |  |
-| modules | string | query | Όχι |  |
-| isCrawler | boolean | query | Όχι |  |
-| includeNotificationCount | boolean | query | Όχι |  |
-| asTree | boolean | query | Όχι |  |
-| maxTreeDepth | integer | query | Όχι |  |
-| useFullTranslationIds | boolean | query | Όχι |  |
-| parentId | string | query | Όχι |  |
-| searchText | string | query | Όχι |  |
-| hashTags | array | query | Όχι |  |
-| userId | string | query | Όχι |  |
-| customConfigStr | string | query | Όχι |  |
-| afterCommentId | string | query | Όχι |  |
-| beforeCommentId | string | query | Όχι |  |
+|------|------|----------|------------|------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## Απόκριση
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

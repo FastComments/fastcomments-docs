@@ -1,12 +1,13 @@
 ## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
 | broadcastId | string | query | Evet |  |
 | sessionId | string | query | Hayır |  |
 | sso | string | query | Hayır |  |
+| locale | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

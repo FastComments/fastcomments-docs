@@ -5,7 +5,7 @@
     {
       "name": "AI coding agents",
       "file": "ai-coding-agents-readme-generated.md",
-      "subCat": "文件說明",
+      "subCat": "文件",
       "type": "readme"
     },
     {
@@ -17,13 +17,13 @@
     {
       "name": "Library Contents",
       "file": "library-contents-readme-generated.md",
-      "subCat": "文件說明",
+      "subCat": "文件",
       "type": "readme"
     },
     {
       "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
-      "subCat": "文件說明",
+      "subCat": "文件",
       "type": "readme"
     },
     {
@@ -41,14 +41,20 @@
     {
       "name": "Common Issues",
       "file": "common-issues-readme-generated.md",
-      "subCat": "文件說明",
+      "subCat": "文件",
       "type": "readme"
     },
     {
       "name": "Notes",
       "file": "notes-readme-generated.md",
-      "subCat": "文件說明",
+      "subCat": "文件",
       "type": "readme"
+    },
+    {
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "代理租戶",
+      "type": "api"
     },
     {
       "name": "aggregate",
@@ -65,7 +71,19 @@
     {
       "name": "logoutPublic",
       "file": "logoutpublic-api-generated.md",
-      "subCat": "驗證",
+      "subCat": "認證",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "批次作業",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "批次作業",
       "type": "api"
     },
     {
@@ -83,7 +101,7 @@
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "檢查已封鎖評論",
+      "subCat": "檢查已封鎖的評論",
       "type": "api"
     },
     {
@@ -183,6 +201,12 @@
       "type": "api"
     },
     {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "評論",
+      "type": "api"
+    },
+    {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "評論",
@@ -221,7 +245,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "評論",
+      "subCat": "使用者的評論",
       "type": "api"
     },
     {
@@ -438,6 +462,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "標籤",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "我的",
       "type": "api"
     },
     {
@@ -837,6 +867,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "頁面",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "頁面",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "頁面",
@@ -855,8 +897,20 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "頁面",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
+      "subCat": "頁面",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
       "subCat": "頁面",
       "type": "api"
     },
@@ -876,6 +930,54 @@
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "待處理 Webhook 事件",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "投票",
       "type": "api"
     },
     {
@@ -959,43 +1061,43 @@
     {
       "name": "addSSOUser",
       "file": "addssouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
       "name": "deleteSSOUser",
       "file": "deletessouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
       "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
       "name": "getSSOUserById",
       "file": "getssouserbyid-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
       "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
       "name": "patchSSOUser",
       "file": "patchssouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
       "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
-      "subCat": "單一登入使用者",
+      "subCat": "單點登入使用者",
       "type": "api"
     },
     {
@@ -1302,6 +1404,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhook",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhook",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhook",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhook",
       "type": "api"
     }
   ]

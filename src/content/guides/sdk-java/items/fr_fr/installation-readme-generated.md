@@ -1,6 +1,6 @@
 ### Maven
 
-Ajoutez le dépôt Repsy au POM de votre projet :
+Ajoutez le dépôt Repsy à votre POM de projet :
 
 ```xml
 <repositories>
@@ -20,21 +20,21 @@ Ensuite, ajoutez les dépendances dont vous avez besoin :
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- Bibliothèque principale (inclut SSO) -->
+    <!-- Bibliothèque Core (inclut SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- Bibliothèque PubSub (pour les événements en direct) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // Client API
-    implementation "com.fastcomments:client:3.0.1"
+    implementation "com.fastcomments:client:3.1.1"
     
-    // Bibliothèque principale (inclut SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    // Bibliothèque Core (inclut SSO)
+    implementation "com.fastcomments:core:3.1.1"
     
     // Bibliothèque PubSub (pour les événements en direct)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
 ### Contenu de la bibliothèque
 
-Cette bibliothèque contient trois modules. Le client API généré, la bibliothèque Java principale qui contient des utilitaires écrits à la main pour faciliter l'utilisation de l'API, et le module `pubsub` qui est une bibliothèque pour s'abonner aux flux de changements.
+Cette bibliothèque contient trois modules : le client API généré, la bibliothèque Java core qui comprend des utilitaires écrits à la main pour faciliter l’utilisation de l’API, et le module `pubsub` qui est une bibliothèque pour s’abonner aux flux de changements.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentation de la bibliothèque Client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentation de la bibliothèque Core, incluant des exemples SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentation de la bibliothèque PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### API publiques vs sécurisées
+### APIs publiques vs sécurisées
 
-Pour le client API, il existe trois classes, `DefaultApi`, `PublicApi` et `ModerationApi`. Le `DefaultApi` contient des méthodes qui nécessitent votre clé API, et le `PublicApi` contient des méthodes qui peuvent être appelées directement depuis un navigateur/appareil mobile/etc. sans authentification.
+Pour le client API, il existe trois classes : `DefaultApi`, `PublicApi` et `ModerationApi`. La classe `DefaultApi` contient des méthodes qui nécessitent votre clé API, tandis que `PublicApi` contient des méthodes qui peuvent être appelées directement depuis un navigateur, un appareil mobile, etc., sans authentification.
 
-Le `ModerationApi` fournit une suite étendue d'API de modération en temps réel et rapides. Chaque méthode du `ModerationApi` accepte un paramètre `sso` et peut s'authentifier via SSO ou un cookie de session FastComments.com.
+La classe `ModerationApi` fournit une suite étendue d’APIs de modération en temps réel et rapides. Chaque méthode de `ModerationApi` accepte un paramètre `sso` et peut s’authentifier via SSO ou un cookie de session FastComments.com.

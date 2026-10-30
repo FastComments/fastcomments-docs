@@ -1,18 +1,19 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Απαιτείται | Περιγραφή |
-|------|------|----------|----------|-------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-------------|
 | tenantId | string | path | Ναι |  |
 | urlId | string | query | Ναι |  |
 | title | string | query | Όχι |  |
+| sso | string | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateV1PageReact.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα createV1PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createV1PageReact Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Εισαγωγή κλάσεων:
 import com.fastcomments.invoker.ApiClient;
@@ -30,9 +31,11 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV1PageReact(tenantId, urlId)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

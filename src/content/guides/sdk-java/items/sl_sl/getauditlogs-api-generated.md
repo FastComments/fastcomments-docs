@@ -1,15 +1,22 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Da |  |
-| limit | number | query | Ne |  |
-| skip | number | query | Ne |  |
-| order | string | query | Ne |  |
-| after | number | query | Ne |  |
-| before | number | query | Ne |  |
+| tenantId | string | query | Yes | Najemnik, za katerega se berejo revizijski dnevniki. |
+| limit | integer | query | No | Koliko dnevnikov naj se vrne. Največ 10000, privzeto 1000. |
+| skip | integer | query | No | Koliko dnevnikov naj se preskoči, za paginacijo. |
+| order | string | query | No | Smer razvrščanja po času dogodka. Privzeto DESC (najprej najnovejše). |
+| after | integer | query | No |  |
+| before | integer | query | No |  |
+| username | string | query | No | Vrni le dogodke, ki jih je izvedel to uporabniško ime. |
+| ip | string | query | No | Vrni le dogodke s tega IP naslova. |
+| crudType | string | query | No | Vrni le dogodke tega tipa: c, r, u, d ali login. |
+| resourceName | string | query | No | Vrni le dogodke za ta vir, npr. Uporabnik ali Moderator. |
+| targetId | string | query | No | Vrni le dogodke, katerih prizadeti objekt ima ta ID. |
+| target | string | query | No | Neobčutljivo na velikost črk iskanje podniza v oznaki prizadetega objekta, npr. uporabniško ime ali e-pošto. |
+| includeManagedTenants | boolean | query | No | Vrni tudi dogodke od najemnikov, ki jih ta najemnik upravlja. |
 
-## Odgovor
+## Odziv
 
 Vrne: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
@@ -30,19 +37,26 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj avtentikacijo API ključa: api_key
+    // Nastavi avtorizacijo API ključa: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    Double limit = 3.4D; // Double | 
-    Double skip = 3.4D; // Double | 
-    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | 
-    Double after = 3.4D; // Double | 
-    Double before = 3.4D; // Double | 
+    String tenantId = "tenantId_example"; // String | Najemnik, za katerega se berejo revizijski dnevniki.
+    Integer limit = 56; // Integer | Koliko dnevnikov naj se vrne. Največ 10000, privzeto 1000.
+    Integer skip = 56; // Integer | Koliko dnevnikov naj se preskoči, za paginacijo.
+    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | Smer razvrščanja po času dogodka. Privzeto DESC (najprej najnovejše).
+    Long after = 56L; // Long | 
+    Long before = 56L; // Long | 
+    String username = "username_example"; // String | Vrni le dogodke, ki jih je izvedel to uporabniško ime.
+    String ip = "ip_example"; // String | Vrni le dogodke s tega IP naslova.
+    String crudType = "crudType_example"; // String | Vrni le dogodke tega tipa: c, r, u, d ali login.
+    String resourceName = "resourceName_example"; // String | Vrni le dogodke za ta vir, npr. Uporabnik ali Moderator.
+    String targetId = "targetId_example"; // String | Vrni le dogodke, katerih prizadeti objekt ima ta ID.
+    String target = "target_example"; // String | Neobčutljivo na velikost črk iskanje podniza v oznaki prizadetega objekta, npr. uporabniško ime ali e-pošto.
+    Boolean includeManagedTenants = true; // Boolean | Vrni tudi dogodke od najemnikov, ki jih ta najemnik upravlja.
     try {
       GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
@@ -50,6 +64,13 @@ public class Example {
             .order(order)
             .after(after)
             .before(before)
+            .username(username)
+            .ip(ip)
+            .crudType(crudType)
+            .resourceName(resourceName)
+            .targetId(targetId)
+            .target(target)
+            .includeManagedTenants(includeManagedTenants)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

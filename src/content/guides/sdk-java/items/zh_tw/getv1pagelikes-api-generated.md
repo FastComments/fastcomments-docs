@@ -1,14 +1,15 @@
----
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | 路徑 | 是 |  |
-| urlId | string | 查詢 | 是 |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | 當設定時，返回點讚此頁面的使用者（頭像和使用者名稱）。僅接受 "public"，會省略私人資料。 |
 
 ## 回應
 
-回傳: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
+返回：[`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
 
 ## 範例
 
@@ -27,14 +28,18 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // 字串 | 
-    String urlId = "urlId_example"; // 字串 | 
+    String tenantId = "tenantId_example"; // String | 
+    String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | 當設定時，返回點讚此頁面的使用者（頭像和使用者名稱）。僅接受 \"public\"，會省略私人資料。
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV1PageLikes");
+      System.err.println("Exception when calling PublicApi#getV1PageLikes"); // 呼叫 PublicApi#getV1PageLikes 時的例外
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
