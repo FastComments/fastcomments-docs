@@ -4,19 +4,19 @@ Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migrati
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | query | Да |  |
 
 ## Response
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
+Враћа: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример migratePages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'migratePages Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи пример кода је још у бета фази. За било који проблем, пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи пример кода је још увек у бета фази. За било који проблем, молимо пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
