@@ -42,6 +42,11 @@
       "name": "Extra: Code Snippet for Page Builder",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "Using The Page Builder"
+    },
+    {
+      "name": "Add Polls To Your BigCommerce Store",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -32,6 +32,11 @@
       "name": "Floating Likes Button",
       "file": "hostinger-floating-likes.md",
       "subCat": "Hostinger Floating Likes"
+    },
+    {
+      "name": "Add Polls To Your Hostinger Site",
+      "file": "hostinger-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

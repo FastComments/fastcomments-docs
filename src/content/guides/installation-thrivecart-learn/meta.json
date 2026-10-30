@@ -27,6 +27,11 @@
       "name": "Customization",
       "file": "thrivecart-learn-customize.md",
       "subCat": "ThriveCart Learn+ Installation"
+    },
+    {
+      "name": "Add Polls To Your ThriveCart Learn+ Course",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

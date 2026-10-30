@@ -14,6 +14,7 @@ keeping them in touch with their communities. We also want to keep administrator
 - When someone replies in the same thread (in-app and email notification).
 - When someone replies to a child comment in the same thread (in-app and email notification).
 - When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When someone responds to a poll you created (in-app notification, plus a daily email). See [Poll Notifications](/guide-polls.html#poll-notifications).
 - When a user comments for the first time (But not with SSO).
 - When a user leaves a comment in a session that is not verified (But not with SSO).
   - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.

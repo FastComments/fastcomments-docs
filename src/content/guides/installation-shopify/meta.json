@@ -62,6 +62,11 @@
       "name": "Manual Install (Advanced)",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify Installation"
+    },
+    {
+      "name": "Add Polls To Your Shopify Store",
+      "file": "shopify-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

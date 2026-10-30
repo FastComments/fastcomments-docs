@@ -37,6 +37,11 @@
       "name": "Customization",
       "file": "webnode-customize.md",
       "subCat": "Webnode Installation"
+    },
+    {
+      "name": "Add Polls To Your Webnode Site",
+      "file": "webnode-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

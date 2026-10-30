@@ -17,6 +17,11 @@
       "name": "Customization",
       "file": "memberspace-customize.md",
       "subCat": "MemberSpace Installation"
+    },
+    {
+      "name": "Add Polls To Your MemberSpace Site",
+      "file": "memberspace-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

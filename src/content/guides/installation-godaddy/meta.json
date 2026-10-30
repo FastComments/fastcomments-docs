@@ -32,6 +32,11 @@
       "name": "Customization",
       "file": "godaddy-customize.md",
       "subCat": "Godaddy Installation"
+    },
+    {
+      "name": "Add Polls To Your Godaddy Site",
+      "file": "godaddy-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -62,6 +62,11 @@
       "name": "Site Customization",
       "file": "gohighlevel-site-customize.md",
       "subCat": "GoHighLevel Site Installation"
+    },
+    {
+      "name": "Add Polls To Your GoHighLevel Site",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

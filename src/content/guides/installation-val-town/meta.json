@@ -36,6 +36,11 @@
       "name": "Domain Errors",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Add Polls To Your Val Town App",
+      "file": "val-town-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

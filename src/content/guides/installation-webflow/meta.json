@@ -32,6 +32,11 @@
       "name": "Customization",
       "file": "webflow-customize.md",
       "subCat": "Webflow Installation"
+    },
+    {
+      "name": "Add Polls To Your Webflow Site",
+      "file": "webflow-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

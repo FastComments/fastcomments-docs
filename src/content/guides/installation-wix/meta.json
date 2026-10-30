@@ -37,6 +37,11 @@
       "name": "Customization",
       "file": "wix-customize.md",
       "subCat": "Wix Installation"
+    },
+    {
+      "name": "Add Polls To Your Wix Site",
+      "file": "wix-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

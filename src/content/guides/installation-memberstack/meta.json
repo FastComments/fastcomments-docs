@@ -17,6 +17,11 @@
       "name": "Customization",
       "file": "memberstack-customize.md",
       "subCat": "Memberstack Installation"
+    },
+    {
+      "name": "Add Polls To Your Memberstack Site",
+      "file": "memberstack-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

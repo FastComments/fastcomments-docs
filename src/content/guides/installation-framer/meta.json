@@ -32,6 +32,11 @@
       "name": "Customization",
       "file": "framer-customize.md",
       "subCat": "Framer Installation"
+    },
+    {
+      "name": "Add Polls To Your Framer Site",
+      "file": "framer-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

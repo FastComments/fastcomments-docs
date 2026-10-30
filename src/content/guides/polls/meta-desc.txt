@@ -1,0 +1,1 @@
+Add live polls to your comment threads. Enable polls, choose who can create them and vote, set voter privacy, and get notified as responses come in.

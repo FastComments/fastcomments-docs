@@ -72,6 +72,11 @@
       "name": "Customization",
       "file": "squarespace-customize.md",
       "subCat": "Squarespace Next Steps"
+    },
+    {
+      "name": "Add Polls To Your Squarespace Site",
+      "file": "squarespace-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

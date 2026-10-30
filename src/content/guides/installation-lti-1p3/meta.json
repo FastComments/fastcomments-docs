@@ -72,6 +72,11 @@
       "name": "Least Privilege & Data Minimization",
       "file": "lti-least-privilege.md",
       "subCat": "Security & Compliance"
+    },
+    {
+      "name": "Add Polls To Your LMS Course",
+      "file": "lti-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

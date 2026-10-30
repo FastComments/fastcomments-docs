@@ -87,6 +87,11 @@
       "name": "Deactivating vs Uninstalling The Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Plugin Removal"
+    },
+    {
+      "name": "Add Polls To Your WordPress Site",
+      "file": "wordpress-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

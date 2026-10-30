@@ -32,6 +32,11 @@
       "name": "Customization",
       "file": "super-so-learn-customize.md",
       "subCat": "Super.so Installation"
+    },
+    {
+      "name": "Add Polls To Your Super.so Site",
+      "file": "super-so-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

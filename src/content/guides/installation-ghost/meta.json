@@ -52,6 +52,11 @@
       "name": "Customization",
       "file": "ghost-customize.md",
       "subCat": "Ghost Installation"
+    },
+    {
+      "name": "Add Polls To Your Ghost Site",
+      "file": "ghost-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -57,6 +57,11 @@
       "name": "Requirements",
       "file": "drupal-requirements.md",
       "subCat": "Drupal Installation"
+    },
+    {
+      "name": "Add Polls To Your Drupal Site",
+      "file": "drupal-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

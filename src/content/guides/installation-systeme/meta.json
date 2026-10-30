@@ -27,6 +27,11 @@
       "name": "Customization",
       "file": "systeme-customize.md",
       "subCat": "Systeme.io Installation"
+    },
+    {
+      "name": "Add Polls To Your Systeme.io Blog",
+      "file": "systeme-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

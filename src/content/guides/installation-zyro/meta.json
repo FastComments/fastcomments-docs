@@ -32,6 +32,11 @@
       "name": "Floating Likes Button",
       "file": "zyro-floating-likes.md",
       "subCat": "Zyro Floating Likes"
+    },
+    {
+      "name": "Add Polls To Your Zyro Site",
+      "file": "zyro-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

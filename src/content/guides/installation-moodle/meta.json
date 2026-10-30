@@ -42,6 +42,11 @@
       "name": "Domain Errors",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle Plugin Installation"
+    },
+    {
+      "name": "Add Polls To Your Moodle Site",
+      "file": "moodle-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

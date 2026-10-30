@@ -1,0 +1,52 @@
+{
+  "name": "Live Polls",
+  "pageHeader": "Live Polls in Comments",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "What are Live Polls",
+      "file": "what-are-polls.md",
+      "subCat": "Background"
+    },
+    {
+      "name": "Enabling Polls",
+      "file": "enabling-polls.md",
+      "subCat": "Setting Up Polls"
+    },
+    {
+      "name": "Who Can Create Polls",
+      "file": "who-can-create-polls.md",
+      "subCat": "Setting Up Polls"
+    },
+    {
+      "name": "Allowing Anonymous Poll Votes",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Setting Up Polls"
+    },
+    {
+      "name": "Creating a Poll",
+      "file": "creating-a-poll.md",
+      "subCat": "Using Polls"
+    },
+    {
+      "name": "Voting and Live Results",
+      "file": "voting-and-live-results.md",
+      "subCat": "Using Polls"
+    },
+    {
+      "name": "Voter Privacy",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Using Polls"
+    },
+    {
+      "name": "Poll Notifications",
+      "file": "poll-notifications.md",
+      "subCat": "Using Polls"
+    },
+    {
+      "name": "Polls API",
+      "file": "polls-api.md",
+      "subCat": "For Developers"
+    }
+  ]
+}

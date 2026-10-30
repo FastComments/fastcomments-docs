@@ -52,6 +52,11 @@
       "name": "Domain Errors",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Troubleshooting"
+    },
+    {
+      "name": "Add Polls To Your Canvas Course",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

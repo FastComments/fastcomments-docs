@@ -1,4 +1,3 @@
-
 {
   "name": "ClickFunnels Installation",
   "pageHeader": "Add Live Chat to ClickFunnels Courses",
@@ -33,6 +32,11 @@
       "name": "Extra: Auto Play Comments",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Auto Play Comments"
+    },
+    {
+      "name": "Add Polls To Your ClickFunnels Course",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

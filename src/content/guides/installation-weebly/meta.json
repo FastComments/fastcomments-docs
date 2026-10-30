@@ -32,6 +32,11 @@
       "name": "Customization",
       "file": "weebly-customize.md",
       "subCat": "Weebly Installation"
+    },
+    {
+      "name": "Add Polls To Your Weebly Site",
+      "file": "weebly-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

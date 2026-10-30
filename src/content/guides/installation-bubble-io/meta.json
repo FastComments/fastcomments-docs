@@ -35,6 +35,11 @@
     {
       "name": "Domain Errors",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Add Polls To Your Bubble.io App",
+      "file": "bubble-io-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

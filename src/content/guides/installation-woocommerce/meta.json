@@ -7,6 +7,11 @@
       "name": "Setup WordPress Plugin",
       "file": "woocommerce.md",
       "subCat": "WooCommerce Installation"
+    },
+    {
+      "name": "Add Polls To Your WooCommerce Store",
+      "file": "woocommerce-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

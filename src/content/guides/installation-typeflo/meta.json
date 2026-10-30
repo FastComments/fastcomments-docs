@@ -25,6 +25,11 @@
     {
       "name": "Domain Errors",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Add Polls To Your Typeflo.io Blog",
+      "file": "typeflo-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -32,6 +32,11 @@
       "name": "Customization",
       "file": "ionos-customize.md",
       "subCat": "Ionos Installation"
+    },
+    {
+      "name": "Add Polls To Your Ionos Site",
+      "file": "ionos-polls.md",
+      "subCat": "Polls"
     }
   ]
 }
