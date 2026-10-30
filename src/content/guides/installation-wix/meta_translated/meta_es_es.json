@@ -1,30 +1,30 @@
 {
   "name": "Instalación de Wix",
-  "pageHeader": "Agregar comentarios a sitios de Wix",
+  "pageHeader": "Agregar Comentarios a Sitios Wix",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "Paso 1: Editar la página correcta",
+      "name": "Paso 1: Editar la Página Correcta",
       "file": "wix-step-1.md",
       "subCat": "Instalación de Wix"
     },
     {
-      "name": "Paso 2: Agregar un bloque incrustado",
+      "name": "Paso 2: Añadir un Bloque de Inserción",
       "file": "wix-step-2.md",
       "subCat": "Instalación de Wix"
     },
     {
-      "name": "Paso 3: Copiar y pegar código personalizado",
+      "name": "Paso 3: Copiar/Pegar Código Personalizado",
       "file": "wix-step-3.md",
       "subCat": "Instalación de Wix"
     },
     {
-      "name": "Paso 4: Ajustar el tamaño",
+      "name": "Paso 4: Redimensionar",
       "file": "wix-step-4.md",
       "subCat": "Instalación de Wix"
     },
     {
-      "name": "Paso 5: Hilos de comentarios únicos",
+      "name": "Paso 5: Hilos de Comentarios Únicos",
       "file": "wix-step-5.md",
       "subCat": "Instalación de Wix"
     },
@@ -37,6 +37,11 @@
       "name": "Personalización",
       "file": "wix-customize.md",
       "subCat": "Instalación de Wix"
+    },
+    {
+      "name": "Añadir Encuestas a Tu Sitio Wix",
+      "file": "wix-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

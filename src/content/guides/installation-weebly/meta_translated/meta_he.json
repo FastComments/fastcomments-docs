@@ -1,6 +1,6 @@
 {
   "name": "התקנת Weebly",
-  "pageHeader": "הוספת תגובות לאתרי Weebly",
+  "pageHeader": "הוספת תגובות לאתרים של Weebly",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -24,7 +24,7 @@
       "subCat": "התקנת Weebly"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "weebly-domain-errors.md",
       "subCat": "התקנת Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "התאמה אישית",
       "file": "weebly-customize.md",
       "subCat": "התקנת Weebly"
+    },
+    {
+      "name": "הוסף סקרים לאתר ה-Weebly שלך",
+      "file": "weebly-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

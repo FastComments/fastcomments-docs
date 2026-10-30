@@ -17,6 +17,11 @@
       "name": "Anpassung",
       "file": "memberstack-customize.md",
       "subCat": "Memberstack-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Memberstack-Website hinzufügen",
+      "file": "memberstack-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

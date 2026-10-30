@@ -17,6 +17,11 @@
       "name": "Personalizzazione",
       "file": "memberstack-customize.md",
       "subCat": "Installazione di Memberstack"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Shopify 安裝",
-  "pageHeader": "在 Shopify 網站新增留言",
+  "pageHeader": "在 Shopify 網站上添加評論",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -9,47 +9,47 @@
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "在部落格文章與商品頁新增留言",
+      "name": "在部落格文章與商品上添加評論",
       "file": "shopify-add-comments.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "新增留言數量徽章",
+      "name": "添加評論計數徽章",
       "file": "shopify-comment-count.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "新增近期留言串流",
+      "name": "添加最近評論資訊流",
       "file": "shopify-recent-comments.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "新增近期討論串流",
+      "name": "添加最近討論資訊流",
       "file": "shopify-recent-discussions.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "新增熱門頁面列表",
+      "name": "添加熱門頁面清單",
       "file": "shopify-top-pages.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "新增評價摘要",
+      "name": "添加評論摘要",
       "file": "shopify-reviews-summary.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "Shopify 顧客自動登入",
+      "name": "自動登入 Shopify 客戶",
       "file": "shopify-sso.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "匯入現有留言",
+      "name": "匯入現有評論",
       "file": "shopify-import.md",
       "subCat": "Shopify 安裝"
     },
     {
-      "name": "自訂",
+      "name": "自訂設定",
       "file": "shopify-customize.md",
       "subCat": "Shopify 安裝"
     },
@@ -62,6 +62,11 @@
       "name": "手動安裝（進階）",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify 安裝"
+    },
+    {
+      "name": "在您的 Shopify 商店添加投票",
+      "file": "shopify-polls.md",
+      "subCat": "投票"
     }
   ]
 }

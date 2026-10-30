@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Добавяне на коментиране в реално време към сайтове на Bubble.io",
+  "pageHeader": "Добавете живо коментиране към сайтове на Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -9,17 +9,17 @@
       "subCat": "Инсталация"
     },
     {
-      "name": "2. Вмъкнете кода",
+      "name": "2. Вмъкнете код",
       "file": "bubble-io-step-2.md",
       "subCat": "Инсталация"
     },
     {
-      "name": "3. Намерете настройката за ширина",
+      "name": "3. Намерете настройка за ширина",
       "file": "bubble-io-step-3.md",
       "subCat": "Инсталация"
     },
     {
-      "name": "4. Коригирайте оформлението",
+      "name": "4. Настройте оформлението",
       "file": "bubble-io-step-4.md",
       "subCat": "Инсталация"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Грешки в домейна",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Добавете анкети към вашето приложение Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

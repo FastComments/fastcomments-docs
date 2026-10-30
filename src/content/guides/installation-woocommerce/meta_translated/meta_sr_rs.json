@@ -1,12 +1,17 @@
 {
-  "name": "Инсталација WooCommerce-а",
-  "pageHeader": "Додајте коментарисање уживо на WooCommerce сајтове",
+  "name": "Instalacija WooCommerce-a",
+  "pageHeader": "Dodajte live komentarisanje na WooCommerce sajtove",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Подешавање WordPress додатка",
+      "name": "Postavljanje WordPress dodatka",
       "file": "woocommerce.md",
-      "subCat": "Инсталација WooCommerce-а"
+      "subCat": "Instalacija WooCommerce-a"
+    },
+    {
+      "name": "Dodajte ankete u vašu WooCommerce prodavnicu",
+      "file": "woocommerce-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

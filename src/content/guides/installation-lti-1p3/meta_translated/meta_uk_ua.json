@@ -1,77 +1,82 @@
 {
   "name": "Встановлення LMS (LTI 1.3)",
-  "pageHeader": "Додайте коментарі у ваш LMS через LTI 1.3",
+  "pageHeader": "Додати коментарі до вашого LMS за допомогою LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Ціни",
+      "name": "Ціноутворення",
       "file": "lti-plans.md",
-      "subCat": "Стисло"
+      "subCat": "TLDR"
     },
     {
       "name": "Швидкий старт",
       "file": "lti-quick-start.md",
-      "subCat": "Стисло"
+      "subCat": "TLDR"
     },
     {
       "name": "Підтримувані платформи",
       "file": "lti-supported-platforms.md",
-      "subCat": "Стисло"
+      "subCat": "TLDR"
     },
     {
-      "name": "Згенерувати URL реєстрації",
+      "name": "Створити URL реєстрації",
       "file": "lti-generate-url.md",
       "subCat": "Налаштування FastComments"
     },
     {
-      "name": "Зареєструвати в D2L Brightspace",
+      "name": "Реєстрація в D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
-      "name": "Зареєструвати в Moodle",
+      "name": "Реєстрація в Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
-      "name": "Зареєструвати в Blackboard Learn",
+      "name": "Реєстрація в Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
-      "name": "Зареєструвати в Sakai або Schoology",
+      "name": "Реєстрація в Sakai або Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Зареєструвати інструмент"
+      "subCat": "Реєстрація інструменту"
     },
     {
-      "name": "Додати до вмісту курсу в D2L",
+      "name": "Додати до вмісту курсу D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Додати до вмісту курсу в Moodle",
+      "name": "Додати до вмісту курсу Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Додати до вмісту курсу в Blackboard",
+      "name": "Додати до вмісту курсу Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Додати до вмісту курсу в Sakai або Schoology",
+      "name": "Додати до вмісту курсу Sakai або Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Додати до курсу"
     },
     {
-      "name": "Усунення несправностей",
+      "name": "Усунення неполадок",
       "file": "lti-troubleshooting.md",
       "subCat": "Використання інструменту"
     },
     {
-      "name": "Принцип найменших привілеїв і мінімізації даних",
+      "name": "Принцип найменших привілеїв та мінімізація даних",
       "file": "lti-least-privilege.md",
       "subCat": "Безпека та відповідність"
+    },
+    {
+      "name": "Додати опитування до вашого курсу LMS",
+      "file": "lti-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

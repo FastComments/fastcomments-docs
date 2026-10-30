@@ -24,7 +24,7 @@
       "subCat": "התקנת WordPress"
     },
     {
-      "name": "משתמשים, ממנים ומנהלים",
+      "name": "משתמשים, ממחזרים ומנהלים",
       "file": "wordpress-users-moderators-admins.md",
       "subCat": "התקנת WordPress"
     },
@@ -81,12 +81,17 @@
     {
       "name": "העברת התגובות שלך לאתר חדש",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "העברה מחוץ ל-WordPress"
+      "subCat": "העברה מ-WordPress"
     },
     {
-      "name": "השבתה מול הסרת תוסף",
+      "name": "השבתה מול הסרת הפלאגין",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "הסרת תוסף"
+      "subCat": "הסרת פלאגין"
+    },
+    {
+      "name": "הוספת סקרים לאתר WordPress שלך",
+      "file": "wordpress-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

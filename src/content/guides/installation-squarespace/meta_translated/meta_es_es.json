@@ -1,6 +1,6 @@
 {
   "name": "Instalación de Squarespace",
-  "pageHeader": "Agregar comentarios a sitios de Squarespace",
+  "pageHeader": "Agregar comentarios a sitios Squarespace",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Agregar comentarios a tu blog"
     },
     {
-      "name": "Paso 1: Abre la configuración del blog",
+      "name": "Paso 1: Abrir la configuración del blog",
       "file": "squarespace-blog-step-1.md",
       "subCat": "Agregar comentarios a tu blog"
     },
     {
-      "name": "Paso 2: Pega el código de FastComments.com",
+      "name": "Paso 2: Pegar tu código de FastComments.com",
       "file": "squarespace-blog-step-2.md",
       "subCat": "Agregar comentarios a tu blog"
     },
@@ -29,12 +29,12 @@
       "subCat": "Agregar comentarios a todas las páginas"
     },
     {
-      "name": "Paso 1: Abre las herramientas del desarrollador",
+      "name": "Paso 1: Abrir herramientas de desarrollo",
       "file": "squarespace-pages-all-pages-step-1.md",
       "subCat": "Agregar comentarios a todas las páginas"
     },
     {
-      "name": "Paso 2: Pega el código de FastComments.com",
+      "name": "Paso 2: Pegar tu código de FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
       "subCat": "Agregar comentarios a todas las páginas"
     },
@@ -49,12 +49,12 @@
       "subCat": "Agregar comentarios a una página específica"
     },
     {
-      "name": "Paso 1: Agrega un bloque de código",
+      "name": "Paso 1: Añadir bloque de código",
       "file": "squarespace-pages-specific-page-step-1.md",
       "subCat": "Agregar comentarios a una página específica"
     },
     {
-      "name": "Paso 2: Pega el código de FastComments.com",
+      "name": "Paso 2: Pegar tu código de FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
       "subCat": "Agregar comentarios a una página específica"
     },
@@ -66,12 +66,17 @@
     {
       "name": "Errores de dominio",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Siguientes pasos en Squarespace"
+      "subCat": "Próximos pasos de Squarespace"
     },
     {
       "name": "Personalización",
       "file": "squarespace-customize.md",
-      "subCat": "Siguientes pasos en Squarespace"
+      "subCat": "Próximos pasos de Squarespace"
+    },
+    {
+      "name": "Agregar encuestas a tu sitio Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

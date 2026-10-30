@@ -1,37 +1,42 @@
 {
-  "name": "Installation af Framer",
-  "pageHeader": "Tilføj live-kommentering til Framer-websteder",
+  "name": "Framer-installation",
+  "pageHeader": "Tilføj live-kommentarer til Framer-sider",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
       "name": "Trin 1: Åbn editoren",
       "file": "framer-step-1.md",
-      "subCat": "Installation af Framer"
+      "subCat": "Framer-installation"
     },
     {
       "name": "Trin 2: Tilføj indlejringsblok",
       "file": "framer-step-2.md",
-      "subCat": "Installation af Framer"
+      "subCat": "Framer-installation"
     },
     {
       "name": "Trin 3: Kopier og indsæt Framer-specifik FastComments-kode",
       "file": "framer-step-3.md",
-      "subCat": "Installation af Framer"
+      "subCat": "Framer-installation"
     },
     {
-      "name": "Trin 4: Justér widgetens og sidens højde",
+      "name": "Trin 4: Justér widget- og sidehøjde",
       "file": "framer-step-4.md",
-      "subCat": "Installation af Framer"
+      "subCat": "Framer-installation"
     },
     {
       "name": "Domænefejl",
       "file": "framer-domain-errors.md",
-      "subCat": "Installation af Framer"
+      "subCat": "Framer-installation"
     },
     {
       "name": "Tilpasning",
       "file": "framer-customize.md",
-      "subCat": "Installation af Framer"
+      "subCat": "Framer-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Framer-side",
+      "file": "framer-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

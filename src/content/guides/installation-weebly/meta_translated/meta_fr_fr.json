@@ -14,7 +14,7 @@
       "subCat": "Installation de Weebly"
     },
     {
-      "name": "Étape 3 : Publier !",
+      "name": "Étape 3 : Publier !",
       "file": "weebly-step-3.md",
       "subCat": "Installation de Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Personnalisation",
       "file": "weebly-customize.md",
       "subCat": "Installation de Weebly"
+    },
+    {
+      "name": "Ajouter des sondages à votre site Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

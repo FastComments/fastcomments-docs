@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "在 Bubble.io 網站加入即時留言功能",
+  "pageHeader": "為 Bubble.io 網站新增即時評論",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -19,12 +19,12 @@
       "subCat": "安裝"
     },
     {
-      "name": "4. 調整佈局",
+      "name": "4. 調整版面配置",
       "file": "bubble-io-step-4.md",
       "subCat": "安裝"
     },
     {
-      "name": "完成",
+      "name": "成功",
       "file": "bubble-io-success.md",
       "subCat": "安裝"
     },
@@ -35,6 +35,11 @@
     {
       "name": "網域錯誤",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "為您的 Bubble.io 應用程式新增投票",
+      "file": "bubble-io-polls.md",
+      "subCat": "投票"
     }
   ]
 }

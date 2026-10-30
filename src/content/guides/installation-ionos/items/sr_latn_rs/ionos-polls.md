@@ -1,0 +1,4 @@
+---
+Jednom kada je FastComments na vašem Ionos sajtu, možete takođe pokrenuti live ankete direktno u komentarima. Uključite **Enable Polls** u podešavanjima prilagođavanja widgeta i dugme za anketu pojavljuje se u alatnoj traci komentara. Ankete mogu imati od 2 do 10 opcija, rezultati se ažuriraju u realnom vremenu za sve na stranici, a vi birate ko može kreirati ankete i da li glasanje zahteva prijavu. Ništa drugo ne treba instalirati na Ionos.
+
+[Isprobajte demo Live anketa](https://fastcomments.com/product/live-polls) ili pročitajte [Dokumentacija o anketama](/guide-polls.html) da ih postavite.

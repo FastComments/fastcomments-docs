@@ -1,6 +1,6 @@
 {
   "name": "MemberSpace 安裝",
-  "pageHeader": "使用 MemberSpace 新增評論",
+  "pageHeader": "使用 MemberSpace 添加評論",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "自訂",
       "file": "memberspace-customize.md",
       "subCat": "MemberSpace 安裝"
+    },
+    {
+      "name": "在您的 MemberSpace 網站添加投票",
+      "file": "memberspace-polls.md",
+      "subCat": "投票"
     }
   ]
 }

@@ -6,32 +6,32 @@
     {
       "name": "Τιμολόγηση",
       "file": "canvas-lms-plans.md",
-      "subCat": "Σύνοψη"
+      "subCat": "TLDR"
     },
     {
       "name": "Γρήγορη εκκίνηση",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Σύνοψη"
+      "subCat": "TLDR"
     },
     {
       "name": "Ρύθμιση πίνακα ελέγχου FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Ρύθμιση LTI 1.3 στο Canvas"
+      "subCat": "Ρύθμιση Canvas LTI 1.3"
     },
     {
       "name": "Κλειδί προγραμματιστή Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Ρύθμιση LTI 1.3 στο Canvas"
+      "subCat": "Ρύθμιση Canvas LTI 1.3"
     },
     {
-      "name": "Ολοκλήρωση της σύνδεσης",
+      "name": "Ολοκλήρωση σύνδεσης",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Ρύθμιση LTI 1.3 στο Canvas"
+      "subCat": "Ρύθμιση Canvas LTI 1.3"
     },
     {
       "name": "Προσθήκη σε μάθημα",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Ρύθμιση LTI 1.3 στο Canvas"
+      "subCat": "Ρύθμιση Canvas LTI 1.3"
     },
     {
       "name": "Στυλ σχολιασμού",
@@ -52,6 +52,11 @@
       "name": "Σφάλματα τομέα",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Αντιμετώπιση προβλημάτων"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στο μάθημα Canvas",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "MemberSpace 설치",
-  "pageHeader": "MemberSpace로 댓글 추가하기",
+  "pageHeader": "MemberSpace로 댓글 추가",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "맞춤 설정",
       "file": "memberspace-customize.md",
       "subCat": "MemberSpace 설치"
+    },
+    {
+      "name": "MemberSpace 사이트에 설문 추가",
+      "file": "memberspace-polls.md",
+      "subCat": "설문"
     }
   ]
 }

@@ -3,19 +3,19 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Uw account identificeren",
+      "name": "Identificeren van uw account",
       "file": "tenant-id.md",
-      "subCat": "Basis"
+      "subCat": "De basis"
     },
     {
       "name": "Hoe reacties gekoppeld zijn aan pagina's en artikelen",
       "file": "url-id.md",
-      "subCat": "Basis"
+      "subCat": "De basis"
     },
     {
-      "name": "Dezelfde reacties weergeven op verschillende pagina's",
+      "name": "Het weergeven van dezelfde reacties op verschillende pagina's",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "Basis"
+      "subCat": "De basis"
     },
     {
       "name": "Aangepaste styling",
@@ -133,7 +133,7 @@
       "subCat": "Uiterlijk en gevoel"
     },
     {
-      "name": "Automatisch aanmaken van hashtags uitschakelen",
+      "name": "Automatisch hashtag aanmaken uitschakelen",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Uiterlijk en gevoel"
     },
@@ -258,49 +258,54 @@
       "subCat": "Paginering & Sortering"
     },
     {
-      "name": "Alle reacties in één keer weergeven - paginering uitschakelen",
+      "name": "Alle reacties in één keer weergeven - Paginering uitschakelen",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginering & Sortering"
     },
     {
       "name": "Reactievak verplaatsen naar na de reacties",
       "file": "input-after-comments.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Lengte van reacties beperken",
       "file": "max-comment-character-length.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Meerdere regels in reacties uitschakelen",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Aantal reacties per gebruiker beperken",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Nieuwe top-level reacties voorkomen",
       "file": "no-new-root-comments.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Maximale diepte van antwoorden",
       "file": "max-reply-depth.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Acceptatie van servicevoorwaarden verplichten",
       "file": "terms-of-service.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Waarschuwen bij verlaten met een niet-verzonden reactie",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "Het reactievak"
+      "subCat": "Het Reactievak"
+    },
+    {
+      "name": "Polls inschakelen",
+      "file": "enable-polls.md",
+      "subCat": "Het Reactievak"
     },
     {
       "name": "Overzicht Single Sign-On (SSO)",
@@ -328,7 +333,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Reactie-threads beschermen met Single Sign-On",
+      "name": "Commentaarthreads beschermen met Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -343,12 +348,12 @@
       "subCat": "Anonieme reacties"
     },
     {
-      "name": "E-mailvelden uitschakelen",
+      "name": "E-mailinvoer uitschakelen",
       "file": "disable-email-inputs.md",
       "subCat": "Anonieme reacties"
     },
     {
-      "name": "Label 'niet geverifieerd' uitschakelen",
+      "name": "Label 'Niet geverifieerd' uitschakelen",
       "file": "disable-unverified-label.md",
       "subCat": "Anonieme reacties"
     },
@@ -368,69 +373,69 @@
       "subCat": "Anonieme reacties"
     },
     {
-      "name": "Terugroepfuncties",
+      "name": "Callbacks",
       "file": "callbacks.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Handmatig de locale van de gebruiker definiëren",
       "file": "locale.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Toegestane talen beperken",
       "file": "allowed-languages.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Vertaling van reacties",
       "file": "comment-translation.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Paginatitels",
       "file": "page-title.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Nieuwe antwoorden voorkomen & stemmen uitschakelen",
       "file": "readonly.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Linkdomeinen beperken",
       "file": "restricting-link-domains.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Aantal reacties & alle geneste antwoorden tellen",
       "file": "count-all.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Links naar reageerders inschakelen",
       "file": "enable-commenter-links.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Moderatiegroepen",
       "file": "moderation-group-ids.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
-      "name": "Groep-ID's vermelden",
+      "name": "Vermeld groeps-ID's",
       "file": "mention-group-ids.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Omzeilen van third-party cookies",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Reacties met antwoorden verwijderen",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "Diversen"
+      "subCat": "Divers"
     },
     {
       "name": "Badges tonen in bovenbalk",

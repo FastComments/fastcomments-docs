@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Kod Bileşeni Ekle",
+      "name": "Adım 1: Kod Widget'ı Ekle",
       "file": "hostinger-step-1.md",
       "subCat": "Hostinger Site Kurulumu"
     },
@@ -14,7 +14,7 @@
       "subCat": "Hostinger Site Kurulumu"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "hostinger-site-success.md",
       "subCat": "Hostinger Site Kurulumu"
     },
@@ -29,9 +29,14 @@
       "subCat": "Hostinger Site Kurulumu"
     },
     {
-      "name": "Yüzen Beğeni Butonu",
+      "name": "Yüzen Beğeniler Düğmesi",
       "file": "hostinger-floating-likes.md",
       "subCat": "Hostinger Yüzen Beğeniler"
+    },
+    {
+      "name": "Hostinger Sitenize Anketler Ekleyin",
+      "file": "hostinger-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

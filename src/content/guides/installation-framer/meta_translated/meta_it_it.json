@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Apri l'editor",
+      "name": "Passo 1: Apri l'Editor",
       "file": "framer-step-1.md",
       "subCat": "Installazione di Framer"
     },
     {
-      "name": "Passo 2: Aggiungi un blocco incorporato",
+      "name": "Passo 2: Aggiungi blocco di incorporamento",
       "file": "framer-step-2.md",
       "subCat": "Installazione di Framer"
     },
@@ -32,6 +32,11 @@
       "name": "Personalizzazione",
       "file": "framer-customize.md",
       "subCat": "Installazione di Framer"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Framer",
+      "file": "framer-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

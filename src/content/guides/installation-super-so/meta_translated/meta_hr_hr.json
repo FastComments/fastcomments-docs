@@ -1,6 +1,6 @@
 {
   "name": "Instalacija Super.so",
-  "pageHeader": "Dodajte uživo rasprave na Super.so web-stranice",
+  "pageHeader": "Dodajte uživo rasprave na Super.so stranice",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Pogledajte također: standardni widget komentara",
+      "name": "Vidi također: Redovni widget za komentare",
       "file": "super-so-comment-widget.md",
       "subCat": "Instalacija Super.so"
     },
@@ -24,7 +24,7 @@
       "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "super-so-learn-domain-errors.md",
       "subCat": "Instalacija Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Prilagodba",
       "file": "super-so-learn-customize.md",
       "subCat": "Instalacija Super.so"
+    },
+    {
+      "name": "Dodajte ankete na svoju Super.so stranicu",
+      "file": "super-so-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

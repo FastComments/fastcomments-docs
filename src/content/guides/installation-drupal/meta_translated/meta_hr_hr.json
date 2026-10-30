@@ -1,12 +1,12 @@
 {
   "name": "Instalacija Drupala",
-  "pageHeader": "Omogućite komentare uživo na Drupal stranicama",
+  "pageHeader": "Dodajte komentiranje uživo na Drupal stranice",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
       "name": "Brzi početak",
       "file": "drupal-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacija",
@@ -19,7 +19,7 @@
       "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Blokovi widgeta",
+      "name": "Widget blokovi",
       "file": "drupal-widget-blocks.md",
       "subCat": "Instalacija Drupala"
     },
@@ -39,12 +39,12 @@
       "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Višejezično",
+      "name": "Višejezičnost",
       "file": "drupal-multilingual.md",
       "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Pohrana podataka u EU",
+      "name": "Smještaj podataka u EU",
       "file": "drupal-eu-data-residency.md",
       "subCat": "Instalacija Drupala"
     },
@@ -57,6 +57,11 @@
       "name": "Zahtjevi",
       "file": "drupal-requirements.md",
       "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Dodajte ankete na svoju Drupal stranicu",
+      "file": "drupal-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

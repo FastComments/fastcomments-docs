@@ -14,7 +14,7 @@
       "subCat": "Weebly のインストール"
     },
     {
-      "name": "ステップ 3: 公開する！",
+      "name": "ステップ 3: 公開！",
       "file": "weebly-step-3.md",
       "subCat": "Weebly のインストール"
     },
@@ -24,7 +24,7 @@
       "subCat": "Weebly のインストール"
     },
     {
-      "name": "ドメインのエラー",
+      "name": "ドメインエラー",
       "file": "weebly-domain-errors.md",
       "subCat": "Weebly のインストール"
     },
@@ -32,6 +32,11 @@
       "name": "カスタマイズ",
       "file": "weebly-customize.md",
       "subCat": "Weebly のインストール"
+    },
+    {
+      "name": "Weebly サイトに投票を追加する",
+      "file": "weebly-polls.md",
+      "subCat": "投票"
     }
   ]
 }

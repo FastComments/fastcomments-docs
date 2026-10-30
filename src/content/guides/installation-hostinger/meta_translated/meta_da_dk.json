@@ -6,32 +6,37 @@
     {
       "name": "Trin 1: Tilføj kode-widget",
       "file": "hostinger-step-1.md",
-      "subCat": "Installation af Hostinger-side"
+      "subCat": "Hostinger-sideinstallation"
     },
     {
       "name": "Trin 2: Tilføj koden",
       "file": "hostinger-step-2.md",
-      "subCat": "Installation af Hostinger-side"
+      "subCat": "Hostinger-sideinstallation"
     },
     {
       "name": "Succes",
       "file": "hostinger-site-success.md",
-      "subCat": "Installation af Hostinger-side"
+      "subCat": "Hostinger-sideinstallation"
     },
     {
       "name": "Domænefejl på siden",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Installation af Hostinger-side"
+      "subCat": "Hostinger-sideinstallation"
     },
     {
-      "name": "Tilpasning af websted",
+      "name": "Tilpasning af siden",
       "file": "hostinger-site-customize.md",
-      "subCat": "Installation af Hostinger-side"
+      "subCat": "Hostinger-sideinstallation"
     },
     {
-      "name": "Flydende like-knap",
+      "name": "Flydende likes-knap",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Hostinger Flydende Like-knap"
+      "subCat": "Hostinger flydende likes"
+    },
+    {
+      "name": "Tilføj afstemninger til din Hostinger-side",
+      "file": "hostinger-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

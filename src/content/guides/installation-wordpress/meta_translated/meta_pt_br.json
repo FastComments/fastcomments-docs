@@ -54,7 +54,7 @@
       "subCat": "Instalação do WordPress"
     },
     {
-      "name": "Comunicação entre Instalação do WordPress <> Servidor FastComment",
+      "name": "Comunicação WordPress <> Servidor FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalação do WordPress"
     },
@@ -81,12 +81,17 @@
     {
       "name": "Movendo Seus Comentários para um Novo Site",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "Migrando do WordPress"
+      "subCat": "Migrando Fora do WordPress"
     },
     {
       "name": "Desativando vs Desinstalando o Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Remoção do Plugin"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Site WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

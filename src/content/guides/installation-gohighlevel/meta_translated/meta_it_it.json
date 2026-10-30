@@ -1,55 +1,55 @@
 {
-  "name": "Installazione di GoHighLevel",
+  "name": "Installazione GoHighLevel",
   "pageHeader": "Aggiungi commenti ai siti GoHighLevel",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Modifica il corso",
+      "name": "Passo 1: Modifica corso",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Passo 2: Apri le impostazioni avanzate",
+      "name": "Passo 2: Apri impostazioni avanzate",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Passo 3: Copia il codice",
+      "name": "Passo 3: Copia codice",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Passo 4: Incolla il codice",
+      "name": "Passo 4: Incolla codice",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Area membri: installazione completata",
+      "name": "Successo del sito membro",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Errori di dominio dell'area membri",
+      "name": "Errori di dominio del sito membro",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Personalizzazione area membri",
+      "name": "Personalizzazione del sito membro",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Installazione area membri GoHighLevel"
+      "subCat": "Installazione sito membro GoHighLevel"
     },
     {
-      "name": "Passo 1: Aggiungi elemento di codice personalizzato",
+      "name": "Passo 1: Aggiungi elemento codice personalizzato",
       "file": "gohighlevel-site-step-1.md",
       "subCat": "Installazione sito GoHighLevel"
     },
     {
-      "name": "Passo 2: Copia e incolla il codice",
+      "name": "Passo 2: Copia e incolla codice",
       "file": "gohighlevel-site-step-2.md",
       "subCat": "Installazione sito GoHighLevel"
     },
     {
-      "name": "Sito: installazione completata",
+      "name": "Successo del sito",
       "file": "gohighlevel-site-success.md",
       "subCat": "Installazione sito GoHighLevel"
     },
@@ -59,9 +59,14 @@
       "subCat": "Installazione sito GoHighLevel"
     },
     {
-      "name": "Personalizzazione sito",
+      "name": "Personalizzazione del sito",
       "file": "gohighlevel-site-customize.md",
       "subCat": "Installazione sito GoHighLevel"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito GoHighLevel",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

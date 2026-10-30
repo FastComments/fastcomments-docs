@@ -1,6 +1,6 @@
 {
   "name": "ThriveCart Learn+ Kurulumu",
-  "pageHeader": "ThriveCart Learn+ Kurslarına Yorum Ekleme",
+  "pageHeader": "ThriveCart Learn+ Kurslarına Yorum Ekle",
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
@@ -27,6 +27,11 @@
       "name": "Özelleştirme",
       "file": "thrivecart-learn-customize.md",
       "subCat": "ThriveCart Learn+ Kurulumu"
+    },
+    {
+      "name": "ThriveCart Learn+ Kursunuza Anketler Ekleyin",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

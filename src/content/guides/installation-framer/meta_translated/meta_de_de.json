@@ -32,6 +32,11 @@
       "name": "Anpassung",
       "file": "framer-customize.md",
       "subCat": "Framer-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Framer-Website hinzufügen",
+      "file": "framer-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

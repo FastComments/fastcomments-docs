@@ -1,10 +1,10 @@
 {
   "name": "Weebly-installation",
-  "pageHeader": "Tilføj kommentarer til Weebly-sider",
+  "pageHeader": "Tilføj kommentarer til Weebly-websteder",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
-      "name": "Trin 1: Åbn blogindstillingerne",
+      "name": "Trin 1: Åbn blogindstillinger",
       "file": "weebly-step-1.md",
       "subCat": "Weebly-installation"
     },
@@ -32,6 +32,11 @@
       "name": "Tilpasning",
       "file": "weebly-customize.md",
       "subCat": "Weebly-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Weebly-side",
+      "file": "weebly-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

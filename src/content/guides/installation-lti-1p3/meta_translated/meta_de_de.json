@@ -1,10 +1,10 @@
 {
   "name": "LMS-Installation (LTI 1.3)",
-  "pageHeader": "Kommentare in Ihr LMS über LTI 1.3 hinzufügen",
+  "pageHeader": "Kommentare zu Ihrem LMS über LTI 1.3 hinzufügen",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Preise",
+      "name": "Preisgestaltung",
       "file": "lti-plans.md",
       "subCat": "Kurzfassung"
     },
@@ -19,59 +19,64 @@
       "subCat": "Kurzfassung"
     },
     {
-      "name": "Registrierungs-URL generieren",
+      "name": "Registrierungs-URL erzeugen",
       "file": "lti-generate-url.md",
-      "subCat": "FastComments-Einrichtung"
+      "subCat": "FastComments Einrichtung"
     },
     {
-      "name": "In D2L Brightspace registrieren",
+      "name": "Registrierung in D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Das Tool registrieren"
+      "subCat": "Tool registrieren"
     },
     {
-      "name": "In Moodle registrieren",
+      "name": "Registrierung in Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Das Tool registrieren"
+      "subCat": "Tool registrieren"
     },
     {
-      "name": "In Blackboard Learn registrieren",
+      "name": "Registrierung in Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Das Tool registrieren"
+      "subCat": "Tool registrieren"
     },
     {
-      "name": "In Sakai oder Schoology registrieren",
+      "name": "Registrierung in Sakai oder Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Das Tool registrieren"
+      "subCat": "Tool registrieren"
     },
     {
-      "name": "Zu D2L-Kursinhalten hinzufügen",
+      "name": "Zu D2L Kursinhalt hinzufügen",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
-      "name": "Zu Moodle-Kursinhalten hinzufügen",
+      "name": "Zu Moodle Kursinhalt hinzufügen",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
-      "name": "Zu Blackboard-Kursinhalten hinzufügen",
+      "name": "Zu Blackboard Kursinhalt hinzufügen",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
-      "name": "Zu Sakai- oder Schoology-Kursinhalten hinzufügen",
+      "name": "Zu Sakai- oder Schoology-Kursinhalt hinzufügen",
       "file": "lti-other-add-to-course.md",
       "subCat": "Zu einem Kurs hinzufügen"
     },
     {
       "name": "Fehlerbehebung",
       "file": "lti-troubleshooting.md",
-      "subCat": "Das Tool verwenden"
+      "subCat": "Tool verwenden"
     },
     {
-      "name": "Prinzip der geringsten Rechte & Datenminimierung",
+      "name": "Minimalrechte & Datenminimierung",
       "file": "lti-least-privilege.md",
       "subCat": "Sicherheit & Compliance"
+    },
+    {
+      "name": "Umfragen zu Ihrem LMS-Kurs hinzufügen",
+      "file": "lti-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

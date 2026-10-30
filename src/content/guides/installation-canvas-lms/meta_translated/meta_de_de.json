@@ -4,37 +4,37 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "Preise",
+      "name": "Preisgestaltung",
       "file": "canvas-lms-plans.md",
-      "subCat": "Kurzfassung"
+      "subCat": "TLDR"
     },
     {
       "name": "Schnellstart",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Kurzfassung"
+      "subCat": "TLDR"
     },
     {
-      "name": "Einrichtung des FastComments-Dashboards",
+      "name": "FastComments Dashboard-Einrichtung",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Einrichtung von Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3 Einrichtung"
     },
     {
       "name": "Canvas-Entwicklerschlüssel",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Einrichtung von Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3 Einrichtung"
     },
     {
       "name": "Verbindung abschließen",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Einrichtung von Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3 Einrichtung"
     },
     {
       "name": "Zu einem Kurs hinzufügen",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Einrichtung von Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3 Einrichtung"
     },
     {
-      "name": "Kommentarstile",
+      "name": "Kommentierungsstile",
       "file": "canvas-lms-commenting-styles.md",
       "subCat": "Konfiguration"
     },
@@ -52,6 +52,11 @@
       "name": "Domain-Fehler",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Fehlerbehebung"
+    },
+    {
+      "name": "Umfragen zu Ihrem Canvas-Kurs hinzufügen",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

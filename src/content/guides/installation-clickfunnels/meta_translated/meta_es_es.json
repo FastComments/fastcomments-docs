@@ -1,20 +1,20 @@
 {
   "name": "Instalación de ClickFunnels",
-  "pageHeader": "Agregar chat en vivo a los cursos de ClickFunnels",
+  "pageHeader": "Agregar Chat en Vivo a los Cursos de ClickFunnels",
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
-      "name": "Paso uno: Encuentra la plantilla",
+      "name": "Paso Uno: Encontrar la Plantilla",
       "file": "clickfunnels-step-1.md",
       "subCat": "Instalación de ClickFunnels"
     },
     {
-      "name": "Paso dos: Agrega el código",
+      "name": "Paso Dos: Añadir el Código",
       "file": "clickfunnels-step-2.md",
       "subCat": "Instalación de ClickFunnels"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "clickfunnels-domain-errors.md",
       "subCat": "Instalación de ClickFunnels"
     },
@@ -24,14 +24,19 @@
       "subCat": "Instalación de ClickFunnels"
     },
     {
-      "name": "Extra: Fragmento de código para comentarios en vivo",
+      "name": "Extra: Fragmento de Código para Comentarios en Vivo",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Fragmento de código para comentarios en vivo"
+      "subCat": "Fragmento de Código de Comentarios en Vivo"
     },
     {
-      "name": "Extra: Reproducción automática de comentarios",
+      "name": "Extra: Reproducción Automática de Comentarios",
       "file": "clickfunnels-extra-scheduled-comments.md",
-      "subCat": "Reproducción automática de comentarios"
+      "subCat": "Reproducción Automática de Comentarios"
+    },
+    {
+      "name": "Agregar Encuestas a tu Curso de ClickFunnels",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

@@ -1,62 +1,67 @@
 {
-  "name": "Drupal のインストール",
-  "pageHeader": "Drupal サイトにライブコメントを追加する",
+  "name": "Drupal インストール",
+  "pageHeader": "Drupal サイトにライブコメントを追加",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
       "name": "クイックスタート",
       "file": "drupal-quick-start.md",
-      "subCat": "要点"
+      "subCat": "要約"
     },
     {
       "name": "インストール",
       "file": "drupal-installation.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "設定",
       "file": "drupal-configuration.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "ウィジェットブロック",
       "file": "drupal-widget-blocks.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "コンテンツタイプのフィールド",
       "file": "drupal-content-type-fields.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "シングルサインオン (SSO)",
       "file": "drupal-sso.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "権限",
       "file": "drupal-permissions.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
-      "name": "多言語対応",
+      "name": "多言語",
       "file": "drupal-multilingual.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
-      "name": "EU内データ保管",
+      "name": "EU データ所在地",
       "file": "drupal-eu-data-residency.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "drupal-customize.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
     },
     {
       "name": "要件",
       "file": "drupal-requirements.md",
-      "subCat": "Drupal のインストール"
+      "subCat": "Drupal インストール"
+    },
+    {
+      "name": "Drupal サイトに投票を追加",
+      "file": "drupal-polls.md",
+      "subCat": "投票"
     }
   ]
 }

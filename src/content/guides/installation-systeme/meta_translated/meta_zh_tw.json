@@ -1,15 +1,15 @@
 {
   "name": "Systeme.io 安裝",
-  "pageHeader": "在 Systeme.io 部落格新增留言",
+  "pageHeader": "在 Systeme.io 部落格中添加評論",
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "步驟 1：開啟部落格佈景主題範本",
+      "name": "步驟 1：打開部落格主題模板",
       "file": "systeme-step-1.md",
       "subCat": "Systeme.io 安裝"
     },
     {
-      "name": "步驟 2：加入 FastComments.com 程式碼",
+      "name": "步驟 2：添加 FastComments.com 代碼",
       "file": "systeme-step-2.md",
       "subCat": "Systeme.io 安裝"
     },
@@ -19,7 +19,7 @@
       "subCat": "Systeme.io 安裝"
     },
     {
-      "name": "網域錯誤",
+      "name": "域名錯誤",
       "file": "systeme-domain-errors.md",
       "subCat": "Systeme.io 安裝"
     },
@@ -27,6 +27,11 @@
       "name": "自訂",
       "file": "systeme-customize.md",
       "subCat": "Systeme.io 安裝"
+    },
+    {
+      "name": "在您的 Systeme.io 部落格中添加投票",
+      "file": "systeme-polls.md",
+      "subCat": "投票"
     }
   ]
 }

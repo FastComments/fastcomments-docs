@@ -1,6 +1,6 @@
 {
   "name": "Weebly 安装",
-  "pageHeader": "向 Weebly 网站添加评论",
+  "pageHeader": "在 Weebly 网站添加评论",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -32,6 +32,11 @@
       "name": "自定义",
       "file": "weebly-customize.md",
       "subCat": "Weebly 安装"
+    },
+    {
+      "name": "在您的 Weebly 网站添加投票",
+      "file": "weebly-polls.md",
+      "subCat": "投票"
     }
   ]
 }

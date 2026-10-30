@@ -1,37 +1,42 @@
 {
   "name": "Hostinger-Installation",
-  "pageHeader": "Live-Kommentare zu Hostinger-Websites hinzufügen",
+  "pageHeader": "Live-Kommentare zu Hostinger-Seiten hinzufügen",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
       "name": "Schritt 1: Code-Widget hinzufügen",
       "file": "hostinger-step-1.md",
-      "subCat": "Installation auf Hostinger"
+      "subCat": "Hostinger-Website-Installation"
     },
     {
       "name": "Schritt 2: Code hinzufügen",
       "file": "hostinger-step-2.md",
-      "subCat": "Installation auf Hostinger"
+      "subCat": "Hostinger-Website-Installation"
     },
     {
       "name": "Erfolg",
       "file": "hostinger-site-success.md",
-      "subCat": "Installation auf Hostinger"
+      "subCat": "Hostinger-Website-Installation"
     },
     {
-      "name": "Domainfehler der Website",
+      "name": "Domain-Fehler der Website",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Installation auf Hostinger"
+      "subCat": "Hostinger-Website-Installation"
     },
     {
       "name": "Website-Anpassung",
       "file": "hostinger-site-customize.md",
-      "subCat": "Installation auf Hostinger"
+      "subCat": "Hostinger-Website-Installation"
     },
     {
       "name": "Schwebender Like-Button",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Hostinger Schwebende Likes"
+      "subCat": "Hostinger schwebende Likes"
+    },
+    {
+      "name": "Umfragen zu Ihrer Hostinger-Website hinzufügen",
+      "file": "hostinger-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

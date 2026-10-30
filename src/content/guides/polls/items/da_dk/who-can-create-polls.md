@@ -1,0 +1,8 @@
+Once polls are enabled, the **Who Can Create Polls** setting controls who sees the poll button in the comment toolbar:
+
+- **Admins/Moderators Only** (the default): only your site's admins and moderators can attach a poll to a comment.
+- **Everyone**: any commenter can attach a poll to their comment.
+
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.poll-creation'; alt='Dropdown-menuen \'Who Can Create Polls\' indstillet til \'Admins/Moderators Only\''; title='Hvem kan oprette afstemninger' app-screenshot-end]
+
+This setting only controls who can create polls. Who can vote is set separately, see the next section.

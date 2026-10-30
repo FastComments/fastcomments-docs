@@ -1,67 +1,72 @@
 {
   "name": "Instalación de GoHighLevel",
-  "pageHeader": "Agregar comentarios a los sitios de GoHighLevel",
+  "pageHeader": "Agregar Comentarios a los Sitios de GoHighLevel",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "Paso 1: Editar curso",
+      "name": "Paso 1: Editar Curso",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Paso 2: Abrir configuración avanzada",
+      "name": "Paso 2: Abrir Configuraciones Avanzadas",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Paso 3: Copiar código",
+      "name": "Paso 3: Copiar Código",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Paso 4: Pegar código",
+      "name": "Paso 4: Pegar Código",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Instalación del sitio de miembros exitosa",
+      "name": "Éxito del Sitio de Miembros",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Errores de dominio del sitio de miembros",
+      "name": "Errores de Dominio del Sitio de Miembros",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Personalización del sitio de miembros",
+      "name": "Personalización del Sitio de Miembros",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Instalación del sitio de miembros de GoHighLevel"
+      "subCat": "Instalación del Sitio de Miembros de GoHighLevel"
     },
     {
-      "name": "Paso 1: Agregar elemento de código personalizado",
+      "name": "Paso 1: Añadir Elemento de Código Personalizado",
       "file": "gohighlevel-site-step-1.md",
-      "subCat": "Instalación del sitio de GoHighLevel"
+      "subCat": "Instalación del Sitio de GoHighLevel"
     },
     {
-      "name": "Paso 2: Copiar y pegar código",
+      "name": "Paso 2: Copiar y Pegar Código",
       "file": "gohighlevel-site-step-2.md",
-      "subCat": "Instalación del sitio de GoHighLevel"
+      "subCat": "Instalación del Sitio de GoHighLevel"
     },
     {
-      "name": "Instalación del sitio exitosa",
+      "name": "Éxito del Sitio",
       "file": "gohighlevel-site-success.md",
-      "subCat": "Instalación del sitio de GoHighLevel"
+      "subCat": "Instalación del Sitio de GoHighLevel"
     },
     {
-      "name": "Errores de dominio del sitio",
+      "name": "Errores de Dominio del Sitio",
       "file": "gohighlevel-site-domain-errors.md",
-      "subCat": "Instalación del sitio de GoHighLevel"
+      "subCat": "Instalación del Sitio de GoHighLevel"
     },
     {
-      "name": "Personalización del sitio",
+      "name": "Personalización del Sitio",
       "file": "gohighlevel-site-customize.md",
-      "subCat": "Instalación del sitio de GoHighLevel"
+      "subCat": "Instalación del Sitio de GoHighLevel"
+    },
+    {
+      "name": "Agregar Encuestas a su Sitio de GoHighLevel",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

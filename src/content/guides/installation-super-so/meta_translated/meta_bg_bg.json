@@ -1,6 +1,6 @@
 {
   "name": "Инсталиране на Super.so",
-  "pageHeader": "Добавяне на живи дискусии към сайтове на Super.so",
+  "pageHeader": "Добавете живи дискусии към сайтове Super.so",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
@@ -14,12 +14,12 @@
       "subCat": "Инсталиране на Super.so"
     },
     {
-      "name": "Вижте също: Обикновен уиджет за коментари",
+      "name": "Вижте също: Стандартен уиджет за коментари",
       "file": "super-so-comment-widget.md",
       "subCat": "Инсталиране на Super.so"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "super-so-learn-success.md",
       "subCat": "Инсталиране на Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Персонализиране",
       "file": "super-so-learn-customize.md",
       "subCat": "Инсталиране на Super.so"
+    },
+    {
+      "name": "Добавете анкети към вашия сайт Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

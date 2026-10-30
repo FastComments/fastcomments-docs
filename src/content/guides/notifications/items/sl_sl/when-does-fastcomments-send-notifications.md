@@ -1,34 +1,36 @@
-At FastComments, vemo, da že prejemate dovolj obvestil. Zaradi tega sprejemamo nekaj ukrepov, da omejimo obvestila, ki jih uporabniki prejemajo, hkrati pa jih ohranjamo v stiku z njihovimi skupnostmi. Želimo tudi, da so skrbniki in moderatorji na tekočem ter jih obvestimo, ko je potrebno ukrepati.
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
+keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
-#### Pošiljali bomo obvestila o naslednjih dogodkih za skrbnike in moderatorje:
+#### We'll send notifications for the following events for administrators and moderators:
 
-- Povzetek skupnosti (pogostost nastavljiva).
-- Zahteve za pomoč skupnosti in opomniki.
-- Novi komentarji.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
-#### Za komentatorje:
+#### For Commenters:
 
-- Ko nekdo odgovori na vaš komentar (prek e-pošte).
-- Ko ste omenjeni (obvestilo v aplikaciji in po e-pošti).
-- Ko nekdo odgovori v isti nit (obvestilo v aplikaciji in po e-pošti).
-- Ko nekdo odgovori na podkomentar v isti nit (obvestilo v aplikaciji in po e-pošti).
-- Ko nekdo odgovori na stran, na katero ste se naročili (obvestilo v aplikaciji in po e-pošti, pogostost nastavljiva za vsako naročnino: vsako minuto, na uro ali dnevno).
-- Ko uporabnik prvič komentira (razen pri SSO).
-- Ko uporabnik pusti komentar v seji, ki ni potrjena (razen pri SSO).
-  - V tem primeru ne pošiljamo več potrditvenih e-pošt. Pošljemo le prvo, ki bo potrdila vso dejavnost v isti seji.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When someone responds to a poll you created (in-app notification, plus a daily email). See [Poll Notifications](/guide-polls.html#poll-notifications).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
-#### Za vse uporabnike:
+#### For All Users:
 
-- Ko je zaznana prijava z novega IP naslova, se pošlje varnostno opozorilo po e-pošti z približnim lokacijo in IP naslovom. To ne velja za prvo prijavo uporabnika.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-#### ...in končno samo za skrbnike:
+#### ...and finally for administrators only:
 
-- Ko so integracije zaključene.
-- Ko so migracije zaključene.
-- Ko se uvozi ali izvozi končajo.
-- Ko se pojavijo težave z obračunom.
-- Opomniki o koncu preizkusne različice.
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
 
-Nekatera obvestila se združujejo, da se prepreči množično pošiljanje obvestil uporabnikom. Več o tem preberite v naslednjem razdelku `Notification Types`.
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
 
-E-poštna sporočila z odgovori in omembami se pošiljajo le za odobrene komentarje. Če želite preveriti, ali je bilo e-poštno sporočilo z odgovorom ali omembo poslano za določen komentar, ali zakaj ni bilo, odprite [Comment Logs](/guide-moderation.html#comment-logs) tega komentarja na strani Moderiraj komentarje.
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Comment Logs](/guide-moderation.html#comment-logs) from the Moderate Comments page.

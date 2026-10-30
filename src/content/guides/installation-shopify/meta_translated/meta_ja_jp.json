@@ -1,67 +1,72 @@
 {
-  "name": "Shopify のインストール",
-  "pageHeader": "Shopify サイトにコメントを追加する",
+  "name": "Shopify インストール",
+  "pageHeader": "Shopify サイトにコメントを追加",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "FastComments アプリをインストールする",
+      "name": "FastComments アプリをインストール",
       "file": "shopify-install.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "ブログ投稿と商品にコメントを追加する",
+      "name": "ブログ記事と商品にコメントを追加",
       "file": "shopify-add-comments.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "コメント数バッジを追加する",
+      "name": "コメント数バッジを追加",
       "file": "shopify-comment-count.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "最近のコメントフィードを追加する",
+      "name": "最新コメントフィードを追加",
       "file": "shopify-recent-comments.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "最近のディスカッションフィードを追加する",
+      "name": "最新ディスカッションフィードを追加",
       "file": "shopify-recent-discussions.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "人気ページ一覧を追加する",
+      "name": "トップページリストを追加",
       "file": "shopify-top-pages.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "レビューの概要を追加する",
+      "name": "レビューサマリーを追加",
       "file": "shopify-reviews-summary.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "Shopify の顧客を自動ログインさせる",
+      "name": "Shopify 顧客の自動ログイン",
       "file": "shopify-sso.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "既存のコメントをインポートする",
+      "name": "既存のコメントをインポート",
       "file": "shopify-import.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "shopify-customize.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
       "name": "ドメインエラー",
       "file": "shopify-domain-errors.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
     },
     {
-      "name": "手動インストール（上級者向け）",
+      "name": "手動インストール（上級）",
       "file": "shopify-manual-install.md",
-      "subCat": "Shopify のインストール"
+      "subCat": "Shopify インストール"
+    },
+    {
+      "name": "Shopify ストアに投票を追加",
+      "file": "shopify-polls.md",
+      "subCat": "投票"
     }
   ]
 }

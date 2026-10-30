@@ -1,15 +1,15 @@
 {
   "name": "Instalação do Systeme.io",
-  "pageHeader": "Adicionar comentários a um blog do Systeme.io",
+  "pageHeader": "Adicionar Comentários a um Blog do Systeme.io",
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Abra o modelo de tema do blog",
+      "name": "Etapa 1: Abra o Modelo de Tema do Blog",
       "file": "systeme-step-1.md",
       "subCat": "Instalação do Systeme.io"
     },
     {
-      "name": "Passo 2: Adicione o código do FastComments.com",
+      "name": "Etapa 2: Adicione o Código do FastComments.com",
       "file": "systeme-step-2.md",
       "subCat": "Instalação do Systeme.io"
     },
@@ -19,7 +19,7 @@
       "subCat": "Instalação do Systeme.io"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "systeme-domain-errors.md",
       "subCat": "Instalação do Systeme.io"
     },
@@ -27,6 +27,11 @@
       "name": "Personalização",
       "file": "systeme-customize.md",
       "subCat": "Instalação do Systeme.io"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Blog do Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

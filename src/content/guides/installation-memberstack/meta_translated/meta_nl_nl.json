@@ -1,22 +1,27 @@
 {
-  "name": "Memberstack-installatie",
+  "name": "Memberstack Installatie",
   "pageHeader": "Reacties toevoegen met Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
       "name": "De code",
       "file": "memberstack-step-1.md",
-      "subCat": "Memberstack-installatie"
+      "subCat": "Memberstack Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "memberstack-domain-errors.md",
-      "subCat": "Memberstack-installatie"
+      "subCat": "Memberstack Installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "memberstack-customize.md",
-      "subCat": "Memberstack-installatie"
+      "subCat": "Memberstack Installatie"
+    },
+    {
+      "name": "Polls toevoegen aan je Memberstack-site",
+      "file": "memberstack-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Installazione di Weebly",
-  "pageHeader": "Aggiungere commenti ai siti Weebly",
+  "pageHeader": "Aggiungi commenti ai siti Weebly",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Installazione di Weebly"
     },
     {
-      "name": "Passo 2: Aggiungi il codice di FastComments.com",
+      "name": "Passo 2: Aggiungi il codice FastComments.com",
       "file": "weebly-step-2.md",
       "subCat": "Installazione di Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Personalizzazione",
       "file": "weebly-customize.md",
       "subCat": "Installazione di Weebly"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

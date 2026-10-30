@@ -1,12 +1,12 @@
 {
   "name": "Instalación de WordPress",
-  "pageHeader": "Agregar comentarios en vivo a sitios WordPress",
+  "pageHeader": "Agregar Comentarios en Vivo a Sitios WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Inicio rápido",
+      "name": "Inicio Rápido",
       "file": "wordpress-quick-start.md",
-      "subCat": "TLDR"
+      "subCat": "Resumen"
     },
     {
       "name": "Instalación",
@@ -24,12 +24,12 @@
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Usuarios, moderadores y administradores",
+      "name": "Usuarios, Moderadores y Administradores",
       "file": "wordpress-users-moderators-admins.md",
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Sitios solo para miembros (SSO)",
+      "name": "Sitios Solo para Miembros (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Instalación de WordPress"
     },
@@ -39,54 +39,59 @@
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Temas personalizados",
+      "name": "Temas Personalizados",
       "file": "wordpress-custom-themes.md",
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Sincronizando de vuelta a WordPress",
+      "name": "Sincronización de Vuelta a WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Recuento de comentarios",
+      "name": "Recuento de Comentarios",
       "file": "wordpress-comment-counts.md",
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Comunicación entre Instalación de WordPress <> Servidor FastComment",
+      "name": "Comunicación entre Instalación de WordPress y Servidor FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "wordpress-domain-errors.md",
       "subCat": "Instalación de WordPress"
     },
     {
-      "name": "Widget de comentarios recientes",
+      "name": "Widget de Comentarios Recientes",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Otros widgets"
+      "subCat": "Otros Widgets"
     },
     {
-      "name": "Widget de discusiones recientes",
+      "name": "Widget de Discusiones Recientes",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Otros widgets"
+      "subCat": "Otros Widgets"
     },
     {
-      "name": "Widget de páginas principales",
+      "name": "Widget de Páginas Principales",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Otros widgets"
+      "subCat": "Otros Widgets"
     },
     {
-      "name": "Mover tus comentarios a un nuevo sitio",
+      "name": "Mover tus Comentarios a un Nuevo Sitio",
       "file": "wordpress-moving-off-wordpress.md",
       "subCat": "Migrar fuera de WordPress"
     },
     {
-      "name": "Desactivar vs desinstalar el plugin",
+      "name": "Desactivar vs Desinstalar el Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Eliminación del plugin"
+      "subCat": "Eliminación del Plugin"
+    },
+    {
+      "name": "Agregar Encuestas a tu Sitio WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

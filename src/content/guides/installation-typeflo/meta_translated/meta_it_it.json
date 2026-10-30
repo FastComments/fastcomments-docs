@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. Trova il campo per l'inserimento del codice",
+      "name": "1. Trova l'input del codice",
       "file": "typeflo-step-1.md",
       "subCat": "Installazione"
     },
@@ -23,8 +23,13 @@
       "file": "typeflo-customize.md"
     },
     {
-      "name": "Errori del dominio",
+      "name": "Errori di dominio",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo blog Typeflo.io",
+      "file": "typeflo-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

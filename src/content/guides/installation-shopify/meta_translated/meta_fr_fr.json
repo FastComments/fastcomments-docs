@@ -14,7 +14,7 @@
       "subCat": "Installation Shopify"
     },
     {
-      "name": "Ajouter un badge indiquant le nombre de commentaires",
+      "name": "Ajouter un badge de compteur de commentaires",
       "file": "shopify-comment-count.md",
       "subCat": "Installation Shopify"
     },
@@ -44,7 +44,7 @@
       "subCat": "Installation Shopify"
     },
     {
-      "name": "Importer des commentaires existants",
+      "name": "Importer les commentaires existants",
       "file": "shopify-import.md",
       "subCat": "Installation Shopify"
     },
@@ -62,6 +62,11 @@
       "name": "Installation manuelle (avancée)",
       "file": "shopify-manual-install.md",
       "subCat": "Installation Shopify"
+    },
+    {
+      "name": "Ajouter des sondages à votre boutique Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

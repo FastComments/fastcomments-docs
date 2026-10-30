@@ -4,9 +4,9 @@
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Γρήγορη Έναρξη",
+      "name": "Γρήγορη Εκκίνηση",
       "file": "wordpress-quick-start.md",
-      "subCat": "TLDR"
+      "subCat": "Συνοπτικά"
     },
     {
       "name": "Εγκατάσταση",
@@ -29,7 +29,7 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Ιστοσελίδες Μόνο Μελών (SSO)",
+      "name": "Ιστοσελίδες Μόνο Μέλη (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -54,7 +54,7 @@
       "subCat": "Εγκατάσταση WordPress"
     },
     {
-      "name": "Επικοινωνία Εγκατάστασης WordPress <> FastComment Server",
+      "name": "Εγκατάσταση WordPress <> Επικοινωνία με Διακομιστή FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Εγκατάσταση WordPress"
     },
@@ -87,6 +87,11 @@
       "name": "Απενεργοποίηση vs Απεγκατάσταση του Πρόσθετου",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Αφαίρεση Πρόσθετου"
+    },
+    {
+      "name": "Προσθήκη Δημοσκοπήσεων στην Ιστοσελίδα WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

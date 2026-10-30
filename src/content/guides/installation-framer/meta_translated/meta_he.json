@@ -1,6 +1,6 @@
 {
   "name": "התקנת Framer",
-  "pageHeader": "הוספת תגובות בזמן אמת לאתרי Framer",
+  "pageHeader": "הוספת תגובות חיות לאתרי Framer",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "התקנת Framer"
     },
     {
-      "name": "שלב 3: העתק והדבק את קוד FastComments הספציפי ל-Framer",
+      "name": "שלב 3: העתק והדבק קוד FastComments ספציפי ל‑Framer",
       "file": "framer-step-3.md",
       "subCat": "התקנת Framer"
     },
@@ -32,6 +32,11 @@
       "name": "התאמה אישית",
       "file": "framer-customize.md",
       "subCat": "התקנת Framer"
+    },
+    {
+      "name": "הוסף סקרים לאתר Framer שלך",
+      "file": "framer-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

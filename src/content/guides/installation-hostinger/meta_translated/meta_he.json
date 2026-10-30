@@ -1,37 +1,42 @@
 {
-  "name": "התקנת הוסטינגר",
-  "pageHeader": "הוספת תגובות בזמן אמת לאתרי הוסטינגר",
+  "name": "התקנת Hostinger",
+  "pageHeader": "הוסף תגובות חיות לאתרים של Hostinger",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "שלב 1: הוספת ווידג'ט קוד",
+      "name": "שלב 1: הוסף וידג'ט קוד",
       "file": "hostinger-step-1.md",
-      "subCat": "התקנת אתר ב-הוסטינגר"
+      "subCat": "התקנת אתר Hostinger"
     },
     {
-      "name": "שלב 2: הוספת הקוד",
+      "name": "שלב 2: הוסף את הקוד",
       "file": "hostinger-step-2.md",
-      "subCat": "התקנת אתר ב-הוסטינגר"
+      "subCat": "התקנת אתר Hostinger"
     },
     {
       "name": "הצלחה",
       "file": "hostinger-site-success.md",
-      "subCat": "התקנת אתר ב-הוסטינגר"
+      "subCat": "התקנת אתר Hostinger"
     },
     {
-      "name": "שגיאות בדומיין של האתר",
+      "name": "שגיאות דומיין של האתר",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "התקנת אתר ב-הוסטינגר"
+      "subCat": "התקנת אתר Hostinger"
     },
     {
-      "name": "התאמה אישית של האתר",
+      "name": "התאמת האתר",
       "file": "hostinger-site-customize.md",
-      "subCat": "התקנת אתר ב-הוסטינגר"
+      "subCat": "התקנת אתר Hostinger"
     },
     {
-      "name": "כפתור לייק צף",
+      "name": "כפתור לייקים צף",
       "file": "hostinger-floating-likes.md",
-      "subCat": "לייקים צפים ב-הוסטינגר"
+      "subCat": "לייקים צפים של Hostinger"
+    },
+    {
+      "name": "הוסף סקרים לאתר Hostinger שלך",
+      "file": "hostinger-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

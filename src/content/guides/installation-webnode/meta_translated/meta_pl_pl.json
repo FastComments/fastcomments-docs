@@ -1,10 +1,10 @@
 {
   "name": "Instalacja Webnode",
-  "pageHeader": "Dodaj komentarze do witryn Webnode",
+  "pageHeader": "Dodaj komentarze do stron Webnode",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Krok 1: Edytuj stronę",
+      "name": "Krok 1: Edytuj swoją stronę",
       "file": "webnode-step-1.md",
       "subCat": "Instalacja Webnode"
     },
@@ -34,9 +34,14 @@
       "subCat": "Instalacja Webnode"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "webnode-customize.md",
       "subCat": "Instalacja Webnode"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

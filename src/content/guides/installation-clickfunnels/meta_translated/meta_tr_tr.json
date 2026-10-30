@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Şablonu Bul",
+      "name": "Adım Bir: Şablonu Bul",
       "file": "clickfunnels-step-1.md",
       "subCat": "ClickFunnels Kurulumu"
     },
     {
-      "name": "Adım 2: Kodu Ekle",
+      "name": "Adım İki: Kodu Ekle",
       "file": "clickfunnels-step-2.md",
       "subCat": "ClickFunnels Kurulumu"
     },
@@ -24,14 +24,19 @@
       "subCat": "ClickFunnels Kurulumu"
     },
     {
-      "name": "Ek: Canlı Yorumlar için Kod Parçacığı",
+      "name": "Ek: Canlı Yorumlama İçin Kod Parçası",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Canlı Yorum Kod Parçacığı"
+      "subCat": "Canlı Yorumlama Kod Parçası"
     },
     {
-      "name": "Ek: Yorumları Otomatik Oynat",
+      "name": "Ek: Otomatik Yorum Oynatma",
       "file": "clickfunnels-extra-scheduled-comments.md",
-      "subCat": "Yorumları Otomatik Oynat"
+      "subCat": "Otomatik Yorum Oynatma"
+    },
+    {
+      "name": "ClickFunnels Kursunuza Anketler Ekleyin",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

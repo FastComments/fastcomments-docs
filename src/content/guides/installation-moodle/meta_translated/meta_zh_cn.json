@@ -4,9 +4,9 @@
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "快速开始",
+      "name": "快速入门",
       "file": "moodle-quick-start.md",
-      "subCat": "摘要"
+      "subCat": "简要概述"
     },
     {
       "name": "安装",
@@ -39,9 +39,14 @@
       "subCat": "Moodle 插件安装"
     },
     {
-      "name": "域名错误",
+      "name": "域错误",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle 插件安装"
+    },
+    {
+      "name": "向您的 Moodle 站点添加投票",
+      "file": "moodle-polls.md",
+      "subCat": "投票"
     }
   ]
 }

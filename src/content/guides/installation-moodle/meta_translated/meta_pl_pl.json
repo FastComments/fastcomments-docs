@@ -1,12 +1,12 @@
 {
   "name": "Instalacja Moodle",
-  "pageHeader": "Dodawanie komentarzy do stron Moodle",
+  "pageHeader": "Dodaj komentarze do stron Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "Szybki start",
       "file": "moodle-quick-start.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacja",
@@ -34,7 +34,7 @@
       "subCat": "Instalacja wtyczki Moodle"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "moodle-customize.md",
       "subCat": "Instalacja wtyczki Moodle"
     },
@@ -42,6 +42,11 @@
       "name": "Błędy domeny",
       "file": "moodle-domain-errors.md",
       "subCat": "Instalacja wtyczki Moodle"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Moodle",
+      "file": "moodle-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

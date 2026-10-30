@@ -1,0 +1,52 @@
+{
+  "name": "Live-afstemninger",
+  "pageHeader": "Live-afstemninger i kommentarer",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Hvad er live-afstemninger",
+      "file": "what-are-polls.md",
+      "subCat": "Baggrund"
+    },
+    {
+      "name": "Aktivering af afstemninger",
+      "file": "enabling-polls.md",
+      "subCat": "Opsætning af afstemninger"
+    },
+    {
+      "name": "Hvem kan oprette afstemninger",
+      "file": "who-can-create-polls.md",
+      "subCat": "Opsætning af afstemninger"
+    },
+    {
+      "name": "Tillad anonyme afstemningsstemmer",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Opsætning af afstemninger"
+    },
+    {
+      "name": "Opret en afstemning",
+      "file": "creating-a-poll.md",
+      "subCat": "Brug af afstemninger"
+    },
+    {
+      "name": "Afstemning og live-resultater",
+      "file": "voting-and-live-results.md",
+      "subCat": "Brug af afstemninger"
+    },
+    {
+      "name": "Vælgerens privatliv",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Brug af afstemninger"
+    },
+    {
+      "name": "Notifikationer om afstemninger",
+      "file": "poll-notifications.md",
+      "subCat": "Brug af afstemninger"
+    },
+    {
+      "name": "Afstemnings-API",
+      "file": "polls-api.md",
+      "subCat": "For udviklere"
+    }
+  ]
+}

@@ -1,45 +1,45 @@
 {
   "name": "Installation de Ghost",
-  "pageHeader": "Ajouter des commentaires en direct réservés aux membres aux sites Ghost",
+  "pageHeader": "Ajouter les commentaires en direct réservés aux membres aux sites Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Téléchargez votre thème",
+      "name": "Étape 1 : Téléchargez votre thème",
       "file": "ghost-step-1.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Étape 2 : Installez votre thème localement",
+      "name": "Étape 2 : Installez votre thème localement",
       "file": "ghost-step-2.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Étape 3 : Nommez le nouveau thème",
+      "name": "Étape 3 : Nommez le nouveau thème",
       "file": "ghost-step-3.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Étape 4 : Ouvrez le modèle de publication",
+      "name": "Étape 4 : Ouvrez le modèle d'article",
       "file": "ghost-step-4.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Étape 5 : Ajoutez le code FastComments",
+      "name": "Étape 5 : Ajoutez le code FastComments",
       "file": "ghost-step-5.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Étape 6 : Exportez votre thème",
+      "name": "Étape 6 : Exportez votre thème",
       "file": "ghost-step-6.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Étape 7 : Téléversez le thème sur Ghost",
+      "name": "Étape 7 : Téléversez le thème sur Ghost",
       "file": "ghost-step-7.md",
       "subCat": "Installation de Ghost"
     },
     {
-      "name": "Succès !",
+      "name": "Succès !",
       "file": "ghost-success.md",
       "subCat": "Installation de Ghost"
     },
@@ -52,6 +52,11 @@
       "name": "Personnalisation",
       "file": "ghost-customize.md",
       "subCat": "Installation de Ghost"
+    },
+    {
+      "name": "Ajoutez des sondages à votre site Ghost",
+      "file": "ghost-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

@@ -1,37 +1,42 @@
 {
   "name": "Installation de ClickFunnels",
-  "pageHeader": "Ajouter un chat en direct aux cours ClickFunnels",
+  "pageHeader": "Ajouter le chat en direct aux cours ClickFunnels",
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Trouver le modèle",
+      "name": "Étape 1 : Trouver le modèle",
       "file": "clickfunnels-step-1.md",
-      "subCat": "Installation de ClickFunnels"
+      "subCat": "Installation ClickFunnels"
     },
     {
-      "name": "Étape 2 : Ajouter le code",
+      "name": "Étape 2 : Ajouter le code",
       "file": "clickfunnels-step-2.md",
-      "subCat": "Installation de ClickFunnels"
+      "subCat": "Installation ClickFunnels"
     },
     {
       "name": "Erreurs de domaine",
       "file": "clickfunnels-domain-errors.md",
-      "subCat": "Installation de ClickFunnels"
+      "subCat": "Installation ClickFunnels"
     },
     {
       "name": "Personnalisation",
       "file": "clickfunnels-customize.md",
-      "subCat": "Installation de ClickFunnels"
+      "subCat": "Installation ClickFunnels"
     },
     {
-      "name": "Supplément : extrait de code pour les commentaires en direct",
+      "name": "Supplément : Extrait de code pour les commentaires en direct",
       "file": "clickfunnels-extra-live-commenting.md",
       "subCat": "Extrait de code pour les commentaires en direct"
     },
     {
-      "name": "Supplément : lecture automatique des commentaires",
+      "name": "Supplément : Lecture automatique des commentaires",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Lecture automatique des commentaires"
+    },
+    {
+      "name": "Ajouter des sondages à votre cours ClickFunnels",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Instalacija Framera",
-  "pageHeader": "Dodajte komentare uživo na Framer web-stranice",
+  "pageHeader": "Dodajte komentiranje uživo na Framer stranice",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Instalacija Framera"
     },
     {
-      "name": "Korak 3: Kopirajte i zalijepite FastComments kod za Framer",
+      "name": "Korak 3: Kopirajte i zalijepite FastComments kod specifičan za Framer",
       "file": "framer-step-3.md",
       "subCat": "Instalacija Framera"
     },
@@ -24,7 +24,7 @@
       "subCat": "Instalacija Framera"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "framer-domain-errors.md",
       "subCat": "Instalacija Framera"
     },
@@ -32,6 +32,11 @@
       "name": "Prilagodba",
       "file": "framer-customize.md",
       "subCat": "Instalacija Framera"
+    },
+    {
+      "name": "Dodajte ankete na svoju Framer stranicu",
+      "file": "framer-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

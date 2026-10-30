@@ -14,7 +14,7 @@
       "subCat": "Instalacja Super.so"
     },
     {
-      "name": "Zobacz także: standardowy widżet komentarzy",
+      "name": "Zobacz także: Standardowy widget komentarzy",
       "file": "super-so-comment-widget.md",
       "subCat": "Instalacja Super.so"
     },
@@ -29,9 +29,14 @@
       "subCat": "Instalacja Super.so"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "super-so-learn-customize.md",
       "subCat": "Instalacja Super.so"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

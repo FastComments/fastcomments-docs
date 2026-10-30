@@ -18,12 +18,12 @@
       "subCat": "Встановлення Val Town"
     },
     {
-      "name": "Захищений SSO за допомогою std/oauth",
+      "name": "Захищений SSO з std/oauth",
       "file": "val-town-sso.md",
       "subCat": "Встановлення Val Town"
     },
     {
-      "name": "Отримання вебхукiв",
+      "name": "Отримання вебхуків",
       "file": "val-town-webhooks.md",
       "subCat": "Встановлення Val Town"
     },
@@ -36,6 +36,11 @@
       "name": "Помилки домену",
       "file": "val-town-domain-errors.md",
       "subCat": "Встановлення Val Town"
+    },
+    {
+      "name": "Додати опитування до вашого додатку Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

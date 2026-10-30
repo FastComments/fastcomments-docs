@@ -1,37 +1,42 @@
 {
-  "name": "Инсталација Zyro",
-  "pageHeader": "Додајте коментарисање уживо на Zyro сајтове",
+  "name": "Zyro instalacija",
+  "pageHeader": "Dodajte live komentarisanje na Zyro sajtove",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Додајте видгет за код",
+      "name": "Korak 1: Dodajte kod vidžet",
       "file": "zyro-step-1.md",
-      "subCat": "Инсталација Zyro сајта"
+      "subCat": "Zyro instalacija sajta"
     },
     {
-      "name": "Корак 2: Додајте код",
+      "name": "Korak 2: Dodajte kod",
       "file": "zyro-step-2.md",
-      "subCat": "Инсталација Zyro сајта"
+      "subCat": "Zyro instalacija sajta"
     },
     {
-      "name": "Успешно",
+      "name": "Uspeh",
       "file": "zyro-site-success.md",
-      "subCat": "Инсталација Zyro сајта"
+      "subCat": "Zyro instalacija sajta"
     },
     {
-      "name": "Грешке домена сајта",
+      "name": "Greške domena sajta",
       "file": "zyro-site-domain-errors.md",
-      "subCat": "Инсталација Zyro сајта"
+      "subCat": "Zyro instalacija sajta"
     },
     {
-      "name": "Прилагођавање сајта",
+      "name": "Prilagođavanje sajta",
       "file": "zyro-site-customize.md",
-      "subCat": "Инсталација Zyro сајта"
+      "subCat": "Zyro instalacija sajta"
     },
     {
-      "name": "Плутајуће дугме за лајкове",
+      "name": "Plutajući dugme za lajkove",
       "file": "zyro-floating-likes.md",
-      "subCat": "Плутајући лајкови за Zyro"
+      "subCat": "Zyro plutajući lajkovi"
+    },
+    {
+      "name": "Dodajte ankete na vaš Zyro sajt",
+      "file": "zyro-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

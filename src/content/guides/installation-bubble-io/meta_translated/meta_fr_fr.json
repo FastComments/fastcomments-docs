@@ -35,6 +35,11 @@
     {
       "name": "Erreurs de domaine",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Ajouter des sondages à votre application Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

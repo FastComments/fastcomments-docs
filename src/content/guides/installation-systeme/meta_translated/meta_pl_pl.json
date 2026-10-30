@@ -24,9 +24,14 @@
       "subCat": "Instalacja Systeme.io"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "systeme-customize.md",
       "subCat": "Instalacja Systeme.io"
+    },
+    {
+      "name": "Dodaj ankiety do swojego bloga Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

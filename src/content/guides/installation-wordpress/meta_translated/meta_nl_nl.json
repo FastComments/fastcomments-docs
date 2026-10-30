@@ -1,6 +1,6 @@
 {
-  "name": "WordPress-installatie",
-  "pageHeader": "Live reacties toevoegen aan WordPress-sites",
+  "name": "WordPress Installatie",
+  "pageHeader": "Live commentaar toevoegen aan WordPress-sites",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
@@ -11,82 +11,87 @@
     {
       "name": "Installatie",
       "file": "wordpress-installation.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
       "name": "Aanpassing",
       "file": "wordpress-customize.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
       "name": "Moderatie",
       "file": "wordpress-moderation.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
-      "name": "Gebruikers, moderators en beheerders",
+      "name": "Gebruikers, Moderators en Beheerders",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
       "name": "Sites alleen voor leden (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
       "name": "Meldingen",
       "file": "wordpress-notifications.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
-      "name": "Aangepaste thema's",
+      "name": "Aangepaste Thema's",
       "file": "wordpress-custom-themes.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
       "name": "Synchroniseren terug naar WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
-      "name": "Aantal reacties",
+      "name": "Aantal Reacties",
       "file": "wordpress-comment-counts.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
-      "name": "WordPress-installatie <> FastComment servercommunicatie",
+      "name": "WordPress Installatie <> FastComment Server Communicatie",
       "file": "wordpress-server-communication.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "wordpress-domain-errors.md",
-      "subCat": "WordPress-installatie"
+      "subCat": "WordPress Installatie"
     },
     {
-      "name": "Widget recente reacties",
+      "name": "Recente Reacties Widget",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Andere widgets"
+      "subCat": "Andere Widgets"
     },
     {
-      "name": "Widget recente discussies",
+      "name": "Recente Discussies Widget",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Andere widgets"
+      "subCat": "Andere Widgets"
     },
     {
-      "name": "Widget toppagina's",
+      "name": "Top Pagina's Widget",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Andere widgets"
+      "subCat": "Andere Widgets"
     },
     {
-      "name": "Je reacties verplaatsen naar een nieuwe site",
+      "name": "Je Reacties Verplaatsen naar een Nieuwe Site",
       "file": "wordpress-moving-off-wordpress.md",
       "subCat": "Verplaatsen van WordPress"
     },
     {
-      "name": "Deactiveren vs de plugin verwijderen",
+      "name": "Deactiveren vs Verwijderen van de Plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Pluginverwijdering"
+      "subCat": "Plugin Verwijderen"
+    },
+    {
+      "name": "Polls Toevoegen aan je WordPress Site",
+      "file": "wordpress-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

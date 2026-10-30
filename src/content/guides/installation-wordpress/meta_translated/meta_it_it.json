@@ -81,12 +81,17 @@
     {
       "name": "Spostare i tuoi commenti su un nuovo sito",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "Spostamento da WordPress"
+      "subCat": "Migrazione da WordPress"
     },
     {
-      "name": "Disattivazione vs Disinstallazione del plugin",
+      "name": "Disattivare vs Disinstallare il plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Rimozione del plugin"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

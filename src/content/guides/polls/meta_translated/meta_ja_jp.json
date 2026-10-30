@@ -1,0 +1,52 @@
+{
+  "name": "ライブ投票",
+  "pageHeader": "コメント内のライブ投票",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "ライブ投票とは何か",
+      "file": "what-are-polls.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "投票の有効化",
+      "file": "enabling-polls.md",
+      "subCat": "投票の設定"
+    },
+    {
+      "name": "誰が投票を作成できるか",
+      "file": "who-can-create-polls.md",
+      "subCat": "投票の設定"
+    },
+    {
+      "name": "匿名投票の許可",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "投票の設定"
+    },
+    {
+      "name": "投票の作成",
+      "file": "creating-a-poll.md",
+      "subCat": "投票の使用"
+    },
+    {
+      "name": "投票とライブ結果",
+      "file": "voting-and-live-results.md",
+      "subCat": "投票の使用"
+    },
+    {
+      "name": "投票者のプライバシー",
+      "file": "poll-voter-privacy.md",
+      "subCat": "投票の使用"
+    },
+    {
+      "name": "投票通知",
+      "file": "poll-notifications.md",
+      "subCat": "投票の使用"
+    },
+    {
+      "name": "投票 API",
+      "file": "polls-api.md",
+      "subCat": "開発者向け"
+    }
+  ]
+}

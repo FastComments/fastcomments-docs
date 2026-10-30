@@ -1,15 +1,15 @@
 {
   "name": "Instalación de Weebly",
-  "pageHeader": "Añadir comentarios a sitios de Weebly",
+  "pageHeader": "Agregar Comentarios a Sitios Weebly",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
-      "name": "Paso 1: Abrir la configuración del blog",
+      "name": "Paso 1: Abrir Configuración del Blog",
       "file": "weebly-step-1.md",
       "subCat": "Instalación de Weebly"
     },
     {
-      "name": "Paso 2: Añadir el código de FastComments.com",
+      "name": "Paso 2: Añadir el Código de FastComments.com",
       "file": "weebly-step-2.md",
       "subCat": "Instalación de Weebly"
     },
@@ -24,7 +24,7 @@
       "subCat": "Instalación de Weebly"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "weebly-domain-errors.md",
       "subCat": "Instalación de Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Personalización",
       "file": "weebly-customize.md",
       "subCat": "Instalación de Weebly"
+    },
+    {
+      "name": "Agregar Encuestas a Tu Sitio Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

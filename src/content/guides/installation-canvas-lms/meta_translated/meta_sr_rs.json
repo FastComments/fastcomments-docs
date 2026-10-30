@@ -1,57 +1,62 @@
 {
-  "name": "Инсталација Canvas LMS-а",
-  "pageHeader": "Додавање коментара у Canvas LMS преко LTI 1.3",
+  "name": "Instalacija Canvas LMS-a",
+  "pageHeader": "Dodavanje komentara u Canvas LMS putem LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "Цене",
+      "name": "Cenovnik",
       "file": "canvas-lms-plans.md",
-      "subCat": "Укратко"
+      "subCat": "TLDR"
     },
     {
-      "name": "Брзи почетак",
+      "name": "Brzi početak",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Укратко"
+      "subCat": "TLDR"
     },
     {
-      "name": "Подешавање FastComments контролне табле",
+      "name": "Postavljanje FastComments kontrolne table",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Подешавање Canvas LTI 1.3"
+      "subCat": "Podešavanje Canvas LTI 1.3"
     },
     {
-      "name": "Развојачки кључ за Canvas",
+      "name": "Canvas developerski ključ",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Подешавање Canvas LTI 1.3"
+      "subCat": "Podešavanje Canvas LTI 1.3"
     },
     {
-      "name": "Завршите повезивање",
+      "name": "Završite povezivanje",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Подешавање Canvas LTI 1.3"
+      "subCat": "Podešavanje Canvas LTI 1.3"
     },
     {
-      "name": "Додајте у курс",
+      "name": "Dodaj u kurs",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Подешавање Canvas LTI 1.3"
+      "subCat": "Podešavanje Canvas LTI 1.3"
     },
     {
-      "name": "Стилови коментарисања",
+      "name": "Stilovi komentarisanja",
       "file": "canvas-lms-commenting-styles.md",
-      "subCat": "Конфигурација"
+      "subCat": "Konfiguracija"
     },
     {
-      "name": "Мапирање улога",
+      "name": "Mapiranje uloga",
       "file": "canvas-lms-role-mapping.md",
-      "subCat": "Конфигурација"
+      "subCat": "Konfiguracija"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "canvas-lms-customize.md",
-      "subCat": "Конфигурација"
+      "subCat": "Konfiguracija"
     },
     {
-      "name": "Проблеми са доменом",
+      "name": "Greške domena",
       "file": "canvas-lms-domain-errors.md",
-      "subCat": "Решавање проблема"
+      "subCat": "Otklanjanje grešaka"
+    },
+    {
+      "name": "Dodajte ankete u vaš Canvas kurs",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

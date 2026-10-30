@@ -14,22 +14,22 @@
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Tilføj et badge med antal kommentarer",
+      "name": "Tilføj et badge for kommentarantal",
       "file": "shopify-comment-count.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Tilføj et feed med nyeste kommentarer",
+      "name": "Tilføj et feed med seneste kommentarer",
       "file": "shopify-recent-comments.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Tilføj et feed med nyeste diskussioner",
+      "name": "Tilføj et feed med seneste diskussioner",
       "file": "shopify-recent-discussions.md",
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Tilføj en liste over mest populære sider",
+      "name": "Tilføj en liste over top-sider",
       "file": "shopify-top-pages.md",
       "subCat": "Shopify-installation"
     },
@@ -39,7 +39,7 @@
       "subCat": "Shopify-installation"
     },
     {
-      "name": "Automatisk log ind for Shopify-kunder",
+      "name": "Automatisk login for Shopify-kunder",
       "file": "shopify-sso.md",
       "subCat": "Shopify-installation"
     },
@@ -62,6 +62,11 @@
       "name": "Manuel installation (avanceret)",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Shopify-butik",
+      "file": "shopify-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

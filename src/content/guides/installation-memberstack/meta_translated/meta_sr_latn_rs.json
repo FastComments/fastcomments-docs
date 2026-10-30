@@ -1,22 +1,27 @@
 {
-  "name": "Instalacija Memberstacka",
-  "pageHeader": "Dodajte komentare pomoću Memberstacka",
+  "name": "Instalacija Memberstack-a",
+  "pageHeader": "Dodajte komentare uz Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
       "name": "Kod",
       "file": "memberstack-step-1.md",
-      "subCat": "Instalacija Memberstacka"
+      "subCat": "Instalacija Memberstack-a"
     },
     {
-      "name": "Greške na domenu",
+      "name": "Greške domena",
       "file": "memberstack-domain-errors.md",
-      "subCat": "Instalacija Memberstacka"
+      "subCat": "Instalacija Memberstack-a"
     },
     {
       "name": "Prilagođavanje",
       "file": "memberstack-customize.md",
-      "subCat": "Instalacija Memberstacka"
+      "subCat": "Instalacija Memberstack-a"
+    },
+    {
+      "name": "Dodajte ankete na vaš Memberstack sajt",
+      "file": "memberstack-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

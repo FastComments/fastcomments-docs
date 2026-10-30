@@ -9,12 +9,12 @@
       "subCat": "Kurulum"
     },
     {
-      "name": "2. Kodu Ekle",
+      "name": "2. Kodu Yerleştir",
       "file": "typeflo-step-2.md",
       "subCat": "Kurulum"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "typeflo-success.md",
       "subCat": "Kurulum"
     },
@@ -25,6 +25,11 @@
     {
       "name": "Alan Adı Hataları",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Typeflo.io Blogunuza Anketler Ekleyin",
+      "file": "typeflo-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

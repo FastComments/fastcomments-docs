@@ -1,22 +1,27 @@
 {
-  "name": "Installation af Memberstack",
+  "name": "Memberstack-installation",
   "pageHeader": "Tilføj kommentarer med Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
       "name": "Koden",
       "file": "memberstack-step-1.md",
-      "subCat": "Installation af Memberstack"
+      "subCat": "Memberstack-installation"
     },
     {
       "name": "Domænefejl",
       "file": "memberstack-domain-errors.md",
-      "subCat": "Installation af Memberstack"
+      "subCat": "Memberstack-installation"
     },
     {
       "name": "Tilpasning",
       "file": "memberstack-customize.md",
-      "subCat": "Installation af Memberstack"
+      "subCat": "Memberstack-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Memberstack-side",
+      "file": "memberstack-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

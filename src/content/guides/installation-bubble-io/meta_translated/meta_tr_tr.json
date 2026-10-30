@@ -24,7 +24,7 @@
       "subCat": "Kurulum"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "bubble-io-success.md",
       "subCat": "Kurulum"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Alan Adı Hataları",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Bubble.io Uygulamanıza Anketler Ekleyin",
+      "file": "bubble-io-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

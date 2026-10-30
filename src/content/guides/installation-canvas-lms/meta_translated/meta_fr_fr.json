@@ -6,32 +6,32 @@
     {
       "name": "Tarification",
       "file": "canvas-lms-plans.md",
-      "subCat": "Résumé"
+      "subCat": "TLDR"
     },
     {
       "name": "Démarrage rapide",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Résumé"
+      "subCat": "TLDR"
     },
     {
       "name": "Configuration du tableau de bord FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Configuration de Canvas LTI 1.3"
+      "subCat": "Configuration LTI 1.3 de Canvas"
     },
     {
       "name": "Clé développeur Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Configuration de Canvas LTI 1.3"
+      "subCat": "Configuration LTI 1.3 de Canvas"
     },
     {
-      "name": "Finaliser la connexion",
+      "name": "Compléter la connexion",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Configuration de Canvas LTI 1.3"
+      "subCat": "Configuration LTI 1.3 de Canvas"
     },
     {
       "name": "Ajouter à un cours",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Configuration de Canvas LTI 1.3"
+      "subCat": "Configuration LTI 1.3 de Canvas"
     },
     {
       "name": "Styles de commentaires",
@@ -39,7 +39,7 @@
       "subCat": "Configuration"
     },
     {
-      "name": "Correspondance des rôles",
+      "name": "Mappage des rôles",
       "file": "canvas-lms-role-mapping.md",
       "subCat": "Configuration"
     },
@@ -52,6 +52,11 @@
       "name": "Erreurs de domaine",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Dépannage"
+    },
+    {
+      "name": "Ajouter des sondages à votre cours Canvas",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

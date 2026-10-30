@@ -1,42 +1,47 @@
 {
-  "name": "Instalacija Webnode-a",
-  "pageHeader": "Dodavanje komentara na Webnode sajtove",
+  "name": "Webnode instalacija",
+  "pageHeader": "Dodajte komentare na Webnode sajtove",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Izmenite vašu stranicu",
+      "name": "Korak 1: Uredite svoju stranicu",
       "file": "webnode-step-1.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
     },
     {
       "name": "Korak 2: Dodajte sekciju i HTML blok",
       "file": "webnode-step-2.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
     },
     {
-      "name": "Korak 3: Kopirajte i nalepite deo koda",
+      "name": "Korak 3: Kopirajte i nalepite kod",
       "file": "webnode-step-3.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
     },
     {
       "name": "Korak 4: Objavite",
       "file": "webnode-step-4.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "webnode-success.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
     },
     {
       "name": "Greške domena",
       "file": "webnode-domain-errors.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
     },
     {
       "name": "Prilagođavanje",
       "file": "webnode-customize.md",
-      "subCat": "Instalacija Webnode-a"
+      "subCat": "Webnode instalacija"
+    },
+    {
+      "name": "Dodajte ankete na vaš Webnode sajt",
+      "file": "webnode-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

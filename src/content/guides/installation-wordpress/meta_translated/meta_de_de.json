@@ -6,7 +6,7 @@
     {
       "name": "Schnellstart",
       "file": "wordpress-quick-start.md",
-      "subCat": "TLDR"
+      "subCat": "Kurzfassung"
     },
     {
       "name": "Installation",
@@ -74,12 +74,12 @@
       "subCat": "Andere Widgets"
     },
     {
-      "name": "Widget für Top-Seiten",
+      "name": "Widget für Top‑Seiten",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Andere Widgets"
     },
     {
-      "name": "Verschieben Ihrer Kommentare zu einer neuen Seite",
+      "name": "Kommentare auf eine neue Seite verschieben",
       "file": "wordpress-moving-off-wordpress.md",
       "subCat": "Umzug von WordPress"
     },
@@ -87,6 +87,11 @@
       "name": "Deaktivieren vs Deinstallieren des Plugins",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Plugin-Entfernung"
+    },
+    {
+      "name": "Umfragen zu Ihrer WordPress-Seite hinzufügen",
+      "file": "wordpress-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

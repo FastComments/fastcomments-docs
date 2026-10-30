@@ -1,0 +1,52 @@
+{
+  "name": "Sondaggi live",
+  "pageHeader": "Sondaggi live nei commenti",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Cosa sono i sondaggi live",
+      "file": "what-are-polls.md",
+      "subCat": "Contesto"
+    },
+    {
+      "name": "Abilitare i sondaggi",
+      "file": "enabling-polls.md",
+      "subCat": "Configurazione dei sondaggi"
+    },
+    {
+      "name": "Chi può creare i sondaggi",
+      "file": "who-can-create-polls.md",
+      "subCat": "Configurazione dei sondaggi"
+    },
+    {
+      "name": "Consentire voti anonimi nei sondaggi",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Configurazione dei sondaggi"
+    },
+    {
+      "name": "Creare un sondaggio",
+      "file": "creating-a-poll.md",
+      "subCat": "Utilizzo dei sondaggi"
+    },
+    {
+      "name": "Votare e risultati in tempo reale",
+      "file": "voting-and-live-results.md",
+      "subCat": "Utilizzo dei sondaggi"
+    },
+    {
+      "name": "Privacy degli elettori",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Utilizzo dei sondaggi"
+    },
+    {
+      "name": "Notifiche dei sondaggi",
+      "file": "poll-notifications.md",
+      "subCat": "Utilizzo dei sondaggi"
+    },
+    {
+      "name": "API dei sondaggi",
+      "file": "polls-api.md",
+      "subCat": "Per gli sviluppatori"
+    }
+  ]
+}

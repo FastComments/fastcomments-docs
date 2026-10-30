@@ -1,25 +1,25 @@
 {
   "name": "Weebly Kurulumu",
-  "pageHeader": "Weebly Sitelerine Yorum Ekleme",
+  "pageHeader": "Weebly Sitelerine Yorum Ekle",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Blog Ayarlarını Açın",
+      "name": "Adım 1: Blog Ayarlarını Aç",
       "file": "weebly-step-1.md",
       "subCat": "Weebly Kurulumu"
     },
     {
-      "name": "Adım 2: FastComments.com Kodunu Ekleyin",
+      "name": "Adım 2: FastComments.com Kodunu Ekle",
       "file": "weebly-step-2.md",
       "subCat": "Weebly Kurulumu"
     },
     {
-      "name": "Adım 3: Yayınlayın!",
+      "name": "Adım 3: Yayınla!",
       "file": "weebly-step-3.md",
       "subCat": "Weebly Kurulumu"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "weebly-success.md",
       "subCat": "Weebly Kurulumu"
     },
@@ -32,6 +32,11 @@
       "name": "Özelleştirme",
       "file": "weebly-customize.md",
       "subCat": "Weebly Kurulumu"
+    },
+    {
+      "name": "Weebly Sitenize Anketler Ekleyin",
+      "file": "weebly-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

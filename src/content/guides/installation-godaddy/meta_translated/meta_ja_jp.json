@@ -1,37 +1,42 @@
 {
-  "name": "Godaddy のインストール",
-  "pageHeader": "Godaddy サイトにコメントを追加",
+  "name": "GoDaddy インストール",
+  "pageHeader": "GoDaddy サイトにコメントを追加",
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
-      "name": "ステップ1: コード領域を追加",
+      "name": "ステップ 1: コード領域を追加",
       "file": "godaddy-step-1.md",
-      "subCat": "Godaddy のインストール"
+      "subCat": "GoDaddy インストール"
     },
     {
-      "name": "ステップ2: FastComments.com のコードを追加",
+      "name": "ステップ 2: FastComments.com コードを追加",
       "file": "godaddy-step-2.md",
-      "subCat": "Godaddy のインストール"
+      "subCat": "GoDaddy インストール"
     },
     {
-      "name": "ステップ3: 公開",
+      "name": "ステップ 3: 公開",
       "file": "godaddy-step-3.md",
-      "subCat": "Godaddy のインストール"
+      "subCat": "GoDaddy インストール"
     },
     {
-      "name": "完了",
+      "name": "成功",
       "file": "godaddy-success.md",
-      "subCat": "Godaddy のインストール"
+      "subCat": "GoDaddy インストール"
     },
     {
       "name": "ドメインエラー",
       "file": "godaddy-domain-errors.md",
-      "subCat": "Godaddy のインストール"
+      "subCat": "GoDaddy インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "godaddy-customize.md",
-      "subCat": "Godaddy のインストール"
+      "subCat": "GoDaddy インストール"
+    },
+    {
+      "name": "GoDaddy サイトに投票を追加",
+      "file": "godaddy-polls.md",
+      "subCat": "投票"
     }
   ]
 }

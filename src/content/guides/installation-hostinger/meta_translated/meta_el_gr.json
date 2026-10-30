@@ -1,37 +1,42 @@
 {
-  "name": "Εγκατάσταση στο Hostinger",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Hostinger",
+  "name": "Εγκατάσταση Hostinger",
+  "pageHeader": "Προσθήκη Ζωντανών Σχολίων σε Ιστοσελίδες Hostinger",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Προσθήκη widget κώδικα",
+      "name": "Βήμα 1: Προσθήκη Widget Κώδικα",
       "file": "hostinger-step-1.md",
-      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+      "subCat": "Εγκατάσταση Ιστοσελίδας Hostinger"
     },
     {
-      "name": "Βήμα 2: Προσθήκη κώδικα",
+      "name": "Βήμα 2: Προσθήκη Κώδικα",
       "file": "hostinger-step-2.md",
-      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+      "subCat": "Εγκατάσταση Ιστοσελίδας Hostinger"
     },
     {
       "name": "Επιτυχία",
       "file": "hostinger-site-success.md",
-      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+      "subCat": "Εγκατάσταση Ιστοσελίδας Hostinger"
     },
     {
-      "name": "Σφάλματα τομέα ιστότοπου",
+      "name": "Σφάλματα Τομέα Ιστοσελίδας",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+      "subCat": "Εγκατάσταση Ιστοσελίδας Hostinger"
     },
     {
-      "name": "Προσαρμογή ιστότοπου",
+      "name": "Προσαρμογή Ιστοσελίδας",
       "file": "hostinger-site-customize.md",
-      "subCat": "Εγκατάσταση ιστότοπου Hostinger"
+      "subCat": "Εγκατάσταση Ιστοσελίδας Hostinger"
     },
     {
-      "name": "Πλωτό κουμπί «Μου αρέσει»",
+      "name": "Κουμπί Πλωτών Μουαρέων",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Πλωτά «Μου αρέσει» για Hostinger"
+      "subCat": "Πλωτά Μουαρέων Hostinger"
+    },
+    {
+      "name": "Προσθήκη Δημοσκοπήσεων στην Ιστοσελίδα Hostinger",
+      "file": "hostinger-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Memberstack 安裝",
-  "pageHeader": "使用 Memberstack 新增留言",
+  "pageHeader": "使用 Memberstack 添加評論",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Memberstack 安裝"
     },
     {
-      "name": "網域錯誤",
+      "name": "網域錯�誤",
       "file": "memberstack-domain-errors.md",
       "subCat": "Memberstack 安裝"
     },
@@ -17,6 +17,11 @@
       "name": "自訂",
       "file": "memberstack-customize.md",
       "subCat": "Memberstack 安裝"
+    },
+    {
+      "name": "在您的 Memberstack 網站添加投票",
+      "file": "memberstack-polls.md",
+      "subCat": "投票"
     }
   ]
 }

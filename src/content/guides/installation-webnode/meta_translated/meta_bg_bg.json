@@ -1,6 +1,6 @@
 {
   "name": "Инсталиране на Webnode",
-  "pageHeader": "Добавяне на коментари към сайтове на Webnode",
+  "pageHeader": "Добавяне на коментари към Webnode сайтове",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Инсталиране на Webnode"
     },
     {
-      "name": "Стъпка 3: Копирайте и поставете фрагмент от код",
+      "name": "Стъпка 3: Копирайте и поставете кода",
       "file": "webnode-step-3.md",
       "subCat": "Инсталиране на Webnode"
     },
@@ -24,7 +24,7 @@
       "subCat": "Инсталиране на Webnode"
     },
     {
-      "name": "Готово",
+      "name": "Успех",
       "file": "webnode-success.md",
       "subCat": "Инсталиране на Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "Персонализиране",
       "file": "webnode-customize.md",
       "subCat": "Инсталиране на Webnode"
+    },
+    {
+      "name": "Добавете анкети към вашия Webnode сайт",
+      "file": "webnode-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

@@ -1,67 +1,67 @@
 {
-  "name": "LMS のインストール（LTI 1.3）",
-  "pageHeader": "LTI 1.3 経由で LMS にコメントを追加する",
+  "name": "LMS インストール (LTI 1.3)",
+  "pageHeader": "LTI 1.3 を使用して LMS にコメントを追加",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "料金",
+      "name": "価格設定",
       "file": "lti-plans.md",
-      "subCat": "概要"
+      "subCat": "要約"
     },
     {
       "name": "クイックスタート",
       "file": "lti-quick-start.md",
-      "subCat": "概要"
+      "subCat": "要約"
     },
     {
-      "name": "対応プラットフォーム",
+      "name": "サポートされているプラットフォーム",
       "file": "lti-supported-platforms.md",
-      "subCat": "概要"
+      "subCat": "要約"
     },
     {
-      "name": "登録用URLを生成する",
+      "name": "登録 URL を生成",
       "file": "lti-generate-url.md",
-      "subCat": "FastComments のセットアップ"
+      "subCat": "FastComments 設定"
     },
     {
-      "name": "D2L Brightspace に登録する",
+      "name": "D2L Brightspace に登録",
       "file": "lti-register-d2l.md",
-      "subCat": "ツールの登録"
+      "subCat": "ツールを登録"
     },
     {
-      "name": "Moodle に登録する",
+      "name": "Moodle に登録",
       "file": "lti-register-moodle.md",
-      "subCat": "ツールの登録"
+      "subCat": "ツールを登録"
     },
     {
-      "name": "Blackboard Learn に登録する",
+      "name": "Blackboard Learn に登録",
       "file": "lti-register-blackboard.md",
-      "subCat": "ツールの登録"
+      "subCat": "ツールを登録"
     },
     {
-      "name": "Sakai または Schoology に登録する",
+      "name": "Sakai または Schoology に登録",
       "file": "lti-register-other.md",
-      "subCat": "ツールの登録"
+      "subCat": "ツールを登録"
     },
     {
-      "name": "D2L のコースコンテンツに追加する",
+      "name": "D2L コースコンテンツに追加",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "コースに追加する"
+      "subCat": "コースに追加"
     },
     {
-      "name": "Moodle のコースコンテンツに追加する",
+      "name": "Moodle コースコンテンツに追加",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "コースに追加する"
+      "subCat": "コースに追加"
     },
     {
-      "name": "Blackboard Learn のコースコンテンツに追加する",
+      "name": "Blackboard コースコンテンツに追加",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "コースに追加する"
+      "subCat": "コースに追加"
     },
     {
-      "name": "Sakai または Schoology のコースコンテンツに追加する",
+      "name": "Sakai または Schoology コースコンテンツに追加",
       "file": "lti-other-add-to-course.md",
-      "subCat": "コースに追加する"
+      "subCat": "コースに追加"
     },
     {
       "name": "トラブルシューティング",
@@ -69,9 +69,14 @@
       "subCat": "ツールの使用"
     },
     {
-      "name": "最小権限とデータの最小化",
+      "name": "最小権限とデータ最小化",
       "file": "lti-least-privilege.md",
       "subCat": "セキュリティとコンプライアンス"
+    },
+    {
+      "name": "LMS コースに投票を追加",
+      "file": "lti-polls.md",
+      "subCat": "投票"
     }
   ]
 }

@@ -1,37 +1,42 @@
 {
-  "name": "Instalacja na Hostingerze",
-  "pageHeader": "Dodaj komentowanie na żywo na stronach Hostinger",
+  "name": "Instalacja Hostinger",
+  "pageHeader": "Dodaj komentarze na żywo do stron Hostinger",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Krok 1: Dodaj widżet z kodem",
+      "name": "Krok 1: Dodaj widżet kodu",
       "file": "hostinger-step-1.md",
-      "subCat": "Instalacja strony na Hostingerze"
+      "subCat": "Instalacja strony Hostinger"
     },
     {
       "name": "Krok 2: Dodaj kod",
       "file": "hostinger-step-2.md",
-      "subCat": "Instalacja strony na Hostingerze"
+      "subCat": "Instalacja strony Hostinger"
     },
     {
       "name": "Sukces",
       "file": "hostinger-site-success.md",
-      "subCat": "Instalacja strony na Hostingerze"
+      "subCat": "Instalacja strony Hostinger"
     },
     {
       "name": "Błędy domeny witryny",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Instalacja strony na Hostingerze"
+      "subCat": "Instalacja strony Hostinger"
     },
     {
-      "name": "Dostosowywanie strony",
+      "name": "Dostosowanie witryny",
       "file": "hostinger-site-customize.md",
-      "subCat": "Instalacja strony na Hostingerze"
+      "subCat": "Instalacja strony Hostinger"
     },
     {
       "name": "Pływający przycisk polubień",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Pływające polubienia na Hostingerze"
+      "subCat": "Hostinger Pływające Polubienia"
+    },
+    {
+      "name": "Dodaj ankiety do swojej witryny Hostinger",
+      "file": "hostinger-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

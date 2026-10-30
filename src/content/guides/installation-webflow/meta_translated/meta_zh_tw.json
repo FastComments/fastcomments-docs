@@ -1,10 +1,10 @@
 {
   "name": "Webflow 安裝",
-  "pageHeader": "在 Webflow 網站加入留言",
+  "pageHeader": "在 Webflow 網站添加評論",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "步驟 1：新增嵌入區塊",
+      "name": "步驟 1：添加嵌入區塊",
       "file": "webflow-step-1.md",
       "subCat": "Webflow 安裝"
     },
@@ -14,7 +14,7 @@
       "subCat": "Webflow 安裝"
     },
     {
-      "name": "步驟 3：發佈",
+      "name": "步驟 3：發布",
       "file": "webflow-step-3.md",
       "subCat": "Webflow 安裝"
     },
@@ -32,6 +32,11 @@
       "name": "自訂",
       "file": "webflow-customize.md",
       "subCat": "Webflow 安裝"
+    },
+    {
+      "name": "在您的 Webflow 網站添加投票",
+      "file": "webflow-polls.md",
+      "subCat": "投票"
     }
   ]
 }

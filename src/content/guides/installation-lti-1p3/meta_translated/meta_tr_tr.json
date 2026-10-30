@@ -1,22 +1,22 @@
 {
   "name": "LMS Kurulumu (LTI 1.3)",
-  "pageHeader": "LTI 1.3 aracılığıyla LMS'inize Yorum Ekleme",
+  "pageHeader": "LTI 1.3 aracılığıyla LMS'nize Yorum Ekleyin",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
       "name": "Fiyatlandırma",
       "file": "lti-plans.md",
-      "subCat": "Özet"
+      "subCat": "TLDR"
     },
     {
       "name": "Hızlı Başlangıç",
       "file": "lti-quick-start.md",
-      "subCat": "Özet"
+      "subCat": "TLDR"
     },
     {
       "name": "Desteklenen Platformlar",
       "file": "lti-supported-platforms.md",
-      "subCat": "Özet"
+      "subCat": "TLDR"
     },
     {
       "name": "Kayıt URL'si Oluştur",
@@ -24,44 +24,44 @@
       "subCat": "FastComments Kurulumu"
     },
     {
-      "name": "D2L Brightspace'e Kayıt",
+      "name": "D2L Brightspace'te Kayıt Ol",
       "file": "lti-register-d2l.md",
-      "subCat": "Aracı Kaydetme"
+      "subCat": "Aracı Kaydet"
     },
     {
-      "name": "Moodle'da Kayıt",
+      "name": "Moodle'da Kayıt Ol",
       "file": "lti-register-moodle.md",
-      "subCat": "Aracı Kaydetme"
+      "subCat": "Aracı Kaydet"
     },
     {
-      "name": "Blackboard Learn'de Kayıt",
+      "name": "Blackboard Learn'de Kayıt Ol",
       "file": "lti-register-blackboard.md",
-      "subCat": "Aracı Kaydetme"
+      "subCat": "Aracı Kaydet"
     },
     {
-      "name": "Sakai veya Schoology'de Kayıt",
+      "name": "Sakai veya Schoology'de Kayıt Ol",
       "file": "lti-register-other.md",
-      "subCat": "Aracı Kaydetme"
+      "subCat": "Aracı Kaydet"
     },
     {
-      "name": "D2L Ders İçeriğine Ekle",
+      "name": "D2L Kurs İçeriğine Ekle",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Derse Ekleme"
+      "subCat": "Bir Kursa Ekle"
     },
     {
-      "name": "Moodle Ders İçeriğine Ekle",
+      "name": "Moodle Kurs İçeriğine Ekle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Derse Ekleme"
+      "subCat": "Bir Kursa Ekle"
     },
     {
-      "name": "Blackboard Ders İçeriğine Ekle",
+      "name": "Blackboard Kurs İçeriğine Ekle",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Derse Ekleme"
+      "subCat": "Bir Kursa Ekle"
     },
     {
-      "name": "Sakai veya Schoology Ders İçeriğine Ekle",
+      "name": "Sakai veya Schoology Kurs İçeriğine Ekle",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Derse Ekleme"
+      "subCat": "Bir Kursa Ekle"
     },
     {
       "name": "Sorun Giderme",
@@ -69,9 +69,14 @@
       "subCat": "Aracı Kullanma"
     },
     {
-      "name": "Asgari Yetki ve Veri Minimizasyonu",
+      "name": "En Az Yetki ve Veri Azaltma",
       "file": "lti-least-privilege.md",
       "subCat": "Güvenlik ve Uyumluluk"
+    },
+    {
+      "name": "LMS Kursunuza Anket Ekleyin",
+      "file": "lti-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

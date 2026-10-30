@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Προσθήκη ζωντανού σχολιασμού στο ιστολόγιό σας",
+      "name": "Προσθήκη ζωντανών σχολίων στο ιστολόγιό σας",
       "file": "squarespace-blog-step-0.md",
       "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
     },
@@ -14,7 +14,7 @@
       "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
     },
     {
-      "name": "Βήμα 2: Επικολλήστε τον κώδικά σας από το FastComments.com",
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα FastComments.com",
       "file": "squarespace-blog-step-2.md",
       "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
     },
@@ -24,7 +24,7 @@
       "subCat": "Προσθήκη σχολίων στο ιστολόγιό σας"
     },
     {
-      "name": "Προσθήκη ζωντανού σχολιασμού σε όλες τις σελίδες",
+      "name": "Προσθήκη ζωντανών σχολίων σε όλες τις σελίδες",
       "file": "squarespace-pages-all-pages-step-0.md",
       "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
     },
@@ -34,7 +34,7 @@
       "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
     },
     {
-      "name": "Βήμα 2: Επικολλήστε τον κώδικά σας από το FastComments.com",
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
       "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
     },
@@ -44,7 +44,7 @@
       "subCat": "Προσθήκη σχολίων σε όλες τις σελίδες"
     },
     {
-      "name": "Προσθήκη ζωντανού σχολιασμού σε συγκεκριμένη σελίδα",
+      "name": "Προσθήκη ζωντανών σχολίων σε συγκεκριμένη σελίδα",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
     },
@@ -54,7 +54,7 @@
       "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
     },
     {
-      "name": "Βήμα 2: Επικολλήστε τον κώδικά σας από το FastComments.com",
+      "name": "Βήμα 2: Επικολλήστε τον κώδικα FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
       "subCat": "Προσθήκη σχολίων σε συγκεκριμένη σελίδα"
     },
@@ -66,12 +66,17 @@
     {
       "name": "Σφάλματα τομέα",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Επόμενα βήματα για Squarespace"
+      "subCat": "Επόμενα βήματα Squarespace"
     },
     {
       "name": "Προσαρμογή",
       "file": "squarespace-customize.md",
-      "subCat": "Επόμενα βήματα για Squarespace"
+      "subCat": "Επόμενα βήματα Squarespace"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

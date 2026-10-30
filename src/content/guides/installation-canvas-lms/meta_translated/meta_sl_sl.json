@@ -6,32 +6,32 @@
     {
       "name": "Cenik",
       "file": "canvas-lms-plans.md",
-      "subCat": "Na kratko"
+      "subCat": "TLDR"
     },
     {
-      "name": "Hitri začetek",
+      "name": "Hiter začetek",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Na kratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Nastavitev nadzorne plošče FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Nastavitev LTI 1.3 za Canvas"
+      "subCat": "Nastavitev Canvas LTI 1.3"
     },
     {
-      "name": "Razvijalski ključ za Canvas",
+      "name": "Ključ razvijalca Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Nastavitev LTI 1.3 za Canvas"
+      "subCat": "Nastavitev Canvas LTI 1.3"
     },
     {
-      "name": "Dokončajte povezavo",
+      "name": "Dokončaj povezavo",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Nastavitev LTI 1.3 za Canvas"
+      "subCat": "Nastavitev Canvas LTI 1.3"
     },
     {
-      "name": "Dodaj v predmet",
+      "name": "Dodaj v tečaj",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Nastavitev LTI 1.3 za Canvas"
+      "subCat": "Nastavitev Canvas LTI 1.3"
     },
     {
       "name": "Slogi komentiranja",
@@ -49,9 +49,14 @@
       "subCat": "Konfiguracija"
     },
     {
-      "name": "Napake domen",
+      "name": "Napake domene",
       "file": "canvas-lms-domain-errors.md",
-      "subCat": "Odpravljanje težav"
+      "subCat": "Odpravljanje napak"
+    },
+    {
+      "name": "Dodaj ankete v svoj Canvas tečaj",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

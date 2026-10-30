@@ -1,0 +1,52 @@
+{
+  "name": "Живі опитування",
+  "pageHeader": "Живі опитування в коментарях",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Що таке живі опитування",
+      "file": "what-are-polls.md",
+      "subCat": "Передумови"
+    },
+    {
+      "name": "Увімкнення опитувань",
+      "file": "enabling-polls.md",
+      "subCat": "Налаштування опитувань"
+    },
+    {
+      "name": "Хто може створювати опитування",
+      "file": "who-can-create-polls.md",
+      "subCat": "Налаштування опитувань"
+    },
+    {
+      "name": "Дозвіл анонімного голосування в опитуваннях",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Налаштування опитувань"
+    },
+    {
+      "name": "Створення опитування",
+      "file": "creating-a-poll.md",
+      "subCat": "Використання опитувань"
+    },
+    {
+      "name": "Голосування та живі результати",
+      "file": "voting-and-live-results.md",
+      "subCat": "Використання опитувань"
+    },
+    {
+      "name": "Конфіденційність голосуючих",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Використання опитувань"
+    },
+    {
+      "name": "Сповіщення про опитування",
+      "file": "poll-notifications.md",
+      "subCat": "Використання опитувань"
+    },
+    {
+      "name": "API опитувань",
+      "file": "polls-api.md",
+      "subCat": "Для розробників"
+    }
+  ]
+}

@@ -1,37 +1,42 @@
 {
-  "name": "Ionos instalacija",
+  "name": "Instalacija Ionos",
   "pageHeader": "Dodajte komentare na Ionos stranice",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodajte kontakt obrazac",
+      "name": "Korak 1: Dodajte kontaktni obrazac",
       "file": "ionos-step-1.md",
-      "subCat": "Ionos instalacija"
+      "subCat": "Instalacija Ionos"
     },
     {
-      "name": "Korak 2: Dodajte kod za FastComments.com",
+      "name": "Korak 2: Dodajte FastComments.com kod",
       "file": "ionos-step-2.md",
-      "subCat": "Ionos instalacija"
+      "subCat": "Instalacija Ionos"
     },
     {
       "name": "Korak 3: Objavite",
       "file": "ionos-step-3.md",
-      "subCat": "Ionos instalacija"
+      "subCat": "Instalacija Ionos"
     },
     {
       "name": "Uspjeh",
       "file": "ionos-success.md",
-      "subCat": "Ionos instalacija"
+      "subCat": "Instalacija Ionos"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "ionos-domain-errors.md",
-      "subCat": "Ionos instalacija"
+      "subCat": "Instalacija Ionos"
     },
     {
       "name": "Prilagodba",
       "file": "ionos-customize.md",
-      "subCat": "Ionos instalacija"
+      "subCat": "Instalacija Ionos"
+    },
+    {
+      "name": "Dodajte ankete na svoju Ionos stranicu",
+      "file": "ionos-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

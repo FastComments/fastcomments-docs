@@ -29,7 +29,7 @@
       "subCat": "Drupal 설치"
     },
     {
-      "name": "싱글 사인온(SSO)",
+      "name": "싱글 사인온 (SSO)",
       "file": "drupal-sso.md",
       "subCat": "Drupal 설치"
     },
@@ -44,12 +44,12 @@
       "subCat": "Drupal 설치"
     },
     {
-      "name": "EU 데이터 저장 위치",
+      "name": "EU 데이터 거주지",
       "file": "drupal-eu-data-residency.md",
       "subCat": "Drupal 설치"
     },
     {
-      "name": "맞춤화",
+      "name": "맞춤 설정",
       "file": "drupal-customize.md",
       "subCat": "Drupal 설치"
     },
@@ -57,6 +57,11 @@
       "name": "요구 사항",
       "file": "drupal-requirements.md",
       "subCat": "Drupal 설치"
+    },
+    {
+      "name": "Drupal 사이트에 설문 추가",
+      "file": "drupal-polls.md",
+      "subCat": "설문"
     }
   ]
 }

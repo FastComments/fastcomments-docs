@@ -1,15 +1,15 @@
 {
   "name": "Instalación de Webflow",
-  "pageHeader": "Añadir comentarios a sitios de Webflow",
+  "pageHeader": "Agregar comentarios a sitios Webflow",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Paso 1: Añadir un bloque de incrustación",
+      "name": "Paso 1: Añadir un bloque incrustado",
       "file": "webflow-step-1.md",
       "subCat": "Instalación de Webflow"
     },
     {
-      "name": "Paso 2: Pegue su código de FastComments.com",
+      "name": "Paso 2: Pegar tu código de FastComments.com",
       "file": "webflow-step-2.md",
       "subCat": "Instalación de Webflow"
     },
@@ -32,6 +32,11 @@
       "name": "Personalización",
       "file": "webflow-customize.md",
       "subCat": "Instalación de Webflow"
+    },
+    {
+      "name": "Agregar encuestas a tu sitio Webflow",
+      "file": "webflow-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

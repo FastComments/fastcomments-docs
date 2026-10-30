@@ -1,6 +1,6 @@
 {
   "name": "Встановлення Zyro",
-  "pageHeader": "Додати живі коментарі на сайти Zyro",
+  "pageHeader": "Додайте живі коментарі до сайтів Zyro",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Встановлення сайту Zyro"
     },
     {
-      "name": "Успішно",
+      "name": "Успіх",
       "file": "zyro-site-success.md",
       "subCat": "Встановлення сайту Zyro"
     },
@@ -32,6 +32,11 @@
       "name": "Плаваюча кнопка лайків",
       "file": "zyro-floating-likes.md",
       "subCat": "Плаваючі лайки Zyro"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Zyro",
+      "file": "zyro-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

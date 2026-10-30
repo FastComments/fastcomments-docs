@@ -1,12 +1,12 @@
 {
-  "name": "Moodle のインストール",
-  "pageHeader": "Moodle サイトにコメントを追加する",
+  "name": "Moodle インストール",
+  "pageHeader": "Moodle サイトにコメントを追加",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "クイックスタート",
       "file": "moodle-quick-start.md",
-      "subCat": "要約"
+      "subCat": "TLDR"
     },
     {
       "name": "インストール",
@@ -19,7 +19,7 @@
       "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "コメントのスタイル",
+      "name": "コメントスタイル",
       "file": "moodle-commenting-styles.md",
       "subCat": "Moodle プラグインのインストール"
     },
@@ -29,7 +29,7 @@
       "subCat": "Moodle プラグインのインストール"
     },
     {
-      "name": "ユーザーの通知設定",
+      "name": "ユーザー通知設定",
       "file": "moodle-user-preferences.md",
       "subCat": "Moodle プラグインのインストール"
     },
@@ -42,6 +42,11 @@
       "name": "ドメインエラー",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle プラグインのインストール"
+    },
+    {
+      "name": "Moodle サイトに投票を追加",
+      "file": "moodle-polls.md",
+      "subCat": "投票"
     }
   ]
 }

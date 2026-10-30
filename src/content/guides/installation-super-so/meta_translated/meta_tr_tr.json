@@ -1,25 +1,25 @@
 {
   "name": "Super.so Kurulumu",
-  "pageHeader": "Super.so Sitelerine Canlı Tartışmalar Ekle",
+  "pageHeader": "Super.so Sitelerine Canlı Tartışmalar Ekleyin",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Ayarları Açın",
+      "name": "Adım 1: Ayarları Aç",
       "file": "super-so-learn-step-1.md",
       "subCat": "Super.so Kurulumu"
     },
     {
-      "name": "Adım 2: Önceden Hazırlanmış Kodu Ekleyin",
+      "name": "Adım 2: Hazır Kodu Ekle",
       "file": "super-so-learn-step-2.md",
       "subCat": "Super.so Kurulumu"
     },
     {
-      "name": "Ayrıca Bakınız: Standart Yorum Bileşeni",
+      "name": "Ayrıca Bakınız: Normal Yorum Widget'ı",
       "file": "super-so-comment-widget.md",
       "subCat": "Super.so Kurulumu"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "super-so-learn-success.md",
       "subCat": "Super.so Kurulumu"
     },
@@ -32,6 +32,11 @@
       "name": "Özelleştirme",
       "file": "super-so-learn-customize.md",
       "subCat": "Super.so Kurulumu"
+    },
+    {
+      "name": "Super.so Sitenize Anketler Ekleyin",
+      "file": "super-so-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

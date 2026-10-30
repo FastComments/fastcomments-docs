@@ -1,15 +1,15 @@
 {
   "name": "Инсталиране на Webflow",
-  "pageHeader": "Добавяне на коментари към сайтове в Webflow",
+  "pageHeader": "Добавете коментари към Webflow сайтове",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Стъпка 1: Добавете Embed блок",
+      "name": "Стъпка 1: Добавете блок за вграждане",
       "file": "webflow-step-1.md",
       "subCat": "Инсталиране на Webflow"
     },
     {
-      "name": "Стъпка 2: Поставете своя код от FastComments.com",
+      "name": "Стъпка 2: Поставете кода от FastComments.com",
       "file": "webflow-step-2.md",
       "subCat": "Инсталиране на Webflow"
     },
@@ -19,12 +19,12 @@
       "subCat": "Инсталиране на Webflow"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "webflow-success.md",
       "subCat": "Инсталиране на Webflow"
     },
     {
-      "name": "Грешки с домейна",
+      "name": "Грешки в домейна",
       "file": "webflow-domain-errors.md",
       "subCat": "Инсталиране на Webflow"
     },
@@ -32,6 +32,11 @@
       "name": "Персонализиране",
       "file": "webflow-customize.md",
       "subCat": "Инсталиране на Webflow"
+    },
+    {
+      "name": "Добавете анкети към вашия Webflow сайт",
+      "file": "webflow-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

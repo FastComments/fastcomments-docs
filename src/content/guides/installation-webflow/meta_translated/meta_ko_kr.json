@@ -14,7 +14,7 @@
       "subCat": "Webflow 설치"
     },
     {
-      "name": "3단계: 게시",
+      "name": "3단계: 게시하기",
       "file": "webflow-step-3.md",
       "subCat": "Webflow 설치"
     },
@@ -32,6 +32,11 @@
       "name": "맞춤 설정",
       "file": "webflow-customize.md",
       "subCat": "Webflow 설치"
+    },
+    {
+      "name": "Webflow 사이트에 설문 추가",
+      "file": "webflow-polls.md",
+      "subCat": "설문"
     }
   ]
 }

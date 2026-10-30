@@ -1,22 +1,27 @@
 {
-  "name": "Installatie van MemberSpace",
+  "name": "MemberSpace-installatie",
   "pageHeader": "Reacties toevoegen met MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
       "name": "De code",
       "file": "memberspace-step-1.md",
-      "subCat": "Installatie van MemberSpace"
+      "subCat": "MemberSpace-installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "memberspace-domain-errors.md",
-      "subCat": "Installatie van MemberSpace"
+      "subCat": "MemberSpace-installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "memberspace-customize.md",
-      "subCat": "Installatie van MemberSpace"
+      "subCat": "MemberSpace-installatie"
+    },
+    {
+      "name": "Polls toevoegen aan je MemberSpace-site",
+      "file": "memberspace-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

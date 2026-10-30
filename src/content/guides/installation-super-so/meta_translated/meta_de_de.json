@@ -32,6 +32,11 @@
       "name": "Anpassung",
       "file": "super-so-learn-customize.md",
       "subCat": "Super.so-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Super.so-Website hinzufügen",
+      "file": "super-so-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

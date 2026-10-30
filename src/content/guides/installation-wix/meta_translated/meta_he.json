@@ -1,42 +1,47 @@
 {
-  "name": "התקנת ויקס",
-  "pageHeader": "הוספת תגובות לאתרי ויקס",
+  "name": "התקנת Wix",
+  "pageHeader": "הוספת תגובות לאתרי Wix",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "שלב 1: ערוך את הדף הנכון",
+      "name": "שלב 1: ערוך את העמוד הנכון",
       "file": "wix-step-1.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
     },
     {
       "name": "שלב 2: הוסף בלוק הטמעה",
       "file": "wix-step-2.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
     },
     {
-      "name": "שלב 3: העתק והדבק קוד מותאם אישית",
+      "name": "שלב 3: העתק/הדבק קוד מותאם אישית",
       "file": "wix-step-3.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
     },
     {
-      "name": "שלב 4: שנה את הגודל",
+      "name": "שלב 4: שינוי גודל",
       "file": "wix-step-4.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
     },
     {
       "name": "שלב 5: שרשורי תגובות ייחודיים",
       "file": "wix-step-5.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
     },
     {
-      "name": "שלב 6: חגוג",
+      "name": "שלב 6: לחגוג",
       "file": "wix-step-6.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
     },
     {
       "name": "התאמה אישית",
       "file": "wix-customize.md",
-      "subCat": "התקנת ויקס"
+      "subCat": "התקנת Wix"
+    },
+    {
+      "name": "הוסף סקרים לאתר Wix שלך",
+      "file": "wix-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

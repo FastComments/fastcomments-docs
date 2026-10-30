@@ -1,25 +1,25 @@
 {
   "name": "Встановлення Webnode",
-  "pageHeader": "Додавання коментарів до сайтів Webnode",
+  "pageHeader": "Додати коментарі до сайтів Webnode",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Редагування сторінки",
+      "name": "Крок 1: Редагуйте свою сторінку",
       "file": "webnode-step-1.md",
       "subCat": "Встановлення Webnode"
     },
     {
-      "name": "Крок 2: Додавання секції та HTML-блоку",
+      "name": "Крок 2: Додайте розділ і HTML-блок",
       "file": "webnode-step-2.md",
       "subCat": "Встановлення Webnode"
     },
     {
-      "name": "Крок 3: Копіювання та вставлення фрагмента коду",
+      "name": "Крок 3: Скопіюйте та вставте фрагмент коду",
       "file": "webnode-step-3.md",
       "subCat": "Встановлення Webnode"
     },
     {
-      "name": "Крок 4: Публікація",
+      "name": "Крок 4: Опублікуйте",
       "file": "webnode-step-4.md",
       "subCat": "Встановлення Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "Налаштування",
       "file": "webnode-customize.md",
       "subCat": "Встановлення Webnode"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

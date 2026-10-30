@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Vind het sjabloon",
+      "name": "Stap één: vind de sjabloon",
       "file": "clickfunnels-step-1.md",
       "subCat": "ClickFunnels-installatie"
     },
     {
-      "name": "Stap 2: Voeg de code toe",
+      "name": "Stap twee: voeg de code toe",
       "file": "clickfunnels-step-2.md",
       "subCat": "ClickFunnels-installatie"
     },
@@ -19,19 +19,24 @@
       "subCat": "ClickFunnels-installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "clickfunnels-customize.md",
       "subCat": "ClickFunnels-installatie"
     },
     {
-      "name": "Extra: codefragment voor live reacties",
+      "name": "Extra: codefragment voor live commentaar",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Codefragment voor live reacties"
+      "subCat": "Live commentaar codefragment"
     },
     {
-      "name": "Extra: automatisch afspelen van reacties",
+      "name": "Extra: automatische weergave van reacties",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Automatisch afspelen van reacties"
+    },
+    {
+      "name": "Polls toevoegen aan je ClickFunnels-cursus",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -1,47 +1,52 @@
 {
-  "name": "Instalacija BigCommerce-a",
+  "name": "Instalacija BigCommerce",
   "pageHeader": "Dodajte komentare na BigCommerce sajtove",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Pripremite temu",
+      "name": "Korak jedan: Pripremite svoju temu",
       "file": "bigcommerce-step-1.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Korak 2: Izmenite odgovarajući šablon",
+      "name": "Korak dva: Izmenite odgovarajući šablon",
       "file": "bigcommerce-step-2.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Korak 3: Dodajte kod vidžeta",
+      "name": "Korak tri: Dodajte kod vidžeta",
       "file": "bigcommerce-step-3.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Korak 4: Aktivirajte novu temu",
+      "name": "Korak četiri: Aktivirajte novu temu",
       "file": "bigcommerce-step-4.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "bigcommerce-success.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
       "name": "Greške domena",
       "file": "bigcommerce-domain-errors.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
       "name": "Prilagođavanje",
       "file": "bigcommerce-customize.md",
-      "subCat": "Instalacija BigCommerce-a"
+      "subCat": "Instalacija BigCommerce"
     },
     {
       "name": "Dodatno: Isječak koda za Page Builder",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "Korišćenje Page Builder-a"
+    },
+    {
+      "name": "Dodajte ankete u vašu BigCommerce prodavnicu",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

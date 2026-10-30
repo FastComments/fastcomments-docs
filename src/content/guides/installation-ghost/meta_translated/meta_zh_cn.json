@@ -1,6 +1,6 @@
 {
   "name": "Ghost 安装",
-  "pageHeader": "为 Ghost 站点添加仅限会员的实时评论",
+  "pageHeader": "为 Ghost 站点添加仅会员可见的实时评论",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -34,7 +34,7 @@
       "subCat": "Ghost 安装"
     },
     {
-      "name": "步骤 7：将主题上传到 Ghost",
+      "name": "步骤 7：将主题上传至 Ghost",
       "file": "ghost-step-7.md",
       "subCat": "Ghost 安装"
     },
@@ -52,6 +52,11 @@
       "name": "自定义",
       "file": "ghost-customize.md",
       "subCat": "Ghost 安装"
+    },
+    {
+      "name": "为您的 Ghost 站点添加投票",
+      "file": "ghost-polls.md",
+      "subCat": "投票"
     }
   ]
 }

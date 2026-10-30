@@ -1,10 +1,10 @@
 {
   "name": "Εγκατάσταση Drupal",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστοτόπους Drupal",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Drupal",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
-      "name": "Γρήγορη Εκκίνηση",
+      "name": "Γρήγορη εκκίνηση",
       "file": "drupal-quick-start.md",
       "subCat": "Συνοπτικά"
     },
@@ -19,7 +19,7 @@
       "subCat": "Εγκατάσταση Drupal"
     },
     {
-      "name": "Μπλοκ widget",
+      "name": "Μπλοκ Widget",
       "file": "drupal-widget-blocks.md",
       "subCat": "Εγκατάσταση Drupal"
     },
@@ -29,7 +29,7 @@
       "subCat": "Εγκατάσταση Drupal"
     },
     {
-      "name": "Ενιαία σύνδεση (SSO)",
+      "name": "Μοναδική Σύνδεση (SSO)",
       "file": "drupal-sso.md",
       "subCat": "Εγκατάσταση Drupal"
     },
@@ -39,12 +39,12 @@
       "subCat": "Εγκατάσταση Drupal"
     },
     {
-      "name": "Πολυγλωσσικότητα",
+      "name": "Πολυγλωσσικό",
       "file": "drupal-multilingual.md",
       "subCat": "Εγκατάσταση Drupal"
     },
     {
-      "name": "Αποθήκευση δεδομένων στην ΕΕ",
+      "name": "Κατοικία Δεδομένων ΕΕ",
       "file": "drupal-eu-data-residency.md",
       "subCat": "Εγκατάσταση Drupal"
     },
@@ -57,6 +57,11 @@
       "name": "Απαιτήσεις",
       "file": "drupal-requirements.md",
       "subCat": "Εγκατάσταση Drupal"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο Drupal",
+      "file": "drupal-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "name": "Typeflo.io",
-  "pageHeader": "Добавяне на коментиране в реално време към блоговете на Typeflo.io",
+  "pageHeader": "Добавете живо коментиране към блоговете на Typeflo.io",
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. Намерете полето за въвеждане на код",
+      "name": "1. Намерете полето за код",
       "file": "typeflo-step-1.md",
       "subCat": "Инсталация"
     },
@@ -23,8 +23,13 @@
       "file": "typeflo-customize.md"
     },
     {
-      "name": "Грешки с домейна",
+      "name": "Грешки в домейна",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Добавете анкети към вашия Typeflo.io блог",
+      "file": "typeflo-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

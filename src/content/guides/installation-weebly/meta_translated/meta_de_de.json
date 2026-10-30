@@ -9,7 +9,7 @@
       "subCat": "Weebly-Installation"
     },
     {
-      "name": "Schritt 2: Den FastComments.com-Code hinzufügen",
+      "name": "Schritt 2: FastComments.com-Code hinzufügen",
       "file": "weebly-step-2.md",
       "subCat": "Weebly-Installation"
     },
@@ -32,6 +32,11 @@
       "name": "Anpassung",
       "file": "weebly-customize.md",
       "subCat": "Weebly-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Weebly-Website hinzufügen",
+      "file": "weebly-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

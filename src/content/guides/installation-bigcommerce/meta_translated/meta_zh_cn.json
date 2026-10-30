@@ -1,25 +1,25 @@
 {
   "name": "BigCommerce 安装",
-  "pageHeader": "向 BigCommerce 站点添加评论",
+  "pageHeader": "在 BigCommerce 网站上添加评论",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "第一步：准备主题",
+      "name": "步骤一：准备您的主题",
       "file": "bigcommerce-step-1.md",
       "subCat": "BigCommerce 安装"
     },
     {
-      "name": "第二步：编辑正确的模板",
+      "name": "步骤二：编辑正确的模板",
       "file": "bigcommerce-step-2.md",
       "subCat": "BigCommerce 安装"
     },
     {
-      "name": "第三步：添加小部件代码",
+      "name": "步骤三：添加小部件代码",
       "file": "bigcommerce-step-3.md",
       "subCat": "BigCommerce 安装"
     },
     {
-      "name": "第四步：激活新主题",
+      "name": "步骤四：激活新主题",
       "file": "bigcommerce-step-4.md",
       "subCat": "BigCommerce 安装"
     },
@@ -29,7 +29,7 @@
       "subCat": "BigCommerce 安装"
     },
     {
-      "name": "域名错误",
+      "name": "域错误",
       "file": "bigcommerce-domain-errors.md",
       "subCat": "BigCommerce 安装"
     },
@@ -39,9 +39,14 @@
       "subCat": "BigCommerce 安装"
     },
     {
-      "name": "附加：页面构建器的代码片段",
+      "name": "额外：页面构建器代码片段",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "使用页面构建器"
+    },
+    {
+      "name": "向您的 BigCommerce 商店添加投票",
+      "file": "bigcommerce-polls.md",
+      "subCat": "投票"
     }
   ]
 }

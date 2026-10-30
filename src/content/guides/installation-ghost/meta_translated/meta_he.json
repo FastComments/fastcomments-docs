@@ -1,6 +1,6 @@
 {
   "name": "התקנת Ghost",
-  "pageHeader": "הוספת תגובות חיות לחברים בלבד לאתרים ב-Ghost",
+  "pageHeader": "הוספת תגובות חיות לחברי האתר בלבד לאתרים של Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "התקנת Ghost"
     },
     {
-      "name": "שלב 2: התקן את התבנית באופן מקומי",
+      "name": "שלב 2: התקן את התבנית שלך מקומית",
       "file": "ghost-step-2.md",
       "subCat": "התקנת Ghost"
     },
@@ -34,7 +34,7 @@
       "subCat": "התקנת Ghost"
     },
     {
-      "name": "שלב 7: העלה את התבנית אל Ghost",
+      "name": "שלב 7: העלה את התבנית ל‑Ghost",
       "file": "ghost-step-7.md",
       "subCat": "התקנת Ghost"
     },
@@ -52,6 +52,11 @@
       "name": "התאמה אישית",
       "file": "ghost-customize.md",
       "subCat": "התקנת Ghost"
+    },
+    {
+      "name": "הוסף סקרים לאתר Ghost שלך",
+      "file": "ghost-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

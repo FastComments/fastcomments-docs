@@ -1,6 +1,6 @@
 {
   "name": "Instalación de Memberstack",
-  "pageHeader": "Añadir comentarios con Memberstack",
+  "pageHeader": "Agregar comentarios con Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Personalización",
       "file": "memberstack-customize.md",
       "subCat": "Instalación de Memberstack"
+    },
+    {
+      "name": "Agregar encuestas a tu sitio Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

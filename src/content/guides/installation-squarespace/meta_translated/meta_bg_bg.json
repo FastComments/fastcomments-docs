@@ -1,6 +1,6 @@
 {
   "name": "Инсталиране на Squarespace",
-  "pageHeader": "Добавяне на коментари в сайтове на Squarespace",
+  "pageHeader": "Добавяне на коментари към сайтове в Squarespace",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
@@ -24,7 +24,7 @@
       "subCat": "Добавяне на коментари към вашия блог"
     },
     {
-      "name": "Добавяне на живо коментиране на всички страници",
+      "name": "Добавяне на живи коментари към всички страници",
       "file": "squarespace-pages-all-pages-step-0.md",
       "subCat": "Добавяне на коментари към всички страници"
     },
@@ -44,12 +44,12 @@
       "subCat": "Добавяне на коментари към всички страници"
     },
     {
-      "name": "Добавяне на живо коментиране на конкретна страница",
+      "name": "Добавяне на жив коментар към конкретна страница",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Добавяне на коментари към конкретна страница"
     },
     {
-      "name": "Стъпка 1: Добавете блок с код",
+      "name": "Стъпка 1: Добавете кодов блок",
       "file": "squarespace-pages-specific-page-step-1.md",
       "subCat": "Добавяне на коментари към конкретна страница"
     },
@@ -72,6 +72,11 @@
       "name": "Персонализиране",
       "file": "squarespace-customize.md",
       "subCat": "Следващи стъпки за Squarespace"
+    },
+    {
+      "name": "Добавяне на анкети към вашия сайт в Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

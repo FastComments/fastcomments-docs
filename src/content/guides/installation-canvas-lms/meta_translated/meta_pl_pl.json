@@ -6,12 +6,12 @@
     {
       "name": "Cennik",
       "file": "canvas-lms-plans.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Szybki start",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Konfiguracja panelu FastComments",
@@ -19,12 +19,12 @@
       "subCat": "Konfiguracja Canvas LTI 1.3"
     },
     {
-      "name": "Klucz deweloperski Canvas",
+      "name": "Klucz dewelopera Canvas",
       "file": "canvas-lms-developer-key.md",
       "subCat": "Konfiguracja Canvas LTI 1.3"
     },
     {
-      "name": "Dokończ połączenie",
+      "name": "Ukończ połączenie",
       "file": "canvas-lms-complete-connection.md",
       "subCat": "Konfiguracja Canvas LTI 1.3"
     },
@@ -44,7 +44,7 @@
       "subCat": "Konfiguracja"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "canvas-lms-customize.md",
       "subCat": "Konfiguracja"
     },
@@ -52,6 +52,11 @@
       "name": "Błędy domeny",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Rozwiązywanie problemów"
+    },
+    {
+      "name": "Dodaj ankiety do swojego kursu Canvas",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

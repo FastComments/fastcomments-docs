@@ -1,6 +1,6 @@
 {
   "name": "התקנת ClickFunnels",
-  "pageHeader": "הוספת צ'אט חי לקורסים ב-ClickFunnels",
+  "pageHeader": "הוספת צ'אט חי לקורסי ClickFunnels",
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
@@ -24,14 +24,19 @@
       "subCat": "התקנת ClickFunnels"
     },
     {
-      "name": "נוסף: קטע קוד להערות חיות",
+      "name": "נוסף: קטע קוד לתגובות חיות",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "קטע קוד להערות חיות"
+      "subCat": "קטע קוד לתגובות חיות"
     },
     {
-      "name": "נוסף: השמעת הערות אוטומטית",
+      "name": "נוסף: הפעלת תגובות אוטומטית",
       "file": "clickfunnels-extra-scheduled-comments.md",
-      "subCat": "השמעת הערות אוטומטית"
+      "subCat": "הפעלת תגובות אוטומטית"
+    },
+    {
+      "name": "הוסף סקרים לקורס ClickFunnels שלך",
+      "file": "clickfunnels-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

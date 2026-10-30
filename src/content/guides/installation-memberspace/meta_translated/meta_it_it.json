@@ -17,6 +17,11 @@
       "name": "Personalizzazione",
       "file": "memberspace-customize.md",
       "subCat": "Installazione di MemberSpace"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito MemberSpace",
+      "file": "memberspace-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

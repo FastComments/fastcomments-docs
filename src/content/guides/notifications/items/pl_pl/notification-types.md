@@ -1,10 +1,13 @@
-Istnieje kilka rodzajów powiadomień oraz kanałów, za pomocą których FastComments wysyła powiadomienia:
+---
+Istnieje kilka typów powiadomień i kanałów, w których FastComments wysyła powiadomienia:
 
-- Natychmiastowe przez e-mail.
-  - Powiadomienia o odpowiedzi na komentarz i wzmianki wysyłane są co minutę.
+- Natychmiastowe przez e‑mail.
+  - Powiadomienia o odpowiedziach na komentarze i wzmiankach są wysyłane co minutę.
 - Natychmiastowe w aplikacji.
-  - Są one wyświetlane pod ikoną dzwonka powiadomień.
-- Grupowane przez e-mail.
-  - Powiadomienia o subskrypcjach stron można skonfigurować dla każdej subskrypcji osobno, aby były wysyłane co minutę, jako skrót godzinny lub jako skrót dzienny. Jeśli w danym przedziale czasowym nie ma nic do wysłania dla użytkownika, nie wysyłamy e-maila.
-- Zaplanowane przez e-mail.
-  - Przykłady obejmują Podsumowanie Community Digest, które może być wysyłane codziennie, co tydzień lub co miesiąc (lub wyłączone).
+  - Są wyświetlane pod ikoną dzwonka powiadomień.
+- Zgrupowane przez e‑mail.
+  - Powiadomienia o subskrypcji stron można skonfigurować dla każdej subskrypcji, aby były wysyłane co minutę, jako podsumowanie godzinowe lub jako podsumowanie dzienne. Jeśli w danym przedziale czasu nie ma nic do wysłania dla użytkownika, nie wysyłamy e‑maila.
+  - Powiadomienia o odpowiedziach w ankiecie są wysyłane do autora ankiety jako codzienny e‑mail.
+- Czasowe przez e‑mail.
+  - Przykłady obejmują Podsumowanie Społeczności, które może być wysyłane codziennie, tygodniowo lub miesięcznie (lub wyłączone).
+---

@@ -1,15 +1,15 @@
 {
   "name": "Instalación de MemberSpace",
-  "pageHeader": "Agregar comentarios con MemberSpace",
+  "pageHeader": "Agregar Comentarios con MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
-      "name": "El código",
+      "name": "El Código",
       "file": "memberspace-step-1.md",
       "subCat": "Instalación de MemberSpace"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "memberspace-domain-errors.md",
       "subCat": "Instalación de MemberSpace"
     },
@@ -17,6 +17,11 @@
       "name": "Personalización",
       "file": "memberspace-customize.md",
       "subCat": "Instalación de MemberSpace"
+    },
+    {
+      "name": "Agregar Encuestas a tu Sitio MemberSpace",
+      "file": "memberspace-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

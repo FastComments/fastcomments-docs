@@ -128,7 +128,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "停用圖片重定向",
+      "name": "停用圖片重新導向",
       "file": "disable-image-redirect.md",
       "subCat": "外觀與感受"
     },
@@ -138,7 +138,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "停用通知鈴",
+      "name": "停用通知鈴鐺",
       "file": "disable-notification-bell.md",
       "subCat": "外觀與感受"
     },
@@ -163,7 +163,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "變更 GIF 的內容分級",
+      "name": "更改 GIF 的內容分級",
       "file": "gif-rating.md",
       "subCat": "外觀與感受"
     },
@@ -173,7 +173,7 @@
       "subCat": "外觀與感受"
     },
     {
-      "name": "變更投票樣式",
+      "name": "更改投票樣式",
       "file": "vote-style.md",
       "subCat": "外觀與感受"
     },
@@ -235,202 +235,207 @@
     {
       "name": "立即顯示即時評論",
       "file": "show-live-right-away.md",
-      "subCat": "即時評論"
+      "subCat": "Live Commenting"
     },
     {
       "name": "停用即時評論",
       "file": "disable-live-commenting.md",
-      "subCat": "即時評論"
+      "subCat": "Live Commenting"
     },
     {
       "name": "新即時評論顯示於底部",
       "file": "new-comments-to-bottom.md",
-      "subCat": "即時評論"
+      "subCat": "Live Commenting"
     },
     {
       "name": "啟用無限捲動",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "分頁與排序"
+      "subCat": "Pagination & Sorting"
     },
     {
-      "name": "變更預設排序方向",
+      "name": "更改預設排序方向",
       "file": "default-sort-direction.md",
-      "subCat": "分頁與排序"
+      "subCat": "Pagination & Sorting"
     },
     {
       "name": "一次呈現所有評論 - 停用分頁",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "分頁與排序"
+      "subCat": "Pagination & Sorting"
     },
     {
       "name": "將回覆框移至評論之後",
       "file": "input-after-comments.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "限制評論長度",
       "file": "max-comment-character-length.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "停用多行評論",
       "file": "use-single-line-comment-input.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "限制每位使用者的評論數量",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "阻止新增頂層評論",
       "file": "no-new-root-comments.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "最大回覆深度",
       "file": "max-reply-depth.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "要求接受服務條款",
       "file": "terms-of-service.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
       "name": "離開前若有未送出的評論則警告",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "回覆框"
+      "subCat": "The Reply Box"
     },
     {
-      "name": "單一登入 (SSO) 概述",
+      "name": "啟用投票",
+      "file": "enable-polls.md",
+      "subCat": "The Reply Box"
+    },
+    {
+      "name": "單一登入（SSO）概覽",
       "file": "sso.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
-      "name": "自訂整合 - 安全單一登入 (SSO)",
+      "name": "自訂整合 - 安全單一登入（SSO）",
       "file": "sso-secure.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
-      "name": "自訂整合 - 簡易單一登入 (SSO)",
+      "name": "自訂整合 - 簡易單一登入（SSO）",
       "file": "sso-simple.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "自訂整合 - 從 Disqus SSO 遷移",
       "file": "sso-disqus.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "自訂整合 - 從 Commento SSO 遷移",
       "file": "sso-commento.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "使用單一登入保護評論串",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "單一登入"
+      "subCat": "SSO"
     },
     {
       "name": "允許匿名評論",
       "file": "allow-anon.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "防止匿名評論過期",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "停用電子郵件輸入",
       "file": "disable-email-inputs.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "停用未驗證標籤",
       "file": "disable-unverified-label.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "允許匿名投票",
       "file": "allow-anon-votes.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "設定預設使用者名稱",
       "file": "default-username.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "自動產生使用者名稱",
       "file": "auto-generate-username.md",
-      "subCat": "匿名評論"
+      "subCat": "Anonymous Commenting"
     },
     {
       "name": "回呼函式",
       "file": "callbacks.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "手動定義使用者語系",
       "file": "locale.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "限制允許的語言",
       "file": "allowed-languages.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "評論翻譯",
       "file": "comment-translation.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "頁面標題",
       "file": "page-title.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "阻止新增回覆並停用投票",
       "file": "readonly.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
-      "name": "限制連結網域",
+      "name": "限制連結域名",
       "file": "restricting-link-domains.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "評論計數與計算所有巢狀回覆",
       "file": "count-all.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "啟用評論者連結",
       "file": "enable-commenter-links.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "審核群組",
       "file": "moderation-group-ids.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "提及群組 ID",
       "file": "mention-group-ids.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "第三方 Cookie 繞過",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
-      "name": "刪除含回覆的評論",
+      "name": "刪除含有回覆的評論",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "其他"
+      "subCat": "Misc"
     },
     {
       "name": "在頂部欄顯示徽章",

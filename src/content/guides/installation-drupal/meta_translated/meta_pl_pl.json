@@ -1,62 +1,67 @@
 {
-  "name": "Instalacja Drupala",
-  "pageHeader": "Dodaj komentowanie na żywo na stronach Drupala",
+  "name": "Instalacja Drupal",
+  "pageHeader": "Dodaj komentarze na żywo do stron Drupal",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
       "name": "Szybki start",
       "file": "drupal-quick-start.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacja",
       "file": "drupal-installation.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
       "name": "Konfiguracja",
       "file": "drupal-configuration.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
-      "name": "Bloki widżetów",
+      "name": "Bloki widgetów",
       "file": "drupal-widget-blocks.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
-      "name": "Pola typu treści",
+      "name": "Pola typów treści",
       "file": "drupal-content-type-fields.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
-      "name": "Logowanie jednokrotne (SSO)",
+      "name": "Jednokrotne logowanie (SSO)",
       "file": "drupal-sso.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
       "name": "Uprawnienia",
       "file": "drupal-permissions.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
       "name": "Wielojęzyczność",
       "file": "drupal-multilingual.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
-      "name": "Przechowywanie danych w UE",
+      "name": "Miejsce przechowywania danych UE",
       "file": "drupal-eu-data-residency.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "drupal-customize.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
     },
     {
       "name": "Wymagania",
       "file": "drupal-requirements.md",
-      "subCat": "Instalacja Drupala"
+      "subCat": "Instalacja Drupal"
+    },
+    {
+      "name": "Dodaj ankiety do swojej witryny Drupal",
+      "file": "drupal-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

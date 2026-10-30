@@ -1,6 +1,6 @@
 {
   "name": "Instalação Val Town",
-  "pageHeader": "Adicionar Comentários ao Vivo aos Aplicativos Val Town",
+  "pageHeader": "Adicionar Comentários ao Vivo aos Apps Val Town",
   "itemsOrdered": [
     {
       "name": "Passo 1: Adicionar o Widget",
@@ -28,7 +28,7 @@
       "subCat": "Instalação Val Town"
     },
     {
-      "name": "Exemplos de Vals",
+      "name": "Vals de Exemplo",
       "file": "val-town-examples.md",
       "subCat": "Instalação Val Town"
     },
@@ -36,6 +36,11 @@
       "name": "Erros de Domínio",
       "file": "val-town-domain-errors.md",
       "subCat": "Instalação Val Town"
+    },
+    {
+      "name": "Adicionar Enquetes ao seu App Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

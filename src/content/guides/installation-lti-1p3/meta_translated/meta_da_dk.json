@@ -6,17 +6,17 @@
     {
       "name": "Priser",
       "file": "lti-plans.md",
-      "subCat": "Kort fortalt"
+      "subCat": "TLDR"
     },
     {
-      "name": "Kom godt i gang",
+      "name": "Hurtig start",
       "file": "lti-quick-start.md",
-      "subCat": "Kort fortalt"
+      "subCat": "TLDR"
     },
     {
       "name": "Understøttede platforme",
       "file": "lti-supported-platforms.md",
-      "subCat": "Kort fortalt"
+      "subCat": "TLDR"
     },
     {
       "name": "Generer registrerings-URL",
@@ -44,22 +44,22 @@
       "subCat": "Registrer værktøjet"
     },
     {
-      "name": "Tilføj til D2L-kursusindhold",
+      "name": "Tilføj til D2L kursusindhold",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Tilføj til et kursus"
     },
     {
-      "name": "Tilføj til Moodle-kursusindhold",
+      "name": "Tilføj til Moodle kursusindhold",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Tilføj til et kursus"
     },
     {
-      "name": "Tilføj til Blackboard-kursusindhold",
+      "name": "Tilføj til Blackboard kursusindhold",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Tilføj til et kursus"
     },
     {
-      "name": "Tilføj til Sakai- eller Schoology-kursusindhold",
+      "name": "Tilføj til Sakai eller Schoology kursusindhold",
       "file": "lti-other-add-to-course.md",
       "subCat": "Tilføj til et kursus"
     },
@@ -69,9 +69,14 @@
       "subCat": "Brug værktøjet"
     },
     {
-      "name": "Mindste privilegium og dataminimering",
+      "name": "Mindste privilegium & dataminimering",
       "file": "lti-least-privilege.md",
-      "subCat": "Sikkerhed og overholdelse"
+      "subCat": "Sikkerhed & overholdelse"
+    },
+    {
+      "name": "Tilføj afstemninger til dit LMS-kursus",
+      "file": "lti-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

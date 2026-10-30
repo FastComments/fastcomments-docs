@@ -93,7 +93,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prebacivanje niti komentara bez ponovnog učitavanja stranice",
+      "name": "Prebacivanje tema komentara bez ponovnog učitavanja stranice",
       "file": "switching-comment-threads.md",
       "subCat": "Izgled i dojam"
     },
@@ -103,7 +103,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikaz oba, apsolutna i relativna datuma",
+      "name": "Prikazivanje i apsolutnih i relativnih datuma",
       "file": "absolute-and-relative-dates.md",
       "subCat": "Izgled i dojam"
     },
@@ -128,7 +128,7 @@
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Onemogući preusmjeravanje slika",
+      "name": "Onemogući preusmjeravanje slike",
       "file": "disable-image-redirect.md",
       "subCat": "Izgled i dojam"
     },
@@ -298,22 +298,27 @@
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Upozori prije napuštanja s neslanim komentarom",
+      "name": "Upozori prije napuštanja s neposlanim komentarom",
       "file": "warn-on-unsaved-comment.md",
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Pregled jednokratne prijave (SSO)",
+      "name": "Omogući ankete",
+      "file": "enable-polls.md",
+      "subCat": "Polje za odgovor"
+    },
+    {
+      "name": "Pregled jedinstvene prijave (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagođene integracije – sigurna jednokratna prijava (SSO)",
+      "name": "Prilagođene integracije – sigurna jedinstvena prijava (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Prilagođene integracije – jednostavna jednokratna prijava (SSO)",
+      "name": "Prilagođene integracije – jednostavna jedinstvena prijava (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -328,7 +333,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Zaštita niti komentara jednokratnom prijavom",
+      "name": "Zaštita tema komentara jedinstvenom prijavom",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -433,12 +438,12 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prikaz znački u gornjoj traci",
+      "name": "Prikaži značke u gornjoj traci",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Izgled i dojam"
     },
     {
-      "name": "Prikaz popisa online korisnika",
+      "name": "Prikaži popis online korisnika",
       "file": "users-list.md",
       "subCat": "Izgled i dojam"
     }

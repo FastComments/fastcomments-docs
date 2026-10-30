@@ -1,6 +1,6 @@
 {
   "name": "Εγκατάσταση Memberstack",
-  "pageHeader": "Προσθήκη σχολίων με το Memberstack",
+  "pageHeader": "Προσθήκη σχολίων με Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Προσαρμογή",
       "file": "memberstack-customize.md",
       "subCat": "Εγκατάσταση Memberstack"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

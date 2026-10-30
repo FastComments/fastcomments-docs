@@ -4,22 +4,22 @@
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Préparez votre thème",
+      "name": "Étape 1 : préparer votre thème",
       "file": "bigcommerce-step-1.md",
       "subCat": "Installation de BigCommerce"
     },
     {
-      "name": "Étape 2 : Modifiez le bon modèle",
+      "name": "Étape 2 : modifier le bon modèle",
       "file": "bigcommerce-step-2.md",
       "subCat": "Installation de BigCommerce"
     },
     {
-      "name": "Étape 3 : Ajoutez le code du widget",
+      "name": "Étape 3 : ajouter le code du widget",
       "file": "bigcommerce-step-3.md",
       "subCat": "Installation de BigCommerce"
     },
     {
-      "name": "Étape 4 : Activez le nouveau thème",
+      "name": "Étape 4 : activer le nouveau thème",
       "file": "bigcommerce-step-4.md",
       "subCat": "Installation de BigCommerce"
     },
@@ -39,9 +39,14 @@
       "subCat": "Installation de BigCommerce"
     },
     {
-      "name": "Supplément : extrait de code pour le Page Builder",
+      "name": "Extra : extrait de code pour le constructeur de pages",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Utilisation du Page Builder"
+      "subCat": "Utilisation du constructeur de pages"
+    },
+    {
+      "name": "Ajouter des sondages à votre boutique BigCommerce",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

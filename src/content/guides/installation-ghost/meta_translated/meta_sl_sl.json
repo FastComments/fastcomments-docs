@@ -1,57 +1,62 @@
 {
-  "name": "Namestitev Ghosta",
-  "pageHeader": "Dodajte v živo komentiranje, namenjeno samo članom, na spletna mesta Ghost",
+  "name": "Namestitev Ghost",
+  "pageHeader": "Dodajte komentarje v živo samo za člane na Ghost straneh",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
       "name": "Korak 1: Prenesite svojo temo",
       "file": "ghost-step-1.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
-      "name": "Korak 2: Namestite temo lokalno",
+      "name": "Korak 2: Namestite svojo temo lokalno",
       "file": "ghost-step-2.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
       "name": "Korak 3: Poimenujte novo temo",
       "file": "ghost-step-3.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
       "name": "Korak 4: Odprite predlogo objave",
       "file": "ghost-step-4.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
       "name": "Korak 5: Dodajte kodo FastComments",
       "file": "ghost-step-5.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
-      "name": "Korak 6: Izvozi svojo temo",
+      "name": "Korak 6: Izvozite svojo temo",
       "file": "ghost-step-6.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
       "name": "Korak 7: Naložite temo v Ghost",
       "file": "ghost-step-7.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
-      "name": "Uspešno!",
+      "name": "Uspeh!",
       "file": "ghost-success.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
       "name": "Napake domene",
       "file": "ghost-domain-errors.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
     },
     {
       "name": "Prilagajanje",
       "file": "ghost-customize.md",
-      "subCat": "Namestitev Ghosta"
+      "subCat": "Namestitev Ghost"
+    },
+    {
+      "name": "Dodajte ankete na svoj Ghost splet",
+      "file": "ghost-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

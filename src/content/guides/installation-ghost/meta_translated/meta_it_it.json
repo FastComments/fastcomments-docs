@@ -1,6 +1,6 @@
 {
   "name": "Installazione di Ghost",
-  "pageHeader": "Aggiungi commenti live riservati ai membri ai siti Ghost",
+  "pageHeader": "Aggiungi commenti live solo per membri ai siti Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -9,17 +9,17 @@
       "subCat": "Installazione di Ghost"
     },
     {
-      "name": "Passo 2: Installa il tuo tema in locale",
+      "name": "Passo 2: Installa il tuo tema localmente",
       "file": "ghost-step-2.md",
       "subCat": "Installazione di Ghost"
     },
     {
-      "name": "Passo 3: Assegna un nome al nuovo tema",
+      "name": "Passo 3: Nomina il nuovo tema",
       "file": "ghost-step-3.md",
       "subCat": "Installazione di Ghost"
     },
     {
-      "name": "Passo 4: Apri il modello del post",
+      "name": "Passo 4: Apri il modello di post",
       "file": "ghost-step-4.md",
       "subCat": "Installazione di Ghost"
     },
@@ -39,7 +39,7 @@
       "subCat": "Installazione di Ghost"
     },
     {
-      "name": "Completato!",
+      "name": "Successo!",
       "file": "ghost-success.md",
       "subCat": "Installazione di Ghost"
     },
@@ -52,6 +52,11 @@
       "name": "Personalizzazione",
       "file": "ghost-customize.md",
       "subCat": "Installazione di Ghost"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Ghost",
+      "file": "ghost-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

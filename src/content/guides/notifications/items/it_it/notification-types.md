@@ -1,10 +1,14 @@
-Esistono alcuni tipi di notifiche e canali attraverso i quali FastComments invia notifiche:
+---
+There are a few types of notifications and mediums in which FastComments sends notifications:
 
-- Immediato via email.
-  - Le notifiche di risposta a commenti e menzioni vengono inviate ogni minuto.
-- Immediato tramite app.
-  - Questi vengono mostrati sotto l'icona della campanella delle notifiche.
-- Raggruppati via email.
-  - Le notifiche di sottoscrizione alle pagine possono essere configurate, per ogni sottoscrizione, per l'invio ogni minuto, come riepilogo orario o come riepilogo giornaliero. Se non c'è nulla da inviare all'utente in quel periodo di tempo, non inviamo alcuna email.
-- Programmato via email.
-  - Esempi includono il Riepilogo Digest della Community che può essere inviato giornalmente, settimanalmente o mensilmente (o disabilitato).
+- Immediate via email.
+  - Comment reply and mention notifications are sent every minute.
+- Immediate via app.
+  - These are shown under the notification bell icon.
+- Batched via email.
+  - Page subscription notifications can be configured per subscription to send every minute, as an hourly digest, or as a daily digest. If there is nothing to send for the user in that timeframe, we do not send an email.
+  - Poll response notifications are sent to the poll's author as a daily email.
+- Timed via email.
+  - Examples include the Community Digest Summary which can be sent daily, weekly, or monthly (or disabled).
+
+---

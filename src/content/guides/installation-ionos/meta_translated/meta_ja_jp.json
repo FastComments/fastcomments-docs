@@ -1,37 +1,42 @@
 {
-  "name": "Ionos のインストール",
+  "name": "Ionos インストール",
   "pageHeader": "Ionos サイトにコメントを追加",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "ステップ1：お問い合わせフォームを追加",
+      "name": "ステップ 1: お問い合わせフォームを追加",
       "file": "ionos-step-1.md",
-      "subCat": "Ionos のインストール"
+      "subCat": "Ionos インストール"
     },
     {
-      "name": "ステップ2：FastComments.com のコードを追加",
+      "name": "ステップ 2: FastComments.com コードを追加",
       "file": "ionos-step-2.md",
-      "subCat": "Ionos のインストール"
+      "subCat": "Ionos インストール"
     },
     {
-      "name": "ステップ3：公開",
+      "name": "ステップ 3: 公開",
       "file": "ionos-step-3.md",
-      "subCat": "Ionos のインストール"
+      "subCat": "Ionos インストール"
     },
     {
-      "name": "完了",
+      "name": "成功",
       "file": "ionos-success.md",
-      "subCat": "Ionos のインストール"
+      "subCat": "Ionos インストール"
     },
     {
       "name": "ドメインエラー",
       "file": "ionos-domain-errors.md",
-      "subCat": "Ionos のインストール"
+      "subCat": "Ionos インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "ionos-customize.md",
-      "subCat": "Ionos のインストール"
+      "subCat": "Ionos インストール"
+    },
+    {
+      "name": "Ionos サイトに投票を追加",
+      "file": "ionos-polls.md",
+      "subCat": "投票"
     }
   ]
 }

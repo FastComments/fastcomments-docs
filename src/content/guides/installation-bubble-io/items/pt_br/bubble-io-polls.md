@@ -1,0 +1,6 @@
+---
+Depois que o FastComments estiver no seu aplicativo Bubble.io, você também pode executar enquetes ao vivo diretamente nos comentários. Ative **Enable Polls** nas configurações de personalização do seu widget e um botão de enquete aparecerá na barra de ferramentas dos comentários. As enquetes podem ter de 2 a 10 opções, os resultados são atualizados ao vivo para todos na página, e você decide quem pode criar enquetes e se a votação requer login. Não há mais nada a instalar no Bubble.io.
+
+[Experimente a demonstração de Enquetes ao Vivo](https://fastcomments.com/product/live-polls) ou leia a [Documentação de Enquetes](/guide-polls.html) para configurá‑las.
+
+---

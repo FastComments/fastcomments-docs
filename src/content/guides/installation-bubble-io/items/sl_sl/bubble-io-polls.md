@@ -1,0 +1,4 @@
+---
+Ko je FastComments nameščen v vaši aplikaciji Bubble.io, lahko v komentarjih tudi izvajate ankete v živo. V nastavitvah prilagajanja vašega gradnika vklopite **Enable Polls** in v orodni vrstici komentarjev se prikaže gumb za anketo. Ankete sprejmejo od 2 do 10 možnosti, rezultati se v živo posodabljajo za vse na strani, vi pa izberete, kdo lahko ustvarja ankete in ali glasovanje zahteva prijavo. Na Bubble.io ni potrebno namestiti nič drugega.
+
+[Preizkusite demo ankete v živo](https://fastcomments.com/product/live-polls) ali preberite [dokumentacijo o anketah](/guide-polls.html), da jih nastavite.

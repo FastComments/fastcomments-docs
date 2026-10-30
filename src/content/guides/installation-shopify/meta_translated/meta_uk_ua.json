@@ -1,6 +1,6 @@
 {
   "name": "Встановлення Shopify",
-  "pageHeader": "Додавання коментарів на сайти Shopify",
+  "pageHeader": "Додати коментарі до сайтів Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Додати коментарі до публікацій блогу та товарів",
+      "name": "Додати коментарі до блог-постів та продуктів",
       "file": "shopify-add-comments.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Додати бейдж з кількістю коментарів",
+      "name": "Додати значок кількості коментарів",
       "file": "shopify-comment-count.md",
       "subCat": "Встановлення Shopify"
     },
@@ -29,12 +29,12 @@
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Додати список найпопулярніших сторінок",
+      "name": "Додати список топ-сторінок",
       "file": "shopify-top-pages.md",
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Додати зведення відгуків",
+      "name": "Додати підсумок відгуків",
       "file": "shopify-reviews-summary.md",
       "subCat": "Встановлення Shopify"
     },
@@ -44,7 +44,7 @@
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Імпортувати існуючі коментарі",
+      "name": "Імпорт існуючих коментарів",
       "file": "shopify-import.md",
       "subCat": "Встановлення Shopify"
     },
@@ -59,9 +59,14 @@
       "subCat": "Встановлення Shopify"
     },
     {
-      "name": "Ручна установка (для просунутих)",
+      "name": "Ручне встановлення (розширене)",
       "file": "shopify-manual-install.md",
       "subCat": "Встановлення Shopify"
+    },
+    {
+      "name": "Додати опитування у ваш магазин Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

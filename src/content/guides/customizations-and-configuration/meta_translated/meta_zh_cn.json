@@ -118,7 +118,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "使用按钮切换评论",
+      "name": "使用按钮切换评论显示",
       "file": "use-show-comments-toggle.md",
       "subCat": "外观与感觉"
     },
@@ -163,7 +163,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "更改 GIF 的内容评级",
+      "name": "更改 GIF 内容评级",
       "file": "gif-rating.md",
       "subCat": "外观与感觉"
     },
@@ -188,7 +188,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "高亮显示新评论",
+      "name": "高亮新评论",
       "file": "highlighting-new-comments.md",
       "subCat": "外观与感觉"
     },
@@ -258,7 +258,7 @@
       "subCat": "分页与排序"
     },
     {
-      "name": "一次性渲染所有评论 - 禁用分页",
+      "name": "一次渲染所有评论 - 禁用分页",
       "file": "starting-page-disable-pagination.md",
       "subCat": "分页与排序"
     },
@@ -278,7 +278,7 @@
       "subCat": "回复框"
     },
     {
-      "name": "限制每用户的评论量",
+      "name": "限制每用户的评论数量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回复框"
     },
@@ -298,8 +298,13 @@
       "subCat": "回复框"
     },
     {
-      "name": "离开前警告未发送的评论",
+      "name": "在未发送评论离开前警告",
       "file": "warn-on-unsaved-comment.md",
+      "subCat": "回复框"
+    },
+    {
+      "name": "启用投票",
+      "file": "enable-polls.md",
       "subCat": "回复框"
     },
     {
@@ -373,7 +378,7 @@
       "subCat": "其他"
     },
     {
-      "name": "手动定义用户的地区设置",
+      "name": "手动定义用户地区设置",
       "file": "locale.md",
       "subCat": "其他"
     },

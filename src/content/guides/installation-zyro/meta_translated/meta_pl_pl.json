@@ -1,10 +1,10 @@
 {
   "name": "Instalacja Zyro",
-  "pageHeader": "Dodaj komentowanie na żywo do stron Zyro",
+  "pageHeader": "Dodaj komentarze na żywo do stron Zyro",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "Krok 1: Dodaj widżet z kodem",
+      "name": "Krok 1: Dodaj widżet kodu",
       "file": "zyro-step-1.md",
       "subCat": "Instalacja strony Zyro"
     },
@@ -19,19 +19,24 @@
       "subCat": "Instalacja strony Zyro"
     },
     {
-      "name": "Błędy domeny strony",
+      "name": "Błędy domeny witryny",
       "file": "zyro-site-domain-errors.md",
       "subCat": "Instalacja strony Zyro"
     },
     {
-      "name": "Dostosowywanie strony",
+      "name": "Dostosowanie witryny",
       "file": "zyro-site-customize.md",
-      "subCat": "Instalacja strony Zyro"
+      "subCat": "Instalaacja strony Zyro"
     },
     {
       "name": "Pływający przycisk polubień",
       "file": "zyro-floating-likes.md",
-      "subCat": "Pływające polubienia Zyro"
+      "subCat": "Zyro Pływające Polubienia"
+    },
+    {
+      "name": "Dodaj ankiety do swojej witryny Zyro",
+      "file": "zyro-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "name": "即時投票",
+  "pageHeader": "評論中的即時投票",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "什麼是即時投票",
+      "file": "what-are-polls.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "啟用投票",
+      "file": "enabling-polls.md",
+      "subCat": "設定投票"
+    },
+    {
+      "name": "誰可以建立投票",
+      "file": "who-can-create-polls.md",
+      "subCat": "設定投票"
+    },
+    {
+      "name": "允許匿名投票",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "設定投票"
+    },
+    {
+      "name": "建立投票",
+      "file": "creating-a-poll.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票與即時結果",
+      "file": "voting-and-live-results.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票者隱私",
+      "file": "poll-voter-privacy.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票通知",
+      "file": "poll-notifications.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票 API",
+      "file": "polls-api.md",
+      "subCat": "給開發者"
+    }
+  ]
+}

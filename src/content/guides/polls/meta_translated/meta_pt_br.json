@@ -1,0 +1,52 @@
+{
+  "name": "Enquetes ao Vivo",
+  "pageHeader": "Enquetes ao Vivo nos Comentários",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "O que são Enquetes ao Vivo",
+      "file": "what-are-polls.md",
+      "subCat": "Contexto"
+    },
+    {
+      "name": "Ativando Enquetes",
+      "file": "enabling-polls.md",
+      "subCat": "Configurando Enquetes"
+    },
+    {
+      "name": "Quem pode criar Enquetes",
+      "file": "who-can-create-polls.md",
+      "subCat": "Configurando Enquetes"
+    },
+    {
+      "name": "Permitir votos anônimos nas Enquetes",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Configurando Enquetes"
+    },
+    {
+      "name": "Criando uma Enquete",
+      "file": "creating-a-poll.md",
+      "subCat": "Usando Enquetes"
+    },
+    {
+      "name": "Votando e resultados ao vivo",
+      "file": "voting-and-live-results.md",
+      "subCat": "Usando Enquetes"
+    },
+    {
+      "name": "Privacidade do eleitor",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Usando Enquetes"
+    },
+    {
+      "name": "Notificações de Enquetes",
+      "file": "poll-notifications.md",
+      "subCat": "Usando Enquetes"
+    },
+    {
+      "name": "API de Enquetes",
+      "file": "polls-api.md",
+      "subCat": "Para desenvolvedores"
+    }
+  ]
+}

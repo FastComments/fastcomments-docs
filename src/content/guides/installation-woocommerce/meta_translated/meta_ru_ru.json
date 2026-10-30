@@ -4,9 +4,14 @@
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Установка плагина WordPress",
+      "name": "Настройка плагина WordPress",
       "file": "woocommerce.md",
       "subCat": "Установка WooCommerce"
+    },
+    {
+      "name": "Добавьте опросы в ваш магазин WooCommerce",
+      "file": "woocommerce-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

@@ -24,7 +24,7 @@
       "subCat": "설치"
     },
     {
-      "name": "완료",
+      "name": "성공",
       "file": "bubble-io-success.md",
       "subCat": "설치"
     },
@@ -35,6 +35,11 @@
     {
       "name": "도메인 오류",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Bubble.io 앱에 설문 추가",
+      "file": "bubble-io-polls.md",
+      "subCat": "설문"
     }
   ]
 }

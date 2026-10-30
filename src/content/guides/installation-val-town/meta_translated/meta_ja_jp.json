@@ -18,7 +18,7 @@
       "subCat": "Val Town インストール"
     },
     {
-      "name": "std/oauth による安全な SSO",
+      "name": "std/oauth による安全なシングルサインオン",
       "file": "val-town-sso.md",
       "subCat": "Val Town インストール"
     },
@@ -28,7 +28,7 @@
       "subCat": "Val Town インストール"
     },
     {
-      "name": "例 Vals",
+      "name": "サンプル Vals",
       "file": "val-town-examples.md",
       "subCat": "Val Town インストール"
     },
@@ -36,6 +36,11 @@
       "name": "ドメインエラー",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town インストール"
+    },
+    {
+      "name": "Val Town アプリに投票機能を追加",
+      "file": "val-town-polls.md",
+      "subCat": "投票"
     }
   ]
 }

@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Schritt 1: Einen Embed-Block hinzufügen",
+      "name": "Schritt 1: Einbettungsblock hinzufügen",
       "file": "webflow-step-1.md",
       "subCat": "Webflow-Installation"
     },
     {
-      "name": "Schritt 2: Ihren FastComments.com-Code einfügen",
+      "name": "Schritt 2: FastComments.com-Code einfügen",
       "file": "webflow-step-2.md",
       "subCat": "Webflow-Installation"
     },
@@ -32,6 +32,11 @@
       "name": "Anpassung",
       "file": "webflow-customize.md",
       "subCat": "Webflow-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Webflow-Website hinzufügen",
+      "file": "webflow-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Instalacija Ghosta",
-  "pageHeader": "Dodajte komentiranje uživo samo za članove na Ghost stranice",
+  "pageHeader": "Dodajte komentiranje uživo samo za članove na Ghost stranicama",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -9,17 +9,17 @@
       "subCat": "Instalacija Ghosta"
     },
     {
-      "name": "Korak 2: Instalirajte temu lokalno",
+      "name": "Korak 2: Instalirajte svoju temu lokalno",
       "file": "ghost-step-2.md",
       "subCat": "Instalacija Ghosta"
     },
     {
-      "name": "Korak 3: Imenujte novu temu",
+      "name": "Korak 3: Nazovite novu temu",
       "file": "ghost-step-3.md",
       "subCat": "Instalacija Ghosta"
     },
     {
-      "name": "Korak 4: Otvorite predložak objave",
+      "name": "Korak 4: Otvorite predložak posta",
       "file": "ghost-step-4.md",
       "subCat": "Instalacija Ghosta"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalacija Ghosta"
     },
     {
-      "name": "Korak 6: Izvezite temu",
+      "name": "Korak 6: Izvezite svoju temu",
       "file": "ghost-step-6.md",
       "subCat": "Instalacija Ghosta"
     },
@@ -39,12 +39,12 @@
       "subCat": "Instalacija Ghosta"
     },
     {
-      "name": "Uspješno!",
+      "name": "Uspjeh!",
       "file": "ghost-success.md",
       "subCat": "Instalacija Ghosta"
     },
     {
-      "name": "Pogreške s domenom",
+      "name": "Greške domene",
       "file": "ghost-domain-errors.md",
       "subCat": "Instalacija Ghosta"
     },
@@ -52,6 +52,11 @@
       "name": "Prilagodba",
       "file": "ghost-customize.md",
       "subCat": "Instalacija Ghosta"
+    },
+    {
+      "name": "Dodajte ankete na svoju Ghost stranicu",
+      "file": "ghost-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

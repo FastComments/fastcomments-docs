@@ -14,7 +14,7 @@
       "subCat": "インストール"
     },
     {
-      "name": "3. 幅の設定を見つける",
+      "name": "3. 幅設定を見つける",
       "file": "bubble-io-step-3.md",
       "subCat": "インストール"
     },
@@ -24,7 +24,7 @@
       "subCat": "インストール"
     },
     {
-      "name": "完了",
+      "name": "成功",
       "file": "bubble-io-success.md",
       "subCat": "インストール"
     },
@@ -35,6 +35,11 @@
     {
       "name": "ドメインエラー",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Bubble.io アプリに投票機能を追加",
+      "file": "bubble-io-polls.md",
+      "subCat": "投票"
     }
   ]
 }

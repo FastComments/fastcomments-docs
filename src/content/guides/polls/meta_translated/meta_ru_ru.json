@@ -1,0 +1,52 @@
+{
+  "name": "Опросы в реальном времени",
+  "pageHeader": "Опросы в реальном времени в комментариях",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Что такое опросы в реальном времени",
+      "file": "what-are-polls.md",
+      "subCat": "Фон"
+    },
+    {
+      "name": "Включение опросов",
+      "file": "enabling-polls.md",
+      "subCat": "Настройка опросов"
+    },
+    {
+      "name": "Кто может создавать опросы",
+      "file": "who-can-create-polls.md",
+      "subCat": "Настройка опросов"
+    },
+    {
+      "name": "Разрешение анонимных голосов в опросах",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Настройка опросов"
+    },
+    {
+      "name": "Создание опроса",
+      "file": "creating-a-poll.md",
+      "subCat": "Использование опросов"
+    },
+    {
+      "name": "Голосование и результаты в реальном времени",
+      "file": "voting-and-live-results.md",
+      "subCat": "Использование опросов"
+    },
+    {
+      "name": "Конфиденциальность голосования",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Использование опросов"
+    },
+    {
+      "name": "Уведомления об опросах",
+      "file": "poll-notifications.md",
+      "subCat": "Использование опросов"
+    },
+    {
+      "name": "API опросов",
+      "file": "polls-api.md",
+      "subCat": "Для разработчиков"
+    }
+  ]
+}

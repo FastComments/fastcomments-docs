@@ -1,37 +1,37 @@
 {
-  "name": "Installazione di Canvas LMS",
-  "pageHeader": "Aggiungere commenti su Canvas LMS tramite LTI 1.3",
+  "name": "Installazione Canvas LMS",
+  "pageHeader": "Aggiungi commenti a Canvas LMS tramite LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
       "name": "Prezzi",
       "file": "canvas-lms-plans.md",
-      "subCat": "In breve"
+      "subCat": "TLDR"
     },
     {
       "name": "Avvio rapido",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "In breve"
+      "subCat": "TLDR"
     },
     {
-      "name": "Configurazione della dashboard di FastComments",
+      "name": "Configurazione della dashboard FastComments",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Configurazione LTI 1.3 per Canvas"
+      "subCat": "Configurazione Canvas LTI 1.3"
     },
     {
-      "name": "Chiave sviluppatore di Canvas",
+      "name": "Chiave sviluppatore Canvas",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Configurazione LTI 1.3 per Canvas"
+      "subCat": "Configurazione Canvas LTI 1.3"
     },
     {
       "name": "Completa la connessione",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Configurazione LTI 1.3 per Canvas"
+      "subCat": "Configurazione Canvas LTI 1.3"
     },
     {
       "name": "Aggiungi a un corso",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Configurazione LTI 1.3 per Canvas"
+      "subCat": "Configurazione Canvas LTI 1.3"
     },
     {
       "name": "Stili di commento",
@@ -52,6 +52,11 @@
       "name": "Errori di dominio",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Risoluzione dei problemi"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo corso Canvas",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

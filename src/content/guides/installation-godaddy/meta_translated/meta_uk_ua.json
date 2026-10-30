@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Додати область для коду",
+      "name": "Крок 1: Додати область коду",
       "file": "godaddy-step-1.md",
       "subCat": "Встановлення Godaddy"
     },
@@ -19,12 +19,12 @@
       "subCat": "Встановлення Godaddy"
     },
     {
-      "name": "Успішно",
+      "name": "Успіх",
       "file": "godaddy-success.md",
       "subCat": "Встановлення Godaddy"
     },
     {
-      "name": "Помилки доменів",
+      "name": "Помилки домену",
       "file": "godaddy-domain-errors.md",
       "subCat": "Встановлення Godaddy"
     },
@@ -32,6 +32,11 @@
       "name": "Налаштування",
       "file": "godaddy-customize.md",
       "subCat": "Встановлення Godaddy"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Godaddy",
+      "file": "godaddy-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

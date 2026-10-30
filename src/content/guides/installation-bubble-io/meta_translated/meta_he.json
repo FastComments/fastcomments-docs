@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "הוסף תגובות בזמן אמת לאתרים ב-Bubble.io",
+  "pageHeader": "הוסף תגובות חיות לאתרי Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -9,17 +9,17 @@
       "subCat": "התקנה"
     },
     {
-      "name": "2. הכנס קוד",
+      "name": "2. הוסף קוד",
       "file": "bubble-io-step-2.md",
       "subCat": "התקנה"
     },
     {
-      "name": "3. מצא את הגדרת הרוחב",
+      "name": "3. מצא הגדרת רוחב",
       "file": "bubble-io-step-3.md",
       "subCat": "התקנה"
     },
     {
-      "name": "4. התאם את הפריסה",
+      "name": "4. התאם פריסה",
       "file": "bubble-io-step-4.md",
       "subCat": "התקנה"
     },
@@ -33,8 +33,13 @@
       "file": "bubble-io-customize.md"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "הוסף סקרים לאפליקציית Bubble.io שלך",
+      "file": "bubble-io-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

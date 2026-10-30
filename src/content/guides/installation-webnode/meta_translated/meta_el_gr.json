@@ -4,22 +4,22 @@
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Επεξεργαστείτε τη σελίδα σας",
+      "name": "Βήμα 1: Επεξεργασία της σελίδας σας",
       "file": "webnode-step-1.md",
       "subCat": "Εγκατάσταση Webnode"
     },
     {
-      "name": "Βήμα 2: Προσθέστε ενότητα και μπλοκ HTML",
+      "name": "Βήμα 2: Προσθήκη ενότητας και HTML μπλοκ",
       "file": "webnode-step-2.md",
       "subCat": "Εγκατάσταση Webnode"
     },
     {
-      "name": "Βήμα 3: Αντιγράψτε και επικολλήστε το απόσπασμα κώδικα",
+      "name": "Βήμα 3: Αντιγραφή & επικόλληση αποσπάσματος κώδικα",
       "file": "webnode-step-3.md",
       "subCat": "Εγκατάσταση Webnode"
     },
     {
-      "name": "Βήμα 4: Δημοσιεύστε",
+      "name": "Βήμα 4: Δημοσίευση",
       "file": "webnode-step-4.md",
       "subCat": "Εγκατάσταση Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "Προσαρμογή",
       "file": "webnode-customize.md",
       "subCat": "Εγκατάσταση Webnode"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

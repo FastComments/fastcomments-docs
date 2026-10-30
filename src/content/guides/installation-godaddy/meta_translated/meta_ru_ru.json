@@ -1,10 +1,10 @@
 {
   "name": "Установка Godaddy",
-  "pageHeader": "Добавление комментариев на сайты Godaddy",
+  "pageHeader": "Добавить комментарии на сайты Godaddy",
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
-      "name": "Шаг 1: Добавить область для кода",
+      "name": "Шаг 1: Добавить область кода",
       "file": "godaddy-step-1.md",
       "subCat": "Установка Godaddy"
     },
@@ -32,6 +32,11 @@
       "name": "Настройка",
       "file": "godaddy-customize.md",
       "subCat": "Установка Godaddy"
+    },
+    {
+      "name": "Добавить опросы на ваш сайт Godaddy",
+      "file": "godaddy-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Instalação do LMS (LTI 1.3)",
-  "pageHeader": "Adicione comentários ao seu LMS via LTI 1.3",
+  "pageHeader": "Adicionar Comentários ao Seu LMS via LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
@@ -9,69 +9,74 @@
       "subCat": "Resumo"
     },
     {
-      "name": "Início rápido",
+      "name": "Início Rápido",
       "file": "lti-quick-start.md",
       "subCat": "Resumo"
     },
     {
-      "name": "Plataformas compatíveis",
+      "name": "Plataformas Compatíveis",
       "file": "lti-supported-platforms.md",
       "subCat": "Resumo"
     },
     {
-      "name": "Gerar URL de registro",
+      "name": "Gerar URL de Registro",
       "file": "lti-generate-url.md",
       "subCat": "Configuração do FastComments"
     },
     {
       "name": "Registrar no D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Registrar a ferramenta"
+      "subCat": "Registrar a Ferramenta"
     },
     {
       "name": "Registrar no Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Registrar a ferramenta"
+      "subCat": "Registrar a Ferramenta"
     },
     {
       "name": "Registrar no Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Registrar a ferramenta"
+      "subCat": "Registrar a Ferramenta"
     },
     {
       "name": "Registrar no Sakai ou Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Registrar a ferramenta"
+      "subCat": "Registrar a Ferramenta"
     },
     {
-      "name": "Adicionar ao conteúdo do curso no D2L",
+      "name": "Adicionar ao Conteúdo do Curso D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Adicionar a um curso"
+      "subCat": "Adicionar a um Curso"
     },
     {
-      "name": "Adicionar ao conteúdo do curso no Moodle",
+      "name": "Adicionar ao Conteúdo do Curso Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Adicionar a um curso"
+      "subCat": "Adicionar a um Curso"
     },
     {
-      "name": "Adicionar ao conteúdo do curso no Blackboard",
+      "name": "Adicionar ao Conteúdo do Curso Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Adicionar a um curso"
+      "subCat": "Adicionar a um Curso"
     },
     {
-      "name": "Adicionar ao conteúdo do curso no Sakai ou Schoology",
+      "name": "Adicionar ao Conteúdo do Curso Sakai ou Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Adicionar a um curso"
+      "subCat": "Adicionar a um Curso"
     },
     {
-      "name": "Solução de problemas",
+      "name": "Resolução de Problemas",
       "file": "lti-troubleshooting.md",
-      "subCat": "Usar a ferramenta"
+      "subCat": "Usar a Ferramenta"
     },
     {
-      "name": "Privilégio mínimo e minimização de dados",
+      "name": "Princípio do Menor Privilégio e Minimização de Dados",
       "file": "lti-least-privilege.md",
-      "subCat": "Segurança e conformidade"
+      "subCat": "Segurança e Conformidade"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Curso LMS",
+      "file": "lti-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

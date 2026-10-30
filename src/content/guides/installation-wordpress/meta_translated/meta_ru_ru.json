@@ -87,6 +87,11 @@
       "name": "Деактивация vs удаление плагина",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Удаление плагина"
+    },
+    {
+      "name": "Добавьте опросы на ваш сайт WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

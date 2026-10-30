@@ -1,6 +1,6 @@
 {
   "name": "Installation de Val Town",
-  "pageHeader": "Ajouter les commentaires en direct aux applications Val Town",
+  "pageHeader": "Ajouter des commentaires en direct aux applications Val Town",
   "itemsOrdered": [
     {
       "name": "Étape 1 : Ajouter le widget",
@@ -36,6 +36,11 @@
       "name": "Erreurs de domaine",
       "file": "val-town-domain-errors.md",
       "subCat": "Installation de Val Town"
+    },
+    {
+      "name": "Ajouter des sondages à votre application Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

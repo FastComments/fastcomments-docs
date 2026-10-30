@@ -1,37 +1,42 @@
 {
-  "name": "Installazione di Zyro",
+  "name": "Installazione Zyro",
   "pageHeader": "Aggiungi commenti in tempo reale ai siti Zyro",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Aggiungi il widget del codice",
+      "name": "Passo 1: Aggiungi il widget di codice",
       "file": "zyro-step-1.md",
-      "subCat": "Installazione del sito Zyro"
+      "subCat": "Installazione sito Zyro"
     },
     {
       "name": "Passo 2: Aggiungi il codice",
       "file": "zyro-step-2.md",
-      "subCat": "Installazione del sito Zyro"
+      "subCat": "Installazione sito Zyro"
     },
     {
       "name": "Successo",
       "file": "zyro-site-success.md",
-      "subCat": "Installazione del sito Zyro"
+      "subCat": "Installazione sito Zyro"
     },
     {
-      "name": "Errori del dominio del sito",
+      "name": "Errori di dominio del sito",
       "file": "zyro-site-domain-errors.md",
-      "subCat": "Installazione del sito Zyro"
+      "subCat": "Installazione sito Zyro"
     },
     {
       "name": "Personalizzazione del sito",
       "file": "zyro-site-customize.md",
-      "subCat": "Installazione del sito Zyro"
+      "subCat": "Installazione sito Zyro"
     },
     {
-      "name": "Pulsante \"Mi piace\" flottante",
+      "name": "Pulsante Like fluttuante",
       "file": "zyro-floating-likes.md",
-      "subCat": "Mi piace flottanti Zyro"
+      "subCat": "Like fluttuanti Zyro"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Zyro",
+      "file": "zyro-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

@@ -14,7 +14,7 @@
       "subCat": "Установка Super.so"
     },
     {
-      "name": "См. также: обычный виджет комментариев",
+      "name": "Смотрите также: Виджет обычных комментариев",
       "file": "super-so-comment-widget.md",
       "subCat": "Установка Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Настройка",
       "file": "super-so-learn-customize.md",
       "subCat": "Установка Super.so"
+    },
+    {
+      "name": "Добавьте опросы на ваш сайт Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

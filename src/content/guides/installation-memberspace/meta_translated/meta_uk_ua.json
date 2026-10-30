@@ -1,6 +1,6 @@
 {
   "name": "Встановлення MemberSpace",
-  "pageHeader": "Додавання коментарів за допомогою MemberSpace",
+  "pageHeader": "Додати коментарі за допомогою MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Налаштування",
       "file": "memberspace-customize.md",
       "subCat": "Встановлення MemberSpace"
+    },
+    {
+      "name": "Додати опитування на ваш сайт MemberSpace",
+      "file": "memberspace-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

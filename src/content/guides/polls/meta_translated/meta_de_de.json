@@ -1,0 +1,52 @@
+{
+  "name": "Live-Umfragen",
+  "pageHeader": "Live-Umfragen in Kommentaren",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Was sind Live-Umfragen",
+      "file": "what-are-polls.md",
+      "subCat": "Hintergrund"
+    },
+    {
+      "name": "Umfragen aktivieren",
+      "file": "enabling-polls.md",
+      "subCat": "Einrichten von Umfragen"
+    },
+    {
+      "name": "Wer kann Umfragen erstellen",
+      "file": "who-can-create-polls.md",
+      "subCat": "Einrichten von Umfragen"
+    },
+    {
+      "name": "Erlauben anonymer Umfrageabstimmungen",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Einrichten von Umfragen"
+    },
+    {
+      "name": "Erstellen einer Umfrage",
+      "file": "creating-a-poll.md",
+      "subCat": "Verwendung von Umfragen"
+    },
+    {
+      "name": "Abstimmung und Live-Ergebnisse",
+      "file": "voting-and-live-results.md",
+      "subCat": "Verwendung von Umfragen"
+    },
+    {
+      "name": "Wähler-Privatsphäre",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Verwendung von Umfragen"
+    },
+    {
+      "name": "Umfrage-Benachrichtigungen",
+      "file": "poll-notifications.md",
+      "subCat": "Verwendung von Umfragen"
+    },
+    {
+      "name": "Umfragen-API",
+      "file": "polls-api.md",
+      "subCat": "Für Entwickler"
+    }
+  ]
+}

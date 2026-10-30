@@ -1,6 +1,6 @@
 {
   "name": "Instalación de Webnode",
-  "pageHeader": "Agregar comentarios a sitios de Webnode",
+  "pageHeader": "Agregar comentarios a sitios Webnode",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
@@ -9,17 +9,17 @@
       "subCat": "Instalación de Webnode"
     },
     {
-      "name": "Paso 2: Agrega una sección y un bloque HTML",
+      "name": "Paso 2: Añadir sección y bloque HTML",
       "file": "webnode-step-2.md",
       "subCat": "Instalación de Webnode"
     },
     {
-      "name": "Paso 3: Copia y pega el fragmento de código",
+      "name": "Paso 3: Copiar y pegar fragmento de código",
       "file": "webnode-step-3.md",
       "subCat": "Instalación de Webnode"
     },
     {
-      "name": "Paso 4: Publica",
+      "name": "Paso 4: Publicar",
       "file": "webnode-step-4.md",
       "subCat": "Instalación de Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "Personalización",
       "file": "webnode-customize.md",
       "subCat": "Instalación de Webnode"
+    },
+    {
+      "name": "Agregar encuestas a tu sitio Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "Тарифы",
+      "name": "Ценообразование",
       "file": "canvas-lms-plans.md",
       "subCat": "Кратко"
     },
@@ -24,7 +24,7 @@
       "subCat": "Настройка Canvas LTI 1.3"
     },
     {
-      "name": "Завершение подключения",
+      "name": "Завершить подключение",
       "file": "canvas-lms-complete-connection.md",
       "subCat": "Настройка Canvas LTI 1.3"
     },
@@ -36,22 +36,27 @@
     {
       "name": "Стили комментирования",
       "file": "canvas-lms-commenting-styles.md",
-      "subCat": "Конфигурация"
+      "subCat": "Настройка"
     },
     {
       "name": "Сопоставление ролей",
       "file": "canvas-lms-role-mapping.md",
-      "subCat": "Конфигурация"
+      "subCat": "Настройка"
     },
     {
-      "name": "Настройка",
+      "name": "Кастомизация",
       "file": "canvas-lms-customize.md",
-      "subCat": "Конфигурация"
+      "subCat": "Настройка"
     },
     {
       "name": "Ошибки домена",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Устранение неполадок"
+    },
+    {
+      "name": "Добавить опросы в ваш курс Canvas",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

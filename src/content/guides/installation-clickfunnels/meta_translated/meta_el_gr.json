@@ -26,12 +26,17 @@
     {
       "name": "Επιπλέον: Απόσπασμα κώδικα για ζωντανά σχόλια",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Απόσπασμα κώδικα για ζωντανά σχόλια"
+      "subCat": "Απόσπασμα κώδικα ζωντανών σχολίων"
     },
     {
       "name": "Επιπλέον: Αυτόματη αναπαραγωγή σχολίων",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Αυτόματη αναπαραγωγή σχολίων"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στο μάθημα ClickFunnels",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

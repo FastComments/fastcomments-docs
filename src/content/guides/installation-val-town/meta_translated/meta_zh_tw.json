@@ -18,7 +18,7 @@
       "subCat": "Val Town 安裝"
     },
     {
-      "name": "使用 std/oauth 進行安全單一登入",
+      "name": "使用 std/oauth 進行安全單點登入",
       "file": "val-town-sso.md",
       "subCat": "Val Town 安裝"
     },
@@ -28,7 +28,7 @@
       "subCat": "Val Town 安裝"
     },
     {
-      "name": "範例值",
+      "name": "範例 Vals",
       "file": "val-town-examples.md",
       "subCat": "Val Town 安裝"
     },
@@ -36,6 +36,11 @@
       "name": "網域錯誤",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town 安裝"
+    },
+    {
+      "name": "為您的 Val Town 應用程式新增投票",
+      "file": "val-town-polls.md",
+      "subCat": "投票"
     }
   ]
 }

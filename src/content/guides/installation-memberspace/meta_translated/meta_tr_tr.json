@@ -1,6 +1,6 @@
 {
   "name": "MemberSpace Kurulumu",
-  "pageHeader": "MemberSpace ile Yorum Ekleme",
+  "pageHeader": "MemberSpace ile Yorum Ekle",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Özelleştirme",
       "file": "memberspace-customize.md",
       "subCat": "MemberSpace Kurulumu"
+    },
+    {
+      "name": "MemberSpace Sitenize Anketler Ekleyin",
+      "file": "memberspace-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

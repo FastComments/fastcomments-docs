@@ -1,6 +1,6 @@
 {
   "name": "Webnode 설치",
-  "pageHeader": "Webnode 사이트에 댓글 추가하기",
+  "pageHeader": "Webnode 사이트에 댓글 추가",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
@@ -24,7 +24,7 @@
       "subCat": "Webnode 설치"
     },
     {
-      "name": "완료",
+      "name": "성공",
       "file": "webnode-success.md",
       "subCat": "Webnode 설치"
     },
@@ -37,6 +37,11 @@
       "name": "맞춤 설정",
       "file": "webnode-customize.md",
       "subCat": "Webnode 설치"
+    },
+    {
+      "name": "Webnode 사이트에 설문 추가",
+      "file": "webnode-polls.md",
+      "subCat": "설문"
     }
   ]
 }

@@ -1,42 +1,47 @@
 {
-  "name": "Webnode-installatie",
+  "name": "Webnode Installatie",
   "pageHeader": "Reacties toevoegen aan Webnode-sites",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
       "name": "Stap 1: Bewerk uw pagina",
       "file": "webnode-step-1.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
     },
     {
-      "name": "Stap 2: Voeg een sectie en een HTML-blok toe",
+      "name": "Stap 2: Voeg sectie en HTML-blok toe",
       "file": "webnode-step-2.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
     },
     {
-      "name": "Stap 3: Kopieer en plak het codefragment",
+      "name": "Stap 3: Kopieer en plak codefragment",
       "file": "webnode-step-3.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
     },
     {
-      "name": "Stap 4: Publiceer",
+      "name": "Stap 4: Publiceren",
       "file": "webnode-step-4.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
     },
     {
       "name": "Succes",
       "file": "webnode-success.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "webnode-domain-errors.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "webnode-customize.md",
-      "subCat": "Webnode-installatie"
+      "subCat": "Webnode Installatie"
+    },
+    {
+      "name": "Voeg polls toe aan uw Webnode-site",
+      "file": "webnode-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Memberstack Kurulumu",
-  "pageHeader": "Memberstack ile Yorum Ekleme",
+  "pageHeader": "Memberstack ile Yorum Ekle",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Özelleştirme",
       "file": "memberstack-customize.md",
       "subCat": "Memberstack Kurulumu"
+    },
+    {
+      "name": "Memberstack Sitenize Anketler Ekleyin",
+      "file": "memberstack-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

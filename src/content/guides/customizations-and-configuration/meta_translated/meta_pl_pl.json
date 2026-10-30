@@ -20,220 +20,220 @@
     {
       "name": "Niestandardowy styl",
       "file": "custom-css.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Niestandardowe czcionki",
       "file": "custom-fonts.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Usuwanie znaków firmowych",
+      "name": "Usuwanie brandingu",
       "file": "remove-branding.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Obsługa ciemnych tła (tryb ciemny)",
       "file": "has-dark-background.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Przełączanie trybu ciemnego",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Zastępowanie tekstu",
       "file": "translations.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Zmiana domyślnego awatara",
       "file": "default-avatar-src.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłączanie awatarów",
       "file": "hide-avatars.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłączanie wszystkich domyślnych stylów",
       "file": "no-styles.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Łączenie komentarzy ze stronami",
       "file": "url.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Domyślne zwijanie odpowiedzi",
       "file": "collapse-replies.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Włącz edytor WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłączanie paska narzędzi",
       "file": "disable-toolbar.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłączanie blokowania",
       "file": "disable-blocking.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Określanie, którą stronę wyświetlić",
       "file": "starting-page.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Przełączanie wątków komentarzy bez przeładowywania strony",
       "file": "switching-comment-threads.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Daty absolutne (wyłącz przyjazne dla człowieka znaczniki czasu)",
       "file": "absolute-dates.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyświetlanie zarówno dat absolutnych, jak i względnych",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Dodawanie tekstu nagłówka",
       "file": "header-html.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Renderowanie linków jako tekst",
+      "name": "Wyświetlanie linków jako tekst",
       "file": "render-links-as-text.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Przełączanie komentarzy przyciskiem",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Dostosowywanie tekstu liczby komentarzy",
       "file": "comment-count-format.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz przekierowanie obrazów",
       "file": "disable-image-redirect.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz automatyczne tworzenie hashtagów",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz dzwonek powiadomień",
       "file": "disable-notification-bell.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz profile",
       "file": "disable-profiles.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz komentarze w profilach",
       "file": "disable-profile-comments.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Wyłącz prywatne wiadomości w profilach",
+      "name": "Wyłącz bezpośrednie wiadomości w profilach",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz komunikat sukcesu",
       "file": "disable-success-message.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Zmień ocenę treści GIF-ów",
       "file": "gif-rating.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Moderacja treści obrazów",
       "file": "image-content-moderation.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Zmień styl głosowania",
       "file": "vote-style.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz usuwanie",
       "file": "disable-deleting.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłącz edytowanie",
       "file": "disable-editing.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyróżnianie nowych komentarzy",
       "file": "highlighting-new-comments.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Rozmiary stron",
       "file": "page-size.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Szablony e-mail",
       "file": "email-templates.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Formaty nazw użytkowników",
       "file": "user-name-formats.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Wyłączanie przesyłania obrazów",
       "file": "no-image-uploads.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Zezwalaj na osadzanie mediów",
       "file": "allow-media-embeds.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Włącz pole wyszukiwania",
       "file": "enable-search.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Włącz spoiler",
       "file": "enable-spoilers.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
       "name": "Włącz liczbę wyświetleń komentarzy",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Wyświetlaj komentarze na żywo od razu",
+      "name": "Pokaż komentarze na żywo od razu",
       "file": "show-live-right-away.md",
       "subCat": "Komentowanie na żywo"
     },
@@ -258,7 +258,7 @@
       "subCat": "Paginacja i sortowanie"
     },
     {
-      "name": "Renderowanie wszystkich komentarzy jednocześnie – wyłącz paginację",
+      "name": "Wyświetlanie wszystkich komentarzy jednocześnie – wyłącz paginację",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Paginacja i sortowanie"
     },
@@ -300,6 +300,11 @@
     {
       "name": "Ostrzeż przed opuszczeniem strony z niewysłanym komentarzem",
       "file": "warn-on-unsaved-comment.md",
+      "subCat": "Pole odpowiedzi"
+    },
+    {
+      "name": "Włączanie ankiet",
+      "file": "enable-polls.md",
       "subCat": "Pole odpowiedzi"
     },
     {
@@ -358,12 +363,12 @@
       "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Ustaw domyślną nazwę użytkownika",
+      "name": "Ustawianie domyślnej nazwy użytkownika",
       "file": "default-username.md",
       "subCat": "Anonimowe komentowanie"
     },
     {
-      "name": "Generuj nazwy użytkowników automatycznie",
+      "name": "Automatyczne generowanie nazw użytkowników",
       "file": "auto-generate-username.md",
       "subCat": "Anonimowe komentowanie"
     },
@@ -373,7 +378,7 @@
       "subCat": "Różne"
     },
     {
-      "name": "Ręczne definiowanie ustawień regionalnych użytkownika",
+      "name": "Ręczne definiowanie lokalizacji użytkownika",
       "file": "locale.md",
       "subCat": "Różne"
     },
@@ -408,7 +413,7 @@
       "subCat": "Różne"
     },
     {
-      "name": "Włącz linki komentujących",
+      "name": "Włączanie linków komentujących",
       "file": "enable-commenter-links.md",
       "subCat": "Różne"
     },
@@ -418,7 +423,7 @@
       "subCat": "Różne"
     },
     {
-      "name": "Wspominanie identyfikatorów grup",
+      "name": "Wzmianki o identyfikatorach grup",
       "file": "mention-group-ids.md",
       "subCat": "Różne"
     },
@@ -433,14 +438,14 @@
       "subCat": "Różne"
     },
     {
-      "name": "Wyświetl odznaki w górnym pasku",
+      "name": "Pokaż odznaki w górnym pasku",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     },
     {
-      "name": "Wyświetl listę użytkowników online",
+      "name": "Pokaż listę online użytkowników",
       "file": "users-list.md",
-      "subCat": "Wygląd i odczucie"
+      "subCat": "Wygląd i odczucia"
     }
   ]
 }

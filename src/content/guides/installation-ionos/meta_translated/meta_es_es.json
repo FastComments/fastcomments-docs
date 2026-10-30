@@ -1,37 +1,42 @@
 {
-  "name": "Instalación de Ionos",
-  "pageHeader": "Añadir comentarios a sitios de Ionos",
+  "name": "Instalación Ionos",
+  "pageHeader": "Agregar Comentarios a Sitios Ionos",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "Paso 1: Añadir un formulario de contacto",
+      "name": "Paso 1: Añadir un Formulario de Contacto",
       "file": "ionos-step-1.md",
-      "subCat": "Instalación de Ionos"
+      "subCat": "Instalación Ionos"
     },
     {
-      "name": "Paso 2: Añadir el código de FastComments.com",
+      "name": "Paso 2: Añadir Código de FastComments.com",
       "file": "ionos-step-2.md",
-      "subCat": "Instalación de Ionos"
+      "subCat": "Instalación Ionos"
     },
     {
       "name": "Paso 3: Publicar",
       "file": "ionos-step-3.md",
-      "subCat": "Instalación de Ionos"
+      "subCat": "Instalación Ionos"
     },
     {
       "name": "Éxito",
       "file": "ionos-success.md",
-      "subCat": "Instalación de Ionos"
+      "subCat": "Instalación Ionos"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "ionos-domain-errors.md",
-      "subCat": "Instalación de Ionos"
+      "subCat": "Instalación Ionos"
     },
     {
       "name": "Personalización",
       "file": "ionos-customize.md",
-      "subCat": "Instalación de Ionos"
+      "subCat": "Instalación Ionos"
+    },
+    {
+      "name": "Añadir Encuestas a Tu Sitio Ionos",
+      "file": "ionos-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

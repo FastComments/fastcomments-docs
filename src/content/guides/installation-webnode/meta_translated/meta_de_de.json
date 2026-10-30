@@ -1,6 +1,6 @@
 {
   "name": "Webnode-Installation",
-  "pageHeader": "Kommentare zu Webnode-Seiten hinzufügen",
+  "pageHeader": "Kommentare zu Webnode-Websites hinzufügen",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Webnode-Installation"
     },
     {
-      "name": "Schritt 3: Code-Snippet kopieren und einfügen",
+      "name": "Schritt 3: Code-Snippet kopieren & einfügen",
       "file": "webnode-step-3.md",
       "subCat": "Webnode-Installation"
     },
@@ -37,6 +37,11 @@
       "name": "Anpassung",
       "file": "webnode-customize.md",
       "subCat": "Webnode-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Webnode-Website hinzufügen",
+      "file": "webnode-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

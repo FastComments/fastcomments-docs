@@ -1,37 +1,42 @@
 {
-  "name": "Инсталация на Hostinger",
-  "pageHeader": "Добавяне на коментари в реално време към сайтове на Hostinger",
+  "name": "Инсталиране на Hostinger",
+  "pageHeader": "Добавете живо коментиране към сайтове на Hostinger",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Стъпка 1: Добавяне на уиджет за код",
+      "name": "Стъпка 1: Добавете уиджет за код",
       "file": "hostinger-step-1.md",
-      "subCat": "Инсталация на сайт в Hostinger"
+      "subCat": "Инсталиране на сайт в Hostinger"
     },
     {
-      "name": "Стъпка 2: Добавяне на кода",
+      "name": "Стъпка 2: Добавете кода",
       "file": "hostinger-step-2.md",
-      "subCat": "Инсталация на сайт в Hostinger"
+      "subCat": "Инсталиране на сайт в Hostinger"
     },
     {
       "name": "Успех",
       "file": "hostinger-site-success.md",
-      "subCat": "Инсталация на сайт в Hostinger"
+      "subCat": "Инсталиране на сайт в Hostinger"
     },
     {
-      "name": "Грешки с домейна на сайта",
+      "name": "Грешки в домейна на сайта",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Инсталация на сайт в Hostinger"
+      "subCat": "Инсталиране на сайт в Hostinger"
     },
     {
       "name": "Персонализиране на сайта",
       "file": "hostinger-site-customize.md",
-      "subCat": "Инсталация на сайт в Hostinger"
+      "subCat": "Инсталиране на сайт в Hostinger"
     },
     {
       "name": "Плаващ бутон за харесвания",
       "file": "hostinger-floating-likes.md",
       "subCat": "Плаващи харесвания в Hostinger"
+    },
+    {
+      "name": "Добавете анкети към вашия сайт в Hostinger",
+      "file": "hostinger-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

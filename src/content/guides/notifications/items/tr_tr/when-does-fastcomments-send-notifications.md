@@ -1,34 +1,36 @@
-At FastComments'ta, zaten yeterince bildirim aldığınızı biliyoruz. Bu yüzden, kullanıcıların aldıkları bildirimleri sınırlamak için bazı önlemler alıyoruz, ancak topluluklarıyla iletişimde kalmalarını sağlıyoruz. Ayrıca yöneticileri ve moderatörleri güncel tutmak ve bir işlem yapılması gerektiğinde onları bilgilendirmek istiyoruz.
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still  
+keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
-#### Yöneticiler ve moderatörler için aşağıdaki olaylarda bildirim göndereceğiz:
+#### We'll send notifications for the following events for administrators and moderators:
 
-- Topluluk Özeti (sıklık yapılandırılabilir).
-- Topluluk yardım istekleri ve hatırlatıcılar.
-- Yeni Yorumlar.
+- Community Digest Summary (frequency configurable).
+- Community help requests and reminders.
+- New Comments.
 
-#### Yorum Yapanlar İçin:
+#### For Commenters:
 
-- Birisi yorumunuza yanıt verdiğinde (e-posta ile).
-- Adınız anıldığında (uygulama içi ve e-posta bildirimi).
-- Birisi aynı dizide yanıt verdiğinde (uygulama içi ve e-posta bildirimi).
-- Birisi aynı dizideki bir alt yoruma yanıt verdiğinde (uygulama içi ve e-posta bildirimi).
-- Abone olduğunuz bir sayfaya birisi yanıt verdiğinde (uygulama içi ve e-posta bildirimi, abonelik başına sıklık yapılandırılabilir: her dakika, saatlik veya günlük).
-- Bir kullanıcı ilk kez yorum yaptığında (SSO ile değil).
-- Bir kullanıcı doğrulanmamış bir oturumda yorum bıraktığında (SSO ile değil).
-  - Bu durumda birden fazla doğrulama e-postası gönderilmiyor. Sadece ilk e-posta gönderilir ve aynı oturumdaki tüm etkinliği doğrular.
+- When someone replies to your comment (via email).
+- When you are mentioned (in-app and email notification).
+- When someone replies in the same thread (in-app and email notification).
+- When someone replies to a child comment in the same thread (in-app and email notification).
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
+- When someone responds to a poll you created (in-app notification, plus a daily email). See [Anket Bildirimleri](/guide-polls.html#poll-notifications).
+- When a user comments for the first time (But not with SSO).
+- When a user leaves a comment in a session that is not verified (But not with SSO).
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
-#### Tüm Kullanıcılar İçin:
+#### For All Users:
 
-- Yeni bir IP adresinden giriş tespit edildiğinde, yaklaşık konum ve IP adresiyle bir güvenlik uyarısı e-postası gönderilir. Bu, kullanıcının ilk girişine uygulanmaz.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-#### ...ve sonunda sadece yöneticiler için:
+#### ...and finally for administrators only:
 
-- Entegrasyonlar tamamlandığında.
-- Göçler tamamlandığında.
-- İçe aktarmalar veya dışa aktarmalar bittiğinde.
-- Faturalama sorunları olduğunda.
-- Deneme süresi sonu hatırlatmaları.
+- When integrations are complete.
+- When migrations are complete.
+- When imports or exports finish.
+- When there are billing issues.
+- Trial-end reminders.
 
-Bazı bildirimler, kullanıcılara toplu gönderimi önlemek için toplu hâle getirilir. Bunun hakkında bir sonraki bölümde `Notification Types` öğrenin.
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
 
-Yanıt ve bahsetme e-postaları yalnızca onaylanmış yorumlar için gönderilir. Belirli bir yorum için yanıt veya bahsetme e-postasının gönderilip gönderilmediğini veya neden gönderilmediğini görmek için, Yorumları Yönet sayfasından o yorumun [Comment Logs](/guide-moderation.html#comment-logs) bölümünü açın.
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Yorum Kayıtları](/guide-moderation.html#comment-logs) from the Moderate Comments page.

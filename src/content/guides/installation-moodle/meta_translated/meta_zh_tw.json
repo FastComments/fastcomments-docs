@@ -1,12 +1,12 @@
 {
   "name": "Moodle 安裝",
-  "pageHeader": "在 Moodle 站點新增評論",
+  "pageHeader": "在 Moodle 網站添加評論",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "快速上手",
+      "name": "快速入門",
       "file": "moodle-quick-start.md",
-      "subCat": "重點摘要"
+      "subCat": "TLDR"
     },
     {
       "name": "安裝",
@@ -24,7 +24,7 @@
       "subCat": "Moodle 外掛安裝"
     },
     {
-      "name": "單一登入（SSO）模式",
+      "name": "單點登入模式",
       "file": "moodle-sso-modes.md",
       "subCat": "Moodle 外掛安裝"
     },
@@ -42,6 +42,11 @@
       "name": "網域錯誤",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle 外掛安裝"
+    },
+    {
+      "name": "在您的 Moodle 網站添加投票",
+      "file": "moodle-polls.md",
+      "subCat": "投票"
     }
   ]
 }

@@ -1,0 +1,3 @@
+---
+Tilføj live afstemninger til dine kommentartråde. Aktiver afstemninger, vælg hvem der kan oprette dem og stemme, indstil vælgerens privatliv, og få besked, når svar kommer ind.
+---

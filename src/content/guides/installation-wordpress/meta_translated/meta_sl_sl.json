@@ -84,9 +84,14 @@
       "subCat": "Premikanje iz WordPressa"
     },
     {
-      "name": "Deaktiviranje nasprotno odstranjevanju vtičnika",
+      "name": "Deaktiviranje vs odstranjevanje vtičnika",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Odstranjevanje vtičnika"
+      "subCat": "Odstranitev vtičnika"
+    },
+    {
+      "name": "Dodajte ankete na svoje WordPress spletno mesto",
+      "file": "wordpress-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
   "name": "Namestitev Systeme.io",
-  "pageHeader": "Dodajanje komentarjev v blog Systeme.io",
+  "pageHeader": "Dodaj komentarje v blog Systeme.io",
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Odprite predlogo teme bloga",
+      "name": "Korak 1: Odpri predlogo teme bloga",
       "file": "systeme-step-1.md",
       "subCat": "Namestitev Systeme.io"
     },
     {
-      "name": "Korak 2: Dodajte kodo FastComments.com",
+      "name": "Korak 2: Dodaj kodo FastComments.com",
       "file": "systeme-step-2.md",
       "subCat": "Namestitev Systeme.io"
     },
@@ -24,9 +24,14 @@
       "subCat": "Namestitev Systeme.io"
     },
     {
-      "name": "Prilagoditev",
+      "name": "Prilagajanje",
       "file": "systeme-customize.md",
       "subCat": "Namestitev Systeme.io"
+    },
+    {
+      "name": "Dodaj ankete v svoj blog Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

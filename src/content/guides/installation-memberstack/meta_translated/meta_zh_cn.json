@@ -17,6 +17,11 @@
       "name": "自定义",
       "file": "memberstack-customize.md",
       "subCat": "Memberstack 安装"
+    },
+    {
+      "name": "在您的 Memberstack 网站上添加投票",
+      "file": "memberstack-polls.md",
+      "subCat": "投票"
     }
   ]
 }

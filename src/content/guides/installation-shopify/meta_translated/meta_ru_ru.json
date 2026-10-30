@@ -9,12 +9,12 @@
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Добавить комментарии в записи блога и на страницы товаров",
+      "name": "Добавить комментарии к записям блога и продуктам",
       "file": "shopify-add-comments.md",
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Добавить бейдж с количеством комментариев",
+      "name": "Добавить значок количества комментариев",
       "file": "shopify-comment-count.md",
       "subCat": "Установка Shopify"
     },
@@ -29,7 +29,7 @@
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Добавить список популярных страниц",
+      "name": "Добавить список топ-страниц",
       "file": "shopify-top-pages.md",
       "subCat": "Установка Shopify"
     },
@@ -59,9 +59,14 @@
       "subCat": "Установка Shopify"
     },
     {
-      "name": "Ручная установка (для продвинутых)",
+      "name": "Ручная установка (расширенная)",
       "file": "shopify-manual-install.md",
       "subCat": "Установка Shopify"
+    },
+    {
+      "name": "Добавить опросы в ваш магазин Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

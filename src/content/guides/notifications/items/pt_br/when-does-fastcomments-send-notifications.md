@@ -1,4 +1,4 @@
-Na FastComments, sabemos que você já recebe notificações suficientes. Por isso, tomamos algumas medidas para limitar as notificações que os usuários recebem, mantendo-os em contato com suas comunidades. Também queremos manter administradores e moderadores atualizados e informá‑los quando for necessário tomar alguma ação.
+Na FastComments, sabemos que você já recebe notificações suficientes. Por isso, tomamos algumas medidas para limitar as notificações que os usuários recebem, ao mesmo tempo em que os mantemos conectados às suas comunidades. Também queremos manter administradores e moderadores atualizados e informá‑los quando for necessário tomar alguma ação.
 
 #### Enviaremos notificações para os seguintes eventos para administradores e moderadores:
 
@@ -9,12 +9,13 @@ Na FastComments, sabemos que você já recebe notificações suficientes. Por is
 #### Para Comentadores:
 
 - Quando alguém responde ao seu comentário (por e‑mail).
-- Quando você é mencionado (notificação no app e por e‑mail).
+- Quando você for mencionado (notificação no app e por e‑mail).
 - Quando alguém responde no mesmo tópico (notificação no app e por e‑mail).
 - Quando alguém responde a um comentário filho no mesmo tópico (notificação no app e por e‑mail).
 - Quando alguém responde a uma página à qual você está inscrito (notificação no app e por e‑mail, frequência configurável por assinatura: a cada minuto, a cada hora ou diariamente).
-- Quando um usuário comenta pela primeira vez (mas não com SSO).
-- Quando um usuário deixa um comentário em uma sessão que não está verificada (mas não com SSO).
+- Quando alguém responde a uma enquete que você criou (notificação no app, mais um e‑mail diário). Veja [Poll Notifications](/guide-polls.html#poll-notifications).
+- Quando um usuário comenta pela primeira vez (Mas não com SSO).
+- Quando um usuário deixa um comentário em uma sessão que não está verificada (Mas não com SSO).
   - Não enviamos múltiplos e‑mails de verificação neste caso. Apenas o primeiro, que verificará toda a atividade na mesma sessão.
 
 #### Para Todos os Usuários:

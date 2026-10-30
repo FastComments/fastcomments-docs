@@ -1,6 +1,6 @@
 {
   "name": "Установка Memberstack",
-  "pageHeader": "Добавление комментариев с помощью Memberstack",
+  "pageHeader": "Добавить комментарии с Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Настройка",
       "file": "memberstack-customize.md",
       "subCat": "Установка Memberstack"
+    },
+    {
+      "name": "Добавить опросы на ваш сайт Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

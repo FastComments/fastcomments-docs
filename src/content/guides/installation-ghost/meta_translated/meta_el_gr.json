@@ -1,57 +1,62 @@
 {
-  "name": "Εγκατάσταση του Ghost",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων μόνο για μέλη σε ιστότοπους Ghost",
+  "name": "Εγκατάσταση Ghost",
+  "pageHeader": "Προσθήκη Ζωντανών Σχολίων μόνο για μέλη σε ιστοσελίδες Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Κατεβάστε το θέμα σας",
+      "name": "Βήμα 1: Κατεβάστε το Θέμα σας",
       "file": "ghost-step-1.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Βήμα 2: Εγκαταστήστε το θέμα σας τοπικά",
+      "name": "Βήμα 2: Εγκαταστήστε το Θέμα σας τοπικά",
       "file": "ghost-step-2.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Βήμα 3: Ονομάστε το νέο θέμα",
+      "name": "Βήμα 3: Ονομάστε το Νέο Θέμα",
       "file": "ghost-step-3.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Βήμα 4: Ανοίξτε το πρότυπο ανάρτησης",
+      "name": "Βήμα 4: Ανοίξτε το Πρότυπο Ανάρτησης",
       "file": "ghost-step-4.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Βήμα 5: Προσθέστε τον κώδικα του FastComments",
+      "name": "Βήμα 5: Προσθέστε τον Κώδικα FastComments",
       "file": "ghost-step-5.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Βήμα 6: Εξαγάγετε το θέμα σας",
+      "name": "Βήμα 6: Εξαγάγετε το Θέμα σας",
       "file": "ghost-step-6.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Βήμα 7: Ανεβάστε το θέμα στο Ghost",
+      "name": "Βήμα 7: Ανεβάστε το Θέμα στο Ghost",
       "file": "ghost-step-7.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
       "name": "Επιτυχία!",
       "file": "ghost-success.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
-      "name": "Σφάλματα τομέα",
+      "name": "Σφάλματα Τομέα",
       "file": "ghost-domain-errors.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
     },
     {
       "name": "Προσαρμογή",
       "file": "ghost-customize.md",
-      "subCat": "Εγκατάσταση του Ghost"
+      "subCat": "Εγκατάσταση Ghost"
+    },
+    {
+      "name": "Προσθήκη Δημοσκοπήσεων στην ιστοσελίδα Ghost",
+      "file": "ghost-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

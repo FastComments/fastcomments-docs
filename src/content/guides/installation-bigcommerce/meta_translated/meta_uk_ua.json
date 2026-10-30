@@ -1,15 +1,15 @@
 {
   "name": "Встановлення BigCommerce",
-  "pageHeader": "Додавання коментарів на сайти BigCommerce",
+  "pageHeader": "Додати коментарі до сайтів BigCommerce",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Крок перший: Підготуйте вашу тему",
+      "name": "Крок перший: Підготуйте свою тему",
       "file": "bigcommerce-step-1.md",
       "subCat": "Встановлення BigCommerce"
     },
     {
-      "name": "Крок другий: Відредагуйте відповідний шаблон",
+      "name": "Крок другий: Відредагуйте правильний шаблон",
       "file": "bigcommerce-step-2.md",
       "subCat": "Встановлення BigCommerce"
     },
@@ -39,9 +39,14 @@
       "subCat": "Встановлення BigCommerce"
     },
     {
-      "name": "Додатково: фрагмент коду для конструктора сторінок",
+      "name": "Додатково: Фрагмент коду для Page Builder",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Використання конструктора сторінок"
+      "subCat": "Використання Page Builder"
+    },
+    {
+      "name": "Додати опитування до вашого магазину BigCommerce",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

@@ -1,37 +1,42 @@
 {
-  "name": "Instalacja IONOS",
-  "pageHeader": "Dodaj komentarze do stron IONOS",
+  "name": "Instalacja Ionos",
+  "pageHeader": "Dodaj komentarze do stron Ionos",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
       "name": "Krok 1: Dodaj formularz kontaktowy",
       "file": "ionos-step-1.md",
-      "subCat": "Instalacja IONOS"
+      "subCat": "Instalacja Ionos"
     },
     {
       "name": "Krok 2: Dodaj kod FastComments.com",
       "file": "ionos-step-2.md",
-      "subCat": "Instalacja IONOS"
+      "subCat": "Instalacja Ionos"
     },
     {
       "name": "Krok 3: Opublikuj",
       "file": "ionos-step-3.md",
-      "subCat": "Instalacja IONOS"
+      "subCat": "Instalacja Ionos"
     },
     {
       "name": "Sukces",
       "file": "ionos-success.md",
-      "subCat": "Instalacja IONOS"
+      "subCat": "Instalacja Ionos"
     },
     {
       "name": "Błędy domeny",
       "file": "ionos-domain-errors.md",
-      "subCat": "Instalacja IONOS"
+      "subCat": "Instalacja Ionos"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "ionos-customize.md",
-      "subCat": "Instalacja IONOS"
+      "subCat": "Instalacja Ionos"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Ionos",
+      "file": "ionos-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

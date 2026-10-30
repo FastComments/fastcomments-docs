@@ -1,6 +1,6 @@
 {
   "name": "Instalação do Drupal",
-  "pageHeader": "Adicionar comentários em tempo real a sites Drupal",
+  "pageHeader": "Adicionar Comentários ao Vivo em Sites Drupal",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
@@ -24,7 +24,7 @@
       "subCat": "Instalação do Drupal"
     },
     {
-      "name": "Campos do tipo de conteúdo",
+      "name": "Campos de Tipo de Conteúdo",
       "file": "drupal-content-type-fields.md",
       "subCat": "Instalação do Drupal"
     },
@@ -57,6 +57,11 @@
       "name": "Requisitos",
       "file": "drupal-requirements.md",
       "subCat": "Instalação do Drupal"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Site Drupal",
+      "file": "drupal-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

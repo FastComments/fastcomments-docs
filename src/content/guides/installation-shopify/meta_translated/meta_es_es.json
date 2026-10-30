@@ -1,6 +1,6 @@
 {
   "name": "Instalación de Shopify",
-  "pageHeader": "Agregar comentarios a sitios de Shopify",
+  "pageHeader": "Agregar comentarios a sitios Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Instalación de Shopify"
     },
     {
-      "name": "Agregar comentarios a publicaciones del blog y productos",
+      "name": "Agregar comentarios a publicaciones de blog y productos",
       "file": "shopify-add-comments.md",
       "subCat": "Instalación de Shopify"
     },
     {
-      "name": "Agregar una insignia de conteo de comentarios",
+      "name": "Agregar una insignia de recuento de comentarios",
       "file": "shopify-comment-count.md",
       "subCat": "Instalación de Shopify"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalación de Shopify"
     },
     {
-      "name": "Agregar una lista de las páginas más populares",
+      "name": "Agregar una lista de páginas principales",
       "file": "shopify-top-pages.md",
       "subCat": "Instalación de Shopify"
     },
@@ -62,6 +62,11 @@
       "name": "Instalación manual (avanzada)",
       "file": "shopify-manual-install.md",
       "subCat": "Instalación de Shopify"
+    },
+    {
+      "name": "Agregar encuestas a tu tienda Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

@@ -8,7 +8,7 @@
       "subCat": "Val Town Installatie"
     },
     {
-      "name": "Stap 2: Gebruik je eigen account",
+      "name": "Stap 2: Gebruik uw eigen account",
       "file": "val-town-step-2.md",
       "subCat": "Val Town Installatie"
     },
@@ -36,6 +36,11 @@
       "name": "Domeinfouten",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town Installatie"
+    },
+    {
+      "name": "Polls toevoegen aan uw Val Town-app",
+      "file": "val-town-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

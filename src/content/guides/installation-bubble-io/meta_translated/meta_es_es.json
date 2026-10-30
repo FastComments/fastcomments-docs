@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Añadir comentarios en vivo a sitios de Bubble.io",
+  "pageHeader": "Agregar comentarios en vivo a sitios de Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -14,12 +14,12 @@
       "subCat": "Instalación"
     },
     {
-      "name": "3. Encontrar la configuración de ancho",
+      "name": "3. Encontrar configuración de ancho",
       "file": "bubble-io-step-3.md",
       "subCat": "Instalación"
     },
     {
-      "name": "4. Ajustar el diseño",
+      "name": "4. Ajustar diseño",
       "file": "bubble-io-step-4.md",
       "subCat": "Instalación"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Errores de dominio",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Agregar encuestas a tu aplicación Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

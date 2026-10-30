@@ -1,42 +1,47 @@
 {
-  "name": "Инсталација за Wix",
-  "pageHeader": "Додајте коментаре на Wix сајтове",
+  "name": "Wix instalacija",
+  "pageHeader": "Dodajte komentare na Wix sajtove",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Уредите исправну страницу",
+      "name": "Korak 1: Izmenite odgovarajuću stranicu",
       "file": "wix-step-1.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
     },
     {
-      "name": "Корак 2: Додајте блок за уграђивање",
+      "name": "Korak 2: Dodajte ugrađeni blok",
       "file": "wix-step-2.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
     },
     {
-      "name": "Корак 3: Копирајте/налепите прилагођени код",
+      "name": "Korak 3: Kopirajte/zalepite prilagođeni kod",
       "file": "wix-step-3.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
     },
     {
-      "name": "Корак 4: Промените величину",
+      "name": "Korak 4: Promenite veličinu",
       "file": "wix-step-4.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
     },
     {
-      "name": "Корак 5: Јединствене нити коментара",
+      "name": "Korak 5: Jedinstvene teme komentara",
       "file": "wix-step-5.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
     },
     {
-      "name": "Корак 6: Прославите",
+      "name": "Korak 6: Proslavite",
       "file": "wix-step-6.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "wix-customize.md",
-      "subCat": "Инсталација за Wix"
+      "subCat": "Wix instalacija"
+    },
+    {
+      "name": "Dodajte ankete na vaš Wix sajt",
+      "file": "wix-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

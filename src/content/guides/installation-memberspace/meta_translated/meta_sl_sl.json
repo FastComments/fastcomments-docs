@@ -1,6 +1,6 @@
 {
   "name": "Namestitev MemberSpace",
-  "pageHeader": "Dodajanje komentarjev z MemberSpace",
+  "pageHeader": "Dodaj komentarje z MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -14,9 +14,14 @@
       "subCat": "Namestitev MemberSpace"
     },
     {
-      "name": "Prilagajanje",
+      "name": "Prilagoditev",
       "file": "memberspace-customize.md",
       "subCat": "Namestitev MemberSpace"
+    },
+    {
+      "name": "Dodaj ankete na svoje MemberSpace spletno mesto",
+      "file": "memberspace-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

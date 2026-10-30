@@ -1,42 +1,42 @@
 {
   "name": "Установка GoHighLevel",
-  "pageHeader": "Добавление комментариев на сайты GoHighLevel",
+  "pageHeader": "Добавить комментарии к сайтам GoHighLevel",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
       "name": "Шаг 1: Редактировать курс",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
       "name": "Шаг 2: Открыть расширенные настройки",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
       "name": "Шаг 3: Скопировать код",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
       "name": "Шаг 4: Вставить код",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
-      "name": "Успешная установка членского сайта",
+      "name": "Успешная установка сайта участника",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
-      "name": "Ошибки домена членского сайта",
+      "name": "Ошибки домена сайта участника",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
-      "name": "Настройка членского сайта",
+      "name": "Настройка сайта участника",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Установка членского сайта GoHighLevel"
+      "subCat": "Установка сайта участника GoHighLevel"
     },
     {
       "name": "Шаг 1: Добавить элемент пользовательского кода",
@@ -62,6 +62,11 @@
       "name": "Настройка сайта",
       "file": "gohighlevel-site-customize.md",
       "subCat": "Установка сайта GoHighLevel"
+    },
+    {
+      "name": "Добавить опросы на ваш сайт GoHighLevel",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

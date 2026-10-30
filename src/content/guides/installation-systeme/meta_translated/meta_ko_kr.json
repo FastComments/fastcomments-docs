@@ -27,6 +27,11 @@
       "name": "맞춤 설정",
       "file": "systeme-customize.md",
       "subCat": "Systeme.io 설치"
+    },
+    {
+      "name": "Systeme.io 블로그에 설문 추가",
+      "file": "systeme-polls.md",
+      "subCat": "설문"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Shopify-Installation",
-  "pageHeader": "Kommentare zu Shopify-Seiten hinzufügen",
+  "pageHeader": "Kommentare zu Shopify-Websites hinzufügen",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -14,37 +14,37 @@
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Ein Badge für die Kommentaranzahl hinzufügen",
+      "name": "Badge für Kommentaranzahl hinzufügen",
       "file": "shopify-comment-count.md",
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Einen Feed mit neuesten Kommentaren hinzufügen",
+      "name": "Feed für aktuelle Kommentare hinzufügen",
       "file": "shopify-recent-comments.md",
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Einen Feed mit neuesten Diskussionen hinzufügen",
+      "name": "Feed für aktuelle Diskussionen hinzufügen",
       "file": "shopify-recent-discussions.md",
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Eine Liste der Top-Seiten hinzufügen",
+      "name": "Liste der Top-Seiten hinzufügen",
       "file": "shopify-top-pages.md",
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Eine Bewertungsübersicht hinzufügen",
+      "name": "Zusammenfassung der Bewertungen hinzufügen",
       "file": "shopify-reviews-summary.md",
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Automatisches Login für Shopify-Kunden",
+      "name": "Shopify-Kunden automatisch anmelden",
       "file": "shopify-sso.md",
       "subCat": "Shopify-Installation"
     },
     {
-      "name": "Bestehende Kommentare importieren",
+      "name": "Vorhandene Kommentare importieren",
       "file": "shopify-import.md",
       "subCat": "Shopify-Installation"
     },
@@ -62,6 +62,11 @@
       "name": "Manuelle Installation (Erweitert)",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrem Shopify-Shop hinzufügen",
+      "file": "shopify-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

@@ -1,32 +1,37 @@
 {
-  "name": "Installation af ThriveCart Learn+",
-  "pageHeader": "Tilføj kommentarer til ThriveCart Learn+-kurser",
+  "name": "ThriveCart Learn+ Installation",
+  "pageHeader": "Tilføj kommentarer til ThriveCart Learn+ kurser",
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
-      "name": "Trin 1: Forbered kurset",
+      "name": "Trin 1: Forbered kursus",
       "file": "thrivecart-learn-step-1.md",
-      "subCat": "Installation af ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Installation"
     },
     {
       "name": "Trin 2: Tilføj tilpasset kode",
       "file": "thrivecart-learn-step-2.md",
-      "subCat": "Installation af ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Installation"
     },
     {
       "name": "Succes",
       "file": "thrivecart-learn-success.md",
-      "subCat": "Installation af ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Installation"
     },
     {
       "name": "Domænefejl",
       "file": "thrivecart-learn-domain-errors.md",
-      "subCat": "Installation af ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Installation"
     },
     {
       "name": "Tilpasning",
       "file": "thrivecart-learn-customize.md",
-      "subCat": "Installation af ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Installation"
+    },
+    {
+      "name": "Tilføj afstemninger til dit ThriveCart Learn+ kursus",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

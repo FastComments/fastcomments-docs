@@ -1,35 +1,35 @@
 {
   "name": "Namestitev Wix",
-  "pageHeader": "Dodajanje komentarjev na spletna mesta Wix",
+  "pageHeader": "Dodaj komentarje na Wix strani",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Uredite pravilno stran",
+      "name": "Korak 1: Uredi pravilno stran",
       "file": "wix-step-1.md",
       "subCat": "Namestitev Wix"
     },
     {
-      "name": "Korak 2: Dodajte blok za vdelavo",
+      "name": "Korak 2: Dodaj vdelani blok",
       "file": "wix-step-2.md",
       "subCat": "Namestitev Wix"
     },
     {
-      "name": "Korak 3: Kopirajte in prilepite prilagojeno kodo",
+      "name": "Korak 3: Kopiraj/prilepi prilagojeno kodo",
       "file": "wix-step-3.md",
       "subCat": "Namestitev Wix"
     },
     {
-      "name": "Korak 4: Prilagodite velikost",
+      "name": "Korak 4: Spremeni velikost",
       "file": "wix-step-4.md",
       "subCat": "Namestitev Wix"
     },
     {
-      "name": "Korak 5: Edinstvene niti komentarjev",
+      "name": "Korak 5: Edinstveni komentarni nizi",
       "file": "wix-step-5.md",
       "subCat": "Namestitev Wix"
     },
     {
-      "name": "Korak 6: Proslavite",
+      "name": "Korak 6: Praznuj",
       "file": "wix-step-6.md",
       "subCat": "Namestitev Wix"
     },
@@ -37,6 +37,11 @@
       "name": "Prilagajanje",
       "file": "wix-customize.md",
       "subCat": "Namestitev Wix"
+    },
+    {
+      "name": "Dodaj ankete na svojo Wix stran",
+      "file": "wix-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

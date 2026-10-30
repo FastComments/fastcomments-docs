@@ -1,37 +1,42 @@
 {
-  "name": "Webflow のインストール",
-  "pageHeader": "Webflow サイトにコメントを追加する",
+  "name": "Webflow インストール",
+  "pageHeader": "Webflow サイトにコメントを追加",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
       "name": "ステップ 1: 埋め込みブロックを追加",
       "file": "webflow-step-1.md",
-      "subCat": "Webflow のインストール"
+      "subCat": "Webflow インストール"
     },
     {
       "name": "ステップ 2: FastComments.com のコードを貼り付け",
       "file": "webflow-step-2.md",
-      "subCat": "Webflow のインストール"
+      "subCat": "Webflow インストール"
     },
     {
       "name": "ステップ 3: 公開",
       "file": "webflow-step-3.md",
-      "subCat": "Webflow のインストール"
+      "subCat": "Webflow インストール"
     },
     {
-      "name": "完了",
+      "name": "成功",
       "file": "webflow-success.md",
-      "subCat": "Webflow のインストール"
+      "subCat": "Webflow インストール"
     },
     {
       "name": "ドメインエラー",
       "file": "webflow-domain-errors.md",
-      "subCat": "Webflow のインストール"
+      "subCat": "Webflow インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "webflow-customize.md",
-      "subCat": "Webflow のインストール"
+      "subCat": "Webflow インストール"
+    },
+    {
+      "name": "Webflow サイトに投票を追加",
+      "file": "webflow-polls.md",
+      "subCat": "投票"
     }
   ]
 }

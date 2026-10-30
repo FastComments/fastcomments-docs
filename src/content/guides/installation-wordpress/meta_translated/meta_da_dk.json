@@ -64,17 +64,17 @@
       "subCat": "WordPress-installation"
     },
     {
-      "name": "Widget til seneste kommentarer",
+      "name": "Seneste kommentarer-widget",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "Andre widgets"
     },
     {
-      "name": "Widget til seneste diskussioner",
+      "name": "Seneste diskussioner-widget",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "Andre widgets"
     },
     {
-      "name": "Widget til top-sider",
+      "name": "Top sider-widget",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Andre widgets"
     },
@@ -87,6 +87,11 @@
       "name": "Deaktivering vs afinstallation af plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Fjernelse af plugin"
+    },
+    {
+      "name": "Tilføj afstemninger til dit WordPress-websted",
+      "file": "wordpress-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

@@ -1,67 +1,72 @@
 {
   "name": "GoHighLevel-Installation",
-  "pageHeader": "Kommentare zu GoHighLevel-Seiten hinzufügen",
+  "pageHeader": "Kommentare zu GoHighLevel-Websites hinzufügen",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
       "name": "Schritt 1: Kurs bearbeiten",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
       "name": "Schritt 2: Erweiterte Einstellungen öffnen",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
       "name": "Schritt 3: Code kopieren",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
       "name": "Schritt 4: Code einfügen",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
-      "name": "Mitgliederseite erfolgreich",
+      "name": "Erfolg der Mitgliedsseite",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
-      "name": "Domain-Fehler der Mitgliederseite",
+      "name": "Domain-Fehler der Mitgliedsseite",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
-      "name": "Anpassung der Mitgliederseite",
+      "name": "Anpassung der Mitgliedsseite",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Installation der GoHighLevel-Mitgliederseite"
+      "subCat": "GoHighLevel-Mitgliedsseiten-Installation"
     },
     {
-      "name": "Schritt 1: Element für benutzerdefinierten Code hinzufügen",
+      "name": "Schritt 1: Benutzerdefiniertes Code-Element hinzufügen",
       "file": "gohighlevel-site-step-1.md",
-      "subCat": "Installation der GoHighLevel-Website"
+      "subCat": "GoHighLevel-Website-Installation"
     },
     {
       "name": "Schritt 2: Code kopieren und einfügen",
       "file": "gohighlevel-site-step-2.md",
-      "subCat": "Installation der GoHighLevel-Website"
+      "subCat": "GoHighLevel-Website-Installation"
     },
     {
-      "name": "Website erfolgreich",
+      "name": "Erfolg der Website",
       "file": "gohighlevel-site-success.md",
-      "subCat": "Installation der GoHighLevel-Website"
+      "subCat": "GoHighLevel-Website-Installation"
     },
     {
       "name": "Domain-Fehler der Website",
       "file": "gohighlevel-site-domain-errors.md",
-      "subCat": "Installation der GoHighLevel-Website"
+      "subCat": "GoHighLevel-Website-Installation"
     },
     {
       "name": "Website-Anpassung",
       "file": "gohighlevel-site-customize.md",
-      "subCat": "Installation der GoHighLevel-Website"
+      "subCat": "GoHighLevel-Website-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer GoHighLevel-Website hinzufügen",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

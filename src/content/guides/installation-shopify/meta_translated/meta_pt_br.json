@@ -1,50 +1,50 @@
 {
   "name": "Instalação do Shopify",
-  "pageHeader": "Adicionar comentários a sites do Shopify",
+  "pageHeader": "Adicionar Comentários aos Sites Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Instalar o aplicativo FastComments",
+      "name": "Instalar o Aplicativo FastComments",
       "file": "shopify-install.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Adicionar comentários a postagens do blog e produtos",
+      "name": "Adicionar Comentários a Posts de Blog e Produtos",
       "file": "shopify-add-comments.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Adicionar um distintivo com a contagem de comentários",
+      "name": "Adicionar um Badge de Contagem de Comentários",
       "file": "shopify-comment-count.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Adicionar um feed de comentários recentes",
+      "name": "Adicionar um Feed de Comentários Recentes",
       "file": "shopify-recent-comments.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Adicionar um feed de discussões recentes",
+      "name": "Adicionar um Feed de Discussões Recentes",
       "file": "shopify-recent-discussions.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Adicionar uma lista das principais páginas",
+      "name": "Adicionar uma Lista de Páginas Principais",
       "file": "shopify-top-pages.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Adicionar um resumo de avaliações",
+      "name": "Adicionar um Resumo de Avaliações",
       "file": "shopify-reviews-summary.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Login automático para clientes do Shopify",
+      "name": "Login Automático para Clientes Shopify",
       "file": "shopify-sso.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Importar comentários existentes",
+      "name": "Importar Comentários Existentes",
       "file": "shopify-import.md",
       "subCat": "Instalação do Shopify"
     },
@@ -54,14 +54,19 @@
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "shopify-domain-errors.md",
       "subCat": "Instalação do Shopify"
     },
     {
-      "name": "Instalação manual (avançada)",
+      "name": "Instalação Manual (Avançada)",
       "file": "shopify-manual-install.md",
       "subCat": "Instalação do Shopify"
+    },
+    {
+      "name": "Adicionar Enquetes à Sua Loja Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

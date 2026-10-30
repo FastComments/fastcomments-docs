@@ -1,47 +1,52 @@
 {
-  "name": "BigCommerce-installatie",
+  "name": "BigCommerce Installatie",
   "pageHeader": "Reacties toevoegen aan BigCommerce-sites",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Bereid uw thema voor",
+      "name": "Stap één: Bereid uw thema voor",
       "file": "bigcommerce-step-1.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
-      "name": "Stap 2: Bewerk het juiste sjabloon",
+      "name": "Stap twee: Bewerk de juiste sjabloon",
       "file": "bigcommerce-step-2.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
-      "name": "Stap 3: Voeg widgetcode toe",
+      "name": "Stap drie: Voeg widgetcode toe",
       "file": "bigcommerce-step-3.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
-      "name": "Stap 4: Activeer het nieuwe thema",
+      "name": "Stap vier: Activeer nieuw thema",
       "file": "bigcommerce-step-4.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
       "name": "Succes",
       "file": "bigcommerce-success.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "bigcommerce-domain-errors.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "bigcommerce-customize.md",
-      "subCat": "BigCommerce-installatie"
+      "subCat": "BigCommerce Installatie"
     },
     {
-      "name": "Extra: codefragment voor Page Builder",
+      "name": "Extra: Codefragment voor Page Builder",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "Gebruik van de Page Builder"
+    },
+    {
+      "name": "Voeg peilingen toe aan uw BigCommerce-winkel",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Peilingen"
     }
   ]
 }

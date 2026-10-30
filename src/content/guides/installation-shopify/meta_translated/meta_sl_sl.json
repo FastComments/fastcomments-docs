@@ -1,6 +1,6 @@
 {
   "name": "Namestitev Shopify",
-  "pageHeader": "Dodajte komentarje na spletne strani Shopify",
+  "pageHeader": "Dodaj komentarje na spletna mesta Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -9,32 +9,32 @@
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Dodajte komentarje k objavam na blogu in izdelkom",
+      "name": "Dodaj komentarje k blog objavam in izdelkom",
       "file": "shopify-add-comments.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Dodajte značko s številom komentarjev",
+      "name": "Dodaj značko števila komentarjev",
       "file": "shopify-comment-count.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Dodajte vir zadnjih komentarjev",
+      "name": "Dodaj vir nedavnih komentarjev",
       "file": "shopify-recent-comments.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Dodajte vir zadnjih razprav",
+      "name": "Dodaj vir nedavnih razprav",
       "file": "shopify-recent-discussions.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Dodajte seznam najbolj obiskanih strani",
+      "name": "Dodaj seznam najboljših strani",
       "file": "shopify-top-pages.md",
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Dodajte povzetek ocen",
+      "name": "Dodaj povzetek ocen",
       "file": "shopify-reviews-summary.md",
       "subCat": "Namestitev Shopify"
     },
@@ -44,7 +44,7 @@
       "subCat": "Namestitev Shopify"
     },
     {
-      "name": "Uvoz obstoječih komentarjev",
+      "name": "Uvozi obstoječe komentarje",
       "file": "shopify-import.md",
       "subCat": "Namestitev Shopify"
     },
@@ -62,6 +62,11 @@
       "name": "Ročna namestitev (napredno)",
       "file": "shopify-manual-install.md",
       "subCat": "Namestitev Shopify"
+    },
+    {
+      "name": "Dodaj ankete v vašo trgovino Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

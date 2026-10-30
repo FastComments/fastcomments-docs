@@ -1,0 +1,52 @@
+{
+  "name": "Canlı Anketler",
+  "pageHeader": "Yorumlarda Canlı Anketler",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Canlı Anketler Nedir",
+      "file": "what-are-polls.md",
+      "subCat": "Arka Plan"
+    },
+    {
+      "name": "Anketleri Etkinleştirme",
+      "file": "enabling-polls.md",
+      "subCat": "Anketleri Kurma"
+    },
+    {
+      "name": "Kim Anket Oluşturabilir",
+      "file": "who-can-create-polls.md",
+      "subCat": "Anketleri Kurma"
+    },
+    {
+      "name": "Anonim Anket Oylarına İzin Verme",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Anketleri Kurma"
+    },
+    {
+      "name": "Bir Anket Oluşturma",
+      "file": "creating-a-poll.md",
+      "subCat": "Anketleri Kullanma"
+    },
+    {
+      "name": "Oy Verme ve Canlı Sonuçlar",
+      "file": "voting-and-live-results.md",
+      "subCat": "Anketleri Kullanma"
+    },
+    {
+      "name": "Oy Veren Gizliliği",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Anketleri Kullanma"
+    },
+    {
+      "name": "Anket Bildirimleri",
+      "file": "poll-notifications.md",
+      "subCat": "Anketleri Kullanma"
+    },
+    {
+      "name": "Anket API'si",
+      "file": "polls-api.md",
+      "subCat": "Geliştiriciler İçin"
+    }
+  ]
+}

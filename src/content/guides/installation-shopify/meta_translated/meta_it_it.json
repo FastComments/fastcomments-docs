@@ -1,67 +1,72 @@
 {
   "name": "Installazione di Shopify",
-  "pageHeader": "Aggiungere commenti ai siti Shopify",
+  "pageHeader": "Aggiungi commenti ai siti Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
       "name": "Installa l'app FastComments",
       "file": "shopify-install.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
-      "name": "Aggiungi commenti agli articoli del blog e ai prodotti",
+      "name": "Aggiungi commenti ai post del blog e ai prodotti",
       "file": "shopify-add-comments.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
-      "name": "Aggiungi un badge con il conteggio dei commenti",
+      "name": "Aggiungi un badge del conteggio dei commenti",
       "file": "shopify-comment-count.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Aggiungi un feed dei commenti recenti",
       "file": "shopify-recent-comments.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Aggiungi un feed delle discussioni recenti",
       "file": "shopify-recent-discussions.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
-      "name": "Aggiungi un elenco delle pagine principali",
+      "name": "Aggiungi un elenco delle pagine più popolari",
       "file": "shopify-top-pages.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Aggiungi un riepilogo delle recensioni",
       "file": "shopify-reviews-summary.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Accesso automatico per i clienti Shopify",
       "file": "shopify-sso.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Importa commenti esistenti",
       "file": "shopify-import.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Personalizzazione",
       "file": "shopify-customize.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Errori di dominio",
       "file": "shopify-domain-errors.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
     },
     {
       "name": "Installazione manuale (avanzata)",
       "file": "shopify-manual-install.md",
-      "subCat": "Installazione di Shopify"
+      "subCat": "Installazione Shopify"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo negozio Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

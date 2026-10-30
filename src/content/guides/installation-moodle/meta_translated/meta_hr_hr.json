@@ -1,12 +1,12 @@
 {
-  "name": "Instalacija Moodla",
-  "pageHeader": "Dodavanje komentara na Moodle stranice",
+  "name": "Instalacija Moodlea",
+  "pageHeader": "Dodajte komentare na Moodle stranice",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "Brzi početak",
       "file": "moodle-quick-start.md",
-      "subCat": "Sažetak"
+      "subCat": "Ukratko"
     },
     {
       "name": "Instalacija",
@@ -39,9 +39,14 @@
       "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "moodle-domain-errors.md",
       "subCat": "Instalacija Moodle dodatka"
+    },
+    {
+      "name": "Dodajte ankete na svoju Moodle stranicu",
+      "file": "moodle-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

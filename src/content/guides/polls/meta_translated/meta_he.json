@@ -1,0 +1,52 @@
+{
+  "name": "סקרים חיים",
+  "pageHeader": "סקרים חיים בתגובות",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "מה הם סקרים חיים",
+      "file": "what-are-polls.md",
+      "subCat": "רקע"
+    },
+    {
+      "name": "הפעלת סקרים",
+      "file": "enabling-polls.md",
+      "subCat": "הגדרת סקרים"
+    },
+    {
+      "name": "מי יכול ליצור סקרים",
+      "file": "who-can-create-polls.md",
+      "subCat": "הגדרת סקרים"
+    },
+    {
+      "name": "אפשרות הצבעות אנונימיות בסקר",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "הגדרת סקרים"
+    },
+    {
+      "name": "יצירת סקר",
+      "file": "creating-a-poll.md",
+      "subCat": "שימוש בסקרים"
+    },
+    {
+      "name": "הצבעה ותוצאות בזמן אמת",
+      "file": "voting-and-live-results.md",
+      "subCat": "שימוש בסקרים"
+    },
+    {
+      "name": "פרטיות המצביע",
+      "file": "poll-voter-privacy.md",
+      "subCat": "שימוש בסקרים"
+    },
+    {
+      "name": "התראות סקר",
+      "file": "poll-notifications.md",
+      "subCat": "שימוש בסקרים"
+    },
+    {
+      "name": "API של סקרים",
+      "file": "polls-api.md",
+      "subCat": "למפתחים"
+    }
+  ]
+}

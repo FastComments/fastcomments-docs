@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
-      "name": "Шаг 1: Подготовить курс",
+      "name": "Шаг 1: Подготовьте курс",
       "file": "thrivecart-learn-step-1.md",
       "subCat": "Установка ThriveCart Learn+"
     },
@@ -14,7 +14,7 @@
       "subCat": "Установка ThriveCart Learn+"
     },
     {
-      "name": "Готово",
+      "name": "Успех",
       "file": "thrivecart-learn-success.md",
       "subCat": "Установка ThriveCart Learn+"
     },
@@ -27,6 +27,11 @@
       "name": "Настройка",
       "file": "thrivecart-learn-customize.md",
       "subCat": "Установка ThriveCart Learn+"
+    },
+    {
+      "name": "Добавить опросы в ваш курс ThriveCart Learn+",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

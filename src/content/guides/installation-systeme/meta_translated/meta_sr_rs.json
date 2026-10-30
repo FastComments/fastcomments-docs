@@ -1,32 +1,37 @@
 {
-  "name": "Инсталација Systeme.io",
-  "pageHeader": "Додавање коментара на Systeme.io блог",
+  "name": "Instalacija Systeme.io",
+  "pageHeader": "Dodajte komentare na blog Systeme.io",
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Отворите шаблон теме блога",
+      "name": "Korak 1: Otvorite šablon teme bloga",
       "file": "systeme-step-1.md",
-      "subCat": "Инсталација Systeme.io"
+      "subCat": "Instalacija Systeme.io"
     },
     {
-      "name": "Корак 2: Додајте код са FastComments.com",
+      "name": "Korak 2: Dodajte kod FastComments.com",
       "file": "systeme-step-2.md",
-      "subCat": "Инсталација Systeme.io"
+      "subCat": "Instalacija Systeme.io"
     },
     {
-      "name": "Успех",
+      "name": "Uspeh",
       "file": "systeme-success.md",
-      "subCat": "Инсталација Systeme.io"
+      "subCat": "Instalacija Systeme.io"
     },
     {
-      "name": "Грешке домена",
+      "name": "Greške domena",
       "file": "systeme-domain-errors.md",
-      "subCat": "Инсталација Systeme.io"
+      "subCat": "Instalacija Systeme.io"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "systeme-customize.md",
-      "subCat": "Инсталација Systeme.io"
+      "subCat": "Instalacija Systeme.io"
+    },
+    {
+      "name": "Dodajte ankete na vaš blog Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

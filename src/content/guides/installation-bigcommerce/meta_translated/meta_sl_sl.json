@@ -1,6 +1,6 @@
 {
   "name": "Namestitev BigCommerce",
-  "pageHeader": "Dodajanje komentarjev na spletna mesta BigCommerce",
+  "pageHeader": "Dodaj komentarje na spletna mesta BigCommerce",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Namestitev BigCommerce"
     },
     {
-      "name": "Korak 2: Uredite pravo predlogo",
+      "name": "Korak 2: Uredite pravilno predlogo",
       "file": "bigcommerce-step-2.md",
       "subCat": "Namestitev BigCommerce"
     },
     {
-      "name": "Korak 3: Dodajte kodo gradnika",
+      "name": "Korak 3: Dodajte kodo pripomočka",
       "file": "bigcommerce-step-3.md",
       "subCat": "Namestitev BigCommerce"
     },
@@ -29,19 +29,24 @@
       "subCat": "Namestitev BigCommerce"
     },
     {
-      "name": "Napake domen",
+      "name": "Napake domene",
       "file": "bigcommerce-domain-errors.md",
       "subCat": "Namestitev BigCommerce"
     },
     {
-      "name": "Prilagoditve",
+      "name": "Prilagajanje",
       "file": "bigcommerce-customize.md",
       "subCat": "Namestitev BigCommerce"
     },
     {
-      "name": "Dodatno: Izsek kode za Page Builder",
+      "name": "Dodatno: Kodni izrezek za graditelj strani",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Uporaba urejevalnika strani"
+      "subCat": "Uporaba graditelja strani"
+    },
+    {
+      "name": "Dodaj ankete v svojo trgovino BigCommerce",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

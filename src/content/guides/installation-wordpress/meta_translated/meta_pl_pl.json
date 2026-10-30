@@ -1,5 +1,5 @@
 {
-  "name": "Instalacja WordPressa",
+  "name": "Instalacja WordPress",
   "pageHeader": "Dodaj komentarze na żywo do stron WordPress",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
@@ -11,57 +11,57 @@
     {
       "name": "Instalacja",
       "file": "wordpress-installation.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Dostosowanie",
       "file": "wordpress-customize.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Moderacja",
       "file": "wordpress-moderation.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Użytkownicy, moderatorzy i administratorzy",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Strony tylko dla członków (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Powiadomienia",
       "file": "wordpress-notifications.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Niestandardowe motywy",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
-      "name": "Synchronizacja z WordPressem",
+      "name": "Synchronizacja z WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Liczba komentarzy",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Komunikacja między instalacją WordPress a serwerem FastComment",
       "file": "wordpress-server-communication.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Błędy domeny",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Instalacja WordPressa"
+      "subCat": "Instalacja WordPress"
     },
     {
       "name": "Widżet ostatnich komentarzy",
@@ -81,12 +81,17 @@
     {
       "name": "Przenoszenie komentarzy na nową stronę",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "Przenoszenie poza WordPress"
+      "subCat": "Przenoszenie z WordPress"
     },
     {
       "name": "Dezaktywacja vs odinstalowanie wtyczki",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Usuwanie wtyczki"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

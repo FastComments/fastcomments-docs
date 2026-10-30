@@ -1,22 +1,27 @@
 {
-  "name": "Инсталација MemberSpace",
-  "pageHeader": "Додавање коментара уз MemberSpace",
+  "name": "Instalacija MemberSpace",
+  "pageHeader": "Dodajte komentare uz MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
-      "name": "Код",
+      "name": "Kod",
       "file": "memberspace-step-1.md",
-      "subCat": "Инсталација MemberSpace"
+      "subCat": "Instalacija MemberSpace"
     },
     {
-      "name": "Грешке домена",
+      "name": "Greške domena",
       "file": "memberspace-domain-errors.md",
-      "subCat": "Инсталација MemberSpace"
+      "subCat": "Instalacija MemberSpace"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "memberspace-customize.md",
-      "subCat": "Инсталација MemberSpace"
+      "subCat": "Instalacija MemberSpace"
+    },
+    {
+      "name": "Dodajte ankete na vaš MemberSpace sajt",
+      "file": "memberspace-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

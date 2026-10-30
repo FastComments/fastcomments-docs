@@ -4,39 +4,44 @@
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Modifiez votre page",
+      "name": "Étape 1 : Modifiez votre page",
       "file": "webnode-step-1.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
     },
     {
-      "name": "Étape 2 : Ajoutez une section et un bloc HTML",
+      "name": "Étape 2 : Ajouter une section et un bloc HTML",
       "file": "webnode-step-2.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
     },
     {
-      "name": "Étape 3 : Copiez et collez l'extrait de code",
+      "name": "Étape 3 : Copier‑coller le fragment de code",
       "file": "webnode-step-3.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
     },
     {
-      "name": "Étape 4 : Publiez",
+      "name": "Étape 4 : Publier",
       "file": "webnode-step-4.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
     },
     {
       "name": "Succès",
       "file": "webnode-success.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
     },
     {
       "name": "Erreurs de domaine",
       "file": "webnode-domain-errors.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
     },
     {
       "name": "Personnalisation",
       "file": "webnode-customize.md",
-      "subCat": "Installation de Webnode"
+      "subCat": "Installation Webnode"
+    },
+    {
+      "name": "Ajouter des sondages à votre site Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

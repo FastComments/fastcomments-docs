@@ -3,7 +3,7 @@
   "pageHeader": "Προσθήκη ζωντανής σχολιασμού στις εφαρμογές Val Town",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Προσθήκη του Widget",
+      "name": "Βήμα 1: Προσθήκη του widget",
       "file": "val-town-step-1.md",
       "subCat": "Εγκατάσταση Val Town"
     },
@@ -13,7 +13,7 @@
       "subCat": "Εγκατάσταση Val Town"
     },
     {
-      "name": "Αριθμοί σχολίων σε σελίδα ευρετηρίου",
+      "name": "Πλήθος σχολίων σε σελίδα ευρετηρίου",
       "file": "val-town-counts.md",
       "subCat": "Εγκατάσταση Val Town"
     },
@@ -23,7 +23,7 @@
       "subCat": "Εγκατάσταση Val Town"
     },
     {
-      "name": "Λήψη Webhooks",
+      "name": "Λήψη webhooks",
       "file": "val-town-webhooks.md",
       "subCat": "Εγκατάσταση Val Town"
     },
@@ -36,6 +36,11 @@
       "name": "Σφάλματα τομέα",
       "file": "val-town-domain-errors.md",
       "subCat": "Εγκατάσταση Val Town"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στην εφαρμογή Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

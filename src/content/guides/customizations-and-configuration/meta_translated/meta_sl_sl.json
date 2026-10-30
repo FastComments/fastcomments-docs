@@ -63,12 +63,12 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Povezovanje komentarjev s stranmi",
+      "name": "Povezovanje iz komentarjev na strani",
       "file": "url.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Privzeto skrivanje odgovorov",
+      "name": "Privzeto skrčenje odgovorov",
       "file": "collapse-replies.md",
       "subCat": "Videz in občutek"
     },
@@ -88,7 +88,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Določanje, katera stran se prikaže",
+      "name": "Določanje, katera stran naj se prikaže",
       "file": "starting-page.md",
       "subCat": "Videz in občutek"
     },
@@ -138,7 +138,7 @@
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Onemogoči obvestilno zvonček",
+      "name": "Onemogoči zvonec obvestil",
       "file": "disable-notification-bell.md",
       "subCat": "Videz in občutek"
     },
@@ -278,7 +278,7 @@
       "subCat": "Polje za odgovor"
     },
     {
-      "name": "Omejitev števila komentarjev na uporabnika",
+      "name": "Omeji število komentarjev na uporabnika",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Polje za odgovor"
     },
@@ -300,6 +300,11 @@
     {
       "name": "Opozori pred zapustitvijo z neposlanim komentarjem",
       "file": "warn-on-unsaved-comment.md",
+      "subCat": "Polje za odgovor"
+    },
+    {
+      "name": "Omogoči ankete",
+      "file": "enable-polls.md",
       "subCat": "Polje za odgovor"
     },
     {
@@ -348,7 +353,7 @@
       "subCat": "Anonimno komentiranje"
     },
     {
-      "name": "Onemogoči oznako nepreverjenega",
+      "name": "Onemogoči oznako nepreverjeno",
       "file": "disable-unverified-label.md",
       "subCat": "Anonimno komentiranje"
     },
@@ -373,7 +378,7 @@
       "subCat": "Razno"
     },
     {
-      "name": "Ročno določanje uporabnikovega jezika",
+      "name": "Ročno določanje jezikovne nastavitve uporabnika",
       "file": "locale.md",
       "subCat": "Razno"
     },
@@ -403,17 +408,17 @@
       "subCat": "Razno"
     },
     {
-      "name": "Število komentarjev in štetje vseh vdelanih odgovorov",
+      "name": "Število komentarjev in štetje vseh vgrajenih odgovorov",
       "file": "count-all.md",
       "subCat": "Razno"
     },
     {
-      "name": "Omogočanje povezav komentatorjev",
+      "name": "Omogoči povezave komentatorjev",
       "file": "enable-commenter-links.md",
       "subCat": "Razno"
     },
     {
-      "name": "Skupine za moderiranje",
+      "name": "Skupine moderacije",
       "file": "moderation-group-ids.md",
       "subCat": "Razno"
     },
@@ -433,12 +438,12 @@
       "subCat": "Razno"
     },
     {
-      "name": "Prikaz značk v zgornji vrstici",
+      "name": "Prikaži značke v zgornji vrstici",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Videz in občutek"
     },
     {
-      "name": "Prikaz seznama uporabnikov na spletu",
+      "name": "Prikaži seznam spletnih uporabnikov",
       "file": "users-list.md",
       "subCat": "Videz in občutek"
     }

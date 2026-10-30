@@ -1,17 +1,17 @@
 {
-  "name": "Instalacija Canvas LMS-a",
-  "pageHeader": "Dodavanje komentara u Canvas LMS putem LTI 1.3",
+  "name": "Instalacija Canvas LMS",
+  "pageHeader": "Dodajte komentare u Canvas LMS putem LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
       "name": "Cijene",
       "file": "canvas-lms-plans.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Brzi početak",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Postavljanje nadzorne ploče FastComments",
@@ -19,17 +19,17 @@
       "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
-      "name": "Developerski ključ za Canvas",
+      "name": "Canvas razvojni ključ",
       "file": "canvas-lms-developer-key.md",
       "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
-      "name": "Dovršavanje povezivanja",
+      "name": "Završite vezu",
       "file": "canvas-lms-complete-connection.md",
       "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
-      "name": "Dodavanje u kolegij",
+      "name": "Dodaj u tečaj",
       "file": "canvas-lms-add-to-course.md",
       "subCat": "Postavljanje Canvas LTI 1.3"
     },
@@ -49,9 +49,14 @@
       "subCat": "Konfiguracija"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Rješavanje problema"
+    },
+    {
+      "name": "Dodajte ankete u svoj Canvas tečaj",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Hostinger 安裝",
-  "pageHeader": "為 Hostinger 網站新增即時留言",
+  "pageHeader": "為 Hostinger 網站新增即時評論",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
@@ -9,29 +9,34 @@
       "subCat": "Hostinger 網站安裝"
     },
     {
-      "name": "步驟 2：加入程式碼",
+      "name": "步驟 2：新增程式碼",
       "file": "hostinger-step-2.md",
       "subCat": "Hostinger 網站安裝"
     },
     {
-      "name": "完成",
+      "name": "成功",
       "file": "hostinger-site-success.md",
       "subCat": "Hostinger 網站安裝"
     },
     {
-      "name": "網站網域錯誤",
+      "name": "網站域名錯誤",
       "file": "hostinger-site-domain-errors.md",
       "subCat": "Hostinger 網站安裝"
     },
     {
-      "name": "網站客製化",
+      "name": "網站自訂",
       "file": "hostinger-site-customize.md",
       "subCat": "Hostinger 網站安裝"
     },
     {
-      "name": "浮動按讚按鈕",
+      "name": "浮動讚按鈕",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Hostinger 浮動按讚"
+      "subCat": "Hostinger 浮動讚"
+    },
+    {
+      "name": "為您的 Hostinger 網站新增投票",
+      "file": "hostinger-polls.md",
+      "subCat": "投票"
     }
   ]
 }

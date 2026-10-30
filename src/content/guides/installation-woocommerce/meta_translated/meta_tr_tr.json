@@ -7,6 +7,11 @@
       "name": "WordPress Eklentisini Kur",
       "file": "woocommerce.md",
       "subCat": "WooCommerce Kurulumu"
+    },
+    {
+      "name": "WooCommerce Mağazanıza Anketler Ekleyin",
+      "file": "woocommerce-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

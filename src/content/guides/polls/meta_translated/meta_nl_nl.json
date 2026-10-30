@@ -1,0 +1,52 @@
+{
+  "name": "Live peilingen",
+  "pageHeader": "Live peilingen in reacties",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Wat zijn live peilingen",
+      "file": "what-are-polls.md",
+      "subCat": "Achtergrond"
+    },
+    {
+      "name": "Peilingen inschakelen",
+      "file": "enabling-polls.md",
+      "subCat": "Peilingen instellen"
+    },
+    {
+      "name": "Wie kan peilingen maken",
+      "file": "who-can-create-polls.md",
+      "subCat": "Peilingen instellen"
+    },
+    {
+      "name": "Anonieme peilingstemmen toestaan",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Peilingen instellen"
+    },
+    {
+      "name": "Een peiling maken",
+      "file": "creating-a-poll.md",
+      "subCat": "Peilingen gebruiken"
+    },
+    {
+      "name": "Stemmen en live resultaten",
+      "file": "voting-and-live-results.md",
+      "subCat": "Peilingen gebruiken"
+    },
+    {
+      "name": "Privacy van stemmers",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Peilingen gebruiken"
+    },
+    {
+      "name": "Peilingmeldingen",
+      "file": "poll-notifications.md",
+      "subCat": "Peilingen gebruiken"
+    },
+    {
+      "name": "Peilingen API",
+      "file": "polls-api.md",
+      "subCat": "Voor ontwikkelaars"
+    }
+  ]
+}

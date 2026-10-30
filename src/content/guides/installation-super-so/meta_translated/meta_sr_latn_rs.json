@@ -14,12 +14,12 @@
       "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Pogledajte takođe: Standardni widget za komentare",
+      "name": "Pogledajte i: Regularni widget za komentare",
       "file": "super-so-comment-widget.md",
       "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "super-so-learn-success.md",
       "subCat": "Instalacija Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Prilagođavanje",
       "file": "super-so-learn-customize.md",
       "subCat": "Instalacija Super.so"
+    },
+    {
+      "name": "Dodajte ankete na vaš Super.so sajt",
+      "file": "super-so-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

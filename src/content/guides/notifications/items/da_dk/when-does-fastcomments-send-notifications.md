@@ -1,4 +1,4 @@
-At FastComments ved vi, at du allerede får nok meddelelser. Derfor træffer vi nogle foranstaltninger for at begrænse de meddelelser, brugerne modtager, samtidig med at de holdes i kontakt med deres fællesskaber. Vi ønsker også at holde administratorer og moderatorer opdateret og informere dem, når der skal træffes handling.
+At FastComments ved vi, at du allerede får nok meddelelser. Derfor tager vi nogle foranstaltninger for at begrænse de meddelelser, brugerne modtager, samtidig med at de holdes i kontakt med deres fællesskaber. Vi vil også holde administratorer og moderatorer opdateret og informere dem, når der skal træffes handling.
 
 #### Vi sender meddelelser for følgende begivenheder for administratorer og moderatorer:
 
@@ -13,6 +13,7 @@ At FastComments ved vi, at du allerede får nok meddelelser. Derfor træffer vi 
 - Når nogen svarer i samme tråd (i appen og via e‑mail).
 - Når nogen svarer på en underkommentar i samme tråd (i appen og via e‑mail).
 - Når nogen svarer på en side, du har abonneret på (i appen og via e‑mail, frekvens kan konfigureres pr. abonnement: hvert minut, hver time eller dagligt).
+- Når nogen svarer på en afstemning, du har oprettet (i appen, plus en daglig e‑mail). Se [Poll Notifications](/guide-polls.html#poll-notifications).
 - Når en bruger kommenterer for første gang (men ikke med SSO).
 - Når en bruger efterlader en kommentar i en session, der ikke er bekræftet (men ikke med SSO).
   - Vi sender ikke flere bekræftelses‑e‑mails i dette tilfælde. Kun den første, som bekræfter al aktivitet i den samme session.
@@ -29,6 +30,6 @@ At FastComments ved vi, at du allerede får nok meddelelser. Derfor træffer vi 
 - Når der er faktureringsproblemer.
 - Påmindelser om trial‑slutning.
 
-Nogle meddelelser samles for at forhindre masseafsendelse til brugere. Læs mere om dette i næste afsnit `Notification Types`.
+Nogle meddelelser samles for at forhindre masseafsendelse af meddelelser til brugere. Lær mere om dette i næste afsnit `Notification Types`.
 
-Svar‑ og nævn‑e‑mails sendes kun for kommentarer, der er godkendt. For at se, om en svar‑ eller nævn‑e‑mail blev sendt for en specifik kommentar, eller hvorfor den ikke blev sendt, åbn den pågældende kommentars [Comment Logs](/guide-moderation.html#comment-logs) fra siden Moderer kommentarer fra siden Moderer kommentarer.
+Svar‑ og nævn‑e‑mails sendes kun for kommentarer, der er godkendt. For at se, om en svar‑ eller nævn‑e‑mail blev sendt for en specifik kommentar, eller hvorfor den ikke blev sendt, åbn den kommentars [Comment Logs](/guide-moderation.html#comment-logs) fra siden Moderer kommentarer.

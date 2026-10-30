@@ -1,0 +1,3 @@
+---
+Dodaj ankiety na żywo do swoich wątków komentarzy. Włącz ankiety, wybierz, kto może je tworzyć i głosować, ustaw prywatność głosujących oraz otrzymuj powiadomienia, gdy pojawią się odpowiedzi.
+---

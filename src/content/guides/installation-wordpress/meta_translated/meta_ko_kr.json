@@ -87,6 +87,11 @@
       "name": "플러그인 비활성화 vs 제거",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "플러그인 제거"
+    },
+    {
+      "name": "워드프레스 사이트에 설문 추가",
+      "file": "wordpress-polls.md",
+      "subCat": "설문"
     }
   ]
 }

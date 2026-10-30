@@ -9,12 +9,12 @@
       "subCat": "Instalacja Wix"
     },
     {
-      "name": "Krok 2: Dodaj blok osadzania",
+      "name": "Krok 2: Dodaj blok osadzenia",
       "file": "wix-step-2.md",
       "subCat": "Instalacja Wix"
     },
     {
-      "name": "Krok 3: Skopiuj i wklej niestandardowy kod",
+      "name": "Krok 3: Kopiuj/wklej własny kod",
       "file": "wix-step-3.md",
       "subCat": "Instalacja Wix"
     },
@@ -34,9 +34,14 @@
       "subCat": "Instalacja Wix"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "wix-customize.md",
       "subCat": "Instalacja Wix"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Wix",
+      "file": "wix-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

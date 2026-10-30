@@ -8,7 +8,7 @@
       "subCat": "Установка Val Town"
     },
     {
-      "name": "Шаг 2: Использовать свой аккаунт",
+      "name": "Шаг 2: Использовать свою учетную запись",
       "file": "val-town-step-2.md",
       "subCat": "Установка Val Town"
     },
@@ -36,6 +36,11 @@
       "name": "Ошибки домена",
       "file": "val-town-domain-errors.md",
       "subCat": "Установка Val Town"
+    },
+    {
+      "name": "Добавить опросы в ваше приложение Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

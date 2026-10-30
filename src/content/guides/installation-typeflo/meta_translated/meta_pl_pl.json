@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. Znajdź pole wprowadzania kodu",
+      "name": "1. Znajdź pole kodu",
       "file": "typeflo-step-1.md",
       "subCat": "Instalacja"
     },
@@ -19,12 +19,17 @@
       "subCat": "Instalacja"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "typeflo-customize.md"
     },
     {
       "name": "Błędy domeny",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Dodaj ankiety do swojego bloga Typeflo.io",
+      "file": "typeflo-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

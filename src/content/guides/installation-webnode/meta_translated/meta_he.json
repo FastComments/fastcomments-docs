@@ -9,12 +9,12 @@
       "subCat": "התקנת Webnode"
     },
     {
-      "name": "שלב 2: הוסף מקטע ובלוק HTML",
+      "name": "שלב 2: הוסף קטע וחסימת HTML",
       "file": "webnode-step-2.md",
       "subCat": "התקנת Webnode"
     },
     {
-      "name": "שלב 3: העתק והדבק את קטע הקוד",
+      "name": "שלב 3: העתק והדבק קטע קוד",
       "file": "webnode-step-3.md",
       "subCat": "התקנת Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "התאמה אישית",
       "file": "webnode-customize.md",
       "subCat": "התקנת Webnode"
+    },
+    {
+      "name": "הוספת סקרים לאתר Webnode שלך",
+      "file": "webnode-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

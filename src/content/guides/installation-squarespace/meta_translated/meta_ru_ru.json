@@ -1,30 +1,30 @@
 {
   "name": "Установка Squarespace",
-  "pageHeader": "Добавление комментариев на сайты Squarespace",
+  "pageHeader": "Добавить комментарии на сайты Squarespace",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
       "name": "Добавление живых комментариев в ваш блог",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Добавить комментарии в блог"
+      "subCat": "Добавить комментарии в ваш блог"
     },
     {
       "name": "Шаг 1: Откройте настройки блога",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Добавить комментарии в блог"
+      "subCat": "Добавить комментарии в ваш блог"
     },
     {
-      "name": "Шаг 2: Вставьте код FastComments.com",
+      "name": "Шаг 2: Вставьте ваш код FastComments.com",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Добавить комментарии в блог"
+      "subCat": "Добавить комментарии в ваш блог"
     },
     {
-      "name": "Готово",
+      "name": "Успешно",
       "file": "squarespace-blog-success.md",
-      "subCat": "Добавить комментарии в блог"
+      "subCat": "Добавить комментарии в ваш блог"
     },
     {
-      "name": "Добавление живых комментариев на все страницы",
+      "name": "Добавить живые комментарии на все страницы",
       "file": "squarespace-pages-all-pages-step-0.md",
       "subCat": "Добавить комментарии на все страницы"
     },
@@ -34,17 +34,17 @@
       "subCat": "Добавить комментарии на все страницы"
     },
     {
-      "name": "Шаг 2: Вставьте код FastComments.com",
+      "name": "Шаг 2: Вставьте ваш код FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
       "subCat": "Добавить комментарии на все страницы"
     },
     {
-      "name": "Готово",
+      "name": "Успешно",
       "file": "squarespace-pages-all-pages-success.md",
       "subCat": "Добавить комментарии на все страницы"
     },
     {
-      "name": "Добавление живых комментариев на конкретную страницу",
+      "name": "Добавить живой комментарий на конкретную страницу",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Добавить комментарии на конкретную страницу"
     },
@@ -54,24 +54,29 @@
       "subCat": "Добавить комментарии на конкретную страницу"
     },
     {
-      "name": "Шаг 2: Вставьте код FastComments.com",
+      "name": "Шаг 2: Вставьте ваш код FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
       "subCat": "Добавить комментарии на конкретную страницу"
     },
     {
-      "name": "Готово",
+      "name": "Успешно",
       "file": "squarespace-pages-specific-page-success.md",
       "subCat": "Добавить комментарии на конкретную страницу"
     },
     {
       "name": "Ошибки домена",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Дальнейшие шаги для Squarespace"
+      "subCat": "Следующие шаги Squarespace"
     },
     {
       "name": "Настройка",
       "file": "squarespace-customize.md",
-      "subCat": "Дальнейшие шаги для Squarespace"
+      "subCat": "Следующие шаги Squarespace"
+    },
+    {
+      "name": "Добавить опросы на ваш сайт Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

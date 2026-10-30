@@ -17,6 +17,11 @@
       "name": "맞춤 설정",
       "file": "memberstack-customize.md",
       "subCat": "Memberstack 설치"
+    },
+    {
+      "name": "Memberstack 사이트에 설문 추가",
+      "file": "memberstack-polls.md",
+      "subCat": "설문"
     }
   ]
 }

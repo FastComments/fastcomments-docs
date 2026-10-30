@@ -1,6 +1,6 @@
 {
   "name": "Установка Moodle",
-  "pageHeader": "Добавление комментариев на сайтах Moodle",
+  "pageHeader": "Добавление комментариев к сайтам Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -34,7 +34,7 @@
       "subCat": "Установка плагина Moodle"
     },
     {
-      "name": "Персонализация",
+      "name": "Настройка",
       "file": "moodle-customize.md",
       "subCat": "Установка плагина Moodle"
     },
@@ -42,6 +42,11 @@
       "name": "Ошибки домена",
       "file": "moodle-domain-errors.md",
       "subCat": "Установка плагина Moodle"
+    },
+    {
+      "name": "Добавить опросы на ваш сайт Moodle",
+      "file": "moodle-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

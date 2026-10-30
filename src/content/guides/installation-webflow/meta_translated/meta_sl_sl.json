@@ -1,37 +1,42 @@
 {
-  "name": "Namestitev Webflowa",
-  "pageHeader": "Dodajte komentarje na spletna mesta Webflow",
+  "name": "Namestitev Webflow",
+  "pageHeader": "Dodaj komentarje na spletna mesta Webflow",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodajte blok za vdelavo",
+      "name": "Korak 1: Dodaj vdelani blok",
       "file": "webflow-step-1.md",
-      "subCat": "Namestitev Webflowa"
+      "subCat": "Namestitev Webflow"
     },
     {
-      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "name": "Korak 2: Prilepi svojo kodo FastComments.com",
       "file": "webflow-step-2.md",
-      "subCat": "Namestitev Webflowa"
+      "subCat": "Namestitev Webflow"
     },
     {
-      "name": "Korak 3: Objavite",
+      "name": "Korak 3: Objavi",
       "file": "webflow-step-3.md",
-      "subCat": "Namestitev Webflowa"
+      "subCat": "Namestitev Webflow"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "webflow-success.md",
-      "subCat": "Namestitev Webflowa"
+      "subCat": "Namestitev Webflow"
     },
     {
       "name": "Napake domene",
       "file": "webflow-domain-errors.md",
-      "subCat": "Namestitev Webflowa"
+      "subCat": "Namestitev Webflow"
     },
     {
       "name": "Prilagajanje",
       "file": "webflow-customize.md",
-      "subCat": "Namestitev Webflowa"
+      "subCat": "Namestitev Webflow"
+    },
+    {
+      "name": "Dodaj ankete na svoje spletno mesto Webflow",
+      "file": "webflow-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

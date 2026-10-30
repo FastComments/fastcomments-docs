@@ -1,37 +1,42 @@
 {
   "name": "Zyro-installatie",
-  "pageHeader": "Voeg live reacties toe aan Zyro-sites",
+  "pageHeader": "Live commentaar toevoegen aan Zyro-sites",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Voeg de code-widget toe",
+      "name": "Stap 1: Code-widget toevoegen",
       "file": "zyro-step-1.md",
-      "subCat": "Zyro-siteinstallatie"
+      "subCat": "Zyro-site-installatie"
     },
     {
       "name": "Stap 2: Voeg de code toe",
       "file": "zyro-step-2.md",
-      "subCat": "Zyro-siteinstallatie"
+      "subCat": "Zyro-site-installatie"
     },
     {
       "name": "Succes",
       "file": "zyro-site-success.md",
-      "subCat": "Zyro-siteinstallatie"
+      "subCat": "Zyro-site-installatie"
     },
     {
-      "name": "Fouten met het domein van de site",
+      "name": "Fouten site-domein",
       "file": "zyro-site-domain-errors.md",
-      "subCat": "Zyro-siteinstallatie"
+      "subCat": "Zyro-site-installatie"
     },
     {
       "name": "Site-aanpassing",
       "file": "zyro-site-customize.md",
-      "subCat": "Zyro-siteinstallatie"
+      "subCat": "Zyro-site-installatie"
     },
     {
-      "name": "Drijvende vind-ik-leuk-knop",
+      "name": "Zwevende likes-knop",
       "file": "zyro-floating-likes.md",
-      "subCat": "Zyro drijvende vind-ik-leuk-knop"
+      "subCat": "Zyro zwevende likes"
+    },
+    {
+      "name": "Polls toevoegen aan je Zyro-site",
+      "file": "zyro-polls.md",
+      "subCat": "Enquêtes"
     }
   ]
 }

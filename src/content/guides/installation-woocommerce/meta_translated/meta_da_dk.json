@@ -1,12 +1,17 @@
 {
-  "name": "Installation af WooCommerce",
-  "pageHeader": "Tilføj live-kommentering til WooCommerce-sider",
+  "name": "WooCommerce-installation",
+  "pageHeader": "Tilføj live-kommentarer til WooCommerce-websteder",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
       "name": "Opsæt WordPress-plugin",
       "file": "woocommerce.md",
-      "subCat": "Installation af WooCommerce"
+      "subCat": "WooCommerce-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din WooCommerce-butik",
+      "file": "woocommerce-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

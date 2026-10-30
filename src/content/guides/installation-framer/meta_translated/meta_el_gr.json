@@ -1,6 +1,6 @@
 {
   "name": "Εγκατάσταση Framer",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Framer",
+  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστοσελίδες Framer",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
@@ -14,12 +14,12 @@
       "subCat": "Εγκατάσταση Framer"
     },
     {
-      "name": "Βήμα 3: Αντιγράψτε και επικολλήστε τον κώδικα FastComments ειδικό για το Framer",
+      "name": "Βήμα 3: Αντιγραφή και επικόλληση κώδικα FastComments ειδικού για Framer",
       "file": "framer-step-3.md",
       "subCat": "Εγκατάσταση Framer"
     },
     {
-      "name": "Βήμα 4: Προσαρμόστε το ύψος του widget και της σελίδας",
+      "name": "Βήμα 4: Προσαρμογή του ύψους του widget και της σελίδας",
       "file": "framer-step-4.md",
       "subCat": "Εγκατάσταση Framer"
     },
@@ -32,6 +32,11 @@
       "name": "Προσαρμογή",
       "file": "framer-customize.md",
       "subCat": "Εγκατάσταση Framer"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπό σας Framer",
+      "file": "framer-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

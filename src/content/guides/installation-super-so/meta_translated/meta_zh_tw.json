@@ -1,6 +1,6 @@
 {
   "name": "Super.so 安裝",
-  "pageHeader": "在 Super.so 網站新增即時討論",
+  "pageHeader": "將即時討論加入 Super.so 網站",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Super.so 安裝"
     },
     {
-      "name": "步驟 2：加入預製程式碼",
+      "name": "步驟 2：加入預先製作的程式碼",
       "file": "super-so-learn-step-2.md",
       "subCat": "Super.so 安裝"
     },
     {
-      "name": "另見：一般留言小工具",
+      "name": "另請參閱：一般評論小工具",
       "file": "super-so-comment-widget.md",
       "subCat": "Super.so 安裝"
     },
@@ -32,6 +32,11 @@
       "name": "自訂",
       "file": "super-so-learn-customize.md",
       "subCat": "Super.so 安裝"
+    },
+    {
+      "name": "在您的 Super.so 網站加入投票",
+      "file": "super-so-polls.md",
+      "subCat": "投票"
     }
   ]
 }

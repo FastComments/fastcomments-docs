@@ -14,12 +14,12 @@
       "subCat": "Installazione"
     },
     {
-      "name": "3. Trova l'impostazione della larghezza",
+      "name": "3. Trova impostazione larghezza",
       "file": "bubble-io-step-3.md",
       "subCat": "Installazione"
     },
     {
-      "name": "4. Regola il layout",
+      "name": "4. Regola layout",
       "file": "bubble-io-step-4.md",
       "subCat": "Installazione"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Errori di dominio",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Aggiungi sondaggi alla tua app Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

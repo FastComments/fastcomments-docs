@@ -1,6 +1,6 @@
 {
   "name": "Instalación de Zyro",
-  "pageHeader": "Añadir comentarios en vivo a sitios Zyro",
+  "pageHeader": "Agregar comentarios en vivo a sitios Zyro",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
@@ -29,9 +29,14 @@
       "subCat": "Instalación del sitio Zyro"
     },
     {
-      "name": "Botón flotante de 'Me gusta'",
+      "name": "Botón flotante de Me gusta",
       "file": "zyro-floating-likes.md",
-      "subCat": "Botones 'Me gusta' flotantes de Zyro"
+      "subCat": "Me gusta flotantes de Zyro"
+    },
+    {
+      "name": "Agregar encuestas a tu sitio Zyro",
+      "file": "zyro-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

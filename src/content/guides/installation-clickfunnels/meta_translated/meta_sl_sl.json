@@ -1,20 +1,20 @@
 {
   "name": "Namestitev ClickFunnels",
-  "pageHeader": "Dodajte klepet v živo v ClickFunnels tečaje",
+  "pageHeader": "Dodaj klepet v živo v tečaje ClickFunnels",
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Poiščite predlogo",
+      "name": "Korak 1: Najdi predlogo",
       "file": "clickfunnels-step-1.md",
       "subCat": "Namestitev ClickFunnels"
     },
     {
-      "name": "Korak 2: Dodajte kodo",
+      "name": "Korak 2: Dodaj kodo",
       "file": "clickfunnels-step-2.md",
       "subCat": "Namestitev ClickFunnels"
     },
     {
-      "name": "Napake pri domeni",
+      "name": "Napake domene",
       "file": "clickfunnels-domain-errors.md",
       "subCat": "Namestitev ClickFunnels"
     },
@@ -24,14 +24,19 @@
       "subCat": "Namestitev ClickFunnels"
     },
     {
-      "name": "Dodatno: Izsek kode za komentiranje v živo",
+      "name": "Dodatno: Izrezek kode za komentarje v živo",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Izsek kode za komentiranje v živo"
+      "subCat": "Izrezek kode za komentarje v živo"
     },
     {
       "name": "Dodatno: Samodejno predvajanje komentarjev",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Samodejno predvajanje komentarjev"
+    },
+    {
+      "name": "Dodaj ankete v svoj ClickFunnels tečaj",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

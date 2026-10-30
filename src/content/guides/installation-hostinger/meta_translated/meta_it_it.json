@@ -4,34 +4,39 @@
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Passaggio 1: Aggiungi il widget codice",
+      "name": "Passo 1: Aggiungi il widget di codice",
       "file": "hostinger-step-1.md",
-      "subCat": "Installazione del sito Hostinger"
+      "subCat": "Installazione sito Hostinger"
     },
     {
-      "name": "Passaggio 2: Aggiungi il codice",
+      "name": "Passo 2: Aggiungi il codice",
       "file": "hostinger-step-2.md",
-      "subCat": "Installazione del sito Hostinger"
+      "subCat": "Installazione sito Hostinger"
     },
     {
       "name": "Successo",
       "file": "hostinger-site-success.md",
-      "subCat": "Installazione del sito Hostinger"
+      "subCat": "Installazione sito Hostinger"
     },
     {
       "name": "Errori di dominio del sito",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Installazione del sito Hostinger"
+      "subCat": "Installazione sito Hostinger"
     },
     {
       "name": "Personalizzazione del sito",
       "file": "hostinger-site-customize.md",
-      "subCat": "Installazione del sito Hostinger"
+      "subCat": "Installazione sito Hostinger"
     },
     {
-      "name": "Pulsante Mi piace flottante",
+      "name": "Pulsante Like fluttuante",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Mi piace flottanti per Hostinger"
+      "subCat": "Like fluttuanti Hostinger"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Hostinger",
+      "file": "hostinger-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

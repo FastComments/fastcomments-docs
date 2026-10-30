@@ -32,6 +32,11 @@
       "name": "自定义",
       "file": "webflow-customize.md",
       "subCat": "Webflow 安装"
+    },
+    {
+      "name": "向您的 Webflow 网站添加投票",
+      "file": "webflow-polls.md",
+      "subCat": "投票"
     }
   ]
 }

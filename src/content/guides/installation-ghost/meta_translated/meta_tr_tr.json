@@ -1,6 +1,6 @@
 {
   "name": "Ghost Kurulumu",
-  "pageHeader": "Ghost Sitelerine Üyelere Özel Canlı Yorum Ekle",
+  "pageHeader": "Üyelere Özel Canlı Yorumlamayı Ghost Sitelerine Ekleyin",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -14,12 +14,12 @@
       "subCat": "Ghost Kurulumu"
     },
     {
-      "name": "Adım 3: Yeni Temaya İsim Verin",
+      "name": "Adım 3: Yeni Temayı Adlandırın",
       "file": "ghost-step-3.md",
       "subCat": "Ghost Kurulumu"
     },
     {
-      "name": "Adım 4: Yazı Şablonunu Açın",
+      "name": "Adım 4: Gönderi Şablonunu Açın",
       "file": "ghost-step-4.md",
       "subCat": "Ghost Kurulumu"
     },
@@ -52,6 +52,11 @@
       "name": "Özelleştirme",
       "file": "ghost-customize.md",
       "subCat": "Ghost Kurulumu"
+    },
+    {
+      "name": "Ghost Sitenize Anketler Ekleyin",
+      "file": "ghost-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

@@ -1,25 +1,25 @@
 {
   "name": "Instalacja BigCommerce",
-  "pageHeader": "Dodaj komentarze na stronach BigCommerce",
+  "pageHeader": "Dodaj komentarze do stron BigCommerce",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Krok 1: Przygotuj motyw",
+      "name": "Krok pierwszy: przygotuj swój motyw",
       "file": "bigcommerce-step-1.md",
       "subCat": "Instalacja BigCommerce"
     },
     {
-      "name": "Krok 2: Edytuj właściwy szablon",
+      "name": "Krok drugi: edytuj właściwy szablon",
       "file": "bigcommerce-step-2.md",
       "subCat": "Instalacja BigCommerce"
     },
     {
-      "name": "Krok 3: Dodaj kod widżetu",
+      "name": "Krok trzeci: dodaj kod widgetu",
       "file": "bigcommerce-step-3.md",
       "subCat": "Instalacja BigCommerce"
     },
     {
-      "name": "Krok 4: Aktywuj nowy motyw",
+      "name": "Krok czwarty: aktywuj nowy motyw",
       "file": "bigcommerce-step-4.md",
       "subCat": "Instalacja BigCommerce"
     },
@@ -34,14 +34,19 @@
       "subCat": "Instalacja BigCommerce"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "bigcommerce-customize.md",
       "subCat": "Instalacja BigCommerce"
     },
     {
       "name": "Dodatkowo: fragment kodu dla kreatora stron",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Korzystanie z kreatora stron"
+      "subCat": "Używanie kreatora stron"
+    },
+    {
+      "name": "Dodaj ankiety do swojego sklepu BigCommerce",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

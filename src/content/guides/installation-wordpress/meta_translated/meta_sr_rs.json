@@ -1,92 +1,97 @@
 {
-  "name": "Instalacija WordPress-a",
-  "pageHeader": "Dodajte live komentarisanje na WordPress sajtove",
+  "name": "Инсталација WordPress-а",
+  "pageHeader": "Додајте коментарисање уживо на WordPress сајтове",
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "Brzi početak",
+      "name": "Брзи почетак",
       "file": "wordpress-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
-      "name": "Instalacija",
+      "name": "Инсталација",
       "file": "wordpress-installation.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Prilagođavanje",
+      "name": "Прилагођавање",
       "file": "wordpress-customize.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Moderacija",
+      "name": "Модерација",
       "file": "wordpress-moderation.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Korisnici, moderatori i administratori",
+      "name": "Корисници, модератори и администратори",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Sajtovi samo za članove (SSO)",
+      "name": "Сајтови само за чланове (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Obaveštenja",
+      "name": "Обавештења",
       "file": "wordpress-notifications.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Prilagođene teme",
+      "name": "Прилагођене теме",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Sinhronizacija nazad na WordPress",
+      "name": "Синхронизација назад у WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Broj komentara",
+      "name": "Број коментара",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Instalacija WordPress-a <> Komunikacija sa FastComment serverom",
+      "name": "Инсталација WordPress-а <> Комуникација са FastComment сервером",
       "file": "wordpress-server-communication.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Greške domena",
+      "name": "Грешке домена",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Instalacija WordPress-a"
+      "subCat": "Инсталација WordPress-а"
     },
     {
-      "name": "Vidžet za poslednje komentare",
+      "name": "Виџет за скорашње коментаре",
       "file": "wordpress-recent-comments-widget.md",
-      "subCat": "Ostali vidžeti"
+      "subCat": "Остали виџети"
     },
     {
-      "name": "Vidžet za poslednje diskusije",
+      "name": "Виџет за скорашње дискусије",
       "file": "wordpress-recent-discussions-widget.md",
-      "subCat": "Ostali vidžeti"
+      "subCat": "Остали виџети"
     },
     {
-      "name": "Vidžet za najpopularnije stranice",
+      "name": "Виџет за најбоље странице",
       "file": "wordpress-top-pages-widget.md",
-      "subCat": "Ostali vidžeti"
+      "subCat": "Остали виџети"
     },
     {
-      "name": "Premeštanje vaših komentara na novi sajt",
+      "name": "Пренос ваших коментара на нови сајт",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "Prelazak sa WordPress-a"
+      "subCat": "Прелаз са WordPress-а"
     },
     {
-      "name": "Deaktiviranje vs deinstalacija plugina",
+      "name": "Деактивирање vs деинсталација додатка",
       "file": "wordpress-deactivating-vs-uninstalling.md",
-      "subCat": "Uklanjanje plugina"
+      "subCat": "Уклањање додатка"
+    },
+    {
+      "name": "Додајте анкете на ваш WordPress сајт",
+      "file": "wordpress-polls.md",
+      "subCat": "Анкете"
     }
   ]
 }

@@ -1,30 +1,30 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Добавьте живые комментарии на сайты Bubble.io",
+  "pageHeader": "Добавить живой комментарий на сайты Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
-      "name": "1. Добавьте HTML-блок",
+      "name": "1. Добавить HTML-блок",
       "file": "bubble-io-step-1.md",
       "subCat": "Установка"
     },
     {
-      "name": "2. Вставьте код",
+      "name": "2. Вставить код",
       "file": "bubble-io-step-2.md",
       "subCat": "Установка"
     },
     {
-      "name": "3. Найдите настройку ширины",
+      "name": "3. Найти настройку ширины",
       "file": "bubble-io-step-3.md",
       "subCat": "Установка"
     },
     {
-      "name": "4. Настройте макет",
+      "name": "4. Настроить макет",
       "file": "bubble-io-step-4.md",
       "subCat": "Установка"
     },
     {
-      "name": "Готово",
+      "name": "Успех",
       "file": "bubble-io-success.md",
       "subCat": "Установка"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Ошибки домена",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Добавить опросы в ваше приложение Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

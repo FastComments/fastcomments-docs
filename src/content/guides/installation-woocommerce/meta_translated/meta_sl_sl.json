@@ -1,12 +1,17 @@
 {
   "name": "Namestitev WooCommerce",
-  "pageHeader": "Dodajte komentiranje v živo na spletna mesta WooCommerce",
+  "pageHeader": "Dodajte živo komentiranje na WooCommerce spletna mesta",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Namestitev vtičnika za WordPress",
+      "name": "Nastavitev vtičnika WordPress",
       "file": "woocommerce.md",
       "subCat": "Namestitev WooCommerce"
+    },
+    {
+      "name": "Dodajte ankete v vašo WooCommerce trgovino",
+      "file": "woocommerce-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

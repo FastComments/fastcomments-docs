@@ -1,37 +1,42 @@
 {
-  "name": "Installatie van Super.so",
-  "pageHeader": "Voeg live discussies toe aan Super.so-sites",
+  "name": "Super.so Installatie",
+  "pageHeader": "Live discussies toevoegen aan Super.so-sites",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
       "name": "Stap 1: Open instellingen",
       "file": "super-so-learn-step-1.md",
-      "subCat": "Installatie van Super.so"
+      "subCat": "Super.so Installatie"
     },
     {
       "name": "Stap 2: Voeg kant-en-klare code toe",
       "file": "super-so-learn-step-2.md",
-      "subCat": "Installatie van Super.so"
+      "subCat": "Super.so Installatie"
     },
     {
-      "name": "Zie ook: Standaard reactie-widget",
+      "name": "Zie ook: Reguliere reactie-widget",
       "file": "super-so-comment-widget.md",
-      "subCat": "Installatie van Super.so"
+      "subCat": "Super.so Installatie"
     },
     {
       "name": "Succes",
       "file": "super-so-learn-success.md",
-      "subCat": "Installatie van Super.so"
+      "subCat": "Super.so Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "super-so-learn-domain-errors.md",
-      "subCat": "Installatie van Super.so"
+      "subCat": "Super.so Installatie"
     },
     {
       "name": "Aanpassing",
       "file": "super-so-learn-customize.md",
-      "subCat": "Installatie van Super.so"
+      "subCat": "Super.so Installatie"
+    },
+    {
+      "name": "Voeg peilingen toe aan je Super.so-site",
+      "file": "super-so-polls.md",
+      "subCat": "Peilingen"
     }
   ]
 }

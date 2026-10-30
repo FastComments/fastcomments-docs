@@ -1,40 +1,40 @@
 {
-  "name": "Installation af Canvas LMS",
+  "name": "Canvas LMS-installation",
   "pageHeader": "Tilføj kommentarer til Canvas LMS via LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "Priser",
+      "name": "Pris",
       "file": "canvas-lms-plans.md",
-      "subCat": "Kort fortalt"
+      "subCat": "TLDR"
     },
     {
       "name": "Hurtig start",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Kort fortalt"
+      "subCat": "TLDR"
     },
     {
-      "name": "Opsætning af FastComments-dashboard",
+      "name": "FastComments dashboard-opsætning",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Opsætning af Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3-opsætning"
     },
     {
       "name": "Canvas-udviklernøgle",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Opsætning af Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3-opsætning"
     },
     {
       "name": "Fuldfør forbindelsen",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Opsætning af Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3-opsætning"
     },
     {
       "name": "Tilføj til et kursus",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Opsætning af Canvas LTI 1.3"
+      "subCat": "Canvas LTI 1.3-opsætning"
     },
     {
-      "name": "Kommentarstilarter",
+      "name": "Kommentarstile",
       "file": "canvas-lms-commenting-styles.md",
       "subCat": "Konfiguration"
     },
@@ -52,6 +52,11 @@
       "name": "Domænefejl",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "Fejlfinding"
+    },
+    {
+      "name": "Tilføj afstemninger til dit Canvas-kursus",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

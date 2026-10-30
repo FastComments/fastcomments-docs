@@ -1,47 +1,52 @@
 {
-  "name": "Инсталација Moodle",
-  "pageHeader": "Додавање коментара на Moodle сајтове",
+  "name": "Instalacija Moodle-a",
+  "pageHeader": "Dodajte komentare na Moodle sajtove",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Брзи почетак",
+      "name": "Brzi početak",
       "file": "moodle-quick-start.md",
-      "subCat": "Укратко"
+      "subCat": "TLDR"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "moodle-installation.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Конфигурација",
+      "name": "Konfiguracija",
       "file": "moodle-configuration.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Стилови коментирања",
+      "name": "Stilovi komentarisanja",
       "file": "moodle-commenting-styles.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "SSO режими",
+      "name": "SSO režimi",
       "file": "moodle-sso-modes.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Подешавања обавештавања корисника",
+      "name": "Preferencije obaveštenja korisnika",
       "file": "moodle-user-preferences.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "moodle-customize.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
     },
     {
-      "name": "Грешке домена",
+      "name": "Greške domena",
       "file": "moodle-domain-errors.md",
-      "subCat": "Инсталација додатка за Moodle"
+      "subCat": "Instalacija Moodle dodatka"
+    },
+    {
+      "name": "Dodajte ankete na vaš Moodle sajt",
+      "file": "moodle-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

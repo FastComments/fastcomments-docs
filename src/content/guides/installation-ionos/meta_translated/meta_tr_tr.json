@@ -1,25 +1,25 @@
 {
   "name": "Ionos Kurulumu",
-  "pageHeader": "Ionos Sitelerine Yorum Ekleyin",
+  "pageHeader": "Ionos Sitelerine Yorum Ekle",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Bir İletişim Formu Ekleyin",
+      "name": "Adım 1: İletişim Formu Ekle",
       "file": "ionos-step-1.md",
       "subCat": "Ionos Kurulumu"
     },
     {
-      "name": "Adım 2: FastComments.com Kodunu Ekleyin",
+      "name": "Adım 2: FastComments.com Kodunu Ekle",
       "file": "ionos-step-2.md",
       "subCat": "Ionos Kurulumu"
     },
     {
-      "name": "Adım 3: Yayınlayın",
+      "name": "Adım 3: Yayınla",
       "file": "ionos-step-3.md",
       "subCat": "Ionos Kurulumu"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "ionos-success.md",
       "subCat": "Ionos Kurulumu"
     },
@@ -32,6 +32,11 @@
       "name": "Özelleştirme",
       "file": "ionos-customize.md",
       "subCat": "Ionos Kurulumu"
+    },
+    {
+      "name": "Ionos Sitenize Anketler Ekleyin",
+      "file": "ionos-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

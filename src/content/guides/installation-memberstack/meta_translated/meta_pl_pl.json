@@ -1,22 +1,27 @@
 {
-  "name": "Instalacja Memberstacka",
-  "pageHeader": "Dodaj komentarze za pomocą Memberstack",
+  "name": "Instalacja Memberstack",
+  "pageHeader": "Dodaj komentarze z Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
       "name": "Kod",
       "file": "memberstack-step-1.md",
-      "subCat": "Instalacja Memberstacka"
+      "subCat": "Instalacja Memberstack"
     },
     {
       "name": "Błędy domeny",
       "file": "memberstack-domain-errors.md",
-      "subCat": "Instalacja Memberstacka"
+      "subCat": "Instalacja Memberstack"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "memberstack-customize.md",
-      "subCat": "Instalacja Memberstacka"
+      "subCat": "Instalacja Memberstack"
+    },
+    {
+      "name": "Dodaj ankiety do swojej witryny Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

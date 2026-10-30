@@ -1,37 +1,42 @@
 {
-  "name": "Instalacija Weebly",
-  "pageHeader": "Dodavanje komentara na Weebly sajtove",
+  "name": "Weebly instalacija",
+  "pageHeader": "Dodajte komentare na Weebly sajtove",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
       "name": "Korak 1: Otvorite podešavanja bloga",
       "file": "weebly-step-1.md",
-      "subCat": "Instalacija Weebly"
+      "subCat": "Weebly instalacija"
     },
     {
-      "name": "Korak 2: Dodajte FastComments.com kod",
+      "name": "Korak 2: Dodajte kod FastComments.com",
       "file": "weebly-step-2.md",
-      "subCat": "Instalacija Weebly"
+      "subCat": "Weebly instalacija"
     },
     {
       "name": "Korak 3: Objavite!",
       "file": "weebly-step-3.md",
-      "subCat": "Instalacija Weebly"
+      "subCat": "Weebly instalacija"
     },
     {
       "name": "Uspeh",
       "file": "weebly-success.md",
-      "subCat": "Instalacija Weebly"
+      "subCat": "Weebly instalacija"
     },
     {
       "name": "Greške domena",
       "file": "weebly-domain-errors.md",
-      "subCat": "Instalacija Weebly"
+      "subCat": "Weebly instalacija"
     },
     {
       "name": "Prilagođavanje",
       "file": "weebly-customize.md",
-      "subCat": "Instalacija Weebly"
+      "subCat": "Weebly instalacija"
+    },
+    {
+      "name": "Dodajte ankete na vaš Weebly sajt",
+      "file": "weebly-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Installazione di Val Town",
+  "name": "Installazione Val Town",
   "pageHeader": "Aggiungi commenti live alle app Val Town",
   "itemsOrdered": [
     {
@@ -36,6 +36,11 @@
       "name": "Errori di dominio",
       "file": "val-town-domain-errors.md",
       "subCat": "Installazione Val Town"
+    },
+    {
+      "name": "Aggiungi sondaggi alla tua app Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

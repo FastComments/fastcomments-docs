@@ -1,37 +1,42 @@
 {
-  "name": "GoDaddy-installatie",
-  "pageHeader": "Reacties toevoegen aan GoDaddy-sites",
+  "name": "Godaddy Installatie",
+  "pageHeader": "Reacties toevoegen aan Godaddy-sites",
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
       "name": "Stap 1: Voeg een codegebied toe",
       "file": "godaddy-step-1.md",
-      "subCat": "GoDaddy-installatie"
+      "subCat": "Godaddy Installatie"
     },
     {
       "name": "Stap 2: Voeg FastComments.com-code toe",
       "file": "godaddy-step-2.md",
-      "subCat": "GoDaddy-installatie"
+      "subCat": "Godaddy Installatie"
     },
     {
-      "name": "Stap 3: Publiceer",
+      "name": "Stap 3: Publiceren",
       "file": "godaddy-step-3.md",
-      "subCat": "GoDaddy-installatie"
+      "subCat": "Godaddy Installatie"
     },
     {
       "name": "Succes",
       "file": "godaddy-success.md",
-      "subCat": "GoDaddy-installatie"
+      "subCat": "Godaddy Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "godaddy-domain-errors.md",
-      "subCat": "GoDaddy-installatie"
+      "subCat": "Godaddy Installatie"
     },
     {
       "name": "Aanpassing",
       "file": "godaddy-customize.md",
-      "subCat": "GoDaddy-installatie"
+      "subCat": "Godaddy Installatie"
+    },
+    {
+      "name": "Voeg polls toe aan uw Godaddy-site",
+      "file": "godaddy-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

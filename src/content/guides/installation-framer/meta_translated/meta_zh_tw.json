@@ -1,6 +1,6 @@
 {
   "name": "Framer 安裝",
-  "pageHeader": "在 Framer 網站新增即時評論",
+  "pageHeader": "為 Framer 網站新增即時評論",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Framer 安裝"
     },
     {
-      "name": "步驟 3：複製並貼上 Framer 專用的 FastComments 程式碼",
+      "name": "步驟 3：複製並貼上 Framer 專屬的 FastComments 程式碼",
       "file": "framer-step-3.md",
       "subCat": "Framer 安裝"
     },
@@ -32,6 +32,11 @@
       "name": "自訂",
       "file": "framer-customize.md",
       "subCat": "Framer 安裝"
+    },
+    {
+      "name": "為您的 Framer 網站新增投票",
+      "file": "framer-polls.md",
+      "subCat": "投票"
     }
   ]
 }

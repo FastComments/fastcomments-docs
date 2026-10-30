@@ -1,25 +1,25 @@
 {
   "name": "Instalacija BigCommerce",
-  "pageHeader": "Dodavanje komentara na BigCommerce stranice",
+  "pageHeader": "Dodajte komentare na BigCommerce stranice",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Pripremite temu",
+      "name": "Korak jedan: Pripremite svoju temu",
       "file": "bigcommerce-step-1.md",
       "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Korak 2: Uredite odgovarajući predložak",
+      "name": "Korak dva: Uredite ispravan predložak",
       "file": "bigcommerce-step-2.md",
       "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Korak 3: Dodajte kod widgeta",
+      "name": "Korak tri: Dodajte kod widgeta",
       "file": "bigcommerce-step-3.md",
       "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Korak 4: Aktivirajte novu temu",
+      "name": "Korak četiri: Aktivirajte novu temu",
       "file": "bigcommerce-step-4.md",
       "subCat": "Instalacija BigCommerce"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "bigcommerce-domain-errors.md",
       "subCat": "Instalacija BigCommerce"
     },
@@ -39,9 +39,14 @@
       "subCat": "Instalacija BigCommerce"
     },
     {
-      "name": "Dodatno: fragment koda za graditelj stranica",
+      "name": "Dodatno: Isječak koda za Page Builder",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Korištenje graditelja stranica"
+      "subCat": "Korištenje Page Buildera"
+    },
+    {
+      "name": "Dodajte ankete u svoju BigCommerce trgovinu",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

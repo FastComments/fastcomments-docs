@@ -4,9 +4,14 @@
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Configura il plugin per WordPress",
+      "name": "Configura plugin WordPress",
       "file": "woocommerce.md",
       "subCat": "Installazione di WooCommerce"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo negozio WooCommerce",
+      "file": "woocommerce-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

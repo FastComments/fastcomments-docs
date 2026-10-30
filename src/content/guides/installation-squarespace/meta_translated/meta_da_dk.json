@@ -66,12 +66,17 @@
     {
       "name": "Domænefejl",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Næste trin for Squarespace"
+      "subCat": "Squarespace næste trin"
     },
     {
       "name": "Tilpasning",
       "file": "squarespace-customize.md",
-      "subCat": "Næste trin for Squarespace"
+      "subCat": "Squarespace næste trin"
+    },
+    {
+      "name": "Tilføj afstemninger til din Squarespace-side",
+      "file": "squarespace-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

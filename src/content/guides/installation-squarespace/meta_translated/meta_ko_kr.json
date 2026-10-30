@@ -19,7 +19,7 @@
       "subCat": "블로그에 댓글 추가"
     },
     {
-      "name": "완료",
+      "name": "성공",
       "file": "squarespace-blog-success.md",
       "subCat": "블로그에 댓글 추가"
     },
@@ -39,7 +39,7 @@
       "subCat": "모든 페이지에 댓글 추가"
     },
     {
-      "name": "완료",
+      "name": "성공",
       "file": "squarespace-pages-all-pages-success.md",
       "subCat": "모든 페이지에 댓글 추가"
     },
@@ -59,7 +59,7 @@
       "subCat": "특정 페이지에 댓글 추가"
     },
     {
-      "name": "완료",
+      "name": "성공",
       "file": "squarespace-pages-specific-page-success.md",
       "subCat": "특정 페이지에 댓글 추가"
     },
@@ -72,6 +72,11 @@
       "name": "맞춤 설정",
       "file": "squarespace-customize.md",
       "subCat": "Squarespace 다음 단계"
+    },
+    {
+      "name": "Squarespace 사이트에 설문 추가",
+      "file": "squarespace-polls.md",
+      "subCat": "설문"
     }
   ]
 }

@@ -9,7 +9,7 @@
       "subCat": "Installazione GoDaddy"
     },
     {
-      "name": "Passo 2: Aggiungi il codice di FastComments.com",
+      "name": "Passo 2: Aggiungi il codice FastComments.com",
       "file": "godaddy-step-2.md",
       "subCat": "Installazione GoDaddy"
     },
@@ -32,6 +32,11 @@
       "name": "Personalizzazione",
       "file": "godaddy-customize.md",
       "subCat": "Installazione GoDaddy"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito GoDaddy",
+      "file": "godaddy-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

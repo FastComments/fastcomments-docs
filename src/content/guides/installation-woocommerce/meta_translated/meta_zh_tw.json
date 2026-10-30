@@ -7,6 +7,11 @@
       "name": "設定 WordPress 外掛",
       "file": "woocommerce.md",
       "subCat": "WooCommerce 安裝"
+    },
+    {
+      "name": "為您的 WooCommerce 商店新增投票",
+      "file": "woocommerce-polls.md",
+      "subCat": "投票"
     }
   ]
 }

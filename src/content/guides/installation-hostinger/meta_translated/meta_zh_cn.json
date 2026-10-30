@@ -1,15 +1,15 @@
 {
   "name": "Hostinger 安装",
-  "pageHeader": "向 Hostinger 网站添加实时评论",
+  "pageHeader": "为 Hostinger 网站添加实时评论",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "第 1 步：添加代码小部件",
+      "name": "步骤 1：添加代码小部件",
       "file": "hostinger-step-1.md",
       "subCat": "Hostinger 网站安装"
     },
     {
-      "name": "第 2 步：添加代码",
+      "name": "步骤 2：添加代码",
       "file": "hostinger-step-2.md",
       "subCat": "Hostinger 网站安装"
     },
@@ -32,6 +32,11 @@
       "name": "悬浮点赞按钮",
       "file": "hostinger-floating-likes.md",
       "subCat": "Hostinger 悬浮点赞"
+    },
+    {
+      "name": "为您的 Hostinger 网站添加投票",
+      "file": "hostinger-polls.md",
+      "subCat": "投票"
     }
   ]
 }

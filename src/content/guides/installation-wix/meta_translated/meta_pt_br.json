@@ -1,42 +1,47 @@
 {
-  "name": "Instalação do Wix",
-  "pageHeader": "Adicionar comentários a sites Wix",
+  "name": "Instalação Wix",
+  "pageHeader": "Adicionar Comentários aos Sites Wix",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Edite a página correta",
+      "name": "Passo 1: Editar a Página Correta",
       "file": "wix-step-1.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
     },
     {
-      "name": "Passo 2: Adicione um bloco de incorporação",
+      "name": "Passo 2: Adicionar um Bloco de Incorporação",
       "file": "wix-step-2.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
     },
     {
-      "name": "Passo 3: Copie e cole o código personalizado",
+      "name": "Passo 3: Copiar/Colar Código Personalizado",
       "file": "wix-step-3.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
     },
     {
-      "name": "Passo 4: Redimensione",
+      "name": "Passo 4: Redimensionar",
       "file": "wix-step-4.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
     },
     {
-      "name": "Passo 5: Tópicos de comentários exclusivos",
+      "name": "Passo 5: Tópicos de Comentários Únicos",
       "file": "wix-step-5.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
     },
     {
-      "name": "Passo 6: Comemore",
+      "name": "Passo 6: Celebrar",
       "file": "wix-step-6.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
     },
     {
       "name": "Personalização",
       "file": "wix-customize.md",
-      "subCat": "Instalação do Wix"
+      "subCat": "Instalação Wix"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Site Wix",
+      "file": "wix-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

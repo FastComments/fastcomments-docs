@@ -1,67 +1,72 @@
 {
-  "name": "Instalacija Shopifya",
+  "name": "Instalacija Shopifyja",
   "pageHeader": "Dodajte komentare na Shopify stranice",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "Instalirajte aplikaciju FastComments",
+      "name": "Instalirajte FastComments aplikaciju",
       "file": "shopify-install.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
-      "name": "Dodajte komentare na objave bloga i proizvode",
+      "name": "Dodajte komentare na blog postove i proizvode",
       "file": "shopify-add-comments.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
-      "name": "Dodajte oznaku s brojem komentara",
+      "name": "Dodajte značku broja komentara",
       "file": "shopify-comment-count.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
-      "name": "Dodajte feed najnovijih komentara",
+      "name": "Dodajte feed nedavnih komentara",
       "file": "shopify-recent-comments.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
-      "name": "Dodajte feed najnovijih rasprava",
+      "name": "Dodajte feed nedavnih rasprava",
       "file": "shopify-recent-discussions.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
       "name": "Dodajte popis najpopularnijih stranica",
       "file": "shopify-top-pages.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
       "name": "Dodajte sažetak recenzija",
       "file": "shopify-reviews-summary.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
-      "name": "Automatsko prijavljivanje Shopify kupaca",
+      "name": "Automatska prijava Shopify kupaca",
       "file": "shopify-sso.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
       "name": "Uvezite postojeće komentare",
       "file": "shopify-import.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
       "name": "Prilagodba",
       "file": "shopify-customize.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "shopify-domain-errors.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
     },
     {
       "name": "Ručno instaliranje (napredno)",
       "file": "shopify-manual-install.md",
-      "subCat": "Instalacija Shopifya"
+      "subCat": "Instalacija Shopifyja"
+    },
+    {
+      "name": "Dodajte ankete u svoju Shopify trgovinu",
+      "file": "shopify-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

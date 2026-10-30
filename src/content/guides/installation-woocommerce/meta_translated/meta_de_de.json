@@ -1,12 +1,17 @@
 {
   "name": "WooCommerce-Installation",
-  "pageHeader": "Live-Kommentare zu WooCommerce-Seiten hinzufügen",
+  "pageHeader": "Live-Kommentare zu WooCommerce-Websites hinzufügen",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
       "name": "WordPress-Plugin einrichten",
       "file": "woocommerce.md",
       "subCat": "WooCommerce-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrem WooCommerce-Shop hinzufügen",
+      "file": "woocommerce-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

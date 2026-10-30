@@ -1,25 +1,25 @@
 {
   "name": "התקנת BigCommerce",
-  "pageHeader": "הוספת תגובות לאתרים ב‑BigCommerce",
+  "pageHeader": "הוספת תגובות לאתרי BigCommerce",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "שלב ראשון: הכינו את התבנית",
+      "name": "שלב ראשון: הכנת העיצוב שלך",
       "file": "bigcommerce-step-1.md",
       "subCat": "התקנת BigCommerce"
     },
     {
-      "name": "שלב שני: ערכו את התבנית המתאימה",
+      "name": "שלב שני: עריכת התבנית הנכונה",
       "file": "bigcommerce-step-2.md",
       "subCat": "התקנת BigCommerce"
     },
     {
-      "name": "שלב שלישי: הוסיפו את קוד הווידג'ט",
+      "name": "שלב שלישי: הוספת קוד הווידג'ט",
       "file": "bigcommerce-step-3.md",
       "subCat": "התקנת BigCommerce"
     },
     {
-      "name": "שלב רביעי: הפעילו את התבנית החדשה",
+      "name": "שלב רביעי: הפעלת העיצוב החדש",
       "file": "bigcommerce-step-4.md",
       "subCat": "התקנת BigCommerce"
     },
@@ -29,7 +29,7 @@
       "subCat": "התקנת BigCommerce"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "bigcommerce-domain-errors.md",
       "subCat": "התקנת BigCommerce"
     },
@@ -39,9 +39,14 @@
       "subCat": "התקנת BigCommerce"
     },
     {
-      "name": "נוסף: קטע קוד עבור בונה הדפים",
+      "name": "נוסף: קטע קוד לבונה העמודים",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "שימוש בבונה הדפים"
+      "subCat": "שימוש בבונה העמודים"
+    },
+    {
+      "name": "הוספת סקרים לחנות ה-BigCommerce שלך",
+      "file": "bigcommerce-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

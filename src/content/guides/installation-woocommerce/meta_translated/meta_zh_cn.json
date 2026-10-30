@@ -1,12 +1,17 @@
 {
   "name": "WooCommerce 安装",
-  "pageHeader": "将实时评论添加到 WooCommerce 站点",
+  "pageHeader": "为 WooCommerce 网站添加实时评论",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
       "name": "设置 WordPress 插件",
       "file": "woocommerce.md",
       "subCat": "WooCommerce 安装"
+    },
+    {
+      "name": "为您的 WooCommerce 商店添加投票",
+      "file": "woocommerce-polls.md",
+      "subCat": "投票"
     }
   ]
 }

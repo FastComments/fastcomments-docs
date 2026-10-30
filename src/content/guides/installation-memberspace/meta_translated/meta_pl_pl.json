@@ -14,9 +14,14 @@
       "subCat": "Instalacja MemberSpace"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "memberspace-customize.md",
       "subCat": "Instalacja MemberSpace"
+    },
+    {
+      "name": "Dodaj ankiety do swojej witryny MemberSpace",
+      "file": "memberspace-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

@@ -27,6 +27,11 @@
       "name": "맞춤 설정",
       "file": "thrivecart-learn-customize.md",
       "subCat": "ThriveCart Learn+ 설치"
+    },
+    {
+      "name": "ThriveCart Learn+ 코스에 설문 추가",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "설문조사"
     }
   ]
 }

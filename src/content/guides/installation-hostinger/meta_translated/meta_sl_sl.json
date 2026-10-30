@@ -1,37 +1,42 @@
 {
-  "name": "Namestitev na Hostingerju",
-  "pageHeader": "Dodajte živo komentiranje na spletna mesta na Hostingerju",
+  "name": "Namestitev Hostingerja",
+  "pageHeader": "Dodajte živo komentiranje na Hostinger spletna mesta",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodajte pripomoček za kodo",
+      "name": "Korak 1: Dodajte gradnik kode",
       "file": "hostinger-step-1.md",
-      "subCat": "Namestitev spletnega mesta na Hostingerju"
+      "subCat": "Namestitev Hostinger spletnega mesta"
     },
     {
       "name": "Korak 2: Dodajte kodo",
       "file": "hostinger-step-2.md",
-      "subCat": "Namestitev spletnega mesta na Hostingerju"
+      "subCat": "Namestitev Hostinger spletnega mesta"
     },
     {
       "name": "Uspeh",
       "file": "hostinger-site-success.md",
-      "subCat": "Namestitev spletnega mesta na Hostingerju"
+      "subCat": "Namestitev Hostinger spletnega mesta"
     },
     {
       "name": "Napake domene spletnega mesta",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Namestitev spletnega mesta na Hostingerju"
+      "subCat": "Namestitev Hostinger spletnega mesta"
     },
     {
       "name": "Prilagajanje spletnega mesta",
       "file": "hostinger-site-customize.md",
-      "subCat": "Namestitev spletnega mesta na Hostingerju"
+      "subCat": "Namestitev Hostinger spletnega mesta"
     },
     {
-      "name": "Plavajoči gumb za všečkanje",
+      "name": "Plavajoč gumb všečkov",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Plavajoči všečki na Hostingerju"
+      "subCat": "Hostinger plavajoči všečki"
+    },
+    {
+      "name": "Dodajte ankete na svoje Hostinger spletno mesto",
+      "file": "hostinger-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

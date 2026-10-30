@@ -1,15 +1,15 @@
 {
   "name": "Встановлення Ghost",
-  "pageHeader": "Додати живі коментарі тільки для учасників на сайтах Ghost",
+  "pageHeader": "Додайте живе коментування лише для членів на сайти Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Завантажте вашу тему",
+      "name": "Крок 1: Завантажте свою тему",
       "file": "ghost-step-1.md",
       "subCat": "Встановлення Ghost"
     },
     {
-      "name": "Крок 2: Встановіть тему локально",
+      "name": "Крок 2: Встановіть свою тему локально",
       "file": "ghost-step-2.md",
       "subCat": "Встановлення Ghost"
     },
@@ -19,7 +19,7 @@
       "subCat": "Встановлення Ghost"
     },
     {
-      "name": "Крок 4: Відкрийте шаблон допису",
+      "name": "Крок 4: Відкрийте шаблон публікації",
       "file": "ghost-step-4.md",
       "subCat": "Встановлення Ghost"
     },
@@ -29,22 +29,22 @@
       "subCat": "Встановлення Ghost"
     },
     {
-      "name": "Крок 6: Експортуйте вашу тему",
+      "name": "Крок 6: Експортуйте свою тему",
       "file": "ghost-step-6.md",
       "subCat": "Встановлення Ghost"
     },
     {
-      "name": "Крок 7: Завантажте тему у Ghost",
+      "name": "Крок 7: Завантажте тему в Ghost",
       "file": "ghost-step-7.md",
       "subCat": "Встановлення Ghost"
     },
     {
-      "name": "Готово!",
+      "name": "Успіх!",
       "file": "ghost-success.md",
       "subCat": "Встановлення Ghost"
     },
     {
-      "name": "Помилки доменів",
+      "name": "Помилки домену",
       "file": "ghost-domain-errors.md",
       "subCat": "Встановлення Ghost"
     },
@@ -52,6 +52,11 @@
       "name": "Налаштування",
       "file": "ghost-customize.md",
       "subCat": "Встановлення Ghost"
+    },
+    {
+      "name": "Додайте опитування на ваш сайт Ghost",
+      "file": "ghost-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

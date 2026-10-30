@@ -4,9 +4,9 @@
   "icon": "3rd-party-products/wordpress.png",
   "itemsOrdered": [
     {
-      "name": "快速開始",
+      "name": "快速入門",
       "file": "wordpress-quick-start.md",
-      "subCat": "TLDR"
+      "subCat": "簡要說明"
     },
     {
       "name": "安裝",
@@ -29,7 +29,7 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "僅限會員網站（SSO）",
+      "name": "僅限會員的網站（單一登入）",
       "file": "wordpress-membership-sites.md",
       "subCat": "WordPress 安裝"
     },
@@ -64,12 +64,12 @@
       "subCat": "WordPress 安裝"
     },
     {
-      "name": "最新評論小工具",
+      "name": "最近評論小工具",
       "file": "wordpress-recent-comments-widget.md",
       "subCat": "其他小工具"
     },
     {
-      "name": "最新討論小工具",
+      "name": "最近討論小工具",
       "file": "wordpress-recent-discussions-widget.md",
       "subCat": "其他小工具"
     },
@@ -79,14 +79,19 @@
       "subCat": "其他小工具"
     },
     {
-      "name": "將您的評論搬移至新網站",
+      "name": "將您的評論搬遷至新網站",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "從 WordPress 搬移"
+      "subCat": "從 WordPress 移除"
     },
     {
-      "name": "停用與解除安裝外掛",
+      "name": "停用與解除安裝外掛的差異",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "外掛移除"
+    },
+    {
+      "name": "為您的 WordPress 網站新增投票",
+      "file": "wordpress-polls.md",
+      "subCat": "投票"
     }
   ]
 }

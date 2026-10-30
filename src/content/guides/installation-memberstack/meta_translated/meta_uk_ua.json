@@ -1,6 +1,6 @@
 {
   "name": "Встановлення Memberstack",
-  "pageHeader": "Додавання коментарів за допомогою Memberstack",
+  "pageHeader": "Додати коментарі за допомогою Memberstack",
   "icon": "3rd-party-products/memberstack.png",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "Налаштування",
       "file": "memberstack-customize.md",
       "subCat": "Встановлення Memberstack"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

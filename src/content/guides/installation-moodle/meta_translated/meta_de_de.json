@@ -6,7 +6,7 @@
     {
       "name": "Schnellstart",
       "file": "moodle-quick-start.md",
-      "subCat": "Kurzfassung"
+      "subCat": "TLDR"
     },
     {
       "name": "Installation",
@@ -19,7 +19,7 @@
       "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Kommentarstile",
+      "name": "Kommentierungsstile",
       "file": "moodle-commenting-styles.md",
       "subCat": "Moodle-Plugin-Installation"
     },
@@ -29,7 +29,7 @@
       "subCat": "Moodle-Plugin-Installation"
     },
     {
-      "name": "Benachrichtigungseinstellungen für Benutzer",
+      "name": "Benutzer-Benachrichtigungseinstellungen",
       "file": "moodle-user-preferences.md",
       "subCat": "Moodle-Plugin-Installation"
     },
@@ -42,6 +42,11 @@
       "name": "Domain-Fehler",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle-Plugin-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Moodle-Seite hinzufügen",
+      "file": "moodle-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

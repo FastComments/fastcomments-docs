@@ -1,20 +1,20 @@
 {
   "name": "התקנת Webflow",
-  "pageHeader": "הוספת תגובות לאתרים ב-Webflow",
+  "pageHeader": "הוספת תגובות לאתרי Webflow",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "שלב 1: הוסף בלוק הטמעה",
+      "name": "שלב 1: הוספת בלוק הטמעה",
       "file": "webflow-step-1.md",
       "subCat": "התקנת Webflow"
     },
     {
-      "name": "שלב 2: הדבק את קוד FastComments.com שלך",
+      "name": "שלב 2: הדבקת הקוד של FastComments.com",
       "file": "webflow-step-2.md",
       "subCat": "התקנת Webflow"
     },
     {
-      "name": "שלב 3: פרסם",
+      "name": "שלב 3: פרסום",
       "file": "webflow-step-3.md",
       "subCat": "התקנת Webflow"
     },
@@ -24,7 +24,7 @@
       "subCat": "התקנת Webflow"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "webflow-domain-errors.md",
       "subCat": "התקנת Webflow"
     },
@@ -32,6 +32,11 @@
       "name": "התאמה אישית",
       "file": "webflow-customize.md",
       "subCat": "התקנת Webflow"
+    },
+    {
+      "name": "הוספת סקרים לאתר Webflow שלך",
+      "file": "webflow-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

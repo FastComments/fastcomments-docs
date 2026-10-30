@@ -1,10 +1,10 @@
 {
   "name": "Typeflo.io",
-  "pageHeader": "הוסף תגובות בזמן אמת לבלוגים של Typeflo.io",
+  "pageHeader": "הוסף תגובות חיות לבלוגים של Typeflo.io",
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. מצא שדה להזנת קוד",
+      "name": "1. מצא קלט קוד",
       "file": "typeflo-step-1.md",
       "subCat": "התקנה"
     },
@@ -23,8 +23,13 @@
       "file": "typeflo-customize.md"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "הוסף סקרים לבלוג שלך ב-Typeflo.io",
+      "file": "typeflo-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

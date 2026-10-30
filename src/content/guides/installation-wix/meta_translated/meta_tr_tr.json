@@ -1,25 +1,25 @@
 {
   "name": "Wix Kurulumu",
-  "pageHeader": "Wix Sitelerine Yorum Ekleyin",
+  "pageHeader": "Wix Sitelerine Yorum Ekle",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Doğru Sayfayı Düzenleyin",
+      "name": "Adım 1: Doğru Sayfayı Düzenle",
       "file": "wix-step-1.md",
       "subCat": "Wix Kurulumu"
     },
     {
-      "name": "Adım 2: Gömme Bloğu Ekleyin",
+      "name": "Adım 2: Gömülü Blok Ekle",
       "file": "wix-step-2.md",
       "subCat": "Wix Kurulumu"
     },
     {
-      "name": "Adım 3: Özel Kodu Kopyalayın/Yapıştırın",
+      "name": "Adım 3: Özel Kodu Kopyala/Yapıştır",
       "file": "wix-step-3.md",
       "subCat": "Wix Kurulumu"
     },
     {
-      "name": "Adım 4: Yeniden Boyutlandırın",
+      "name": "Adım 4: Yeniden Boyutlandır",
       "file": "wix-step-4.md",
       "subCat": "Wix Kurulumu"
     },
@@ -29,7 +29,7 @@
       "subCat": "Wix Kurulumu"
     },
     {
-      "name": "Adım 6: Kutlayın",
+      "name": "Adım 6: Kutlama",
       "file": "wix-step-6.md",
       "subCat": "Wix Kurulumu"
     },
@@ -37,6 +37,11 @@
       "name": "Özelleştirme",
       "file": "wix-customize.md",
       "subCat": "Wix Kurulumu"
+    },
+    {
+      "name": "Wix Sitenize Anketler Ekleyin",
+      "file": "wix-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

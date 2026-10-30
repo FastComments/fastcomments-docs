@@ -14,7 +14,7 @@
       "subCat": "Namestitev Super.so"
     },
     {
-      "name": "Glej tudi: standardni pripomoček za komentarje",
+      "name": "Oglejte si tudi: Redni pripomoček za komentarje",
       "file": "super-so-comment-widget.md",
       "subCat": "Namestitev Super.so"
     },
@@ -29,9 +29,14 @@
       "subCat": "Namestitev Super.so"
     },
     {
-      "name": "Prilagoditev",
+      "name": "Prilagajanje",
       "file": "super-so-learn-customize.md",
       "subCat": "Namestitev Super.so"
+    },
+    {
+      "name": "Dodajte ankete na svoje spletno mesto Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

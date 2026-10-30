@@ -1,10 +1,10 @@
 {
   "name": "Typeflo.io",
-  "pageHeader": "Tilføj live-kommentarer til Typeflo.io-blogge",
+  "pageHeader": "Tilføj live-kommentarer til Typeflo.io blogs",
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. Find kodefeltet",
+      "name": "1. Find kodeinput",
       "file": "typeflo-step-1.md",
       "subCat": "Installation"
     },
@@ -25,6 +25,11 @@
     {
       "name": "Domænefejl",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Tilføj afstemninger til din Typeflo.io blog",
+      "file": "typeflo-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

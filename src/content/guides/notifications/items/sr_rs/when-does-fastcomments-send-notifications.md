@@ -1,35 +1,36 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still  
 keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
-#### Слаћемо обавештења за следеће догађаје за администраторе и модераторе:
+#### We'll send notifications for the following events for administrators and moderators:
 
-- Сажетак заједнице (фреквенција подесива).
-- Захтеви за помоћ заједнице и подсетници.
-- Нови коментари.
+- Community Digest Summary (frequency configurable).  
+- Community help requests and reminders.  
+- New Comments.
 
-#### За коментаторе:
+#### For Commenters:
 
-- Када неко одговори на ваш коментар (преко е-поште).
-- Када сте поменути (обавештење у апликацији и е-поштом).
-- Када неко одговори у истој теми (обавештење у апликацији и е-поштом).
-- Када неко одговори на подкоментар у истој теми (обавештење у апликацији и е-поштом).
-- Када неко одговори на страницу на коју сте претплаћени (обавештење у апликацији и е-поштом, фреквенција подесива по претплати: сваки минут, сваки сат или дневно).
-- Када корисник коментарише први пут (али не са SSO).
-- Када корисник остави коментар у сесији која није верификована (али не са SSO).
-  - У овом случају не шаљемо више верификационих е-порука. Само прва, која ће верификовати сву активност у истој сесији.
+- When someone replies to your comment (via email).  
+- When you are mentioned (in-app and email notification).  
+- When someone replies in the same thread (in-app and email notification).  
+- When someone replies to a child comment in the same thread (in-app and email notification).  
+- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).  
+- When someone responds to a poll you created (in-app notification, plus a daily email). See [Обавештења о анкетама](/guide-polls.html#poll-notifications).  
+- When a user comments for the first time (But not with SSO).  
+- When a user leaves a comment in a session that is not verified (But not with SSO).  
+  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
 
-#### За све кориснике:
+#### For All Users:
 
-- Када се открије пријава са нове ИП адресе, шаље се е-порука о безбедносном упозорењу са приближном локацијом и ИП адресом. Ово се не примењује на прву пријаву корисника.
+- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
 
-#### ...и на крају само за администраторе:
+#### ...and finally for administrators only:
 
-- Када су интеграције завршене.
-- Када су миграције завршене.
-- Када се заврше увози или извози.
-- Када постоје проблеми са наплатом.
-- Подсетници о крају пробног периода.
+- When integrations are complete.  
+- When migrations are complete.  
+- When imports or exports finish.  
+- When there are billing issues.  
+- Trial-end reminders.
 
-Нека обавештења се групишу како би се спречило масовно слање обавештења корисницима. Сазнајте више о томе у следећем одељку `Notification Types`.
+Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
 
-Е-поруке о одговорима и помињањима се шаљу само за одобрене коментаре. Да бисте видели да ли је е-порука о одговору или помињању послата за одређени коментар, или зашто није, отворите [Comment Logs](/guide-moderation.html#comment-logs) тог коментара са странице за модерирање коментара.
+Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Записници коментара](/guide-moderation.html#comment-logs) from the Moderate Comments page.

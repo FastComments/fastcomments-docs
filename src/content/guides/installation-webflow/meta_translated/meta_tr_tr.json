@@ -1,10 +1,10 @@
 {
   "name": "Webflow Kurulumu",
-  "pageHeader": "Webflow Sitelerine Yorum Ekleme",
+  "pageHeader": "Webflow Sitelerine Yorum Ekle",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Bir Embed Bloğu Ekleyin",
+      "name": "Adım 1: Gömülü Blok Ekle",
       "file": "webflow-step-1.md",
       "subCat": "Webflow Kurulumu"
     },
@@ -14,7 +14,7 @@
       "subCat": "Webflow Kurulumu"
     },
     {
-      "name": "Adım 3: Yayınlayın",
+      "name": "Adım 3: Yayınla",
       "file": "webflow-step-3.md",
       "subCat": "Webflow Kurulumu"
     },
@@ -32,6 +32,11 @@
       "name": "Özelleştirme",
       "file": "webflow-customize.md",
       "subCat": "Webflow Kurulumu"
+    },
+    {
+      "name": "Webflow Sitenize Anketler Ekleyin",
+      "file": "webflow-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

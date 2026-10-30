@@ -1,6 +1,6 @@
 {
   "name": "Ghost 安裝",
-  "pageHeader": "為 Ghost 站點新增僅限會員的即時留言功能",
+  "pageHeader": "為 Ghost 網站新增僅限會員的即時評論",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -19,7 +19,7 @@
       "subCat": "Ghost 安裝"
     },
     {
-      "name": "步驟 4：開啟文章範本",
+      "name": "步驟 4：開啟文章模板",
       "file": "ghost-step-4.md",
       "subCat": "Ghost 安裝"
     },
@@ -34,7 +34,7 @@
       "subCat": "Ghost 安裝"
     },
     {
-      "name": "步驟 7：將主題上傳到 Ghost",
+      "name": "步驟 7：上傳主題至 Ghost",
       "file": "ghost-step-7.md",
       "subCat": "Ghost 安裝"
     },
@@ -52,6 +52,11 @@
       "name": "自訂",
       "file": "ghost-customize.md",
       "subCat": "Ghost 安裝"
+    },
+    {
+      "name": "為您的 Ghost 網站新增投票",
+      "file": "ghost-polls.md",
+      "subCat": "投票"
     }
   ]
 }

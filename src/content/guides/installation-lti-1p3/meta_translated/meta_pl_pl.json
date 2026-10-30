@@ -6,72 +6,77 @@
     {
       "name": "Cennik",
       "file": "lti-plans.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Szybki start",
       "file": "lti-quick-start.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
       "name": "Obsługiwane platformy",
       "file": "lti-supported-platforms.md",
-      "subCat": "W skrócie"
+      "subCat": "TLDR"
     },
     {
-      "name": "Wygeneruj adres URL rejestracji",
+      "name": "Wygeneruj URL rejestracji",
       "file": "lti-generate-url.md",
-      "subCat": "Konfiguracja FastComments"
+      "subCat": "Ustawienia FastComments"
     },
     {
-      "name": "Rejestracja w D2L Brightspace",
+      "name": "Zarejestruj w D2L Brightspace",
       "file": "lti-register-d2l.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Rejestracja w Moodle",
+      "name": "Zarejestruj w Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Rejestracja w Blackboard Learn",
+      "name": "Zarejestruj w Blackboard Learn",
       "file": "lti-register-blackboard.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Rejestracja w Sakai lub Schoology",
+      "name": "Zarejestruj w Sakai lub Schoology",
       "file": "lti-register-other.md",
       "subCat": "Zarejestruj narzędzie"
     },
     {
-      "name": "Dodaj do zawartości kursu w D2L",
+      "name": "Dodaj do treści kursu D2L",
       "file": "lti-d2l-add-to-course.md",
       "subCat": "Dodaj do kursu"
     },
     {
-      "name": "Dodaj do zawartości kursu w Moodle",
+      "name": "Dodaj do treści kursu Moodle",
       "file": "lti-moodle-add-to-course.md",
       "subCat": "Dodaj do kursu"
     },
     {
-      "name": "Dodaj do zawartości kursu w Blackboard",
+      "name": "Dodaj do treści kursu Blackboard",
       "file": "lti-blackboard-add-to-course.md",
       "subCat": "Dodaj do kursu"
     },
     {
-      "name": "Dodaj do zawartości kursu w Sakai lub Schoology",
+      "name": "Dodaj do treści kursu Sakai lub Schoology",
       "file": "lti-other-add-to-course.md",
       "subCat": "Dodaj do kursu"
     },
     {
       "name": "Rozwiązywanie problemów",
       "file": "lti-troubleshooting.md",
-      "subCat": "Korzystanie z narzędzia"
+      "subCat": "Używanie narzędzia"
     },
     {
-      "name": "Zasada najmniejszych uprawnień i minimalizacja danych",
+      "name": "Najmniejsze uprawnienia i minimalizacja danych",
       "file": "lti-least-privilege.md",
       "subCat": "Bezpieczeństwo i zgodność"
+    },
+    {
+      "name": "Dodaj ankiety do swojego kursu LMS",
+      "file": "lti-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

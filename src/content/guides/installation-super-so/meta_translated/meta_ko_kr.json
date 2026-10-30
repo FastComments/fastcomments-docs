@@ -9,12 +9,12 @@
       "subCat": "Super.so 설치"
     },
     {
-      "name": "2단계: 미리 만들어진 코드 추가",
+      "name": "2단계: 미리 만든 코드 추가",
       "file": "super-so-learn-step-2.md",
       "subCat": "Super.so 설치"
     },
     {
-      "name": "참고: 일반 댓글 위젯",
+      "name": "또 보기: 일반 댓글 위젯",
       "file": "super-so-comment-widget.md",
       "subCat": "Super.so 설치"
     },
@@ -32,6 +32,11 @@
       "name": "맞춤 설정",
       "file": "super-so-learn-customize.md",
       "subCat": "Super.so 설치"
+    },
+    {
+      "name": "Super.so 사이트에 설문 추가",
+      "file": "super-so-polls.md",
+      "subCat": "설문"
     }
   ]
 }

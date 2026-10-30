@@ -1,10 +1,10 @@
 {
   "name": "Typeflo.io",
-  "pageHeader": "Typeflo.io のブログにライブコメントを追加する",
+  "pageHeader": "Typeflo.io ブログにライブコメントを追加する",
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. コード入力欄を見つける",
+      "name": "1. コード入力を見つける",
       "file": "typeflo-step-1.md",
       "subCat": "インストール"
     },
@@ -14,7 +14,7 @@
       "subCat": "インストール"
     },
     {
-      "name": "完了",
+      "name": "成功",
       "file": "typeflo-success.md",
       "subCat": "インストール"
     },
@@ -25,6 +25,11 @@
     {
       "name": "ドメインエラー",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Typeflo.io ブログに投票を追加する",
+      "file": "typeflo-polls.md",
+      "subCat": "投票"
     }
   ]
 }

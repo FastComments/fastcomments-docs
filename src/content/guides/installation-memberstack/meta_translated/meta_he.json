@@ -17,6 +17,11 @@
       "name": "התאמה אישית",
       "file": "memberstack-customize.md",
       "subCat": "התקנת Memberstack"
+    },
+    {
+      "name": "הוספת סקרים לאתר Memberstack שלך",
+      "file": "memberstack-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

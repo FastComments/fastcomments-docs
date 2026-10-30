@@ -32,6 +32,11 @@
       "name": "플로팅 좋아요 버튼",
       "file": "zyro-floating-likes.md",
       "subCat": "Zyro 플로팅 좋아요"
+    },
+    {
+      "name": "Zyro 사이트에 설문 추가",
+      "file": "zyro-polls.md",
+      "subCat": "설문"
     }
   ]
 }

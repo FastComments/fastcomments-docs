@@ -1,30 +1,30 @@
 {
   "name": "Instalacja Squarespace",
-  "pageHeader": "Dodawanie komentarzy na stronach Squarespace",
+  "pageHeader": "Dodaj komentarze do stron Squarespace",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Dodawanie komentarzy na żywo do bloga",
+      "name": "Dodawanie komentarzy na żywo do Twojego bloga",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Dodaj komentarze do bloga"
+      "subCat": "Dodaj komentarze do swojego bloga"
     },
     {
       "name": "Krok 1: Otwórz ustawienia bloga",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Dodaj komentarze do bloga"
+      "subCat": "Dodaj komentarze do swojego bloga"
     },
     {
-      "name": "Krok 2: Wklej kod FastComments.com",
+      "name": "Krok 2: Wklej swój kod FastComments.com",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Dodaj komentarze do bloga"
+      "subCat": "Dodaj komentarze do swojego bloga"
     },
     {
       "name": "Sukces",
       "file": "squarespace-blog-success.md",
-      "subCat": "Dodaj komentarze do bloga"
+      "subCat": "Dodaj komentarze do swojego bloga"
     },
     {
-      "name": "Dodawanie komentarzy na żywo na wszystkich stronach",
+      "name": "Dodaj komentarze na żywo do wszystkich stron",
       "file": "squarespace-pages-all-pages-step-0.md",
       "subCat": "Dodaj komentarze do wszystkich stron"
     },
@@ -34,7 +34,7 @@
       "subCat": "Dodaj komentarze do wszystkich stron"
     },
     {
-      "name": "Krok 2: Wklej kod FastComments.com",
+      "name": "Krok 2: Wklej swój kod FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
       "subCat": "Dodaj komentarze do wszystkich stron"
     },
@@ -54,7 +54,7 @@
       "subCat": "Dodaj komentarze do konkretnej strony"
     },
     {
-      "name": "Krok 2: Wklej kod FastComments.com",
+      "name": "Krok 2: Wklej swój kod FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
       "subCat": "Dodaj komentarze do konkretnej strony"
     },
@@ -66,12 +66,17 @@
     {
       "name": "Błędy domeny",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Następne kroki w Squarespace"
+      "subCat": "Kolejne kroki Squarespace"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "squarespace-customize.md",
-      "subCat": "Następne kroki w Squarespace"
+      "subCat": "Kolejne kroki Squarespace"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

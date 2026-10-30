@@ -29,9 +29,14 @@
       "subCat": "Instalacja Weebly"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "weebly-customize.md",
       "subCat": "Instalacja Weebly"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

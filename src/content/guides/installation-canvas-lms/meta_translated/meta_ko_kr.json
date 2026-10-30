@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "요금",
+      "name": "가격",
       "file": "canvas-lms-plans.md",
       "subCat": "요약"
     },
@@ -52,6 +52,11 @@
       "name": "도메인 오류",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "문제 해결"
+    },
+    {
+      "name": "Canvas 코스에 설문 추가",
+      "file": "canvas-lms-polls.md",
+      "subCat": "설문"
     }
   ]
 }

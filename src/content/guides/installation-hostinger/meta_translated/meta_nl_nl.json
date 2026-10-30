@@ -1,37 +1,42 @@
 {
-  "name": "Hostinger-installatie",
-  "pageHeader": "Live-reacties toevoegen aan Hostinger-sites",
+  "name": "Hostinger Installatie",
+  "pageHeader": "Live reacties toevoegen aan Hostinger-sites",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
       "name": "Stap 1: Code-widget toevoegen",
       "file": "hostinger-step-1.md",
-      "subCat": "Installatie van Hostinger-site"
+      "subCat": "Hostinger-site-installatie"
     },
     {
       "name": "Stap 2: Voeg de code toe",
       "file": "hostinger-step-2.md",
-      "subCat": "Installatie van Hostinger-site"
+      "subCat": "Hostinger-site-installatie"
     },
     {
       "name": "Succes",
       "file": "hostinger-site-success.md",
-      "subCat": "Installatie van Hostinger-site"
+      "subCat": "Hostinger-site-installatie"
     },
     {
-      "name": "Fouten in site-domein",
+      "name": "Fouten met site-domein",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Installatie van Hostinger-site"
+      "subCat": "Hostinger-site-installatie"
     },
     {
       "name": "Site-aanpassing",
       "file": "hostinger-site-customize.md",
-      "subCat": "Installatie van Hostinger-site"
+      "subCat": "Hostinger-site-installatie"
     },
     {
-      "name": "Zwevende vind-ik-leuk-knop",
+      "name": "Zwevende likes-knop",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Hostinger zwevende vind-ik-leuk-knop"
+      "subCat": "Hostinger zwevende likes"
+    },
+    {
+      "name": "Polls toevoegen aan je Hostinger-site",
+      "file": "hostinger-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

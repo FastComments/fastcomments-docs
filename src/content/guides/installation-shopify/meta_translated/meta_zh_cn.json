@@ -1,6 +1,6 @@
 {
   "name": "Shopify 安装",
-  "pageHeader": "向 Shopify 网站添加评论",
+  "pageHeader": "在 Shopify 网站添加评论",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Shopify 安装"
     },
     {
-      "name": "为博客文章和产品添加评论",
+      "name": "在博客文章和产品中添加评论",
       "file": "shopify-add-comments.md",
       "subCat": "Shopify 安装"
     },
@@ -19,7 +19,7 @@
       "subCat": "Shopify 安装"
     },
     {
-      "name": "添加最新评论信息流",
+      "name": "添加最近评论信息流",
       "file": "shopify-recent-comments.md",
       "subCat": "Shopify 安装"
     },
@@ -34,7 +34,7 @@
       "subCat": "Shopify 安装"
     },
     {
-      "name": "添加评价摘要",
+      "name": "添加评论摘要",
       "file": "shopify-reviews-summary.md",
       "subCat": "Shopify 安装"
     },
@@ -62,6 +62,11 @@
       "name": "手动安装（高级）",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify 安装"
+    },
+    {
+      "name": "在您的 Shopify 商店添加投票",
+      "file": "shopify-polls.md",
+      "subCat": "投票"
     }
   ]
 }

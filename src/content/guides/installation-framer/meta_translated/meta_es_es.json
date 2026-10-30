@@ -1,30 +1,30 @@
 {
   "name": "Instalación de Framer",
-  "pageHeader": "Añadir comentarios en directo a sitios de Framer",
+  "pageHeader": "Agregar Comentarios en Vivo a Sitios Framer",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
-      "name": "Paso 1: Abrir el editor",
+      "name": "Paso 1: Abrir el Editor",
       "file": "framer-step-1.md",
       "subCat": "Instalación de Framer"
     },
     {
-      "name": "Paso 2: Añadir bloque incrustado",
+      "name": "Paso 2: Añadir Bloque de Inserción",
       "file": "framer-step-2.md",
       "subCat": "Instalación de Framer"
     },
     {
-      "name": "Paso 3: Copiar y pegar el código de FastComments específico para Framer",
+      "name": "Paso 3: Copiar y Pegar el Código FastComments Específico de Framer",
       "file": "framer-step-3.md",
       "subCat": "Instalación de Framer"
     },
     {
-      "name": "Paso 4: Ajustar la altura del widget y de la página",
+      "name": "Paso 4: Ajustar el Widget y la Altura de la Página",
       "file": "framer-step-4.md",
       "subCat": "Instalación de Framer"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "framer-domain-errors.md",
       "subCat": "Instalación de Framer"
     },
@@ -32,6 +32,11 @@
       "name": "Personalización",
       "file": "framer-customize.md",
       "subCat": "Instalación de Framer"
+    },
+    {
+      "name": "Añadir Encuestas a Tu Sitio Framer",
+      "file": "framer-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

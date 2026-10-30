@@ -1,37 +1,42 @@
 {
-  "name": "Instalacija Hostingera",
-  "pageHeader": "Dodajte komentare uživo na Hostingerove stranice",
+  "name": "Hostinger instalacija",
+  "pageHeader": "Dodajte live komentiranje na Hostinger stranice",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodajte widget s kodom",
+      "name": "Korak 1: Dodajte widget koda",
       "file": "hostinger-step-1.md",
-      "subCat": "Instalacija stranice na Hostingeru"
+      "subCat": "Instalacija Hostinger stranice"
     },
     {
       "name": "Korak 2: Dodajte kod",
       "file": "hostinger-step-2.md",
-      "subCat": "Instalacija stranice na Hostingeru"
+      "subCat": "Instalacija Hostinger stranice"
     },
     {
-      "name": "Uspješno",
+      "name": "Uspjeh",
       "file": "hostinger-site-success.md",
-      "subCat": "Instalacija stranice na Hostingeru"
+      "subCat": "Instalacija Hostinger stranice"
     },
     {
-      "name": "Pogreške domene web-mjesta",
+      "name": "Greške domene stranice",
       "file": "hostinger-site-domain-errors.md",
-      "subCat": "Instalacija stranice na Hostingeru"
+      "subCat": "Instalacija Hostinger stranice"
     },
     {
       "name": "Prilagodba stranice",
       "file": "hostinger-site-customize.md",
-      "subCat": "Instalacija stranice na Hostingeru"
+      "subCat": "Instalacija Hostinger stranice"
     },
     {
-      "name": "Lebdeći gumb za sviđanja",
+      "name": "Plutajući gumb za lajkove",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Lebdeća sviđanja na Hostingeru"
+      "subCat": "Hostinger plutajući lajkovi"
+    },
+    {
+      "name": "Dodajte ankete na svoju Hostinger stranicu",
+      "file": "hostinger-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

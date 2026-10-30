@@ -24,7 +24,7 @@
       "subCat": "Instalacja witryny członkowskiej GoHighLevel"
     },
     {
-      "name": "Pomyślna instalacja witryny członkowskiej",
+      "name": "Sukces witryny członkowskiej",
       "file": "gohighlevel-member-site-success.md",
       "subCat": "Instalacja witryny członkowskiej GoHighLevel"
     },
@@ -34,7 +34,7 @@
       "subCat": "Instalacja witryny członkowskiej GoHighLevel"
     },
     {
-      "name": "Dostosowywanie witryny członkowskiej",
+      "name": "Dostosowanie witryny członkowskiej",
       "file": "gohighlevel-member-site-customize.md",
       "subCat": "Instalacja witryny członkowskiej GoHighLevel"
     },
@@ -49,7 +49,7 @@
       "subCat": "Instalacja witryny GoHighLevel"
     },
     {
-      "name": "Pomyślna instalacja witryny",
+      "name": "Sukces witryny",
       "file": "gohighlevel-site-success.md",
       "subCat": "Instalacja witryny GoHighLevel"
     },
@@ -59,9 +59,14 @@
       "subCat": "Instalacja witryny GoHighLevel"
     },
     {
-      "name": "Dostosowywanie witryny",
+      "name": "Dostosowanie witryny",
       "file": "gohighlevel-site-customize.md",
       "subCat": "Instalacja witryny GoHighLevel"
+    },
+    {
+      "name": "Dodaj ankiety do swojej witryny GoHighLevel",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

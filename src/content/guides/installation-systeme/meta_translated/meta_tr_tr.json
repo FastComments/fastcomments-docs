@@ -1,20 +1,20 @@
 {
   "name": "Systeme.io Kurulumu",
-  "pageHeader": "Systeme.io Bloguna Yorum Ekleme",
+  "pageHeader": "Systeme.io Bloguna Yorum Ekle",
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Blog Tema Şablonunu Açın",
+      "name": "Adım 1: Blog Tema Şablonunu Aç",
       "file": "systeme-step-1.md",
       "subCat": "Systeme.io Kurulumu"
     },
     {
-      "name": "Adım 2: FastComments.com Kodunu Ekleyin",
+      "name": "Adım 2: FastComments.com Kodunu Ekle",
       "file": "systeme-step-2.md",
       "subCat": "Systeme.io Kurulumu"
     },
     {
-      "name": "Başarıyla Tamamlandı",
+      "name": "Başarı",
       "file": "systeme-success.md",
       "subCat": "Systeme.io Kurulumu"
     },
@@ -27,6 +27,11 @@
       "name": "Özelleştirme",
       "file": "systeme-customize.md",
       "subCat": "Systeme.io Kurulumu"
+    },
+    {
+      "name": "Systeme.io Blogunuza Anketler Ekleyin",
+      "file": "systeme-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

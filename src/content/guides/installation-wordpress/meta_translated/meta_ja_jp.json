@@ -6,7 +6,7 @@
     {
       "name": "クイックスタート",
       "file": "wordpress-quick-start.md",
-      "subCat": "要約"
+      "subCat": "要点"
     },
     {
       "name": "インストール",
@@ -87,6 +87,11 @@
       "name": "プラグインの無効化とアンインストールの違い",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "プラグインの削除"
+    },
+    {
+      "name": "WordPress サイトに投票機能を追加",
+      "file": "wordpress-polls.md",
+      "subCat": "投票"
     }
   ]
 }

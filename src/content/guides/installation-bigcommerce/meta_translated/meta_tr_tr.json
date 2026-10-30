@@ -1,30 +1,30 @@
 {
   "name": "BigCommerce Kurulumu",
-  "pageHeader": "BigCommerce Sitelerine Yorum Ekleme",
+  "pageHeader": "BigCommerce Sitelerine Yorum Ekle",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "1. Adım: Temanızı Hazırlayın",
+      "name": "Adım Bir: Temanızı Hazırlayın",
       "file": "bigcommerce-step-1.md",
       "subCat": "BigCommerce Kurulumu"
     },
     {
-      "name": "2. Adım: Doğru Şablonu Düzenleyin",
+      "name": "Adım İki: Doğru Şablonu Düzenleyin",
       "file": "bigcommerce-step-2.md",
       "subCat": "BigCommerce Kurulumu"
     },
     {
-      "name": "3. Adım: Widget Kodunu Ekleyin",
+      "name": "Adım Üç: Widget Kodunu Ekleyin",
       "file": "bigcommerce-step-3.md",
       "subCat": "BigCommerce Kurulumu"
     },
     {
-      "name": "4. Adım: Yeni Temayı Etkinleştirin",
+      "name": "Adım Dört: Yeni Temayı Etkinleştirin",
       "file": "bigcommerce-step-4.md",
       "subCat": "BigCommerce Kurulumu"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "bigcommerce-success.md",
       "subCat": "BigCommerce Kurulumu"
     },
@@ -39,9 +39,14 @@
       "subCat": "BigCommerce Kurulumu"
     },
     {
-      "name": "Ekstra: Sayfa Oluşturucu için Kod Parçacığı",
+      "name": "Ekstra: Sayfa Oluşturucu için Kod Parçası",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "Sayfa Oluşturucuyu Kullanma"
+    },
+    {
+      "name": "BigCommerce Mağazanıza Anketler Ekleyin",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

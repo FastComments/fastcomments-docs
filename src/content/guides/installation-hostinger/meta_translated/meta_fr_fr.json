@@ -1,15 +1,15 @@
 {
-  "name": "Installation sur Hostinger",
-  "pageHeader": "Ajouter des commentaires en direct aux sites Hostinger",
+  "name": "Installation Hostinger",
+  "pageHeader": "Ajouter les commentaires en direct aux sites Hostinger",
   "icon": "3rd-party-products/hostinger.png",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Ajouter le widget de code",
+      "name": "Étape 1 : Ajouter le widget de code",
       "file": "hostinger-step-1.md",
       "subCat": "Installation du site Hostinger"
     },
     {
-      "name": "Étape 2 : Ajouter le code",
+      "name": "Étape 2 : Ajouter le code",
       "file": "hostinger-step-2.md",
       "subCat": "Installation du site Hostinger"
     },
@@ -29,9 +29,14 @@
       "subCat": "Installation du site Hostinger"
     },
     {
-      "name": "Bouton flottant « J'aime »",
+      "name": "Bouton de likes flottant",
       "file": "hostinger-floating-likes.md",
-      "subCat": "Boutons « J'aime » flottants Hostinger"
+      "subCat": "Likes flottants Hostinger"
+    },
+    {
+      "name": "Ajouter des sondages à votre site Hostinger",
+      "file": "hostinger-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

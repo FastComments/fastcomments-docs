@@ -1,25 +1,25 @@
 {
   "name": "Framer Kurulumu",
-  "pageHeader": "Framer Sitelerine Canlı Yorum Ekleme",
+  "pageHeader": "Framer Sitelerine Canlı Yorum Ekle",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Düzenleyiciyi Açın",
+      "name": "Adım 1: Düzenleyiciyi Aç",
       "file": "framer-step-1.md",
       "subCat": "Framer Kurulumu"
     },
     {
-      "name": "Adım 2: Gömme Bloğu Ekle",
+      "name": "Adım 2: Gömülü Blok Ekle",
       "file": "framer-step-2.md",
       "subCat": "Framer Kurulumu"
     },
     {
-      "name": "Adım 3: Framer'a Özel FastComments Kodunu Kopyalayın ve Yapıştırın",
+      "name": "Adım 3: Framer'e Özel FastComments Kodunu Kopyala ve Yapıştır",
       "file": "framer-step-3.md",
       "subCat": "Framer Kurulumu"
     },
     {
-      "name": "Adım 4: Widget ve Sayfa Yüksekliğini Ayarlayın",
+      "name": "Adım 4: Widget ve Sayfa Yüksekliğini Ayarla",
       "file": "framer-step-4.md",
       "subCat": "Framer Kurulumu"
     },
@@ -32,6 +32,11 @@
       "name": "Özelleştirme",
       "file": "framer-customize.md",
       "subCat": "Framer Kurulumu"
+    },
+    {
+      "name": "Framer Sitenize Anketler Ekleyin",
+      "file": "framer-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

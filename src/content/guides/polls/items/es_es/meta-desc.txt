@@ -1,0 +1,4 @@
+---
+Añade encuestas en vivo a tus hilos de comentarios. Habilita encuestas, elige quién puede crearlas y votar, establece la privacidad de los votantes y recibe notificaciones a medida que llegan las respuestas.
+
+---

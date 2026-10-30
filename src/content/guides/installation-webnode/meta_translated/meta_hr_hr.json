@@ -29,7 +29,7 @@
       "subCat": "Instalacija Webnodea"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "webnode-domain-errors.md",
       "subCat": "Instalacija Webnodea"
     },
@@ -37,6 +37,11 @@
       "name": "Prilagodba",
       "file": "webnode-customize.md",
       "subCat": "Instalacija Webnodea"
+    },
+    {
+      "name": "Dodajte ankete na svoju Webnode stranicu",
+      "file": "webnode-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

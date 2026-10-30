@@ -1,15 +1,15 @@
 {
   "name": "Инсталиране на Moodle",
-  "pageHeader": "Добавяне на коментари към сайтове на Moodle",
+  "pageHeader": "Добавяне на коментари към Moodle сайтове",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "Бърз старт",
       "file": "moodle-quick-start.md",
-      "subCat": "Накратко"
+      "subCat": "TLDR"
     },
     {
-      "name": "Инсталация",
+      "name": "Инсталиране",
       "file": "moodle-installation.md",
       "subCat": "Инсталиране на плъгин за Moodle"
     },
@@ -24,7 +24,7 @@
       "subCat": "Инсталиране на плъгин за Moodle"
     },
     {
-      "name": "Режими на единен вход (SSO)",
+      "name": "Режими на SSO",
       "file": "moodle-sso-modes.md",
       "subCat": "Инсталиране на плъгин за Moodle"
     },
@@ -42,6 +42,11 @@
       "name": "Грешки в домейна",
       "file": "moodle-domain-errors.md",
       "subCat": "Инсталиране на плъгин за Moodle"
+    },
+    {
+      "name": "Добавяне на анкети към вашия Moodle сайт",
+      "file": "moodle-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Voeg een insluitblok toe",
+      "name": "Stap 1: Voeg een embed-blok toe",
       "file": "webflow-step-1.md",
       "subCat": "Webflow-installatie"
     },
     {
-      "name": "Stap 2: Plak uw FastComments.com-code",
+      "name": "Stap 2: Plak je FastComments.com-code",
       "file": "webflow-step-2.md",
       "subCat": "Webflow-installatie"
     },
@@ -32,6 +32,11 @@
       "name": "Aanpassing",
       "file": "webflow-customize.md",
       "subCat": "Webflow-installatie"
+    },
+    {
+      "name": "Voeg polls toe aan je Webflow-site",
+      "file": "webflow-polls.md",
+      "subCat": "Enquêtes"
     }
   ]
 }

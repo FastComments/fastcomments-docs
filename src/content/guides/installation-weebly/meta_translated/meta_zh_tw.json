@@ -1,6 +1,6 @@
 {
   "name": "Weebly 安裝",
-  "pageHeader": "在 Weebly 網站加入評論",
+  "pageHeader": "在 Weebly 網站上添加評論",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Weebly 安裝"
     },
     {
-      "name": "步驟 2：加入 FastComments.com 代碼",
+      "name": "步驟 2：加入 FastComments.com 程式碼",
       "file": "weebly-step-2.md",
       "subCat": "Weebly 安裝"
     },
@@ -32,6 +32,11 @@
       "name": "自訂",
       "file": "weebly-customize.md",
       "subCat": "Weebly 安裝"
+    },
+    {
+      "name": "在您的 Weebly 網站加入投票",
+      "file": "weebly-polls.md",
+      "subCat": "投票"
     }
   ]
 }

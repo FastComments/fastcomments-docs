@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Ανοίξτε τις ρυθμίσεις του ιστολογίου",
+      "name": "Βήμα 1: Άνοιγμα ρυθμίσεων ιστολογίου",
       "file": "weebly-step-1.md",
       "subCat": "Εγκατάσταση Weebly"
     },
     {
-      "name": "Βήμα 2: Προσθέστε τον κώδικα του FastComments.com",
+      "name": "Βήμα 2: Προσθήκη του κώδικα FastComments.com",
       "file": "weebly-step-2.md",
       "subCat": "Εγκατάσταση Weebly"
     },
     {
-      "name": "Βήμα 3: Δημοσιεύστε!",
+      "name": "Βήμα 3: Δημοσίευση!",
       "file": "weebly-step-3.md",
       "subCat": "Εγκατάσταση Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Προσαρμογή",
       "file": "weebly-customize.md",
       "subCat": "Εγκατάσταση Weebly"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

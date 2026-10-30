@@ -163,7 +163,7 @@
       "subCat": "모양 및 느낌"
     },
     {
-      "name": "GIF 콘텐츠 등급 변경",
+      "name": "GIF의 콘텐츠 등급 변경",
       "file": "gif-rating.md",
       "subCat": "모양 및 느낌"
     },
@@ -250,17 +250,17 @@
     {
       "name": "무한 스크롤 활성화",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "페이지네이션 및 정렬"
+      "subCat": "페이지 매김 및 정렬"
     },
     {
       "name": "기본 정렬 방향 변경",
       "file": "default-sort-direction.md",
-      "subCat": "페이지네이션 및 정렬"
+      "subCat": "페이지 매김 및 정렬"
     },
     {
-      "name": "한 번에 모든 댓글 렌더링 - 페이지네이션 비활성화",
+      "name": "한 번에 모든 댓글 렌더링 - 페이지 매김 비활성화",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "페이지네이션 및 정렬"
+      "subCat": "페이지 매김 및 정렬"
     },
     {
       "name": "답글 박스를 댓글 뒤로 이동",
@@ -303,17 +303,22 @@
       "subCat": "답글 박스"
     },
     {
-      "name": "싱글 사인온 (SSO) 개요",
+      "name": "투표 활성화",
+      "file": "enable-polls.md",
+      "subCat": "답글 박스"
+    },
+    {
+      "name": "단일 로그인(SSO) 개요",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "맞춤 통합 - 보안 싱글 사인온 (SSO)",
+      "name": "맞춤 통합 - 보안 단일 로그인(SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "맞춤 통합 - 간단 싱글 사인온 (SSO)",
+      "name": "맞춤 통합 - 간단한 단일 로그인(SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -328,7 +333,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "싱글 사인온으로 댓글 스레드 보호",
+      "name": "단일 로그인으로 댓글 스레드 보호",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },

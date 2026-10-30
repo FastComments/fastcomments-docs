@@ -1,6 +1,6 @@
 {
   "name": "GoHighLevel 설치",
-  "pageHeader": "GoHighLevel 사이트에 댓글 추가하기",
+  "pageHeader": "GoHighLevel 사이트에 댓글 추가",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
@@ -24,7 +24,7 @@
       "subCat": "GoHighLevel 멤버 사이트 설치"
     },
     {
-      "name": "멤버 사이트 설치 성공",
+      "name": "멤버 사이트 성공",
       "file": "gohighlevel-member-site-success.md",
       "subCat": "GoHighLevel 멤버 사이트 설치"
     },
@@ -39,7 +39,7 @@
       "subCat": "GoHighLevel 멤버 사이트 설치"
     },
     {
-      "name": "1단계: 커스텀 코드 요소 추가",
+      "name": "1단계: 사용자 정의 코드 요소 추가",
       "file": "gohighlevel-site-step-1.md",
       "subCat": "GoHighLevel 사이트 설치"
     },
@@ -49,7 +49,7 @@
       "subCat": "GoHighLevel 사이트 설치"
     },
     {
-      "name": "사이트 설치 성공",
+      "name": "사이트 성공",
       "file": "gohighlevel-site-success.md",
       "subCat": "GoHighLevel 사이트 설치"
     },
@@ -62,6 +62,11 @@
       "name": "사이트 맞춤 설정",
       "file": "gohighlevel-site-customize.md",
       "subCat": "GoHighLevel 사이트 설치"
+    },
+    {
+      "name": "GoHighLevel 사이트에 설문 추가",
+      "file": "gohighlevel-polls.md",
+      "subCat": "설문"
     }
   ]
 }

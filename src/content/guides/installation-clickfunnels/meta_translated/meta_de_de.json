@@ -26,12 +26,17 @@
     {
       "name": "Extra: Code-Snippet für Live-Kommentare",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Code-Snippet für Live-Kommentare"
+      "subCat": "Live-Kommentar-Code-Snippet"
     },
     {
-      "name": "Extra: Kommentare automatisch abspielen",
+      "name": "Extra: Automatisches Abspielen von Kommentaren",
       "file": "clickfunnels-extra-scheduled-comments.md",
-      "subCat": "Kommentare automatisch abspielen"
+      "subCat": "Automatisches Abspielen von Kommentaren"
+    },
+    {
+      "name": "Umfragen zu Ihrem ClickFunnels-Kurs hinzufügen",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

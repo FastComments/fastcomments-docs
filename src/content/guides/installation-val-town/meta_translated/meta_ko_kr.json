@@ -8,7 +8,7 @@
       "subCat": "Val Town 설치"
     },
     {
-      "name": "2단계: 내 계정 사용",
+      "name": "2단계: 자체 계정 사용",
       "file": "val-town-step-2.md",
       "subCat": "Val Town 설치"
     },
@@ -36,6 +36,11 @@
       "name": "도메인 오류",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town 설치"
+    },
+    {
+      "name": "Val Town 앱에 설문 추가",
+      "file": "val-town-polls.md",
+      "subCat": "설문"
     }
   ]
 }

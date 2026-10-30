@@ -1,6 +1,6 @@
 {
   "name": "Встановлення Moodle",
-  "pageHeader": "Додавання коментарів на сайтах Moodle",
+  "pageHeader": "Додати коментарі до сайтів Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
@@ -11,37 +11,42 @@
     {
       "name": "Встановлення",
       "file": "moodle-installation.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
     },
     {
       "name": "Налаштування",
       "file": "moodle-configuration.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
     },
     {
       "name": "Стилі коментування",
       "file": "moodle-commenting-styles.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
     },
     {
-      "name": "Режими єдиного входу (SSO)",
+      "name": "Режими SSO",
       "file": "moodle-sso-modes.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
     },
     {
-      "name": "Параметри сповіщень користувача",
+      "name": "Налаштування сповіщень користувачів",
       "file": "moodle-user-preferences.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
     },
     {
       "name": "Персоналізація",
       "file": "moodle-customize.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
     },
     {
-      "name": "Помилки доменів",
+      "name": "Помилки домену",
       "file": "moodle-domain-errors.md",
-      "subCat": "Встановлення плагіна для Moodle"
+      "subCat": "Встановлення плагіну Moodle"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Moodle",
+      "file": "moodle-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

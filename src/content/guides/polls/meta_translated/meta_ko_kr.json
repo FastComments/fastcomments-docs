@@ -1,0 +1,52 @@
+{
+  "name": "실시간 설문",
+  "pageHeader": "댓글의 실시간 설문",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "실시간 설문이란?",
+      "file": "what-are-polls.md",
+      "subCat": "배경"
+    },
+    {
+      "name": "설문 활성화",
+      "file": "enabling-polls.md",
+      "subCat": "설문 설정"
+    },
+    {
+      "name": "누가 설문을 만들 수 있나요",
+      "file": "who-can-create-polls.md",
+      "subCat": "설문 설정"
+    },
+    {
+      "name": "익명 설문 투표 허용",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "설문 설정"
+    },
+    {
+      "name": "설문 만들기",
+      "file": "creating-a-poll.md",
+      "subCat": "설문 사용"
+    },
+    {
+      "name": "투표 및 실시간 결과",
+      "file": "voting-and-live-results.md",
+      "subCat": "설문 사용"
+    },
+    {
+      "name": "투표자 프라이버시",
+      "file": "poll-voter-privacy.md",
+      "subCat": "설문 사용"
+    },
+    {
+      "name": "설문 알림",
+      "file": "poll-notifications.md",
+      "subCat": "설문 사용"
+    },
+    {
+      "name": "설문 API",
+      "file": "polls-api.md",
+      "subCat": "개발자를 위한"
+    }
+  ]
+}

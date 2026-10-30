@@ -1,0 +1,4 @@
+---
+Gdy FastComments jest już na Twojej stronie GoHighLevel, możesz także uruchamiać ankiety na żywo bezpośrednio w komentarzach. Włącz **Enable Polls** w ustawieniach personalizacji widgetu, a przycisk ankiety pojawi się w pasku narzędzi komentarzy. Ankiety mogą mieć od 2 do 10 opcji, wyniki aktualizują się na żywo dla wszystkich na stronie, a Ty decydujesz, kto może tworzyć ankiety i czy głosowanie wymaga logowania. Nie ma nic więcej do zainstalowania na GoHighLevel.
+
+[Wypróbuj demo ankiet na żywo](https://fastcomments.com/product/live-polls) lub przeczytaj [dokumentację ankiet](/guide-polls.html), aby je skonfigurować.

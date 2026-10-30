@@ -1,30 +1,30 @@
 {
   "name": "Встановлення Webflow",
-  "pageHeader": "Додавання коментарів на сайти Webflow",
+  "pageHeader": "Додати коментарі до сайтів Webflow",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Додайте вбудований блок (Embed)",
+      "name": "Крок 1: Додати блок вбудовування",
       "file": "webflow-step-1.md",
       "subCat": "Встановлення Webflow"
     },
     {
-      "name": "Крок 2: Вставте свій код з FastComments.com",
+      "name": "Крок 2: Вставити ваш код FastComments.com",
       "file": "webflow-step-2.md",
       "subCat": "Встановлення Webflow"
     },
     {
-      "name": "Крок 3: Опублікуйте",
+      "name": "Крок 3: Опублікувати",
       "file": "webflow-step-3.md",
       "subCat": "Встановлення Webflow"
     },
     {
-      "name": "Успішно",
+      "name": "Успіх",
       "file": "webflow-success.md",
       "subCat": "Встановлення Webflow"
     },
     {
-      "name": "Помилки доменів",
+      "name": "Помилки домену",
       "file": "webflow-domain-errors.md",
       "subCat": "Встановлення Webflow"
     },
@@ -32,6 +32,11 @@
       "name": "Налаштування",
       "file": "webflow-customize.md",
       "subCat": "Встановлення Webflow"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Webflow",
+      "file": "webflow-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

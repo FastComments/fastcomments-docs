@@ -1,6 +1,6 @@
 {
   "name": "Установка Weebly",
-  "pageHeader": "Добавление комментариев на сайты Weebly",
+  "pageHeader": "Добавить комментарии на сайты Weebly",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -14,12 +14,12 @@
       "subCat": "Установка Weebly"
     },
     {
-      "name": "Шаг 3: Опубликуйте!",
+      "name": "Шаг 3: Опубликовать!",
       "file": "weebly-step-3.md",
       "subCat": "Установка Weebly"
     },
     {
-      "name": "Готово",
+      "name": "Успех",
       "file": "weebly-success.md",
       "subCat": "Установка Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Настройка",
       "file": "weebly-customize.md",
       "subCat": "Установка Weebly"
+    },
+    {
+      "name": "Добавить опросы на ваш сайт Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

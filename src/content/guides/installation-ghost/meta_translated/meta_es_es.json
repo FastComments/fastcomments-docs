@@ -1,6 +1,6 @@
 {
   "name": "Instalación de Ghost",
-  "pageHeader": "Añadir comentarios en vivo solo para miembros en sitios Ghost",
+  "pageHeader": "Agregar Comentarios en Vivo Solo para Miembros a sitios Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -19,7 +19,7 @@
       "subCat": "Instalación de Ghost"
     },
     {
-      "name": "Paso 4: Abre la plantilla de la publicación",
+      "name": "Paso 4: Abre la plantilla de publicación",
       "file": "ghost-step-4.md",
       "subCat": "Instalación de Ghost"
     },
@@ -52,6 +52,11 @@
       "name": "Personalización",
       "file": "ghost-customize.md",
       "subCat": "Instalación de Ghost"
+    },
+    {
+      "name": "Añadir encuestas a tu sitio Ghost",
+      "file": "ghost-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

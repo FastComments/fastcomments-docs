@@ -1,37 +1,42 @@
 {
-  "name": "Weebly-installatie",
+  "name": "Weebly Installatie",
   "pageHeader": "Reacties toevoegen aan Weebly-sites",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
       "name": "Stap 1: Open bloginstellingen",
       "file": "weebly-step-1.md",
-      "subCat": "Weebly-installatie"
+      "subCat": "Weebly Installatie"
     },
     {
       "name": "Stap 2: Voeg de FastComments.com-code toe",
       "file": "weebly-step-2.md",
-      "subCat": "Weebly-installatie"
+      "subCat": "Weebly Installatie"
     },
     {
       "name": "Stap 3: Publiceer!",
       "file": "weebly-step-3.md",
-      "subCat": "Weebly-installatie"
+      "subCat": "Weebly Installatie"
     },
     {
       "name": "Succes",
       "file": "weebly-success.md",
-      "subCat": "Weebly-installatie"
+      "subCat": "Weebly Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "weebly-domain-errors.md",
-      "subCat": "Weebly-installatie"
+      "subCat": "Weebly Installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "weebly-customize.md",
-      "subCat": "Weebly-installatie"
+      "subCat": "Weebly Installatie"
+    },
+    {
+      "name": "Voeg peilingen toe aan je Weebly-site",
+      "file": "weebly-polls.md",
+      "subCat": "Peilingen"
     }
   ]
 }

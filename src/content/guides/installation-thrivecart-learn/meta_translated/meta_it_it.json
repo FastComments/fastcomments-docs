@@ -1,6 +1,6 @@
 {
   "name": "Installazione di ThriveCart Learn+",
-  "pageHeader": "Aggiungi commenti ai corsi di ThriveCart Learn+",
+  "pageHeader": "Aggiungi commenti ai corsi ThriveCart Learn+",
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
@@ -19,7 +19,7 @@
       "subCat": "Installazione di ThriveCart Learn+"
     },
     {
-      "name": "Errori del dominio",
+      "name": "Errori di dominio",
       "file": "thrivecart-learn-domain-errors.md",
       "subCat": "Installazione di ThriveCart Learn+"
     },
@@ -27,6 +27,11 @@
       "name": "Personalizzazione",
       "file": "thrivecart-learn-customize.md",
       "subCat": "Installazione di ThriveCart Learn+"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo corso ThriveCart Learn+",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

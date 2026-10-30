@@ -1,25 +1,25 @@
 {
   "name": "Εγκατάσταση BigCommerce",
-  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους BigCommerce",
+  "pageHeader": "Προσθήκη Σχολίων σε Ιστότοπους BigCommerce",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Προετοιμάστε το θέμα σας",
+      "name": "Βήμα 1: Προετοιμάστε το Θέμα σας",
       "file": "bigcommerce-step-1.md",
       "subCat": "Εγκατάσταση BigCommerce"
     },
     {
-      "name": "Βήμα 2: Επεξεργαστείτε το σωστό πρότυπο",
+      "name": "Βήμα 2: Επεξεργαστείτε το Σωστό Πρότυπο",
       "file": "bigcommerce-step-2.md",
       "subCat": "Εγκατάσταση BigCommerce"
     },
     {
-      "name": "Βήμα 3: Προσθέστε τον κώδικα του widget",
+      "name": "Βήμα 3: Προσθέστε τον Κώδικα του Widget",
       "file": "bigcommerce-step-3.md",
       "subCat": "Εγκατάσταση BigCommerce"
     },
     {
-      "name": "Βήμα 4: Ενεργοποιήστε το νέο θέμα",
+      "name": "Βήμα 4: Ενεργοποιήστε το Νέο Θέμα",
       "file": "bigcommerce-step-4.md",
       "subCat": "Εγκατάσταση BigCommerce"
     },
@@ -29,7 +29,7 @@
       "subCat": "Εγκατάσταση BigCommerce"
     },
     {
-      "name": "Σφάλματα τομέα",
+      "name": "Σφάλματα Τομέα",
       "file": "bigcommerce-domain-errors.md",
       "subCat": "Εγκατάσταση BigCommerce"
     },
@@ -39,9 +39,14 @@
       "subCat": "Εγκατάσταση BigCommerce"
     },
     {
-      "name": "Επιπλέον: Απόσπασμα κώδικα για τον κατασκευαστή σελίδων",
+      "name": "Επιπλέον: Απόσπασμα Κώδικα για το Page Builder",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Χρήση του κατασκευαστή σελίδων"
+      "subCat": "Χρήση του Page Builder"
+    },
+    {
+      "name": "Προσθήκη Δημοσκοπήσεων στο Κατάστημά σας BigCommerce",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "name": "Уживо анкете",
+  "pageHeader": "Уживо анкете у коментарима",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Шта су уживе анкете",
+      "file": "what-are-polls.md",
+      "subCat": "Позадина"
+    },
+    {
+      "name": "Омогућавање анкета",
+      "file": "enabling-polls.md",
+      "subCat": "Подешавање анкета"
+    },
+    {
+      "name": "Ко може креирати анкете",
+      "file": "who-can-create-polls.md",
+      "subCat": "Подешавање анкета"
+    },
+    {
+      "name": "Омогућавање анонимних гласова у анкетама",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Подешавање анкета"
+    },
+    {
+      "name": "Креирање анкете",
+      "file": "creating-a-poll.md",
+      "subCat": "Коришћење анкета"
+    },
+    {
+      "name": "Гласање и уживи резултати",
+      "file": "voting-and-live-results.md",
+      "subCat": "Коришћење анкета"
+    },
+    {
+      "name": "Приватност гласача",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Коришћење анкета"
+    },
+    {
+      "name": "Обавештења о анкетама",
+      "file": "poll-notifications.md",
+      "subCat": "Коришћење анкета"
+    },
+    {
+      "name": "API за анкете",
+      "file": "polls-api.md",
+      "subCat": "За програмере"
+    }
+  ]
+}

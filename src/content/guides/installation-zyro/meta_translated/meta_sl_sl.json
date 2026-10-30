@@ -1,37 +1,42 @@
 {
   "name": "Namestitev Zyro",
-  "pageHeader": "Dodajte komentiranje v živo na Zyro spletne strani",
+  "pageHeader": "Dodajanje živih komentarjev na Zyro strani",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodajte pripomoček za kodo",
+      "name": "Korak 1: Dodaj gradnik kode",
       "file": "zyro-step-1.md",
-      "subCat": "Namestitev Zyro spletnega mesta"
+      "subCat": "Namestitev Zyro strani"
     },
     {
-      "name": "Korak 2: Dodajte kodo",
+      "name": "Korak 2: Dodaj kodo",
       "file": "zyro-step-2.md",
-      "subCat": "Namestitev Zyro spletnega mesta"
+      "subCat": "Namestitev Zyro strani"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "zyro-site-success.md",
-      "subCat": "Namestitev Zyro spletnega mesta"
+      "subCat": "Namestitev Zyro strani"
     },
     {
       "name": "Napake domene spletnega mesta",
       "file": "zyro-site-domain-errors.md",
-      "subCat": "Namestitev Zyro spletnega mesta"
+      "subCat": "Namestitev Zyro strani"
     },
     {
-      "name": "Prilagoditev spletnega mesta",
+      "name": "Prilagajanje strani",
       "file": "zyro-site-customize.md",
-      "subCat": "Namestitev Zyro spletnega mesta"
+      "subCat": "Namestitev Zyro strani"
     },
     {
-      "name": "Plavajoči gumb za všečke",
+      "name": "Plavajoči gumb všečkov",
       "file": "zyro-floating-likes.md",
       "subCat": "Zyro plavajoči všečki"
+    },
+    {
+      "name": "Dodaj ankete na svojo Zyro stran",
+      "file": "zyro-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

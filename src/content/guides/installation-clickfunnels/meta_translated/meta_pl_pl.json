@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
-      "name": "Krok pierwszy: Znajdź szablon",
+      "name": "Krok pierwszy: znajdź szablon",
       "file": "clickfunnels-step-1.md",
       "subCat": "Instalacja ClickFunnels"
     },
     {
-      "name": "Krok drugi: Dodaj kod",
+      "name": "Krok drugi: dodaj kod",
       "file": "clickfunnels-step-2.md",
       "subCat": "Instalacja ClickFunnels"
     },
@@ -19,12 +19,12 @@
       "subCat": "Instalacja ClickFunnels"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "clickfunnels-customize.md",
       "subCat": "Instalacja ClickFunnels"
     },
     {
-      "name": "Dodatkowo: fragment kodu do komentarzy na żywo",
+      "name": "Dodatkowo: fragment kodu do komentowania na żywo",
       "file": "clickfunnels-extra-live-commenting.md",
       "subCat": "Fragment kodu do komentowania na żywo"
     },
@@ -32,6 +32,11 @@
       "name": "Dodatkowo: automatyczne odtwarzanie komentarzy",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Automatyczne odtwarzanie komentarzy"
+    },
+    {
+      "name": "Dodaj ankiety do swojego kursu ClickFunnels",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

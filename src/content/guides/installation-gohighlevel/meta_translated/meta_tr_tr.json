@@ -24,7 +24,7 @@
       "subCat": "GoHighLevel Üye Sitesi Kurulumu"
     },
     {
-      "name": "Üye Sitesi Kurulumu Başarılı",
+      "name": "Üye Sitesi Başarısı",
       "file": "gohighlevel-member-site-success.md",
       "subCat": "GoHighLevel Üye Sitesi Kurulumu"
     },
@@ -34,7 +34,7 @@
       "subCat": "GoHighLevel Üye Sitesi Kurulumu"
     },
     {
-      "name": "Üye Sitesi Özelleştirmesi",
+      "name": "Üye Sitesi Özelleştirme",
       "file": "gohighlevel-member-site-customize.md",
       "subCat": "GoHighLevel Üye Sitesi Kurulumu"
     },
@@ -49,7 +49,7 @@
       "subCat": "GoHighLevel Site Kurulumu"
     },
     {
-      "name": "Site Kurulumu Başarılı",
+      "name": "Site Başarısı",
       "file": "gohighlevel-site-success.md",
       "subCat": "GoHighLevel Site Kurulumu"
     },
@@ -59,9 +59,14 @@
       "subCat": "GoHighLevel Site Kurulumu"
     },
     {
-      "name": "Site Özelleştirmesi",
+      "name": "Site Özelleştirme",
       "file": "gohighlevel-site-customize.md",
       "subCat": "GoHighLevel Site Kurulumu"
+    },
+    {
+      "name": "GoHighLevel Sitenize Anketler Ekleyin",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

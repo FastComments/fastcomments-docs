@@ -7,6 +7,11 @@
       "name": "WordPress 플러그인 설정",
       "file": "woocommerce.md",
       "subCat": "WooCommerce 설치"
+    },
+    {
+      "name": "WooCommerce 스토어에 설문조사 추가",
+      "file": "woocommerce-polls.md",
+      "subCat": "설문조사"
     }
   ]
 }

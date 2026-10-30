@@ -29,7 +29,7 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Samo za članove (SSO)",
+      "name": "Stranice samo za članove (SSO)",
       "file": "wordpress-membership-sites.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -54,7 +54,7 @@
       "subCat": "Instalacija WordPressa"
     },
     {
-      "name": "Instalacija WordPressa <> Komunikacija s FastComment poslužiteljem",
+      "name": "Instalacija WordPressa <> Komunikacija s FastComment serverom",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacija WordPressa"
     },
@@ -87,6 +87,11 @@
       "name": "Deaktiviranje vs deinstalacija dodatka",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Uklanjanje dodatka"
+    },
+    {
+      "name": "Dodajte ankete na svoju WordPress stranicu",
+      "file": "wordpress-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

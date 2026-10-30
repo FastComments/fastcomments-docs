@@ -1,10 +1,10 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "在 Bubble.io 网站添加实时评论",
+  "pageHeader": "为 Bubble.io 网站添加实时评论",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
-      "name": "1. 添加 HTML 区块",
+      "name": "1. 添加 HTML 块",
       "file": "bubble-io-step-1.md",
       "subCat": "安装"
     },
@@ -35,6 +35,11 @@
     {
       "name": "域名错误",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "为您的 Bubble.io 应用添加投票",
+      "file": "bubble-io-polls.md",
+      "subCat": "投票"
     }
   ]
 }

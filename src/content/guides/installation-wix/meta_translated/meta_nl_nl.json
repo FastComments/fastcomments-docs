@@ -9,7 +9,7 @@
       "subCat": "Wix-installatie"
     },
     {
-      "name": "Stap 2: Voeg een insluitblok toe",
+      "name": "Stap 2: Voeg een embed-blok toe",
       "file": "wix-step-2.md",
       "subCat": "Wix-installatie"
     },
@@ -19,24 +19,29 @@
       "subCat": "Wix-installatie"
     },
     {
-      "name": "Stap 4: Grootte aanpassen",
+      "name": "Stap 4: Formaat aanpassen",
       "file": "wix-step-4.md",
       "subCat": "Wix-installatie"
     },
     {
-      "name": "Stap 5: Unieke reactiedraden",
+      "name": "Stap 5: Unieke discussies",
       "file": "wix-step-5.md",
       "subCat": "Wix-installatie"
     },
     {
-      "name": "Stap 6: Vier het",
+      "name": "Stap 6: Vier",
       "file": "wix-step-6.md",
       "subCat": "Wix-installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "wix-customize.md",
       "subCat": "Wix-installatie"
+    },
+    {
+      "name": "Voeg peilingen toe aan je Wix-site",
+      "file": "wix-polls.md",
+      "subCat": "Peilingen"
     }
   ]
 }

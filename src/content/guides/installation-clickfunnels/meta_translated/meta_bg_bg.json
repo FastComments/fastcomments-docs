@@ -1,6 +1,6 @@
 {
   "name": "Инсталиране на ClickFunnels",
-  "pageHeader": "Добавяне на жив чат към курсовете в ClickFunnels",
+  "pageHeader": "Добавете жив чат към курсовете в ClickFunnels",
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
@@ -14,24 +14,29 @@
       "subCat": "Инсталиране на ClickFunnels"
     },
     {
-      "name": "Проблеми с домейна",
+      "name": "Грешки в домейна",
       "file": "clickfunnels-domain-errors.md",
       "subCat": "Инсталиране на ClickFunnels"
     },
     {
-      "name": "Персонализация",
+      "name": "Персонализиране",
       "file": "clickfunnels-customize.md",
       "subCat": "Инсталиране на ClickFunnels"
     },
     {
-      "name": "Допълнително: Кодов фрагмент за коментиране на живо",
+      "name": "Допълнително: Фрагмент от код за живи коментари",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "Кодов фрагмент за коментиране на живо"
+      "subCat": "Фрагмент от код за живи коментари"
     },
     {
       "name": "Допълнително: Автоматично възпроизвеждане на коментари",
       "file": "clickfunnels-extra-scheduled-comments.md",
       "subCat": "Автоматично възпроизвеждане на коментари"
+    },
+    {
+      "name": "Добавете анкети към вашия курс в ClickFunnels",
+      "file": "clickfunnels-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

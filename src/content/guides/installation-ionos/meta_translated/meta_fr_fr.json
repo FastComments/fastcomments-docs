@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Ajouter un formulaire de contact",
+      "name": "Étape 1 : Ajouter un formulaire de contact",
       "file": "ionos-step-1.md",
       "subCat": "Installation Ionos"
     },
     {
-      "name": "Étape 2 : Ajouter le code FastComments.com",
+      "name": "Étape 2 : Ajouter le code FastComments.com",
       "file": "ionos-step-2.md",
       "subCat": "Installation Ionos"
     },
     {
-      "name": "Étape 3 : Publier",
+      "name": "Étape 3 : Publier",
       "file": "ionos-step-3.md",
       "subCat": "Installation Ionos"
     },
@@ -32,6 +32,11 @@
       "name": "Personnalisation",
       "file": "ionos-customize.md",
       "subCat": "Installation Ionos"
+    },
+    {
+      "name": "Ajouter des sondages à votre site Ionos",
+      "file": "ionos-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

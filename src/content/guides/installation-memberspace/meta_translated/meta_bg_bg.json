@@ -9,7 +9,7 @@
       "subCat": "Инсталиране на MemberSpace"
     },
     {
-      "name": "Грешки с домейна",
+      "name": "Грешки в домейна",
       "file": "memberspace-domain-errors.md",
       "subCat": "Инсталиране на MemberSpace"
     },
@@ -17,6 +17,11 @@
       "name": "Персонализиране",
       "file": "memberspace-customize.md",
       "subCat": "Инсталиране на MemberSpace"
+    },
+    {
+      "name": "Добавяне на анкети към вашия MemberSpace сайт",
+      "file": "memberspace-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

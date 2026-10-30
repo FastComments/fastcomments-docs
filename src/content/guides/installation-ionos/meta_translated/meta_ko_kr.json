@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "1단계: 문의 양식 추가",
+      "name": "1단계: 연락처 양식 추가",
       "file": "ionos-step-1.md",
       "subCat": "Ionos 설치"
     },
@@ -14,7 +14,7 @@
       "subCat": "Ionos 설치"
     },
     {
-      "name": "3단계: 게시하기",
+      "name": "3단계: 게시",
       "file": "ionos-step-3.md",
       "subCat": "Ionos 설치"
     },
@@ -32,6 +32,11 @@
       "name": "맞춤 설정",
       "file": "ionos-customize.md",
       "subCat": "Ionos 설치"
+    },
+    {
+      "name": "Ionos 사이트에 설문 추가",
+      "file": "ionos-polls.md",
+      "subCat": "설문"
     }
   ]
 }

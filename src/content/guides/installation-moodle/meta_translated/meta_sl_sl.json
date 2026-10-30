@@ -1,47 +1,52 @@
 {
-  "name": "Namestitev Moodla",
-  "pageHeader": "Dodajanje komentarjev na Moodle spletna mesta",
+  "name": "Namestitev Moodle",
+  "pageHeader": "Dodajanje komentarjev na Moodle strani",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Hitri začetek",
+      "name": "Hiter začetek",
       "file": "moodle-quick-start.md",
-      "subCat": "Na kratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Namestitev",
       "file": "moodle-installation.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
     },
     {
       "name": "Konfiguracija",
       "file": "moodle-configuration.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
     },
     {
       "name": "Slogi komentiranja",
       "file": "moodle-commenting-styles.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
     },
     {
-      "name": "Načini enotne prijave (SSO)",
+      "name": "Načini SSO",
       "file": "moodle-sso-modes.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
     },
     {
       "name": "Nastavitve obvestil uporabnika",
       "file": "moodle-user-preferences.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
     },
     {
-      "name": "Prilagoditev",
+      "name": "Prilagajanje",
       "file": "moodle-customize.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
     },
     {
       "name": "Napake domene",
       "file": "moodle-domain-errors.md",
-      "subCat": "Namestitev vtičnika za Moodle"
+      "subCat": "Namestitev vtičnika Moodle"
+    },
+    {
+      "name": "Dodaj ankete na vašo Moodle stran",
+      "file": "moodle-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

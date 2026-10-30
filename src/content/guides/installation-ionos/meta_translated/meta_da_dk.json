@@ -1,37 +1,42 @@
 {
-  "name": "Ionos-installation",
+  "name": "Ionos Installation",
   "pageHeader": "Tilføj kommentarer til Ionos-websteder",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
       "name": "Trin 1: Tilføj en kontaktformular",
       "file": "ionos-step-1.md",
-      "subCat": "Ionos-installation"
+      "subCat": "Ionos Installation"
     },
     {
       "name": "Trin 2: Tilføj FastComments.com-kode",
       "file": "ionos-step-2.md",
-      "subCat": "Ionos-installation"
+      "subCat": "Ionos Installation"
     },
     {
       "name": "Trin 3: Udgiv",
       "file": "ionos-step-3.md",
-      "subCat": "Ionos-installation"
+      "subCat": "Ionos Installation"
     },
     {
       "name": "Succes",
       "file": "ionos-success.md",
-      "subCat": "Ionos-installation"
+      "subCat": "Ionos Installation"
     },
     {
       "name": "Domænefejl",
       "file": "ionos-domain-errors.md",
-      "subCat": "Ionos-installation"
+      "subCat": "Ionos Installation"
     },
     {
       "name": "Tilpasning",
       "file": "ionos-customize.md",
-      "subCat": "Ionos-installation"
+      "subCat": "Ionos Installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Ionos-side",
+      "file": "ionos-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

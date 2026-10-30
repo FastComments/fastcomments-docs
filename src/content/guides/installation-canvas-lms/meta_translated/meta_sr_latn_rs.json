@@ -1,37 +1,37 @@
 {
-  "name": "Instalacija Canvas LMS-a",
-  "pageHeader": "Dodavanje komentara u Canvas LMS putem LTI 1.3",
+  "name": "Instalacija Canvas LMS",
+  "pageHeader": "Dodajte komentare u Canvas LMS putem LTI 1.3",
   "icon": "3rd-party-products/canvas-lms.svg",
   "itemsOrdered": [
     {
-      "name": "Cene",
+      "name": "Cenovnik",
       "file": "canvas-lms-plans.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Brzi početak",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
-      "name": "Podešavanje FastComments kontrolne table",
+      "name": "Postavljanje FastComments kontrolne table",
       "file": "canvas-lms-dashboard-setup.md",
-      "subCat": "Podešavanje LTI 1.3 za Canvas"
+      "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
-      "name": "Razvojni ključ za Canvas",
+      "name": "Canvas ključ za programere",
       "file": "canvas-lms-developer-key.md",
-      "subCat": "Podešavanje LTI 1.3 za Canvas"
+      "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
-      "name": "Dovršite povezivanje",
+      "name": "Završite povezivanje",
       "file": "canvas-lms-complete-connection.md",
-      "subCat": "Podešavanje LTI 1.3 za Canvas"
+      "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
-      "name": "Dodajte u kurs",
+      "name": "Dodaj u kurs",
       "file": "canvas-lms-add-to-course.md",
-      "subCat": "Podešavanje LTI 1.3 za Canvas"
+      "subCat": "Postavljanje Canvas LTI 1.3"
     },
     {
       "name": "Stilovi komentarisanja",
@@ -51,7 +51,12 @@
     {
       "name": "Greške domena",
       "file": "canvas-lms-domain-errors.md",
-      "subCat": "Otklanjanje problema"
+      "subCat": "Otklanjanje grešaka"
+    },
+    {
+      "name": "Dodajte ankete u vaš Canvas kurs",
+      "file": "canvas-lms-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -9,7 +9,7 @@
       "subCat": "MemberSpace 安装"
     },
     {
-      "name": "域名错误",
+      "name": "域错误",
       "file": "memberspace-domain-errors.md",
       "subCat": "MemberSpace 安装"
     },
@@ -17,6 +17,11 @@
       "name": "自定义",
       "file": "memberspace-customize.md",
       "subCat": "MemberSpace 安装"
+    },
+    {
+      "name": "在您的 MemberSpace 网站上添加投票",
+      "file": "memberspace-polls.md",
+      "subCat": "投票"
     }
   ]
 }

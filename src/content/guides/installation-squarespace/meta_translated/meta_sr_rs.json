@@ -1,67 +1,67 @@
 {
-  "name": "Инсталација Squarespace-а",
-  "pageHeader": "Додавање коментара на Squarespace сајтове",
+  "name": "Инсталација Squarespace",
+  "pageHeader": "Додајте коментаре на Squarespace сајтове",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Додавање коментара у реалном времену на ваш блог",
+      "name": "Додавање живих коментара на ваш блог",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Додавање коментара на ваш блог"
+      "subCat": "Додајте коментаре на ваш блог"
     },
     {
       "name": "Корак 1: Отворите подешавања блога",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Додавање коментара на ваш блог"
+      "subCat": "Додајте коментаре на ваш блог"
     },
     {
       "name": "Корак 2: Налепите ваш FastComments.com код",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Додавање коментара на ваш блог"
+      "subCat": "Додајте коментаре на ваш блог"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "squarespace-blog-success.md",
-      "subCat": "Додавање коментара на ваш блог"
+      "subCat": "Додајте коментаре на ваш блог"
     },
     {
-      "name": "Додавање коментара у реалном времену на све странице",
+      "name": "Додајте живе коментаре на све странице",
       "file": "squarespace-pages-all-pages-step-0.md",
-      "subCat": "Додавање коментара на све странице"
+      "subCat": "Додајте коментаре на све странице"
     },
     {
-      "name": "Корак 1: Отворите алате за програмере",
+      "name": "Корак 1: Отворите алате за развој",
       "file": "squarespace-pages-all-pages-step-1.md",
-      "subCat": "Додавање коментара на све странице"
+      "subCat": "Додајте коментаре на све странице"
     },
     {
       "name": "Корак 2: Налепите ваш FastComments.com код",
       "file": "squarespace-pages-all-pages-step-2.md",
-      "subCat": "Додавање коментара на све странице"
+      "subCat": "Додајте коментаре на све странице"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "squarespace-pages-all-pages-success.md",
-      "subCat": "Додавање коментара на све странице"
+      "subCat": "Додајте коментаре на све странице"
     },
     {
-      "name": "Додавање коментара у реалном времену на одређену страницу",
+      "name": "Додајте живи коментар на одређену страницу",
       "file": "squarespace-pages-specific-page-step-0.md",
-      "subCat": "Додавање коментара на одређену страницу"
+      "subCat": "Додајте коментаре на одређену страницу"
     },
     {
       "name": "Корак 1: Додајте блок кода",
       "file": "squarespace-pages-specific-page-step-1.md",
-      "subCat": "Додавање коментара на одређену страницу"
+      "subCat": "Додајте коментаре на одређену страницу"
     },
     {
       "name": "Корак 2: Налепите ваш FastComments.com код",
       "file": "squarespace-pages-specific-page-step-2.md",
-      "subCat": "Додавање коментара на одређену страницу"
+      "subCat": "Додајте коментаре на одређену страницу"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "squarespace-pages-specific-page-success.md",
-      "subCat": "Додавање коментара на одређену страницу"
+      "subCat": "Додајте коментаре на одређену страницу"
     },
     {
       "name": "Грешке домена",
@@ -72,6 +72,11 @@
       "name": "Прилагођавање",
       "file": "squarespace-customize.md",
       "subCat": "Следећи кораци за Squarespace"
+    },
+    {
+      "name": "Додајте анкете на ваш Squarespace сајт",
+      "file": "squarespace-polls.md",
+      "subCat": "Анкете"
     }
   ]
 }

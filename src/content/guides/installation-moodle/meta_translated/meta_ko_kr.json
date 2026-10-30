@@ -6,7 +6,7 @@
     {
       "name": "빠른 시작",
       "file": "moodle-quick-start.md",
-      "subCat": "요약"
+      "subCat": "TLDR"
     },
     {
       "name": "설치",
@@ -42,6 +42,11 @@
       "name": "도메인 오류",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle 플러그인 설치"
+    },
+    {
+      "name": "Moodle 사이트에 설문 추가",
+      "file": "moodle-polls.md",
+      "subCat": "설문"
     }
   ]
 }

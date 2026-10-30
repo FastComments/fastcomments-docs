@@ -1,6 +1,6 @@
 {
   "name": "Typeflo.io",
-  "pageHeader": "Dodajte komentare uživo na Typeflo.io blogove",
+  "pageHeader": "Dodajte live komentarisanje na Typeflo.io blogove",
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Instalacija"
     },
     {
-      "name": "2. Umetnite kod",
+      "name": "2. Ubacite kod",
       "file": "typeflo-step-2.md",
       "subCat": "Instalacija"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "typeflo-success.md",
       "subCat": "Instalacija"
     },
@@ -25,6 +25,11 @@
     {
       "name": "Greške domena",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Dodajte ankete na svoj Typeflo.io blog",
+      "file": "typeflo-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

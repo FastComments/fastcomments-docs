@@ -9,7 +9,7 @@
       "subCat": "Shopify 설치"
     },
     {
-      "name": "블로그 게시물 및 상품에 댓글 추가",
+      "name": "블로그 게시물 및 제품에 댓글 추가",
       "file": "shopify-add-comments.md",
       "subCat": "Shopify 설치"
     },
@@ -59,9 +59,14 @@
       "subCat": "Shopify 설치"
     },
     {
-      "name": "수동 설치(고급)",
+      "name": "수동 설치 (고급)",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify 설치"
+    },
+    {
+      "name": "Shopify 스토어에 설문 조사 추가",
+      "file": "shopify-polls.md",
+      "subCat": "설문 조사"
     }
   ]
 }

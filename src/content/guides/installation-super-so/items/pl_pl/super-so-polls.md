@@ -1,0 +1,4 @@
+---
+Po umieszczeniu FastComments na swojej stronie Super.so, możesz także uruchamiać ankiety na żywo bezpośrednio w komentarzach. Włącz **Enable Polls** w ustawieniach dostosowywania widgetu i przycisk ankiety pojawi się w pasku narzędzi komentarza. Ankiety przyjmują od 2 do 10 opcji, wyniki aktualizują się na żywo dla wszystkich na stronie, a Ty wybierasz, kto może tworzyć ankiety i czy głosowanie wymaga logowania. Nie ma nic więcej do zainstalowania na Super.so.
+
+[Wypróbuj demo ankiet na żywo](https://fastcomments.com/product/live-polls) lub przeczytaj [dokumentację ankiet](/guide-polls.html), aby je skonfigurować.

@@ -1,6 +1,6 @@
 {
   "name": "Инсталиране на Val Town",
-  "pageHeader": "Добавете живо коментиране към приложенията на Val Town",
+  "pageHeader": "Добавете живо коментиране към приложенията Val Town",
   "itemsOrdered": [
     {
       "name": "Стъпка 1: Добавете уиджета",
@@ -36,6 +36,11 @@
       "name": "Грешки в домейна",
       "file": "val-town-domain-errors.md",
       "subCat": "Инсталиране на Val Town"
+    },
+    {
+      "name": "Добавете анкети към вашето приложение Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

@@ -54,7 +54,7 @@
       "subCat": "Instalacija WordPress-a"
     },
     {
-      "name": "Komunikacija instalacije WordPress-a i FastComment servera",
+      "name": "Instalacija WordPress-a <> Komunikacija sa FastComment serverom",
       "file": "wordpress-server-communication.md",
       "subCat": "Instalacija WordPress-a"
     },
@@ -81,12 +81,17 @@
     {
       "name": "Premeštanje vaših komentara na novi sajt",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "Premeštanje sa WordPress-a"
+      "subCat": "Prelazak sa WordPress-a"
     },
     {
       "name": "Deaktiviranje vs deinstaliranje plugina",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Uklanjanje plugina"
+    },
+    {
+      "name": "Dodajte ankete na vaš WordPress sajt",
+      "file": "wordpress-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

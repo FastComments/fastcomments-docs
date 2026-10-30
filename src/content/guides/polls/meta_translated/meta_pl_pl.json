@@ -1,0 +1,52 @@
+{
+  "name": "Ankiety na żywo",
+  "pageHeader": "Ankiety na żywo w komentarzach",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Czym są ankiety na żywo",
+      "file": "what-are-polls.md",
+      "subCat": "Tło"
+    },
+    {
+      "name": "Włączanie ankiet",
+      "file": "enabling-polls.md",
+      "subCat": "Konfigurowanie ankiet"
+    },
+    {
+      "name": "Kto może tworzyć ankiety",
+      "file": "who-can-create-polls.md",
+      "subCat": "Konfigurowanie ankiet"
+    },
+    {
+      "name": "Zezwalanie na anonimowe głosy w ankietach",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Konfigurowanie ankiet"
+    },
+    {
+      "name": "Tworzenie ankiety",
+      "file": "creating-a-poll.md",
+      "subCat": "Używanie ankiet"
+    },
+    {
+      "name": "Głosowanie i wyniki na żywo",
+      "file": "voting-and-live-results.md",
+      "subCat": "Używanie ankiet"
+    },
+    {
+      "name": "Prywatność głosujących",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Używanie ankiet"
+    },
+    {
+      "name": "Powiadomienia o ankietach",
+      "file": "poll-notifications.md",
+      "subCat": "Używanie ankiet"
+    },
+    {
+      "name": "API ankiet",
+      "file": "polls-api.md",
+      "subCat": "Dla programistów"
+    }
+  ]
+}

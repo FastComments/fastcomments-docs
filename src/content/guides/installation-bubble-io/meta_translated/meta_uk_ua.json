@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Додати живе коментування на сайти Bubble.io",
+  "pageHeader": "Додайте живі коментарі до сайтів Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -33,8 +33,13 @@
       "file": "bubble-io-customize.md"
     },
     {
-      "name": "Помилки доменів",
+      "name": "Помилки домену",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Додати опитування до вашого додатку Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

@@ -19,12 +19,12 @@
       "subCat": "Installation de Drupal"
     },
     {
-      "name": "Blocs de widgets",
+      "name": "Blocs de widget",
       "file": "drupal-widget-blocks.md",
       "subCat": "Installation de Drupal"
     },
     {
-      "name": "Champs des types de contenu",
+      "name": "Champs de type de contenu",
       "file": "drupal-content-type-fields.md",
       "subCat": "Installation de Drupal"
     },
@@ -44,7 +44,7 @@
       "subCat": "Installation de Drupal"
     },
     {
-      "name": "Résidence des données dans l'UE",
+      "name": "Résidence des données UE",
       "file": "drupal-eu-data-residency.md",
       "subCat": "Installation de Drupal"
     },
@@ -54,9 +54,14 @@
       "subCat": "Installation de Drupal"
     },
     {
-      "name": "Prérequis",
+      "name": "Exigences",
       "file": "drupal-requirements.md",
       "subCat": "Installation de Drupal"
+    },
+    {
+      "name": "Ajouter des sondages à votre site Drupal",
+      "file": "drupal-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

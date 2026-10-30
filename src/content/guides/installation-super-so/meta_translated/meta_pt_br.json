@@ -1,20 +1,20 @@
 {
   "name": "Instalação do Super.so",
-  "pageHeader": "Adicione discussões ao vivo em sites do Super.so",
+  "pageHeader": "Adicionar Discussões ao Vivo aos Sites Super.so",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Abra as configurações",
+      "name": "Etapa 1: Abrir Configurações",
       "file": "super-so-learn-step-1.md",
       "subCat": "Instalação do Super.so"
     },
     {
-      "name": "Passo 2: Adicione o código pronto",
+      "name": "Etapa 2: Adicionar Código Pré-fabricado",
       "file": "super-so-learn-step-2.md",
       "subCat": "Instalação do Super.so"
     },
     {
-      "name": "Veja também: widget de comentários padrão",
+      "name": "Veja Também: Widget de Comentário Regular",
       "file": "super-so-comment-widget.md",
       "subCat": "Instalação do Super.so"
     },
@@ -24,7 +24,7 @@
       "subCat": "Instalação do Super.so"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "super-so-learn-domain-errors.md",
       "subCat": "Instalação do Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Personalização",
       "file": "super-so-learn-customize.md",
       "subCat": "Instalação do Super.so"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Site Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

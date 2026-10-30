@@ -1,22 +1,27 @@
 {
-  "name": "MemberSpace のインストール",
-  "pageHeader": "MemberSpace でコメントを追加する",
+  "name": "MemberSpace インストール",
+  "pageHeader": "MemberSpaceでコメントを追加",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
       "name": "コード",
       "file": "memberspace-step-1.md",
-      "subCat": "MemberSpace のインストール"
+      "subCat": "MemberSpace インストール"
     },
     {
       "name": "ドメインエラー",
       "file": "memberspace-domain-errors.md",
-      "subCat": "MemberSpace のインストール"
+      "subCat": "MemberSpace インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "memberspace-customize.md",
-      "subCat": "MemberSpace のインストール"
+      "subCat": "MemberSpace インストール"
+    },
+    {
+      "name": "MemberSpaceサイトに投票を追加",
+      "file": "memberspace-polls.md",
+      "subCat": "投票"
     }
   ]
 }

@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Ouvrir le modèle de thème du blog",
+      "name": "Étape 1 : Ouvrir le modèle de thème du blog",
       "file": "systeme-step-1.md",
       "subCat": "Installation de Systeme.io"
     },
     {
-      "name": "Étape 2 : Ajouter le code de FastComments.com",
+      "name": "Étape 2 : Ajouter le code FastComments.com",
       "file": "systeme-step-2.md",
       "subCat": "Installation de Systeme.io"
     },
@@ -27,6 +27,11 @@
       "name": "Personnalisation",
       "file": "systeme-customize.md",
       "subCat": "Installation de Systeme.io"
+    },
+    {
+      "name": "Ajouter des sondages à votre blog Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

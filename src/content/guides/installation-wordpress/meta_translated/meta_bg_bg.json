@@ -6,62 +6,62 @@
     {
       "name": "Бърз старт",
       "file": "wordpress-quick-start.md",
-      "subCat": "TLDR"
+      "subCat": "Кратко резюме"
     },
     {
-      "name": "Инсталация",
+      "name": "Инсталиране",
       "file": "wordpress-installation.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Персонализиране",
       "file": "wordpress-customize.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Модериране",
       "file": "wordpress-moderation.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Потребители, модератори и администратори",
       "file": "wordpress-users-moderators-admins.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Сайтове само за членове (SSO)",
       "file": "wordpress-membership-sites.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Известия",
       "file": "wordpress-notifications.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Персонализирани теми",
       "file": "wordpress-custom-themes.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Синхронизиране обратно към WordPress",
       "file": "wordpress-syncing-back-to-wp.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
-      "name": "Брой коментари",
+      "name": "Брой на коментарите",
       "file": "wordpress-comment-counts.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
-      "name": "Инсталация на WordPress <> Комуникация със сървъра FastComment",
+      "name": "Комуникация между Инсталиране на WordPress и FastComment сървъра",
       "file": "wordpress-server-communication.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
-      "name": "Грешки с домейна",
+      "name": "Грешки в домейна",
       "file": "wordpress-domain-errors.md",
-      "subCat": "Инсталация на WordPress"
+      "subCat": "Инсталиране на WordPress"
     },
     {
       "name": "Джаджа за последни коментари",
@@ -81,12 +81,17 @@
     {
       "name": "Преместване на вашите коментари към нов сайт",
       "file": "wordpress-moving-off-wordpress.md",
-      "subCat": "Преместване от WordPress"
+      "subCat": "Преместване извън WordPress"
     },
     {
       "name": "Деактивиране срещу деинсталиране на плъгина",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Премахване на плъгин"
+    },
+    {
+      "name": "Добавете анкети към вашия WordPress сайт",
+      "file": "wordpress-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

@@ -23,8 +23,13 @@
       "file": "typeflo-customize.md"
     },
     {
-      "name": "Domainfehler",
+      "name": "Domain-Fehler",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Umfragen zu Ihrem Typeflo.io-Blog hinzufügen",
+      "file": "typeflo-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

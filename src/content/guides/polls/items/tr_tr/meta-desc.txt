@@ -1,0 +1,3 @@
+---
+Yorum dizilerine canlı anketler ekleyin. Anketleri etkinleştirin, kimlerin oluşturabileceğini ve oy kullanabileceğini seçin, oy veren gizliliğini ayarlayın ve yanıtlar geldikçe bildirim alın.
+---

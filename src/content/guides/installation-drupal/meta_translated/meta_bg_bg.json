@@ -1,15 +1,15 @@
 {
   "name": "Инсталиране на Drupal",
-  "pageHeader": "Добавяне на живо коментиране към сайтове на Drupal",
+  "pageHeader": "Добавете живо коментиране към Drupal сайтове",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
       "name": "Бърз старт",
       "file": "drupal-quick-start.md",
-      "subCat": "Накратко"
+      "subCat": "Кратко резюме"
     },
     {
-      "name": "Инсталация",
+      "name": "Инсталиране",
       "file": "drupal-installation.md",
       "subCat": "Инсталиране на Drupal"
     },
@@ -19,17 +19,17 @@
       "subCat": "Инсталиране на Drupal"
     },
     {
-      "name": "Уиджет блокове",
+      "name": "Блокове с уиджети",
       "file": "drupal-widget-blocks.md",
       "subCat": "Инсталиране на Drupal"
     },
     {
-      "name": "Полета на типа съдържание",
+      "name": "Полета за типове съдържание",
       "file": "drupal-content-type-fields.md",
       "subCat": "Инсталиране на Drupal"
     },
     {
-      "name": "Единно влизане (SSO)",
+      "name": "Еднократно влизане (SSO)",
       "file": "drupal-sso.md",
       "subCat": "Инсталиране на Drupal"
     },
@@ -39,7 +39,7 @@
       "subCat": "Инсталиране на Drupal"
     },
     {
-      "name": "Многоезичност",
+      "name": "Многоезичен",
       "file": "drupal-multilingual.md",
       "subCat": "Инсталиране на Drupal"
     },
@@ -57,6 +57,11 @@
       "name": "Изисквания",
       "file": "drupal-requirements.md",
       "subCat": "Инсталиране на Drupal"
+    },
+    {
+      "name": "Добавете анкети към вашия Drupal сайт",
+      "file": "drupal-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

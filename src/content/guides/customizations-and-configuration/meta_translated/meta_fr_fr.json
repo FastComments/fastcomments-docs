@@ -38,7 +38,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Activer/désactiver le mode sombre",
+      "name": "Activer/Désactiver le mode sombre",
       "file": "has-dark-background-toggle.md",
       "subCat": "Aspect et apparence"
     },
@@ -63,7 +63,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Lien des commentaires vers les pages",
+      "name": "Lier les commentaires aux pages",
       "file": "url.md",
       "subCat": "Aspect et apparence"
     },
@@ -118,7 +118,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Activer/désactiver les commentaires avec un bouton",
+      "name": "Activer/Désactiver les commentaires avec un bouton",
       "file": "use-show-comments-toggle.md",
       "subCat": "Aspect et apparence"
     },
@@ -233,7 +233,7 @@
       "subCat": "Aspect et apparence"
     },
     {
-      "name": "Afficher immédiatement les commentaires en direct",
+      "name": "Afficher les commentaires en direct immédiatement",
       "file": "show-live-right-away.md",
       "subCat": "Commentaire en direct"
     },
@@ -268,12 +268,12 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Limiter la longueur du commentaire",
+      "name": "Limiter la longueur des commentaires",
       "file": "max-comment-character-length.md",
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Désactiver les commentaires multi-lignes",
+      "name": "Désactiver les commentaires multilignes",
       "file": "use-single-line-comment-input.md",
       "subCat": "Zone de réponse"
     },
@@ -303,17 +303,22 @@
       "subCat": "Zone de réponse"
     },
     {
-      "name": "Vue d'ensemble de l'authentification unique (SSO)",
+      "name": "Activer les sondages",
+      "file": "enable-polls.md",
+      "subCat": "Zone de réponse"
+    },
+    {
+      "name": "Vue d'ensemble du Single Sign On (SSO)",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - Authentification unique sécurisée (SSO)",
+      "name": "Intégrations personnalisées - SSO sécurisé",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "Intégrations personnalisées - Authentification unique simple (SSO)",
+      "name": "Intégrations personnalisées - SSO simple",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -328,7 +333,7 @@
       "subCat": "SSO"
     },
     {
-      "name": "Protéger les fils de commentaires avec l'authentification unique",
+      "name": "Protéger les fils de commentaires avec le SSO",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
@@ -418,7 +423,7 @@
       "subCat": "Divers"
     },
     {
-      "name": "Mentionner les ID de groupe",
+      "name": "Mentionner les IDs de groupe",
       "file": "mention-group-ids.md",
       "subCat": "Divers"
     },

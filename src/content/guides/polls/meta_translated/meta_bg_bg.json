@@ -1,0 +1,52 @@
+{
+  "name": "Живи анкети",
+  "pageHeader": "Живи анкети в коментарите",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Какво са живите анкети",
+      "file": "what-are-polls.md",
+      "subCat": "Фон"
+    },
+    {
+      "name": "Активиране на анкети",
+      "file": "enabling-polls.md",
+      "subCat": "Настройване на анкети"
+    },
+    {
+      "name": "Кой може да създава анкети",
+      "file": "who-can-create-polls.md",
+      "subCat": "Настройване на анкети"
+    },
+    {
+      "name": "Разрешаване на анонимни гласове в анкети",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Настройване на анкети"
+    },
+    {
+      "name": "Създаване на анкета",
+      "file": "creating-a-poll.md",
+      "subCat": "Използване на анкети"
+    },
+    {
+      "name": "Гласуване и живи резултати",
+      "file": "voting-and-live-results.md",
+      "subCat": "Използване на анкети"
+    },
+    {
+      "name": "Поверителност на гласувателите",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Използване на анкети"
+    },
+    {
+      "name": "Известия за анкети",
+      "file": "poll-notifications.md",
+      "subCat": "Използване на анкети"
+    },
+    {
+      "name": "API за анкети",
+      "file": "polls-api.md",
+      "subCat": "За разработчици"
+    }
+  ]
+}

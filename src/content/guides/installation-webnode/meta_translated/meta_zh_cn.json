@@ -4,12 +4,12 @@
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "步骤 1：编辑您的页面",
+      "name": "步骤 1：编辑页面",
       "file": "webnode-step-1.md",
       "subCat": "Webnode 安装"
     },
     {
-      "name": "步骤 2：添加区段并插入 HTML 模块",
+      "name": "步骤 2：添加章节和 HTML 块",
       "file": "webnode-step-2.md",
       "subCat": "Webnode 安装"
     },
@@ -37,6 +37,11 @@
       "name": "自定义",
       "file": "webnode-customize.md",
       "subCat": "Webnode 安装"
+    },
+    {
+      "name": "向您的 Webnode 网站添加投票",
+      "file": "webnode-polls.md",
+      "subCat": "投票"
     }
   ]
 }

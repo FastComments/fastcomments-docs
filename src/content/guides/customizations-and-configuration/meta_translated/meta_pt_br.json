@@ -1,5 +1,5 @@
 {
-  "name": "Personalizações e Configuração",
+  "name": "Customizações e Configuração",
   "icon": "feature.png",
   "itemsOrdered": [
     {
@@ -20,217 +20,217 @@
     {
       "name": "Estilização personalizada",
       "file": "custom-css.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Fontes personalizadas",
       "file": "custom-fonts.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Removendo a marca",
       "file": "remove-branding.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Suportando fundos escuros (Modo escuro)",
       "file": "has-dark-background.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Alternando o modo escuro",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Sobrescrevendo texto",
       "file": "translations.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Alterando o avatar padrão",
       "file": "default-avatar-src.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativando avatares",
       "file": "hide-avatars.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativando todos os estilos padrão",
       "file": "no-styles.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Linkando dos comentários para páginas",
       "file": "url.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Recolher respostas por padrão",
       "file": "collapse-replies.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Habilitar WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
-      "name": "Desativando a barra de ferramentas",
+      "name": "Desativar a barra de ferramentas",
       "file": "disable-toolbar.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
-      "name": "Desativando bloqueio",
+      "name": "Desativar bloqueio",
       "file": "disable-blocking.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Determinar qual página renderizar",
       "file": "starting-page.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
-      "name": "Alternar tópicos de comentários sem recarregar a página",
+      "name": "Alternar threads de comentários sem recarregar a página",
       "file": "switching-comment-threads.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
-      "name": "Datas absolutas (Desativar timestamps legíveis)",
+      "name": "Datas absolutas (Desativar timestamps amigáveis)",
       "file": "absolute-dates.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
-      "name": "Exibir datas absolutas e relativas",
+      "name": "Mostrar datas absolutas e relativas",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Adicionar texto de cabeçalho",
       "file": "header-html.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Renderizar links como texto",
       "file": "render-links-as-text.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Alternar comentários com um botão",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Personalizar o texto da contagem de comentários",
       "file": "comment-count-format.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar redirecionamento de imagem",
       "file": "disable-image-redirect.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar criação automática de hashtags",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
-      "name": "Desativar sino de notificação",
+      "name": "Desativar sino de notificações",
       "file": "disable-notification-bell.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar perfis",
       "file": "disable-profiles.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar comentários de perfil",
       "file": "disable-profile-comments.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar mensagens diretas de perfil",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar mensagem de sucesso",
       "file": "disable-success-message.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Alterar a classificação de conteúdo de GIFs",
       "file": "gif-rating.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Moderação de conteúdo de imagem",
       "file": "image-content-moderation.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Alterar o estilo de votação",
       "file": "vote-style.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar exclusão",
       "file": "disable-deleting.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar edição",
       "file": "disable-editing.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Destacar novos comentários",
       "file": "highlighting-new-comments.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Tamanhos de página",
       "file": "page-size.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Modelos de e‑mail",
       "file": "email-templates.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Formatos de nome de usuário",
       "file": "user-name-formats.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Desativar upload de imagens",
       "file": "no-image-uploads.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Permitir incorporação de mídia",
       "file": "allow-media-embeds.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Habilitar caixa de pesquisa",
       "file": "enable-search.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Habilitar spoilers",
       "file": "enable-spoilers.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Habilitar contagem de visualizações de comentários",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Mostrar comentários ao vivo imediatamente",
@@ -250,57 +250,62 @@
     {
       "name": "Habilitar rolagem infinita",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Paginação e ordenação"
+      "subCat": "Paginação e Ordenação"
     },
     {
       "name": "Alterar a direção padrão de ordenação",
       "file": "default-sort-direction.md",
-      "subCat": "Paginação e ordenação"
+      "subCat": "Paginação e Ordenação"
     },
     {
       "name": "Renderizar todos os comentários de uma vez - Desativar paginação",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Paginação e ordenação"
+      "subCat": "Paginação e Ordenação"
     },
     {
       "name": "Mover a caixa de resposta para depois dos comentários",
       "file": "input-after-comments.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Limitar o comprimento do comentário",
       "file": "max-comment-character-length.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Desativar comentários multilinha",
       "file": "use-single-line-comment-input.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Limitar volume de comentários por usuário",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Impedir novos comentários de nível superior",
       "file": "no-new-root-comments.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Profundidade máxima de respostas",
       "file": "max-reply-depth.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
-      "name": "Exigir aceitação dos termos de serviço",
+      "name": "Exigir aceitação dos Termos de Serviço",
       "file": "terms-of-service.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Avisar antes de sair com um comentário não enviado",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "A caixa de resposta"
+      "subCat": "Caixa de Resposta"
+    },
+    {
+      "name": "Habilitar enquetes",
+      "file": "enable-polls.md",
+      "subCat": "Caixa de Resposta"
     },
     {
       "name": "Visão geral de Single Sign On (SSO)",
@@ -328,57 +333,57 @@
       "subCat": "SSO"
     },
     {
-      "name": "Protegendo tópicos de comentários com Single Sign-On",
+      "name": "Protegindo threads de comentários com Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
       "name": "Permitir comentários anônimos",
       "file": "allow-anon.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
       "name": "Impedir que comentários anônimos expirem",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
       "name": "Desativar campos de e‑mail",
       "file": "disable-email-inputs.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
-      "name": "Desativar o rótulo não verificado",
+      "name": "Desativar rótulo não verificado",
       "file": "disable-unverified-label.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
       "name": "Permitir votação anônima",
       "file": "allow-anon-votes.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
       "name": "Definir um nome de usuário padrão",
       "file": "default-username.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
       "name": "Gerar nomes de usuário automaticamente",
       "file": "auto-generate-username.md",
-      "subCat": "Comentário anônimo"
+      "subCat": "Comentários anônimos"
     },
     {
-      "name": "Retornos",
+      "name": "Callbacks",
       "file": "callbacks.md",
       "subCat": "Diversos"
     },
     {
-      "name": "Definir manualmente a localidade do usuário",
+      "name": "Definindo manualmente o locale do usuário",
       "file": "locale.md",
       "subCat": "Diversos"
     },
     {
-      "name": "Limitar idiomas permitidos",
+      "name": "Limitando idiomas permitidos",
       "file": "allowed-languages.md",
       "subCat": "Diversos"
     },
@@ -398,7 +403,7 @@
       "subCat": "Diversos"
     },
     {
-      "name": "Restringir domínios de links",
+      "name": "Restringindo domínios de links",
       "file": "restricting-link-domains.md",
       "subCat": "Diversos"
     },
@@ -418,12 +423,12 @@
       "subCat": "Diversos"
     },
     {
-      "name": "Mencionar IDs de grupos",
+      "name": "IDs de grupos de menção",
       "file": "mention-group-ids.md",
       "subCat": "Diversos"
     },
     {
-      "name": "Contornar cookies de terceiros",
+      "name": "Contorno de cookie de terceiros",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Diversos"
     },
@@ -435,12 +440,12 @@
     {
       "name": "Mostrar emblemas na barra superior",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     },
     {
       "name": "Mostrar lista de usuários online",
       "file": "users-list.md",
-      "subCat": "Aparência e sensação"
+      "subCat": "Aparência"
     }
   ]
 }

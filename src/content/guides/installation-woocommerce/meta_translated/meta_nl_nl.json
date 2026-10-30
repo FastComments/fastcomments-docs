@@ -1,12 +1,17 @@
 {
   "name": "WooCommerce-installatie",
-  "pageHeader": "Voeg live reacties toe aan WooCommerce-sites",
+  "pageHeader": "Live commentaar toevoegen aan WooCommerce-sites",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "WordPress-plug-in instellen",
+      "name": "WordPress-plugin instellen",
       "file": "woocommerce.md",
       "subCat": "WooCommerce-installatie"
+    },
+    {
+      "name": "Polls toevoegen aan je WooCommerce-winkel",
+      "file": "woocommerce-polls.md",
+      "subCat": "Peilingen"
     }
   ]
 }

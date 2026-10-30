@@ -1,10 +1,10 @@
 {
   "name": "Typeflo.io",
-  "pageHeader": "Dodajte komentiranje v živo na Typeflo.io bloge",
+  "pageHeader": "Dodajte živo komentiranje na bloge Typeflo.io",
   "icon": "3rd-party-products/typeflo.svg",
   "itemsOrdered": [
     {
-      "name": "1. Poiščite polje za vnos kode",
+      "name": "1. Najdite vnos kode",
       "file": "typeflo-step-1.md",
       "subCat": "Namestitev"
     },
@@ -25,6 +25,11 @@
     {
       "name": "Napake domene",
       "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "Dodajte ankete v svoj blog Typeflo.io",
+      "file": "typeflo-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

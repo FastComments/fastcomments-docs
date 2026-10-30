@@ -1,20 +1,20 @@
 {
   "name": "Встановлення Super.so",
-  "pageHeader": "Додайте живі обговорення на сайти Super.so",
+  "pageHeader": "Додайте живі обговорення до сайтів Super.so",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Відкрийте налаштування",
+      "name": "Крок 1: Відкрити налаштування",
       "file": "super-so-learn-step-1.md",
       "subCat": "Встановлення Super.so"
     },
     {
-      "name": "Крок 2: Додайте готовий код",
+      "name": "Крок 2: Додати готовий код",
       "file": "super-so-learn-step-2.md",
       "subCat": "Встановлення Super.so"
     },
     {
-      "name": "Див. також: звичайний віджет коментарів",
+      "name": "Дивіться також: Звичайний віджет коментарів",
       "file": "super-so-comment-widget.md",
       "subCat": "Встановлення Super.so"
     },
@@ -24,7 +24,7 @@
       "subCat": "Встановлення Super.so"
     },
     {
-      "name": "Помилки доменів",
+      "name": "Помилки домену",
       "file": "super-so-learn-domain-errors.md",
       "subCat": "Встановлення Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Налаштування",
       "file": "super-so-learn-customize.md",
       "subCat": "Встановлення Super.so"
+    },
+    {
+      "name": "Додайте опитування до вашого сайту Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

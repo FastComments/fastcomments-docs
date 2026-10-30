@@ -9,32 +9,32 @@
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Voeg reacties toe aan blogposts en producten",
+      "name": "Reacties toevoegen aan blogberichten en producten",
       "file": "shopify-add-comments.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Voeg een badge met aantal reacties toe",
+      "name": "Een reactietellerbadge toevoegen",
       "file": "shopify-comment-count.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Voeg een feed met recente reacties toe",
+      "name": "Een feed met recente reacties toevoegen",
       "file": "shopify-recent-comments.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Voeg een feed met recente discussies toe",
+      "name": "Een feed met recente discussies toevoegen",
       "file": "shopify-recent-discussions.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Voeg een lijst met populairste pagina's toe",
+      "name": "Een lijst met toppagina's toevoegen",
       "file": "shopify-top-pages.md",
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Voeg een overzicht van beoordelingen toe",
+      "name": "Een samenvatting van beoordelingen toevoegen",
       "file": "shopify-reviews-summary.md",
       "subCat": "Shopify-installatie"
     },
@@ -59,9 +59,14 @@
       "subCat": "Shopify-installatie"
     },
     {
-      "name": "Handmatige installatie (Geavanceerd)",
+      "name": "Handmatige installatie (geavanceerd)",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify-installatie"
+    },
+    {
+      "name": "Polls toevoegen aan uw Shopify-winkel",
+      "file": "shopify-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

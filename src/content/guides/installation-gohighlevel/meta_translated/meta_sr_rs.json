@@ -1,67 +1,72 @@
 {
-  "name": "Инсталација GoHighLevel",
-  "pageHeader": "Додавање коментара на GoHighLevel сајтове",
+  "name": "GoHighLevel instalacija",
+  "pageHeader": "Dodajte komentare na GoHighLevel sajtove",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Уреди курс",
+      "name": "Korak 1: Uredi kurs",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Корак 2: Отвори напредна подешавања",
+      "name": "Korak 2: Otvori napredna podešavanja",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Корак 3: Копирај код",
+      "name": "Korak 3: Kopiraj kod",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Корак 4: Налепи код",
+      "name": "Korak 4: Nalepi kod",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Успешно подешавање чланског сајта",
+      "name": "Uspeh članskog sajta",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Грешке домена чланског сајта",
+      "name": "Greške domena članskog sajta",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Прилагођавање чланског сајта",
+      "name": "Prilagođavanje članskog sajta",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Инсталација чланског сајта GoHighLevel"
+      "subCat": "GoHighLevel instalacija članskog sajta"
     },
     {
-      "name": "Корак 1: Додај елемент за прилагођени код",
+      "name": "Korak 1: Dodaj element prilagođenog koda",
       "file": "gohighlevel-site-step-1.md",
-      "subCat": "Инсталација GoHighLevel сајта"
+      "subCat": "GoHighLevel instalacija sajta"
     },
     {
-      "name": "Корак 2: Копирај и налепи код",
+      "name": "Korak 2: Kopiraj i nalepi kod",
       "file": "gohighlevel-site-step-2.md",
-      "subCat": "Инсталација GoHighLevel сајта"
+      "subCat": "GoHighLevel instalacija sajta"
     },
     {
-      "name": "Успешно подешавање сајта",
+      "name": "Uspeh sajta",
       "file": "gohighlevel-site-success.md",
-      "subCat": "Инсталација GoHighLevel сајта"
+      "subCat": "GoHighLevel instalacija sajta"
     },
     {
-      "name": "Грешке домена сајта",
+      "name": "Greške domena sajta",
       "file": "gohighlevel-site-domain-errors.md",
-      "subCat": "Инсталација GoHighLevel сајта"
+      "subCat": "GoHighLevel instalacija sajta"
     },
     {
-      "name": "Прилагођавање сајта",
+      "name": "Prilagođavanje sajta",
       "file": "gohighlevel-site-customize.md",
-      "subCat": "Инсталација GoHighLevel сајта"
+      "subCat": "GoHighLevel instalacija sajta"
+    },
+    {
+      "name": "Dodajte ankete na vaš GoHighLevel sajt",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "BigCommerce-installation",
-  "pageHeader": "Tilføj kommentarer til BigCommerce-sider",
+  "pageHeader": "Tilføj kommentarer til BigCommerce-websteder",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
@@ -14,12 +14,12 @@
       "subCat": "BigCommerce-installation"
     },
     {
-      "name": "Trin 3: Tilføj widget-kode",
+      "name": "Trin 3: Tilføj widgetkode",
       "file": "bigcommerce-step-3.md",
       "subCat": "BigCommerce-installation"
     },
     {
-      "name": "Trin 4: Aktivér det nye tema",
+      "name": "Trin 4: Aktiver nyt tema",
       "file": "bigcommerce-step-4.md",
       "subCat": "BigCommerce-installation"
     },
@@ -39,9 +39,14 @@
       "subCat": "BigCommerce-installation"
     },
     {
-      "name": "Ekstra: Kodeudsnit til sidebyggeren",
+      "name": "Ekstra: Kodesnippet til Page Builder",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Brug af sidebyggeren"
+      "subCat": "Brug af Page Builder"
+    },
+    {
+      "name": "Tilføj afstemninger til din BigCommerce-butik",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

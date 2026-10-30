@@ -1,30 +1,30 @@
 {
   "name": "Namestitev Squarespace",
-  "pageHeader": "Dodajanje komentarjev na spletne strani Squarespace",
+  "pageHeader": "Dodajanje komentarjev na Squarespace spletna mesta",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Dodajanje komentarjev v živo na blog",
+      "name": "Dodajanje živih komentarjev na vaš blog",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Dodajanje komentarjev na blog"
+      "subCat": "Dodajanje komentarjev na vaš blog"
     },
     {
       "name": "Korak 1: Odprite nastavitve bloga",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Dodajanje komentarjev na blog"
+      "subCat": "Dodajanje komentarjev na vaš blog"
     },
     {
-      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "name": "Korak 2: Prilepite kodo FastComments.com",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Dodajanje komentarjev na blog"
+      "subCat": "Dodajanje komentarjev na vaš blog"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "squarespace-blog-success.md",
-      "subCat": "Dodajanje komentarjev na blog"
+      "subCat": "Dodajanje komentarjev na vaš blog"
     },
     {
-      "name": "Dodajanje komentarjev v živo na vse strani",
+      "name": "Dodajanje živih komentarjev na vse strani",
       "file": "squarespace-pages-all-pages-step-0.md",
       "subCat": "Dodajanje komentarjev na vse strani"
     },
@@ -34,17 +34,17 @@
       "subCat": "Dodajanje komentarjev na vse strani"
     },
     {
-      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "name": "Korak 2: Prilepite kodo FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
       "subCat": "Dodajanje komentarjev na vse strani"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "squarespace-pages-all-pages-success.md",
       "subCat": "Dodajanje komentarjev na vse strani"
     },
     {
-      "name": "Dodajanje komentarjev v živo na določeno stran",
+      "name": "Dodajanje živih komentarjev na določeno stran",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Dodajanje komentarjev na določeno stran"
     },
@@ -54,12 +54,12 @@
       "subCat": "Dodajanje komentarjev na določeno stran"
     },
     {
-      "name": "Korak 2: Prilepite svojo kodo FastComments.com",
+      "name": "Korak 2: Prilepite kodo FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
       "subCat": "Dodajanje komentarjev na določeno stran"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "squarespace-pages-specific-page-success.md",
       "subCat": "Dodajanje komentarjev na določeno stran"
     },
@@ -72,6 +72,11 @@
       "name": "Prilagajanje",
       "file": "squarespace-customize.md",
       "subCat": "Naslednji koraki za Squarespace"
+    },
+    {
+      "name": "Dodajanje anket na vaše Squarespace spletno mesto",
+      "file": "squarespace-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

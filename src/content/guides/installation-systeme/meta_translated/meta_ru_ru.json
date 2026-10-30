@@ -27,6 +27,11 @@
       "name": "Настройка",
       "file": "systeme-customize.md",
       "subCat": "Установка Systeme.io"
+    },
+    {
+      "name": "Добавить опросы в ваш блог Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

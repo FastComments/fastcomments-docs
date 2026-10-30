@@ -1,47 +1,52 @@
 {
-  "name": "BigCommerce のインストール",
-  "pageHeader": "BigCommerce サイトにコメントを追加する",
+  "name": "BigCommerce インストール",
+  "pageHeader": "BigCommerce サイトにコメントを追加",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
       "name": "ステップ1：テーマを準備する",
       "file": "bigcommerce-step-1.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
       "name": "ステップ2：正しいテンプレートを編集する",
       "file": "bigcommerce-step-2.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
       "name": "ステップ3：ウィジェットコードを追加する",
       "file": "bigcommerce-step-3.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
       "name": "ステップ4：新しいテーマを有効化する",
       "file": "bigcommerce-step-4.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
       "name": "成功",
       "file": "bigcommerce-success.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
       "name": "ドメインエラー",
       "file": "bigcommerce-domain-errors.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "bigcommerce-customize.md",
-      "subCat": "BigCommerce のインストール"
+      "subCat": "BigCommerce インストール"
     },
     {
-      "name": "補足：ページビルダー用コードスニペット",
+      "name": "追加：ページビルダー用コードスニペット",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "ページビルダーの使用"
+    },
+    {
+      "name": "BigCommerce ストアに投票を追加する",
+      "file": "bigcommerce-polls.md",
+      "subCat": "投票"
     }
   ]
 }

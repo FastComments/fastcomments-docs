@@ -6,7 +6,7 @@
     {
       "name": "Швидкий старт",
       "file": "wordpress-quick-start.md",
-      "subCat": "Коротко"
+      "subCat": "TLDR"
     },
     {
       "name": "Встановлення",
@@ -34,7 +34,7 @@
       "subCat": "Встановлення WordPress"
     },
     {
-      "name": "Повідомлення",
+      "name": "Сповіщення",
       "file": "wordpress-notifications.md",
       "subCat": "Встановлення WordPress"
     },
@@ -74,7 +74,7 @@
       "subCat": "Інші віджети"
     },
     {
-      "name": "Віджет найпопулярніших сторінок",
+      "name": "Віджет топ-сторінок",
       "file": "wordpress-top-pages-widget.md",
       "subCat": "Інші віджети"
     },
@@ -84,9 +84,14 @@
       "subCat": "Перехід з WordPress"
     },
     {
-      "name": "Деактивація проти видалення плагіну",
+      "name": "Деактивація vs Видалення плагіну",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Видалення плагіну"
+    },
+    {
+      "name": "Додайте опитування на ваш сайт WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

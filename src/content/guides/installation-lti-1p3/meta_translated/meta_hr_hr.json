@@ -6,17 +6,17 @@
     {
       "name": "Cijene",
       "file": "lti-plans.md",
-      "subCat": "Sažetak"
+      "subCat": "TLDR"
     },
     {
       "name": "Brzi početak",
       "file": "lti-quick-start.md",
-      "subCat": "Sažetak"
+      "subCat": "TLDR"
     },
     {
       "name": "Podržane platforme",
       "file": "lti-supported-platforms.md",
-      "subCat": "Sažetak"
+      "subCat": "TLDR"
     },
     {
       "name": "Generirajte URL za registraciju",
@@ -24,44 +24,44 @@
       "subCat": "Postavljanje FastComments"
     },
     {
-      "name": "Registrirajte u D2L Brightspace",
+      "name": "Registrirajte se u D2L Brightspace",
       "file": "lti-register-d2l.md",
       "subCat": "Registrirajte alat"
     },
     {
-      "name": "Registrirajte u Moodlu",
+      "name": "Registrirajte se u Moodle",
       "file": "lti-register-moodle.md",
       "subCat": "Registrirajte alat"
     },
     {
-      "name": "Registrirajte u Blackboard Learn",
+      "name": "Registrirajte se u Blackboard Learn",
       "file": "lti-register-blackboard.md",
       "subCat": "Registrirajte alat"
     },
     {
-      "name": "Registrirajte u Sakai ili Schoology",
+      "name": "Registrirajte se u Sakai ili Schoology",
       "file": "lti-register-other.md",
       "subCat": "Registrirajte alat"
     },
     {
-      "name": "Dodajte u sadržaj kolegija u D2L",
+      "name": "Dodajte u sadržaj tečaja D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Dodajte u kolegij"
+      "subCat": "Dodajte u tečaj"
     },
     {
-      "name": "Dodajte u sadržaj kolegija u Moodlu",
+      "name": "Dodajte u sadržaj tečaja Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Dodajte u kolegij"
+      "subCat": "Dodajte u tečaj"
     },
     {
-      "name": "Dodajte u sadržaj kolegija u Blackboard",
+      "name": "Dodajte u sadržaj tečaja Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Dodajte u kolegij"
+      "subCat": "Dodajte u tečaj"
     },
     {
-      "name": "Dodajte u sadržaj kolegija u Sakai ili Schoology",
+      "name": "Dodajte u sadržaj tečaja Sakai ili Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Dodajte u kolegij"
+      "subCat": "Dodajte u tečaj"
     },
     {
       "name": "Rješavanje problema",
@@ -69,9 +69,14 @@
       "subCat": "Korištenje alata"
     },
     {
-      "name": "Načelo najmanjih privilegija i minimizacija podataka",
+      "name": "Najmanje privilegije i minimiziranje podataka",
       "file": "lti-least-privilege.md",
       "subCat": "Sigurnost i usklađenost"
+    },
+    {
+      "name": "Dodajte ankete u svoj LMS tečaj",
+      "file": "lti-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

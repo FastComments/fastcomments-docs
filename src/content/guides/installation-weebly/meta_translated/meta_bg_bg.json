@@ -1,6 +1,6 @@
 {
   "name": "Инсталиране на Weebly",
-  "pageHeader": "Добавяне на коментари към сайтове Weebly",
+  "pageHeader": "Добавете коментари към сайтове в Weebly",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Инсталиране на Weebly"
     },
     {
-      "name": "Стъпка 2: Добавете кода на FastComments.com",
+      "name": "Стъпка 2: Добавете кода от FastComments.com",
       "file": "weebly-step-2.md",
       "subCat": "Инсталиране на Weebly"
     },
@@ -19,7 +19,7 @@
       "subCat": "Инсталиране на Weebly"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "weebly-success.md",
       "subCat": "Инсталиране на Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Персонализиране",
       "file": "weebly-customize.md",
       "subCat": "Инсталиране на Weebly"
+    },
+    {
+      "name": "Добавете анкети към вашия сайт в Weebly",
+      "file": "weebly-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

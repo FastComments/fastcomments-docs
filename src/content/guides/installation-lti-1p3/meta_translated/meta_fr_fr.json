@@ -21,7 +21,7 @@
     {
       "name": "Générer l'URL d'enregistrement",
       "file": "lti-generate-url.md",
-      "subCat": "Configuration de FastComments"
+      "subCat": "Configuration FastComments"
     },
     {
       "name": "Enregistrer dans D2L Brightspace",
@@ -69,9 +69,14 @@
       "subCat": "Utiliser l'outil"
     },
     {
-      "name": "Moindre privilège et minimisation des données",
+      "name": "Principe du moindre privilège & minimisation des données",
       "file": "lti-least-privilege.md",
-      "subCat": "Sécurité et conformité"
+      "subCat": "Sécurité & conformité"
+    },
+    {
+      "name": "Ajouter des sondages à votre cours LMS",
+      "file": "lti-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

@@ -1,12 +1,17 @@
 {
   "name": "Instalacja WooCommerce",
-  "pageHeader": "Dodaj komentowanie na żywo do witryn WooCommerce",
+  "pageHeader": "Dodaj komentarze na żywo do stron WooCommerce",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Konfiguracja wtyczki WordPress",
+      "name": "Instalacja wtyczki WordPress",
       "file": "woocommerce.md",
       "subCat": "Instalacja WooCommerce"
+    },
+    {
+      "name": "Dodaj ankiety do swojego sklepu WooCommerce",
+      "file": "woocommerce-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

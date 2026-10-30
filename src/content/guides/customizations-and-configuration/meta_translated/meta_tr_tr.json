@@ -13,7 +13,7 @@
       "subCat": "Temel Bilgiler"
     },
     {
-      "name": "Aynı Yorumların Farklı Sayfalarda Görüntülenmesi",
+      "name": "Aynı Yorumları Farklı Sayfalarda Görüntüleme",
       "file": "url-id-same-comments-different-pages.md",
       "subCat": "Temel Bilgiler"
     },
@@ -63,7 +63,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Yorumlardan Sayfalara Bağlantı Verme",
+      "name": "Yorumlardan Sayfalara Bağlantı",
       "file": "url.md",
       "subCat": "Görünüm ve His"
     },
@@ -93,12 +93,12 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Sayfayı Yeniden Yüklemeden Yorum Dizilerini Değiştirme",
+      "name": "Sayfayı Yenilemeden Yorum Dizilerini Değiştirme",
       "file": "switching-comment-threads.md",
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Kesin Tarihler (Kullanıcı Dostu Zaman Damgalarını Devre Dışı Bırak)",
+      "name": "Kesin Tarihler (İnsan Dostu Zaman Damgalarını Devre Dışı Bırak)",
       "file": "absolute-dates.md",
       "subCat": "Görünüm ve His"
     },
@@ -173,7 +173,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Oylama Stilini Değiştirme",
+      "name": "Oylama Stili Değiştirme",
       "file": "vote-style.md",
       "subCat": "Görünüm ve His"
     },
@@ -208,7 +208,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Görsel Yüklemeyi Devre Dışı Bırakma",
+      "name": "Görsel Yüklemelerini Devre Dışı Bırakma",
       "file": "no-image-uploads.md",
       "subCat": "Görünüm ve His"
     },
@@ -228,7 +228,7 @@
       "subCat": "Görünüm ve His"
     },
     {
-      "name": "Yorum Görüntülenme Sayısını Etkinleştirme",
+      "name": "Yorum Görüntülenme Sayılarını Etkinleştirme",
       "file": "enable-comment-view-counts.md",
       "subCat": "Görünüm ve His"
     },
@@ -243,7 +243,7 @@
       "subCat": "Canlı Yorumlama"
     },
     {
-      "name": "Yeni Canlı Yorumları Alta Taşıma",
+      "name": "Yeni Canlı Yorumlar Alta Eklensin",
       "file": "new-comments-to-bottom.md",
       "subCat": "Canlı Yorumlama"
     },
@@ -258,7 +258,7 @@
       "subCat": "Sayfalama ve Sıralama"
     },
     {
-      "name": "Tüm Yorumları Tek Seferde Görüntüleme - Sayfalamayı Devre Dışı Bırakma",
+      "name": "Tüm Yorumları Tek Seferde Görüntüleme - Sayfalamayı Devre Dışı Bırak",
       "file": "starting-page-disable-pagination.md",
       "subCat": "Sayfalama ve Sıralama"
     },
@@ -268,7 +268,7 @@
       "subCat": "Yanıt Kutusu"
     },
     {
-      "name": "Yorum Uzunluğunu Sınırlandırma",
+      "name": "Yorum Uzunluğunu Sınırlama",
       "file": "max-comment-character-length.md",
       "subCat": "Yanıt Kutusu"
     },
@@ -278,7 +278,7 @@
       "subCat": "Yanıt Kutusu"
     },
     {
-      "name": "Kullanıcı Başına Yorum Hacmini Sınırlandırma",
+      "name": "Kullanıcı Başına Yorum Hacmini Sınırlama",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "Yanıt Kutusu"
     },
@@ -300,6 +300,11 @@
     {
       "name": "Gönderilmemiş Yorumla Çıkmadan Önce Uyar",
       "file": "warn-on-unsaved-comment.md",
+      "subCat": "Yanıt Kutusu"
+    },
+    {
+      "name": "Anketleri Etkinleştirme",
+      "file": "enable-polls.md",
       "subCat": "Yanıt Kutusu"
     },
     {
@@ -378,7 +383,7 @@
       "subCat": "Çeşitli"
     },
     {
-      "name": "İzin Verilen Dilleri Sınırlandırma",
+      "name": "İzin Verilen Dilleri Sınırlama",
       "file": "allowed-languages.md",
       "subCat": "Çeşitli"
     },
@@ -403,7 +408,7 @@
       "subCat": "Çeşitli"
     },
     {
-      "name": "Yorum Sayısı ve Tüm İç İçe Yanıtları Sayma",
+      "name": "Yorum Sayısı ve Tüm İç İçe Yanıtların Sayılması",
       "file": "count-all.md",
       "subCat": "Çeşitli"
     },

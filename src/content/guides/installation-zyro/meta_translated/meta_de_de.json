@@ -1,6 +1,6 @@
 {
   "name": "Zyro-Installation",
-  "pageHeader": "Live-Kommentare zu Zyro-Websites hinzufügen",
+  "pageHeader": "Live-Kommentare zu Zyro-Seiten hinzufügen",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
@@ -19,7 +19,7 @@
       "subCat": "Zyro-Website-Installation"
     },
     {
-      "name": "Fehler bei der Website-Domain",
+      "name": "Domain-Fehler der Website",
       "file": "zyro-site-domain-errors.md",
       "subCat": "Zyro-Website-Installation"
     },
@@ -29,9 +29,14 @@
       "subCat": "Zyro-Website-Installation"
     },
     {
-      "name": "Schwebender Gefällt-mir-Button",
+      "name": "Schwebender Like-Button",
       "file": "zyro-floating-likes.md",
-      "subCat": "Zyro Schwebender Gefällt-mir-Button"
+      "subCat": "Zyro schwebende Likes"
+    },
+    {
+      "name": "Umfragen zu Ihrer Zyro-Website hinzufügen",
+      "file": "zyro-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

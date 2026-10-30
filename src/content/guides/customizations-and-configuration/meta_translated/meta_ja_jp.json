@@ -8,7 +8,7 @@
       "subCat": "基本"
     },
     {
-      "name": "コメントがページや記事に結びつく方法",
+      "name": "コメントがページや記事に結び付けられる方法",
       "file": "url-id.md",
       "subCat": "基本"
     },
@@ -20,217 +20,217 @@
     {
       "name": "カスタムスタイリング",
       "file": "custom-css.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "カスタムフォント",
       "file": "custom-fonts.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ブランドの削除",
       "file": "remove-branding.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ダーク背景（ダークモード）への対応",
       "file": "has-dark-background.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ダークモードの切り替え",
       "file": "has-dark-background-toggle.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "テキストの上書き",
       "file": "translations.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "デフォルトアバターの変更",
       "file": "default-avatar-src.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "アバターの無効化",
       "file": "hide-avatars.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "すべてのデフォルトスタイルの無効化",
       "file": "no-styles.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "コメントからページへのリンク",
       "file": "url.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "デフォルトで返信を折りたたむ",
       "file": "collapse-replies.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
-      "name": "WYSIWYGを有効化",
+      "name": "WYSIWYG を有効化",
       "file": "enable-wysiwyg.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ツールバーの無効化",
       "file": "disable-toolbar.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ブロック機能の無効化",
       "file": "disable-blocking.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "表示するページの決定",
       "file": "starting-page.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ページをリロードせずにコメントスレッドを切り替える",
       "file": "switching-comment-threads.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "絶対日時（人間に優しいタイムスタンプの無効化）",
       "file": "absolute-dates.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "絶対日時と相対日時の両方を表示",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ヘッダーテキストの追加",
       "file": "header-html.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "リンクをテキストとして表示",
       "file": "render-links-as-text.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ボタンでコメントの切り替え",
       "file": "use-show-comments-toggle.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "コメント数テキストのカスタマイズ",
       "file": "comment-count-format.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "画像リダイレクトの無効化",
       "file": "disable-image-redirect.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "自動ハッシュタグ作成の無効化",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "通知ベルの無効化",
       "file": "disable-notification-bell.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "プロフィールの無効化",
       "file": "disable-profiles.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "プロフィールコメントの無効化",
       "file": "disable-profile-comments.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "プロフィールのダイレクトメッセージの無効化",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "成功メッセージの無効化",
       "file": "disable-success-message.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
-      "name": "GIFのコンテンツ評価を変更",
+      "name": "GIF のコンテンツレーティングを変更",
       "file": "gif-rating.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "画像コンテンツのモデレーション",
       "file": "image-content-moderation.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "投票スタイルの変更",
       "file": "vote-style.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "削除の無効化",
       "file": "disable-deleting.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "編集の無効化",
       "file": "disable-editing.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "新しいコメントのハイライト",
       "file": "highlighting-new-comments.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ページサイズ",
       "file": "page-size.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "メールテンプレート",
       "file": "email-templates.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ユーザー名の形式",
       "file": "user-name-formats.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "画像アップロードの無効化",
       "file": "no-image-uploads.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
-      "name": "メディア埋め込みを許可",
+      "name": "メディア埋め込みの許可",
       "file": "allow-media-embeds.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
-      "name": "検索ボックスを有効化",
+      "name": "検索ボックスの有効化",
       "file": "enable-search.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "スポイラーの有効化",
       "file": "enable-spoilers.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "コメント閲覧数の有効化",
       "file": "enable-comment-view-counts.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "ライブコメントをすぐに表示",
@@ -298,42 +298,47 @@
       "subCat": "返信ボックス"
     },
     {
-      "name": "未送信コメントがある状態で離脱しようとしたときに警告",
+      "name": "未送信コメントがある状態で離脱しようとしたら警告",
       "file": "warn-on-unsaved-comment.md",
       "subCat": "返信ボックス"
     },
     {
-      "name": "シングルサインオン（SSO）概要",
+      "name": "投票機能の有効化",
+      "file": "enable-polls.md",
+      "subCat": "返信ボックス"
+    },
+    {
+      "name": "シングルサインオン (SSO) の概要",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン (SSO)"
     },
     {
-      "name": "カスタム統合 - 安全なシングルサインオン（SSO）",
+      "name": "カスタム統合 - 安全なシングルサインオン (SSO)",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン (SSO)"
     },
     {
-      "name": "カスタム統合 - シンプルなシングルサインオン（SSO）",
+      "name": "カスタム統合 - シンプルなシングルサインオン (SSO)",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン (SSO)"
     },
     {
-      "name": "カスタム統合 - Disqus SSOからの移行",
+      "name": "カスタム統合 - Disqus SSO からの移行",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン (SSO)"
     },
     {
-      "name": "カスタム統合 - Commento SSOからの移行",
+      "name": "カスタム統合 - Commento SSO からの移行",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン (SSO)"
     },
     {
       "name": "シングルサインオンでコメントスレッドを保護",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "シングルサインオン (SSO)"
     },
     {
-      "name": "匿名コメントを許可",
+      "name": "匿名コメントの許可",
       "file": "allow-anon.md",
       "subCat": "匿名コメント"
     },
@@ -353,7 +358,7 @@
       "subCat": "匿名コメント"
     },
     {
-      "name": "匿名投票を許可",
+      "name": "匿名投票の許可",
       "file": "allow-anon-votes.md",
       "subCat": "匿名コメント"
     },
@@ -378,7 +383,7 @@
       "subCat": "その他"
     },
     {
-      "name": "許可言語の制限",
+      "name": "許可される言語の制限",
       "file": "allowed-languages.md",
       "subCat": "その他"
     },
@@ -435,12 +440,12 @@
     {
       "name": "トップバーにバッジを表示",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     },
     {
       "name": "オンラインユーザーリストを表示",
       "file": "users-list.md",
-      "subCat": "外観と感覚"
+      "subCat": "外観と操作感"
     }
   ]
 }

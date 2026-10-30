@@ -49,12 +49,12 @@
       "subCat": "Installation WordPress"
     },
     {
-      "name": "Nombre de commentaires",
+      "name": "Décompte des commentaires",
       "file": "wordpress-comment-counts.md",
       "subCat": "Installation WordPress"
     },
     {
-      "name": "Communication Installation WordPress <> Serveur FastComment",
+      "name": "Communication entre WordPress et le serveur FastComment",
       "file": "wordpress-server-communication.md",
       "subCat": "Installation WordPress"
     },
@@ -84,9 +84,14 @@
       "subCat": "Migration hors WordPress"
     },
     {
-      "name": "Désactivation vs désinstallation du plugin",
+      "name": "Désactiver vs désinstaller le plugin",
       "file": "wordpress-deactivating-vs-uninstalling.md",
       "subCat": "Suppression du plugin"
+    },
+    {
+      "name": "Ajouter des sondages à votre site WordPress",
+      "file": "wordpress-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

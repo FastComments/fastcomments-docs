@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Bubble.io",
+  "pageHeader": "Προσθήκη ζωντανής σχολιασμού σε ιστότοπους Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Εγκατάσταση"
     },
     {
-      "name": "3. Βρείτε τη ρύθμιση πλάτους",
+      "name": "3. Εύρεση ρύθμισης πλάτους",
       "file": "bubble-io-step-3.md",
       "subCat": "Εγκατάσταση"
     },
@@ -33,8 +33,13 @@
       "file": "bubble-io-customize.md"
     },
     {
-      "name": "Σφάλματα ονόματος τομέα",
+      "name": "Σφάλματα τομέα",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στην εφαρμογή Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

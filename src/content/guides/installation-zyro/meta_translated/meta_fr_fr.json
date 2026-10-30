@@ -1,15 +1,15 @@
 {
-  "name": "Installation de Zyro",
-  "pageHeader": "Ajouter des commentaires en direct aux sites Zyro",
+  "name": "Installation Zyro",
+  "pageHeader": "Ajouter les commentaires en direct aux sites Zyro",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Ajouter le widget de code",
+      "name": "Étape 1 : Ajouter le widget de code",
       "file": "zyro-step-1.md",
       "subCat": "Installation du site Zyro"
     },
     {
-      "name": "Étape 2 : Ajouter le code",
+      "name": "Étape 2 : Ajouter le code",
       "file": "zyro-step-2.md",
       "subCat": "Installation du site Zyro"
     },
@@ -29,9 +29,14 @@
       "subCat": "Installation du site Zyro"
     },
     {
-      "name": "Bouton flottant J'aime",
+      "name": "Bouton de likes flottant",
       "file": "zyro-floating-likes.md",
-      "subCat": "Boutons J'aime flottants Zyro"
+      "subCat": "Likes flottants Zyro"
+    },
+    {
+      "name": "Ajouter des sondages à votre site Zyro",
+      "file": "zyro-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

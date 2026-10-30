@@ -1,6 +1,6 @@
 {
   "name": "התקנת MemberSpace",
-  "pageHeader": "הוספת תגובות באמצעות MemberSpace",
+  "pageHeader": "הוסף תגובות עם MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -17,6 +17,11 @@
       "name": "התאמה אישית",
       "file": "memberspace-customize.md",
       "subCat": "התקנת MemberSpace"
+    },
+    {
+      "name": "הוסף סקרים לאתר MemberSpace שלך",
+      "file": "memberspace-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

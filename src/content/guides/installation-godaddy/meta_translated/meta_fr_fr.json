@@ -1,37 +1,42 @@
 {
-  "name": "Installation Godaddy",
-  "pageHeader": "Ajouter des commentaires aux sites Godaddy",
+  "name": "Installation GoDaddy",
+  "pageHeader": "Ajouter des commentaires aux sites GoDaddy",
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Ajouter une zone de code",
+      "name": "Étape 1 : Ajouter une zone de code",
       "file": "godaddy-step-1.md",
-      "subCat": "Installation Godaddy"
+      "subCat": "Installation GoDaddy"
     },
     {
-      "name": "Étape 2 : Ajouter le code FastComments.com",
+      "name": "Étape 2 : Ajouter le code FastComments.com",
       "file": "godaddy-step-2.md",
-      "subCat": "Installation Godaddy"
+      "subCat": "Installation GoDaddy"
     },
     {
-      "name": "Étape 3 : Publier",
+      "name": "Étape 3 : Publier",
       "file": "godaddy-step-3.md",
-      "subCat": "Installation Godaddy"
+      "subCat": "Installation GoDaddy"
     },
     {
       "name": "Succès",
       "file": "godaddy-success.md",
-      "subCat": "Installation Godaddy"
+      "subCat": "Installation GoDaddy"
     },
     {
       "name": "Erreurs de domaine",
       "file": "godaddy-domain-errors.md",
-      "subCat": "Installation Godaddy"
+      "subCat": "Installation GoDaddy"
     },
     {
       "name": "Personnalisation",
       "file": "godaddy-customize.md",
-      "subCat": "Installation Godaddy"
+      "subCat": "Installation GoDaddy"
+    },
+    {
+      "name": "Ajouter des sondages à votre site GoDaddy",
+      "file": "godaddy-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

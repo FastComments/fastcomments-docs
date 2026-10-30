@@ -1,6 +1,6 @@
 {
   "name": "Instalacija Val Town",
-  "pageHeader": "Dodajte live komentarisanje u aplikacije Val Town",
+  "pageHeader": "Dodajte komentarisanje u realnom vremenu u aplikacije Val Town",
   "itemsOrdered": [
     {
       "name": "Korak 1: Dodajte vidžet",
@@ -28,7 +28,7 @@
       "subCat": "Instalacija Val Town"
     },
     {
-      "name": "Primer vrednosti",
+      "name": "Primer Vals",
       "file": "val-town-examples.md",
       "subCat": "Instalacija Val Town"
     },
@@ -36,6 +36,11 @@
       "name": "Greške domena",
       "file": "val-town-domain-errors.md",
       "subCat": "Instalacija Val Town"
+    },
+    {
+      "name": "Dodajte ankete u vašu Val Town aplikaciju",
+      "file": "val-town-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,67 +1,72 @@
 {
-  "name": "Инсталация на Shopify",
-  "pageHeader": "Добавяне на коментари в сайтове на Shopify",
+  "name": "Инсталиране на Shopify",
+  "pageHeader": "Добавяне на коментари към Shopify сайтове",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
       "name": "Инсталиране на приложението FastComments",
       "file": "shopify-install.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Добавяне на коментари към публикации в блога и продукти",
+      "name": "Добавяне на коментари към блог постове и продукти",
       "file": "shopify-add-comments.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Добавяне на значка с брой коментари",
+      "name": "Добавяне на значка за брой коментари",
       "file": "shopify-comment-count.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
       "name": "Добавяне на емисия с последни коментари",
       "file": "shopify-recent-comments.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
       "name": "Добавяне на емисия с последни дискусии",
       "file": "shopify-recent-discussions.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Добавяне на списък с най-популярните страници",
+      "name": "Добавяне на списък с най‑популярни страници",
       "file": "shopify-top-pages.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Добавяне на обобщение на отзивите",
+      "name": "Добавяне на резюме на отзивите",
       "file": "shopify-reviews-summary.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Автоматично влизане на клиенти в Shopify",
+      "name": "Автоматично влизане за Shopify клиенти",
       "file": "shopify-sso.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Импортиране на съществуващи коментари",
+      "name": "Импорт на съществуващи коментари",
       "file": "shopify-import.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
       "name": "Персонализиране",
       "file": "shopify-customize.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
       "name": "Грешки с домейна",
       "file": "shopify-domain-errors.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
     },
     {
-      "name": "Ръчна инсталация (за напреднали)",
+      "name": "Ръчна инсталация (Разширено)",
       "file": "shopify-manual-install.md",
-      "subCat": "Инсталация на Shopify"
+      "subCat": "Инсталиране на Shopify"
+    },
+    {
+      "name": "Добавяне на анкети към вашия Shopify магазин",
+      "file": "shopify-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

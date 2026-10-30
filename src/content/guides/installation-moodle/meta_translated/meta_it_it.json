@@ -1,47 +1,52 @@
 {
   "name": "Installazione di Moodle",
-  "pageHeader": "Aggiungere commenti ai siti Moodle",
+  "pageHeader": "Aggiungi commenti ai siti Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "Avvio rapido",
       "file": "moodle-quick-start.md",
-      "subCat": "In breve"
+      "subCat": "TLDR"
     },
     {
       "name": "Installazione",
       "file": "moodle-installation.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
     },
     {
       "name": "Configurazione",
       "file": "moodle-configuration.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
     },
     {
       "name": "Stili di commento",
       "file": "moodle-commenting-styles.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
     },
     {
       "name": "Modalità SSO",
       "file": "moodle-sso-modes.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
     },
     {
-      "name": "Preferenze di notifica dell'utente",
+      "name": "Preferenze di notifica utente",
       "file": "moodle-user-preferences.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
     },
     {
       "name": "Personalizzazione",
       "file": "moodle-customize.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
     },
     {
       "name": "Errori di dominio",
       "file": "moodle-domain-errors.md",
-      "subCat": "Installazione del plugin per Moodle"
+      "subCat": "Installazione plugin Moodle"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Moodle",
+      "file": "moodle-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

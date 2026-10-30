@@ -1,15 +1,15 @@
 {
   "name": "Zyro 安裝",
-  "pageHeader": "在 Zyro 網站新增即時留言",
+  "pageHeader": "在 Zyro 網站添加即時評論",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "步驟 1：新增程式碼小工具",
+      "name": "步驟 1：添加代碼小工具",
       "file": "zyro-step-1.md",
       "subCat": "Zyro 網站安裝"
     },
     {
-      "name": "步驟 2：新增程式碼",
+      "name": "步驟 2：添加代碼",
       "file": "zyro-step-2.md",
       "subCat": "Zyro 網站安裝"
     },
@@ -19,7 +19,7 @@
       "subCat": "Zyro 網站安裝"
     },
     {
-      "name": "網站網域錯誤",
+      "name": "網站域名錯誤",
       "file": "zyro-site-domain-errors.md",
       "subCat": "Zyro 網站安裝"
     },
@@ -29,9 +29,14 @@
       "subCat": "Zyro 網站安裝"
     },
     {
-      "name": "浮動按讚按鈕",
+      "name": "浮動讚好按鈕",
       "file": "zyro-floating-likes.md",
-      "subCat": "Zyro 浮動按讚"
+      "subCat": "Zyro 浮動讚好"
+    },
+    {
+      "name": "在 Zyro 網站添加投票",
+      "file": "zyro-polls.md",
+      "subCat": "投票"
     }
   ]
 }

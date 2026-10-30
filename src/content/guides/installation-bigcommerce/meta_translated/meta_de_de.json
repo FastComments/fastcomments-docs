@@ -1,15 +1,15 @@
 {
   "name": "BigCommerce-Installation",
-  "pageHeader": "Kommentare zu BigCommerce-Seiten hinzufügen",
+  "pageHeader": "Kommentare zu BigCommerce-Websites hinzufügen",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Schritt 1: Theme vorbereiten",
+      "name": "Schritt 1: Bereiten Sie Ihr Theme vor",
       "file": "bigcommerce-step-1.md",
       "subCat": "BigCommerce-Installation"
     },
     {
-      "name": "Schritt 2: Die richtige Vorlage bearbeiten",
+      "name": "Schritt 2: Die korrekte Vorlage bearbeiten",
       "file": "bigcommerce-step-2.md",
       "subCat": "BigCommerce-Installation"
     },
@@ -42,6 +42,11 @@
       "name": "Extra: Code-Snippet für den Page Builder",
       "file": "bigcommerce-interactive-editor.md",
       "subCat": "Verwendung des Page Builders"
+    },
+    {
+      "name": "Umfragen zu Ihrem BigCommerce-Shop hinzufügen",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

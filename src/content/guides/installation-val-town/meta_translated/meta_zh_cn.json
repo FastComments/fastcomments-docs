@@ -13,12 +13,12 @@
       "subCat": "Val Town 安装"
     },
     {
-      "name": "索引页上的评论计数",
+      "name": "索引页面上的评论计数",
       "file": "val-town-counts.md",
       "subCat": "Val Town 安装"
     },
     {
-      "name": "使用 std/oauth 的安全单点登录",
+      "name": "使用 std/oauth 实现安全单点登录",
       "file": "val-town-sso.md",
       "subCat": "Val Town 安装"
     },
@@ -36,6 +36,11 @@
       "name": "域错误",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town 安装"
+    },
+    {
+      "name": "为您的 Val Town 应用添加投票",
+      "file": "val-town-polls.md",
+      "subCat": "投票"
     }
   ]
 }

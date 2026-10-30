@@ -19,12 +19,12 @@
       "subCat": "Wix-Installation"
     },
     {
-      "name": "Schritt 4: Größe anpassen",
+      "name": "Schritt 4: Größe ändern",
       "file": "wix-step-4.md",
       "subCat": "Wix-Installation"
     },
     {
-      "name": "Schritt 5: Einzigartige Kommentarstränge",
+      "name": "Schritt 5: Einzigartige Kommentar-Threads",
       "file": "wix-step-5.md",
       "subCat": "Wix-Installation"
     },
@@ -37,6 +37,11 @@
       "name": "Anpassung",
       "file": "wix-customize.md",
       "subCat": "Wix-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Wix-Website hinzufügen",
+      "file": "wix-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

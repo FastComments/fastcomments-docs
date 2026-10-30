@@ -1,0 +1,3 @@
+Ko je FastComments nameščen na vašem Squarespace spletnem mestu, lahko tudi izvajate žive ankete neposredno v komentarjih. V nastavitvah prilagajanja gradnika vklopite **Enable Polls** in v orodni vrstici komentarjev se prikaže gumb ankete. Ankete sprejmejo od 2 do 10 možnosti, rezultati se posodabljajo v živo za vse na strani, vi pa izberete, kdo lahko ustvarja ankete in ali glasovanje zahteva prijavo. Nič drugega ni potrebno namestiti na Squarespace.
+
+[Try the Live Polls demo](https://fastcomments.com/product/live-polls) or read the [Polls documentation](/guide-polls.html) to set them up.

@@ -1,77 +1,82 @@
 {
   "name": "Instalacija LMS-a (LTI 1.3)",
-  "pageHeader": "Dodajte komentare u svoj LMS putem LTI 1.3",
+  "pageHeader": "Dodajte komentare u vaš LMS putem LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Cene",
+      "name": "Cenovnik",
       "file": "lti-plans.md",
-      "subCat": "Sažetak"
+      "subCat": "TLDR"
     },
     {
       "name": "Brzi početak",
       "file": "lti-quick-start.md",
-      "subCat": "Sažetak"
+      "subCat": "TLDR"
     },
     {
       "name": "Podržane platforme",
       "file": "lti-supported-platforms.md",
-      "subCat": "Sažetak"
+      "subCat": "TLDR"
     },
     {
-      "name": "Generisanje URL-a za registraciju",
+      "name": "Generišite URL za registraciju",
       "file": "lti-generate-url.md",
       "subCat": "Podešavanje FastComments"
     },
     {
-      "name": "Registracija u D2L Brightspace",
+      "name": "Registrujte se u D2L Brightspace",
       "file": "lti-register-d2l.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
-      "name": "Registracija u Moodle",
+      "name": "Registrujte se u Moodle",
       "file": "lti-register-moodle.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
-      "name": "Registracija u Blackboard Learn",
+      "name": "Registrujte se u Blackboard Learn",
       "file": "lti-register-blackboard.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
-      "name": "Registracija u Sakai ili Schoology",
+      "name": "Registrujte se u Sakai ili Schoology",
       "file": "lti-register-other.md",
-      "subCat": "Registracija alata"
+      "subCat": "Registrujte alat"
     },
     {
-      "name": "Dodavanje u sadržaj kursa (D2L)",
+      "name": "Dodajte u sadržaj kursa D2L",
       "file": "lti-d2l-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Dodavanje u sadržaj kursa (Moodle)",
+      "name": "Dodajte u sadržaj kursa Moodle",
       "file": "lti-moodle-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Dodavanje u sadržaj kursa (Blackboard)",
+      "name": "Dodajte u sadržaj kursa Blackboard",
       "file": "lti-blackboard-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Dodavanje u sadržaj kursa (Sakai ili Schoology)",
+      "name": "Dodajte u sadržaj kursa Sakai ili Schoology",
       "file": "lti-other-add-to-course.md",
-      "subCat": "Dodavanje u kurs"
+      "subCat": "Dodajte u kurs"
     },
     {
-      "name": "Otklanjanje problema",
+      "name": "Rešavanje problema",
       "file": "lti-troubleshooting.md",
       "subCat": "Korišćenje alata"
     },
     {
-      "name": "Princip najmanjih privilegija i minimizacija podataka",
+      "name": "Najmanje privilegije i minimizacija podataka",
       "file": "lti-least-privilege.md",
       "subCat": "Bezbednost i usklađenost"
+    },
+    {
+      "name": "Dodajte ankete u vaš LMS kurs",
+      "file": "lti-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

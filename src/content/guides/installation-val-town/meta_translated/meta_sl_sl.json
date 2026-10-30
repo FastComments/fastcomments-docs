@@ -3,7 +3,7 @@
   "pageHeader": "Dodajanje živih komentarjev v aplikacije Val Town",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodaj pripomoček",
+      "name": "Korak 1: Dodaj gradnik",
       "file": "val-town-step-1.md",
       "subCat": "Namestitev Val Town"
     },
@@ -18,7 +18,7 @@
       "subCat": "Namestitev Val Town"
     },
     {
-      "name": "Zavaruj SSO z std/oauth",
+      "name": "Zavarovano SSO s std/oauth",
       "file": "val-town-sso.md",
       "subCat": "Namestitev Val Town"
     },
@@ -36,6 +36,11 @@
       "name": "Napake domene",
       "file": "val-town-domain-errors.md",
       "subCat": "Namestitev Val Town"
+    },
+    {
+      "name": "Dodaj ankete v svojo aplikacijo Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,12 +1,17 @@
 {
   "name": "Встановлення WooCommerce",
-  "pageHeader": "Додати живі коментарі на сайти WooCommerce",
+  "pageHeader": "Додати живі коментарі до сайтів WooCommerce",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Налаштування плагіна WordPress",
+      "name": "Налаштування плагіну WordPress",
       "file": "woocommerce.md",
       "subCat": "Встановлення WooCommerce"
+    },
+    {
+      "name": "Додати опитування до вашого магазину WooCommerce",
+      "file": "woocommerce-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

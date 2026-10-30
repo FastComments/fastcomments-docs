@@ -1,47 +1,52 @@
 {
   "name": "Moodle-installatie",
-  "pageHeader": "Opmerkingen toevoegen aan Moodle-sites",
+  "pageHeader": "Reacties toevoegen aan Moodle-sites",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
       "name": "Snelstart",
       "file": "moodle-quick-start.md",
-      "subCat": "Kort samengevat"
+      "subCat": "TLDR"
     },
     {
       "name": "Installatie",
       "file": "moodle-installation.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
     },
     {
       "name": "Configuratie",
       "file": "moodle-configuration.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
     },
     {
-      "name": "Commentaarstijlen",
+      "name": "Reactiestijlen",
       "file": "moodle-commenting-styles.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
     },
     {
       "name": "SSO-modi",
       "file": "moodle-sso-modes.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
     },
     {
-      "name": "Voorkeuren voor gebruikersmeldingen",
+      "name": "Gebruikersnotificatievoorkeuren",
       "file": "moodle-user-preferences.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
     },
     {
       "name": "Aanpassing",
       "file": "moodle-customize.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
     },
     {
       "name": "Domeinfouten",
       "file": "moodle-domain-errors.md",
-      "subCat": "Installatie van Moodle-plugin"
+      "subCat": "Moodle-plug-ininstallatie"
+    },
+    {
+      "name": "Enquêtes toevoegen aan uw Moodle-site",
+      "file": "moodle-polls.md",
+      "subCat": "Enquêtes"
     }
   ]
 }

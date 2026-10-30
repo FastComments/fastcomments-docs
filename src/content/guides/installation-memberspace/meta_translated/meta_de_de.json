@@ -9,7 +9,7 @@
       "subCat": "MemberSpace-Installation"
     },
     {
-      "name": "Domainfehler",
+      "name": "Domain-Fehler",
       "file": "memberspace-domain-errors.md",
       "subCat": "MemberSpace-Installation"
     },
@@ -17,6 +17,11 @@
       "name": "Anpassung",
       "file": "memberspace-customize.md",
       "subCat": "MemberSpace-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer MemberSpace-Website hinzufügen",
+      "file": "memberspace-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

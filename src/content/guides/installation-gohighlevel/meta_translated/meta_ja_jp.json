@@ -1,67 +1,72 @@
 {
-  "name": "GoHighLevel のインストール",
+  "name": "GoHighLevel インストール",
   "pageHeader": "GoHighLevel サイトにコメントを追加",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "ステップ1：コースを編集",
+      "name": "ステップ 1: コースを編集",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "ステップ2：詳細設定を開く",
+      "name": "ステップ 2: 詳細設定を開く",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "ステップ3：コードをコピー",
+      "name": "ステップ 3: コードをコピー",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "ステップ4：コードを貼り付け",
+      "name": "ステップ 4: コードを貼り付け",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "会員サイトの設定完了",
+      "name": "メンバーサイト成功",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "会員サイトのドメインエラー",
+      "name": "メンバーサイト ドメインエラー",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "会員サイトのカスタマイズ",
+      "name": "メンバーサイト カスタマイズ",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "GoHighLevel メンバーサイトのインストール"
+      "subCat": "GoHighLevel メンバーサイトインストール"
     },
     {
-      "name": "ステップ1：カスタムコード要素を追加",
+      "name": "ステップ 1: カスタムコード要素を追加",
       "file": "gohighlevel-site-step-1.md",
-      "subCat": "GoHighLevel サイトのインストール"
+      "subCat": "GoHighLevel サイトインストール"
     },
     {
-      "name": "ステップ2：コードをコピーして貼り付ける",
+      "name": "ステップ 2: コードをコピーして貼り付け",
       "file": "gohighlevel-site-step-2.md",
-      "subCat": "GoHighLevel サイトのインストール"
+      "subCat": "GoHighLevel サイトインストール"
     },
     {
-      "name": "サイトの設定完了",
+      "name": "サイト成功",
       "file": "gohighlevel-site-success.md",
-      "subCat": "GoHighLevel サイトのインストール"
+      "subCat": "GoHighLevel サイトインストール"
     },
     {
-      "name": "サイトのドメインエラー",
+      "name": "サイト ドメインエラー",
       "file": "gohighlevel-site-domain-errors.md",
-      "subCat": "GoHighLevel サイトのインストール"
+      "subCat": "GoHighLevel サイトインストール"
     },
     {
-      "name": "サイトのカスタマイズ",
+      "name": "サイト カスタマイズ",
       "file": "gohighlevel-site-customize.md",
-      "subCat": "GoHighLevel サイトのインストール"
+      "subCat": "GoHighLevel サイトインストール"
+    },
+    {
+      "name": "GoHighLevel サイトに投票を追加",
+      "file": "gohighlevel-polls.md",
+      "subCat": "投票"
     }
   ]
 }

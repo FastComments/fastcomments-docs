@@ -1,6 +1,6 @@
 {
   "name": "Instalação do MemberSpace",
-  "pageHeader": "Adicionar comentários com o MemberSpace",
+  "pageHeader": "Adicionar Comentários com MemberSpace",
   "icon": "3rd-party-products/memberspace.webp",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Instalação do MemberSpace"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "memberspace-domain-errors.md",
       "subCat": "Instalação do MemberSpace"
     },
@@ -17,6 +17,11 @@
       "name": "Personalização",
       "file": "memberspace-customize.md",
       "subCat": "Instalação do MemberSpace"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Site MemberSpace",
+      "file": "memberspace-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

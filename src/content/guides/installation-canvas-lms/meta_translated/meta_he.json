@@ -6,12 +6,12 @@
     {
       "name": "תמחור",
       "file": "canvas-lms-plans.md",
-      "subCat": "תקציר"
+      "subCat": "TLDR"
     },
     {
       "name": "התחלה מהירה",
       "file": "canvas-lms-quick-start.md",
-      "subCat": "תקציר"
+      "subCat": "TLDR"
     },
     {
       "name": "הגדרת לוח הבקרה של FastComments",
@@ -19,7 +19,7 @@
       "subCat": "הגדרת Canvas LTI 1.3"
     },
     {
-      "name": "מפתח מפתחים של Canvas",
+      "name": "מפתח מפתח של Canvas",
       "file": "canvas-lms-developer-key.md",
       "subCat": "הגדרת Canvas LTI 1.3"
     },
@@ -49,9 +49,14 @@
       "subCat": "תצורה"
     },
     {
-      "name": "שגיאות דומיין",
+      "name": "שגיאות תחום",
       "file": "canvas-lms-domain-errors.md",
       "subCat": "פתרון בעיות"
+    },
+    {
+      "name": "הוספת סקרים לקורס Canvas שלך",
+      "file": "canvas-lms-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

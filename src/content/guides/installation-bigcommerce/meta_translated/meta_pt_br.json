@@ -1,25 +1,25 @@
 {
   "name": "Instalação do BigCommerce",
-  "pageHeader": "Adicionar comentários em sites do BigCommerce",
+  "pageHeader": "Adicionar Comentários aos Sites BigCommerce",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Prepare seu tema",
+      "name": "Etapa Um: Prepare seu Tema",
       "file": "bigcommerce-step-1.md",
       "subCat": "Instalação do BigCommerce"
     },
     {
-      "name": "Passo 2: Edite o modelo correto",
+      "name": "Etapa Dois: Edite o Modelo Correto",
       "file": "bigcommerce-step-2.md",
       "subCat": "Instalação do BigCommerce"
     },
     {
-      "name": "Passo 3: Adicione o código do widget",
+      "name": "Etapa Três: Adicione o Código do Widget",
       "file": "bigcommerce-step-3.md",
       "subCat": "Instalação do BigCommerce"
     },
     {
-      "name": "Passo 4: Ative o novo tema",
+      "name": "Etapa Quatro: Ative o Novo Tema",
       "file": "bigcommerce-step-4.md",
       "subCat": "Instalação do BigCommerce"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalação do BigCommerce"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "bigcommerce-domain-errors.md",
       "subCat": "Instalação do BigCommerce"
     },
@@ -39,9 +39,14 @@
       "subCat": "Instalação do BigCommerce"
     },
     {
-      "name": "Extra: Trecho de código para o Page Builder",
+      "name": "Extra: Trecho de Código para o Construtor de Páginas",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Usando o Page Builder"
+      "subCat": "Usando o Construtor de Páginas"
+    },
+    {
+      "name": "Adicionar Enquetes à sua Loja BigCommerce",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

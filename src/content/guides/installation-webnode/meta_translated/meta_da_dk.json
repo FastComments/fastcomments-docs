@@ -1,6 +1,6 @@
 {
   "name": "Webnode-installation",
-  "pageHeader": "Tilføj kommentarer til Webnode-sider",
+  "pageHeader": "Tilføj kommentarer til Webnode-websteder",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
@@ -19,12 +19,12 @@
       "subCat": "Webnode-installation"
     },
     {
-      "name": "Trin 4: Udgiv",
+      "name": "Trin 4: Publicer",
       "file": "webnode-step-4.md",
       "subCat": "Webnode-installation"
     },
     {
-      "name": "Fuldført",
+      "name": "Succes",
       "file": "webnode-success.md",
       "subCat": "Webnode-installation"
     },
@@ -37,6 +37,11 @@
       "name": "Tilpasning",
       "file": "webnode-customize.md",
       "subCat": "Webnode-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Webnode-side",
+      "file": "webnode-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

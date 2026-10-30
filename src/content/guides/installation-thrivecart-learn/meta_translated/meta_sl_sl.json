@@ -1,15 +1,15 @@
 {
   "name": "Namestitev ThriveCart Learn+",
-  "pageHeader": "Dodajanje komentarjev v tečaje ThriveCart Learn+",
+  "pageHeader": "Dodaj komentarje v tečaje ThriveCart Learn+",
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Priprava tečaja",
+      "name": "Korak 1: Pripravi tečaj",
       "file": "thrivecart-learn-step-1.md",
       "subCat": "Namestitev ThriveCart Learn+"
     },
     {
-      "name": "Korak 2: Dodajanje lastne kode",
+      "name": "Korak 2: Dodaj prilagojeno kodo",
       "file": "thrivecart-learn-step-2.md",
       "subCat": "Namestitev ThriveCart Learn+"
     },
@@ -24,9 +24,14 @@
       "subCat": "Namestitev ThriveCart Learn+"
     },
     {
-      "name": "Prilagajanje",
+      "name": "Prilagoditev",
       "file": "thrivecart-learn-customize.md",
       "subCat": "Namestitev ThriveCart Learn+"
+    },
+    {
+      "name": "Dodaj ankete v svoj tečaj ThriveCart Learn+",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

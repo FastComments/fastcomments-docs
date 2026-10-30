@@ -1,47 +1,52 @@
 {
-  "name": "Инсталација за BigCommerce",
-  "pageHeader": "Додавање коментара на сајтове на BigCommerce",
+  "name": "Инсталација BigCommerce",
+  "pageHeader": "Додајте коментаре на BigCommerce сајтове",
   "icon": "3rd-party-products/bigcommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Припремите тему",
+      "name": "Корак први: Припремите вашу тему",
       "file": "bigcommerce-step-1.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
-      "name": "Корак 2: Измените одговарајући шаблон",
+      "name": "Корак други: Уредите исправан шаблон",
       "file": "bigcommerce-step-2.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
-      "name": "Корак 3: Додајте код виџета",
+      "name": "Корак трећи: Додајте код виџета",
       "file": "bigcommerce-step-3.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
-      "name": "Корак 4: Активирајте нову тему",
+      "name": "Корак четврти: Активирајте нову тему",
       "file": "bigcommerce-step-4.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
-      "name": "Успешно",
+      "name": "Успех",
       "file": "bigcommerce-success.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
       "name": "Грешке домена",
       "file": "bigcommerce-domain-errors.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
       "name": "Прилагођавање",
       "file": "bigcommerce-customize.md",
-      "subCat": "Инсталација за BigCommerce"
+      "subCat": "Инсталација BigCommerce"
     },
     {
-      "name": "Додатно: Исечак кода за Page Builder",
+      "name": "Додатно: Кôд исечак за градитељ страница",
       "file": "bigcommerce-interactive-editor.md",
-      "subCat": "Коришћење Page Builder-а"
+      "subCat": "Коришћење градитеља страница"
+    },
+    {
+      "name": "Додајте анкете у ваш BigCommerce продавницу",
+      "file": "bigcommerce-polls.md",
+      "subCat": "Анкете"
     }
   ]
 }

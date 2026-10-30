@@ -8,12 +8,12 @@
       "subCat": "Instalación de Val Town"
     },
     {
-      "name": "Paso 2: Usa tu propia cuenta",
+      "name": "Paso 2: Usa Tu Propia Cuenta",
       "file": "val-town-step-2.md",
       "subCat": "Instalación de Val Town"
     },
     {
-      "name": "Conteo de Comentarios en una Página de Índice",
+      "name": "Recuento de Comentarios en una Página de Índice",
       "file": "val-town-counts.md",
       "subCat": "Instalación de Val Town"
     },
@@ -28,14 +28,19 @@
       "subCat": "Instalación de Val Town"
     },
     {
-      "name": "Vals de ejemplo",
+      "name": "Ejemplo Vals",
       "file": "val-town-examples.md",
       "subCat": "Instalación de Val Town"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "val-town-domain-errors.md",
       "subCat": "Instalación de Val Town"
+    },
+    {
+      "name": "Agregar Encuestas a Tu Aplicación Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

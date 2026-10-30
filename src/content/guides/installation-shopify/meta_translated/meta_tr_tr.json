@@ -4,42 +4,42 @@
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
-      "name": "FastComments Uygulamasını Kurun",
+      "name": "FastComments Uygulamasını Kur",
       "file": "shopify-install.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Blog Gönderilerine ve Ürünlere Yorum Ekleyin",
+      "name": "Blog Gönderilerine ve Ürünlere Yorum Ekle",
       "file": "shopify-add-comments.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Yorum Sayısı Rozeti Ekleyin",
+      "name": "Yorum Sayısı Rozeti Ekle",
       "file": "shopify-comment-count.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Son Yorumlar Akışı Ekleyin",
+      "name": "Son Yorum Akışı Ekle",
       "file": "shopify-recent-comments.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Son Tartışmalar Akışı Ekleyin",
+      "name": "Son Tartışma Akışı Ekle",
       "file": "shopify-recent-discussions.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "En Popüler Sayfalar Listesi Ekleyin",
+      "name": "En İyi Sayfalar Listesi Ekle",
       "file": "shopify-top-pages.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "İncelemeler Özeti Ekleyin",
+      "name": "İnceleme Özeti Ekle",
       "file": "shopify-reviews-summary.md",
       "subCat": "Shopify Kurulumu"
     },
     {
-      "name": "Shopify Müşterileri için Otomatik Oturum Açma",
+      "name": "Shopify Müşterileri için Otomatik Giriş",
       "file": "shopify-sso.md",
       "subCat": "Shopify Kurulumu"
     },
@@ -62,6 +62,11 @@
       "name": "Manuel Kurulum (Gelişmiş)",
       "file": "shopify-manual-install.md",
       "subCat": "Shopify Kurulumu"
+    },
+    {
+      "name": "Shopify Mağazanıza Anketler Ekleyin",
+      "file": "shopify-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

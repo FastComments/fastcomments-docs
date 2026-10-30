@@ -1,30 +1,30 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Adicionar comentários em tempo real a sites Bubble.io",
+  "pageHeader": "Adicionar Comentários ao Vivo em Sites Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
-      "name": "1. Adicionar bloco HTML",
+      "name": "1. Adicionar Bloco HTML",
       "file": "bubble-io-step-1.md",
       "subCat": "Instalação"
     },
     {
-      "name": "2. Inserir código",
+      "name": "2. Inserir Código",
       "file": "bubble-io-step-2.md",
       "subCat": "Instalação"
     },
     {
-      "name": "3. Localizar configuração de largura",
+      "name": "3. Encontrar Configuração de Largura",
       "file": "bubble-io-step-3.md",
       "subCat": "Instalação"
     },
     {
-      "name": "4. Ajustar o layout",
+      "name": "4. Ajustar Layout",
       "file": "bubble-io-step-4.md",
       "subCat": "Instalação"
     },
     {
-      "name": "Concluído",
+      "name": "Sucesso",
       "file": "bubble-io-success.md",
       "subCat": "Instalação"
     },
@@ -33,8 +33,13 @@
       "file": "bubble-io-customize.md"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Aplicativo Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

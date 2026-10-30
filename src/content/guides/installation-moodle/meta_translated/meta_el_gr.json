@@ -6,7 +6,7 @@
     {
       "name": "Γρήγορη εκκίνηση",
       "file": "moodle-quick-start.md",
-      "subCat": "Σύνοψη"
+      "subCat": "Συνοπτικά"
     },
     {
       "name": "Εγκατάσταση",
@@ -42,6 +42,11 @@
       "name": "Σφάλματα τομέα",
       "file": "moodle-domain-errors.md",
       "subCat": "Εγκατάσταση πρόσθετου Moodle"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο Moodle",
+      "file": "moodle-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

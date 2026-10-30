@@ -1,6 +1,6 @@
 {
   "name": "Instalacja Framera",
-  "pageHeader": "Dodaj komentowanie na żywo do stron Framer",
+  "pageHeader": "Dodaj komentarze na żywo do stron Framer",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
@@ -9,17 +9,17 @@
       "subCat": "Instalacja Framera"
     },
     {
-      "name": "Krok 2: Dodaj blok osadzania",
+      "name": "Krok 2: Dodaj blok osadzenia",
       "file": "framer-step-2.md",
       "subCat": "Instalacja Framera"
     },
     {
-      "name": "Krok 3: Skopiuj i wklej kod FastComments dla Framer",
+      "name": "Krok 3: Skopiuj i wklej kod FastComments specyficzny dla Framera",
       "file": "framer-step-3.md",
       "subCat": "Instalacja Framera"
     },
     {
-      "name": "Krok 4: Dostosuj wysokość widżetu i strony",
+      "name": "Krok 4: Dostosuj wysokość widgetu i strony",
       "file": "framer-step-4.md",
       "subCat": "Instalacja Framera"
     },
@@ -29,9 +29,14 @@
       "subCat": "Instalacja Framera"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Personalizacja",
       "file": "framer-customize.md",
       "subCat": "Instalacja Framera"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Framer",
+      "file": "framer-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

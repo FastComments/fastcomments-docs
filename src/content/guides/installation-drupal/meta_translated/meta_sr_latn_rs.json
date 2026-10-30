@@ -1,12 +1,12 @@
 {
   "name": "Instalacija Drupala",
-  "pageHeader": "Dodajte komentare uživo na Drupal sajtove",
+  "pageHeader": "Dodajte live komentarisanje na Drupal sajtove",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
       "name": "Brzi početak",
       "file": "drupal-quick-start.md",
-      "subCat": "Ukratko"
+      "subCat": "TLDR"
     },
     {
       "name": "Instalacija",
@@ -44,7 +44,7 @@
       "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Čuvanje podataka u EU",
+      "name": "Rezidencija podataka u EU",
       "file": "drupal-eu-data-residency.md",
       "subCat": "Instalacija Drupala"
     },
@@ -57,6 +57,11 @@
       "name": "Zahtevi",
       "file": "drupal-requirements.md",
       "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Dodajte ankete na vaš Drupal sajt",
+      "file": "drupal-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

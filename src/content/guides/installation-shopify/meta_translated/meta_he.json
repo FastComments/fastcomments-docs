@@ -14,7 +14,7 @@
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "הוספת סמל המציג את מספר התגובות",
+      "name": "הוספת תגית ספירת תגובות",
       "file": "shopify-comment-count.md",
       "subCat": "התקנת Shopify"
     },
@@ -29,7 +29,7 @@
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "הוספת רשימת הדפים המובילים",
+      "name": "הוספת רשימת דפים מובילים",
       "file": "shopify-top-pages.md",
       "subCat": "התקנת Shopify"
     },
@@ -39,7 +39,7 @@
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "התחברות אוטומטית של לקוחות Shopify",
+      "name": "כניסה אוטומטית ללקוחות Shopify",
       "file": "shopify-sso.md",
       "subCat": "התקנת Shopify"
     },
@@ -59,9 +59,14 @@
       "subCat": "התקנת Shopify"
     },
     {
-      "name": "התקנה ידנית (מתקדם)",
+      "name": "התקנה ידנית (מתקדמת)",
       "file": "shopify-manual-install.md",
       "subCat": "התקנת Shopify"
+    },
+    {
+      "name": "הוספת סקרים לחנות Shopify שלך",
+      "file": "shopify-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

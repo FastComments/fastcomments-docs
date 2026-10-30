@@ -9,12 +9,12 @@
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Προσθήκη σχολίων σε αναρτήσεις blog και προϊόντα",
+      "name": "Προσθήκη σχολίων σε αναρτήσεις ιστολογίου και προϊόντα",
       "file": "shopify-add-comments.md",
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Προσθήκη σήματος με αριθμό σχολίων",
+      "name": "Προσθήκη εμβλήματος αριθμού σχολίων",
       "file": "shopify-comment-count.md",
       "subCat": "Εγκατάσταση Shopify"
     },
@@ -34,7 +34,7 @@
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Προσθήκη σύνοψης κριτικών",
+      "name": "Προσθήκη σύνοψης αξιολογήσεων",
       "file": "shopify-reviews-summary.md",
       "subCat": "Εγκατάσταση Shopify"
     },
@@ -59,9 +59,14 @@
       "subCat": "Εγκατάσταση Shopify"
     },
     {
-      "name": "Χειροκίνητη εγκατάσταση (για προχωρημένους)",
+      "name": "Χειροκίνητη εγκατάσταση (Προχωρημένο)",
       "file": "shopify-manual-install.md",
       "subCat": "Εγκατάσταση Shopify"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στο κατάστημα Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

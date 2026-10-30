@@ -1,6 +1,6 @@
 {
   "name": "Squarespace-Installation",
-  "pageHeader": "Kommentare zu Squarespace-Seiten hinzufügen",
+  "pageHeader": "Kommentare zu Squarespace-Websites hinzufügen",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
@@ -19,32 +19,32 @@
       "subCat": "Kommentare zu Ihrem Blog hinzufügen"
     },
     {
-      "name": "Erfolgreich",
+      "name": "Erfolg",
       "file": "squarespace-blog-success.md",
       "subCat": "Kommentare zu Ihrem Blog hinzufügen"
     },
     {
-      "name": "Live-Kommentare auf allen Seiten hinzufügen",
+      "name": "Live-Kommentare zu allen Seiten hinzufügen",
       "file": "squarespace-pages-all-pages-step-0.md",
-      "subCat": "Kommentare auf allen Seiten hinzufügen"
+      "subCat": "Kommentare zu allen Seiten hinzufügen"
     },
     {
       "name": "Schritt 1: Entwicklertools öffnen",
       "file": "squarespace-pages-all-pages-step-1.md",
-      "subCat": "Kommentare auf allen Seiten hinzufügen"
+      "subCat": "Kommentare zu allen Seiten hinzufügen"
     },
     {
       "name": "Schritt 2: Ihren FastComments.com-Code einfügen",
       "file": "squarespace-pages-all-pages-step-2.md",
-      "subCat": "Kommentare auf allen Seiten hinzufügen"
+      "subCat": "Kommentare zu allen Seiten hinzufügen"
     },
     {
-      "name": "Erfolgreich",
+      "name": "Erfolg",
       "file": "squarespace-pages-all-pages-success.md",
-      "subCat": "Kommentare auf allen Seiten hinzufügen"
+      "subCat": "Kommentare zu allen Seiten hinzufügen"
     },
     {
-      "name": "Live-Kommentare zu einer bestimmten Seite hinzufügen",
+      "name": "Live-Kommentar zu einer bestimmten Seite hinzufügen",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
     },
@@ -59,7 +59,7 @@
       "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
     },
     {
-      "name": "Erfolgreich",
+      "name": "Erfolg",
       "file": "squarespace-pages-specific-page-success.md",
       "subCat": "Kommentare zu einer bestimmten Seite hinzufügen"
     },
@@ -72,6 +72,11 @@
       "name": "Anpassung",
       "file": "squarespace-customize.md",
       "subCat": "Nächste Schritte für Squarespace"
+    },
+    {
+      "name": "Umfragen zu Ihrer Squarespace-Website hinzufügen",
+      "file": "squarespace-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Εγκατάσταση Zyro",
-  "pageHeader": "Προσθήκη ζωντανών σχολίων σε ιστότοπους Zyro",
+  "pageHeader": "Προσθήκη ζωντανού σχολιασμού σε ιστότοπους Zyro",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
@@ -24,14 +24,19 @@
       "subCat": "Εγκατάσταση ιστότοπου Zyro"
     },
     {
-      "name": "Προσαρμογή ιστοτόπου",
+      "name": "Προσαρμογή ιστότοπου",
       "file": "zyro-site-customize.md",
       "subCat": "Εγκατάσταση ιστότοπου Zyro"
     },
     {
-      "name": "Πλωτό κουμπί «Μου αρέσει»",
+      "name": "Κουμπί αιωρούμενων likes",
       "file": "zyro-floating-likes.md",
-      "subCat": "Πλωτά «Μου αρέσει» στο Zyro"
+      "subCat": "Αιωρούμενα likes Zyro"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπό σας Zyro",
+      "file": "zyro-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

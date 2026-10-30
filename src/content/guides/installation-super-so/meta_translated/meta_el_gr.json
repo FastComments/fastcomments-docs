@@ -24,7 +24,7 @@
       "subCat": "Εγκατάσταση Super.so"
     },
     {
-      "name": "Σφάλματα ονόματος τομέα",
+      "name": "Σφάλματα τομέα",
       "file": "super-so-learn-domain-errors.md",
       "subCat": "Εγκατάσταση Super.so"
     },
@@ -32,6 +32,11 @@
       "name": "Προσαρμογή",
       "file": "super-so-learn-customize.md",
       "subCat": "Εγκατάσταση Super.so"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπό σας Super.so",
+      "file": "super-so-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

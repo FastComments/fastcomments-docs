@@ -29,7 +29,7 @@
       "subCat": "Reacties toevoegen aan alle pagina's"
     },
     {
-      "name": "Stap 1: Open de ontwikkelaarstools",
+      "name": "Stap 1: Open ontwikkelaarstools",
       "file": "squarespace-pages-all-pages-step-1.md",
       "subCat": "Reacties toevoegen aan alle pagina's"
     },
@@ -44,7 +44,7 @@
       "subCat": "Reacties toevoegen aan alle pagina's"
     },
     {
-      "name": "Live reactie toevoegen aan een specifieke pagina",
+      "name": "Live reactie toevoegen aan specifieke pagina",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Reacties toevoegen aan een specifieke pagina"
     },
@@ -66,12 +66,17 @@
     {
       "name": "Domeinfouten",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Vervolgstappen voor Squarespace"
+      "subCat": "Volgende stappen voor Squarespace"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "squarespace-customize.md",
-      "subCat": "Vervolgstappen voor Squarespace"
+      "subCat": "Volgende stappen voor Squarespace"
+    },
+    {
+      "name": "Enquêtes toevoegen aan je Squarespace-site",
+      "file": "squarespace-polls.md",
+      "subCat": "Enquêtes"
     }
   ]
 }

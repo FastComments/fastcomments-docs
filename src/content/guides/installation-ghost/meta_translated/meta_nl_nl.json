@@ -1,6 +1,6 @@
 {
   "name": "Ghost-installatie",
-  "pageHeader": "Voeg live reacties alleen voor leden toe aan Ghost-sites",
+  "pageHeader": "Voeg alleen-leden live reacties toe aan Ghost-sites",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -19,7 +19,7 @@
       "subCat": "Ghost-installatie"
     },
     {
-      "name": "Stap 4: Open de berichttemplate",
+      "name": "Stap 4: Open de berichtsjabloon",
       "file": "ghost-step-4.md",
       "subCat": "Ghost-installatie"
     },
@@ -49,9 +49,14 @@
       "subCat": "Ghost-installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "ghost-customize.md",
       "subCat": "Ghost-installatie"
+    },
+    {
+      "name": "Voeg polls toe aan je Ghost-site",
+      "file": "ghost-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

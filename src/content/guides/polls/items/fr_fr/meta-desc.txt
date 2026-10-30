@@ -1,0 +1,3 @@
+---
+Ajoutez des sondages en direct à vos fils de commentaires. Activez les sondages, choisissez qui peut les créer et voter, définissez la confidentialité des votants et recevez des notifications au fur et à mesure que les réponses arrivent.
+---

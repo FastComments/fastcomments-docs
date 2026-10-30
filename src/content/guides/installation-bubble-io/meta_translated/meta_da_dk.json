@@ -1,6 +1,6 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Tilføj live-kommentering til Bubble.io-sider",
+  "pageHeader": "Tilføj live-kommentarer til Bubble.io-websteder",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
@@ -19,7 +19,7 @@
       "subCat": "Installation"
     },
     {
-      "name": "4. Tilpas layout",
+      "name": "4. Juster layout",
       "file": "bubble-io-step-4.md",
       "subCat": "Installation"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Domænefejl",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Tilføj afstemninger til din Bubble.io-app",
+      "file": "bubble-io-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

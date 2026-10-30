@@ -4,22 +4,22 @@
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "Étape 1 : Modifier le cours",
+      "name": "Étape 1 : Modifier le cours",
       "file": "gohighlevel-member-site-step-1.md",
       "subCat": "Installation du site membre GoHighLevel"
     },
     {
-      "name": "Étape 2 : Ouvrir les paramètres avancés",
+      "name": "Étape 2 : Ouvrir les paramètres avancés",
       "file": "gohighlevel-member-site-step-2.md",
       "subCat": "Installation du site membre GoHighLevel"
     },
     {
-      "name": "Étape 3 : Copier le code",
+      "name": "Étape 3 : Copier le code",
       "file": "gohighlevel-member-site-step-3.md",
       "subCat": "Installation du site membre GoHighLevel"
     },
     {
-      "name": "Étape 4 : Coller le code",
+      "name": "Étape 4 : Coller le code",
       "file": "gohighlevel-member-site-step-4.md",
       "subCat": "Installation du site membre GoHighLevel"
     },
@@ -39,12 +39,12 @@
       "subCat": "Installation du site membre GoHighLevel"
     },
     {
-      "name": "Étape 1 : Ajouter un élément de code personnalisé",
+      "name": "Étape 1 : Ajouter un élément de code personnalisé",
       "file": "gohighlevel-site-step-1.md",
       "subCat": "Installation du site GoHighLevel"
     },
     {
-      "name": "Étape 2 : Copier et coller le code",
+      "name": "Étape 2 : Copier et coller le code",
       "file": "gohighlevel-site-step-2.md",
       "subCat": "Installation du site GoHighLevel"
     },
@@ -62,6 +62,11 @@
       "name": "Personnalisation du site",
       "file": "gohighlevel-site-customize.md",
       "subCat": "Installation du site GoHighLevel"
+    },
+    {
+      "name": "Ajouter des sondages à votre site GoHighLevel",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Sondages"
     }
   ]
 }

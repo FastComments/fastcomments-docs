@@ -32,6 +32,11 @@
       "name": "맞춤 설정",
       "file": "weebly-customize.md",
       "subCat": "Weebly 설치"
+    },
+    {
+      "name": "Weebly 사이트에 설문 추가",
+      "file": "weebly-polls.md",
+      "subCat": "설문"
     }
   ]
 }

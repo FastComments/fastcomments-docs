@@ -1,0 +1,4 @@
+---
+Gdy FastComments jest na Twojej stronie Moodle, możesz także uruchamiać ankiety na żywo bezpośrednio w komentarzach. Włącz **Enable Polls** w ustawieniach personalizacji widgetu, a przycisk ankiety pojawi się na pasku narzędzi komentarzy. Ankiety przyjmują od 2 do 10 opcji, wyniki aktualizują się na żywo dla wszystkich na stronie, a Ty wybierasz, kto może tworzyć ankiety i czy głosowanie wymaga logowania. Nie ma nic więcej do zainstalowania na Moodle.
+
+[Wypróbuj demo ankiet na żywo](https://fastcomments.com/product/live-polls) lub przeczytaj [dokumentację ankiet](/guide-polls.html), aby je skonfigurować.

@@ -1,37 +1,42 @@
 {
-  "name": "Инсталација Super.so",
-  "pageHeader": "Додајте дискусије уживо на сајтове Super.so",
+  "name": "Instalacija Super.so",
+  "pageHeader": "Dodajte uživo diskusije na Super.so sajtove",
   "icon": "3rd-party-products/super-so.svg",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Отворите подешавања",
+      "name": "Korak 1: Otvorite podešavanja",
       "file": "super-so-learn-step-1.md",
-      "subCat": "Инсталација Super.so"
+      "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Корак 2: Додајте унапред припремљени код",
+      "name": "Korak 2: Dodajte unapred pripremljeni kod",
       "file": "super-so-learn-step-2.md",
-      "subCat": "Инсталација Super.so"
+      "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Погледајте и: Стандардни виџет за коментаре",
+      "name": "Pogledajte i: Regularni widget za komentare",
       "file": "super-so-comment-widget.md",
-      "subCat": "Инсталација Super.so"
+      "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Успешно",
+      "name": "Uspeh",
       "file": "super-so-learn-success.md",
-      "subCat": "Инсталација Super.so"
+      "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Грешке домена",
+      "name": "Greške domena",
       "file": "super-so-learn-domain-errors.md",
-      "subCat": "Инсталација Super.so"
+      "subCat": "Instalacija Super.so"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "super-so-learn-customize.md",
-      "subCat": "Инсталација Super.so"
+      "subCat": "Instalacija Super.so"
+    },
+    {
+      "name": "Dodajte ankete na vaš Super.so sajt",
+      "file": "super-so-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

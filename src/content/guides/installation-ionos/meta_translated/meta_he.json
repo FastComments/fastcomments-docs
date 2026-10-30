@@ -1,20 +1,20 @@
 {
   "name": "התקנת Ionos",
-  "pageHeader": "הוספת תגובות לאתרי Ionos",
+  "pageHeader": "הוספת תגובות לאתרים של Ionos",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
-      "name": "שלב 1: הוסף טופס יצירת קשר",
+      "name": "שלב 1: הוספת טופס יצירת קשר",
       "file": "ionos-step-1.md",
       "subCat": "התקנת Ionos"
     },
     {
-      "name": "שלב 2: הוסף קוד של FastComments.com",
+      "name": "שלב 2: הוספת קוד FastComments.com",
       "file": "ionos-step-2.md",
       "subCat": "התקנת Ionos"
     },
     {
-      "name": "שלב 3: פרסם",
+      "name": "שלב 3: פרסום",
       "file": "ionos-step-3.md",
       "subCat": "התקנת Ionos"
     },
@@ -24,7 +24,7 @@
       "subCat": "התקנת Ionos"
     },
     {
-      "name": "שגיאות בדומיין",
+      "name": "שגיאות דומיין",
       "file": "ionos-domain-errors.md",
       "subCat": "התקנת Ionos"
     },
@@ -32,6 +32,11 @@
       "name": "התאמה אישית",
       "file": "ionos-customize.md",
       "subCat": "התקנת Ionos"
+    },
+    {
+      "name": "הוספת סקרים לאתר ה-Ionos שלך",
+      "file": "ionos-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

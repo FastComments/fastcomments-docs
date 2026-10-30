@@ -1,0 +1,52 @@
+{
+  "name": "Sondages en direct",
+  "pageHeader": "Sondages en direct dans les commentaires",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Qu'est-ce que les sondages en direct",
+      "file": "what-are-polls.md",
+      "subCat": "Contexte"
+    },
+    {
+      "name": "Activation des sondages",
+      "file": "enabling-polls.md",
+      "subCat": "Configuration des sondages"
+    },
+    {
+      "name": "Qui peut créer des sondages",
+      "file": "who-can-create-polls.md",
+      "subCat": "Configuration des sondages"
+    },
+    {
+      "name": "Autoriser les votes anonymes aux sondages",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Configuration des sondages"
+    },
+    {
+      "name": "Créer un sondage",
+      "file": "creating-a-poll.md",
+      "subCat": "Utilisation des sondages"
+    },
+    {
+      "name": "Vote et résultats en direct",
+      "file": "voting-and-live-results.md",
+      "subCat": "Utilisation des sondages"
+    },
+    {
+      "name": "Confidentialité des votants",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Utilisation des sondages"
+    },
+    {
+      "name": "Notifications de sondage",
+      "file": "poll-notifications.md",
+      "subCat": "Utilisation des sondages"
+    },
+    {
+      "name": "API des sondages",
+      "file": "polls-api.md",
+      "subCat": "Pour les développeurs"
+    }
+  ]
+}

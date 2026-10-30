@@ -27,6 +27,11 @@
       "name": "自定义",
       "file": "systeme-customize.md",
       "subCat": "Systeme.io 安装"
+    },
+    {
+      "name": "向您的 Systeme.io 博客添加投票",
+      "file": "systeme-polls.md",
+      "subCat": "投票"
     }
   ]
 }

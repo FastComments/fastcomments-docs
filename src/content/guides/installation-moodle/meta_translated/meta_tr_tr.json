@@ -6,7 +6,7 @@
     {
       "name": "Hızlı Başlangıç",
       "file": "moodle-quick-start.md",
-      "subCat": "Kısa Özet"
+      "subCat": "Özet"
     },
     {
       "name": "Kurulum",
@@ -19,7 +19,7 @@
       "subCat": "Moodle Eklenti Kurulumu"
     },
     {
-      "name": "Yorumlama Stilleri",
+      "name": "Yorum Stilleri",
       "file": "moodle-commenting-styles.md",
       "subCat": "Moodle Eklenti Kurulumu"
     },
@@ -42,6 +42,11 @@
       "name": "Alan Adı Hataları",
       "file": "moodle-domain-errors.md",
       "subCat": "Moodle Eklenti Kurulumu"
+    },
+    {
+      "name": "Moodle Sitenize Anketler Ekleyin",
+      "file": "moodle-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

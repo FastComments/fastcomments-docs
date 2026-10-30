@@ -17,6 +17,11 @@
       "name": "Персонализиране",
       "file": "memberstack-customize.md",
       "subCat": "Инсталиране на Memberstack"
+    },
+    {
+      "name": "Добавяне на анкети към вашия сайт с Memberstack",
+      "file": "memberstack-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Ghost 설치",
-  "pageHeader": "Ghost 사이트에 회원 전용 실시간 댓글 추가하기",
+  "pageHeader": "Ghost 사이트에 회원 전용 실시간 댓글 추가",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Ghost 설치"
     },
     {
-      "name": "2단계: 테마를 로컬에 설치",
+      "name": "2단계: 로컬에 테마 설치",
       "file": "ghost-step-2.md",
       "subCat": "Ghost 설치"
     },
@@ -19,7 +19,7 @@
       "subCat": "Ghost 설치"
     },
     {
-      "name": "4단계: 게시물 템플릿 열기",
+      "name": "4단계: 포스트 템플릿 열기",
       "file": "ghost-step-4.md",
       "subCat": "Ghost 설치"
     },
@@ -52,6 +52,11 @@
       "name": "맞춤 설정",
       "file": "ghost-customize.md",
       "subCat": "Ghost 설치"
+    },
+    {
+      "name": "Ghost 사이트에 설문 추가",
+      "file": "ghost-polls.md",
+      "subCat": "설문"
     }
   ]
 }

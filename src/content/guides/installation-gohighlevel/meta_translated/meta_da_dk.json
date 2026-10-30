@@ -1,67 +1,72 @@
 {
-  "name": "Installation af GoHighLevel",
+  "name": "GoHighLevel Installation",
   "pageHeader": "Tilføj kommentarer til GoHighLevel-sider",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
       "name": "Trin 1: Rediger kursus",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
       "name": "Trin 2: Åbn avancerede indstillinger",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
       "name": "Trin 3: Kopier kode",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
       "name": "Trin 4: Indsæt kode",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
-      "name": "Medlemsområde succes",
+      "name": "Succes for medlemswebsted",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
-      "name": "Domænefejl på medlemsområdet",
+      "name": "Domænefejl for medlemswebsted",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
-      "name": "Tilpasning af medlemsområdet",
+      "name": "Tilpasning af medlemswebsted",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Installation af GoHighLevel-medlemsområde"
+      "subCat": "GoHighLevel medlemswebstedsinstallation"
     },
     {
       "name": "Trin 1: Tilføj brugerdefineret kodeelement",
       "file": "gohighlevel-site-step-1.md",
-      "subCat": "Installation af GoHighLevel-side"
+      "subCat": "GoHighLevel webstedsinstallation"
     },
     {
       "name": "Trin 2: Kopier og indsæt kode",
       "file": "gohighlevel-site-step-2.md",
-      "subCat": "Installation af GoHighLevel-side"
+      "subCat": "GoHighLevel webstedsinstallation"
     },
     {
-      "name": "Side succes",
+      "name": "Succes for websted",
       "file": "gohighlevel-site-success.md",
-      "subCat": "Installation af GoHighLevel-side"
+      "subCat": "GoHighLevel webstedsinstallation"
     },
     {
-      "name": "Domænefejl på siden",
+      "name": "Domænefejl for websted",
       "file": "gohighlevel-site-domain-errors.md",
-      "subCat": "Installation af GoHighLevel-side"
+      "subCat": "GoHighLevel webstedsinstallation"
     },
     {
-      "name": "Tilpasning af siden",
+      "name": "Tilpasning af websted",
       "file": "gohighlevel-site-customize.md",
-      "subCat": "Installation af GoHighLevel-side"
+      "subCat": "GoHighLevel webstedsinstallation"
+    },
+    {
+      "name": "Tilføj afstemninger til dit GoHighLevel-websted",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

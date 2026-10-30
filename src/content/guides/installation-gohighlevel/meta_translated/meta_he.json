@@ -1,60 +1,60 @@
 {
   "name": "התקנת GoHighLevel",
-  "pageHeader": "הוספת תגובות לאתרים ב-GoHighLevel",
+  "pageHeader": "הוספת תגובות לאתרי GoHighLevel",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "שלב 1: עריכת הקורס",
+      "name": "שלב 1: ערוך קורס",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
       "name": "שלב 2: פתח הגדרות מתקדמות",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
       "name": "שלב 3: העתק קוד",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
       "name": "שלב 4: הדבק קוד",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
-      "name": "אתר חברים הותקן בהצלחה",
+      "name": "הצלחה באתר החבר",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
-      "name": "שגיאות בדומיין של אתר חברים",
+      "name": "שגיאות דומיין באתר החבר",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
-      "name": "התאמה אישית של אתר חברים",
+      "name": "התאמה אישית של אתר החבר",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "התקנת אתר חברים ב-GoHighLevel"
+      "subCat": "התקנת אתר חבר ב-GoHighLevel"
     },
     {
-      "name": "שלב 1: הוסף אלמנט קוד מותאם אישית",
+      "name": "שלב 1: הוסף אלמנט קוד מותאם",
       "file": "gohighlevel-site-step-1.md",
       "subCat": "התקנת אתר ב-GoHighLevel"
     },
     {
-      "name": "שלב 2: העתק והדבק את הקוד",
+      "name": "שלב 2: העתק והדבק קוד",
       "file": "gohighlevel-site-step-2.md",
       "subCat": "התקנת אתר ב-GoHighLevel"
     },
     {
-      "name": "האתר הותקן בהצלחה",
+      "name": "הצלחה באתר",
       "file": "gohighlevel-site-success.md",
       "subCat": "התקנת אתר ב-GoHighLevel"
     },
     {
-      "name": "שגיאות בדומיין של האתר",
+      "name": "שגיאות דומיין באתר",
       "file": "gohighlevel-site-domain-errors.md",
       "subCat": "התקנת אתר ב-GoHighLevel"
     },
@@ -62,6 +62,11 @@
       "name": "התאמה אישית של האתר",
       "file": "gohighlevel-site-customize.md",
       "subCat": "התקנת אתר ב-GoHighLevel"
+    },
+    {
+      "name": "הוסף סקרים לאתר GoHighLevel שלך",
+      "file": "gohighlevel-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

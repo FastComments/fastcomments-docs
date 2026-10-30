@@ -36,6 +36,11 @@
       "name": "שגיאות דומיין",
       "file": "val-town-domain-errors.md",
       "subCat": "התקנת Val Town"
+    },
+    {
+      "name": "הוסף סקרים לאפליקציית Val Town שלך",
+      "file": "val-town-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

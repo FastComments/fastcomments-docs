@@ -14,17 +14,17 @@
       "subCat": "Webnode Kurulumu"
     },
     {
-      "name": "Adım 3: Kod Parçacığını Kopyalayıp Yapıştırın",
+      "name": "Adım 3: Kod Parçasını Kopyala ve Yapıştır",
       "file": "webnode-step-3.md",
       "subCat": "Webnode Kurulumu"
     },
     {
-      "name": "Adım 4: Yayınlayın",
+      "name": "Adım 4: Yayınla",
       "file": "webnode-step-4.md",
       "subCat": "Webnode Kurulumu"
     },
     {
-      "name": "Başarılı",
+      "name": "Başarı",
       "file": "webnode-success.md",
       "subCat": "Webnode Kurulumu"
     },
@@ -37,6 +37,11 @@
       "name": "Özelleştirme",
       "file": "webnode-customize.md",
       "subCat": "Webnode Kurulumu"
+    },
+    {
+      "name": "Webnode Sitenize Anket Ekleyin",
+      "file": "webnode-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

@@ -1,62 +1,67 @@
 {
-  "name": "Инсталација Drupal-а",
-  "pageHeader": "Додајте коментарисање уживо на Drupal сајтовима",
+  "name": "Instalacija Drupala",
+  "pageHeader": "Dodajte komentarisanje u realnom vremenu na Drupal sajtove",
   "icon": "3rd-party-products/drupal.png",
   "itemsOrdered": [
     {
-      "name": "Брзи почетак",
+      "name": "Brzi početak",
       "file": "drupal-quick-start.md",
-      "subCat": "Сажетак"
+      "subCat": "TLDR"
     },
     {
-      "name": "Инсталација",
+      "name": "Instalacija",
       "file": "drupal-installation.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Конфигурација",
+      "name": "Konfiguracija",
       "file": "drupal-configuration.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Видгет блокови",
+      "name": "Widget blokovi",
       "file": "drupal-widget-blocks.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Поља типа садржаја",
+      "name": "Polja tipa sadržaja",
       "file": "drupal-content-type-fields.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Једнократно пријављивање (SSO)",
+      "name": "Jedinstvena prijava (SSO)",
       "file": "drupal-sso.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Дозволе",
+      "name": "Dozvole",
       "file": "drupal-permissions.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Вишезичност",
+      "name": "Višejezičnost",
       "file": "drupal-multilingual.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Резиденција података у ЕУ",
+      "name": "Rezidencija podataka EU",
       "file": "drupal-eu-data-residency.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "drupal-customize.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
     },
     {
-      "name": "Захтеви",
+      "name": "Zahtevi",
       "file": "drupal-requirements.md",
-      "subCat": "Инсталација Drupal-а"
+      "subCat": "Instalacija Drupala"
+    },
+    {
+      "name": "Dodajte ankete na vaš Drupal sajt",
+      "file": "drupal-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

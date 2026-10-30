@@ -1,6 +1,6 @@
 {
   "name": "Wix 安裝",
-  "pageHeader": "在 Wix 網站新增評論",
+  "pageHeader": "在 Wix 網站添加評論",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
@@ -9,12 +9,12 @@
       "subCat": "Wix 安裝"
     },
     {
-      "name": "步驟 2：新增嵌入區塊",
+      "name": "步驟 2：添加嵌入區塊",
       "file": "wix-step-2.md",
       "subCat": "Wix 安裝"
     },
     {
-      "name": "步驟 3：複製並貼上自訂程式碼",
+      "name": "步驟 3：複製/貼上自訂程式碼",
       "file": "wix-step-3.md",
       "subCat": "Wix 安裝"
     },
@@ -24,7 +24,7 @@
       "subCat": "Wix 安裝"
     },
     {
-      "name": "步驟 5：獨立的留言串",
+      "name": "步驟 5：唯一評論串",
       "file": "wix-step-5.md",
       "subCat": "Wix 安裝"
     },
@@ -37,6 +37,11 @@
       "name": "自訂",
       "file": "wix-customize.md",
       "subCat": "Wix 安裝"
+    },
+    {
+      "name": "在您的 Wix 網站添加投票",
+      "file": "wix-polls.md",
+      "subCat": "投票"
     }
   ]
 }

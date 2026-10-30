@@ -1,37 +1,42 @@
 {
-  "name": "ClickFunnels のインストール",
-  "pageHeader": "ClickFunnels コースにライブチャットを追加する",
+  "name": "ClickFunnels インストール",
+  "pageHeader": "ClickFunnels コースにライブチャットを追加",
   "icon": "3rd-party-products/clickfunnels.svg",
   "itemsOrdered": [
     {
       "name": "ステップ1：テンプレートを見つける",
       "file": "clickfunnels-step-1.md",
-      "subCat": "ClickFunnels のインストール"
+      "subCat": "ClickFunnels インストール"
     },
     {
       "name": "ステップ2：コードを追加する",
       "file": "clickfunnels-step-2.md",
-      "subCat": "ClickFunnels のインストール"
+      "subCat": "ClickFunnels インストール"
     },
     {
-      "name": "ドメインのエラー",
+      "name": "ドメインエラー",
       "file": "clickfunnels-domain-errors.md",
-      "subCat": "ClickFunnels のインストール"
+      "subCat": "ClickFunnels インストール"
     },
     {
       "name": "カスタマイズ",
       "file": "clickfunnels-customize.md",
-      "subCat": "ClickFunnels のインストール"
+      "subCat": "ClickFunnels インストール"
     },
     {
-      "name": "補足：ライブコメント用のコードスニペット",
+      "name": "追加：ライブコメント用コードスニペット",
       "file": "clickfunnels-extra-live-commenting.md",
-      "subCat": "ライブコメント用コードスニペット"
+      "subCat": "ライブコメントコードスニペット"
     },
     {
-      "name": "補足：コメントの自動再生",
+      "name": "追加：自動再生コメント",
       "file": "clickfunnels-extra-scheduled-comments.md",
-      "subCat": "コメントの自動再生"
+      "subCat": "自動再生コメント"
+    },
+    {
+      "name": "ClickFunnels コースに投票を追加",
+      "file": "clickfunnels-polls.md",
+      "subCat": "投票"
     }
   ]
 }

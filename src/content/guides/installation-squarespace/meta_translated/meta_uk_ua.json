@@ -1,77 +1,82 @@
 {
   "name": "Встановлення Squarespace",
-  "pageHeader": "Додавання коментарів на сайти Squarespace",
+  "pageHeader": "Додати коментарі до сайтів Squarespace",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Додавання живого коментування до вашого блогу",
+      "name": "Додавання живих коментарів до вашого блогу",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Додати коментарі до блогу"
+      "subCat": "Додати коментарі до вашого блогу"
     },
     {
-      "name": "Крок 1: Відкрийте налаштування блогу",
+      "name": "Крок 1: Відкрити налаштування блогу",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Додати коментарі до блогу"
+      "subCat": "Додати коментарі до вашого блогу"
     },
     {
-      "name": "Крок 2: Вставте код FastComments.com",
+      "name": "Крок 2: Вставити ваш код FastComments.com",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Додати коментарі до блогу"
+      "subCat": "Додати коментарі до вашого блогу"
     },
     {
-      "name": "Готово",
+      "name": "Успіх",
       "file": "squarespace-blog-success.md",
-      "subCat": "Додати коментарі до блогу"
+      "subCat": "Додати коментарі до вашого блогу"
     },
     {
-      "name": "Додавання живого коментування на всі сторінки",
+      "name": "Додати живі коментарі на всі сторінки",
       "file": "squarespace-pages-all-pages-step-0.md",
-      "subCat": "Додати коментарі до всіх сторінок"
+      "subCat": "Додати коментарі на всі сторінки"
     },
     {
-      "name": "Крок 1: Відкрийте інструменти розробника",
+      "name": "Крок 1: Відкрити інструменти розробника",
       "file": "squarespace-pages-all-pages-step-1.md",
-      "subCat": "Додати коментарі до всіх сторінок"
+      "subCat": "Додати коментарі на всі сторінки"
     },
     {
-      "name": "Крок 2: Вставте код FastComments.com",
+      "name": "Крок 2: Вставити ваш код FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
-      "subCat": "Додати коментарі до всіх сторінок"
+      "subCat": "Додати коментарі на всі сторінки"
     },
     {
-      "name": "Готово",
+      "name": "Успіх",
       "file": "squarespace-pages-all-pages-success.md",
-      "subCat": "Додати коментарі до всіх сторінок"
+      "subCat": "Додати коментарі на всі сторінки"
     },
     {
-      "name": "Додавання живого коментування на конкретну сторінку",
+      "name": "Додати живий коментар до конкретної сторінки",
       "file": "squarespace-pages-specific-page-step-0.md",
       "subCat": "Додати коментарі до конкретної сторінки"
     },
     {
-      "name": "Крок 1: Додайте блок коду",
+      "name": "Крок 1: Додати блок коду",
       "file": "squarespace-pages-specific-page-step-1.md",
       "subCat": "Додати коментарі до конкретної сторінки"
     },
     {
-      "name": "Крок 2: Вставте код FastComments.com",
+      "name": "Крок 2: Вставити ваш код FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
       "subCat": "Додати коментарі до конкретної сторінки"
     },
     {
-      "name": "Готово",
+      "name": "Успіх",
       "file": "squarespace-pages-specific-page-success.md",
       "subCat": "Додати коментарі до конкретної сторінки"
     },
     {
       "name": "Помилки домену",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Наступні кроки для Squarespace"
+      "subCat": "Наступні кроки Squarespace"
     },
     {
       "name": "Налаштування",
       "file": "squarespace-customize.md",
-      "subCat": "Наступні кроки для Squarespace"
+      "subCat": "Наступні кроки Squarespace"
+    },
+    {
+      "name": "Додати опитування до вашого сайту Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

@@ -23,7 +23,7 @@
       "subCat": "Val Town Installation"
     },
     {
-      "name": "Modtagelse af webhooks",
+      "name": "Modtag webhooks",
       "file": "val-town-webhooks.md",
       "subCat": "Val Town Installation"
     },
@@ -36,6 +36,11 @@
       "name": "Domænefejl",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town Installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Val Town-app",
+      "file": "val-town-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

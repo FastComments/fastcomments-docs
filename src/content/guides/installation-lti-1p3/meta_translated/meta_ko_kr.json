@@ -1,10 +1,10 @@
 {
   "name": "LMS 설치 (LTI 1.3)",
-  "pageHeader": "LTI 1.3을 통해 LMS에 댓글 추가하기",
+  "pageHeader": "LTI 1.3을 통해 LMS에 댓글 추가",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "요금",
+      "name": "가격",
       "file": "lti-plans.md",
       "subCat": "요약"
     },
@@ -72,6 +72,11 @@
       "name": "최소 권한 및 데이터 최소화",
       "file": "lti-least-privilege.md",
       "subCat": "보안 및 규정 준수"
+    },
+    {
+      "name": "LMS 코스에 설문 추가",
+      "file": "lti-polls.md",
+      "subCat": "설문"
     }
   ]
 }

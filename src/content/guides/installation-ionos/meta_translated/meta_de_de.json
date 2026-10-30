@@ -32,6 +32,11 @@
       "name": "Anpassung",
       "file": "ionos-customize.md",
       "subCat": "Ionos-Installation"
+    },
+    {
+      "name": "Umfragen zu Ihrer Ionos-Website hinzufügen",
+      "file": "ionos-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

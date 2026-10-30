@@ -1,32 +1,37 @@
 {
-  "name": "Инсталација ThriveCart Learn+",
-  "pageHeader": "Додајте коментаре курсевима у ThriveCart Learn+",
+  "name": "ThriveCart Learn+ Instalacija",
+  "pageHeader": "Dodajte komentare na ThriveCart Learn+ kurseve",
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
-      "name": "Корак 1: Припремите курс",
+      "name": "Korak 1: Pripremite kurs",
       "file": "thrivecart-learn-step-1.md",
-      "subCat": "Инсталација ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Instalacija"
     },
     {
-      "name": "Корак 2: Додајте прилагођени код",
+      "name": "Korak 2: Dodajte prilagođeni kod",
       "file": "thrivecart-learn-step-2.md",
-      "subCat": "Инсталација ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Instalacija"
     },
     {
-      "name": "Успешно",
+      "name": "Uspeh",
       "file": "thrivecart-learn-success.md",
-      "subCat": "Инсталација ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Instalacija"
     },
     {
-      "name": "Грешке домена",
+      "name": "Greške domena",
       "file": "thrivecart-learn-domain-errors.md",
-      "subCat": "Инсталација ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Instalacija"
     },
     {
-      "name": "Прилагођавање",
+      "name": "Prilagođavanje",
       "file": "thrivecart-learn-customize.md",
-      "subCat": "Инсталација ThriveCart Learn+"
+      "subCat": "ThriveCart Learn+ Instalacija"
+    },
+    {
+      "name": "Dodajte ankete u vaš ThriveCart Learn+ kurs",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

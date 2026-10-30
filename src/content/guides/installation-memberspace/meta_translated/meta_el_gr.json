@@ -17,6 +17,11 @@
       "name": "Προσαρμογή",
       "file": "memberspace-customize.md",
       "subCat": "Εγκατάσταση MemberSpace"
+    },
+    {
+      "name": "Προσθήκη δημοσκοπήσεων στον ιστότοπο MemberSpace",
+      "file": "memberspace-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

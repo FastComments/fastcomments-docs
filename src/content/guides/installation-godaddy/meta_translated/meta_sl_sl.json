@@ -1,37 +1,42 @@
 {
-  "name": "Namestitev Godaddy",
-  "pageHeader": "Dodajte komentarje na spletna mesta Godaddy",
+  "name": "Namestitev GoDaddy",
+  "pageHeader": "Dodaj komentarje na spletna mesta GoDaddy",
   "icon": "3rd-party-products/godaddy.svg",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Dodajte območje za kodo",
+      "name": "Korak 1: Dodaj območje kode",
       "file": "godaddy-step-1.md",
-      "subCat": "Namestitev Godaddy"
+      "subCat": "Namestitev GoDaddy"
     },
     {
-      "name": "Korak 2: Dodajte kodo FastComments.com",
+      "name": "Korak 2: Dodaj kodo FastComments.com",
       "file": "godaddy-step-2.md",
-      "subCat": "Namestitev Godaddy"
+      "subCat": "Namestitev GoDaddy"
     },
     {
-      "name": "Korak 3: Objavite",
+      "name": "Korak 3: Objavi",
       "file": "godaddy-step-3.md",
-      "subCat": "Namestitev Godaddy"
+      "subCat": "Namestitev GoDaddy"
     },
     {
-      "name": "Uspešno",
+      "name": "Uspeh",
       "file": "godaddy-success.md",
-      "subCat": "Namestitev Godaddy"
+      "subCat": "Namestitev GoDaddy"
     },
     {
       "name": "Napake domene",
       "file": "godaddy-domain-errors.md",
-      "subCat": "Namestitev Godaddy"
+      "subCat": "Namestitev GoDaddy"
     },
     {
       "name": "Prilagajanje",
       "file": "godaddy-customize.md",
-      "subCat": "Namestitev Godaddy"
+      "subCat": "Namestitev GoDaddy"
+    },
+    {
+      "name": "Dodaj ankete na svoje GoDaddy spletno mesto",
+      "file": "godaddy-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

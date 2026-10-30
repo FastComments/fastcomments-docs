@@ -1,47 +1,52 @@
 {
   "name": "Instalación de Moodle",
-  "pageHeader": "Añadir comentarios a sitios de Moodle",
+  "pageHeader": "Agregar Comentarios a Sitios Moodle",
   "icon": "3rd-party-products/moodle.png",
   "itemsOrdered": [
     {
-      "name": "Inicio rápido",
+      "name": "Inicio Rápido",
       "file": "moodle-quick-start.md",
       "subCat": "Resumen"
     },
     {
       "name": "Instalación",
       "file": "moodle-installation.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
     },
     {
       "name": "Configuración",
       "file": "moodle-configuration.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
     },
     {
-      "name": "Estilos de comentarios",
+      "name": "Estilos de Comentario",
       "file": "moodle-commenting-styles.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
     },
     {
       "name": "Modos SSO",
       "file": "moodle-sso-modes.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
     },
     {
-      "name": "Preferencias de notificación del usuario",
+      "name": "Preferencias de Notificación del Usuario",
       "file": "moodle-user-preferences.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
     },
     {
       "name": "Personalización",
       "file": "moodle-customize.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
     },
     {
-      "name": "Errores de dominio",
+      "name": "Errores de Dominio",
       "file": "moodle-domain-errors.md",
-      "subCat": "Instalación del complemento de Moodle"
+      "subCat": "Instalación del Plugin de Moodle"
+    },
+    {
+      "name": "Agregar Encuestas a su Sitio Moodle",
+      "file": "moodle-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

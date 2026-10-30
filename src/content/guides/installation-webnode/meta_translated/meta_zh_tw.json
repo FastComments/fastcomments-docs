@@ -1,6 +1,6 @@
 {
   "name": "Webnode 安裝",
-  "pageHeader": "在 Webnode 網站新增留言",
+  "pageHeader": "在 Webnode 網站上添加評論",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Webnode 安裝"
     },
     {
-      "name": "步驟 2：新增區段與 HTML 區塊",
+      "name": "步驟 2：添加區段和 HTML 區塊",
       "file": "webnode-step-2.md",
       "subCat": "Webnode 安裝"
     },
@@ -37,6 +37,11 @@
       "name": "自訂",
       "file": "webnode-customize.md",
       "subCat": "Webnode 安裝"
+    },
+    {
+      "name": "在您的 Webnode 網站上添加投票",
+      "file": "webnode-polls.md",
+      "subCat": "投票"
     }
   ]
 }

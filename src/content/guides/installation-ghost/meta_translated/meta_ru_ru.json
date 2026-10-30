@@ -1,15 +1,15 @@
 {
   "name": "Установка Ghost",
-  "pageHeader": "Добавьте живые комментарии только для участников на сайтах Ghost",
+  "pageHeader": "Добавьте живой комментарий только для участников на сайты Ghost",
   "icon": "3rd-party-products/ghost.png",
   "itemsOrdered": [
     {
-      "name": "Шаг 1: Скачайте тему",
+      "name": "Шаг 1: Скачайте свою тему",
       "file": "ghost-step-1.md",
       "subCat": "Установка Ghost"
     },
     {
-      "name": "Шаг 2: Установите тему локально",
+      "name": "Шаг 2: Установите свою тему локально",
       "file": "ghost-step-2.md",
       "subCat": "Установка Ghost"
     },
@@ -19,7 +19,7 @@
       "subCat": "Установка Ghost"
     },
     {
-      "name": "Шаг 4: Откройте шаблон записи",
+      "name": "Шаг 4: Откройте шаблон поста",
       "file": "ghost-step-4.md",
       "subCat": "Установка Ghost"
     },
@@ -29,7 +29,7 @@
       "subCat": "Установка Ghost"
     },
     {
-      "name": "Шаг 6: Экспортируйте тему",
+      "name": "Шаг 6: Экспортируйте свою тему",
       "file": "ghost-step-6.md",
       "subCat": "Установка Ghost"
     },
@@ -39,7 +39,7 @@
       "subCat": "Установка Ghost"
     },
     {
-      "name": "Готово!",
+      "name": "Успех!",
       "file": "ghost-success.md",
       "subCat": "Установка Ghost"
     },
@@ -52,6 +52,11 @@
       "name": "Настройка",
       "file": "ghost-customize.md",
       "subCat": "Установка Ghost"
+    },
+    {
+      "name": "Добавьте опросы на ваш сайт Ghost",
+      "file": "ghost-polls.md",
+      "subCat": "Опросы"
     }
   ]
 }

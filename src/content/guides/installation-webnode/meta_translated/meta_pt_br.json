@@ -1,25 +1,25 @@
 {
   "name": "Instalação do Webnode",
-  "pageHeader": "Adicionar comentários a sites do Webnode",
+  "pageHeader": "Adicionar Comentários aos Sites Webnode",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Passo 1: Edite sua página",
+      "name": "Etapa 1: Edite sua página",
       "file": "webnode-step-1.md",
       "subCat": "Instalação do Webnode"
     },
     {
-      "name": "Passo 2: Adicione uma seção e um bloco HTML",
+      "name": "Etapa 2: Adicione Seção e Bloco HTML",
       "file": "webnode-step-2.md",
       "subCat": "Instalação do Webnode"
     },
     {
-      "name": "Passo 3: Copie e cole o trecho de código",
+      "name": "Etapa 3: Copie e Cole o Trecho de Código",
       "file": "webnode-step-3.md",
       "subCat": "Instalação do Webnode"
     },
     {
-      "name": "Passo 4: Publique",
+      "name": "Etapa 4: Publicar",
       "file": "webnode-step-4.md",
       "subCat": "Instalação do Webnode"
     },
@@ -29,7 +29,7 @@
       "subCat": "Instalação do Webnode"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "webnode-domain-errors.md",
       "subCat": "Instalação do Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "Personalização",
       "file": "webnode-customize.md",
       "subCat": "Instalação do Webnode"
+    },
+    {
+      "name": "Adicionar Enquetes ao seu Site Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

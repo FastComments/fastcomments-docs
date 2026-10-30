@@ -1,6 +1,6 @@
 {
   "name": "Ionos 安装",
-  "pageHeader": "在 Ionos 网站添加评论",
+  "pageHeader": "在 Ionos 网站上添加评论",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
@@ -32,6 +32,11 @@
       "name": "自定义",
       "file": "ionos-customize.md",
       "subCat": "Ionos 安装"
+    },
+    {
+      "name": "在您的 Ionos 网站上添加投票",
+      "file": "ionos-polls.md",
+      "subCat": "投票"
     }
   ]
 }

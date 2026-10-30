@@ -1,6 +1,6 @@
 {
   "name": "Instalacija Weebly",
-  "pageHeader": "Dodavanje komentara na Weebly stranice",
+  "pageHeader": "Dodajte komentare na Weebly stranice",
   "icon": "3rd-party-products/weebly.svg",
   "itemsOrdered": [
     {
@@ -24,7 +24,7 @@
       "subCat": "Instalacija Weebly"
     },
     {
-      "name": "Pogreške domene",
+      "name": "Greške domene",
       "file": "weebly-domain-errors.md",
       "subCat": "Instalacija Weebly"
     },
@@ -32,6 +32,11 @@
       "name": "Prilagodba",
       "file": "weebly-customize.md",
       "subCat": "Instalacija Weebly"
+    },
+    {
+      "name": "Dodajte ankete na svoju Weebly stranicu",
+      "file": "weebly-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

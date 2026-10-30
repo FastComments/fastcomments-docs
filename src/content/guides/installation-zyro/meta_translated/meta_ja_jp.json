@@ -1,37 +1,42 @@
 {
-  "name": "Zyroのインストール",
-  "pageHeader": "Zyroサイトにライブコメントを追加",
+  "name": "Zyro インストール",
+  "pageHeader": "Zyro サイトにライブコメントを追加",
   "icon": "3rd-party-products/zyro.png",
   "itemsOrdered": [
     {
-      "name": "ステップ1：コードウィジェットを追加",
+      "name": "ステップ 1: コードウィジェットを追加",
       "file": "zyro-step-1.md",
-      "subCat": "Zyroサイトのインストール"
+      "subCat": "Zyro サイトインストール"
     },
     {
-      "name": "ステップ2：コードを追加",
+      "name": "ステップ 2: コードを追加",
       "file": "zyro-step-2.md",
-      "subCat": "Zyroサイトのインストール"
+      "subCat": "Zyro サイトインストール"
     },
     {
       "name": "成功",
       "file": "zyro-site-success.md",
-      "subCat": "Zyroサイトのインストール"
+      "subCat": "Zyro サイトインストール"
     },
     {
-      "name": "サイトドメインのエラー",
+      "name": "サイトドメインエラー",
       "file": "zyro-site-domain-errors.md",
-      "subCat": "Zyroサイトのインストール"
+      "subCat": "Zyro サイトインストール"
     },
     {
-      "name": "サイトのカスタマイズ",
+      "name": "サイトカスタマイズ",
       "file": "zyro-site-customize.md",
-      "subCat": "Zyroサイトのインストール"
+      "subCat": "Zyro サイトインストール"
     },
     {
       "name": "フローティングいいねボタン",
       "file": "zyro-floating-likes.md",
-      "subCat": "Zyroフローティングいいね"
+      "subCat": "Zyro フローティングいいね"
+    },
+    {
+      "name": "Zyro サイトに投票を追加",
+      "file": "zyro-polls.md",
+      "subCat": "投票"
     }
   ]
 }

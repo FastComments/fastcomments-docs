@@ -1,6 +1,6 @@
 {
   "name": "Wix-installation",
-  "pageHeader": "Tilføj kommentarer til Wix-sider",
+  "pageHeader": "Tilføj kommentarer til Wix-websteder",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Wix-installation"
     },
     {
-      "name": "Trin 3: Kopier/indsæt brugerdefineret kode",
+      "name": "Trin 3: Kopier/indsæt tilpasset kode",
       "file": "wix-step-3.md",
       "subCat": "Wix-installation"
     },
@@ -37,6 +37,11 @@
       "name": "Tilpasning",
       "file": "wix-customize.md",
       "subCat": "Wix-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til din Wix-side",
+      "file": "wix-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

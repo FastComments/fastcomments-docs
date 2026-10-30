@@ -32,6 +32,11 @@
       "name": "플로팅 좋아요 버튼",
       "file": "hostinger-floating-likes.md",
       "subCat": "Hostinger 플로팅 좋아요"
+    },
+    {
+      "name": "Hostinger 사이트에 설문 추가",
+      "file": "hostinger-polls.md",
+      "subCat": "설문"
     }
   ]
 }

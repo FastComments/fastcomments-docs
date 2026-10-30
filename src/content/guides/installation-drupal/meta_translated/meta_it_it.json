@@ -6,7 +6,7 @@
     {
       "name": "Avvio rapido",
       "file": "drupal-quick-start.md",
-      "subCat": "In breve"
+      "subCat": "TLDR"
     },
     {
       "name": "Installazione",
@@ -29,7 +29,7 @@
       "subCat": "Installazione di Drupal"
     },
     {
-      "name": "Single Sign-On (SSO)",
+      "name": "Accesso unico (SSO)",
       "file": "drupal-sso.md",
       "subCat": "Installazione di Drupal"
     },
@@ -44,7 +44,7 @@
       "subCat": "Installazione di Drupal"
     },
     {
-      "name": "Residenza dei dati nell'UE",
+      "name": "Residenza dei dati UE",
       "file": "drupal-eu-data-residency.md",
       "subCat": "Installazione di Drupal"
     },
@@ -57,6 +57,11 @@
       "name": "Requisiti",
       "file": "drupal-requirements.md",
       "subCat": "Installazione di Drupal"
+    },
+    {
+      "name": "Aggiungi sondaggi al tuo sito Drupal",
+      "file": "drupal-polls.md",
+      "subCat": "Sondaggi"
     }
   ]
 }

@@ -29,12 +29,17 @@
       "subCat": "Instalacja"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "bubble-io-customize.md"
     },
     {
       "name": "Błędy domeny",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Dodaj ankiety do swojej aplikacji Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

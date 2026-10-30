@@ -1,10 +1,10 @@
 {
   "name": "התקנת Systeme.io",
-  "pageHeader": "הוספת תגובות לבלוג ב-Systeme.io",
+  "pageHeader": "הוספת תגובות לבלוג של Systeme.io",
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "שלב 1: פתח את תבנית הנושא של הבלוג",
+      "name": "שלב 1: פתח את תבנית ערכת נושא הבלוג",
       "file": "systeme-step-1.md",
       "subCat": "התקנת Systeme.io"
     },
@@ -27,6 +27,11 @@
       "name": "התאמה אישית",
       "file": "systeme-customize.md",
       "subCat": "התקנת Systeme.io"
+    },
+    {
+      "name": "הוספת סקרים לבלוג שלך ב-Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

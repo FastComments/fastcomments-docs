@@ -1,9 +1,9 @@
 {
   "name": "Val Town Kurulumu",
-  "pageHeader": "Val Town Uygulamalarına Canlı Yorum Ekleme",
+  "pageHeader": "Val Town Uygulamalarına Canlı Yorum Ekle",
   "itemsOrdered": [
     {
-      "name": "Adım 1: Widget'ı Ekle",
+      "name": "Adım 1: Widget'ı Ekleyin",
       "file": "val-town-step-1.md",
       "subCat": "Val Town Kurulumu"
     },
@@ -13,7 +13,7 @@
       "subCat": "Val Town Kurulumu"
     },
     {
-      "name": "İndeks Sayfasındaki Yorum Sayıları",
+      "name": "İndeks Sayfasında Yorum Sayıları",
       "file": "val-town-counts.md",
       "subCat": "Val Town Kurulumu"
     },
@@ -23,7 +23,7 @@
       "subCat": "Val Town Kurulumu"
     },
     {
-      "name": "Webhook'ları Alma",
+      "name": "Webhooks Alma",
       "file": "val-town-webhooks.md",
       "subCat": "Val Town Kurulumu"
     },
@@ -33,9 +33,14 @@
       "subCat": "Val Town Kurulumu"
     },
     {
-      "name": "Alan Adı Hataları",
+      "name": "Domain Hataları",
       "file": "val-town-domain-errors.md",
       "subCat": "Val Town Kurulumu"
+    },
+    {
+      "name": "Val Town Uygulamanıza Anketler Ekleyin",
+      "file": "val-town-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }

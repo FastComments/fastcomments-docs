@@ -1,67 +1,72 @@
 {
   "name": "Εγκατάσταση GoHighLevel",
-  "pageHeader": "Προσθήκη σχολίων σε ιστότοπους GoHighLevel",
+  "pageHeader": "Προσθήκη Σχολίων σε Ιστότοπους GoHighLevel",
   "icon": "3rd-party-products/gohighlevel.png",
   "itemsOrdered": [
     {
-      "name": "Βήμα 1: Επεξεργασία μαθήματος",
+      "name": "Βήμα 1: Επεξεργασία Μαθήματος",
       "file": "gohighlevel-member-site-step-1.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Βήμα 2: Άνοιγμα Προχωρημένων Ρυθμίσεων",
+      "name": "Βήμα 2: Άνοιγμα Προηγμένων Ρυθμίσεων",
       "file": "gohighlevel-member-site-step-2.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Βήμα 3: Αντιγραφή κώδικα",
+      "name": "Βήμα 3: Αντιγραφή Κώδικα",
       "file": "gohighlevel-member-site-step-3.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Βήμα 4: Επικόλληση κώδικα",
+      "name": "Βήμα 4: Επικόλληση Κώδικα",
       "file": "gohighlevel-member-site-step-4.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Επιτυχής ρύθμιση ιστότοπου μελών",
+      "name": "Επιτυχία Ιστοτόπου Μέλους",
       "file": "gohighlevel-member-site-success.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Σφάλματα τομέα στον ιστότοπο μελών",
+      "name": "Σφάλματα Τομέα Ιστοτόπου Μέλους",
       "file": "gohighlevel-member-site-domain-errors.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Προσαρμογή ιστότοπου μελών",
+      "name": "Προσαρμογή Ιστοτόπου Μέλους",
       "file": "gohighlevel-member-site-customize.md",
-      "subCat": "Εγκατάσταση ιστότοπου μελών GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου Μέλους GoHighLevel"
     },
     {
-      "name": "Βήμα 1: Προσθήκη στοιχείου προσαρμοσμένου κώδικα",
+      "name": "Βήμα 1: Προσθήκη Προσαρμοσμένου Στοιχείου Κώδικα",
       "file": "gohighlevel-site-step-1.md",
-      "subCat": "Εγκατάσταση ιστότοπου GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου GoHighLevel"
     },
     {
-      "name": "Βήμα 2: Αντιγραφή και επικόλληση κώδικα",
+      "name": "Βήμα 2: Αντιγραφή και Επικόλληση Κώδικα",
       "file": "gohighlevel-site-step-2.md",
-      "subCat": "Εγκατάσταση ιστότοπου GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου GoHighLevel"
     },
     {
-      "name": "Επιτυχής ρύθμιση ιστότοπου",
+      "name": "Επιτυχία Ιστοτόπου",
       "file": "gohighlevel-site-success.md",
-      "subCat": "Εγκατάσταση ιστότοπου GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου GoHighLevel"
     },
     {
-      "name": "Σφάλματα τομέα στον ιστότοπο",
+      "name": "Σφάλματα Τομέα Ιστοτόπου",
       "file": "gohighlevel-site-domain-errors.md",
-      "subCat": "Εγκατάσταση ιστότοπου GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου GoHighLevel"
     },
     {
-      "name": "Προσαρμογή ιστότοπου",
+      "name": "Προσαρμογή Ιστοτόπου",
       "file": "gohighlevel-site-customize.md",
-      "subCat": "Εγκατάσταση ιστότοπου GoHighLevel"
+      "subCat": "Εγκατάσταση Ιστοτόπου GoHighLevel"
+    },
+    {
+      "name": "Προσθήκη Δημοσκοπήσεων στον Ιστότοπό σας GoHighLevel",
+      "file": "gohighlevel-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

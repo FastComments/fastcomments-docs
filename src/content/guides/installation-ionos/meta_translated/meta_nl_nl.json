@@ -1,37 +1,42 @@
 {
-  "name": "Ionos-installatie",
+  "name": "Ionos Installatie",
   "pageHeader": "Reacties toevoegen aan Ionos-sites",
   "icon": "3rd-party-products/ionos.svg",
   "itemsOrdered": [
     {
       "name": "Stap 1: Voeg een contactformulier toe",
       "file": "ionos-step-1.md",
-      "subCat": "Ionos-installatie"
+      "subCat": "Ionos Installatie"
     },
     {
       "name": "Stap 2: Voeg FastComments.com-code toe",
       "file": "ionos-step-2.md",
-      "subCat": "Ionos-installatie"
+      "subCat": "Ionos Installatie"
     },
     {
-      "name": "Stap 3: Publiceer",
+      "name": "Stap 3: Publiceren",
       "file": "ionos-step-3.md",
-      "subCat": "Ionos-installatie"
+      "subCat": "Ionos Installatie"
     },
     {
       "name": "Succes",
       "file": "ionos-success.md",
-      "subCat": "Ionos-installatie"
+      "subCat": "Ionos Installatie"
     },
     {
       "name": "Domeinfouten",
       "file": "ionos-domain-errors.md",
-      "subCat": "Ionos-installatie"
+      "subCat": "Ionos Installatie"
     },
     {
       "name": "Aanpassing",
       "file": "ionos-customize.md",
-      "subCat": "Ionos-installatie"
+      "subCat": "Ionos Installatie"
+    },
+    {
+      "name": "Voeg polls toe aan uw Ionos-site",
+      "file": "ionos-polls.md",
+      "subCat": "Polls"
     }
   ]
 }

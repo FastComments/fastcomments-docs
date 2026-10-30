@@ -33,7 +33,7 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Supporto per sfondi scuri (Modalità scura)",
+      "name": "Supporto per sfondi scuri (Modalità Dark)",
       "file": "has-dark-background.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -228,39 +228,39 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilita il conteggio delle visualizzazioni dei commenti",
+      "name": "Abilita conteggio visualizzazioni commenti",
       "file": "enable-comment-view-counts.md",
       "subCat": "Aspetto e sensazione"
     },
     {
       "name": "Mostra i commenti live immediatamente",
       "file": "show-live-right-away.md",
-      "subCat": "Commenti live"
+      "subCat": "Commenti Live"
     },
     {
       "name": "Disabilita i commenti live",
       "file": "disable-live-commenting.md",
-      "subCat": "Commenti live"
+      "subCat": "Commenti Live"
     },
     {
       "name": "Nuovi commenti live in fondo",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Commenti live"
+      "subCat": "Commenti Live"
     },
     {
       "name": "Abilitare lo scorrimento infinito",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Paginazione e ordinamento"
+      "subCat": "Paginazione e Ordinamento"
     },
     {
       "name": "Cambiare la direzione di ordinamento predefinita",
       "file": "default-sort-direction.md",
-      "subCat": "Paginazione e ordinamento"
+      "subCat": "Paginazione e Ordinamento"
     },
     {
       "name": "Renderizzare tutti i commenti in una volta - Disabilita paginazione",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Paginazione e ordinamento"
+      "subCat": "Paginazione e Ordinamento"
     },
     {
       "name": "Spostare la casella di risposta dopo i commenti",
@@ -273,7 +273,7 @@
       "subCat": "La casella di risposta"
     },
     {
-      "name": "Disabilita i commenti multilinea",
+      "name": "Disabilita commenti multilinea",
       "file": "use-single-line-comment-input.md",
       "subCat": "La casella di risposta"
     },
@@ -293,13 +293,18 @@
       "subCat": "La casella di risposta"
     },
     {
-      "name": "Richiedi l'accettazione dei termini di servizio",
+      "name": "Richiedi accettazione dei termini di servizio",
       "file": "terms-of-service.md",
       "subCat": "La casella di risposta"
     },
     {
       "name": "Avvisa prima di uscire con un commento non inviato",
       "file": "warn-on-unsaved-comment.md",
+      "subCat": "La casella di risposta"
+    },
+    {
+      "name": "Abilitare i sondaggi",
+      "file": "enable-polls.md",
       "subCat": "La casella di risposta"
     },
     {
@@ -343,7 +348,7 @@
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilita gli input email",
+      "name": "Disabilita input email",
       "file": "disable-email-inputs.md",
       "subCat": "Commenti anonimi"
     },
@@ -418,12 +423,12 @@
       "subCat": "Varie"
     },
     {
-      "name": "Menziona ID di gruppo",
+      "name": "Menziona ID gruppo",
       "file": "mention-group-ids.md",
       "subCat": "Varie"
     },
     {
-      "name": "Bypass dei cookie di terze parti",
+      "name": "Bypass cookie di terze parti",
       "file": "enable-third-party-cookie-bypass.md",
       "subCat": "Varie"
     },
@@ -433,12 +438,12 @@
       "subCat": "Varie"
     },
     {
-      "name": "Mostra i badge nella barra superiore",
+      "name": "Mostra badge nella barra superiore",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostra la lista degli utenti online",
+      "name": "Mostra lista utenti online",
       "file": "users-list.md",
       "subCat": "Aspetto e sensazione"
     }

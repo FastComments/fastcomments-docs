@@ -4,17 +4,17 @@
   "icon": "3rd-party-products/systeme_io.png",
   "itemsOrdered": [
     {
-      "name": "Крок 1: Відкрийте шаблон теми блогу",
+      "name": "Крок 1: Відкрити шаблон теми блогу",
       "file": "systeme-step-1.md",
       "subCat": "Встановлення Systeme.io"
     },
     {
-      "name": "Крок 2: Додайте код FastComments.com",
+      "name": "Крок 2: Додати код FastComments.com",
       "file": "systeme-step-2.md",
       "subCat": "Встановлення Systeme.io"
     },
     {
-      "name": "Успішно",
+      "name": "Успіх",
       "file": "systeme-success.md",
       "subCat": "Встановлення Systeme.io"
     },
@@ -27,6 +27,11 @@
       "name": "Налаштування",
       "file": "systeme-customize.md",
       "subCat": "Встановлення Systeme.io"
+    },
+    {
+      "name": "Додати опитування до вашого блогу Systeme.io",
+      "file": "systeme-polls.md",
+      "subCat": "Опитування"
     }
   ]
 }

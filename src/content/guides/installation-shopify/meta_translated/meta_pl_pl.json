@@ -1,6 +1,6 @@
 {
   "name": "Instalacja Shopify",
-  "pageHeader": "Dodaj komentarze do stron Shopify",
+  "pageHeader": "Dodaj komentarze do witryn Shopify",
   "icon": "3rd-party-products/shopify.svg",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Instalacja Shopify"
     },
     {
-      "name": "Dodaj odznakę z liczbą komentarzy",
+      "name": "Dodaj odznakę liczby komentarzy",
       "file": "shopify-comment-count.md",
       "subCat": "Instalacja Shopify"
     },
@@ -49,7 +49,7 @@
       "subCat": "Instalacja Shopify"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "shopify-customize.md",
       "subCat": "Instalacja Shopify"
     },
@@ -59,9 +59,14 @@
       "subCat": "Instalacja Shopify"
     },
     {
-      "name": "Ręczna instalacja (zaawansowana)",
+      "name": "Instalacja ręczna (zaawansowana)",
       "file": "shopify-manual-install.md",
       "subCat": "Instalacja Shopify"
+    },
+    {
+      "name": "Dodaj ankiety do swojego sklepu Shopify",
+      "file": "shopify-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

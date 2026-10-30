@@ -1,6 +1,6 @@
 {
   "name": "Wix 安装",
-  "pageHeader": "向 Wix 网站添加评论",
+  "pageHeader": "在 Wix 网站上添加评论",
   "icon": "3rd-party-products/wix.svg",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Wix 安装"
     },
     {
-      "name": "步骤 3：复制并粘贴自定义代码",
+      "name": "步骤 3：复制/粘贴自定义代码",
       "file": "wix-step-3.md",
       "subCat": "Wix 安装"
     },
@@ -24,7 +24,7 @@
       "subCat": "Wix 安装"
     },
     {
-      "name": "步骤 5：设置唯一的评论线程",
+      "name": "步骤 5：唯一的评论线程",
       "file": "wix-step-5.md",
       "subCat": "Wix 安装"
     },
@@ -37,6 +37,11 @@
       "name": "自定义",
       "file": "wix-customize.md",
       "subCat": "Wix 安装"
+    },
+    {
+      "name": "在您的 Wix 网站上添加投票",
+      "file": "wix-polls.md",
+      "subCat": "投票"
     }
   ]
 }

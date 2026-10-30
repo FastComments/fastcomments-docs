@@ -1,25 +1,25 @@
 {
   "name": "Namestitev Webnode",
-  "pageHeader": "Dodajte komentarje na strani Webnode",
+  "pageHeader": "Dodaj komentarje na spletna mesta Webnode",
   "icon": "3rd-party-products/webnode.png",
   "itemsOrdered": [
     {
-      "name": "Korak 1: Uredite svojo stran",
+      "name": "Korak 1: Uredi svojo stran",
       "file": "webnode-step-1.md",
       "subCat": "Namestitev Webnode"
     },
     {
-      "name": "Korak 2: Dodajte razdelek in HTML blok",
+      "name": "Korak 2: Dodaj odsek in HTML blok",
       "file": "webnode-step-2.md",
       "subCat": "Namestitev Webnode"
     },
     {
-      "name": "Korak 3: Kopirajte in prilepite del kode",
+      "name": "Korak 3: Kopiraj in prilepi izsek kode",
       "file": "webnode-step-3.md",
       "subCat": "Namestitev Webnode"
     },
     {
-      "name": "Korak 4: Objavite",
+      "name": "Korak 4: Objavi",
       "file": "webnode-step-4.md",
       "subCat": "Namestitev Webnode"
     },
@@ -29,7 +29,7 @@
       "subCat": "Namestitev Webnode"
     },
     {
-      "name": "Napake pri domeni",
+      "name": "Napake domene",
       "file": "webnode-domain-errors.md",
       "subCat": "Namestitev Webnode"
     },
@@ -37,6 +37,11 @@
       "name": "Prilagajanje",
       "file": "webnode-customize.md",
       "subCat": "Namestitev Webnode"
+    },
+    {
+      "name": "Dodaj ankete na svoje spletno mesto Webnode",
+      "file": "webnode-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

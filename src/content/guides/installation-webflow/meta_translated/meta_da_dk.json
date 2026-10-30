@@ -1,20 +1,20 @@
 {
   "name": "Webflow-installation",
-  "pageHeader": "Tilføj kommentarer til Webflow-sider",
+  "pageHeader": "Tilføj kommentarer til Webflow-websteder",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
-      "name": "Trin 1: Tilføj en embed-blok",
+      "name": "Trin 1: Tilføj en indlejringsblok",
       "file": "webflow-step-1.md",
       "subCat": "Webflow-installation"
     },
     {
-      "name": "Trin 2: Indsæt din kode fra FastComments.com",
+      "name": "Trin 2: Indsæt din FastComments.com-kode",
       "file": "webflow-step-2.md",
       "subCat": "Webflow-installation"
     },
     {
-      "name": "Trin 3: Publicer",
+      "name": "Trin 3: Udgiv",
       "file": "webflow-step-3.md",
       "subCat": "Webflow-installation"
     },
@@ -32,6 +32,11 @@
       "name": "Tilpasning",
       "file": "webflow-customize.md",
       "subCat": "Webflow-installation"
+    },
+    {
+      "name": "Tilføj afstemninger til dit Webflow-websted",
+      "file": "webflow-polls.md",
+      "subCat": "Afstemninger"
     }
   ]
 }

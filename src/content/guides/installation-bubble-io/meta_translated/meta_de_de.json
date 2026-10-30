@@ -14,7 +14,7 @@
       "subCat": "Installation"
     },
     {
-      "name": "3. Breiten-Einstellung finden",
+      "name": "3. Breiteneinstellung finden",
       "file": "bubble-io-step-3.md",
       "subCat": "Installation"
     },
@@ -24,7 +24,7 @@
       "subCat": "Installation"
     },
     {
-      "name": "Erfolgreich",
+      "name": "Erfolg",
       "file": "bubble-io-success.md",
       "subCat": "Installation"
     },
@@ -35,6 +35,11 @@
     {
       "name": "Domain-Fehler",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Umfragen zu Ihrer Bubble.io-App hinzufügen",
+      "file": "bubble-io-polls.md",
+      "subCat": "Umfragen"
     }
   ]
 }

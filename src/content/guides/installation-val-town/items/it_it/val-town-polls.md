@@ -1,0 +1,4 @@
+---
+Una volta che FastComments è nella tua app Val Town, puoi anche eseguire sondaggi live direttamente nei commenti. Attiva **Enable Polls** nelle impostazioni di personalizzazione del widget e un pulsante per i sondaggi appare nella barra degli strumenti dei commenti. I sondaggi accettano da 2 a 10 opzioni, i risultati si aggiornano in tempo reale per tutti gli utenti sulla pagina, e puoi scegliere chi può creare sondaggi e se il voto richiede l'accesso. Non c'è nient'altro da installare su Val Town.
+
+[Prova la demo dei sondaggi live](https://fastcomments.com/product/live-polls) oppure leggi la [Documentazione sui sondaggi](/guide-polls.html) per configurarli.

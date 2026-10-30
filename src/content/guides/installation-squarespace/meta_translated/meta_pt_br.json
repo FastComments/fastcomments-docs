@@ -1,77 +1,82 @@
 {
   "name": "Instalação do Squarespace",
-  "pageHeader": "Adicionar comentários em sites Squarespace",
+  "pageHeader": "Adicionar Comentários a Sites Squarespace",
   "icon": "3rd-party-products/squarespace.svg",
   "itemsOrdered": [
     {
-      "name": "Adicionando comentários em tempo real ao seu blog",
+      "name": "Adicionando Comentários ao Vivo ao Seu Blog",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Adicionar comentários ao seu blog"
+      "subCat": "Adicionar Comentários ao Seu Blog"
     },
     {
-      "name": "Passo 1: Abra as configurações do blog",
+      "name": "Etapa 1: Abrir Configurações do Blog",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Adicionar comentários ao seu blog"
+      "subCat": "Adicionar Comentários ao Seu Blog"
     },
     {
-      "name": "Passo 2: Cole o código do FastComments.com",
+      "name": "Etapa 2: Colar Seu Código FastComments.com",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Adicionar comentários ao seu blog"
+      "subCat": "Adicionar Comentários ao Seu Blog"
     },
     {
-      "name": "Concluído",
+      "name": "Sucesso",
       "file": "squarespace-blog-success.md",
-      "subCat": "Adicionar comentários ao seu blog"
+      "subCat": "Adicionar Comentários ao Seu Blog"
     },
     {
-      "name": "Adicionar comentários em tempo real a todas as páginas",
+      "name": "Adicionar Comentários ao Vivo a Todas as Páginas",
       "file": "squarespace-pages-all-pages-step-0.md",
-      "subCat": "Adicionar comentários a todas as páginas"
+      "subCat": "Adicionar Comentários a Todas as Páginas"
     },
     {
-      "name": "Passo 1: Abra as ferramentas de desenvolvedor",
+      "name": "Etapa 1: Abrir Ferramentas de Desenvolvedor",
       "file": "squarespace-pages-all-pages-step-1.md",
-      "subCat": "Adicionar comentários a todas as páginas"
+      "subCat": "Adicionar Comentários a Todas as Páginas"
     },
     {
-      "name": "Passo 2: Cole o código do FastComments.com",
+      "name": "Etapa 2: Colar Seu Código FastComments.com",
       "file": "squarespace-pages-all-pages-step-2.md",
-      "subCat": "Adicionar comentários a todas as páginas"
+      "subCat": "Adicionar Comentários a Todas as Páginas"
     },
     {
-      "name": "Concluído",
+      "name": "Sucesso",
       "file": "squarespace-pages-all-pages-success.md",
-      "subCat": "Adicionar comentários a todas as páginas"
+      "subCat": "Adicionar Comentários a Todas as Páginas"
     },
     {
-      "name": "Adicionar comentários em tempo real a uma página específica",
+      "name": "Adicionar Comentário ao Vivo a Página Específica",
       "file": "squarespace-pages-specific-page-step-0.md",
-      "subCat": "Adicionar comentários a uma página específica"
+      "subCat": "Adicionar Comentários a uma Página Específica"
     },
     {
-      "name": "Passo 1: Adicione um bloco de código",
+      "name": "Etapa 1: Adicionar Bloco de Código",
       "file": "squarespace-pages-specific-page-step-1.md",
-      "subCat": "Adicionar comentários a uma página específica"
+      "subCat": "Adicionar Comentários a uma Página Específica"
     },
     {
-      "name": "Passo 2: Cole o código do FastComments.com",
+      "name": "Etapa 2: Colar Seu Código FastComments.com",
       "file": "squarespace-pages-specific-page-step-2.md",
-      "subCat": "Adicionar comentários a uma página específica"
+      "subCat": "Adicionar Comentários a uma Página Específica"
     },
     {
-      "name": "Concluído",
+      "name": "Sucesso",
       "file": "squarespace-pages-specific-page-success.md",
-      "subCat": "Adicionar comentários a uma página específica"
+      "subCat": "Adicionar Comentários a uma Página Específica"
     },
     {
-      "name": "Erros de domínio",
+      "name": "Erros de Domínio",
       "file": "squarespace-domain-errors.md",
-      "subCat": "Próximos passos no Squarespace"
+      "subCat": "Próximas Etapas do Squarespace"
     },
     {
       "name": "Personalização",
       "file": "squarespace-customize.md",
-      "subCat": "Próximos passos no Squarespace"
+      "subCat": "Próximas Etapas do Squarespace"
+    },
+    {
+      "name": "Adicionar Enquetes ao Seu Site Squarespace",
+      "file": "squarespace-polls.md",
+      "subCat": "Enquetes"
     }
   ]
 }

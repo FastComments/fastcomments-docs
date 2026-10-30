@@ -1,0 +1,52 @@
+{
+  "name": "实时投票",
+  "pageHeader": "评论中的实时投票",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "什么是实时投票",
+      "file": "what-are-polls.md",
+      "subCat": "背景"
+    },
+    {
+      "name": "启用投票",
+      "file": "enabling-polls.md",
+      "subCat": "设置投票"
+    },
+    {
+      "name": "谁可以创建投票",
+      "file": "who-can-create-polls.md",
+      "subCat": "设置投票"
+    },
+    {
+      "name": "允许匿名投票",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "设置投票"
+    },
+    {
+      "name": "创建投票",
+      "file": "creating-a-poll.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票与实时结果",
+      "file": "voting-and-live-results.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票者隐私",
+      "file": "poll-voter-privacy.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票通知",
+      "file": "poll-notifications.md",
+      "subCat": "使用投票"
+    },
+    {
+      "name": "投票 API",
+      "file": "polls-api.md",
+      "subCat": "面向开发者"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "Instalacja Webflow",
-  "pageHeader": "Dodaj komentarze do witryn Webflow",
+  "pageHeader": "Dodaj komentarze do stron Webflow",
   "icon": "3rd-party-products/webflow.svg",
   "itemsOrdered": [
     {
@@ -9,7 +9,7 @@
       "subCat": "Instalacja Webflow"
     },
     {
-      "name": "Krok 2: Wklej kod z FastComments.com",
+      "name": "Krok 2: Wklej swój kod FastComments.com",
       "file": "webflow-step-2.md",
       "subCat": "Instalacja Webflow"
     },
@@ -29,9 +29,14 @@
       "subCat": "Instalacja Webflow"
     },
     {
-      "name": "Dostosowywanie",
+      "name": "Dostosowanie",
       "file": "webflow-customize.md",
       "subCat": "Instalacja Webflow"
+    },
+    {
+      "name": "Dodaj ankiety do swojej strony Webflow",
+      "file": "webflow-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

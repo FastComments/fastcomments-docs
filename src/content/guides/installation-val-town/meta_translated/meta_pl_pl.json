@@ -36,6 +36,11 @@
       "name": "Błędy domeny",
       "file": "val-town-domain-errors.md",
       "subCat": "Instalacja Val Town"
+    },
+    {
+      "name": "Dodaj ankiety do swojej aplikacji Val Town",
+      "file": "val-town-polls.md",
+      "subCat": "Ankiety"
     }
   ]
 }

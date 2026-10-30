@@ -1,22 +1,22 @@
 {
   "name": "Инсталиране на LMS (LTI 1.3)",
-  "pageHeader": "Добавяне на коментари във вашия LMS чрез LTI 1.3",
+  "pageHeader": "Добавете коментари към вашия LMS чрез LTI 1.3",
   "icon": "3rd-party-products/lti.png",
   "itemsOrdered": [
     {
-      "name": "Цени",
+      "name": "Ценообразуване",
       "file": "lti-plans.md",
-      "subCat": "Накратко"
+      "subCat": "TLDR"
     },
     {
       "name": "Бърз старт",
       "file": "lti-quick-start.md",
-      "subCat": "Накратко"
+      "subCat": "TLDR"
     },
     {
       "name": "Поддържани платформи",
       "file": "lti-supported-platforms.md",
-      "subCat": "Накратко"
+      "subCat": "TLDR"
     },
     {
       "name": "Генериране на URL за регистрация",
@@ -69,9 +69,14 @@
       "subCat": "Използване на инструмента"
     },
     {
-      "name": "Минимални права и минимизация на данни",
+      "name": "Най-малко привилегии и минимизиране на данните",
       "file": "lti-least-privilege.md",
       "subCat": "Сигурност и съответствие"
+    },
+    {
+      "name": "Добавяне на анкети към вашия LMS курс",
+      "file": "lti-polls.md",
+      "subCat": "Анкети"
     }
   ]
 }

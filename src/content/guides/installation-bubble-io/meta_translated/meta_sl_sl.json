@@ -1,25 +1,25 @@
 {
   "name": "Bubble.io",
-  "pageHeader": "Dodajte sprotno komentiranje na spletna mesta Bubble.io",
+  "pageHeader": "Dodajte živo komentiranje na spletna mesta Bubble.io",
   "icon": "3rd-party-products/bubble-io.png",
   "itemsOrdered": [
     {
-      "name": "1. Dodajte HTML blok",
+      "name": "1. Dodaj HTML blok",
       "file": "bubble-io-step-1.md",
       "subCat": "Namestitev"
     },
     {
-      "name": "2. Vstavite kodo",
+      "name": "2. Vstavi kodo",
       "file": "bubble-io-step-2.md",
       "subCat": "Namestitev"
     },
     {
-      "name": "3. Poiščite nastavitev širine",
+      "name": "3. Najdi nastavitev širine",
       "file": "bubble-io-step-3.md",
       "subCat": "Namestitev"
     },
     {
-      "name": "4. Prilagodite postavitev",
+      "name": "4. Prilagodi postavitev",
       "file": "bubble-io-step-4.md",
       "subCat": "Namestitev"
     },
@@ -29,12 +29,17 @@
       "subCat": "Namestitev"
     },
     {
-      "name": "Prilagajanje",
+      "name": "Prilagoditev",
       "file": "bubble-io-customize.md"
     },
     {
       "name": "Napake domene",
       "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "Dodajte ankete v svojo aplikacijo Bubble.io",
+      "file": "bubble-io-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -1,12 +1,17 @@
 {
   "name": "Instalación de WooCommerce",
-  "pageHeader": "Añadir comentarios en vivo a sitios de WooCommerce",
+  "pageHeader": "Agregar Comentarios en Vivo a Sitios WooCommerce",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Configurar el plugin de WordPress",
+      "name": "Configurar el Plugin de WordPress",
       "file": "woocommerce.md",
       "subCat": "Instalación de WooCommerce"
+    },
+    {
+      "name": "Agregar Encuestas a tu Tienda WooCommerce",
+      "file": "woocommerce-polls.md",
+      "subCat": "Encuestas"
     }
   ]
 }

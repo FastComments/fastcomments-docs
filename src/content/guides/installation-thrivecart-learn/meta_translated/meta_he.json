@@ -1,6 +1,6 @@
 {
   "name": "התקנת ThriveCart Learn+",
-  "pageHeader": "הוספת תגובות לקורסי ThriveCart Learn+",
+  "pageHeader": "הוספת תגובות לקורסים של ThriveCart Learn+",
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
@@ -27,6 +27,11 @@
       "name": "התאמה אישית",
       "file": "thrivecart-learn-customize.md",
       "subCat": "התקנת ThriveCart Learn+"
+    },
+    {
+      "name": "הוספת סקרים לקורס ThriveCart Learn+ שלך",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "סקרים"
     }
   ]
 }

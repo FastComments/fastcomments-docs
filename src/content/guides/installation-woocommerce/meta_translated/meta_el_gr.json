@@ -1,12 +1,17 @@
 {
   "name": "Εγκατάσταση WooCommerce",
-  "pageHeader": "Προσθέστε ζωντανά σχόλια σε ιστότοπους WooCommerce",
+  "pageHeader": "Προσθήκη Ζωντανών Σχολίων σε Ιστότοπους WooCommerce",
   "icon": "3rd-party-products/woocommerce.svg",
   "itemsOrdered": [
     {
-      "name": "Ρύθμιση πρόσθετου WordPress",
+      "name": "Ρύθμιση Πρόσθετου WordPress",
       "file": "woocommerce.md",
       "subCat": "Εγκατάσταση WooCommerce"
+    },
+    {
+      "name": "Προσθήκη Δημοσκοπήσεων στο Κατάστημα WooCommerce",
+      "file": "woocommerce-polls.md",
+      "subCat": "Δημοσκοπήσεις"
     }
   ]
 }

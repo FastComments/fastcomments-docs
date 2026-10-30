@@ -1,0 +1,52 @@
+{
+  "name": "Encuestas en vivo",
+  "pageHeader": "Encuestas en vivo en los comentarios",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "Qué son las encuestas en vivo",
+      "file": "what-are-polls.md",
+      "subCat": "Antecedentes"
+    },
+    {
+      "name": "Activar encuestas",
+      "file": "enabling-polls.md",
+      "subCat": "Configuración de encuestas"
+    },
+    {
+      "name": "Quién puede crear encuestas",
+      "file": "who-can-create-polls.md",
+      "subCat": "Configuración de encuestas"
+    },
+    {
+      "name": "Permitir votos anónimos en encuestas",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "Configuración de encuestas"
+    },
+    {
+      "name": "Crear una encuesta",
+      "file": "creating-a-poll.md",
+      "subCat": "Uso de encuestas"
+    },
+    {
+      "name": "Votar y resultados en vivo",
+      "file": "voting-and-live-results.md",
+      "subCat": "Uso de encuestas"
+    },
+    {
+      "name": "Privacidad del votante",
+      "file": "poll-voter-privacy.md",
+      "subCat": "Uso de encuestas"
+    },
+    {
+      "name": "Notificaciones de encuestas",
+      "file": "poll-notifications.md",
+      "subCat": "Uso de encuestas"
+    },
+    {
+      "name": "API de encuestas",
+      "file": "polls-api.md",
+      "subCat": "Para desarrolladores"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
   "itemsOrdered": [
     {
-      "name": "Stap 1: Bereid de cursus voor",
+      "name": "Stap 1: Bereid cursus voor",
       "file": "thrivecart-learn-step-1.md",
       "subCat": "ThriveCart Learn+ Installatie"
     },
@@ -24,9 +24,14 @@
       "subCat": "ThriveCart Learn+ Installatie"
     },
     {
-      "name": "Aanpassingen",
+      "name": "Aanpassing",
       "file": "thrivecart-learn-customize.md",
       "subCat": "ThriveCart Learn+ Installatie"
+    },
+    {
+      "name": "Voeg peilingen toe aan je ThriveCart Learn+ cursus",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "Peilingen"
     }
   ]
 }

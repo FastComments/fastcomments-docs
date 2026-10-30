@@ -1,6 +1,6 @@
 {
   "name": "Namestitev Framerja",
-  "pageHeader": "Dodajte žive komentarje na Framer spletna mesta",
+  "pageHeader": "Dodajte živo komentiranje na Framer spletna mesta",
   "icon": "3rd-party-products/framer.png",
   "itemsOrdered": [
     {
@@ -14,7 +14,7 @@
       "subCat": "Namestitev Framerja"
     },
     {
-      "name": "Korak 3: Kopirajte in prilepite FastComments kodo za Framer",
+      "name": "Korak 3: Kopirajte in prilepite kodo FastComments, specifično za Framer",
       "file": "framer-step-3.md",
       "subCat": "Namestitev Framerja"
     },
@@ -32,6 +32,11 @@
       "name": "Prilagajanje",
       "file": "framer-customize.md",
       "subCat": "Namestitev Framerja"
+    },
+    {
+      "name": "Dodajte ankete na svoje Framer spletno mesto",
+      "file": "framer-polls.md",
+      "subCat": "Ankete"
     }
   ]
 }

@@ -6,62 +6,62 @@
     {
       "name": "Blogunuza Canlı Yorum Ekleme",
       "file": "squarespace-blog-step-0.md",
-      "subCat": "Blogunuza Yorum Ekleme"
+      "subCat": "Blogunuza Yorum Ekle"
     },
     {
-      "name": "Adım 1: Blog Ayarlarını Açın",
+      "name": "Adım 1: Blog Ayarlarını Aç",
       "file": "squarespace-blog-step-1.md",
-      "subCat": "Blogunuza Yorum Ekleme"
+      "subCat": "Blogunuza Yorum Ekle"
     },
     {
-      "name": "Adım 2: FastComments.com kodunuzu yapıştırın",
+      "name": "Adım 2: FastComments.com Kodunuzu Yapıştırın",
       "file": "squarespace-blog-step-2.md",
-      "subCat": "Blogunuza Yorum Ekleme"
+      "subCat": "Blogunuza Yorum Ekle"
     },
     {
-      "name": "Başarıyla Tamamlandı",
+      "name": "Başarılı",
       "file": "squarespace-blog-success.md",
-      "subCat": "Blogunuza Yorum Ekleme"
+      "subCat": "Blogunuza Yorum Ekle"
     },
     {
-      "name": "Tüm Sayfalara Canlı Yorum Ekleme",
+      "name": "Tüm Sayfalara Canlı Yorum Ekle",
       "file": "squarespace-pages-all-pages-step-0.md",
-      "subCat": "Tüm Sayfalara Yorum Ekleme"
+      "subCat": "Tüm Sayfalara Yorum Ekle"
     },
     {
-      "name": "Adım 1: Geliştirici Araçlarını Açın",
+      "name": "Adım 1: Geliştirici Araçlarını Aç",
       "file": "squarespace-pages-all-pages-step-1.md",
-      "subCat": "Tüm Sayfalara Yorum Ekleme"
+      "subCat": "Tüm Sayfalara Yorum Ekle"
     },
     {
-      "name": "Adım 2: FastComments.com kodunuzu yapıştırın",
+      "name": "Adım 2: FastComments.com Kodunuzu Yapıştırın",
       "file": "squarespace-pages-all-pages-step-2.md",
-      "subCat": "Tüm Sayfalara Yorum Ekleme"
+      "subCat": "Tüm Sayfalara Yorum Ekle"
     },
     {
-      "name": "Başarıyla Tamamlandı",
+      "name": "Başarılı",
       "file": "squarespace-pages-all-pages-success.md",
-      "subCat": "Tüm Sayfalara Yorum Ekleme"
+      "subCat": "Tüm Sayfalara Yorum Ekle"
     },
     {
-      "name": "Belirli Bir Sayfaya Canlı Yorum Ekleme",
+      "name": "Belirli Bir Sayfaya Canlı Yorum Ekle",
       "file": "squarespace-pages-specific-page-step-0.md",
-      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+      "subCat": "Belirli Bir Sayfaya Yorum Ekle"
     },
     {
-      "name": "Adım 1: Kod Bloğu Ekleyin",
+      "name": "Adım 1: Kod Bloğu Ekle",
       "file": "squarespace-pages-specific-page-step-1.md",
-      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+      "subCat": "Belirli Bir Sayfaya Yorum Ekle"
     },
     {
-      "name": "Adım 2: FastComments.com kodunuzu yapıştırın",
+      "name": "Adım 2: FastComments.com Kodunuzu Yapıştırın",
       "file": "squarespace-pages-specific-page-step-2.md",
-      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+      "subCat": "Belirli Bir Sayfaya Yorum Ekle"
     },
     {
-      "name": "Başarıyla Tamamlandı",
+      "name": "Başarılı",
       "file": "squarespace-pages-specific-page-success.md",
-      "subCat": "Belirli Bir Sayfaya Yorum Ekleme"
+      "subCat": "Belirli Bir Sayfaya Yorum Ekle"
     },
     {
       "name": "Alan Adı Hataları",
@@ -72,6 +72,11 @@
       "name": "Özelleştirme",
       "file": "squarespace-customize.md",
       "subCat": "Squarespace Sonraki Adımlar"
+    },
+    {
+      "name": "Squarespace Sitenize Anketler Ekleyin",
+      "file": "squarespace-polls.md",
+      "subCat": "Anketler"
     }
   ]
 }
