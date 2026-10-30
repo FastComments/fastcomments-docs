@@ -8,7 +8,7 @@ Each plan tier sets:
 
 The exact numbers are shown on the [pricing page](https://fastcomments.com/traffic-pricing) and on your account's billing page. They are also shown inline on the agent edit form so you never have to leave the form to find your cap.
 
-FastComments Pro includes $200/mo worth of AI usage. Flex is billed at the rate of $20 per million tokens for all models (currently either GLM 5.1 or gpt-oss-120B-turbo).
+FastComments Pro includes $200/mo worth of AI usage. Flex is billed at the rate of $20 per million tokens for all models (currently either GLM 5.2 or gpt-oss-120B).
 
 ### Billing must be valid
 

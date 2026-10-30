@@ -246,7 +246,7 @@ pub fn init_ai_context(
     let cache_dir = ai_cache_dir(&repo_root, &ctx.sdk.id);
     // Primary model from LLM_MODEL, defaulting to the DeepInfra open model.
     let model =
-        std::env::var("LLM_MODEL").unwrap_or_else(|_| "openai/gpt-oss-120b-Turbo".to_string());
+        std::env::var("LLM_MODEL").unwrap_or_else(|_| "openai/gpt-oss-120b".to_string());
     let llm = LlmClient::new(&cache_dir, &model, lang)?;
     Ok(AiContext {
         op_map,

@@ -124,7 +124,7 @@ impl LlmClient {
             }
         }
         data.insert("prompt".to_string(), Value::String(prompt.to_string()));
-        data.insert("model".to_string(), Value::String(self.model.clone()));
+        data.insert("model".to_string(), Value::String(cache_key_model(&self.model).to_string()));
         sha256_hex(&Value::Object(data))
     }
 
@@ -354,6 +354,18 @@ fn chat_completions_url() -> String {
     format!("{}/chat/completions", base.trim_end_matches('/'))
 }
 
+/// The model id a cache key is computed with. DeepInfra deprecated
+/// `openai/gpt-oss-120b-Turbo` (2026-10-20) in favor of
+/// `openai/gpt-oss-120b`, the same weights; ~1k committed cache files are
+/// keyed on the Turbo id, so the replacement keeps hashing as Turbo
+/// rather than regenerating every one of them.
+fn cache_key_model(model: &str) -> &str {
+    match model {
+        "openai/gpt-oss-120b" => "openai/gpt-oss-120b-Turbo",
+        other => other,
+    }
+}
+
 fn default_fallbacks(primary: &str) -> Vec<String> {
     // Primary model first, then any models from `LLM_FALLBACK_MODELS`
     // (comma-separated). Empty by default so no provider-specific model
@@ -559,5 +571,18 @@ mod cache_key_tests {
             strip_code_fences("```typescript\nlet a = `\\`\\``;\n```"),
             "let a = `\\`\\``;"
         );
+    }
+
+    #[test]
+    fn gpt_oss_reuses_turbo_cache_entries() {
+        // ~1k committed cache files are keyed on the deprecated Turbo id.
+        let method = json!({"name": "getComments", "httpMethod": "GET", "path": "/api/v1/comments"});
+        let mut turbo = make_client();
+        turbo.model = "openai/gpt-oss-120b-Turbo".into();
+        let mut plain = make_client();
+        plain.model = "openai/gpt-oss-120b".into();
+        assert_eq!(plain.cache_key(&method, "P"), turbo.cache_key(&method, "P"));
+        // Other models still key on their own id.
+        assert_ne!(make_client().cache_key(&method, "P"), turbo.cache_key(&method, "P"));
     }
 }

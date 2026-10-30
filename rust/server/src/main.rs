@@ -66,6 +66,10 @@ const MAX_QUERY_LEN: usize = 256;
 /// few seconds of sustained load.
 const RATE_PER_SEC: f64 = 60.0;
 const RATE_BURST: f64 = 200.0;
+/// Rerank is an optional polish on results we already have, so a slow
+/// provider must not hold the response hostage. GLM-5.3 at low effort
+/// answers in ~1-2s (p90 1.7s, max 3.4s over 24 real queries).
+const RERANK_TIMEOUT: Duration = Duration::from_secs(5);
 
 #[derive(Clone)]
 struct AppState {
@@ -200,7 +204,7 @@ async fn main() -> Result<()> {
         telemetry: Arc::new(Mutex::new(telemetry::Collector::default())),
         llm_api_key: std::env::var("LLM_API_KEY").ok().map(Arc::new),
         llm_model: Arc::new(
-            std::env::var("LLM_MODEL").unwrap_or_else(|_| "openai/gpt-oss-120b-Turbo".to_string()),
+            std::env::var("LLM_MODEL").unwrap_or_else(|_| "zai-org/GLM-5.3".to_string()),
         ),
         llm_endpoint: Arc::new(format!(
             "{}/chat/completions",
@@ -600,7 +604,7 @@ async fn reorder_with_llm(
         .collect::<Vec<_>>()
         .join("\n");
 
-    let body = serde_json::json!({
+    let mut body = serde_json::json!({
         "model": model,
         "messages": [
             {"role": "system", "content": "You are a search result ranker for FastComments documentation. Given a search query and a list of results with IDs in brackets, return ONLY the IDs in order of relevance (most relevant first). Output only comma-separated IDs, nothing else. Example output: guide-auth,api-sso,ref-users\n\nImportant ranking hints:\n- For queries about installing, adding, or setting up FastComments on a website (e.g., \"install\", \"add to site\", \"setup\", \"getting started\", \"how to add\"), the guide-installation result should be ranked first if present."},
@@ -608,18 +612,26 @@ async fn reorder_with_llm(
         ],
         "max_tokens": 4000,
     });
+    // GLM-5.3 can't have thinking switched off on DeepInfra: with
+    // chat_template_kwargs.enable_thinking=false it reasons into `content`
+    // instead, which breaks id parsing. Low effort keeps the reasoning in
+    // its own field and cuts latency from ~6s to ~1.2s median.
+    if model.starts_with("zai-org/GLM-") {
+        body["reasoning_effort"] = serde_json::json!("low");
+    }
 
     info!(model, n = results.len(), "LLM reranking");
     let resp = match client
         .post(endpoint)
         .bearer_auth(api_key)
+        .timeout(RERANK_TIMEOUT)
         .json(&body)
         .send()
         .await
     {
         Ok(r) => r,
         Err(e) => {
-            error!("LLM request failed: {e}");
+            error!(timeout = e.is_timeout(), "LLM request failed: {e}");
             return results;
         }
     };
@@ -647,9 +659,10 @@ async fn reorder_with_llm(
         warn!("LLM reranking: empty ranking text");
         return results;
     }
+    // Models sometimes echo ids in the "[id]" form the prompt lists them in.
     let ranked: Vec<String> = ranking_text
         .split(',')
-        .map(|s| s.trim().to_string())
+        .map(|s| s.trim().trim_start_matches('[').trim_end_matches(']').trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
     if ranked.is_empty() {
@@ -702,6 +715,111 @@ async fn shutdown_signal() {
 }
 
 use fcdocs_shared::repo::repo_root;
+
+#[cfg(test)]
+mod rerank_tests {
+    //! Drives reorder_with_llm against a local stand-in for the
+    //! DeepInfra chat-completions endpoint.
+
+    use super::*;
+    use axum::routing::post;
+
+    fn result(id: &str) -> SearchResult {
+        SearchResult {
+            id: id.into(),
+            title: id.into(),
+            parent_title: None,
+            url: format!("/{id}"),
+            parent_url: None,
+            icon: None,
+            score: 1.0,
+            body: None,
+            search_text: String::new(),
+        }
+    }
+
+    fn ids(results: &[SearchResult]) -> Vec<&str> {
+        results.iter().map(|r| r.id.as_str()).collect()
+    }
+
+    /// Serves `reply` as the completion content, records each request
+    /// body, and returns the endpoint URL.
+    async fn mock_llm(reply: &'static str) -> (String, Arc<Mutex<Vec<serde_json::Value>>>) {
+        let seen: Arc<Mutex<Vec<serde_json::Value>>> = Arc::new(Mutex::new(Vec::new()));
+        let seen_handler = seen.clone();
+        let app = Router::new().route(
+            "/chat/completions",
+            post(move |Json(body): Json<serde_json::Value>| {
+                let seen = seen_handler.clone();
+                async move {
+                    seen.lock().await.push(body);
+                    Json(serde_json::json!({"choices": [{"message": {"content": reply}}]}))
+                }
+            }),
+        );
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let addr = listener.local_addr().unwrap();
+        tokio::spawn(async move { axum::serve(listener, app).await.unwrap() });
+        (format!("http://{addr}/chat/completions"), seen)
+    }
+
+    #[tokio::test]
+    async fn bracketed_ids_in_reply_are_matched() {
+        // GLM sometimes echoes the ids in the bracketed form the prompt lists them in.
+        let (endpoint, _) = mock_llm("[b], [a]").await;
+        let out = reorder_with_llm(
+            &reqwest::Client::new(),
+            "q",
+            vec![result("a"), result("b")],
+            "key",
+            "zai-org/GLM-5.3",
+            &endpoint,
+        )
+        .await;
+        assert_eq!(ids(&out), vec!["b", "a"]);
+    }
+
+    #[tokio::test]
+    async fn glm_requests_use_low_reasoning_effort() {
+        let (endpoint, seen) = mock_llm("a,b").await;
+        let client = reqwest::Client::new();
+        reorder_with_llm(&client, "q", vec![result("a"), result("b")], "key", "zai-org/GLM-5.3", &endpoint).await;
+        reorder_with_llm(&client, "q", vec![result("a"), result("b")], "key", "openai/gpt-oss-120b", &endpoint).await;
+        let seen = seen.lock().await;
+        assert_eq!(seen[0]["reasoning_effort"], "low");
+        assert!(seen[1].get("reasoning_effort").is_none(), "non-GLM models keep provider defaults");
+    }
+
+    #[tokio::test]
+    async fn stalled_llm_falls_back_to_unranked_results_quickly() {
+        // Accepts the connection but never answers.
+        let listener = tokio::net::TcpListener::bind("127.0.0.1:0").await.unwrap();
+        let addr = listener.local_addr().unwrap();
+        tokio::spawn(async move {
+            let mut held = Vec::new();
+            loop {
+                let (sock, _) = listener.accept().await.unwrap();
+                held.push(sock);
+            }
+        });
+        let started = std::time::Instant::now();
+        let out = tokio::time::timeout(
+            Duration::from_secs(15),
+            reorder_with_llm(
+                &reqwest::Client::new(),
+                "q",
+                vec![result("a"), result("b")],
+                "key",
+                "zai-org/GLM-5.3",
+                &format!("http://{addr}/chat/completions"),
+            ),
+        )
+        .await
+        .expect("rerank must give up on a stalled provider on its own");
+        assert_eq!(ids(&out), vec!["a", "b"]);
+        assert!(started.elapsed() <= RERANK_TIMEOUT + Duration::from_secs(1));
+    }
+}
 
 #[cfg(test)]
 mod fallback_tests {

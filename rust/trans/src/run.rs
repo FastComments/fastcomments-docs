@@ -37,7 +37,7 @@ use crate::json_translator::JsonTranslator;
 use crate::snapshot::hash_content;
 use crate::ui;
 
-const DEFAULT_MODEL: &str = "openai/gpt-oss-120b-Turbo";
+const DEFAULT_MODEL: &str = "openai/gpt-oss-120b";
 
 /// Matches Node's the legacy Node translator CLI default
 /// (`parseArgs() options.concurrency = 20` at line 1001). The
