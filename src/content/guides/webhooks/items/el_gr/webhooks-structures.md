@@ -1,20 +1,21 @@
-Η μόνη δομή που αποστέλλεται μέσω webhooks είναι το αντικείμενο WebhookComment, περιγραφόμενο σε TypeScript παρακάτω.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
-#### Η Δομή του Αντικειμένου WebhookComment
+#### The WebhookComment Object Structure
 
-##### Η Δομή του Γεγονότος "Create"
-Το σώμα του αιτήματος του γεγονότος "create" είναι ένα αντικείμενο WebhookComment.
+##### The "Create" Event Structure  
+The "create" event request body is a WebhookComment object.
 
-##### Η Δομή του Γεγονότος "Update"
-Το σώμα του αιτήματος του γεγονότος "update" είναι ένα αντικείμενο WebhookComment.
+##### The "Update" Event Structure  
+The "update" event request body is a WebhookComment object.
 
-##### Η Δομή του Γεγονότος "Delete"
-Το σώμα του αιτήματος του γεγονότος "delete" είναι ένα αντικείμενο WebhookComment.
+##### The "Delete" Event Structure  
+The "delete" event request body is a WebhookComment object.
 
-    Αλλαγή από 14 Νοεμβρίου 2023
-    Πριν, το σώμα του αιτήματος του γεγονότος "delete" περιείχε μόνο το id του σχολίου. Τώρα περιέχει ολόκληρο το σχόλιο τη στιγμή της διαγραφής.
+    Change as of Nov 14th 2023
+    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
-Κάθε κλειδί είναι πάντα παρόν στο σώμα. Όταν το σχόλιο δεν έχει τιμή για ένα πεδίο, το σώμα μεταφέρει `null` (ή `false` για boolean και `[]` για λίστες), έτσι η δομή μιας παράδοσης δεν διαφέρει ποτέ από ένα σχόλιο στο άλλο.
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
 [inline-code-attrs-start title = 'Το Αντικείμενο WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -75,10 +76,13 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-Όταν χρήστες επισημαίνονται σε ένα σχόλιο, οι πληροφορίες αποθηκεύονται σε μια λίστα που ονομάζεται `mentions`. Κάθε αντικείμενο σε αυτή τη λίστα έχει την ακόλουθη δομή.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
 [inline-code-attrs-start title = 'Το Αντικείμενο Αναφορών Webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -96,25 +100,48 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-#### Μέθοδοι HTTP
+Each entry in the `badges` list has the following structure. See the [Badges guide](/guide-badges.html) for the badge types.
 
-Μπορείτε να ρυθμίσετε τη μέθοδο HTTP για κάθε τύπο γεγονότος webhook στον πίνακα διαχείρισης:
+[inline-code-attrs-start title = 'Το Αντικείμενο Σήματος Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
+}
+[inline-code-end]
 
-- **Create Event**: POST ή PUT (προεπιλογή: PUT)
-- **Update Event**: POST ή PUT (προεπιλογή: PUT)
-- **Delete Event**: DELETE, POST ή PUT (προεπιλογή: DELETE)
+#### HTTP Methods
 
-Δεδομένου ότι όλα τα αιτήματα περιέχουν ένα ID, οι λειτουργίες Δημιουργίας και Ενημέρωσης είναι ιδεομερείς από προεπιλογή (PUT). Η επανάληψη του ίδιου αιτήματος Δημιουργίας ή Ενημέρωσης δεν πρέπει να δημιουργεί διπλότυπα αντικείμενα από την πλευρά σας.
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-#### Κεφαλίδες Αιτήματος
+- **Create Event**: POST or PUT (default: PUT)
+- **Update Event**: POST or PUT (default: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
-Κάθε αίτημα webhook περιλαμβάνει τις ακόλουθες κεφαλίδες:
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
+
+#### Request Headers
+
+Each webhook request includes the following headers:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Το Μυστικό API σας |
-| `X-FastComments-Timestamp` | Χρονική σήμανση Unix (δευτερόλεπτα) όταν υπογράφηκε το αίτημα |
-| `X-FastComments-Signature` | Υπογραφή HMAC‑SHA256 (`sha256=<hex>`) |
+| `token` | Your API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
 
-Δείτε το [Ασφάλεια & Διακριτικά API](/guide-webhooks.html#webhooks-api-tokens) για πληροφορίες σχετικά με την επαλήθευση της υπογραφής HMAC.
+See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

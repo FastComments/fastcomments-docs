@@ -2,22 +2,22 @@ The only structure sent via webhooks is the WebhookComment object, outlined in T
 
 #### Структура WebhookComment објекта
 
-##### Структура догађаја „Create“
+##### Структура догађаја "Create"
 The "create" event request body is a WebhookComment object.
 
-##### Структура догађаја „Update“
+##### Структура догађаја "Update"
 The "update" event request body is a WebhookComment object.
 
-##### Структура догађаја „Delete“
+##### Структура догађаја "Delete"
 The "delete" event request body is a WebhookComment object.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    Промена од 14. новембра 2023
+    Претходно, тело захтева за догађај "delete" је садржало само ID коментара. Сада садржи цео коментар у тренутку брисања.
 
 Every key is always present in the body. When the comment has no value for a field the body carries `null`
 (or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
-[inline-code-attrs-start title = 'WebHookComment објекат'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Објекат WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** The id of the comment. **/
@@ -76,13 +76,15 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
 When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
 has the following structure.
 
-[inline-code-attrs-start title = 'WebHook Mentions објекат'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Објекат Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -98,13 +100,36 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
+Each entry in the `badges` list has the following structure. See the [Водич за значке](/guide-badges.html) for the badge types.
+
+[inline-code-attrs-start title = 'Објекат Webhook Badge'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
+}
+[inline-code-end]
+
 #### HTTP методи
 
 You can configure the HTTP method for each webhook event type in the admin panel:
 
 - **Create Event**: POST or PUT (default: PUT)
 - **Update Event**: POST or PUT (default: PUT)
-- **Delete Event**: DELETE, POST or PUT (default: DELETE)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
 
 Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
@@ -116,7 +141,9 @@ Each webhook request includes the following headers:
 |--------|-------------|
 | `Content-Type` | `application/json` |
 | `token` | Ваш API тајн |
-| `X-FastComments-Timestamp` | Unix временски печат (секунде) када је захтев потписан |
+| `X-FastComments-Timestamp` | Unix временска ознака (секунде) када је захтев потписан |
 | `X-FastComments-Signature` | HMAC-SHA256 потпис (`sha256=<hex>`) |
 
-See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+See [Сигурност и API токени](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+
+---

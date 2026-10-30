@@ -1,120 +1,147 @@
-Webhooks aracılığıyla gönderilen tek yapı, aşağıda TypeScript ile açıklanan WebhookComment nesnesidir.
+The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
 
-#### WebhookComment Nesne Yapısı
+#### WebhookComment Nesnesi Yapısı
 
-##### "Create" Olayı Yapısı  
-"create" olayı isteği gövdesi bir WebhookComment nesnesidir.
+##### The "Create" Event Structure
+The "create" event request body is a WebhookComment object.
 
-##### "Update" Olayı Yapısı  
-"update" olayı isteği gövdesi bir WebhookComment nesnesidir.
+##### The "Update" Event Structure
+The "update" event request body is a WebhookComment object.
 
-##### "Delete" Olayı Yapısı  
-"delete" olayı isteği gövdesi bir WebhookComment nesnesidir.
+##### The "Delete" Event Structure
+The "delete" event request body is a WebhookComment object.
 
-    Değişiklik 14 Kasım 2023 tarihinden itibaren
-    Daha önce "delete" olayı isteği gövdesi yalnızca yorum kimliğini içeriyordu. Şimdi silme anındaki tam yorumu içeriyor.
+    Change as of Nov 14th 2023
+    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
-Gövde içinde her anahtar her zaman bulunur. Yorum bir alan için değere sahip olmadığında gövde `null` (veya booleans için `false` ve listeler için `[]`) taşır, böylece teslimatın şekli bir yorumdan diğerine asla değişmez.
+Every key is always present in the body. When the comment has no value for a field the body carries `null`
+(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
 
 [inline-code-attrs-start title = 'WebhookComment Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** Yorumun kimliği. **/
+    /** The id of the comment. **/
     id: string
-    /** Yorum dizisini tanımlayan kimlik veya URL. Normalleştirilmiş. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** Yorumun bırakıldığı yeri gösteren URL. **/
+    /** The URL that points to where the comment was left. **/
     url: string | null
-    /** Yorumu bırakan kullanıcının kimliği. SSO ise, tenant kimliğiyle ön eklenir. **/
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
     userId: string | null
-    /** Yorumu bırakan kullanıcının e-posta adresi. **/
+    /** The email of the user left the comment. **/
     commenterEmail: string | null
-    /** Yorum widget'ında gösterilen kullanıcının adı. SSO ile, displayName olabilir. **/
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Ham yorumun metni. **/
+    /** Raw comment text. **/
     comment: string
-    /** Ayrıştırma sonrası yorum metni. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Yorumun dış kimliği. **/
+    /** Comment external id. **/
     externalId: string | null
-    /** Üst yorumun kimliği. **/
+    /** The id of the parent comment. **/
     parentId: string | null
-    /** Yorumun bırakıldığı UTC tarih. **/
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Oyların birleşik karması (yukarı - aşağı). **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Kullanıcı yorum yaptığında oturum açmışsa, yorumu doğrulamışsa veya yorum bırakıldığında oturumu doğrulamışsa true. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Yorumun doğrulandığı UTC tarih. **/
+    /** The UTC date when the comment was verified. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** Bir moderatör yorumun incelendiğini işaretlediyse. **/
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** Avatarın konumu veya base64 kodlaması. SSO ile gönderilen değer base64 ise sadece base64 olur. **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
     avatarSrc: string | null
-    /** Yorum manuel veya otomatik olarak spam olarak işaretlendi mi? **/
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Yorum otomatik olarak spam olarak işaretlendi mi? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Yorumda resimler var mı? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** "Most Relevant" sıralama yönü için yorumun bulunduğu sayfa numarası. **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
     pageNumber: number | null
-    /** "Oldest First" sıralama yönü için yorumun bulunduğu sayfa numarası. **/
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
     pageNumberOF: number | null
-    /** "Newest First" sıralama yönü için yorumun bulunduğu sayfa numarası. **/
+    /** The page number the comment is on for the "Newest First" sort direction. **/
     pageNumberNF: number | null
-    /** Yorum otomatik veya manuel olarak onaylandı mı? **/
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** Yorum yazıldığında kullanıcının yerel kodu (format: en_us). **/
+    /** The locale code (format: en_us) of the user when the comment was written. **/
     locale: string | null
-    /** Yorumda yazılan ve başarıyla ayrıştırılan @mentions. Hiçbiri yoksa boş. **/
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
     mentions: CommentUserMention[]
-    /** Yorumun geldiği domain. **/
+    /** The domain the comment is from. **/
     domain: string | null
-    /** Bu yorumla ilişkili moderasyon grup kimlikleri. Hiçbiri yoksa boş. **/
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-Kullanıcılar bir yorumda etiketlendiğinde, bilgi `mentions` adlı bir listede saklanır. Bu listedeki her nesnenin yapısı aşağıdaki gibidir.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
+has the following structure.
 
 [inline-code-attrs-start title = 'Webhook Mentions Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Kullanıcı kimliği. SSO kullanıcıları için tenant kimliği ön eklenir. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** Son @mention etiket metni, @ sembolü dahil. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** Orijinal @mention etiket metni, @ sembolü dahil. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Etiketlenen kullanıcının tipi. user = FastComments.com hesabı. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Kullanıcı bildirimlerden çıkmayı seçse bile, bu değer true olarak ayarlanır. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
+}
+[inline-code-end]
+
+Each entry in the `badges` list has the following structure. See the [Badges guide](/guide-badges.html) for the badge types.
+
+[inline-code-attrs-start title = 'Webhook Badge Nesnesi'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
 }
 [inline-code-end]
 
 #### HTTP Yöntemleri
 
-Her webhook olay türü için HTTP yöntemini yönetim panelinde yapılandırabilirsiniz:
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-- **Create Olayı**: POST veya PUT (varsayılan: PUT)
-- **Update Olayı**: POST veya PUT (varsayılan: PUT)
-- **Delete Olayı**: DELETE, POST veya PUT (varsayılan: DELETE)
+- **Create Olayı**: POST or PUT (default: PUT)
+- **Update Olayı**: POST or PUT (default: PUT)
+- **Delete Olayı**: DELETE, POST, or PUT (default: DELETE)
 
-Tüm istekler bir ID içerdiğinden, Create ve Update işlemleri varsayılan olarak (PUT) idempotenttir. Aynı Create veya Update isteğini tekrarlamak, tarafınızda yinelenen nesneler oluşturmaz.
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
 #### İstek Başlıkları
 
-Her webhook isteği aşağıdaki başlıkları içerir:
+Each webhook request includes the following headers:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
 | `token` | API Gizliniz |
-| `X-FastComments-Timestamp` | İsteğin imzalandığı Unix zaman damgası (saniye) |
+| `X-FastComments-Timestamp` | İsteğin imzalandığı zamanın Unix zaman damgası (saniye) |
 | `X-FastComments-Signature` | HMAC-SHA256 imzası (`sha256=<hex>`) |
 
-HMAC imzasını doğrulama hakkında bilgi için [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) sayfasına bakın.
+See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

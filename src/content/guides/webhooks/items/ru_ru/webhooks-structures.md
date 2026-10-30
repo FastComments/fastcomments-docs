@@ -1,122 +1,148 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+Единственная структура, отправляемая через вебхуки, — объект WebhookComment, описанный ниже на TypeScript.
 
-#### The WebhookComment Object Structure
+#### Структура объекта WebhookComment
 
-##### The "Create" Event Structure  
-The "create" event request body is a WebhookComment object.
+##### Структура события "Create"
+Тело запроса события "create" представляет собой объект WebhookComment.
 
-##### The "Update" Event Structure  
-The "update" event request body is a WebhookComment object.
+##### Структура события "Update"
+Тело запроса события "update" представляет собой объект WebhookComment.
 
-##### The "Delete" Event Structure  
-The "delete" event request body is a WebhookComment object.
+##### Структура события "Delete"
+Тело запроса события "delete" представляет собой объект WebhookComment.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+Изменения от 14 ноября 2023 г.  
+Ранее тело запроса события "delete" содержало только идентификатор комментария. Теперь оно содержит полный комментарий на момент удаления.
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null`
-(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+Каждый ключ всегда присутствует в теле. Когда у комментария нет значения для поля, тело содержит `null`  
+(или `false` для булевых значений и `[]` для списков), поэтому структура доставки никогда не меняется от комментария к комментарию.
 
 [inline-code-attrs-start title = 'Объект WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** The id of the comment. **/
+    /** Идентификатор комментария. **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** Идентификатор или URL, определяющий ветку комментариев. Нормализовано. **/
     urlId: string
-    /** The URL that points to where the comment was left. **/
+    /** URL, указывающий место, где был оставлен комментарий. **/
     url: string | null
-    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    /** Идентификатор пользователя, оставившего комментарий. Если SSO, с префиксом tenant id. **/
     userId: string | null
-    /** The email of the user left the comment. **/
+    /** Электронная почта пользователя, оставившего комментарий. **/
     commenterEmail: string | null
-    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
+    /** Имя пользователя, отображаемое в виджете комментария. При SSO может быть displayName. **/
     commenterName: string
-    /** Raw comment text. **/
+    /** Необработанный текст комментария. **/
     comment: string
-    /** Comment text after parsing. **/
+    /** Текст комментария после парсинга. **/
     commentHTML: string
-    /** Comment external id. **/
+    /** Внешний идентификатор комментария. **/
     externalId: string | null
-    /** The id of the parent comment. **/
+    /** Идентификатор родительского комментария. **/
     parentId: string | null
-    /** The UTC date when the comment was left. **/
+    /** Дата в UTC, когда был оставлен комментарий. **/
     date: UTC_ISO_DateString
-    /** Combined karma (up - down) of votes. **/
+    /** Суммарный карма (голосов "за" - "против"). **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** true, если пользователь был залогинен при комментировании, или их комментарий был верифицирован, или они верифицировали сессию при оставлении комментария. **/
     verified: boolean
-    /** The UTC date when the comment was verified. **/
+    /** Дата в UTC, когда комментарий был верифицирован. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** If a moderator marked the comment reviewed. **/
+    /** Если модератор отметил комментарий как проверенный. **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    /** Расположение или base64-кодировка аватара. Будет base64 только если это значение было передано через SSO. **/
     avatarSrc: string | null
-    /** Was the comment manually or automatically marked as spam? **/
+    /** Был ли комментарий помечен как спам вручную или автоматически? **/
     isSpam: boolean
-    /** Was the comment automatically marked as spam? **/
+    /** Был ли комментарий автоматически помечен как спам? **/
     aiDeterminedSpam: boolean
-    /** Are there images in the comment? **/
+    /** Есть ли изображения в комментарии? **/
     hasImages: boolean
-    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    /** Номер страницы, на которой находится комментарий при сортировке "Самые релевантные". **/
     pageNumber: number | null
-    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    /** Номер страницы, на которой находится комментарий при сортировке "Старые сначала". **/
     pageNumberOF: number | null
-    /** The page number the comment is on for the "Newest First" sort direction. **/
+    /** Номер страницы, на которой находится комментарий при сортировке "Новые сначала". **/
     pageNumberNF: number | null
-    /** Was the comment approved automatically or manually? **/
+    /** Был ли комментарий одобрен автоматически или вручную? **/
     approved: boolean
-    /** The locale code (format: en_us) of the user when the comment was written. **/
+    /** Код локали (формат: en_us) пользователя, когда был написан комментарий. **/
     locale: string | null
-    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    /** @упоминания, написанные в комментарии и успешно распарсенные. Пусто, если их нет. **/
     mentions: CommentUserMention[]
-    /** The domain the comment is from. **/
+    /** Домен, откуда пришел комментарий. **/
     domain: string | null
-    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    /** Идентификаторы групп модерации, связанные с этим комментарием. Пусто, если их нет. **/
     moderationGroupIds: string[]
+    /** Значки, отображаемые рядом с именем комментатора в этом комментарии, на момент создания события. Пусто, если их нет. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Когда пользователи упоминаются в комментарии, информация сохраняется в списке под названием `mentions`. Каждый объект в этом списке имеет следующую структуру.
 
 [inline-code-attrs-start title = 'Объект упоминаний Webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Идентификатор пользователя. Для SSO‑пользователей будет с префиксом tenant id. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Окончательный текст тега @mention, включая символ @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Оригинальный текст тега @mention, включая символ @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Какой тип пользователя был упомянут. user = аккаунт FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Если пользователь отказался от уведомлений, это всё равно будет true. **/
     sent: boolean
 }
 [inline-code-end]
 
-#### HTTP Methods
+Каждый элемент списка `badges` имеет следующую структуру. Смотрите [руководство по значкам](/guide-badges.html) для типов значков.
 
-You can configure the HTTP method for each webhook event type in the admin panel:
+[inline-code-attrs-start title = 'Объект значка Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** Идентификатор значка, присвоенного этому пользователю. **/
+    id: string
+    /** Тип значка. **/
+    type: number
+    /** Описание значка, отображаемое при наведении. **/
+    description: string
+    /** Текст, отображаемый на значке. **/
+    displayLabel?: string | null
+    /** Изображение, отображаемое для значка, если оно используется. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** Дополнительный CSS‑класс, применяемый к значку. **/
+    cssClass?: string | null
+}
+[inline-code-end]
 
-- **Create Event**: POST or PUT (default: PUT)
-- **Update Event**: POST or PUT (default: PUT)
-- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
+#### HTTP-методы
 
-Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
+Вы можете настроить HTTP-метод для каждого типа события вебхука в админ-панели:
 
-#### Request Headers
+- **Create Event**: POST или PUT (по умолчанию: PUT)
+- **Update Event**: POST или PUT (по умолчанию: PUT)
+- **Delete Event**: DELETE, POST или PUT (по умолчанию: DELETE)
 
-Each webhook request includes the following headers:
+Поскольку все запросы содержат ID, операции Create и Update по умолчанию идемпотентны (PUT). Повторение того же запроса Create или Update не должно создавать дублирующие объекты у вас.
 
-| Header | Description |
-|--------|-------------|
+#### Заголовки запроса
+
+Каждый запрос вебхука включает следующие заголовки:
+
+| Header | Описание |
+|--------|----------|
 | `Content-Type` | `application/json` |
-| `token` | Your API Secret |
-| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
-| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
+| `token` | Ваш API‑секрет |
+| `X-FastComments-Timestamp` | Unix‑временная метка (секунды) при подписи запроса |
+| `X-FastComments-Signature` | HMAC‑SHA256 подпись (`sha256=<hex>`) |
 
-See [Безопасность и токены API](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+Смотрите [Безопасность и API‑токены](/guide-webhooks.html#webhooks-api-tokens) для информации о проверке HMAC‑подписи.
+
+---

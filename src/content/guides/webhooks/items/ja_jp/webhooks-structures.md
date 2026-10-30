@@ -3,18 +3,18 @@ The only structure sent via webhooks is the WebhookComment object, outlined in T
 #### WebhookComment オブジェクト構造
 
 ##### 「Create」イベント構造  
-「create」イベントのリクエストボディは WebhookComment オブジェクトです。
+The "create" event request body is a WebhookComment object.
 
 ##### 「Update」イベント構造  
-「update」イベントのリクエストボディは WebhookComment オブジェクトです。
+The "update" event request body is a WebhookComment object.
 
 ##### 「Delete」イベント構造  
-「delete」イベントのリクエストボディは WebhookComment オブジェクトです。
+The "delete" event request body is a WebhookComment object.
 
-2023年11月14日以降の変更  
-以前は「delete」イベントのリクエストボディはコメント ID のみが含まれていました。現在は削除時点の完全なコメントが含まれます。
+    変更 (2023年11月14日現在)
+    以前は「delete」イベントのリクエストボディはコメント ID のみが含まれていましたが、現在は削除時点の完全なコメントが含まれます。
 
-すべてのキーは常にボディに存在します。フィールドに値がない場合、ボディは `null`（ブール値の場合は `false`、リストの場合は `[]`）を保持します。そのため、配信の形状はコメントごとに変わりません。
+ボディには常にすべてのキーが存在します。フィールドに値がない場合、ボディは `null`（ブール値の場合は `false`、リストの場合は `[]`）を保持するため、配信の形状はコメントごとに変わりません。
 
 [inline-code-attrs-start title = 'WebhookComment オブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -75,12 +75,14 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-コメント内でユーザーがタグ付けされると、その情報は `mentions` というリストに保存されます。そのリスト内の各オブジェクトは以下の構造を持ちます。
+コメント内でユーザーがタグ付けされると、その情報は `mentions` というリストに保存されます。そのリスト内の各オブジェクトは以下の構造です。
 
-[inline-code-attrs-start title = 'Webhook Mentions オブジェクト'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhook メンション オブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -96,6 +98,29 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
+`badges` リストの各エントリは以下の構造です。バッジの種類については [Badges guide](/guide-badges.html) を参照してください。
+
+[inline-code-attrs-start title = 'Webhook バッジ オブジェクト'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
+}
+[inline-code-end]
+
 #### HTTP メソッド
 
 管理パネルで各 webhook イベントタイプの HTTP メソッドを設定できます：
@@ -104,7 +129,7 @@ interface CommentUserMention {
 - **Update Event**: POST または PUT（デフォルト: PUT）
 - **Delete Event**: DELETE、POST、または PUT（デフォルト: DELETE）
 
-すべてのリクエストに ID が含まれるため、Create と Update の操作はデフォルトで冪等です（PUT）。同じ Create または Update リクエストを繰り返しても、側で重複したオブジェクトは作成されません。
+すべてのリクエストに ID が含まれるため、Create と Update の操作はデフォルトで冪等（PUT）です。同じ Create または Update リクエストを繰り返しても、側で重複したオブジェクトは作成されません。
 
 #### リクエストヘッダー
 
@@ -115,6 +140,6 @@ interface CommentUserMention {
 | `Content-Type` | `application/json` |
 | `token` | あなたの API シークレット |
 | `X-FastComments-Timestamp` | リクエストが署名されたときの Unix タイムスタンプ（秒） |
-| `X-FastComments-Signature` | HMAC-SHA256 署名 (`sha256=<hex>`) |
+| `X-FastComments-Signature` | HMAC-SHA256 署名（`sha256=<hex>`） |
 
-HMAC 署名の検証に関する情報は、[Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) を参照してください。
+HMAC 署名の検証に関する情報は [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) を参照してください。

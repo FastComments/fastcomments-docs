@@ -1,21 +1,20 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+Den eneste struktur, der sendes via webhooks, er WebhookComment‑objektet, beskrevet i TypeScript nedenfor.
 
-#### WebhookComment-objektets struktur
+#### WebhookComment‑objektets struktur
 
-##### The "Create" Event Structure
+##### "Create"-begivenhedens struktur  
 The "create" event request body is a WebhookComment object.
 
-##### The "Update" Event Structure
+##### "Update"-begivenhedens struktur  
 The "update" event request body is a WebhookComment object.
 
-##### The "Delete" Event Structure
+##### "Delete"-begivenhedens struktur  
 The "delete" event request body is a WebhookComment object.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+Ændring pr. 14. november 2023  
+Tidligere indeholdt anmodningskroppen for "delete"-begivenheden kun kommentar‑id'et. Den indeholder nu den fulde kommentar på tidspunktet for sletning.
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null`
-(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+Alle nøgler er altid til stede i kroppen. Når kommentaren ikke har en værdi for et felt, indeholder kroppen `null` (eller `false` for boolske værdier og `[]` for lister), så strukturen af en levering aldrig varierer fra en kommentar til den næste.
 
 [inline-code-attrs-start title = 'WebhookComment-objektet'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -76,11 +75,12 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Når brugere er tagget i en kommentar, gemmes informationen i en liste kaldet `mentions`. Hvert objekt i den liste har følgende struktur.
 
 [inline-code-attrs-start title = 'Webhook-mentions-objektet'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -98,25 +98,48 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
+Hvert element i `badges`‑listen har følgende struktur. Se [Badges guide](/guide-badges.html) for badge‑typerne.
+
+[inline-code-attrs-start title = 'Webhook-badge-objektet'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
+}
+[inline-code-end]
+
 #### HTTP-metoder
 
-Du kan konfigurere HTTP-metoden for hver webhook-begivenhedstype i administrationspanelet:
+Du kan konfigurere HTTP‑metoden for hver webhook‑begivenhedstype i adminpanelet:
 
-- **Create-begivenhed**: POST eller PUT (standard: PUT)
-- **Update-begivenhed**: POST eller PUT (standard: PUT)
-- **Delete-begivenhed**: DELETE, POST eller PUT (standard: DELETE)
+- **Create‑begivenhed**: POST eller PUT (standard: PUT)
+- **Update‑begivenhed**: POST eller PUT (standard: PUT)
+- **Delete‑begivenhed**: DELETE, POST eller PUT (standard: DELETE)
 
-Da alle anmodninger indeholder et ID, er Create- og Update-operationer idempotente som standard (PUT). Gentagelse af den samme Create- eller Update-anmodning bør ikke oprette duplikerede objekter på din side.
+Da alle anmodninger indeholder en ID, er Create‑ og Update‑operationer idempotente som standard (PUT). Gentagelse af den samme Create‑ eller Update‑anmodning bør ikke oprette dublerede objekter på din side.
 
 #### Anmodnings‑headers
 
-Hver webhook-anmodning inkluderer følgende headers:
+Hver webhook‑anmodning inkluderer følgende headers:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Din API-hemmelighed |
-| `X-FastComments-Timestamp` | Unix-tidsstempel (sekunder) da anmodningen blev signeret |
-| `X-FastComments-Signature` | HMAC-SHA256-signatur (`sha256=<hex>`) |
+| `token` | Din API‑hemmelighed |
+| `X-FastComments-Timestamp` | Unix‑tidsstempel (sekunder) da anmodningen blev signeret |
+| `X-FastComments-Signature` | HMAC‑SHA256‑signatur (`sha256=<hex>`) |
 
-Se [Sikkerhed & API‑tokens](/guide-webhooks.html#webhooks-api-tokens) for information om verifikation af HMAC-signaturen.
+Se [Sikkerhed & API‑tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.

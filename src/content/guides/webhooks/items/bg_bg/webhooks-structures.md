@@ -14,112 +14,136 @@ The "delete" event request body is a WebhookComment object.
     Change as of Nov 14th 2023
     Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
-Промяна от 14 ноември 2023 г.  
-Преди тялото на заявката за събитие "delete" съдържаше само идентификатора на коментара. Сега съдържа целия коментар към момента на изтриване.
+Промяна от 14 ноември 2023 г. Преди тялото на заявката за събитието "delete" съдържаше само идентификатора на коментара. Сега съдържа целия коментар към момента на изтриване.
 
-Всеки ключ винаги присъства в тялото. Когато коментарът няма стойност за дадено поле, тялото съдържа `null`  
-(или `false` за булеви стойности и `[]` за списъци), така че формата на доставката никога не се променя от един коментар към друг.
+Всеки ключ винаги присъства в тялото. Когато коментарът няма стойност за дадено поле, тялото съдържа `null` (или `false` за булеви стойности и `[]` за списъци), така че формата на доставката никога не варира от един коментар към друг.
 
 [inline-code-attrs-start title = 'Обектът WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** The id of the comment. **/
+    /** Идентификаторът на коментара. **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** Идентификаторът или URL, който идентифицира нишката на коментара. Нормализиран. **/
     urlId: string
-    /** The URL that points to where the comment was left. **/
+    /** URL‑то, което указва къде е оставен коментарът. **/
     url: string | null
-    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    /** Идентификаторът на потребителя, който е оставил коментара. При SSO е с префикс на идентификатора на наемателя. **/
     userId: string | null
-    /** The email of the user left the comment. **/
+    /** Имейлът на потребителя, който е оставил коментара. **/
     commenterEmail: string | null
-    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
+    /** Името на потребителя, което се показва в уиджета за коментари. При SSO може да бъде displayName. **/
     commenterName: string
-    /** Raw comment text. **/
+    /** Необработен текст на коментара. **/
     comment: string
-    /** Comment text after parsing. **/
+    /** Текст на коментара след парсиране. **/
     commentHTML: string
-    /** Comment external id. **/
+    /** Външен идентификатор на коментара. **/
     externalId: string | null
-    /** The id of the parent comment. **/
+    /** Идентификаторът на родителския коментар. **/
     parentId: string | null
-    /** The UTC date when the comment was left. **/
+    /** UTC датата, когато е оставен коментарът. **/
     date: UTC_ISO_DateString
-    /** Combined karma (up - down) of votes. **/
+    /** Комбинирано карма (гласове нагоре - надолу). **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** Истина, ако потребителят е бил влязъл, когато е коментирал, или е верифицирал коментара, или е верифицирал сесията си, когато коментарът е оставен. **/
     verified: boolean
-    /** The UTC date when the comment was verified. **/
+    /** UTC датата, когато коментарът е верифициран. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** If a moderator marked the comment reviewed. **/
+    /** Ако модератор е маркирал коментара като прегледан. **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    /** Местоположението или base64 кодирането на аватара. Ще бъде base64 само ако това е стойността, предадена с SSO. **/
     avatarSrc: string | null
-    /** Was the comment manually or automatically marked as spam? **/
+    /** Беше ли коментарът маркиран като спам ръчно или автоматично? **/
     isSpam: boolean
-    /** Was the comment automatically marked as spam? **/
+    /** Беше ли коментарът автоматично маркиран като спам? **/
     aiDeterminedSpam: boolean
-    /** Are there images in the comment? **/
+    /** Има ли изображения в коментара? **/
     hasImages: boolean
-    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    /** Номерът на страницата, на която се намира коментарът за сортиране "Most Relevant". **/
     pageNumber: number | null
-    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    /** Номерът на страницата, на която се намира коментарът за сортиране "Oldest First". **/
     pageNumberOF: number | null
-    /** The page number the comment is on for the "Newest First" sort direction. **/
+    /** Номерът на страницата, на която се намира коментарът за сортиране "Newest First". **/
     pageNumberNF: number | null
-    /** Was the comment approved automatically or manually? **/
+    /** Беше ли коментарът одобрен автоматично или ръчно? **/
     approved: boolean
-    /** The locale code (format: en_us) of the user when the comment was written. **/
+    /** Кодът на локала (формат: en_us) на потребителя, когато е написан коментарът. **/
     locale: string | null
-    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    /** Отбелязаните @упомени в коментара, които са успешно парсирани. Празно, ако няма такива. **/
     mentions: CommentUserMention[]
-    /** The domain the comment is from. **/
+    /** Домейнът, от който е коментарът. **/
     domain: string | null
-    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    /** Идентификаторите на модерационните групи, свързани с този коментар. Празно, ако няма такива. **/
     moderationGroupIds: string[]
+    /** Значките, показвани до името на коментатора в този коментар, към момента на създаване на събитието. Празно, ако няма такива. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-Когато потребители са споменати в коментар, информацията се съхранява в списък, наречен `mentions`. Всеки обект в този списък  
-има следната структура.
+When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list has the following structure.
 
 [inline-code-attrs-start title = 'Обектът Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Идентификаторът на потребителя. За SSO потребители това ще има вашия идентификатор на наемателя като префикс. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Крайната @упомената таг текст, включително символа @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Оригиналният @упоменат таг текст, включително символа @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Какъв тип потребител е отбелязан. user = акаунт FastComments.com. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Ако потребителят се откаже от известия, това все пак ще бъде зададено на true. **/
     sent: boolean
+}
+[inline-code-end]
+
+Each entry in the `badges` list has the following structure. See the [Badges guide](/guide-badges.html) for the badge types.
+
+[inline-code-attrs-start title = 'Обектът Webhook Badge'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** Идентификаторът на значката, присвоена на този потребител. **/
+    id: string
+    /** Типът на значката. **/
+    type: number
+    /** Описанието на значката, показвано при задържане на мишката върху нея. **/
+    description: string
+    /** Текстът, показван на значката. **/
+    displayLabel?: string | null
+    /** Изображението, показвано за значката, ако използва такова. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** Допълнителен CSS клас, приложен към значката. **/
+    cssClass?: string | null
 }
 [inline-code-end]
 
 #### HTTP методи
 
-Можете да конфигурирате HTTP метода за всеки тип уебкук събитие в администраторския панел:
+You can configure the HTTP method for each webhook event type in the admin panel:
 
-- **Create Event**: POST или PUT (по подразбиране: PUT)
-- **Update Event**: POST или PUT (по подразбиране: PUT)
-- **Delete Event**: DELETE, POST или PUT (по подразбиране: DELETE)
+- **Create Event**: POST or PUT (default: PUT) -> **Create Event**: POST или PUT (по подразбиране: PUT)
+- **Update Event**: POST or PUT (default: PUT) -> **Update Event**: POST или PUT (по подразбиране: PUT)
+- **Delete Event**: DELETE, POST, or PUT (default: DELETE) -> **Delete Event**: DELETE, POST или PUT (по подразбиране: DELETE)
+
+Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
 
 Тъй като всички заявки съдържат ID, операциите Create и Update са идемпотентни по подразбиране (PUT). Повтарянето на една и съща заявка за Create или Update не трябва да създава дублирани обекти от ваша страна.
 
 #### Заглавки на заявката
 
-Всяка уебкук заявка включва следните заглавки:
-
-| Header | Description |
-|--------|-------------|
+| Заглавка | Описание |
+|----------|----------|
 | `Content-Type` | `application/json` |
 | `token` | Вашият API Secret |
 | `X-FastComments-Timestamp` | Unix времева отметка (секунди), когато заявката е подписана |
 | `X-FastComments-Signature` | HMAC-SHA256 подпис (`sha256=<hex>`) |
 
-Вижте [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) за информация относно проверката на HMAC подписа.
+See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+
+Вижте [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) за информация относно проверка на HMAC подписа.

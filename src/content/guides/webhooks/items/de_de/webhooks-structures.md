@@ -1,20 +1,21 @@
-Die einzige Struktur, die über Webhooks gesendet wird, ist das WebhookComment-Objekt, das unten in TypeScript dargestellt ist.
+Die einzige Struktur, die über Webhooks gesendet wird, ist das WebhookComment‑Objekt, das unten in TypeScript dargestellt ist.
 
-#### Die Struktur des WebhookComment-Objekts
+#### Die Struktur des WebhookComment‑Objekts
 
-##### Die Struktur des "Create"-Ereignisses
-Der Anforderungstext des "create"-Ereignisses ist ein WebhookComment-Objekt.
+##### Die „Create“-Ereignisstruktur
+Der Anfragetext des „create“-Ereignisses ist ein WebhookComment‑Objekt.
 
-##### Die Struktur des "Update"-Ereignisses
-Der Anforderungstext des "update"-Ereignisses ist ein WebhookComment-Objekt.
+##### Die „Update“-Ereignisstruktur
+Der Anfragetext des „update“-Ereignisses ist ein WebhookComment‑Objekt.
 
-##### Die Struktur des "Delete"-Ereignisses
-Der Anforderungstext des "delete"-Ereignisses ist ein WebhookComment-Objekt.
+##### Die „Delete“-Ereignisstruktur
+Der Anfragetext des „delete“-Ereignisses ist ein WebhookComment‑Objekt.
 
-    Änderung ab 14. November 2023
-    Früher enthielt der Anforderungstext des "delete"-Ereignisses nur die Kommentar-ID. Jetzt enthält er den vollständigen Kommentar zum Zeitpunkt der Löschung.
+    Change as of Nov 14th 2023
+    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
 
-Jeder Schlüssel ist immer im Body vorhanden. Wenn der Kommentar keinen Wert für ein Feld hat, enthält der Body `null` (oder `false` für Booleans und `[]` für Listen), sodass die Struktur einer Lieferung nie von einem Kommentar zum anderen variiert.
+Jeder Schlüssel ist immer im Body vorhanden. Wenn ein Kommentar keinen Wert für ein Feld hat, enthält der Body `null`
+(oder `false` für Booleans und `[]` für Listen), sodass die Form einer Lieferung niemals von einem Kommentar zum nächsten variiert.
 
 [inline-code-attrs-start title = 'Das WebhookComment-Objekt'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -75,6 +76,8 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
@@ -96,27 +99,48 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-#### HTTP-Methoden
+Jeder Eintrag in der `badges`‑Liste hat die folgende Struktur. Siehe den [Badges guide](/guide-badges.html) für die Badge‑Typen.
 
-Sie können die HTTP-Methode für jeden Webhook-Ereignistyp im Admin-Panel konfigurieren:
+[inline-code-attrs-start title = 'Das Webhook-Badge-Objekt'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
+}
+[inline-code-end]
 
-- **Create Event**: POST oder PUT (Standard: PUT)
-- **Update Event**: POST oder PUT (Standard: PUT)
-- **Delete Event**: DELETE, POST oder PUT (Standard: DELETE)
+#### HTTP‑Methoden
 
-Da alle Anfragen eine ID enthalten, sind Create- und Update-Operationen standardmäßig (PUT) idempotent. Das Wiederholen derselben Create- oder Update-Anfrage sollte auf Ihrer Seite keine doppelten Objekte erzeugen.
+Sie können die HTTP‑Methode für jeden Webhook‑Ereignistyp im Admin‑Panel konfigurieren:
 
-#### Anforderungs-Header
+- **Create‑Ereignis**: POST oder PUT (Standard: PUT)
+- **Update‑Ereignis**: POST oder PUT (Standard: PUT)
+- **Delete‑Ereignis**: DELETE, POST oder PUT (Standard: DELETE)
 
-Jede Webhook-Anfrage enthält die folgenden Header:
+Da alle Anfragen eine ID enthalten, sind Create‑ und Update‑Operationen standardmäßig idempotent (PUT). Das Wiederholen derselben Create‑ oder Update‑Anfrage sollte auf Ihrer Seite keine doppelten Objekte erzeugen.
 
-| Header | Description |
-|--------|-------------|
+#### Anforderungs‑Header
+
+Jede Webhook‑Anfrage enthält die folgenden Header:
+
+| Header | Beschreibung |
+|--------|---------------|
 | `Content-Type` | `application/json` |
-| `token` | Ihr API-Geheimnis |
-| `X-FastComments-Timestamp` | Unix-Zeitstempel (Sekunden), wenn die Anfrage signiert wurde |
-| `X-FastComments-Signature` | HMAC-SHA256-Signatur (`sha256=<hex>`) |
+| `token` | Ihr API‑Geheimnis |
+| `X-FastComments-Timestamp` | Unix‑Zeitstempel (Sekunden) zum Zeitpunkt der Signatur |
+| `X-FastComments-Signature` | HMAC‑SHA256‑Signatur (`sha256=<hex>`) |
 
-Siehe [Sicherheit & API-Token](/guide-webhooks.html#webhooks-api-tokens) für Informationen zur Überprüfung der HMAC-Signatur.
-
----
+Siehe [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) für Informationen zur Überprüfung der HMAC‑Signatur.

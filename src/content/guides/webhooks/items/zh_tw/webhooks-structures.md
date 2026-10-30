@@ -2,20 +2,19 @@ The only structure sent via webhooks is the WebhookComment object, outlined in T
 
 #### WebhookComment 物件結構
 
-##### 「Create」事件結構  
-The "create" event request body is a WebhookComment object.
+##### 「建立」事件結構
+「create」事件的請求主體是一個 WebhookComment 物件。
 
-##### 「Update」事件結構  
-The "update" event request body is a WebhookComment object.
+##### 「更新」事件結構
+「update」事件的請求主體是一個 WebhookComment 物件。
 
-##### 「Delete」事件結構  
-The "delete" event request body is a WebhookComment object.
+##### 「刪除」事件結構
+「delete」事件的請求主體是一個 WebhookComment 物件。
 
-    變更於 Nov 14th 2023
-    先前的 "delete" 事件請求主體僅包含評論 id。現在會在刪除時包含完整的評論內容。
+    變更於 2023 年 11 月 14 日
+    之前「delete」事件的請求主體僅包含評論 ID。現在會在刪除時包含完整的評論內容。
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null`
-(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+每個鍵在主體中皆會出現。當評論的某個欄位沒有值時，主體會攜帶 `null`（布林值則為 `false`，列表則為 `[]`），因此每次傳遞的資料形狀不會因評論而異。
 
 [inline-code-attrs-start title = 'WebhookComment 物件'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -76,11 +75,12 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+當使用者在評論中被標記時，資訊會儲存在名為 `mentions` 的列表中。該列表中的每個物件具有以下結構。
 
 [inline-code-attrs-start title = 'Webhook 提及 物件'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -98,19 +98,42 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
+`badges` 列表中的每個條目具有以下結構。請參閱 [徽章指南](/guide-badges.html) 了解徽章類型。
+
+[inline-code-attrs-start title = 'Webhook 徽章 物件'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
+}
+[inline-code-end]
+
 #### HTTP 方法
 
-You can configure the HTTP method for each webhook event type in the admin panel:
+您可以在管理面板中為每種 webhook 事件類型設定 HTTP 方法：
 
-- **Create Event**: POST or PUT (default: PUT)
-- **Update Event**: POST or PUT (default: PUT)
-- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
+- **建立事件**：POST 或 PUT（預設：PUT）
+- **更新事件**：POST 或 PUT（預設：PUT）
+- **刪除事件**：DELETE、POST 或 PUT（預設：DELETE）
 
-Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
+由於所有請求皆包含 ID，建立與更新操作預設為冪等（PUT）。重複相同的建立或更新請求不應在您的端產生重複的物件。
 
 #### 請求標頭
 
-Each webhook request includes the following headers:
+每個 webhook 請求都會包含以下標頭：
 
 | 標頭 | 說明 |
 |--------|-------------|
@@ -119,4 +142,4 @@ Each webhook request includes the following headers:
 | `X-FastComments-Timestamp` | 請求簽署時的 Unix 時間戳（秒） |
 | `X-FastComments-Signature` | HMAC-SHA256 簽名（`sha256=<hex>`） |
 
-See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+請參閱 [安全性與 API 令牌](/guide-webhooks.html#webhooks-api-tokens) 以取得驗證 HMAC 簽名的相關資訊。
