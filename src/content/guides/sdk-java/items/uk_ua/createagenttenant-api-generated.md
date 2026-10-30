@@ -13,7 +13,7 @@ Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Приклад createAgentTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
