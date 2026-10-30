@@ -1,21 +1,21 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.
-Integrations use this to test a connection and label it.
+Идентификује кориснички акредитив у употреби: станар (тенант) коме припада и, за OAuth токене, корисника који га је ауторизовао.  
+Интеграције користе ово за тестирање везе и означавање.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| Име | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|------|
+| tenantId | string | query | Да |  |
 
 ## Response
 
-Returns: [`GetMeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMeResponse.java)
+Враћа: [`GetMeResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetMeResponse.java)
 
 ## Example
 
 [inline-code-attrs-start title = 'getMe пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Увези класе:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Конфигуриши ауторизацију API кључа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Одкоментариши следећу линију да поставиш префикс за API кључ, нпр. "Token" (подразумевано је null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

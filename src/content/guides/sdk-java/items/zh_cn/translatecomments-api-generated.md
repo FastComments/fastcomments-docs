@@ -3,7 +3,7 @@ customization rule has Comment Translation set to Automatic or Manual.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
@@ -12,7 +12,7 @@ customization rule has Comment Translation set to Automatic or Manual.
 
 ## Response
 
-Returns: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
+返回: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
 
 ## Example
 

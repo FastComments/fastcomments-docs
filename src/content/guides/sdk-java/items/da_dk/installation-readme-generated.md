@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+Tilføj Repsy-repositoriet til dit projekts POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+Tilføj derefter de afhængigheder, du har brug for:
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@ Then add the dependencies you need:
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+Tilføj Repsy-repositoriet til din build.gradle-fil:
 
 ```groovy
 repositories {
@@ -63,18 +63,16 @@ dependencies {
 }
 ```
 
-### Library Contents
+### Biblioteksindhold
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+Dette bibliotek indeholder tre moduler. Den genererede API-klient, kernebiblioteket til Java, som indeholder håndskrevne værktøjer for at gøre arbejdet med API'et lettere, og `pubsub`-modulet, som er et bibliotek til at abonnere på ændringsfeeds.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API-klientbibliotek Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Kernebibliotek Docs, inklusiv SSO-eksempler](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub-bibliotek Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Offentlige vs Sikrede API'er
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+For API-klienten er der tre klasser, `DefaultApi`, `PublicApi` og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder metoder, som kan kaldes direkte fra en browser/mobil enhed osv. uden godkendelse.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` leverer en omfattende suite af live og hurtige moderations-API'er. Hver `ModerationApi`-metode accepterer en `sso`-parameter og kan autentificere via SSO eller en FastComments.com sessionscookie.

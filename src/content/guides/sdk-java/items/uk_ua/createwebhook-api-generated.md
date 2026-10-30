@@ -1,12 +1,12 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
+Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same  
+event and domain again returns the existing subscription. Deliveries are HMAC signed, see the  
 webhooks guide; the legacy `token` header is never sent to API subscriptions.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов’язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Так |  |
 
 ## Response
 
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації за ключем API: api_key
+    // Налаштування авторизації API‑ключа: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для ключа API, напр. "Token" (за замовчуванням null)
+    // Розкоментуйте наступний рядок, щоб встановити префікс для API‑ключа, напр. "Token" (за замовчуванням null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

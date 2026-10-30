@@ -1,31 +1,31 @@
 Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| event | string | query | No |  |
-| domain | string | query | No |  |
-| source | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Так |  |
+| event | string | query | Ні |  |
+| domain | string | query | Ні |  |
+| source | string | query | Ні |  |
+| skip | number | query | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
+Повертає: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'getWebhooks Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні зразки коду все ще у бета-версії. У разі будь-якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let event = WebhookEventName() // WebhookEventName |  (optional)
-let domain = "domain_example" // String |  (optional)
-let source = WebhookSource() // WebhookSource |  (optional)
-let skip = 987 // Double |  (optional)
+let event = WebhookEventName() // WebhookEventName |  (необов'язково)
+let domain = "domain_example" // String |  (необов'язково)
+let source = WebhookSource() // WebhookSource |  (необов'язково)
+let skip = 987 // Double |  (необов'язково)
 
 DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOptions(event: event, domain: domain, source: source, skip: skip)) { (response, error) in
     guard error == nil else {

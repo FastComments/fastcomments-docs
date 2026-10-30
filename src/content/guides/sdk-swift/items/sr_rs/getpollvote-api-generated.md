@@ -1,19 +1,19 @@
-## Parametri
+## Параметри
 
-| Naziv | Tip | Lokacija | Obavezno | Opis |
+| Име | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|------|
-| tenantId | string | query | Da |  |
-| id | string | path | Da |  |
+| tenantId | string | query | Да |  |
+| id | string | path | Да |  |
 
-## Odgovor
+## Одговор
 
-Vraća: [`GetPollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPollVoteResponse.swift)
+Враћа: [`GetPollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPollVoteResponse.swift)
 
-## Primer
+## Пример
 
-[inline-code-attrs-start title = 'getPollVote Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći primeri koda su i dalje beta. Za bilo koji problem, molimo vas da prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следећи примери кода су још у бета фази. За било који проблем, молимо пријавите га на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -30,3 +30,5 @@ DefaultAPI.getPollVote(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
+
+---

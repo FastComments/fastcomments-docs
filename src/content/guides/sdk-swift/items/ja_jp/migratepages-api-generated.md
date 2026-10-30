@@ -1,18 +1,18 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+コメント、ページ、および関連レコードをある urlId またはドメインから別のものへ移動するバッチジョブをキューに入れます。  
+"urlId" マイグレーションは正確な urlId のみと一致します。 "domain" マイグレーションはすべての urlId と url 内の値を検索/置換します。  
+GET /api/v1/batch-jobs/{batchJobId} をポーリングします：完了すると、マイグレーションごとの結果と undoId が含まれます。
 
-## Parameters
+## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 
-## Response
+## レスポンス
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
+返却: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'migratePages の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

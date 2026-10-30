@@ -1,20 +1,23 @@
-By default, FastComments translates the widget's own interface (buttons, labels, error messages) into the viewer's language, but comments are shown exactly as they were written.
+---
+Από προεπιλογή, το FastComments μεταφράζει τη διεπαφή του widget (κουμπιά, ετικέτες, μηνύματα σφάλματος) στη γλώσσα του θεατή, αλλά τα σχόλια εμφανίζονται ακριβώς όπως γράφτηκαν.
 
-Comment Translation adds translation of the comments themselves, so a community that writes in more than one language can read every comment in its own.
+Η Μετάφραση Σχολίων προσθέτει τη μετάφραση των ίδιων των σχολίων, ώστε μια κοινότητα που γράφει σε περισσότερες από μία γλώσσες να μπορεί να διαβάσει κάθε σχόλιο στη δική της.
 
-There are two modes:
+Υπάρχουν δύο τρόποι:
 
-- **Automatic**: comments written in a language other than the widget's language are shown translated. A "Translated from Spanish" line appears under the comment with a **Show original** link that switches between the translation and the untranslated text.
-- **Manual**: every comment gets a **Translate** link. Clicking it translates that one comment into the viewer's language, with the same **Show original** toggle afterwards. Comments that are already in the viewer's language say so instead.
+- **Automatic**: σχόλια που γράφτηκαν σε γλώσσα διαφορετική από τη γλώσσα του widget εμφανίζονται μεταφρασμένα. Μια γραμμή «Translated from Spanish» εμφανίζεται κάτω από το σχόλιο με έναν σύνδεσμο **Show original** που εναλλάσσει μεταξύ της μετάφρασης και του αμετάφραστου κειμένου.
+- **Manual**: κάθε σχόλιο λαμβάνει έναν σύνδεσμο **Translate**. Κάνοντας κλικ, μεταφράζεται αυτό το σχόλιο στη γλώσσα του θεατή, με το ίδιο κουμπί **Show original** μετά. Τα σχόλια που είναι ήδη στη γλώσσα του θεατή το δηλώνουν αντίθετα.
 
-The target language is the widget's language: the [Locale / Language](#locale) setting on the same customization rule if it is set, otherwise the visitor's browser language. Nothing is required from the visitor, no account, extension or extra software, and it works the same in the embedded widget and on standalone comment pages.
+Η γλώσσα‑στόχος είναι η γλώσσα του widget: η ρύθμιση [Locale / Language](#locale) στον ίδιο κανόνα προσαρμογής εάν έχει οριστεί, διαφορετικά η γλώσσα του προγράμματος περιήγησης του επισκέπτη. Δεν απαιτείται τίποτα από τον επισκέπτη, χωρίς λογαριασμό, επέκταση ή επιπλέον λογισμικό, και λειτουργεί το ίδιο στο ενσωματωμένο widget και σε αυτόνομες σελίδες σχολίων.
 
-This is turned on per <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">customization rule</a>, so it can apply to your whole site, one domain, or a single page. It is off by default.
+Αυτό ενεργοποιείται ανά <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">κανόνα προσαρμογής</a>, ώστε να μπορεί να εφαρμοστεί σε ολόκληρο τον ιστότοπό σας, σε έναν τομέα ή σε μια μόνο σελίδα. Είναι απενεργοποιημένο από προεπιλογή.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='Αναπτυσσόμενο μενού Μετάφρασης Σχολίων στη σελίδα προσαρμογής του widget με επιλογές Off, Automatic και Manual'; title='Μετάφραση Σχολίων' app-screenshot-end]
 
-Translation is a server-side setting. Passing `commentTranslation` in the widget's JavaScript configuration does not enable it; the rule does.
+Η μετάφραση είναι ρύθμιση διακομιστή. Η μεταβίβαση `commentTranslation` στη διαμόρφωση JavaScript του widget δεν την ενεργοποιεί· ο κανόνας το κάνει.
 
-Each comment is translated at most once per target language and the result is stored with the comment, so a comment read by a thousand Spanish speakers is translated once. If the author or a moderator edits the comment, the stored translation is discarded and the comment is translated again on the next view. Translated text goes through the same sanitization and link rules as the original comment. Comments that are too long, or whose language cannot be detected, are shown untranslated.
+Κάθε σχόλιο μεταφράζεται το πολύ μία φορά ανά γλώσσα‑στόχο και το αποτέλεσμα αποθηκεύεται με το σχόλιο, έτσι ένα σχόλιο που διαβάζεται από χίλιους Ισπανομιλάτες μεταφράζεται μία φορά. Εάν ο συγγραφέας ή ένας συντονιστής επεξεργαστεί το σχόλιο, η αποθηκευμένη μετάφραση απορρίπτεται και το σχόλιο μεταφράζεται ξανά στην επόμενη προβολή. Το μεταφρασμένο κείμενο περνάει από την ίδια διαδικασία απολύμανσης και κανόνες συνδέσμων όπως το αρχικό σχόλιο. Τα σχόλια που είναι πολύ μεγάλα ή των οποίων η γλώσσα δεν μπορεί να εντοπιστεί, εμφανίζονται αμετάφραστα.
 
-Usage is billed as LLM tokens at the same rate as [AI Agents](/guide-ai-agents.html#plans-and-eligibility) and appears in the same place in your billing details.
+Η χρήση χρεώνεται ως tokens LLM με τον ίδιο ρυθμό όπως οι [AI Agents](/guide-ai-agents.html#plans-and-eligibility) και εμφανίζεται στην ίδια θέση στις λεπτομέρειες χρέωσής σας.
+
+---

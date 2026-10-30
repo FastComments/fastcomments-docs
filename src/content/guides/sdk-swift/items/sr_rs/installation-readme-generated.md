@@ -1,6 +1,6 @@
 ### Swift Package Manager
 
-Add the following to your `Package.swift` file:
+Додајте следеће у ваш `Package.swift` фајл:
 
 ```swift
 dependencies: [
@@ -8,12 +8,12 @@ dependencies: [
 ]
 ```
 
-Or in Xcode:
+Или у Xcode-у:
 1. File > Add Packages...
-2. Enter the repository URL: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Select the version you want to use
+2. Унесите URL репозиторију: `https://github.com/fastcomments/fastcomments-swift.git`
+3. Изаберите верзију коју желите да користите
 
-### Requirements
+### Захтеви
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+

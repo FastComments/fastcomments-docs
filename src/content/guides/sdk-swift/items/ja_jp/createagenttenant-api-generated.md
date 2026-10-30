@@ -5,11 +5,11 @@ MCP server, and a claim URL. Give the claim URL to the human you are working for
 logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
 deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
 
-## Response
+## レスポンス
 
 Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'createAgentTenant の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

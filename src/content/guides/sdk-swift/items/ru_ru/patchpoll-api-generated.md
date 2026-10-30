@@ -1,17 +1,17 @@
 Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it, or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
 
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 
-## Response
+## Ответ
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+Возвращает: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример patchPoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

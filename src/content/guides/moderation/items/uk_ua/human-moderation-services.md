@@ -1,29 +1,29 @@
-Human Moderation Services is managed moderation by the FastComments team. Our moderators work your queue, in your dashboard, under your guidelines. There is no separate tool and no export of your data to a third party: the service runs on the moderation features every account already has.
+Human Moderation Services — це керована модерація командою FastComments. Наші модератори працюють у вашій черзі, у вашій панелі, згідно з вашими рекомендаціями. Немає окремого інструменту і не відбувається експорт ваших даних третім сторонам: сервіс працює на функціях модерації, які вже є в кожному акаунті.
 
-### How it works
+### Як це працює
 
-1. **We agree the rules.** You share your community guidelines and tell us what to approve, remove, and escalate. Both sides sign off on a written playbook before anyone touches your queue.
-2. **We join your account.** FastComments moderators are added through [Adding Moderators](/guide-moderation.html#moderators-adding) and scoped with [Moderation Groups](/guide-moderation.html#moderation-groups), so they only see the pages, categories, or sites you assign.
-3. **Machines first, people second.** [Spam Detection](/guide-moderation.html#spam-detection) and [AI Agents](/guide-ai-agents.html) handle the obvious cases. Our moderators work what is left: context, tone, appeals, and anything an agent escalated.
-4. **You see everything.** Each action is recorded in [Comment Logs](/guide-moderation.html#comment-logs) and [Moderator Stats](/guide-moderation.html#moderator-stats) with the moderator's name on it. Policy questions go to your named escalation contact.
+1. **Ми погоджуємо правила.** Ви ділитесь вашими рекомендаціями спільноти і повідомляєте нам, що схвалювати, видаляти та ескалувати. Обидві сторони підписують письмовий план дій перед тим, як хтось торкнеться вашої черги.
+2. **Ми приєднуємося до вашого акаунту.** Модератори FastComments додаються через [Додавання модераторів](/guide-moderation.html#moderators-adding) і обмежуються [Групами модерації](/guide-moderation.html#moderation-groups), тому вони бачать лише ті сторінки, категорії або сайти, які ви призначаєте.
+3. **Спочатку машини, потім люди.** [Виявлення спаму](/guide-moderation.html#spam-detection) та [AI-агенти](/guide-ai-agents.html) обробляють очевидні випадки. Наші модератори працюють з тим, що залишилося: контекст, тон, апеляції та все, що агент ескалував.
+4. **Ви бачите все.** Кожна дія записується в [Журнали коментарів](/guide-moderation.html#comment-logs) та [Статистика модераторів](/guide-moderation.html#moderator-stats) з ім'ям модератора. Питання щодо політики надходять до вашого зазначеного контакту для ескалації.
 
-### What you control
+### Що ви контролюєте
 
-- **Guidelines.** Our moderators follow the playbook written from your guidelines. When a case is not covered, it is escalated to you rather than decided for you.
-- **Scope.** Widen or narrow access at any time by editing the Moderation Group our moderators belong to.
-- **Escalation contacts.** You name who on your side receives policy questions, and we name who on ours owns the queue.
-- **Access.** [Removing a moderator](/guide-moderation.html#moderators-removing) ends their access immediately.
+- **Рекомендації.** Наші модератори дотримуються плану дій, написаного на основі ваших рекомендацій. Якщо випадок не охоплений, його ескалюють до вас, а не вирішують за вас.
+- **Обсяг.** Розширюйте або звужуйте доступ у будь-який час, редагуючи Групу модерації, до якої належать наші модератори.
+- **Контакти ескалації.** Ви вказуєте, хто з вашого боку отримує питання щодо політики, а ми вказуємо, хто з нашого боку відповідає за чергу.
+- **Доступ.** [Видалення модератора](/guide-moderation.html#moderators-removing) негайно припиняє його доступ.
 
-### Working alongside AI Agents
+### Робота разом з AI-агентами
 
-Agents and FastComments moderators act through the same tools, so every action shows up in the same logs and the same moderation page. A typical setup runs spam detection and AI Agents as the first pass, with human moderators handling the comments agents flag for review. See [AI Agents](/guide-ai-agents.html) for how agents escalate to a human.
+Агенти та модератори FastComments працюють через ті ж інструменти, тому кожна дія відображається в тих самих журналах і на тій самій сторінці модерації. Типове налаштування запускає виявлення спаму та AI-агентів як перший етап, а людські модератори обробляють коментарі, які агенти позначили для перегляду. Дивіться [AI-агенти](/guide-ai-agents.html) для того, як агенти ескалюються до людини.
 
-The [trust factor](/guide-moderation.html#spam-detection) ties the two together. Each commenter carries a 0 to 100 score built from tenure, comment count, and pinned comments. Spam detection and AI Agents read it to decide how strictly to treat a comment, and our moderators adjust it by hand when the automatic score is wrong. Every change is recorded in [Comment Logs](/guide-moderation.html#comment-logs), so a human decision today changes how the automated layers treat that person from then on.
+The [фактор довіри](/guide-moderation.html#spam-detection) пов'язує їх разом. Кожен коментатор має оцінку від 0 до 100, сформовану на основі стажу, кількості коментарів та закріплених коментарів. Виявлення спаму та AI-агенти читають її, щоб вирішити, наскільки суворо обробляти коментар, а наші модератори коригують її вручну, коли автоматична оцінка неправильна. Кожна зміна записується в [Журнали коментарів](/guide-moderation.html#comment-logs), тому рішення людини сьогодні змінює те, як автоматичні шари обробляють цю особу надалі.
 
-### Where our moderators are
+### Де наші модератори
 
-For global and US customers, FastComments moderators are based in the United States, so your data does not leave the country. On the EU deployment, only EU-based moderators work your queue, so comment data does not leave the EU.
+Для глобальних та американських клієнтів модератори FastComments розташовані у Сполучених Штатах, тому ваші дані не залишають країну. У розгортанні для ЄС лише модератори, розташовані в ЄС, працюють з вашою чергою, тому дані коментарів не залишають ЄС.
 
-### Terms
+### Умови
 
-Coverage hours, languages, response targets, reporting cadence, and pricing are agreed per contract. To start, read more at [fastcomments.com/human-moderation](https://fastcomments.com/human-moderation) or [contact us](https://fastcomments.com/contact-us) with a description of your community, your guidelines, and your traffic.
+Години покриття, мови, цілі відповіді, частота звітності та ціноутворення узгоджуються за контрактом. Щоб розпочати, дізнайтеся більше на [fastcomments.com/human-moderation](https://fastcomments.com/human-moderation) або [зв’яжіться з нами](https://fastcomments.com/contact-us), вказавши опис вашої спільноти, ваших рекомендацій та вашого трафіку.

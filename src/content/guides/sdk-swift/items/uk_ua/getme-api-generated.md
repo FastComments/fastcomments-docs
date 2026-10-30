@@ -1,27 +1,22 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-Ідентифікує використані облікові дані: орендар, якому вони належать, та, для OAuth‑токенів, користувача, який їх авторизував.  
-
-Integrations use this to test a connection and label it.  
+---
+Визначає використані облікові дані: орендар, до якого вони належать, і, для OAuth‑токенів, користувача, який їх авторизував.  
 Інтеграції використовують це для тестування з’єднання та його маркування.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| **Назва** | **Тип** | **Розташування** | **Обов’язково** | **Опис** |
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Так |  |
 
-## Response
+## Відповідь
 
-Returns: [`GetMeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMeResponse.swift)  
 Повертає: [`GetMeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMeResponse.swift)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getMe'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду ще у бета-версії. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -37,3 +32,5 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
+
+---

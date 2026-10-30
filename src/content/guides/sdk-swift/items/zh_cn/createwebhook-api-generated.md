@@ -1,22 +1,20 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+将 URL 订阅到评论事件（REST hook 订阅）。再次将相同的 URL 订阅到相同的事件和域时，将返回已有的订阅。交付采用 HMAC 签名，请参阅 webhooks 指南；旧版 `token` 头部永不发送到 API 订阅。
 
-## Parameters
+## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 是 |  |
 
-## Response
+## 响应
 
-Returns: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateWebhookResponse.swift)
+返回：[`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateWebhookResponse.swift)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'createWebhook 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+// 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

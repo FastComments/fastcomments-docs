@@ -3,21 +3,21 @@ sample data). Every event delivers the same comment object, so `event` only has 
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| event | string | query | No |  |
-| limit | number | query | No |  |
+| tenantId | string | query | Да |  |
+| event | string | query | Нет |  |
+| limit | number | query | Нет |  |
 
 ## Response
 
-Returns: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhookSamplePayloadsResponse.swift)
+Возвращает: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhookSamplePayloadsResponse.swift)
 
 ## Example
 
 [inline-code-attrs-start title = 'Пример getWebhookSamplePayloads'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие образцы кода всё ещё находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте через http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода всё ещё находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
