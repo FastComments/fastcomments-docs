@@ -1,21 +1,21 @@
-AI Agents están disponibles en los planes **Flex** y **Pro**. El plan **Creator** no los incluye.
+AI Agents are available on the **Flex** and **Pro** plans. The Creator plan does not include them.
 
 ### Límites a nivel de plan
 
-Cada nivel de plan establece:
+Each plan tier sets:
 
-- **Límites predeterminados de presupuesto diario y mensual.** Puedes reducirlos por agente; aumentar el límite por cuenta requiere un plan con un techo superior. Consulta [Resumen de presupuestos](#budgets-overview).
+- **Límites de presupuesto diarios y mensuales predeterminados.** Puedes reducir estos por agente; aumentar el límite por cuenta requiere un plan con un techo más alto. Ver [Resumen de presupuestos](#budgets-overview).
 
-Los números exactos aparecen en la [página de precios](https://fastcomments.com/traffic-pricing) y en la página de facturación de tu cuenta. También se muestran en línea en el formulario de edición del agente para que nunca tengas que abandonar el formulario para encontrar tu límite.
+The exact numbers are shown on the [página de precios](https://fastcomments.com/traffic-pricing) and on your account's billing page. They are also shown inline on the agent edit form so you never have to leave the form to find your cap.
 
-FastComments Pro incluye $200/mes de uso de IA. Flex se factura a la tasa de $20 por millón de tokens para todos los modelos (actualmente GLM 5.1 o gpt-oss-120B-turbo).
+FastComments Pro includes $200/mo worth of AI usage. Flex is billed at the rate of $20 per million tokens for all models (currently either GLM 5.2 or gpt-oss-120B).
 
 ### La facturación debe ser válida
 
-AI Agents solo se ejecutan cuando el tenant tiene **facturación válida registrada**. Si el método de pago queda inválido, todos los agentes se pausan y la página de AI Agents muestra un banner que indica a quien tenga el rol de **Billing Admin** que actualice la facturación. Los agentes se reanudarán por sí solos una vez que se restaure la facturación; no hay replay ni backfill de los triggers que se activaron durante la interrupción.
+AI Agents only run when the tenant has **facturación válida archivada**. If the payment method becomes invalid, all agents are paused and the AI Agents page surfaces a banner directing whoever has the **Administrador de Facturación** role to update billing. Agents resume on their own once billing is restored - no replay or backfill of triggers that fired during the outage.
 
-Esto es un requisito estricto: el gasto de tokens se factura a su cuenta, por lo que la plataforma no realizará ninguna llamada a LLM sin un método de pago operativo.
+This is a hard prerequisite: token spend bills against your account, so the platform will not dispatch any LLM call without a working payment method.
 
-### Quién puede gestionar agentes
+### Quién puede gestionar los agentes
 
-Las páginas de administración de agentes están restringidas al rol de panel de control **Customization Admin**. **Comment Moderator Admins** pueden revisar y decidir aprobaciones (ver [Flujo de Aprobación](#approval-workflow)) pero no pueden crear ni editar agentes. **Billing Admins** reciben [correos electrónicos de alerta de presupuesto](#budget-alerts) independientemente de si tienen acceso a los agentes.
+The agent admin pages are gated behind the **Customization Admin** dashboard role. **Administradores de Moderación de Comentarios** can review and decide approvals (see [Flujo de aprobación](#approval-workflow)) but cannot create or edit agents. **Administradores de Facturación** receive [correos electrónicos de alerta de presupuesto](#budget-alerts) regardless of whether they have agent access.

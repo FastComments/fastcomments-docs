@@ -1,21 +1,21 @@
-AI Agents 在 **Flex** 和 **Pro** 計劃可用。Creator 計劃不包含它們。
+AI 代理在 **Flex** 與 **Pro** 計畫中可用。Creator 計畫不包含它們。
 
-### 計劃層級限制
+### Plan-level limits
 
-Each plan tier sets:
+每個計畫層級設定：
 
-- **Default daily and monthly budget caps.** 您可以為每個代理降低這些上限；要提高每個帳戶的上限則需要更高上限的計劃。請參閱 [預算總覽](#budgets-overview)。
+- **預設每日與每月預算上限。** 您可以針對每個代理降低此上限；若要提升每帳戶的上限，需升級至上限更高的計畫。請參閱 [Budgets Overview](#budgets-overview)。
 
-The exact numbers are shown on the [定價頁面](https://fastcomments.com/traffic-pricing) and on your account's billing page. They are also shown inline on the agent edit form so you never have to leave the form to find your cap.
+精確的數字顯示於 [pricing page](https://fastcomments.com/traffic-pricing) 與您的帳戶計費頁面上。它們也會直接顯示在代理編輯表單中，讓您不必離開表單即可查看上限。
 
-FastComments Pro includes $200/mo worth of AI usage. Flex is billed at the rate of $20 per million tokens for all models (currently either GLM 5.1 or gpt-oss-120B-turbo).
+FastComments Pro 包含每月 $200 美元的 AI 使用額度。Flex 以每百萬個 token $20 美元的費率計費，適用於所有模型（目前為 GLM 5.2 或 gpt-oss-120B）。
 
-### 帳單必須有效
+### Billing must be valid
 
-AI Agents only run when the tenant has **valid billing on file**. If the payment method becomes invalid, all agents are paused and the AI Agents page surfaces a banner directing whoever has the **Billing Admin** role to update billing. Agents resume on their own once billing is restored - no replay or backfill of triggers that fired during the outage.
+AI 代理僅在租戶的 **有效帳單資訊** 存在時才會運行。若付款方式失效，所有代理將被暫停，且 AI 代理頁面會顯示橫幅，指示擁有 **Billing Admin** 角色的使用者更新帳單。帳單恢復後，代理會自行恢復運作——不會重新執行或補填在中斷期間觸發的事件。
 
-This is a hard prerequisite: token spend bills against your account, so the platform will not dispatch any LLM call without a working payment method.
+這是一項嚴格的前提條件：Token 消費會向您的帳戶計費，因此平台在沒有有效付款方式時不會發送任何 LLM 呼叫。
 
-### 誰可以管理 agents
+### Who can manage agents
 
-The agent admin pages are gated behind the **Customization Admin** dashboard role. **Comment Moderator Admins** can review and decide approvals (see [審核工作流程](#approval-workflow)) but cannot create or edit agents. **Billing Admins** receive [預算警示電子郵件](#budget-alerts) regardless of whether they have agent access.
+代理管理頁面受 **Customization Admin** 儀表板角色限制。**Comment Moderator Admins** 可以審核並決定批准（請參閱 [Approval Workflow](#approval-workflow)），但無法建立或編輯代理。**Billing Admins** 會收到 [budget alert emails](#budget-alerts)，即使他們沒有代理存取權限。

@@ -1,23 +1,21 @@
-AI Agents zijn beschikbaar op de **Flex** en **Pro** plannen. Het **Creator**-plan bevat ze niet.
+AI Agents zijn beschikbaar op de **Flex**- en **Pro**-plannen. Het Creator‑plan omvat ze niet.
 
-### Limieten op planniveau
+### Limieten per plan
 
-Elke plantier stelt:
+Elke planlaag stelt het volgende in:
 
-- **Standaard dag- en maandelijkse budgetlimieten.** U kunt deze per agent verlagen; het verhogen van de limiet per account vereist een plan met een hoger plafond. Zie [Budgetoverzicht](#budgets-overview).
+- **Standaard dagelijkse en maandelijkse budgetlimieten.** Je kunt deze per agent verlagen; het verhogen van de limiet per account vereist een plan met een hoger plafond. Zie [Budgets Overview](#budgets-overview).
 
-De exacte cijfers worden weergegeven op de [prijspagina](https://fastcomments.com/traffic-pricing) en op de factureringspagina van uw account. Ze worden ook inline weergegeven op het agentbewerkingsformulier, zodat u het formulier nooit hoeft te verlaten om uw limiet te vinden.
+De exacte cijfers worden weergegeven op de [prijspagina](https://fastcomments.com/traffic-pricing) en op de facturatiepagina van je account. Ze worden ook inline weergegeven op het bewerkingsformulier van de agent, zodat je nooit het formulier hoeft te verlaten om je limiet te vinden.
 
-FastComments Pro bevat $200/maand aan AI-gebruik. Flex wordt gefactureerd tegen een tarief van $20 per miljoen tokens voor alle modellen (momenteel GLM 5.1 of gpt-oss-120B-turbo).
+FastComments Pro omvat $200/maand aan AI‑gebruik. Flex wordt gefactureerd tegen een tarief van $20 per miljoen tokens voor alle modellen (momenteel ofwel GLM 5.2 of gpt-oss-120B).
 
-### Facturering moet geldig zijn
+### Facturatie moet geldig zijn
 
-AI Agents draaien alleen wanneer de tenant **geldige factureringsgegevens** heeft. Als de betaalmethode ongeldig wordt, worden alle agents gepauzeerd en toont de AI Agents-pagina een banner die degene met de rol **Billing Admin** verzoekt de facturering bij te werken. Agents hervatten automatisch zodra de facturering is hersteld — er vindt geen replay of backfill plaats van triggers die tijdens de storing werden geactiveerd.
+AI Agents draaien alleen wanneer de huurder **geldige facturatie in het bestand** heeft. Als de betaalmethode ongeldig wordt, worden alle agents gepauzeerd en toont de AI Agents-pagina een banner die degene met de **Billing Admin**‑rol aanwijst om de facturatie bij te werken. Agents hervatten automatisch zodra de facturatie is hersteld – er is geen herhaling of backfill van triggers die tijdens de storing zijn geactiveerd.
 
-Dit is een harde voorwaarde: tokenuitgaven worden op uw account gefactureerd, dus het platform zal geen enkele LLM-aanroep uitvoeren zonder een werkende betaalmethode.
+Dit is een harde voorwaarde: tokenuitgaven worden gefactureerd op je account, dus het platform zal geen LLM‑aanroep verzenden zonder een werkende betaalmethode.
 
 ### Wie agents kan beheren
 
-De agentbeheerpagina's zijn afgeschermd achter de dashboardrol **Customization Admin**. **Comment Moderator Admins** kunnen goedkeuringen beoordelen en beslissen (zie [Goedkeuringsworkflow](#approval-workflow)), maar kunnen geen agents aanmaken of bewerken. **Billing Admins** ontvangen [e-mails met budgetwaarschuwingen](#budget-alerts) ongeacht of ze toegang tot agents hebben.
-
----
+De agent‑adminpagina's zijn achter de dashboardrol **Customization Admin** afgeschermd. **Comment Moderator Admins** kunnen beoordelingen uitvoeren en goedkeuringen beslissen (zie [Approval Workflow](#approval-workflow)), maar kunnen geen agents aanmaken of bewerken. **Billing Admins** ontvangen [budgetwaarschuwing e-mails](#budget-alerts) ongeacht of ze toegang tot agents hebben.

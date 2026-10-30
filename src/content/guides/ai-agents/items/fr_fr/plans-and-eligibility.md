@@ -1,21 +1,21 @@
-Les AI Agents sont disponibles sur les plans **Flex** et **Pro**. Le plan Creator ne les inclut pas.
+Les agents IA sont disponibles sur les plans **Flex** et **Pro**. Le plan Creator ne les inclut pas.
 
-### Limites par plan
+### Plan-level limits
 
 Chaque niveau de plan définit :
 
-- **Plafonds de budget par défaut quotidiens et mensuels.** Vous pouvez réduire ces plafonds par agent ; augmenter le plafond par compte nécessite un plan avec un seuil supérieur. Voir [Aperçu des budgets](#budgets-overview).
+- **Limites de budget quotidiennes et mensuelles par défaut.** Vous pouvez les réduire par agent ; augmenter la limite par compte nécessite un plan avec un plafond plus élevé. Voir [Budgets Overview](#budgets-overview).
 
-Les chiffres exacts sont affichés sur la [page de tarification](https://fastcomments.com/traffic-pricing) et sur la page de facturation de votre compte. Ils sont également affichés dans le formulaire d'édition de l'agent, afin que vous n'ayez jamais à quitter le formulaire pour trouver votre plafond.
+Les chiffres exacts sont affichés sur la [pricing page](https://fastcomments.com/traffic-pricing) et sur la page de facturation de votre compte. Ils sont également affichés en ligne sur le formulaire d’édition de l’agent afin que vous n’ayez jamais à quitter le formulaire pour trouver votre limite.
 
-FastComments Pro inclut 200 $/mo d'utilisation d'IA. Flex est facturé au tarif de 20 $ par million de tokens pour tous les modèles (actuellement soit GLM 5.1, soit gpt-oss-120B-turbo).
+FastComments Pro inclut 200 $/mo d’utilisation d’IA. Flex est facturé au tarif de 20 $ par million de jetons pour tous les modèles (actuellement soit GLM 5.2 soit gpt-oss-120B).
 
-### La facturation doit être valide
+### Billing must be valid
 
-Les AI Agents ne fonctionnent que lorsque le locataire dispose d'une **facturation valide enregistrée**. Si le mode de paiement devient invalide, tous les agents sont mis en pause et la page AI Agents affiche une bannière demandant à la personne ayant le rôle **Billing Admin** de mettre à jour la facturation. Les agents reprennent automatiquement une fois la facturation rétablie — il n'y a ni rejouage ni rattrapage des déclencheurs qui se sont produits pendant la panne.
+Les agents IA ne fonctionnent que lorsque le locataire dispose d’une **facturation valide enregistrée**. Si le mode de paiement devient invalide, tous les agents sont mis en pause et la page des agents IA affiche une bannière dirigeant la personne qui possède le rôle **Billing Admin** à mettre à jour la facturation. Les agents reprennent automatiquement une fois la facturation rétablie – aucun relecture ou remplissage rétroactif des déclencheurs qui se sont activés pendant la panne.
 
-Ceci est une exigence stricte : les dépenses en tokens sont facturées sur votre compte, donc la plateforme n'engagera aucun appel LLM sans méthode de paiement fonctionnelle.
+C’est une condition préalable stricte : la dépense de jetons est facturée à votre compte, donc la plateforme n’enverra aucun appel LLM sans un mode de paiement fonctionnel.
 
-### Qui peut gérer les agents
+### Who can manage agents
 
-Les pages d'administration des agents sont protégées par le rôle de tableau de bord **Customization Admin**. Les **Comment Moderator Admins** peuvent examiner et décider des approbations (voir [Flux d'approbation](#approval-workflow)) mais ne peuvent pas créer ni modifier des agents. Les **Billing Admins** reçoivent des [e-mails d'alerte de budget](#budget-alerts) qu'ils aient ou non accès aux agents.
+Les pages d’administration des agents sont réservées au rôle **Customization Admin** du tableau de bord. Les **Comment Moderator Admins** peuvent examiner et décider des approbations (voir [Approval Workflow](#approval-workflow)) mais ne peuvent pas créer ou modifier des agents. Les **Billing Admins** reçoivent les [budget alert emails](#budget-alerts) quel que soit leur accès aux agents.

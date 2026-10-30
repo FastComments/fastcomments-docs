@@ -1,21 +1,21 @@
-AI Agenti su dostupni na planovima **Flex** i **Pro**. Plan **Creator** ih ne uključuje.
+AI agenti su dostupni na planovima **Flex** i **Pro**. Plan Creator ih ne uključuje.
 
-### Ograničenja na razini plana
+### Ograničenja po planu
 
 Svaka razina plana postavlja:
 
-- **Zadane dnevne i mjesečne granice budžeta.** Možete ih sniziti po agentu; za povećanje granice po računu potreban je plan s višim limitom. Vidi [Pregled budžeta](#budgets-overview).
+- **Zadane dnevne i mjesečne granice budžeta.** Možete ih smanjiti po agentu; podizanje granice po računu zahtijeva plan s višim limitom. Pogledajte [Budgets Overview](#budgets-overview).
 
-Točne vrijednosti prikazane su na [stranici s cijenama](https://fastcomments.com/traffic-pricing) i na stranici za naplatu vašeg računa. Također su prikazane izravno u obrascu za uređivanje agenta kako ne biste morali napuštati obrazac da biste pronašli svoju granicu.
+Točni brojevi prikazani su na [stranica s cijenama](https://fastcomments.com/traffic-pricing) i na stranici naplate vašeg računa. Također su prikazani izravno u obrascu za uređivanje agenta, tako da ne morate napuštati obrazac da biste pronašli svoj limit.
 
-FastComments Pro uključuje $200/mo vrijednosti AI korištenja. Flex se naplaćuje po stopi od $20 po milijun tokena za sve modele (trenutno ili GLM 5.1 ili gpt-oss-120B-turbo).
+FastComments Pro uključuje AI korištenje u vrijednosti od $200/mj. Flex se naplaćuje po cijeni od $20 po milijun tokena za sve modele (trenutno ili GLM 5.2 ili gpt-oss-120B).
 
-### Podaci o naplati moraju biti valjani
+### Naplata mora biti valjana
 
-AI Agenti se pokreću samo ako račun ima **valjane podatke o naplati**. Ako metoda plaćanja postane nevaljana, svi agenti se pauziraju i stranica AI Agents prikazuje banner koji upućuje onoga tko ima ulogu **Billing Admin** da ažurira podatke o naplati. Agenti se automatski nastavljaju kada se naplata obnovi — bez ponovnog pokretanja ili naknadnog popunjavanja okidača koji su se aktivirali tijekom prekida.
+AI agenti rade samo kada najmodavac ima **valjanu naplatu u evidenciji**. Ako način plaćanja postane nevažeći, svi agenti se pauziraju, a stranica AI agenata prikazuje banner koji usmjerava osobu s ulogom **Billing Admin** da ažurira naplatu. Agenti se automatski nastavljaju kada se naplata obnovi – bez ponovnog pokretanja ili popunjavanja okidača koji su se aktivirali tijekom prekida.
 
-Ovo je čvrst preduvjet: trošak tokena naplaćuje se na vaš račun, pa platforma neće poslati nijedan LLM poziv bez ispravne metode plaćanja.
+Ovo je strogi preduvjet: potrošnja tokena naplaćuje se na vaš račun, pa platforma neće poslati nijedan LLM poziv bez ispravnog načina plaćanja.
 
 ### Tko može upravljati agentima
 
-Stranice za administraciju agenata zaštićene su ulogom nadzorne ploče **Customization Admin**. **Comment Moderator Admins** mogu pregledavati i odlučivati o odobrenjima (vidi [Tijek odobravanja](#approval-workflow)) ali ne mogu stvarati niti uređivati agente. **Billing Admins** primaju [e-poruke o upozorenju na budžet](#budget-alerts) bez obzira na to imaju li pristup agentima.
+Stranice za upravljanje agentima zaštićene su ulogom **Customization Admin** na nadzornoj ploči. **Comment Moderator Admins** mogu pregledavati i odlučivati o odobrenjima (pogledajte [Approval Workflow](#approval-workflow)), ali ne mogu stvarati ili uređivati agente. **Billing Admins** primaju [e‑mailove upozorenja o budžetu](#budget-alerts) bez obzira imaju li pristup agentima.
