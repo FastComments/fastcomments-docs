@@ -1,11 +1,13 @@
-To create a poll, click the poll button in the comment editor toolbar. A poll editor opens below the text input, where you can set:
+---  
+Za stvaranje ankete, kliknite gumb ankete u alatnoj traci uređivača komentara. Uređivač ankete otvara se ispod polja za unos teksta, gdje možete postaviti:
 
-- **The question**, up to 200 characters.
-- **The options**, between 2 and 10, each up to 100 characters. Use **Add option** to add more.
-- **When the poll closes**: no end date, 1 day, 3 days, or 1 week. A closed poll shows its final results and no longer accepts votes.
-- **Privacy**: whether voters stay anonymous, are visible to admins, or are public. See [Voter Privacy](#poll-voter-privacy).
-- **Require Vote to See Results**: when checked, the results stay hidden from each viewer until they vote or the poll closes.
+- **Pitanje**, do 200 znakova.  
+- **Opcije**, između 2 i 10, svaka do 100 znakova. Upotrijebite **Dodaj opciju** za dodavanje više.  
+- **Kada se anketa zatvori**: bez datuma završetka, 1 dan, 3 dana ili 1 tjedan. Zatvorena anketa prikazuje svoje konačne rezultate i više ne prihvaća glasove.  
+- **Privatnost**: hoće li glasatelji ostati anonimni, biti vidljivi administratorima ili biti javni. Pogledajte [Privatnost glasatelja](#poll-voter-privacy).  
+- **Zahtijevaj glas za prikaz rezultata**: kada je označeno, rezultati ostaju skriveni svakom gledatelju dok ne glasaju ili dok se anketa ne zatvori.
 
-Write your comment as usual and post it. The poll is posted with the comment. Polls can be added to new comments and to replies.
+Napišite svoj komentar kao i obično i objavite ga. Anketa se objavljuje zajedno s komentarom. Ankete se mogu dodati novim komentarima i odgovorima.
 
-To discard a poll before posting, click **Remove poll**.
+Za odbacivanje ankete prije objave, kliknite **Ukloni anketu**.  
+---

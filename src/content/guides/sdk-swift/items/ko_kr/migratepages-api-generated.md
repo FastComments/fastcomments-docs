@@ -16,6 +16,7 @@ Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'migratePages 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
+```
 // 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에서 보고해 주세요
 import FastCommentsSwift
 
@@ -32,4 +33,7 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
         dump(response)
     }
 }
+```
 [inline-code-end]
+
+---

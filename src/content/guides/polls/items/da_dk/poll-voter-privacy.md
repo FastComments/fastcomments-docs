@@ -6,5 +6,4 @@ Every poll has a privacy setting, chosen by its author when creating it. The pol
 - **Public**: any viewer can click **See who voted** and see who voted for what.
 
 Votes from visitors who are not logged in are counted but have no name attached, so they do not appear in the voter list.
-
 ---

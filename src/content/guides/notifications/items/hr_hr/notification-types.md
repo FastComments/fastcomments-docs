@@ -1,11 +1,11 @@
-There are a few types of notifications and mediums in which FastComments sends notifications:
+Postoji nekoliko vrsta obavijesti i medija putem kojih FastComments šalje obavijesti:
 
-- Immediate via email.
-  - Comment reply and mention notifications are sent every minute.
-- Immediate via app.
-  - These are shown under the notification bell icon.
-- Batched via email.
-  - Page subscription notifications can be configured per subscription to send every minute, as an hourly digest, or as a daily digest. If there is nothing to send for the user in that timeframe, we do not send an email.
-  - Poll response notifications are sent to the poll's author as a daily email.
-- Timed via email.
-  - Examples include the Community Digest Summary which can be sent daily, weekly, or monthly (or disabled).
+- Trenutno putem e‑maila.  
+  - Obavijesti o odgovoru na komentar i spominjanju šalju se svake minute.  
+- Trenutno putem aplikacije.  
+  - Prikazuju se ispod ikone zvona za obavijesti.  
+- Grupirano putem e‑maila.  
+  - Obavijesti o pretplati na stranicu mogu se konfigurirati po pretplati da se šalju svake minute, kao satni sažetak ili kao dnevni sažetak. Ako nema ništa za slati korisniku u tom vremenskom okviru, ne šaljemo e‑mail.  
+  - Obavijesti o odgovorima na anketu šalju se autoru ankete kao dnevni e‑mail.  
+- Vremenski putem e‑maila.  
+  - Primjeri uključuju Sažetak zajednice koji se može slati dnevno, tjedno ili mjesečno (ili onemogućen).
