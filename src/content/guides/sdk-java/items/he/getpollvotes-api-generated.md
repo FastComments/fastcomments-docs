@@ -1,13 +1,12 @@
-The individual votes behind one poll's tallies, oldest first.
+הקולות האישיים מאחורי ספירת הצבעות של סקר אחד, מהישנים ביותר לחדשים.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+סקר שייך לתגובה, ולכן הקולות תמיד נקראים סקר אחד בכל פעם - נדרש **commentId**. זה שומר שכל שאילתה תתבצע על האינדקסים שכבר קיימים באוסף.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+מציית לפרטיות של הסקר: קולות של סקר אנונימי אינם ניתנים לקריאה (**poll-anonymous**), כאן או לפי מזהה.
 
-## Parameters
+## פרמטרים
 
-| Name | Type | Location | Required | Description |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | Yes |  |
@@ -15,15 +14,15 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 | optionId | string | query | No |  |
 | skip | integer | query | No |  |
 
-## Response
+## תגובה
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
+מחזיר: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
-## Example
+## דוגמה
 
 [inline-code-attrs-start title = 'דוגמת getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,10 +35,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // הגדר הרשאת מפתח API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // בטל את ההערה על השורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת מחדל היא null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

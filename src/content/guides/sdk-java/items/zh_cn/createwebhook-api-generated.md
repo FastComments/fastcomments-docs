@@ -32,7 +32,7 @@ public class Example {
     // 配置 API 密钥授权: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释以下行以为 API 密钥设置前缀，例如 "Token"（默认 null）
+    // 取消注释以下行以为 API 密钥设置前缀，例如 "Token"（默认值为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

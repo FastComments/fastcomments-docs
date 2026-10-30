@@ -1,8 +1,8 @@
-Who voted for which option. Anonymous polls never answer, admins-only polls answer only for an admin or moderator.
+誰投票給哪個選項。匿名投票永不顯示答案，僅限管理員的投票僅對管理員或版主顯示答案。
 
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | commentId | string | path | Yes |  |
@@ -11,11 +11,11 @@ Who voted for which option. Anonymous polls never answer, admins-only polls answ
 | search | string | query | No |  |
 | sso | string | query | No |  |
 
-## Response
+## 回應
 
 Returns: [`GetPollVoterNamesSuccessResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVoterNamesSuccessResponse.java)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getPollVoters 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

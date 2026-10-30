@@ -5,9 +5,9 @@ keeps every query on the indexes the collection already has.
 
 Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
 
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | query | Yes |  |
@@ -15,13 +15,13 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 | optionId | string | query | No |  |
 | skip | integer | query | No |  |
 
-## Response
+## 回應
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
+返回：[`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
-## Example
+## 範例
 
-[inline-code-attrs-start title = '取得投票範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPollVotes 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // 匯入類別:
 import com.fastcomments.invoker.ApiClient;
@@ -36,7 +36,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 設定 API 金鑰授權: api_key
+    // 設定 API 金鑰授權：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // 取消註解以下行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）

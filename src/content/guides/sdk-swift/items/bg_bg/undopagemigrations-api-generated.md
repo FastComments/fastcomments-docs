@@ -4,8 +4,8 @@ Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Име | Тип | Местоположение | Задължително | Описание |
+|------|------|----------------|--------------|----------|
 | tenantId | string | query | Yes |  |
 | undoId | string | path | Yes |  |
 
@@ -15,9 +15,9 @@ Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fa
 
 ## Example
 
-[inline-code-attrs-start title = 'undoPageMigrations Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за undoPageMigrations'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примерни кодове все още са бета. При какъвто и да е проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следващите примерни кодове все още са бета. За всякакви проблеми, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
