@@ -1,17 +1,24 @@
 ## パラメータ
 
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| limit | number | query | No |  |
-| skip | number | query | No |  |
-| order | string | query | No |  |
-| after | number | query | No |  |
-| before | number | query | No |  |
+| tenantId | string | query | はい | 監査ログを取得するテナント。 |
+| limit | integer | query | いいえ | 返却するログの数。最大 10000、デフォルトは 1000。 |
+| skip | integer | query | いいえ | ページングのためにスキップするログの数。 |
+| order | string | query | いいえ | イベント時間のソート方向。デフォルトは DESC（新しいものが先）。 |
+| after | integer | query | いいえ |  |
+| before | integer | query | いいえ |  |
+| username | string | query | いいえ | このユーザー名で実行されたイベントのみを返す。 |
+| ip | string | query | いいえ | この IP アドレスからのイベントのみを返す。 |
+| crudType | string | query | いいえ | このタイプ（c、r、u、d、または login）のイベントのみを返す。 |
+| resourceName | string | query | いいえ | このリソース（例: User または Moderator）のイベントのみを返す。 |
+| targetId | string | query | いいえ | 対象オブジェクトがこの ID を持つイベントのみを返す。 |
+| target | string | query | いいえ | 対象オブジェクトのラベルに対する大文字小文字を区別しない部分文字列一致（例: ユーザー名またはメール）。 |
+| includeManagedTenants | boolean | query | いいえ | このテナントが管理するテナントからのイベントも返す。 |
 
 ## レスポンス
 
-戻り値: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
+返却: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
 ## 例
 
@@ -30,19 +37,26 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証の構成: api_key
+    // API キー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // APIキーにプレフィックスを設定するには、次の行のコメントアウトを外してください。例: "Token"（デフォルトは null）
+    // 以下の行のコメントを外すと、API キーのプレフィックスを設定できます（例: "Token"、デフォルトは null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    Double limit = 3.4D; // Double | 
-    Double skip = 3.4D; // Double | 
-    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | 
-    Double after = 3.4D; // Double | 
-    Double before = 3.4D; // Double | 
+    String tenantId = "tenantId_example"; // String | 監査ログを取得するテナント。
+    Integer limit = 56; // Integer | 返却するログの数。最大 10000、デフォルトは 1000。
+    Integer skip = 56; // Integer | ページングのためにスキップするログの数。
+    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | イベント時間のソート方向。デフォルトは DESC（新しいものが先）。
+    Long after = 56L; // Long | 
+    Long before = 56L; // Long | 
+    String username = "username_example"; // String | このユーザー名で実行されたイベントのみを返す。
+    String ip = "ip_example"; // String | この IP アドレスからのイベントのみを返す。
+    String crudType = "crudType_example"; // String | このタイプ（c、r、u、d、または login）のイベントのみを返す。
+    String resourceName = "resourceName_example"; // String | このリソース（例: User または Moderator）のイベントのみを返す。
+    String targetId = "targetId_example"; // String | 対象オブジェクトがこの ID を持つイベントのみを返す。
+    String target = "target_example"; // String | 対象オブジェクトのラベルに対する大文字小文字を区別しない部分文字列一致（例: ユーザー名またはメール）。
+    Boolean includeManagedTenants = true; // Boolean | このテナントが管理するテナントからのイベントも返す。
     try {
       GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
@@ -50,6 +64,13 @@ public class Example {
             .order(order)
             .after(after)
             .before(before)
+            .username(username)
+            .ip(ip)
+            .crudType(crudType)
+            .resourceName(resourceName)
+            .targetId(targetId)
+            .target(target)
+            .includeManagedTenants(includeManagedTenants)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

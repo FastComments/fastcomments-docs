@@ -1,5 +1,5 @@
 {
-  "name": "모더레이션",
+  "name": "중재",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
@@ -8,104 +8,104 @@
       "subCat": "소개"
     },
     {
-      "name": "모더레이터",
+      "name": "중재자",
       "file": "moderators.md",
-      "subCat": "모더레이터"
+      "subCat": "중재자"
     },
     {
-      "name": "모더레이터 추가",
+      "name": "중재자 추가",
       "file": "moderators-adding.md",
-      "subCat": "모더레이터"
+      "subCat": "중재자"
     },
     {
-      "name": "모더레이터 통계",
+      "name": "중재자 통계",
       "file": "moderator-stats.md",
-      "subCat": "모더레이터"
+      "subCat": "중재자"
     },
     {
-      "name": "모더레이터 제거",
+      "name": "중재자 제거",
       "file": "moderators-removing.md",
-      "subCat": "모더레이터"
+      "subCat": "중재자"
     },
     {
-      "name": "승인 처리 방식",
+      "name": "승인 작동 방식",
       "file": "moderation-approvals.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "이메일을 통한 모더레이션",
+      "name": "이메일을 통한 중재",
       "file": "moderation-via-email.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "필터링",
       "file": "filters.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "검색",
       "file": "search.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "모더레이션 링크 공유",
+      "name": "중재 링크 공유",
       "file": "sharing-moderation-links.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "댓글 스레드 뷰어",
       "file": "comment-thread-viewer.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "모더레이션 작업",
+      "name": "중재 작업",
       "file": "comment-actions.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "댓글 삭제",
       "file": "deleting-comments.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "댓글 위젯의 모더레이션 작업",
+      "name": "댓글 위젯에서의 중재 작업",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "실시간 모더레이션",
+      "name": "실시간 중재",
       "file": "comment-actions-live.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "사용자 차단",
       "file": "banning-users.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "와일드카드를 사용한 사용자 차단",
+      "name": "와일드카드 사용 사용자 차단",
       "file": "banning-users-wildcards.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "신고",
+      "name": "플래그 지정",
       "file": "flagging.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "일괄 작업",
       "file": "bulk-actions.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
-      "name": "모더레이션 그룹",
+      "name": "중재 그룹",
       "file": "moderation-groups.md",
-      "subCat": "모더레이션 그룹"
+      "subCat": "중재 그룹"
     },
     {
-      "name": "모더레이션 설정",
+      "name": "중재 설정",
       "file": "moderation-settings.md",
-      "subCat": "설정"
+      "subCat": "구성"
     },
     {
       "name": "스팸 감지",
@@ -113,24 +113,29 @@
       "subCat": "스팸 및 욕설"
     },
     {
-      "name": "욕설 가리기",
+      "name": "욕설 마스킹",
       "file": "profanity-mask.md",
       "subCat": "스팸 및 욕설"
     },
     {
       "name": "댓글 로그",
       "file": "comment-logs.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "키보드 단축키",
       "file": "keyboard-shortcuts.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
     },
     {
       "name": "AI 에이전트",
       "file": "ai-agents-pointer.md",
-      "subCat": "모더레이션 워크플로"
+      "subCat": "중재 워크플로우"
+    },
+    {
+      "name": "인간 중재 서비스",
+      "file": "human-moderation-services.md",
+      "subCat": "중재 워크플로우"
     }
   ]
 }

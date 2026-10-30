@@ -98,7 +98,7 @@
       "subCat": "Aspecto y sensación"
     },
     {
-      "name": "Fechas absolutas (Desactivar marcas de tiempo legibles)",
+      "name": "Fechas absolutas (Desactivar marcas de tiempo amigables)",
       "file": "absolute-dates.md",
       "subCat": "Aspecto y sensación"
     },
@@ -208,7 +208,7 @@
       "subCat": "Aspecto y sensación"
     },
     {
-      "name": "Desactivar cargas de imágenes",
+      "name": "Desactivar carga de imágenes",
       "file": "no-image-uploads.md",
       "subCat": "Aspecto y sensación"
     },
@@ -288,7 +288,7 @@
       "subCat": "El cuadro de respuesta"
     },
     {
-      "name": "Profundidad máxima de respuestas",
+      "name": "Profundidad máxima de respuesta",
       "file": "max-reply-depth.md",
       "subCat": "El cuadro de respuesta"
     },
@@ -343,7 +343,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Desactivar entradas de correo electrónico",
+      "name": "Desactivar campos de correo electrónico",
       "file": "disable-email-inputs.md",
       "subCat": "Comentarios anónimos"
     },
@@ -368,7 +368,7 @@
       "subCat": "Comentarios anónimos"
     },
     {
-      "name": "Funciones de devolución",
+      "name": "Retornos",
       "file": "callbacks.md",
       "subCat": "Varios"
     },
@@ -380,6 +380,11 @@
     {
       "name": "Limitar los idiomas permitidos",
       "file": "allowed-languages.md",
+      "subCat": "Varios"
+    },
+    {
+      "name": "Traducción de comentarios",
+      "file": "comment-translation.md",
       "subCat": "Varios"
     },
     {

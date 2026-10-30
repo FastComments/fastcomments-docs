@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+הוסף את מאגר Repsy ל‑POM של הפרויקט שלך:
 
 ```xml
 <repositories>
@@ -12,36 +12,36 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+לאחר מכן הוסף את התלויות שאתה צריך:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- לקוח API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- ספריית ליבה (כוללת SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- ספריית PubSub (לאירועים בזמן אמת) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+הוסף את מאגר Repsy לקובץ build.gradle שלך:
 
 ```groovy
 repositories {
@@ -52,29 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:3.0.1"
+    // לקוח API
+    implementation "com.fastcomments:client:3.1.1"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    // ספריית ליבה (כוללת SSO)
+    implementation "com.fastcomments:core:3.1.1"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    // ספריית PubSub (לאירועים בזמן אמת)
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### תוכן הספרייה
+### Library Contents
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
-to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+ספרייה זו מכילה שלושה מודולים. לקוח ה‑API שנוצר, ספריית הליבה של Java שמכילה כלי עזר שנכתבו ידנית כדי להקל על העבודה עם ה‑API, ומודול `pubsub` שהוא ספרייה למנוי על פיד של שינויים.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [תיעוד ספריית לקוח API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [תיעוד ספריית הליבה, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [תיעוד ספריית PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### API ציבוריים מול API מאובטחים
+### Public vs Secured APIs
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
-that can be made directly from a browser/mobile device/etc without authentication.
+עבור לקוח ה‑API, קיימות שלוש מחלקות, `DefaultApi`, `PublicApi`, ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות את מפתח ה‑API שלך, ו‑`PublicApi` מכילה שיטות שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` מספקת חבילה נרחבת של API למודרציה בזמן אמת ומהירה. כל שיטה ב‑`ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או באמצעות קוביית סשן של FastComments.com.

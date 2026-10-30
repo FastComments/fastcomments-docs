@@ -4,6 +4,8 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | When set, returns the users for each react id (avatars and usernames). Only "public" is accepted, which omits private profiles. |
 
 ## Response
 
@@ -18,8 +20,10 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
+let sso = "sso_example" // String |  (optional)
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | When set, returns the users for each react id (avatars and usernames). Only \"public\" is accepted, which omits private profiles. (optional)
 
-PublicAPI.getV2PageReacts(tenantId: tenantId, urlId: urlId) { (response, error) in
+PublicAPI.getV2PageReacts(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetV2PageReactsOptions(sso: sso, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return

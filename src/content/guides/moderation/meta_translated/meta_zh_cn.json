@@ -1,11 +1,11 @@
 {
-  "name": "内容审核",
+  "name": "审核",
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "评论审核页面",
+      "name": "审核评论页面",
       "file": "moderate-comments-page.md",
-      "subCat": "简介"
+      "subCat": "介绍"
     },
     {
       "name": "审核员",
@@ -30,72 +30,72 @@
     {
       "name": "批准的工作原理",
       "file": "moderation-approvals.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
-      "name": "通过邮件审核",
+      "name": "通过电子邮件进行审核",
       "file": "moderation-via-email.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "过滤",
       "file": "filters.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "搜索",
       "file": "search.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "分享审核链接",
       "file": "sharing-moderation-links.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "评论线程查看器",
       "file": "comment-thread-viewer.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "审核操作",
       "file": "comment-actions.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "删除评论",
       "file": "deleting-comments.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
-      "name": "来自评论组件的审核操作",
+      "name": "来自评论小部件的审核操作",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "实时审核",
       "file": "comment-actions-live.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "封禁用户",
       "file": "banning-users.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "使用通配符封禁用户",
       "file": "banning-users-wildcards.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
-      "name": "举报",
+      "name": "标记",
       "file": "flagging.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "批量操作",
       "file": "bulk-actions.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "审核组",
@@ -108,29 +108,34 @@
       "subCat": "配置"
     },
     {
-      "name": "垃圾评论检测",
+      "name": "垃圾邮件检测",
       "file": "spam-detection.md",
-      "subCat": "垃圾与脏话"
+      "subCat": "垃圾邮件与不雅语言"
     },
     {
-      "name": "屏蔽脏话",
+      "name": "屏蔽不雅语言",
       "file": "profanity-mask.md",
-      "subCat": "垃圾与脏话"
+      "subCat": "垃圾邮件与不雅语言"
     },
     {
       "name": "评论日志",
       "file": "comment-logs.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "键盘快捷键",
       "file": "keyboard-shortcuts.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
     },
     {
       "name": "AI 代理",
       "file": "ai-agents-pointer.md",
-      "subCat": "审核工作流程"
+      "subCat": "审核工作流"
+    },
+    {
+      "name": "人工审核服务",
+      "file": "human-moderation-services.md",
+      "subCat": "审核工作流"
     }
   ]
 }

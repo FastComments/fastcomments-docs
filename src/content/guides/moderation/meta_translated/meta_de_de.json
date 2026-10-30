@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Seite zum Moderieren von Kommentaren",
+      "name": "Seite zur Moderation von Kommentaren",
       "file": "moderate-comments-page.md",
       "subCat": "Einführung"
     },
@@ -13,17 +13,17 @@
       "subCat": "Moderatoren"
     },
     {
-      "name": "Moderatoren hinzufügen",
+      "name": "Hinzufügen von Moderatoren",
       "file": "moderators-adding.md",
       "subCat": "Moderatoren"
     },
     {
-      "name": "Statistiken der Moderatoren",
+      "name": "Moderator-Statistiken",
       "file": "moderator-stats.md",
       "subCat": "Moderatoren"
     },
     {
-      "name": "Moderatoren entfernen",
+      "name": "Entfernen von Moderatoren",
       "file": "moderators-removing.md",
       "subCat": "Moderatoren"
     },
@@ -33,7 +33,7 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Moderation per E-Mail",
+      "name": "Moderation per E‑Mail",
       "file": "moderation-via-email.md",
       "subCat": "Moderationsablauf"
     },
@@ -48,17 +48,17 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Moderationslinks teilen",
+      "name": "Teilen von Moderationslinks",
       "file": "sharing-moderation-links.md",
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Anzeige des Kommentar-Threads",
+      "name": "Der Kommentar-Thread‑Betrachter",
       "file": "comment-thread-viewer.md",
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Moderationsmaßnahmen",
+      "name": "Moderationsaktionen",
       "file": "comment-actions.md",
       "subCat": "Moderationsablauf"
     },
@@ -68,12 +68,12 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Moderationsaktionen im Kommentar-Widget",
+      "name": "Moderationsaktionen aus dem Kommentar‑Widget",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Echtzeit-Moderation",
+      "name": "Live-Moderation",
       "file": "comment-actions-live.md",
       "subCat": "Moderationsablauf"
     },
@@ -110,12 +110,12 @@
     {
       "name": "Spam-Erkennung",
       "file": "spam-detection.md",
-      "subCat": "Spam & beleidigende Inhalte"
+      "subCat": "Spam & Obszönität"
     },
     {
-      "name": "Beleidigungen maskieren",
+      "name": "Maskieren von Obszönität",
       "file": "profanity-mask.md",
-      "subCat": "Spam & beleidigende Inhalte"
+      "subCat": "Spam & Obszönität"
     },
     {
       "name": "Kommentarprotokolle",
@@ -123,13 +123,18 @@
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "Tastenkürzel",
+      "name": "Tastaturkürzel",
       "file": "keyboard-shortcuts.md",
       "subCat": "Moderationsablauf"
     },
     {
-      "name": "KI-Agenten",
+      "name": "KI‑Agenten",
       "file": "ai-agents-pointer.md",
+      "subCat": "Moderationsablauf"
+    },
+    {
+      "name": "Menschliche Moderationsdienste",
+      "file": "human-moderation-services.md",
       "subCat": "Moderationsablauf"
     }
   ]

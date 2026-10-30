@@ -4,14 +4,14 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
 ]
 ```
 
 או ב‑Xcode:
 1. קובץ > הוסף חבילות...
-2. הזן את כתובת ה‑URL של המאגרים: `https://github.com/fastcomments/fastcomments-swift.git`
-3. בחר את הגרסה שברצונך להשתמש
+2. הזן את כתובת ה‑URL של המאגר: `https://github.com/fastcomments/fastcomments-swift.git`
+3. בחר את הגרסה שברצונך להשתמש בה
 
 ### דרישות
 

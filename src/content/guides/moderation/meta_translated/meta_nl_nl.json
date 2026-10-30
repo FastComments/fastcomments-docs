@@ -3,99 +3,99 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "De pagina Reacties modereren",
+      "name": "De pagina voor het modereren van reacties",
       "file": "moderate-comments-page.md",
-      "subCat": "Inleiding"
+      "subCat": "Introductie"
     },
     {
-      "name": "Moderatoren",
+      "name": "Moderators",
       "file": "moderators.md",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
-      "name": "Moderatoren toevoegen",
+      "name": "Moderators toevoegen",
       "file": "moderators-adding.md",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "Moderatorstatistieken",
       "file": "moderator-stats.md",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
-      "name": "Moderatoren verwijderen",
+      "name": "Moderators verwijderen",
       "file": "moderators-removing.md",
-      "subCat": "Moderatoren"
+      "subCat": "Moderators"
     },
     {
       "name": "Hoe goedkeuringen werken",
       "file": "moderation-approvals.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Moderatie via e-mail",
       "file": "moderation-via-email.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Filteren",
       "file": "filters.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Zoeken",
       "file": "search.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "Moderatie-links delen",
+      "name": "Moderatielinks delen",
       "file": "sharing-moderation-links.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "De weergave van reactiedraden",
+      "name": "De weergave van commentaarthreads",
       "file": "comment-thread-viewer.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Moderatieacties",
       "file": "comment-actions.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Reacties verwijderen",
       "file": "deleting-comments.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "Moderatieacties vanuit de reactie-widget",
+      "name": "Moderatieacties vanuit commentaarwidget",
       "file": "comment-actions-from-comment-widget.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "Live moderatie",
+      "name": "Live modereren",
       "file": "comment-actions-live.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Gebruikers verbannen",
       "file": "banning-users.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "Gebruikers verbannen met jokertekens",
+      "name": "Gebruikers verbannen met wildcards",
       "file": "banning-users-wildcards.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "Melden",
+      "name": "Markeren",
       "file": "flagging.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Bulkacties",
       "file": "bulk-actions.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "Moderatiegroepen",
@@ -110,27 +110,32 @@
     {
       "name": "Spamdetectie",
       "file": "spam-detection.md",
-      "subCat": "Spam & Scheldwoorden"
+      "subCat": "Spam & Beledigingen"
     },
     {
-      "name": "Scheldwoorden maskeren",
+      "name": "Beledigingen maskeren",
       "file": "profanity-mask.md",
-      "subCat": "Spam & Scheldwoorden"
+      "subCat": "Spam & Beledigingen"
     },
     {
-      "name": "Reactielogs",
+      "name": "Commentaarlogboeken",
       "file": "comment-logs.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
-      "name": "Sneltoetsen",
+      "name": "Toetsenbord sneltoetsen",
       "file": "keyboard-shortcuts.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
     },
     {
       "name": "AI-agenten",
       "file": "ai-agents-pointer.md",
-      "subCat": "Moderatieworkflow"
+      "subCat": "Moderatie workflow"
+    },
+    {
+      "name": "Menselijke moderatiediensten",
+      "file": "human-moderation-services.md",
+      "subCat": "Moderatie workflow"
     }
   ]
 }

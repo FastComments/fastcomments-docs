@@ -3,52 +3,58 @@
   "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
     {
-      "name": "Agenci kodowania AI",
+      "name": "AI coding agents",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Instalacja",
+      "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Rozpoczęcie",
       "type": "readme"
     },
     {
-      "name": "Zawartość biblioteki",
+      "name": "Library Contents",
       "file": "library-contents-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Szybki start",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Klienci API",
+      "name": "API Clients",
       "file": "api-clients-readme-generated.md",
       "subCat": "Referencja API",
       "type": "readme"
     },
     {
-      "name": "Wykonywanie wywołań API",
+      "name": "Making API Calls",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Referencja API",
       "type": "readme"
     },
     {
-      "name": "Typowe problemy",
+      "name": "Common Issues",
       "file": "common-issues-readme-generated.md",
-      "subCat": "Dokumentacja",
+      "subCat": "Typowe problemy",
       "type": "readme"
     },
     {
-      "name": "Notatki",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
-      "subCat": "Dokumentacja",
+      "subCat": "Notatki",
       "type": "readme"
+    },
+    {
+      "name": "createAgentTenant",
+      "file": "createagenttenant-api-generated.md",
+      "subCat": "Najemcy agenta",
+      "type": "api"
     },
     {
       "name": "aggregate",
@@ -66,6 +72,18 @@
       "name": "logoutPublic",
       "file": "logoutpublic-api-generated.md",
       "subCat": "Uwierzytelnianie",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "Zadania wsadowe",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "Zadania wsadowe",
       "type": "api"
     },
     {
@@ -179,6 +197,12 @@
     {
       "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
+      "subCat": "Komentarze",
+      "type": "api"
+    },
+    {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
       "subCat": "Komentarze",
       "type": "api"
     },
@@ -438,6 +462,12 @@
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
       "subCat": "Hashtagi",
+      "type": "api"
+    },
+    {
+      "name": "getMe",
+      "file": "getme-api-generated.md",
+      "subCat": "Mój profil",
       "type": "api"
     },
     {
@@ -837,6 +867,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Strony",
@@ -855,8 +897,20 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
+      "subCat": "Strony",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
       "subCat": "Strony",
       "type": "api"
     },
@@ -876,6 +930,54 @@
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
       "subCat": "Oczekujące zdarzenia webhook",
+      "type": "api"
+    },
+    {
+      "name": "createPollVote",
+      "file": "createpollvote-api-generated.md",
+      "subCat": "Głosy w ankiecie",
+      "type": "api"
+    },
+    {
+      "name": "deletePollVote",
+      "file": "deletepollvote-api-generated.md",
+      "subCat": "Głosy w ankiecie",
+      "type": "api"
+    },
+    {
+      "name": "getPollVote",
+      "file": "getpollvote-api-generated.md",
+      "subCat": "Głosy w ankiecie",
+      "type": "api"
+    },
+    {
+      "name": "getPollVotes",
+      "file": "getpollvotes-api-generated.md",
+      "subCat": "Głosy w ankiecie",
+      "type": "api"
+    },
+    {
+      "name": "deletePoll",
+      "file": "deletepoll-api-generated.md",
+      "subCat": "Ankiety",
+      "type": "api"
+    },
+    {
+      "name": "getPoll",
+      "file": "getpoll-api-generated.md",
+      "subCat": "Ankiety",
+      "type": "api"
+    },
+    {
+      "name": "patchPoll",
+      "file": "patchpoll-api-generated.md",
+      "subCat": "Ankiety",
+      "type": "api"
+    },
+    {
+      "name": "putPoll",
+      "file": "putpoll-api-generated.md",
+      "subCat": "Ankiety",
       "type": "api"
     },
     {
@@ -1025,7 +1127,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Użycie dzienne najemcy",
+      "subCat": "Dzienne użycie najemcy",
       "type": "api"
     },
     {
@@ -1302,6 +1404,30 @@
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
       "subCat": "Głosy",
+      "type": "api"
+    },
+    {
+      "name": "createWebhook",
+      "file": "createwebhook-api-generated.md",
+      "subCat": "Webhooki",
+      "type": "api"
+    },
+    {
+      "name": "deleteWebhook",
+      "file": "deletewebhook-api-generated.md",
+      "subCat": "Webhooki",
+      "type": "api"
+    },
+    {
+      "name": "getWebhooks",
+      "file": "getwebhooks-api-generated.md",
+      "subCat": "Webhooki",
+      "type": "api"
+    },
+    {
+      "name": "getWebhookSamplePayloads",
+      "file": "getwebhooksamplepayloads-api-generated.md",
+      "subCat": "Webhooki",
       "type": "api"
     }
   ]

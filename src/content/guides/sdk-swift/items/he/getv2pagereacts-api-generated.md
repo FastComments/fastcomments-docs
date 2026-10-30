@@ -1,10 +1,11 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | כן |  |
-| urlId | string | query | כן |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | כאשר מוגדר, מחזיר את המשתמשים עבור כל מזהה תגובה (תמונות פרופיל ושמות משתמש). רק "public" מתקבל, מה שמסיר פרופילים פרטיים. |
 
 ## תגובה
 
@@ -12,15 +13,17 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getV2PageReacts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getV2PageReacts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמות הקוד שלהלן עדיין בבטא. עבור כל בעיה, נא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// דוגמאות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
+let sso = "sso_example" // String |  (אופציונלי)
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | כאשר מוגדר, מחזיר את המשתמשים עבור כל מזהה תגובה (תמונות פרופיל ושמות משתמש). רק \"public\" מתקבל, מה שמסיר פרופילים פרטיים. (אופציונלי)
 
-PublicAPI.getV2PageReacts(tenantId: tenantId, urlId: urlId) { (response, error) in
+PublicAPI.getV2PageReacts(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetV2PageReactsOptions(sso: sso, includeUserInfo: includeUserInfo)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -31,5 +34,3 @@ PublicAPI.getV2PageReacts(tenantId: tenantId, urlId: urlId) { (response, error) 
     }
 }
 [inline-code-end]
-
----

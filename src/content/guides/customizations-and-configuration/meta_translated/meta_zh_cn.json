@@ -103,12 +103,12 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "同时显示绝对日期和相对日期",
+      "name": "同时显示绝对和相对日期",
       "file": "absolute-and-relative-dates.md",
       "subCat": "外观与感觉"
     },
     {
-      "name": "添加标题文本",
+      "name": "添加页眉文字",
       "file": "header-html.md",
       "subCat": "外观与感觉"
     },
@@ -123,7 +123,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "自定义评论计数文本",
+      "name": "自定义评论计数文字",
       "file": "comment-count-format.md",
       "subCat": "外观与感觉"
     },
@@ -153,7 +153,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "禁用个人资料直接消息",
+      "name": "禁用个人资料私信",
       "file": "disable-profile-direct-messages.md",
       "subCat": "外观与感觉"
     },
@@ -163,7 +163,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "更改 GIF 内容评级",
+      "name": "更改 GIF 的内容评级",
       "file": "gif-rating.md",
       "subCat": "外观与感觉"
     },
@@ -228,7 +228,7 @@
       "subCat": "外观与感觉"
     },
     {
-      "name": "启用评论浏览次数",
+      "name": "启用评论浏览计数",
       "file": "enable-comment-view-counts.md",
       "subCat": "外观与感觉"
     },
@@ -278,7 +278,7 @@
       "subCat": "回复框"
     },
     {
-      "name": "限制每用户的评论数量",
+      "name": "限制每用户的评论量",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "回复框"
     },
@@ -383,6 +383,11 @@
       "subCat": "其他"
     },
     {
+      "name": "评论翻译",
+      "file": "comment-translation.md",
+      "subCat": "其他"
+    },
+    {
       "name": "页面标题",
       "file": "page-title.md",
       "subCat": "其他"
@@ -398,7 +403,7 @@
       "subCat": "其他"
     },
     {
-      "name": "评论计数及所有嵌套回复的计数",
+      "name": "评论计数及统计所有嵌套回复",
       "file": "count-all.md",
       "subCat": "其他"
     },

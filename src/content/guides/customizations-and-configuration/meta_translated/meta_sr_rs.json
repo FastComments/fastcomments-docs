@@ -1,441 +1,446 @@
 {
-  "name": "Prilagođavanja i konfiguracija",
+  "name": "Прилагођавања и конфигурација",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Identifikacija vašeg naloga",
+      "name": "Идентификација вашег налога",
       "file": "tenant-id.md",
-      "subCat": "Osnove"
+      "subCat": "Основе"
     },
     {
-      "name": "Kako su komentari povezani sa stranicama i člancima",
+      "name": "Како су коментари повезани са страницама и чланцима",
       "file": "url-id.md",
-      "subCat": "Osnove"
+      "subCat": "Основе"
     },
     {
-      "name": "Prikazivanje istih komentara na različitim stranicama",
+      "name": "Приказ истих коментара на различитим страницама",
       "file": "url-id-same-comments-different-pages.md",
-      "subCat": "Osnove"
+      "subCat": "Основе"
     },
     {
-      "name": "Prilagođeni stil",
+      "name": "Прилагођени стил",
       "file": "custom-css.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Prilagođeni fontovi",
+      "name": "Прилагођени фонтови",
       "file": "custom-fonts.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Uklanjanje brendiranja",
+      "name": "Уклањање бренда",
       "file": "remove-branding.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Podrška za tamne pozadine (tamni režim)",
+      "name": "Подршка за тамне позадине (тамни режим)",
       "file": "has-dark-background.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Uključivanje/isključivanje tamnog režima",
+      "name": "Укључивање/искључивање тамног режима",
       "file": "has-dark-background-toggle.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Zamena teksta",
+      "name": "Преписивање текста",
       "file": "translations.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Promena podrazumevanog avatara",
+      "name": "Промена подразумеваног аватара",
       "file": "default-avatar-src.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogućavanje avatara",
+      "name": "Искључивање аватара",
       "file": "hide-avatars.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogućavanje svih podrazumevanih stilova",
+      "name": "Искључивање свих подразумеваних стилова",
       "file": "no-styles.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Povezivanje iz komentara na stranice",
+      "name": "Повезивање коментара са страницама",
       "file": "url.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Podrazumevano skupljanje odgovora",
+      "name": "Подразумевано скривање одговора",
       "file": "collapse-replies.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Omogući WYSIWYG",
+      "name": "Омогућавање WYSIWYG",
       "file": "enable-wysiwyg.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogućavanje alatne trake",
+      "name": "Искључивање алатне траке",
       "file": "disable-toolbar.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogućavanje blokiranja",
+      "name": "Искључивање блокирања",
       "file": "disable-blocking.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Određivanje koje stranice prikazati",
+      "name": "Одређивање које странице ће се приказати",
       "file": "starting-page.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Promena niti komentara bez ponovnog učitavanja stranice",
+      "name": "Пребацивање тема коментара без поновног учитавања странице",
       "file": "switching-comment-threads.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Apsolutni datumi (onemogući čitljive vremenske oznake)",
+      "name": "Апсолутни датуми (искључивање људски читљивих временских ознака)",
       "file": "absolute-dates.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Prikazivanje i apsolutnih i relativnih datuma",
+      "name": "Приказ апсолутних и релативних датума",
       "file": "absolute-and-relative-dates.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Dodavanje teksta u zaglavlje",
+      "name": "Додавање текста у заглавље",
       "file": "header-html.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Prikazivanje linkova kao teksta",
+      "name": "Приказ веза као текста",
       "file": "render-links-as-text.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Uključivanje/isključivanje komentara dugmetom",
+      "name": "Укључивање/искључивање коментара дугметом",
       "file": "use-show-comments-toggle.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Prilagođavanje teksta broja komentara",
+      "name": "Прилагођавање текста броја коментара",
       "file": "comment-count-format.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući preusmeravanje slike",
+      "name": "Искључивање преусмеравања слика",
       "file": "disable-image-redirect.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući automatsko kreiranje hashtagova",
+      "name": "Искључивање аутоматског креирања хештегова",
       "file": "disable-automatic-hashtag-creation.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući zvono obaveštenja",
+      "name": "Искључивање звона за обавештења",
       "file": "disable-notification-bell.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući profile",
+      "name": "Искључивање профила",
       "file": "disable-profiles.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući komentare na profilu",
+      "name": "Искључивање коментара на профилу",
       "file": "disable-profile-comments.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući direktne poruke na profilu",
+      "name": "Искључивање директних порука на профилу",
       "file": "disable-profile-direct-messages.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući poruku o uspehu",
+      "name": "Искључивање поруке о успеху",
       "file": "disable-success-message.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Promeni ocenu sadržaja GIF-ova",
+      "name": "Промена оцене садржаја GIF-ова",
       "file": "gif-rating.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Moderacija sadržaja slika",
+      "name": "Модерација садржаја слика",
       "file": "image-content-moderation.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Promeni stil glasanja",
+      "name": "Промена стила гласања",
       "file": "vote-style.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući brisanje",
+      "name": "Искључивање брисања",
       "file": "disable-deleting.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogući uređivanje",
+      "name": "Искључивање уређивања",
       "file": "disable-editing.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Isticanje novih komentara",
+      "name": "Истицање нових коментара",
       "file": "highlighting-new-comments.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Veličine stranica",
+      "name": "Величине страница",
       "file": "page-size.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Email šabloni",
+      "name": "Шаблони е-поште",
       "file": "email-templates.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Formati korisničkih imena",
+      "name": "Формати корисничких имена",
       "file": "user-name-formats.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Onemogućavanje otpremanja slika",
+      "name": "Искључивање отпремања слика",
       "file": "no-image-uploads.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Dozvoli ugradnju medija",
+      "name": "Дозволи уграђивање медија",
       "file": "allow-media-embeds.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Omogući polje za pretragu",
+      "name": "Омогући поље за претрагу",
       "file": "enable-search.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Omogući spoiler-e",
+      "name": "Омогући спојлере",
       "file": "enable-spoilers.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Omogući broj pregleda komentara",
+      "name": "Омогући број прегледа коментара",
       "file": "enable-comment-view-counts.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Prikaži live komentare odmah",
+      "name": "Одмах прикажи уживе коментаре",
       "file": "show-live-right-away.md",
-      "subCat": "Live komentarisanje"
+      "subCat": "Уживо коментарисање"
     },
     {
-      "name": "Onemogućavanje live komentarisanja",
+      "name": "Искључивање уживог коментарисања",
       "file": "disable-live-commenting.md",
-      "subCat": "Live komentarisanje"
+      "subCat": "Уживо коментарисање"
     },
     {
-      "name": "Novi live komentari na dno",
+      "name": "Нови уживи коментари на дно",
       "file": "new-comments-to-bottom.md",
-      "subCat": "Live komentarisanje"
+      "subCat": "Уживо коментарисање"
     },
     {
-      "name": "Omogući beskonačno skrolovanje",
+      "name": "Омогућавање бесконачног скроловања",
       "file": "enable-infinite-scrolling.md",
-      "subCat": "Pagiranje i sortiranje"
+      "subCat": "Пагинација и сортирање"
     },
     {
-      "name": "Promena podrazumevanog pravca sortiranja",
+      "name": "Промена подразумеваног смера сортирања",
       "file": "default-sort-direction.md",
-      "subCat": "Pagiranje i sortiranje"
+      "subCat": "Пагинација и сортирање"
     },
     {
-      "name": "Prikazivanje svih komentara odjednom - onemogući pagiranje",
+      "name": "Приказ свих коментара одједном - искључивање пагинације",
       "file": "starting-page-disable-pagination.md",
-      "subCat": "Pagiranje i sortiranje"
+      "subCat": "Пагинација и сортирање"
     },
     {
-      "name": "Premesti polje za odgovor ispod komentara",
+      "name": "Померање поља за одговор испод коментара",
       "file": "input-after-comments.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Ograničenje dužine komentara",
+      "name": "Ограничење дужине коментара",
       "file": "max-comment-character-length.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Onemogući višeredni unos komentara",
+      "name": "Искључивање коментисања у више линија",
       "file": "use-single-line-comment-input.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Ograniči broj komentara po korisniku",
+      "name": "Ограничење броја коментара по кориснику",
       "file": "limit-comment-volume-per-user.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Spreči nove komentare na najvišem nivou",
+      "name": "Спречавање нових коментара на највишем нивоу",
       "file": "no-new-root-comments.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Maksimalna dubina odgovora",
+      "name": "Максимална дубина одговора",
       "file": "max-reply-depth.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Zahtevaj prihvatanje uslova korišćenja",
+      "name": "Захтевајте прихватање услова коришћења",
       "file": "terms-of-service.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Upozori pre napuštanja stranice sa neslanim komentarom",
+      "name": "Упозори пре напуштања са непослатим коментаром",
       "file": "warn-on-unsaved-comment.md",
-      "subCat": "Polje za odgovor"
+      "subCat": "Поље за одговор"
     },
     {
-      "name": "Pregled Single Sign On (SSO)",
+      "name": "Преглед једноставне пријаве (ССО)",
       "file": "sso.md",
-      "subCat": "SSO"
+      "subCat": "ССО"
     },
     {
-      "name": "Prilagođene integracije – siguran Single Sign On (SSO)",
+      "name": "Прилагођене интеграције – безбедна једноставна пријава (ССО)",
       "file": "sso-secure.md",
-      "subCat": "SSO"
+      "subCat": "ССО"
     },
     {
-      "name": "Prilagođene integracije – jednostavan Single Sign On (SSO)",
+      "name": "Прилагођене интеграције – једноставна једноставна пријава (ССО)",
       "file": "sso-simple.md",
-      "subCat": "SSO"
+      "subCat": "ССО"
     },
     {
-      "name": "Prilagođene integracije – migracija sa Disqus SSO",
+      "name": "Прилагођене интеграције – миграција са Disqus ССО",
       "file": "sso-disqus.md",
-      "subCat": "SSO"
+      "subCat": "ССО"
     },
     {
-      "name": "Prilagođene integracije – migracija sa Commento SSO",
+      "name": "Прилагођене интеграције – миграција са Commento ССО",
       "file": "sso-commento.md",
-      "subCat": "SSO"
+      "subCat": "ССО"
     },
     {
-      "name": "Zaštita niti komentara pomoću Single Sign On",
+      "name": "Заштита тема коментара помоћу једноставне пријаве",
       "file": "sso-require-to-view-comments.md",
-      "subCat": "SSO"
+      "subCat": "ССО"
     },
     {
-      "name": "Dozvoli anonimno komentarisanje",
+      "name": "Дозволи анонимно коментарисање",
       "file": "allow-anon.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Sprečavanje da anonimni komentari ističu",
+      "name": "Спречавање истека анонимних коментара",
       "file": "allow-anon-retain-comments.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Onemogući unos email adrese",
+      "name": "Искључивање уноса е-поште",
       "file": "disable-email-inputs.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Onemogući oznaku neproverenog",
+      "name": "Искључивање ознаке непотврђеног",
       "file": "disable-unverified-label.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Dozvoli anonimno glasanje",
+      "name": "Дозволи анонимно гласање",
       "file": "allow-anon-votes.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Postavljanje podrazumevanog korisničkog imena",
+      "name": "Подешавање подразумеваног корисничког имена",
       "file": "default-username.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Automatsko generisanje korisničkih imena",
+      "name": "Аутоматско генерисање корисничких имена",
       "file": "auto-generate-username.md",
-      "subCat": "Anonimno komentarisanje"
+      "subCat": "Анонимно коментарисање"
     },
     {
-      "name": "Povratni pozivi",
+      "name": "Повратни позиви",
       "file": "callbacks.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Ručno definisanje lokala korisnika",
+      "name": "Ручно дефинисање локала корисника",
       "file": "locale.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Ograničavanje dozvoljenih jezika",
+      "name": "Ограничење дозвољених језика",
       "file": "allowed-languages.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Naslovi stranica",
+      "name": "Превод коментара",
+      "file": "comment-translation.md",
+      "subCat": "Разно"
+    },
+    {
+      "name": "Наслови страница",
       "file": "page-title.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Spreči nove odgovore i onemogući glasanje",
+      "name": "Спречи нове одговоре и искључи гласање",
       "file": "readonly.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Ograničavanje domena linkova",
+      "name": "Ограничење домена линкова",
       "file": "restricting-link-domains.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Broj komentara i brojanje svih ugnježdenih odgovora",
+      "name": "Број коментара и бројање свих угнежђених одговора",
       "file": "count-all.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Omogući linkove komentatora",
+      "name": "Омогућавање линкова коментатора",
       "file": "enable-commenter-links.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Grupe za moderaciju",
+      "name": "Групе за модерацију",
       "file": "moderation-group-ids.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Pominjanje ID-ova grupa",
+      "name": "Помена ID-ова група",
       "file": "mention-group-ids.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Zaobilaženje kolačića trećih strana",
+      "name": "Заобиђи колачиће трећих страна",
       "file": "enable-third-party-cookie-bypass.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Brisanje komentara sa odgovorima",
+      "name": "Брисање коментара са одговорима",
       "file": "deleting-comments-with-replies.md",
-      "subCat": "Ostalo"
+      "subCat": "Разно"
     },
     {
-      "name": "Prikazivanje bedževa u gornjoj traci",
+      "name": "Прикажи значке у горњој траци",
       "file": "show-badges-in-top-bar.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     },
     {
-      "name": "Prikazivanje liste online korisnika",
+      "name": "Прикажи листу онлајн корисника",
       "file": "users-list.md",
-      "subCat": "Izgled i osećaj"
+      "subCat": "Изглед и осећај"
     }
   ]
 }

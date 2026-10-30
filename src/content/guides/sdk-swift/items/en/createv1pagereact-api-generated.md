@@ -5,6 +5,7 @@
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
 | title | string | query | No |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -20,8 +21,9 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let title = "title_example" // String |  (optional)
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, title: title) { (response, error) in
+PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, options: PublicAPI.CreateV1PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return

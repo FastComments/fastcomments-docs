@@ -4,6 +4,7 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
 
 ## Response
 
@@ -18,8 +19,9 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
+let sso = "sso_example" // String |  (optional)
 
-PublicAPI.deleteV1PageReact(tenantId: tenantId, urlId: urlId) { (response, error) in
+PublicAPI.deleteV1PageReact(tenantId: tenantId, urlId: urlId, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return

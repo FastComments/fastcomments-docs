@@ -2,16 +2,23 @@
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| limit | number | query | Nein |  |
-| skip | number | query | Nein |  |
-| order | string | query | Nein |  |
-| after | number | query | Nein |  |
-| before | number | query | Nein |  |
+| tenantId | string | query | Yes | Der Mandant, für den die Audit-Logs gelesen werden sollen. |
+| limit | integer | query | No | Wie viele Logs zurückgegeben werden sollen. Maximal 10000, Standardwert 1000. |
+| skip | integer | query | No | Wie viele Logs übersprungen werden sollen, für die Seitennavigation. |
+| order | string | query | No | Sortierrichtung nach der Ereigniszeit. Standard ist DESC (neueste zuerst). |
+| after | integer | query | No |  |
+| before | integer | query | No |  |
+| username | string | query | No | Nur Ereignisse zurückgeben, die von diesem Benutzernamen durchgeführt wurden. |
+| ip | string | query | No | Nur Ereignisse von dieser IP-Adresse zurückgeben. |
+| crudType | string | query | No | Nur Ereignisse dieses Typs zurückgeben: c, r, u, d oder login. |
+| resourceName | string | query | No | Nur Ereignisse für diese Ressource zurückgeben, z. B. User oder Moderator. |
+| targetId | string | query | No | Nur Ereignisse zurückgeben, deren betroffene Objekt diese ID hat. |
+| target | string | query | No | Fallunabhängige Teilzeichenkettenübereinstimmung mit dem Label des betroffenen Objekts, z. B. ein Benutzername oder eine E‑Mail. |
+| includeManagedTenants | boolean | query | No | Auch Ereignisse von Mandanten zurückgeben, die dieser Mandant verwaltet. |
 
 ## Antwort
 
-Gibt zurück: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
+Rückgabe: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
 ## Beispiel
 
@@ -33,16 +40,23 @@ public class Example {
     // API-Schlüssel-Authentifizierung konfigurieren: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Kommentarzeichen vor der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard ist null)
+    // Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standardwert ist null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    Double limit = 3.4D; // Double | 
-    Double skip = 3.4D; // Double | 
-    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | 
-    Double after = 3.4D; // Double | 
-    Double before = 3.4D; // Double | 
+    String tenantId = "tenantId_example"; // String | Der Mandant, für den die Audit-Logs gelesen werden sollen.
+    Integer limit = 56; // Integer | Wie viele Logs zurückgegeben werden sollen. Maximal 10000, Standardwert 1000.
+    Integer skip = 56; // Integer | Wie viele Logs übersprungen werden sollen, für die Seitennavigation.
+    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | Sortierrichtung nach der Ereigniszeit. Standard ist DESC (neueste zuerst).
+    Long after = 56L; // Long | 
+    Long before = 56L; // Long | 
+    String username = "username_example"; // String | Nur Ereignisse zurückgeben, die von diesem Benutzernamen durchgeführt wurden.
+    String ip = "ip_example"; // String | Nur Ereignisse von dieser IP-Adresse zurückgeben.
+    String crudType = "crudType_example"; // String | Nur Ereignisse dieses Typs zurückgeben: c, r, u, d oder login.
+    String resourceName = "resourceName_example"; // String | Nur Ereignisse für diese Ressource zurückgeben, z. B. User oder Moderator.
+    String targetId = "targetId_example"; // String | Nur Ereignisse zurückgeben, deren betroffene Objekt diese ID hat.
+    String target = "target_example"; // String | Fallunabhängige Teilzeichenkettenübereinstimmung mit dem Label des betroffenen Objekts, z. B. ein Benutzername oder eine E‑Mail.
+    Boolean includeManagedTenants = true; // Boolean | Auch Ereignisse von Mandanten zurückgeben, die dieser Mandant verwaltet.
     try {
       GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
@@ -50,6 +64,13 @@ public class Example {
             .order(order)
             .after(after)
             .before(before)
+            .username(username)
+            .ip(ip)
+            .crudType(crudType)
+            .resourceName(resourceName)
+            .targetId(targetId)
+            .target(target)
+            .includeManagedTenants(includeManagedTenants)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

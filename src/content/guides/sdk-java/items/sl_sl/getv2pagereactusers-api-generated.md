@@ -2,13 +2,14 @@
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | pot | Da |  |
-| urlId | string | poizvedba | Da |  |
-| id | string | poizvedba | Da |  |
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| id | string | query | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
-Vrača: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReactUsersResponse.java)
+Vrne: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReactUsersResponse.java)
 
 ## Primer
 
@@ -30,8 +31,10 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetV2PageReactUsersResponse result = apiInstance.getV2PageReactUsers(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -44,5 +47,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

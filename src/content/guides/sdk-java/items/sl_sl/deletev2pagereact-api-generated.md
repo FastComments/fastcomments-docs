@@ -1,10 +1,11 @@
-## Parametri
+## Parameters
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | id | string | query | Da |  |
+| sso | string | query | Ne |  |
 
 ## Odgovor
 
@@ -12,7 +13,7 @@ Vrne: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-java/bl
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer deleteV2PageReact'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'deleteV2PageReact Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Uvozi razrede:
 import com.fastcomments.invoker.ApiClient;
@@ -30,15 +31,17 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV2PageReact(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#deleteV2PageReact");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Izjema pri klicanju PublicApi#deleteV2PageReact");
+      System.err.println("Koda statusa: " + e.getCode());
+      System.err.println("Razlog: " + e.getResponseBody());
+      System.err.println("Glave odgovora: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

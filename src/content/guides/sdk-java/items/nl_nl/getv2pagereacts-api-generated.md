@@ -1,12 +1,13 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
+| sso | string | query | Nee |  |
+| includeUserInfo | string | query | Nee | Wanneer ingesteld, retourneert het de gebruikers voor elke react-id (avatars en gebruikersnamen). Alleen "public" wordt geaccepteerd, wat privéprofielen weglaten. |
 
-## Antwoord
+## Response
 
 Retourneert: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
 
@@ -29,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Wanneer ingesteld, retourneert het de gebruikers voor elke react-id (avatars en gebruikersnamen). Alleen \"public\" wordt geaccepteerd, wat privéprofielen weglaten.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -43,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

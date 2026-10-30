@@ -4,36 +4,38 @@ urlId
 
 ## パラメータ
 
-| 名前 | 型 | 位置 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | はい |  |
-| urlId | string | query | はい |  |
-| page | integer | query | いいえ |  |
-| direction | string | query | いいえ |  |
-| sso | string | query | いいえ |  |
-| skip | integer | query | いいえ |  |
-| skipChildren | integer | query | いいえ |  |
-| limit | integer | query | いいえ |  |
-| limitChildren | integer | query | いいえ |  |
-| countChildren | boolean | query | いいえ |  |
-| fetchPageForCommentId | string | query | いいえ |  |
-| includeConfig | boolean | query | いいえ |  |
-| countAll | boolean | query | いいえ |  |
-| includei10n | boolean | query | いいえ |  |
-| locale | string | query | いいえ |  |
-| modules | string | query | いいえ |  |
-| isCrawler | boolean | query | いいえ |  |
-| includeNotificationCount | boolean | query | いいえ |  |
-| asTree | boolean | query | いいえ |  |
-| maxTreeDepth | integer | query | いいえ |  |
-| useFullTranslationIds | boolean | query | いいえ |  |
-| parentId | string | query | いいえ |  |
-| searchText | string | query | いいえ |  |
-| hashTags | array | query | いいえ |  |
-| userId | string | query | いいえ |  |
-| customConfigStr | string | query | いいえ |  |
-| afterCommentId | string | query | いいえ |  |
-| beforeCommentId | string | query | いいえ |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## レスポンス
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -124,5 +130,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

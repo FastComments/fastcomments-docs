@@ -1,15 +1,17 @@
-## Parametreler
+## Parameters
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
+| sso | string | query | Hayır |  |
+| includeUserInfo | string | query | Hayır | Ayarlandığında, sayfayı beğenen kullanıcıları (avatarlar ve kullanıcı adları) döndürür. Yalnızca \"public\" kabul edilir, bu da özel profilleri dışlar. |
 
-## Yanıt
+## Response
 
 Döndürür: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
 
-## Örnek
+## Example
 
 [inline-code-attrs-start title = 'getV1PageLikes Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Ayarlandığında, sayfayı beğenen kullanıcıları (avatarlar ve kullanıcı adları) döndürür. Yalnızca \"public\" kabul edilir, bu da özel profilleri dışlar.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

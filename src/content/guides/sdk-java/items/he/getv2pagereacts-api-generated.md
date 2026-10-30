@@ -4,6 +4,8 @@
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Yes |  |
 | urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | כאשר מוגדר, מחזיר את המשתמשים עבור כל מזהה תגובה (אווטארים ושמות משתמש). רק "public" מתקבל, מה שמסיר פרופילים פרטיים. |
 
 ## תגובה
 
@@ -11,9 +13,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת getV2PageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -26,14 +28,18 @@ public class Example {
     defaultClient.setBasePath("https://fastcomments.com");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    String urlId = "urlId_example"; // String | 
+    String tenantId = "tenantId_example"; // String |
+    String urlId = "urlId_example"; // String |
+    String sso = "sso_example"; // String |
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | כאשר מוגדר, מחזיר את המשתמשים עבור כל מזהה תגובה (אווטארים ושמות משתמש). רק "public" מתקבל, מה שמסיר פרופילים פרטיים.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReacts");
+      System.err.println("Exception when calling PublicApi#getV2PageReacts"); // חריגה בעת קריאה ל-PublicApi#getV2PageReacts
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -42,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

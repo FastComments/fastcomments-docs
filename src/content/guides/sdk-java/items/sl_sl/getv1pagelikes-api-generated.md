@@ -1,10 +1,11 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Da |  |
-| urlId | string | query | Da |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Ko je nastavljeno, vrne uporabnike, ki so všečkali stran (avatari in uporabniška imena). Sprejema se samo “public”, kar izpusti zasebne profile. |
 
 ## Odgovor
 
@@ -29,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Ko je nastavljeno, vrne uporabnike, ki so všečkali stran (avatari in uporabniška imena). Sprejema se samo \"public\", kar izpusti zasebne profile.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -43,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

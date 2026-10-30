@@ -1,9 +1,11 @@
 ## Παράμετροι
 
-| Όνομα | Τύπος | Location | Υποχρεωτικό | Περιγραφή |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι |  |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+|------|------|----------|------------|-----------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Όταν οριστεί, επιστρέφει τους χρήστες που έδωσαν \"μου αρέσει\" στη σελίδα (εικονογραφίες και ονόματα χρηστών). Μόνο το \"public\" γίνεται αποδεκτό, το οποίο παραλείπει τα ιδιωτικά προφίλ. |
 
 ## Απόκριση
 
@@ -13,7 +15,7 @@
 
 [inline-code-attrs-start title = 'Παράδειγμα getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Όταν οριστεί, επιστρέφει τους χρήστες που έδωσαν \"μου αρέσει\" στη σελίδα (εικονογραφίες και ονόματα χρηστών). Μόνο το \"public\" γίνεται αποδεκτό, το οποίο παραλείπει τα ιδιωτικά προφίλ.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

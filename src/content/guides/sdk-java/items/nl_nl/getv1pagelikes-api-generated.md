@@ -2,16 +2,18 @@
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| sso | string | query | Nee |  |
+| includeUserInfo | string | query | Nee | Wanneer ingesteld, worden de gebruikers die de pagina leuk vonden geretourneerd (avatars en gebruikersnamen). Alleen “public” wordt geaccepteerd, waardoor privé‑profielen worden weggelaten. |
 
 ## Response
 
 Retourneert: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV1PageLikes.java)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'getV1PageLikes Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld getV1PageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importeer klassen:
 import com.fastcomments.invoker.ApiClient;
@@ -28,8 +30,12 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Wanneer ingesteld, worden de gebruikers die de pagina leuk vonden geretourneerd (avatars en gebruikersnamen). Alleen \"public\" wordt geaccepteerd, waardoor privé‑profielen worden weggelaten.
     try {
       GetV1PageLikes result = apiInstance.getV1PageLikes(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

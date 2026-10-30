@@ -2,13 +2,13 @@
 
 Com o FastComments, todo o texto no widget de comentários é personalizável.
 
-Você pode substituir um único trecho de texto, como o botão de envio, ou todo o texto no widget de comentários inteiro.
+Você pode substituir um único trecho de texto, como o botão de enviar, ou todo o texto em todo o widget de comentários.
 
 Por padrão, o texto no widget de comentários é traduzido com base no locale do usuário. No entanto, podemos substituir o texto, se estivermos confiantes de que nossa base de usuários está usando o mesmo local/idioma, por exemplo:
 
 [code-example-start config = {translations: { SUBMIT_REPLY: 'Reply' } }; linesToHighlight = [6, 7, 8]; title = 'Texto Personalizado'; code-example-end]
 
-Todas as traduções personalizáveis podem ser encontradas <a href="https://fastcomments.com/auth/my-account/get-acct-code#translations" target="_blank">aqui</a> sob a aba "opções avançadas".
+Todas as traduções personalizáveis podem ser encontradas <a href="https://fastcomments.com/auth/my-account/get-acct-code#translations" target="_blank">aqui</a> na aba "opções avançadas".
 
 No entanto, há uma maneira mais fácil, via a interface de personalização do widget. Lá, podemos simplesmente encontrar o texto que aparece no widget de comentários no locale EN_US e especificar uma substituição.
 
@@ -16,4 +16,4 @@ No entanto, há uma maneira mais fácil, via a interface de personalização do 
 
 Todas as substituições de traduções atualmente afetam todos os locales.
 
----
+Isso cobre o próprio texto do widget. Para traduzir os comentários que seus visitantes escrevem, veja [Tradução de Comentários](#comment-translation).

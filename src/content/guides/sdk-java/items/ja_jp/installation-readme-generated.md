@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+プロジェクトの POM に Repsy リポジトリを追加します:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+次に、必要な依存関係を追加します:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Then add the dependencies you need:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+build.gradle ファイルに Repsy リポジトリを追加します:
 
 ```groovy
 repositories {
@@ -53,25 +53,25 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.0.1"
+    implementation "com.fastcomments:client:3.1.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    implementation "com.fastcomments:core:3.1.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### Library Contents
+### ライブラリの内容
 
 このライブラリは 3 つのモジュールで構成されています。生成された API クライアント、API の利用を容易にする手書きユーティリティを含むコア Java ライブラリ、そして変更フィードの購読用ライブラリである `pubsub` モジュールです。
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API クライアント ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [コア ライブラリ ドキュメント（SSO の例を含む）](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### 公開 API と保護された API
 
 API クライアントには `DefaultApi`、`PublicApi`、`ModerationApi` の 3 つのクラスがあります。`DefaultApi` には API キーが必要なメソッドが含まれ、`PublicApi` には認証なしでブラウザやモバイルデバイスなどから直接呼び出せるメソッドが含まれます。
 

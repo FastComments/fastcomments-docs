@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Yorumları Denetleme Sayfası",
+      "name": "Yorumları Moderasyon Sayfası",
       "file": "moderate-comments-page.md",
       "subCat": "Giriş"
     },
@@ -28,7 +28,7 @@
       "subCat": "Moderatörler"
     },
     {
-      "name": "Onaylama İşleyişi",
+      "name": "Onayların Nasıl Çalıştığı",
       "file": "moderation-approvals.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -58,17 +58,17 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Moderasyon İşlemleri",
+      "name": "Moderasyon Eylemleri",
       "file": "comment-actions.md",
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Yorum Silme",
+      "name": "Yorumları Silme",
       "file": "deleting-comments.md",
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Yorum Bileşeninden Moderasyon İşlemleri",
+      "name": "Yorum Widget'ından Moderasyon Eylemleri",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -83,7 +83,7 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Joker Karakterlerle Kullanıcı Yasaklama",
+      "name": "Joker Karakterli Kullanıcıları Yasaklama",
       "file": "banning-users-wildcards.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -93,7 +93,7 @@
       "subCat": "Moderasyon İş Akışı"
     },
     {
-      "name": "Toplu İşlemler",
+      "name": "Toplu Eylemler",
       "file": "bulk-actions.md",
       "subCat": "Moderasyon İş Akışı"
     },
@@ -110,12 +110,12 @@
     {
       "name": "Spam Tespiti",
       "file": "spam-detection.md",
-      "subCat": "Spam ve Küfür"
+      "subCat": "Spam ve Hakaret"
     },
     {
-      "name": "Küfürleri Maskeleme",
+      "name": "Hakaret Gizleme",
       "file": "profanity-mask.md",
-      "subCat": "Spam ve Küfür"
+      "subCat": "Spam ve Hakaret"
     },
     {
       "name": "Yorum Kayıtları",
@@ -130,6 +130,11 @@
     {
       "name": "Yapay Zeka Ajanları",
       "file": "ai-agents-pointer.md",
+      "subCat": "Moderasyon İş Akışı"
+    },
+    {
+      "name": "İnsan Moderasyon Hizmetleri",
+      "file": "human-moderation-services.md",
       "subCat": "Moderasyon İş Akışı"
     }
   ]

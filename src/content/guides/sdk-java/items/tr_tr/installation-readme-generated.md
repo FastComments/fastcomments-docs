@@ -1,6 +1,6 @@
 ### Maven
 
-Repsy deposunu projenizin POM'una ekleyin:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Repsy deposunu projenizin POM'una ekleyin:
 </repositories>
 ```
 
-Ardından ihtiyacınız olan bağımlılıkları ekleyin:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Ardından ihtiyacınız olan bağımlılıkları ekleyin:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Repsy deposunu `build.gradle` dosyanıza ekleyin:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -53,26 +53,28 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.0.1"
+    implementation "com.fastcomments:client:3.1.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    implementation "com.fastcomments:core:3.1.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
 ### Library Contents
 
-Bu kütüphane üç modül içerir. Oluşturulan API istemcisi, API ile çalışmayı kolaylaştıran el yazısı yardımcı programları içeren çekirdek Java kütüphanesi ve değişiklik akışlarına abone olmak için bir kütüphane olan `pubsub` modülü.
+This library contains three modules. The generated API client, the core Java library which contains hand-written utilities
+to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API İstemci Kütüphanesi Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Çekirdek Kütüphane Belgeleri, SSO Örnekleri Dahil](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Kütüphane Belgeleri](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerirken, `PublicApi` kimlik doğrulama olmadan bir tarayıcı/mobil cihaz vb. üzerinden doğrudan yapılabilen yöntemleri içerir.
+For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods
+that can be made directly from a browser/mobile device/etc without authentication.
 
-`ModerationApi`, canlı ve hızlı denetleme API'lerinin kapsamlı bir paketini sunar. Her `ModerationApi` yöntemi bir `sso` parametresi alır ve SSO veya bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.
+The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.

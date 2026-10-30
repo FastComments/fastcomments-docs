@@ -2,8 +2,9 @@
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | yol | Evet |  |
-| urlId | string | sorgu | Evet |  |
+| tenantId | string | path | Evet |  |
+| urlId | string | query | Evet |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -28,8 +29,10 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -42,3 +45,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "La página de moderación de comentarios",
+      "name": "Página de moderación de comentarios",
       "file": "moderate-comments-page.md",
       "subCat": "Introducción"
     },
@@ -13,12 +13,12 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Añadir moderadores",
+      "name": "Agregar moderadores",
       "file": "moderators-adding.md",
       "subCat": "Moderadores"
     },
     {
-      "name": "Estadísticas de moderadores",
+      "name": "Estadísticas del moderador",
       "file": "moderator-stats.md",
       "subCat": "Moderadores"
     },
@@ -73,7 +73,7 @@
       "subCat": "Flujo de trabajo de moderación"
     },
     {
-      "name": "Moderación en tiempo real",
+      "name": "Moderación en vivo",
       "file": "comment-actions-live.md",
       "subCat": "Flujo de trabajo de moderación"
     },
@@ -88,7 +88,7 @@
       "subCat": "Flujo de trabajo de moderación"
     },
     {
-      "name": "Señalización",
+      "name": "Denunciar",
       "file": "flagging.md",
       "subCat": "Flujo de trabajo de moderación"
     },
@@ -103,19 +103,19 @@
       "subCat": "Grupos de moderación"
     },
     {
-      "name": "Ajustes de moderación",
+      "name": "Configuración de moderación",
       "file": "moderation-settings.md",
       "subCat": "Configuración"
     },
     {
       "name": "Detección de spam",
       "file": "spam-detection.md",
-      "subCat": "Spam y lenguaje ofensivo"
+      "subCat": "Spam y vulgaridad"
     },
     {
-      "name": "Enmascarar lenguaje ofensivo",
+      "name": "Ocultar vulgaridad",
       "file": "profanity-mask.md",
-      "subCat": "Spam y lenguaje ofensivo"
+      "subCat": "Spam y vulgaridad"
     },
     {
       "name": "Registros de comentarios",
@@ -130,6 +130,11 @@
     {
       "name": "Agentes de IA",
       "file": "ai-agents-pointer.md",
+      "subCat": "Flujo de trabajo de moderación"
+    },
+    {
+      "name": "Servicios de moderación humana",
+      "file": "human-moderation-services.md",
       "subCat": "Flujo de trabajo de moderación"
     }
   ]

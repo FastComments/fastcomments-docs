@@ -1,22 +1,28 @@
----
 ## Parametre
 
-| Navn | Type | Placering | Krævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Ja |  |
-| limit | number | query | Nej |  |
-| skip | number | query | Nej |  |
-| order | string | query | Nej |  |
-| after | number | query | Nej |  |
-| before | number | query | Nej |  |
+| tenantId | string | query | Yes | Lejeren, hvis revisionslogfiler skal læses. |
+| limit | integer | query | No | Hvor mange logfiler der skal returneres. Max 10000, standard er 1000. |
+| skip | integer | query | No | Hvor mange logfiler der skal springes over, til paginering. |
+| order | string | query | No | Sorteringsretning på hændelsestiden. Standard er DESC (nyeste først). |
+| after | integer | query | No |  |
+| before | integer | query | No |  |
+| username | string | query | No | Returner kun hændelser udført af dette brugernavn. |
+| ip | string | query | No | Returner kun hændelser fra denne IP-adresse. |
+| crudType | string | query | No | Returner kun hændelser af denne type: c, r, u, d eller login. |
+| resourceName | string | query | No | Returner kun hændelser for denne ressource, f.eks. Bruger eller Moderator. |
+| targetId | string | query | No | Returner kun hændelser, hvor det berørte objekt har dette id. |
+| target | string | query | No | Case‑insensitiv delstrengssøgning på det berørte objekts label, f.eks. et brugernavn eller en e‑mail. |
+| includeManagedTenants | boolean | query | No | Returner også hændelser fra lejere, som denne lejer administrerer. |
 
 ## Svar
 
-Returnerer: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
+Returns: [`GetAuditLogsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetAuditLogsResponse.java)
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'getAuditLogs-eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getAuditLogs Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importer klasser:
 import com.fastcomments.invoker.ApiClient;
@@ -34,16 +40,23 @@ public class Example {
     // Konfigurer API-nøgleautorisation: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Fjern kommentaren på følgende linje for at angive et præfiks til API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String | 
-    Double limit = 3.4D; // Double | 
-    Double skip = 3.4D; // Double | 
-    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | 
-    Double after = 3.4D; // Double | 
-    Double before = 3.4D; // Double | 
+    String tenantId = "tenantId_example"; // String | Lejeren, hvis revisionslogfiler skal læses.
+    Integer limit = 56; // Integer | Hvor mange logfiler der skal returneres. Max 10000, standard er 1000.
+    Integer skip = 56; // Integer | Hvor mange logfiler der skal springes over, til paginering.
+    SORTDIR order = SORTDIR.fromValue("ASC"); // SORTDIR | Sorteringsretning på hændelsestiden. Standard er DESC (nyeste først).
+    Long after = 56L; // Long | 
+    Long before = 56L; // Long | 
+    String username = "username_example"; // String | Returner kun hændelser udført af dette brugernavn.
+    String ip = "ip_example"; // String | Returner kun hændelser fra denne IP-adresse.
+    String crudType = "crudType_example"; // String | Returner kun hændelser af denne type: c, r, u, d eller login.
+    String resourceName = "resourceName_example"; // String | Returner kun hændelser for denne ressource, f.eks. Bruger eller Moderator.
+    String targetId = "targetId_example"; // String | Returner kun hændelser, hvor det berørte objekt har dette id.
+    String target = "target_example"; // String | Case‑insensitiv delstrengssøgning på det berørte objekts label, f.eks. et brugernavn eller en e‑mail.
+    Boolean includeManagedTenants = true; // Boolean | Returner også hændelser fra lejere, som denne lejer administrerer.
     try {
       GetAuditLogsResponse result = apiInstance.getAuditLogs(tenantId)
             .limit(limit)
@@ -51,6 +64,13 @@ public class Example {
             .order(order)
             .after(after)
             .before(before)
+            .username(username)
+            .ip(ip)
+            .crudType(crudType)
+            .resourceName(resourceName)
+            .targetId(targetId)
+            .target(target)
+            .includeManagedTenants(includeManagedTenants)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -63,5 +83,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

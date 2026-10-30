@@ -1,6 +1,6 @@
 [related-parameter-start name = 'translations'; type = 'Record<string, string>'; related-parameter-end]
 
-Z FastComments cały tekst w widżecie komentarzy jest konfigurowalny.
+W FastComments cały tekst w widżecie komentarzy można dostosować.
 
 Możesz nadpisać pojedynczy fragment tekstu, na przykład przycisk wyślij, lub cały tekst w całym widżecie komentarzy.
 
@@ -16,4 +16,4 @@ Jednak istnieje prostszy sposób, poprzez interfejs UI dostosowywania widżetu. 
 
 Wszystkie nadpisania tłumaczeń obecnie wpływają na wszystkie lokalizacje.
 
----
+Dotyczy to własnego tekstu widżetu. Aby przetłumaczyć komentarze pisane przez Twoich gości, zobacz [Comment Translation](#comment-translation).

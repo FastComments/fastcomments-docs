@@ -1,10 +1,10 @@
 ### Swift 패키지 매니저
 
-`Package.swift` 파일에 다음을 추가하십시오:
+다음 코드를 `Package.swift` 파일에 추가하세요:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
 ]
 ```
 

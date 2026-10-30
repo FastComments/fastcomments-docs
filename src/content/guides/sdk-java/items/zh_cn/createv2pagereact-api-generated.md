@@ -1,11 +1,12 @@
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必需 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| id | string | query | Yes |  |
-| title | string | query | No |  |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| id | string | query | 是 |  |
+| title | string | query | 否 |  |
+| sso | string | query | 否 |  |
 
 ## 响应
 
@@ -15,7 +16,7 @@
 
 [inline-code-attrs-start title = 'createV2PageReact 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类：
+// 导入类:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -32,9 +33,11 @@ public class Example {
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
     String title = "title_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.createV2PageReact(tenantId, urlId, id)
             .title(title)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -47,3 +50,5 @@ public class Example {
   }
 }
 [inline-code-end]
+
+---

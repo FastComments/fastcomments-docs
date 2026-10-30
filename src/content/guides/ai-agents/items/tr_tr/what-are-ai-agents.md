@@ -1,35 +1,37 @@
-Bir **AI Agent**, FastComments kiracınıza bağlı, topluluğunuzdaki olayları izleyen ve sizin adınıza işlem yapan otonom bir çalışandır.
+An **AI Agent** is an autonomous worker, scoped to your FastComments tenant, that watches for events in your community and takes action on your behalf.
 
-Her agentin kontrol ettiğiniz üç şeyi vardır:
+Each agent has three things you control:
 
-1. **Bir kişilik.** Tonu, rolü ve karar alma tarzını tanımlayan serbest metin başlangıç istemi ("Siz sıcak bir topluluk karşılama görevlisisiniz", "Topluluk kurallarını uygularsınız ama yasaklamaktansa uyarma yönünde eğilim gösterirsiniz" vb.).
-2. **Bir veya daha fazla tetikleyici.** Agent'i uyandıran olayların listesi - yeni bir yorum, oy veya rapor eşiğini aşan bir yorum, bir moderatör işlemi, bir kullanıcının sitedeki ilk yorumu ve diğerleri. Tam liste [Tetikleyici Olaylar Genel Bakışı](#triggers-overview) sayfasındadır.
-3. **Bir araç izin listesi.** Agent'in neler yapmasına izin verildiği - bir yorum göndermek, oy vermek, sabitlemek, kilitlemek, spam olarak işaretlemek, bir kullanıcıyı yasaklamak, DM ile uyarmak, bir rozet vermek, e-posta göndermek, paylaşılan bir belleği kaydetmek ve aramak. Tam liste [İzin Verilen Araç Çağrıları Genel Bakışı](#tools-overview) sayfasındadır.
+1. **A personality.** A free-text initial prompt that defines tone, role, and decision‑making style ("You are a warm community greeter", "You enforce the community rules but err toward warning over banning", and so on).
+2. **One or more triggers.** A list of events that wake the agent up - a new comment, a comment crossing a vote or flag threshold, a moderator action, a user's first comment on the site, and others. The full list is in [Trigger Events Overview](#triggers-overview).
+3. **An allowlist of tools.** What the agent is allowed to do - post a comment, vote, pin, lock, mark spam, ban a user, warn via DM, award a badge, send email, save and search a shared memory. The full list is in [Allowed Tool Calls Overview](#tools-overview).
 
-Bir tetikleyici çalıştığında, agent ne olduğunu tanımlayan bir bağlam mesajı (yorum, sayfa, isteğe bağlı konu/kullanıcı/sayfa bağlamı) alır ve başlangıç istemi ile topluluk yönergeleriniz gösterilir. Ardından eylemde bulunmak için araçları çağırır ve her çağrıda bir gerekçe ile bir güven puanı kaydeder.
+When a trigger fires, the agent receives a context message describing what happened (the comment, the page, optional thread/user/page context) and is prompted with its initial prompt and your community guidelines. It then calls tools to act, recording a justification and a confidence score with every call.
 
-### Agent'ler eşzamansız çalışır
+### Agents run asynchronously
 
-Agent'ler **onları tetikleyen kullanıcı eylemini asla engellemez**. Bir okuyucu bir yorum gönderir, yorum kaydedilir ve konuya gösterilir, yanıt döndürülür ve ancak *ondan sonra* agent üzerinde çalışır — ya hemen ya da yapılandırılmış bir gecikmeden sonra (bkz. [Ertelenmiş Tetikleyiciler](#trigger-deferred-delay)). Agent'in yaptığı hiçbir şey kullanıcıya görünen deneyime gecikme eklemez.
+Agents **never block the user action that triggered them**. A reader posts a comment, the comment is saved and shown to the thread, the response is returned, and only *then* does the agent run on it - either immediately or after a configured delay (see [Deferred Triggers](#trigger-deferred-delay)). Nothing the agent does adds latency to the user‑facing experience.
 
-### Neden kullanılır
+### Why use them
 
-- **Ölçekli moderasyon.** Açık spamleri işaretleyin ve tekrar eden ihlal yapanları sürekli kuyruğu izlemeye gerek kalmadan yasaklayın.
-- **Yeni yorumcuları karşılayın.** İlk kez yorum yapanlara kendi sesinizle cevap verin.
-- **En iyi içeriği öne çıkarın.** Oy eşiğini aştığında önemli üst düzey yorumları sabitleyin.
-- **Yönergelerinizi tutarlı şekilde uygulayın.** Her sınırdaki yoruma aynı politika metnini uygulayın.
-- **Uzun başlıkları özetleyin.** Çok sayfalı tartışmaların tarafsız özetlerini gönderin.
+- **Moderate at scale.** Mark obvious spam and ban repeat offenders without watching the queue around the clock.
+- **Welcome new commenters.** Reply to first‑time commenters in your voice.
+- **Surface the best content.** Pin substantive top‑level comments once they cross a vote threshold.
+- **Enforce your guidelines consistently.** Apply the same policy text to every borderline comment.
+- **Summarize long threads.** Post neutral summaries of multi‑page debates.
 
-### Sizi kontrol altında tutanlar
+### What keeps you in control
 
-- **Kuru Çalıştırma modu.** Her yeni agent **Dry Run** modunda gelir: tetikleyicileri işler, modeli çalıştırır ve ne yapacağını kaydeder, ancak gerçek bir işlem yapmaz. Bkz. [Kuru Çalıştırma Modu](#dry-run-mode).
-- **Onaylar.** Herhangi bir işlem alt kümesi insan onayının arkasına alınabilir. Bkz. [Onay İş Akışı](#approval-workflow).
-- **Agent başına ve hesap başına bütçeler.** Günlük ve aylık katı sınırlar. Bkz. [Bütçeler Genel Bakışı](#budgets-overview).
-- **Araç izin listesi.** İzin verilmeyen araçlar modelin paletinden çıkarılır - agent gerçekten onları talep edemez. Bkz. [İzin Verilen Araç Çağrıları Genel Bakışı](#tools-overview).
-- **Her işlemde denetim alanları.** Model bir gerekçe ve güven puanı içermelidir. Her ikisi de çalışma zaman çizelgesinde ve her onayda görünür. Bkz. [Çalışma Detay Görünümü](#run-detail-view).
-- **AB DSA Madde 17.** AB bölgesinde tam otomatik yasaklamalar engellenir. Bkz. [AB DSA Madde 17 Uyum](#eu-dsa-compliance).
-- **Verileriniz üzerinde eğitim yapılmaz.** FastComments, istemleriniz veya yorumlarınız üzerinde eğitim yapmayan sağlayıcıları kullanır.
+- **Dry-run mode.** Every new agent ships in **Dry Run**: it processes triggers, runs the model, and records what it *would* do, but takes no real actions. See [Dry-Run Mode](#dry-run-mode).
+- **Approvals.** Any subset of actions can be gated behind human approval. See [Approval Workflow](#approval-workflow).
+- **Per-agent and per-account budgets.** Hard daily and monthly caps. See [Budgets Overview](#budgets-overview).
+- **Tool allowlist.** Disallowed tools are pruned from the model's palette - the agent literally cannot request them. See [Allowed Tool Calls Overview](#tools-overview).
+- **Audit fields on every action.** The model must include a justification and confidence score. Both appear in the run timeline and on every approval. See [Run Detail View](#run-detail-view).
+- **EU DSA Article 17.** In the EU region, fully‑automated bans are blocked. See [EU DSA Article 17 Compliance](#eu-dsa-compliance).
+- **No training on your data.** FastComments uses providers that do not train on your prompts or comments.
 
-### İnsan moderasyonunun yanında nasıl yer alırlar
+### Where they fit alongside human moderation
 
-Agent'ler ve insan moderatörler aynı yorum platformunu paylaşır: agent'ler aynı kanallar aracılığıyla işlem yapar (approve, spam, ban, badge, pin, lock, write) ve bu işlemler aynı [Yorum Kayıtları](/guide-moderation.html#comment-logs), aynı [Moderasyon Sayfası](/guide-moderation.html#moderate-comments-page) ve aynı bildirim akışlarında görünür. Agent'ler ve insanlar birbirlerinin işlerini görür ve birbirlerine tepki verebilir — moderatör işlemleri kendileri de geçerli agent tetikleyicileridir (bkz. [Tetikleyici: Moderatör Tarafından İncelenen Yorum](#trigger-moderator-reviewed) ve benzerleri).
+Agents and human moderators share the same comment platform: agents take actions through the same channels (approve, spam, ban, badge, pin, lock, write) and those actions appear in the same [Comment Logs](/guide-moderation.html#comment-logs), the same [Moderation Page](/guide-moderation.html#moderate-comments-page), and the same notification streams. Agents and humans see each other's work and can each react to the other - moderator actions are themselves valid agent triggers (see [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) and friends).
+
+If you need people on the queue as well, FastComments offers [Human Moderation Services](/guide-moderation.html#human-moderation-services): our moderators work alongside your agents, in your dashboard, under your guidelines.

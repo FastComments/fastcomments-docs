@@ -303,17 +303,17 @@
       "subCat": "답글 박스"
     },
     {
-      "name": "싱글 사인온(SSO) 개요",
+      "name": "싱글 사인온 (SSO) 개요",
       "file": "sso.md",
       "subCat": "SSO"
     },
     {
-      "name": "맞춤 통합 - 보안 싱글 사인온(SSO)",
+      "name": "맞춤 통합 - 보안 싱글 사인온 (SSO)",
       "file": "sso-secure.md",
       "subCat": "SSO"
     },
     {
-      "name": "맞춤 통합 - 간단 싱글 사인온(SSO)",
+      "name": "맞춤 통합 - 간단 싱글 사인온 (SSO)",
       "file": "sso-simple.md",
       "subCat": "SSO"
     },
@@ -380,6 +380,11 @@
     {
       "name": "허용 언어 제한",
       "file": "allowed-languages.md",
+      "subCat": "기타"
+    },
+    {
+      "name": "댓글 번역",
+      "file": "comment-translation.md",
       "subCat": "기타"
     },
     {

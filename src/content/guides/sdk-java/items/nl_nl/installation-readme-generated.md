@@ -1,6 +1,6 @@
 ### Maven
 
-Voeg de Repsy-repository toe aan de POM van je project:
+Add the Repsy repository to your project's POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Voeg de Repsy-repository toe aan de POM van je project:
 </repositories>
 ```
 
-Voeg vervolgens de benodigde dependencies toe:
+Then add the dependencies you need:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Voeg vervolgens de benodigde dependencies toe:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- Core-bibliotheek (inclusief SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- PubSub-bibliotheek (voor live‑evenementen) -->
+    <!-- PubSub-bibliotheek (voor live‑events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Voeg de Repsy-repository toe aan je `build.gradle`‑bestand:
+Add the Repsy repository to your build.gradle file:
 
 ```groovy
 repositories {
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // API-client
-    implementation "com.fastcomments:client:3.0.1"
+    implementation "com.fastcomments:client:3.1.1"
     
     // Core-bibliotheek (inclusief SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    implementation "com.fastcomments:core:3.1.1"
     
-    // PubSub-bibliotheek (voor live‑evenementen)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    // PubSub-bibliotheek (voor live‑events)
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
 ### Library Contents
 
-Deze bibliotheek bevat drie modules: de gegenereerde API‑client, de core‑Java‑bibliotheek die handgeschreven hulpprogramma’s bevat om het werken met de API te vergemakkelijken, en de `pubsub`‑module, een bibliotheek voor het abonneren op wijzigingsfeeds.
+Deze bibliotheek bevat drie modules. De gegenereerde API‑client, de core‑Java‑bibliotheek die handgeschreven hulpprogramma’s bevat om het werken met de API makkelijker te maken, en de `pubsub`‑module die een bibliotheek is voor het abonneren op wijzigingsfeeds.
 
-- [API-clientbibliotheekdocumentatie](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core-bibliotheekdocumentatie, inclusief SSO‑voorbeelden](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSubscriptie‑bibliotheekdocumentatie](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API‑clientbibliotheek‑documentatie](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core‑bibliotheek‑documentatie, inclusief SSO‑voorbeelden](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub‑bibliotheek‑documentatie](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Public vs Secured APIs
 
-Voor de API‑client zijn er drie klassen: `DefaultApi`, `PublicApi` en `ModerationApi`. `DefaultApi` bevat methoden die je API‑sleutel vereisen, en `PublicApi` bevat methoden die rechtstreeks vanuit een browser/mobiel apparaat/etc. kunnen worden aangeroepen zonder authenticatie.
+Voor de API‑client zijn er drie klassen, `DefaultApi`, `PublicApi` en `ModerationApi`. De `DefaultApi` bevat methoden die je API‑sleutel vereisen, en de `PublicApi` bevat methoden die rechtstreeks vanuit een browser/mobiel apparaat/etc. kunnen worden aangeroepen zonder authenticatie.
 
-`ModerationApi` biedt een uitgebreide reeks live‑ en snelle moderatie‑API’s. Elke `ModerationApi`‑methode accepteert een `sso`‑parameter en kan authenticeren via SSO of een FastComments.com‑sessiecookie.
+De `ModerationApi` biedt een uitgebreide reeks live‑ en snelle moderatie‑API’s. Elke `ModerationApi`‑methode accepteert een `sso`‑parameter en kan authenticeren via SSO of een FastComments.com‑sessiecookie.

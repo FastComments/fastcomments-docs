@@ -3,7 +3,7 @@
   "icon": "moderator.png",
   "itemsOrdered": [
     {
-      "name": "Strona moderowania komentarzy",
+      "name": "Strona moderacji komentarzy",
       "file": "moderate-comments-page.md",
       "subCat": "Wprowadzenie"
     },
@@ -28,7 +28,7 @@
       "subCat": "Moderatorzy"
     },
     {
-      "name": "Jak działa zatwierdzanie",
+      "name": "Jak działają zatwierdzenia",
       "file": "moderation-approvals.md",
       "subCat": "Proces moderacji"
     },
@@ -48,7 +48,7 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Udostępnianie linków do moderacji",
+      "name": "Udostępnianie linków moderacji",
       "file": "sharing-moderation-links.md",
       "subCat": "Proces moderacji"
     },
@@ -68,22 +68,22 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Działania moderacyjne w widżecie komentarza",
+      "name": "Działania moderacyjne z widgetu komentarzy",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Moderacja na żywo",
+      "name": "Moderowanie na żywo",
       "file": "comment-actions-live.md",
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Blokowanie użytkowników",
+      "name": "Banowanie użytkowników",
       "file": "banning-users.md",
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Blokowanie użytkowników za pomocą znaków wieloznacznych",
+      "name": "Banowanie użytkowników z użyciem znaków wieloznacznych",
       "file": "banning-users-wildcards.md",
       "subCat": "Proces moderacji"
     },
@@ -93,7 +93,7 @@
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Działania masowe",
+      "name": "Działania zbiorcze",
       "file": "bulk-actions.md",
       "subCat": "Proces moderacji"
     },
@@ -118,18 +118,23 @@
       "subCat": "Spam i wulgaryzmy"
     },
     {
-      "name": "Dzienniki komentarzy",
+      "name": "Logi komentarzy",
       "file": "comment-logs.md",
       "subCat": "Proces moderacji"
     },
     {
-      "name": "Skróty klawiszowe",
+      "name": "Skróty klawiaturowe",
       "file": "keyboard-shortcuts.md",
       "subCat": "Proces moderacji"
     },
     {
       "name": "Agenci AI",
       "file": "ai-agents-pointer.md",
+      "subCat": "Proces moderacji"
+    },
+    {
+      "name": "Usługi moderacji ludzkiej",
+      "file": "human-moderation-services.md",
       "subCat": "Proces moderacji"
     }
   ]

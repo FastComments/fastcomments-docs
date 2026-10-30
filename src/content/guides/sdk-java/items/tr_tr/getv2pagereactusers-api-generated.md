@@ -5,6 +5,7 @@
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
 | id | string | query | Evet |  |
+| sso | string | query | Hayır |  |
 
 ## Yanıt
 
@@ -30,8 +31,10 @@ public class Example {
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
     String id = "id_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       GetV2PageReactUsersResponse result = apiInstance.getV2PageReactUsers(tenantId, urlId, id)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

@@ -1,13 +1,15 @@
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|----------|----------|-------------|
-| tenantId | string | path | Ja |  |
-| urlId | string | query | Ja |  |
+|------|------|-----|--------------|--------------|
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| sso | string | query | No |  |
+| includeUserInfo | string | query | No | Wenn gesetzt, werden die Benutzer für jede Reaktions‑ID zurückgegeben (Avatare und Benutzernamen). Nur "public" wird akzeptiert, wodurch private Profile weggelassen werden. |
 
 ## Antwort
 
-Gibt zurück: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
+Rückgabe: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetV2PageReacts.java)
 
 ## Beispiel
 
@@ -28,17 +30,23 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Wenn gesetzt, werden die Benutzer für jede Reaktions‑ID zurückgegeben (Avatare und Benutzernamen). Nur \"public\" wird akzeptiert, wodurch private Profile weggelassen werden.
     try {
       GetV2PageReacts result = apiInstance.getV2PageReacts(tenantId, urlId)
+            .sso(sso)
+            .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#getV2PageReacts");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Ausnahme beim Aufruf von PublicApi#getV2PageReacts");
+      System.err.println("Statuscode: " + e.getCode());
+      System.err.println("Grund: " + e.getResponseBody());
+      System.err.println("Antwort-Header: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

@@ -1,39 +1,41 @@
-req  
-tenantId  
-urlId  
+req
+tenantId
+urlId
 
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательно | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Да |  |
-| urlId | string | query | Да |  |
-| page | integer | query | Нет |  |
-| direction | string | query | Нет |  |
-| sso | string | query | Нет |  |
-| skip | integer | query | Нет |  |
-| skipChildren | integer | query | Нет |  |
-| limit | integer | query | Нет |  |
-| limitChildren | integer | query | Нет |  |
-| countChildren | boolean | query | Нет |  |
-| fetchPageForCommentId | string | query | Нет |  |
-| includeConfig | boolean | query | Нет |  |
-| countAll | boolean | query | Нет |  |
-| includei10n | boolean | query | Нет |  |
-| locale | string | query | Нет |  |
-| modules | string | query | Нет |  |
-| isCrawler | boolean | query | Нет |  |
-| includeNotificationCount | boolean | query | Нет |  |
-| asTree | boolean | query | Нет |  |
-| maxTreeDepth | integer | query | Нет |  |
-| useFullTranslationIds | boolean | query | Нет |  |
-| parentId | string | query | Нет |  |
-| searchText | string | query | Нет |  |
-| hashTags | array | query | Нет |  |
-| userId | string | query | Нет |  |
-| customConfigStr | string | query | Нет |  |
-| afterCommentId | string | query | Нет |  |
-| beforeCommentId | string | query | Нет |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## Ответ
 
@@ -43,7 +45,7 @@ urlId
 
 [inline-code-attrs-start title = 'Пример getCommentsPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода всё ещё находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие образцы кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -74,8 +76,10 @@ let userId = "userId_example" // String |  (необязательно)
 let customConfigStr = "customConfigStr_example" // String |  (необязательно)
 let afterCommentId = "afterCommentId_example" // String |  (необязательно)
 let beforeCommentId = "beforeCommentId_example" // String |  (необязательно)
+let questionId = "questionId_example" // String |  (необязательно)
+let questionValue = 987 // Int |  (необязательно)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId, questionId: questionId, questionValue: questionValue)) { (response, error) in
     guard error == nil else {
         print(error)
         return

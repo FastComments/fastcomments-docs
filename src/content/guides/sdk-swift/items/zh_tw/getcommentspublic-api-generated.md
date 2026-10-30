@@ -4,8 +4,8 @@ urlId
 
 ## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
-|------|------|----------|------|-----|
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | 是 |  |
 | urlId | string | query | 是 |  |
 | page | integer | query | 否 |  |
@@ -34,6 +34,8 @@ urlId
 | customConfigStr | string | query | 否 |  |
 | afterCommentId | string | query | 否 |  |
 | beforeCommentId | string | query | 否 |  |
+| questionId | string | query | 否 |  |
+| questionValue | integer | query | 否 |  |
 
 ## 回應
 
@@ -48,34 +50,36 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let page = 987 // Int |  （可選）
-let direction = SortDirections() // SortDirections |  （可選）
-let sso = "sso_example" // String |  （可選）
-let skip = 987 // Int |  （可選）
-let skipChildren = 987 // Int |  （可選）
-let limit = 987 // Int |  （可選）
-let limitChildren = 987 // Int |  （可選）
-let countChildren = true // Bool |  （可選）
-let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  （可選）
-let includeConfig = true // Bool |  （可選）
-let countAll = true // Bool |  （可選）
-let includei10n = true // Bool |  （可選）
-let locale = "locale_example" // String |  （可選）
-let modules = "modules_example" // String |  （可選）
-let isCrawler = true // Bool |  （可選）
-let includeNotificationCount = true // Bool |  （可選）
-let asTree = true // Bool |  （可選）
-let maxTreeDepth = 987 // Int |  （可選）
-let useFullTranslationIds = true // Bool |  （可選）
-let parentId = "parentId_example" // String |  （可選）
-let searchText = "searchText_example" // String |  （可選）
-let hashTags = ["inner_example"] // [String] |  （可選）
-let userId = "userId_example" // String |  （可選）
-let customConfigStr = "customConfigStr_example" // String |  （可選）
-let afterCommentId = "afterCommentId_example" // String |  （可選）
-let beforeCommentId = "beforeCommentId_example" // String |  （可選）
+let page = 987 // Int |  (可選)
+let direction = SortDirections() // SortDirections |  (可選)
+let sso = "sso_example" // String |  (可選)
+let skip = 987 // Int |  (可選)
+let skipChildren = 987 // Int |  (可選)
+let limit = 987 // Int |  (可選)
+let limitChildren = 987 // Int |  (可選)
+let countChildren = true // Bool |  (可選)
+let fetchPageForCommentId = "fetchPageForCommentId_example" // String |  (可選)
+let includeConfig = true // Bool |  (可選)
+let countAll = true // Bool |  (可選)
+let includei10n = true // Bool |  (可選)
+let locale = "locale_example" // String |  (可選)
+let modules = "modules_example" // String |  (可選)
+let isCrawler = true // Bool |  (可選)
+let includeNotificationCount = true // Bool |  (可選)
+let asTree = true // Bool |  (可選)
+let maxTreeDepth = 987 // Int |  (可選)
+let useFullTranslationIds = true // Bool |  (可選)
+let parentId = "parentId_example" // String |  (可選)
+let searchText = "searchText_example" // String |  (可選)
+let hashTags = ["inner_example"] // [String] |  (可選)
+let userId = "userId_example" // String |  (可選)
+let customConfigStr = "customConfigStr_example" // String |  (可選)
+let afterCommentId = "afterCommentId_example" // String |  (可選)
+let beforeCommentId = "beforeCommentId_example" // String |  (可選)
+let questionId = "questionId_example" // String |  (可選)
+let questionValue = 987 // Int |  (可選)
 
-PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId)) { (response, error) in
+PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetCommentsPublicOptions(page: page, direction: direction, sso: sso, skip: skip, skipChildren: skipChildren, limit: limit, limitChildren: limitChildren, countChildren: countChildren, fetchPageForCommentId: fetchPageForCommentId, includeConfig: includeConfig, countAll: countAll, includei10n: includei10n, locale: locale, modules: modules, isCrawler: isCrawler, includeNotificationCount: includeNotificationCount, asTree: asTree, maxTreeDepth: maxTreeDepth, useFullTranslationIds: useFullTranslationIds, parentId: parentId, searchText: searchText, hashTags: hashTags, userId: userId, customConfigStr: customConfigStr, afterCommentId: afterCommentId, beforeCommentId: beforeCommentId, questionId: questionId, questionValue: questionValue)) { (response, error) in
     guard error == nil else {
         print(error)
         return

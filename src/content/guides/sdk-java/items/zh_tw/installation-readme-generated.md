@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-然後加入您需要的相依性：
+然後加入您需要的相依套件：
 
 ```xml
 <dependencies>
@@ -20,21 +20,21 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
@@ -53,13 +53,13 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.0.1"
+    implementation "com.fastcomments:client:3.1.1"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    implementation "com.fastcomments:core:3.1.1"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
@@ -75,4 +75,4 @@ dependencies {
 
 對於 API 客戶端，有三個類別：`DefaultApi`、`PublicApi` 與 `ModerationApi`。`DefaultApi` 包含需要您的 API 金鑰的方法，`PublicApi` 包含可直接從瀏覽器/行動裝置等無需驗證即可呼叫的方法。
 
-`ModerationApi` 提供廣泛的即時與快速審核 API。每個 `ModerationApi` 方法都接受 `sso` 參數，並可透過 SSO 或 FastComments.com 的會話 Cookie 進行驗證。
+`ModerationApi` 提供廣泛的即時與快速審核 API。每個 `ModerationApi` 方法皆接受 `sso` 參數，並可透過 SSO 或 FastComments.com 的會話 Cookie 進行驗證。

@@ -4,12 +4,12 @@ Dodajte sledeće u vaš `Package.swift` fajl:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
 ]
 ```
 
-Ili u Xcode-u:
-1. Datoteka > Dodaj pakete...
+Ili u Xcode:
+1. File > Add Packages...
 2. Unesite URL repozitorijuma: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Izaberite verziju koju želite da koristite
 

@@ -18,7 +18,7 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Estatísticas dos Moderadores",
+      "name": "Estatísticas do Moderador",
       "file": "moderator-stats.md",
       "subCat": "Moderadores"
     },
@@ -28,12 +28,12 @@
       "subCat": "Moderadores"
     },
     {
-      "name": "Como Funcionam as Aprovações",
+      "name": "Como funcionam as aprovações",
       "file": "moderation-approvals.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Moderação por E-mail",
+      "name": "Moderação via Email",
       "file": "moderation-via-email.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
@@ -48,88 +48,93 @@
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Compartilhando Links de Moderação",
+      "name": "Compartilhando links de moderação",
       "file": "sharing-moderation-links.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Visualizador do Encadeamento de Comentários",
+      "name": "Visualizador de tópicos de comentários",
       "file": "comment-thread-viewer.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Ações de Moderação",
+      "name": "Ações de moderação",
       "file": "comment-actions.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Excluindo Comentários",
+      "name": "Excluindo comentários",
       "file": "deleting-comments.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Ações de Moderação no Widget de Comentários",
+      "name": "Ações de moderação a partir do widget de comentário",
       "file": "comment-actions-from-comment-widget.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Moderação ao Vivo",
+      "name": "Moderação ao vivo",
       "file": "comment-actions-live.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Banindo Usuários",
+      "name": "Banindo usuários",
       "file": "banning-users.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Banindo Usuários com Curingas",
+      "name": "Banindo usuários com curingas",
       "file": "banning-users-wildcards.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Sinalização",
+      "name": "Denúncia",
       "file": "flagging.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Ações em Massa",
+      "name": "Ações em massa",
       "file": "bulk-actions.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Grupos de Moderação",
+      "name": "Grupos de moderação",
       "file": "moderation-groups.md",
-      "subCat": "Grupos de Moderação"
+      "subCat": "Grupos de moderação"
     },
     {
-      "name": "Configurações de Moderação",
+      "name": "Configurações de moderação",
       "file": "moderation-settings.md",
       "subCat": "Configuração"
     },
     {
-      "name": "Detecção de Spam",
+      "name": "Detecção de spam",
       "file": "spam-detection.md",
       "subCat": "Spam e Profanidade"
     },
     {
-      "name": "Mascaramento de Palavrões",
+      "name": "Mascaramento de profanidade",
       "file": "profanity-mask.md",
       "subCat": "Spam e Profanidade"
     },
     {
-      "name": "Registros de Comentários",
+      "name": "Logs de comentários",
       "file": "comment-logs.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
-      "name": "Atalhos de Teclado",
+      "name": "Atalhos de teclado",
       "file": "keyboard-shortcuts.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     },
     {
       "name": "Agentes de IA",
       "file": "ai-agents-pointer.md",
+      "subCat": "Fluxo de Trabalho de Moderação"
+    },
+    {
+      "name": "Serviços de moderação humana",
+      "file": "human-moderation-services.md",
       "subCat": "Fluxo de Trabalho de Moderação"
     }
   ]

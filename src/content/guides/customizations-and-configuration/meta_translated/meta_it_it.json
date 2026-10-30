@@ -28,12 +28,12 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Rimuovere il branding",
+      "name": "Rimozione del branding",
       "file": "remove-branding.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Supportare sfondi scuri (Modalità scura)",
+      "name": "Supporto per sfondi scuri (Modalità scura)",
       "file": "has-dark-background.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -68,12 +68,12 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Collassare le risposte per impostazione predefinita",
+      "name": "Comprimi le risposte per impostazione predefinita",
       "file": "collapse-replies.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare WYSIWYG",
+      "name": "Abilita WYSIWYG",
       "file": "enable-wysiwyg.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -88,12 +88,12 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Determinare quale pagina renderizzare",
+      "name": "Determinare quale pagina visualizzare",
       "file": "starting-page.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Passare tra thread di commenti senza ricaricare la pagina",
+      "name": "Cambiare i thread dei commenti senza ricaricare la pagina",
       "file": "switching-comment-threads.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -108,12 +108,12 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Aggiungere testo di intestazione",
+      "name": "Aggiungere testo all'intestazione",
       "file": "header-html.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Renderizzare i link come testo",
+      "name": "Visualizzare i link come testo",
       "file": "render-links-as-text.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -128,42 +128,42 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare il reindirizzamento delle immagini",
+      "name": "Disabilita reindirizzamento immagine",
       "file": "disable-image-redirect.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare la creazione automatica di hashtag",
+      "name": "Disabilita creazione automatica di hashtag",
       "file": "disable-automatic-hashtag-creation.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare la campanella di notifica",
+      "name": "Disabilita la campanella delle notifiche",
       "file": "disable-notification-bell.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare i profili",
+      "name": "Disabilita i profili",
       "file": "disable-profiles.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare i commenti del profilo",
+      "name": "Disabilita i commenti del profilo",
       "file": "disable-profile-comments.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare i messaggi diretti del profilo",
+      "name": "Disabilita i messaggi diretti del profilo",
       "file": "disable-profile-direct-messages.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare il messaggio di successo",
+      "name": "Disabilita il messaggio di successo",
       "file": "disable-success-message.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Cambiare la valutazione dei contenuti dei GIF",
+      "name": "Cambia la classificazione dei contenuti dei GIF",
       "file": "gif-rating.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -173,17 +173,17 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Cambiare lo stile di voto",
+      "name": "Cambia lo stile di voto",
       "file": "vote-style.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare l'eliminazione",
+      "name": "Disabilita l'eliminazione",
       "file": "disable-deleting.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare la modifica",
+      "name": "Disabilita la modifica",
       "file": "disable-editing.md",
       "subCat": "Aspetto e sensazione"
     },
@@ -208,37 +208,37 @@
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Disabilitare il caricamento di immagini",
+      "name": "Disabilita il caricamento di immagini",
       "file": "no-image-uploads.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Consentire incorporamenti multimediali",
+      "name": "Consenti incorporamenti multimediali",
       "file": "allow-media-embeds.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare la casella di ricerca",
+      "name": "Abilita la casella di ricerca",
       "file": "enable-search.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare spoiler",
+      "name": "Abilita spoiler",
       "file": "enable-spoilers.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Abilitare il conteggio delle visualizzazioni dei commenti",
+      "name": "Abilita il conteggio delle visualizzazioni dei commenti",
       "file": "enable-comment-view-counts.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostrare i commenti live immediatamente",
+      "name": "Mostra i commenti live immediatamente",
       "file": "show-live-right-away.md",
       "subCat": "Commenti live"
     },
     {
-      "name": "Disabilitare i commenti live",
+      "name": "Disabilita i commenti live",
       "file": "disable-live-commenting.md",
       "subCat": "Commenti live"
     },
@@ -273,12 +273,12 @@
       "subCat": "La casella di risposta"
     },
     {
-      "name": "Disabilitare i commenti multilinea",
+      "name": "Disabilita i commenti multilinea",
       "file": "use-single-line-comment-input.md",
       "subCat": "La casella di risposta"
     },
     {
-      "name": "Limitare il volume dei commenti per utente",
+      "name": "Limita il volume dei commenti per utente",
       "file": "limit-comment-volume-per-user.md",
       "subCat": "La casella di risposta"
     },
@@ -293,12 +293,12 @@
       "subCat": "La casella di risposta"
     },
     {
-      "name": "Richiedere l'accettazione dei termini di servizio",
+      "name": "Richiedi l'accettazione dei termini di servizio",
       "file": "terms-of-service.md",
       "subCat": "La casella di risposta"
     },
     {
-      "name": "Avvertire prima di uscire con un commento non inviato",
+      "name": "Avvisa prima di uscire con un commento non inviato",
       "file": "warn-on-unsaved-comment.md",
       "subCat": "La casella di risposta"
     },
@@ -328,12 +328,12 @@
       "subCat": "SSO"
     },
     {
-      "name": "Proteggere i thread di commenti con Single Sign-On",
+      "name": "Proteggere i thread dei commenti con Single Sign-On",
       "file": "sso-require-to-view-comments.md",
       "subCat": "SSO"
     },
     {
-      "name": "Consentire commenti anonimi",
+      "name": "Consenti commenti anonimi",
       "file": "allow-anon.md",
       "subCat": "Commenti anonimi"
     },
@@ -343,17 +343,17 @@
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilitare gli input email",
+      "name": "Disabilita gli input email",
       "file": "disable-email-inputs.md",
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Disabilitare l'etichetta non verificata",
+      "name": "Disabilita l'etichetta non verificata",
       "file": "disable-unverified-label.md",
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Consentire voti anonimi",
+      "name": "Consenti voti anonimi",
       "file": "allow-anon-votes.md",
       "subCat": "Commenti anonimi"
     },
@@ -363,7 +363,7 @@
       "subCat": "Commenti anonimi"
     },
     {
-      "name": "Generare nomi utente automaticamente",
+      "name": "Genera nomi utente automaticamente",
       "file": "auto-generate-username.md",
       "subCat": "Commenti anonimi"
     },
@@ -380,6 +380,11 @@
     {
       "name": "Limitare le lingue consentite",
       "file": "allowed-languages.md",
+      "subCat": "Varie"
+    },
+    {
+      "name": "Traduzione dei commenti",
+      "file": "comment-translation.md",
       "subCat": "Varie"
     },
     {
@@ -413,7 +418,7 @@
       "subCat": "Varie"
     },
     {
-      "name": "Menzionare ID di gruppo",
+      "name": "Menziona ID di gruppo",
       "file": "mention-group-ids.md",
       "subCat": "Varie"
     },
@@ -428,12 +433,12 @@
       "subCat": "Varie"
     },
     {
-      "name": "Mostrare i badge nella barra superiore",
+      "name": "Mostra i badge nella barra superiore",
       "file": "show-badges-in-top-bar.md",
       "subCat": "Aspetto e sensazione"
     },
     {
-      "name": "Mostrare la lista degli utenti online",
+      "name": "Mostra la lista degli utenti online",
       "file": "users-list.md",
       "subCat": "Aspetto e sensazione"
     }

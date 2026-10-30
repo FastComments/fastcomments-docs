@@ -7,6 +7,7 @@
 | broadcastId | string | query | כן |  |
 | sessionId | string | query | לא |  |
 | sso | string | query | לא |  |
+| locale | string | query | לא |  |
 
 ## תגובה
 
@@ -14,9 +15,9 @@
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמה ל-createCommentPublic'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createCommentPublic דוגמה'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבוא מחלקות:
+// ייבא מחלקות:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -51,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

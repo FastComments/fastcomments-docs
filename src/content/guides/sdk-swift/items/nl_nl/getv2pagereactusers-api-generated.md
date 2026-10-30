@@ -5,10 +5,11 @@
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | id | string | query | Ja |  |
+| sso | string | query | Nee |  |
 
-## Antwoord
+## Respons
 
-Geeft terug: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetV2PageReactUsersResponse.swift)
+Retourneert: [`GetV2PageReactUsersResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetV2PageReactUsersResponse.swift)
 
 ## Voorbeeld
 
@@ -20,8 +21,9 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let id = "id_example" // String | 
+let sso = "sso_example" // String |  (optioneel)
 
-PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (response, error) in
+PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id, sso: sso) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ PublicAPI.getV2PageReactUsers(tenantId: tenantId, urlId: urlId, id: id) { (respo
     }
 }
 [inline-code-end]
-
----

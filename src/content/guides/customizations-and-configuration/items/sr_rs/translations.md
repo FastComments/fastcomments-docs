@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'translations'; type = 'Record<string, string>'; related-parameter-end]
 
 Са FastComments, сав текст у виџету за коментаре је прилагодљив.
@@ -11,10 +10,10 @@
 
 Све прилагодљиве преводе можете пронаћи <a href="https://fastcomments.com/auth/my-account/get-acct-code#translations" target="_blank">овде</a> под картицом „напредне опције“.
 
-Међутим, постоји једноставнији начин, преко корисничког интерфејса за прилагођавање виџета. Тамо можемо једноставно пронаћи текст који се приказује у виџету за коментаре у EN_US локалу и навести замену.
+Међутим, постоји једноставнији начин, преко UI‑ја за прилагођавање виџета. Тамо можемо једноставно пронаћи текст који се приказује у виџету за коментаре у EN_US локалу и навести замену.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-custom-text-option', '#custom-text-options .dropdown-btn', '.dropdown-items a[data-value="JUST_NOW"]']; selector = '#custom-text-options'; alt='Панел за прилагођени текст са низом виџета изабраним из падајућег менија и пољем за заменски текст'; title='Прилагођени текст' app-screenshot-end]
 
 Све заменe превода тренутно утичу на све локале.
 
----
+Ово покрива текст самог виџета. Да преведете коментаре које пишу ваши посетиоци, погледајте [Comment Translation](#comment-translation).

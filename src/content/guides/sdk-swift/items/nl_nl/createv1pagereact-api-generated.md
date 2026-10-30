@@ -1,12 +1,13 @@
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Vereist | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Ja |  |
 | urlId | string | query | Ja |  |
 | title | string | query | Nee |  |
+| sso | string | query | Nee |  |
 
-## Response
+## Respons
 
 Retourneert: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateV1PageReact.swift)
 
@@ -20,8 +21,9 @@ import FastCommentsSwift
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
 let title = "title_example" // String |  (optioneel)
+let sso = "sso_example" // String |  (optioneel)
 
-PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, title: title) { (response, error) in
+PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, options: PublicAPI.CreateV1PageReactOptions(title: title, sso: sso)) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -32,5 +34,3 @@ PublicAPI.createV1PageReact(tenantId: tenantId, urlId: urlId, title: title) { (r
     }
 }
 [inline-code-end]
-
----

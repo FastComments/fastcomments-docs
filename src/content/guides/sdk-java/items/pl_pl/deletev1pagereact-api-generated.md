@@ -1,9 +1,10 @@
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|-------------|
+|------|------|------------|----------|------|
 | tenantId | string | path | Tak |  |
 | urlId | string | query | Tak |  |
+| sso | string | query | Nie |  |
 
 ## Odpowiedź
 
@@ -28,17 +29,21 @@ public class Example {
     PublicApi apiInstance = new PublicApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
+    String sso = "sso_example"; // String | 
     try {
       CreateV1PageReact result = apiInstance.deleteV1PageReact(tenantId, urlId)
+            .sso(sso)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling PublicApi#deleteV1PageReact");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Wyjątek podczas wywoływania PublicApi#deleteV1PageReact");
+      System.err.println("Kod statusu: " + e.getCode());
+      System.err.println("Powód: " + e.getResponseBody());
+      System.err.println("Nagłówki odpowiedzi: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
+
+---

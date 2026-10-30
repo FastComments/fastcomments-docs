@@ -4,8 +4,8 @@ urlId
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов'язкове | Опис |
-|------|------|----------|----------|-------------|
+| Назва | Тип | Розташування | Обов'язково | Опис |
+|------|------|--------------|-------------|------|
 | tenantId | string | path | Так |  |
 | urlId | string | query | Так |  |
 | page | integer | query | Ні |  |
@@ -34,6 +34,8 @@ urlId
 | customConfigStr | string | query | Ні |  |
 | afterCommentId | string | query | Ні |  |
 | beforeCommentId | string | query | Ні |  |
+| questionId | string | query | Ні |  |
+| questionValue | integer | query | Ні |  |
 
 ## Відповідь
 
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -124,5 +130,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

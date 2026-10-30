@@ -1,4 +1,4 @@
-req
+요청
 tenantId
 urlId
 
@@ -6,34 +6,36 @@ urlId
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | 예 |  |
-| urlId | string | query | 예 |  |
-| page | integer | query | 아니오 |  |
-| direction | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
-| skip | integer | query | 아니오 |  |
-| skipChildren | integer | query | 아니오 |  |
-| limit | integer | query | 아니오 |  |
-| limitChildren | integer | query | 아니오 |  |
-| countChildren | boolean | query | 아니오 |  |
-| fetchPageForCommentId | string | query | 아니오 |  |
-| includeConfig | boolean | query | 아니오 |  |
-| countAll | boolean | query | 아니오 |  |
-| includei10n | boolean | query | 아니오 |  |
-| locale | string | query | 아니오 |  |
-| modules | string | query | 아니오 |  |
-| isCrawler | boolean | query | 아니오 |  |
-| includeNotificationCount | boolean | query | 아니오 |  |
-| asTree | boolean | query | 아니오 |  |
-| maxTreeDepth | integer | query | 아니오 |  |
-| useFullTranslationIds | boolean | query | 아니오 |  |
-| parentId | string | query | 아니오 |  |
-| searchText | string | query | 아니오 |  |
-| hashTags | array | query | 아니오 |  |
-| userId | string | query | 아니오 |  |
-| customConfigStr | string | query | 아니오 |  |
-| afterCommentId | string | query | 아니오 |  |
-| beforeCommentId | string | query | 아니오 |  |
+| tenantId | string | path | Yes |  |
+| urlId | string | query | Yes |  |
+| page | integer | query | No |  |
+| direction | string | query | No |  |
+| sso | string | query | No |  |
+| skip | integer | query | No |  |
+| skipChildren | integer | query | No |  |
+| limit | integer | query | No |  |
+| limitChildren | integer | query | No |  |
+| countChildren | boolean | query | No |  |
+| fetchPageForCommentId | string | query | No |  |
+| includeConfig | boolean | query | No |  |
+| countAll | boolean | query | No |  |
+| includei10n | boolean | query | No |  |
+| locale | string | query | No |  |
+| modules | string | query | No |  |
+| isCrawler | boolean | query | No |  |
+| includeNotificationCount | boolean | query | No |  |
+| asTree | boolean | query | No |  |
+| maxTreeDepth | integer | query | No |  |
+| useFullTranslationIds | boolean | query | No |  |
+| parentId | string | query | No |  |
+| searchText | string | query | No |  |
+| hashTags | array | query | No |  |
+| userId | string | query | No |  |
+| customConfigStr | string | query | No |  |
+| afterCommentId | string | query | No |  |
+| beforeCommentId | string | query | No |  |
+| questionId | string | query | No |  |
+| questionValue | integer | query | No |  |
 
 ## 응답
 
@@ -43,7 +45,7 @@ urlId
 
 [inline-code-attrs-start title = 'getCommentsPublic 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 가져오기:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -84,6 +86,8 @@ public class Example {
     String customConfigStr = "customConfigStr_example"; // String | 
     String afterCommentId = "afterCommentId_example"; // String | 
     String beforeCommentId = "beforeCommentId_example"; // String | 
+    String questionId = "questionId_example"; // String | 
+    Integer questionValue = 56; // Integer | 
     try {
       GetCommentsResponseWithPresencePublicComment result = apiInstance.getCommentsPublic(tenantId, urlId)
             .page(page)
@@ -112,6 +116,8 @@ public class Example {
             .customConfigStr(customConfigStr)
             .afterCommentId(afterCommentId)
             .beforeCommentId(beforeCommentId)
+            .questionId(questionId)
+            .questionValue(questionValue)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {

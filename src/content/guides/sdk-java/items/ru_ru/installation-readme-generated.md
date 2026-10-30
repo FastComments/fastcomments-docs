@@ -16,32 +16,32 @@
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- Клиент API -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Основная библиотека (включает SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- Библиотека PubSub (для живых событий) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.0.1</version>
+        <version>3.1.1</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Добавьте репозиторий Repsy в файл `build.gradle`:
+Добавьте репозиторий Repsy в файл build.gradle:
 
 ```groovy
 repositories {
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:3.0.1"
+    // Клиент API
+    implementation "com.fastcomments:client:3.1.1"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.0.1"
+    // Основная библиотека (включает SSO)
+    implementation "com.fastcomments:core:3.1.1"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.0.1"
+    // Библиотека PubSub (для живых событий)
+    implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### Library Contents
+### Содержимое библиотеки
 
-Эта библиотека содержит три модуля. Сгенерированный клиент API, основная Java‑библиотека, в которой находятся написанные вручную утилиты для упрощения работы с API, и модуль `pubsub`, представляющий собой библиотеку для подписки на потоки изменений.
+Эта библиотека содержит три модуля: сгенерированный клиент API, основную Java‑библиотеку, которая содержит написанные вручную утилиты для упрощения работы с API, и модуль `pubsub`, который представляет собой библиотеку для подписки на потоки изменений.
 
-- [Документация библиотеки API‑клиента](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Документация основной библиотеки (включая примеры SSO)](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Документация библиотеки клиента API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документация основной библиотеки, включая примеры SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Документация библиотеки PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Публичные и защищённые API
 
-Для API‑клиента существует три класса: `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` содержит методы, требующие вашего API‑ключа, а `PublicApi` — методы, которые можно вызывать напрямую из браузера, мобильного устройства и т.п. без аутентификации.
+Для клиента API существует три класса, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` содержит методы, требующие вашего API‑ключа, а `PublicApi` содержит методы, которые можно вызывать напрямую из браузера/мобильного устройства и т.д. без аутентификации.
 
-`ModerationApi` предоставляет обширный набор быстрых и живых API модерации. Каждый метод `ModerationApi` принимает параметр `sso` и может аутентифицироваться через SSO или сессионный cookie FastComments.com.
+`ModerationApi` предоставляет обширный набор живых и быстрых API модерации. Каждый метод `ModerationApi` принимает параметр `sso` и может аутентифицироваться через SSO или сессионный cookie FastComments.com.

@@ -1,12 +1,13 @@
 ## Parametri
 
-| Name | Type | Location | Required | Description |
-|------|------|----------|----------|-------------|
+| Naziv | Tip | Lokacija | Obavezno | Opis |
+|------|------|----------|----------|------|
 | tenantId | string | path | Da |  |
 | urlId | string | query | Da |  |
 | broadcastId | string | query | Da |  |
 | sessionId | string | query | Ne |  |
 | sso | string | query | Ne |  |
+| locale | string | query | Ne |  |
 
 ## Odgovor
 
@@ -16,7 +17,7 @@ Vraća: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createCommentPublic Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvoz klasa:
+// Uvezi klase:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +36,12 @@ public class Example {
     CommentData commentData = new CommentData(); // CommentData | 
     String sessionId = "sessionId_example"; // String | 
     String sso = "sso_example"; // String | 
+    String locale = "locale_example"; // String | 
     try {
       SaveCommentsResponseWithPresence result = apiInstance.createCommentPublic(tenantId, urlId, broadcastId, commentData)
             .sessionId(sessionId)
             .sso(sso)
+            .locale(locale)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
@@ -51,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----
