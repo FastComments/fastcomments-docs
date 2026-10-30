@@ -1,4 +1,5 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
+At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still
+keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
 
 #### We'll send notifications for the following events for administrators and moderators:
 

@@ -1,7 +1,9 @@
-To vote, click an option. The results are shown right away, and the poll shows how many responses it has so far.
+---
+Pour voter, cliquez sur une option. Les résultats sont affichés immédiatement, et le sondage indique le nombre de réponses qu'il a reçues jusqu'à présent.
 
-Each person gets one vote per poll. While the poll is open, a voter can click **Change vote** to pick a different option.
+Chaque personne obtient un vote par sondage. Tant que le sondage est ouvert, un électeur peut cliquer sur **Modifier le vote** pour choisir une option différente.
 
-Results update live. When anyone on the page votes, the counts and bars update for everyone viewing the poll, without a page refresh.
+Les résultats se mettent à jour en temps réel. Lorsqu'une personne sur la page vote, les compteurs et les barres se mettent à jour pour tous les visiteurs du sondage, sans rafraîchissement de la page.
 
-Unless the poll requires a vote to see the results, viewers can click **Show results** to see the current counts before voting.
+À moins que le sondage n'exige un vote pour voir les résultats, les visiteurs peuvent cliquer sur **Afficher les résultats** pour voir les comptes actuels avant de voter.
+---

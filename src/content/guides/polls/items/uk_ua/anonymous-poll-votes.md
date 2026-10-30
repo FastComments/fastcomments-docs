@@ -1,9 +1,11 @@
-By default, only logged in users can vote on polls. Visitors who are not logged in see a **Log in to vote** prompt instead of the vote buttons.
+---
+За замовчуванням лише зареєстровані користувачі можуть голосувати в опитуваннях. Відвідувачі, які не ввійшли в систему, бачать підказку **Log in to vote** замість кнопок голосування.
 
-Check **Allow Anonymous Poll Votes** to let anyone vote without an account.
+Позначте **Allow Anonymous Poll Votes**, щоб дозволити будь-кому голосувати без облікового запису.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.allow-anonymous-poll-votes'; alt='Опція Allow Anonymous Poll Votes у розділі Enable Polls'; title='Allow Anonymous Poll Votes' app-screenshot-end]
 
-To keep results fair, anonymous votes on a poll are limited to three per IP address per hour.
+Щоб забезпечити справедливість результатів, анонімні голоси в опитуванні обмежені трьома голосами з однієї IP-адреси за годину.
 
-This is separate from [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), which controls up and down votes on comments.
+Це окремо від [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), який контролює голоси «за» та «проти» в коментарях.
+---

@@ -1,3 +1,3 @@
-Once FastComments is on your GoHighLevel site, you can also run live polls right in the comments. Turn on **Enable Polls** in your widget customization settings and a poll button appears in the comment toolbar. Polls take 2 to 10 options, results update live for everyone on the page, and you choose who can create polls and whether voting requires logging in. There is nothing else to install on GoHighLevel.
+Zodra FastComments op uw GoHighLevel‑site staat, kunt u ook live‑peilingen uitvoeren direct in de reacties. Schakel **Enable Polls** in uw widget‑aanpassingsinstellingen in en er verschijnt een peiling‑knop in de commentaar‑werkbalk. Peilingen hebben 2 tot 10 opties, resultaten worden live bijgewerkt voor iedereen op de pagina, en u bepaalt wie peilingen mag maken en of stemmen een login vereist. Er hoeft niets anders geïnstalleerd te worden op GoHighLevel.
 
-[Try the Live Polls demo](https://fastcomments.com/product/live-polls) or read the [Polls documentation](/guide-polls.html) to set them up.
+[Probeer de Live Polls‑demo](https://fastcomments.com/product/live-polls) of lees de [Polls‑documentatie](/guide-polls.html) om ze in te stellen.
