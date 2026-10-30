@@ -1,3 +1,5 @@
-Once FastComments is on your Webnode site, you can also run live polls right in the comments. Turn on **Enable Polls** in your widget customization settings and a poll button appears in the comment toolbar. Polls take 2 to 10 options, results update live for everyone on the page, and you choose who can create polls and whether voting requires logging in. There is nothing else to install on Webnode.
+---
+Una vez que FastComments está en su sitio Webnode, también puede ejecutar encuestas en vivo directamente en los comentarios. Active **Enable Polls** en la configuración de personalización de su widget y aparecerá un botón de encuesta en la barra de herramientas de los comentarios. Las encuestas admiten de 2 a 10 opciones, los resultados se actualizan en tiempo real para todos en la página, y usted elige quién puede crear encuestas y si la votación requiere iniciar sesión. No hay nada más que instalar en Webnode.
 
-[Try the Live Polls demo](https://fastcomments.com/product/live-polls) or read the [Polls documentation](/guide-polls.html) to set them up.
+[Pruebe la demostración de Live Polls](https://fastcomments.com/product/live-polls) o lea la [documentación de Polls](/guide-polls.html) para configurarlas.
+---

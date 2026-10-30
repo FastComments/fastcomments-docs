@@ -5,15 +5,15 @@ MCP server, and a claim URL. Give the claim URL to the human you are working for
 logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
 deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
 
-## Response
+## Відповідь
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
+Повертає: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад createAgentTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Імпорт класів:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

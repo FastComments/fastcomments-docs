@@ -1,9 +1,12 @@
-By default, only logged in users can vote on polls. Visitors who are not logged in see a **Log in to vote** prompt instead of the vote buttons.
+---
+Подразумевано, само пријављени корисници могу гласати у анкетама. Посетиоци који нису пријављени виде упит **Log in to vote** уместо дугмади за гласање.
 
-Check **Allow Anonymous Poll Votes** to let anyone vote without an account.
+Означите **Allow Anonymous Poll Votes** да бисте дозволили свакоме да гласа без налога.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.allow-anonymous-poll-votes'; alt='Опција Allow Anonymous Poll Votes под Enable Polls'; title='Дозволи анонимно гласање у анкетама' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.allow-anonymous-poll-votes'; alt='Опција Allow Anonymous Poll Votes у оквиру Enable Polls'; title='Дозволи анонимно гласање у анкетама' app-screenshot-end]
 
-To keep results fair, anonymous votes on a poll are limited to three per IP address per hour.
+Да би резултати били фер, анонимни гласови у анкети су ограничени на три по IP адреси на сат.
 
-This is separate from [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), which controls up and down votes on comments.
+Ово је одвојено од [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), који контролише гласове за и против на коментарима.
+
+---

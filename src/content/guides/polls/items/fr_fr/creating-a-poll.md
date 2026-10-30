@@ -1,11 +1,11 @@
-To create a poll, click the poll button in the comment editor toolbar. A poll editor opens below the text input, where you can set:
+Pour créer un sondage, cliquez sur le bouton poll dans la barre d'outils de l'éditeur de commentaires. Un éditeur de sondage s'ouvre sous le champ de texte, où vous pouvez définir :
 
-- **The question**, up to 200 characters.
-- **The options**, between 2 and 10, each up to 100 characters. Use **Add option** to add more.
-- **When the poll closes**: no end date, 1 day, 3 days, or 1 week. A closed poll shows its final results and no longer accepts votes.
-- **Privacy**: whether voters stay anonymous, are visible to admins, or are public. See [Voter Privacy](#poll-voter-privacy).
-- **Require Vote to See Results**: when checked, the results stay hidden from each viewer until they vote or the poll closes.
+- **La question**, jusqu'à 200 caractères.  
+- **Les options**, entre 2 et 10, chacune jusqu'à 100 caractères. Utilisez **Add option** pour en ajouter davantage.  
+- **Quand le sondage se ferme** : aucune date de fin, 1 jour, 3 jours ou 1 semaine. Un sondage fermé affiche ses résultats finaux et n'accepte plus de votes.  
+- **Confidentialité** : si les votants restent anonymes, sont visibles par les administrateurs, ou sont publics. Voir [Voter Privacy](#poll-voter-privacy).  
+- **Exiger un vote pour voir les résultats** : lorsqu'il est coché, les résultats restent cachés à chaque spectateur jusqu'à ce qu'il vote ou que le sondage se ferme.  
 
-Write your comment as usual and post it. The poll is posted with the comment. Polls can be added to new comments and to replies.
+Rédigez votre commentaire comme d'habitude et publiez-le. Le sondage est publié avec le commentaire. Les sondages peuvent être ajoutés aux nouveaux commentaires et aux réponses.
 
-To discard a poll before posting, click **Remove poll**.
+Pour annuler un sondage avant de le publier, cliquez sur **Remove poll**.

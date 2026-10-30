@@ -1,7 +1,7 @@
-To vote, click an option. The results are shown right away, and the poll shows how many responses it has so far.
+Za glasovanje kliknite na možnost. Rezultati so prikazani takoj, anketa pa pokaže, koliko odgovorov je do sedaj.
 
-Each person gets one vote per poll. While the poll is open, a voter can click **Change vote** to pick a different option.
+Vsaka oseba dobi en glas na anketo. Dokler je anketa odprta, lahko glasovalec klikne **Spremeni glas** za izbiro druge možnosti.
 
-Results update live. When anyone on the page votes, the counts and bars update for everyone viewing the poll, without a page refresh.
+Rezultati se posodabljajo v živo. Ko kdorkoli na strani glasuje, se števci in stolpci posodobijo za vse, ki si ogledajo anketo, brez osvežitve strani.
 
-Unless the poll requires a vote to see the results, viewers can click **Show results** to see the current counts before voting.
+Če anketa ne zahteva glasovanja za ogled rezultatov, si lahko gledalci kliknejo **Pokaži rezultate**, da vidijo trenutne števce pred glasovanjem.

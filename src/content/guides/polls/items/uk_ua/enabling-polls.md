@@ -1,9 +1,12 @@
-Polls are off by default. To turn them on, go to the widget customization settings and check **Enable Polls**.
+---
+Опитування вимкнено за замовчуванням. Щоб увімкнути їх, перейдіть до налаштувань налаштування віджету та позначте **Увімкнути опитування**.
 
-This adds a poll button to the comment editor toolbar. Polls render inside the comment and viewers vote in place.
+Це додає кнопку опитування до панелі інструментів редактора коментарів. Опитування відображаються всередині коментаря, і глядачі голосують на місці.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Сторінка налаштування віджету з позначеною опцією Enable Polls'; title='Увімкнути опитування' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Сторінка налаштування віджету з позначеною опцією Увімкнути опитування'; title='Увімкнути опитування' app-screenshot-end]
 
-Like other widget settings, this can be applied to your whole site or only to specific pages or domains.
+Як і інші налаштування віджету, це можна застосувати до всього сайту або лише до окремих сторінок чи доменів.
 
-If you turn polls off later, the poll button goes away and existing polls stop rendering in the widget. The polls and their votes are kept, and show again if you turn polls back on.
+Якщо ви пізніше вимкнете опитування, кнопка опитування зникає, а існуючі опитування перестають відображатися у віджеті. Опитування та їхні голоси зберігаються і знову з’являться, якщо ви увімкнете опитування.
+
+---

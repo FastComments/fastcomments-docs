@@ -1,11 +1,11 @@
-There are a few types of notifications and mediums in which FastComments sends notifications:
+Існує кілька типів сповіщень та каналів, якими FastComments надсилає сповіщення:
 
-- Immediate via email.
-  - Comment reply and mention notifications are sent every minute.
-- Immediate via app.
-  - These are shown under the notification bell icon.
-- Batched via email.
-  - Page subscription notifications can be configured per subscription to send every minute, as an hourly digest, or as a daily digest. If there is nothing to send for the user in that timeframe, we do not send an email.
-  - Poll response notifications are sent to the poll's author as a daily email.
-- Timed via email.
-  - Examples include the Community Digest Summary which can be sent daily, weekly, or monthly (or disabled).
+- Негайно через електронну пошту.
+  - Сповіщення про відповіді на коментарі та згадки надсилаються щохвилини.
+- Негайно через додаток.
+  - Вони відображаються під іконкою дзвінка сповіщень.
+- Пакетно через електронну пошту.
+  - Сповіщення про підписку на сторінки можна налаштувати для кожної підписки, щоб надсилати їх щохвилини, у вигляді щогодинного дайджесту або щоденного дайджесту. Якщо за цей період немає нічого, що треба надсилати користувачеві, електронний лист не надсилається.
+  - Сповіщення про відповіді в опитуваннях надсилаються автору опитування у вигляді щоденного листа.
+- За розкладом через електронну пошту.
+  - Прикладами є підсумковий дайджест спільноти, який можна надсилати щодня, щотижня або щомісяця (або вимкнути).

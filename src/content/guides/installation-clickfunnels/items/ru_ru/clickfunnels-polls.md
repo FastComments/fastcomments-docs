@@ -1,4 +1,6 @@
 ---
-Once FastComments is on your ClickFunnels course, you can also run live polls right in the comments. Turn on **Enable Polls** in your widget customization settings and a poll button appears in the comment toolbar. Polls take 2 to 10 options, results update live for everyone on the page, and you choose who can create polls and whether voting requires logging in. There is nothing else to install on ClickFunnels.
+Как только FastComments будет установлен в ваш курс ClickFunnels, вы также можете проводить живые опросы прямо в комментариях. Включите **Enable Polls** в настройках настройки виджета, и кнопка опроса появится на панели инструментов комментариев. Опросы поддерживают от 2 до 10 вариантов, результаты обновляются в реальном времени для всех на странице, и вы выбираете, кто может создавать опросы и требуется ли вход в систему для голосования. Больше ничего устанавливать на ClickFunnels не требуется.
 
-[Try the Live Polls demo](https://fastcomments.com/product/live-polls) or read the [Polls documentation](/guide-polls.html) to set them up.
+[Попробуйте демо живых опросов](https://fastcomments.com/product/live-polls) или прочитайте [документацию по опросам](/guide-polls.html) для их настройки.
+
+---
