@@ -77,6 +77,8 @@ interface WebhookComment {
     domain: string | null
     /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
@@ -96,6 +98,29 @@ interface CommentUserMention {
     type: 'user'|'sso'
     /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
+}
+[inline-code-end]
+
+Each entry in the `badges` list has the following structure. See the [Badges guide](/guide-badges.html) for the badge types.
+
+[inline-code-attrs-start title = 'The Webhook Badge Object'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-start]
+interface CommentUserBadgeInfo {
+    /** The id of the badge awarded to this user. **/
+    id: string
+    /** The badge type. **/
+    type: number
+    /** The badge description, shown when hovering over the badge. **/
+    description: string
+    /** The text shown on the badge. **/
+    displayLabel?: string | null
+    /** The image shown for the badge, if it uses one. **/
+    displaySrc?: string | null
+    backgroundColor?: string | null
+    borderColor?: string | null
+    textColor?: string | null
+    /** An extra CSS class applied to the badge. **/
+    cssClass?: string | null
 }
 [inline-code-end]
 
