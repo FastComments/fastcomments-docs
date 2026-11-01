@@ -4,13 +4,13 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
 ]
 ```
 
 또는 Xcode에서:
-1. File > Add Packages...
-2. 저장소 URL을 입력하세요: `https://github.com/fastcomments/fastcomments-swift.git`
+1. File > 패키지 추가...
+2. 저장소 URL 입력: `https://github.com/fastcomments/fastcomments-swift.git`
 3. 사용하려는 버전을 선택하세요
 
 ### 요구 사항

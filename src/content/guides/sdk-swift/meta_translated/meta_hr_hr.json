@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Izvršavanje API poziva",
+      "name": "Izvođenje API poziva",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "API referenca",
       "type": "readme"
@@ -53,13 +53,13 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "Tenanti agenta",
+      "subCat": "Stanari agenta",
       "type": "api"
     },
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Agregacija",
+      "subCat": "Agregat",
       "type": "api"
     },
     {
@@ -71,19 +71,19 @@
     {
       "name": "logoutPublic",
       "file": "logoutpublic-api-generated.md",
-      "subCat": "Autentikacija",
+      "subCat": "Autentifikacija",
       "type": "api"
     },
     {
       "name": "getBatchJob",
       "file": "getbatchjob-api-generated.md",
-      "subCat": "Skupni poslovi",
+      "subCat": "Paketni poslovi",
       "type": "api"
     },
     {
       "name": "getBatchJobs",
       "file": "getbatchjobs-api-generated.md",
-      "subCat": "Skupni poslovi",
+      "subCat": "Paketni poslovi",
       "type": "api"
     },
     {
@@ -917,43 +917,43 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Neobrađeni webhook događaji",
+      "subCat": "Nedovršeni webhook događaji",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Neobrađeni webhook događaji",
+      "subCat": "Nedovršeni webhook događaji",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Neobrađeni webhook događaji",
+      "subCat": "Nedovršeni webhook događaji",
       "type": "api"
     },
     {
       "name": "createPollVote",
       "file": "createpollvote-api-generated.md",
-      "subCat": "Glasovi u anketama",
+      "subCat": "Glasovi ankete",
       "type": "api"
     },
     {
       "name": "deletePollVote",
       "file": "deletepollvote-api-generated.md",
-      "subCat": "Glasovi u anketama",
+      "subCat": "Glasovi ankete",
       "type": "api"
     },
     {
       "name": "getPollVote",
       "file": "getpollvote-api-generated.md",
-      "subCat": "Glasovi u anketama",
+      "subCat": "Glasovi ankete",
       "type": "api"
     },
     {
       "name": "getPollVotes",
       "file": "getpollvotes-api-generated.md",
-      "subCat": "Glasovi u anketama",
+      "subCat": "Glasovi ankete",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Ankete",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Ankete",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Ankete",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Ankete",
       "type": "api"
     },
@@ -1127,115 +1139,115 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Dnevna upotreba najemnika",
+      "subCat": "Dnevna upotreba najmodavca",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Paketi najemnika",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Paketi najemnika",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Paketi najemnika",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Paketi najemnika",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Paketi najemnika",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Paketi najemnika",
+      "subCat": "Paketi najmodavca",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Korisnici najemnika",
+      "subCat": "Korisnici najmodavca",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Najemnici",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Najemnici",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Najemnici",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Najemnici",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Najemnici",
+      "subCat": "Najmodavci",
       "type": "api"
     },
     {
@@ -1277,19 +1289,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Napredak znački korisnika",
+      "subCat": "Napredak značke korisnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Napredak znački korisnika",
+      "subCat": "Napredak značke korisnika",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Napredak znački korisnika",
+      "subCat": "Napredak značke korisnika",
       "type": "api"
     },
     {
@@ -1409,25 +1421,25 @@
     {
       "name": "createWebhook",
       "file": "createwebhook-api-generated.md",
-      "subCat": "Webhooks",
+      "subCat": "Webhook-ovi",
       "type": "api"
     },
     {
       "name": "deleteWebhook",
       "file": "deletewebhook-api-generated.md",
-      "subCat": "Webhooks",
+      "subCat": "Webhook-ovi",
       "type": "api"
     },
     {
       "name": "getWebhooks",
       "file": "getwebhooks-api-generated.md",
-      "subCat": "Webhooks",
+      "subCat": "Webhook-ovi",
       "type": "api"
     },
     {
       "name": "getWebhookSamplePayloads",
       "file": "getwebhooksamplepayloads-api-generated.md",
-      "subCat": "Webhooks",
+      "subCat": "Webhook-ovi",
       "type": "api"
     }
   ]

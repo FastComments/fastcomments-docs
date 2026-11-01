@@ -1,15 +1,15 @@
 ### Swift Package Manager
 
-Add the following to your `Package.swift` file:
+Добавьте следующее в ваш файл `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
 ]
 ```
 
-Or in Xcode:
-1. File > Добавить пакеты...
+Или в Xcode:
+1. File > Add Packages...
 2. Введите URL репозитория: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Выберите версию, которую хотите использовать
 

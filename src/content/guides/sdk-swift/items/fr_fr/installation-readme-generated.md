@@ -1,19 +1,19 @@
-### Gestionnaire de packages Swift
+### Swift Package Manager
 
 Ajoutez ce qui suit à votre fichier `Package.swift` :
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
 ]
 ```
 
 Ou dans Xcode :
-1. Fichier > Ajouter des packages...
+1. File > Add Packages...
 2. Entrez l'URL du dépôt : `https://github.com/fastcomments/fastcomments-swift.git`
 3. Sélectionnez la version que vous souhaitez utiliser
 
-### Exigences
+### Requirements
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+

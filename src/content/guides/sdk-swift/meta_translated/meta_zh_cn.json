@@ -467,7 +467,7 @@
     {
       "name": "getMe",
       "file": "getme-api-generated.md",
-      "subCat": "我的",
+      "subCat": "我的信息",
       "type": "api"
     },
     {
@@ -917,43 +917,43 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "待处理的Webhook事件",
+      "subCat": "待处理的 Webhook 事件",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "待处理的Webhook事件",
+      "subCat": "待处理的 Webhook 事件",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "待处理的Webhook事件",
+      "subCat": "待处理的 Webhook 事件",
       "type": "api"
     },
     {
       "name": "createPollVote",
       "file": "createpollvote-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票记录",
       "type": "api"
     },
     {
       "name": "deletePollVote",
       "file": "deletepollvote-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票记录",
       "type": "api"
     },
     {
       "name": "getPollVote",
       "file": "getpollvote-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票记录",
       "type": "api"
     },
     {
       "name": "getPollVotes",
       "file": "getpollvotes-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票记录",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "投票",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "投票",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "投票",
       "type": "api"
     },
@@ -1127,7 +1139,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "租户每日使用",
+      "subCat": "租户每日使用情况",
       "type": "api"
     },
     {

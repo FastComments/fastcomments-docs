@@ -53,7 +53,7 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "Агенты‑арендаторы",
+      "subCat": "Арендаторы агентов",
       "type": "api"
     },
     {
@@ -245,97 +245,97 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Комментарии пользователя",
+      "subCat": "Комментарии для пользователя",
       "type": "api"
     },
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Конфигурации доменов",
+      "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Конфигурации доменов",
+      "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Конфигурации доменов",
+      "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Конфигурации доменов",
+      "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Конфигурации доменов",
+      "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Конфигурации доменов",
+      "subCat": "Конфигурации домена",
       "type": "api"
     },
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Шаблоны писем",
+      "subCat": "Шаблоны электронной почты",
       "type": "api"
     },
     {
@@ -419,19 +419,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIF‑изображения",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIF‑изображения",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIF‑изображения",
+      "subCat": "GIF",
       "type": "api"
     },
     {
@@ -917,19 +917,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Ожидающие веб‑хуки",
+      "subCat": "Ожидающие события вебхука",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Ожидающие веб‑хуки",
+      "subCat": "Ожидающие события вебхука",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Ожидающие веб‑хуки",
+      "subCat": "Ожидающие события вебхука",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Опросы",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Опросы",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Опросы",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Опросы",
       "type": "api"
     },
@@ -1061,43 +1073,43 @@
     {
       "name": "addSSOUser",
       "file": "addssouser-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
       "name": "deleteSSOUser",
       "file": "deletessouser-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
       "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
       "name": "getSSOUserById",
       "file": "getssouserbyid-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
       "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
       "name": "patchSSOUser",
       "file": "patchssouser-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
       "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
-      "subCat": "SSO‑пользователи",
+      "subCat": "Пользователи SSO",
       "type": "api"
     },
     {
@@ -1385,49 +1397,49 @@
     {
       "name": "createVote",
       "file": "createvote-api-generated.md",
-      "subCat": "Голосования",
+      "subCat": "Голоса",
       "type": "api"
     },
     {
       "name": "deleteVote",
       "file": "deletevote-api-generated.md",
-      "subCat": "Голосования",
+      "subCat": "Голоса",
       "type": "api"
     },
     {
       "name": "getVotes",
       "file": "getvotes-api-generated.md",
-      "subCat": "Голосования",
+      "subCat": "Голоса",
       "type": "api"
     },
     {
       "name": "getVotesForUser",
       "file": "getvotesforuser-api-generated.md",
-      "subCat": "Голосования",
+      "subCat": "Голоса",
       "type": "api"
     },
     {
       "name": "createWebhook",
       "file": "createwebhook-api-generated.md",
-      "subCat": "Веб‑хуки",
+      "subCat": "Вебхуки",
       "type": "api"
     },
     {
       "name": "deleteWebhook",
       "file": "deletewebhook-api-generated.md",
-      "subCat": "Веб‑хуки",
+      "subCat": "Вебхуки",
       "type": "api"
     },
     {
       "name": "getWebhooks",
       "file": "getwebhooks-api-generated.md",
-      "subCat": "Веб‑хуки",
+      "subCat": "Вебхуки",
       "type": "api"
     },
     {
       "name": "getWebhookSamplePayloads",
       "file": "getwebhooksamplepayloads-api-generated.md",
-      "subCat": "Веб‑хуки",
+      "subCat": "Вебхуки",
       "type": "api"
     }
   ]

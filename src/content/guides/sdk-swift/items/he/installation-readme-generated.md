@@ -1,10 +1,10 @@
 ### מנהל חבילות Swift
 
-הוסף את הבא לקובץ `Package.swift` שלך:
+הוסף את הקוד הבא לקובץ `Package.swift` שלך:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
 ]
 ```
 
@@ -17,3 +17,4 @@ dependencies: [
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
+---

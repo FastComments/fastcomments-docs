@@ -4,7 +4,7 @@ Fügen Sie das Folgende zu Ihrer `Package.swift`-Datei hinzu:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
 ]
 ```
 
@@ -13,7 +13,7 @@ Oder in Xcode:
 2. Geben Sie die Repository-URL ein: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Wählen Sie die Version aus, die Sie verwenden möchten
 
-### Anforderungen
+### Voraussetzungen
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+

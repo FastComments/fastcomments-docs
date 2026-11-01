@@ -9,43 +9,43 @@
       "type": "readme"
     },
     {
-      "name": "Installazione",
+      "name": "Installation",
       "file": "installation-readme-generated.md",
       "subCat": "Iniziare",
       "type": "readme"
     },
     {
-      "name": "Contenuti della libreria",
+      "name": "Library Contents",
       "file": "library-contents-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Avvio rapido",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Client API",
+      "name": "API Clients",
       "file": "api-clients-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Eseguire chiamate API",
+      "name": "Making API Calls",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Riferimento API",
       "type": "readme"
     },
     {
-      "name": "Problemi comuni",
+      "name": "Common Issues",
       "file": "common-issues-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Note",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -53,7 +53,7 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "Tenant Agenti",
+      "subCat": "Agent Tenants",
       "type": "api"
     },
     {
@@ -65,7 +65,7 @@
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
-      "subCat": "Log di audit",
+      "subCat": "Registri di audit",
       "type": "api"
     },
     {
@@ -89,19 +89,19 @@
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blocco da commento",
+      "subCat": "Blocca dal commento",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blocco da commento",
+      "subCat": "Blocca dal commento",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Verifica commenti bloccati",
+      "subCat": "Controlla commenti bloccati",
       "type": "api"
     },
     {
@@ -341,13 +341,13 @@
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Log eventi",
+      "subCat": "Registro eventi",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Log eventi",
+      "subCat": "Registro eventi",
       "type": "api"
     },
     {
@@ -419,55 +419,55 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "Gif",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "Gif",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "Gif",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Hashtag",
+      "subCat": "Tag hash",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Hashtag",
+      "subCat": "Tag hash",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Hashtag",
+      "subCat": "Tag hash",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Hashtag",
+      "subCat": "Tag hash",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Hashtag",
+      "subCat": "Tag hash",
       "type": "api"
     },
     {
       "name": "getMe",
       "file": "getme-api-generated.md",
-      "subCat": "Me",
+      "subCat": "Io",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Sondaggi",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Sondaggi",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Sondaggi",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Sondaggi",
       "type": "api"
     },
@@ -1103,25 +1115,25 @@
     {
       "name": "createSubscription",
       "file": "createsubscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "deleteSubscription",
       "file": "deletesubscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
       "name": "updateSubscription",
       "file": "updatesubscription-api-generated.md",
-      "subCat": "Abbonamenti",
+      "subCat": "Sottoscrizioni",
       "type": "api"
     },
     {
@@ -1271,7 +1283,7 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Caricamento immagine",
+      "subCat": "Carica immagine",
       "type": "api"
     },
     {

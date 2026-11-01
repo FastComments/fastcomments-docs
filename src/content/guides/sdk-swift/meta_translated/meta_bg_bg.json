@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Извършване на API повиквания",
+      "name": "Извършване на API заявки",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "API справка",
       "type": "readme"
@@ -53,13 +53,13 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "Агенти на наематели",
+      "subCat": "Наематели на агенти",
       "type": "api"
     },
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Агрегат",
+      "subCat": "Агрегиране",
       "type": "api"
     },
     {
@@ -413,55 +413,55 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Маркиране на коментар",
+      "subCat": "Сигнализиране за коментар",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIF файлове",
+      "subCat": "Гифове",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIF файлове",
+      "subCat": "Гифове",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIF файлове",
+      "subCat": "Гифове",
       "type": "api"
     },
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Хаштагове",
+      "subCat": "Хаш тагове",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Хаштагове",
+      "subCat": "Хаш тагове",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Хаштагове",
+      "subCat": "Хаш тагове",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Хаштагове",
+      "subCat": "Хаш тагове",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Хаштагове",
+      "subCat": "Хаш тагове",
       "type": "api"
     },
     {
@@ -935,25 +935,25 @@
     {
       "name": "createPollVote",
       "file": "createpollvote-api-generated.md",
-      "subCat": "Гласове за анкета",
+      "subCat": "Гласове за анкети",
       "type": "api"
     },
     {
       "name": "deletePollVote",
       "file": "deletepollvote-api-generated.md",
-      "subCat": "Гласове за анкета",
+      "subCat": "Гласове за анкети",
       "type": "api"
     },
     {
       "name": "getPollVote",
       "file": "getpollvote-api-generated.md",
-      "subCat": "Гласове за анкета",
+      "subCat": "Гласове за анкети",
       "type": "api"
     },
     {
       "name": "getPollVotes",
       "file": "getpollvotes-api-generated.md",
-      "subCat": "Гласове за анкета",
+      "subCat": "Гласове за анкети",
       "type": "api"
     },
     {
@@ -965,6 +965,12 @@
     {
       "name": "getPoll",
       "file": "getpoll-api-generated.md",
+      "subCat": "Анкети",
+      "type": "api"
+    },
+    {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
       "subCat": "Анкети",
       "type": "api"
     },
@@ -981,33 +987,39 @@
       "type": "api"
     },
     {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
+      "subCat": "Анкети",
+      "type": "api"
+    },
+    {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "Конфигурации на въпроси",
+      "subCat": "Конфигурации за въпроси",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "Конфигурации на въпроси",
+      "subCat": "Конфигурации за въпроси",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "Конфигурации на въпроси",
+      "subCat": "Конфигурации за въпроси",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "Конфигурации на въпроси",
+      "subCat": "Конфигурации за въпроси",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "Конфигурации на въпроси",
+      "subCat": "Конфигурации за въпроси",
       "type": "api"
     },
     {
@@ -1127,7 +1139,7 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Дневно използване на наемател",
+      "subCat": "Ежедневно използване на наемател",
       "type": "api"
     },
     {
@@ -1409,25 +1421,25 @@
     {
       "name": "createWebhook",
       "file": "createwebhook-api-generated.md",
-      "subCat": "Уебкукове",
+      "subCat": "Уебхук",
       "type": "api"
     },
     {
       "name": "deleteWebhook",
       "file": "deletewebhook-api-generated.md",
-      "subCat": "Уебкукове",
+      "subCat": "Уебхук",
       "type": "api"
     },
     {
       "name": "getWebhooks",
       "file": "getwebhooks-api-generated.md",
-      "subCat": "Уебкукове",
+      "subCat": "Уебхук",
       "type": "api"
     },
     {
       "name": "getWebhookSamplePayloads",
       "file": "getwebhooksamplepayloads-api-generated.md",
-      "subCat": "Уебкукове",
+      "subCat": "Уебхук",
       "type": "api"
     }
   ]

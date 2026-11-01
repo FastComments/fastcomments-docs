@@ -9,45 +9,45 @@
       "type": "readme"
     },
     {
-      "name": "Встановлення",
+      "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Початок роботи",
+      "subCat": "Початок",
       "type": "readme"
     },
     {
-      "name": "Вміст бібліотеки",
+      "name": "Library Contents",
       "file": "library-contents-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Швидкий старт",
+      "name": "Quick Start",
       "file": "quick-start-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Клієнти API",
+      "name": "API Clients",
       "file": "api-clients-readme-generated.md",
       "subCat": "Посилання на API",
       "type": "readme"
     },
     {
-      "name": "Виконання викликів API",
+      "name": "Making API Calls",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Посилання на API",
       "type": "readme"
     },
     {
-      "name": "Поширені проблеми",
+      "name": "Common Issues",
       "file": "common-issues-readme-generated.md",
-      "subCat": "Документація",
+      "subCat": "Поширені проблеми",
       "type": "readme"
     },
     {
-      "name": "Примітки",
+      "name": "Notes",
       "file": "notes-readme-generated.md",
-      "subCat": "Документація",
+      "subCat": "Примітки",
       "type": "readme"
     },
     {
@@ -353,61 +353,61 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Пости стрічки",
+      "subCat": "Пости у стрічці",
       "type": "api"
     },
     {
@@ -419,19 +419,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIFи",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIFи",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIFи",
+      "subCat": "GIF",
       "type": "api"
     },
     {
@@ -917,19 +917,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікуючі події вебхука",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікуючі події вебхука",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Очікувані події вебхука",
+      "subCat": "Очікуючі події вебхука",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Опитування",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Опитування",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Опитування",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Опитування",
       "type": "api"
     },
@@ -1271,55 +1283,55 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Завантаження зображення",
+      "subCat": "Завантажити зображення",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Прогрес бейджу користувача",
+      "subCat": "Прогрес значків користувача",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Прогрес бейджу користувача",
+      "subCat": "Прогрес значків користувача",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Прогрес бейджу користувача",
+      "subCat": "Прогрес значків користувача",
       "type": "api"
     },
     {
       "name": "createUserBadge",
       "file": "createuserbadge-api-generated.md",
-      "subCat": "Бейджі користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "deleteUserBadge",
       "file": "deleteuserbadge-api-generated.md",
-      "subCat": "Бейджі користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "getUserBadge",
       "file": "getuserbadge-api-generated.md",
-      "subCat": "Бейджі користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "getUserBadges",
       "file": "getuserbadges-api-generated.md",
-      "subCat": "Бейджі користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {
       "name": "updateUserBadge",
       "file": "updateuserbadge-api-generated.md",
-      "subCat": "Бейджі користувачів",
+      "subCat": "Значки користувача",
       "type": "api"
     },
     {

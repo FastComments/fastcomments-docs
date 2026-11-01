@@ -3,49 +3,49 @@
   "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
     {
-      "name": "AI coding agents",
+      "name": "AI 程式碼代理",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "Installation",
+      "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "入門",
+      "subCat": "入門指南",
       "type": "readme"
     },
     {
-      "name": "Library Contents",
+      "name": "函式庫內容",
       "file": "library-contents-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "Quick Start",
+      "name": "快速入門",
       "file": "quick-start-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "API Clients",
+      "name": "API 客戶端",
       "file": "api-clients-readme-generated.md",
       "subCat": "API 參考",
       "type": "readme"
     },
     {
-      "name": "Making API Calls",
+      "name": "發送 API 請求",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "API 參考",
       "type": "readme"
     },
     {
-      "name": "Common Issues",
+      "name": "常見問題",
       "file": "common-issues-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "Notes",
+      "name": "備註",
       "file": "notes-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "api"
     },
     {
-      "name": "aggregate",
+      "name": "彙總",
       "file": "aggregate-api-generated.md",
       "subCat": "彙總",
       "type": "api"
@@ -245,7 +245,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "使用者的評論",
+      "subCat": "使用者評論",
       "type": "api"
     },
     {
@@ -419,19 +419,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIF",
+      "subCat": "GIF 圖片",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIF",
+      "subCat": "GIF 圖片",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIF",
+      "subCat": "GIF 圖片",
       "type": "api"
     },
     {
@@ -467,7 +467,7 @@
     {
       "name": "getMe",
       "file": "getme-api-generated.md",
-      "subCat": "我的",
+      "subCat": "我的資訊",
       "type": "api"
     },
     {
@@ -731,37 +731,37 @@
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "審核者",
+      "subCat": "審核員",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "審核者",
+      "subCat": "審核員",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "審核者",
+      "subCat": "審核員",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "審核者",
+      "subCat": "審核員",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "審核者",
+      "subCat": "審核員",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "審核者",
+      "subCat": "審核員",
       "type": "api"
     },
     {
@@ -935,49 +935,61 @@
     {
       "name": "createPollVote",
       "file": "createpollvote-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "deletePollVote",
       "file": "deletepollvote-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "getPollVote",
       "file": "getpollvote-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "getPollVotes",
       "file": "getpollvotes-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "deletePoll",
       "file": "deletepoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "getPoll",
       "file": "getpoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
+      "type": "api"
+    },
+    {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
       "type": "api"
     },
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "投票調查",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
+      "subCat": "投票調查",
       "type": "api"
     },
     {

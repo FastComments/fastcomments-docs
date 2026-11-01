@@ -11,7 +11,7 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Começando",
+      "subCat": "Introdução",
       "type": "readme"
     },
     {
@@ -27,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "API Clients",
+      "name": "Clientes API",
       "file": "api-clients-readme-generated.md",
       "subCat": "Referência API",
       "type": "readme"
     },
     {
-      "name": "Making API Calls",
+      "name": "Fazendo Chamadas API",
       "file": "making-api-calls-readme-generated.md",
       "subCat": "Referência API",
       "type": "readme"
@@ -77,25 +77,25 @@
     {
       "name": "getBatchJob",
       "file": "getbatchjob-api-generated.md",
-      "subCat": "Trabalhos em Lote",
+      "subCat": "Jobs em Lote",
       "type": "api"
     },
     {
       "name": "getBatchJobs",
       "file": "getbatchjobs-api-generated.md",
-      "subCat": "Trabalhos em Lote",
+      "subCat": "Jobs em Lote",
       "type": "api"
     },
     {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Bloquear a partir de Comentário",
+      "subCat": "Bloquear do Comentário",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Bloquear a partir de Comentário",
+      "subCat": "Bloquear do Comentário",
       "type": "api"
     },
     {
@@ -245,7 +245,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Comentários por Usuário",
+      "subCat": "Comentários Para Usuário",
       "type": "api"
     },
     {
@@ -353,61 +353,61 @@
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publicações de Feed",
+      "subCat": "Publicações no Feed",
       "type": "api"
     },
     {
@@ -917,19 +917,19 @@
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Eventos Webhook Pendentes",
+      "subCat": "Eventos de Webhook Pendentes",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Eventos Webhook Pendentes",
+      "subCat": "Eventos de Webhook Pendentes",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Eventos Webhook Pendentes",
+      "subCat": "Eventos de Webhook Pendentes",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Enquetes",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Enquetes",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Enquetes",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Enquetes",
       "type": "api"
     },

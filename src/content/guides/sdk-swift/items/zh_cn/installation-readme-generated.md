@@ -1,17 +1,17 @@
 ### Swift 包管理器
 
-在你的 `Package.swift` 文件中添加以下内容：
+将以下内容添加到您的 `Package.swift` 文件中：
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
 ]
 ```
 
 或者在 Xcode 中：
 1. 文件 > 添加包...
-2. 输入仓库 URL： `https://github.com/fastcomments/fastcomments-swift.git`
-3. 选择你想使用的版本
+2. 输入仓库 URL：`https://github.com/fastcomments/fastcomments-swift.git`
+3. 选择您想使用的版本
 
 ### 要求
 

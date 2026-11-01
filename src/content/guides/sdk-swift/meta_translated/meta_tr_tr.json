@@ -3,7 +3,7 @@
   "pageHeader": "FastComments Swift SDK",
   "itemsOrdered": [
     {
-      "name": "Yapay Zeka kodlama ajanları",
+      "name": "AI kodlama ajanları",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -59,7 +59,7 @@
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Toplam",
+      "subCat": "Toplama",
       "type": "api"
     },
     {
@@ -95,7 +95,7 @@
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Yorumlardan Engelleme",
+      "subCat": "Yorumlardan Engellemeyi Kaldırma",
       "type": "api"
     },
     {
@@ -251,37 +251,37 @@
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "Alan Yapılandırmaları",
+      "subCat": "Alan Adı Yapılandırmaları",
       "type": "api"
     },
     {
@@ -419,19 +419,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "Gifler",
+      "subCat": "GIF'ler",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "Gifler",
+      "subCat": "GIF'ler",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "Gifler",
+      "subCat": "GIF'ler",
       "type": "api"
     },
     {
@@ -473,259 +473,259 @@
     {
       "name": "deleteModerationVote",
       "file": "deletemoderationvote-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getApiComments",
       "file": "getapicomments-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getApiExportStatus",
       "file": "getapiexportstatus-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getApiIds",
       "file": "getapiids-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getBanUsersFromComment",
       "file": "getbanusersfromcomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getCommentBanStatus",
       "file": "getcommentbanstatus-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getCommentChildren",
       "file": "getcommentchildren-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getCount",
       "file": "getcount-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getCounts",
       "file": "getcounts-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getLogs",
       "file": "getlogs-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getManualBadges",
       "file": "getmanualbadges-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getManualBadgesForUser",
       "file": "getmanualbadgesforuser-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getModerationComment",
       "file": "getmoderationcomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getModerationCommentText",
       "file": "getmoderationcommenttext-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getPreBanSummary",
       "file": "getprebansummary-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getSearchCommentsSummary",
       "file": "getsearchcommentssummary-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getSearchPages",
       "file": "getsearchpages-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getSearchSites",
       "file": "getsearchsites-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getSearchSuggest",
       "file": "getsearchsuggest-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getSearchUsers",
       "file": "getsearchusers-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getTrustFactor",
       "file": "gettrustfactor-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getUserBanPreference",
       "file": "getuserbanpreference-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "getUserInternalProfile",
       "file": "getuserinternalprofile-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postAdjustCommentVotes",
       "file": "postadjustcommentvotes-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postApiExport",
       "file": "postapiexport-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postBanUserFromComment",
       "file": "postbanuserfromcomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postBanUserUndo",
       "file": "postbanuserundo-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postBulkPreBanSummary",
       "file": "postbulkprebansummary-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postCommentsByIds",
       "file": "postcommentsbyids-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postFlagComment",
       "file": "postflagcomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postRemoveComment",
       "file": "postremovecomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postRestoreDeletedComment",
       "file": "postrestoredeletedcomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postSetCommentApprovalStatus",
       "file": "postsetcommentapprovalstatus-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postSetCommentReviewStatus",
       "file": "postsetcommentreviewstatus-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postSetCommentSpamStatus",
       "file": "postsetcommentspamstatus-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postSetCommentText",
       "file": "postsetcommenttext-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postUnFlagComment",
       "file": "postunflagcomment-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "postVote",
       "file": "postvote-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "putAwardBadge",
       "file": "putawardbadge-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "putCloseThread",
       "file": "putclosethread-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "putRemoveBadge",
       "file": "putremovebadge-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "putReopenThread",
       "file": "putreopenthread-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
       "name": "setTrustFactor",
       "file": "settrustfactor-api-generated.md",
-      "subCat": "Moderasyon",
+      "subCat": "Moderatörlük",
       "type": "api"
     },
     {
@@ -969,6 +969,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Anketler",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Anketler",
@@ -977,6 +983,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Anketler",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Anketler",
       "type": "api"
     },
@@ -1271,25 +1283,25 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Resim Yükle",
+      "subCat": "Resim Yükleme",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Kullanıcı Rozet İlerlemesi",
+      "subCat": "Kullanıcı Rozeti İlerlemesi",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Kullanıcı Rozet İlerlemesi",
+      "subCat": "Kullanıcı Rozeti İlerlemesi",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Kullanıcı Rozet İlerlemesi",
+      "subCat": "Kullanıcı Rozeti İlerlemesi",
       "type": "api"
     },
     {
@@ -1367,13 +1379,13 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "Kullanıcı Durumu",
+      "subCat": "Kullanıcı Durumları",
       "type": "api"
     },
     {
       "name": "searchUsers",
       "file": "searchusers-api-generated.md",
-      "subCat": "Kullanıcı Ara",
+      "subCat": "Kullanıcı Arama",
       "type": "api"
     },
     {
