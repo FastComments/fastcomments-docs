@@ -1,6 +1,6 @@
-### Swift Package Manager
+### Swift-pakkehåndtering
 
-Add the following to your `Package.swift` file:
+Tilføj følgende til din `Package.swift`-fil:
 
 ```swift
 dependencies: [
@@ -8,12 +8,13 @@ dependencies: [
 ]
 ```
 
-Or in Xcode:
-1. File > Add Packages...
-2. Enter the repository URL: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Select the version you want to use
+Eller i Xcode:
+1. Fil > Tilføj pakker...
+2. Indtast repository-URL'en: `https://github.com/fastcomments/fastcomments-swift.git`
+3. Vælg den version, du vil bruge
 
-### Requirements
+### Krav
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
+---
