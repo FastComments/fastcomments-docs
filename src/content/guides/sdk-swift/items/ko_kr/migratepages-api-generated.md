@@ -2,17 +2,17 @@ Queues a batch job that moves comments, pages and related records from one urlId
 "urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
 Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
 
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 유형 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 예 |  |
 
-## Response
+## 응답
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
+반환: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'migratePages 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -33,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----
