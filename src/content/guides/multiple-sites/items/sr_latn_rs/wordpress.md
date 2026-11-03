@@ -1,9 +1,9 @@
-Each WordPress site needs its own FastComments account or tenant. WordPress numbers posts separately on each site, so post 5 on one site and post 5 on another would share a single comment thread if both were connected to the same account. For that reason, the plugin's setup refuses to connect a site when the account already has a different one connected.
+Svaki WordPress sajt treba da ima svoj FastComments nalog ili tenant. WordPress numeriše postove odvojeno na svakom sajtu, tako da bi post 5 na jednom sajtu i post 5 na drugom delili istu nit komentara ako su oba povezana na isti nalog. Iz tog razloga, podešavanje plugina odbija da poveže sajt kada nalog već ima drugi sajt povezan.
 
-[You can view your active integrations here.](https://fastcomments.com/auth/my-account/manage-data/integrations)
+[Možete pogledati svoje aktivne integracije ovde.](https://fastcomments.com/auth/my-account/manage-data/integrations)
 
-To run several WordPress sites, create a [tenant](https://fastcomments.com/auth/my-account/tenants) for each one, switch to it, and then connect the site from the plugin's setup page. Tenants are included in plans with white labeling. You can also create a separate FastComments account for each site, using a different email address for each.
+Da biste upravljali sa više WordPress sajtova, kreirajte [tenant](https://fastcomments.com/auth/my-account/tenants) za svaki, prebacite se na njega, i zatim povežite sajt sa stranice za podešavanje plugina. Tenant‑i su uključeni u planove sa white labeling‑om. Takođe možete kreirati poseban FastComments nalog za svaki sajt, koristeći različitu email adresu za svaki.
 
-If a site has moved, for example from staging to production, deactivate the plugin on the old site and remove the old site from your active integrations. Then connect the new one. Comments already synced from the old site stay on the account, and they show on any post with the same ID on the new site.
+Ako je sajt premešten, na primer sa staging‑a na produkciju, deaktivirajte plugin na starom sajtu i uklonite stari sajt iz vaših aktivnih integracija. Zatim povežite novi. Komentari koji su već sinhronizovani sa starog sajta ostaju na nalogu i prikazuju se na svakom postu sa istim ID‑jem na novom sajtu.
 
-You can use the same FastComments account with a single WordPress installation that spans multiple domains and has the same content on those domains.
+Možete koristiti isti FastComments nalog sa jedinstvenom WordPress instalacijom koja obuhvata više domena i ima isti sadržaj na tim domenima.
