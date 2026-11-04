@@ -6,12 +6,12 @@
 
 이 메커니즘은 마이그레이션 중에 WordPress 설치 환경에 과도한 부하를 주지 않도록 설계되었습니다.
 
-WordPress에서 사이트를 이전하는 경우, 플러그인을 사용하는 대신 WordPress XML 또는 CSV 내보내기를 가져올 수 있습니다. [댓글을 새 사이트로 이전하기](/guide-installation-wordpress.html#wordpress-moving-off-wordpress)를 참조하세요.
+WordPress에서 사이트를 옮기시는 경우, 플러그인을 사용하는 대신 WordPress XML 또는 CSV 내보내기를 가져올 수 있습니다. [댓글을 새 사이트로 이전하기](/guide-installation-wordpress.html#wordpress-moving-off-wordpress)를 참조하세요.
 
 ### CloudFlare 및 방화벽
 
-자동화된 WordPress 설정이 작동하려면 WordPress 설치 환경에 호출을 해야 합니다. Cloudflare와 같은 방화벽이 저희를 차단하여 연동이 실패할 수 있습니다. 이러한 경우, 연동을 위해 [저희가](https://fastcomments.com/auth/my-account/help) 화이트리스트에 추가할 IP 목록을 제공해 드릴 수 있습니다.
+자동 WordPress 설정이 작동하려면 WordPress 설치 환경에 호출을 보내야 합니다. Cloudflare와 같은 방화벽이 저희를 차단하여 연동이 실패할 수 있습니다. 이러한 경우, [저희가 제공해 드리는](https://fastcomments.com/auth/my-account/help) IP 목록을 연동을 위해 화이트리스트에 추가하시면 됩니다.
 
 ### 데이터 소유권
 
-WordPress 마이그레이션의 경우, 새로운 댓글 데이터나 업데이트된 댓글 데이터는 자동으로 백그라운드에서 WordPress 설치 환경으로 동기화됩니다. 즉, 댓글은 FastComments가 직접 제공하여 WordPress 배포 환경의 부하를 줄이는 동시에, 백업으로 **또한** 데이터베이스에 저장됩니다. 이는 나중에 FastComments를 떠나고 싶으실 때 데이터가 이미 마이그레이션되어 최신 상태로 유지된다는 의미이기도 합니다.
+WordPress 마이그레이션의 경우, 새로 작성되거나 업데이트된 댓글 데이터는 백그라운드에서 자동으로 WordPress 설치 환경에 다시 동기화됩니다. 즉, 댓글은 FastComments가 직접 제공하여 WordPress 배포 환경의 부담을 줄이는 동시에, 백업으로 **또한** 데이터베이스에 저장합니다. 따라서 FastComments에서 다른 서비스로 전환하고 싶으신 경우에도 데이터가 이미 마이그레이션되어 최신 상태로 유지됩니다.

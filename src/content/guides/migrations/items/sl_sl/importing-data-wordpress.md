@@ -1,14 +1,14 @@
 Naš [WordPress vtičnik](https://wordpress.org/plugins/fastcomments/) ima zmogljiv mehanizem uvoza z uporabniškim vmesnikom. Po namestitvi vtičnika
-vas bo vodil skozi povezovanje vaše WordPress namestitve s FastComments in kopiranje vaših obstoječih podatkov o komentarjih.
+vas bo vodil skozi povezavo vaše WordPress namestitve s FastComments in kopiranje vaših obstoječih podatkov o komentarjih.
 
-**To se izvede brez ročnega kopiranja ali prenosov.**
+**To se opravi brez ročnega kopiranja ali prenosov.**
 
-Potek migracije vam bo prikazan prek uporabniškega vmesnika med migracijo. Večina migracij traja le nekaj minut.
+Postopek migracije vam bo prikazan prek uporabniškega vmesnika med migracijo. Večina migracij traja le nekaj minut.
 
-Mehanizem je zasnovan tako, da med migracijo ne obremenjuje vaše WordPress namestitve prekomerno.
+Mehanizem je zasnovan tako, da med migracijo ne obremenjuje vaše WordPress namestitve preveč.
 
-Če selite svoje spletno mesto iz WordPressa, lahko namesto vtičnika uvozite WordPress XML ali CSV izvoz. Glej
-[Prenos komentarjev na novo spletno mesto](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+Če selite svojo stran z WordPressa, lahko uvozite WordPress XML ali CSV izvoz namesto uporabe vtičnika. Glejte
+[Premestitev komentarjev na novo stran](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
 ### CloudFlare in požarni zidovi
 
@@ -18,4 +18,6 @@ Požarni zidovi, kot je Cloudflare, nas lahko blokirajo in povzročijo neuspeh i
 ### Lastništvo podatkov
 
 V primeru naše WordPress migracije se vsi novi ali posodobljeni podatki o komentarjih samodejno sinhronizirajo nazaj v vašo WordPress namestitev
-v ozadju. To pomeni, da čeprav komentarje streže FastComments sam, da bi razbremenil vašo WordPress namestitev, jih **prav tako** shranjujemo v vašo podatkovno bazo kot varnostno kopijo. To pomeni tudi, da če se želite preklopiti s FastComments, so vaši podatki že migrirani in posodobljeni.
+v ozadju. To pomeni, da čeprav komentarje streže FastComments sam, da bi zmanjšal obremenitev vaše WordPress namestitve,
+jih **prav tako** shranjujemo v vašo podatkovno bazo kot varnostno kopijo. To pomeni tudi, da če se želite preusmeriti z FastComments, so vaši podatki
+že migrirani in posodobljeni.
