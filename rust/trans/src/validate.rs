@@ -291,7 +291,8 @@ pub fn audit(guides_dir: &Path, locales: &Locales) -> Vec<Mismatch> {
 /// Rewrite every translated item's `[app-screenshot-*]` blocks and
 /// `<img src>` values from its source (see
 /// [`crate::images::merge_screenshot_blocks`] and
-/// [`crate::images::merge_image_srcs`]) and report how many files changed.
+/// [`crate::images::merge_image_srcs`]), drop `---` lines wrapped around it
+/// (see [`crate::run::strip_wrapper_rules`]), and report how many files changed.
 ///
 /// `trans run` does this to fresh LLM output, so this is for the
 /// back-catalog: translations written before the merge existed still
@@ -321,9 +322,7 @@ fn fix_translated_files(guides_dir: &Path, locales: &Locales) -> Result<usize> {
             let has_screenshots = !crate::images::extract_screenshot_bodies(&source).is_empty();
             let has_html_images = source.contains("<img");
             let has_links = !crate::links::extract_link_urls(&source).is_empty();
-            if !has_screenshots && !has_html_images && !has_links {
-                continue;
-            }
+            let needs_merge = has_screenshots || has_html_images || has_links;
             for (locale, _) in &locales.locales {
                 if locale == &locales.default_locale {
                     continue;
@@ -332,9 +331,14 @@ fn fix_translated_files(guides_dir: &Path, locales: &Locales) -> Result<usize> {
                 let Ok(translated) = std::fs::read_to_string(&target) else {
                     continue;
                 };
-                let merged = crate::images::merge_screenshot_blocks(&source, &translated);
-                let merged = crate::images::merge_image_srcs(&source, &merged);
-                let merged = crate::links::merge_link_urls(&source, &merged);
+                let merged = if needs_merge {
+                    let merged = crate::images::merge_screenshot_blocks(&source, &translated);
+                    let merged = crate::images::merge_image_srcs(&source, &merged);
+                    crate::links::merge_link_urls(&source, &merged)
+                } else {
+                    translated.clone()
+                };
+                let merged = crate::run::strip_wrapper_rules(&source, &merged);
                 if merged != translated {
                     std::fs::write(&target, &merged)?;
                     fixed += 1;
@@ -646,6 +650,29 @@ mod tests {
         let g = tmp.path();
         write(g, "a/meta.json", "{}");
         assert!(audit(g, &locales_en_fr_de()).is_empty());
+    }
+
+    // A page with no images or links still gets wrapped by a translator, so
+    // the back-catalog repair has to reach it too.
+    #[test]
+    fn fix_strips_wrapper_rules_from_a_page_with_no_images_or_links() {
+        let tmp = tempfile::tempdir().unwrap();
+        let g = tmp.path();
+        write(g, "a/items/en/x.md", "Body text of the page.\n");
+        write(g, "a/items/fr_fr/x.md", "---\nCorps du texte.\n\n---");
+        write(g, "a/items/de_de/x.md", "Der Text der Seite.\n");
+
+        let locales = locales_en_fr_de();
+        assert_eq!(fix_translated_files(g, &locales).unwrap(), 1);
+        assert_eq!(
+            std::fs::read_to_string(g.join("a/items/fr_fr/x.md")).unwrap(),
+            "Corps du texte."
+        );
+        assert_eq!(
+            std::fs::read_to_string(g.join("a/items/de_de/x.md")).unwrap(),
+            "Der Text der Seite.\n"
+        );
+        assert_eq!(fix_translated_files(g, &locales).unwrap(), 0, "idempotent");
     }
 
     #[test]

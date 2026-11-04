@@ -150,6 +150,7 @@ fn print_help() {
         "  LLM_MODEL              Primary model to use.",
         "  LLM_BASE_URL           Chat-completions API base (default DeepInfra).",
         "  LLM_FALLBACK_MODELS    Comma-separated fallback models (optional).",
+        "  LLM_TEMPERATURE        Sampling temperature (optional, provider default if unset).",
         "  TRANS_CONCURRENCY      Default concurrency (see --concurrency).",
     ];
     for l in lines {
@@ -510,7 +511,7 @@ async fn process_one_task(
         let raw = call_llm(client, api_key, model, &system, &prompt, &task.filename)
             .await
             .context("LLM call")?;
-        // Four deterministic passes over the model's output. Two are for
+        // Five deterministic passes over the model's output. Two are for
         // the markers whose bodies are evaluated as JavaScript at build
         // time: escape apostrophes in [inline-code-attrs-*], and rebuild
         // [app-screenshot-*] blocks from the source so only the translated
@@ -522,11 +523,13 @@ async fn process_one_task(
         // truncated paths outright - each one a 404 nothing but an
         // external crawl would catch. The fourth undoes a translator
         // promoting the opening paragraph to a heading, which puts a
-        // second <h1> on the page.
+        // second <h1> on the page. The fifth drops `---` lines copied from
+        // around the prompt's source block.
         let cleaned =
             crate::images::merge_screenshot_blocks(&source, &sanitize_inline_code_attrs(&raw));
         let cleaned = crate::links::merge_link_urls(&source, &cleaned);
-        match_leading_heading(&source, &cleaned)
+        let cleaned = match_leading_heading(&source, &cleaned);
+        strip_wrapper_rules(&source, &cleaned)
     };
 
     // Validate inline-code count parity. Mirrors the legacy Node translator:299-311.
@@ -866,6 +869,52 @@ fn match_leading_heading(source: &str, translated: &str) -> String {
     out.join("\n")
 }
 
+/// Remove the `---` lines a translator copied from around the prompt's source
+/// block.
+///
+/// They render as a horizontal rule at the top and bottom of the section, and
+/// a closing one with no blank line above it turns the last paragraph into a
+/// heading. Each end is only touched when the source doesn't open or close
+/// with a rule itself, and a page with nothing to strip comes back
+/// byte-identical, so `validate-links --fix` can run this over the back-catalog
+/// without churn.
+pub(crate) fn strip_wrapper_rules(source: &str, translated: &str) -> String {
+    static RULE: Lazy<Regex> = Lazy::new(|| Regex::new(r"\A\s*-{3,}\s*\z").expect("regex"));
+    let is_rule = |line: Option<&str>| line.is_some_and(|l| RULE.is_match(l));
+    let first = |text: &'_ str| -> Option<String> {
+        text.lines().find(|l| !l.trim().is_empty()).map(str::to_string)
+    };
+    let last = |text: &'_ str| -> Option<String> {
+        text.lines().rev().find(|l| !l.trim().is_empty()).map(str::to_string)
+    };
+    let strip_first =
+        is_rule(first(translated).as_deref()) && !is_rule(first(source).as_deref());
+    let strip_last = is_rule(last(translated).as_deref()) && !is_rule(last(source).as_deref());
+    if !strip_first && !strip_last {
+        return translated.to_string();
+    }
+
+    let lines: Vec<&str> = translated.lines().collect();
+    let mut start = 0;
+    let mut end = lines.len();
+    let droppable = |line: &str| line.trim().is_empty() || RULE.is_match(line);
+    if strip_first {
+        while start < end && droppable(lines[start]) {
+            start += 1;
+        }
+    }
+    if strip_last {
+        while end > start && droppable(lines[end - 1]) {
+            end -= 1;
+        }
+    }
+    let mut out = lines[start..end].join("\n");
+    if translated.ends_with('\n') && !out.is_empty() {
+        out.push('\n');
+    }
+    out
+}
+
 enum H1Kind {
     Atx,
     Setext,
@@ -978,6 +1027,50 @@ use fcdocs_shared::repo::repo_root;
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn strips_rules_wrapped_around_the_translation() {
+        let en = "Body.\n\n## Section\n";
+        let tr = "---\nCorps.\n\n## Section\n\n---";
+        assert_eq!(strip_wrapper_rules(en, tr), "Corps.\n\n## Section");
+    }
+
+    // Without a blank line, markdown reads the closing rule as a setext
+    // underline and turns the last paragraph into a heading.
+    #[test]
+    fn strips_a_closing_rule_directly_under_the_last_line() {
+        let en = "Body.\n";
+        let tr = "Corps.\n---\n";
+        assert_eq!(strip_wrapper_rules(en, tr), "Corps.\n");
+    }
+
+    #[test]
+    fn keeps_rules_the_source_opens_or_closes_with() {
+        let en = "---\nBody.\n---\n";
+        let tr = "---\nCorps.\n---\n";
+        assert_eq!(strip_wrapper_rules(en, tr), tr);
+    }
+
+    #[test]
+    fn strips_only_the_end_the_source_does_not_have() {
+        let en = "---\nBody.\n";
+        let tr = "---\nCorps.\n\n---\n";
+        assert_eq!(strip_wrapper_rules(en, tr), "---\nCorps.\n");
+    }
+
+    #[test]
+    fn keeps_rules_inside_the_page() {
+        let en = "One.\n\n---\n\nTwo.\n";
+        let tr = "---\nUn.\n\n---\n\nDeux.\n---\n";
+        assert_eq!(strip_wrapper_rules(en, tr), "Un.\n\n---\n\nDeux.\n");
+    }
+
+    #[test]
+    fn leaves_an_unwrapped_translation_byte_identical() {
+        let en = "Body.\n";
+        let tr = "Corps.  \n\n";
+        assert_eq!(strip_wrapper_rules(en, tr), tr);
+    }
 
     // The two real shapes translators produced across 39 sdk-* pages.
     #[test]

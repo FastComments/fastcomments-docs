@@ -57,6 +57,24 @@ pub fn env_fallback_models() -> Vec<String> {
         .collect()
 }
 
+/// Sampling temperature from an `LLM_TEMPERATURE` value. Unset or invalid
+/// leaves it to the provider's default.
+///
+/// Worth setting: the same 50 pages through `zai-org/GLM-5.3-Flash` at the
+/// default came back with words like `автmatично` and stray English, and at
+/// 0.2 with none (2026-11-04).
+pub fn parse_temperature(raw: Option<&str>) -> Option<f64> {
+    let raw = raw?.trim();
+    if raw.is_empty() {
+        return None;
+    }
+    let parsed = raw.parse::<f64>().ok().filter(|t| t.is_finite() && *t >= 0.0);
+    if parsed.is_none() {
+        warn!(value = %raw, "ignoring invalid LLM_TEMPERATURE");
+    }
+    parsed
+}
+
 /// HTTP client + credentials + primary model. Cheap to clone (each
 /// field is an Arc / small String).
 #[derive(Clone)]
@@ -69,6 +87,9 @@ pub struct CompletionClient {
     /// Full chat-completions URL. Built from `LLM_BASE_URL` in
     /// [`CompletionClient::new`]; tests override directly.
     pub endpoint_url: Arc<String>,
+    /// Sent with each request when set, otherwise the provider's default
+    /// applies. Built from `LLM_TEMPERATURE` in [`CompletionClient::new`].
+    pub temperature: Option<f64>,
 }
 
 impl CompletionClient {
@@ -85,6 +106,7 @@ impl CompletionClient {
             primary_model,
             alternate_models: env_fallback_models(),
             endpoint_url: Arc::new(chat_completions_url()),
+            temperature: parse_temperature(std::env::var("LLM_TEMPERATURE").ok().as_deref()),
         }
     }
 }
@@ -188,7 +210,7 @@ impl CompletionClient {
         prompt: &str,
         label: &str,
     ) -> Result<SingleCall> {
-        let body = json!({
+        let mut body = json!({
             "model": model,
             "messages": [
                 {"role": "system", "content": system},
@@ -196,6 +218,9 @@ impl CompletionClient {
             ],
             "max_tokens": MAX_TOKENS,
         });
+        if let Some(temperature) = self.temperature {
+            body["temperature"] = json!(temperature);
+        }
         let resp = self
             .client
             .post(self.endpoint_url.as_str())
@@ -267,7 +292,49 @@ mod tests {
             primary_model: "Qwen/Qwen2.5-72B-Instruct".to_string(),
             alternate_models: vec!["meta-llama/Llama-3.3-70B-Instruct".to_string(), "deepseek-ai/DeepSeek-V3".to_string()],
             endpoint_url: Arc::new(url.to_string()),
+            temperature: None,
         }
+    }
+
+    #[test]
+    fn temperature_parses_a_number_and_rejects_anything_else() {
+        assert_eq!(parse_temperature(Some("0.2")), Some(0.2));
+        assert_eq!(parse_temperature(Some(" 0 ")), Some(0.0));
+        assert_eq!(parse_temperature(None), None);
+        assert_eq!(parse_temperature(Some("")), None);
+        assert_eq!(parse_temperature(Some("cold")), None);
+        assert_eq!(parse_temperature(Some("-1")), None);
+    }
+
+    async fn body_sent_with(temperature: Option<f64>) -> Value {
+        #[derive(Clone)]
+        struct St {
+            body: Arc<std::sync::Mutex<Option<Value>>>,
+        }
+        async fn handler(State(st): State<St>, Json(req): Json<Value>) -> Json<Value> {
+            *st.body.lock().unwrap() = Some(req);
+            Json(json!({"choices": [{"message": {"content": "ok"}, "finish_reason": "stop"}]}))
+        }
+        let st = St { body: Arc::new(std::sync::Mutex::new(None)) };
+        let app = Router::new().route("/v1/chat/completions", post(handler)).with_state(st.clone());
+        let url = spawn_server(app).await;
+        let mut cc = client_for(&url);
+        cc.temperature = temperature;
+        cc.complete("sys", "prompt", "test").await.expect("should succeed");
+        let sent = st.body.lock().unwrap().clone();
+        sent.expect("request body captured")
+    }
+
+    #[tokio::test]
+    async fn sends_the_configured_temperature() {
+        let body = body_sent_with(Some(0.2)).await;
+        assert_eq!(body["temperature"], json!(0.2));
+    }
+
+    #[tokio::test]
+    async fn omits_temperature_when_unset() {
+        let body = body_sent_with(None).await;
+        assert!(body.get("temperature").is_none(), "body: {body}");
     }
 
     async fn spawn_server(handler: Router) -> String {
