@@ -1,8 +1,8 @@
 //! Per-language prompt builders. Each is a verbatim port of the
 //! matching `build{Lang}Prompt` in
-//! `src/sdk-doc-generators/the legacy Node LLM client:151-359`. Byte-for-byte
-//! string output is required so the cache key SHA256 matches the
-//! Node-computed value and we hit the existing `sdk-ai-cache/` files.
+//! `src/sdk-doc-generators/the legacy Node LLM client:151-359`. The prompt is
+//! part of the cache key, so any change to this output misses the existing
+//! `sdk-ai-cache/` files and regenerates them.
 
 use super::typescript_parser::{Method, NestedType, ParamInfo};
 

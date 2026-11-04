@@ -110,38 +110,14 @@ impl LlmClient {
         sha256_hex(&Value::Object(cache_key_fields(method_meta, prompt)))
     }
 
-    /// Find the entry for these inputs, moving it to the model-free key if it
-    /// is still under the key it was written with.
-    async fn lookup(&self, method_meta: &Value, prompt: &str) -> Option<CacheRecord> {
-        let key = self.cache_key(method_meta, prompt);
-        let path = self.cache_dir.join(format!("{key}.json"));
-        if let Some(record) = read_cache(&path).await {
-            return Some(record);
-        }
-        let legacy_path = self
-            .cache_dir
-            .join(format!("{}.json", legacy_cache_key(method_meta, prompt)));
-        let mut record = read_cache(&legacy_path).await?;
-        record.signature_hash = key;
-        // The example is already in hand: a failed move only leaves the old
-        // file in place for the next build, it must never cost an LLM call.
-        match write_cache(&path, &record).await {
-            Ok(()) => {
-                if let Err(e) = tokio::fs::remove_file(&legacy_path).await {
-                    tracing::warn!(path = ?legacy_path, error = %e, "could not remove old cache file");
-                }
-            }
-            Err(e) => tracing::warn!(path = ?path, error = %e, "could not move cache file to its new key"),
-        }
-        Some(record)
-    }
-
     /// Cache-only lookup. Returns `Some(code_example)` if the cache
     /// file exists, else `None`. Use this when an API key isn't
     /// available (parity validation, CI, etc.) to surface only the
     /// cache hits.
     pub async fn get_cached(&self, method_meta: &Value, prompt: &str) -> Option<String> {
-        self.lookup(method_meta, prompt).await.map(|c| c.code_example)
+        let key = self.cache_key(method_meta, prompt);
+        let path = self.cache_dir.join(format!("{key}.json"));
+        read_cache(&path).await.map(|c| c.code_example)
     }
 
     /// Generate a completion, with cache lookup keyed by
@@ -152,7 +128,7 @@ impl LlmClient {
         let cache_key = self.cache_key(method_meta, prompt);
         let cache_file = self.cache_dir.join(format!("{cache_key}.json"));
 
-        if let Some(cached) = self.lookup(method_meta, prompt).await {
+        if let Some(cached) = read_cache(&cache_file).await {
             tracing::debug!(method = ?method_meta.get("name"), "llm cache hit");
             return Ok(LlmResponse {
                 text: cached.code_example,
@@ -383,20 +359,6 @@ fn cache_key_fields(method_meta: &Value, prompt: &str) -> serde_json::Map<String
     }
     data.insert("prompt".to_string(), Value::String(prompt.to_string()));
     data
-}
-
-/// The only model id builds have looked files up under since
-/// `openai/gpt-oss-120b` replaced `openai/gpt-oss-120b-Turbo` (2026-10-20).
-/// Files keyed on anything older, such as `gpt-5-mini`, were already
-/// unreachable and stay that way.
-const LEGACY_CACHE_KEY_MODEL: &str = "openai/gpt-oss-120b-Turbo";
-
-/// The key an entry was written under while the model was part of the key.
-/// Goes away once the build has moved every reachable file.
-fn legacy_cache_key(method_meta: &Value, prompt: &str) -> String {
-    let mut data = cache_key_fields(method_meta, prompt);
-    data.insert("model".to_string(), Value::String(LEGACY_CACHE_KEY_MODEL.to_string()));
-    sha256_hex(&Value::Object(data))
 }
 
 fn default_fallbacks(primary: &str) -> Vec<String> {
@@ -673,80 +635,33 @@ mod cache_key_tests {
     }
 
     #[tokio::test]
-    async fn existing_entry_is_found_after_the_primary_model_changes() {
+    async fn entry_is_found_whatever_the_primary_model() {
         let client = client_on_empty_cache("found", NEW_PRIMARY);
-        write_entry(&client, PINNED_TURBO_KEY, "old example");
+        write_entry(&client, PINNED_NEW_KEY, "an example");
         assert_eq!(
             client.get_cached(&pinned_method(), "TEST PROMPT").await.as_deref(),
-            Some("old example")
-        );
-    }
-
-    #[tokio::test]
-    async fn existing_entry_moves_to_the_new_key_with_its_contents_intact() {
-        let client = client_on_empty_cache("moved", NEW_PRIMARY);
-        write_entry(&client, PINNED_TURBO_KEY, "old example");
-
-        client.get_cached(&pinned_method(), "TEST PROMPT").await;
-
-        assert!(!entry_path(&client, PINNED_TURBO_KEY).exists(), "old file should be gone");
-        let moved: Value = serde_json::from_slice(
-            &std::fs::read(entry_path(&client, PINNED_NEW_KEY)).expect("new file"),
-        )
-        .unwrap();
-        assert_eq!(moved["signatureHash"], PINNED_NEW_KEY);
-        assert_eq!(moved["codeExample"], "old example");
-        assert_eq!(moved["method"], "addDomainConfig");
-        assert_eq!(moved["generatedAt"], "2026-01-02T03:04:05.678Z");
-        assert_eq!(moved["model"], "openai/gpt-oss-120b", "keeps which model really wrote it");
-        assert_eq!(moved["promptTokens"], 11);
-        assert_eq!(moved["completionTokens"], 22);
-
-        // And it still resolves on the next build.
-        assert_eq!(
-            client.get_cached(&pinned_method(), "TEST PROMPT").await.as_deref(),
-            Some("old example")
-        );
-    }
-
-    #[tokio::test]
-    async fn new_key_wins_when_both_exist() {
-        let client = client_on_empty_cache("both", NEW_PRIMARY);
-        write_entry(&client, PINNED_TURBO_KEY, "old example");
-        write_entry(&client, PINNED_NEW_KEY, "new example");
-        assert_eq!(
-            client.get_cached(&pinned_method(), "TEST PROMPT").await.as_deref(),
-            Some("new example")
+            Some("an example")
         );
     }
 
     #[tokio::test]
     async fn generate_serves_an_existing_entry_without_calling_out() {
         let client = client_on_empty_cache("generate", NEW_PRIMARY);
-        write_entry(&client, PINNED_TURBO_KEY, "old example");
+        write_entry(&client, PINNED_NEW_KEY, "an example");
         let resp = client
             .generate(&pinned_method(), "TEST PROMPT")
             .await
             .expect("must resolve from disk, the client has no API key");
         assert!(resp.cached);
-        assert_eq!(resp.text, "old example");
+        assert_eq!(resp.text, "an example");
     }
 
-    #[cfg(unix)]
     #[tokio::test]
-    async fn entry_is_still_served_when_it_cannot_be_moved() {
-        use std::os::unix::fs::PermissionsExt;
-        let client = client_on_empty_cache("readonly", NEW_PRIMARY);
+    async fn files_left_under_the_old_key_are_not_read() {
+        let client = client_on_empty_cache("oldkeygone", NEW_PRIMARY);
         write_entry(&client, PINNED_TURBO_KEY, "old example");
-        let dir = client.cache_dir.clone();
-        std::fs::set_permissions(&dir, std::fs::Permissions::from_mode(0o555)).unwrap();
-
-        let served = client.get_cached(&pinned_method(), "TEST PROMPT").await;
-        let old_kept = entry_path(&client, PINNED_TURBO_KEY).exists();
-
-        std::fs::set_permissions(&dir, std::fs::Permissions::from_mode(0o755)).unwrap();
-        assert_eq!(served.as_deref(), Some("old example"), "a failed move must not cost an LLM call");
-        assert!(old_kept, "the old file stays so the next build can retry");
+        assert_eq!(client.get_cached(&pinned_method(), "TEST PROMPT").await, None);
+        assert!(entry_path(&client, PINNED_TURBO_KEY).exists(), "left where it was");
     }
 
     #[tokio::test]

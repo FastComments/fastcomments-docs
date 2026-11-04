@@ -12,8 +12,7 @@
 //!     bail the build at end-of-run; matches Node's
 //!     src/sdk-guide-generator.js:268-309 contract).
 //!   - Four AI generators (typescript, rust, cpp, nim) parallelized
-//!     across methods, sharing the `fcdocs-llm` cache (byte-identical
-//!     SHA256 keys vs Node so existing src/sdk-ai-cache/ entries hit).
+//!     across methods, sharing the `fcdocs-llm` cache in src/sdk-ai-cache/.
 //!   - meta.json emission with Node-shaped category ordering.
 //!
 //! SDK-level fan-out is parallel up to SDKGEN_PARALLEL (default 8).
