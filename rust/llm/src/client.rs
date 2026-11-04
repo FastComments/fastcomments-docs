@@ -87,8 +87,11 @@ impl LlmClient {
         })
     }
 
-    /// Compute the cache key for a (method, prompt, model) tuple,
-    /// matching Node's `the legacy Node LLM client:58-72`.
+    /// Compute the cache key for a (method, prompt) pair. Field handling
+    /// matches Node's `the legacy Node LLM client:58-72`. The model is
+    /// deliberately not part of the key, so changing the primary model does
+    /// not throw away every committed example; a record's `model` field says
+    /// which model wrote it.
     ///
     /// Critical detail: Node does
     ///     const data = { methodName: method.name, ..., httpMethod: method.httpMethod, ... };
@@ -104,28 +107,33 @@ impl LlmClient {
     /// We restore parity by building the JSON object manually and skipping
     /// any field where `method_meta.get(...)` returns `None`.
     pub fn cache_key(&self, method_meta: &Value, prompt: &str) -> String {
-        let mut data = serde_json::Map::with_capacity(8);
-        // (out_key, source_key) — out_key is the JSON property the cache
-        // key sees; source_key matches whatever `to_value(&method)` produced
-        // (Method struct uses #[serde(rename = ...)]).
-        for (out_key, src_key) in [
-            ("methodName", "name"),
-            ("parameters", "parameters"),
-            ("responseType", "responseType"),
-            ("nestedTypes", "nestedTypes"),
-            ("httpMethod", "httpMethod"),
-            ("path", "path"),
-        ] {
-            if let Some(v) = method_meta.get(src_key) {
-                // Node note: an explicit JSON null in method_meta is
-                // preserved as `"key":null` by JSON.stringify. We mirror
-                // that — only true `undefined` / missing keys drop out.
-                data.insert(out_key.to_string(), v.clone());
-            }
+        sha256_hex(&Value::Object(cache_key_fields(method_meta, prompt)))
+    }
+
+    /// Find the entry for these inputs, moving it to the model-free key if it
+    /// is still under the key it was written with.
+    async fn lookup(&self, method_meta: &Value, prompt: &str) -> Option<CacheRecord> {
+        let key = self.cache_key(method_meta, prompt);
+        let path = self.cache_dir.join(format!("{key}.json"));
+        if let Some(record) = read_cache(&path).await {
+            return Some(record);
         }
-        data.insert("prompt".to_string(), Value::String(prompt.to_string()));
-        data.insert("model".to_string(), Value::String(cache_key_model(&self.model).to_string()));
-        sha256_hex(&Value::Object(data))
+        let legacy_path = self
+            .cache_dir
+            .join(format!("{}.json", legacy_cache_key(method_meta, prompt)));
+        let mut record = read_cache(&legacy_path).await?;
+        record.signature_hash = key;
+        // The example is already in hand: a failed move only leaves the old
+        // file in place for the next build, it must never cost an LLM call.
+        match write_cache(&path, &record).await {
+            Ok(()) => {
+                if let Err(e) = tokio::fs::remove_file(&legacy_path).await {
+                    tracing::warn!(path = ?legacy_path, error = %e, "could not remove old cache file");
+                }
+            }
+            Err(e) => tracing::warn!(path = ?path, error = %e, "could not move cache file to its new key"),
+        }
+        Some(record)
     }
 
     /// Cache-only lookup. Returns `Some(code_example)` if the cache
@@ -133,20 +141,18 @@ impl LlmClient {
     /// available (parity validation, CI, etc.) to surface only the
     /// cache hits.
     pub async fn get_cached(&self, method_meta: &Value, prompt: &str) -> Option<String> {
-        let key = self.cache_key(method_meta, prompt);
-        let path = self.cache_dir.join(format!("{key}.json"));
-        read_cache(&path).await.map(|c| c.code_example)
+        self.lookup(method_meta, prompt).await.map(|c| c.code_example)
     }
 
     /// Generate a completion, with cache lookup keyed by
-    /// SHA256(stable_stringify({ method, prompt, model })).
+    /// SHA256(stable_stringify({ method, prompt })).
     /// `method_meta` should mirror the Node call site at
     /// `src/sdk-doc-generators/the legacy Node LLM client:58-72`.
     pub async fn generate(&self, method_meta: &Value, prompt: &str) -> Result<LlmResponse> {
         let cache_key = self.cache_key(method_meta, prompt);
         let cache_file = self.cache_dir.join(format!("{cache_key}.json"));
 
-        if let Some(cached) = read_cache(&cache_file).await {
+        if let Some(cached) = self.lookup(method_meta, prompt).await {
             tracing::debug!(method = ?method_meta.get("name"), "llm cache hit");
             return Ok(LlmResponse {
                 text: cached.code_example,
@@ -354,16 +360,43 @@ fn chat_completions_url() -> String {
     format!("{}/chat/completions", base.trim_end_matches('/'))
 }
 
-/// The model id a cache key is computed with. DeepInfra deprecated
-/// `openai/gpt-oss-120b-Turbo` (2026-10-20) in favor of
-/// `openai/gpt-oss-120b`, the same weights; ~1k committed cache files are
-/// keyed on the Turbo id, so the replacement keeps hashing as Turbo
-/// rather than regenerating every one of them.
-fn cache_key_model(model: &str) -> &str {
-    match model {
-        "openai/gpt-oss-120b" => "openai/gpt-oss-120b-Turbo",
-        other => other,
+/// Everything a cache key hashes.
+fn cache_key_fields(method_meta: &Value, prompt: &str) -> serde_json::Map<String, Value> {
+    let mut data = serde_json::Map::with_capacity(8);
+    // (out_key, source_key): out_key is the JSON property the cache
+    // key sees; source_key matches whatever `to_value(&method)` produced
+    // (Method struct uses #[serde(rename = ...)]).
+    for (out_key, src_key) in [
+        ("methodName", "name"),
+        ("parameters", "parameters"),
+        ("responseType", "responseType"),
+        ("nestedTypes", "nestedTypes"),
+        ("httpMethod", "httpMethod"),
+        ("path", "path"),
+    ] {
+        if let Some(v) = method_meta.get(src_key) {
+            // Node note: an explicit JSON null in method_meta is
+            // preserved as `"key":null` by JSON.stringify. We mirror
+            // that: only true `undefined` / missing keys drop out.
+            data.insert(out_key.to_string(), v.clone());
+        }
     }
+    data.insert("prompt".to_string(), Value::String(prompt.to_string()));
+    data
+}
+
+/// The only model id builds have looked files up under since
+/// `openai/gpt-oss-120b` replaced `openai/gpt-oss-120b-Turbo` (2026-10-20).
+/// Files keyed on anything older, such as `gpt-5-mini`, were already
+/// unreachable and stay that way.
+const LEGACY_CACHE_KEY_MODEL: &str = "openai/gpt-oss-120b-Turbo";
+
+/// The key an entry was written under while the model was part of the key.
+/// Goes away once the build has moved every reachable file.
+fn legacy_cache_key(method_meta: &Value, prompt: &str) -> String {
+    let mut data = cache_key_fields(method_meta, prompt);
+    data.insert("model".to_string(), Value::String(LEGACY_CACHE_KEY_MODEL.to_string()));
+    sha256_hex(&Value::Object(data))
 }
 
 fn default_fallbacks(primary: &str) -> Vec<String> {
@@ -475,7 +508,7 @@ mod cache_key_tests {
         });
         assert_eq!(
             client.cache_key(&method, "TEST PROMPT"),
-            "bfdd410d1ca038c833e3f31d7c460517fae569e5a5b0549fae1b21939eb3ef70"
+            "949995579f2a382fbe36d7e9b872b3b7080b948bfb32bc3bc666e4b2ed3855f9"
         );
     }
 
@@ -494,7 +527,7 @@ mod cache_key_tests {
         });
         assert_eq!(
             client.cache_key(&method, "TEST PROMPT"),
-            "bf79b92af7de651995aca7ba7e3106c1a29f9ac0ff37fc1d27d5e23ab80cf1df"
+            "7be26259eed600095b09d851a0f7d18fb32af2256d300a0eeb2aecd20b463713"
         );
     }
 
@@ -515,7 +548,7 @@ mod cache_key_tests {
         });
         assert_eq!(
             client.cache_key(&method, "TEST PROMPT"),
-            "bf84455d1452535d9a701e331770769d4527b2c6482b8f2024136ecdf20915ae"
+            "6ed017d8dc9af54aa41dcbad7e188815a92770e64b1cf9829cab9efb8e524428"
         );
     }
 
@@ -573,16 +606,171 @@ mod cache_key_tests {
         );
     }
 
+    /// The key of a file written before the model left the key, for
+    /// [`pinned_method`] + "TEST PROMPT" under the Turbo id. Computed
+    /// independently in Node, not by the code under test.
+    const PINNED_TURBO_KEY: &str =
+        "8d4e089b7081a8d6947531551657bd141ac3922bb6003937dec0f2f81d44513e";
+    /// The model-free key of the same inputs, also computed in Node.
+    const PINNED_NEW_KEY: &str =
+        "949995579f2a382fbe36d7e9b872b3b7080b948bfb32bc3bc666e4b2ed3855f9";
+    const NEW_PRIMARY: &str = "google/gemma-4-31B-it-turbo";
+
+    fn pinned_method() -> Value {
+        json!({
+            "name": "addDomainConfig",
+            "parameters": {"tenantId": {"type": "string", "required": true}},
+            "responseType": "DomainConfig",
+            "nestedTypes": {},
+            "httpMethod": "POST",
+            "path": "/api/v1/domain-config",
+        })
+    }
+
+    /// A client with no API key on an empty cache dir of its own, so a test
+    /// passes only if it resolves from disk, never by calling out.
+    fn client_on_empty_cache(test_name: &str, model: &str) -> LlmClient {
+        let dir = std::env::temp_dir()
+            .join(format!("fcdocs-cache-{}-{test_name}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let mut client = make_client();
+        client.cache_dir = dir;
+        client.model = model.to_string();
+        client.fallback_models = vec![model.to_string()];
+        client
+    }
+
+    fn write_entry(client: &LlmClient, key: &str, code: &str) {
+        let body = json!({
+            "method": "addDomainConfig",
+            "signatureHash": key,
+            "generatedAt": "2026-01-02T03:04:05.678Z",
+            "codeExample": code,
+            "model": "openai/gpt-oss-120b",
+            "promptTokens": 11,
+            "completionTokens": 22,
+        });
+        std::fs::write(
+            client.cache_dir.join(format!("{key}.json")),
+            serde_json::to_vec_pretty(&body).unwrap(),
+        )
+        .unwrap();
+    }
+
+    fn entry_path(client: &LlmClient, key: &str) -> PathBuf {
+        client.cache_dir.join(format!("{key}.json"))
+    }
+
     #[test]
-    fn gpt_oss_reuses_turbo_cache_entries() {
-        // ~1k committed cache files are keyed on the deprecated Turbo id.
-        let method = json!({"name": "getComments", "httpMethod": "GET", "path": "/api/v1/comments"});
-        let mut turbo = make_client();
-        turbo.model = "openai/gpt-oss-120b-Turbo".into();
-        let mut plain = make_client();
-        plain.model = "openai/gpt-oss-120b".into();
-        assert_eq!(plain.cache_key(&method, "P"), turbo.cache_key(&method, "P"));
-        // Other models still key on their own id.
-        assert_ne!(make_client().cache_key(&method, "P"), turbo.cache_key(&method, "P"));
+    fn cache_key_does_not_depend_on_the_model() {
+        let method = pinned_method();
+        let mut a = make_client();
+        a.model = "openai/gpt-oss-120b".into();
+        let mut b = make_client();
+        b.model = NEW_PRIMARY.into();
+        assert_eq!(a.cache_key(&method, "P"), b.cache_key(&method, "P"));
+    }
+
+    #[tokio::test]
+    async fn existing_entry_is_found_after_the_primary_model_changes() {
+        let client = client_on_empty_cache("found", NEW_PRIMARY);
+        write_entry(&client, PINNED_TURBO_KEY, "old example");
+        assert_eq!(
+            client.get_cached(&pinned_method(), "TEST PROMPT").await.as_deref(),
+            Some("old example")
+        );
+    }
+
+    #[tokio::test]
+    async fn existing_entry_moves_to_the_new_key_with_its_contents_intact() {
+        let client = client_on_empty_cache("moved", NEW_PRIMARY);
+        write_entry(&client, PINNED_TURBO_KEY, "old example");
+
+        client.get_cached(&pinned_method(), "TEST PROMPT").await;
+
+        assert!(!entry_path(&client, PINNED_TURBO_KEY).exists(), "old file should be gone");
+        let moved: Value = serde_json::from_slice(
+            &std::fs::read(entry_path(&client, PINNED_NEW_KEY)).expect("new file"),
+        )
+        .unwrap();
+        assert_eq!(moved["signatureHash"], PINNED_NEW_KEY);
+        assert_eq!(moved["codeExample"], "old example");
+        assert_eq!(moved["method"], "addDomainConfig");
+        assert_eq!(moved["generatedAt"], "2026-01-02T03:04:05.678Z");
+        assert_eq!(moved["model"], "openai/gpt-oss-120b", "keeps which model really wrote it");
+        assert_eq!(moved["promptTokens"], 11);
+        assert_eq!(moved["completionTokens"], 22);
+
+        // And it still resolves on the next build.
+        assert_eq!(
+            client.get_cached(&pinned_method(), "TEST PROMPT").await.as_deref(),
+            Some("old example")
+        );
+    }
+
+    #[tokio::test]
+    async fn new_key_wins_when_both_exist() {
+        let client = client_on_empty_cache("both", NEW_PRIMARY);
+        write_entry(&client, PINNED_TURBO_KEY, "old example");
+        write_entry(&client, PINNED_NEW_KEY, "new example");
+        assert_eq!(
+            client.get_cached(&pinned_method(), "TEST PROMPT").await.as_deref(),
+            Some("new example")
+        );
+    }
+
+    #[tokio::test]
+    async fn generate_serves_an_existing_entry_without_calling_out() {
+        let client = client_on_empty_cache("generate", NEW_PRIMARY);
+        write_entry(&client, PINNED_TURBO_KEY, "old example");
+        let resp = client
+            .generate(&pinned_method(), "TEST PROMPT")
+            .await
+            .expect("must resolve from disk, the client has no API key");
+        assert!(resp.cached);
+        assert_eq!(resp.text, "old example");
+    }
+
+    #[cfg(unix)]
+    #[tokio::test]
+    async fn entry_is_still_served_when_it_cannot_be_moved() {
+        use std::os::unix::fs::PermissionsExt;
+        let client = client_on_empty_cache("readonly", NEW_PRIMARY);
+        write_entry(&client, PINNED_TURBO_KEY, "old example");
+        let dir = client.cache_dir.clone();
+        std::fs::set_permissions(&dir, std::fs::Permissions::from_mode(0o555)).unwrap();
+
+        let served = client.get_cached(&pinned_method(), "TEST PROMPT").await;
+        let old_kept = entry_path(&client, PINNED_TURBO_KEY).exists();
+
+        std::fs::set_permissions(&dir, std::fs::Permissions::from_mode(0o755)).unwrap();
+        assert_eq!(served.as_deref(), Some("old example"), "a failed move must not cost an LLM call");
+        assert!(old_kept, "the old file stays so the next build can retry");
+    }
+
+    #[tokio::test]
+    async fn entries_keyed_on_other_models_stay_unreachable() {
+        // 2,442 committed files are keyed on gpt-5-mini and no build reaches
+        // them today. Reviving them would swap newer examples for older ones.
+        let client = client_on_empty_cache("othermodel", NEW_PRIMARY);
+        let mut data = serde_json::Map::new();
+        for (k, v) in [
+            ("methodName", json!("addDomainConfig")),
+            ("parameters", json!({"tenantId": {"type": "string", "required": true}})),
+            ("responseType", json!("DomainConfig")),
+            ("nestedTypes", json!({})),
+            ("httpMethod", json!("POST")),
+            ("path", json!("/api/v1/domain-config")),
+            ("prompt", json!("TEST PROMPT")),
+            ("model", json!("gpt-5-mini")),
+        ] {
+            data.insert(k.to_string(), v);
+        }
+        let other_key = sha256_hex(&Value::Object(data));
+        write_entry(&client, &other_key, "ancient example");
+
+        assert_eq!(client.get_cached(&pinned_method(), "TEST PROMPT").await, None);
+        assert!(entry_path(&client, &other_key).exists(), "left where it was");
     }
 }
