@@ -1,10 +1,10 @@
-FastComments SSO (<a href="#sso">detalhes aqui</a>) oferece aos seus usuários uma maneira de comentar sem precisar fazer login em outra plataforma.
+FastComments SSO (<a href="#sso">detalhes aqui</a>) oferece aos seus usuários uma forma de comentar sem precisar fazer login em outra plataforma.
 
-No entanto, isso por si só não protege seus tópicos de comentários, já que, por padrão, os dados dos comentários são informações publicamente disponíveis – qualquer pessoa que possa visualizar a página pode ver os comentários.
+No entanto, isso por si só não protege seus tópicos de comentários, pois, por padrão, os dados dos comentários são informações publicamente disponíveis – qualquer pessoa que possa visualizar a página pode ver os comentários.
 
-Alterando uma configuração, podemos restringir a obtenção de comentários, a menos que seja feita por um administrador ou usuário SSO válido.
+Alterando uma configuração, podemos restringir a obtenção dos comentários, a menos que seja feita por um administrador ou usuário SSO válido.
 
-#### Configuração sem Código
+#### Configuração sem código
 
 Podemos impedir a visualização e a interação com nossos tópicos de comentários, quando o SSO está configurado, criando uma <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">regra de personalização</a>.
 
@@ -14,7 +14,7 @@ Ao fazer isso, procure por SSO, e você encontrará esta opção:
 
 Ative-a e salve a regra de personalização.
 
-#### Proteger Apenas um Domínio ou Página Específico
+#### Proteger Apenas um Domínio ou Página Específica
 
 Para proteger apenas um determinado Domínio ou Página, basta configurar a regra de personalização para isso.
 
@@ -28,7 +28,9 @@ Para proteger uma página específica, insira a URL da página no campo "URL ID"
 
 Ao exigir SSO, você precisará decidir se requer SSO Simples ou SSO Seguro. Se você exigir SSO Simples, ambos são permitidos, mas se exigir SSO Seguro, o conteúdo deve ser obtido com um payload de SSO Seguro hashado com sua chave de API para ser visualizado.
 
-A opção de nível de segurança aparecerá quando você selecionar "Exigir SSO para Visualizar Comentários".
+A opção de nível de segurança aparecerá quando você selecionar "Require SSO To View Comments", e só terá efeito enquanto essa opção estiver ativada.
+
+As configurações <a href="#sso-simple">Verificar Comentários Automaticamente via SSO Simples e Permitir Administradores SSO Simples</a> são separadas e se aplicam independentemente de esta opção estar ativada.
 
 #### Proteção Além da Leitura
 
@@ -37,3 +39,5 @@ Ativar esta opção protegerá a página ou domínio de ser comentado, a menos q
 #### Armadilhas
 
 Qualquer usuário que tenha criado comentários antes da sua integração SSO não poderá vê-los, a menos que faça login via sua integração SSO.
+
+---
