@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "4228df70ec478c763963e411ac7aba647fee605f831a528152a068b64c2901f3",
+  "generatedAt": "2026-07-01T07:19:49.416Z",
+  "codeExample": "auto blockParams = PublicBlockFromCommentParams();  \nblockParams.reason = U(\"spam\");  \napi->unBlockCommentPublic(  \n    U(\"my-tenant-123\"),  \n    U(\"comment-789\"),  \n    blockParams,  \n    boost::optional<utility::string_t>(U(\"sso-token-abc\"))  \n).then([](std::shared_ptr<UnblockSuccess> result){ });",
+  "model": "openai/gpt-oss-120b"
+}

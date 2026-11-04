@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantPackage",
+  "signatureHash": "7bda87affa91ab74354bcb728140231dc7095324f22899837a88c5ebd9f61504",
+  "generatedAt": "2026-07-01T07:19:50.797Z",
+  "codeExample": "let (apiResponse, httpResponse) = client.deleteTenantPackage(tenantId = \"my-tenant-123\", id = \"pkg-456def\")\nif apiResponse.isSome:\n  let emptyResponse = apiResponse.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

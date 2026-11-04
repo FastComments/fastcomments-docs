@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_text",
+  "signatureHash": "bd2d027cfd3ac578a90142e52722cfab7912d7fee018f226496b411327e7b985",
+  "generatedAt": "2026-07-01T10:15:25.998Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetCommentTextParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"comment-12345\".to_string(),\n        edit_key: Some(\"edit-key-abc\".to_string()),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _response = get_comment_text(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "c262c0c399020c5ca4f949bf0a92b62c08cd69010a7899e862d9c41d02c73daa",
+  "generatedAt": "2026-07-01T07:19:20.420Z",
+  "codeExample": "let (hashTagsOpt, httpResp) = client.getHashTags(tenantId = \"my-tenant-123\", page = 0.0)\nif hashTagsOpt.isSome:\n  let hashTags = hashTagsOpt.get()\n  echo hashTags\nelse:\n  echo \"No hashtags found\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserBanPreference",
+  "signatureHash": "1d506ee1f2461de27695f6e3d97d31a4165c8a3030a73f5b351bffff3adb9411",
+  "generatedAt": "2026-07-01T07:19:21.654Z",
+  "codeExample": "let (maybePref, httpResp) = client.getUserBanPreference(tenantId = \"my-tenant-123\", sso = \"\")\nif maybePref.isSome:\n  let pref = maybePref.get()\n  echo pref",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

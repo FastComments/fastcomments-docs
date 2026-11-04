@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "4ceae9329cd35c11bd698f49697be0f256f227754cbbdfa4b11913c5f46f4430",
+  "generatedAt": "2026-07-01T07:19:55.536Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto badgeId = utility::conversions::to_string_t(\"badge-456\");\nPutAwardBadgeOptions opts;\nopts.userId = utility::conversions::to_string_t(\"user-42\");\nopts.note = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Excellent comment\"));\napi->putAwardBadge(tenantId, badgeId, opts).then([](pplx::task<std::shared_ptr<AwardUserBadgeResponse>> t){\n    try{\n        auto resp = t.get();\n        auto respCopy = std::make_shared<AwardUserBadgeResponse>(*resp);\n    }catch(const std::exception& e){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

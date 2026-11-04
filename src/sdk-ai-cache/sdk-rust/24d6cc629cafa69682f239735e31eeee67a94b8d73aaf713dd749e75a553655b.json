@@ -1,0 +1,7 @@
+{
+  "method": "get_offline_users",
+  "signatureHash": "24d6cc629cafa69682f239735e31eeee67a94b8d73aaf713dd749e75a553655b",
+  "generatedAt": "2026-07-01T10:15:26.091Z",
+  "codeExample": "async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetOfflineUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n        after_name: Some(\"alice\".to_string()),\n        after_user_id: Some(\"user-42\".to_string()),\n    };\n    let _response = get_offline_users(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

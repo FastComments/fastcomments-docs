@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "d69190b542d615c5be5aececdc01464e7101beae47b37655c2b9432e9b6265cc",
+  "generatedAt": "2026-07-01T10:15:36.699Z",
+  "codeExample": "async function fetchDomainConfigs(): Promise<void> {\n  const tenantId: string = \"acme-corp-567\";\n  const configs: GetDomainConfigsResponse = await getDomainConfigs(tenantId);\n  console.log(configs);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

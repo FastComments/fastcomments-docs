@@ -1,0 +1,7 @@
+{
+  "method": "deleteV2PageReact",
+  "signatureHash": "54442f0543ff8e4110c26bdc3e7945b705070e887338333d8be192d41b59a550",
+  "generatedAt": "2026-07-01T07:19:27.069Z",
+  "codeExample": "let (maybeReact, httpResp) = client.deleteV2PageReact(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  id = \"react-456\",\n)\n\nif maybeReact.isSome:\n  let react = maybeReact.get()\n  echo react",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

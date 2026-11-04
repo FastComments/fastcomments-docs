@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "b5a4c92072feb619f0340e6261c544743a443e0baed7cf359a693ccaadecfe9f",
+  "generatedAt": "2026-09-23T20:29:55.107Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c6d\";\n\nconst templateBody: CreateEmailTemplateBody = {\n  name: \"Weekly Summary\",\n  subject: \"Your weekly activity report\",\n  // optional field\n  replyTo: \"no-reply@myapp.com\",\n  htmlContent: \"<p>Hello {{userName}}, here is your summary...</p>\"\n};\n\nconst response: CreateEmailTemplateResponse = await createEmailTemplate(tenantId, templateBody);\n\nconsole.log(response.template.id);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

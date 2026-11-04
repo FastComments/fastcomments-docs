@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "9e40299f49e3cfefff78e4217942524f4464852f46a54416520948d6192b5317",
+  "generatedAt": "2026-07-01T07:19:37.368Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"user@example.com\");\napi->getUserNotificationCount(tenantId, sso).then([](pplx::task<std::shared_ptr<GetUserNotificationCountResponse>> t){\n    try{\n        auto resp = t.get();\n        // use resp as needed\n    }catch(const std::exception&){\n        // handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

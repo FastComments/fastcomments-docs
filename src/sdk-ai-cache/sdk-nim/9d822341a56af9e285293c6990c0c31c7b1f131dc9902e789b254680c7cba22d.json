@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "9d822341a56af9e285293c6990c0c31c7b1f131dc9902e789b254680c7cba22d",
+  "generatedAt": "2026-07-01T07:19:49.073Z",
+  "codeExample": "let (respOpt, httpResp) = client.deleteTenant(tenantId = \"my-tenant-123\", id = \"tenant-to-delete\", sure = \"yes\")\nif respOpt.isSome:\n  let emptyResp = respOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "postCommentsByIds",
+  "signatureHash": "252f94f51e9a325e5ea1dc73edd76a9683f87857fda2c78cd07f0bd78b92f358",
+  "generatedAt": "2026-07-01T07:19:52.241Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nCommentsByIdsParams params;\nparams.commentIds = {U(\"cmt-001\"), U(\"cmt-002\")};\nboost::optional<utility::string_t> sso = U(\"sso-token-abc\");\napi->postCommentsByIds(tenantId, params, sso).then([](pplx::task<std::shared_ptr<ModerationAPIChildCommentsResponse>> t){\n    try{\n        auto resp = t.get();\n        auto copy = std::make_shared<ModerationAPIChildCommentsResponse>(*resp);\n    }catch(const std::exception&){ }\n});",
+  "model": "openai/gpt-oss-120b"
+}

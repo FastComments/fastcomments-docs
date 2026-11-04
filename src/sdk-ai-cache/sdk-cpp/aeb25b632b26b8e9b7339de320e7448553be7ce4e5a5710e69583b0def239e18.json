@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "aeb25b632b26b8e9b7339de320e7448553be7ce4e5a5710e69583b0def239e18",
+  "generatedAt": "2026-07-01T07:19:55.290Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto commentIds = U(\"cmt-001,cmt-002\");\nboost::optional<utility::string_t> sso = U(\"user@example.com\");\n\napi->checkedCommentsForBlocked(tenantId, commentIds, sso).then([](std::shared_ptr<CheckBlockedCommentsResponse> resp){\n    (void)resp;\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

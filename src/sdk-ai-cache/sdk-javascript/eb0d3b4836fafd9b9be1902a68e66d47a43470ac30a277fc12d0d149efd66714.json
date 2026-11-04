@@ -1,0 +1,7 @@
+{
+  "method": "getVotesForUser",
+  "signatureHash": "eb0d3b4836fafd9b9be1902a68e66d47a43470ac30a277fc12d0d149efd66714",
+  "generatedAt": "2026-09-23T20:29:50.401Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"post_9876\";\n  const userId: string = \"user_abcde\";\n  const anonUserId: string = \"anon_5678\";\n\n  const responseWithUser: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, userId);\n  const responseWithAnon: GetVotesForUserResponse = await getVotesForUser(tenantId, urlId, undefined, anonUserId);\n}\n\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

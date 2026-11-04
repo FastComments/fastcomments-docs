@@ -1,0 +1,7 @@
+{
+  "method": "postRemoveComment",
+  "signatureHash": "3857041c98debfdf83c16f94ea7f57fbc033ba039487d66b52b6c1579093625f",
+  "generatedAt": "2026-07-01T07:19:50.916Z",
+  "codeExample": "let (apiResponseOpt, httpResp) = client.postRemoveComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-987654\",\n  options = PostRemoveCommentOptions()\n)\n\nif apiResponseOpt.isSome:\n  let apiResponse = apiResponseOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

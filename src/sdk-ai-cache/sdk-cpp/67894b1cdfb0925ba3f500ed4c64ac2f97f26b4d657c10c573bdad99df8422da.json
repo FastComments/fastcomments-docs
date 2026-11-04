@@ -1,0 +1,7 @@
+{
+  "method": "patchSSOUser",
+  "signatureHash": "67894b1cdfb0925ba3f500ed4c64ac2f97f26b4d657c10c573bdad99df8422da",
+  "generatedAt": "2026-07-01T07:19:35.941Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t userId = U(\"user-456\");\nUpdateAPISSOUserData updateData;\nupdateData.email = U(\"jane.doe@example.com\");\nupdateData.displayName = U(\"Jane Doe\");\nboost::optional<bool> updateComments = true;\n\napi->patchSSOUser(tenantId, userId, updateData, updateComments)\n    .then([](pplx::task<std::shared_ptr<PatchSSOUserAPIResponse>> t){\n        try{\n            auto resp = t.get();\n            (void)resp;\n        }catch(const std::exception&){\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

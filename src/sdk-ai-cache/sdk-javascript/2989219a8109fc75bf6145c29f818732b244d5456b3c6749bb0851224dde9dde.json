@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "2989219a8109fc75bf6145c29f818732b244d5456b3c6749bb0851224dde9dde",
+  "generatedAt": "2026-09-23T20:29:51.336Z",
+  "codeExample": "const tenantId: string = \"tenant-9f8b7c6d\";\nconst id: string = \"user-4a3b2c1d\";\n\nconst updateParams: UpdateUserBadgeParams = {\n  badgeId: \"badge-premium\",\n  // optional field\n  expiresAt: new Date(\"2025-12-31T23:59:59Z\")\n};\n\nconst result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateParams);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

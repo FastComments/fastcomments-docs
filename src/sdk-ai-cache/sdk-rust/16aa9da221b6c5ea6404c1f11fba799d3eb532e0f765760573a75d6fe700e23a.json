@@ -1,0 +1,7 @@
+{
+  "method": "get_comment_vote_user_names",
+  "signatureHash": "16aa9da221b6c5ea6404c1f11fba799d3eb532e0f765760573a75d6fe700e23a",
+  "generatedAt": "2026-07-01T10:15:26.673Z",
+  "codeExample": "async fn demo(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetCommentVoteUserNamesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-123\".to_string(),\n        dir: 1,\n        sso: Some(\"user-sso-id\".to_string()),\n    };\n    let _response: GetCommentVoteUserNamesSuccessResponse =\n        get_comment_vote_user_names(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

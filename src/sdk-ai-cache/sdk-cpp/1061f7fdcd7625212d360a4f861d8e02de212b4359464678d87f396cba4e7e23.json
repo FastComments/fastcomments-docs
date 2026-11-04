@@ -1,0 +1,7 @@
+{
+  "method": "getGifLarge",
+  "signatureHash": "1061f7fdcd7625212d360a4f861d8e02de212b4359464678d87f396cba4e7e23",
+  "generatedAt": "2026-07-01T07:19:38.919Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto largeUrl = utility::conversions::to_string_t(\"https://cdn.example.com/gifs/large/abc123.gif\");\n\napi->getGifLarge(tenantId, largeUrl)\n   .then([&](std::shared_ptr<GifGetLargeResponse> resp) {\n        boost::optional<utility::string_t> maybeUrl;\n        if (resp && resp->url) {\n            maybeUrl = resp->url;\n        }\n        if (maybeUrl) {\n            std::wcout << *maybeUrl << std::endl;\n        }\n   });",
+  "model": "openai/gpt-oss-120b"
+}

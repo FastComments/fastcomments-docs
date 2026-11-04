@@ -1,0 +1,7 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "db6cce88eb5da98df3f6ed97208d798bb420cf54e40c22e40879e6c6f0eaf7a6",
+  "generatedAt": "2026-07-01T07:19:46.195Z",
+  "codeExample": "auto fileStream = concurrency::streams::fstream::open_istream(U(\"avatar.png\"), std::ios::in).get();\nHttpContent file(fileStream, U(\"image/png\"));\nUploadImageOptions options;\noptions.description = boost::optional<utility::string_t>(U(\"Profile picture\"));\noptions.width = boost::optional<int>(256);\noptions.height = boost::optional<int>(256);\napi->uploadImage(U(\"my-tenant-123\"), file, options).then([](pplx::task<std::shared_ptr<UploadImageResponse>> t){\n    auto resp = t.get();\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "unBlockCommentPublic",
+  "signatureHash": "19efb70a731afabdeff4a799160d94c2e72d3cb261c91fff3bc0a1e2d36317b7",
+  "generatedAt": "2026-07-01T07:19:29.394Z",
+  "codeExample": "let (unblockResult, httpResp) = client.unBlockCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-7890\",\n  publicBlockFromCommentParams = PublicBlockFromCommentParams(),\n  sso = \"\"\n)\n\nif unblockResult.isSome:\n  let result = unblockResult.get()",
+  "model": "openai/gpt-oss-120b"
+}

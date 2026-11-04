@@ -1,0 +1,7 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "658f6c0b5cc9242a42e8d811beafd1b8c7661cbda84aa7c8c771006aae27e595",
+  "generatedAt": "2026-07-01T07:19:27.749Z",
+  "codeExample": "let (pageOpt, httpRes) = client.getPageByURLId(tenantId = \"my-tenant-123\", urlId = \"news/article-title\")\nif pageOpt.isSome:\n  let page = pageOpt.get()\n  echo page",
+  "model": "openai/gpt-oss-120b"
+}

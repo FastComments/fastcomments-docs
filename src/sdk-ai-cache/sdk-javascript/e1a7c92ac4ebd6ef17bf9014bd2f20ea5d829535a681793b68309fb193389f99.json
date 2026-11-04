@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "e1a7c92ac4ebd6ef17bf9014bd2f20ea5d829535a681793b68309fb193389f99",
+  "generatedAt": "2026-09-23T20:29:53.168Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst notificationId: string = \"notif_9876\";\nconst newStatus: UpdateUserNotificationStatusNewStatusEnum = UpdateUserNotificationStatusNewStatusEnum.READ;\nconst ssoToken: string = \"sso_token_abc\";\n\nconst responseWithSso: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(\n  tenantId,\n  notificationId,\n  newStatus,\n  ssoToken\n);\n\nconst responseWithoutSso: UpdateUserNotificationStatusResponse = await updateUserNotificationStatus(\n  tenantId,\n  notificationId,\n  newStatus\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

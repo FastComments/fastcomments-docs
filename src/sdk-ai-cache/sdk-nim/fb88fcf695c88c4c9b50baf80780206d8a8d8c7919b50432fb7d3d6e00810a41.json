@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "fb88fcf695c88c4c9b50baf80780206d8a8d8c7919b50432fb7d3d6e00810a41",
+  "generatedAt": "2026-07-01T07:19:30.143Z",
+  "codeExample": "let (banStatusOpt, httpResp) = client.getCommentBanStatus(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  sso = \"\")\n\nif banStatusOpt.isSome:\n  let banStatus = banStatusOpt.get()\n  echo banStatus",
+  "model": "openai/gpt-oss-120b"
+}

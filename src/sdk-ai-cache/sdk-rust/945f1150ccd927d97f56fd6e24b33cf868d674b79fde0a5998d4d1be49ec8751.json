@@ -1,0 +1,7 @@
+{
+  "method": "get_api_export_status",
+  "signatureHash": "945f1150ccd927d97f56fd6e24b33cf868d674b79fde0a5998d4d1be49ec8751",
+  "generatedAt": "2026-07-01T10:15:19.318Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetApiExportStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        batch_job_id: Some(\"batch-2023-09-01\".to_string()),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _status = get_api_export_status(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

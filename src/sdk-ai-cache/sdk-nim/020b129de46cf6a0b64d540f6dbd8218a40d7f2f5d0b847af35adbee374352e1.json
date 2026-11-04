@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "020b129de46cf6a0b64d540f6dbd8218a40d7f2f5d0b847af35adbee374352e1",
+  "generatedAt": "2026-07-01T07:19:40.843Z",
+  "codeExample": "let (countOpt, httpResponse) = client.getCount(tenantId = \"my-tenant-123\", options = GetCountOptions())\nif countOpt.isSome:\n  let count = countOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

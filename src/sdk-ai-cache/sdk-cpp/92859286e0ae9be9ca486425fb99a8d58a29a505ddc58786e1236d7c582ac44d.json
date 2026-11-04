@@ -1,0 +1,7 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "92859286e0ae9be9ca486425fb99a8d58a29a505ddc58786e1236d7c582ac44d",
+  "generatedAt": "2026-07-01T07:19:39.946Z",
+  "codeExample": "boost::optional<utility::string_t> optTenant = U(\"my-tenant-123\");\nboost::optional<utility::string_t> optDomain = U(\"example.com\");\n\napi->deleteDomainConfig(optTenant.value(), optDomain.value())\n    .then([](pplx::task<std::shared_ptr<DeleteDomainConfigResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

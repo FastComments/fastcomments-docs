@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "430a889949468c2f39eb453ee0eaa399ec141add15fa7deeb1211ccb173f4914",
+  "generatedAt": "2026-07-01T07:19:30.578Z",
+  "codeExample": "let (responseOpt, httpResponse) = client.postSetCommentText(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-987654\",\n  setCommentTextParams = SetCommentTextParams(),\n  options = PostSetCommentTextOptions()\n)\n\nif responseOpt.isSome:\n  let updatedComment = responseOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

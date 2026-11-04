@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "6ee9b182de3347d18c4fcf0a0f87518005791b59ea3351d8300c9bc3420658f9",
+  "generatedAt": "2026-07-01T07:19:51.053Z",
+  "codeExample": "let (pendingCountOpt, httpResponse) = client.getPendingWebhookEventCount(tenantId = \"my-tenant-123\", options = GetPendingWebhookEventCountOptions())\nif pendingCountOpt.isSome:\n  let pendingCount = pendingCountOpt.get()\n  echo pendingCount",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

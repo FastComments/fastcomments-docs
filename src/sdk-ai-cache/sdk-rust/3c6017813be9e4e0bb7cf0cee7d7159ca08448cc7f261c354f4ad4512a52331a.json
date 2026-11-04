@@ -1,0 +1,7 @@
+{
+  "method": "get_sso_user_by_id",
+  "signatureHash": "3c6017813be9e4e0bb7cf0cee7d7159ca08448cc7f261c354f4ad4512a52331a",
+  "generatedAt": "2026-07-01T10:15:23.986Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetSsoUserByIdParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-9876\".to_string(),\n    };\n    let _response: GetSsoUserByIdApiResponse = get_sso_user_by_id(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationStatus",
+  "signatureHash": "32ab7c5a89dbe12850cd740677845273f0be2a595c5feadd38d87eb783432d68",
+  "generatedAt": "2026-07-01T07:19:29.981Z",
+  "codeExample": "let (respOpt, httpResponse) = client.updateUserNotificationStatus(\n  tenantId = \"my-tenant-123\",\n  notificationId = \"notif-456\",\n  newStatus = \"read\",\n  sso = \"\"\n)\nif respOpt.isSome:\n  let status = respOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

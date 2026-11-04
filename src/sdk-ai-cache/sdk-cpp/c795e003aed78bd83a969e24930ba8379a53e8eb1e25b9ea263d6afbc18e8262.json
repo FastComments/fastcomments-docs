@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "c795e003aed78bd83a969e24930ba8379a53e8eb1e25b9ea263d6afbc18e8262",
+  "generatedAt": "2026-07-01T07:19:43.678Z",
+  "codeExample": "boost::optional<utility::string_t> optTemplateId = utility::conversions::to_string_t(\"template-456\");\napi->deleteEmailTemplateRenderError(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    *optTemplateId,\n    utility::conversions::to_string_t(\"error-789\"))\n    .then([](std::shared_ptr<APIEmptyResponse>) {})\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (...) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

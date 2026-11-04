@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "6a5eff7b5ac1069db4626d09b7e83e8205ceece8e4c77ec8a76f0a3c9aa4e4c9",
+  "generatedAt": "2026-07-01T07:19:41.152Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto moderatorId = utility::string_t(U(\"moderator-789\"));\napi->getModerator(tenantId, moderatorId)\n    .then([](pplx::task<std::shared_ptr<GetModeratorResponse>> t) {\n        try {\n            auto response = t.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

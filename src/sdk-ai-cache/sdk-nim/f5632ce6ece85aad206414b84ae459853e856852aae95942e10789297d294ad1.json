@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadgesForUser",
+  "signatureHash": "f5632ce6ece85aad206414b84ae459853e856852aae95942e10789297d294ad1",
+  "generatedAt": "2026-07-01T07:19:48.318Z",
+  "codeExample": "let (userBadgesOpt, httpResp) = client.getManualBadgesForUser(\n  tenantId = \"my-tenant-123\",\n  options = GetManualBadgesForUserOptions()\n)\nif userBadgesOpt.isSome:\n  let badges = userBadgesOpt.get()\n  echo badges",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

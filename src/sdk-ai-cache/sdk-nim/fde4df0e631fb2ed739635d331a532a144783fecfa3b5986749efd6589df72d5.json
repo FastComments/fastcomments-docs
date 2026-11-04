@@ -1,0 +1,7 @@
+{
+  "method": "addPage",
+  "signatureHash": "fde4df0e631fb2ed739635d331a532a144783fecfa3b5986749efd6589df72d5",
+  "generatedAt": "2026-07-01T07:19:51.268Z",
+  "codeExample": "let pageData = CreateAPIPageData(\n  urlId = \"news/article-2024\",\n  title = \"Breaking News: Nim Takes Over\",\n  description = \"An in-depth article about Nim's rise.\",\n  tags = @[\"nim\", \"programming\", \"news\"]\n)\n\nlet (addPageResp, httpResp) = client.addPage(\n  tenantId = \"my-tenant-123\",\n  createAPIPageData = pageData\n)\n\nif addPageResp.isSome:\n  let resp = addPageResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

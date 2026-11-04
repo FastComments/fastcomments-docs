@@ -1,0 +1,7 @@
+{
+  "method": "getSearchPages",
+  "signatureHash": "9975d41d7747254c2a6afdb5f1d5a3e0e78cc7f3196aedcb14138e5b88845512",
+  "generatedAt": "2026-07-01T07:19:31.746Z",
+  "codeExample": "GetSearchPagesOptions options;\noptions.pageNumber = boost::optional<int>(1);\noptions.pageSize = boost::optional<int>(50);\noptions.searchTerm = boost::optional<utility::string_t>(U(\"spam\"));\n\napi->getSearchPages(U(\"my-tenant-123\"), options)\n    .then([](pplx::task<std::shared_ptr<ModerationPageSearchResponse>> task) {\n        try {\n            auto response = task.get();\n            // use response\n        } catch (const std::exception& e) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

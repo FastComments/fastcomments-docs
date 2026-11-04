@@ -1,0 +1,7 @@
+{
+  "method": "getNotifications",
+  "signatureHash": "bc51500c0039b009b56940883a105fe5420eab97e681b6d3b1246eb5797afae9",
+  "generatedAt": "2026-07-01T07:19:45.846Z",
+  "codeExample": "GetNotificationsOptions options;\noptions.limit = 20;\noptions.after = U(\"cursor-123\");\napi->getNotifications(U(\"my-tenant-123\"), options)\n    .then([](std::shared_ptr<GetNotificationsResponse> resp) {\n        (void)resp;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

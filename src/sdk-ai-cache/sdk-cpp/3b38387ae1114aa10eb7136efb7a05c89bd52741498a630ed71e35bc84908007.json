@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "3b38387ae1114aa10eb7136efb7a05c89bd52741498a630ed71e35bc84908007",
+  "generatedAt": "2026-07-01T07:20:02.599Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nCreateFeedPostParams postParams;\npostParams.content = utility::conversions::to_string_t(\"Excited to join FastComments!\");\npostParams.authorEmail = utility::conversions::to_string_t(\"user@example.com\");\npostParams.title = utility::conversions::to_string_t(\"My First Post\");\npostParams.tags = boost::optional<std::vector<utility::string_t>>({ utility::conversions::to_string_t(\"intro\") });\n\nCreateFeedPostOptions options;\noptions.notifyFollowers = boost::optional<bool>(true);\noptions.scheduledAt = boost::optional<utility::datetime>(utility::datetime::utc_now());\n\napi->createFeedPost(tenantId, postParams, options).then([](std::shared_ptr<CreateFeedPostsResponse> resp) {\n    auto postId = resp->postId;\n});",
+  "model": "openai/gpt-oss-120b"
+}

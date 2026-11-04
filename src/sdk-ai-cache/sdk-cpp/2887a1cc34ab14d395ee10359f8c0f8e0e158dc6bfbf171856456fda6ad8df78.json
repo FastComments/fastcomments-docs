@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "2887a1cc34ab14d395ee10359f8c0f8e0e158dc6bfbf171856456fda6ad8df78",
+  "generatedAt": "2026-07-01T07:19:57.191Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto recordId = utility::string_t(U(\"tenant-456\"));\nUpdateTenantBody body;\nbody.name = boost::optional<utility::string_t>(U(\"Acme Corp\"));\nbody.contactEmail = boost::optional<utility::string_t>(U(\"admin@acme.com\"));\napi->updateTenant(tenantId, recordId, body).then([](std::shared_ptr<APIEmptyResponse> resp) {\n    auto log = std::make_shared<utility::string_t>(U(\"Tenant update succeeded\"));\n    (void)resp;\n    (void)log;\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

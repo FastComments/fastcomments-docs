@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "2c83059b778294125de96623cf2b55d6ed506f22720eeee2c1f225db79aca247",
+  "generatedAt": "2026-07-01T07:19:28.062Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t urlId = U(\"article-456\");\nSearchUsersOptions options;\noptions.query = U(\"john.doe@example.com\");\noptions.page = boost::optional<int>(1);\noptions.pageSize = boost::optional<int>(20);\napi->searchUsers(tenantId, urlId, options).then([](pplx::task<std::shared_ptr<SearchUsersResult>> task){\n    try{\n        auto result = task.get();\n    }catch(const std::exception&){}\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_domain_configs",
+  "signatureHash": "f02a7155b4d0e9c86548896f2d2b35e20abd739e46f3a5ade7b008763a34b429",
+  "generatedAt": "2026-07-01T10:15:28.114Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetDomainConfigsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n    };\n    let _response = get_domain_configs(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

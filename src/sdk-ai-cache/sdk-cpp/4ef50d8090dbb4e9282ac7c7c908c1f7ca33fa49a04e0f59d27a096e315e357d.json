@@ -1,0 +1,7 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "4ef50d8090dbb4e9282ac7c7c908c1f7ca33fa49a04e0f59d27a096e315e357d",
+  "generatedAt": "2026-07-01T07:19:45.246Z",
+  "codeExample": "api->deleteSubscription(utility::string_t(U(\"my-tenant-123\")), utility::string_t(U(\"sub-456\")), boost::optional<utility::string_t>(utility::string_t(U(\"user@example.com\"))))\n    .then([](std::shared_ptr<DeleteSubscriptionAPIResponse> resp){\n        if (resp) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

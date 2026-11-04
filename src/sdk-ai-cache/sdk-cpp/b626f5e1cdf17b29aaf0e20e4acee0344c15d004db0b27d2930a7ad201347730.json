@@ -1,0 +1,7 @@
+{
+  "method": "getUser",
+  "signatureHash": "b626f5e1cdf17b29aaf0e20e4acee0344c15d004db0b27d2930a7ad201347730",
+  "generatedAt": "2026-07-01T07:19:32.981Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto userId = utility::conversions::to_string_t(\"user-789\");\nboost::optional<utility::string_t> optTag = boost::none;\n\napi->getUser(tenantId, userId)\n    .then([=](pplx::task<std::shared_ptr<GetUserResponse>> task) {\n        try {\n            auto response = task.get();\n            if (!response) {\n                response = std::make_shared<GetUserResponse>();\n            }\n            // process response as needed\n        } catch (const std::exception&) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

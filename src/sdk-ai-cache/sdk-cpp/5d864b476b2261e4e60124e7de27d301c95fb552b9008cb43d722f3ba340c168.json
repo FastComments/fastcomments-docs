@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantPackage",
+  "signatureHash": "5d864b476b2261e4e60124e7de27d301c95fb552b9008cb43d722f3ba340c168",
+  "generatedAt": "2026-07-01T07:19:33.392Z",
+  "codeExample": "auto body = std::make_shared<UpdateTenantPackageBody>();\nbody->packageId = utility::conversions::to_string_t(\"premium-plan\");\nbody->expirationDate = utility::conversions::to_string_t(\"2025-12-31\");\nbody->notes = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Upgraded package\"));\n\napi->updateTenantPackage(utility::conversions::to_string_t(\"my-tenant-123\"),\n                         utility::conversions::to_string_t(\"pkg-456\"),\n                         body)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> task) {\n        try {\n            auto response = task.get();\n            // success handling\n        } catch (const std::exception& ex) {\n            // error handling\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

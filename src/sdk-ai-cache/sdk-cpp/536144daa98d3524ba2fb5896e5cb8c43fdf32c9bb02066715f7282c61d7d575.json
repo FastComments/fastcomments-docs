@@ -1,0 +1,7 @@
+{
+  "method": "getComments",
+  "signatureHash": "536144daa98d3524ba2fb5896e5cb8c43fdf32c9bb02066715f7282c61d7d575",
+  "generatedAt": "2026-07-01T07:19:38.320Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nGetCommentsOptions options;\noptions.page = 1;\noptions.limit = 50;\noptions.sort = U(\"newest\");\noptions.authorEmail = boost::optional<utility::string_t>(U(\"user@example.com\"));\napi->getComments(tenantId, options).then([](pplx::task<std::shared_ptr<APIGetCommentsResponse>> task) {\n    try {\n        auto response = task.get();\n        // use response as needed\n    } catch (const std::exception& e) {\n        // handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "block_user_from_comment",
+  "signatureHash": "b0e634dc4282e129fe8e0ce6cd0e9b5d382bbb64a58b5dcf73355fd5fbdcf4ea",
+  "generatedAt": "2026-07-01T10:15:24.542Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = BlockUserFromCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-9876\".to_string(),\n        block_from_comment_params: models::BlockFromCommentParams {\n            reason: \"spam\".to_string(),\n        },\n        user_id: Some(\"user-42\".to_string()),\n        anon_user_id: None,\n    };\n    let _result: BlockSuccess = block_user_from_comment(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

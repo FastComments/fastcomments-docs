@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "295596185f154be18378cc990284ff95fcdc4b0af458f110b13cfd723a187196",
+  "generatedAt": "2026-07-01T10:15:39.461Z",
+  "codeExample": "async function updateDomainConfig() {\n  const tenantId: string = \"tenant_98765\";\n  const domainToUpdate: string = \"forum.mycompany.com\";\n  const patchParams: PatchDomainConfigParams = {\n    enableComments: true,\n    moderationLevel: \"strict\",\n    allowAnonymous: false, // optional parameter demonstrated\n  };\n  const response: PatchDomainConfigResponse = await patchDomainConfig(tenantId, domainToUpdate, patchParams);\n  console.log(response);\n}\n\nupdateDomainConfig();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

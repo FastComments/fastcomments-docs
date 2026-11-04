@@ -1,0 +1,7 @@
+{
+  "method": "uploadImage",
+  "signatureHash": "ff09f3b21adb8f7570f20b3a82df6612fdc1af8ea5509cd5c0da246223b84dc7",
+  "generatedAt": "2026-07-01T07:19:47.858Z",
+  "codeExample": "const tenantId: string = \"acme-tenant-01\";\nconst imageBlob: Blob = new Blob([new Uint8Array([137,80,78,71])], { type: \"image/png\" });\n\nconst uploadResult1: UploadImageResponse = await uploadImage(tenantId, imageBlob);\n\nconst sizePreset: SizePreset = { presetName: \"medium\" };\nconst urlId: string = \"article-9876\";\n\nconst uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);",
+  "model": "openai/gpt-oss-120b"
+}

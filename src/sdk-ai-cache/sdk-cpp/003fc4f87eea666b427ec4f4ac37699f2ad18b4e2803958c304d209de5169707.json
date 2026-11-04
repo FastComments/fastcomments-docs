@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEventCount",
+  "signatureHash": "003fc4f87eea666b427ec4f4ac37699f2ad18b4e2803958c304d209de5169707",
+  "generatedAt": "2026-07-01T07:19:31.900Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nGetPendingWebhookEventCountOptions opts;\nopts.filter = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"active\"));\napi->getPendingWebhookEventCount(tenantId, opts)\n    .then([](std::shared_ptr<GetPendingWebhookEventCountResponse> resp){\n        auto count = resp->getCount();\n    });",
+  "model": "openai/gpt-oss-120b"
+}

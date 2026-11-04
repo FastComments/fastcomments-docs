@@ -1,0 +1,7 @@
+{
+  "method": "send_login_link",
+  "signatureHash": "e85ccdc4e54ead61bb5202324e3e4c553e7ed533f437ccadb015638253116c91",
+  "generatedAt": "2026-07-01T10:15:21.260Z",
+  "codeExample": "async fn run_example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = SendLoginLinkParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n        redirect_url: Some(\"https://acme.com/after-login\".to_string()),\n    };\n    send_login_link(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

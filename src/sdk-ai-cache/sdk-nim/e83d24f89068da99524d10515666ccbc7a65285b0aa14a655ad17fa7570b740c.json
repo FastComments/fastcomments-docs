@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUser",
+  "signatureHash": "e83d24f89068da99524d10515666ccbc7a65285b0aa14a655ad17fa7570b740c",
+  "generatedAt": "2026-07-01T07:19:36.076Z",
+  "codeExample": "let (maybeUser, httpResp) = client.getTenantUser(tenantId = \"my-tenant-123\", id = \"user-456\")\nif maybeUser.isSome:\n  let user = maybeUser.get()\n  echo user",
+  "model": "openai/gpt-oss-120b"
+}

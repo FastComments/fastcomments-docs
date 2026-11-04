@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "109cba09151ef28fe0d2de05aa1507b8cf7f59e4da15b032a539ce82a0eb9e0b",
+  "generatedAt": "2026-09-23T20:29:57.237Z",
+  "codeExample": "async function fetchEmailTemplates() {\n  const tenantId: string = \"acme-corp-123\";\n  const skip: number = 20;\n  const templatesWithSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId, skip);\n  const templatesWithoutSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

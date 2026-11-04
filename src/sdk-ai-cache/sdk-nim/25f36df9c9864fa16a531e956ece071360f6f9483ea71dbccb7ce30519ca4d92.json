@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "25f36df9c9864fa16a531e956ece071360f6f9483ea71dbccb7ce30519ca4d92",
+  "generatedAt": "2026-07-01T07:19:23.798Z",
+  "codeExample": "let (maybeResponse, httpResponse) = client.checkedCommentsForBlocked(\n  tenantId = \"my-tenant-123\",\n  commentIds = \"cmt-1,cmt-2\",\n  sso = \"\"\n)\n\nif maybeResponse.isSome:\n  let response = maybeResponse.get()\n  discard response",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

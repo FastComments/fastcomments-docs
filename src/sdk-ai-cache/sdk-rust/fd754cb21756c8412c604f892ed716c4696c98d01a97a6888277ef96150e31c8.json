@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badge",
+  "signatureHash": "fd754cb21756c8412c604f892ed716c4696c98d01a97a6888277ef96150e31c8",
+  "generatedAt": "2026-07-01T10:15:26.510Z",
+  "codeExample": "async fn fetch_badge() -> Result<(), Error> {\n    let params = GetUserBadgeParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"badge-42\".to_string(),\n    };\n    let _response: ApiGetUserBadgeResponse = get_user_badge(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

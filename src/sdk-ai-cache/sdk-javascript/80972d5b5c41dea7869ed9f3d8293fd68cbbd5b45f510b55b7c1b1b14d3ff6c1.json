@@ -1,0 +1,7 @@
+{
+  "method": "getCommentText",
+  "signatureHash": "80972d5b5c41dea7869ed9f3d8293fd68cbbd5b45f510b55b7c1b1b14d3ff6c1",
+  "generatedAt": "2026-09-23T20:29:59.080Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst commentId: string = \"comment-987654321\";\nconst editKey: string = \"edit-key-abc123\";\nconst sso: string = \"sso-token-xyz789\";\n\nconst commentWithEdit: PublicAPIGetCommentTextResponse = await getCommentText(\n  tenantId,\n  commentId,\n  editKey,\n  sso\n);\n\nconst commentBasic: PublicAPIGetCommentTextResponse = await getCommentText(\n  tenantId,\n  commentId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

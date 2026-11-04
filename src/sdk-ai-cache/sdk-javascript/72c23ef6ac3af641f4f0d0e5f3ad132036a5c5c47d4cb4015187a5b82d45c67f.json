@@ -1,0 +1,7 @@
+{
+  "method": "getPages",
+  "signatureHash": "72c23ef6ac3af641f4f0d0e5f3ad132036a5c5c47d4cb4015187a5b82d45c67f",
+  "generatedAt": "2026-07-01T07:19:32.328Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\n(async () => {\n  const response: GetPagesAPIResponse = await getPages(tenantId);\n  const firstPage: APIPage | undefined = response.pages?.[0];\n  console.log(firstPage?.title);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

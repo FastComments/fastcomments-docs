@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "b14d03e93ca3f2879b1a1fac9de12643caa33ba5f710617a76bc5e6501c6a2e0",
+  "generatedAt": "2026-07-01T07:19:29.123Z",
+  "codeExample": "let (voteOpt, httpResp) = client.postVote(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-789\",\n  options = default(PostVoteOptions)\n)\n\nif voteOpt.isSome:\n  let vote = voteOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

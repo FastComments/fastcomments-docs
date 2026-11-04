@@ -1,0 +1,7 @@
+{
+  "method": "post_set_comment_approval_status",
+  "signatureHash": "50755c424a6798dac72b8c29221ff4df0a3dbcbf84dc5de1494ffcf56c582d7e",
+  "generatedAt": "2026-07-01T10:15:22.310Z",
+  "codeExample": "async fn approve_comment(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = PostSetCommentApprovalStatusParams {\n        tenant_id: \"acme-corp\".to_string(),\n        comment_id: \"cmt-9876\".to_string(),\n        approved: Some(true),\n        broadcast_id: Some(\"broadcast-2023\".to_string()),\n        sso: None,\n    };\n    let _response = post_set_comment_approval_status(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

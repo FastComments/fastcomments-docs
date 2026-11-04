@@ -1,0 +1,7 @@
+{
+  "method": "pinComment",
+  "signatureHash": "5bed97579d09aefc51620b9e1562c202566bd2f05a4fe5ec7a937460ba725b9d",
+  "generatedAt": "2026-07-01T07:19:51.896Z",
+  "codeExample": "let (pinResult, httpResp) = client.pinComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  broadcastId = \"broadcast-001\",\n  sso = \"\",\n)\n\nif pinResult.isSome:\n  let response = pinResult.get()\n  echo response",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

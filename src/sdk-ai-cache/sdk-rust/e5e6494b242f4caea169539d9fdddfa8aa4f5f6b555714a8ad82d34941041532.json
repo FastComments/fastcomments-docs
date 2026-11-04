@@ -1,0 +1,7 @@
+{
+  "method": "update_user_notification_status",
+  "signatureHash": "e5e6494b242f4caea169539d9fdddfa8aa4f5f6b555714a8ad82d34941041532",
+  "generatedAt": "2026-07-01T10:15:25.957Z",
+  "codeExample": "async fn run_update() -> Result<(), Error> {\n    let params = UpdateUserNotificationStatusParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        notification_id: \"news/article\".to_string(),\n        new_status: \"read\".to_string(),\n        sso: Some(\"sso-token-123\".to_string()),\n    };\n    let _response: UpdateUserNotificationStatusResponse =\n        update_user_notification_status(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

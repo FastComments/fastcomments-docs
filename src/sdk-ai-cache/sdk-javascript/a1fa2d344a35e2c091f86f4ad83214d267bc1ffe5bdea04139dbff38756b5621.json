@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "a1fa2d344a35e2c091f86f4ad83214d267bc1ffe5bdea04139dbff38756b5621",
+  "generatedAt": "2026-09-23T20:29:59.862Z",
+  "codeExample": "async function fetchResults() {\n  const tenantId: string = 'c1a2b3d4-5678-90ab-cdef-1234567890ab';\n  const urlId: string = 'blog-post-789';\n  const startDate: string = '2023-01-01T00:00:00Z';\n  const questionIds: string = 'q-abc123,q-def456';\n  const response: GetQuestionResultsResponse = await getQuestionResults(\n    tenantId,\n    urlId,\n    undefined,\n    startDate,\n    undefined,\n    questionIds\n  );\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

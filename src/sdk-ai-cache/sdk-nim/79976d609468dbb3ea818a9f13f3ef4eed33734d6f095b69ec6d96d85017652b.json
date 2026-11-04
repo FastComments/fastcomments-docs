@@ -1,0 +1,7 @@
+{
+  "method": "getModerationCommentText",
+  "signatureHash": "79976d609468dbb3ea818a9f13f3ef4eed33734d6f095b69ec6d96d85017652b",
+  "generatedAt": "2026-07-01T07:19:26.256Z",
+  "codeExample": "let (optResp, httpResp) = client.getModerationCommentText(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-456abc\",\n  sso = \"\"\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

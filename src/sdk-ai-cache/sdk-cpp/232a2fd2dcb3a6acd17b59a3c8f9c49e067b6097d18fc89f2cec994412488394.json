@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionResult",
+  "signatureHash": "232a2fd2dcb3a6acd17b59a3c8f9c49e067b6097d18fc89f2cec994412488394",
+  "generatedAt": "2026-07-01T07:19:38.920Z",
+  "codeExample": "boost::optional<utility::string_t> optTenant = utility::conversions::to_string_t( \"my-tenant-123\" );\nutility::string_t questionId = utility::conversions::to_string_t( \"question-456\" );\n\nif ( optTenant )\n{\n    api->deleteQuestionResult( *optTenant, questionId )\n        .then( []( pplx::task<std::shared_ptr<APIEmptyResponse>> t )\n        {\n            try\n            {\n                auto resp = t.get();\n                // success handling\n            }\n            catch ( const std::exception& e )\n            {\n                // error handling\n            }\n        } );\n}",
+  "model": "openai/gpt-oss-120b"
+}

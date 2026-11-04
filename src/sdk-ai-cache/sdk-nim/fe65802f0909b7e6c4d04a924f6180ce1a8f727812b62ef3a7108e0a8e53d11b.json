@@ -1,0 +1,7 @@
+{
+  "method": "getApiComments",
+  "signatureHash": "fe65802f0909b7e6c4d04a924f6180ce1a8f727812b62ef3a7108e0a8e53d11b",
+  "generatedAt": "2026-07-01T07:19:53.425Z",
+  "codeExample": "let (maybeResp, httpResp) = client.getApiComments(tenantId = \"my-tenant-123\", options = GetApiCommentsOptions())\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  # further processing can be done with `resp`",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

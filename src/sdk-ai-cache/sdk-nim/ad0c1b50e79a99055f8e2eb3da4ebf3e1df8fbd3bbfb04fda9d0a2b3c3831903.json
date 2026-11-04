@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "ad0c1b50e79a99055f8e2eb3da4ebf3e1df8fbd3bbfb04fda9d0a2b3c3831903",
+  "generatedAt": "2026-07-01T07:19:48.098Z",
+  "codeExample": "let (response, httpResponse) = client.deletePendingWebhookEvent(tenantId = \"my-tenant-123\", id = \"event-456\")\nif response.isSome:\n  let empty = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

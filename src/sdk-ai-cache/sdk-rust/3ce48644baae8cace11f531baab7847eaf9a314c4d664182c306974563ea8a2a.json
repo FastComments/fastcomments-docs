@@ -1,0 +1,7 @@
+{
+  "method": "react_feed_post_public",
+  "signatureHash": "3ce48644baae8cace11f531baab7847eaf9a314c4d664182c306974563ea8a2a",
+  "generatedAt": "2026-07-01T10:15:28.129Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let config = configuration::Configuration::default();\n    let react_body = models::ReactBodyParams {\n        reaction: \"like\".to_string(),\n    };\n    let params = ReactFeedPostPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_id: \"news/article/12345\".to_string(),\n        react_body_params: react_body,\n        is_undo: Some(false),\n        broadcast_id: Some(\"broadcast-xyz\".to_string()),\n        sso: Some(\"sso-token-abc\".to_string()),\n    };\n    let _response: ReactFeedPostResponse = react_feed_post_public(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

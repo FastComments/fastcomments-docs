@@ -1,0 +1,7 @@
+{
+  "method": "updateFeedPostPublic",
+  "signatureHash": "ae2a89c80e60eef331dd413b10e91de8e527506b4075c65ebd37b9492669765d",
+  "generatedAt": "2026-07-01T07:19:29.426Z",
+  "codeExample": "let (response, httpResponse) = client.updateFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"post-789\",\n  updateFeedPostParams = UpdateFeedPostParams(),\n  options = UpdateFeedPostPublicOptions()\n)\n\nif response.isSome:\n  let post = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

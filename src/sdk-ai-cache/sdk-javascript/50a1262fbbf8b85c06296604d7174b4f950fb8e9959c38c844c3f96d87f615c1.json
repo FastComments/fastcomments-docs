@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "50a1262fbbf8b85c06296604d7174b4f950fb8e9959c38c844c3f96d87f615c1",
+  "generatedAt": "2026-09-23T20:29:59.409Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst commentParams: CreateCommentParams = {\n  content: \"This is a comment with a mention and a hashtag.\",\n  userId: \"user_987\",\n  mentions: [\n    { userId: \"user_123\", start: 27, end: 34 }\n  ] as CommentUserMentionInfo[],\n  hashtags: [\n    { tag: \"feedback\", start: 45, end: 53 }\n  ] as CommentUserHashTagInfo[],\n  poll: {\n    question: \"Do you like this feature?\",\n    options: [\"Yes\", \"No\"]\n  } as CommentPollInput,\n};\n\nconst response: APISaveCommentResponse = await saveComment(\n  tenantId,\n  commentParams,\n  true,   // isLive\n  true,   // doSpamCheck\n  false,  // sendEmails\n  true    // populateNotifications\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

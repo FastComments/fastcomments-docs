@@ -1,0 +1,7 @@
+{
+  "method": "updateSubscription",
+  "signatureHash": "58317816dfe49078d48bda25be9d48109be6980c9ec0184a1a7e492c84e9dc32",
+  "generatedAt": "2026-07-01T07:19:28.446Z",
+  "codeExample": "let subscriptionData = UpdateAPIUserSubscriptionData(\n  planId = \"premium-plan\",\n  isActive = true,\n  expiresAt = \"2025-01-01\",\n)\n\nlet (responseOpt, httpResponse) = client.updateSubscription(\n  tenantId = \"my-tenant-123\",\n  id = \"sub-456\",\n  updateAPIUserSubscriptionData = subscriptionData,\n  userId = \"user-789\",\n)\n\nif responseOpt.isSome:\n  let subscriptionResult = responseOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

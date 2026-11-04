@@ -1,0 +1,7 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "c83cb8de2f2c6e9a1190ec20cf89ea239f4325470464e8b5a95b4b1b08a89340",
+  "generatedAt": "2026-07-01T07:19:35.684Z",
+  "codeExample": "auto tenant = utility::conversions::to_string_t(\"my-tenant-123\");\nboost::optional<utility::string_t> user = utility::conversions::to_string_t(\"user@example.com\");\n\napi->getSubscriptions(tenant, user).then(\n    [](pplx::task<std::shared_ptr<GetSubscriptionsAPIResponse>> t) {\n        try {\n            auto response = t.get();\n            // process response\n        } catch (const std::exception& e) {\n            // handle error\n        }\n    }\n);",
+  "model": "openai/gpt-oss-120b"
+}

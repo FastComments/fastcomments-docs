@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "cdca7dbae7341310f0beebfe8c903e82360022a9f5c62e6531c69aa676162700",
+  "generatedAt": "2026-09-23T20:29:57.398Z",
+  "codeExample": "async function fetchPackages() {\n  const tenantId: string = \"acme-corp-001\";\n  const skip: number = 15;\n\n  const resultWithSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId, skip);\n  const resultWithoutSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

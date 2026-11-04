@@ -1,0 +1,7 @@
+{
+  "method": "get_page_by_urlid",
+  "signatureHash": "e9b2c8aafcfbbcddee57d060552e0e81f59cb601883fabaf8c819804e5eed5e9",
+  "generatedAt": "2026-07-01T07:19:36.886Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetPageByUrlidParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        url_id: \"news/article\".into(),\n    };\n    let _response = get_page_by_urlid(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

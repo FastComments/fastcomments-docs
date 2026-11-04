@@ -1,0 +1,7 @@
+{
+  "method": "getGifsSearch",
+  "signatureHash": "e891d3f31d032fa5d37c365a8a2ce9bfe6daa55d7715a8072031b28251568821",
+  "generatedAt": "2026-07-01T07:19:28.721Z",
+  "codeExample": "let opts = GetGifsSearchOptions(limit = 10, rating = \"g\")\nlet (responseOpt, httpResponse) = client.getGifsSearch(tenantId = \"my-tenant-123\", search = \"funny cats\", options = opts)\nif responseOpt.isSome:\n  let resp = responseOpt.get()\n  # use resp as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

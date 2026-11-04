@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "31609e7608f64ed8d7a9bf590a760fe174267c81b38fb720d1876d7910a9d14f",
+  "generatedAt": "2026-07-01T07:19:34.328Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"cmt-456789\");\nbool isFlagged = true;\nboost::optional<utility::string_t> sso = utility::conversions::to_string_t(\"sso-token-abc\");\n\napi->flagCommentPublic(tenantId, commentId, isFlagged, sso)\n    .then([](pplx::task<std::shared_ptr<APIEmptyResponse>> t){\n        try{\n            auto resp = t.get();\n        }catch(const std::exception&){\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

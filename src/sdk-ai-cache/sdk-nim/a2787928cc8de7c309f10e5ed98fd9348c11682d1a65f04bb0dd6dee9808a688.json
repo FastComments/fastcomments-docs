@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "a2787928cc8de7c309f10e5ed98fd9348c11682d1a65f04bb0dd6dee9808a688",
+  "generatedAt": "2026-07-01T07:19:23.173Z",
+  "codeExample": "let replaceBody = ReplaceTenantUserBody()\nlet (response, httpResponse) = client.replaceTenantUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  replaceTenantUserBody = replaceBody,\n  updateComments = \"\")\nif response.isSome:\n  let empty = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

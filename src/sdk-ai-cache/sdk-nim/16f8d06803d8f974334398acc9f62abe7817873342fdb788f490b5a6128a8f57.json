@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "16f8d06803d8f974334398acc9f62abe7817873342fdb788f490b5a6128a8f57",
+  "generatedAt": "2026-07-01T07:19:50.856Z",
+  "codeExample": "let (response, httpResponse) = client.getTenantUsers(tenantId = \"my-tenant-123\", skip = 0.0)\nif response.isSome:\n  let data = response.get()\n  echo data",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "flagCommentPublic",
+  "signatureHash": "4eb25a8df7f9b4f6048b51a264201424f093e0b0b0dffba09c85b46321d4a38d",
+  "generatedAt": "2026-07-01T07:19:46.570Z",
+  "codeExample": "let (optResp, httpResp) = client.flagCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  isFlagged = true,\n  sso = \"\"\n)\n\nif optResp.isSome:\n  let empty = optResp.get()\n  discard empty",
+  "model": "openai/gpt-oss-120b"
+}

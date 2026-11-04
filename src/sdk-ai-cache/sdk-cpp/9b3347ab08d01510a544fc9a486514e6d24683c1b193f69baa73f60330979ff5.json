@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReactUsers",
+  "signatureHash": "9b3347ab08d01510a544fc9a486514e6d24683c1b193f69baa73f60330979ff5",
+  "generatedAt": "2026-07-01T07:19:31.523Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto urlId = utility::conversions::to_string_t(\"page-456\");\nauto id = utility::conversions::to_string_t(\"react-789\");\nboost::optional<utility::string_t> maybeFilter;\napi->getV2PageReactUsers(tenantId, urlId, id).then([](pplx::task<std::shared_ptr<GetV2PageReactUsersResponse>> task){\n    try{\n        auto response = task.get();\n        // Use response as needed\n    }catch(const std::exception&){\n        // Handle error\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

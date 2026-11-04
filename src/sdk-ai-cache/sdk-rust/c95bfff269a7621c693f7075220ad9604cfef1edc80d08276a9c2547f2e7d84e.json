@@ -1,0 +1,7 @@
+{
+  "method": "get_comments_for_user",
+  "signatureHash": "c95bfff269a7621c693f7075220ad9604cfef1edc80d08276a9c2547f2e7d84e",
+  "generatedAt": "2026-07-01T07:19:31.583Z",
+  "codeExample": "async fn fetch_user_comments() -> Result<(), Error> {\n    let params = GetCommentsForUserParams {\n        user_id: Some(\"user-42\".to_string()),\n        direction: Some(models::SortDirections::Desc),\n        replies_to_user_id: Some(\"reply-to-42\".to_string()),\n        page: Some(1.0),\n        includei10n: Some(true),\n        locale: Some(\"en-US\".to_string()),\n        is_crawler: Some(false),\n    };\n    let _response = get_comments_for_user(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

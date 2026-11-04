@@ -1,0 +1,7 @@
+{
+  "method": "deletePoll",
+  "signatureHash": "164175390ad09213af1a871583e7b65121f5f308d04f8f5e94bf939ff2e8370c",
+  "generatedAt": "2026-09-23T20:29:50.963Z",
+  "codeExample": "async function runDeletePoll(): Promise<void> {\n  const tenantId: string = \"tenant_9f8b7c6d\";\n  const commentId: string = \"comment_a1b2c3d4\";\n  const result: APIEmptyResponse = await deletePoll(tenantId, commentId);\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

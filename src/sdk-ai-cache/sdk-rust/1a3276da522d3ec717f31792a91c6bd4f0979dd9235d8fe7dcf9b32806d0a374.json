@@ -1,0 +1,7 @@
+{
+  "method": "post_bulk_pre_ban_summary",
+  "signatureHash": "1a3276da522d3ec717f31792a91c6bd4f0979dd9235d8fe7dcf9b32806d0a374",
+  "generatedAt": "2026-07-01T10:15:28.089Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let bulk_params = models::BulkPreBanParams::default();\n    let params = PostBulkPreBanSummaryParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        bulk_pre_ban_params: bulk_params,\n        include_by_user_id_and_email: Some(true),\n        include_by_ip: Some(false),\n        include_by_email_domain: Some(true),\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _summary = post_bulk_pre_ban_summary(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

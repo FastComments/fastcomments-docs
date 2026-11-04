@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "efe30e66026efdcfcb0e75a2c3800184267ba34de55f4a73edb134d337d5fa3f",
+  "generatedAt": "2026-07-01T07:19:23.524Z",
+  "codeExample": "let (response, httpResponse) = client.saveCommentsBulk(\n  tenantId = \"my-tenant-123\",\n  createCommentParams = @[],\n  options = SaveCommentsBulkOptions(),\n  id = \"\",\n  fromName = \"\"\n)\n\nif response.isSome:\n  let result = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

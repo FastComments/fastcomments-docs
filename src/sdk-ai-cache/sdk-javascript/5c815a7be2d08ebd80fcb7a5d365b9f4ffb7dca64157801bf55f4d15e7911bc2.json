@@ -1,0 +1,7 @@
+{
+  "method": "deleteWebhook",
+  "signatureHash": "5c815a7be2d08ebd80fcb7a5d365b9f4ffb7dca64157801bf55f4d15e7911bc2",
+  "generatedAt": "2026-09-23T20:29:48.089Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst webhookId: string = \"wh_98765\";\n\nconst result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

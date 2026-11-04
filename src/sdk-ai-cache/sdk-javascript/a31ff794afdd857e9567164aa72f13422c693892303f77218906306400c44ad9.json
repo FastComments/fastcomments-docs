@@ -1,0 +1,7 @@
+{
+  "method": "deleteDomainConfig",
+  "signatureHash": "a31ff794afdd857e9567164aa72f13422c693892303f77218906306400c44ad9",
+  "generatedAt": "2026-07-01T07:19:35.284Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = 'acme-corp';\n  const domain: string = 'blog.acme.com';\n  const response: DeleteDomainConfigResponse = await deleteDomainConfig(tenantId, domain);\n  console.log(response);\n}\nrunExample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

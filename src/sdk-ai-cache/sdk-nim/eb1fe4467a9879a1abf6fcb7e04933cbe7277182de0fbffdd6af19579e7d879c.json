@@ -1,0 +1,7 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "eb1fe4467a9879a1abf6fcb7e04933cbe7277182de0fbffdd6af19579e7d879c",
+  "generatedAt": "2026-07-01T07:19:49.225Z",
+  "codeExample": "let (apiRespOpt, httpResp) = client.deleteSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  options = DeleteSSOUserOptions()\n)\n\nif apiRespOpt.isSome:\n  let apiResp = apiRespOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

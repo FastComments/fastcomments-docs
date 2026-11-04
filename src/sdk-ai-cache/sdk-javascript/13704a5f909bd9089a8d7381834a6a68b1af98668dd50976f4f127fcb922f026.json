@@ -1,0 +1,7 @@
+{
+  "method": "getPollVotes",
+  "signatureHash": "13704a5f909bd9089a8d7381834a6a68b1af98668dd50976f4f127fcb922f026",
+  "generatedAt": "2026-09-23T20:29:53.428Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"cmt_98765\";\nconst voterId: string = \"user_abc\";\nconst optionId: string = \"opt_1\";\nconst skip: number = 20;\n\nconst pollResult: GetPollVotesResponse = await getPollVotes(\n  tenantId,\n  commentId,\n  voterId,\n  optionId,\n  skip\n);\n\nconsole.log(pollResult);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

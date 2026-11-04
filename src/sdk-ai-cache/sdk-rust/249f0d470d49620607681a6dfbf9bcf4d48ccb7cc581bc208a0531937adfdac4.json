@@ -1,0 +1,7 @@
+{
+  "method": "get_logs",
+  "signatureHash": "249f0d470d49620607681a6dfbf9bcf4d48ccb7cc581bc208a0531937adfdac4",
+  "generatedAt": "2026-07-01T10:15:19.430Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetLogsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-12345\".to_string(),\n        sso: Some(\"user@example.com\".to_string()),\n    };\n    let response = get_logs(&configuration, params).await?;\n    let _ = response;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

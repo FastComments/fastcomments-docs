@@ -1,0 +1,7 @@
+{
+  "method": "render_email_template",
+  "signatureHash": "ee0a105d5d13efb6a3c1afebc62d3f317a5e74a84063e0ca99f87719b11d8869",
+  "generatedAt": "2026-07-01T10:15:24.734Z",
+  "codeExample": "let mut vars = std::collections::HashMap::new();\nvars.insert(\"article_title\".to_string(), \"Breaking News\".to_string());\nvars.insert(\"author\".to_string(), \"Jane Smith\".to_string());\n\nlet body = models::RenderEmailTemplateBody {\n    template_id: \"newsletter\".to_string(),\n    variables: vars,\n};\n\nlet params = RenderEmailTemplateParams {\n    tenant_id: \"acme-corp-tenant\".to_string(),\n    render_email_template_body: body,\n    locale: Some(\"en-US\".to_string()),\n};\n\nlet response = render_email_template(&configuration, params).await?;",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

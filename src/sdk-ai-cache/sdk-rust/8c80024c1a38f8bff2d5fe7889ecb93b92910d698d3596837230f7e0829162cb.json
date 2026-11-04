@@ -1,0 +1,7 @@
+{
+  "method": "get_comment",
+  "signatureHash": "8c80024c1a38f8bff2d5fe7889ecb93b92910d698d3596837230f7e0829162cb",
+  "generatedAt": "2026-07-01T10:15:26.752Z",
+  "codeExample": "async fn fetch_comment() -> Result<(), Error> {\n    let params = GetCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-12345\".to_string(),\n        include_deleted: Some(false),\n    };\n\n    let _response: ApiGetCommentResponse = get_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

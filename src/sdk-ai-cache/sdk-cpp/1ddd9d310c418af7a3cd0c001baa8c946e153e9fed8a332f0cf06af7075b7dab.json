@@ -1,0 +1,7 @@
+{
+  "method": "updateUserNotificationCommentSubscriptionStatus",
+  "signatureHash": "1ddd9d310c418af7a3cd0c001baa8c946e153e9fed8a332f0cf06af7075b7dab",
+  "generatedAt": "2026-07-01T07:19:39.617Z",
+  "codeExample": "auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(\n    utility::conversions::to_string_t(\"my-tenant-123\"),\n    utility::conversions::to_string_t(\"notif-456\"),\n    utility::conversions::to_string_t(\"optedIn\"),\n    utility::conversions::to_string_t(\"comment-789\"),\n    boost::optional<utility::string_t>(utility::conversions::to_string_t(\"sso-token-abc\"))\n).then([](std::shared_ptr<UpdateUserNotificationCommentSubscriptionStatusResponse> resp){\n    (void)resp;\n});",
+  "model": "openai/gpt-oss-120b"
+}

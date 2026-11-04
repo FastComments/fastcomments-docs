@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "2eec02f817f5df49fc945f0d6a63dafcab5fef94d5276bb348bbc59ed14a454e",
+  "generatedAt": "2026-07-01T07:19:51.419Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet body = CreateQuestionResultBody()\nlet (optResult, httpResp) = client.createQuestionResult(tenantId = tenantId, createQuestionResultBody = body)\nif optResult.isSome:\n  let result = optResult.get()\n  echo result",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

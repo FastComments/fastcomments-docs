@@ -1,0 +1,7 @@
+{
+  "method": "postAdjustCommentVotes",
+  "signatureHash": "4f04d7739c1f34f1ab3bff2689eb2a47f863401a88a0d3c0ca4af49d8de02647",
+  "generatedAt": "2026-07-01T07:19:54.944Z",
+  "codeExample": "let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-789\",\n  adjustCommentVotesParams = AdjustCommentVotesParams(),\n  options = PostAdjustCommentVotesOptions()\n)\n\nif adjustRespOpt.isSome:\n  let adjustResp = adjustRespOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

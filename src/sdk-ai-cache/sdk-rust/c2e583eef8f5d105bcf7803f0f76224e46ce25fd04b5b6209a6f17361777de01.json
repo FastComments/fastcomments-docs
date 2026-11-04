@@ -1,0 +1,7 @@
+{
+  "method": "patch_page",
+  "signatureHash": "c2e583eef8f5d105bcf7803f0f76224e46ce25fd04b5b6209a6f17361777de01",
+  "generatedAt": "2026-07-01T10:15:22.517Z",
+  "codeExample": "async fn run_patch_page() -> Result<(), Error> {\n    let update = models::UpdateApiPageData {\n        title: Some(\"Breaking News\".into()),\n        content: Some(\"Updated article content\".into()),\n        ..Default::default()\n    };\n    let params = PatchPageParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        id: \"news/article\".into(),\n        update_api_page_data: update,\n    };\n    let _resp: PatchPageApiResponse = patch_page(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

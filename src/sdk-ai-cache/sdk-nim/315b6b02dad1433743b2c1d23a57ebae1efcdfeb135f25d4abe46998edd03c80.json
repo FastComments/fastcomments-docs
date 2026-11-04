@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsForUser",
+  "signatureHash": "315b6b02dad1433743b2c1d23a57ebae1efcdfeb135f25d4abe46998edd03c80",
+  "generatedAt": "2026-07-01T07:19:51.880Z",
+  "codeExample": "let (maybeResp, httpResp) = client.getCommentsForUser(options = GetCommentsForUserOptions(\n  tenantId = \"my-tenant-123\",\n  userId = \"user-456\",\n  page = 0,\n  pageSize = 20,\n  includeDeleted = false,\n  commentIds = @[]\n))\n\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  discard resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

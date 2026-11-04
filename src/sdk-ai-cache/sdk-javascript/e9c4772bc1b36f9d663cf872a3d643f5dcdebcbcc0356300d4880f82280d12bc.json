@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplate",
+  "signatureHash": "e9c4772bc1b36f9d663cf872a3d643f5dcdebcbcc0356300d4880f82280d12bc",
+  "generatedAt": "2026-09-23T20:29:50.861Z",
+  "codeExample": "async function fetchTemplate() {\n  const tenantId: string = \"acme-corp-123\";\n  const templateId: string = \"welcome-email-456\";\n  const response: GetEmailTemplateResponse = await getEmailTemplate(tenantId, templateId);\n  const status: APIStatus | undefined = response.status;\n  const customTemplate: CustomEmailTemplate | undefined = response.template;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

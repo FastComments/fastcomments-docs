@@ -1,0 +1,7 @@
+{
+  "method": "sendLoginLink",
+  "signatureHash": "0f07f37b18a6636bf06d6a66aeea3b674e975374bf0ca71ade26151634a7101d",
+  "generatedAt": "2026-07-01T10:15:15.380Z",
+  "codeExample": "api->sendLoginLink(\n    U(\"my-tenant-123\"),\n    U(\"user@example.com\"),\n    boost::make_optional(U(\"https://myapp.com/auth/callback\"))\n).then([](std::shared_ptr<APIEmptyResponse> resp) {\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

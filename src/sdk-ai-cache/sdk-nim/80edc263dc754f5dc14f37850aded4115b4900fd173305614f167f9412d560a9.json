@@ -1,0 +1,7 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "80edc263dc754f5dc14f37850aded4115b4900fd173305614f167f9412d560a9",
+  "generatedAt": "2026-07-01T07:19:48.166Z",
+  "codeExample": "let (flagRespOpt, httpResp) = client.unFlagComment(tenantId = \"my-tenant-123\", id = \"comment-456\", options = UnFlagCommentOptions())\nif flagRespOpt.isSome:\n  let flagResp = flagRespOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

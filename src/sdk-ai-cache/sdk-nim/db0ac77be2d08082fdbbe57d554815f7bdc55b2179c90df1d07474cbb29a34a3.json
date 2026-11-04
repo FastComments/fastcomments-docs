@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenantUser",
+  "signatureHash": "db0ac77be2d08082fdbbe57d554815f7bdc55b2179c90df1d07474cbb29a34a3",
+  "generatedAt": "2026-07-01T07:19:27.391Z",
+  "codeExample": "let (response, httpResponse) = client.deleteTenantUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  options = DeleteTenantUserOptions(),\n)\nif response.isSome:\n  let empty = response.get()\n  echo \"User successfully deleted\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

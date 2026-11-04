@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "c53c2bb30cf840f78774de30cb467fd0be5aabe40ff685b0507c7f9c733971f7",
+  "generatedAt": "2026-07-01T07:19:38.513Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto userId = utility::string_t(U(\"john.doe@example.com\"));\nReplaceTenantUserBody replaceBody;\nreplaceBody.email = utility::string_t(U(\"john.doe@example.com\"));\nreplaceBody.role = utility::string_t(U(\"admin\"));\nboost::optional<utility::string_t> updateComments = utility::string_t(U(\"Promoted to admin\"));\napi->replaceTenantUser(tenantId, userId, replaceBody, updateComments)\n    .then([](std::shared_ptr<APIEmptyResponse> resp){ });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteTenant",
+  "signatureHash": "32e4a44ec18d6668c2c12c5718ea095183fa0c6c17d0bc564735d2d9dc7592b7",
+  "generatedAt": "2026-09-23T20:29:58.181Z",
+  "codeExample": "async function main(): Promise<void> {\n  const tenantId: string = \"tenant_12345\";\n  const userId: string = \"user_9876\";\n\n  const resultWithoutSure: APIEmptyResponse = await deleteTenant(tenantId, userId);\n  const resultWithSure: APIEmptyResponse = await deleteTenant(tenantId, userId, \"confirm\");\n}\n\nmain();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

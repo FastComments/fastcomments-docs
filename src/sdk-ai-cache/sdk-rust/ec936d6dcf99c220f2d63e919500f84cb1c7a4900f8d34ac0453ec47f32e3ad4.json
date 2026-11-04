@@ -1,0 +1,7 @@
+{
+  "method": "get_email_template_render_errors",
+  "signatureHash": "ec936d6dcf99c220f2d63e919500f84cb1c7a4900f8d34ac0453ec47f32e3ad4",
+  "generatedAt": "2026-07-01T10:15:20.580Z",
+  "codeExample": "async fn fetch_template_errors(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetEmailTemplateRenderErrorsParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"newsletter-welcome\".to_string(),\n        skip: Some(5.0),\n    };\n    let _response: GetEmailTemplateRenderErrorsResponse = get_email_template_render_errors(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

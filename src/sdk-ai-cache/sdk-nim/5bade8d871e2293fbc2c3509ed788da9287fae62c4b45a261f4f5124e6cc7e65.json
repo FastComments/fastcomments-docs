@@ -1,0 +1,7 @@
+{
+  "method": "postFlagComment",
+  "signatureHash": "5bade8d871e2293fbc2c3509ed788da9287fae62c4b45a261f4f5124e6cc7e65",
+  "generatedAt": "2026-07-01T10:15:14.108Z",
+  "codeExample": "let opts = PostFlagCommentOptions()\nlet (response, httpResponse) = client.postFlagComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-987654\",\n  options = opts,\n)\nif response.isSome:\n  let result = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

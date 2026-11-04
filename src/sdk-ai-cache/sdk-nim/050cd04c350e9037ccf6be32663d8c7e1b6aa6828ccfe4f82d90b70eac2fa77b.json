@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadgeProgressByUserId",
+  "signatureHash": "050cd04c350e9037ccf6be32663d8c7e1b6aa6828ccfe4f82d90b70eac2fa77b",
+  "generatedAt": "2026-07-01T07:19:50.605Z",
+  "codeExample": "let (badgeProgressOpt, httpResp) = client.getUserBadgeProgressByUserId(tenantId = \"my-tenant-123\", userId = \"user-456\")\nif badgeProgressOpt.isSome:\n  let progress = badgeProgressOpt.get()\n  echo progress",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

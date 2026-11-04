@@ -1,0 +1,7 @@
+{
+  "method": "update_user_badge",
+  "signatureHash": "80eb8901d385f8925e6c1fb1e81293ff2e9405d992796bf52004861e017aefc6",
+  "generatedAt": "2026-07-01T10:15:26.277Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = UpdateUserBadgeParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"user-42\".to_string(),\n        update_user_badge_params: models::UpdateUserBadgeParams {\n            badge_name: \"contributor\".to_string(),\n            expires_at: Some(\"2025-12-31T23:59:59Z\".to_string()),\n        },\n    };\n    let _resp = update_user_badge(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

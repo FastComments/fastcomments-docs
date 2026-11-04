@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "9844353f29f24ba19ba24730c053f9b6147e400fa1d3a30fe355bfd16f978916",
+  "generatedAt": "2026-07-01T07:19:54.469Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<utility::string_t> optionalTenant = tenantId;\napi->getDomainConfigs(optionalTenant.value())\n    .then([](std::shared_ptr<GetDomainConfigsResponse> response) {\n        auto domains = response->getDomainList();\n        for (const auto& d : domains) {\n            std::cout << d << std::endl;\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

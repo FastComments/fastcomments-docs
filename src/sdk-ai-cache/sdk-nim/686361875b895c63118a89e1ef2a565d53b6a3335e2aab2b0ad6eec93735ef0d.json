@@ -1,0 +1,7 @@
+{
+  "method": "createVote",
+  "signatureHash": "686361875b895c63118a89e1ef2a565d53b6a3335e2aab2b0ad6eec93735ef0d",
+  "generatedAt": "2026-07-01T07:19:31.506Z",
+  "codeExample": "let (voteOpt, httpResp) = client.createVote(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-7890\",\n  direction = \"up\",\n  options = CreateVoteOptions()\n)\n\nif voteOpt.isSome:\n  let vote = voteOpt.get()\n  echo vote",
+  "model": "openai/gpt-oss-120b"
+}

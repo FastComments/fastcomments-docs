@@ -1,0 +1,7 @@
+{
+  "method": "getModerators",
+  "signatureHash": "58136a2aac2002e3fba8f4551c04bb5fb5de8328d70b53ab6c56f5da396437d1",
+  "generatedAt": "2026-07-01T07:19:41.821Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nboost::optional<double> skip = 10.0;\napi->getModerators(tenantId, skip).then([](pplx::task<std::shared_ptr<GetModeratorsResponse>> t){\n    auto response = t.get();\n});",
+  "model": "openai/gpt-oss-120b"
+}

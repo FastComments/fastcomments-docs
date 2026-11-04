@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant_daily_usages",
+  "signatureHash": "7cb8eaec736f940ca38564667f67f20e3c58972df0210c61741f17028814c414",
+  "generatedAt": "2026-07-01T10:15:20.320Z",
+  "codeExample": "async fn fetch_daily_usage(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetTenantDailyUsagesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        year_number: Some(2023.0),\n        month_number: Some(7.0),\n        day_number: Some(15.0),\n        skip: Some(0.0),\n    };\n    let _response: GetTenantDailyUsagesResponse = get_tenant_daily_usages(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

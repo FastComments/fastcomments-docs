@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "f6a5c237b3ec9ff602e0fc4b8053ec137210a9c63c489546056541ffd128208d",
+  "generatedAt": "2026-07-01T07:19:32.787Z",
+  "codeExample": "let (presenceOpt, httpResp) = client.getUserPresenceStatuses(tenantId = \"my-tenant-123\", urlIdWS = \"news/article-title\", userIds = \"user42\")\nif presenceOpt.isSome:\n  let presence = presenceOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "delete_subscription",
+  "signatureHash": "1a39d173e6026873242c23cf11d83fc594f173ada2c62ad5eafb75878a14d83a",
+  "generatedAt": "2026-07-01T10:15:22.056Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = DeleteSubscriptionParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"sub-2024-09\".to_string(),\n        user_id: Some(\"user-42\".to_string()),\n    };\n    let _response = delete_subscription(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

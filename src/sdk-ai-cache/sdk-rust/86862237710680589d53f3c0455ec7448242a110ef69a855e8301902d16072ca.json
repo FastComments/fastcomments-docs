@@ -1,0 +1,7 @@
+{
+  "method": "delete_domain_config",
+  "signatureHash": "86862237710680589d53f3c0455ec7448242a110ef69a855e8301902d16072ca",
+  "generatedAt": "2026-07-01T10:15:21.924Z",
+  "codeExample": "async fn run_example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = DeleteDomainConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        domain: \"news/article\".to_string(),\n    };\n    let _response: DeleteDomainConfigResponse = delete_domain_config(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

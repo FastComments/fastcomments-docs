@@ -1,0 +1,7 @@
+{
+  "method": "add_hash_tag",
+  "signatureHash": "2faf0cf060986f5eca37a4501201bb2cf262d86a7a932254689b830010c17c55",
+  "generatedAt": "2026-07-01T10:15:24.663Z",
+  "codeExample": "async fn example(cfg: &configuration::Configuration) -> Result<(), Error> {\n    let params = AddHashTagParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        create_hash_tag_body: Some(models::CreateHashTagBody {\n            tag: \"news/article\".to_string(),\n        }),\n    };\n    let _response: CreateHashTagResponse = add_hash_tag(cfg, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

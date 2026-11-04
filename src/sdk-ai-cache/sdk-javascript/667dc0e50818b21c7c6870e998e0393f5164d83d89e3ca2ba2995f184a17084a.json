@@ -1,0 +1,7 @@
+{
+  "method": "getTenant",
+  "signatureHash": "667dc0e50818b21c7c6870e998e0393f5164d83d89e3ca2ba2995f184a17084a",
+  "generatedAt": "2026-09-23T20:29:57.542Z",
+  "codeExample": "async function fetchTenant(): Promise<void> {\n    const tenantId: string = \"tenant_12345\";\n    const id: string = \"tenant_12345\";\n\n    const tenantResponse: GetTenantResponse = await getTenant(tenantId, id);\n\n    // Optional fields in the response\n    const billing: BillingInfo | undefined = tenantResponse.billingInfo;\n    const domainConfig: APIDomainConfiguration | undefined = tenantResponse.domainConfiguration;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

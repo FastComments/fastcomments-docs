@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "d29e13ac476b6ff47c7538a7d549bd3a0c74d082f2b1f413249bca5698345e71",
+  "generatedAt": "2026-07-01T07:19:49.302Z",
+  "codeExample": "let (response, httpResponse) = client.getV1PageLikes(tenantId = \"my-tenant-123\", urlId = \"news/article-title\")\nif response.isSome:\n  let pageLikes = response.get()\n  # use pageLikes as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

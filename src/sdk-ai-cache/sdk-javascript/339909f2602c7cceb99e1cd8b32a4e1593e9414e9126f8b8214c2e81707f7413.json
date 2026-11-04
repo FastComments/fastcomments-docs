@@ -1,0 +1,7 @@
+{
+  "method": "getTenantUsers",
+  "signatureHash": "339909f2602c7cceb99e1cd8b32a4e1593e9414e9126f8b8214c2e81707f7413",
+  "generatedAt": "2026-09-23T20:29:50.810Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst skip: number = 20;\n\nconst firstPage: GetTenantUsersResponse = await getTenantUsers(tenantId);\nconst secondPage: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

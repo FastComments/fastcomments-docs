@@ -1,0 +1,7 @@
+{
+  "method": "get_user_ban_preference",
+  "signatureHash": "8cf977a26a1092ebe4373bd568b8e35eaba31e972b9e26f893104fc10b8c9633",
+  "generatedAt": "2026-07-01T10:15:18.483Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetUserBanPreferenceParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        sso: Some(\"user123\".to_string()),\n    };\n    let _response = get_user_ban_preference(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

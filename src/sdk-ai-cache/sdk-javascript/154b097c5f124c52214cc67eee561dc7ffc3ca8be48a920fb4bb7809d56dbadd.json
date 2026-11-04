@@ -1,0 +1,7 @@
+{
+  "method": "getManualBadgesForUser",
+  "signatureHash": "154b097c5f124c52214cc67eee561dc7ffc3ca8be48a920fb4bb7809d56dbadd",
+  "generatedAt": "2026-09-23T20:29:58.311Z",
+  "codeExample": "async () => {\n  const tenantId: string = \"tenant_12345\";\n  const badgesUserId: string | undefined = \"user_98765\";\n  const commentId: string | undefined = \"comment_abcde\";\n  const sso: string | undefined = \"sso_token_xyz\";\n\n  const basicResponse: GetUserManualBadgesResponse = await getManualBadgesForUser(tenantId);\n  const fullResponse: GetUserManualBadgesResponse = await getManualBadgesForUser(\n    tenantId,\n    badgesUserId,\n    commentId,\n    sso\n  );\n\n  console.log(basicResponse, fullResponse);\n}();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

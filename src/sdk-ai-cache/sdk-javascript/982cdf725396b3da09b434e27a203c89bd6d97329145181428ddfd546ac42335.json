@@ -1,0 +1,7 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "982cdf725396b3da09b434e27a203c89bd6d97329145181428ddfd546ac42335",
+  "generatedAt": "2026-07-01T07:19:35.895Z",
+  "codeExample": "(async () => {\n  const tenantId: string = 'tenant_12345';\n  const config: AddDomainConfigParams = {\n    domain: 'myblog.example.com',\n    enabled: true,\n    // description is optional and omitted here\n  };\n  const response: AddDomainConfigResponse = await addDomainConfig(tenantId, config);\n  console.log(response);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

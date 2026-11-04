@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "3c4d581882f718b097208abcc0c65ea6155af28c26ff94a8a168523e89f0a1e3",
+  "generatedAt": "2026-07-01T07:19:25.900Z",
+  "codeExample": "let (optResp, httpResp) = client.putDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"example.com\",\n  updateDomainConfigParams = UpdateDomainConfigParams()\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

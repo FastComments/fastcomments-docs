@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "a006bd270d3f0841bc9a46bff3f1ef511e93c7e9cd386b5be4197fc4b2b33514",
+  "generatedAt": "2026-07-01T07:19:36.889Z",
+  "codeExample": "auto body = CreateTenantUserBody{};\nbody.email = utility::conversions::to_string_t(\"newuser@example.com\");\nbody.firstName = utility::conversions::to_string_t(\"Alice\");\nbody.lastName = utility::conversions::to_string_t(\"Smith\");\nbody.role = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"moderator\"));\n\napi->createTenantUser(utility::conversions::to_string_t(\"my-tenant-123\"), body)\n    .then([](pplx::task<std::shared_ptr<CreateTenantUserResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

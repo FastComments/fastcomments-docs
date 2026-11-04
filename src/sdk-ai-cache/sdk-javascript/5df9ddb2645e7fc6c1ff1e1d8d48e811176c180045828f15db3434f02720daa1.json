@@ -1,0 +1,7 @@
+{
+  "method": "getHashTags",
+  "signatureHash": "5df9ddb2645e7fc6c1ff1e1d8d48e811176c180045828f15db3434f02720daa1",
+  "generatedAt": "2026-09-23T20:29:48.701Z",
+  "codeExample": "(async () => {\n    const tenantId: string = \"acme-corp-123\";\n    const page: number = 1;\n    const result: GetHashTagsResponse = await getHashTags(tenantId, page);\n    console.log(result);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

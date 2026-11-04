@@ -1,0 +1,7 @@
+{
+  "method": "unFlagComment",
+  "signatureHash": "8bcf6c9df2bb49f30dc2cd24a730e1c3598534ea58e80ca0ac99d679245092c8",
+  "generatedAt": "2026-07-01T07:19:36.769Z",
+  "codeExample": "auto options = UnFlagCommentOptions{};\noptions.reason = boost::optional<utility::string_t>(U(\"Resolved by moderator\"));\napi->unFlagComment(U(\"my-tenant-123\"), U(\"comment-456\"), options)\n    .then([](std::shared_ptr<FlagCommentResponse> response) {\n        if (response) {\n            auto status = response->status;\n            // process status if needed\n        }\n    })\n    .then([](pplx::task<void> previous) {\n        try {\n            previous.get();\n        } catch (const std::exception& e) {\n            // handle error\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

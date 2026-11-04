@@ -1,0 +1,7 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "008b77eaa9634c88d88a5adafee3953edacf9169c191aa11eca36463eb926681",
+  "generatedAt": "2026-07-01T07:19:34.131Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto urlId = utility::conversions::to_string_t(\"page-456\");\nboost::optional<utility::string_t> correlationId = boost::make_optional(utility::conversions::to_string_t(\"corr-789\"));\n\napi->getPageByURLId(tenantId, urlId)\n    .then([correlationId](pplx::task<std::shared_ptr<GetPageByURLIdAPIResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

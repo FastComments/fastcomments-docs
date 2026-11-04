@@ -1,0 +1,7 @@
+{
+  "method": "addPage",
+  "signatureHash": "d5222a9f1dee168658bc9eeb6e95119bbc15b8f793bc8b3bef34ad1467dc52c4",
+  "generatedAt": "2026-07-01T10:15:37.843Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8432b1-4c2e-4f9d-8a5d-7bc9e2f6d9a0\";\n\nconst pageData: CreateAPIPageData = {\n    url: \"https://example.com/articles/fastcomments-intro\",\n    title: \"FastComments Introduction\",\n    description: \"An introductory guide to FastComments API usage.\",\n    tags: [\"fastcomments\", \"api\", \"tutorial\"],\n    metadata: {\n        author: \"Jane Doe\",\n        publishedAt: \"2024-03-15T08:00:00Z\"\n    }\n};\n\nconst response: AddPageAPIResponse = await addPage(tenantId, pageData);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "25fe83368252c9dd7cc738bd7a0d5d20e595ffc9503016518d4ff69637d03f7a",
+  "generatedAt": "2026-07-01T07:19:23.730Z",
+  "codeExample": "let (response, httpResponse) = client.getSSOUserById(tenantId = \"my-tenant-123\", id = \"user-456\")\nif response.isSome:\n  let userInfo = response.get()\n  discard userInfo",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

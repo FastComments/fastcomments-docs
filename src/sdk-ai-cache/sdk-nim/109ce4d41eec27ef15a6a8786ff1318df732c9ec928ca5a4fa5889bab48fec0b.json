@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "109ce4d41eec27ef15a6a8786ff1318df732c9ec928ca5a4fa5889bab48fec0b",
+  "generatedAt": "2026-07-01T07:19:24.937Z",
+  "codeExample": "let (pkgOpt, httpResp) = client.getTenantPackage(tenantId = \"my-tenant-123\", id = \"premium-plan\")\nif pkgOpt.isSome:\n  let pkg = pkgOpt.get()\n  echo pkg",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "post_comments_by_ids",
+  "signatureHash": "72b9e72b374029fb1b86a62c35512bd298cc802629d43482f355dbd5e0564937",
+  "generatedAt": "2026-07-01T10:15:24.471Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = PostCommentsByIdsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comments_by_ids_params: models::CommentsByIdsParams {\n            comment_ids: vec![\"cmt123\".to_string(), \"cmt456\".to_string()],\n        },\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let _response = post_comments_by_ids(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

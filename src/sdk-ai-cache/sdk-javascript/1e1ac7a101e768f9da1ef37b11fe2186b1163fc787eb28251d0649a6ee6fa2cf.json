@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "1e1ac7a101e768f9da1ef37b11fe2186b1163fc787eb28251d0649a6ee6fa2cf",
+  "generatedAt": "2026-09-23T20:29:52.135Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"acme-corp-123\";\n\n  const customOption: QuestionConfigCustomOptionsInner = {\n    key: \"maxLength\",\n    value: 500,\n  };\n\n  const createQuestionConfigBody: CreateQuestionConfigBody = {\n    name: \"User Feedback\",\n    description: \"Collect user feedback after purchase\",\n    enabled: true,\n    customOptions: [customOption],\n    // optional field\n    tags: [\"feedback\", \"post-purchase\"],\n  };\n\n  const response: CreateQuestionConfigResponse = await createQuestionConfig(\n    tenantId,\n    createQuestionConfigBody\n  );\n\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

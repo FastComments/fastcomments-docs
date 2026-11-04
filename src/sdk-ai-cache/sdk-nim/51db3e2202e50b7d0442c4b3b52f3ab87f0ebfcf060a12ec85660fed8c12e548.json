@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "51db3e2202e50b7d0442c4b3b52f3ab87f0ebfcf060a12ec85660fed8c12e548",
+  "generatedAt": "2026-07-01T07:19:22.153Z",
+  "codeExample": "let (exportStatusOpt, httpResp) = client.getApiExportStatus(\n  tenantId = \"my-tenant-123\",\n  options = GetApiExportStatusOptions()\n)\nif exportStatusOpt.isSome:\n  let exportStatus = exportStatusOpt.get()\n  # use exportStatus as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

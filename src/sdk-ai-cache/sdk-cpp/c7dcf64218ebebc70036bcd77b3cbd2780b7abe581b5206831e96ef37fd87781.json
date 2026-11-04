@@ -1,0 +1,7 @@
+{
+  "method": "getApiExportStatus",
+  "signatureHash": "c7dcf64218ebebc70036bcd77b3cbd2780b7abe581b5206831e96ef37fd87781",
+  "generatedAt": "2026-07-01T07:19:44.634Z",
+  "codeExample": "auto opts = GetApiExportStatusOptions{};\nopts.exportId = boost::make_optional<utility::string_t>(U(\"export-456\"));\napi->getApiExportStatus(U(\"my-tenant-123\"), opts)\n    .then([](pplx::task<std::shared_ptr<ModerationExportStatusResponse>> t){\n        try{\n            auto status = t.get();\n        }catch(const std::exception&){\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

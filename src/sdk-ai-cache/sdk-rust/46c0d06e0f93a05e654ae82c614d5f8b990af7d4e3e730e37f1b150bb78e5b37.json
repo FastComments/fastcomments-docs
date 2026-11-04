@@ -1,0 +1,7 @@
+{
+  "method": "get_manual_badges",
+  "signatureHash": "46c0d06e0f93a05e654ae82c614d5f8b990af7d4e3e730e37f1b150bb78e5b37",
+  "generatedAt": "2026-07-01T10:15:20.794Z",
+  "codeExample": "async fn fetch_badges(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetManualBadgesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        sso: Some(\"news/article\".to_string()),\n    };\n    let _response = get_manual_badges(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

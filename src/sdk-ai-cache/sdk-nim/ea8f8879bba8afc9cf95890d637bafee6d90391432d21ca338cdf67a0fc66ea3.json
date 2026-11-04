@@ -1,0 +1,7 @@
+{
+  "method": "postRestoreDeletedComment",
+  "signatureHash": "ea8f8879bba8afc9cf95890d637bafee6d90391432d21ca338cdf67a0fc66ea3",
+  "generatedAt": "2026-07-01T07:19:52.430Z",
+  "codeExample": "let (respOpt, httpResp) = client.postRestoreDeletedComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"comment-456\",\n  options = default(PostRestoreDeletedCommentOptions)\n)\n\nif respOpt.isSome:\n  let empty = respOpt.get()\n  echo \"Comment restored\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

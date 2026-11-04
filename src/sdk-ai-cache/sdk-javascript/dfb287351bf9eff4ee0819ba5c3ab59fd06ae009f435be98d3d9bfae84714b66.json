@@ -1,0 +1,7 @@
+{
+  "method": "createModerator",
+  "signatureHash": "dfb287351bf9eff4ee0819ba5c3ab59fd06ae009f435be98d3d9bfae84714b66",
+  "generatedAt": "2026-09-23T20:29:58.094Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst moderatorPayload: CreateModeratorBody = {\n  userId: \"user_9876\",\n  // optional field; can be omitted if not needed\n  notes: \"Temporary moderator for event\"\n};\n\nconst response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

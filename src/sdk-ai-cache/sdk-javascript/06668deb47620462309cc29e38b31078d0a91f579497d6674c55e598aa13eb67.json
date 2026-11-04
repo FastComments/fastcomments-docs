@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserByEmail",
+  "signatureHash": "06668deb47620462309cc29e38b31078d0a91f579497d6674c55e598aa13eb67",
+  "generatedAt": "2026-07-01T07:19:34.816Z",
+  "codeExample": "async function fetchSSOUser() {\n  const tenantId: string = \"tenant_12345\";\n  const email: string = \"john.doe@example.com\";\n\n  const result: GetSSOUserByEmailAPIResponse = await getSSOUserByEmail(tenantId, email);\n  const user: APISSOUser | undefined = result?.user;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

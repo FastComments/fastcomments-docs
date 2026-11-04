@@ -1,0 +1,7 @@
+{
+  "method": "getCount",
+  "signatureHash": "4bc517639694f56ac3a6bfac5b94f3dd7b68402722bdd5d72d2ae69d71c0fb8d",
+  "generatedAt": "2026-09-23T20:29:50.712Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst basicCount: ModerationAPICountCommentsResponse = await getCount(tenantId);\n\nconst detailedCount: ModerationAPICountCommentsResponse = await getCount(\n  tenantId,\n  \"spam\",\n  \"192.168.1.100\",\n  \"status:pending\",\n  \"user:john\",\n  true,\n  \"sso_token_abc\"\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

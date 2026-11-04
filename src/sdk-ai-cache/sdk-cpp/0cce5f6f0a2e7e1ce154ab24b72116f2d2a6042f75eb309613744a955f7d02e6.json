@@ -1,0 +1,7 @@
+{
+  "method": "addHashTagsBulk",
+  "signatureHash": "0cce5f6f0a2e7e1ce154ab24b72116f2d2a6042f75eb309613744a955f7d02e6",
+  "generatedAt": "2026-07-01T07:19:30.451Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nBulkCreateHashTagsBody bulkBody;\nbulkBody.tags = { utility::string_t(U(\"announcement\")), utility::string_t(U(\"feature-request\")) };\nbulkBody.description = boost::optional<utility::string_t>(U(\"Bulk tag creation\"));\napi->addHashTagsBulk(tenantId, bulkBody).then([](pplx::task<std::shared_ptr<BulkCreateHashTagsResponse>> task){\n    try{\n        auto resp = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

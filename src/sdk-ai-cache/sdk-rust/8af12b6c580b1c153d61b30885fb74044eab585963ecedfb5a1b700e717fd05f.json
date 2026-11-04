@@ -1,0 +1,7 @@
+{
+  "method": "delete_question_config",
+  "signatureHash": "8af12b6c580b1c153d61b30885fb74044eab585963ecedfb5a1b700e717fd05f",
+  "generatedAt": "2026-07-01T10:15:24.513Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params: DeleteQuestionConfigParams = DeleteQuestionConfigParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"question-456\".to_string(),\n    };\n    delete_question_config(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

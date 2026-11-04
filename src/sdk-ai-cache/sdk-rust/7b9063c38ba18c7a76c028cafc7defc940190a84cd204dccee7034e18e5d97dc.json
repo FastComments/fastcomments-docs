@@ -1,0 +1,7 @@
+{
+  "method": "un_flag_comment",
+  "signatureHash": "7b9063c38ba18c7a76c028cafc7defc940190a84cd204dccee7034e18e5d97dc",
+  "generatedAt": "2026-07-01T10:15:21.937Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = UnFlagCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"comment-12345\".to_string(),\n        user_id: Some(\"user-67890\".to_string()),\n        anon_user_id: None,\n    };\n    let _response = un_flag_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

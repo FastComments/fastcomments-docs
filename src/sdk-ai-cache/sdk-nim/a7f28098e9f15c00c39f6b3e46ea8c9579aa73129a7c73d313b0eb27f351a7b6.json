@@ -1,0 +1,7 @@
+{
+  "method": "deleteFeedPostPublic",
+  "signatureHash": "a7f28098e9f15c00c39f6b3e46ea8c9579aa73129a7c73d313b0eb27f351a7b6",
+  "generatedAt": "2026-07-01T07:19:51.053Z",
+  "codeExample": "let (response, httpResponse) = client.deleteFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"news/article-42\",\n  options = DeleteFeedPostPublicOptions()\n)\n\nif response.isSome:\n  let deleteResp = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

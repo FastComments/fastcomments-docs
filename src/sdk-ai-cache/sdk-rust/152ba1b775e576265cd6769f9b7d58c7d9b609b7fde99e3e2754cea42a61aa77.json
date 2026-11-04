@@ -1,0 +1,7 @@
+{
+  "method": "delete_notification_count",
+  "signatureHash": "152ba1b775e576265cd6769f9b7d58c7d9b609b7fde99e3e2754cea42a61aa77",
+  "generatedAt": "2026-07-01T10:15:23.029Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article-123\".to_string(),\n    };\n    let _response: ApiEmptyResponse = delete_notification_count(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

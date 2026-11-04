@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentReviewStatus",
+  "signatureHash": "e1526e766f4724ae75686b289319588f0f4f6e955455570a94919b8f7064d5f2",
+  "generatedAt": "2026-09-23T20:29:50.509Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\nconst commentId: string = \"cmt_98765\";\nconst reviewed: boolean = true;\nconst broadcastId: string = \"brd_001\";\nconst sso: string = \"sso_token_abc\";\n\nconst result: APIEmptyResponse = await postSetCommentReviewStatus(\n  tenantId,\n  commentId,\n  reviewed,\n  broadcastId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

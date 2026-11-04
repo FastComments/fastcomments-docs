@@ -1,0 +1,7 @@
+{
+  "method": "putAwardBadge",
+  "signatureHash": "55180d8a57c642e259487f925b3d4404692a573c4513afaa013e0b458e430815",
+  "generatedAt": "2026-07-01T07:19:38.097Z",
+  "codeExample": "let (response, httpResponse) = client.putAwardBadge(\n  tenantId = \"my-tenant-123\",\n  badgeId = \"gold-badge\",\n  options = PutAwardBadgeOptions()\n)\n\nif response.isSome:\n  let award = response.get()",
+  "model": "openai/gpt-oss-120b"
+}

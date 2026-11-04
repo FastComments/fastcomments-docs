@@ -1,0 +1,7 @@
+{
+  "method": "get_question_results",
+  "signatureHash": "5a5ea3b1e696e24d40da9a7f40fc7525272fedc0ab203727f35ba5e4b1f78ba2",
+  "generatedAt": "2026-07-01T10:15:24.645Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetQuestionResultsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: Some(\"news/article\".to_string()),\n        user_id: Some(\"user-12345\".to_string()),\n        start_date: Some(\"2023-01-01\".to_string()),\n        question_id: Some(\"q-987\".to_string()),\n        question_ids: Some(\"q-1,q-2,q-3\".to_string()),\n        skip: Some(10.0),\n    };\n    let _response = get_question_results(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

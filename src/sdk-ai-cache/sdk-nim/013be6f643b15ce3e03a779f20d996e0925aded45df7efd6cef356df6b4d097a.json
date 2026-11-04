@@ -1,0 +1,7 @@
+{
+  "method": "blockFromCommentPublic",
+  "signatureHash": "013be6f643b15ce3e03a779f20d996e0925aded45df7efd6cef356df6b4d097a",
+  "generatedAt": "2026-07-01T07:19:28.513Z",
+  "codeExample": "let (blockOpt, httpResp) = client.blockFromCommentPublic(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  publicBlockFromCommentParams = PublicBlockFromCommentParams(),\n  sso = \"\"\n)\n\nif blockOpt.isSome:\n  let block = blockOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

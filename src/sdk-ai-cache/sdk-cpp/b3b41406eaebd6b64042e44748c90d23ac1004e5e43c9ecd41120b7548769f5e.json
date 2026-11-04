@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "b3b41406eaebd6b64042e44748c90d23ac1004e5e43c9ecd41120b7548769f5e",
+  "generatedAt": "2026-07-01T10:15:15.641Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto moderatorId = utility::conversions::to_string_t(\"mod-456\");\nboost::optional<utility::string_t> sendEmail = utility::conversions::to_string_t(\"admin@example.com\");\napi->deleteModerator(tenantId, moderatorId, sendEmail)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n        // handle success\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

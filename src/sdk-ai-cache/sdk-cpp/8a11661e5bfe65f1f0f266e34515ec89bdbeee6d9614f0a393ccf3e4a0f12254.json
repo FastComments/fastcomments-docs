@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "8a11661e5bfe65f1f0f266e34515ec89bdbeee6d9614f0a393ccf3e4a0f12254",
+  "generatedAt": "2026-07-01T07:19:31.999Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto packageId = U(\"pkg-456\");\napi->getTenantPackage(tenantId, packageId).then([](pplx::task<std::shared_ptr<GetTenantPackageResponse>> task){\n    try{\n        auto resp = task.get();\n        auto result = std::make_shared<GetTenantPackageResponse>(*resp);\n    }catch(...){}\n});",
+  "model": "openai/gpt-oss-120b"
+}

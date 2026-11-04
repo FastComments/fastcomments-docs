@@ -1,0 +1,7 @@
+{
+  "method": "get_user_presence_statuses",
+  "signatureHash": "74262f5b332b614f97680b4962a42ac05a8652c8cfb99b8c76dd7c84ca2b49f0",
+  "generatedAt": "2026-07-01T10:15:25.550Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = GetUserPresenceStatusesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id_ws: \"news/article\".to_string(),\n        user_ids: \"user123,user456\".to_string(),\n    };\n    let _response = get_user_presence_statuses(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

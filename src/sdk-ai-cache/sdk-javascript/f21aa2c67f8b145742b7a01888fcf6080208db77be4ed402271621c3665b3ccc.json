@@ -1,0 +1,7 @@
+{
+  "method": "replaceTenantUser",
+  "signatureHash": "f21aa2c67f8b145742b7a01888fcf6080208db77be4ed402271621c3665b3ccc",
+  "generatedAt": "2026-09-23T20:29:57.090Z",
+  "codeExample": "const tenantId: string = \"c1a2b3d4-5678-90ab-cdef-1234567890ab\";\nconst userId: string = \"user-987654321\";\nconst replaceBody: ReplaceTenantUserBody = {\n  email: \"newuser@example.com\",\n  name: \"New User\",\n  role: \"admin\"\n};\n\nconst response: APIEmptyResponse = await replaceTenantUser(\n  tenantId,\n  userId,\n  replaceBody,\n  \"Migrated user to new tenant\"\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

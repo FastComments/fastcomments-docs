@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfigs",
+  "signatureHash": "5640cb349f363f2df2ba8011d03e03350ca3a5676a7af6633f167c2726266ffc",
+  "generatedAt": "2026-07-01T07:19:22.562Z",
+  "codeExample": "let (domainConfigsOpt, httpResponse) = client.getDomainConfigs(tenantId = \"my-tenant-123\")\nif domainConfigsOpt.isSome:\n  let domainConfigs = domainConfigsOpt.get()\n  echo domainConfigs",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

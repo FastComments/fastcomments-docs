@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateDefinitions",
+  "signatureHash": "fadd7746eaa32071d8e1c60bc11dd0b536990533c52766379fe90f6e34b065d4",
+  "generatedAt": "2026-07-01T07:19:33.642Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\napi->getEmailTemplateDefinitions(tenantId).then([](pplx::task<std::shared_ptr<GetEmailTemplateDefinitionsResponse>> t) {\n    try {\n        auto resp = t.get();\n        boost::optional<utility::string_t> tmplName = resp ? resp->templateName : boost::none;\n        if (tmplName) {\n            std::cout << *tmplName << std::endl;\n        }\n    } catch (const std::exception& e) {\n        std::cerr << e.what() << std::endl;\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

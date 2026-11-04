@@ -1,0 +1,7 @@
+{
+  "method": "putSSOUser",
+  "signatureHash": "6a00a3b24082570070f0defc28a683861e8bd114fafb6fd89421253c7b06928e",
+  "generatedAt": "2026-07-01T07:19:51.977Z",
+  "codeExample": "let (apiRespOpt, httpResp) = client.putSSOUser(\n  tenantId = \"my-tenant-123\",\n  id = \"user-456\",\n  updateAPISSOUserData = default(UpdateAPISSOUserData),\n  updateComments = false)\n\nif apiRespOpt.isSome:\n  let apiResp = apiRespOpt.get()\n  echo apiResp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "patchPage",
+  "signatureHash": "962736f6fef43fb764553db481c921506a6617b884b7ec4716e3eb7b775a0ce7",
+  "generatedAt": "2026-07-01T10:15:13.955Z",
+  "codeExample": "let (response, httpResponse) = client.patchPage(\n  tenantId = \"my-tenant-123\",\n  id = \"news/article-456\",\n  updateAPIPageData = UpdateAPIPageData(title = \"Updated article title\", description = \"Revised description\")\n)\n\nif response.isSome:\n  let resp = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

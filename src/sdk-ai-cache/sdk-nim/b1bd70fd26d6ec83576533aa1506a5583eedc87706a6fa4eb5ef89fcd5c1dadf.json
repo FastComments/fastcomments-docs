@@ -1,0 +1,7 @@
+{
+  "method": "putReopenThread",
+  "signatureHash": "b1bd70fd26d6ec83576533aa1506a5583eedc87706a6fa4eb5ef89fcd5c1dadf",
+  "generatedAt": "2026-07-01T07:19:32.023Z",
+  "codeExample": "let (apiRespOpt, httpResp) = client.putReopenThread(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  sso = \"\"\n)\n\nif apiRespOpt.isSome:\n  let emptyResp = apiRespOpt.get()\n  discard",
+  "model": "openai/gpt-oss-120b"
+}

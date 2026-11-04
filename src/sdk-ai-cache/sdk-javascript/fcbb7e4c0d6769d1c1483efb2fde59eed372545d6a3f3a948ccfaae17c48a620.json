@@ -1,0 +1,7 @@
+{
+  "method": "getCommentBanStatus",
+  "signatureHash": "fcbb7e4c0d6769d1c1483efb2fde59eed372545d6a3f3a948ccfaae17c48a620",
+  "generatedAt": "2026-09-23T20:29:57.709Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const commentId: string = \"cmt_987654\";\n  const ssoToken: string = \"sso_user_abc\";\n\n  const statusWithSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId, ssoToken);\n  const statusWithoutSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "6ccb4b3999952d9d757cfc90adbeba1326459341cb0e9abc526cbd65e55ebc97",
+  "generatedAt": "2026-09-23T20:29:51.491Z",
+  "codeExample": "let tenantId: string = \"tenant-42f9b8c1\";\nlet notificationId: string = \"notif-7e3a9d4f\";\n\nconst result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

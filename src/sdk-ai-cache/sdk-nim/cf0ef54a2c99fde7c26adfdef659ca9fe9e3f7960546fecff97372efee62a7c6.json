@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPost",
+  "signatureHash": "cf0ef54a2c99fde7c26adfdef659ca9fe9e3f7960546fecff97372efee62a7c6",
+  "generatedAt": "2026-07-01T07:19:50.455Z",
+  "codeExample": "let (respOpt, httpResp) = client.createFeedPost(\n  tenantId = \"my-tenant-123\",\n  createFeedPostParams = CreateFeedPostParams(),\n  options = CreateFeedPostOptions()\n)\n\nif respOpt.isSome:\n  let feedPost = respOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

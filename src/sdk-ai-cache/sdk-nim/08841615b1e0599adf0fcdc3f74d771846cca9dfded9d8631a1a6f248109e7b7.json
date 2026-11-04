@@ -1,0 +1,7 @@
+{
+  "method": "updateComment",
+  "signatureHash": "08841615b1e0599adf0fcdc3f74d771846cca9dfded9d8631a1a6f248109e7b7",
+  "generatedAt": "2026-07-01T07:19:27.240Z",
+  "codeExample": "let commentParams = UpdatableCommentParams(content: \"Updated comment content\")\nlet updateOpts = UpdateCommentOptions(force: false)\n\nlet (respOpt, httpResp) = client.updateComment(\n  tenantId = \"my-tenant-123\",\n  id = \"comment-456\",\n  updatableCommentParams = commentParams,\n  options = updateOpts\n)\n\nif respOpt.isSome:\n  let resp = respOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

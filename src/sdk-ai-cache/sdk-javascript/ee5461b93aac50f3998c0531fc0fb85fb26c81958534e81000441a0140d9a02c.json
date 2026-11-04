@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplateRenderErrors",
+  "signatureHash": "ee5461b93aac50f3998c0531fc0fb85fb26c81958534e81000441a0140d9a02c",
+  "generatedAt": "2026-09-23T20:29:51.726Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant_12345\";\n  const templateId: string = \"template_9876\";\n\n  const resultWithSkip: GetEmailTemplateRenderErrorsResponse = await getEmailTemplateRenderErrors(tenantId, templateId, 10);\n  const resultWithoutSkip: GetEmailTemplateRenderErrorsResponse = await getEmailTemplateRenderErrors(tenantId, templateId);\n\n  console.log(resultWithSkip, resultWithoutSkip);\n}\ndemo();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

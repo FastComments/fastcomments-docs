@@ -1,0 +1,7 @@
+{
+  "method": "updateTenantUser",
+  "signatureHash": "d2d0b90992f0b2a5ddb40e31a72b2f8e7e32c63210aa139e98a133674dd01272",
+  "generatedAt": "2026-09-23T20:29:52.065Z",
+  "codeExample": "async function runUpdate() {\n  const tenantId: string = \"tenant_12345\";\n  const userId: string = \"user_987\";\n  const updateBody: UpdateTenantUserBody = {\n    email: \"new.email@example.com\",\n    role: \"admin\",\n    isActive: true\n  };\n  const comment: string = \"Promoted to admin role\";\n\n  const result: APIEmptyResponse = await updateTenantUser(tenantId, userId, updateBody, comment);\n  console.log(result);\n}\n\nrunUpdate();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getComment",
+  "signatureHash": "8216fe8b1dbddd2ceb408faa78bdd21329482d5d1f8543ee473fedbb51594ab1",
+  "generatedAt": "2026-07-01T07:19:25.394Z",
+  "codeExample": "let (response, httpResponse) = client.getComment(tenantId = \"my-tenant-123\", id = \"cmt-789\")\nif response.isSome:\n  let comment = response.get()\n  discard comment",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

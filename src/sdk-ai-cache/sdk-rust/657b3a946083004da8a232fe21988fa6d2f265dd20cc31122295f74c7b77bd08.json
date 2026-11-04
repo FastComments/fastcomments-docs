@@ -1,0 +1,7 @@
+{
+  "method": "get_search_pages",
+  "signatureHash": "657b3a946083004da8a232fe21988fa6d2f265dd20cc31122295f74c7b77bd08",
+  "generatedAt": "2026-07-01T10:15:21.254Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetSearchPagesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        value: Some(\"news/article\".to_string()),\n        sso: Some(\"sso-token-123\".to_string()),\n    };\n    let response: ModerationPageSearchResponse = get_search_pages(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

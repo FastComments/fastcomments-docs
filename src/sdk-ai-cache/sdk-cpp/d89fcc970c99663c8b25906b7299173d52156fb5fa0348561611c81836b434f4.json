@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "d89fcc970c99663c8b25906b7299173d52156fb5fa0348561611c81836b434f4",
+  "generatedAt": "2026-07-01T07:19:32.155Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nboost::optional<double> skip = 10.0;\napi->getEmailTemplates(tenantId, skip)\n    .then([](std::shared_ptr<GetEmailTemplatesResponse> resp) {\n        (void)resp;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

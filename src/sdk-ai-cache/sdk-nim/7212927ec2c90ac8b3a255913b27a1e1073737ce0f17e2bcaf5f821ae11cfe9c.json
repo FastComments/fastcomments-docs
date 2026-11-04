@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "7212927ec2c90ac8b3a255913b27a1e1073737ce0f17e2bcaf5f821ae11cfe9c",
+  "generatedAt": "2026-07-01T07:19:53.703Z",
+  "codeExample": "let (apiResult, httpResponse) = client.deleteQuestionConfig(tenantId = \"my-tenant-123\", id = \"question-config-456\")\nif apiResult.isSome:\n  let empty = apiResult.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

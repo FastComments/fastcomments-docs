@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerationVote",
+  "signatureHash": "fdfdadc396e2973a6a487c4a159ab133f94d08509bb461f0b981e0a883afd124",
+  "generatedAt": "2026-07-01T07:19:43.435Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-abc123\");\nauto voteId = utility::conversions::to_string_t(\"vote-xyz789\");\nDeleteModerationVoteOptions opts;\nopts.reason = utility::conversions::to_string_t(\"Offensive language\");\nopts.hardDelete = boost::optional<bool>(true);\napi->deleteModerationVote(tenantId, commentId, voteId, opts)\n    .then([](std::shared_ptr<VoteDeleteResponse> resp){});",
+  "model": "openai/gpt-oss-120b"
+}

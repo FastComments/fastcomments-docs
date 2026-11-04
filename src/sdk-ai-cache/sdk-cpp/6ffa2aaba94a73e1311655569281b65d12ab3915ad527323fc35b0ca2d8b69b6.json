@@ -1,0 +1,7 @@
+{
+  "method": "postSetCommentText",
+  "signatureHash": "6ffa2aaba94a73e1311655569281b65d12ab3915ad527323fc35b0ca2d8b69b6",
+  "generatedAt": "2026-07-01T07:20:03.644Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto commentId = U(\"comment-456\");\nSetCommentTextParams params;\nparams.text = U(\"Revised comment content\");\nPostSetCommentTextOptions options;\noptions.requestId = boost::optional<utility::string_t>(U(\"req-987\"));\napi->postSetCommentText(tenantId, commentId, params, options)\n    .then([](std::shared_ptr<SetCommentTextResponse> resp) {\n        auto updatedId = resp->commentId;\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception&) {}\n    });",
+  "model": "openai/gpt-oss-120b"
+}

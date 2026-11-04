@@ -1,0 +1,7 @@
+{
+  "method": "getPageByURLId",
+  "signatureHash": "96202491dbab52b018581a4e44b071656a965724c983c9dee5ba890d326182a2",
+  "generatedAt": "2026-07-01T07:19:36.771Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"url_9876\";\n\n  const response: GetPageByURLIdAPIResponse = await getPageByURLId(tenantId, urlId);\n  const page: APIPage | undefined = response.page;\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

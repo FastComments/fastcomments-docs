@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "dc41802ff0c109231d1857855f7e4313d35d7c91257f0f6352be6d8b46e635c4",
+  "generatedAt": "2026-09-23T20:29:57.707Z",
+  "codeExample": "async function runExample() {\n  const tenantId: string = \"tenant-456\";\n  const urlId: string = \"url-789\";\n  const broadcastId: string = \"broadcast-101112\";\n  const commentData: CommentData = { text: \"This is a comment\", userId: \"user-123\" };\n  const sessionId: string = \"session-131415\";\n  const sso: string = \"sso-token-xyz\";\n  const result: SaveCommentsResponseWithPresence = await createCommentPublic(tenantId, urlId, broadcastId, commentData, sessionId, sso);\n  const resultNoOpt: SaveCommentsResponseWithPresence = await createCommentPublic(tenantId, urlId, broadcastId, commentData);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

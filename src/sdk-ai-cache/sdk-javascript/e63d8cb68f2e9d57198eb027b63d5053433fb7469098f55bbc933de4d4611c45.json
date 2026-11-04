@@ -1,0 +1,7 @@
+{
+  "method": "checkedCommentsForBlocked",
+  "signatureHash": "e63d8cb68f2e9d57198eb027b63d5053433fb7469098f55bbc933de4d4611c45",
+  "generatedAt": "2026-09-23T20:29:50.654Z",
+  "codeExample": "(async () => {\n    const tenantId: string = \"tenant_12345\";\n    const commentIds: string = \"cmt_9876,cmt_5432\";\n    const ssoToken: string = \"sso_user_abc123\";\n\n    const responseWithSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds, ssoToken);\n    const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

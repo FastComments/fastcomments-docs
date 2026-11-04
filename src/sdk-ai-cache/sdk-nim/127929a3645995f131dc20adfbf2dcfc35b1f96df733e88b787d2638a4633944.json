@@ -1,0 +1,7 @@
+{
+  "method": "getPages",
+  "signatureHash": "127929a3645995f131dc20adfbf2dcfc35b1f96df733e88b787d2638a4633944",
+  "generatedAt": "2026-07-01T07:19:49.824Z",
+  "codeExample": "let (pagesOpt, httpResp) = client.getPages(tenantId = \"my-tenant-123\")\nif pagesOpt.isSome:\n  let pages = pagesOpt.get()\n  echo pages\nelse:\n  echo \"No pages returned\"\necho httpResp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

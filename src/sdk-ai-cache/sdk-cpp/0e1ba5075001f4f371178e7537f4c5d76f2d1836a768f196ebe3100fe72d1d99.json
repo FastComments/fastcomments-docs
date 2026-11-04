@@ -1,0 +1,7 @@
+{
+  "method": "deleteComment",
+  "signatureHash": "0e1ba5075001f4f371178e7537f4c5d76f2d1836a768f196ebe3100fe72d1d99",
+  "generatedAt": "2026-07-01T07:19:34.522Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto commentId = utility::conversions::to_string_t(\"comment-789\");\nDeleteCommentOptions options;\noptions.reason = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"Inappropriate content\"));\noptions.force = boost::optional<bool>(true);\napi->deleteComment(tenantId, commentId, options).then([](pplx::task<std::shared_ptr<DeleteCommentResult>> task){\n    try{\n        auto result = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

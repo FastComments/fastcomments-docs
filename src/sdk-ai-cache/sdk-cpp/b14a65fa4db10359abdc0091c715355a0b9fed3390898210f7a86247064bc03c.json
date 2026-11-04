@@ -1,0 +1,7 @@
+{
+  "method": "createV1PageReact",
+  "signatureHash": "b14a65fa4db10359abdc0091c715355a0b9fed3390898210f7a86247064bc03c",
+  "generatedAt": "2026-07-01T07:19:55.175Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto urlId = utility::string_t(U(\"https://example.com/articles/789\"));\nboost::optional<utility::string_t> title = utility::string_t(U(\"Understanding Async C++\"));\napi->createV1PageReact(tenantId, urlId, title).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task) {\n    try {\n        auto response = task.get();\n    } catch (const std::exception&) {\n    }\n});",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

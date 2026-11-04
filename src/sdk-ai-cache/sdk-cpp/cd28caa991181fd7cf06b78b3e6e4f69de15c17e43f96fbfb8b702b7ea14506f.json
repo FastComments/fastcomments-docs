@@ -1,0 +1,7 @@
+{
+  "method": "addHashTag",
+  "signatureHash": "cd28caa991181fd7cf06b78b3e6e4f69de15c17e43f96fbfb8b702b7ea14506f",
+  "generatedAt": "2026-07-01T07:19:53.080Z",
+  "codeExample": "CreateHashTagBody request;\nrequest.tag = utility::conversions::to_string_t(\"feature-request\");\nrequest.description = utility::conversions::to_string_t(\"Requests for new features\");\nrequest.relatedUrl = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"https://example.com/feature-request\"));\n\napi->addHashTag(utility::conversions::to_string_t(\"my-tenant-123\"), request)\n    .then([](std::shared_ptr<CreateHashTagResponse> resp) {\n        (void)resp;\n    });",
+  "model": "openai/gpt-oss-120b"
+}

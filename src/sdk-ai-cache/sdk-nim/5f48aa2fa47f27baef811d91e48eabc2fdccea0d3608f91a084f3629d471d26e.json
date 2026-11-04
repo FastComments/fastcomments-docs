@@ -1,0 +1,7 @@
+{
+  "method": "postBulkPreBanSummary",
+  "signatureHash": "5f48aa2fa47f27baef811d91e48eabc2fdccea0d3608f91a084f3629d471d26e",
+  "generatedAt": "2026-07-01T07:19:43.841Z",
+  "codeExample": "let bulkParams = BulkPreBanParams(emailAddresses: @[\"spam@example.com\"], ipAddresses: @[\"203.0.113.5\"])\nlet opt = PostBulkPreBanSummaryOptions(dryRun: false, maxResults: 0)\nlet (summaryOpt, httpResp) = client.postBulkPreBanSummary(tenantId = \"my-tenant-123\", bulkPreBanParams = bulkParams, options = opt)\nif summaryOpt.isSome:\n  let _ = summaryOpt.get()",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "get_feed_posts_stats",
+  "signatureHash": "da0d603243e5312f4b790154b458940d64a409c53cee6e9660d9a8c9a52fac74",
+  "generatedAt": "2026-07-01T10:15:26.560Z",
+  "codeExample": "async fn fetch_feed_stats() -> Result<(), Error> {\n    let params = GetFeedPostsStatsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        post_ids: vec![\n            \"news/article/123\".to_string(),\n            \"blog/post/456\".to_string(),\n        ],\n        sso: Some(\"sso-token-xyz\".to_string()),\n    };\n    let _response = get_feed_posts_stats(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

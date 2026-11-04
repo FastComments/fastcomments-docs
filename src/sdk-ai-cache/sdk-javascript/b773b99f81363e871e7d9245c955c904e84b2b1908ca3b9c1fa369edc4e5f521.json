@@ -1,0 +1,7 @@
+{
+  "method": "getSubscriptions",
+  "signatureHash": "b773b99f81363e871e7d9245c955c904e84b2b1908ca3b9c1fa369edc4e5f521",
+  "generatedAt": "2026-07-01T10:15:37.485Z",
+  "codeExample": "(async () => {\n    const tenantId: string = \"acme-corp-123\";\n    const userId: string = \"user-789\";\n\n    const responseWithUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId, userId);\n    const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

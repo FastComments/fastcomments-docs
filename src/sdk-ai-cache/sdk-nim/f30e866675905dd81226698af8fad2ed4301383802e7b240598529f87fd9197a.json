@@ -1,0 +1,7 @@
+{
+  "method": "updateModerator",
+  "signatureHash": "f30e866675905dd81226698af8fad2ed4301383802e7b240598529f87fd9197a",
+  "generatedAt": "2026-07-01T07:19:22.367Z",
+  "codeExample": "let body = UpdateModeratorBody(name = \"John Doe\", email = \"john@example.com\", isActive = true)\nlet (apiResult, httpResp) = client.updateModerator(tenantId = \"my-tenant-123\", id = \"mod-456\", updateModeratorBody = body)\nif apiResult.isSome:\n  let result = apiResult.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

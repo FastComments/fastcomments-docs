@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "72326cc9ef28dced66cc7a18cb7e117cc7b8e63fb892742363ae245542eff4e1",
+  "generatedAt": "2026-07-01T07:19:21.879Z",
+  "codeExample": "let reactParams = ReactBodyParams()\nlet (optResp, httpResp) = client.reactFeedPostPublic(\n  tenantId = \"my-tenant-123\",\n  postId = \"post-456\",\n  reactBodyParams = reactParams,\n  options = ReactFeedPostPublicOptions()\n)\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

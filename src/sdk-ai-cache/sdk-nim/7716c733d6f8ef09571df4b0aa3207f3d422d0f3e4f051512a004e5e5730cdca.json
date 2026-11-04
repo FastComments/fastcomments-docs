@@ -1,0 +1,7 @@
+{
+  "method": "addDomainConfig",
+  "signatureHash": "7716c733d6f8ef09571df4b0aa3207f3d422d0f3e4f051512a004e5e5730cdca",
+  "generatedAt": "2026-07-01T07:19:23.279Z",
+  "codeExample": "let (respOpt, httpResp) = client.addDomainConfig(\n  tenantId = \"my-tenant-123\",\n  addDomainConfigParams = default(AddDomainConfigParams)\n)\n\nif respOpt.isSome:\n  let cfg = respOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

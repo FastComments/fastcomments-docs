@@ -1,0 +1,7 @@
+{
+  "method": "getUsersInfo",
+  "signatureHash": "858fc891d41a41e8a2e914ff9ddf8a034ecd317f4e93835d66d6c2f03e1ad3cd",
+  "generatedAt": "2026-07-01T07:19:52.203Z",
+  "codeExample": "let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = \"my-tenant-123\", ids = \"user42\")\nif usersInfoOpt.isSome:\n  let usersInfo = usersInfoOpt.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

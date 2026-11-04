@@ -1,0 +1,7 @@
+{
+  "method": "patchDomainConfig",
+  "signatureHash": "5e9096eabc43a88a6dcc58deec1bd3d899b66ff540650f3cf35057db80132afc",
+  "generatedAt": "2026-07-01T07:19:49.684Z",
+  "codeExample": "let (optResp, httpResp) = client.patchDomainConfig(\n  tenantId = \"my-tenant-123\",\n  domainToUpdate = \"news.mywebsite.com\",\n  patchDomainConfigParams = PatchDomainConfigParams()\n)\n\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

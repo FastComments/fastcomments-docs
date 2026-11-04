@@ -1,0 +1,7 @@
+{
+  "method": "getSearchCommentsSummary",
+  "signatureHash": "d3a11677817e4c4458ddbd336994b22878da867316b0b336890dcdc10a4b58f5",
+  "generatedAt": "2026-07-01T07:19:52.865Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto options = std::make_shared<GetSearchCommentsSummaryOptions>();\noptions->query = utility::conversions::to_string_t(\"spam\");\noptions->pageSize = boost::optional<int>(50);\noptions->pageNumber = boost::optional<int>(1);\noptions->fromDate = boost::none;\napi->getSearchCommentsSummary(tenantId, *options).then([](pplx::task<std::shared_ptr<ModerationCommentSearchResponse>> task){\n    try{\n        auto response = task.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

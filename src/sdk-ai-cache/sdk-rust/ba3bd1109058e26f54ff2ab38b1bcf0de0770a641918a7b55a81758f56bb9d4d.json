@@ -1,0 +1,7 @@
+{
+  "method": "un_lock_comment",
+  "signatureHash": "ba3bd1109058e26f54ff2ab38b1bcf0de0770a641918a7b55a81758f56bb9d4d",
+  "generatedAt": "2026-07-01T10:15:20.112Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = UnLockCommentParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"cmt-456\".to_string(),\n        broadcast_id: \"news/article-123\".to_string(),\n        sso: Some(\"user-sso-token\".to_string()),\n    };\n    let _response = un_lock_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

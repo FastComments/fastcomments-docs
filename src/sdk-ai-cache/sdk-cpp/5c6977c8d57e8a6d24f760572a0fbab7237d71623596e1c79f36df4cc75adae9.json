@@ -1,0 +1,7 @@
+{
+  "method": "deletePendingWebhookEvent",
+  "signatureHash": "5c6977c8d57e8a6d24f760572a0fbab7237d71623596e1c79f36df4cc75adae9",
+  "generatedAt": "2026-07-01T10:15:18.307Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto eventId = utility::conversions::to_string_t(\"event-987654\");\nboost::optional<utility::string_t> optTenant = tenantId;\n\napi->deletePendingWebhookEvent(optTenant.value(), eventId)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {\n        (void)resp;\n    })\n    .then([](pplx::task<void> t) {\n        try { t.get(); } catch (const std::exception& e) { }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

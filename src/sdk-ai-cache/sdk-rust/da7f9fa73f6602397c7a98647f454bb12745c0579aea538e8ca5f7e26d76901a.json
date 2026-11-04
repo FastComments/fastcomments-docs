@@ -1,0 +1,7 @@
+{
+  "method": "get_v1_page_likes",
+  "signatureHash": "da7f9fa73f6602397c7a98647f454bb12745c0579aea538e8ca5f7e26d76901a",
+  "generatedAt": "2026-07-01T10:15:28.074Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetV1PageLikesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        url_id: \"news/article\".to_string(),\n    };\n    let _likes = get_v1_page_likes(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

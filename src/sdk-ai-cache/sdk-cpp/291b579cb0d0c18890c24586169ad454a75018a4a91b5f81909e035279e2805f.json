@@ -1,0 +1,7 @@
+{
+  "method": "postVote",
+  "signatureHash": "291b579cb0d0c18890c24586169ad454a75018a4a91b5f81909e035279e2805f",
+  "generatedAt": "2026-07-01T07:19:45.582Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t commentId = U(\"cmt-456789\");\nPostVoteOptions options;\noptions.upvote = boost::make_optional(true);\noptions.reason = boost::make_optional<std::string>(\"Inappropriate content\");\napi->postVote(tenantId, commentId, options)\n    .then([](pplx::task<std::shared_ptr<VoteResponse>> t) {\n        try {\n            auto resp = t.get();\n            auto count = resp->voteCount;\n        } catch (const std::exception& e) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTrustFactor",
+  "signatureHash": "feb31353a1b2b55744ddea3f13c1b6a51904a71d7f171b89f4813424d51e1cf4",
+  "generatedAt": "2026-09-23T20:29:50.082Z",
+  "codeExample": "async function demo() {\n  const tenantId: string = \"tenant_12345\";\n  const userId: string = \"user_98765\";\n  const sso: string = \"sso_token_abcde\";\n\n  const trustFactor: GetUserTrustFactorResponse = await getTrustFactor(tenantId);\n  const trustFactorWithUser: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId);\n  const trustFactorFull: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId, sso);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "33867e01eb4d3dbe5851354965d59ba6d219db2cf461639212fa5e298b5c39b0",
+  "generatedAt": "2026-07-01T07:19:48.681Z",
+  "codeExample": "let (maybeResp, httpResp) = client.getPendingWebhookEvents(\n  tenantId = \"my-tenant-123\",\n  options = GetPendingWebhookEventsOptions()\n)\n\nif maybeResp.isSome:\n  let resp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

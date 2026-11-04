@@ -1,0 +1,7 @@
+{
+  "method": "delete_v1_page_react",
+  "signatureHash": "69567efe62447b33cf482f64c273e084585203b7d70b3c1fdc7aa72943e79e4c",
+  "generatedAt": "2026-07-01T10:15:29.591Z",
+  "codeExample": "async fn run_example(cfg: &configuration::Configuration) -> Result<(), Error> {\n    let tenant_id: String = Some(\"acme-corp-tenant\".to_string()).unwrap();\n    let url_id: String = \"news/article\".to_string();\n    let params: DeleteV1PageReactParams = DeleteV1PageReactParams {\n        tenant_id,\n        url_id,\n        ..Default::default()\n    };\n    let _result = delete_v1_page_react(cfg, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "06228e40cbd0a47891d598a2e1cd072a72fd89168da26eba33974f99c7ede29d",
+  "generatedAt": "2026-09-23T20:29:50.711Z",
+  "codeExample": "async function fetchEventLogs() {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"url_9876\";\n  const userIdWS: string = \"user_ws_abcde\";\n  const startTime: number = Date.now() - 24 * 60 * 60 * 1000; // 24 hours ago\n  const endTime: number = Date.now();\n\n  const logWithEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime, endTime);\n  const logWithoutEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

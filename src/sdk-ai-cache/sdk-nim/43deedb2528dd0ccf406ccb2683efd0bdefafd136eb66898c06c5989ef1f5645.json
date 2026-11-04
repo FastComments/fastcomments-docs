@@ -1,0 +1,7 @@
+{
+  "method": "getModerationComment",
+  "signatureHash": "43deedb2528dd0ccf406ccb2683efd0bdefafd136eb66898c06c5989ef1f5645",
+  "generatedAt": "2026-07-01T07:19:52.375Z",
+  "codeExample": "let (maybeComment, httpResponse) = client.getModerationComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  options = default(GetModerationCommentOptions)\n)\n\nif maybeComment.isSome:\n  let comment = maybeComment.get()\n  echo comment",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

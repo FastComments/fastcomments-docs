@@ -1,0 +1,7 @@
+{
+  "method": "getNotificationCount",
+  "signatureHash": "198677b6c89010c317c8b3af15150bc0d8eb97ed8235d12f0dcc01ed1d6d425a",
+  "generatedAt": "2026-09-23T20:29:58.954Z",
+  "codeExample": "const tenantId: string = \"acme-corp\";\nconst userId: string = \"user-12345\";\nconst urlId: string = \"https://app.example.com/dashboard\";\nconst fromCommentId: string = \"cmt-9876\";\nconst viewed: boolean = false;\nconst type: string = \"reply\";\n\nconst notificationCount: GetNotificationCountResponse = await getNotificationCount(\n  tenantId,\n  userId,\n  urlId,\n  fromCommentId,\n  viewed,\n  type\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

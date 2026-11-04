@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "19ef6f0f77ce601e844327266a0f50c8a6d1da65f43b508f2db184498ede71ed",
+  "generatedAt": "2026-07-01T07:19:56.225Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nCreateQuestionResultBody body;\nbody.questionId = U(\"question-456\");\nbody.result = U(\"approved\");\nbody.comment = boost::optional<utility::string_t>(U(\"Looks good\"));\napi->createQuestionResult(tenantId, body)\n    .then([=](pplx::task<std::shared_ptr<CreateQuestionResultResponse>> t) {\n        try {\n            auto resp = t.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

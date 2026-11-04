@@ -1,0 +1,7 @@
+{
+  "method": "getLogs",
+  "signatureHash": "349cac79852ee42b6c6bf9468716c0b548ad18deb702d8635bf702c868e2046e",
+  "generatedAt": "2026-07-01T07:19:28.143Z",
+  "codeExample": "let (logsOpt, httpRes) = client.getLogs(tenantId = \"my-tenant-123\", commentId = \"cmt-789\", sso = \"\")\nif logsOpt.isSome:\n  let logs = logsOpt.get()\n  echo logs",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getTranslations",
+  "signatureHash": "00b7f546994220b8b77df7d8c8bea662688df3cfc9e4d91b9ff032d6d4d553c1",
+  "generatedAt": "2026-07-01T07:19:41.804Z",
+  "codeExample": "let opts = GetTranslationsOptions()\nlet (maybeResp, httpResp) = client.getTranslations(namespace = \"my-tenant-123\", component = \"news/article-title\", options = opts)\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b"
+}

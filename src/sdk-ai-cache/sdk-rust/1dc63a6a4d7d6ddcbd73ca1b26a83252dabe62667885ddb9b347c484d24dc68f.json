@@ -1,0 +1,7 @@
+{
+  "method": "get_tenant_package",
+  "signatureHash": "1dc63a6a4d7d6ddcbd73ca1b26a83252dabe62667885ddb9b347c484d24dc68f",
+  "generatedAt": "2026-07-01T10:15:23.331Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetTenantPackageParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"news/article\".to_string(),\n    };\n    let _response: GetTenantPackageResponse = get_tenant_package(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

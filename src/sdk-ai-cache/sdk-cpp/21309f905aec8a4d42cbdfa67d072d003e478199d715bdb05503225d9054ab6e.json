@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "21309f905aec8a4d42cbdfa67d072d003e478199d715bdb05503225d9054ab6e",
+  "generatedAt": "2026-07-01T07:19:58.864Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nCreateTenantPackageBody body;\nbody.name = utility::conversions::to_string_t(\"Pro Plan\");\nbody.maxUsers = 100;\nbody.expiryDate = boost::optional<utility::datetime>(utility::datetime::utc_now() + std::chrono::hours(24 * 30));\nbody.notes = boost::none;\napi->createTenantPackage(tenantId, body).then([](pplx::task<std::shared_ptr<CreateTenantPackageResponse>> t){\n    try{\n        auto resp = t.get();\n    }catch(const std::exception&){\n    }\n});",
+  "model": "openai/gpt-oss-120b"
+}

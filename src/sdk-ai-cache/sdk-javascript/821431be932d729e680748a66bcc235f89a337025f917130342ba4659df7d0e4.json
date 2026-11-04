@@ -1,0 +1,7 @@
+{
+  "method": "getSearchSites",
+  "signatureHash": "821431be932d729e680748a66bcc235f89a337025f917130342ba4659df7d0e4",
+  "generatedAt": "2026-09-23T20:29:51.809Z",
+  "codeExample": "async function runSearches(): Promise<void> {\n  const tenantId: string = \"tenant-987654\";\n  const query: string = \"offensive content\";\n  const ssoToken: string = \"sso-token-xyz\";\n\n  const fullResult: ModerationSiteSearchResponse = await getSearchSites(tenantId, query, ssoToken);\n  const minimalResult: ModerationSiteSearchResponse = await getSearchSites(tenantId);\n}\n\nrunSearches();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

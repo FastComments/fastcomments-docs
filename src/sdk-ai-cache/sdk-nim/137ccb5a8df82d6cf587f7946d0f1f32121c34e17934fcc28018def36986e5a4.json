@@ -1,0 +1,7 @@
+{
+  "method": "getEmailTemplates",
+  "signatureHash": "137ccb5a8df82d6cf587f7946d0f1f32121c34e17934fcc28018def36986e5a4",
+  "generatedAt": "2026-07-01T07:19:48.750Z",
+  "codeExample": "let (emailTemplatesOpt, httpResp) = client.getEmailTemplates(tenantId = \"my-tenant-123\", skip = 0.0)\nif emailTemplatesOpt.isSome:\n  let templates = emailTemplatesOpt.get()\n  echo templates",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

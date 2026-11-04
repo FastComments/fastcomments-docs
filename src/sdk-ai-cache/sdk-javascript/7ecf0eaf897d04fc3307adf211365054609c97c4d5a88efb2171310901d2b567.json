@@ -1,0 +1,7 @@
+{
+  "method": "createFeedPostPublic",
+  "signatureHash": "7ecf0eaf897d04fc3307adf211365054609c97c4d5a88efb2171310901d2b567",
+  "generatedAt": "2026-09-23T20:29:52.130Z",
+  "codeExample": "const tenantId: string = \"tenant_12345\";\n\nconst mediaAsset: FeedPostMediaItemAsset = {\n  url: \"https://cdn.example.com/image.jpg\",\n  width: 800,\n  height: 600,\n  mimeType: \"image/jpeg\"\n};\n\nconst mediaItem: FeedPostMediaItem = {\n  type: \"image\",\n  asset: mediaAsset,\n  caption: \"Sunset over the hills\"\n};\n\nconst link: FeedPostLink = {\n  url: \"https://example.com/blog/post\",\n  title: \"Exciting New Features\",\n  description: \"Read about our latest updates.\"\n};\n\nconst createFeedPostParams: CreateFeedPostParams = {\n  content: \"Check out our latest blog post!\",\n  media: [mediaItem],\n  link: link,\n  visibility: \"public\"\n};\n\nconst broadcastId: string = \"broadcast_9876\";\nconst sso: string = \"sso_token_abc123\";\n\nconst response: CreateFeedPostResponse = await createFeedPostPublic(\n  tenantId,\n  createFeedPostParams,\n  broadcastId,\n  sso\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

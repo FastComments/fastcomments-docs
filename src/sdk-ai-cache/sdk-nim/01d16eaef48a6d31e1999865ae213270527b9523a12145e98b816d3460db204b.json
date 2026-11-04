@@ -1,0 +1,7 @@
+{
+  "method": "getTickets",
+  "signatureHash": "01d16eaef48a6d31e1999865ae213270527b9523a12145e98b816d3460db204b",
+  "generatedAt": "2026-07-01T07:19:26.364Z",
+  "codeExample": "let (ticketsOpt, httpResp) = client.getTickets(tenantId = \"my-tenant-123\", options = GetTicketsOptions())\nif ticketsOpt.isSome:\n  let tickets = ticketsOpt.get()\n  # use tickets as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

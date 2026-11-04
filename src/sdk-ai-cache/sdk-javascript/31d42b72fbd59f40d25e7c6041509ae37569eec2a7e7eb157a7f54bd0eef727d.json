@@ -1,0 +1,7 @@
+{
+  "method": "updateTenant",
+  "signatureHash": "31d42b72fbd59f40d25e7c6041509ae37569eec2a7e7eb157a7f54bd0eef727d",
+  "generatedAt": "2026-09-23T20:29:56.304Z",
+  "codeExample": "async function runUpdateTenant() {\n  const tenantId: string = \"tenant-abc123\";\n  const id: string = \"config-456def\";\n\n  const updateTenantBody: UpdateTenantBody = {\n    // required field\n    name: \"Acme International\",\n    // optional fields can be omitted, e.g., billingInfo, domainConfiguration\n  };\n\n  const response: APIEmptyResponse = await updateTenant(tenantId, id, updateTenantBody);\n  console.log(response);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

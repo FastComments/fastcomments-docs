@@ -1,0 +1,7 @@
+{
+  "method": "postUnFlagComment",
+  "signatureHash": "3ed14a417e27abf46ad62f30244288df7acffe7ff5d9c445a2e9ed4e25b1aeb0",
+  "generatedAt": "2026-07-01T07:19:53.659Z",
+  "codeExample": "let (maybeResp, httpResp) = client.postUnFlagComment(\n  tenantId = \"my-tenant-123\",\n  commentId = \"cmt-456789\",\n  options = default(PostUnFlagCommentOptions)\n)\n\nif maybeResp.isSome:\n  let emptyResp = maybeResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

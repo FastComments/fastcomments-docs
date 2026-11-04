@@ -1,0 +1,7 @@
+{
+  "method": "get_pages",
+  "signatureHash": "a60549376508f50370545965c40c1bbff301dc108c1b64cff1ddf9b69fbc4dc0",
+  "generatedAt": "2026-07-01T10:15:20.472Z",
+  "codeExample": "async fn fetch_pages(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetPagesParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n    };\n    let _response: GetPagesApiResponse = get_pages(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

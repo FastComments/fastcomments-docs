@@ -1,0 +1,7 @@
+{
+  "method": "updateUserBadge",
+  "signatureHash": "4cfed2504618109520e14abfdfc63171caea99c99f0ae19f9ba93a31f55b5938",
+  "generatedAt": "2026-07-01T07:19:24.252Z",
+  "codeExample": "let params = UpdateUserBadgeParams()\nlet (maybeResp, httpResp) = client.updateUserBadge(tenantId = \"my-tenant-123\", id = \"user-456\", updateUserBadgeParams = params)\nif maybeResp.isSome:\n  let success = maybeResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

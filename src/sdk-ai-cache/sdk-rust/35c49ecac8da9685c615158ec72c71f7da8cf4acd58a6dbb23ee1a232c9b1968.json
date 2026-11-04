@@ -1,0 +1,7 @@
+{
+  "method": "post_remove_comment",
+  "signatureHash": "35c49ecac8da9685c615158ec72c71f7da8cf4acd58a6dbb23ee1a232c9b1968",
+  "generatedAt": "2026-07-01T10:15:22.653Z",
+  "codeExample": "async fn remove_comment_example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = PostRemoveCommentParams {\n        tenant_id: \"acme-corp\".into(),\n        comment_id: \"news/article/42\".into(),\n        broadcast_id: Some(\"live-event-99\".into()),\n        sso: Some(\"sso-user-abc\".into()),\n    };\n    let _response = post_remove_comment(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteHashTag",
+  "signatureHash": "82a1192cc16889e6d1d45088f89f52d864abd3d155c03137348bc2409bd1d179",
+  "generatedAt": "2026-09-23T20:29:51.112Z",
+  "codeExample": "const tenantId: string = \"tenant_42\";\nconst tag: string = \"high-priority\";\n\nconst requestBody: DeleteHashTagRequestBody = {\n  // populate fields as needed\n};\n\nconst resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);\nconst resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

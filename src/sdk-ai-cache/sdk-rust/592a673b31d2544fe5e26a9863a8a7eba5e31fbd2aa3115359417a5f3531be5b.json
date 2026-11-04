@@ -1,0 +1,7 @@
+{
+  "method": "get_hash_tags",
+  "signatureHash": "592a673b31d2544fe5e26a9863a8a7eba5e31fbd2aa3115359417a5f3531be5b",
+  "generatedAt": "2026-07-01T10:15:19.823Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetHashTagsParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        page: Some(1.0),\n    };\n    let _response = get_hash_tags(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getModerator",
+  "signatureHash": "2c0ad4d8804e7ce2959ed3080d76cf044bde2455b0e152c64fe0410b664269a8",
+  "generatedAt": "2026-07-01T07:19:25.021Z",
+  "codeExample": "let (moderatorOpt, httpResponse) = client.getModerator(tenantId = \"my-tenant-123\", id = \"moderator-456\")\nif moderatorOpt.isSome:\n  let moderator = moderatorOpt.get()\n  discard moderator",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

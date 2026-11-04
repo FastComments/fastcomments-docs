@@ -1,0 +1,7 @@
+{
+  "method": "update_subscription",
+  "signatureHash": "24543bfcea3af57b1828ea21765aeb5690badc96bb304a3b19131b30c47511a1",
+  "generatedAt": "2026-07-01T10:15:28.917Z",
+  "codeExample": "async fn example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = UpdateSubscriptionParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"sub-12345\".to_string(),\n        update_api_user_subscription_data: models::UpdateApiUserSubscriptionData {\n            plan_id: \"premium\".to_string(),\n            status: \"active\".to_string(),\n        },\n        user_id: Some(\"user-987\".to_string()),\n    };\n    let _resp = update_subscription(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

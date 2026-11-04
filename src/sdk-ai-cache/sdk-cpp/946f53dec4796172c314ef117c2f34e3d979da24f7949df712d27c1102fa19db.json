@@ -1,0 +1,7 @@
+{
+  "method": "getPages",
+  "signatureHash": "946f53dec4796172c314ef117c2f34e3d979da24f7949df712d27c1102fa19db",
+  "generatedAt": "2026-07-01T07:19:41.030Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\napi->getPages(tenantId)\n    .then([](pplx::task<std::shared_ptr<GetPagesAPIResponse>> task) {\n        try {\n            auto response = task.get();\n            boost::optional<utility::string_t> nextCursor = response->nextCursor;\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

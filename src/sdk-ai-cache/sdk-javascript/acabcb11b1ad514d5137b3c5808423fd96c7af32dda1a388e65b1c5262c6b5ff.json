@@ -1,0 +1,7 @@
+{
+  "method": "deleteQuestionConfig",
+  "signatureHash": "acabcb11b1ad514d5137b3c5808423fd96c7af32dda1a388e65b1c5262c6b5ff",
+  "generatedAt": "2026-09-23T20:29:50.451Z",
+  "codeExample": "async function executeDeletion() {\n  const tenantId: string = \"tenant_12345\";\n  const configId: string = \"config_9876\";\n  const result: APIEmptyResponse = await deleteQuestionConfig(tenantId, configId);\n  console.log(result);\n}\nexecuteDeletion();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "810ded9ed539de7848748ebed8cfa287a1c009506e4d8e701fe0ce416cf7e00c",
+  "generatedAt": "2026-07-01T07:19:22.492Z",
+  "codeExample": "let configBody = CreateQuestionConfigBody()\nlet (maybeResp, httpResp) = client.createQuestionConfig(\n  tenantId = \"my-tenant-123\",\n  createQuestionConfigBody = configBody,\n)\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  # use resp as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

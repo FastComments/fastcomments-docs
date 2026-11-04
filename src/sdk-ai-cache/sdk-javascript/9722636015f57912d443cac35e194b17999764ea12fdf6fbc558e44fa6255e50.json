@@ -1,0 +1,7 @@
+{
+  "method": "getSSOUserById",
+  "signatureHash": "9722636015f57912d443cac35e194b17999764ea12fdf6fbc558e44fa6255e50",
+  "generatedAt": "2026-07-01T10:15:37.116Z",
+  "codeExample": "async function fetchUser() {\n  const tenantId: string = \"tenant-987654321\";\n  const userId: string = \"sso-user-abc123\";\n  const result: GetSSOUserByIdAPIResponse = await getSSOUserById(tenantId, userId);\n  const ssoUser: APISSOUser = result.user;\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

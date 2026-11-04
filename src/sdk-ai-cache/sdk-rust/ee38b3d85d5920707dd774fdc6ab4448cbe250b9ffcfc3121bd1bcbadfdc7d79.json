@@ -1,0 +1,7 @@
+{
+  "method": "delete_vote",
+  "signatureHash": "ee38b3d85d5920707dd774fdc6ab4448cbe250b9ffcfc3121bd1bcbadfdc7d79",
+  "generatedAt": "2026-07-01T10:15:23.500Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteVoteParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"vote-12345\".to_string(),\n        edit_key: Some(\"edit-key-abc\".to_string()),\n    };\n    let _response: VoteDeleteResponse = delete_vote(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

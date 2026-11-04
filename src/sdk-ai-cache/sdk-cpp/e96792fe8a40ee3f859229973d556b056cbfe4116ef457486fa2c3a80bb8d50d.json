@@ -1,0 +1,7 @@
+{
+  "method": "getUserBadges",
+  "signatureHash": "e96792fe8a40ee3f859229973d556b056cbfe4116ef457486fa2c3a80bb8d50d",
+  "generatedAt": "2026-07-01T07:19:35.010Z",
+  "codeExample": "GetUserBadgesOptions opts;\nopts.userId = boost::make_optional(U(\"user@example.com\"));\nopts.includeExpired = boost::make_optional(false);\n\napi->getUserBadges(U(\"my-tenant-123\"), opts)\n   .then([](pplx::task<std::shared_ptr<APIGetUserBadgesResponse>> t) {\n       try {\n           auto response = t.get();\n       } catch (const std::exception&) {\n       }\n   });",
+  "model": "openai/gpt-oss-120b"
+}

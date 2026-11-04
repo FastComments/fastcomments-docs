@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "322998e995872606e858f0dde951567fdff023b2280517b5d4731a0fba8fec6d",
+  "generatedAt": "2026-07-01T07:19:52.056Z",
+  "codeExample": "auto tenantId = utility::string_t(U(\"my-tenant-123\"));\nauto questionId = utility::string_t(U(\"question-789\"));\nboost::optional<utility::string_t> optionalParam = boost::none;\n\napi->getQuestionResult(tenantId, questionId)\n    .then([](pplx::task<std::shared_ptr<GetQuestionResultResponse>> task) {\n        try {\n            auto response = task.get();\n        } catch (const std::exception&) {\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

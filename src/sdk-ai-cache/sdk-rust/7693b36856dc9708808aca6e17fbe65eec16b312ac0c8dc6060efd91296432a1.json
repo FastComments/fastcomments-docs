@@ -1,0 +1,7 @@
+{
+  "method": "post_vote",
+  "signatureHash": "7693b36856dc9708808aca6e17fbe65eec16b312ac0c8dc6060efd91296432a1",
+  "generatedAt": "2026-07-01T10:15:27.996Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let cfg = configuration::Configuration::default();\n    let params = PostVoteParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        comment_id: \"news/article-12345\".to_string(),\n        direction: Some(\"up\".to_string()),\n        broadcast_id: Some(\"broadcast-987\".to_string()),\n        sso: None,\n    };\n    let _response = post_vote(&cfg, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

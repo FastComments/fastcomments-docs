@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "33c36b66027bbbbd0cd1de3efad65cd04dfa479ddbdb6e8014e0939500c608a5",
+  "generatedAt": "2026-07-01T07:19:48.807Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto postId = utility::conversions::to_string_t(\"post-987\");\nReactBodyParams reactBody;\nreactBody.reaction = utility::conversions::to_string_t(\"love\");\nreactBody.userId = utility::conversions::to_string_t(\"user@example.com\");\nReactFeedPostPublicOptions options;\noptions.metadata = boost::optional<utility::string_t>(utility::conversions::to_string_t(\"mobile\"));\napi->reactFeedPostPublic(tenantId, postId, reactBody, options)\n    .then([](std::shared_ptr<ReactFeedPostResponse> resp) {\n    });",
+  "model": "openai/gpt-oss-120b"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getUserNotificationCount",
+  "signatureHash": "cf21612f882eb8d803baf7169df45110f1a46c665b63817ea080644b805dfedf",
+  "generatedAt": "2026-07-01T07:19:26.283Z",
+  "codeExample": "let (optResp, httpResp) = client.getUserNotificationCount(tenantId = \"my-tenant-123\", sso = \"\")\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b"
+}

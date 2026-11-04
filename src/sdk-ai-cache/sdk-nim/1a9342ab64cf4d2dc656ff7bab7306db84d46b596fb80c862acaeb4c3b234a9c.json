@@ -1,0 +1,7 @@
+{
+  "method": "blockUserFromComment",
+  "signatureHash": "1a9342ab64cf4d2dc656ff7bab7306db84d46b596fb80c862acaeb4c3b234a9c",
+  "generatedAt": "2026-07-01T07:19:50.298Z",
+  "codeExample": "let params = BlockFromCommentParams()\nlet opts = BlockUserFromCommentOptions()\nlet (blockResult, httpResp) = client.blockUserFromComment(\n  tenantId = \"my-tenant-123\",\n  id = \"comment-456\",\n  blockFromCommentParams = params,\n  options = opts\n)\nif blockResult.isSome:\n  let success = blockResult.get()\n  discard success",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getBanUsersFromComment",
+  "signatureHash": "d0ed01a19395101528dd3f3436b7bb5e70debd8da66c0c78e56a4c498802fa0a",
+  "generatedAt": "2026-09-23T20:29:57.430Z",
+  "codeExample": "const tenantId: string = \"tenant_9f8b7c\";\nconst commentId: string = \"comment_a1b2c3\";\nconst ssoToken: string = \"sso_abc123\";\n\nconst bannedUsers: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(tenantId, commentId, ssoToken);\nconst bannedUsersNoSso: GetBannedUsersFromCommentResponse = await getBanUsersFromComment(tenantId, commentId);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

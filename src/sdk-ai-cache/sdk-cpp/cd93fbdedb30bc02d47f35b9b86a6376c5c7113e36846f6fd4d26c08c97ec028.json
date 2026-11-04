@@ -1,0 +1,7 @@
+{
+  "method": "resetUserNotificationCount",
+  "signatureHash": "cd93fbdedb30bc02d47f35b9b86a6376c5c7113e36846f6fd4d26c08c97ec028",
+  "generatedAt": "2026-07-01T07:19:39.609Z",
+  "codeExample": "auto resetTask = api->resetUserNotificationCount(\n    U(\"my-tenant-123\"),\n    boost::optional<utility::string_t>(U(\"user@example.com\"))\n).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){\n});",
+  "model": "openai/gpt-oss-120b"
+}

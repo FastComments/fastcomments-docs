@@ -1,0 +1,7 @@
+{
+  "method": "delete_tenant_user",
+  "signatureHash": "303ed772a837b08c3cc7ad10ae6eb6a91e5dea651ea35d5a3919c3ad3edb15db",
+  "generatedAt": "2026-07-01T10:15:23.822Z",
+  "codeExample": "async fn run() -> Result<(), Error> {\n    let params = DeleteTenantUserParams {\n        tenant_id: \"acme-corp\".into(),\n        id: \"user-123\".into(),\n        delete_comments: Some(\"true\".into()),\n        comment_delete_mode: Some(\"hard\".into()),\n    };\n    delete_tenant_user(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

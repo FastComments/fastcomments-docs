@@ -1,0 +1,7 @@
+{
+  "method": "putCloseThread",
+  "signatureHash": "e7116a49b863098f5bcf7ed63c6815f55c379d9a9791a2f9db27e44d2c59959e",
+  "generatedAt": "2026-07-01T07:19:35.915Z",
+  "codeExample": "let (respOpt, httpResp) = client.putCloseThread(tenantId = \"my-tenant-123\", urlId = \"news/fastcomments-integration\", sso = \"\")\nif respOpt.isSome:\n  let empty = respOpt.get()\n  echo \"Thread successfully closed\"",
+  "model": "openai/gpt-oss-120b"
+}

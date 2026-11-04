@@ -1,0 +1,7 @@
+{
+  "method": "deleteSubscription",
+  "signatureHash": "69ae097ba7d10f6bad94bdfd3d108ab763e034d25d20adcc97c1193c72ab94e6",
+  "generatedAt": "2026-07-01T07:19:53.834Z",
+  "codeExample": "let (maybeResp, httpResp) = client.deleteSubscription(\n  tenantId = \"my-tenant-123\",\n  id = \"sub-789\",\n  userId = \"\"\n)\n\nif maybeResp.isSome:\n  let apiResult = maybeResp.get()\n  # use apiResult as needed",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

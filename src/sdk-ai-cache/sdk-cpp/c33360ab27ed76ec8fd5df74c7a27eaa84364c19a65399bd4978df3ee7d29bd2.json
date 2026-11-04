@@ -1,0 +1,7 @@
+{
+  "method": "deleteNotificationCount",
+  "signatureHash": "c33360ab27ed76ec8fd5df74c7a27eaa84364c19a65399bd4978df3ee7d29bd2",
+  "generatedAt": "2026-07-01T07:19:32.893Z",
+  "codeExample": "auto tenantId = utility::conversions::to_string_t(\"my-tenant-123\");\nauto notificationId = utility::conversions::to_string_t(\"notif-789\");\n\napi->deleteNotificationCount(tenantId, notificationId)\n    .then([](std::shared_ptr<APIEmptyResponse> resp) {})\n    .then([](pplx::task<void> t) { try { t.get(); } catch (const std::exception&) {} });",
+  "model": "openai/gpt-oss-120b"
+}

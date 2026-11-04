@@ -1,0 +1,7 @@
+{
+  "method": "deleteModerator",
+  "signatureHash": "be87e7de6b4dee5e1a1d770eed1acd9cd798f19321bd3d459e2e70084fa07e91",
+  "generatedAt": "2026-07-01T07:19:21.947Z",
+  "codeExample": "let (apiResp, httpResp) = client.deleteModerator(\n  tenantId = \"my-tenant-123\",\n  id = \"mod-789\",\n  sendEmail = \"admin@mydomain.com\",\n)\n\nif apiResp.isSome:\n  let empty = apiResp.get()\n  echo \"Moderator removed\"",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

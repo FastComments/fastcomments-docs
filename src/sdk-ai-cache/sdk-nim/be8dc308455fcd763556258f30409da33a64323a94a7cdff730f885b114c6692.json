@@ -1,0 +1,7 @@
+{
+  "method": "searchUsers",
+  "signatureHash": "be8dc308455fcd763556258f30409da33a64323a94a7cdff730f885b114c6692",
+  "generatedAt": "2026-07-01T07:19:51.486Z",
+  "codeExample": "let (response, httpResponse) = client.searchUsers(\n  tenantId = \"my-tenant-123\",\n  urlId = \"news/article-title\",\n  options = SearchUsersOptions()\n)\n\nif response.isSome:\n  let result = response.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

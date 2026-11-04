@@ -1,0 +1,7 @@
+{
+  "method": "delete_sso_user",
+  "signatureHash": "5e6bd9864fa2d5806729b2665db903d3407d6b4b2feac753d49794f2427a191c",
+  "generatedAt": "2026-07-01T10:15:19.427Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = DeleteSsoUserParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        id: \"user-42\".to_string(),\n        delete_comments: Some(true),\n        comment_delete_mode: Some(\"soft\".to_string()),\n    };\n    let _response: DeleteSsoUserApiResponse = delete_sso_user(&config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "deleteEmailTemplateRenderError",
+  "signatureHash": "08f402f893932704d1434a840ef447b189f9faf72f79b51af13c3fbf7f58e913",
+  "generatedAt": "2026-07-01T07:19:21.738Z",
+  "codeExample": "let (apiRes, httpRes) = client.deleteEmailTemplateRenderError(\n  tenantId = \"my-tenant-123\",\n  id = \"welcome-email\",\n  errorId = \"render-err-456\"\n)\n\nif apiRes.isSome:\n  let empty = apiRes.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "setTrustFactor",
+  "signatureHash": "66a7dc8aba65a74c4f5a6806887b03d1099b3f403be20cb6bcd16df2a695c24c",
+  "generatedAt": "2026-07-01T07:19:20.882Z",
+  "codeExample": "let opts = SetTrustFactorOptions(userId = \"user-456\", trustFactor = 5, reason = \"spam detection\")\nlet (trustResponse, httpResponse) = client.setTrustFactor(tenantId = \"my-tenant-123\", options = opts)\nif trustResponse.isSome:\n  let result = trustResponse.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

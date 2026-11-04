@@ -1,0 +1,7 @@
+{
+  "method": "postBanUserFromComment",
+  "signatureHash": "93312a5f9d6f2802a486a1a95d8984e8e32595f04417d7cb0fef34dad93d637d",
+  "generatedAt": "2026-09-23T20:29:59.548Z",
+  "codeExample": "async function banUserExample(): Promise<void> {\n  const result: BanUserFromCommentResult = await postBanUserFromComment(\n    \"tenant_42\",\n    \"comment_1001\",\n    true,                     // banEmail\n    undefined,                // banEmailDomain (omitted)\n    true,                     // banIP\n    false,                    // deleteAllUsersComments\n    \"2025-01-01T00:00:00Z\",   // bannedUntil\n    true,                     // isShadowBan\n    undefined,                // updateId (omitted)\n    \"Harassment\",             // banReason\n    undefined                 // sso (omitted)\n  );\n\n  console.log(result);\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

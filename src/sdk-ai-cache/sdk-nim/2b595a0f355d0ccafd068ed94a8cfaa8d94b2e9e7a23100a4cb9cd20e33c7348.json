@@ -1,0 +1,7 @@
+{
+  "method": "createTenantUser",
+  "signatureHash": "2b595a0f355d0ccafd068ed94a8cfaa8d94b2e9e7a23100a4cb9cd20e33c7348",
+  "generatedAt": "2026-07-01T07:19:24.601Z",
+  "codeExample": "let tenantId = \"my-tenant-123\"\nlet userBody = CreateTenantUserBody(\n  email: \"john.doe@example.com\",\n  name: \"John Doe\",\n  password: \"s3cr3tP@ss\",\n  role: \"admin\"\n)\nlet (optResp, httpResp) = client.createTenantUser(\n  tenantId = tenantId,\n  createTenantUserBody = userBody\n)\nif optResp.isSome:\n  let resp = optResp.get()\n  echo resp.userId",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

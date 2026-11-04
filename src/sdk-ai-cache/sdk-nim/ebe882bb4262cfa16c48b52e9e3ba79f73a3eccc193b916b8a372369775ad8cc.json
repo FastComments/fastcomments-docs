@@ -1,0 +1,7 @@
+{
+  "method": "createEmailTemplate",
+  "signatureHash": "ebe882bb4262cfa16c48b52e9e3ba79f73a3eccc193b916b8a372369775ad8cc",
+  "generatedAt": "2026-07-01T07:19:22.832Z",
+  "codeExample": "let createBody = CreateEmailTemplateBody(\n  name: \"Welcome Email\",\n  subject: \"Welcome to FastComments\",\n  htmlBody: \"<p>Hello, thank you for joining us!</p>\",\n  isActive: true,\n  tags: @[]\n)\n\nlet (optResp, httpResp) = client.createEmailTemplate(\n  tenantId = \"my-tenant-123\",\n  createEmailTemplateBody = createBody\n)\n\nif optResp.isSome:\n  let emailTemplate = optResp.get()",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

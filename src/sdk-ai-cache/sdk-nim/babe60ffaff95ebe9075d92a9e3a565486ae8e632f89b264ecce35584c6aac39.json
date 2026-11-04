@@ -1,0 +1,7 @@
+{
+  "method": "getDomainConfig",
+  "signatureHash": "babe60ffaff95ebe9075d92a9e3a565486ae8e632f89b264ecce35584c6aac39",
+  "generatedAt": "2026-07-01T07:19:23.452Z",
+  "codeExample": "let (configOpt, httpResp) = client.getDomainConfig(tenantId = \"my-tenant-123\", domain = \"news.example.com\")\nif configOpt.isSome:\n  let cfg = configOpt.get()\n  discard cfg",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

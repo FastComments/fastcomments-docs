@@ -1,0 +1,7 @@
+{
+  "method": "get_feed_posts_public",
+  "signatureHash": "75e6155dc6d76dc70ef75f0b52ee6633b0b5f8382127a26d5354a69a56d1d607",
+  "generatedAt": "2026-07-01T10:15:26.349Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetFeedPostsPublicParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        after_id: Some(\"post123\".to_string()),\n        limit: Some(20),\n        tags: Some(vec![\"news\".to_string(), \"article\".to_string()]),\n        sso: Some(\"sso-token-xyz\".to_string()),\n        is_crawler: Some(false),\n        include_user_info: Some(true),\n    };\n    let _response = get_feed_posts_public(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

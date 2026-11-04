@@ -1,0 +1,7 @@
+{
+  "method": "deleteSSOUser",
+  "signatureHash": "8209f5c570974001b643c59300b2a3ed99baa76e5f408fbf5fbea7b932a9ad38",
+  "generatedAt": "2026-07-01T07:19:33.851Z",
+  "codeExample": "const tenantId: string = \"acme-corp-tenant\";\nconst userId: string = \"sso-user-42\";\nconst deleteComments: boolean = true;\nconst commentDeleteMode: string = \"hard\";\n\nconst detailedResult: DeleteSSOUserAPIResponse = await deleteSSOUser(\n  tenantId,\n  userId,\n  deleteComments,\n  commentDeleteMode\n);\n\nconst simpleResult: DeleteSSOUserAPIResponse = await deleteSSOUser(\n  tenantId,\n  userId\n);",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

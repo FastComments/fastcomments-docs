@@ -1,0 +1,7 @@
+{
+  "method": "getV1PageLikes",
+  "signatureHash": "5ec8e3aab6eb95e15e37596e2b06b94b644f29299b532f0081250be01b73811e",
+  "generatedAt": "2026-09-23T20:29:53.117Z",
+  "codeExample": "(async () => {\n  const tenantId: string = \"tenant_12345\";\n  const urlId: string = \"https://myblog.com/post/42\";\n  const ssoToken: string = \"sso_user_987\";\n\n  const likesWithSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId, ssoToken);\n  const likesWithoutSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId);\n})();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

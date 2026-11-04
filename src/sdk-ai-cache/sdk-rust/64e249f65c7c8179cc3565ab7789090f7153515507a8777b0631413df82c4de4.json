@@ -1,0 +1,7 @@
+{
+  "method": "get_sso_users",
+  "signatureHash": "64e249f65c7c8179cc3565ab7789090f7153515507a8777b0631413df82c4de4",
+  "generatedAt": "2026-07-01T10:15:21.167Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = GetSsoUsersParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        skip: Some(10),\n    };\n    let _response = get_sso_users(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

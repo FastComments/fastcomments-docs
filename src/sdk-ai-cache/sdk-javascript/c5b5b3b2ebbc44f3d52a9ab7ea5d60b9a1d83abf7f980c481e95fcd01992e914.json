@@ -1,0 +1,7 @@
+{
+  "method": "reactFeedPostPublic",
+  "signatureHash": "c5b5b3b2ebbc44f3d52a9ab7ea5d60b9a1d83abf7f980c481e95fcd01992e914",
+  "generatedAt": "2026-09-23T20:29:57.696Z",
+  "codeExample": "async function demoReact() {\n  const tenantId: string = \"tenant_12345\";\n  const postId: string = \"post_98765\";\n  const reactBodyParams: ReactBodyParams = {\n    type: \"like\",\n    userId: \"user_abcde\"\n  };\n  const response: ReactFeedPostResponse = await reactFeedPostPublic(\n    tenantId,\n    postId,\n    reactBodyParams,\n    true,\n    \"broadcast_001\",\n    \"sso_token_xyz\"\n  );\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

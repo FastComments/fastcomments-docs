@@ -1,0 +1,7 @@
+{
+  "method": "flag_comment",
+  "signatureHash": "42ce3b1fef95743bd24fa37b5a4a87b1b5b1735a53fde2d013a8d781436831df",
+  "generatedAt": "2026-07-01T10:15:21.546Z",
+  "codeExample": "async fn example() -> Result<(), Error> {\n    let params = FlagCommentParams {\n        tenant_id: \"acme-corp\".to_string(),\n        id: \"comment-9876\".to_string(),\n        user_id: Some(\"user-42\".to_string()),\n        anon_user_id: None,\n    };\n    let _response = flag_comment(&configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

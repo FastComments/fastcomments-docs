@@ -1,0 +1,7 @@
+{
+  "method": "change_ticket_state",
+  "signatureHash": "60b82bce92026da820ab92ff8eb823c54c81cad41ff6f228a4a8bcd283a11154",
+  "generatedAt": "2026-07-01T10:15:21.589Z",
+  "codeExample": "async fn example(config: &configuration::Configuration) -> Result<(), Error> {\n    let body = models::ChangeTicketStateBody {\n        state: Some(\"closed\".to_string()),\n        comment: Some(\"Issue resolved\".to_string()),\n    };\n    let params = ChangeTicketStateParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: \"user-1234\".to_string(),\n        id: \"ticket-5678\".to_string(),\n        change_ticket_state_body: body,\n    };\n    let _response: ChangeTicketStateResponse = change_ticket_state(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

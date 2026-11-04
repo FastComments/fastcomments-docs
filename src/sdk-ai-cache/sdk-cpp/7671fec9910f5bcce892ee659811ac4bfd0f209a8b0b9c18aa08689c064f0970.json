@@ -1,0 +1,7 @@
+{
+  "method": "putDomainConfig",
+  "signatureHash": "7671fec9910f5bcce892ee659811ac4bfd0f209a8b0b9c18aa08689c064f0970",
+  "generatedAt": "2026-07-01T07:19:43.618Z",
+  "codeExample": "utility::string_t tenantId = U(\"my-tenant-123\");\nutility::string_t domainToUpdate = U(\"example.com\");\nUpdateDomainConfigParams updateParams;\nupdateParams.enableComments = true;\nupdateParams.moderationLevel = boost::optional<int>(2);\nupdateParams.customCss = boost::optional<utility::string_t>(U(\".fc-comment{color:red;}\"));\napi->putDomainConfig(tenantId, domainToUpdate, updateParams)\n    .then([](std::shared_ptr<PutDomainConfigResponse> resp) {\n    });",
+  "model": "openai/gpt-oss-120b"
+}

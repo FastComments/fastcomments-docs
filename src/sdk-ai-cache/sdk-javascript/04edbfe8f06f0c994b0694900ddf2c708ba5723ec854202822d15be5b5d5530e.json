@@ -1,0 +1,7 @@
+{
+  "method": "deletePage",
+  "signatureHash": "04edbfe8f06f0c994b0694900ddf2c708ba5723ec854202822d15be5b5d5530e",
+  "generatedAt": "2026-07-01T10:15:38.014Z",
+  "codeExample": "async function example() {\n    const tenantId: string = \"acme-corp-001\";\n    const pageId: string = \"page-987654321\";\n    const result: DeletePageAPIResponse = await deletePage(tenantId, pageId);\n    console.log(result);\n}\nexample();",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

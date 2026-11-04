@@ -1,0 +1,7 @@
+{
+  "method": "get_user_badge_progress_list",
+  "signatureHash": "c92712c0c49473c4a97ab4ddaee2ae5d222b7e66d82373fa0e281857fe74621b",
+  "generatedAt": "2026-07-01T10:15:22.820Z",
+  "codeExample": "async fn fetch_badge_progress(conf: &configuration::Configuration) -> Result<(), Error> {\n    let params = GetUserBadgeProgressListParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        user_id: Some(\"user-98765\".to_string()),\n        limit: Some(20.0),\n        skip: Some(5.0),\n    };\n    let _resp = get_user_badge_progress_list(conf, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

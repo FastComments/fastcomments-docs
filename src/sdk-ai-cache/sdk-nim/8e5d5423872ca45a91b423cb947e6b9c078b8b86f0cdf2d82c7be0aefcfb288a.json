@@ -1,0 +1,7 @@
+{
+  "method": "getTenants",
+  "signatureHash": "8e5d5423872ca45a91b423cb947e6b9c078b8b86f0cdf2d82c7be0aefcfb288a",
+  "generatedAt": "2026-07-01T07:19:54.199Z",
+  "codeExample": "let (maybeResp, httpResp) = client.getTenants(tenantId = \"my-tenant-123\", options = GetTenantsOptions())\nif maybeResp.isSome:\n  let resp = maybeResp.get()\n  echo resp",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

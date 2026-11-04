@@ -1,0 +1,7 @@
+{
+  "method": "getGlobalEventLog",
+  "signatureHash": "cdaa9e90d976356c6663b89daff7e11724d79c2e7662f3d6dc1c137a26dbe506",
+  "generatedAt": "2026-07-01T07:19:52.941Z",
+  "codeExample": "api->getGlobalEventLog(\n    U(\"my-tenant-123\"),\n    U(\"article-456\"),\n    U(\"user@example.com\"),\n    1622505600,\n    boost::optional<int64_t>(1625097600)\n).then([](std::shared_ptr<GetEventLogResponse> resp) {\n    (void)resp;\n});",
+  "model": "openai/gpt-oss-120b"
+}

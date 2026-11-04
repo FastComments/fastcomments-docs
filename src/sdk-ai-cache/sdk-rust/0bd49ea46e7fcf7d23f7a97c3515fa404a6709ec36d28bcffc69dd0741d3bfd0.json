@@ -1,0 +1,7 @@
+{
+  "method": "delete_pending_webhook_event",
+  "signatureHash": "0bd49ea46e7fcf7d23f7a97c3515fa404a6709ec36d28bcffc69dd0741d3bfd0",
+  "generatedAt": "2026-07-01T10:15:24.972Z",
+  "codeExample": "async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {\n    let params = DeletePendingWebhookEventParams {\n        tenant_id: \"acme-corp-tenant\".into(),\n        id: \"event-12345\".into(),\n    };\n    delete_pending_webhook_event(configuration, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}

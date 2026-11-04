@@ -1,0 +1,7 @@
+{
+  "method": "getUserPresenceStatuses",
+  "signatureHash": "7d760f3f2535855aeddb694c5dcc251c4987c5c4f40ab9a1b3b59be86a9f6e8b",
+  "generatedAt": "2026-07-01T07:20:07.138Z",
+  "codeExample": "auto tenantId = U(\"my-tenant-123\");\nauto urlIdWS = U(\"article-789\");\nauto userIds = U(\"alice@example.com,bob@example.com\");\nboost::optional<utility::string_t> optionalFilter = boost::none;\napi->getUserPresenceStatuses(tenantId, urlIdWS, userIds)\n    .then([](pplx::task<std::shared_ptr<GetUserPresenceStatusesResponse>> t){\n        try{\n            auto response = t.get();\n        }catch(...){\n        }\n    });",
+  "model": "openai/gpt-oss-120b"
+}

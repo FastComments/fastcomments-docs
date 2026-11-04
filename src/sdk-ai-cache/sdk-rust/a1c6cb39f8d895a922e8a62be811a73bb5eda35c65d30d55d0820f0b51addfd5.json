@@ -1,0 +1,7 @@
+{
+  "method": "reset_user_notification_count",
+  "signatureHash": "a1c6cb39f8d895a922e8a62be811a73bb5eda35c65d30d55d0820f0b51addfd5",
+  "generatedAt": "2026-07-01T07:19:30.436Z",
+  "codeExample": "async fn run_example(config: &configuration::Configuration) -> Result<(), Error> {\n    let params = ResetUserNotificationCountParams {\n        tenant_id: \"acme-corp-tenant\".to_string(),\n        sso: Some(\"john.doe\".to_string()),\n    };\n    let _response: ResetUserNotificationsResponse = reset_user_notification_count(config, params).await?;\n    Ok(())\n}",
+  "model": "openai/gpt-oss-120b-Turbo"
+}
