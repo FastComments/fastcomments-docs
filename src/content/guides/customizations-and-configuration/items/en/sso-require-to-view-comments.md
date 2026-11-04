@@ -29,7 +29,9 @@ To protect a particular page, enter a page URL in the "URL ID" field. If you hav
 When requiring SSO, you'll want to decide if you require Simple SSO or Secure SSO. If you require Simple SSO, then both are allowed, but if you require Secure SSO then
 the content must be fetched with a Secure SSO payload hashed with your API key in order to be viewed.
 
-The security level option will appear when you select "Require SSO To View Comments".
+The security level option will appear when you select "Require SSO To View Comments", and only takes effect while that option is on.
+
+The <a href="#sso-simple">Auto Verify Comments via Simple SSO and Allow Simple SSO Admins</a> settings are separate, and apply whether or not this option is on.
 
 #### Protection Beyond Reading
 
